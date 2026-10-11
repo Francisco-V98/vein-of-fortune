@@ -1,0 +1,27 @@
+{
+  "id": "F0-27",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Procedimiento de extracción e ignorado escrito en studio/README.md."
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Falta probarlo: necesita el repositorio en GitHub y al menos un commit con historial (ver F0-29)."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Procedimiento",
+      "path": "README.md"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "colors": [
+    { "name": "Abismo", "hex": "#0E161D", "role": "Fondo", "use": "Fondos más oscuros" },
+    { "name": "Pizarra oscura", "hex": "#17232C", "role": "Fondo", "use": "Paneles y superficies" },
+    { "name": "Pizarra", "hex": "#22333F", "role": "Base", "use": "Elementos principales" },
+    { "name": "Acero azul", "hex": "#36505F", "role": "Base", "use": "Metal y estructuras" },
+    { "name": "Azul grisáceo", "hex": "#5B7C8C", "role": "Medio", "use": "Tonos medios y texto secundario" },
+    { "name": "Hielo medio", "hex": "#8FB0BA", "role": "Luz", "use": "Luces y bordes" },
+    { "name": "Hielo claro", "hex": "#C9DCDF", "role": "Luz", "use": "Texto y brillos" },
+    { "name": "Vinotinto oscuro", "hex": "#6E1A2B", "role": "Acento", "use": "Sombras del acento" },
+    { "name": "Vinotinto", "hex": "#9A2640", "role": "Acento", "use": "Acento principal del proyecto" },
+    { "name": "Vinotinto resalte", "hex": "#C23B55", "role": "Acento", "use": "Alertas y resaltes" },
+    { "name": "Latón", "hex": "#B8893A", "role": "Acento secundario", "use": "Detalles mínimos: remaches, marcos, monedas" },
+    { "name": "Ámbar", "hex": "#E3B25C", "role": "Luz cálida", "use": "Brillo de lámparas" },
+    { "name": "Éter rojo-rosado", "hex": "#E0365A", "role": "Aetherita", "use": "Solo para la Aetherita" },
+    { "name": "Éter cian", "hex": "#7FE3E8", "role": "Aetherita", "use": "Aura de la Aetherita" },
+    { "name": "Oro", "hex": "#D9A93A", "role": "Lujo", "use": "Excepción controlada para oro y lujo" }
+  ],
+  "proportion": [
+    { "label": "Neutros fríos", "pct": 80, "color": "#36505F" },
+    { "label": "Tonos medios y materiales", "pct": 15, "color": "#8FB0BA" },
+    { "label": "Vinotinto y detalles", "pct": 5, "color": "#9A2640" }
+  ],
+  "rules": [
+    "Aproximadamente 80 % neutros fríos, 15 % tonos medios y menos de 5 % vinotinto.",
+    "El rojo-rosado brillante es solo de la Aetherita; el resto del juego usa vinotinto mate.",
+    "Latón y ámbar son detalles mínimos, nunca el protagonista.",
+    "No depender de rojo y verde para subidas y bajadas: usar flechas, formas y cian contra vinotinto."
+  ]
+}

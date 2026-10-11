@@ -1,0 +1,21 @@
+{
+  "id": "F0-28",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se reemplaza el nombre provisional en documentos, hub y configuración."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Hub, README, documentos 00, 06 y 11 y configuración ya usan Veta de Fortuna / Vein of Fortune."
+    }
+  ],
+  "comments": [],
+  "evidence": []
+}

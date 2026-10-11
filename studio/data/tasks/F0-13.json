@@ -1,0 +1,40 @@
+{
+  "id": "F0-13",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se desglosan las fases en hitos y tareas."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Roadmap F0 a F6 con horas, objetivos y criterios de listo; revisado con la incorporación de idiomas, marca, storyboard y métricas."
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "La estimación total subió de unas 650-1.200 h a unas 850-1.450 h tras sumar localización ES/EN, marca, storyboard y métricas."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Roadmap en datos",
+      "path": "data/roadmap.json"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Registro de decisiones",
+      "doc": "06-roadmap-y-pendientes"
+    }
+  ]
+}

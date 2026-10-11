@@ -1,0 +1,21 @@
+{
+  "id": "F0-03",
+  "history": [
+    {
+      "at": "2026-10-10",
+      "from": "backlog",
+      "to": "done",
+      "by": "claude",
+      "note": "Documento acordado con el autor en la conversación de diseño."
+    }
+  ],
+  "comments": [],
+  "evidence": [
+    {
+      "at": "2026-10-10",
+      "type": "doc",
+      "title": "Documento 02",
+      "doc": "02-extraccion"
+    }
+  ]
+}

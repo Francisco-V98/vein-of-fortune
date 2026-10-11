@@ -1,0 +1,28 @@
+{
+  "id": "F0-19",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se redacta el documento de marca con el nombre elegido."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 13 redactado: nombre, esencia, personalidad, voz, tono, frases, identidad visual y piezas. Pendiente de la revisión del autor."
+    }
+  ],
+  "comments": [],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Documento 13",
+      "doc": "13-marca-e-identidad"
+    }
+  ]
+}

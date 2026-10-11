@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Veta de Fortuna · Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal"></aside>
+    <div class="content">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <form class="search" id="searchForm" role="search">
+          <input id="q" type="search" placeholder="Buscar en documentos y tareas…" aria-label="Buscar en documentos y tareas" autocomplete="off">
+        </form>
+        <span class="gen" id="gen"></span>
+      </header>
+      <main id="main" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lb-close" id="lbClose" type="button" aria-label="Cerrar">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Imagen anterior">‹</button>
+    <figure class="lb-fig">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Imagen siguiente">›</button>
+  </div>
+
+  <script>
+    /* Carga data.js saltando la caché para ver siempre los datos más recientes. */
+    (function () {
+      function load(src, next) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.onload = next;
+        s.onerror = next;
+        document.body.appendChild(s);
+      }
+      load('data.js?v=' + Date.now(), function () { load('app.js?v=' + Date.now()); });
+    })();
+  </script>
+</body>
+</html>

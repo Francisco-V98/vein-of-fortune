@@ -1,0 +1,45 @@
+{
+  "id": "F0-18",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se proponen nombres bilingües y se verifican choques con búsquedas web y consultas DNS."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor elige «Veta de Fortuna» / «Vein of Fortune»."
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Vamos con Veta de Fortuna, Vein of Fortune."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Falta una búsqueda de marca formal antes de publicar. Los dominios .com consultados no tienen registro DNS el 2026-10-11, lo que sugiere que están libres, pero hay que confirmarlo en un registrador."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Documento de marca",
+      "doc": "13-marca-e-identidad"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Descartado",
+      "text": "Veta Madre / Mother Lode choca con Motherload y Super Motherload (juegos de minería conocidos). Soot & Vein: Vein está saturado (Code Vein, Vein)."
+    }
+  ]
+}

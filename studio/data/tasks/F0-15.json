@@ -1,0 +1,58 @@
+{
+  "id": "F0-15",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se descarta Trello. Se rediseña el tablero como sistema interno del estudio."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Implementado: historial por tarea, evidencias, comentarios, detalle de tarea, actividad reciente y validación de coherencia en el build."
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Los estados y los movimientos los hace Claude al 100%. Si una tarea pasa de backlog a en proceso es porque se editaron líneas de código."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "El build compara el estado del roadmap con el último movimiento del historial y avisa si no coinciden. El hub no tiene botones que cambien estados."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Detalle de tarea en el hub",
+      "path": "evidence/F0-15/detalle-de-tarea.jpg",
+      "note": "Descripción, listo cuando, evidencias y comentarios de esta misma tarea."
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Validación y generación de datos",
+      "path": "hub/build.py"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Explicación del sistema",
+      "path": "README.md"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Prueba de la validación",
+      "text": "Se forzaron dos incoherencias a propósito (F1-01 en 'doing' sin historial y F0-29 en 'review' con el último movimiento en 'doing'). El build las detectó, salió con código 1 con --strict y volvió a código 0 al restaurar."
+    }
+  ]
+}

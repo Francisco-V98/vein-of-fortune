@@ -1,0 +1,25 @@
+# Sistema
+.DS_Store
+*.log
+
+# Secretos y firmas: nunca en el repositorio
+.env
+.env.*
+*.keystore
+*.jks
+*.p12
+export_credentials.cfg
+
+# Builds
+*.apk
+*.aab
+
+# Herramientas locales
+.claude/settings.local.json
+__pycache__/
+*.pyc
+
+# Godot (cuando exista game/)
+.godot/
+.import/
+*.translation

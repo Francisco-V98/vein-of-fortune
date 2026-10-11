@@ -1,0 +1,20 @@
+{
+  "id": "F0-29",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se prepara el repositorio local: .gitignore, README y estructura."
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Falta crear el repositorio privado vacío en GitHub y subirlo. La herramienta gh no está instalada; el autor lo crea en la web."
+    }
+  ],
+  "evidence": []
+}

@@ -1,0 +1,35 @@
+{
+  "source_note": "Imágenes de referencia generadas con IA (gpt_image_2_5 vía Higgsfield). Los términos de uso comercial deben revisarse antes de publicar.",
+  "images": [
+    { "file": "assets-ref/prueba-de-estilo/mina.png", "title": "Mina (vertical, primera ronda)", "category": "Escenas", "round": 1, "status": "superada", "note": "La primera mina en vertical. Gustó la atmósfera; el juego es horizontal." },
+    { "file": "assets-ref/prueba-de-estilo/personajes.png", "title": "Protagonistas hombre y mujer", "category": "Personajes", "round": 1, "status": "aprobada", "note": "Base para los protagonistas jugables. Gustó el estilo." },
+    { "file": "assets-ref/prueba-de-estilo/minerales.png", "title": "Minerales v1", "category": "Minerales", "round": 1, "status": "superada", "note": "Cuarzo, salitre y plata se parecían demasiado." },
+    { "file": "assets-ref/prueba-de-estilo/mercado.png", "title": "Interfaz de mercado (vertical)", "category": "Interfaz", "round": 1, "status": "superada", "note": "No convenció; reemplazada por versiones horizontales." },
+    { "file": "assets-ref/prueba-de-estilo-2/mina-horizontal.png", "title": "Galerías del Hollín (horizontal)", "category": "Escenas", "round": 2, "status": "aprobada", "note": "Escena de la zona 1. Referencia de atmósfera para las zonas." },
+    { "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png", "title": "Minerales v2", "category": "Minerales", "round": 2, "status": "aprobada", "note": "Siluetas distintas. La Aetherita es un cristal vinotinto con aura cian." },
+    { "file": "assets-ref/prueba-de-estilo-2/retratos-a.png", "title": "Retratos: Reme, Teo, Quiroga y Lucía", "category": "Personajes", "round": 2, "status": "aprobada", "note": "Retratos de diálogo detallados." },
+    { "file": "assets-ref/prueba-de-estilo-2/retratos-b.png", "title": "Retratos: Esteban, Casilda, Ministro Dueñas y Anselmo", "category": "Personajes", "round": 2, "status": "aprobada", "note": "Anselmo aparece como una foto desgastada." },
+    { "file": "assets-ref/prueba-de-estilo-2/sprites.png", "title": "Sprites pequeños tipo Stardew", "category": "Personajes", "round": 2, "status": "referencia", "note": "Corregir: el ministro salió parecido a un sacerdote." },
+    { "file": "assets-ref/prueba-de-estilo-2/ui-mercado.png", "title": "Terminal de mercado", "category": "Interfaz", "round": 2, "status": "referencia", "note": "Buena base. Cambiar flechas rojo/verde por formas y colores accesibles." },
+    { "file": "assets-ref/prueba-de-estilo-2/ui-tienda.png", "title": "Tienda (vista interior)", "category": "Interfaz", "round": 2, "status": "aprobada", "note": "Corte transversal con mostrador, taller y almacén." },
+    { "file": "assets-ref/prueba-de-estilo-2/minijuegos.png", "title": "Maquetas de minijuegos", "category": "Minijuegos", "round": 2, "status": "referencia", "note": "Picado, Perforación y Regateo." },
+    { "file": "assets-ref/prueba-de-estilo-2/edificios.png", "title": "Edificios en isométrica", "category": "Edificios", "round": 2, "status": "aprobada", "note": "Tienda, taller, almacén, casa, Ministerio, Consorcio, Unión, bar y periódico." },
+    { "file": "assets-ref/prueba-de-estilo-2/mapa-valdoria.png", "title": "Mapa de Valdoria", "category": "Mapa y zonas", "round": 2, "status": "referencia", "note": "Seis regiones con vías de tren. Viable como imagen estática con zonas tocables." },
+    { "file": "assets-ref/prueba-de-estilo-2/zonas.png", "title": "Fondos de las 6 zonas", "category": "Mapa y zonas", "round": 2, "status": "referencia", "note": "Cada zona con identidad propia." },
+    { "file": "assets-ref/prueba-de-estilo-2/paleta-laton.png", "title": "Acento secundario: latón (elegido)", "category": "Paleta", "round": 2, "status": "aprobada", "note": "Elegido como complemento cálido del vinotinto." },
+    { "file": "assets-ref/prueba-de-estilo-2/paleta-verdigris.png", "title": "Acento secundario: verdigrís", "category": "Paleta", "round": 2, "status": "superada", "note": "Reservar para detalles de cobre y tecnología." },
+    { "file": "assets-ref/prueba-de-estilo-2/paleta-oxido.png", "title": "Acento secundario: naranja óxido", "category": "Paleta", "round": 2, "status": "superada", "note": "Se lee como peligro." }
+  ],
+  "sounds_planned": [
+    { "name": "Interfaz: tocar, confirmar, cancelar", "group": "Interfaz", "status": "pendiente" },
+    { "name": "Picado: golpe, carga, acierto y fallo", "group": "Minería", "status": "pendiente" },
+    { "name": "Perforación: taladro, calor y sobrecalentamiento", "group": "Minería", "status": "pendiente" },
+    { "name": "Teletipo y mercado: impresión, subida y bajada", "group": "Mercado", "status": "pendiente" },
+    { "name": "Moneda y caja registradora", "group": "Tienda", "status": "pendiente" },
+    { "name": "Blips de voz por personaje", "group": "Personajes", "status": "pendiente" },
+    { "name": "Ambiente: galerías del Hollín", "group": "Ambientes", "status": "pendiente" },
+    { "name": "Aetherita: zumbido y exposición", "group": "Ambientes", "status": "pendiente" },
+    { "name": "Música base de la mina y de la tienda", "group": "Música", "status": "pendiente" },
+    { "name": "Eventos sociales: sirena, apagón, saqueo", "group": "Eventos", "status": "pendiente" }
+  ]
+}

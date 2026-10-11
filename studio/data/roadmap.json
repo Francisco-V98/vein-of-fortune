@@ -1,0 +1,1856 @@
+{
+  "meta": {
+    "updated": "2026-10-11",
+    "targets": [
+      "MVP",
+      "Release 1",
+      "Evolutivo"
+    ],
+    "statuses": [
+      "backlog",
+      "sprint",
+      "doing",
+      "review",
+      "done",
+      "dropped"
+    ],
+    "notes": "Fuente única del plan. Las horas son horas del autor (dirigir a la IA, probar, generar assets, corregir), no tiempo de cálculo. El detalle de tareas de las fases 4 a 6 se completa justo antes de entrar a cada fase."
+  },
+  "phases": [
+    {
+      "id": "F0",
+      "name": "Diseño",
+      "target": "MVP",
+      "hours": null,
+      "goal": "Dejar todo el diseño del juego, el mundo, la parte técnica y legal y la dirección de arte definidos en papel.",
+      "gate": null,
+      "milestones": [
+        {
+          "id": "F0.1",
+          "name": "Diseño de juego",
+          "tasks": [
+            {
+              "id": "F0-01",
+              "title": "Visión, pilares, plataforma y modelo de negocio",
+              "est": 3,
+              "status": "done",
+              "desc": "Documento 00: concepto, pilares, plataforma, modelo, público, estética y alcance.",
+              "done_when": "Documento 00 acordado."
+            },
+            {
+              "id": "F0-02",
+              "title": "Core loop y día de 3 bloques",
+              "est": 2,
+              "status": "done",
+              "desc": "Documento 01: ciclo del día, bloques de tiempo y libertad con consecuencias.",
+              "done_when": "Documento 01 acordado."
+            },
+            {
+              "id": "F0-03",
+              "title": "Extracción: zonas, detector, herramientas y enemigos",
+              "est": 4,
+              "status": "done",
+              "desc": "Documento 02: zonas, escáner con probabilidades, herramientas con desgaste, encuentros y pérdida parcial.",
+              "done_when": "Documento 02 acordado."
+            },
+            {
+              "id": "F0-04",
+              "title": "Mercado: precios, información por capas, contratos, mercado negro y refinado",
+              "est": 5,
+              "status": "done",
+              "desc": "Documento 03: modelo de precios, noticias con sesgos, frenos a los abusos, vigilancia y refinado.",
+              "done_when": "Documento 03 acordado."
+            },
+            {
+              "id": "F0-05",
+              "title": "Progresión: stats, empleados, dificultad, permadeath y legado",
+              "est": 4,
+              "status": "done",
+              "desc": "Documento 04: tres ejes de progreso, 5 stats por uso, empleados con contratos y salón de la fama.",
+              "done_when": "Documento 04 acordado."
+            },
+            {
+              "id": "F0-06",
+              "title": "Minijuegos: catálogo, reglas comunes y MVP",
+              "est": 3,
+              "status": "done",
+              "desc": "Documento 09: minijuegos de extracción, tareas de peligro, tienda y automatización.",
+              "done_when": "Documento 09 acordado."
+            }
+          ]
+        },
+        {
+          "id": "F0.2",
+          "name": "Mundo y narrativa",
+          "tasks": [
+            {
+              "id": "F0-07",
+              "title": "Valdoria: regiones, zonas y 10 minerales con lore",
+              "est": 3,
+              "status": "done",
+              "desc": "Documento 05.",
+              "done_when": "Documento 05 acordado."
+            },
+            {
+              "id": "F0-08",
+              "title": "Sociedad, facciones, prensa y eventos sociales",
+              "est": 3,
+              "status": "done",
+              "desc": "Documento 07.",
+              "done_when": "Documento 07 acordado."
+            },
+            {
+              "id": "F0-09",
+              "title": "Historia en 4 actos, elenco y verdad de la Aetherita",
+              "est": 4,
+              "status": "done",
+              "desc": "Documento 08.",
+              "done_when": "Documento 08 acordado."
+            }
+          ]
+        },
+        {
+          "id": "F0.3",
+          "name": "Técnico, legal y arte",
+          "tasks": [
+            {
+              "id": "F0-10",
+              "title": "Motor, arquitectura, controles y seguridad",
+              "est": 3,
+              "status": "done",
+              "desc": "Documento 10.",
+              "done_when": "Documento 10 redactado."
+            },
+            {
+              "id": "F0-11",
+              "title": "Lista legal por etapas",
+              "est": 2,
+              "status": "done",
+              "desc": "Documento 11.",
+              "done_when": "Documento 11 redactado."
+            },
+            {
+              "id": "F0-12",
+              "title": "Pruebas de estilo y paleta (2 rondas)",
+              "est": 4,
+              "status": "done",
+              "desc": "Documento 12 y 18 imágenes de referencia en assets.",
+              "done_when": "Paleta y dirección de arte acordadas."
+            }
+          ]
+        },
+        {
+          "id": "F0.4",
+          "name": "Proceso y herramientas",
+          "tasks": [
+            {
+              "id": "F0-13",
+              "title": "Roadmap con fases, hitos y tareas",
+              "est": 3,
+              "status": "done",
+              "desc": "Este archivo.",
+              "done_when": "Plan de fases con horas y objetivos definido."
+            },
+            {
+              "id": "F0-14",
+              "title": "Hub visual local de documentación y roadmap",
+              "est": 6,
+              "status": "done",
+              "desc": "Sitio local en studio/hub/ que muestra documentos, arte, paleta, roadmap y tablero.",
+              "done_when": "El sitio abre y refleja los documentos y el roadmap."
+            },
+            {
+              "id": "F0-15",
+              "title": "Sistema interno de tareas con estados, evidencias y comentarios",
+              "est": 10,
+              "status": "review",
+              "desc": "Reemplaza a Trello. El tablero vive dentro del hub; los estados se guardan en el código y los cambia Claude. Cada tarea tiene historial de estados, comentarios y evidencias.",
+              "done_when": "El hub muestra el tablero con historial, evidencias y comentarios por tarea, y el build valida la coherencia."
+            }
+          ]
+        },
+        {
+          "id": "F0.5",
+          "name": "Pendientes de diseño",
+          "tasks": [
+            {
+              "id": "F0-16",
+              "title": "Confirmar Godot como motor",
+              "est": 0.5,
+              "status": "backlog",
+              "desc": "Propuesto en el documento 10; falta la confirmación explícita.",
+              "done_when": "Decisión registrada."
+            },
+            {
+              "id": "F0-17",
+              "title": "Corregir arte de referencia: sprite del ministro y flechas de interfaz sin rojo/verde",
+              "est": 1,
+              "status": "backlog",
+              "desc": "El ministro salió parecido a un sacerdote; las flechas de precio usan rojo y verde.",
+              "done_when": "Versiones corregidas guardadas en assets."
+            },
+            {
+              "id": "F0-18",
+              "title": "Elegir nombre bilingüe (ES/EN) y revisar conflictos de marca",
+              "est": 3,
+              "status": "done",
+              "target": "MVP",
+              "desc": "El nombre debe funcionar o ser traducible en español e inglés. Valdoria se mantiene como nombre del mundo.",
+              "done_when": "Nombre elegido y búsqueda preliminar de conflictos hecha."
+            }
+          ]
+        },
+        {
+          "id": "F0.6",
+          "name": "Marca e identidad",
+          "tasks": [
+            {
+              "id": "F0-19",
+              "title": "Documento de marca: personalidad, voz y tono en ES y EN",
+              "est": 4,
+              "status": "review",
+              "desc": "Personalidad, voz (tuteo en español, tono cercano en inglés), tono, frases de marca y reglas de escritura.",
+              "done_when": "Documento de marca acordado."
+            },
+            {
+              "id": "F0-20",
+              "title": "Guía visual de marca: colores, tipografías candidatas y símbolo",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Reglas de uso de la paleta, tipografías con licencia clara, símbolo (lámpara de minero) y usos correctos e incorrectos.",
+              "done_when": "Guía visual acordada."
+            },
+            {
+              "id": "F0-21",
+              "title": "Wordmark provisional del nombre elegido",
+              "est": 5,
+              "status": "backlog",
+              "desc": "Versión provisional del logotipo en pixel art para el hub, el README y las pruebas.",
+              "done_when": "Wordmark provisional guardado en studio."
+            }
+          ]
+        },
+        {
+          "id": "F0.7",
+          "name": "Storytelling y storyboard",
+          "tasks": [
+            {
+              "id": "F0-22",
+              "title": "Story map por actos",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Línea de tiempo de los 4 actos con carriles: narrativa, mecánicas que se desbloquean, mercado y eventos, zonas, personajes, estatus y arte necesario. Visible en el hub.",
+              "done_when": "Story map completo y visible en el hub."
+            },
+            {
+              "id": "F0-23",
+              "title": "Guion día a día del Acto I",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Los primeros 7 a 10 días con objetivo de aprendizaje, qué se desbloquea y qué decisión toma el jugador cada día.",
+              "done_when": "Guion de días aprobado."
+            },
+            {
+              "id": "F0-24",
+              "title": "Storyboard de las escenas clave del Acto I",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Paneles con arte de referencia, texto de diálogo y pantalla de cada escena clave. Barato e iterable.",
+              "done_when": "Storyboard visible en el hub."
+            },
+            {
+              "id": "F0-25",
+              "title": "Flujo de pantallas",
+              "est": 5,
+              "status": "backlog",
+              "desc": "Diagrama de pantallas y transiciones: título, mapa, ciudad, edificios con vista interior, mina, mercado, minijuegos y menús.",
+              "done_when": "Flujo de pantallas acordado."
+            }
+          ]
+        },
+        {
+          "id": "F0.8",
+          "name": "Estructura del proyecto y GitHub",
+          "tasks": [
+            {
+              "id": "F0-26",
+              "title": "Reorganizar en game/ y studio/",
+              "est": 3,
+              "status": "review",
+              "desc": "Mover documentos, hub, datos y assets de referencia a studio/. game/ queda para el proyecto Godot.",
+              "done_when": "Estructura creada y el hub sigue funcionando."
+            },
+            {
+              "id": "F0-27",
+              "title": "Reglas de extracción y exclusión de studio/",
+              "est": 2,
+              "status": "doing",
+              "desc": "Cómo ignorar studio/ o extraerlo con su historial a otro repositorio.",
+              "done_when": "Procedimiento documentado y probado."
+            },
+            {
+              "id": "F0-28",
+              "title": "Renombrar el proyecto con el nombre elegido",
+              "est": 2,
+              "status": "review",
+              "desc": "Reemplazar el nombre en documentos, hub, README y configuración.",
+              "done_when": "No quedan referencias al nombre provisional."
+            },
+            {
+              "id": "F0-29",
+              "title": "Repositorio privado en GitHub",
+              "est": 3,
+              "status": "doing",
+              "desc": "Preparar .gitignore, README y primer commit; subir cuando el nombre esté definido.",
+              "done_when": "El repositorio existe, es privado y tiene el primer commit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F1",
+      "name": "Preparación técnica",
+      "target": "MVP",
+      "hours": [
+        35,
+        50
+      ],
+      "goal": "Tener el entorno funcionando, un proyecto Godot que corre en el Android, la estructura de datos y las reglas de arte listas.",
+      "gate": null,
+      "milestones": [
+        {
+          "id": "F1.1",
+          "name": "Entorno de desarrollo",
+          "tasks": [
+            {
+              "id": "F1-01",
+              "title": "Instalar Godot 4.x y abrir un proyecto vacío",
+              "est": 1,
+              "status": "backlog",
+              "desc": "Instalar el editor en el Mac y crear el proyecto base del juego.",
+              "done_when": "El editor abre el proyecto y corre una escena vacía."
+            },
+            {
+              "id": "F1-02",
+              "title": "Configurar la exportación a Android",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Instalar JDK y Android SDK, crear keystore de debug y configurar la exportación.",
+              "done_when": "Un APK de debug se instala en el teléfono."
+            },
+            {
+              "id": "F1-03",
+              "title": "Hola mundo en el Android: escena horizontal con un botón táctil",
+              "est": 1.5,
+              "status": "backlog",
+              "desc": "Escena mínima en horizontal con texto y un botón que responde al toque.",
+              "done_when": "Se ve y responde en el teléfono en horizontal."
+            },
+            {
+              "id": "F1-04",
+              "title": "Repositorio Git privado con .gitignore y estructura de carpetas",
+              "est": 1.5,
+              "status": "backlog",
+              "desc": "Separar núcleo, datos, interfaz, entrada, guardado y assets. Copias de respaldo.",
+              "done_when": "El repositorio existe, es privado y tiene la estructura."
+            },
+            {
+              "id": "F1-05",
+              "title": "Convenciones de nombres, datos y commits",
+              "est": 1,
+              "status": "backlog",
+              "desc": "Documento corto con las reglas del proyecto.",
+              "done_when": "Convenciones escritas."
+            }
+          ]
+        },
+        {
+          "id": "F1.2",
+          "name": "Base técnica",
+          "tasks": [
+            {
+              "id": "F1-06",
+              "title": "Resolución base y escalado entero",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Probar 480x270 (x4) y alternativa 384x216 (x5). Zona 16:9 segura con fondo extendido para 20:9.",
+              "done_when": "Resolución elegida y probada en el teléfono."
+            },
+            {
+              "id": "F1-07",
+              "title": "Capa de entrada por acciones: táctil y mando",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Acciones abstractas, detección del último dispositivo y HUD táctil que se oculta al usar mando.",
+              "done_when": "Con mando conectado el HUD táctil desaparece y todo se maneja con el mando."
+            },
+            {
+              "id": "F1-08",
+              "title": "Navegación por foco en menús de prueba",
+              "est": 1.5,
+              "status": "backlog",
+              "desc": "Menús navegables con mando y teclado.",
+              "done_when": "Se puede recorrer un menú sin tocar la pantalla."
+            },
+            {
+              "id": "F1-09",
+              "title": "Esquema de datos para minerales, zonas, herramientas y eventos",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Archivos de datos con ficha de mercado por mineral y ficha por zona.",
+              "done_when": "Esquema definido con datos de ejemplo."
+            },
+            {
+              "id": "F1-10",
+              "title": "Cargador de datos y pruebas automáticas mínimas",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Carga y validación de datos en modo sin interfaz.",
+              "done_when": "Las pruebas corren por consola y pasan."
+            }
+          ]
+        },
+        {
+          "id": "F1.3",
+          "name": "Arte y audio mínimos",
+          "tasks": [
+            {
+              "id": "F1-11",
+              "title": "Fijar paleta final y tamaños de íconos y sprites",
+              "est": 1,
+              "status": "backlog",
+              "desc": "Confirmar la paleta del documento 12 y los tamaños base.",
+              "done_when": "Paleta y tamaños definidos."
+            },
+            {
+              "id": "F1-12",
+              "title": "Elegir fuente pixel con licencia clara",
+              "est": 1,
+              "status": "backlog",
+              "desc": "Buscar una fuente que permita uso comercial y registrar su licencia.",
+              "done_when": "Fuente elegida y registrada."
+            },
+            {
+              "id": "F1-13",
+              "title": "Placeholders del prototipo con formas y colores de la paleta",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Paquete de cajas, íconos simples y colores para el prototipo.",
+              "done_when": "El prototipo puede mostrarse con placeholders coherentes."
+            },
+            {
+              "id": "F1-14",
+              "title": "Registro de licencias de assets",
+              "est": 1,
+              "status": "backlog",
+              "desc": "Plantilla con fuente, licencia, uso comercial y captura de términos.",
+              "done_when": "Plantilla creada con los primeros assets cargados."
+            },
+            {
+              "id": "F1-15",
+              "title": "Probar un mando Bluetooth con la escena de prueba",
+              "est": 1,
+              "status": "backlog",
+              "desc": "Conectar un mando al Android y comprobar el mapeo.",
+              "done_when": "Mapeo verificado con un mando real."
+            }
+          ]
+        },
+        {
+          "id": "F1.4",
+          "name": "Localización ES/EN",
+          "tasks": [
+            {
+              "id": "F1-16",
+              "title": "Marco de traducción en Godot con archivos .po y cambio de idioma en caliente",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Español e inglés desde el inicio, con un marco que permita sumar idiomas sin tocar el código.",
+              "done_when": "Cambiar de idioma actualiza todos los textos sin reiniciar."
+            },
+            {
+              "id": "F1-17",
+              "title": "Regla y verificación: ninguna cadena fija en el código ni dentro del arte",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Script que busca textos escritos directamente en el código. El arte no lleva texto incrustado.",
+              "done_when": "El script corre y no encuentra cadenas fijas."
+            },
+            {
+              "id": "F1-18",
+              "title": "Fuente pixel con caracteres latinos extendidos y plan de fuentes de respaldo por idioma",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Debe incluir á é í ó ú ñ ¿ ¡. Prever fuentes de respaldo para idiomas futuros.",
+              "done_when": "Fuente elegida con licencia registrada y glifos verificados."
+            },
+            {
+              "id": "F1-19",
+              "title": "Interfaz que tolera textos más largos y pruebas con pseudo-localización",
+              "est": 3,
+              "status": "backlog",
+              "desc": "El español ocupa entre 20 y 30 % más que el inglés. Botones y paneles se adaptan al texto.",
+              "done_when": "Con textos alargados ninguna pantalla se corta."
+            },
+            {
+              "id": "F1-20",
+              "title": "Flujo de traducción: extracción, traducción asistida por IA, revisión y glosario ES/EN",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Proceso repetible para traducir y revisar, con glosario de términos del mundo (Aetherita, Faroleros, etc.).",
+              "done_when": "Un lote de textos recorre el flujo completo."
+            },
+            {
+              "id": "F1-21",
+              "title": "Selector de idioma y detección del idioma del dispositivo",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Idioma inicial según el dispositivo, cambiable desde opciones.",
+              "done_when": "El juego arranca en el idioma del teléfono y se puede cambiar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "name": "Prototipo del núcleo",
+      "target": "MVP",
+      "hours": [
+        75,
+        135
+      ],
+      "goal": "Algo jugable aunque feo: un día completo con extracción, mercado y tienda, para comprobar si el loop es divertido.",
+      "gate": "Puerta A: ¿es divertido? Si no lo es, se ajusta o se replantea antes de invertir en arte final.",
+      "milestones": [
+        {
+          "id": "F2.1",
+          "name": "Estado del juego y ciclo del día",
+          "tasks": [
+            {
+              "id": "F2-01",
+              "title": "Modelo de estado de partida y semilla",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Día, bloque, dinero, inventario y semilla aleatoria reproducible.",
+              "done_when": "El estado se crea, modifica y se reproduce con la misma semilla."
+            },
+            {
+              "id": "F2-02",
+              "title": "Ciclo de 3 bloques y avance del día",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Mañana, tarde y noche con eventos de fin de día.",
+              "done_when": "Se puede avanzar días consumiendo bloques."
+            },
+            {
+              "id": "F2-03",
+              "title": "Guardado y carga versionado con escritura segura",
+              "est": 5,
+              "status": "backlog",
+              "desc": "Archivo temporal y reemplazo, copia de respaldo y verificación de integridad.",
+              "done_when": "Guardar, cerrar, abrir y continuar funciona; un archivo corrupto se detecta."
+            }
+          ]
+        },
+        {
+          "id": "F2.2",
+          "name": "Mercado v0 (módulo independiente)",
+          "tasks": [
+            {
+              "id": "F2-04",
+              "title": "Modelo de precio: valor justo, oferta y demanda, ruido y momentum",
+              "est": 8,
+              "status": "backlog",
+              "desc": "El precio persigue al valor justo con retraso y agitación.",
+              "done_when": "Los precios generan tendencias y rebotes creíbles."
+            },
+            {
+              "id": "F2-05",
+              "title": "Cuatro minerales de prueba con ficha de mercado",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Carbón, hierro, cobre y cuarzo con volatilidad, liquidez y sensibilidad.",
+              "done_when": "Los 4 minerales tienen comportamientos distintos."
+            },
+            {
+              "id": "F2-06",
+              "title": "Tres actualizaciones de mercado por día",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Una por bloque.",
+              "done_when": "El precio cambia al pasar de bloque."
+            },
+            {
+              "id": "F2-07",
+              "title": "Spread, slippage y límite de variación diaria",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Frenos a los abusos del mercado.",
+              "done_when": "Comprar y vender seguido no genera ganancia segura."
+            },
+            {
+              "id": "F2-08",
+              "title": "Simulador por consola de miles de días",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Ejecuta el mercado sin interfaz y genera reportes.",
+              "done_when": "Corre 10.000 días y entrega un informe."
+            },
+            {
+              "id": "F2-09",
+              "title": "Pruebas automáticas del mercado",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Casos de prueba para los frenos y la reproducibilidad.",
+              "done_when": "Las pruebas pasan."
+            }
+          ]
+        },
+        {
+          "id": "F2.3",
+          "name": "Extracción v0",
+          "tasks": [
+            {
+              "id": "F2-10",
+              "title": "Zona 1 (Galerías del Hollín) con menas y probabilidades",
+              "est": 5,
+              "status": "backlog",
+              "desc": "Generación de menas con composición oculta.",
+              "done_when": "Cada mena tiene composición coherente con la zona."
+            },
+            {
+              "id": "F2-11",
+              "title": "Escáner instantáneo con rangos",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Muestra rangos de composición; la precisión depende del Ojo y la herramienta.",
+              "done_when": "Tocar una mena muestra sus rangos."
+            },
+            {
+              "id": "F2-12",
+              "title": "Energía y herramienta con desgaste",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Pico con durabilidad y energía por mena.",
+              "done_when": "Minar gasta energía y desgasta el pico."
+            },
+            {
+              "id": "F2-13",
+              "title": "Resultado de extracción: rendimiento, daño y pérdida",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Perfecto, bueno, regular y fallo.",
+              "done_when": "El resultado del minijuego afecta lo obtenido."
+            }
+          ]
+        },
+        {
+          "id": "F2.4",
+          "name": "Minijuegos MVP",
+          "tasks": [
+            {
+              "id": "F2-14",
+              "title": "Picado (fuerza y precisión)",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Mantener para cargar, marcador oscilante, soltar en la zona.",
+              "done_when": "Jugable con táctil y con mando."
+            },
+            {
+              "id": "F2-15",
+              "title": "Perforación (velocidad y calor)",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Avanzar sin sobrecalentar.",
+              "done_when": "Jugable con táctil y con mando."
+            },
+            {
+              "id": "F2-16",
+              "title": "Zona óptima según herramienta y Pericia",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Mejor herramienta, zona más amplia.",
+              "done_when": "La dificultad cambia al mejorar herramienta y stat."
+            }
+          ]
+        },
+        {
+          "id": "F2.5",
+          "name": "Tienda v0",
+          "tasks": [
+            {
+              "id": "F2-17",
+              "title": "Inventario y almacén con capacidad y costo",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Capacidad limitada y alquiler.",
+              "done_when": "El almacén limita y cobra."
+            },
+            {
+              "id": "F2-18",
+              "title": "Venta en mercado spot",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Interfaz placeholder para comprar y vender.",
+              "done_when": "Se puede vender y el precio reacciona."
+            },
+            {
+              "id": "F2-19",
+              "title": "Regateo (oferta y paciencia)",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Cliente con precio máximo oculto y paciencia.",
+              "done_when": "Jugable con táctil y con mando."
+            }
+          ]
+        },
+        {
+          "id": "F2.6",
+          "name": "Interfaz y flujo placeholder",
+          "tasks": [
+            {
+              "id": "F2-20",
+              "title": "Pantallas placeholder: día, mina, mercado y tienda en horizontal",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Interfaz funcional con formas y colores de la paleta.",
+              "done_when": "Se navega entre las pantallas en el teléfono."
+            },
+            {
+              "id": "F2-21",
+              "title": "Flujo completo de un día jugable",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Leer mercado, minar, vender, cerrar día.",
+              "done_when": "Un día completo se juega de principio a fin."
+            }
+          ]
+        },
+        {
+          "id": "F2.7",
+          "name": "Puerta A: prueba de diversión",
+          "tasks": [
+            {
+              "id": "F2-22",
+              "title": "Sesiones de prueba y registro de impresiones",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Jugar varios días y anotar qué engancha y qué aburre.",
+              "done_when": "Notas de al menos 5 sesiones."
+            },
+            {
+              "id": "F2-23",
+              "title": "Decisión: seguir, ajustar o replantear",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Revisar las notas y decidir.",
+              "done_when": "Decisión registrada."
+            }
+          ]
+        },
+        {
+          "id": "F2.8",
+          "name": "Telemetría y diagnóstico (capa local)",
+          "tasks": [
+            {
+              "id": "F2-24",
+              "title": "Módulo de telemetría local: rendimiento, errores y eventos, sin datos personales",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Registra cuadros por segundo, memoria, tiempos de carga, errores y eventos de juego en un archivo local. ID anónimo reiniciable; sin nombre del jugador ni de la tienda.",
+              "done_when": "El juego genera un archivo de diagnóstico sin datos personales."
+            },
+            {
+              "id": "F2-25",
+              "title": "Exportar diagnóstico desde el juego",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Botón que comparte el archivo con quien lo pida. Nada se envía solo.",
+              "done_when": "El probador exporta el archivo desde el teléfono."
+            },
+            {
+              "id": "F2-26",
+              "title": "Marca de cierre no limpio para detectar fallos",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Un cierre inesperado se detecta al siguiente arranque y se registra.",
+              "done_when": "Forzar un cierre deja el rastro en el siguiente diagnóstico."
+            },
+            {
+              "id": "F2-27",
+              "title": "Modo de pruebas con telemetría ampliada solo en builds de testing",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Más detalle solo en versiones de pruebas, nunca en la versión pública.",
+              "done_when": "La versión pública no incluye el detalle extra."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "name": "Vertical slice",
+      "target": "MVP",
+      "hours": [
+        170,
+        270
+      ],
+      "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido finales, información por capas, noticias, encuentros y progresión base.",
+      "gate": "Puerta B: ¿se sigue hacia la v1 y se piensa en publicar?",
+      "milestones": [
+        {
+          "id": "F3.1",
+          "name": "Información y noticias",
+          "tasks": [
+            {
+              "id": "F3-01",
+              "title": "Capas de información 1 a 3",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Precio y flecha, prensa y gráficos.",
+              "done_when": "Las capas se desbloquean con dinero."
+            },
+            {
+              "id": "F3-02",
+              "title": "Motor de eventos: evento real y reporte por medio",
+              "est": 14,
+              "status": "backlog",
+              "desc": "Cada medio publica con sesgo, retraso y fiabilidad.",
+              "done_when": "Un mismo evento sale distinto en cada medio."
+            },
+            {
+              "id": "F3-03",
+              "title": "Tres medios de prensa con costo y sesgo",
+              "est": 6,
+              "status": "backlog",
+              "desc": "El Heraldo Meridiano, La Voz del Hollín y Teletipo Meridiano.",
+              "done_when": "Los tres medios están disponibles con su carácter."
+            },
+            {
+              "id": "F3-04",
+              "title": "Tabulador (capa 4) con margen de error",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Valor justo estimado; el error se achica con Ojo y mejoras.",
+              "done_when": "El tabulador muestra sobre y subvaloración con ruido."
+            }
+          ]
+        },
+        {
+          "id": "F3.2",
+          "name": "Comercio ampliado",
+          "tasks": [
+            {
+              "id": "F3-05",
+              "title": "Contratos y pedidos: estándar y urgente",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Mineral, cantidad, plazo, precio y penalización.",
+              "done_when": "Se aceptan, cumplen y fallan contratos."
+            },
+            {
+              "id": "F3-06",
+              "title": "Bots agregados con 4 arquetipos",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Industrial, especulador, acaparador y pánico.",
+              "done_when": "Los arquetipos influyen en el mercado de forma visible."
+            },
+            {
+              "id": "F3-07",
+              "title": "Refinado y taller: lingotes y productos básicos",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Acero y pólvora como primeros productos.",
+              "done_when": "Se refina y el producto se vende."
+            },
+            {
+              "id": "F3-08",
+              "title": "Costos de almacén y alquiler",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Alquiler periódico y mejoras de capacidad.",
+              "done_when": "Almacenar cuesta y se puede ampliar."
+            }
+          ]
+        },
+        {
+          "id": "F3.3",
+          "name": "Riesgo y progresión",
+          "tasks": [
+            {
+              "id": "F3-09",
+              "title": "Encuentros por eventos con decisión",
+              "est": 12,
+              "status": "backlog",
+              "desc": "Pelear, huir, sobornar o soltar parte de la carga.",
+              "done_when": "Los encuentros aparecen y sus probabilidades se ven antes de decidir."
+            },
+            {
+              "id": "F3-10",
+              "title": "Peligros ambientales de la zona 1 y tareas de peligro",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Gas y derrumbe con sellar fuga y apuntalar.",
+              "done_when": "Los peligros se resuelven con tareas cortas."
+            },
+            {
+              "id": "F3-11",
+              "title": "Stats por uso e hitos (5 stats)",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Aguante, Pericia, Ojo, Temple y Labia con rendimientos decrecientes.",
+              "done_when": "Los stats suben por lo que hace el jugador."
+            },
+            {
+              "id": "F3-12",
+              "title": "Herramientas: 5 niveles, reparación y mejora con minerales",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Mejoras que consumen minerales concretos.",
+              "done_when": "Se puede mejorar y reparar una herramienta."
+            },
+            {
+              "id": "F3-13",
+              "title": "Regeneración y agotamiento de zonas",
+              "est": 5,
+              "status": "backlog",
+              "desc": "Las menas se agotan y regresan por ciclos visibles.",
+              "done_when": "La zona se agota y se regenera."
+            }
+          ]
+        },
+        {
+          "id": "F3.4",
+          "name": "Narrativa del Acto I",
+          "tasks": [
+            {
+              "id": "F3-14",
+              "title": "Personalización del protagonista",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Nombre de una palabra, tienda con espacios, género y un modelo de cada uno.",
+              "done_when": "El nombre aparece en los diálogos."
+            },
+            {
+              "id": "F3-15",
+              "title": "Sistema de diálogos con variable de nombre y retratos",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Textos neutros y blips de personaje.",
+              "done_when": "Un diálogo completo se muestra con retratos."
+            },
+            {
+              "id": "F3-16",
+              "title": "Acto I: Villa Brasa, Reme, Teo, deuda y tutorial guiado",
+              "est": 14,
+              "status": "backlog",
+              "desc": "Primeros días guiados.",
+              "done_when": "El Acto I se juega de principio a fin."
+            },
+            {
+              "id": "F3-17",
+              "title": "Deuda: cuotas y cierre del Acto I",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Pagos periódicos a Reme.",
+              "done_when": "Pagar las primeras cuotas cierra el acto."
+            }
+          ]
+        },
+        {
+          "id": "F3.5",
+          "name": "Arte y audio finales de la tajada",
+          "tasks": [
+            {
+              "id": "F3-18",
+              "title": "Arte final: mina, tienda (vista interior) e interfaz base",
+              "est": 20,
+              "status": "backlog",
+              "desc": "Reconstruir sobre cuadrícula fija a partir de las referencias.",
+              "done_when": "Pantallas con arte final coherente."
+            },
+            {
+              "id": "F3-19",
+              "title": "Retratos y sprites de Reme, Teo, Quiroga, Lucía y protagonistas",
+              "est": 14,
+              "status": "backlog",
+              "desc": "Retrato detallado y sprite pequeño por personaje.",
+              "done_when": "Los personajes del Acto I tienen retrato y sprite."
+            },
+            {
+              "id": "F3-20",
+              "title": "Íconos de minerales usados y herramientas",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Siluetas legibles a tamaño pequeño.",
+              "done_when": "Íconos limpios y distinguibles."
+            },
+            {
+              "id": "F3-21",
+              "title": "Sonidos: interfaz, minería, mercado, blips y música base",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Referencia sonora: Balatro. Revisar licencias.",
+              "done_when": "El Acto I tiene sonido completo y licencias registradas."
+            }
+          ]
+        },
+        {
+          "id": "F3.6",
+          "name": "Calidad y Puerta B",
+          "tasks": [
+            {
+              "id": "F3-22",
+              "title": "Selector de dificultad con parámetros",
+              "est": 5,
+              "status": "backlog",
+              "desc": "Novato, Intermedio y Difícil como conjuntos de números.",
+              "done_when": "Elegir dificultad cambia volatilidad, desgaste y pérdidas."
+            },
+            {
+              "id": "F3-23",
+              "title": "Prueba de la tajada y decisión de seguir hacia la v1",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Jugar el Acto I completo y decidir si se continúa y si se piensa en publicar.",
+              "done_when": "Decisión registrada."
+            }
+          ]
+        },
+        {
+          "id": "F3.7",
+          "name": "Panel de métricas (studio)",
+          "tasks": [
+            {
+              "id": "F3-24",
+              "title": "Importar archivos de diagnóstico al panel",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Arrastrar o elegir el archivo exportado por un probador.",
+              "done_when": "El panel carga un diagnóstico real."
+            },
+            {
+              "id": "F3-25",
+              "title": "Gráficas de rendimiento por dispositivo",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Cuadros por segundo, memoria y tiempos de carga por modelo de teléfono.",
+              "done_when": "Se comparan dos dispositivos."
+            },
+            {
+              "id": "F3-26",
+              "title": "Vista de economía y abandono",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Curva de dinero, días jugados, éxito en minijuegos y puntos donde se deja de jugar.",
+              "done_when": "Se ve una partida completa resumida."
+            },
+            {
+              "id": "F3-27",
+              "title": "Integrar informes del simulador de mercado",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Mostrar en el panel los resultados de las simulaciones de miles de días.",
+              "done_when": "Un informe del simulador se visualiza."
+            }
+          ]
+        },
+        {
+          "id": "F3.8",
+          "name": "Marca y localización del vertical slice",
+          "tasks": [
+            {
+              "id": "F3-28",
+              "title": "Logo definitivo y wordmark",
+              "est": 10,
+              "status": "backlog",
+              "desc": "A partir de la guía de marca y el wordmark provisional.",
+              "done_when": "Logo aprobado."
+            },
+            {
+              "id": "F3-29",
+              "title": "Ícono de la app y pantalla de título",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Ícono legible a tamaño pequeño y pantalla de título con la marca.",
+              "done_when": "Ícono y pantalla integrados en el juego."
+            },
+            {
+              "id": "F3-30",
+              "title": "Traducción inglesa del Acto I y revisión",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Todos los textos del Acto I en inglés, con tono cercano y revisión.",
+              "done_when": "El Acto I se juega completo en inglés y en español."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "name": "Contenido v1",
+      "target": "Release 1",
+      "hours": [
+        390,
+        690
+      ],
+      "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
+      "gate": null,
+      "milestones": [
+        {
+          "id": "F4.1",
+          "name": "Zonas 2 a 6",
+          "tasks": [
+            {
+              "id": "F4-01",
+              "title": "Zonas 2 y 3: Cañón Ferroso y Minas de Sierra Alta",
+              "est": 30,
+              "status": "backlog",
+              "desc": "Fichas, arte, peligros y enemigos."
+            },
+            {
+              "id": "F4-02",
+              "title": "Zonas 4 y 5: Salares del Litoral y Cavernas de Cristal",
+              "est": 30,
+              "status": "backlog",
+              "desc": "Fichas, arte, peligros y enemigos."
+            },
+            {
+              "id": "F4-03",
+              "title": "Zona 6: La Fosa del Éter",
+              "est": 20,
+              "status": "backlog",
+              "desc": "Ficha, arte, criaturas y exposición a la Aetherita."
+            },
+            {
+              "id": "F4-04",
+              "title": "Peligros y encuentros por zona",
+              "est": 25,
+              "status": "backlog",
+              "desc": "Eventos y tareas de peligro propias de cada zona."
+            }
+          ]
+        },
+        {
+          "id": "F4.2",
+          "name": "Mercado completo",
+          "tasks": [
+            {
+              "id": "F4-05",
+              "title": "10 minerales con personalidad de mercado",
+              "est": 15,
+              "status": "backlog",
+              "desc": "Estable, volátil, estacional, estratégico y lujo."
+            },
+            {
+              "id": "F4-06",
+              "title": "Sectores de demanda y calendario estacional",
+              "est": 15,
+              "status": "backlog",
+              "desc": "Ferrocarril, energía, militar, agricultura, lujo y tecnología."
+            },
+            {
+              "id": "F4-07",
+              "title": "Noticias por categoría con firmas reconocibles",
+              "est": 20,
+              "status": "backlog",
+              "desc": "Producción, política, laboral, tecnología, clima, exterior, moda y descubrimiento."
+            },
+            {
+              "id": "F4-08",
+              "title": "Balance inicial del mercado con simulaciones",
+              "est": 15,
+              "status": "backlog",
+              "desc": "Calibrar números con el simulador."
+            }
+          ]
+        },
+        {
+          "id": "F4.3",
+          "name": "Minijuegos restantes",
+          "tasks": [
+            {
+              "id": "F4-09",
+              "title": "Cincelado",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Trazar sobre la gema sin salirse del margen."
+            },
+            {
+              "id": "F4-10",
+              "title": "Cribado",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Inclinación y caudal."
+            },
+            {
+              "id": "F4-11",
+              "title": "Detonación",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Potencia y ubicación."
+            },
+            {
+              "id": "F4-12",
+              "title": "Contención de Aetherita y exposición",
+              "est": 14,
+              "status": "backlog",
+              "desc": "Presión y resonancia; acumula el mal del éter."
+            },
+            {
+              "id": "F4-13",
+              "title": "Duelo de timing para jefes",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Bloquear y contraatacar en pocas rondas."
+            },
+            {
+              "id": "F4-14",
+              "title": "Tasar y minijuego de refinado",
+              "est": 14,
+              "status": "backlog",
+              "desc": "Detectar piezas falsas y mantener temperatura."
+            },
+            {
+              "id": "F4-15",
+              "title": "Modificadores de mena: costra, inestable y veta rica",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Reglas que varían cada mena."
+            }
+          ]
+        },
+        {
+          "id": "F4.4",
+          "name": "Facciones, vigilancia y mercado negro",
+          "tasks": [
+            {
+              "id": "F4-16",
+              "title": "Relaciones con las 5 facciones",
+              "est": 14,
+              "status": "backlog",
+              "desc": "Medidor por facción y sus efectos."
+            },
+            {
+              "id": "F4-17",
+              "title": "Indicador de vigilancia y multas",
+              "est": 14,
+              "status": "backlog",
+              "desc": "Niveles, inspecciones, redadas y formas de bajarlo."
+            },
+            {
+              "id": "F4-18",
+              "title": "Mercado negro nocturno",
+              "est": 12,
+              "status": "backlog",
+              "desc": "Mejor precio sin impuestos, volumen limitado."
+            },
+            {
+              "id": "F4-19",
+              "title": "Contratos largos, oficiales y negros",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Tipos de contrato restantes."
+            }
+          ]
+        },
+        {
+          "id": "F4.5",
+          "name": "Eventos sociales",
+          "tasks": [
+            {
+              "id": "F4-20",
+              "title": "Apagón y generador",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Cobre escaso, apagones y la tienda sin luz."
+            },
+            {
+              "id": "F4-21",
+              "title": "Huelga",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Cierra zonas y baja la oferta."
+            },
+            {
+              "id": "F4-22",
+              "title": "Saqueo y protección",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Días sin abrir y riesgo para el inventario."
+            },
+            {
+              "id": "F4-23",
+              "title": "Avisos previos en las noticias",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Los eventos se anticipan con rumores."
+            }
+          ]
+        },
+        {
+          "id": "F4.6",
+          "name": "Empleados",
+          "tasks": [
+            {
+              "id": "F4-24",
+              "title": "Contratos por tiempo, despido y renovación",
+              "est": 14,
+              "status": "backlog",
+              "desc": "Corto, medio y largo con indemnización."
+            },
+            {
+              "id": "F4-25",
+              "title": "Contratación por periódicos con sesgo político",
+              "est": 12,
+              "status": "backlog",
+              "desc": "Sección de empleos y anuncios propios."
+            },
+            {
+              "id": "F4-26",
+              "title": "Roles y stats de empleado",
+              "est": 14,
+              "status": "backlog",
+              "desc": "Minero, dependiente, guardia, refinador y analista."
+            },
+            {
+              "id": "F4-27",
+              "title": "Lealtad: robo, soborno y huelga",
+              "est": 12,
+              "status": "backlog",
+              "desc": "Consecuencias de los malos stats."
+            },
+            {
+              "id": "F4-28",
+              "title": "Mineros automáticos en expediciones",
+              "est": 12,
+              "status": "backlog",
+              "desc": "Rinden menos que el jugador y pueden herirse."
+            }
+          ]
+        },
+        {
+          "id": "F4.7",
+          "name": "Estatus y metas",
+          "tasks": [
+            {
+              "id": "F4-29",
+              "title": "Escalera de estatus",
+              "est": 8,
+              "status": "backlog",
+              "desc": "De Buscador a Magnate con condiciones."
+            },
+            {
+              "id": "F4-30",
+              "title": "Estilo de vida y cosméticos",
+              "est": 15,
+              "status": "backlog",
+              "desc": "Casa, ropa, auto y bonos pasivos pequeños."
+            },
+            {
+              "id": "F4-31",
+              "title": "Árbol de logros",
+              "est": 15,
+              "status": "backlog",
+              "desc": "Logros fáciles y difíciles con recompensas."
+            },
+            {
+              "id": "F4-32",
+              "title": "Proveedores desbloqueables",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Desbloqueados por estatus y relaciones."
+            }
+          ]
+        },
+        {
+          "id": "F4.8",
+          "name": "Dificultad y legado",
+          "tasks": [
+            {
+              "id": "F4-33",
+              "title": "Modo Hardcore con permadeath",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Muerte termina la partida."
+            },
+            {
+              "id": "F4-34",
+              "title": "Salón de la fama",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Registro de partidas terminadas."
+            },
+            {
+              "id": "F4-35",
+              "title": "Legado tipo Balatro",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Ayudas desbloqueables para próximas partidas."
+            }
+          ]
+        },
+        {
+          "id": "F4.9",
+          "name": "Historia: Actos II a IV",
+          "tasks": [
+            {
+              "id": "F4-36",
+              "title": "Acto II con tres variantes del acreedor",
+              "est": 30,
+              "status": "backlog",
+              "desc": "Consorcio, Faroleros o Ministerio detrás de Reme."
+            },
+            {
+              "id": "F4-37",
+              "title": "Acto III en la capital",
+              "est": 25,
+              "status": "backlog",
+              "desc": "Bolsa, círculo de poder y dilemas."
+            },
+            {
+              "id": "F4-38",
+              "title": "Acto IV: la verdad de la Aetherita y tres salidas",
+              "est": 25,
+              "status": "backlog",
+              "desc": "Revelar, callar o vender."
+            },
+            {
+              "id": "F4-39",
+              "title": "Cintas de Anselmo",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Coleccionables que cuentan lo ocurrido."
+            }
+          ]
+        },
+        {
+          "id": "F4.10",
+          "name": "Mapa y ciudades",
+          "tasks": [
+            {
+              "id": "F4-40",
+              "title": "Mapa de Valdoria táctil",
+              "est": 12,
+              "status": "backlog",
+              "desc": "Imagen estática con zonas tocables."
+            },
+            {
+              "id": "F4-41",
+              "title": "Edificios isométricos y vistas interiores",
+              "est": 30,
+              "status": "backlog",
+              "desc": "Mapa de ciudad con edificios en isométrica y vista interior al entrar."
+            },
+            {
+              "id": "F4-42",
+              "title": "Puerto Meridiano",
+              "est": 15,
+              "status": "backlog",
+              "desc": "Capital con bolsa, ministerio y prensa."
+            }
+          ]
+        },
+        {
+          "id": "F4.11",
+          "name": "Procedural y rejugabilidad",
+          "tasks": [
+            {
+              "id": "F4-43",
+              "title": "Semilla y mundo variable",
+              "est": 12,
+              "status": "backlog",
+              "desc": "Reglas fijas, mundo y circunstancias variables."
+            },
+            {
+              "id": "F4-44",
+              "title": "Automatización de minijuegos dominados (prueba)",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Solo con herramienta alta y stats altos; probar si rompe el ritmo."
+            }
+          ]
+        },
+        {
+          "id": "F4.12",
+          "name": "Localización del contenido",
+          "tasks": [
+            {
+              "id": "F4-45",
+              "title": "Textos, noticias y diálogos ES/EN de todo el contenido",
+              "est": 40,
+              "status": "backlog",
+              "desc": "Mantener las dos lenguas sincronizadas conforme se escribe el contenido de las zonas, noticias, eventos e historia."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F5",
+      "name": "Pulido y lanzamiento",
+      "target": "Release 1",
+      "hours": [
+        125,
+        225
+      ],
+      "goal": "Dejar el juego listo para publicar en Google Play: tutorial, balance, rendimiento, accesibilidad, legal y ficha de tienda.",
+      "gate": null,
+      "milestones": [
+        {
+          "id": "F5.1",
+          "name": "Tutorial y onboarding",
+          "tasks": [
+            {
+              "id": "F5-01",
+              "title": "Tutorial guiado completo",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Enseñar a leer el mercado y a minar."
+            },
+            {
+              "id": "F5-02",
+              "title": "Ayudas contextuales",
+              "est": 5,
+              "status": "backlog",
+              "desc": "Consejos que aparecen en el momento oportuno."
+            }
+          ]
+        },
+        {
+          "id": "F5.2",
+          "name": "Balance económico",
+          "tasks": [
+            {
+              "id": "F5-03",
+              "title": "Simulaciones masivas del mercado",
+              "est": 12,
+              "status": "backlog",
+              "desc": "Detectar trucos, inflación y estrategias dominantes."
+            },
+            {
+              "id": "F5-04",
+              "title": "Ajuste de precios, multas y sumideros",
+              "est": 13,
+              "status": "backlog",
+              "desc": "Iterar sobre los resultados."
+            }
+          ]
+        },
+        {
+          "id": "F5.3",
+          "name": "Rendimiento y dispositivos",
+          "tasks": [
+            {
+              "id": "F5-05",
+              "title": "Pruebas en varios Android",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Gamas distintas y proporciones de pantalla."
+            },
+            {
+              "id": "F5-06",
+              "title": "Optimización y batería",
+              "est": 10,
+              "status": "backlog",
+              "desc": "Tamaño de la app, consumo y arranque."
+            }
+          ]
+        },
+        {
+          "id": "F5.4",
+          "name": "Accesibilidad y opciones",
+          "tasks": [
+            {
+              "id": "F5-07",
+              "title": "Opciones de daltonismo, tamaño de texto, volumen y vibración",
+              "est": 9,
+              "status": "backlog",
+              "desc": "Sin depender solo del color."
+            },
+            {
+              "id": "F5-08",
+              "title": "Remapeo de mando",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Configuración de botones."
+            }
+          ]
+        },
+        {
+          "id": "F5.5",
+          "name": "Legal y tienda",
+          "tasks": [
+            {
+              "id": "F5-09",
+              "title": "Cuenta de desarrollador de Google Play",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Verificación de identidad."
+            },
+            {
+              "id": "F5-10",
+              "title": "Política de privacidad pública",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Declarar que no se recopilan datos."
+            },
+            {
+              "id": "F5-11",
+              "title": "Formularios de seguridad de datos y clasificación de contenido",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Coherentes con lo que hace el juego."
+            },
+            {
+              "id": "F5-12",
+              "title": "Créditos y licencias de terceros",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Godot, fuentes, assets, música."
+            },
+            {
+              "id": "F5-13",
+              "title": "Búsqueda de marca y título definitivo",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Revisar conflictos antes de publicar."
+            },
+            {
+              "id": "F5-14",
+              "title": "Prueba cerrada con testers",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Cumplir el requisito vigente de la cuenta personal."
+            }
+          ]
+        },
+        {
+          "id": "F5.6",
+          "name": "Lanzamiento",
+          "tasks": [
+            {
+              "id": "F5-15",
+              "title": "Build firmado con la firma gestionada por Google Play",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Respaldo seguro de las claves."
+            },
+            {
+              "id": "F5-16",
+              "title": "Ficha de tienda: capturas, descripción, ícono",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Material de presentación."
+            },
+            {
+              "id": "F5-17",
+              "title": "Publicar y monitorear",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Revisar reportes de fallos y comentarios."
+            },
+            {
+              "id": "F5-18",
+              "title": "Plan de actualizaciones",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Qué sigue después del lanzamiento."
+            }
+          ]
+        },
+        {
+          "id": "F5.7",
+          "name": "Métricas en producción",
+          "tasks": [
+            {
+              "id": "F5-19",
+              "title": "Revisar Android vitals de Google Play y definir umbrales",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Cierres, bloqueos, arranque, batería y renderizado lento."
+            },
+            {
+              "id": "F5-20",
+              "title": "Actualizar política de privacidad y formularios con la telemetría real",
+              "est": 2,
+              "status": "backlog",
+              "desc": "Que lo declarado coincida con lo que hace el juego."
+            }
+          ]
+        },
+        {
+          "id": "F5.8",
+          "name": "Marca y localización de tienda",
+          "tasks": [
+            {
+              "id": "F5-21",
+              "title": "Arte clave y capturas de tienda en ES y EN",
+              "est": 6,
+              "status": "backlog",
+              "desc": "Material de presentación localizado."
+            },
+            {
+              "id": "F5-22",
+              "title": "Kit de prensa",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Logos, capturas, descripción y datos del juego."
+            },
+            {
+              "id": "F5-23",
+              "title": "Pruebas de localización: cortes de texto, glifos y formatos",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Revisar todas las pantallas en ambos idiomas, y números y fechas."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F6",
+      "name": "Evolutivo",
+      "target": "Evolutivo",
+      "hours": null,
+      "goal": "Ideas para después del lanzamiento. El casino es la primera actualización prevista; el resto se prioriza según cómo vaya el proyecto.",
+      "gate": null,
+      "milestones": [
+        {
+          "id": "F6.1",
+          "name": "Casino (primera actualización tras el lanzamiento)",
+          "tasks": [
+            {
+              "id": "F6-04",
+              "title": "Diseño del casino: integración suave en la economía y la historia",
+              "est": 8,
+              "status": "backlog",
+              "desc": "Quién lo opera (por ejemplo Los Faroleros), dónde está, cómo se integra con el mercado negro y la vigilancia, y cómo funciona como sumidero de dinero. Solo moneda del juego."
+            },
+            {
+              "id": "F6-10",
+              "title": "Tragamonedas",
+              "est": 20,
+              "status": "backlog",
+              "desc": "Máquina con premios, probabilidades configurables y estética coherente con el juego."
+            },
+            {
+              "id": "F6-11",
+              "title": "Ruleta",
+              "est": 16,
+              "status": "backlog",
+              "desc": "Ruleta con apuestas simples y combinadas."
+            },
+            {
+              "id": "F6-12",
+              "title": "Blackjack",
+              "est": 16,
+              "status": "backlog",
+              "desc": "Partida contra la casa con reglas claras."
+            },
+            {
+              "id": "F6-13",
+              "title": "Integración: edificio, facciones, vigilancia, logros y estadísticas",
+              "est": 14,
+              "status": "backlog",
+              "desc": "El casino como lugar del mapa, con consecuencias en el resto del juego."
+            },
+            {
+              "id": "F6-14",
+              "title": "Revisión de clasificación por edad y políticas de las tiendas para azar simulado",
+              "est": 3,
+              "status": "backlog",
+              "desc": "Verificar los requisitos vigentes antes de publicar la actualización."
+            },
+            {
+              "id": "F6-15",
+              "title": "Opciones de juego responsable con moneda del juego",
+              "est": 4,
+              "status": "backlog",
+              "desc": "Límites de apuesta y avisos de sesión larga."
+            }
+          ]
+        },
+        {
+          "id": "F6.2",
+          "name": "Plataformas",
+          "tasks": [
+            {
+              "id": "F6-01",
+              "title": "Versión iOS",
+              "est": 40,
+              "status": "backlog",
+              "desc": "Cuenta de Apple, pruebas en dispositivo y publicación."
+            },
+            {
+              "id": "F6-02",
+              "title": "Versión PC en Steam",
+              "est": 50,
+              "status": "backlog",
+              "desc": "Declaración de uso de IA y soporte de teclado y mando."
+            },
+            {
+              "id": "F6-03",
+              "title": "Evaluar consolas",
+              "est": 20,
+              "status": "backlog",
+              "desc": "Revisar requisitos y opciones de port."
+            }
+          ]
+        },
+        {
+          "id": "F6.3",
+          "name": "Contenido nuevo",
+          "tasks": [
+            {
+              "id": "F6-05",
+              "title": "Calidad de minerales",
+              "est": 30,
+              "status": "backlog",
+              "desc": "Común, buena y excelente con efecto en precio y contratos."
+            },
+            {
+              "id": "F6-06",
+              "title": "Capa de imperio: sucursales y otras ciudades",
+              "est": 80,
+              "status": "backlog",
+              "desc": "Más tiendas, mercados de otras regiones y plantillas mayores."
+            },
+            {
+              "id": "F6-07",
+              "title": "Eventos de temporada",
+              "est": 30,
+              "status": "backlog",
+              "desc": "Eventos recurrentes y especiales."
+            }
+          ]
+        },
+        {
+          "id": "F6.4",
+          "name": "Presentación",
+          "tasks": [
+            {
+              "id": "F6-08",
+              "title": "Voces de personajes",
+              "est": 40,
+              "status": "backlog",
+              "desc": "Reemplazar o complementar los blips."
+            },
+            {
+              "id": "F6-09",
+              "title": "Idiomas adicionales (por ejemplo portugués, francés, alemán)",
+              "est": 30,
+              "status": "backlog",
+              "desc": "Español e inglés ya están desde el inicio; esto suma más idiomas usando el mismo marco de traducción."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

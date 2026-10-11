@@ -1,0 +1,35 @@
+{
+  "id": "F0-14",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se construye el sitio local con documentos, roadmap, tablero, arte, paleta y búsqueda."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Hub verificado en el navegador en escritorio y a 375 px, sin errores en la consola."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor lo aprueba y pide ampliarlo con tareas internas, evidencias y comentarios (ver F0-15)."
+    }
+  ],
+  "comments": [],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Código del hub",
+      "path": "hub/app.js"
+    }
+  ]
+}

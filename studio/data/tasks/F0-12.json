@@ -1,0 +1,63 @@
+{
+  "id": "F0-12",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Primera ronda de imágenes de referencia."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Segunda ronda en horizontal; el autor elige latón como acento secundario y edificios en isométrica con vista interior."
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Me gustaron la mina y los personajes. Elijo latón como acento y los edificios en isometría con vista interna."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Son imágenes de referencia generadas con IA, no assets finales: hay que reconstruirlas sobre una cuadrícula fija. Los términos de uso comercial de la herramienta están por revisar."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Documento 12",
+      "doc": "12-direccion-de-arte"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Galerías del Hollín (horizontal)",
+      "path": "assets-ref/prueba-de-estilo-2/mina-horizontal.png"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Minerales v2 con la Aetherita vinotinto",
+      "path": "assets-ref/prueba-de-estilo-2/minerales-v2.png"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Acento secundario: latón",
+      "path": "assets-ref/prueba-de-estilo-2/paleta-laton.png"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Edificios en isométrica",
+      "path": "assets-ref/prueba-de-estilo-2/edificios.png"
+    }
+  ]
+}
