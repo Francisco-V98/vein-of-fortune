@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "root": "src",
+  "layers": {
+    "domain": [],
+    "application": ["domain"],
+    "infrastructure": ["application", "domain"],
+    "presentation": ["application", "domain"],
+    "api": ["application", "domain"]
+  },
+  "allowed_autoloads": ["App"],
+  "domain_forbidden_symbols": [
+    "Node", "Node2D", "Node3D", "Control", "CanvasItem", "SceneTree",
+    "Input", "InputEvent", "DisplayServer", "OS", "FileAccess", "DirAccess",
+    "get_tree", "get_node", "ResourceLoader", "ResourceSaver", "Engine"
+  ],
+  "modules": {
+    "day": { "depends_on": [] },
+    "inventory": { "depends_on": [] },
+    "market": { "depends_on": ["day"] },
+    "extraction": { "depends_on": ["day", "inventory"] },
+    "shop": { "depends_on": ["market", "inventory", "day"] },
+    "crafting": { "depends_on": ["inventory", "market"] },
+    "staff": { "depends_on": ["day", "extraction", "shop"] },
+    "factions": { "depends_on": ["day"] },
+    "world_events": { "depends_on": ["day", "factions"] },
+    "news": { "depends_on": ["world_events", "market"] },
+    "story": { "depends_on": ["day", "factions", "world_events"] },
+    "progression": { "depends_on": ["extraction", "shop"] },
+    "lifestyle": { "depends_on": ["progression", "inventory"] },
+    "save": { "depends_on": [] },
+    "telemetry": { "depends_on": [] }
+  }
+}
