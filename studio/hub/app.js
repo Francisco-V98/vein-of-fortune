@@ -271,7 +271,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -531,6 +531,156 @@
   }
 
 
+
+  /* ---------- presentación del juego ---------- */
+  var deck = { idx: 0, io: null, n: 0, ids: [] };
+
+  function docLabel(id) {
+    var d = H.docs.filter(function (x) { return x.id === id; })[0];
+    return d ? d.title : id;
+  }
+  function sourceChips(s) {
+    if (!s.source || !s.source.length) return '';
+    return '<span class="sl-src">Fuente: ' + s.source.map(function (id) { return '<a href="#/docs/' + esc(id) + '">' + esc(docLabel(id)) + '</a>'; }).join(' · ') + '</span>';
+  }
+  function slideHead(s) {
+    return (s.kicker ? '<p class="sl-kicker">' + esc(s.kicker) + '</p>' : '') + (s.title ? '<h2 class="sl-title">' + inline(s.title) + '</h2>' : '') + (s.lead ? '<p class="sl-lead">' + inline(s.lead) + '</p>' : '');
+  }
+  function slideImg(file, cls) {
+    return '<figure class="sl-fig ' + (cls || '') + '"><a href="../' + esc(file) + '" target="_blank" rel="noopener"><img loading="lazy" src="../' + esc(file) + '" alt=""></a></figure>';
+  }
+  function computedBlock(s) {
+    var live = TASKS.filter(function (t) { return t.status !== 'dropped'; });
+    if (s.kind === 'phases') {
+      var cum = 0;
+      var rows = phases.map(function (p) {
+        var l = live.filter(function (t) { return t.phase.id === p.id; });
+        var hrs = l.reduce(function (a, t) { return a + t.est; }, 0);
+        var done = l.filter(function (t) { return t.status === 'done'; }).reduce(function (a, t) { return a + t.est; }, 0);
+        cum += hrs;
+        return '<tr><td><strong>' + esc(p.id) + '</strong> · ' + esc(p.name) + '</td><td>' + esc(p.target) + '</td><td class="num-cell">' + l.length + '</td><td class="num-cell">' + num(hrs) + ' h</td><td class="num-cell">' + num(cum) + ' h</td><td class="num-cell">' + (hrs ? Math.round(100 * done / hrs) : 0) + '%</td><td>' + (p.gate ? esc(p.gate) : '') + '</td></tr>';
+      }).join('');
+      var launch = live.filter(function (t) { return t.target !== 'Evolutivo'; }).reduce(function (a, t) { return a + t.est; }, 0);
+      return '<div class="table-wrap"><table><thead><tr><th>Fase</th><th>Objetivo</th><th class="num-cell">Tareas</th><th class="num-cell">Horas</th><th class="num-cell">Acumuladas</th><th class="num-cell">Hecho</th><th>Puerta de decisión</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="sl-note">Hasta el lanzamiento: <strong>' + num(launch) + ' h</strong> base. Lo demás es posterior (Evolutivo).</p>';
+    }
+    var adr = H.docs.filter(function (d) { return d.id.indexOf('adr-') === 0; }).length;
+    var done = live.filter(function (t) { return t.status === 'done'; });
+    var tot = live.reduce(function (a, t) { return a + t.est; }, 0);
+    var dh = done.reduce(function (a, t) { return a + t.est; }, 0);
+    var by = function (st) { return live.filter(function (t) { return t.status === st; }).length; };
+    var stat = function (label, value, sub) { return '<div class="card"><div class="stat-label">' + esc(label) + '</div><div class="stat-value">' + value + '</div><div class="stat-sub">' + sub + '</div></div>'; };
+    var h = '<div class="grid grid-3">' +
+      stat('Documentos de diseño', H.docs.length - adr, adr + ' decisiones de arquitectura (ADR)') +
+      stat('Tareas', live.length, done.length + ' finalizadas · ' + by('review') + ' en revisión · ' + by('qa') + ' en QA') +
+      stat('Avance en horas', Math.round(100 * dh / tot) + '%', num(dh) + ' de ' + num(tot) + ' h') +
+      stat('Casos de prueba', (H.qa && H.qa.cases ? H.qa.cases.length : 0), 'catálogo de QA, aún sin ejecutar') +
+      stat('Arte de referencia', H.assets.images.length, 'imágenes generadas con IA') +
+      stat('Fase actual', esc(currentPhase().id), esc(currentPhase().name)) + '</div>';
+    var queue = TASKS.filter(function (t) { return t.status !== 'done' && t.status !== 'dropped'; })
+      .map(function (t, idx) { return { t: t, idx: idx }; })
+      .sort(function (a, b) { return (QUEUE_ORDER[a.t.status] - QUEUE_ORDER[b.t.status]) || (PRANK[a.t.prio] - PRANK[b.t.prio]) || (a.idx - b.idx); })
+      .slice(0, 5);
+    h += '<h3 class="sl-sub">Lo siguiente</h3><ul class="sl-next">' + queue.map(function (q) { return '<li><span class="tid">' + esc(q.t.id) + '</span> ' + esc(q.t.title) + ' ' + statusPill(q.t.status) + '</li>'; }).join('') + '</ul>';
+    return h;
+  }
+  function slideHtml(s, i, n) {
+    var h = '<section class="slide lay-' + s.layout + '" id="slide-' + esc(s.id) + '" data-idx="' + i + '" aria-label="' + esc(s.title || s.kicker || s.id) + '">';
+    if (s.layout === 'hero') {
+      h += (s.image ? '<img class="hero-img" src="../' + esc(s.image) + '" alt="">' : '') + '<div class="hero-over"></div><div class="slide-body hero-body-s">' +
+        '<p class="sl-kicker">' + esc(s.kicker) + '</p><h1 class="sl-hero-title">' + esc(s.title) + '</h1><p class="sl-hero-sub">' + esc(s.subtitle || '') + '</p>' +
+        '<div class="chips">' + (s.chips || []).map(function (c) { return '<span class="chip brass">' + esc(c) + '</span>'; }).join('') + '</div>' +
+        '<p class="sl-hint">Usa las flechas del teclado, la tecla F para pantalla completa o los botones de arriba.</p></div>';
+    } else if (s.layout === 'quote') {
+      h += '<div class="slide-body"><p class="sl-kicker">' + esc(s.kicker) + '</p><blockquote class="sl-quote">' + inline(s.quote) + '</blockquote>' + (s.author ? '<p class="sl-author">' + inline(s.author) + '</p>' : '') + '</div>';
+    } else {
+      h += '<div class="slide-body">' + slideHead(s);
+      if (s.layout === 'bullets') {
+        var ul = '<ul class="sl-bullets">' + s.bullets.map(function (b) { return '<li>' + inline(b) + '</li>'; }).join('') + '</ul>';
+        h += s.image ? '<div class="sl-split"><div>' + ul + '</div>' + slideImg(s.image) + '</div>' : ul;
+      } else if (s.layout === 'table') {
+        h += '<div class="table-wrap sl-table"><table><thead><tr>' + s.head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+          s.rows.map(function (r) { return '<tr>' + r.map(function (c) { return '<td>' + inline(c) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
+        if (s.image) h += slideImg(s.image, 'sl-wide');
+      } else if (s.layout === 'cards') {
+        h += '<div class="sl-cards" style="--cols:' + (s.cols || 3) + '">' + s.cards.map(function (c) {
+          return '<article class="sl-card">' + (c.tag ? '<span class="sl-tag">' + esc(c.tag) + '</span>' : '') + '<h3>' + inline(c.title) + '</h3><p>' + inline(c.text) + '</p></article>';
+        }).join('') + '</div>';
+      } else if (s.layout === 'timeline') {
+        h += '<ol class="sl-steps">' + s.steps.map(function (st, k) {
+          return '<li><span class="sl-step-n">' + (k + 1) + '</span>' + (st.tag ? '<span class="sl-tag">' + esc(st.tag) + '</span>' : '') + '<h3>' + inline(st.title) + '</h3><p>' + inline(st.text) + '</p></li>';
+        }).join('') + '</ol>';
+      } else if (s.layout === 'gallery') {
+        h += '<div class="sl-gallery">' + s.images.map(function (im) {
+          return '<figure class="sl-fig"><a href="../' + esc(im.file) + '" target="_blank" rel="noopener"><img loading="lazy" src="../' + esc(im.file) + '" alt="' + esc(im.caption || '') + '"></a><figcaption>' + esc(im.caption || '') + '</figcaption></figure>';
+        }).join('') + '</div>';
+      } else if (s.layout === 'computed') {
+        h += computedBlock(s);
+      }
+      h += '</div>';
+    }
+    h += '<div class="sl-foot">' + sourceChips(s) + '<span class="sl-num">' + (i + 1) + ' / ' + n + '</span></div></section>';
+    return h;
+  }
+  function viewGame() {
+    var slides = (H.presentation && H.presentation.slides) || [];
+    if (!slides.length) return '<div class="notice">No hay láminas. Revisa <code>studio/data/presentation.json</code>.</div>';
+    deck.n = slides.length;
+    deck.ids = slides.map(function (s) { return s.id; });
+    var h = '<div class="deck-wrap" id="deckWrap"><div class="deck-bar"><div class="deck-title"><strong>El juego</strong><span id="deckCount">1 / ' + slides.length + '</span></div><div class="deck-actions">' +
+      '<button class="chip" type="button" data-action="deck-prev" aria-label="Lámina anterior">‹ Anterior</button>' +
+      '<button class="chip" type="button" data-action="deck-next" aria-label="Lámina siguiente">Siguiente ›</button>' +
+      '<button class="chip" type="button" data-action="deck-full" title="Tecla F">Pantalla completa</button>' +
+      '<button class="chip" type="button" data-action="deck-print" title="Imprimir o guardar como PDF">Imprimir / PDF</button></div></div>' +
+      '<div class="deck" id="deck" tabindex="0" aria-label="Presentación del juego">' + slides.map(function (s, i) { return slideHtml(s, i, slides.length); }).join('') + '</div>' +
+      '<nav class="deck-dots" aria-label="Láminas">' + slides.map(function (s, i) { return '<button type="button" data-action="deck-go" data-index="' + i + '" title="' + esc(s.title || s.kicker || s.id) + '" aria-label="Lámina ' + (i + 1) + ': ' + esc(s.title || s.kicker || s.id) + '"></button>'; }).join('') + '</nav></div>';
+    return h;
+  }
+  function setDeckIdx(i) {
+    deck.idx = i;
+    var c = $('#deckCount');
+    if (c) c.textContent = (i + 1) + ' / ' + deck.n;
+    $all('.deck-dots button').forEach(function (b, k) { if (k === i) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+  }
+  function gotoSlide(i) {
+    if (i < 0 || i >= deck.n) return;
+    var el = document.getElementById('slide-' + deck.ids[i]);
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (el) el.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
+    setDeckIdx(i);
+  }
+  function initDeck() {
+    var d = $('#deck');
+    if (!d || !('IntersectionObserver' in window)) { setDeckIdx(0); return; }
+    deck.io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) setDeckIdx(+en.target.getAttribute('data-idx')); });
+    }, { root: d, threshold: 0.55 });
+    $all('.slide', d).forEach(function (el) { deck.io.observe(el); });
+    setDeckIdx(0);
+  }
+  function teardownDeck() {
+    if (deck.io) { deck.io.disconnect(); deck.io = null; }
+    if (document.fullscreenElement && document.exitFullscreen) { try { document.exitFullscreen(); } catch (e) { /* sin acción */ } }
+  }
+  function toggleFullscreen() {
+    var w = $('#deckWrap');
+    if (!w) return;
+    try {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (w.requestFullscreen) w.requestFullscreen();
+    } catch (e) { toast('Tu navegador no permite pantalla completa aquí'); }
+  }
+  document.addEventListener('keydown', function (e) {
+    if (parseHash().segs[0] !== 'juego' || !$('#lightbox').hidden) return;
+    var tag = (e.target && e.target.tagName) || '';
+    if (/INPUT|SELECT|TEXTAREA/.test(tag) || e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ') { e.preventDefault(); gotoSlide(deck.idx + 1); }
+    else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') { e.preventDefault(); gotoSlide(deck.idx - 1); }
+    else if (k === 'Home') { e.preventDefault(); gotoSlide(0); }
+    else if (k === 'End') { e.preventDefault(); gotoSlide(deck.n - 1); }
+    else if (k === 'f' || k === 'F') { e.preventDefault(); toggleFullscreen(); }
+  });
+
   /* ---------- QA ---------- */
   var RESULT_LABEL = { 'not-run': 'Sin ejecutar', pass: 'Aprobado', fail: 'Fallido', blocked: 'Bloqueado', skipped: 'Omitido' };
   var SEVERITY_LABEL = { S1: 'Crítico', S2: 'Grave', S3: 'Moderado', S4: 'Menor' };
@@ -787,6 +937,7 @@
       case 'linea': html = viewTimeline(); title += ' · Línea de tiempo'; break;
       case 'tablero': html = viewBoard(); title += ' · Tablero'; break;
       case 'qa': html = viewQA(); title += ' · QA'; break;
+      case 'juego': html = viewGame(); title += ' · El juego'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
       case 'sonido': html = viewSound(); title += ' · Sonido'; break;
@@ -801,6 +952,8 @@
         break;
       default: html = '<div class="notice">Página no encontrada. <a href="#/">Volver al inicio</a>.</div>';
     }
+    teardownDeck();
+    main.className = key === 'juego' ? 'is-deck' : '';
     main.innerHTML = html;
     document.title = title;
     setActive(activeKey);
@@ -810,6 +963,7 @@
       if ($('.tl-wrap')) $('.tl-wrap').scrollLeft = tlScroll;
       return;
     }
+    if (key === 'juego') initDeck();
     var target = anchor && document.getElementById(anchor);
     if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
   }
@@ -861,6 +1015,11 @@
     else if (act === 'rm-hide') { state.rm.hideDone = !state.rm.hideDone; render(true); }
     else if (act === 'art-cat') { state.art.cat = val; render(); }
     else if (act === 'qa-area') { state.qa.area = val; render(true); }
+    else if (act === 'deck-go') { gotoSlide(+el.getAttribute('data-index')); }
+    else if (act === 'deck-next') { gotoSlide(deck.idx + 1); }
+    else if (act === 'deck-prev') { gotoSlide(deck.idx - 1); }
+    else if (act === 'deck-full') { toggleFullscreen(); }
+    else if (act === 'deck-print') { window.print(); }
     else if (act === 'qa-type') { state.qa.type = val; render(true); }
     else if (act === 'open-img') { openLightbox(+el.getAttribute('data-index'), el); }
     else if (act === 'tl-select') { state.tl.sel = state.tl.sel === val ? null : val; render(true); }

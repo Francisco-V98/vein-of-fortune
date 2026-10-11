@@ -12,6 +12,7 @@ Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/evidence/<ID>/...        archivos de evidencia
   - studio/data/qa/cases.json       catálogo de casos de prueba y sus resultados
   - studio/data/qa/bugs/BUG-*.json  registro de errores
+  - studio/data/presentation.json   láminas de la página «El juego» (resumen curado del diseño)
 
 Regla de coherencia: si el estado de una tarea no es "backlog", debe existir su
 archivo de actividad y el último movimiento del historial debe llevar a ese estado.
@@ -33,6 +34,8 @@ EVIDENCE = STUDIO / "evidence"
 VALID_STATUS = ["backlog", "sprint", "doing", "review", "qa", "done", "dropped"]
 VALID_PRIO = ["P0", "P1", "P2", "P3"]
 MAX_EST = 20  # una tarea más grande debe desglosarse
+SLIDE_LAYOUTS = ["hero", "quote", "table", "cards", "bullets", "timeline", "gallery", "computed"]
+COMPUTED_KINDS = ["phases", "status"]
 VALID_RESULT = ["not-run", "pass", "fail", "blocked", "skipped"]
 VALID_SEVERITY = ["S1", "S2", "S3", "S4"]
 VALID_BUG_STATUS = ["abierto", "triaje", "en-correccion", "corregido", "verificado", "cerrado", "no-se-corrige"]
@@ -236,6 +239,35 @@ def load_qa(task_ids):
     return qa
 
 
+def load_presentation(doc_ids):
+    """Carga y valida las láminas de la presentación del juego."""
+    path = DATA / "presentation.json"
+    if not path.exists():
+        return {"slides": []}
+    data = load_json(path)
+    seen = set()
+    for s in data.get("slides", []):
+        sid = s.get("id", "?")
+        if sid in seen:
+            warn("Lámina repetida: %s" % sid)
+        seen.add(sid)
+        layout = s.get("layout")
+        if layout not in SLIDE_LAYOUTS:
+            warn("Lámina %s con diseño desconocido: %s" % (sid, layout))
+        if layout not in ("quote",) and not s.get("title"):
+            warn("La lámina %s no tiene título" % sid)
+        if layout == "computed" and s.get("kind") not in COMPUTED_KINDS:
+            warn("Lámina %s con cálculo desconocido: %s" % (sid, s.get("kind")))
+        for src in s.get("source", []):
+            if src not in doc_ids:
+                warn("La lámina %s cita un documento inexistente: %s" % (sid, src))
+        files = ([s["image"]] if s.get("image") else []) + [i.get("file", "") for i in s.get("images", [])]
+        for f in files:
+            if not f or not (STUDIO / f).exists():
+                warn("La lámina %s usa una imagen que no existe: %s" % (sid, f))
+    return {"slides": data.get("slides", [])}
+
+
 def build_assets(assets):
     for img in assets["images"]:
         path = STUDIO / img["file"]
@@ -272,6 +304,7 @@ def build_hub():
         "assets": build_assets(load_json(DATA / "assets.json")),
         "palette": load_json(DATA / "palette.json"),
         "qa": load_qa(task_ids),
+        "presentation": load_presentation({d["id"] for d in docs}),
     }
 
 
