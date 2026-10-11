@@ -7,6 +7,13 @@
       "to": "doing",
       "by": "claude",
       "note": "Procedimiento de extracción e ignorado escrito en studio/README.md."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Procedimiento probado en local sobre el repositorio real."
     }
   ],
   "comments": [
@@ -14,6 +21,11 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Falta probarlo: necesita el repositorio en GitHub y al menos un commit con historial (ver F0-29)."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Se probó la mitad local. Falta probar el git push de la rama extraída a un repositorio distinto; no lo hice para no crear repositorios ajenos al proyecto."
     }
   ],
   "evidence": [
@@ -21,6 +33,18 @@
       "at": "2026-10-11",
       "type": "file",
       "title": "Procedimiento",
+      "path": "README.md"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Resultado de la prueba",
+      "text": "1) git subtree split --prefix=studio -b studio-solo creó la rama con el historial; su raíz contenía README.md, assets-ref, data, docs, evidence y hub, y no contenía game. 2) Un clon con git sparse-checkout set game dejó solo .gitignore, README.md y game; studio/ no existía. Ramas y clon temporales borrados."
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Procedimiento documentado",
       "path": "README.md"
     }
   ]

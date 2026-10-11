@@ -88,7 +88,7 @@ git push <url-del-nuevo-repositorio> studio-solo:main
 
 Después, en el repositorio original, se puede quitar con `git rm -r studio`.
 
-> Estado: procedimiento documentado, **sin probar todavía**. Se prueba en la tarea F0-27 cuando exista el repositorio en GitHub.
+> Estado: **probado en local el 2026-10-11** con el historial del repositorio. `git subtree split` produjo una rama cuya raíz es el contenido de `studio/` (sin `game/`) y con su historial; `git sparse-checkout set game` dejó un clon con solo `game/`. Falta probar el `git push` de la rama extraída a un repositorio distinto.
 
 ## Qué edita cada cosa
 

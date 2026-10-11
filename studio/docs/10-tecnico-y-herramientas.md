@@ -16,7 +16,7 @@
 | 3 | PC (Steam) | Futuro |
 | 4 | Consola | Futuro lejano |
 
-## Motor 🟡 (recomendación, pendiente de confirmar)
+## Motor ✅ (confirmado el 2026-10-11)
 
 **Godot 4.x** con GDScript.
 
@@ -182,7 +182,7 @@ Principio: **reducir la superficie de ataque y los datos que se manejan**.
 
 ## Pendiente
 
-- ❓ Confirmar Godot.
+- ✅ Godot 4.x con GDScript confirmado por el autor el 2026-10-11.
 - ❓ Estructura de carpetas del proyecto del juego.
 - ❓ Herramientas concretas de arte y audio (después de la prueba de estilo).
 - ❓ Hub de documentación y tablero de tareas (ver [06](06-roadmap-y-pendientes.md)).

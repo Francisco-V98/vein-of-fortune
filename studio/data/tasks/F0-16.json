@@ -1,0 +1,27 @@
+{
+  "id": "F0-16",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor confirma Godot como motor."
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Te confirmo que vamos a usar Godot."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Motor y arquitectura",
+      "doc": "10-tecnico-y-herramientas"
+    }
+  ]
+}

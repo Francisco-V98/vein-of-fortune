@@ -118,4 +118,6 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-11 | **Título elegido:** Veta de Fortuna (ES) / Vein of Fortune (EN), localizado por idioma |
 | 2026-10-11 | Reorganización en `game/` y `studio/`; el hub pasa a `studio/hub/` |
 | 2026-10-11 | Tareas con historial, comentarios y evidencias; el estado solo lo cambia Claude y el build valida su coherencia |
+| 2026-10-11 | **Motor confirmado:** Godot 4.x con GDScript |
+| 2026-10-11 | Extracción de `studio/` probada en local con `git subtree split` y `git sparse-checkout` |
 | 2026-10-10 | Personaje personalizable: nombre de una palabra, tienda con espacios, hombre o mujer (1 modelo de cada uno en v1) |

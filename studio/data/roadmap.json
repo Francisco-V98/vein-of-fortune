@@ -177,7 +177,7 @@
               "id": "F0-16",
               "title": "Confirmar Godot como motor",
               "est": 0.5,
-              "status": "backlog",
+              "status": "done",
               "desc": "Propuesto en el documento 10; falta la confirmación explícita.",
               "done_when": "Decisión registrada."
             },
@@ -284,7 +284,7 @@
               "id": "F0-27",
               "title": "Reglas de extracción y exclusión de studio/",
               "est": 2,
-              "status": "doing",
+              "status": "review",
               "desc": "Cómo ignorar studio/ o extraerlo con su historial a otro repositorio.",
               "done_when": "Procedimiento documentado y probado."
             },
