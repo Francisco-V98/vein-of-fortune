@@ -120,4 +120,7 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-11 | Tareas con historial, comentarios y evidencias; el estado solo lo cambia Claude y el build valida su coherencia |
 | 2026-10-11 | **Motor confirmado:** Godot 4.x con GDScript |
 | 2026-10-11 | Extracción de `studio/` probada en local con `git subtree split` y `git sparse-checkout` |
+| 2026-10-11 | Backlog desglosado de 190 a 423 tareas de 2 a 20 horas, con prioridad P0 a P3 |
+| 2026-10-11 | Prioridades: P0 indispensable, P1 importante, P2 deseable, P3 opcional; el hub permite recortar el alcance y ver la línea de tiempo en horas |
+| 2026-10-11 | **Estimación revisada al desglosar:** unas 2.200 h base hasta el lanzamiento (rango 1.700–3.050 h); solo P0 son unas 750 h y P0 con P1, unas 1.850 h. Reemplaza la cifra de 850–1.450 h |
 | 2026-10-10 | Personaje personalizable: nombre de una palabra, tienda con espacios, hombre o mujer (1 modelo de cada uno en v1) |

@@ -37,6 +37,19 @@ python3 studio/hub/build.py            # genera hub/data.js y muestra avisos
 python3 studio/hub/build.py --strict   # falla si hay incoherencias
 ```
 
+## Campos de una tarea en `roadmap.json`
+
+| Campo | Significado |
+|---|---|
+| `id` | Identificador (por ejemplo `F4-12`) |
+| `title`, `desc`, `done_when` | Qué es y cuándo se considera lista (desde F4 se detallan antes de entrar a la fase) |
+| `est` | Horas base del autor; **máximo 20 por tarea** (si es más, se desglosa) |
+| `prio` | `P0` indispensable, `P1` importante, `P2` deseable, `P3` opcional |
+| `status` | `backlog`, `sprint`, `doing`, `review`, `done`, `dropped` |
+| `target` | Solo si difiere del de la fase (`MVP`, `Release 1`, `Evolutivo`) |
+
+El orden de las tareas en el archivo es el **orden del plan**: la línea de tiempo del hub las coloca una detrás de otra según ese orden.
+
 ## Cómo funcionan las tareas
 
 **El estado se guarda en el código y solo lo cambia Claude al trabajar.** El hub solo muestra; no tiene botones que cambien estados.

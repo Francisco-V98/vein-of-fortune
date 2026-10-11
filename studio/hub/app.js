@@ -23,6 +23,18 @@
   var STATUS_ORDER = ['backlog', 'sprint', 'doing', 'review', 'done', 'dropped'];
   var QUEUE_ORDER = { doing: 0, review: 1, sprint: 2, backlog: 3 };
   var AUTHOR = { autor: 'Autor', claude: 'Claude' };
+  var PRIOS = ['P0', 'P1', 'P2', 'P3'];
+  var PRANK = { P0: 0, P1: 1, P2: 2, P3: 3 };
+  var PRIO_LABEL = (H.roadmap.meta && H.roadmap.meta.priorities) || {
+    P0: 'Indispensable', P1: 'Importante', P2: 'Deseable', P3: 'Opcional'
+  };
+  var SCOPES = [
+    { key: 'all', label: 'Todo', max: 3, hint: 'P0 a P3' },
+    { key: 'P2', label: 'P0–P2', max: 2, hint: 'sin lo opcional' },
+    { key: 'P1', label: 'P0–P1', max: 1, hint: 'indispensable e importante' },
+    { key: 'P0', label: 'Solo P0', max: 0, hint: 'solo lo indispensable' }
+  ];
+  var PRIO_COLOR = { P0: '#c23b55', P1: '#e3b25c', P2: '#8fb0ba', P3: '#5b7c8c' };
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -180,6 +192,7 @@
           c.phase = p;
           c.ms = m;
           c.target = t.target || p.target;
+          c.prio = t.prio || 'P1';
           c.history = t.history || [];
           c.comments = t.comments || [];
           c.evidence = t.evidence || [];
@@ -205,12 +218,18 @@
     }
     return phases[phases.length - 1];
   }
+  function inScope(t) { return PRANK[t.prio] <= SCOPES.filter(function (s) { return s.key === state.scope; })[0].max; }
+
   function statusPill(s) {
     return '<span class="pill s-' + s + '">' + STATUS[s].glyph + ' ' + STATUS[s].label + '</span>';
   }
   function targetPill(t) { return '<span class="pill ' + targetClass(t) + '">' + esc(t) + '</span>'; }
+  function prioPill(p) { return '<span class="pill p-' + p + '" title="' + esc(PRIO_LABEL[p] || p) + '">' + p + '</span>'; }
   function bar(pct, ok) { return '<div class="bar' + (ok ? ' ok' : '') + '" role="img" aria-label="' + pct + ' por ciento"><span style="width:' + pct + '%"></span></div>'; }
-  function hoursRange(p) { return p.hours ? p.hours[0] + '–' + p.hours[1] + ' h estimadas' : 'sin estimación global'; }
+  function hoursLabel(p) {
+    var base = progress(phaseTasks(p)).total;
+    return 'base ' + num(base) + ' h' + (p.hours ? ' · rango ' + p.hours[0] + '–' + p.hours[1] + ' h' : '') + (p.confidence ? ' · estimación ' + p.confidence : '');
+  }
   function taskLink(t, text) { return '<a href="#/tarea/' + esc(t.id) + '">' + (text || esc(t.title)) + '</a>'; }
   function move(h) { return STATUS[h.from].label + ' → ' + STATUS[h.to].label; }
 
@@ -225,11 +244,22 @@
 
   /* ---------- estado de las vistas ---------- */
   var state = {
+    scope: 'all',
     rm: { target: 'all', hideDone: false, open: null },
-    board: { phase: 'current', target: 'all' },
+    board: { phase: 'all', target: 'all', limit: {} },
+    tl: { px: 1.1, target: 'launch', rate: 0, sel: null },
     art: { cat: 'Todas' }
   };
   var lb = { list: [], idx: 0, opener: null };
+
+  function scopeChips() {
+    return '<div class="filter-group"><span class="filter-label">Alcance</span>' + SCOPES.map(function (s) {
+      return '<button class="chip" type="button" data-action="scope" data-value="' + s.key + '" aria-pressed="' + (state.scope === s.key) + '" title="' + esc(s.hint) + '">' + esc(s.label) + '</button>';
+    }).join('') + '</div>';
+  }
+  function prioLegend() {
+    return '<div class="prio-legend">' + PRIOS.map(function (p) { return '<span>' + prioPill(p) + ' ' + esc(PRIO_LABEL[p]) + '</span>'; }).join('') + '</div>';
+  }
 
   /* ---------- navegación lateral ---------- */
   function buildNav() {
@@ -237,7 +267,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('roadmap', 'Roadmap', '▤') + link('tablero', 'Tablero', '▦');
+    h += link('', 'Inicio', '◆') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -262,7 +292,26 @@
     });
   }
 
-  /* ---------- vistas ---------- */
+  /* ---------- inicio ---------- */
+  function scopeTable() {
+    var live = TASKS.filter(function (t) { return t.status !== 'dropped'; });
+    var launch = live.filter(function (t) { return t.target !== 'Evolutivo'; });
+    var after = live.filter(function (t) { return t.target === 'Evolutivo'; });
+    var totalLaunch = launch.reduce(function (a, t) { return a + t.est; }, 0);
+    var h = '<div class="table-wrap"><table><thead><tr><th>Prioridad</th><th class="num-cell">Tareas</th><th class="num-cell">Horas</th><th class="num-cell">Hechas</th><th class="num-cell">Acumulado</th><th class="num-cell">% del lanzamiento</th></tr></thead><tbody>';
+    var cum = 0;
+    PRIOS.forEach(function (p) {
+      var l = launch.filter(function (t) { return t.prio === p; });
+      var hrs = l.reduce(function (a, t) { return a + t.est; }, 0);
+      var dn = l.filter(function (t) { return t.status === 'done'; }).reduce(function (a, t) { return a + t.est; }, 0);
+      cum += hrs;
+      h += '<tr><td>' + prioPill(p) + ' ' + esc(PRIO_LABEL[p]) + '</td><td class="num-cell">' + l.length + '</td><td class="num-cell">' + num(hrs) + ' h</td><td class="num-cell">' + num(dn) + ' h</td><td class="num-cell">' + num(cum) + ' h</td><td class="num-cell">' + (totalLaunch ? Math.round(100 * cum / totalLaunch) : 0) + '%</td></tr>';
+    });
+    var ah = after.reduce(function (a, t) { return a + t.est; }, 0);
+    h += '<tr><td><span class="pill t-Evolutivo">Evolutivo</span> después del lanzamiento</td><td class="num-cell">' + after.length + '</td><td class="num-cell">' + num(ah) + ' h</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">—</td></tr>';
+    return h + '</tbody></table></div>';
+  }
+
   function viewHome() {
     var cfg = H.config;
     var cur = currentPhase();
@@ -279,10 +328,13 @@
     });
     h += '</div>';
 
+    h += '<h2 class="section-title">Alcance y prioridades <small>horas base hasta el lanzamiento</small></h2>' + scopeTable() +
+      '<p class="stat-sub">Las horas son estimaciones base del autor. El rango real de cada fase está en el roadmap. <a href="#/linea">Ver la línea de tiempo en horas →</a></p>';
+
     h += '<h2 class="section-title">Fases <small>fase actual: ' + esc(cur.id + ' · ' + cur.name) + '</small></h2><div class="card">';
     phases.forEach(function (p) {
       var pr = progress(phaseTasks(p));
-      h += '<div class="phase-row"><div class="phase-name"><a href="#/roadmap" data-phase="' + p.id + '" style="color:inherit;text-decoration:none">' + esc(p.id + ' · ' + p.name) + '</a><small>' + hoursRange(p) + ' · ' + esc(p.target) + '</small></div>' + bar(pr.pct, pr.pct === 100) + '<div class="pct">' + pr.pct + '%</div></div>';
+      h += '<div class="phase-row"><div class="phase-name"><a href="#/roadmap" data-phase="' + p.id + '" style="color:inherit;text-decoration:none">' + esc(p.id + ' · ' + p.name) + '</a><small>' + hoursLabel(p) + ' · ' + esc(p.target) + '</small></div>' + bar(pr.pct, pr.pct === 100) + '<div class="pct">' + pr.pct + '%</div></div>';
     });
     h += '</div>';
 
@@ -296,12 +348,12 @@
 
     var queue = TASKS.filter(function (t) { return t.status !== 'done' && t.status !== 'dropped'; })
       .map(function (t, idx) { return { t: t, idx: idx }; })
-      .sort(function (a, b) { return (QUEUE_ORDER[a.t.status] - QUEUE_ORDER[b.t.status]) || (a.idx - b.idx); })
+      .sort(function (a, b) { return (QUEUE_ORDER[a.t.status] - QUEUE_ORDER[b.t.status]) || (PRANK[a.t.prio] - PRANK[b.t.prio]) || (a.idx - b.idx); })
       .slice(0, 6);
     h += '<h2 class="section-title">Siguiente en la cola</h2><div class="card">';
     if (!queue.length) h += '<div class="empty">No quedan tareas pendientes.</div>';
     queue.forEach(function (q) {
-      h += '<div class="phase-row" style="grid-template-columns:70px 1fr auto"><span class="tid">' + esc(q.t.id) + '</span><span>' + taskLink(q.t) + '</span>' + statusPill(q.t.status) + '</div>';
+      h += '<div class="phase-row" style="grid-template-columns:70px 1fr auto auto"><span class="tid">' + esc(q.t.id) + '</span><span>' + taskLink(q.t) + '</span>' + prioPill(q.t.prio) + statusPill(q.t.status) + '</div>';
     });
     h += '</div>';
 
@@ -313,25 +365,27 @@
     return h;
   }
 
+  /* ---------- roadmap ---------- */
   function viewRoadmap() {
     var s = state.rm;
     var cur = currentPhase();
     if (!s.open) { s.open = {}; s.open[cur.id] = true; }
-    var h = '<p class="eyebrow">Plan</p><h1 class="page-title">Roadmap</h1><p class="page-lead">Fases, hitos y tareas con su objetivo (MVP, Release 1 o Evolutivo) y su estado. Las horas son horas del autor, no tiempo de cálculo de la IA. Actualizado el ' + esc(H.roadmap.meta.updated) + '.</p>';
-    h += '<div class="filters"><div class="filter-group"><span class="filter-label">Objetivo</span>';
+    var h = '<p class="eyebrow">Plan</p><h1 class="page-title">Roadmap</h1><p class="page-lead">Fases, hitos y tareas con su objetivo (MVP, Release 1 o Evolutivo), prioridad y estado. Las horas son horas del autor, no tiempo de cálculo de la IA. Actualizado el ' + esc(H.roadmap.meta.updated) + '. <a href="#/linea">Ver en línea de tiempo →</a></p>';
+    h += '<div class="filters">' + scopeChips() + '<div class="filter-group"><span class="filter-label">Objetivo</span>';
     ['all'].concat(targets).forEach(function (t) {
       h += '<button class="chip" type="button" data-action="rm-target" data-value="' + esc(t) + '" aria-pressed="' + (s.target === t) + '">' + (t === 'all' ? 'Todos' : esc(t)) + '</button>';
     });
-    h += '</div><div class="filter-group"><button class="chip" type="button" data-action="rm-hide" aria-pressed="' + s.hideDone + '">Ocultar finalizadas</button></div></div>';
+    h += '</div><div class="filter-group"><button class="chip" type="button" data-action="rm-hide" aria-pressed="' + s.hideDone + '">Ocultar finalizadas</button></div></div>' + prioLegend();
 
     var shown = 0;
     phases.forEach(function (p) {
       var all = phaseTasks(p);
-      var list = all.filter(function (t) { return s.target === 'all' || t.target === s.target; });
+      var list = all.filter(function (t) { return (s.target === 'all' || t.target === s.target) && inScope(t); });
       if (!list.length) return;
       shown++;
       var pr = progress(all);
-      h += '<details class="phase" data-phase="' + p.id + '"' + (s.open[p.id] ? ' open' : '') + '><summary><div><div class="phase-head"><span class="phase-id">' + esc(p.id) + '</span><span class="phase-title">' + esc(p.name) + '</span>' + targetPill(p.target) + '</div><div class="stat-sub">' + hoursRange(p) + ' · ' + pr.nd + ' de ' + pr.n + ' tareas</div></div>' + bar(pr.pct, pr.pct === 100) + '<div class="pct">' + pr.pct + '%</div></summary><div class="phase-body">';
+      var sc = progress(list);
+      h += '<details class="phase" data-phase="' + p.id + '"' + (s.open[p.id] ? ' open' : '') + '><summary><div><div class="phase-head"><span class="phase-id">' + esc(p.id) + '</span><span class="phase-title">' + esc(p.name) + '</span>' + targetPill(p.target) + '</div><div class="stat-sub">' + hoursLabel(p) + ' · ' + pr.nd + ' de ' + pr.n + ' tareas' + (state.scope !== 'all' ? ' · en este alcance: ' + sc.n + ' tareas, ' + num(sc.total) + ' h' : '') + '</div></div>' + bar(pr.pct, pr.pct === 100) + '<div class="pct">' + pr.pct + '%</div></summary><div class="phase-body">';
       h += '<p class="phase-goal">' + esc(p.goal) + '</p>';
       if (p.gate) h += '<div class="gate"><strong>◆ </strong>' + esc(p.gate) + '</div>';
       p.milestones.forEach(function (m) {
@@ -357,34 +411,121 @@
   function taskRow(t) {
     var chk = '<span class="check ' + t.status + '" aria-hidden="true">' + (t.status === 'done' ? '✓' : '') + '</span>';
     var body = '<div class="task-body"><dl>' + (t.desc ? '<dt>Descripción</dt><dd>' + esc(t.desc) + '</dd>' : '') + (t.done_when ? '<dt>Listo cuando</dt><dd>' + esc(t.done_when) + '</dd>' : '') + '</dl><p><a href="#/tarea/' + esc(t.id) + '">Ver detalle, historial y evidencias →</a></p></div>';
-    return '<details class="task"><summary>' + chk + '<span class="tid">' + esc(t.id) + '</span><span class="ttitle ' + t.status + '">' + esc(t.title) + badges(t) + '</span><span class="est">' + num(t.est) + ' h</span>' + statusPill(t.status) + '</summary>' + body + '</details>';
+    return '<details class="task"><summary>' + chk + '<span class="tid">' + esc(t.id) + '</span><span class="ttitle ' + t.status + '">' + esc(t.title) + badges(t) + '</span>' + prioPill(t.prio) + '<span class="est">' + num(t.est) + ' h</span>' + statusPill(t.status) + '</summary>' + body + '</details>';
   }
 
+  /* ---------- línea de tiempo en horas ---------- */
+  function viewTimeline() {
+    var tl = state.tl;
+    var list = TASKS.filter(function (t) {
+      if (t.status === 'dropped' || !inScope(t)) return false;
+      if (tl.target === 'launch') return t.target !== 'Evolutivo';
+      return tl.target === 'all' || t.target === tl.target;
+    });
+    var LABEL = 190;
+    var px = tl.px;
+    var pos = 0, doneH = 0;
+    var lanes = [], lmap = {};
+    list.forEach(function (t) {
+      var lane = lmap[t.phase.id];
+      if (!lane) { lane = lmap[t.phase.id] = { p: t.phase, ms: [], mmap: {}, start: pos, end: pos, total: 0, done: 0 }; lanes.push(lane); }
+      var m = lane.mmap[t.ms.id];
+      if (!m) { m = lane.mmap[t.ms.id] = { m: t.ms, start: pos, end: pos, total: 0, done: 0, prio: { P0: 0, P1: 0, P2: 0, P3: 0 }, tasks: [] }; lane.ms.push(m); }
+      m.tasks.push(t);
+      m.total += t.est;
+      m.prio[t.prio] += t.est;
+      if (t.status === 'done') { m.done += t.est; lane.done += t.est; doneH += t.est; }
+      pos += t.est;
+      m.end = pos;
+      lane.end = pos;
+      lane.total += t.est;
+    });
+    var total = pos;
+    var width = Math.round(LABEL + total * px + 70);
+
+    var h = '<p class="eyebrow">Plan</p><h1 class="page-title">Línea de tiempo en horas</h1><p class="page-lead">Las tareas colocadas en el orden del plan, una detrás de otra, con el ancho proporcional a sus horas. No hay fechas: solo horas de trabajo del autor. Cambia el alcance para ver cuánto se acorta el camino si se recorta.</p>';
+    h += '<div class="filters">' + scopeChips() + '<div class="filter-group"><label class="filter-label" for="tlTarget">Mostrar</label><select id="tlTarget" data-action="tl-target">' +
+      [['launch', 'Hasta el lanzamiento'], ['all', 'Todo'], ['MVP', 'MVP'], ['Release 1', 'Release 1'], ['Evolutivo', 'Evolutivo']].map(function (o) { return '<option value="' + o[0] + '"' + (tl.target === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('') + '</select></div>' +
+      '<div class="filter-group"><label class="filter-label" for="tlZoom">Zoom</label><input id="tlZoom" type="range" min="0.3" max="2.5" step="0.1" value="' + px + '" data-action="tl-zoom"></div>' +
+      '<div class="filter-group"><label class="filter-label" for="tlRate">Equivalencia</label><select id="tlRate" data-action="tl-rate">' +
+      [[0, 'Solo horas'], [5, '5 h por semana'], [10, '10 h por semana'], [20, '20 h por semana'], [30, '30 h por semana']].map(function (o) { return '<option value="' + o[0] + '"' + (tl.rate === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('') + '</select></div></div>' + prioLegend();
+
+    var remaining = total - doneH;
+    h += '<div class="grid grid-3" style="margin:14px 0 18px"><div class="card"><div class="stat-label">Total en este alcance</div><div class="stat-value">' + num(total) + ' h</div><div class="stat-sub">' + list.length + ' tareas</div></div>' +
+      '<div class="card"><div class="stat-label">Hechas</div><div class="stat-value">' + num(doneH) + ' h</div><div class="stat-sub">' + (total ? Math.round(100 * doneH / total) : 0) + ' % del camino</div></div>' +
+      '<div class="card"><div class="stat-label">Por recorrer</div><div class="stat-value">' + num(remaining) + ' h</div><div class="stat-sub">' + (tl.rate ? '≈ ' + Math.ceil(remaining / tl.rate) + ' semanas a ' + tl.rate + ' h por semana' : 'sin equivalencia en calendario') + '</div></div></div>';
+
+    if (!total) return h + '<div class="empty">No hay tareas para este filtro.</div>';
+
+    var step = [10, 25, 50, 100, 200, 500].filter(function (s) { return s * px >= 64; })[0] || 500;
+    var ticks = '';
+    for (var x = 0; x <= total; x += step) {
+      ticks += '<span class="tl-tick" style="left:' + Math.round(LABEL + x * px) + 'px">' + x + ' h</span>';
+    }
+    var inner = '<div class="tl-inner" style="width:' + width + 'px"><div class="tl-ruler">' + ticks + '</div>';
+    lanes.forEach(function (lane) {
+      inner += '<div class="tl-lane"><div class="tl-lane-label"><strong>' + esc(lane.p.id + ' · ' + lane.p.name) + '</strong><small>' + num(lane.total) + ' h · ' + esc(lane.p.target) + '</small></div>';
+      lane.ms.forEach(function (m) {
+        var w = Math.max(4, Math.round((m.end - m.start) * px));
+        var left = Math.round(LABEL + m.start * px);
+        var pctDone = m.total ? Math.round(100 * m.done / m.total) : 0;
+        var stripe = PRIOS.map(function (p) { return m.prio[p] ? '<i style="width:' + (100 * m.prio[p] / m.total) + '%;background:' + PRIO_COLOR[p] + '"></i>' : ''; }).join('');
+        var tip = m.m.id + ' · ' + m.m.name + ' — ' + num(m.total) + ' h (' + num(m.done) + ' h hechas)';
+        inner += '<button type="button" class="tl-block' + (tl.sel === m.m.id ? ' sel' : '') + '" data-action="tl-select" data-value="' + esc(m.m.id) + '" style="left:' + left + 'px;width:' + w + 'px;--p:' + pctDone + '%" title="' + esc(tip) + '" aria-label="' + esc(tip) + '"><span class="tl-name">' + (w > 60 ? esc(m.m.name) : '') + '</span><span class="tl-h">' + (w > 40 ? num(m.total) + ' h' : '') + '</span><span class="tl-prio">' + stripe + '</span></button>';
+      });
+      if (lane.p.gate) inner += '<span class="tl-gate" style="left:' + Math.round(LABEL + lane.end * px - 8) + 'px" title="' + esc(lane.p.gate) + '">◆</span>';
+      inner += '</div>';
+    });
+    inner += '<div class="tl-today" style="left:' + Math.round(LABEL + doneH * px) + 'px"><span>Avance: ' + num(doneH) + ' h</span></div></div>';
+    h += '<div class="tl-wrap" tabindex="0" aria-label="Línea de tiempo en horas">' + inner + '</div>';
+    h += '<p class="stat-sub">Cada bloque es un hito: el relleno claro muestra lo hecho y la franja de abajo, la mezcla de prioridades. Toca un bloque para ver sus tareas. ◆ marca una puerta de decisión.</p>';
+
+    var sel = null;
+    lanes.forEach(function (l) { l.ms.forEach(function (m) { if (m.m.id === tl.sel) sel = m; }); });
+    if (sel) {
+      h += '<h2 class="section-title">' + esc(sel.m.id + ' · ' + sel.m.name) + ' <small>' + num(sel.total) + ' h · del hito ' + num(sel.start) + ' h al ' + num(sel.end) + ' h</small></h2><div class="card">';
+      sel.tasks.forEach(function (t) {
+        h += '<div class="phase-row" style="grid-template-columns:62px 1fr auto auto auto"><span class="tid">' + esc(t.id) + '</span><span>' + taskLink(t) + '</span>' + prioPill(t.prio) + '<span class="est">' + num(t.est) + ' h</span>' + statusPill(t.status) + '</div>';
+      });
+      h += '</div>';
+    }
+
+    h += '<h2 class="section-title">Horas acumuladas al final de cada fase</h2><div class="table-wrap"><table><thead><tr><th>Fase</th><th class="num-cell">Horas de la fase</th><th class="num-cell">Acumuladas</th><th>Puerta de decisión</th></tr></thead><tbody>';
+    lanes.forEach(function (l) {
+      h += '<tr><td>' + esc(l.p.id + ' · ' + l.p.name) + '</td><td class="num-cell">' + num(l.total) + ' h</td><td class="num-cell">' + num(l.end) + ' h' + (tl.rate ? ' · semana ' + Math.ceil(l.end / tl.rate) : '') + '</td><td>' + (l.p.gate ? esc(l.p.gate) : '—') + '</td></tr>';
+    });
+    return h + '</tbody></table></div>';
+  }
+
+  /* ---------- tablero ---------- */
   function viewBoard() {
     var b = state.board;
     var cur = currentPhase();
     var phaseId = b.phase === 'current' ? cur.id : b.phase;
     var list = TASKS.filter(function (t) {
-      return (phaseId === 'all' || t.phase.id === phaseId) && (b.target === 'all' || t.target === b.target);
+      return (phaseId === 'all' || t.phase.id === phaseId) && (b.target === 'all' || t.target === b.target) && inScope(t);
     });
     var h = '<p class="eyebrow">Plan</p><h1 class="page-title">Tablero</h1><p class="page-lead">Tareas por estado. Los estados se guardan en el código del proyecto y los cambia Claude al trabajar: si una tarea pasó a «En proceso», es porque se editó su archivo de datos. Toca una tarjeta para ver su historial, evidencias y comentarios.</p>';
-    h += '<div class="filters"><div class="filter-group"><label class="filter-label" for="bPhase">Fase</label><select id="bPhase" data-action="board-phase"><option value="current"' + (b.phase === 'current' ? ' selected' : '') + '>Fase actual (' + esc(cur.id) + ')</option><option value="all"' + (b.phase === 'all' ? ' selected' : '') + '>Todas</option>' +
+    h += '<div class="filters">' + scopeChips() + '<div class="filter-group"><label class="filter-label" for="bPhase">Fase</label><select id="bPhase" data-action="board-phase"><option value="all"' + (b.phase === 'all' ? ' selected' : '') + '>Todas</option><option value="current"' + (b.phase === 'current' ? ' selected' : '') + '>Fase actual (' + esc(cur.id) + ')</option>' +
       phases.map(function (p) { return '<option value="' + p.id + '"' + (b.phase === p.id ? ' selected' : '') + '>' + esc(p.id + ' · ' + p.name) + '</option>'; }).join('') + '</select></div>' +
       '<div class="filter-group"><label class="filter-label" for="bTarget">Objetivo</label><select id="bTarget" data-action="board-target"><option value="all">Todos</option>' +
-      targets.map(function (t) { return '<option value="' + esc(t) + '"' + (b.target === t ? ' selected' : '') + '>' + esc(t) + '</option>'; }).join('') + '</select></div></div>';
+      targets.map(function (t) { return '<option value="' + esc(t) + '"' + (b.target === t ? ' selected' : '') + '>' + esc(t) + '</option>'; }).join('') + '</select></div></div>' + prioLegend();
     h += '<div class="board">';
     STATUS_ORDER.forEach(function (st) {
       var cards = list.filter(function (t) { return t.status === st; });
+      var lim = b.limit[st] || 12;
       h += '<section class="col" aria-label="' + STATUS[st].label + '"><div class="col-head"><span class="s-' + st + '">' + STATUS[st].glyph + ' ' + STATUS[st].label + '</span><small>' + cards.length + '</small></div><div class="col-body">';
       if (!cards.length) h += '<div class="empty">Sin tareas</div>';
-      cards.forEach(function (t) {
-        h += '<a class="kcard" href="#/tarea/' + esc(t.id) + '"><div>' + esc(t.title) + '</div><div class="meta"><span>' + esc(t.id) + '</span><span>' + num(t.est) + ' h</span><span class="' + targetClass(t.target) + '">' + esc(t.target) + '</span>' + badges(t) + '</div></a>';
+      cards.slice(0, lim).forEach(function (t) {
+        h += '<a class="kcard" href="#/tarea/' + esc(t.id) + '"><div>' + esc(t.title) + '</div><div class="meta"><span>' + esc(t.id) + '</span>' + prioPill(t.prio) + '<span>' + num(t.est) + ' h</span><span class="' + targetClass(t.target) + '">' + esc(t.target) + '</span>' + badges(t) + '</div></a>';
       });
+      if (cards.length > lim) h += '<button type="button" class="chip more" data-action="board-more" data-value="' + st + '">Mostrar ' + Math.min(25, cards.length - lim) + ' más (' + (cards.length - lim) + ' ocultas)</button>';
       h += '</div></section>';
     });
     return h + '</div>';
   }
 
+  /* ---------- tarea ---------- */
   function evidenceItem(e) {
     var cap = '<div class="ev-cap"><strong>' + esc(e.title || e.type) + '</strong>' + (e.note ? '<span>' + esc(e.note) + '</span>' : '') + '<small>' + esc(e.at || '') + ' · ' + esc(e.type) + '</small></div>';
     if (e.type === 'image') {
@@ -400,9 +541,9 @@
     if (!t) return '<div class="notice">No existe la tarea «' + esc(id) + '». <a href="#/roadmap">Volver al roadmap</a>.</div>';
     var h = '<p class="eyebrow"><a href="#/roadmap" data-phase="' + esc(t.phase.id) + '">' + esc(t.phase.id + ' · ' + t.phase.name) + '</a> › ' + esc(t.ms.id + ' · ' + t.ms.name) + '</p>';
     h += '<h1 class="page-title">' + esc(t.title) + '</h1>';
-    h += '<div class="doc-meta"><span class="chip">' + esc(t.id) + '</span>' + statusPill(t.status) + targetPill(t.target) + '<span class="chip">' + num(t.est) + ' h estimadas</span></div>';
+    h += '<div class="doc-meta"><span class="chip">' + esc(t.id) + '</span>' + statusPill(t.status) + prioPill(t.prio) + targetPill(t.target) + '<span class="chip">' + num(t.est) + ' h estimadas</span></div>';
     h += '<div class="task-layout"><div>';
-    h += '<div class="card"><dl class="task-dl"><dt>Descripción</dt><dd>' + (t.desc ? esc(t.desc) : '—') + '</dd><dt>Listo cuando</dt><dd>' + (t.done_when ? esc(t.done_when) : '—') + '</dd></dl></div>';
+    h += '<div class="card"><dl class="task-dl"><dt>Prioridad</dt><dd>' + esc(t.prio + ' · ' + (PRIO_LABEL[t.prio] || '')) + '</dd><dt>Descripción</dt><dd>' + (t.desc ? esc(t.desc) : 'Se detalla antes de entrar a la fase.') + '</dd><dt>Listo cuando</dt><dd>' + (t.done_when ? esc(t.done_when) : 'Se define antes de entrar a la fase.') + '</dd></dl></div>';
     h += '<h2 class="section-title">Evidencias <small>' + t.evidence.length + '</small></h2>';
     h += t.evidence.length ? '<div class="ev-grid">' + t.evidence.map(evidenceItem).join('') + '</div>' : '<div class="empty">Sin evidencias todavía.</div>';
     h += '<h2 class="section-title">Comentarios <small>' + t.comments.length + '</small></h2>';
@@ -424,6 +565,7 @@
     return h;
   }
 
+  /* ---------- documentos, arte, sonido, paleta ---------- */
   function viewDoc(id) {
     var d = H.docs.filter(function (x) { return x.id === id; })[0];
     if (!d) return '<div class="notice">No existe el documento «' + esc(id) + '».</div>';
@@ -534,7 +676,7 @@
       if (e.kind === 'doc') {
         h += '<div class="result"><a class="r-title" href="#/docs/' + e.doc.id + (e.head.id ? '?h=' + e.head.id : '') + '">' + esc(e.doc.title) + '</a><span class="r-where">' + esc(e.head.text) + '</span><p>' + highlight(e.text, tokens) + '</p></div>';
       } else if (e.kind === 'task') {
-        h += '<div class="result"><a class="r-title" href="#/tarea/' + esc(e.task.id) + '">' + esc(e.task.id) + ' · ' + highlight(e.task.title, tokens) + '</a><span class="r-where">Tarea · ' + esc(e.task.phase.id) + ' · ' + STATUS[e.task.status].label + '</span>' + (e.task.desc ? '<p>' + highlight(e.task.desc, tokens) + '</p>' : '') + '</div>';
+        h += '<div class="result"><a class="r-title" href="#/tarea/' + esc(e.task.id) + '">' + esc(e.task.id) + ' · ' + highlight(e.task.title, tokens) + '</a><span class="r-where">Tarea · ' + esc(e.task.phase.id) + ' · ' + e.task.prio + ' · ' + STATUS[e.task.status].label + '</span>' + (e.task.desc ? '<p>' + highlight(e.task.desc, tokens) + '</p>' : '') + '</div>';
       } else {
         h += '<div class="result"><a class="r-title" href="#/tarea/' + esc(e.task.id) + '">' + esc(e.task.id) + ' · ' + esc(e.task.title) + '</a><span class="r-where">' + esc(e.label) + '</span><p>' + highlight(e.text, tokens) + '</p></div>';
       }
@@ -555,15 +697,18 @@
     });
     return { segs: parts[0].split('/').filter(Boolean).map(decodeURIComponent), query: query };
   }
-  function render() {
+  function render(keepScroll) {
     var r = parseHash();
     var key = r.segs[0] || '';
     var html, title = H.config.title;
     var anchor = null;
     var activeKey = key;
+    var y = window.scrollY;
+    var tlScroll = $('.tl-wrap') ? $('.tl-wrap').scrollLeft : 0;
     switch (key) {
       case '': html = viewHome(); title += ' · Inicio'; break;
       case 'roadmap': html = viewRoadmap(); title += ' · Roadmap'; break;
+      case 'linea': html = viewTimeline(); title += ' · Línea de tiempo'; break;
       case 'tablero': html = viewBoard(); title += ' · Tablero'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
@@ -583,6 +728,11 @@
     document.title = title;
     setActive(activeKey);
     closeMenu();
+    if (keepScroll) {
+      window.scrollTo(0, y);
+      if ($('.tl-wrap')) $('.tl-wrap').scrollLeft = tlScroll;
+      return;
+    }
     var target = anchor && document.getElementById(anchor);
     if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
   }
@@ -629,10 +779,13 @@
     if (!el) return;
     var act = el.getAttribute('data-action');
     var val = el.getAttribute('data-value');
-    if (act === 'rm-target') { state.rm.target = val; render(); }
-    else if (act === 'rm-hide') { state.rm.hideDone = !state.rm.hideDone; render(); }
+    if (act === 'scope') { state.scope = val; render(true); }
+    else if (act === 'rm-target') { state.rm.target = val; render(true); }
+    else if (act === 'rm-hide') { state.rm.hideDone = !state.rm.hideDone; render(true); }
     else if (act === 'art-cat') { state.art.cat = val; render(); }
     else if (act === 'open-img') { openLightbox(+el.getAttribute('data-index'), el); }
+    else if (act === 'tl-select') { state.tl.sel = state.tl.sel === val ? null : val; render(true); }
+    else if (act === 'board-more') { state.board.limit[val] = (state.board.limit[val] || 12) + 25; render(true); }
     else if (act === 'copy-hex') {
       var hex = el.getAttribute('data-hex');
       try {
@@ -644,8 +797,11 @@
     var el = e.target.closest('[data-action]');
     if (!el) return;
     var act = el.getAttribute('data-action');
-    if (act === 'board-phase') { state.board.phase = el.value; render(); }
-    else if (act === 'board-target') { state.board.target = el.value; render(); }
+    if (act === 'board-phase') { state.board.phase = el.value; state.board.limit = {}; render(true); }
+    else if (act === 'board-target') { state.board.target = el.value; state.board.limit = {}; render(true); }
+    else if (act === 'tl-target') { state.tl.target = el.value; state.tl.sel = null; render(true); }
+    else if (act === 'tl-zoom') { state.tl.px = parseFloat(el.value); render(true); }
+    else if (act === 'tl-rate') { state.tl.rate = parseInt(el.value, 10); render(true); }
   });
   main.addEventListener('toggle', function (e) {
     var d = e.target;
@@ -681,11 +837,11 @@
       if (q.length >= 2) location.hash = '#/buscar?q=' + encodeURIComponent(q);
     }, 350);
   });
-  window.addEventListener('hashchange', render);
+  window.addEventListener('hashchange', function () { render(false); });
 
-  /* ---------- inicio ---------- */
+  /* ---------- arranque ---------- */
   $('#gen').textContent = 'Actualizado ' + H.generated;
   document.title = H.config.title + ' · ' + H.config.subtitle;
   buildNav();
-  render();
+  render(false);
 })();

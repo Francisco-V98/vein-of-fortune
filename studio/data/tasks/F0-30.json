@@ -1,0 +1,64 @@
+{
+  "id": "F0-30",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor nota que el backlog parece incompleto (7 tareas) y pide un alcance más realista y una línea de tiempo en horas con prioridades."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Backlog desglosado de 190 a 423 tareas de entre 2 y 20 horas, con prioridad P0 a P3, vista de alcance, línea de tiempo en horas y tablero sin filtro de fase por defecto."
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Siento que las tareas y el tablero están incompletos: en el backlog hay solo 7 tareas. Quiero un backlog con alcance más realista y un roadmap tipo línea temporal, pero por horas, con visión de prioridades."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Diagnóstico: el tablero estaba filtrado por la fase actual (F0), que solo tenía 7 tareas en backlog; el roadmap tenía 168. Además, a partir de F4 las tareas eran gruesas (22 de 14 h o más) y faltaban pruebas, reservas para errores, audio y arte por pieza."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Al desglosar, el alcance completo hasta el lanzamiento sube a unas 2.200 h base (rango 1.700–3.050 h). La estimación anterior de 850–1.450 h era de arriba hacia abajo y quedaba corta. Solo P0 son unas 750 h; P0 y P1, unas 1.850 h."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Línea de tiempo en horas",
+      "path": "evidence/F0-30/linea-de-tiempo.jpg",
+      "note": "Un carril por fase; ancho proporcional a las horas; relleno claro = hecho; franja inferior = mezcla de prioridades; línea punteada = avance."
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Horas acumuladas al final de cada fase",
+      "path": "evidence/F0-30/horas-acumuladas.jpg",
+      "note": "La puerta A cae en la hora 336 y la puerta B en la 664."
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Plan completo con prioridades",
+      "path": "data/roadmap.json"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Cifras del desglose",
+      "text": "423 tareas (antes 168 en backlog). Horas base por prioridad hasta el lanzamiento: P0 754 h, P1 1.192 h, P2 443 h, P3 192 h (esta última incluye el Evolutivo). Reservas para errores: F2 12 h, F3 20 h, F4 60 h, F5 40 h."
+    }
+  ]
+}

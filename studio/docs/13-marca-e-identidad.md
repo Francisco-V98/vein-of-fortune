@@ -124,8 +124,8 @@ Una fuente **pixel** para títulos y textos del juego (licencia comercial clara,
 | Wordmark provisional | ❓ pendiente | F0-21 |
 | Logo definitivo | ❓ pendiente | F3-28 |
 | Ícono y pantalla de título | ❓ pendiente | F3-29 |
-| Arte clave y capturas de tienda ES/EN | ❓ pendiente | F5-21 |
-| Kit de prensa | ❓ pendiente | F5-22 |
+| Arte clave y capturas de tienda ES/EN | ❓ pendiente | F5-43 y F5-35 |
+| Kit de prensa | ❓ pendiente | F5-44 |
 
 ## Pendiente
 

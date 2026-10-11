@@ -14,7 +14,13 @@
       "done",
       "dropped"
     ],
-    "notes": "Fuente única del plan. Las horas son horas del autor (dirigir a la IA, probar, generar assets, corregir), no tiempo de cálculo. El detalle de tareas de las fases 4 a 6 se completa justo antes de entrar a cada fase."
+    "notes": "Fuente única del plan. Las horas son horas del autor (dirigir a la IA, probar, generar assets, corregir), no tiempo de cálculo. Cada tarea tiene prioridad P0 a P3. F1 a F3 tienen estimación media; F4 en adelante es gruesa (±50 %) y se afina antes de entrar a cada fase.",
+    "priorities": {
+      "P0": "Indispensable: sin esto no hay juego publicable",
+      "P1": "Importante: define la experiencia prevista",
+      "P2": "Deseable: enriquece el juego",
+      "P3": "Opcional: se puede recortar o dejar para después"
+    }
   },
   "phases": [
     {
@@ -35,7 +41,8 @@
               "est": 3,
               "status": "done",
               "desc": "Documento 00: concepto, pilares, plataforma, modelo, público, estética y alcance.",
-              "done_when": "Documento 00 acordado."
+              "done_when": "Documento 00 acordado.",
+              "prio": "P1"
             },
             {
               "id": "F0-02",
@@ -43,7 +50,8 @@
               "est": 2,
               "status": "done",
               "desc": "Documento 01: ciclo del día, bloques de tiempo y libertad con consecuencias.",
-              "done_when": "Documento 01 acordado."
+              "done_when": "Documento 01 acordado.",
+              "prio": "P1"
             },
             {
               "id": "F0-03",
@@ -51,7 +59,8 @@
               "est": 4,
               "status": "done",
               "desc": "Documento 02: zonas, escáner con probabilidades, herramientas con desgaste, encuentros y pérdida parcial.",
-              "done_when": "Documento 02 acordado."
+              "done_when": "Documento 02 acordado.",
+              "prio": "P1"
             },
             {
               "id": "F0-04",
@@ -59,7 +68,8 @@
               "est": 5,
               "status": "done",
               "desc": "Documento 03: modelo de precios, noticias con sesgos, frenos a los abusos, vigilancia y refinado.",
-              "done_when": "Documento 03 acordado."
+              "done_when": "Documento 03 acordado.",
+              "prio": "P1"
             },
             {
               "id": "F0-05",
@@ -67,7 +77,8 @@
               "est": 4,
               "status": "done",
               "desc": "Documento 04: tres ejes de progreso, 5 stats por uso, empleados con contratos y salón de la fama.",
-              "done_when": "Documento 04 acordado."
+              "done_when": "Documento 04 acordado.",
+              "prio": "P1"
             },
             {
               "id": "F0-06",
@@ -75,7 +86,8 @@
               "est": 3,
               "status": "done",
               "desc": "Documento 09: minijuegos de extracción, tareas de peligro, tienda y automatización.",
-              "done_when": "Documento 09 acordado."
+              "done_when": "Documento 09 acordado.",
+              "prio": "P1"
             }
           ]
         },
@@ -89,7 +101,8 @@
               "est": 3,
               "status": "done",
               "desc": "Documento 05.",
-              "done_when": "Documento 05 acordado."
+              "done_when": "Documento 05 acordado.",
+              "prio": "P1"
             },
             {
               "id": "F0-08",
@@ -97,7 +110,8 @@
               "est": 3,
               "status": "done",
               "desc": "Documento 07.",
-              "done_when": "Documento 07 acordado."
+              "done_when": "Documento 07 acordado.",
+              "prio": "P1"
             },
             {
               "id": "F0-09",
@@ -105,7 +119,8 @@
               "est": 4,
               "status": "done",
               "desc": "Documento 08.",
-              "done_when": "Documento 08 acordado."
+              "done_when": "Documento 08 acordado.",
+              "prio": "P1"
             }
           ]
         },
@@ -119,7 +134,8 @@
               "est": 3,
               "status": "done",
               "desc": "Documento 10.",
-              "done_when": "Documento 10 redactado."
+              "done_when": "Documento 10 redactado.",
+              "prio": "P1"
             },
             {
               "id": "F0-11",
@@ -127,7 +143,8 @@
               "est": 2,
               "status": "done",
               "desc": "Documento 11.",
-              "done_when": "Documento 11 redactado."
+              "done_when": "Documento 11 redactado.",
+              "prio": "P1"
             },
             {
               "id": "F0-12",
@@ -135,7 +152,8 @@
               "est": 4,
               "status": "done",
               "desc": "Documento 12 y 18 imágenes de referencia en assets.",
-              "done_when": "Paleta y dirección de arte acordadas."
+              "done_when": "Paleta y dirección de arte acordadas.",
+              "prio": "P1"
             }
           ]
         },
@@ -149,7 +167,8 @@
               "est": 3,
               "status": "done",
               "desc": "Este archivo.",
-              "done_when": "Plan de fases con horas y objetivos definido."
+              "done_when": "Plan de fases con horas y objetivos definido.",
+              "prio": "P1"
             },
             {
               "id": "F0-14",
@@ -157,7 +176,8 @@
               "est": 6,
               "status": "done",
               "desc": "Sitio local en studio/hub/ que muestra documentos, arte, paleta, roadmap y tablero.",
-              "done_when": "El sitio abre y refleja los documentos y el roadmap."
+              "done_when": "El sitio abre y refleja los documentos y el roadmap.",
+              "prio": "P1"
             },
             {
               "id": "F0-15",
@@ -165,7 +185,17 @@
               "est": 10,
               "status": "review",
               "desc": "Reemplaza a Trello. El tablero vive dentro del hub; los estados se guardan en el código y los cambia Claude. Cada tarea tiene historial de estados, comentarios y evidencias.",
-              "done_when": "El hub muestra el tablero con historial, evidencias y comentarios por tarea, y el build valida la coherencia."
+              "done_when": "El hub muestra el tablero con historial, evidencias y comentarios por tarea, y el build valida la coherencia.",
+              "prio": "P1"
+            },
+            {
+              "id": "F0-30",
+              "title": "Backlog desglosado con prioridades y línea de tiempo por horas",
+              "est": 5,
+              "status": "review",
+              "prio": "P1",
+              "desc": "Desglosar las tareas gruesas en tareas de 2 a 12 horas, añadir las que faltaban (pruebas, reservas para errores, audio, arte por pieza), asignar prioridad P0 a P3 y ofrecer una línea de tiempo en horas.",
+              "done_when": "El hub muestra el backlog completo con prioridades, el alcance por prioridad y la línea de tiempo en horas."
             }
           ]
         },
@@ -179,7 +209,8 @@
               "est": 0.5,
               "status": "done",
               "desc": "Propuesto en el documento 10; falta la confirmación explícita.",
-              "done_when": "Decisión registrada."
+              "done_when": "Decisión registrada.",
+              "prio": "P1"
             },
             {
               "id": "F0-17",
@@ -187,7 +218,8 @@
               "est": 1,
               "status": "backlog",
               "desc": "El ministro salió parecido a un sacerdote; las flechas de precio usan rojo y verde.",
-              "done_when": "Versiones corregidas guardadas en assets."
+              "done_when": "Versiones corregidas guardadas en assets.",
+              "prio": "P2"
             },
             {
               "id": "F0-18",
@@ -196,7 +228,8 @@
               "status": "done",
               "target": "MVP",
               "desc": "El nombre debe funcionar o ser traducible en español e inglés. Valdoria se mantiene como nombre del mundo.",
-              "done_when": "Nombre elegido y búsqueda preliminar de conflictos hecha."
+              "done_when": "Nombre elegido y búsqueda preliminar de conflictos hecha.",
+              "prio": "P0"
             }
           ]
         },
@@ -210,7 +243,8 @@
               "est": 4,
               "status": "review",
               "desc": "Personalidad, voz (tuteo en español, tono cercano en inglés), tono, frases de marca y reglas de escritura.",
-              "done_when": "Documento de marca acordado."
+              "done_when": "Documento de marca acordado.",
+              "prio": "P1"
             },
             {
               "id": "F0-20",
@@ -218,7 +252,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Reglas de uso de la paleta, tipografías con licencia clara, símbolo (lámpara de minero) y usos correctos e incorrectos.",
-              "done_when": "Guía visual acordada."
+              "done_when": "Guía visual acordada.",
+              "prio": "P2"
             },
             {
               "id": "F0-21",
@@ -226,7 +261,8 @@
               "est": 5,
               "status": "backlog",
               "desc": "Versión provisional del logotipo en pixel art para el hub, el README y las pruebas.",
-              "done_when": "Wordmark provisional guardado en studio."
+              "done_when": "Wordmark provisional guardado en studio.",
+              "prio": "P2"
             }
           ]
         },
@@ -240,7 +276,8 @@
               "est": 8,
               "status": "backlog",
               "desc": "Línea de tiempo de los 4 actos con carriles: narrativa, mecánicas que se desbloquean, mercado y eventos, zonas, personajes, estatus y arte necesario. Visible en el hub.",
-              "done_when": "Story map completo y visible en el hub."
+              "done_when": "Story map completo y visible en el hub.",
+              "prio": "P1"
             },
             {
               "id": "F0-23",
@@ -248,7 +285,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Los primeros 7 a 10 días con objetivo de aprendizaje, qué se desbloquea y qué decisión toma el jugador cada día.",
-              "done_when": "Guion de días aprobado."
+              "done_when": "Guion de días aprobado.",
+              "prio": "P1"
             },
             {
               "id": "F0-24",
@@ -256,7 +294,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "Paneles con arte de referencia, texto de diálogo y pantalla de cada escena clave. Barato e iterable.",
-              "done_when": "Storyboard visible en el hub."
+              "done_when": "Storyboard visible en el hub.",
+              "prio": "P2"
             },
             {
               "id": "F0-25",
@@ -264,7 +303,8 @@
               "est": 5,
               "status": "backlog",
               "desc": "Diagrama de pantallas y transiciones: título, mapa, ciudad, edificios con vista interior, mina, mercado, minijuegos y menús.",
-              "done_when": "Flujo de pantallas acordado."
+              "done_when": "Flujo de pantallas acordado.",
+              "prio": "P1"
             }
           ]
         },
@@ -278,7 +318,8 @@
               "est": 3,
               "status": "review",
               "desc": "Mover documentos, hub, datos y assets de referencia a studio/. game/ queda para el proyecto Godot.",
-              "done_when": "Estructura creada y el hub sigue funcionando."
+              "done_when": "Estructura creada y el hub sigue funcionando.",
+              "prio": "P1"
             },
             {
               "id": "F0-27",
@@ -286,7 +327,8 @@
               "est": 2,
               "status": "review",
               "desc": "Cómo ignorar studio/ o extraerlo con su historial a otro repositorio.",
-              "done_when": "Procedimiento documentado y probado."
+              "done_when": "Procedimiento documentado y probado.",
+              "prio": "P1"
             },
             {
               "id": "F0-28",
@@ -294,7 +336,8 @@
               "est": 2,
               "status": "review",
               "desc": "Reemplazar el nombre en documentos, hub, README y configuración.",
-              "done_when": "No quedan referencias al nombre provisional."
+              "done_when": "No quedan referencias al nombre provisional.",
+              "prio": "P1"
             },
             {
               "id": "F0-29",
@@ -302,19 +345,21 @@
               "est": 3,
               "status": "review",
               "desc": "Preparar .gitignore, README y primer commit; subir cuando el nombre esté definido.",
-              "done_when": "El repositorio existe, es privado y tiene el primer commit."
+              "done_when": "El repositorio existe, es privado y tiene el primer commit.",
+              "prio": "P1"
             }
           ]
         }
-      ]
+      ],
+      "confidence": "alta"
     },
     {
       "id": "F1",
       "name": "Preparación técnica",
       "target": "MVP",
       "hours": [
-        35,
-        50
+        50,
+        80
       ],
       "goal": "Tener el entorno funcionando, un proyecto Godot que corre en el Android, la estructura de datos y las reglas de arte listas.",
       "gate": null,
@@ -329,7 +374,8 @@
               "est": 1,
               "status": "backlog",
               "desc": "Instalar el editor en el Mac y crear el proyecto base del juego.",
-              "done_when": "El editor abre el proyecto y corre una escena vacía."
+              "done_when": "El editor abre el proyecto y corre una escena vacía.",
+              "prio": "P0"
             },
             {
               "id": "F1-02",
@@ -337,7 +383,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "Instalar JDK y Android SDK, crear keystore de debug y configurar la exportación.",
-              "done_when": "Un APK de debug se instala en el teléfono."
+              "done_when": "Un APK de debug se instala en el teléfono.",
+              "prio": "P0"
             },
             {
               "id": "F1-03",
@@ -345,7 +392,8 @@
               "est": 1.5,
               "status": "backlog",
               "desc": "Escena mínima en horizontal con texto y un botón que responde al toque.",
-              "done_when": "Se ve y responde en el teléfono en horizontal."
+              "done_when": "Se ve y responde en el teléfono en horizontal.",
+              "prio": "P0"
             },
             {
               "id": "F1-04",
@@ -353,7 +401,8 @@
               "est": 1.5,
               "status": "backlog",
               "desc": "Separar núcleo, datos, interfaz, entrada, guardado y assets. Copias de respaldo.",
-              "done_when": "El repositorio existe, es privado y tiene la estructura."
+              "done_when": "El repositorio existe, es privado y tiene la estructura.",
+              "prio": "P0"
             },
             {
               "id": "F1-05",
@@ -361,7 +410,8 @@
               "est": 1,
               "status": "backlog",
               "desc": "Documento corto con las reglas del proyecto.",
-              "done_when": "Convenciones escritas."
+              "done_when": "Convenciones escritas.",
+              "prio": "P0"
             }
           ]
         },
@@ -375,7 +425,8 @@
               "est": 2,
               "status": "backlog",
               "desc": "Probar 480x270 (x4) y alternativa 384x216 (x5). Zona 16:9 segura con fondo extendido para 20:9.",
-              "done_when": "Resolución elegida y probada en el teléfono."
+              "done_when": "Resolución elegida y probada en el teléfono.",
+              "prio": "P0"
             },
             {
               "id": "F1-07",
@@ -383,7 +434,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "Acciones abstractas, detección del último dispositivo y HUD táctil que se oculta al usar mando.",
-              "done_when": "Con mando conectado el HUD táctil desaparece y todo se maneja con el mando."
+              "done_when": "Con mando conectado el HUD táctil desaparece y todo se maneja con el mando.",
+              "prio": "P0"
             },
             {
               "id": "F1-08",
@@ -391,7 +443,8 @@
               "est": 1.5,
               "status": "backlog",
               "desc": "Menús navegables con mando y teclado.",
-              "done_when": "Se puede recorrer un menú sin tocar la pantalla."
+              "done_when": "Se puede recorrer un menú sin tocar la pantalla.",
+              "prio": "P0"
             },
             {
               "id": "F1-09",
@@ -399,7 +452,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "Archivos de datos con ficha de mercado por mineral y ficha por zona.",
-              "done_when": "Esquema definido con datos de ejemplo."
+              "done_when": "Esquema definido con datos de ejemplo.",
+              "prio": "P0"
             },
             {
               "id": "F1-10",
@@ -407,7 +461,8 @@
               "est": 2,
               "status": "backlog",
               "desc": "Carga y validación de datos en modo sin interfaz.",
-              "done_when": "Las pruebas corren por consola y pasan."
+              "done_when": "Las pruebas corren por consola y pasan.",
+              "prio": "P0"
             }
           ]
         },
@@ -421,7 +476,8 @@
               "est": 1,
               "status": "backlog",
               "desc": "Confirmar la paleta del documento 12 y los tamaños base.",
-              "done_when": "Paleta y tamaños definidos."
+              "done_when": "Paleta y tamaños definidos.",
+              "prio": "P0"
             },
             {
               "id": "F1-12",
@@ -429,7 +485,8 @@
               "est": 1,
               "status": "backlog",
               "desc": "Buscar una fuente que permita uso comercial y registrar su licencia.",
-              "done_when": "Fuente elegida y registrada."
+              "done_when": "Fuente elegida y registrada.",
+              "prio": "P1"
             },
             {
               "id": "F1-13",
@@ -437,7 +494,8 @@
               "est": 2,
               "status": "backlog",
               "desc": "Paquete de cajas, íconos simples y colores para el prototipo.",
-              "done_when": "El prototipo puede mostrarse con placeholders coherentes."
+              "done_when": "El prototipo puede mostrarse con placeholders coherentes.",
+              "prio": "P0"
             },
             {
               "id": "F1-14",
@@ -445,7 +503,8 @@
               "est": 1,
               "status": "backlog",
               "desc": "Plantilla con fuente, licencia, uso comercial y captura de términos.",
-              "done_when": "Plantilla creada con los primeros assets cargados."
+              "done_when": "Plantilla creada con los primeros assets cargados.",
+              "prio": "P1"
             },
             {
               "id": "F1-15",
@@ -453,7 +512,8 @@
               "est": 1,
               "status": "backlog",
               "desc": "Conectar un mando al Android y comprobar el mapeo.",
-              "done_when": "Mapeo verificado con un mando real."
+              "done_when": "Mapeo verificado con un mando real.",
+              "prio": "P2"
             }
           ]
         },
@@ -467,7 +527,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Español e inglés desde el inicio, con un marco que permita sumar idiomas sin tocar el código.",
-              "done_when": "Cambiar de idioma actualiza todos los textos sin reiniciar."
+              "done_when": "Cambiar de idioma actualiza todos los textos sin reiniciar.",
+              "prio": "P0"
             },
             {
               "id": "F1-17",
@@ -475,7 +536,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "Script que busca textos escritos directamente en el código. El arte no lleva texto incrustado.",
-              "done_when": "El script corre y no encuentra cadenas fijas."
+              "done_when": "El script corre y no encuentra cadenas fijas.",
+              "prio": "P1"
             },
             {
               "id": "F1-18",
@@ -483,7 +545,8 @@
               "est": 2,
               "status": "backlog",
               "desc": "Debe incluir á é í ó ú ñ ¿ ¡. Prever fuentes de respaldo para idiomas futuros.",
-              "done_when": "Fuente elegida con licencia registrada y glifos verificados."
+              "done_when": "Fuente elegida con licencia registrada y glifos verificados.",
+              "prio": "P1"
             },
             {
               "id": "F1-19",
@@ -491,7 +554,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "El español ocupa entre 20 y 30 % más que el inglés. Botones y paneles se adaptan al texto.",
-              "done_when": "Con textos alargados ninguna pantalla se corta."
+              "done_when": "Con textos alargados ninguna pantalla se corta.",
+              "prio": "P1"
             },
             {
               "id": "F1-20",
@@ -499,7 +563,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Proceso repetible para traducir y revisar, con glosario de términos del mundo (Aetherita, Faroleros, etc.).",
-              "done_when": "Un lote de textos recorre el flujo completo."
+              "done_when": "Un lote de textos recorre el flujo completo.",
+              "prio": "P1"
             },
             {
               "id": "F1-21",
@@ -507,19 +572,72 @@
               "est": 2,
               "status": "backlog",
               "desc": "Idioma inicial según el dispositivo, cambiable desde opciones.",
-              "done_when": "El juego arranca en el idioma del teléfono y se puede cambiar."
+              "done_when": "El juego arranca en el idioma del teléfono y se puede cambiar.",
+              "prio": "P2"
+            }
+          ]
+        },
+        {
+          "id": "F1.5",
+          "name": "Herramientas de apoyo",
+          "tasks": [
+            {
+              "id": "F1-22",
+              "status": "backlog",
+              "title": "Overlay de depuración: FPS, día, bloque y semilla",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Información en pantalla solo en builds de pruebas.",
+              "done_when": "El overlay se activa y se oculta."
+            },
+            {
+              "id": "F1-23",
+              "status": "backlog",
+              "title": "Consola y atajos de depuración: saltar día, dar dinero, forzar eventos",
+              "est": 4,
+              "prio": "P1",
+              "desc": "Acelera las pruebas del prototipo.",
+              "done_when": "Los atajos funcionan en builds de pruebas."
+            },
+            {
+              "id": "F1-24",
+              "status": "backlog",
+              "title": "Guía corta de arquitectura: capas, señales y autoloads",
+              "est": 2,
+              "prio": "P1",
+              "desc": "Documento breve para mantener el orden del código.",
+              "done_when": "Guía escrita en studio/docs."
+            },
+            {
+              "id": "F1-25",
+              "status": "backlog",
+              "title": "Marco de pruebas automáticas ejecutable por consola",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Elegir el marco (por ejemplo GUT) y dejarlo corriendo.",
+              "done_when": "Un test de ejemplo pasa por consola."
+            },
+            {
+              "id": "F1-26",
+              "status": "backlog",
+              "title": "Exportación reproducible por línea de comandos",
+              "est": 3,
+              "prio": "P2",
+              "desc": "Para generar el APK sin abrir el editor.",
+              "done_when": "Un comando genera el APK de pruebas."
             }
           ]
         }
-      ]
+      ],
+      "confidence": "media"
     },
     {
       "id": "F2",
       "name": "Prototipo del núcleo",
       "target": "MVP",
       "hours": [
-        75,
-        135
+        135,
+        210
       ],
       "goal": "Algo jugable aunque feo: un día completo con extracción, mercado y tienda, para comprobar si el loop es divertido.",
       "gate": "Puerta A: ¿es divertido? Si no lo es, se ajusta o se replantea antes de invertir en arte final.",
@@ -534,7 +652,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Día, bloque, dinero, inventario y semilla aleatoria reproducible.",
-              "done_when": "El estado se crea, modifica y se reproduce con la misma semilla."
+              "done_when": "El estado se crea, modifica y se reproduce con la misma semilla.",
+              "prio": "P0"
             },
             {
               "id": "F2-02",
@@ -542,7 +661,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Mañana, tarde y noche con eventos de fin de día.",
-              "done_when": "Se puede avanzar días consumiendo bloques."
+              "done_when": "Se puede avanzar días consumiendo bloques.",
+              "prio": "P0"
             },
             {
               "id": "F2-03",
@@ -550,7 +670,8 @@
               "est": 5,
               "status": "backlog",
               "desc": "Archivo temporal y reemplazo, copia de respaldo y verificación de integridad.",
-              "done_when": "Guardar, cerrar, abrir y continuar funciona; un archivo corrupto se detecta."
+              "done_when": "Guardar, cerrar, abrir y continuar funciona; un archivo corrupto se detecta.",
+              "prio": "P0"
             }
           ]
         },
@@ -564,7 +685,8 @@
               "est": 8,
               "status": "backlog",
               "desc": "El precio persigue al valor justo con retraso y agitación.",
-              "done_when": "Los precios generan tendencias y rebotes creíbles."
+              "done_when": "Los precios generan tendencias y rebotes creíbles.",
+              "prio": "P0"
             },
             {
               "id": "F2-05",
@@ -572,7 +694,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "Carbón, hierro, cobre y cuarzo con volatilidad, liquidez y sensibilidad.",
-              "done_when": "Los 4 minerales tienen comportamientos distintos."
+              "done_when": "Los 4 minerales tienen comportamientos distintos.",
+              "prio": "P0"
             },
             {
               "id": "F2-06",
@@ -580,7 +703,8 @@
               "est": 2,
               "status": "backlog",
               "desc": "Una por bloque.",
-              "done_when": "El precio cambia al pasar de bloque."
+              "done_when": "El precio cambia al pasar de bloque.",
+              "prio": "P0"
             },
             {
               "id": "F2-07",
@@ -588,7 +712,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Frenos a los abusos del mercado.",
-              "done_when": "Comprar y vender seguido no genera ganancia segura."
+              "done_when": "Comprar y vender seguido no genera ganancia segura.",
+              "prio": "P0"
             },
             {
               "id": "F2-08",
@@ -596,7 +721,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Ejecuta el mercado sin interfaz y genera reportes.",
-              "done_when": "Corre 10.000 días y entrega un informe."
+              "done_when": "Corre 10.000 días y entrega un informe.",
+              "prio": "P1"
             },
             {
               "id": "F2-09",
@@ -604,7 +730,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "Casos de prueba para los frenos y la reproducibilidad.",
-              "done_when": "Las pruebas pasan."
+              "done_when": "Las pruebas pasan.",
+              "prio": "P1"
             }
           ]
         },
@@ -618,7 +745,8 @@
               "est": 5,
               "status": "backlog",
               "desc": "Generación de menas con composición oculta.",
-              "done_when": "Cada mena tiene composición coherente con la zona."
+              "done_when": "Cada mena tiene composición coherente con la zona.",
+              "prio": "P0"
             },
             {
               "id": "F2-11",
@@ -626,7 +754,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Muestra rangos de composición; la precisión depende del Ojo y la herramienta.",
-              "done_when": "Tocar una mena muestra sus rangos."
+              "done_when": "Tocar una mena muestra sus rangos.",
+              "prio": "P0"
             },
             {
               "id": "F2-12",
@@ -634,7 +763,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Pico con durabilidad y energía por mena.",
-              "done_when": "Minar gasta energía y desgasta el pico."
+              "done_when": "Minar gasta energía y desgasta el pico.",
+              "prio": "P0"
             },
             {
               "id": "F2-13",
@@ -642,7 +772,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Perfecto, bueno, regular y fallo.",
-              "done_when": "El resultado del minijuego afecta lo obtenido."
+              "done_when": "El resultado del minijuego afecta lo obtenido.",
+              "prio": "P0"
             }
           ]
         },
@@ -656,7 +787,8 @@
               "est": 8,
               "status": "backlog",
               "desc": "Mantener para cargar, marcador oscilante, soltar en la zona.",
-              "done_when": "Jugable con táctil y con mando."
+              "done_when": "Jugable con táctil y con mando.",
+              "prio": "P0"
             },
             {
               "id": "F2-15",
@@ -664,7 +796,8 @@
               "est": 8,
               "status": "backlog",
               "desc": "Avanzar sin sobrecalentar.",
-              "done_when": "Jugable con táctil y con mando."
+              "done_when": "Jugable con táctil y con mando.",
+              "prio": "P0"
             },
             {
               "id": "F2-16",
@@ -672,7 +805,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "Mejor herramienta, zona más amplia.",
-              "done_when": "La dificultad cambia al mejorar herramienta y stat."
+              "done_when": "La dificultad cambia al mejorar herramienta y stat.",
+              "prio": "P0"
             }
           ]
         },
@@ -686,7 +820,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Capacidad limitada y alquiler.",
-              "done_when": "El almacén limita y cobra."
+              "done_when": "El almacén limita y cobra.",
+              "prio": "P0"
             },
             {
               "id": "F2-18",
@@ -694,7 +829,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Interfaz placeholder para comprar y vender.",
-              "done_when": "Se puede vender y el precio reacciona."
+              "done_when": "Se puede vender y el precio reacciona.",
+              "prio": "P0"
             },
             {
               "id": "F2-19",
@@ -702,7 +838,8 @@
               "est": 8,
               "status": "backlog",
               "desc": "Cliente con precio máximo oculto y paciencia.",
-              "done_when": "Jugable con táctil y con mando."
+              "done_when": "Jugable con táctil y con mando.",
+              "prio": "P0"
             }
           ]
         },
@@ -716,7 +853,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "Interfaz funcional con formas y colores de la paleta.",
-              "done_when": "Se navega entre las pantallas en el teléfono."
+              "done_when": "Se navega entre las pantallas en el teléfono.",
+              "prio": "P0"
             },
             {
               "id": "F2-21",
@@ -724,7 +862,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "Leer mercado, minar, vender, cerrar día.",
-              "done_when": "Un día completo se juega de principio a fin."
+              "done_when": "Un día completo se juega de principio a fin.",
+              "prio": "P0"
             }
           ]
         },
@@ -738,7 +877,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Jugar varios días y anotar qué engancha y qué aburre.",
-              "done_when": "Notas de al menos 5 sesiones."
+              "done_when": "Notas de al menos 5 sesiones.",
+              "prio": "P0"
             },
             {
               "id": "F2-23",
@@ -746,7 +886,8 @@
               "est": 2,
               "status": "backlog",
               "desc": "Revisar las notas y decidir.",
-              "done_when": "Decisión registrada."
+              "done_when": "Decisión registrada.",
+              "prio": "P0"
             }
           ]
         },
@@ -760,7 +901,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Registra cuadros por segundo, memoria, tiempos de carga, errores y eventos de juego en un archivo local. ID anónimo reiniciable; sin nombre del jugador ni de la tienda.",
-              "done_when": "El juego genera un archivo de diagnóstico sin datos personales."
+              "done_when": "El juego genera un archivo de diagnóstico sin datos personales.",
+              "prio": "P1"
             },
             {
               "id": "F2-25",
@@ -768,7 +910,8 @@
               "est": 3,
               "status": "backlog",
               "desc": "Botón que comparte el archivo con quien lo pida. Nada se envía solo.",
-              "done_when": "El probador exporta el archivo desde el teléfono."
+              "done_when": "El probador exporta el archivo desde el teléfono.",
+              "prio": "P1"
             },
             {
               "id": "F2-26",
@@ -776,7 +919,8 @@
               "est": 2,
               "status": "backlog",
               "desc": "Un cierre inesperado se detecta al siguiente arranque y se registra.",
-              "done_when": "Forzar un cierre deja el rastro en el siguiente diagnóstico."
+              "done_when": "Forzar un cierre deja el rastro en el siguiente diagnóstico.",
+              "prio": "P1"
             },
             {
               "id": "F2-27",
@@ -784,19 +928,96 @@
               "est": 2,
               "status": "backlog",
               "desc": "Más detalle solo en versiones de pruebas, nunca en la versión pública.",
-              "done_when": "La versión pública no incluye el detalle extra."
+              "done_when": "La versión pública no incluye el detalle extra.",
+              "prio": "P2"
+            }
+          ]
+        },
+        {
+          "id": "F2.9",
+          "name": "Soporte del prototipo",
+          "tasks": [
+            {
+              "id": "F2-28",
+              "status": "backlog",
+              "title": "Resumen de fin de día: ingresos, gastos y eventos",
+              "est": 5,
+              "prio": "P1",
+              "desc": "Pantalla que cierra el día.",
+              "done_when": "Se muestra al terminar el tercer bloque."
+            },
+            {
+              "id": "F2-29",
+              "status": "backlog",
+              "title": "Registro de transacciones con historial",
+              "est": 4,
+              "prio": "P1",
+              "desc": "Cada compra y venta queda anotada.",
+              "done_when": "Se puede consultar el historial del día."
+            },
+            {
+              "id": "F2-30",
+              "status": "backlog",
+              "title": "Mensajes en pantalla (avisos breves)",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Notificaciones dentro del juego.",
+              "done_when": "Los avisos aparecen y desaparecen."
+            },
+            {
+              "id": "F2-31",
+              "status": "backlog",
+              "title": "Ajustes mínimos: volumen, vibración e idioma",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Pantalla de opciones básica.",
+              "done_when": "Los ajustes persisten."
+            },
+            {
+              "id": "F2-32",
+              "status": "backlog",
+              "title": "Ayuda mínima del prototipo en pantalla",
+              "est": 2,
+              "prio": "P2",
+              "desc": "Texto de ayuda para probadores.",
+              "done_when": "Hay ayuda en las pantallas principales."
+            }
+          ]
+        },
+        {
+          "id": "F2.10",
+          "name": "Cierre del prototipo",
+          "tasks": [
+            {
+              "id": "F2-33",
+              "status": "backlog",
+              "title": "Corrección de errores y ajustes tras las pruebas (reserva)",
+              "est": 12,
+              "prio": "P0",
+              "desc": "Tiempo reservado para lo que aparezca al jugar.",
+              "done_when": "Los errores graves quedan resueltos."
+            },
+            {
+              "id": "F2-34",
+              "status": "backlog",
+              "title": "Documento de aprendizajes: qué se mantiene y qué cambia",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Resumen de lo aprendido con el prototipo.",
+              "done_when": "Documento escrito y revisado."
             }
           ]
         }
-      ]
+      ],
+      "confidence": "media"
     },
     {
       "id": "F3",
       "name": "Vertical slice",
       "target": "MVP",
       "hours": [
-        170,
-        270
+        280,
+        460
       ],
       "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido finales, información por capas, noticias, encuentros y progresión base.",
       "gate": "Puerta B: ¿se sigue hacia la v1 y se piensa en publicar?",
@@ -811,7 +1032,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "Precio y flecha, prensa y gráficos.",
-              "done_when": "Las capas se desbloquean con dinero."
+              "done_when": "Las capas se desbloquean con dinero.",
+              "prio": "P0"
             },
             {
               "id": "F3-02",
@@ -819,7 +1041,8 @@
               "est": 14,
               "status": "backlog",
               "desc": "Cada medio publica con sesgo, retraso y fiabilidad.",
-              "done_when": "Un mismo evento sale distinto en cada medio."
+              "done_when": "Un mismo evento sale distinto en cada medio.",
+              "prio": "P0"
             },
             {
               "id": "F3-03",
@@ -827,7 +1050,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "El Heraldo Meridiano, La Voz del Hollín y Teletipo Meridiano.",
-              "done_when": "Los tres medios están disponibles con su carácter."
+              "done_when": "Los tres medios están disponibles con su carácter.",
+              "prio": "P0"
             },
             {
               "id": "F3-04",
@@ -835,7 +1059,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Valor justo estimado; el error se achica con Ojo y mejoras.",
-              "done_when": "El tabulador muestra sobre y subvaloración con ruido."
+              "done_when": "El tabulador muestra sobre y subvaloración con ruido.",
+              "prio": "P1"
             }
           ]
         },
@@ -849,7 +1074,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "Mineral, cantidad, plazo, precio y penalización.",
-              "done_when": "Se aceptan, cumplen y fallan contratos."
+              "done_when": "Se aceptan, cumplen y fallan contratos.",
+              "prio": "P0"
             },
             {
               "id": "F3-06",
@@ -857,7 +1083,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "Industrial, especulador, acaparador y pánico.",
-              "done_when": "Los arquetipos influyen en el mercado de forma visible."
+              "done_when": "Los arquetipos influyen en el mercado de forma visible.",
+              "prio": "P1"
             },
             {
               "id": "F3-07",
@@ -865,7 +1092,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "Acero y pólvora como primeros productos.",
-              "done_when": "Se refina y el producto se vende."
+              "done_when": "Se refina y el producto se vende.",
+              "prio": "P0"
             },
             {
               "id": "F3-08",
@@ -873,7 +1101,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Alquiler periódico y mejoras de capacidad.",
-              "done_when": "Almacenar cuesta y se puede ampliar."
+              "done_when": "Almacenar cuesta y se puede ampliar.",
+              "prio": "P1"
             }
           ]
         },
@@ -887,7 +1116,8 @@
               "est": 12,
               "status": "backlog",
               "desc": "Pelear, huir, sobornar o soltar parte de la carga.",
-              "done_when": "Los encuentros aparecen y sus probabilidades se ven antes de decidir."
+              "done_when": "Los encuentros aparecen y sus probabilidades se ven antes de decidir.",
+              "prio": "P0"
             },
             {
               "id": "F3-10",
@@ -895,7 +1125,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "Gas y derrumbe con sellar fuga y apuntalar.",
-              "done_when": "Los peligros se resuelven con tareas cortas."
+              "done_when": "Los peligros se resuelven con tareas cortas.",
+              "prio": "P0"
             },
             {
               "id": "F3-11",
@@ -903,7 +1134,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "Aguante, Pericia, Ojo, Temple y Labia con rendimientos decrecientes.",
-              "done_when": "Los stats suben por lo que hace el jugador."
+              "done_when": "Los stats suben por lo que hace el jugador.",
+              "prio": "P1"
             },
             {
               "id": "F3-12",
@@ -911,7 +1143,8 @@
               "est": 8,
               "status": "backlog",
               "desc": "Mejoras que consumen minerales concretos.",
-              "done_when": "Se puede mejorar y reparar una herramienta."
+              "done_when": "Se puede mejorar y reparar una herramienta.",
+              "prio": "P1"
             },
             {
               "id": "F3-13",
@@ -919,7 +1152,8 @@
               "est": 5,
               "status": "backlog",
               "desc": "Las menas se agotan y regresan por ciclos visibles.",
-              "done_when": "La zona se agota y se regenera."
+              "done_when": "La zona se agota y se regenera.",
+              "prio": "P1"
             }
           ]
         },
@@ -933,7 +1167,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Nombre de una palabra, tienda con espacios, género y un modelo de cada uno.",
-              "done_when": "El nombre aparece en los diálogos."
+              "done_when": "El nombre aparece en los diálogos.",
+              "prio": "P0"
             },
             {
               "id": "F3-15",
@@ -941,7 +1176,8 @@
               "est": 8,
               "status": "backlog",
               "desc": "Textos neutros y blips de personaje.",
-              "done_when": "Un diálogo completo se muestra con retratos."
+              "done_when": "Un diálogo completo se muestra con retratos.",
+              "prio": "P0"
             },
             {
               "id": "F3-16",
@@ -949,7 +1185,8 @@
               "est": 14,
               "status": "backlog",
               "desc": "Primeros días guiados.",
-              "done_when": "El Acto I se juega de principio a fin."
+              "done_when": "El Acto I se juega de principio a fin.",
+              "prio": "P0"
             },
             {
               "id": "F3-17",
@@ -957,7 +1194,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Pagos periódicos a Reme.",
-              "done_when": "Pagar las primeras cuotas cierra el acto."
+              "done_when": "Pagar las primeras cuotas cierra el acto.",
+              "prio": "P0"
             }
           ]
         },
@@ -971,7 +1209,8 @@
               "est": 20,
               "status": "backlog",
               "desc": "Reconstruir sobre cuadrícula fija a partir de las referencias.",
-              "done_when": "Pantallas con arte final coherente."
+              "done_when": "Pantallas con arte final coherente.",
+              "prio": "P0"
             },
             {
               "id": "F3-19",
@@ -979,7 +1218,8 @@
               "est": 14,
               "status": "backlog",
               "desc": "Retrato detallado y sprite pequeño por personaje.",
-              "done_when": "Los personajes del Acto I tienen retrato y sprite."
+              "done_when": "Los personajes del Acto I tienen retrato y sprite.",
+              "prio": "P0"
             },
             {
               "id": "F3-20",
@@ -987,7 +1227,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Siluetas legibles a tamaño pequeño.",
-              "done_when": "Íconos limpios y distinguibles."
+              "done_when": "Íconos limpios y distinguibles.",
+              "prio": "P0"
             },
             {
               "id": "F3-21",
@@ -995,7 +1236,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "Referencia sonora: Balatro. Revisar licencias.",
-              "done_when": "El Acto I tiene sonido completo y licencias registradas."
+              "done_when": "El Acto I tiene sonido completo y licencias registradas.",
+              "prio": "P1"
             }
           ]
         },
@@ -1009,7 +1251,8 @@
               "est": 5,
               "status": "backlog",
               "desc": "Novato, Intermedio y Difícil como conjuntos de números.",
-              "done_when": "Elegir dificultad cambia volatilidad, desgaste y pérdidas."
+              "done_when": "Elegir dificultad cambia volatilidad, desgaste y pérdidas.",
+              "prio": "P1"
             },
             {
               "id": "F3-23",
@@ -1017,7 +1260,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Jugar el Acto I completo y decidir si se continúa y si se piensa en publicar.",
-              "done_when": "Decisión registrada."
+              "done_when": "Decisión registrada.",
+              "prio": "P0"
             }
           ]
         },
@@ -1031,7 +1275,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Arrastrar o elegir el archivo exportado por un probador.",
-              "done_when": "El panel carga un diagnóstico real."
+              "done_when": "El panel carga un diagnóstico real.",
+              "prio": "P2"
             },
             {
               "id": "F3-25",
@@ -1039,7 +1284,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Cuadros por segundo, memoria y tiempos de carga por modelo de teléfono.",
-              "done_when": "Se comparan dos dispositivos."
+              "done_when": "Se comparan dos dispositivos.",
+              "prio": "P2"
             },
             {
               "id": "F3-26",
@@ -1047,7 +1293,8 @@
               "est": 8,
               "status": "backlog",
               "desc": "Curva de dinero, días jugados, éxito en minijuegos y puntos donde se deja de jugar.",
-              "done_when": "Se ve una partida completa resumida."
+              "done_when": "Se ve una partida completa resumida.",
+              "prio": "P2"
             },
             {
               "id": "F3-27",
@@ -1055,7 +1302,8 @@
               "est": 4,
               "status": "backlog",
               "desc": "Mostrar en el panel los resultados de las simulaciones de miles de días.",
-              "done_when": "Un informe del simulador se visualiza."
+              "done_when": "Un informe del simulador se visualiza.",
+              "prio": "P2"
             }
           ]
         },
@@ -1069,7 +1317,8 @@
               "est": 10,
               "status": "backlog",
               "desc": "A partir de la guía de marca y el wordmark provisional.",
-              "done_when": "Logo aprobado."
+              "done_when": "Logo aprobado.",
+              "prio": "P1"
             },
             {
               "id": "F3-29",
@@ -1077,7 +1326,8 @@
               "est": 6,
               "status": "backlog",
               "desc": "Ícono legible a tamaño pequeño y pantalla de título con la marca.",
-              "done_when": "Ícono y pantalla integrados en el juego."
+              "done_when": "Ícono y pantalla integrados en el juego.",
+              "prio": "P1"
             },
             {
               "id": "F3-30",
@@ -1085,19 +1335,129 @@
               "est": 10,
               "status": "backlog",
               "desc": "Todos los textos del Acto I en inglés, con tono cercano y revisión.",
-              "done_when": "El Acto I se juega completo en inglés y en español."
+              "done_when": "El Acto I se juega completo en inglés y en español.",
+              "prio": "P0"
+            }
+          ]
+        },
+        {
+          "id": "F3.9",
+          "name": "Contenido del Acto I",
+          "tasks": [
+            {
+              "id": "F3-31",
+              "status": "backlog",
+              "title": "Diez noticias iniciales y seis eventos del Acto I",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Material para que el mercado se sienta vivo.",
+              "done_when": "Aparecen en partidas distintas."
+            },
+            {
+              "id": "F3-32",
+              "status": "backlog",
+              "title": "Doce contratos de ejemplo con clientes",
+              "est": 4,
+              "prio": "P1",
+              "desc": "Variedad de pedidos para el Acto I.",
+              "done_when": "Se generan contratos distintos."
+            },
+            {
+              "id": "F3-33",
+              "status": "backlog",
+              "title": "Textos de ayuda y descripciones emergentes del vertical slice",
+              "est": 5,
+              "prio": "P2",
+              "desc": "Ayuda contextual.",
+              "done_when": "Las pantallas clave tienen ayuda."
+            }
+          ]
+        },
+        {
+          "id": "F3.10",
+          "name": "Base de sistemas",
+          "tasks": [
+            {
+              "id": "F3-34",
+              "status": "backlog",
+              "title": "Sistema de audio: buses, volumen y mezcla",
+              "est": 5,
+              "prio": "P1",
+              "desc": "Base para efectos, música y voces.",
+              "done_when": "Se controlan los volúmenes por tipo."
+            },
+            {
+              "id": "F3-35",
+              "status": "backlog",
+              "title": "Migraciones de versión del guardado",
+              "est": 4,
+              "prio": "P1",
+              "desc": "Que las partidas viejas sigan funcionando.",
+              "done_when": "Un guardado antiguo carga en la versión nueva."
+            },
+            {
+              "id": "F3-36",
+              "status": "backlog",
+              "title": "Transiciones entre pantallas y animaciones mínimas",
+              "est": 6,
+              "prio": "P2",
+              "desc": "Pulido de la interfaz.",
+              "done_when": "Las pantallas cambian con transición."
+            },
+            {
+              "id": "F3-37",
+              "status": "backlog",
+              "title": "Guía de contenido: cómo añadir un mineral, una zona, un evento o un texto",
+              "est": 4,
+              "prio": "P1",
+              "desc": "Documento práctico para producir contenido.",
+              "done_when": "Guía escrita y probada una vez."
+            }
+          ]
+        },
+        {
+          "id": "F3.11",
+          "name": "Cierre del vertical slice",
+          "tasks": [
+            {
+              "id": "F3-38",
+              "status": "backlog",
+              "title": "Pasada de pruebas manuales del vertical slice",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Lista de verificación completa.",
+              "done_when": "Lista recorrida y errores anotados."
+            },
+            {
+              "id": "F3-39",
+              "status": "backlog",
+              "title": "Prueba con dos o tres personas externas y registro de impresiones",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Opinión de quien no conoce el juego.",
+              "done_when": "Notas de cada sesión."
+            },
+            {
+              "id": "F3-40",
+              "status": "backlog",
+              "title": "Corrección de errores y ajustes (reserva)",
+              "est": 20,
+              "prio": "P0",
+              "desc": "Tiempo reservado para lo que aparezca.",
+              "done_when": "Los errores graves quedan resueltos."
             }
           ]
         }
-      ]
+      ],
+      "confidence": "media"
     },
     {
       "id": "F4",
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        390,
-        690
+        970,
+        1820
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -1108,31 +1468,199 @@
           "tasks": [
             {
               "id": "F4-01",
-              "title": "Zonas 2 y 3: Cañón Ferroso y Minas de Sierra Alta",
-              "est": 30,
               "status": "backlog",
-              "desc": "Fichas, arte, peligros y enemigos."
+              "title": "Desbloqueo de zonas por etapas y requisitos",
+              "est": 5,
+              "prio": "P0"
             },
             {
               "id": "F4-02",
-              "title": "Zonas 4 y 5: Salares del Litoral y Cavernas de Cristal",
-              "est": 30,
               "status": "backlog",
-              "desc": "Fichas, arte, peligros y enemigos."
+              "title": "Zona 2 (Cañón Ferroso): ficha, probabilidades y regeneración",
+              "est": 3,
+              "prio": "P1"
             },
             {
               "id": "F4-03",
-              "title": "Zona 6: La Fosa del Éter",
-              "est": 20,
               "status": "backlog",
-              "desc": "Ficha, arte, criaturas y exposición a la Aetherita."
+              "title": "Zona 2: arte de fondo y piezas",
+              "est": 6,
+              "prio": "P1"
             },
             {
               "id": "F4-04",
-              "title": "Peligros y encuentros por zona",
-              "est": 25,
               "status": "backlog",
-              "desc": "Eventos y tareas de peligro propias de cada zona."
+              "title": "Zona 2: peligros y tareas de peligro",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-05",
+              "status": "backlog",
+              "title": "Zona 2: encuentros y enemigos",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-06",
+              "status": "backlog",
+              "title": "Zona 2: pruebas y ajuste",
+              "est": 2,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-07",
+              "status": "backlog",
+              "title": "Zona 3 (Minas de Sierra Alta): ficha, probabilidades y regeneración",
+              "est": 3,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-08",
+              "status": "backlog",
+              "title": "Zona 3: arte de fondo y piezas",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-09",
+              "status": "backlog",
+              "title": "Zona 3: peligros y tareas de peligro",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-10",
+              "status": "backlog",
+              "title": "Zona 3: encuentros y enemigos",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-11",
+              "status": "backlog",
+              "title": "Zona 3: pruebas y ajuste",
+              "est": 2,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-12",
+              "status": "backlog",
+              "title": "Zona 4 (Salares del Litoral): ficha, probabilidades y regeneración",
+              "est": 3,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-13",
+              "status": "backlog",
+              "title": "Zona 4: arte de fondo y piezas",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-14",
+              "status": "backlog",
+              "title": "Zona 4: peligros y tareas de peligro",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-15",
+              "status": "backlog",
+              "title": "Zona 4: encuentros y enemigos",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-16",
+              "status": "backlog",
+              "title": "Zona 4: pruebas y ajuste",
+              "est": 2,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-17",
+              "status": "backlog",
+              "title": "Zona 5 (Cavernas de Cristal): ficha, probabilidades y regeneración",
+              "est": 3,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-18",
+              "status": "backlog",
+              "title": "Zona 5: arte de fondo y piezas",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-19",
+              "status": "backlog",
+              "title": "Zona 5: peligros y tareas de peligro",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-20",
+              "status": "backlog",
+              "title": "Zona 5: encuentros y enemigos",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-21",
+              "status": "backlog",
+              "title": "Zona 5: pruebas y ajuste",
+              "est": 2,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-22",
+              "status": "backlog",
+              "title": "Zona 6 (La Fosa del Éter): ficha, probabilidades y regeneración",
+              "est": 3,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-23",
+              "status": "backlog",
+              "title": "Zona 6: arte de fondo y piezas",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-24",
+              "status": "backlog",
+              "title": "Zona 6: peligros y tareas de peligro",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-25",
+              "status": "backlog",
+              "title": "Zona 6: encuentros y enemigos",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-26",
+              "status": "backlog",
+              "title": "Zona 6: pruebas y ajuste",
+              "est": 2,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-27",
+              "status": "backlog",
+              "title": "La Fosa: exposición a la Aetherita y mal del éter",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-28",
+              "status": "backlog",
+              "title": "La Fosa: criaturas mutadas",
+              "est": 6,
+              "prio": "P2"
             }
           ]
         },
@@ -1141,32 +1669,109 @@
           "name": "Mercado completo",
           "tasks": [
             {
-              "id": "F4-05",
-              "title": "10 minerales con personalidad de mercado",
-              "est": 15,
+              "id": "F4-29",
               "status": "backlog",
-              "desc": "Estable, volátil, estacional, estratégico y lujo."
+              "title": "Fichas de mercado de los 10 minerales (datos)",
+              "est": 5,
+              "prio": "P0"
             },
             {
-              "id": "F4-06",
-              "title": "Sectores de demanda y calendario estacional",
-              "est": 15,
+              "id": "F4-30",
               "status": "backlog",
-              "desc": "Ferrocarril, energía, militar, agricultura, lujo y tecnología."
+              "title": "Personalidades de mercado: estable, volátil, estacional, estratégico y lujo",
+              "est": 8,
+              "prio": "P0"
             },
             {
-              "id": "F4-07",
-              "title": "Noticias por categoría con firmas reconocibles",
-              "est": 20,
+              "id": "F4-31",
               "status": "backlog",
-              "desc": "Producción, política, laboral, tecnología, clima, exterior, moda y descubrimiento."
+              "title": "Sectores de demanda: ferrocarril, energía, militar, agricultura, lujo y tecnología",
+              "est": 8,
+              "prio": "P0"
             },
             {
-              "id": "F4-08",
-              "title": "Balance inicial del mercado con simulaciones",
-              "est": 15,
+              "id": "F4-32",
               "status": "backlog",
-              "desc": "Calibrar números con el simulador."
+              "title": "Calendario estacional y ciclos",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-33",
+              "status": "backlog",
+              "title": "Noticias de producción y clima",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-34",
+              "status": "backlog",
+              "title": "Noticias de política y exterior",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-35",
+              "status": "backlog",
+              "title": "Noticias laborales",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-36",
+              "status": "backlog",
+              "title": "Noticias de tecnología y descubrimientos",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-37",
+              "status": "backlog",
+              "title": "Noticias de moda y lujo",
+              "est": 3,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-38",
+              "status": "backlog",
+              "title": "Efectos de eventos con retraso y magnitud",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-39",
+              "status": "backlog",
+              "title": "Ajuste de los 4 arquetipos de bots con los 10 minerales",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-40",
+              "status": "backlog",
+              "title": "Marketplace: comprar minerales a proveedores",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-41",
+              "status": "backlog",
+              "title": "Trueque con comerciantes y reputación",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-42",
+              "status": "backlog",
+              "title": "Balance del mercado, ronda 1: 10.000 días",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-43",
+              "status": "backlog",
+              "title": "Balance del mercado, ronda 2: con eventos y facciones",
+              "est": 6,
+              "prio": "P0"
             }
           ]
         },
@@ -1175,53 +1780,123 @@
           "name": "Minijuegos restantes",
           "tasks": [
             {
-              "id": "F4-09",
-              "title": "Cincelado",
+              "id": "F4-44",
+              "status": "backlog",
+              "title": "Cincelado: implementación y variante con mando",
               "est": 10,
-              "status": "backlog",
-              "desc": "Trazar sobre la gema sin salirse del margen."
+              "prio": "P1"
             },
             {
-              "id": "F4-10",
-              "title": "Cribado",
+              "id": "F4-45",
+              "status": "backlog",
+              "title": "Cincelado: ajuste de zona óptima por herramienta",
+              "est": 2,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-46",
+              "status": "backlog",
+              "title": "Cribado: implementación y variante con mando",
               "est": 10,
-              "status": "backlog",
-              "desc": "Inclinación y caudal."
+              "prio": "P1"
             },
             {
-              "id": "F4-11",
-              "title": "Detonación",
+              "id": "F4-47",
+              "status": "backlog",
+              "title": "Cribado: ajuste de zona óptima por herramienta",
+              "est": 2,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-48",
+              "status": "backlog",
+              "title": "Detonación: implementación y variante con mando",
               "est": 10,
-              "status": "backlog",
-              "desc": "Potencia y ubicación."
+              "prio": "P1"
             },
             {
-              "id": "F4-12",
-              "title": "Contención de Aetherita y exposición",
-              "est": 14,
+              "id": "F4-49",
               "status": "backlog",
-              "desc": "Presión y resonancia; acumula el mal del éter."
+              "title": "Detonación: ajuste de zona óptima por herramienta",
+              "est": 2,
+              "prio": "P1"
             },
             {
-              "id": "F4-13",
+              "id": "F4-50",
+              "status": "backlog",
+              "title": "Contención de Aetherita: minijuego",
+              "est": 10,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-51",
+              "status": "backlog",
+              "title": "Contención: exposición y mal del éter",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-52",
+              "status": "backlog",
+              "title": "Contención: ajuste",
+              "est": 2,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-53",
+              "status": "backlog",
+              "title": "Tarea de peligro: reparar equipo (conectar cables)",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-54",
+              "status": "backlog",
               "title": "Duelo de timing para jefes",
               "est": 8,
-              "status": "backlog",
-              "desc": "Bloquear y contraatacar en pocas rondas."
+              "prio": "P2"
             },
             {
-              "id": "F4-14",
-              "title": "Tasar y minijuego de refinado",
-              "est": 14,
+              "id": "F4-55",
               "status": "backlog",
-              "desc": "Detectar piezas falsas y mantener temperatura."
+              "title": "Tasar piezas: detectar falsas",
+              "est": 6,
+              "prio": "P2"
             },
             {
-              "id": "F4-15",
-              "title": "Modificadores de mena: costra, inestable y veta rica",
+              "id": "F4-56",
+              "status": "backlog",
+              "title": "Minijuego de refinado: temperatura y tiempo",
               "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-57",
               "status": "backlog",
-              "desc": "Reglas que varían cada mena."
+              "title": "Modificador de mena: costra",
+              "est": 3,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-58",
+              "status": "backlog",
+              "title": "Modificador de mena: inestable",
+              "est": 3,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-59",
+              "status": "backlog",
+              "title": "Modificador de mena: veta rica",
+              "est": 3,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-60",
+              "status": "backlog",
+              "title": "Ajuste de los 5 niveles de cada herramienta",
+              "est": 6,
+              "prio": "P1"
             }
           ]
         },
@@ -1230,32 +1905,123 @@
           "name": "Facciones, vigilancia y mercado negro",
           "tasks": [
             {
-              "id": "F4-16",
-              "title": "Relaciones con las 5 facciones",
-              "est": 14,
+              "id": "F4-61",
               "status": "backlog",
-              "desc": "Medidor por facción y sus efectos."
+              "title": "Modelo de relaciones por facción",
+              "est": 6,
+              "prio": "P1"
             },
             {
-              "id": "F4-17",
-              "title": "Indicador de vigilancia y multas",
-              "est": 14,
+              "id": "F4-62",
               "status": "backlog",
-              "desc": "Niveles, inspecciones, redadas y formas de bajarlo."
+              "title": "Efectos de la relación con el Ministerio",
+              "est": 4,
+              "prio": "P1"
             },
             {
-              "id": "F4-18",
-              "title": "Mercado negro nocturno",
-              "est": 12,
+              "id": "F4-63",
               "status": "backlog",
-              "desc": "Mejor precio sin impuestos, volumen limitado."
+              "title": "Efectos de la relación con el Consorcio Arvel",
+              "est": 4,
+              "prio": "P1"
             },
             {
-              "id": "F4-19",
-              "title": "Contratos largos, oficiales y negros",
-              "est": 10,
+              "id": "F4-64",
               "status": "backlog",
-              "desc": "Tipos de contrato restantes."
+              "title": "Efectos de la relación con la Unión",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-65",
+              "status": "backlog",
+              "title": "Efectos de la relación con Los Faroleros",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-66",
+              "status": "backlog",
+              "title": "Efectos de la relación con la prensa",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-67",
+              "status": "backlog",
+              "title": "Indicador de vigilancia y sus niveles",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-68",
+              "status": "backlog",
+              "title": "Inspecciones y multas",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-69",
+              "status": "backlog",
+              "title": "Redada: confiscación, cierre y arresto",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-70",
+              "status": "backlog",
+              "title": "Formas de bajar la vigilancia: soborno, reputación y guardias",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-71",
+              "status": "backlog",
+              "title": "Mercado negro: acceso por contacto",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-72",
+              "status": "backlog",
+              "title": "Mercado negro: operación nocturna con volumen limitado",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-73",
+              "status": "backlog",
+              "title": "Mercado negro: precios y riesgos",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-74",
+              "status": "backlog",
+              "title": "Contratos oficiales del Ministerio",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-75",
+              "status": "backlog",
+              "title": "Contratos negros",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-76",
+              "status": "backlog",
+              "title": "Contratos a largo plazo",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-77",
+              "status": "backlog",
+              "title": "Pantalla de facciones y vigilancia",
+              "est": 8,
+              "prio": "P1"
             }
           ]
         },
@@ -1264,32 +2030,88 @@
           "name": "Eventos sociales",
           "tasks": [
             {
-              "id": "F4-20",
-              "title": "Apagón y generador",
-              "est": 10,
+              "id": "F4-78",
               "status": "backlog",
-              "desc": "Cobre escaso, apagones y la tienda sin luz."
-            },
-            {
-              "id": "F4-21",
-              "title": "Huelga",
-              "est": 10,
-              "status": "backlog",
-              "desc": "Cierra zonas y baja la oferta."
-            },
-            {
-              "id": "F4-22",
-              "title": "Saqueo y protección",
-              "est": 10,
-              "status": "backlog",
-              "desc": "Días sin abrir y riesgo para el inventario."
-            },
-            {
-              "id": "F4-23",
-              "title": "Avisos previos en las noticias",
+              "title": "Apagón: modelo y efectos en la tienda",
               "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-79",
               "status": "backlog",
-              "desc": "Los eventos se anticipan con rumores."
+              "title": "Apagón: generador (compra y combustible)",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-80",
+              "status": "backlog",
+              "title": "Apagón: arte y avisos",
+              "est": 3,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-81",
+              "status": "backlog",
+              "title": "Huelga: modelo y duración",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-82",
+              "status": "backlog",
+              "title": "Huelga: efectos en zonas y oferta",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-83",
+              "status": "backlog",
+              "title": "Huelga: arte y avisos",
+              "est": 3,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-84",
+              "status": "backlog",
+              "title": "Saqueo: modelo y días sin abrir",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-85",
+              "status": "backlog",
+              "title": "Saqueo: pérdida de inventario",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-86",
+              "status": "backlog",
+              "title": "Protección: guardias y pagos a Los Faroleros",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-87",
+              "status": "backlog",
+              "title": "Saqueo: arte y avisos",
+              "est": 3,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-88",
+              "status": "backlog",
+              "title": "Avisos previos en las noticias para cada evento",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-89",
+              "status": "backlog",
+              "title": "Calendario aleatorio de eventos y severidad por dificultad",
+              "est": 6,
+              "prio": "P1"
             }
           ]
         },
@@ -1298,39 +2120,137 @@
           "name": "Empleados",
           "tasks": [
             {
-              "id": "F4-24",
-              "title": "Contratos por tiempo, despido y renovación",
-              "est": 14,
+              "id": "F4-90",
               "status": "backlog",
-              "desc": "Corto, medio y largo con indemnización."
+              "title": "Contratos por tiempo: duración, salario y vencimiento",
+              "est": 8,
+              "prio": "P1"
             },
             {
-              "id": "F4-25",
-              "title": "Contratación por periódicos con sesgo político",
-              "est": 12,
+              "id": "F4-91",
               "status": "backlog",
-              "desc": "Sección de empleos y anuncios propios."
+              "title": "Despido e indemnización",
+              "est": 4,
+              "prio": "P1"
             },
             {
-              "id": "F4-26",
-              "title": "Roles y stats de empleado",
-              "est": 14,
+              "id": "F4-92",
               "status": "backlog",
-              "desc": "Minero, dependiente, guardia, refinador y analista."
+              "title": "Renovación y negociación con Labia",
+              "est": 6,
+              "prio": "P1"
             },
             {
-              "id": "F4-27",
-              "title": "Lealtad: robo, soborno y huelga",
-              "est": 12,
+              "id": "F4-93",
               "status": "backlog",
-              "desc": "Consecuencias de los malos stats."
+              "title": "Avisos agrupados de contratos por vencer",
+              "est": 3,
+              "prio": "P2"
             },
             {
-              "id": "F4-28",
-              "title": "Mineros automáticos en expediciones",
-              "est": 12,
+              "id": "F4-94",
               "status": "backlog",
-              "desc": "Rinden menos que el jugador y pueden herirse."
+              "title": "Sección de empleos del periódico",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-95",
+              "status": "backlog",
+              "title": "Anuncios propios en periódicos",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-96",
+              "status": "backlog",
+              "title": "Sesgo político de los candidatos según el medio",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-97",
+              "status": "backlog",
+              "title": "Información oculta de candidatos y referencias",
+              "est": 6,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-98",
+              "status": "backlog",
+              "title": "Roles y stats de empleado: eficiencia, cuidado y lealtad",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-99",
+              "status": "backlog",
+              "title": "Minero automático: expediciones sin minijuego",
+              "est": 10,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-100",
+              "status": "backlog",
+              "title": "Dependiente: atiende y repone",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-101",
+              "status": "backlog",
+              "title": "Guardia",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-102",
+              "status": "backlog",
+              "title": "Refinador",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-103",
+              "status": "backlog",
+              "title": "Analista",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-104",
+              "status": "backlog",
+              "title": "Lealtad: robo",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-105",
+              "status": "backlog",
+              "title": "Lealtad: soborno",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-106",
+              "status": "backlog",
+              "title": "Lealtad: huelga de empleados",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-107",
+              "status": "backlog",
+              "title": "Pantalla de personal",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-108",
+              "status": "backlog",
+              "title": "Arte de empleados: retratos y sprites",
+              "est": 8,
+              "prio": "P1"
             }
           ]
         },
@@ -1339,32 +2259,81 @@
           "name": "Estatus y metas",
           "tasks": [
             {
-              "id": "F4-29",
-              "title": "Escalera de estatus",
+              "id": "F4-109",
+              "status": "backlog",
+              "title": "Escalera de estatus y condiciones de ascenso",
               "est": 8,
-              "status": "backlog",
-              "desc": "De Buscador a Magnate con condiciones."
+              "prio": "P1"
             },
             {
-              "id": "F4-30",
-              "title": "Estilo de vida y cosméticos",
-              "est": 15,
+              "id": "F4-110",
               "status": "backlog",
-              "desc": "Casa, ropa, auto y bonos pasivos pequeños."
-            },
-            {
-              "id": "F4-31",
-              "title": "Árbol de logros",
-              "est": 15,
-              "status": "backlog",
-              "desc": "Logros fáciles y difíciles con recompensas."
-            },
-            {
-              "id": "F4-32",
-              "title": "Proveedores desbloqueables",
+              "title": "Casa: mejoras y bonos pasivos",
               "est": 6,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-111",
               "status": "backlog",
-              "desc": "Desbloqueados por estatus y relaciones."
+              "title": "Ropa",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-112",
+              "status": "backlog",
+              "title": "Auto",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-113",
+              "status": "backlog",
+              "title": "Cosméticos",
+              "est": 6,
+              "prio": "P3"
+            },
+            {
+              "id": "F4-114",
+              "status": "backlog",
+              "title": "Proveedores desbloqueables por estatus",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-115",
+              "status": "backlog",
+              "title": "Sistema de logros",
+              "est": 6,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-116",
+              "status": "backlog",
+              "title": "Primeros 30 logros",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-117",
+              "status": "backlog",
+              "title": "30 logros más",
+              "est": 8,
+              "prio": "P3"
+            },
+            {
+              "id": "F4-118",
+              "status": "backlog",
+              "title": "Pantalla de logros",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-119",
+              "status": "backlog",
+              "title": "Pantalla de estilo de vida",
+              "est": 6,
+              "prio": "P2"
             }
           ]
         },
@@ -1373,25 +2342,53 @@
           "name": "Dificultad y legado",
           "tasks": [
             {
-              "id": "F4-33",
-              "title": "Modo Hardcore con permadeath",
-              "est": 8,
+              "id": "F4-120",
               "status": "backlog",
-              "desc": "Muerte termina la partida."
+              "title": "Ajuste fino de parámetros por dificultad",
+              "est": 6,
+              "prio": "P1"
             },
             {
-              "id": "F4-34",
+              "id": "F4-121",
+              "status": "backlog",
+              "title": "Hardcore: permadeath",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-122",
+              "status": "backlog",
               "title": "Salón de la fama",
               "est": 8,
-              "status": "backlog",
-              "desc": "Registro de partidas terminadas."
+              "prio": "P2"
             },
             {
-              "id": "F4-35",
-              "title": "Legado tipo Balatro",
-              "est": 10,
+              "id": "F4-123",
               "status": "backlog",
-              "desc": "Ayudas desbloqueables para próximas partidas."
+              "title": "Legado: diseño de las ayudas",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-124",
+              "status": "backlog",
+              "title": "Legado: implementación",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-125",
+              "status": "backlog",
+              "title": "Legado: balance",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-126",
+              "status": "backlog",
+              "title": "Reinicio rápido tras la muerte con resumen de actos ya vistos",
+              "est": 5,
+              "prio": "P2"
             }
           ]
         },
@@ -1400,32 +2397,179 @@
           "name": "Historia: Actos II a IV",
           "tasks": [
             {
-              "id": "F4-36",
-              "title": "Acto II con tres variantes del acreedor",
-              "est": 30,
+              "id": "F4-127",
               "status": "backlog",
-              "desc": "Consorcio, Faroleros o Ministerio detrás de Reme."
+              "title": "Regla de activación de actos por umbrales",
+              "est": 6,
+              "prio": "P0"
             },
             {
-              "id": "F4-37",
-              "title": "Acto III en la capital",
-              "est": 25,
+              "id": "F4-128",
               "status": "backlog",
-              "desc": "Bolsa, círculo de poder y dilemas."
+              "title": "Acto II: guion y escenas",
+              "est": 6,
+              "prio": "P1"
             },
             {
-              "id": "F4-38",
-              "title": "Acto IV: la verdad de la Aetherita y tres salidas",
-              "est": 25,
+              "id": "F4-129",
               "status": "backlog",
-              "desc": "Revelar, callar o vender."
+              "title": "Variante del acreedor: Consorcio Arvel",
+              "est": 8,
+              "prio": "P1"
             },
             {
-              "id": "F4-39",
-              "title": "Cintas de Anselmo",
-              "est": 10,
+              "id": "F4-130",
               "status": "backlog",
-              "desc": "Coleccionables que cuentan lo ocurrido."
+              "title": "Variante del acreedor: Los Faroleros",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-131",
+              "status": "backlog",
+              "title": "Variante del acreedor: Ministerio",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-132",
+              "status": "backlog",
+              "title": "Primera huelga grande",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-133",
+              "status": "backlog",
+              "title": "Alianza: elección y consecuencias",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-134",
+              "status": "backlog",
+              "title": "Acto II: arte y retratos",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-135",
+              "status": "backlog",
+              "title": "Acto III: guion y escenas",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-136",
+              "status": "backlog",
+              "title": "Bolsa de la capital (narrativa)",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-137",
+              "status": "backlog",
+              "title": "Dilema moral 1",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-138",
+              "status": "backlog",
+              "title": "Dilema moral 2",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-139",
+              "status": "backlog",
+              "title": "Dilema moral 3",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-140",
+              "status": "backlog",
+              "title": "Círculo de poder",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-141",
+              "status": "backlog",
+              "title": "Acto III: arte",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-142",
+              "status": "backlog",
+              "title": "Acto IV: guion y escenas",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-143",
+              "status": "backlog",
+              "title": "Verdad de la Aetherita: revelación",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-144",
+              "status": "backlog",
+              "title": "Salida: revelar la verdad",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-145",
+              "status": "backlog",
+              "title": "Salida: callar la verdad",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-146",
+              "status": "backlog",
+              "title": "Salida: vender la verdad",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-147",
+              "status": "backlog",
+              "title": "Colapso del mercado de la Aetherita",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-148",
+              "status": "backlog",
+              "title": "Acto IV: arte",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-149",
+              "status": "backlog",
+              "title": "Transición a sandbox tras el Acto IV",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-150",
+              "status": "backlog",
+              "title": "Sistema de cintas coleccionables de Anselmo",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-151",
+              "status": "backlog",
+              "title": "Ocho cintas: guion y sonido",
+              "est": 8,
+              "prio": "P2"
             }
           ]
         },
@@ -1434,25 +2578,116 @@
           "name": "Mapa y ciudades",
           "tasks": [
             {
-              "id": "F4-40",
-              "title": "Mapa de Valdoria táctil",
-              "est": 12,
+              "id": "F4-152",
               "status": "backlog",
-              "desc": "Imagen estática con zonas tocables."
+              "title": "Mapa de Valdoria táctil: zonas tocables",
+              "est": 8,
+              "prio": "P1"
             },
             {
-              "id": "F4-41",
-              "title": "Edificios isométricos y vistas interiores",
-              "est": 30,
+              "id": "F4-153",
               "status": "backlog",
-              "desc": "Mapa de ciudad con edificios en isométrica y vista interior al entrar."
+              "title": "Estado visual del mapa: zonas bloqueadas y desbloqueadas",
+              "est": 5,
+              "prio": "P1"
             },
             {
-              "id": "F4-42",
-              "title": "Puerto Meridiano",
-              "est": 15,
+              "id": "F4-154",
               "status": "backlog",
-              "desc": "Capital con bolsa, ministerio y prensa."
+              "title": "Viaje entre regiones: tiempo y costo",
+              "est": 6,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-155",
+              "status": "backlog",
+              "title": "Edificios isométricos: tienda, taller, almacén y casa",
+              "est": 14,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-156",
+              "status": "backlog",
+              "title": "Edificios isométricos: Ministerio, Consorcio, Unión, bar y periódico",
+              "est": 16,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-157",
+              "status": "backlog",
+              "title": "Vista interior: tienda",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-158",
+              "status": "backlog",
+              "title": "Vista interior: taller",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-159",
+              "status": "backlog",
+              "title": "Vista interior: almacén",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-160",
+              "status": "backlog",
+              "title": "Vista interior: Ministerio",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-161",
+              "status": "backlog",
+              "title": "Vista interior: Consorcio Arvel",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-162",
+              "status": "backlog",
+              "title": "Vista interior: sede de la Unión",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-163",
+              "status": "backlog",
+              "title": "Vista interior: bar de Los Faroleros",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-164",
+              "status": "backlog",
+              "title": "Vista interior: periódico",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-165",
+              "status": "backlog",
+              "title": "Puerto Meridiano: mapa de ciudad",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-166",
+              "status": "backlog",
+              "title": "Bolsa: interfaz",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-167",
+              "status": "backlog",
+              "title": "Navegación entre mapa, ciudad y edificios",
+              "est": 6,
+              "prio": "P1"
             }
           ]
         },
@@ -1461,43 +2696,265 @@
           "name": "Procedural y rejugabilidad",
           "tasks": [
             {
-              "id": "F4-43",
-              "title": "Semilla y mundo variable",
-              "est": 12,
+              "id": "F4-168",
               "status": "backlog",
-              "desc": "Reglas fijas, mundo y circunstancias variables."
+              "title": "Variación del mundo por semilla",
+              "est": 8,
+              "prio": "P1"
             },
             {
-              "id": "F4-44",
+              "id": "F4-169",
+              "status": "backlog",
+              "title": "Variación de zonas y probabilidades por partida",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-170",
+              "status": "backlog",
+              "title": "Variación del perfil de mercado por partida",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-171",
+              "status": "backlog",
+              "title": "Calendario de eventos distinto por semilla",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-172",
+              "status": "backlog",
+              "title": "Nombres y clientes procedurales",
+              "est": 5,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-173",
+              "status": "backlog",
               "title": "Automatización de minijuegos dominados (prueba)",
               "est": 10,
-              "status": "backlog",
-              "desc": "Solo con herramienta alta y stats altos; probar si rompe el ritmo."
+              "prio": "P3"
             }
           ]
         },
         {
           "id": "F4.12",
-          "name": "Localización del contenido",
+          "name": "Localización ES/EN del contenido",
           "tasks": [
             {
-              "id": "F4-45",
-              "title": "Textos, noticias y diálogos ES/EN de todo el contenido",
-              "est": 40,
+              "id": "F4-174",
               "status": "backlog",
-              "desc": "Mantener las dos lenguas sincronizadas conforme se escribe el contenido de las zonas, noticias, eventos e historia."
+              "title": "Textos de zonas, peligros y enemigos",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-175",
+              "status": "backlog",
+              "title": "Textos de mercado, noticias y eventos",
+              "est": 10,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-176",
+              "status": "backlog",
+              "title": "Textos de eventos sociales",
+              "est": 5,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-177",
+              "status": "backlog",
+              "title": "Textos de facciones y mercado negro",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-178",
+              "status": "backlog",
+              "title": "Textos de empleados y contratos",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-179",
+              "status": "backlog",
+              "title": "Textos del Acto II",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-180",
+              "status": "backlog",
+              "title": "Textos del Acto III",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-181",
+              "status": "backlog",
+              "title": "Textos del Acto IV",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-182",
+              "status": "backlog",
+              "title": "Textos de logros y estilo de vida",
+              "est": 4,
+              "prio": "P2"
+            },
+            {
+              "id": "F4-183",
+              "status": "backlog",
+              "title": "Interfaz y mensajes del sistema",
+              "est": 4,
+              "prio": "P0"
+            }
+          ]
+        },
+        {
+          "id": "F4.13",
+          "name": "Sonido y música",
+          "tasks": [
+            {
+              "id": "F4-184",
+              "status": "backlog",
+              "title": "Sonidos de los minijuegos restantes",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-185",
+              "status": "backlog",
+              "title": "Ambientes de las zonas 2 a 6",
+              "est": 10,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-186",
+              "status": "backlog",
+              "title": "Música: mina, tienda, capital y Aetherita",
+              "est": 12,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-187",
+              "status": "backlog",
+              "title": "Blips de los personajes restantes",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-188",
+              "status": "backlog",
+              "title": "Sonidos de eventos sociales y mercado negro",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-189",
+              "status": "backlog",
+              "title": "Mezcla e integración del audio",
+              "est": 6,
+              "prio": "P1"
+            }
+          ]
+        },
+        {
+          "id": "F4.14",
+          "name": "Arte de personajes, íconos e interfaz",
+          "tasks": [
+            {
+              "id": "F4-190",
+              "status": "backlog",
+              "title": "Retratos finales: Esteban, Casilda, Ministro y Anselmo",
+              "est": 10,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-191",
+              "status": "backlog",
+              "title": "Sprites finales de los personajes restantes",
+              "est": 10,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-192",
+              "status": "backlog",
+              "title": "Íconos finales de los 10 minerales y de las herramientas",
+              "est": 12,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-193",
+              "status": "backlog",
+              "title": "Marcos, botones y componentes de interfaz",
+              "est": 16,
+              "prio": "P0"
+            }
+          ]
+        },
+        {
+          "id": "F4.15",
+          "name": "Calidad de la fase",
+          "tasks": [
+            {
+              "id": "F4-194",
+              "status": "backlog",
+              "title": "Pasada de pruebas manuales 1: zonas y mercado",
+              "est": 8,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-195",
+              "status": "backlog",
+              "title": "Pasada de pruebas manuales 2: empleados, facciones y eventos",
+              "est": 8,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-196",
+              "status": "backlog",
+              "title": "Pasada de pruebas manuales 3: historia completa",
+              "est": 12,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-197",
+              "status": "backlog",
+              "title": "Corrección de errores y ajustes (reserva 1 de 3)",
+              "est": 20,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-198",
+              "status": "backlog",
+              "title": "Corrección de errores y ajustes (reserva 2 de 3)",
+              "est": 20,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-199",
+              "status": "backlog",
+              "title": "Corrección de errores y ajustes (reserva 3 de 3)",
+              "est": 20,
+              "prio": "P0"
             }
           ]
         }
-      ]
+      ],
+      "confidence": "baja"
     },
     {
       "id": "F5",
       "name": "Pulido y lanzamiento",
       "target": "Release 1",
       "hours": [
-        125,
-        225
+        260,
+        485
       ],
       "goal": "Dejar el juego listo para publicar en Google Play: tutorial, balance, rendimiento, accesibilidad, legal y ficha de tienda.",
       "gate": null,
@@ -1508,17 +2965,31 @@
           "tasks": [
             {
               "id": "F5-01",
-              "title": "Tutorial guiado completo",
-              "est": 10,
               "status": "backlog",
-              "desc": "Enseñar a leer el mercado y a minar."
+              "title": "Tutorial guiado de los primeros 3 días",
+              "est": 8,
+              "prio": "P0"
             },
             {
               "id": "F5-02",
-              "title": "Ayudas contextuales",
-              "est": 5,
               "status": "backlog",
-              "desc": "Consejos que aparecen en el momento oportuno."
+              "title": "Consejos contextuales",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-03",
+              "status": "backlog",
+              "title": "Enciclopedia dentro del juego: minerales, facciones y glosario",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F5-04",
+              "status": "backlog",
+              "title": "Pruebas de comprensión con jugadores nuevos",
+              "est": 6,
+              "prio": "P1"
             }
           ]
         },
@@ -1527,18 +2998,46 @@
           "name": "Balance económico",
           "tasks": [
             {
-              "id": "F5-03",
-              "title": "Simulaciones masivas del mercado",
-              "est": 12,
+              "id": "F5-05",
               "status": "backlog",
-              "desc": "Detectar trucos, inflación y estrategias dominantes."
+              "title": "Simulaciones masivas del mercado: tres pasadas",
+              "est": 12,
+              "prio": "P0"
             },
             {
-              "id": "F5-04",
-              "title": "Ajuste de precios, multas y sumideros",
-              "est": 13,
+              "id": "F5-06",
               "status": "backlog",
-              "desc": "Iterar sobre los resultados."
+              "title": "Ajuste de precios y sumideros de dinero",
+              "est": 12,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-07",
+              "status": "backlog",
+              "title": "Ajuste de multas y vigilancia",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-08",
+              "status": "backlog",
+              "title": "Ajuste fino por nivel de dificultad",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-09",
+              "status": "backlog",
+              "title": "Partida completa de prueba, ronda 1",
+              "est": 12,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-10",
+              "status": "backlog",
+              "title": "Partida completa de prueba, ronda 2",
+              "est": 12,
+              "prio": "P1"
             }
           ]
         },
@@ -1547,18 +3046,46 @@
           "name": "Rendimiento y dispositivos",
           "tasks": [
             {
-              "id": "F5-05",
-              "title": "Pruebas en varios Android",
-              "est": 10,
+              "id": "F5-11",
               "status": "backlog",
-              "desc": "Gamas distintas y proporciones de pantalla."
+              "title": "Perfilado en tres gamas de Android",
+              "est": 8,
+              "prio": "P0"
             },
             {
-              "id": "F5-06",
-              "title": "Optimización y batería",
-              "est": 10,
+              "id": "F5-12",
               "status": "backlog",
-              "desc": "Tamaño de la app, consumo y arranque."
+              "title": "Optimización de render y memoria",
+              "est": 8,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-13",
+              "status": "backlog",
+              "title": "Tamaño de la app y compresión de assets",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-14",
+              "status": "backlog",
+              "title": "Consumo de batería y calor",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-15",
+              "status": "backlog",
+              "title": "Tiempos de arranque y carga",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-16",
+              "status": "backlog",
+              "title": "Pruebas con varios modelos de mando",
+              "est": 4,
+              "prio": "P2"
             }
           ]
         },
@@ -1567,18 +3094,39 @@
           "name": "Accesibilidad y opciones",
           "tasks": [
             {
-              "id": "F5-07",
-              "title": "Opciones de daltonismo, tamaño de texto, volumen y vibración",
-              "est": 9,
+              "id": "F5-17",
               "status": "backlog",
-              "desc": "Sin depender solo del color."
+              "title": "Opciones de daltonismo",
+              "est": 4,
+              "prio": "P1"
             },
             {
-              "id": "F5-08",
-              "title": "Remapeo de mando",
-              "est": 3,
+              "id": "F5-18",
               "status": "backlog",
-              "desc": "Configuración de botones."
+              "title": "Tamaño de texto",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-19",
+              "status": "backlog",
+              "title": "Revisión de contraste",
+              "est": 3,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-20",
+              "status": "backlog",
+              "title": "Volumen y vibración",
+              "est": 3,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-21",
+              "status": "backlog",
+              "title": "Remapeo de mando",
+              "est": 6,
+              "prio": "P2"
             }
           ]
         },
@@ -1587,46 +3135,74 @@
           "name": "Legal y tienda",
           "tasks": [
             {
-              "id": "F5-09",
+              "id": "F5-22",
+              "status": "backlog",
               "title": "Cuenta de desarrollador de Google Play",
               "est": 2,
-              "status": "backlog",
-              "desc": "Verificación de identidad."
+              "prio": "P0"
             },
             {
-              "id": "F5-10",
-              "title": "Política de privacidad pública",
-              "est": 4,
+              "id": "F5-23",
               "status": "backlog",
-              "desc": "Declarar que no se recopilan datos."
+              "title": "Política de privacidad pública en español e inglés",
+              "est": 6,
+              "prio": "P0"
             },
             {
-              "id": "F5-11",
-              "title": "Formularios de seguridad de datos y clasificación de contenido",
-              "est": 4,
+              "id": "F5-24",
               "status": "backlog",
-              "desc": "Coherentes con lo que hace el juego."
+              "title": "Términos de uso",
+              "est": 3,
+              "prio": "P1"
             },
             {
-              "id": "F5-12",
+              "id": "F5-25",
+              "status": "backlog",
               "title": "Créditos y licencias de terceros",
               "est": 4,
-              "status": "backlog",
-              "desc": "Godot, fuentes, assets, música."
+              "prio": "P0"
             },
             {
-              "id": "F5-13",
-              "title": "Búsqueda de marca y título definitivo",
-              "est": 3,
+              "id": "F5-26",
               "status": "backlog",
-              "desc": "Revisar conflictos antes de publicar."
+              "title": "Registro final de licencias de assets y audio",
+              "est": 6,
+              "prio": "P0"
             },
             {
-              "id": "F5-14",
-              "title": "Prueba cerrada con testers",
+              "id": "F5-27",
+              "status": "backlog",
+              "title": "Formularios de seguridad de datos",
               "est": 4,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-28",
               "status": "backlog",
-              "desc": "Cumplir el requisito vigente de la cuenta personal."
+              "title": "Clasificación de contenido",
+              "est": 3,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-29",
+              "status": "backlog",
+              "title": "Búsqueda de marca formal del título",
+              "est": 4,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-30",
+              "status": "backlog",
+              "title": "Declaración de uso de IA según las tiendas",
+              "est": 2,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-31",
+              "status": "backlog",
+              "title": "Prueba cerrada: reclutar testers y coordinar",
+              "est": 8,
+              "prio": "P0"
             }
           ]
         },
@@ -1635,32 +3211,60 @@
           "name": "Lanzamiento",
           "tasks": [
             {
-              "id": "F5-15",
-              "title": "Build firmado con la firma gestionada por Google Play",
-              "est": 4,
+              "id": "F5-32",
               "status": "backlog",
-              "desc": "Respaldo seguro de las claves."
+              "title": "Build firmado con respaldo seguro de las claves",
+              "est": 5,
+              "prio": "P0"
             },
             {
-              "id": "F5-16",
-              "title": "Ficha de tienda: capturas, descripción, ícono",
+              "id": "F5-33",
+              "status": "backlog",
+              "title": "Ficha de tienda en español",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-34",
+              "status": "backlog",
+              "title": "Ficha de tienda en inglés",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-35",
+              "status": "backlog",
+              "title": "Capturas de pantalla en español e inglés",
               "est": 8,
-              "status": "backlog",
-              "desc": "Material de presentación."
+              "prio": "P0"
             },
             {
-              "id": "F5-17",
-              "title": "Publicar y monitorear",
-              "est": 4,
+              "id": "F5-36",
               "status": "backlog",
-              "desc": "Revisar reportes de fallos y comentarios."
+              "title": "Tráiler corto",
+              "est": 10,
+              "prio": "P2"
             },
             {
-              "id": "F5-18",
-              "title": "Plan de actualizaciones",
-              "est": 4,
+              "id": "F5-37",
               "status": "backlog",
-              "desc": "Qué sigue después del lanzamiento."
+              "title": "Publicar en producción",
+              "est": 3,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-38",
+              "status": "backlog",
+              "title": "Monitoreo de la primera semana",
+              "est": 5,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-39",
+              "status": "backlog",
+              "title": "Plan de parches y actualizaciones",
+              "est": 4,
+              "prio": "P1"
             }
           ]
         },
@@ -1669,18 +3273,25 @@
           "name": "Métricas en producción",
           "tasks": [
             {
-              "id": "F5-19",
-              "title": "Revisar Android vitals de Google Play y definir umbrales",
-              "est": 3,
+              "id": "F5-40",
               "status": "backlog",
-              "desc": "Cierres, bloqueos, arranque, batería y renderizado lento."
+              "title": "Android vitals de Google Play y umbrales",
+              "est": 3,
+              "prio": "P1"
             },
             {
-              "id": "F5-20",
-              "title": "Actualizar política de privacidad y formularios con la telemetría real",
-              "est": 2,
+              "id": "F5-41",
               "status": "backlog",
-              "desc": "Que lo declarado coincida con lo que hace el juego."
+              "title": "Actualizar política y formularios con la telemetría real",
+              "est": 2,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-42",
+              "status": "backlog",
+              "title": "Resumen de métricas del lanzamiento en el panel",
+              "est": 4,
+              "prio": "P2"
             }
           ]
         },
@@ -1689,35 +3300,73 @@
           "name": "Marca y localización de tienda",
           "tasks": [
             {
-              "id": "F5-21",
-              "title": "Arte clave y capturas de tienda en ES y EN",
-              "est": 6,
+              "id": "F5-43",
               "status": "backlog",
-              "desc": "Material de presentación localizado."
+              "title": "Arte clave",
+              "est": 6,
+              "prio": "P1"
             },
             {
-              "id": "F5-22",
+              "id": "F5-44",
+              "status": "backlog",
               "title": "Kit de prensa",
               "est": 4,
-              "status": "backlog",
-              "desc": "Logos, capturas, descripción y datos del juego."
+              "prio": "P2"
             },
             {
-              "id": "F5-23",
+              "id": "F5-45",
+              "status": "backlog",
               "title": "Pruebas de localización: cortes de texto, glifos y formatos",
               "est": 8,
+              "prio": "P0"
+            }
+          ]
+        },
+        {
+          "id": "F5.9",
+          "name": "Calidad de la fase",
+          "tasks": [
+            {
+              "id": "F5-46",
               "status": "backlog",
-              "desc": "Revisar todas las pantallas en ambos idiomas, y números y fechas."
+              "title": "Pasada final de pruebas 1",
+              "est": 12,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-47",
+              "status": "backlog",
+              "title": "Pasada final de pruebas 2",
+              "est": 12,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-48",
+              "status": "backlog",
+              "title": "Corrección de errores y ajustes (reserva 1 de 2)",
+              "est": 20,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-49",
+              "status": "backlog",
+              "title": "Corrección de errores y ajustes (reserva 2 de 2)",
+              "est": 20,
+              "prio": "P0"
             }
           ]
         }
-      ]
+      ],
+      "confidence": "baja"
     },
     {
       "id": "F6",
       "name": "Evolutivo",
       "target": "Evolutivo",
-      "hours": null,
+      "hours": [
+        305,
+        570
+      ],
       "goal": "Ideas para después del lanzamiento. El casino es la primera actualización prevista; el resto se prioriza según cómo vaya el proyecto.",
       "gate": null,
       "milestones": [
@@ -1726,131 +3375,361 @@
           "name": "Casino (primera actualización tras el lanzamiento)",
           "tasks": [
             {
-              "id": "F6-04",
+              "id": "F6-01",
+              "status": "backlog",
               "title": "Diseño del casino: integración suave en la economía y la historia",
               "est": 8,
+              "prio": "P1",
+              "desc": "Quién lo opera (por ejemplo Los Faroleros), dónde está, cómo se integra con el mercado negro y la vigilancia, y cómo funciona como sumidero. Solo moneda del juego."
+            },
+            {
+              "id": "F6-02",
               "status": "backlog",
-              "desc": "Quién lo opera (por ejemplo Los Faroleros), dónde está, cómo se integra con el mercado negro y la vigilancia, y cómo funciona como sumidero de dinero. Solo moneda del juego."
+              "title": "Tragamonedas: lógica y probabilidades",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F6-03",
+              "status": "backlog",
+              "title": "Tragamonedas: arte y sonido",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F6-04",
+              "status": "backlog",
+              "title": "Tragamonedas: interfaz y mando",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F6-05",
+              "status": "backlog",
+              "title": "Ruleta: lógica",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F6-06",
+              "status": "backlog",
+              "title": "Ruleta: arte y sonido",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F6-07",
+              "status": "backlog",
+              "title": "Ruleta: interfaz y mando",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F6-08",
+              "status": "backlog",
+              "title": "Blackjack: lógica",
+              "est": 8,
+              "prio": "P1"
+            },
+            {
+              "id": "F6-09",
+              "status": "backlog",
+              "title": "Blackjack: arte y sonido",
+              "est": 6,
+              "prio": "P1"
             },
             {
               "id": "F6-10",
-              "title": "Tragamonedas",
-              "est": 20,
               "status": "backlog",
-              "desc": "Máquina con premios, probabilidades configurables y estética coherente con el juego."
+              "title": "Blackjack: interfaz y mando",
+              "est": 4,
+              "prio": "P1"
             },
             {
               "id": "F6-11",
-              "title": "Ruleta",
-              "est": 16,
               "status": "backlog",
-              "desc": "Ruleta con apuestas simples y combinadas."
+              "title": "Integración: edificio, facciones y vigilancia",
+              "est": 8,
+              "prio": "P1"
             },
             {
               "id": "F6-12",
-              "title": "Blackjack",
-              "est": 16,
               "status": "backlog",
-              "desc": "Partida contra la casa con reglas claras."
+              "title": "Logros y estadísticas del casino",
+              "est": 4,
+              "prio": "P2"
             },
             {
               "id": "F6-13",
-              "title": "Integración: edificio, facciones, vigilancia, logros y estadísticas",
-              "est": 14,
               "status": "backlog",
-              "desc": "El casino como lugar del mapa, con consecuencias en el resto del juego."
+              "title": "Revisión de clasificación por edad y políticas de las tiendas",
+              "est": 3,
+              "prio": "P1"
             },
             {
               "id": "F6-14",
-              "title": "Revisión de clasificación por edad y políticas de las tiendas para azar simulado",
-              "est": 3,
               "status": "backlog",
-              "desc": "Verificar los requisitos vigentes antes de publicar la actualización."
+              "title": "Opciones de juego responsable con moneda del juego",
+              "est": 4,
+              "prio": "P1"
             },
             {
               "id": "F6-15",
-              "title": "Opciones de juego responsable con moneda del juego",
-              "est": 4,
               "status": "backlog",
-              "desc": "Límites de apuesta y avisos de sesión larga."
+              "title": "Balance del casino como sumidero de dinero",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F6-16",
+              "status": "backlog",
+              "title": "Textos del casino en español e inglés",
+              "est": 4,
+              "prio": "P1"
+            },
+            {
+              "id": "F6-17",
+              "status": "backlog",
+              "title": "Pruebas y reserva de la actualización",
+              "est": 10,
+              "prio": "P1"
             }
           ]
         },
         {
           "id": "F6.2",
-          "name": "Plataformas",
+          "name": "iOS",
           "tasks": [
             {
-              "id": "F6-01",
-              "title": "Versión iOS",
-              "est": 40,
+              "id": "F6-18",
               "status": "backlog",
-              "desc": "Cuenta de Apple, pruebas en dispositivo y publicación."
+              "title": "Cuenta de Apple Developer",
+              "est": 2,
+              "prio": "P2"
             },
             {
-              "id": "F6-02",
-              "title": "Versión PC en Steam",
-              "est": 50,
+              "id": "F6-19",
               "status": "backlog",
-              "desc": "Declaración de uso de IA y soporte de teclado y mando."
+              "title": "Exportación y firma para iOS",
+              "est": 6,
+              "prio": "P2"
             },
             {
-              "id": "F6-03",
-              "title": "Evaluar consolas",
-              "est": 20,
+              "id": "F6-20",
               "status": "backlog",
-              "desc": "Revisar requisitos y opciones de port."
+              "title": "Pruebas en dispositivo iOS",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F6-21",
+              "status": "backlog",
+              "title": "Ajustes de interfaz para iPhone: áreas seguras",
+              "est": 6,
+              "prio": "P2"
+            },
+            {
+              "id": "F6-22",
+              "status": "backlog",
+              "title": "Ficha de App Store en español e inglés",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F6-23",
+              "status": "backlog",
+              "title": "Revisión de Apple y correcciones",
+              "est": 6,
+              "prio": "P2"
             }
           ]
         },
         {
           "id": "F6.3",
-          "name": "Contenido nuevo",
+          "name": "PC y Steam",
           "tasks": [
             {
-              "id": "F6-05",
-              "title": "Calidad de minerales",
-              "est": 30,
+              "id": "F6-24",
               "status": "backlog",
-              "desc": "Común, buena y excelente con efecto en precio y contratos."
+              "title": "Exportación a PC",
+              "est": 6,
+              "prio": "P2"
             },
             {
-              "id": "F6-06",
-              "title": "Capa de imperio: sucursales y otras ciudades",
-              "est": 80,
+              "id": "F6-25",
               "status": "backlog",
-              "desc": "Más tiendas, mercados de otras regiones y plantillas mayores."
+              "title": "Teclado y ratón",
+              "est": 8,
+              "prio": "P2"
             },
             {
-              "id": "F6-07",
-              "title": "Eventos de temporada",
-              "est": 30,
+              "id": "F6-26",
               "status": "backlog",
-              "desc": "Eventos recurrentes y especiales."
+              "title": "Logros de Steam",
+              "est": 6,
+              "prio": "P2"
+            },
+            {
+              "id": "F6-27",
+              "status": "backlog",
+              "title": "Ficha de Steam y declaración de uso de IA",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F6-28",
+              "status": "backlog",
+              "title": "Pruebas en PC",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F6-29",
+              "status": "backlog",
+              "title": "Evaluar opciones y requisitos de consolas",
+              "est": 10,
+              "prio": "P3"
             }
           ]
         },
         {
           "id": "F6.4",
-          "name": "Presentación",
+          "name": "Calidad de minerales",
           "tasks": [
             {
-              "id": "F6-08",
-              "title": "Voces de personajes",
-              "est": 40,
+              "id": "F6-30",
               "status": "backlog",
-              "desc": "Reemplazar o complementar los blips."
+              "title": "Calidad de minerales: modelo de datos",
+              "est": 8,
+              "prio": "P2"
             },
             {
-              "id": "F6-09",
-              "title": "Idiomas adicionales (por ejemplo portugués, francés, alemán)",
-              "est": 30,
+              "id": "F6-31",
               "status": "backlog",
-              "desc": "Español e inglés ya están desde el inicio; esto suma más idiomas usando el mismo marco de traducción."
+              "title": "Calidad: relación con minijuegos y rendimiento",
+              "est": 8,
+              "prio": "P2"
+            },
+            {
+              "id": "F6-32",
+              "status": "backlog",
+              "title": "Calidad: precio y contratos",
+              "est": 6,
+              "prio": "P2"
+            },
+            {
+              "id": "F6-33",
+              "status": "backlog",
+              "title": "Calidad: interfaz",
+              "est": 4,
+              "prio": "P2"
+            }
+          ]
+        },
+        {
+          "id": "F6.5",
+          "name": "Capa de imperio",
+          "tasks": [
+            {
+              "id": "F6-34",
+              "status": "backlog",
+              "title": "Sucursales",
+              "est": 12,
+              "prio": "P2"
+            },
+            {
+              "id": "F6-35",
+              "status": "backlog",
+              "title": "Otras ciudades: mercados propios",
+              "est": 20,
+              "prio": "P3"
+            },
+            {
+              "id": "F6-36",
+              "status": "backlog",
+              "title": "Plantillas mayores de empleados",
+              "est": 8,
+              "prio": "P3"
+            }
+          ]
+        },
+        {
+          "id": "F6.6",
+          "name": "Eventos de temporada",
+          "tasks": [
+            {
+              "id": "F6-37",
+              "status": "backlog",
+              "title": "Sistema de eventos de temporada",
+              "est": 10,
+              "prio": "P3"
+            },
+            {
+              "id": "F6-38",
+              "status": "backlog",
+              "title": "Temporada 1",
+              "est": 10,
+              "prio": "P3"
+            },
+            {
+              "id": "F6-39",
+              "status": "backlog",
+              "title": "Temporada 2",
+              "est": 10,
+              "prio": "P3"
+            }
+          ]
+        },
+        {
+          "id": "F6.7",
+          "name": "Voces e idiomas adicionales",
+          "tasks": [
+            {
+              "id": "F6-40",
+              "status": "backlog",
+              "title": "Voces: pruebas y selección",
+              "est": 8,
+              "prio": "P3"
+            },
+            {
+              "id": "F6-41",
+              "status": "backlog",
+              "title": "Voces de los protagonistas",
+              "est": 12,
+              "prio": "P3"
+            },
+            {
+              "id": "F6-42",
+              "status": "backlog",
+              "title": "Voces de los personajes principales",
+              "est": 20,
+              "prio": "P3"
+            },
+            {
+              "id": "F6-43",
+              "status": "backlog",
+              "title": "Idioma adicional: portugués",
+              "est": 20,
+              "prio": "P3"
+            },
+            {
+              "id": "F6-44",
+              "status": "backlog",
+              "title": "Idioma adicional: francés",
+              "est": 20,
+              "prio": "P3"
+            },
+            {
+              "id": "F6-45",
+              "status": "backlog",
+              "title": "Idioma adicional: alemán",
+              "est": 20,
+              "prio": "P3"
             }
           ]
         }
-      ]
+      ],
+      "confidence": "baja"
     }
   ]
 }

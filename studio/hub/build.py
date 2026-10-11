@@ -29,6 +29,8 @@ TASKS_DIR = DATA / "tasks"
 EVIDENCE = STUDIO / "evidence"
 
 VALID_STATUS = ["backlog", "sprint", "doing", "review", "done", "dropped"]
+VALID_PRIO = ["P0", "P1", "P2", "P3"]
+MAX_EST = 20  # una tarea más grande debe desglosarse
 VALID_EVIDENCE = ["image", "link", "note", "file", "doc"]
 VALID_AUTHORS = ["autor", "claude"]
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -152,6 +154,10 @@ def check_roadmap(roadmap, activity):
                     warn("Objetivo inválido en %s: %s" % (tid, task["target"]))
                 if "est" not in task:
                     warn("Falta 'est' en %s" % tid)
+                elif task["est"] > MAX_EST:
+                    warn("%s tiene %s h: desglosar (máximo %s h por tarea)" % (tid, task["est"], MAX_EST))
+                if task.get("prio") not in VALID_PRIO:
+                    warn("Prioridad inválida o ausente en %s: %s" % (tid, task.get("prio")))
                 act = activity.get(tid, {})
                 check_activity(tid, task["status"], act)
                 task["history"] = act.get("history", [])
