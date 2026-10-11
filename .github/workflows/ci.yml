@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+# Las acciones se fijan por versión; la tarea F1-35 las fija por hash.
+jobs:
+  studio:
+    name: Estudio (roadmap, tareas, QA y hub)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validar roadmap, tareas, catálogo de QA y registro de errores
+        run: python3 studio/hub/build.py --strict
+      - name: Comprobar que hub/data.js está al día
+        run: python3 studio/hub/build.py --check
+
+  tools:
+    name: Pruebas de las herramientas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verificador de arquitectura
+        run: python3 -m unittest discover -s tools/arch -v
+      - name: Verificador de commits
+        run: python3 -m unittest discover -s tools/ci -v
+
+  commits:
+    name: Convención de commits
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verificar los mensajes del PR
+        run: python3 tools/ci/check_commits.py "origin/${{ github.base_ref }}..HEAD"
+
+  architecture:
+    name: Arquitectura modular de game/
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verificar capas, módulos y dependencias
+        run: python3 tools/arch/check_architecture.py game
+
+  game:
+    name: Juego (formato, lint y pruebas)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar si existe el proyecto Godot
+        id: godot
+        run: |
+          if [ -f game/project.godot ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; else echo "exists=false" >> "$GITHUB_OUTPUT"; fi
+      - name: Aviso
+        if: steps.godot.outputs.exists == 'false'
+        run: echo "Todavía no existe game/project.godot. Formato, lint y pruebas se activan en las tareas F1-32 y F1-33."
