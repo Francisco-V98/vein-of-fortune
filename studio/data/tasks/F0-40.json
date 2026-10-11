@@ -1,0 +1,65 @@
+{
+  "id": "F0-40",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pide una página con todo el contexto, la historia y el juego, como una presentación, para tenerlo todo en un lugar.",
+      "ref": "rama studio/F0-40-pagina-de-presentacion"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "28 láminas basadas en los documentos, con navegación por teclado, pantalla completa, impresión y cálculo en vivo de fases y estado.",
+      "ref": "rama studio/F0-40-pagina-de-presentacion"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "¿Puedes agregar una página con todo el contexto, historia y todo sobre el juego, como una presentación, para tenerlo todo en un lugar?"
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Es un resumen curado: si un documento cambia, hay que revisar la lámina que lo cita (cada una enlaza a su fuente). Las láminas de plan y estado se calculan en vivo del roadmap. El modo de pantalla completa no pude probarlo en el panel de vista previa."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Portada",
+      "path": "evidence/F0-40/portada.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Lámina de minijuegos",
+      "path": "evidence/F0-40/minijuegos.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Lámina del plan (calculada en vivo)",
+      "path": "evidence/F0-40/plan.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Contenido de las láminas",
+      "path": "data/presentation.json"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "28 láminas y 28 puntos de navegación; 42 enlaces a fuentes válidos; 13 imágenes sin roturas; teclado (flechas, Inicio y Fin) probado; sin errores en la consola; a 375 px de ancho la página no desborda."
+    }
+  ]
+}
