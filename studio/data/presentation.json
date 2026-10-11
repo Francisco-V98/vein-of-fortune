@@ -1,318 +1,1742 @@
 {
-  "version": 1,
-  "note": "Resumen curado de los documentos de diseño. Cada lámina enlaza a su fuente. Si un documento cambia, hay que revisar la lámina.",
+  "version": 2,
+  "note": "Resumen visual y curado de los documentos de diseño. Cada lámina enlaza a su fuente; si un documento cambia, hay que revisar la lámina. Los recortes (sheet) usan las hojas de arte de referencia: col y row cuentan desde 0.",
+  "sections": [
+    {
+      "id": "idea",
+      "n": "01",
+      "title": "La idea",
+      "blurb": "Qué es Veta de Fortuna",
+      "accent": "#e3b25c",
+      "image": "assets-ref/prueba-de-estilo-2/mina-horizontal.png"
+    },
+    {
+      "id": "juego",
+      "n": "02",
+      "title": "Cómo se juega",
+      "blurb": "El día, la mina y el mercado",
+      "accent": "#8fb0ba",
+      "image": "assets-ref/prueba-de-estilo-2/ui-tienda.png"
+    },
+    {
+      "id": "mundo",
+      "n": "03",
+      "title": "El mundo",
+      "blurb": "Valdoria, sus zonas y quién manda",
+      "accent": "#4fb6a5",
+      "image": "assets-ref/prueba-de-estilo-2/mapa-valdoria.png"
+    },
+    {
+      "id": "historia",
+      "n": "04",
+      "title": "La historia",
+      "blurb": "Una deuda, un misterio y una cima",
+      "accent": "#c23b55",
+      "image": "assets-ref/prueba-de-estilo-2/retratos-b.png"
+    },
+    {
+      "id": "arte",
+      "n": "05",
+      "title": "Arte y marca",
+      "blurb": "Cómo se ve, suena y habla",
+      "accent": "#b8893a",
+      "image": "assets-ref/prueba-de-estilo-2/edificios.png"
+    },
+    {
+      "id": "proyecto",
+      "n": "06",
+      "title": "El proyecto",
+      "blurb": "Cómo se construye y dónde vamos",
+      "accent": "#86c5e8",
+      "image": "assets-ref/prueba-de-estilo-2/ui-mercado.png"
+    }
+  ],
   "slides": [
     {
-      "id": "portada", "layout": "hero", "kicker": "Presentación del juego",
+      "id": "portada",
+      "layout": "cover",
+      "kicker": "Presentación del juego",
       "title": "Veta de Fortuna",
-      "subtitle": "Vein of Fortune · Un cuento de minería y comercio en Valdoria",
-      "chips": ["Android primero", "Horizontal", "Pixel art", "ES y EN", "Un jugador", "Pago único"],
+      "titleEn": "Vein of Fortune",
+      "tagline": "Un cuento de minería y comercio en Valdoria",
+      "chips": [
+        "Android primero",
+        "Horizontal",
+        "Pixel art",
+        "ES y EN",
+        "Un jugador",
+        "Pago único"
+      ],
       "image": "assets-ref/prueba-de-estilo-2/mina-horizontal.png",
-      "source": ["00-vision", "13-marca-e-identidad"]
+      "source": [
+        "00-vision",
+        "13-marca-e-identidad"
+      ]
     },
     {
-      "id": "idea", "layout": "quote", "kicker": "La idea",
-      "quote": "Un optimista hereda una deuda, una licencia y un puesto de mercado en una nación dura donde mandan el poder y la corrupción. Mina, lee el mercado, negocia y asciende.",
+      "id": "agenda",
+      "layout": "agenda",
+      "kicker": "Contenido",
+      "title": "Seis partes para entenderlo todo",
+      "source": [
+        "00-vision"
+      ]
+    },
+    {
+      "id": "s-idea",
+      "layout": "section",
+      "section": "idea"
+    },
+    {
+      "id": "idea",
+      "layout": "statement",
+      "section": "idea",
+      "kicker": "En una frase",
+      "statement": "Heredas una deuda, una licencia y un puesto de mercado en una nación dura. Mina, lee el mercado, negocia y asciende.",
       "author": "No cambias el país, pero cambias tu lugar en él.",
-      "source": ["00-vision", "08-historia-y-personaje"]
-    },
-    {
-      "id": "ficha", "layout": "table", "kicker": "Ficha del juego", "title": "Qué es y para qué plataforma",
-      "head": ["Aspecto", "Decisión"],
-      "rows": [
-        ["Título", "**Veta de Fortuna** (español) · **Vein of Fortune** (inglés). «Veta» y «fortuna» significan a la vez mineral y suerte"],
-        ["Mundo", "La República de **Valdoria**, una nación en plena revolución industrial"],
-        ["Género", "Gestión, minería y comercio con un mercado simulado"],
-        ["Plataforma", "**Android primero**; iOS, PC y consolas más adelante si todo va bien"],
-        ["Pantalla y controles", "Horizontal; táctil y mando (con mando el HUD táctil se oculta)"],
-        ["Estética", "Pixel art retrofuturista (industrial con aire atómico), paleta fría con acento vinotinto"],
-        ["Modo y modelo", "Un jugador, sin conexión ni cuentas; **pago único**, sin anuncios"],
-        ["Idiomas", "Español e inglés desde el inicio, con marco para sumar más"],
-        ["Motor", "Godot 4.x con GDScript"],
-        ["Origen", "Proyecto personal primero: se hace para disfrutarlo; publicar es una decisión posterior"]
+      "tiles": [
+        {
+          "glyph": "◆",
+          "label": "Género",
+          "value": "Gestión, minería y comercio"
+        },
+        {
+          "glyph": "▲",
+          "label": "Mercado",
+          "value": "Simulado, con noticias y sesgos"
+        },
+        {
+          "glyph": "☼",
+          "label": "Protagonista",
+          "value": "Un optimista en un mundo cínico"
+        },
+        {
+          "glyph": "∞",
+          "label": "Final",
+          "value": "Historia con actos y luego sandbox"
+        }
       ],
-      "source": ["00-vision", "10-tecnico-y-herramientas"]
+      "source": [
+        "00-vision",
+        "08-historia-y-personaje"
+      ]
     },
     {
-      "id": "pilares", "layout": "cards", "kicker": "Diseño", "title": "Cinco pilares", "cols": 3,
+      "id": "ficha",
+      "layout": "specs",
+      "section": "idea",
+      "kicker": "Ficha del juego",
+      "title": "Qué es, en diez datos",
+      "items": [
+        {
+          "glyph": "◆",
+          "label": "Título",
+          "value": "Veta de Fortuna · Vein of Fortune"
+        },
+        {
+          "glyph": "▣",
+          "label": "Mundo",
+          "value": "República de Valdoria"
+        },
+        {
+          "glyph": "●",
+          "label": "Plataforma",
+          "value": "Android primero; luego iOS, PC y consolas"
+        },
+        {
+          "glyph": "▤",
+          "label": "Pantalla",
+          "value": "Horizontal · táctil y mando"
+        },
+        {
+          "glyph": "✦",
+          "label": "Estética",
+          "value": "Pixel art retrofuturista"
+        },
+        {
+          "glyph": "◐",
+          "label": "Modo",
+          "value": "Un jugador, sin conexión"
+        },
+        {
+          "glyph": "■",
+          "label": "Modelo",
+          "value": "Pago único, sin anuncios"
+        },
+        {
+          "glyph": "☾",
+          "label": "Idiomas",
+          "value": "Español e inglés"
+        },
+        {
+          "glyph": "⬢",
+          "label": "Motor",
+          "value": "Godot 4.x · GDScript"
+        },
+        {
+          "glyph": "♦",
+          "label": "Origen",
+          "value": "Proyecto personal primero"
+        }
+      ],
+      "source": [
+        "00-vision",
+        "10-tecnico-y-herramientas"
+      ]
+    },
+    {
+      "id": "pilares",
+      "layout": "cards",
+      "section": "idea",
+      "kicker": "Diseño",
+      "title": "Cinco pilares",
+      "cols": 5,
+      "numbered": true,
       "cards": [
-        {"title": "La información es poder", "text": "Saber qué hay en una mena, qué hará el mercado o qué peligro tiene una zona vale dinero, y se progresa en ello."},
-        {"title": "Dos mitades, un solo juego", "text": "Lo que pasa en las minas mueve el mercado, y lo que pide el mercado dirige a dónde ir a minar."},
-        {"title": "Decisiones con riesgo", "text": "Energía, desgaste de herramientas, peligros y pérdida parcial de carga obligan a elegir."},
-        {"title": "Cada partida distinta", "text": "Mundo, mercado y eventos procedurales. Las reglas son fijas; el mundo cambia."},
-        {"title": "Libertad con consecuencias", "text": "Decides cómo usar tu día, pero descuidar una mitad se paga."}
+        {
+          "title": "La información es poder",
+          "text": "Saber vale dinero."
+        },
+        {
+          "title": "Dos mitades, un juego",
+          "text": "La mina mueve el mercado y el mercado dirige la mina."
+        },
+        {
+          "title": "Decisiones con riesgo",
+          "text": "Energía, desgaste y pérdidas obligan a elegir."
+        },
+        {
+          "title": "Cada partida distinta",
+          "text": "Reglas fijas, mundo cambiante."
+        },
+        {
+          "title": "Libertad con consecuencias",
+          "text": "Descuidar una mitad se paga."
+        }
       ],
-      "source": ["00-vision"]
+      "source": [
+        "00-vision"
+      ]
     },
     {
-      "id": "bucle", "layout": "timeline", "kicker": "Cómo se juega", "title": "Un día, tres bloques",
-      "lead": "Cada día tiene **mañana, tarde y noche**. Una expedición o atender la tienda consume un bloque; mirar el mercado, leer noticias y organizar el inventario es gratis.",
+      "id": "s-juego",
+      "layout": "section",
+      "section": "juego"
+    },
+    {
+      "id": "dia",
+      "layout": "day",
+      "section": "juego",
+      "kicker": "El día",
+      "title": "Tres bloques por día",
+      "blocks": [
+        {
+          "glyph": "☼",
+          "name": "Mañana",
+          "text": "Expedición o tienda"
+        },
+        {
+          "glyph": "◐",
+          "name": "Tarde",
+          "text": "Expedición o tienda"
+        },
+        {
+          "glyph": "☾",
+          "name": "Noche",
+          "text": "Tienda, contratos y mercado negro"
+        }
+      ],
+      "cost": "Una expedición o un turno de tienda cuesta 1 bloque (2 en zonas profundas).",
+      "free": {
+        "title": "Gratis, sin gastar bloques",
+        "items": [
+          "Leer el mercado",
+          "Leer las noticias",
+          "Organizar el inventario"
+        ]
+      },
+      "foot": "Al cerrar el día: el mercado avanza, aparecen noticias, las zonas se regeneran y se pagan costos.",
+      "source": [
+        "01-core-loop"
+      ]
+    },
+    {
+      "id": "mitades",
+      "layout": "cycle",
+      "section": "juego",
+      "kicker": "El núcleo",
+      "title": "Dos mitades que se alimentan",
+      "left": {
+        "title": "Extracción",
+        "points": [
+          "Zonas y peligros",
+          "Menas con probabilidades",
+          "Minijuegos"
+        ]
+      },
+      "right": {
+        "title": "Comercio",
+        "points": [
+          "Mercado y noticias",
+          "Tienda y contratos",
+          "Refinado"
+        ]
+      },
+      "toRight": "La escasez de una zona sube el precio",
+      "toLeft": "La demanda dice a dónde ir a minar",
+      "source": [
+        "00-vision",
+        "02-extraccion",
+        "03-comercio"
+      ]
+    },
+    {
+      "id": "extraccion",
+      "layout": "cards",
+      "section": "juego",
+      "kicker": "Extracción",
+      "title": "Minar es decidir",
+      "cols": 4,
+      "stats": [
+        {
+          "n": "6",
+          "l": "zonas"
+        },
+        {
+          "n": "5",
+          "l": "niveles de herramienta"
+        },
+        {
+          "n": "100%",
+          "l": "decisión previa al viaje"
+        }
+      ],
+      "cards": [
+        {
+          "glyph": "◈",
+          "title": "El detector",
+          "text": "Muestra rangos, no valores exactos.",
+          "ranges": [
+            {
+              "label": "Carbón",
+              "min": 40,
+              "max": 60
+            },
+            {
+              "label": "Oro",
+              "min": 20,
+              "max": 40
+            },
+            {
+              "label": "Diamante",
+              "min": 0,
+              "max": 6
+            }
+          ]
+        },
+        {
+          "glyph": "▲",
+          "title": "Herramientas",
+          "text": "Se desgastan; mejorarlas cuesta minerales.",
+          "chips": [
+            "Pico",
+            "Taladro",
+            "Cincel",
+            "Criba",
+            "Explosivo"
+          ]
+        },
+        {
+          "glyph": "✚",
+          "title": "Peligros",
+          "text": "Gas, derrumbes y frío: tareas cortas y el equipo que llevaste."
+        },
+        {
+          "glyph": "◆",
+          "title": "Encuentros",
+          "text": "Ves las probabilidades antes de decidir.",
+          "chips": [
+            "Pelear",
+            "Huir",
+            "Sobornar",
+            "Soltar carga"
+          ]
+        }
+      ],
+      "source": [
+        "02-extraccion"
+      ]
+    },
+    {
+      "id": "minijuegos",
+      "layout": "showcase",
+      "section": "juego",
+      "kicker": "Minijuegos",
+      "title": "Cortos y siempre con dos variables en tensión",
+      "image": "assets-ref/prueba-de-estilo-2/minijuegos.png",
+      "caption": "Picado, Perforación y Regateo (referencia)",
+      "items": [
+        {
+          "name": "Picado",
+          "tension": "Fuerza ↔ Precisión"
+        },
+        {
+          "name": "Perforación",
+          "tension": "Velocidad ↔ Calor"
+        },
+        {
+          "name": "Cincelado",
+          "tension": "Precisión pura"
+        },
+        {
+          "name": "Cribado",
+          "tension": "Inclinación ↔ Caudal"
+        },
+        {
+          "name": "Detonación",
+          "tension": "Potencia ↔ Ubicación"
+        },
+        {
+          "name": "Contención",
+          "tension": "Presión ↔ Resonancia"
+        },
+        {
+          "name": "Regateo",
+          "tension": "Oferta ↔ Paciencia"
+        },
+        {
+          "name": "Refinado",
+          "tension": "Temperatura ↔ Tiempo"
+        }
+      ],
+      "foot": "MVP: Picado, Perforación y Regateo. De 8 a 15 segundos, con táctil o mando.",
+      "source": [
+        "09-minijuegos"
+      ]
+    },
+    {
+      "id": "mercado",
+      "layout": "market",
+      "section": "juego",
+      "kicker": "Comercio",
+      "title": "Un mercado que se comporta como uno real",
+      "points": [
+        {
+          "glyph": "▲",
+          "title": "Valor justo",
+          "text": "El precio lo persigue con retraso, ruido y momentum."
+        },
+        {
+          "glyph": "◐",
+          "title": "Tres veces al día",
+          "text": "Una actualización por bloque."
+        },
+        {
+          "glyph": "◆",
+          "title": "Diez minerales",
+          "text": "Estables, volátiles, estacionales, estratégicos y de lujo."
+        },
+        {
+          "glyph": "✚",
+          "title": "Frenos a los trucos",
+          "text": "Spread, slippage, costo de almacén, impuestos y límites."
+        }
+      ],
+      "foot": "Bots agregados: industrial, especulador, acaparador y pánico.",
+      "source": [
+        "03-comercio"
+      ]
+    },
+    {
+      "id": "informacion",
+      "layout": "ladder",
+      "section": "juego",
+      "kicker": "Comercio",
+      "title": "La información se compra",
       "steps": [
-        {"title": "Leer el contexto", "text": "Precios, noticias, pedidos y rumores. No gasta bloques."},
-        {"title": "Decidir el plan", "text": "A qué zona ir, qué preparar y qué vender."},
-        {"title": "Expedición", "text": "Escanear, elegir menas, minar y afrontar peligros. 1 bloque (2 en zonas profundas)."},
-        {"title": "Volver y vender", "text": "Refinar, almacenar, cerrar contratos y atender la tienda. 1 bloque."},
-        {"title": "Cerrar el día", "text": "El mercado avanza, aparecen noticias, las zonas se regeneran y se pagan costos."}
+        {
+          "tag": "Gratis",
+          "title": "Básica",
+          "text": "Precio y flecha de tendencia."
+        },
+        {
+          "tag": "Se compra",
+          "title": "Prensa",
+          "text": "Titulares y rumores de tres medios."
+        },
+        {
+          "tag": "Mejoras",
+          "title": "Análisis",
+          "text": "Gráficos y oferta frente a demanda."
+        },
+        {
+          "tag": "Avanzado",
+          "title": "Tabulador",
+          "text": "Valor justo estimado, con margen de error."
+        }
       ],
-      "source": ["01-core-loop"]
+      "foot": "Las noticias traen fiabilidad variable: confirmada, rumor o falsa alarma.",
+      "source": [
+        "03-comercio"
+      ]
     },
     {
-      "id": "mitades", "layout": "cards", "kicker": "Cómo se juega", "title": "Las dos mitades", "cols": 2,
-      "lead": "Se alimentan entre sí: la escasez de una zona sube el precio, y la demanda del mercado dice dónde conviene minar.",
+      "id": "tienda",
+      "layout": "cards",
+      "section": "juego",
+      "kicker": "Comercio",
+      "title": "Seis maneras de mover mercancía",
+      "cols": 3,
       "cards": [
-        {"title": "Extracción", "tag": "Explorar y arriesgar", "text": "Elige una zona según sus peligros, escanea las menas, decide cuál vale la pena y juega un minijuego para extraerla. Cada herramienta se desgasta y un encuentro mal resuelto puede costarte parte de la carga."},
-        {"title": "Comercio", "tag": "Leer y negociar", "text": "Un mercado que sube y baja como uno real. Lee noticias de fuentes con sesgos distintos, compra barato, guarda hasta que suba, cumple contratos, refina y atiende tu tienda."}
+        {
+          "glyph": "▲",
+          "title": "Mercado spot",
+          "text": "Precio del día."
+        },
+        {
+          "glyph": "■",
+          "title": "Contratos",
+          "text": "Precio fijo y plazo.",
+          "chips": [
+            "Estándar",
+            "Urgente",
+            "Largo plazo",
+            "Oficial",
+            "Negro"
+          ]
+        },
+        {
+          "glyph": "◆",
+          "title": "Trueque",
+          "text": "Con comerciantes, ganando reputación."
+        },
+        {
+          "glyph": "◈",
+          "title": "Marketplace",
+          "text": "Para comprar lo que te falta."
+        },
+        {
+          "glyph": "✦",
+          "title": "Refinado",
+          "text": "Mena → lingote → producto.",
+          "chips": [
+            "Acero",
+            "Conductor",
+            "Oscilador",
+            "Joyería",
+            "Pólvora",
+            "Celda de éter"
+          ]
+        },
+        {
+          "glyph": "▣",
+          "title": "Almacén",
+          "text": "Capacidad limitada y con costo: especular tiene un precio."
+        }
       ],
-      "source": ["00-vision", "02-extraccion", "03-comercio"]
+      "source": [
+        "03-comercio"
+      ]
     },
     {
-      "id": "extraccion", "layout": "bullets", "kicker": "Extracción", "title": "Minar es decidir",
-      "bullets": [
-        "**Seis zonas** que se desbloquean por etapas; cada una con sus minerales, probabilidades, peligros y nivel de riesgo visible.",
-        "**El detector** muestra rangos de composición («oro 20–40 %»), no valores exactos. Mejor herramienta, rangos más estrechos.",
-        "**Herramientas con desgaste** y cinco niveles: el material de más nivel exige mejores herramientas, y mejorarlas cuesta minerales.",
-        "**Peligros ambientales** (gas, derrumbes, frío…) que se afrontan con tareas cortas y con el equipo que elegiste antes de salir.",
-        "**Encuentros con decisión:** pelear, huir, sobornar o soltar parte de la carga. Ves las probabilidades antes de decidir.",
-        "**Pérdida parcial:** perder un encuentro cuesta una parte de la carga, nunca todo.",
-        "Las zonas se **agotan y se regeneran** por ciclos visibles."
+      "id": "negro",
+      "layout": "meter",
+      "section": "juego",
+      "kicker": "Mercado negro",
+      "title": "Paga más, pero te vigilan",
+      "facts": [
+        {
+          "n": "+20–40%",
+          "l": "sobre el precio normal"
+        },
+        {
+          "n": "0 %",
+          "l": "de impuestos"
+        },
+        {
+          "n": "Noche",
+          "l": "y volumen limitado"
+        }
       ],
-      "image": "assets-ref/prueba-de-estilo-2/zonas.png",
-      "source": ["02-extraccion"]
+      "zones": [
+        {
+          "name": "Tranquilo",
+          "range": "0–30",
+          "text": "Nada",
+          "color": "#4fb6a5",
+          "w": 30
+        },
+        {
+          "name": "Observado",
+          "range": "30–60",
+          "text": "Inspecciones y multas leves",
+          "color": "#e3b25c",
+          "w": 30
+        },
+        {
+          "name": "Vigilado",
+          "range": "60–85",
+          "text": "Multas fuertes y contratos oficiales bloqueados",
+          "color": "#ef8da0",
+          "w": 25
+        },
+        {
+          "name": "Bajo investigación",
+          "range": "85+",
+          "text": "Redada: confiscación, cierre y arresto",
+          "color": "#c23b55",
+          "w": 15
+        }
+      ],
+      "lowerTitle": "Cómo bajarla",
+      "lower": [
+        "Esperar",
+        "Sobornar al inspector",
+        "Reputación con el Ministerio",
+        "Pagar a Los Faroleros",
+        "Guardias"
+      ],
+      "source": [
+        "03-comercio"
+      ]
     },
     {
-      "id": "minijuegos", "layout": "table", "kicker": "Minijuegos", "title": "Cortos, simples y siempre con dos variables en tensión",
-      "lead": "De 8 a 15 segundos, con táctil o con mando. Mejor herramienta o más Pericia ensanchan la zona óptima. **El MVP lleva Picado, Perforación y Regateo.**",
-      "head": ["Minijuego", "Con qué", "Tensión", "Cómo se juega"],
-      "rows": [
-        ["Picado", "Pico", "Fuerza ↔ Precisión", "Carga mientras un marcador oscila y suelta en la zona"],
-        ["Perforación", "Taladro", "Velocidad ↔ Calor", "Avanza sin sobrecalentar"],
-        ["Cincelado", "Cincel", "Precisión", "Traza sobre la gema sin salirte del margen"],
-        ["Cribado", "Criba", "Inclinación ↔ Caudal", "Mantén el flujo en la zona (oro y salitre)"],
-        ["Detonación", "Explosivo", "Potencia ↔ Ubicación", "Alto rendimiento, alto riesgo"],
-        ["Contención", "Aetherita", "Presión ↔ Resonancia", "Controla una energía inestable; acumula el «mal del éter»"],
-        ["Regateo", "Tienda", "Tu oferta ↔ Paciencia del cliente", "Lee al cliente, ajusta el precio y no lo hagas irse"],
-        ["Refinado", "Taller", "Temperatura ↔ Tiempo", "Mantén el metal en la banda justa"]
-      ],
-      "source": ["09-minijuegos"]
-    },
-    {
-      "id": "interfaz", "layout": "gallery", "kicker": "Referencias de arte", "title": "Cómo podría verse",
-      "lead": "Imágenes de referencia generadas con IA para fijar la dirección. No son assets finales: se reconstruirán sobre una cuadrícula de píxeles.",
-      "images": [
-        {"file": "assets-ref/prueba-de-estilo-2/minijuegos.png", "caption": "Picado, Perforación y Regateo"},
-        {"file": "assets-ref/prueba-de-estilo-2/ui-mercado.png", "caption": "Terminal de mercado"},
-        {"file": "assets-ref/prueba-de-estilo-2/ui-tienda.png", "caption": "La tienda, en corte transversal"}
-      ],
-      "source": ["12-direccion-de-arte"]
-    },
-    {
-      "id": "mercado", "layout": "bullets", "kicker": "Comercio", "title": "Un mercado que se comporta como uno real",
-      "bullets": [
-        "Cada mineral tiene un **valor justo**. El precio lo persigue con retraso, ruido y momentum: tendencias y rebotes que se aprenden a leer.",
-        "**Se mueve tres veces al día**, una por bloque: esperar al siguiente bloque para vender es una decisión.",
-        "**Diez minerales con personalidad:** estables, volátiles, estacionales, estratégicos y de lujo.",
-        "**Bots agregados** (industrial, especulador, acaparador y pánico) hacen que el mercado se sienta vivo.",
-        "**Frenos a los trucos:** diferencia entre comprar y vender, caída del precio al vender mucho de golpe, costo del almacén, impuestos, límite diario de variación y tope por comprador.",
-        "Especular tiene un costo real: guardar cuesta dinero y espacio."
-      ],
-      "source": ["03-comercio"]
-    },
-    {
-      "id": "informacion", "layout": "cards", "kicker": "Comercio", "title": "La información se compra y se aprende a leer", "cols": 4,
-      "lead": "Empiezas viendo poco y vas desbloqueando más. Las noticias traen fiabilidad variable: confirmada, rumor o falsa alarma.",
+      "id": "progresion",
+      "layout": "cards",
+      "section": "juego",
+      "kicker": "Progresión",
+      "title": "Crecer de tres maneras",
+      "cols": 3,
       "cards": [
-        {"title": "1 · Básica", "tag": "Gratis", "text": "Precio actual y una flecha de tendencia."},
-        {"title": "2 · Prensa", "tag": "Se compra", "text": "Titulares y rumores. Tres medios con sesgos distintos."},
-        {"title": "3 · Análisis", "tag": "Mejoras", "text": "Gráficos de 7 y 30 días y medidor de oferta frente a demanda."},
-        {"title": "4 · Tabulador", "tag": "Avanzado", "text": "Valor justo estimado con margen de error, que se achica con tu Ojo."}
+        {
+          "glyph": "▲",
+          "title": "Capacidad",
+          "tag": "Dinero y minerales",
+          "chips": [
+            "Herramientas",
+            "Almacén",
+            "Tienda",
+            "Empleados"
+          ]
+        },
+        {
+          "glyph": "◆",
+          "title": "Habilidad",
+          "tag": "Por uso, nunca de la nada",
+          "chips": [
+            "Aguante",
+            "Pericia",
+            "Ojo",
+            "Temple",
+            "Labia"
+          ]
+        },
+        {
+          "glyph": "★",
+          "title": "Influencia",
+          "tag": "Decisiones y logros",
+          "chips": [
+            "Buscador",
+            "Minero con licencia",
+            "Comerciante",
+            "Empresario",
+            "Magnate"
+          ]
+        }
       ],
-      "source": ["03-comercio"]
+      "source": [
+        "04-progresion-y-meta"
+      ]
     },
     {
-      "id": "tienda", "layout": "cards", "kicker": "Comercio", "title": "Tienda, contratos y mercado negro", "cols": 3,
-      "cards": [
-        {"title": "Cómo se vende", "text": "Mercado spot, contratos (estándar, urgente, a largo plazo, oficial y negro), trueque con comerciantes y un marketplace para comprar lo que falta."},
-        {"title": "Refinado", "text": "Mena → lingote → producto: acero, conductor, oscilador, joyería, pólvora y celda de éter. Cada mineral tiene usos reales."},
-        {"title": "La tienda", "text": "Empieza modesta y mejora. Reponer estantes, regatear, tasar y refinar son dinámicas propias; los empleados pueden automatizarlas."},
-        {"title": "Mercado negro", "text": "Paga más (entre un 20 y un 40 % por encima, orientativo), sin impuestos, de noche y con volumen limitado. Se accede por contactos."},
-        {"title": "Vigilancia", "text": "Un indicador de 0 a 100: Tranquilo, Observado, Vigilado y Bajo investigación. Más arriba hay multas, redadas, cierre de tienda y arresto."},
-        {"title": "Cómo bajarla", "text": "Esperar, sobornar al inspector, cuidar la reputación con el Ministerio, pagar a Los Faroleros o contratar guardias."}
-      ],
-      "source": ["03-comercio", "07-sociedad-y-eventos"]
-    },
-    {
-      "id": "progresion", "layout": "cards", "kicker": "Progresión", "title": "Crecer de tres maneras", "cols": 2,
-      "cards": [
-        {"title": "Capacidad", "tag": "Dinero y minerales", "text": "Herramientas, equipo, almacén, tienda y empleados."},
-        {"title": "Habilidad", "tag": "Uso, acciones e hitos", "text": "Cinco stats que suben por lo que haces, nunca de la nada: **Aguante, Pericia, Ojo, Temple y Labia**."},
-        {"title": "Influencia", "tag": "Decisiones y logros", "text": "Estatus, reputación y conexiones: de *Buscador* a *Magnate*. Subir exige condiciones, no solo dinero."},
-        {"title": "Estilo de vida", "tag": "Sumidero y meta", "text": "Casa, ropa, auto y cosméticos: dan bonos pequeños y desbloquean proveedores y contactos."}
-      ],
-      "source": ["04-progresion-y-meta"]
-    },
-    {
-      "id": "empleados", "layout": "bullets", "kicker": "Progresión", "title": "Empleados: crecer más allá de tus tres bloques",
-      "lead": "Llegan a mitad del juego. Rinden menos que tú y los mejores minerales siguen necesitándote.",
-      "bullets": [
-        "**Roles:** minero, dependiente, guardia, refinador y analista.",
-        "**Stats propios:** eficiencia, cuidado y **lealtad**. Un empleado con malos stats es contraproducente: puede robar, dejarse sobornar o sumarse a una huelga.",
-        "**Contratos por tiempo:** nadie dura para siempre. Puedes despedir, o dejar que venza y renovar negociando con tu Labia.",
-        "**Contratación por los periódicos:** ofertas de empleo y anuncios propios. El sesgo político del medio cambia a los candidatos y dónde publicas manda una señal a las facciones.",
-        "Del candidato ves solo estimaciones: contratar a ciegas es una apuesta."
-      ],
-      "source": ["04-progresion-y-meta"]
-    },
-    {
-      "id": "meta", "layout": "cards", "kicker": "Progresión", "title": "Dificultad, riesgo y rejugabilidad", "cols": 2,
-      "cards": [
-        {"title": "Cuatro dificultades", "text": "Novato, Intermedio, Difícil y **Hardcore**. Son parámetros (volatilidad, desgaste, pérdidas, información visible), no contenidos distintos."},
-        {"title": "Permadeath y legado", "text": "En Hardcore morir termina la partida. Como en Balatro, lo que desbloqueas da ayudas para empezar las siguientes. Hay salón de la fama."},
-        {"title": "Sin final fijo", "text": "Hay una historia con actos, y después queda como sandbox: la estructura social de Valdoria se mantiene."},
-        {"title": "Casino (primera actualización)", "text": "Tragamonedas, ruleta y blackjack con moneda del juego, integrados de forma suave en el mundo."}
-      ],
-      "source": ["04-progresion-y-meta", "06-roadmap-y-pendientes"]
-    },
-    {
-      "id": "valdoria", "layout": "table", "kicker": "El mundo", "title": "Valdoria",
-      "lead": "Una sociedad dura, con política, poder y negocios oscuros, vista con un protagonista optimista. Serio y realista, sin apocalipsis.",
-      "head": ["Región", "Identidad", "Poder dominante"],
-      "rows": [
-        ["**Cuenca del Hollín** (inicio)", "Carbón y hierro, humo, pueblos obreros", "Sindicato minero"],
-        ["**Sierra Alta**", "Cobre y plata, frío, pueblos de empresa", "Casas industriales"],
-        ["**Salares del Litoral**", "Salitre, puertos, contrabando", "Organización criminal"],
-        ["**Cavernas de Cristal**", "Cuarzo y gemas, cuevas inestables", "Disputada entre todos"],
-        ["**La Fosa**", "Donde apareció la Aetherita; militarizada", "Gobierno"],
-        ["**Puerto Meridiano** (capital)", "Bolsa, prensa, élite, lujo", "Gobierno y Casas"]
-      ],
-      "source": ["05-mundo-y-minerales"]
-    },
-    {
-      "id": "mapa", "layout": "gallery", "kicker": "El mundo", "title": "Mapa y zonas de minado",
-      "lead": "Seis zonas: Galerías del Hollín, Cañón Ferroso, Minas de Sierra Alta, Salares del Litoral, Cavernas de Cristal y La Fosa del Éter.",
-      "images": [
-        {"file": "assets-ref/prueba-de-estilo-2/mapa-valdoria.png", "caption": "Mapa de Valdoria, con vías de tren"},
-        {"file": "assets-ref/prueba-de-estilo-2/zonas.png", "caption": "Las seis zonas"},
-        {"file": "assets-ref/prueba-de-estilo-2/edificios.png", "caption": "Edificios en isométrica"}
-      ],
-      "source": ["05-mundo-y-minerales", "12-direccion-de-arte"]
-    },
-    {
-      "id": "minerales", "layout": "table", "kicker": "El mundo", "title": "Diez minerales, cada uno con su papel",
-      "head": ["Mineral", "Personalidad", "En el mundo"],
-      "rows": [
-        ["Carbón", "Estable / estacional", "«El pan negro»: energía y fundición; sube en invierno y con las huelgas"],
-        ["Hierro", "Estable", "Ferrocarriles y máquinas; lo disparan los contratos de guerra"],
-        ["Cobre", "Estable–medio", "La electrificación; si escasea, hay apagones"],
-        ["Salitre", "Estratégico", "Pólvora y fertilizante; sus puertos los controla el crimen"],
-        ["Plata", "Medio", "Contactos eléctricos, fotografía y joyería"],
-        ["Oro", "Lujo", "Reserva del Estado y símbolo de estatus"],
-        ["Cuarzo", "Medio, tecnológico", "Radios y teletipos; tu detector depende de él"],
-        ["Esmeralda", "Lujo / volátil", "Prestigio de la élite; el precio sigue las modas"],
-        ["Diamante", "Volátil", "Herramientas de corte y lujo extremo"],
-        ["**Aetherita**", "Volátil / estratégico", "Combustible casi milagroso y peligroso: el eje del misterio"]
-      ],
-      "image": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
-      "source": ["05-mundo-y-minerales"]
-    },
-    {
-      "id": "sociedad", "layout": "cards", "kicker": "Sociedad", "title": "Cinco facciones", "cols": 3,
-      "lead": "Cada una tiene un medidor de relación con el jugador. Subir en la sociedad es mover esas piezas.",
-      "cards": [
-        {"title": "Ministerio de Recursos", "text": "Licencias, impuestos y acceso a zonas. Dentro está la Comisión del Éter."},
-        {"title": "Consorcio Arvel", "text": "El cartel de las grandes casas: contratos grandes y presión sobre los precios."},
-        {"title": "La Unión", "text": "Los mineros del Hollín: apoyo en las zonas, o huelgas si los ignoras."},
-        {"title": "Los Faroleros", "text": "Nacieron encendiendo faroles de puerto y hoy «cobran la luz»: protección, extorsión y mercado negro."},
-        {"title": "La prensa", "text": "El Heraldo Meridiano (oficialista), La Voz del Hollín (sindical) y el Teletipo Meridiano (rápido, sin confirmar)."},
-        {"title": "Tú", "text": "No tienes que ensuciarte las manos, pero el mundo te lo pondrá a tiro. Cada elección tiene beneficios y riesgos."}
-      ],
-      "source": ["07-sociedad-y-eventos"]
-    },
-    {
-      "id": "eventos", "layout": "cards", "kicker": "Sociedad", "title": "Cuando el mundo te toca la puerta", "cols": 3,
-      "lead": "Los eventos sociales son también eventos económicos, y siempre avisan antes en las noticias.",
-      "cards": [
-        {"title": "Apagón", "text": "Necesitas un generador para que la tienda funcione. Si el cobre escasea, hay más apagones."},
-        {"title": "Huelga", "text": "Cierra zonas y baja la oferta: sube el precio del mineral."},
-        {"title": "Saqueo", "text": "Hay días en que no se puede abrir, y sin protección pueden llevarse mercancía del inventario."}
-      ],
-      "source": ["07-sociedad-y-eventos"]
-    },
-    {
-      "id": "historia", "layout": "timeline", "kicker": "La historia", "title": "Heredas una deuda",
-      "lead": "Anselmo Vidal, tu tío, desapareció y te dejó su **licencia**, su **puesto de mercado** y su **deuda** con Doña Reme, una prestamista amable. La facción que está detrás de ella cambia según la partida.",
+      "id": "empleados",
+      "layout": "flow",
+      "section": "juego",
+      "kicker": "Empleados",
+      "title": "Nadie dura para siempre",
       "steps": [
-        {"title": "I · El recién llegado", "tag": "Villa Brasa", "text": "Aprendes a minar y vender; reabres el puesto y pagas las primeras cuotas."},
-        {"title": "II · Aprender las reglas", "tag": "Hollín", "text": "Descubres que la política manda: protección, facciones, la primera huelga grande y con quién te alías."},
-        {"title": "III · El ascenso", "tag": "Puerto Meridiano", "text": "La capital, la bolsa y el círculo de poder, con dilemas morales."},
-        {"title": "IV · La cima", "tag": "La Fosa", "text": "Descubres qué le pasó a tu tío, qué esconde la Aetherita y qué haces con tu poder."}
+        {
+          "glyph": "1",
+          "title": "Contratar",
+          "text": "Por el periódico: empleos o anuncio propio."
+        },
+        {
+          "glyph": "2",
+          "title": "Trabajar",
+          "text": "En la mina o en la tienda, sin gastar tus bloques."
+        },
+        {
+          "glyph": "3",
+          "title": "Vence el contrato",
+          "text": "Corto, medio o largo."
+        },
+        {
+          "glyph": "4",
+          "title": "Decidir",
+          "text": "Renovar con tu Labia, despedir o verlo irse."
+        }
       ],
-      "source": ["08-historia-y-personaje"]
+      "chips": [
+        "Minero",
+        "Dependiente",
+        "Guardia",
+        "Refinador",
+        "Analista"
+      ],
+      "warn": "Con lealtad baja pueden robar, dejarse sobornar o sumarse a una huelga.",
+      "source": [
+        "04-progresion-y-meta"
+      ]
     },
     {
-      "id": "personajes", "layout": "gallery", "kicker": "La historia", "title": "Quiénes son",
-      "lead": "**Doña Reme** (prestamista), **el Viejo Teo** (mentor), **Inspector Quiroga** (corrupto), **Lucía Montalvo** (periodista), **Esteban Arvel** (rival), **Casilda «la Faro»** (Los Faroleros) y el **Ministro Aurelio Dueñas**. El protagonista lo personalizas: nombre de una palabra, tienda con el nombre que quieras, hombre o mujer.",
+      "id": "dificultad",
+      "layout": "scale",
+      "section": "juego",
+      "kicker": "Dificultad",
+      "title": "Tú eliges cuánto riesgo",
+      "levels": [
+        {
+          "name": "Novato",
+          "text": "Mercado calmado y más información."
+        },
+        {
+          "name": "Intermedio",
+          "text": "El equilibrio previsto."
+        },
+        {
+          "name": "Difícil",
+          "text": "Más volatilidad, desgaste y pérdidas."
+        },
+        {
+          "name": "Hardcore",
+          "text": "Permadeath: morir termina la partida."
+        }
+      ],
+      "facts": [
+        {
+          "glyph": "✦",
+          "title": "Legado",
+          "text": "Lo que desbloqueas ayuda en las siguientes partidas."
+        },
+        {
+          "glyph": "★",
+          "title": "Salón de la fama",
+          "text": "Registro de cada partida."
+        },
+        {
+          "glyph": "∞",
+          "title": "Sin final fijo",
+          "text": "Después de la historia, sandbox."
+        }
+      ],
+      "source": [
+        "04-progresion-y-meta"
+      ]
+    },
+    {
+      "id": "s-mundo",
+      "layout": "section",
+      "section": "mundo"
+    },
+    {
+      "id": "mapa",
+      "layout": "map",
+      "section": "mundo",
+      "kicker": "Valdoria",
+      "title": "Una nación en plena revolución industrial",
+      "image": "assets-ref/prueba-de-estilo-2/mapa-valdoria.png",
+      "spots": [
+        {
+          "n": 1,
+          "x": 0.17,
+          "y": 0.72,
+          "name": "Cuenca del Hollín",
+          "text": "Carbón y hierro · inicio"
+        },
+        {
+          "n": 2,
+          "x": 0.22,
+          "y": 0.17,
+          "name": "Sierra Alta",
+          "text": "Cobre y plata · Casas industriales"
+        },
+        {
+          "n": 3,
+          "x": 0.68,
+          "y": 0.2,
+          "name": "Salares del Litoral",
+          "text": "Salitre y puertos · el crimen"
+        },
+        {
+          "n": 4,
+          "x": 0.34,
+          "y": 0.44,
+          "name": "Cavernas de Cristal",
+          "text": "Cuarzo y gemas · disputada"
+        },
+        {
+          "n": 5,
+          "x": 0.57,
+          "y": 0.47,
+          "name": "La Fosa",
+          "text": "Aetherita · el Gobierno"
+        },
+        {
+          "n": 6,
+          "x": 0.85,
+          "y": 0.66,
+          "name": "Puerto Meridiano",
+          "text": "La capital · bolsa y prensa"
+        }
+      ],
+      "source": [
+        "05-mundo-y-minerales"
+      ]
+    },
+    {
+      "id": "zonas",
+      "layout": "crops",
+      "section": "mundo",
+      "kicker": "Zonas de minado",
+      "title": "Seis zonas, seis maneras de arriesgarte",
+      "cols": 3,
+      "ar": "16/10",
+      "items": [
+        {
+          "title": "Galerías del Hollín",
+          "tag": "Gas, polvo y derrumbes",
+          "text": "Carbón y hierro.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 3,
+            "rows": 2,
+            "col": 0,
+            "row": 0
+          }
+        },
+        {
+          "title": "Cañón Ferroso",
+          "tag": "Calor y desprendimientos",
+          "text": "Hierro y cobre.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 3,
+            "rows": 2,
+            "col": 1,
+            "row": 0
+          }
+        },
+        {
+          "title": "Minas de Sierra Alta",
+          "tag": "Frío y falta de aire",
+          "text": "Cobre y plata.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 3,
+            "rows": 2,
+            "col": 2,
+            "row": 0
+          }
+        },
+        {
+          "title": "Salares del Litoral",
+          "tag": "Sed, calor y gases",
+          "text": "Salitre y plata.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 3,
+            "rows": 2,
+            "col": 0,
+            "row": 1
+          }
+        },
+        {
+          "title": "Cavernas de Cristal",
+          "tag": "Cristales y desorientación",
+          "text": "Cuarzo, esmeralda y oro.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 3,
+            "rows": 2,
+            "col": 1,
+            "row": 1
+          }
+        },
+        {
+          "title": "La Fosa del Éter",
+          "tag": "Radiación de éter",
+          "text": "Diamante y Aetherita.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 3,
+            "rows": 2,
+            "col": 2,
+            "row": 1
+          }
+        }
+      ],
+      "source": [
+        "02-extraccion",
+        "05-mundo-y-minerales"
+      ]
+    },
+    {
+      "id": "minerales",
+      "layout": "crops",
+      "section": "mundo",
+      "kicker": "Minerales",
+      "title": "Diez minerales, cada uno con su papel",
+      "cols": 5,
+      "ar": "1/1",
+      "compact": true,
+      "items": [
+        {
+          "title": "Carbón",
+          "tag": "Estable",
+          "text": "El pan negro.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 0,
+            "row": 0,
+            "fx": 0.56,
+            "fy": 0.57
+          }
+        },
+        {
+          "title": "Hierro",
+          "tag": "Estable",
+          "text": "Rieles y máquinas.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 1,
+            "row": 0,
+            "fx": 0.56,
+            "fy": 0.57
+          }
+        },
+        {
+          "title": "Cobre",
+          "tag": "Estable–medio",
+          "text": "Si escasea, apagones.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 2,
+            "row": 0,
+            "fx": 0.43,
+            "fy": 0.57
+          }
+        },
+        {
+          "title": "Salitre",
+          "tag": "Estratégico",
+          "text": "Pólvora y abono.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 3,
+            "row": 0,
+            "fx": 0.42,
+            "fy": 0.57
+          }
+        },
+        {
+          "title": "Plata",
+          "tag": "Medio",
+          "text": "Contactos y joyería.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 4,
+            "row": 0,
+            "fx": 0.37,
+            "fy": 0.57
+          }
+        },
+        {
+          "title": "Oro",
+          "tag": "Lujo",
+          "text": "Reserva y estatus.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 0,
+            "row": 1,
+            "fx": 0.54,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Cuarzo",
+          "tag": "Tecnológico",
+          "text": "Tu detector lo usa.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 1,
+            "row": 1,
+            "fx": 0.49,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Esmeralda",
+          "tag": "Lujo / volátil",
+          "text": "Sigue las modas.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 2,
+            "row": 1,
+            "fx": 0.4,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Diamante",
+          "tag": "Volátil",
+          "text": "Corte y lujo.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 3,
+            "row": 1,
+            "fx": 0.31,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Aetherita",
+          "tag": "El misterio",
+          "text": "Combustible y peligro.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 5,
+            "rows": 2,
+            "col": 4,
+            "row": 1,
+            "fx": 0.43,
+            "fy": 0.4
+          },
+          "hot": true
+        }
+      ],
+      "source": [
+        "05-mundo-y-minerales"
+      ]
+    },
+    {
+      "id": "sociedad",
+      "layout": "cards",
+      "section": "mundo",
+      "kicker": "Quién manda",
+      "title": "Cinco facciones",
+      "cols": 5,
+      "big": true,
+      "cards": [
+        {
+          "glyph": "M",
+          "title": "Ministerio de Recursos",
+          "tag": "Gobierno",
+          "text": "Licencias, impuestos y acceso."
+        },
+        {
+          "glyph": "C",
+          "title": "Consorcio Arvel",
+          "tag": "Las Casas",
+          "text": "Contratos grandes y presión de precios."
+        },
+        {
+          "glyph": "U",
+          "title": "La Unión",
+          "tag": "Mineros",
+          "text": "Apoyo… o huelgas."
+        },
+        {
+          "glyph": "F",
+          "title": "Los Faroleros",
+          "tag": "Crimen",
+          "text": "Protección y mercado negro."
+        },
+        {
+          "glyph": "P",
+          "title": "La prensa",
+          "tag": "3 medios",
+          "text": "El Heraldo, La Voz y el Teletipo."
+        }
+      ],
+      "source": [
+        "07-sociedad-y-eventos"
+      ]
+    },
+    {
+      "id": "eventos",
+      "layout": "cards",
+      "section": "mundo",
+      "kicker": "Cuando el mundo toca la puerta",
+      "title": "Eventos que avisan antes",
+      "cols": 3,
+      "cards": [
+        {
+          "glyph": "⚡",
+          "title": "Apagón",
+          "text": "La tienda no abre sin luz.",
+          "chips": [
+            "Generador",
+            "Cobre"
+          ]
+        },
+        {
+          "glyph": "✊",
+          "title": "Huelga",
+          "text": "Zonas cerradas y precio al alza.",
+          "chips": [
+            "Unión",
+            "Oferta"
+          ]
+        },
+        {
+          "glyph": "!",
+          "title": "Saqueo",
+          "text": "Días sin abrir y mercancía en riesgo.",
+          "chips": [
+            "Guardias",
+            "Protección"
+          ]
+        }
+      ],
+      "foot": "Todos se anuncian antes en las noticias. Cada uno es también un evento económico.",
+      "source": [
+        "07-sociedad-y-eventos"
+      ]
+    },
+    {
+      "id": "s-historia",
+      "layout": "section",
+      "section": "historia"
+    },
+    {
+      "id": "gancho",
+      "layout": "feature",
+      "section": "historia",
+      "kicker": "El gancho",
+      "title": "Un tío desaparecido",
+      "media": {
+        "ar": "3/4",
+        "sheet": {
+          "file": "assets-ref/prueba-de-estilo-2/retratos-b.png",
+          "w": 1344,
+          "h": 752,
+          "cols": 4,
+          "rows": 1,
+          "col": 3,
+          "row": 0,
+          "fx": 0.5,
+          "fy": 0.42
+        },
+        "caption": "Anselmo Vidal"
+      },
+      "text": "Anselmo Vidal desapareció. Te dejó tres cosas:",
+      "tiles": [
+        {
+          "glyph": "◆",
+          "label": "Una licencia",
+          "value": "Para minar en Valdoria"
+        },
+        {
+          "glyph": "■",
+          "label": "Un puesto",
+          "value": "En el mercado de Villa Brasa"
+        },
+        {
+          "glyph": "✚",
+          "label": "Una deuda",
+          "value": "Con Doña Reme, amable… por ahora"
+        }
+      ],
+      "foot": "La facción que está detrás de la deuda cambia según la partida.",
+      "source": [
+        "08-historia-y-personaje"
+      ]
+    },
+    {
+      "id": "actos",
+      "layout": "acts",
+      "section": "historia",
+      "kicker": "Cuatro actos",
+      "title": "De Villa Brasa a la cima",
+      "acts": [
+        {
+          "n": "I",
+          "title": "El recién llegado",
+          "tag": "Villa Brasa",
+          "text": "Aprendes y pagas las primeras cuotas.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 3,
+            "rows": 2,
+            "col": 0,
+            "row": 0
+          }
+        },
+        {
+          "n": "II",
+          "title": "Aprender las reglas",
+          "tag": "El Hollín",
+          "text": "La política manda: eliges con quién aliarte.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 3,
+            "rows": 2,
+            "col": 1,
+            "row": 0
+          }
+        },
+        {
+          "n": "III",
+          "title": "El ascenso",
+          "tag": "Puerto Meridiano",
+          "text": "La bolsa, el poder y los dilemas.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/mapa-valdoria.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 1,
+            "rows": 1,
+            "col": 0,
+            "row": 0,
+            "zoom": 2.4,
+            "fx": 0.85,
+            "fy": 0.66
+          }
+        },
+        {
+          "n": "IV",
+          "title": "La cima",
+          "tag": "La Fosa",
+          "text": "La verdad de la Aetherita y qué haces con ella.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 3,
+            "rows": 2,
+            "col": 2,
+            "row": 1
+          }
+        }
+      ],
+      "foot": "Después del Acto IV queda como sandbox.",
+      "source": [
+        "08-historia-y-personaje"
+      ]
+    },
+    {
+      "id": "personajes",
+      "layout": "crops",
+      "section": "historia",
+      "kicker": "Elenco",
+      "title": "Quiénes son",
+      "cols": 4,
+      "ar": "1/1",
+      "items": [
+        {
+          "title": "Doña Reme",
+          "tag": "Prestamista",
+          "text": "Cálida, con filo.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/retratos-a.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 4,
+            "rows": 1,
+            "col": 0,
+            "row": 0,
+            "fx": 0.46,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "El Viejo Teo",
+          "tag": "Mentor",
+          "text": "Minero veterano.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/retratos-a.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 4,
+            "rows": 1,
+            "col": 1,
+            "row": 0,
+            "fx": 0.46,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Inspector Quiroga",
+          "tag": "Corrupto",
+          "text": "Licencias y sobornos.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/retratos-a.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 4,
+            "rows": 1,
+            "col": 2,
+            "row": 0,
+            "fx": 0.46,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Lucía Montalvo",
+          "tag": "Periodista",
+          "text": "Fuente de rumores.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/retratos-a.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 4,
+            "rows": 1,
+            "col": 3,
+            "row": 0,
+            "fx": 0.5,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Esteban Arvel",
+          "tag": "Rival",
+          "text": "Tiene todo lo que tú ganas.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/retratos-b.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 4,
+            "rows": 1,
+            "col": 0,
+            "row": 0,
+            "fx": 0.5,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Casilda «la Faro»",
+          "tag": "Los Faroleros",
+          "text": "Extorsión y mercado negro.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/retratos-b.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 4,
+            "rows": 1,
+            "col": 1,
+            "row": 0,
+            "fx": 0.5,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Ministro Dueñas",
+          "tag": "El Estado",
+          "text": "Antagonista principal.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/retratos-b.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 4,
+            "rows": 1,
+            "col": 2,
+            "row": 0,
+            "fx": 0.5,
+            "fy": 0.4
+          }
+        },
+        {
+          "title": "Anselmo Vidal",
+          "tag": "Tu tío",
+          "text": "Dejó cintas grabadas.",
+          "sheet": {
+            "file": "assets-ref/prueba-de-estilo-2/retratos-b.png",
+            "w": 1344,
+            "h": 752,
+            "cols": 4,
+            "rows": 1,
+            "col": 3,
+            "row": 0,
+            "fx": 0.5,
+            "fy": 0.42
+          }
+        }
+      ],
+      "foot": "Tú eliges tu nombre (una palabra), el de tu tienda y si eres hombre o mujer.",
+      "source": [
+        "08-historia-y-personaje"
+      ],
+      "compact": true
+    },
+    {
+      "id": "aetherita",
+      "layout": "feature",
+      "section": "historia",
+      "kicker": "El secreto",
+      "title": "La verdad de la Aetherita",
+      "media": {
+        "ar": "1/1",
+        "sheet": {
+          "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+          "w": 1344,
+          "h": 752,
+          "cols": 5,
+          "rows": 2,
+          "col": 4,
+          "row": 1,
+          "fx": 0.43,
+          "fy": 0.4
+        },
+        "caption": "Aetherita",
+        "glow": true
+      },
+      "text": "Enferma a quien la extrae. El Estado lo oculta; tu tío lo descubrió. En el Acto IV eliges:",
+      "outcomes": [
+        {
+          "title": "Revelarla",
+          "text": "El precio se desploma y hay caos."
+        },
+        {
+          "title": "Callarla",
+          "text": "Sigues ganando."
+        },
+        {
+          "title": "Venderla",
+          "text": "Moneda de poder con una facción."
+        }
+      ],
+      "foot": "Cualquier salida cambia tu partida, pero el sistema se reabsorbe: cambias tu lugar, no el país.",
+      "source": [
+        "08-historia-y-personaje"
+      ]
+    },
+    {
+      "id": "s-arte",
+      "layout": "section",
+      "section": "arte"
+    },
+    {
+      "id": "paleta",
+      "layout": "palette",
+      "section": "arte",
+      "kicker": "Paleta",
+      "title": "Frío, con vinotinto y un toque de latón",
+      "rules": [
+        "Un 80 % de neutros fríos",
+        "El vinotinto es el acento",
+        "El rojo-rosado brillante es solo de la Aetherita"
+      ],
+      "source": [
+        "12-direccion-de-arte",
+        "13-marca-e-identidad"
+      ]
+    },
+    {
+      "id": "estilo",
+      "layout": "mosaic",
+      "section": "arte",
+      "kicker": "Dirección de arte",
+      "title": "Pixel art retrofuturista",
       "images": [
-        {"file": "assets-ref/prueba-de-estilo-2/retratos-a.png", "caption": "Reme, Teo, Quiroga y Lucía"},
-        {"file": "assets-ref/prueba-de-estilo-2/retratos-b.png", "caption": "Esteban, Casilda, el Ministro y Anselmo"},
-        {"file": "assets-ref/prueba-de-estilo/personajes.png", "caption": "Protagonistas"}
+        {
+          "file": "assets-ref/prueba-de-estilo-2/mina-horizontal.png",
+          "caption": "La mina"
+        },
+        {
+          "file": "assets-ref/prueba-de-estilo-2/ui-tienda.png",
+          "caption": "La tienda"
+        },
+        {
+          "file": "assets-ref/prueba-de-estilo-2/edificios.png",
+          "caption": "Edificios"
+        },
+        {
+          "file": "assets-ref/prueba-de-estilo-2/sprites.png",
+          "caption": "Personajes pequeños"
+        }
       ],
-      "source": ["08-historia-y-personaje"]
-    },
-    {
-      "id": "aetherita", "layout": "bullets", "kicker": "La historia", "title": "La verdad de la Aetherita",
-      "lead": "Es el eje del misterio, y el color que la hace distinta de todo lo demás del juego.",
-      "bullets": [
-        "**La Aetherita enferma a quien la extrae** («el mal del éter»). La Comisión del Éter lo oculta porque la economía y el ejército dependen de ella.",
-        "Tu tío lo descubrió: por eso desapareció. Sus **cintas de grabación** se encuentran a lo largo del juego.",
-        "**En el Acto IV eliges:** *revelarla* (el precio se desploma y hay caos), *callarla* (sigues ganando) o *venderla* (la usas como moneda de poder).",
-        "Cualquier salida cambia tu partida, pero **el sistema se reabsorbe y todo sigue igual**: no cambias el país, cambias tu lugar en él."
+      "chips": [
+        "Fallout",
+        "Dave the Diver",
+        "Papers, Please",
+        "Balatro",
+        "Stardew Valley"
       ],
-      "image": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
-      "source": ["08-historia-y-personaje"]
+      "foot": "Referencias generadas con IA; se reconstruirán sobre una cuadrícula de píxeles.",
+      "source": [
+        "12-direccion-de-arte"
+      ]
     },
     {
-      "id": "arte", "layout": "cards", "kicker": "Arte y marca", "title": "Cómo se ve y cómo suena", "cols": 2,
-      "cards": [
-        {"title": "Paleta", "text": "Fría (pizarra, acero y hielo) con **vinotinto** como acento principal y **latón** como detalle. El rojo-rosado brillante es solo de la Aetherita."},
-        {"title": "Referencias", "text": "Fallout (retrofuturismo), Dave the Diver (pixel art), Papers, Please (interfaz de escritorio), Balatro (sonido) y Stardew Valley (personajes pequeños)."},
-        {"title": "Personalidad", "text": "**Optimista terco:** cálido, ingenioso y con filo. Nunca cínico, nunca ingenuo. Humor seco y sin burlarse de los trabajadores."},
-        {"title": "Voz", "text": "Español neutro con tuteo e inglés igual de cercano. Símbolo de marca: la **lámpara de minero**. *Escarba. Negocia. Asciende.* / *Dig. Deal. Rise.*"}
+      "id": "marca",
+      "layout": "brand",
+      "section": "arte",
+      "kicker": "Marca y voz",
+      "title": "Un optimista terco",
+      "chips": [
+        "Cálido",
+        "Ingenioso",
+        "Con filo",
+        "Nunca cínico",
+        "Nunca ingenuo"
       ],
-      "source": ["12-direccion-de-arte", "13-marca-e-identidad"]
-    },
-    {
-      "id": "construccion", "layout": "cards", "kicker": "Cómo se construye", "title": "Un proyecto modular, verificado y por ramas", "cols": 2,
-      "cards": [
-        {"title": "Arquitectura modular", "text": "Cada funcionalidad es un módulo con capas (dominio, aplicación, infraestructura, presentación y api). Los módulos solo se conocen por su api y por eventos; una herramienta lo verifica."},
-        {"title": "Flujo por ramas", "text": "Una tarea, una rama, un pull request con integración continua y fusión con *squash*. Commits con convención e ID de tarea."},
-        {"title": "QA como etapa", "text": "`backlog → sprint → doing → review → qa → done`. 49 casos de prueba, errores por severidad y criterios de salida por versión."},
-        {"title": "Privacidad y seguridad", "text": "Sin cuentas, sin anuncios y sin analíticas de terceros. Telemetría local exportable por el probador. Lista de seguridad adaptada de OWASP MASVS."},
-        {"title": "Localización", "text": "Español e inglés desde el primer día con archivos .po; ningún texto dentro del código ni del arte."},
-        {"title": "Estudio separado", "text": "Todo lo de gestión vive en `studio/`: se puede ignorar o extraer con su historial sin tocar el juego."}
+      "voice": [
+        {
+          "lang": "ES",
+          "text": "Tu pico se partió. Nada que una buena veta no arregle."
+        },
+        {
+          "lang": "EN",
+          "text": "Your pickaxe snapped. Nothing a good vein can't fix."
+        }
       ],
-      "source": ["14-arquitectura-y-modularidad", "15-flujo-de-trabajo-y-calidad", "16-calidad-y-qa", "10-tecnico-y-herramientas"]
-    },
-    {
-      "id": "plan", "layout": "computed", "kind": "phases", "kicker": "El plan", "title": "Fases y horas",
-      "lead": "Horas del autor (dirigir a la IA, probar, generar assets y corregir). Las estimaciones de las fases cercanas son medias; las lejanas son gruesas. Hay dos puertas de decisión: ¿es divertido? y ¿seguimos hacia la versión 1?",
-      "source": ["06-roadmap-y-pendientes"]
-    },
-    {
-      "id": "estado", "layout": "computed", "kind": "status", "kicker": "Dónde estamos", "title": "Estado actual",
-      "source": ["06-roadmap-y-pendientes", "16-calidad-y-qa"]
-    },
-    {
-      "id": "pendientes", "layout": "bullets", "kicker": "Lo que falta", "title": "Preguntas abiertas",
-      "bullets": [
-        "**Marca:** subtítulo y frase definitivos, tipografía con licencia clara y diseño del logotipo en los dos idiomas.",
-        "**Búsqueda de marca formal** del título antes de publicar.",
-        "**Alcance de la primera salida:** el plan completo ronda las 2.500 horas; hay que decidir qué entra y qué llega en actualizaciones.",
-        "**Dispositivos de prueba reales** y presupuestos de rendimiento medidos en el teléfono.",
-        "**Storyboard:** story map por actos, guion del Acto I y flujo de pantallas.",
-        "**Licencias:** revisar los términos de uso comercial del arte y el audio generados con IA.",
-        "**Primeras líneas de código:** validar la arquitectura con GDScript real en la Fase 1."
+      "taglines": [
+        {
+          "es": "Escarba. Negocia. Asciende.",
+          "en": "Dig. Deal. Rise."
+        }
       ],
-      "source": ["06-roadmap-y-pendientes", "11-legal-y-cumplimiento"]
+      "symbol": "La lámpara de minero",
+      "source": [
+        "13-marca-e-identidad"
+      ]
+    },
+    {
+      "id": "s-proyecto",
+      "layout": "section",
+      "section": "proyecto"
+    },
+    {
+      "id": "arquitectura",
+      "layout": "arch",
+      "section": "proyecto",
+      "kicker": "Arquitectura",
+      "title": "Módulos que no se conocen por dentro",
+      "app": "app · raíz de composición",
+      "modules": [
+        "day",
+        "inventory",
+        "market",
+        "extraction",
+        "shop",
+        "crafting",
+        "staff",
+        "factions",
+        "world_events",
+        "news",
+        "story",
+        "progression",
+        "lifestyle",
+        "save",
+        "telemetry"
+      ],
+      "layers": [
+        {
+          "name": "presentation",
+          "text": "Escenas y presentadores"
+        },
+        {
+          "name": "application",
+          "text": "Casos de uso"
+        },
+        {
+          "name": "domain",
+          "text": "Reglas puras"
+        },
+        {
+          "name": "infrastructure",
+          "text": "Datos y guardado"
+        },
+        {
+          "name": "api",
+          "text": "Lo único que otros ven"
+        }
+      ],
+      "badges": [
+        "Verificado por herramienta",
+        "Eventos entre módulos",
+        "Plataforma por puertos"
+      ],
+      "source": [
+        "14-arquitectura-y-modularidad"
+      ]
+    },
+    {
+      "id": "flujo",
+      "layout": "flow",
+      "section": "proyecto",
+      "kicker": "Flujo de trabajo",
+      "title": "Una tarea, una rama, un PR",
+      "colored": true,
+      "steps": [
+        {
+          "glyph": "○",
+          "title": "backlog",
+          "text": "En la lista."
+        },
+        {
+          "glyph": "◔",
+          "title": "sprint",
+          "text": "Elegida."
+        },
+        {
+          "glyph": "◐",
+          "title": "doing",
+          "text": "En su rama."
+        },
+        {
+          "glyph": "◕",
+          "title": "review",
+          "text": "Código y arquitectura."
+        },
+        {
+          "glyph": "◈",
+          "title": "qa",
+          "text": "Casos de prueba."
+        },
+        {
+          "glyph": "●",
+          "title": "done",
+          "text": "Fusionada."
+        }
+      ],
+      "chips": [
+        "Integración continua",
+        "49 casos de QA",
+        "Seguridad",
+        "Commits con convención",
+        "Telemetría local"
+      ],
+      "source": [
+        "15-flujo-de-trabajo-y-calidad",
+        "16-calidad-y-qa"
+      ]
+    },
+    {
+      "id": "plan",
+      "layout": "plan",
+      "section": "proyecto",
+      "kicker": "El plan",
+      "title": "Fases y horas",
+      "source": [
+        "06-roadmap-y-pendientes"
+      ]
+    },
+    {
+      "id": "estado",
+      "layout": "status",
+      "section": "proyecto",
+      "kicker": "Dónde estamos",
+      "title": "Estado actual",
+      "source": [
+        "06-roadmap-y-pendientes",
+        "16-calidad-y-qa"
+      ]
+    },
+    {
+      "id": "pendientes",
+      "layout": "checklist",
+      "section": "proyecto",
+      "kicker": "Lo que falta",
+      "title": "Preguntas abiertas",
+      "items": [
+        {
+          "title": "Marca",
+          "text": "Subtítulo, frase, tipografía y logotipo en los dos idiomas."
+        },
+        {
+          "title": "Alcance de la primera salida",
+          "text": "El plan completo ronda las 2.500 horas."
+        },
+        {
+          "title": "Storyboard",
+          "text": "Story map, guion del Acto I y flujo de pantallas."
+        },
+        {
+          "title": "Dispositivos de prueba",
+          "text": "Reales, con rendimiento medido en el teléfono."
+        },
+        {
+          "title": "Licencias",
+          "text": "Términos del arte y el audio generados con IA."
+        },
+        {
+          "title": "Primer código",
+          "text": "Validar la arquitectura con GDScript real."
+        }
+      ],
+      "source": [
+        "06-roadmap-y-pendientes",
+        "11-legal-y-cumplimiento"
+      ]
+    },
+    {
+      "id": "cierre",
+      "layout": "closing",
+      "kicker": "Gracias",
+      "title": "Veta de Fortuna",
+      "taglines": [
+        "Escarba. Negocia. Asciende.",
+        "Dig. Deal. Rise."
+      ],
+      "image": "assets-ref/prueba-de-estilo-2/mapa-valdoria.png",
+      "source": [
+        "00-vision"
+      ]
     }
   ]
 }

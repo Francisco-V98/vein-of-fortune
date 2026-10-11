@@ -34,8 +34,10 @@ EVIDENCE = STUDIO / "evidence"
 VALID_STATUS = ["backlog", "sprint", "doing", "review", "qa", "done", "dropped"]
 VALID_PRIO = ["P0", "P1", "P2", "P3"]
 MAX_EST = 20  # una tarea más grande debe desglosarse
-SLIDE_LAYOUTS = ["hero", "quote", "table", "cards", "bullets", "timeline", "gallery", "computed"]
-COMPUTED_KINDS = ["phases", "status"]
+SLIDE_LAYOUTS = [
+    "cover", "agenda", "section", "statement", "specs", "cards", "day", "cycle", "showcase", "market", "ladder", "meter",
+    "flow", "scale", "map", "crops", "feature", "acts", "palette", "mosaic", "brand", "arch", "plan", "status", "checklist", "closing",
+]
 VALID_RESULT = ["not-run", "pass", "fail", "blocked", "skipped"]
 VALID_SEVERITY = ["S1", "S2", "S3", "S4"]
 VALID_BUG_STATUS = ["abierto", "triaje", "en-correccion", "corregido", "verificado", "cerrado", "no-se-corrige"]
@@ -239,12 +241,32 @@ def load_qa(task_ids):
     return qa
 
 
+def _walk_files(node):
+    """Rutas de imagen (claves 'file' e 'image') dentro de una lámina o sección."""
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if k in ("file", "image") and isinstance(v, str):
+                yield v
+            else:
+                yield from _walk_files(v)
+    elif isinstance(node, list):
+        for v in node:
+            yield from _walk_files(v)
+
+
 def load_presentation(doc_ids):
     """Carga y valida las láminas de la presentación del juego."""
     path = DATA / "presentation.json"
     if not path.exists():
-        return {"slides": []}
+        return {"sections": [], "slides": []}
     data = load_json(path)
+    sections = data.get("sections", [])
+    section_ids = set()
+    for sec in sections:
+        section_ids.add(sec.get("id"))
+        for key in ("id", "n", "title", "blurb", "accent", "image"):
+            if not sec.get(key):
+                warn("Sección %s sin '%s'" % (sec.get("id", "?"), key))
     seen = set()
     for s in data.get("slides", []):
         sid = s.get("id", "?")
@@ -254,18 +276,22 @@ def load_presentation(doc_ids):
         layout = s.get("layout")
         if layout not in SLIDE_LAYOUTS:
             warn("Lámina %s con diseño desconocido: %s" % (sid, layout))
-        if layout not in ("quote",) and not s.get("title"):
+        if s.get("section") and s["section"] not in section_ids:
+            warn("La lámina %s usa una sección inexistente: %s" % (sid, s["section"]))
+        if layout not in ("section", "statement", "cover", "closing") and not s.get("title"):
             warn("La lámina %s no tiene título" % sid)
-        if layout == "computed" and s.get("kind") not in COMPUTED_KINDS:
-            warn("Lámina %s con cálculo desconocido: %s" % (sid, s.get("kind")))
+        if layout not in ("cover", "agenda", "closing") and not s.get("section"):
+            warn("La lámina %s no pertenece a ninguna sección" % sid)
         for src in s.get("source", []):
             if src not in doc_ids:
                 warn("La lámina %s cita un documento inexistente: %s" % (sid, src))
-        files = ([s["image"]] if s.get("image") else []) + [i.get("file", "") for i in s.get("images", [])]
-        for f in files:
-            if not f or not (STUDIO / f).exists():
+        for f in _walk_files(s):
+            if not (STUDIO / f).exists():
                 warn("La lámina %s usa una imagen que no existe: %s" % (sid, f))
-    return {"slides": data.get("slides", [])}
+    for f in _walk_files(sections):
+        if not (STUDIO / f).exists():
+            warn("Una sección usa una imagen que no existe: %s" % f)
+    return {"sections": sections, "slides": data.get("slides", [])}
 
 
 def build_assets(assets):

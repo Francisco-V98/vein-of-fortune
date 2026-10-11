@@ -16,6 +16,22 @@
       "by": "claude",
       "note": "28 láminas basadas en los documentos, con navegación por teclado, pantalla completa, impresión y cálculo en vivo de fases y estado.",
       "ref": "rama studio/F0-40-pagina-de-presentacion"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pide estructurarlo mejor porque quedó muy texto plano. Se rediseña con 40 láminas, 6 secciones y 26 formatos visuales.",
+      "ref": "rama studio/F0-40-pagina-de-presentacion"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Rediseño listo: agenda por secciones, tarjetas con iconos, cifras grandes, gráfico de mercado, mapa con marcadores, recortes de zonas, minerales y personajes, plan y estado calculados en vivo.",
+      "ref": "rama studio/F0-40-pagina-de-presentacion"
     }
   ],
   "comments": [
@@ -28,6 +44,16 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Es un resumen curado: si un documento cambia, hay que revisar la lámina que lo cita (cada una enlaza a su fuente). Las láminas de plan y estado se calculan en vivo del roadmap. El modo de pantalla completa no pude probarlo en el panel de vista previa."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Estructúralo un poco mejor porque quedó muy texto plano, quiero mejorarlo mucho más."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Rehecho: ahora son 40 láminas con 6 secciones (barra de secciones arriba), menos de 45 palabras por lámina de media y un formato visual por tema. Los recortes de zonas, minerales y personajes salen de las imágenes de referencia, así que su encuadre es aproximado. Pantalla completa y PDF siguen sin probarse en el panel de vista previa."
     }
   ],
   "evidence": [
@@ -51,6 +77,24 @@
     },
     {
       "at": "2026-10-11",
+      "type": "image",
+      "title": "Mosaico de dirección de arte",
+      "path": "evidence/F0-40/mosaico.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Mapa de Valdoria con marcadores",
+      "path": "evidence/F0-40/mapa.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Lámina de minerales (recortes de la hoja de sprites)",
+      "path": "evidence/F0-40/minerales.jpg"
+    },
+    {
+      "at": "2026-10-11",
       "type": "file",
       "title": "Contenido de las láminas",
       "path": "data/presentation.json"
@@ -59,7 +103,7 @@
       "at": "2026-10-11",
       "type": "note",
       "title": "Verificación",
-      "text": "28 láminas y 28 puntos de navegación; 42 enlaces a fuentes válidos; 13 imágenes sin roturas; teclado (flechas, Inicio y Fin) probado; sin errores en la consola; a 375 px de ancho la página no desborda."
+      "text": "40 láminas y 6 secciones; 26 formatos; sin errores en consola; teclado (flechas, Re Pág, Inicio, Fin) y botones de sección probados; a 375 px de ancho no desborda; build en modo estricto correcto."
     }
   ]
 }
