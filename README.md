@@ -26,6 +26,10 @@ Después de cambiar documentos o datos, se regenera con:
 python3 studio/hub/build.py
 ```
 
+## Calidad y flujo de trabajo
+
+El proyecto se trabaja **por ramas**, con **arquitectura modular verificada automáticamente** y **QA como etapa del flujo** (`backlog → sprint → doing → review → qa → done`). Resumen en [CONTRIBUTING.md](CONTRIBUTING.md); detalle en `studio/docs/` (documentos 14, 15 y 16 y decisiones en `adr/`).
+
 ## Estado
 
 Fase 0 (diseño) casi completa. Siguiente: marca, storyboard y preparación técnica. Detalle en el hub, sección Roadmap.
