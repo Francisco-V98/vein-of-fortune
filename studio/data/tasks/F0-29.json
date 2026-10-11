@@ -31,6 +31,11 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Se subió con el alias SSH github.com-personal, tras comprobar que esa clave pertenece a Francisco-V98 y no a la cuenta de trabajo. La consulta pública devuelve 404, coherente con un repositorio privado: confírmalo en Settings."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Se instaló la CLI de GitHub (gh 2.102.0) y el autor inició sesión como Francisco-V98. Alcances concedidos: repo, gist y read:org; solo se usa repo. Repositorio verificado como privado. Compromiso: solo se crean y consultan PR; no se fusiona, no se borra ni se cambian ajustes sin pedirlo."
     }
   ],
   "evidence": [

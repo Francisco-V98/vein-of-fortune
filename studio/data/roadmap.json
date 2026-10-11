@@ -384,12 +384,12 @@
             },
             {
               "id": "F0-34",
-              "status": "doing",
+              "status": "review",
               "title": "Integración continua en GitHub Actions",
               "est": 4,
               "prio": "P0",
               "desc": "Trabajos: estudio, herramientas, commits, arquitectura, QA y juego.",
-              "done_when": "El primer PR corre la integración continua en verde en GitHub."
+              "done_when": "Los 5 trabajos de CI pasan en verde en GitHub."
             },
             {
               "id": "F0-35",

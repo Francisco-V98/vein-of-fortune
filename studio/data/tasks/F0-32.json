@@ -7,7 +7,7 @@
       "to": "doing",
       "by": "claude",
       "note": "Se construye el verificador con reglas A1 a A9.",
-      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones"
+      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
     },
     {
       "at": "2026-10-11",
@@ -15,7 +15,7 @@
       "to": "review",
       "by": "claude",
       "note": "22 pruebas automáticas pasan. Una prueba reveló un defecto real (no validaba ciclos sin código) y se corrigió.",
-      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones"
+      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
     }
   ],
   "comments": [
