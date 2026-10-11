@@ -1,6 +1,6 @@
 # ADR-0005 · GitHub Flow con ramas de versión y Conventional Commits
 
-**Estado:** 🟡 Propuesta · **Fecha:** 2026-10-11
+**Estado:** ✅ Aceptada · **Fecha:** 2026-10-11
 
 ## Contexto
 

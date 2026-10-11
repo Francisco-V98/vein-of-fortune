@@ -16,6 +16,22 @@
       "by": "claude",
       "note": "22 pruebas automáticas pasan. Una prueba reveló un defecto real (no validaba ciclos sin código) y se corrigió.",
       "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "qa",
+      "by": "claude",
+      "note": "QA: 22 pruebas del verificador pasan en la CI de GitHub, también sobre main.",
+      "ref": "PR #3 · fusionado en main (4ec1f16)"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "qa",
+      "to": "done",
+      "by": "claude",
+      "note": "Fusionado. Pendiente de validar con código GDScript real en la Fase 1.",
+      "ref": "PR #3 · fusionado en main (4ec1f16)"
     }
   ],
   "comments": [

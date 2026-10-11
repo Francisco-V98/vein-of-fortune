@@ -357,7 +357,7 @@
           "tasks": [
             {
               "id": "F0-31",
-              "status": "review",
+              "status": "done",
               "title": "Documentos de arquitectura, flujo de trabajo, QA y ADR",
               "est": 8,
               "prio": "P0",
@@ -366,7 +366,7 @@
             },
             {
               "id": "F0-32",
-              "status": "review",
+              "status": "done",
               "title": "Verificador de arquitectura con pruebas automáticas",
               "est": 8,
               "prio": "P0",
@@ -375,7 +375,7 @@
             },
             {
               "id": "F0-33",
-              "status": "review",
+              "status": "done",
               "title": "Verificador de mensajes de commit con pruebas",
               "est": 3,
               "prio": "P1",
@@ -384,7 +384,7 @@
             },
             {
               "id": "F0-34",
-              "status": "review",
+              "status": "done",
               "title": "Integración continua en GitHub Actions",
               "est": 4,
               "prio": "P0",
@@ -402,7 +402,7 @@
             },
             {
               "id": "F0-36",
-              "status": "review",
+              "status": "done",
               "title": "Plantillas y convenciones del repositorio",
               "est": 2,
               "prio": "P1",
@@ -411,7 +411,7 @@
             },
             {
               "id": "F0-37",
-              "status": "review",
+              "status": "done",
               "title": "Estado qa en el flujo, el validador y el hub",
               "est": 3,
               "prio": "P0",
@@ -420,7 +420,7 @@
             },
             {
               "id": "F0-38",
-              "status": "review",
+              "status": "done",
               "title": "Catálogo inicial de casos de prueba con su validación",
               "est": 6,
               "prio": "P0",
@@ -429,7 +429,7 @@
             },
             {
               "id": "F0-39",
-              "status": "review",
+              "status": "done",
               "title": "Vista de QA en el hub: casos, resultados y errores",
               "est": 5,
               "prio": "P0",

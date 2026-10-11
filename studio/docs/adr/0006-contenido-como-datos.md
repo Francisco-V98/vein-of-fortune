@@ -1,6 +1,6 @@
 # ADR-0006 · El contenido del juego vive en datos validados
 
-**Estado:** 🟡 Propuesta · **Fecha:** 2026-10-11
+**Estado:** ✅ Aceptada · **Fecha:** 2026-10-11
 
 ## Contexto
 

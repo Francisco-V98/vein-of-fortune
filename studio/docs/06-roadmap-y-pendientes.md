@@ -130,4 +130,7 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-11 | Estimación revisada: unas 2.480 h base hasta el lanzamiento (P0 947 h, P0 y P1 2.131 h); la metodología, el scaffolding y el QA suman unas 280 h. Puertas de decisión en la hora 485 y la 840 |
 | 2026-10-11 | El archivo generado `hub/data.js` deja de versionarse (evita conflictos entre PR); se crea con `build.py` |
 | 2026-10-11 | El modelo de ramas (ADR-0005) queda **aceptado** por el autor; el resto de propuestas, de acuerdo con el plan |
+| 2026-10-11 | **Aceptados** los ADR 0003, 0004, 0005, 0006 y 0008 al fusionar el PR #2 |
+| 2026-10-11 | Fusionados en main los PR #3 (herramientas y CI), #2 (documentos) y #1 (estado QA y catálogo); la CI de GitHub pasa en todos |
+| 2026-10-11 | CLI de GitHub instalada y autenticada; los PR se crean desde la terminal |
 | 2026-10-10 | Personaje personalizable: nombre de una palabra, tienda con espacios, hombre o mujer (1 modelo de cada uno en v1) |

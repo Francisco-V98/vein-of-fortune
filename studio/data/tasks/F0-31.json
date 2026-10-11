@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Documentos 14, 15 y 16 y ocho ADR redactados. Los ADR 0003, 0004, 0005, 0006 y 0008 quedan como propuesta hasta que el autor los confirme.",
       "ref": "rama docs/F0-31-arquitectura-flujo-y-qa · PR #2"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprueba y fusiona el PR. Los ADR 0003, 0004, 0006 y 0008 pasan de propuesta a aceptados.",
+      "ref": "PR #2 · fusionado en main (1ebac06)"
     }
   ],
   "comments": [

@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Plantilla de PR, CONTRIBUTING, .editorconfig y .gitattributes creados.",
       "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "Fusionado: plantillas y convenciones, sin comportamiento que probar.",
+      "ref": "PR #3 · fusionado en main (4ec1f16)"
     }
   ],
   "comments": [],

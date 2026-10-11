@@ -1,6 +1,6 @@
 # ADR-0008 · El QA es una etapa propia del flujo de trabajo
 
-**Estado:** 🟡 Propuesta · **Fecha:** 2026-10-11
+**Estado:** ✅ Aceptada · **Fecha:** 2026-10-11
 
 ## Contexto
 
