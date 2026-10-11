@@ -18,15 +18,17 @@ studio/
 
 ## Abrir el hub
 
-Abre `studio/hub/index.html` en el navegador. Funciona sin servidor ni internet.
+`hub/data.js` es un archivo **generado** y no se versiona: después de clonar o de traer cambios, créalo con `python3 studio/hub/build.py`.
+
+Luego abre `studio/hub/index.html` en el navegador. Funciona sin servidor ni internet.
 
 Si prefieres un servidor local (solo escucha en tu equipo):
 
 ```bash
-python3 -m http.server 8765 --bind 127.0.0.1 --directory studio
+python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-y abre `http://localhost:8765/hub/`.
+ejecutado desde la **raíz del repositorio**, y abre `http://localhost:8765/studio/hub/`.
 
 ## Regenerar los datos
 
