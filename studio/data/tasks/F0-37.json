@@ -7,7 +7,7 @@
       "to": "doing",
       "by": "claude",
       "note": "Se añade el estado qa.",
-      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+      "ref": "rama studio/F0-37-estado-qa-y-catalogo"
     },
     {
       "at": "2026-10-11",
@@ -15,7 +15,7 @@
       "to": "review",
       "by": "claude",
       "note": "El build, el validador y el tablero reconocen el estado qa.",
-      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+      "ref": "rama studio/F0-37-estado-qa-y-catalogo"
     }
   ],
   "comments": [

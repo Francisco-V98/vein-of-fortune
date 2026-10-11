@@ -7,7 +7,7 @@
       "to": "doing",
       "by": "claude",
       "note": "Se empieza a escribir la arquitectura, el flujo de trabajo y el QA.",
-      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+      "ref": "rama docs/F0-31-arquitectura-flujo-y-qa"
     },
     {
       "at": "2026-10-11",
@@ -15,7 +15,7 @@
       "to": "review",
       "by": "claude",
       "note": "Documentos 14, 15 y 16 y ocho ADR redactados. Los ADR 0003, 0004, 0005, 0006 y 0008 quedan como propuesta hasta que el autor los confirme.",
-      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+      "ref": "rama docs/F0-31-arquitectura-flujo-y-qa"
     }
   ],
   "comments": [

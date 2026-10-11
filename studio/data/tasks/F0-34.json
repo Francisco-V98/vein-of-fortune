@@ -7,7 +7,7 @@
       "to": "doing",
       "by": "claude",
       "note": "Flujo de GitHub Actions escrito.",
-      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones"
     }
   ],
   "comments": [

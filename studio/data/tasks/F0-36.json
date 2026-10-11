@@ -7,7 +7,7 @@
       "to": "doing",
       "by": "claude",
       "note": "Plantillas y convenciones del repositorio.",
-      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones"
     },
     {
       "at": "2026-10-11",
@@ -15,7 +15,7 @@
       "to": "review",
       "by": "claude",
       "note": "Plantilla de PR, CONTRIBUTING, .editorconfig y .gitattributes creados.",
-      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones"
     }
   ],
   "comments": [],

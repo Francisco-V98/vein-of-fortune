@@ -7,7 +7,7 @@
       "to": "doing",
       "by": "claude",
       "note": "Se deriva un catálogo de casos de prueba del diseño.",
-      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+      "ref": "rama studio/F0-37-estado-qa-y-catalogo"
     },
     {
       "at": "2026-10-11",
@@ -15,7 +15,7 @@
       "to": "review",
       "by": "claude",
       "note": "49 casos en 14 áreas, con tareas relacionadas, y validación en el build.",
-      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+      "ref": "rama studio/F0-37-estado-qa-y-catalogo"
     }
   ],
   "comments": [],

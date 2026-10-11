@@ -128,4 +128,6 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-11 | Flujo de ramas GitHub Flow con ramas de versión y Conventional Commits con ID de tarea (ADR-0005: propuesta) |
 | 2026-10-11 | **QA como etapa del flujo:** `backlog → sprint → doing → review → qa → done`; catálogo de 49 casos de prueba, registro de errores por severidad y criterios de salida (ADR-0008: propuesta) |
 | 2026-10-11 | Estimación revisada: unas 2.480 h base hasta el lanzamiento (P0 947 h, P0 y P1 2.131 h); la metodología, el scaffolding y el QA suman unas 280 h. Puertas de decisión en la hora 485 y la 840 |
+| 2026-10-11 | El archivo generado `hub/data.js` deja de versionarse (evita conflictos entre PR); se crea con `build.py` |
+| 2026-10-11 | El modelo de ramas (ADR-0005) queda **aceptado** por el autor; el resto de propuestas, de acuerdo con el plan |
 | 2026-10-10 | Personaje personalizable: nombre de una palabra, tienda con espacios, hombre o mujer (1 modelo de cada uno en v1) |

@@ -5,7 +5,6 @@ de cada tarea (historial, comentarios y evidencias) y los assets de referencia.
 Uso:
     python3 studio/hub/build.py            # genera y muestra avisos
     python3 studio/hub/build.py --strict   # falla (código 1) si hay avisos
-    python3 studio/hub/build.py --check    # falla si hub/data.js no está al día (para CI)
 
 Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/roadmap.json        plan y estado actual de cada tarea
@@ -280,33 +279,10 @@ def render(hub):
     return "// Archivo generado por build.py. No editar a mano.\nwindow.HUB = " + json.dumps(hub, ensure_ascii=False) + ";\n"
 
 
-def is_up_to_date(hub):
-    """Compara hub/data.js con lo que se generaría ahora, ignorando la hora de generación."""
-    out = HUB / "data.js"
-    if not out.exists():
-        return False
-    text = out.read_text(encoding="utf-8")
-    body = text.split("window.HUB = ", 1)[1].rsplit(";", 1)[0]
-    current = json.loads(body)
-    current.pop("generated", None)
-    fresh = json.loads(json.dumps(hub, ensure_ascii=False))
-    fresh.pop("generated", None)
-    return current == fresh
-
-
 def main():
     strict = "--strict" in sys.argv
     hub = build_hub()
     roadmap = hub["roadmap"]
-    if "--check" in sys.argv:
-        if warnings:
-            print("%d aviso(s): corrige los datos antes de comprobar." % len(warnings))
-            sys.exit(1)
-        if is_up_to_date(hub):
-            print("hub/data.js está al día.")
-            return
-        print("ERROR: hub/data.js está desactualizado. Ejecuta: python3 studio/hub/build.py")
-        sys.exit(1)
     out = HUB / "data.js"
     out.write_text(render(hub), encoding="utf-8")
     tasks = [t for p in roadmap["phases"] for m in p["milestones"] for t in m["tasks"]]
