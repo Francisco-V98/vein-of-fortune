@@ -5,11 +5,14 @@ de cada tarea (historial, comentarios y evidencias) y los assets de referencia.
 Uso:
     python3 studio/hub/build.py            # genera y muestra avisos
     python3 studio/hub/build.py --strict   # falla (código 1) si hay avisos
+    python3 studio/hub/build.py --check    # falla si hub/data.js no está al día (para CI)
 
 Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/roadmap.json        plan y estado actual de cada tarea
   - studio/data/tasks/<ID>.json     historial, comentarios y evidencias de la tarea
   - studio/evidence/<ID>/...        archivos de evidencia
+  - studio/data/qa/cases.json       catálogo de casos de prueba y sus resultados
+  - studio/data/qa/bugs/BUG-*.json  registro de errores
 
 Regla de coherencia: si el estado de una tarea no es "backlog", debe existir su
 archivo de actividad y el último movimiento del historial debe llevar a ese estado.
@@ -28,9 +31,12 @@ DATA = STUDIO / "data"
 TASKS_DIR = DATA / "tasks"
 EVIDENCE = STUDIO / "evidence"
 
-VALID_STATUS = ["backlog", "sprint", "doing", "review", "done", "dropped"]
+VALID_STATUS = ["backlog", "sprint", "doing", "review", "qa", "done", "dropped"]
 VALID_PRIO = ["P0", "P1", "P2", "P3"]
 MAX_EST = 20  # una tarea más grande debe desglosarse
+VALID_RESULT = ["not-run", "pass", "fail", "blocked", "skipped"]
+VALID_SEVERITY = ["S1", "S2", "S3", "S4"]
+VALID_BUG_STATUS = ["abierto", "triaje", "en-correccion", "corregido", "verificado", "cerrado", "no-se-corrige"]
 VALID_EVIDENCE = ["image", "link", "note", "file", "doc"]
 VALID_AUTHORS = ["autor", "claude"]
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -40,8 +46,10 @@ GROUPS = [
     ("Mundo y narrativa", ["05", "07", "08"]),
     ("Marca y arte", ["12", "13"]),
     ("Técnico y legal", ["10", "11"]),
+    ("Arquitectura y calidad", ["14", "15"]),
     ("Plan y decisiones", ["06"]),
 ]
+ADR_GROUP = "Decisiones de arquitectura (ADR)"
 
 warnings = []
 
@@ -78,6 +86,18 @@ def build_docs():
                     "prop": text.count("🟡"),
                     "open": text.count("❓"),
                 },
+            }
+        )
+    for path in sorted((DOCS / "adr").glob("[0-9][0-9][0-9][0-9]-*.md")) if (DOCS / "adr").exists() else []:
+        text = path.read_text(encoding="utf-8")
+        match = re.search(r"^#\s+(.+)$", text, re.M)
+        docs.append(
+            {
+                "id": "adr-" + path.stem,
+                "title": match.group(1).strip() if match else path.stem,
+                "group": ADR_GROUP,
+                "md": text,
+                "counts": {"ok": text.count("✅"), "prop": text.count("🟡"), "open": text.count("❓")},
             }
         )
     return docs
@@ -118,6 +138,8 @@ def check_activity(tid, status, act):
             warn("%s: fecha inválida en el historial: %s" % (tid, h.get("at")))
         if not h.get("note"):
             warn("%s: movimiento %d sin nota" % (tid, i + 1))
+        if "ref" in h and not isinstance(h["ref"], str):
+            warn("%s: el campo 'ref' del movimiento %d debe ser texto (rama, PR o commit)" % (tid, i + 1))
         prev = h.get("to", prev)
     for c in act.get("comments", []):
         if c.get("by") not in VALID_AUTHORS:
@@ -168,6 +190,53 @@ def check_roadmap(roadmap, activity):
             warn("Hay actividad para una tarea que no existe en el roadmap: %s" % tid)
 
 
+def load_qa(task_ids):
+    """Carga y valida el catálogo de casos de prueba y el registro de errores."""
+    qa = {"areas": [], "types": [], "cases": [], "bugs": []}
+    path = DATA / "qa" / "cases.json"
+    if path.exists():
+        data = load_json(path)
+        qa["areas"] = data.get("areas", [])
+        qa["types"] = data.get("types", [])
+        seen = set()
+        for c in data.get("cases", []):
+            cid = c.get("id", "?")
+            if cid in seen:
+                warn("Caso de prueba repetido: %s" % cid)
+            seen.add(cid)
+            if c.get("area") not in qa["areas"]:
+                warn("%s: área desconocida: %s" % (cid, c.get("area")))
+            if c.get("prio") not in VALID_PRIO:
+                warn("%s: prioridad inválida: %s" % (cid, c.get("prio")))
+            if not c.get("steps") or not c.get("expected"):
+                warn("%s: debe tener pasos y resultado esperado" % cid)
+            status = c.get("result", {}).get("status")
+            if status not in VALID_RESULT:
+                warn("%s: resultado inválido: %s" % (cid, status))
+            elif status != "not-run" and not c["result"].get("at"):
+                warn("%s: un resultado ejecutado debe llevar fecha" % cid)
+            for tid in c.get("tasks", []):
+                if tid not in task_ids:
+                    warn("%s cita una tarea inexistente: %s" % (cid, tid))
+            qa["cases"].append(c)
+    bugs_dir = DATA / "qa" / "bugs"
+    for bp in sorted(bugs_dir.glob("BUG-*.json")) if bugs_dir.exists() else []:
+        b = load_json(bp)
+        if b.get("id") != bp.stem:
+            warn("El archivo %s declara id %s" % (bp.name, b.get("id")))
+        if b.get("severity") not in VALID_SEVERITY:
+            warn("%s: severidad inválida: %s" % (bp.stem, b.get("severity")))
+        if b.get("status") not in VALID_BUG_STATUS:
+            warn("%s: estado inválido: %s" % (bp.stem, b.get("status")))
+        if b.get("task") and b["task"] not in task_ids:
+            warn("%s cita una tarea inexistente: %s" % (bp.stem, b["task"]))
+        for k in ("title", "steps", "expected", "actual"):
+            if not b.get(k):
+                warn("%s: falta '%s'" % (bp.stem, k))
+        qa["bugs"].append(b)
+    return qa
+
+
 def build_assets(assets):
     for img in assets["images"]:
         path = STUDIO / img["file"]
@@ -186,27 +255,60 @@ def build_assets(assets):
     return assets
 
 
-def main():
-    strict = "--strict" in sys.argv
+def build_hub():
     roadmap = load_json(DATA / "roadmap.json")
     activity = load_activity()
     check_roadmap(roadmap, activity)
-    hub = {
+    docs = build_docs()
+    groups = [g for g, _ in GROUPS]
+    if any(d["group"] == ADR_GROUP for d in docs):
+        groups.append(ADR_GROUP)
+    task_ids = {t["id"] for p in roadmap["phases"] for m in p["milestones"] for t in m["tasks"]}
+    return {
         "generated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "config": load_json(DATA / "config.json"),
-        "docs": build_docs(),
-        "groups": [g for g, _ in GROUPS],
+        "docs": docs,
+        "groups": groups,
         "roadmap": roadmap,
         "assets": build_assets(load_json(DATA / "assets.json")),
         "palette": load_json(DATA / "palette.json"),
+        "qa": load_qa(task_ids),
     }
+
+
+def render(hub):
+    return "// Archivo generado por build.py. No editar a mano.\nwindow.HUB = " + json.dumps(hub, ensure_ascii=False) + ";\n"
+
+
+def is_up_to_date(hub):
+    """Compara hub/data.js con lo que se generaría ahora, ignorando la hora de generación."""
     out = HUB / "data.js"
-    out.write_text(
-        "// Archivo generado por build.py. No editar a mano.\nwindow.HUB = "
-        + json.dumps(hub, ensure_ascii=False)
-        + ";\n",
-        encoding="utf-8",
-    )
+    if not out.exists():
+        return False
+    text = out.read_text(encoding="utf-8")
+    body = text.split("window.HUB = ", 1)[1].rsplit(";", 1)[0]
+    current = json.loads(body)
+    current.pop("generated", None)
+    fresh = json.loads(json.dumps(hub, ensure_ascii=False))
+    fresh.pop("generated", None)
+    return current == fresh
+
+
+def main():
+    strict = "--strict" in sys.argv
+    hub = build_hub()
+    roadmap = hub["roadmap"]
+    if "--check" in sys.argv:
+        if warnings:
+            print("%d aviso(s): corrige los datos antes de comprobar." % len(warnings))
+            sys.exit(1)
+        if is_up_to_date(hub):
+            print("hub/data.js está al día.")
+            return
+        print("ERROR: hub/data.js está desactualizado. Ejecuta: python3 studio/hub/build.py")
+        sys.exit(1)
+    out = HUB / "data.js"
+    out.write_text(render(hub), encoding="utf-8")
     tasks = [t for p in roadmap["phases"] for m in p["milestones"] for t in m["tasks"]]
     counts = {}
     for t in tasks:

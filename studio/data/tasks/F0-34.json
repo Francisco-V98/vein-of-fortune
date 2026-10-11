@@ -1,0 +1,28 @@
+{
+  "id": "F0-34",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Flujo de GitHub Actions escrito.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Todavía no se ha ejecutado en GitHub: la tarea pasa a review cuando el primer PR muestre los trabajos en verde. Los trabajos se probaron uno a uno en local."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Flujo de CI",
+      "path": "../.github/workflows/ci.yml"
+    }
+  ]
+}

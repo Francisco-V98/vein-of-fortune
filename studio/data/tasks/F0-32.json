@@ -1,0 +1,42 @@
+{
+  "id": "F0-32",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se construye el verificador con reglas A1 a A9.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "22 pruebas automáticas pasan. Una prueba reveló un defecto real (no validaba ciclos sin código) y se corrigió.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Límite honesto: es un análisis estático aproximado de rutas res:// y nombres de clase; no ve referencias dinámicas. Falta probarlo con GDScript real en la Fase 1."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Verificador",
+      "path": "../tools/arch/check_architecture.py"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Pruebas",
+      "path": "../tools/arch/test_check_architecture.py"
+    }
+  ]
+}

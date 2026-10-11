@@ -1,0 +1,36 @@
+{
+  "id": "F0-37",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se añade el estado qa.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "El build, el validador y el tablero reconocen el estado qa.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "El QA también debe ser un proceso en el flujo."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "QA en el flujo",
+      "doc": "16-calidad-y-qa"
+    }
+  ]
+}

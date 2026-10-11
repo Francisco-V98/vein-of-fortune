@@ -1,0 +1,36 @@
+{
+  "id": "F0-36",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Plantillas y convenciones del repositorio.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Plantilla de PR, CONTRIBUTING, .editorconfig y .gitattributes creados.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    }
+  ],
+  "comments": [],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Plantilla de PR",
+      "path": "../.github/pull_request_template.md"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Guía de contribución",
+      "path": "../CONTRIBUTING.md"
+    }
+  ]
+}

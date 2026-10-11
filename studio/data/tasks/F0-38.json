@@ -1,0 +1,30 @@
+{
+  "id": "F0-38",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se deriva un catálogo de casos de prueba del diseño.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "49 casos en 14 áreas, con tareas relacionadas, y validación en el build.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    }
+  ],
+  "comments": [],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Catálogo",
+      "path": "data/qa/cases.json"
+    }
+  ]
+}

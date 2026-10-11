@@ -1,0 +1,1198 @@
+{
+  "version": 1,
+  "areas": [
+    "Día",
+    "Mercado",
+    "Extracción",
+    "Tienda",
+    "Empleados",
+    "Facciones",
+    "Eventos",
+    "Progresión",
+    "Historia",
+    "Guardado",
+    "Localización",
+    "Accesibilidad",
+    "Rendimiento",
+    "Seguridad",
+    "Privacidad",
+    "Instalación"
+  ],
+  "types": [
+    "accesibilidad",
+    "compatibilidad",
+    "contenido",
+    "funcional",
+    "guardado",
+    "instalación",
+    "localización",
+    "privacidad",
+    "regresión",
+    "rendimiento",
+    "seguridad",
+    "simulación"
+  ],
+  "cases": [
+    {
+      "id": "TC-001",
+      "area": "Día",
+      "title": "Un día tiene tres bloques y el cierre dispara los eventos de fin de día",
+      "type": "funcional",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Empezar un día",
+        "Gastar los tres bloques",
+        "Cerrar el día"
+      ],
+      "expected": "Se muestran el resumen y los eventos de fin de día; el día siguiente empieza en la mañana.",
+      "tasks": [
+        "F2-02"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-002",
+      "area": "Día",
+      "title": "No se pueden gastar más bloques de los disponibles",
+      "type": "funcional",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Gastar los tres bloques",
+        "Intentar una cuarta acción con bloque"
+      ],
+      "expected": "La acción se rechaza con un mensaje claro y el estado no cambia.",
+      "tasks": [
+        "F2-02"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-003",
+      "area": "Mercado",
+      "title": "El precio tiende al valor justo sin saltos mayores al límite diario",
+      "type": "simulación",
+      "level": "integración",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Simular 10.000 días",
+        "Medir variación diaria y distancia al valor justo"
+      ],
+      "expected": "Ninguna variación diaria supera el límite y el precio vuelve al valor justo a largo plazo.",
+      "tasks": [
+        "F2-08"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-004",
+      "area": "Mercado",
+      "title": "La misma semilla produce la misma serie de precios",
+      "type": "regresión",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Ejecutar dos simulaciones con la misma semilla",
+        "Comparar las series"
+      ],
+      "expected": "Las series son idénticas.",
+      "tasks": [
+        "F2-04"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-005",
+      "area": "Mercado",
+      "title": "Vender en tandas rinde más que vender de golpe",
+      "type": "funcional",
+      "level": "integración",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Vender 100 unidades de golpe",
+        "Vender 100 unidades en cinco tandas"
+      ],
+      "expected": "El ingreso total en tandas es mayor (slippage).",
+      "tasks": [
+        "F2-07"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-006",
+      "area": "Mercado",
+      "title": "Comprar y vender seguido no genera ganancia segura",
+      "type": "simulación",
+      "level": "integración",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Comprar y vender el mismo mineral repetidamente"
+      ],
+      "expected": "El resultado neto es una pérdida o cero (spread).",
+      "tasks": [
+        "F2-07"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-007",
+      "area": "Mercado",
+      "title": "El mercado se actualiza tres veces por día, una por bloque",
+      "type": "funcional",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Avanzar de bloque tres veces"
+      ],
+      "expected": "El precio cambia en cada cambio de bloque.",
+      "tasks": [
+        "F2-06"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-008",
+      "area": "Mercado",
+      "title": "Noticia confirmada, rumor y falsa alarma respetan su fiabilidad",
+      "type": "simulación",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Generar 1.000 eventos",
+        "Comparar noticias con lo ocurrido"
+      ],
+      "expected": "La proporción de aciertos coincide con la fiabilidad de cada tipo.",
+      "tasks": [
+        "F3-02"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-009",
+      "area": "Mercado",
+      "title": "Cada medio reporta un mismo evento con su sesgo y retraso",
+      "type": "funcional",
+      "level": "manual",
+      "auto": false,
+      "prio": "P1",
+      "steps": [
+        "Provocar un evento laboral",
+        "Leer los tres medios"
+      ],
+      "expected": "El Heraldo minimiza, La Voz exagera y el Teletipo llega antes, a veces con error.",
+      "tasks": [
+        "F3-03"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-010",
+      "area": "Extracción",
+      "title": "El escáner muestra rangos que contienen la composición real",
+      "type": "funcional",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Generar 1.000 menas",
+        "Escanear cada una"
+      ],
+      "expected": "La composición real siempre cae dentro del rango mostrado.",
+      "tasks": [
+        "F2-11"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-011",
+      "area": "Extracción",
+      "title": "Fallar el minijuego daña la mena y desgasta la herramienta",
+      "type": "funcional",
+      "level": "integración",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Resolver un minijuego con resultado fallo"
+      ],
+      "expected": "El rendimiento baja, la mena se daña y el desgaste aumenta según la tabla.",
+      "tasks": [
+        "F2-13"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-012",
+      "area": "Extracción",
+      "title": "La zona óptima del Picado se ensancha con la herramienta y la Pericia",
+      "type": "funcional",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Jugar Picado con pico nivel 1",
+        "Repetir con pico nivel 3"
+      ],
+      "expected": "La zona óptima es más ancha con la herramienta mejor.",
+      "tasks": [
+        "F2-16"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-013",
+      "area": "Extracción",
+      "title": "Los minijuegos se completan con táctil y con mando",
+      "type": "compatibilidad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Jugar Picado y Perforación con el dedo",
+        "Repetir con un mando Bluetooth"
+      ],
+      "expected": "Ambos modos permiten completar el minijuego y el HUD táctil se oculta con mando.",
+      "tasks": [
+        "F2-14",
+        "F1-07"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-014",
+      "area": "Extracción",
+      "title": "Las tareas de peligro se resuelven dentro del tiempo",
+      "type": "funcional",
+      "level": "manual",
+      "auto": false,
+      "prio": "P1",
+      "steps": [
+        "Provocar una fuga de gas",
+        "Sellar las válvulas en orden"
+      ],
+      "expected": "La tarea se completa o falla según el tiempo y el Temple.",
+      "tasks": [
+        "F3-10"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-015",
+      "area": "Extracción",
+      "title": "Una zona agotada se regenera tras su ciclo",
+      "type": "funcional",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Agotar una zona",
+        "Avanzar los días del ciclo"
+      ],
+      "expected": "Las menas reaparecen al terminar el ciclo.",
+      "tasks": [
+        "F3-13"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-016",
+      "area": "Extracción",
+      "title": "Perder un encuentro pierde solo parte de la carga",
+      "type": "funcional",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Perder un encuentro con carga completa"
+      ],
+      "expected": "Se pierde una fracción definida y el resto se conserva.",
+      "tasks": [
+        "F3-09"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-017",
+      "area": "Tienda",
+      "title": "Una venta actualiza el inventario y el dinero sin diferencias",
+      "type": "funcional",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Vender 10 unidades"
+      ],
+      "expected": "El inventario baja en 10 y el dinero sube exactamente el total.",
+      "tasks": [
+        "F2-18"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-018",
+      "area": "Tienda",
+      "title": "El almacén respeta la capacidad y cobra alquiler",
+      "type": "funcional",
+      "level": "integración",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Llenar el almacén",
+        "Intentar guardar más",
+        "Avanzar un día"
+      ],
+      "expected": "No entra más de la capacidad y el alquiler se descuenta.",
+      "tasks": [
+        "F2-17"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-019",
+      "area": "Tienda",
+      "title": "Un contrato vencido aplica su penalización",
+      "type": "funcional",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Aceptar un contrato",
+        "Dejar vencer el plazo"
+      ],
+      "expected": "Se cobra la penalización y baja la reputación.",
+      "tasks": [
+        "F3-05"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-020",
+      "area": "Tienda",
+      "title": "En el regateo el cliente se va al agotar su paciencia",
+      "type": "funcional",
+      "level": "manual",
+      "auto": false,
+      "prio": "P1",
+      "steps": [
+        "Contraofertar repetidamente por encima del máximo"
+      ],
+      "expected": "El cliente se retira y no hay venta.",
+      "tasks": [
+        "F2-19"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-021",
+      "area": "Empleados",
+      "title": "Un contrato por tiempo vence y el empleado se va o renueva",
+      "type": "funcional",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Contratar por 7 días",
+        "Avanzar 7 días"
+      ],
+      "expected": "El empleado se va o renueva según su lealtad y el salario.",
+      "tasks": [
+        "F4-90"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-022",
+      "area": "Empleados",
+      "title": "Un empleado de baja lealtad puede robar según su probabilidad",
+      "type": "simulación",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Simular 1.000 días con un empleado de lealtad baja"
+      ],
+      "expected": "La frecuencia de robos coincide con la probabilidad configurada.",
+      "tasks": [
+        "F4-104"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-023",
+      "area": "Facciones",
+      "title": "La vigilancia sube con operaciones negras y baja con el tiempo",
+      "type": "funcional",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Hacer tres ventas negras",
+        "Avanzar días sin operar"
+      ],
+      "expected": "El indicador sube con cada venta y baja gradualmente.",
+      "tasks": [
+        "F4-67"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-024",
+      "area": "Facciones",
+      "title": "Una redada confisca el stock negro y cierra la tienda",
+      "type": "funcional",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Llevar la vigilancia al nivel máximo"
+      ],
+      "expected": "Se confisca el stock negro, se cierra la tienda y se aplica la multa.",
+      "tasks": [
+        "F4-69"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-025",
+      "area": "Eventos",
+      "title": "Un apagón sin generador cierra la tienda ese día",
+      "type": "funcional",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Provocar un apagón sin generador"
+      ],
+      "expected": "La tienda no puede abrir y el día lo registra.",
+      "tasks": [
+        "F4-78"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-026",
+      "area": "Eventos",
+      "title": "Cada evento social se anuncia antes en las noticias",
+      "type": "funcional",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Programar una huelga",
+        "Revisar las noticias de los días previos"
+      ],
+      "expected": "Aparece un aviso o rumor antes del evento.",
+      "tasks": [
+        "F4-88"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-027",
+      "area": "Progresión",
+      "title": "Los stats suben por uso y con rendimientos decrecientes",
+      "type": "funcional",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Realizar 100 acciones fáciles",
+        "Realizar 10 acciones difíciles"
+      ],
+      "expected": "Las difíciles aportan más experiencia por acción.",
+      "tasks": [
+        "F3-11"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-028",
+      "area": "Progresión",
+      "title": "Subir de estatus exige condiciones y no solo dinero",
+      "type": "funcional",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Tener dinero suficiente sin cumplir las condiciones"
+      ],
+      "expected": "El ascenso se rechaza e indica qué falta.",
+      "tasks": [
+        "F4-109"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-029",
+      "area": "Historia",
+      "title": "El Acto I se puede completar de principio a fin",
+      "type": "funcional",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Empezar una partida nueva",
+        "Jugar el Acto I hasta pagar las primeras cuotas"
+      ],
+      "expected": "El acto se cierra y se desbloquea lo siguiente sin errores.",
+      "tasks": [
+        "F3-16"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-030",
+      "area": "Historia",
+      "title": "El nombre del personaje aparece en los diálogos y los nombres inválidos se rechazan",
+      "type": "funcional",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Elegir un nombre válido",
+        "Probar nombres vacíos, largos y con símbolos"
+      ],
+      "expected": "El nombre válido aparece en los diálogos; los inválidos se rechazan con un mensaje.",
+      "tasks": [
+        "F3-14"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-031",
+      "area": "Guardado",
+      "title": "Guardar y cargar conserva el estado exacto",
+      "type": "guardado",
+      "level": "integración",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Jugar varios días",
+        "Guardar y cerrar",
+        "Cargar"
+      ],
+      "expected": "El estado es idéntico al guardado.",
+      "tasks": [
+        "F2-03"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-032",
+      "area": "Guardado",
+      "title": "Un guardado corrupto se detecta y no rompe el juego",
+      "type": "guardado",
+      "level": "integración",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Alterar bytes del archivo",
+        "Cargar"
+      ],
+      "expected": "El juego detecta la corrupción, ofrece la copia de respaldo y no se cierra.",
+      "tasks": [
+        "F2-37"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-033",
+      "area": "Guardado",
+      "title": "Un guardado de una versión anterior se migra",
+      "type": "guardado",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Cargar un guardado de la versión anterior"
+      ],
+      "expected": "Se migra a la versión actual sin perder datos.",
+      "tasks": [
+        "F3-35"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-034",
+      "area": "Localización",
+      "title": "Cambiar de idioma actualiza todos los textos sin reiniciar",
+      "type": "localización",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Abrir opciones",
+        "Cambiar de español a inglés y volver"
+      ],
+      "expected": "Todos los textos visibles cambian de inmediato.",
+      "tasks": [
+        "F1-16"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-035",
+      "area": "Localización",
+      "title": "Ningún texto se corta con idiomas más largos",
+      "type": "localización",
+      "level": "manual",
+      "auto": false,
+      "prio": "P1",
+      "steps": [
+        "Activar pseudo-localización",
+        "Recorrer todas las pantallas"
+      ],
+      "expected": "No hay textos cortados ni superpuestos.",
+      "tasks": [
+        "F1-19"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-036",
+      "area": "Localización",
+      "title": "No hay cadenas sin traducir ni cadenas fijas en el código",
+      "type": "contenido",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Ejecutar el verificador de cadenas"
+      ],
+      "expected": "No quedan cadenas fijas ni claves sin traducción.",
+      "tasks": [
+        "F1-17"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-037",
+      "area": "Accesibilidad",
+      "title": "Las subidas y bajadas se distinguen sin depender del color",
+      "type": "accesibilidad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P1",
+      "steps": [
+        "Ver el mercado con un filtro de daltonismo"
+      ],
+      "expected": "Flechas y formas permiten distinguir subidas y bajadas.",
+      "tasks": [
+        "F5-17"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-038",
+      "area": "Accesibilidad",
+      "title": "Todo el juego se maneja con mando",
+      "type": "accesibilidad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Recorrer todas las pantallas solo con el mando"
+      ],
+      "expected": "Todo es accesible por foco y el HUD táctil se oculta.",
+      "tasks": [
+        "F1-08"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-039",
+      "area": "Rendimiento",
+      "title": "El arranque en frío cumple el presupuesto en gama media",
+      "type": "rendimiento",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Cerrar el juego por completo",
+        "Abrirlo y cronometrar hasta el menú"
+      ],
+      "expected": "Arranque dentro del presupuesto (5 s a evaluar).",
+      "tasks": [
+        "F1-44"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-040",
+      "area": "Rendimiento",
+      "title": "Sesión de 60 minutos sin cierres ni fugas de memoria visibles",
+      "type": "rendimiento",
+      "level": "manual",
+      "auto": false,
+      "prio": "P1",
+      "steps": [
+        "Jugar 60 minutos con el overlay de depuración"
+      ],
+      "expected": "Sin cierres, memoria estable y cuadros por segundo dentro del objetivo.",
+      "tasks": [
+        "F1-22"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-041",
+      "area": "Seguridad",
+      "title": "No hay secretos en el repositorio ni en el APK",
+      "type": "seguridad",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Ejecutar el escaneo de secretos sobre el repositorio y el APK"
+      ],
+      "expected": "El escaneo no encuentra claves, tokens ni contraseñas.",
+      "tasks": [
+        "F1-42"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-042",
+      "area": "Seguridad",
+      "title": "El manifiesto solo pide los permisos necesarios",
+      "type": "seguridad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Revisar el manifiesto del APK"
+      ],
+      "expected": "Solo hay permisos esenciales y ningún componente exportado innecesario.",
+      "tasks": [
+        "F1-41"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-043",
+      "area": "Seguridad",
+      "title": "Los nombres del personaje y de la tienda no inyectan formato ni rompen la interfaz",
+      "type": "seguridad",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Probar nombres con corchetes, comillas, saltos de línea y emojis"
+      ],
+      "expected": "Se sanean o se rechazan; la interfaz no se rompe.",
+      "tasks": [
+        "F3-14"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-044",
+      "area": "Seguridad",
+      "title": "El archivo de diagnóstico no contiene datos personales",
+      "type": "privacidad",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P0",
+      "steps": [
+        "Generar un diagnóstico con nombre y tienda personalizados"
+      ],
+      "expected": "El archivo no incluye el nombre del jugador ni de la tienda.",
+      "tasks": [
+        "F2-24"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-045",
+      "area": "Seguridad",
+      "title": "La versión de lanzamiento no tiene depuración activada",
+      "type": "seguridad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Instalar el build de lanzamiento",
+        "Intentar abrir la consola y los atajos"
+      ],
+      "expected": "No hay consola, atajos ni overlay de depuración.",
+      "tasks": [
+        "F5-51"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-046",
+      "area": "Seguridad",
+      "title": "Un guardado manipulado no ejecuta contenido ni rompe invariantes",
+      "type": "seguridad",
+      "level": "integración",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Editar valores imposibles en el guardado",
+        "Cargar"
+      ],
+      "expected": "Los valores imposibles se rechazan o se corrigen; no hay efectos inesperados.",
+      "tasks": [
+        "F2-37"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-047",
+      "area": "Privacidad",
+      "title": "Nada se envía sin una acción del usuario",
+      "type": "privacidad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Jugar con un monitor de red",
+        "Exportar el diagnóstico"
+      ],
+      "expected": "No hay tráfico de red automático; solo se comparte el archivo cuando el usuario lo decide.",
+      "tasks": [
+        "F2-25"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-048",
+      "area": "Privacidad",
+      "title": "El identificador anónimo se puede reiniciar",
+      "type": "privacidad",
+      "level": "unitaria",
+      "auto": true,
+      "prio": "P1",
+      "steps": [
+        "Reiniciar el identificador"
+      ],
+      "expected": "Se genera uno nuevo y el anterior deja de usarse.",
+      "tasks": [
+        "F2-24"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-049",
+      "area": "Instalación",
+      "title": "Instalar, abrir, cerrar y actualizar conserva la partida",
+      "type": "instalación",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Instalar la versión anterior",
+        "Jugar y guardar",
+        "Actualizar a la nueva"
+      ],
+      "expected": "La partida se conserva y el juego abre normalmente.",
+      "tasks": [
+        "F5-50"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    }
+  ]
+}

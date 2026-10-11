@@ -1,0 +1,23 @@
+{
+  "id": "F0-39",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se construye la vista QA del hub.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Resumen, filtros por área y tipo, y registro de errores por severidad.",
+      "ref": "rama docs/F0-31-arquitectura-y-flujo-de-trabajo"
+    }
+  ],
+  "comments": [],
+  "evidence": []
+}
