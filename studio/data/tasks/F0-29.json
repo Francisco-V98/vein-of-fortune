@@ -7,6 +7,13 @@
       "to": "doing",
       "by": "claude",
       "note": "Se prepara el repositorio local: .gitignore, README y estructura."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Repositorio privado creado por el autor y subido: 2 commits en la rama main."
     }
   ],
   "comments": [
@@ -14,7 +21,30 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Falta crear el repositorio privado vacío en GitHub y subirlo. La herramienta gh no está instalada; el autor lo crea en la web."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Te dejo el repo git@github.com:Francisco-V98/vein-of-fortune.git"
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Se subió con el alias SSH github.com-personal, tras comprobar que esa clave pertenece a Francisco-V98 y no a la cuenta de trabajo. La consulta pública devuelve 404, coherente con un repositorio privado: confírmalo en Settings."
     }
   ],
-  "evidence": []
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "link",
+      "title": "Repositorio en GitHub",
+      "url": "https://github.com/Francisco-V98/vein-of-fortune"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación de la subida",
+      "text": "El hash de main en local y en origin coincidió tras el push. Commits: 1dc95f4 (estructura inicial) y f5b051a (confirma Godot y prueba de extracción)."
+    }
+  ]
 }

@@ -300,7 +300,7 @@
               "id": "F0-29",
               "title": "Repositorio privado en GitHub",
               "est": 3,
-              "status": "doing",
+              "status": "review",
               "desc": "Preparar .gitignore, README y primer commit; subir cuando el nombre esté definido.",
               "done_when": "El repositorio existe, es privado y tiene el primer commit."
             }
