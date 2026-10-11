@@ -24,8 +24,6 @@ jobs:
           python-version: "3.11"
       - name: Validar roadmap, tareas, catálogo de QA y registro de errores
         run: python3 studio/hub/build.py --strict
-      - name: Comprobar que hub/data.js está al día
-        run: python3 studio/hub/build.py --check
 
   tools:
     name: Pruebas de las herramientas

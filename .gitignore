@@ -23,3 +23,6 @@ __pycache__/
 .godot/
 .import/
 *.translation
+
+# Archivo generado por studio/hub/build.py (no se versiona)
+studio/hub/data.js

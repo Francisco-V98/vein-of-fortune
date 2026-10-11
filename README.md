@@ -18,7 +18,7 @@ Un optimista hereda una deuda, una licencia y un puesto de mercado en **Valdoria
 
 ## Ver el estudio (documentos, roadmap, tablero, arte)
 
-Abre `studio/hub/index.html` en el navegador. No necesita servidor ni internet.
+Primero genera los datos (el archivo `studio/hub/data.js` no se versiona) y luego abre `studio/hub/index.html` en el navegador. No necesita servidor ni internet.
 
 Después de cambiar documentos o datos, se regenera con:
 
