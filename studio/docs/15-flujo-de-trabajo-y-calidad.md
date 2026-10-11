@@ -100,7 +100,7 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 
 | Trabajo | Qué hace |
 |---|---|
-| `studio` | Valida roadmap, tareas, catálogo de QA y registro de errores (`build.py --strict`) y que `hub/data.js` esté al día (`--check`) |
+| `studio` | Valida roadmap, tareas, catálogo de QA y registro de errores (`build.py --strict`); el archivo generado `hub/data.js` no se versiona |
 | `tools` | Pruebas de las herramientas de verificación |
 | `commits` | Convención de mensajes de commit del PR |
 | `architecture` | Verificador de arquitectura sobre `game/` |
