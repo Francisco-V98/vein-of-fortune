@@ -123,4 +123,11 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-11 | Backlog desglosado de 190 a 423 tareas de 2 a 20 horas, con prioridad P0 a P3 |
 | 2026-10-11 | Prioridades: P0 indispensable, P1 importante, P2 deseable, P3 opcional; el hub permite recortar el alcance y ver la línea de tiempo en horas |
 | 2026-10-11 | **Estimación revisada al desglosar:** unas 2.200 h base hasta el lanzamiento (rango 1.700–3.050 h); solo P0 son unas 750 h y P0 con P1, unas 1.850 h. Reemplaza la cifra de 850–1.450 h |
+| 2026-10-11 | **Requisito:** trabajo por ramas, clean code, arquitectura muy modular sin dependencias directas, escalable, con scaffolding y buenas prácticas |
+| 2026-10-11 | Arquitectura por módulos con capas, api pública, eventos de dominio y puertos/adaptadores, verificada automáticamente (ADR-0003, 0004, 0006: propuestas) |
+| 2026-10-11 | Flujo de ramas GitHub Flow con ramas de versión y Conventional Commits con ID de tarea (ADR-0005: propuesta) |
+| 2026-10-11 | **QA como etapa del flujo:** `backlog → sprint → doing → review → qa → done`; catálogo de 49 casos de prueba, registro de errores por severidad y criterios de salida (ADR-0008: propuesta) |
+| 2026-10-11 | Estimación revisada: unas 2.480 h base hasta el lanzamiento (P0 947 h, P0 y P1 2.131 h); la metodología, el scaffolding y el QA suman unas 280 h. Puertas de decisión en la hora 485 y la 840 |
+| 2026-10-11 | El archivo generado `hub/data.js` deja de versionarse (evita conflictos entre PR); se crea con `build.py` |
+| 2026-10-11 | El modelo de ramas (ADR-0005) queda **aceptado** por el autor; el resto de propuestas, de acuerdo con el plan |
 | 2026-10-10 | Personaje personalizable: nombre de una palabra, tienda con espacios, hombre o mujer (1 modelo de cada uno en v1) |

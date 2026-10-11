@@ -1,0 +1,47 @@
+{
+  "id": "F0-34",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Flujo de GitHub Actions escrito.",
+      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Primera ejecución real en GitHub: los 5 trabajos pasan en verde.",
+      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Todavía no se ha ejecutado en GitHub: la tarea pasa a review cuando el primer PR muestre los trabajos en verde. Los trabajos se probaron uno a uno en local."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Estudio, herramientas, commits, arquitectura y juego pasaron en 4 a 10 segundos cada uno. El trabajo del juego solo avisa que aún no existe project.godot."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Flujo de CI",
+      "path": "../.github/workflows/ci.yml"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "link",
+      "title": "Ejecución de la CI en GitHub",
+      "url": "https://github.com/Francisco-V98/vein-of-fortune/actions/runs/38155493581"
+    }
+  ]
+}

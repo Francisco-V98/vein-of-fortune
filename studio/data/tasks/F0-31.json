@@ -1,0 +1,53 @@
+{
+  "id": "F0-31",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza a escribir la arquitectura, el flujo de trabajo y el QA.",
+      "ref": "rama docs/F0-31-arquitectura-flujo-y-qa · PR #2"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documentos 14, 15 y 16 y ocho ADR redactados. Los ADR 0003, 0004, 0005, 0006 y 0008 quedan como propuesta hasta que el autor los confirme.",
+      "ref": "rama docs/F0-31-arquitectura-flujo-y-qa · PR #2"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Necesito trabajar por ramas, muy organizado, con clean code, muy modular y sin dependencias directas, escalable, con buen scaffolding y las mejores prácticas. También quiero QA (revisiones, pruebas funcionales, seguridad) como un proceso dentro del flujo."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "El modelo de ramas, la arquitectura concreta y el QA como etapa propia son propuestas mías (ADR en estado Propuesta). Los principios son requisitos tuyos."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Arquitectura y modularidad",
+      "doc": "14-arquitectura-y-modularidad"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Flujo de trabajo y calidad",
+      "doc": "15-flujo-de-trabajo-y-calidad"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Calidad y QA",
+      "doc": "16-calidad-y-qa"
+    }
+  ]
+}

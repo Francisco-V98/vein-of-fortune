@@ -11,10 +11,11 @@
       "sprint",
       "doing",
       "review",
+      "qa",
       "done",
       "dropped"
     ],
-    "notes": "Fuente única del plan. Las horas son horas del autor (dirigir a la IA, probar, generar assets, corregir), no tiempo de cálculo. Cada tarea tiene prioridad P0 a P3. F1 a F3 tienen estimación media; F4 en adelante es gruesa (±50 %) y se afina antes de entrar a cada fase.",
+    "notes": "Fuente única del plan. Las horas son horas del autor (dirigir a la IA, probar, generar assets, corregir), no tiempo de cálculo, e incluyen escribir las pruebas de cada tarea. Cada tarea tiene prioridad P0 a P3. Flujo: backlog, sprint, doing, review, qa, done. F1 a F3 tienen estimación media; F4 en adelante es gruesa (±50 %) y se afina antes de entrar a cada fase.",
     "priorities": {
       "P0": "Indispensable: sin esto no hay juego publicable",
       "P1": "Importante: define la experiencia prevista",
@@ -349,6 +350,93 @@
               "prio": "P1"
             }
           ]
+        },
+        {
+          "id": "F0.9",
+          "name": "Metodología, calidad y QA",
+          "tasks": [
+            {
+              "id": "F0-31",
+              "status": "review",
+              "title": "Documentos de arquitectura, flujo de trabajo, QA y ADR",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Documentos 14, 15 y 16 y ocho registros de decisión (ADR).",
+              "done_when": "Documentos revisados por el autor."
+            },
+            {
+              "id": "F0-32",
+              "status": "review",
+              "title": "Verificador de arquitectura con pruebas automáticas",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Comprueba capas, módulos, dominio puro, plataforma, ciclos y autoloads.",
+              "done_when": "22 pruebas pasan; falta ejecutarlo con código real en la Fase 1."
+            },
+            {
+              "id": "F0-33",
+              "status": "review",
+              "title": "Verificador de mensajes de commit con pruebas",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Convención tipo(ámbito): ID descripción.",
+              "done_when": "9 pruebas pasan."
+            },
+            {
+              "id": "F0-34",
+              "status": "review",
+              "title": "Integración continua en GitHub Actions",
+              "est": 4,
+              "prio": "P0",
+              "desc": "Trabajos: estudio, herramientas, commits, arquitectura, QA y juego.",
+              "done_when": "Los 5 trabajos de CI pasan en verde en GitHub."
+            },
+            {
+              "id": "F0-35",
+              "status": "backlog",
+              "title": "Protección de la rama main y ajustes de GitHub",
+              "est": 1,
+              "prio": "P0",
+              "desc": "Los hace el autor: PR obligatorio, comprobaciones requeridas, historial lineal.",
+              "done_when": "Reglas activas en Settings."
+            },
+            {
+              "id": "F0-36",
+              "status": "review",
+              "title": "Plantillas y convenciones del repositorio",
+              "est": 2,
+              "prio": "P1",
+              "desc": "Plantilla de PR, CONTRIBUTING, editorconfig y gitattributes.",
+              "done_when": "Archivos en el repositorio."
+            },
+            {
+              "id": "F0-37",
+              "status": "review",
+              "title": "Estado qa en el flujo, el validador y el hub",
+              "est": 3,
+              "prio": "P0",
+              "desc": "Nuevo estado entre review y done en el roadmap, el build y el tablero.",
+              "done_when": "El build valida el estado qa y el tablero lo muestra."
+            },
+            {
+              "id": "F0-38",
+              "status": "review",
+              "title": "Catálogo inicial de casos de prueba con su validación",
+              "est": 6,
+              "prio": "P0",
+              "desc": "49 casos derivados del diseño, con resultado, tareas relacionadas y validación en el build.",
+              "done_when": "El build valida el catálogo."
+            },
+            {
+              "id": "F0-39",
+              "status": "review",
+              "title": "Vista de QA en el hub: casos, resultados y errores",
+              "est": 5,
+              "prio": "P0",
+              "desc": "Resumen, filtros por área y tipo, y registro de errores por severidad.",
+              "done_when": "La vista QA se muestra en el hub."
+            }
+          ]
         }
       ],
       "confidence": "alta"
@@ -358,8 +446,8 @@
       "name": "Preparación técnica",
       "target": "MVP",
       "hours": [
-        50,
-        80
+        120,
+        190
       ],
       "goal": "Tener el entorno funcionando, un proyecto Godot que corre en el Android, la estructura de datos y las reglas de arte listas.",
       "gate": null,
@@ -627,6 +715,180 @@
               "done_when": "Un comando genera el APK de pruebas."
             }
           ]
+        },
+        {
+          "id": "F1.6",
+          "name": "Scaffolding y calidad del código",
+          "tasks": [
+            {
+              "id": "F1-27",
+              "status": "backlog",
+              "title": "Esqueleto de game/ según la arquitectura",
+              "est": 5,
+              "prio": "P0",
+              "desc": "Carpetas, architecture.json y README por módulo.",
+              "done_when": "El verificador de arquitectura corre sobre game/."
+            },
+            {
+              "id": "F1-28",
+              "status": "backlog",
+              "title": "Generador de módulos",
+              "est": 6,
+              "prio": "P0",
+              "desc": "Crea las capas, las pruebas y el registro de un módulo nuevo.",
+              "done_when": "Un módulo de ejemplo se genera y pasa el verificador."
+            },
+            {
+              "id": "F1-29",
+              "status": "backlog",
+              "title": "Núcleo (kernel): Result, identificadores, azar con semilla, eventos y bus",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Tipos base compartidos y mínimos.",
+              "done_when": "Pruebas del núcleo en verde."
+            },
+            {
+              "id": "F1-30",
+              "status": "backlog",
+              "title": "Puertos de plataforma y adaptadores de prueba",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Entrada, almacenamiento, audio, idioma y reloj.",
+              "done_when": "Cada puerto tiene un adaptador de prueba."
+            },
+            {
+              "id": "F1-31",
+              "status": "backlog",
+              "title": "Raíz de composición e inyección de dependencias",
+              "est": 6,
+              "prio": "P0",
+              "desc": "app/ conecta puertos, adaptadores y módulos.",
+              "done_when": "El juego arranca desde app/."
+            },
+            {
+              "id": "F1-32",
+              "status": "backlog",
+              "title": "gdlint y gdformat configurados y en integración continua",
+              "est": 3,
+              "prio": "P0",
+              "desc": "Estilo y lint de GDScript automáticos.",
+              "done_when": "El PR falla si hay avisos."
+            },
+            {
+              "id": "F1-33",
+              "status": "backlog",
+              "title": "Pruebas del dominio con Godot sin interfaz en integración continua",
+              "est": 6,
+              "prio": "P0",
+              "desc": "Marco de pruebas ejecutado por consola en cada PR.",
+              "done_when": "Las pruebas corren en CI."
+            },
+            {
+              "id": "F1-34",
+              "status": "backlog",
+              "title": "Hooks locales: formato, lint, arquitectura y mensajes",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Verificación antes de cada commit.",
+              "done_when": "Un commit inválido se rechaza en local."
+            },
+            {
+              "id": "F1-35",
+              "status": "backlog",
+              "title": "Acciones de GitHub fijadas por hash y Dependabot",
+              "est": 2,
+              "prio": "P1",
+              "desc": "Reducir riesgo de la cadena de suministro.",
+              "done_when": "Acciones fijadas y Dependabot activo."
+            },
+            {
+              "id": "F1-36",
+              "status": "backlog",
+              "title": "UI kit: tema y tokens de diseño desde la paleta",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Tema de Godot y componentes base.",
+              "done_when": "Las pantallas usan el tema."
+            },
+            {
+              "id": "F1-37",
+              "status": "backlog",
+              "title": "Convención de nombres y estructura de assets",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Reglas para arte, audio y fuentes.",
+              "done_when": "Convención documentada."
+            },
+            {
+              "id": "F1-38",
+              "status": "backlog",
+              "title": "Corte vertical de referencia de punta a punta",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Un módulo mínimo completo que valide la arquitectura con código real.",
+              "done_when": "Pasa el verificador y tiene pruebas."
+            }
+          ]
+        },
+        {
+          "id": "F1.7",
+          "name": "QA y seguridad",
+          "tasks": [
+            {
+              "id": "F1-39",
+              "status": "backlog",
+              "title": "Plan de pruebas y matriz de dispositivos con el Android del autor",
+              "est": 4,
+              "prio": "P0",
+              "desc": "Qué se prueba, dónde y con qué dispositivos.",
+              "done_when": "Matriz definida."
+            },
+            {
+              "id": "F1-40",
+              "status": "backlog",
+              "title": "Plantilla de informe de QA por versión",
+              "est": 2,
+              "prio": "P1",
+              "desc": "Resultados, errores, métricas y decisión.",
+              "done_when": "Plantilla en studio/qa."
+            },
+            {
+              "id": "F1-41",
+              "status": "backlog",
+              "title": "Lista de verificación de seguridad adaptada de OWASP MASVS",
+              "est": 4,
+              "prio": "P0",
+              "desc": "Para un juego sin conexión ni cuentas.",
+              "done_when": "Lista aprobada y con casos asociados."
+            },
+            {
+              "id": "F1-42",
+              "status": "backlog",
+              "title": "Escaneo de secretos en integración continua",
+              "est": 3,
+              "prio": "P0",
+              "desc": "Detectar claves, tokens y contraseñas en el repositorio.",
+              "done_when": "Un secreto de prueba es detectado."
+            },
+            {
+              "id": "F1-43",
+              "status": "backlog",
+              "title": "Proceso de errores probado con un error de práctica",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Plantilla, severidad y triaje.",
+              "done_when": "Un error de práctica recorre el ciclo completo."
+            },
+            {
+              "id": "F1-44",
+              "status": "backlog",
+              "title": "Presupuestos de rendimiento medidos en el teléfono",
+              "est": 4,
+              "prio": "P1",
+              "desc": "Arranque, cuadros por segundo, memoria y batería.",
+              "done_when": "Medidas registradas."
+            }
+          ]
         }
       ],
       "confidence": "media"
@@ -636,8 +898,8 @@
       "name": "Prototipo del núcleo",
       "target": "MVP",
       "hours": [
-        135,
-        210
+        155,
+        245
       ],
       "goal": "Algo jugable aunque feo: un día completo con extracción, mercado y tienda, para comprobar si el loop es divertido.",
       "gate": "Puerta A: ¿es divertido? Si no lo es, se ajusta o se replantea antes de invertir en arte final.",
@@ -1007,6 +1269,46 @@
               "done_when": "Documento escrito y revisado."
             }
           ]
+        },
+        {
+          "id": "F2.11",
+          "name": "QA del prototipo",
+          "tasks": [
+            {
+              "id": "F2-35",
+              "status": "backlog",
+              "title": "Automatizar los casos del mercado y del día del catálogo",
+              "est": 8,
+              "prio": "P0"
+            },
+            {
+              "id": "F2-36",
+              "status": "backlog",
+              "title": "Ronda funcional del prototipo en el teléfono con resultados registrados",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F2-37",
+              "status": "backlog",
+              "title": "Pruebas de guardado: corrupción y migración",
+              "est": 5,
+              "prio": "P0"
+            }
+          ]
+        },
+        {
+          "id": "F2.12",
+          "name": "Arquitectura y deuda técnica",
+          "tasks": [
+            {
+              "id": "F2-38",
+              "status": "backlog",
+              "title": "Revisión de arquitectura y deuda técnica del prototipo",
+              "est": 6,
+              "prio": "P1"
+            }
+          ]
         }
       ],
       "confidence": "media"
@@ -1016,8 +1318,8 @@
       "name": "Vertical slice",
       "target": "MVP",
       "hours": [
-        280,
-        460
+        300,
+        495
       ],
       "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido finales, información por capas, noticias, encuentros y progresión base.",
       "gate": "Puerta B: ¿se sigue hacia la v1 y se piensa en publicar?",
@@ -1447,6 +1749,53 @@
               "done_when": "Los errores graves quedan resueltos."
             }
           ]
+        },
+        {
+          "id": "F3.12",
+          "name": "QA del vertical slice",
+          "tasks": [
+            {
+              "id": "F3-41",
+              "status": "backlog",
+              "title": "Pruebas de seguridad del slice: entradas, guardados y permisos",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F3-42",
+              "status": "backlog",
+              "title": "Pruebas de accesibilidad y localización del slice",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F3-43",
+              "status": "backlog",
+              "title": "Pruebas de rendimiento y compatibilidad en la matriz de dispositivos",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F3-44",
+              "status": "backlog",
+              "title": "Informe de QA del vertical slice",
+              "est": 3,
+              "prio": "P0"
+            }
+          ]
+        },
+        {
+          "id": "F3.13",
+          "name": "Arquitectura y deuda técnica",
+          "tasks": [
+            {
+              "id": "F3-45",
+              "status": "backlog",
+              "title": "Revisión de arquitectura y deuda técnica del vertical slice",
+              "est": 6,
+              "prio": "P1"
+            }
+          ]
         }
       ],
       "confidence": "media"
@@ -1456,8 +1805,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        970,
-        1820
+        1025,
+        1925
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -2944,6 +3293,88 @@
               "prio": "P0"
             }
           ]
+        },
+        {
+          "id": "F4.16",
+          "name": "QA continuo",
+          "tasks": [
+            {
+              "id": "F4-200",
+              "status": "backlog",
+              "title": "Automatizar los casos de extracción, tienda y empleados",
+              "est": 10,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-201",
+              "status": "backlog",
+              "title": "Regresión completa tras cada bloque de contenido, ronda 1",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-202",
+              "status": "backlog",
+              "title": "Regresión completa tras cada bloque de contenido, ronda 2",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-203",
+              "status": "backlog",
+              "title": "Regresión completa tras cada bloque de contenido, ronda 3",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-204",
+              "status": "backlog",
+              "title": "Pruebas de economía con eventos y facciones",
+              "est": 8,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-205",
+              "status": "backlog",
+              "title": "Pruebas de seguridad de la versión 1 con la lista de verificación",
+              "est": 8,
+              "prio": "P0"
+            },
+            {
+              "id": "F4-206",
+              "status": "backlog",
+              "title": "Playtest con cinco jugadores externos y análisis",
+              "est": 10,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-207",
+              "status": "backlog",
+              "title": "Informe de QA del contenido",
+              "est": 3,
+              "prio": "P1"
+            }
+          ]
+        },
+        {
+          "id": "F4.17",
+          "name": "Arquitectura y deuda técnica",
+          "tasks": [
+            {
+              "id": "F4-208",
+              "status": "backlog",
+              "title": "Revisión de arquitectura y deuda técnica, ronda 1",
+              "est": 5,
+              "prio": "P1"
+            },
+            {
+              "id": "F4-209",
+              "status": "backlog",
+              "title": "Revisión de arquitectura y deuda técnica, ronda 2",
+              "est": 5,
+              "prio": "P1"
+            }
+          ]
         }
       ],
       "confidence": "baja"
@@ -2953,8 +3384,8 @@
       "name": "Pulido y lanzamiento",
       "target": "Release 1",
       "hours": [
-        260,
-        485
+        290,
+        545
       ],
       "goal": "Dejar el juego listo para publicar en Google Play: tutorial, balance, rendimiento, accesibilidad, legal y ficha de tienda.",
       "gate": null,
@@ -3353,6 +3784,67 @@
               "title": "Corrección de errores y ajustes (reserva 2 de 2)",
               "est": 20,
               "prio": "P0"
+            }
+          ]
+        },
+        {
+          "id": "F5.10",
+          "name": "QA de lanzamiento",
+          "tasks": [
+            {
+              "id": "F5-50",
+              "status": "backlog",
+              "title": "Pruebas de instalación y actualización",
+              "est": 6,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-51",
+              "status": "backlog",
+              "title": "Pasada de seguridad final: APK, manifiesto y firma",
+              "est": 8,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-52",
+              "status": "backlog",
+              "title": "Pruebas de accesibilidad completas",
+              "est": 6,
+              "prio": "P1"
+            },
+            {
+              "id": "F5-53",
+              "status": "backlog",
+              "title": "Revisión de privacidad y de la telemetría real",
+              "est": 4,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-54",
+              "status": "backlog",
+              "title": "Informe de QA de la versión 1.0 y criterios de salida",
+              "est": 4,
+              "prio": "P0"
+            },
+            {
+              "id": "F5-55",
+              "status": "backlog",
+              "title": "Decisión de lanzamiento con los errores abiertos",
+              "est": 3,
+              "prio": "P0"
+            }
+          ]
+        },
+        {
+          "id": "F5.11",
+          "name": "Arquitectura y deuda técnica",
+          "tasks": [
+            {
+              "id": "F5-56",
+              "status": "backlog",
+              "title": "Revisión final de arquitectura y deuda técnica",
+              "est": 8,
+              "prio": "P1"
             }
           ]
         }

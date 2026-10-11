@@ -1,0 +1,30 @@
+{
+  "id": "F0-33",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se escribe el verificador de convención de commits.",
+      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "9 pruebas pasan; probado con asuntos válidos e inválidos.",
+      "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
+    }
+  ],
+  "comments": [],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Verificador",
+      "path": "../tools/ci/check_commits.py"
+    }
+  ]
+}

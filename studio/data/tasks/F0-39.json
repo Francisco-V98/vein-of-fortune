@@ -1,0 +1,23 @@
+{
+  "id": "F0-39",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se construye la vista QA del hub.",
+      "ref": "rama studio/F0-37-estado-qa-y-catalogo · PR #1"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Resumen, filtros por área y tipo, y registro de errores por severidad.",
+      "ref": "rama studio/F0-37-estado-qa-y-catalogo · PR #1"
+    }
+  ],
+  "comments": [],
+  "evidence": []
+}

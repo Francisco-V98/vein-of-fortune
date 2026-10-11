@@ -17,11 +17,12 @@
     sprint: { label: 'Sprint', glyph: '◔' },
     doing: { label: 'En proceso', glyph: '◐' },
     review: { label: 'Revisión', glyph: '◕' },
+    qa: { label: 'QA', glyph: '◈' },
     done: { label: 'Finalizada', glyph: '●' },
     dropped: { label: 'Desestimada', glyph: '✕' }
   };
-  var STATUS_ORDER = ['backlog', 'sprint', 'doing', 'review', 'done', 'dropped'];
-  var QUEUE_ORDER = { doing: 0, review: 1, sprint: 2, backlog: 3 };
+  var STATUS_ORDER = ['backlog', 'sprint', 'doing', 'review', 'qa', 'done', 'dropped'];
+  var QUEUE_ORDER = { doing: 0, qa: 1, review: 2, sprint: 3, backlog: 4 };
   var AUTHOR = { autor: 'Autor', claude: 'Claude' };
   var PRIOS = ['P0', 'P1', 'P2', 'P3'];
   var PRANK = { P0: 0, P1: 1, P2: 2, P3: 3 };
@@ -59,7 +60,9 @@
 
   /* ---------- markdown (subconjunto usado en los documentos) ---------- */
   function mdLink(text, href) {
-    var m = href.match(/^(\d{2}-[\w-]+)\.md(?:#(.+))?$/);
+    var adr = href.match(/^(?:adr\/)?(\d{4}-[\w-]+)\.md(?:#(.+))?$/);
+    if (adr) return '<a href="#/docs/adr-' + adr[1] + (adr[2] ? '?h=' + adr[2] : '') + '">' + text + '</a>';
+    var m = href.replace(/^\.\.\//, '').match(/^(\d{2}-[\w-]+)\.md(?:#(.+))?$/);
     if (m) return '<a href="#/docs/' + m[1] + (m[2] ? '?h=' + m[2] : '') + '">' + text + '</a>';
     if (/^https?:\/\//.test(href)) return '<a href="' + href + '" target="_blank" rel="noopener noreferrer">' + text + '</a>';
     if (href.charAt(0) === '#') return '<a href="' + href + '">' + text + '</a>';
@@ -248,7 +251,8 @@
     rm: { target: 'all', hideDone: false, open: null },
     board: { phase: 'all', target: 'all', limit: {} },
     tl: { px: 1.1, target: 'launch', rate: 0, sel: null },
-    art: { cat: 'Todas' }
+    art: { cat: 'Todas' },
+    qa: { area: 'Todas', type: 'Todos' }
   };
   var lb = { list: [], idx: 0, opener: null };
 
@@ -267,14 +271,15 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦');
+    h += link('', 'Inicio', '◆') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
       h += '<div class="nav-group">' + esc(g) + '</div>';
       docs.forEach(function (d) {
         var parts = d.title.split(' · ');
-        h += '<a href="#/docs/' + d.id + '" data-key="docs/' + d.id + '"><span class="num">' + esc(d.id.slice(0, 2)) + '</span>' + esc(parts.length > 1 ? parts.slice(1).join(' · ') : d.title) + '</a>';
+        var label = d.id.indexOf('adr-') === 0 ? 'A' + parseInt(d.id.slice(4, 8), 10) : d.id.slice(0, 2);
+        h += '<a href="#/docs/' + d.id + '" data-key="docs/' + d.id + '"><span class="num">' + esc(label) + '</span>' + esc(parts.length > 1 ? parts.slice(1).join(' · ') : d.title) + '</a>';
       });
     });
     h += '<div class="nav-group">Recursos</div>';
@@ -525,6 +530,77 @@
     return h + '</div>';
   }
 
+
+  /* ---------- QA ---------- */
+  var RESULT_LABEL = { 'not-run': 'Sin ejecutar', pass: 'Aprobado', fail: 'Fallido', blocked: 'Bloqueado', skipped: 'Omitido' };
+  var SEVERITY_LABEL = { S1: 'Crítico', S2: 'Grave', S3: 'Moderado', S4: 'Menor' };
+  function resultPill(st) { return '<span class="pill r-' + st + '">' + esc(RESULT_LABEL[st] || st) + '</span>'; }
+
+  function viewQA() {
+    var qa = H.qa || { areas: [], types: [], cases: [], bugs: [] };
+    var cases = qa.cases;
+    var q = state.qa;
+    var count = function (f) { return cases.filter(f).length; };
+    var ran = count(function (c) { return c.result.status !== 'not-run'; });
+    var openBugs = qa.bugs.filter(function (b) { return ['cerrado', 'no-se-corrige', 'verificado'].indexOf(b.status) < 0; });
+    var inQa = TASKS.filter(function (t) { return t.status === 'qa'; });
+    var inReview = TASKS.filter(function (t) { return t.status === 'review'; });
+
+    var h = '<p class="eyebrow">Calidad</p><h1 class="page-title">QA</h1><p class="page-lead">El QA es una etapa del flujo, entre la revisión y el cierre. Aquí se ven los casos de prueba, sus resultados y los errores. Procedimiento completo en <a href="#/docs/16-calidad-y-qa">Calidad y QA</a>.</p>';
+    h += '<div class="flow">' + ['backlog', 'sprint', 'doing', 'review', 'qa', 'done'].map(function (s) {
+      var n = TASKS.filter(function (t) { return t.status === s; }).length;
+      return '<span class="flow-step s-' + s + (s === 'qa' ? ' flow-qa' : '') + '"><b>' + STATUS[s].label + '</b><small>' + n + '</small></span>';
+    }).join('<span class="flow-arrow">→</span>') + '</div>';
+
+    h += '<div class="grid grid-3" style="margin:16px 0 8px">' +
+      '<div class="card"><div class="stat-label">Casos de prueba</div><div class="stat-value">' + cases.length + '</div><div class="stat-sub">' + count(function (c) { return c.auto; }) + ' automáticos · ' + count(function (c) { return !c.auto; }) + ' manuales</div></div>' +
+      '<div class="card"><div class="stat-label">Ejecutados</div><div class="stat-value">' + ran + ' / ' + cases.length + '</div><div class="stat-sub">' + count(function (c) { return c.result.status === 'pass'; }) + ' aprobados · ' + count(function (c) { return c.result.status === 'fail'; }) + ' fallidos · ' + count(function (c) { return c.result.status === 'blocked'; }) + ' bloqueados</div></div>' +
+      '<div class="card"><div class="stat-label">Errores abiertos</div><div class="stat-value">' + openBugs.length + '</div><div class="stat-sub">' + ['S1', 'S2', 'S3', 'S4'].map(function (s) { return s + ': ' + openBugs.filter(function (b) { return b.severity === s; }).length; }).join(' · ') + '</div></div></div>';
+    if (!ran) h += '<p class="stat-sub">Todavía no se ha ejecutado ningún caso: el prototipo aún no existe. Los casos se derivan del diseño y se ejecutan desde la Fase 2.</p>';
+
+    h += '<h2 class="section-title">Tareas en revisión y en QA <small>' + inReview.length + ' en revisión · ' + inQa.length + ' en QA</small></h2><div class="card">';
+    var pending = inQa.concat(inReview);
+    if (!pending.length) h += '<div class="empty">Ninguna tarea espera revisión ni QA.</div>';
+    pending.slice(0, 12).forEach(function (t) {
+      h += '<div class="phase-row" style="grid-template-columns:62px 1fr auto auto"><span class="tid">' + esc(t.id) + '</span><span>' + taskLink(t) + '</span>' + prioPill(t.prio) + statusPill(t.status) + '</div>';
+    });
+    if (pending.length > 12) h += '<div class="empty">Y ' + (pending.length - 12) + ' más en el <a href="#/tablero">tablero</a>.</div>';
+    h += '</div>';
+
+    h += '<h2 class="section-title">Cobertura por área</h2><div class="table-wrap"><table><thead><tr><th>Área</th><th class="num-cell">Casos</th><th class="num-cell">Automáticos</th><th class="num-cell">Ejecutados</th><th class="num-cell">Aprobados</th><th class="num-cell">Fallidos</th></tr></thead><tbody>';
+    qa.areas.forEach(function (a) {
+      var l = cases.filter(function (c) { return c.area === a; });
+      if (!l.length) return;
+      h += '<tr><td>' + esc(a) + '</td><td class="num-cell">' + l.length + '</td><td class="num-cell">' + l.filter(function (c) { return c.auto; }).length + '</td><td class="num-cell">' + l.filter(function (c) { return c.result.status !== 'not-run'; }).length + '</td><td class="num-cell">' + l.filter(function (c) { return c.result.status === 'pass'; }).length + '</td><td class="num-cell">' + l.filter(function (c) { return c.result.status === 'fail'; }).length + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+
+    var areas = ['Todas'].concat(qa.areas.filter(function (a) { return cases.some(function (c) { return c.area === a; }); }));
+    var types = ['Todos'].concat(qa.types);
+    var list = cases.filter(function (c) { return (q.area === 'Todas' || c.area === q.area) && (q.type === 'Todos' || c.type === q.type); });
+    h += '<h2 class="section-title">Casos de prueba <small>' + list.length + ' de ' + cases.length + '</small></h2>';
+    h += '<div class="filters"><div class="filter-group"><span class="filter-label">Área</span>' + areas.map(function (a) { return '<button class="chip" type="button" data-action="qa-area" data-value="' + esc(a) + '" aria-pressed="' + (q.area === a) + '">' + esc(a) + '</button>'; }).join('') + '</div>' +
+      '<div class="filter-group"><span class="filter-label">Tipo</span>' + types.map(function (a) { return '<button class="chip" type="button" data-action="qa-type" data-value="' + esc(a) + '" aria-pressed="' + (q.type === a) + '">' + esc(a) + '</button>'; }).join('') + '</div></div>';
+    h += '<div class="table-wrap"><table><thead><tr><th>ID</th><th>Caso</th><th>Tipo</th><th>Nivel</th><th>Prio</th><th>Tareas</th><th>Resultado</th></tr></thead><tbody>';
+    list.forEach(function (c) {
+      var links = c.tasks.map(function (id) { var t = taskById(id); return t ? '<a href="#/tarea/' + esc(id) + '">' + esc(id) + '</a>' : esc(id); }).join(', ');
+      h += '<tr><td class="tid">' + esc(c.id) + '</td><td><details class="case"><summary>' + esc(c.title) + '</summary><ol>' + c.steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol><p><strong>Esperado:</strong> ' + esc(c.expected) + '</p></details></td><td>' + esc(c.type) + '</td><td>' + esc(c.level) + (c.auto ? ' · auto' : ' · manual') + '</td><td>' + prioPill(c.prio) + '</td><td>' + links + '</td><td>' + resultPill(c.result.status) + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+
+    h += '<h2 class="section-title">Errores <small>' + qa.bugs.length + ' registrados</small></h2>';
+    if (!qa.bugs.length) h += '<div class="notice">No hay errores registrados. Cuando aparezca uno se guarda como <code>data/qa/bugs/BUG-NNNN.json</code> con su severidad: S1 crítico, S2 grave, S3 moderado, S4 menor.</div>';
+    else {
+      h += '<div class="table-wrap"><table><thead><tr><th>ID</th><th>Error</th><th>Severidad</th><th>Estado</th><th>Tarea</th></tr></thead><tbody>';
+      qa.bugs.forEach(function (b) {
+        h += '<tr><td class="tid">' + esc(b.id) + '</td><td>' + esc(b.title) + '</td><td><span class="pill sev-' + esc(b.severity) + '">' + esc(b.severity) + ' · ' + esc(SEVERITY_LABEL[b.severity] || '') + '</span></td><td>' + esc(b.status) + '</td><td>' + (b.task ? '<a href="#/tarea/' + esc(b.task) + '">' + esc(b.task) + '</a>' : '—') + '</td></tr>';
+      });
+      h += '</tbody></table></div>';
+    }
+    h += '<h2 class="section-title">Criterios de salida de una versión</h2><div class="card"><ul class="prose" style="margin:0"><li>0 errores S1 y S2 abiertos.</li><li>Casos de prioridad P0 aprobados (automáticos y manuales).</li><li>Matriz de dispositivos recorrida y lista de seguridad completa.</li><li>Presupuestos de rendimiento cumplidos.</li><li>Informe de QA de la versión redactado.</li></ul></div>';
+    return h;
+  }
+
   /* ---------- tarea ---------- */
   function evidenceItem(e) {
     var cap = '<div class="ev-cap"><strong>' + esc(e.title || e.type) + '</strong>' + (e.note ? '<span>' + esc(e.note) + '</span>' : '') + '<small>' + esc(e.at || '') + ' · ' + esc(e.type) + '</small></div>';
@@ -557,7 +633,7 @@
     else {
       h += '<ol class="timeline">';
       t.history.forEach(function (x) {
-        h += '<li><span class="tid">' + esc(x.at) + '</span><div>' + statusPill(x.to) + '</div><div class="tl-from">desde ' + esc(STATUS[x.from].label) + (x.by ? ' · ' + esc(AUTHOR[x.by] || x.by) : '') + '</div><p>' + esc(x.note) + '</p></li>';
+        h += '<li><span class="tid">' + esc(x.at) + '</span><div>' + statusPill(x.to) + '</div><div class="tl-from">desde ' + esc(STATUS[x.from].label) + (x.by ? ' · ' + esc(AUTHOR[x.by] || x.by) : '') + '</div><p>' + esc(x.note) + '</p>' + (x.ref ? '<p class="tl-ref"><code>' + esc(x.ref) + '</code></p>' : '') + '</li>';
       });
       h += '</ol>';
     }
@@ -571,7 +647,7 @@
     if (!d) return '<div class="notice">No existe el documento «' + esc(id) + '».</div>';
     var r = mdToHtml(d.md);
     var h = '<div class="doc-layout"><article class="prose">';
-    h += '<div class="doc-meta"><span class="chip">' + esc(d.group) + '</span><span class="chip" title="Acordado">✅ ' + d.counts.ok + '</span><span class="chip" title="Propuesta">🟡 ' + d.counts.prop + '</span><span class="chip" title="Abierto">❓ ' + d.counts.open + '</span><a class="chip" href="../docs/' + esc(d.id) + '.md" target="_blank" rel="noopener">Abrir archivo .md</a></div>';
+    h += '<div class="doc-meta"><span class="chip">' + esc(d.group) + '</span><span class="chip" title="Acordado">✅ ' + d.counts.ok + '</span><span class="chip" title="Propuesta">🟡 ' + d.counts.prop + '</span><span class="chip" title="Abierto">❓ ' + d.counts.open + '</span><a class="chip" href="../docs/' + (d.id.indexOf('adr-') === 0 ? 'adr/' + esc(d.id.slice(4)) : esc(d.id)) + '.md" target="_blank" rel="noopener">Abrir archivo .md</a></div>';
     h += r.html + '</article>';
     h += '<nav class="toc" aria-label="En este documento"><div class="toc-title">En este documento</div>' +
       r.toc.map(function (t) { return '<a class="l' + t.level + '" href="#/docs/' + d.id + '?h=' + t.id + '">' + esc(t.text) + '</a>'; }).join('') + '</nav></div>';
@@ -710,6 +786,7 @@
       case 'roadmap': html = viewRoadmap(); title += ' · Roadmap'; break;
       case 'linea': html = viewTimeline(); title += ' · Línea de tiempo'; break;
       case 'tablero': html = viewBoard(); title += ' · Tablero'; break;
+      case 'qa': html = viewQA(); title += ' · QA'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
       case 'sonido': html = viewSound(); title += ' · Sonido'; break;
@@ -783,6 +860,8 @@
     else if (act === 'rm-target') { state.rm.target = val; render(true); }
     else if (act === 'rm-hide') { state.rm.hideDone = !state.rm.hideDone; render(true); }
     else if (act === 'art-cat') { state.art.cat = val; render(); }
+    else if (act === 'qa-area') { state.qa.area = val; render(true); }
+    else if (act === 'qa-type') { state.qa.type = val; render(true); }
     else if (act === 'open-img') { openLightbox(+el.getAttribute('data-index'), el); }
     else if (act === 'tl-select') { state.tl.sel = state.tl.sel === val ? null : val; render(true); }
     else if (act === 'board-more') { state.board.limit[val] = (state.board.limit[val] || 12) + 25; render(true); }
