@@ -80,6 +80,7 @@ La fuente de verdad del equipo y las etapas es `studio/data/equipo.json`. El ava
 - Los estados de una etapa son `pendiente`, `activa`, `hecha` y `omitida`.
 - `entrega` es lo que esa etapa le pasa a la siguiente. `por` permite indicar un rol distinto del habitual.
 - Un **hallazgo** lo deja un rol (`de`) y lo resuelve otro (`resuelto_por`, con `como`); mientras no esté resuelto queda `abierto`. Así se ve qué encontró cada especialista y cómo lo solucionó el que correspondía.
+- `traspasos` es el registro cronológico de cada vez que el trabajo pasó de un rol a otro: `{ "de", "a", "que", "at", "tipo" }`, con `tipo` `entrega` (por defecto) o `devolucion`. Si una línea se recorre varias veces, el panel las numera (1.ª, 2.ª pasada…), las cuenta en el plano (×N) y las lista en el historial. Sin registro, se deriva de las etapas hechas.
 - Si una tarea no trae `pipeline`, los mods lo infieren del estado del roadmap: `doing` es producción activa, `review` es la revisión del autor, `qa` es la prueba del autor y `done` es todo hecho.
 - `build.py` valida el bloque y avisa si una etapa, un estado, un rol o un hallazgo no existen.
 
@@ -94,7 +95,7 @@ Las etapas «Revisión del autor» y «Prueba del autor» son tuyas. En el panel
 3. Pulsas **Terminé mi parte**. El panel envía un mensaje a la conversación y la acción queda como enviada.
 4. El coordinador decide: si todo se aprobó, la tarea sigue su flujo; si hubo ajustes, los asigna al especialista que corresponda, el trabajo vuelve a la etapa que toque y, al terminar, vuelve a tu bandeja.
 
-El panel **se actualiza solo**: mira los datos cada pocos segundos, los PR cada rato y también al terminar cada turno.
+El panel **se actualiza solo**: mira los datos cada pocos segundos, los PR cada rato y también al terminar cada turno. Tu personaje en la oficina se llama **Fran**: lleva la etiqueta «TÚ» y una estrella en la placa. Al pasar el ratón por un empleado, una línea o una bandera aparece un globo con su información (qué hace cada uno, qué pasó de quién a quién y en qué pasada).
 
 ## Los mods de Claude Code ✅
 

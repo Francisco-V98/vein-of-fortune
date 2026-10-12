@@ -43,11 +43,21 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "/equipo pasa a una pestaña Oficina: el estudio en planta con siete salas, un escritorio por empleado y personajes que teclean cuando trabajan, duermen cuando están libres y quedan en sombra si aún no se incorporan. Los paquetes viajan por el recorrido de la tarea, las banderas llevan los hallazgos de quien los dejó a quien los resolvió y un globo muestra en qué tarea trabaja cada uno. El detalle pasó a la pestaña Traspasos y el reparto de roles a Equipo."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Me gusta la animación; solo que al hacer scroll se reinicia. Quiero información al pasar el ratón: en las líneas qué le pasó a quién, en los personajes qué hacen, en las banderas de qué le pasará a quién; y si un flujo pasó varias veces por la misma línea, que diga en qué pasada fue. Además quiero un identificador de «Fran» para saber cuál es mi personaje."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Cada línea del plano guarda ahora su historial de pasadas (1.ª, 2.ª…) con la fecha y lo que se entregó, y muestra un contador ×N cuando se repite; en la pestaña Oficina hay además una lista con ese historial. Los personajes y las banderas llevan un globo con su información. Los dibujos tienen clave estable para que el scroll no reinicie la animación. Tu personaje se llama Fran, lleva la etiqueta TÚ y una estrella en la placa. Falta confirmar en la app que el globo aparece al pasar el ratón: depende de que se muestren los títulos del SVG; si no, lo pasamos a botones."
     }
   ],
   "evidence": [],
   "pipeline": {
-    "especialista": "desarrollador",
+    "especialista": "herramientas",
     "etapas": [
       {
         "etapa": "ideacion",
@@ -71,7 +81,7 @@
         "at": "2026-10-12",
         "nota": "Segunda versión: diagrama de traspasos, bandeja del autor y actualización automática",
         "entrega": "Mod con diagrama, bandeja y sondeo",
-        "por": "desarrollador"
+        "por": "herramientas"
       },
       {
         "etapa": "qa",
@@ -91,15 +101,22 @@
             "de": "autor",
             "texto": "El panel era una lista de texto: quería ver quién le pasa a quién, los hallazgos y cómo se resolvieron",
             "estado": "resuelto",
-            "resuelto_por": "desarrollador",
+            "resuelto_por": "herramientas",
             "como": "Diagrama de traspasos con hallazgos y resoluciones"
           },
           {
             "de": "autor",
             "texto": "La actualización con la tecla R era manual y no había forma de saber qué me tocaba a mí",
             "estado": "resuelto",
-            "resuelto_por": "desarrollador",
+            "resuelto_por": "herramientas",
             "como": "Actualización automática y bandeja «Te toca a ti» con Todo bien, Salieron ajustes y Terminé mi parte"
+          },
+          {
+            "de": "autor",
+            "texto": "La animación se reinicia al hacer scroll y falta información al pasar el ratón por las líneas y los personajes",
+            "estado": "resuelto",
+            "resuelto_por": "herramientas",
+            "como": "Dibujos con clave estable, globos con información y historial por línea; el globo al pasar el ratón depende de que la app muestre los títulos del SVG (por confirmar)"
           }
         ]
       },
@@ -111,6 +128,89 @@
       {
         "etapa": "cierre",
         "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Un panel con flujo, equipo y botones",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "herramientas",
+        "que": "Criterio: nada se escribe sin que el autor lo pida",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "Mod /equipo v1 con pestañas Flujo, Equipo y Tarea",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y cinco pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "herramientas",
+        "que": "La estética no gusta: quiere un diagrama de traspasos con hallazgos, actualización automática y botones del autor",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "v2 con diagrama de traspasos, bandeja del autor y actualización automática",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y ocho pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "herramientas",
+        "que": "Quiere una oficina animada tipo juego de gestión y un equipo más real",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "v3 con oficina animada y 21 roles",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y diez pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "herramientas",
+        "que": "La animación se reinicia al hacer scroll; quiere información al pasar el ratón, el historial por línea y el identificador de Fran",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "v4 con globos de información, historial por línea, marca de Fran y dibujos con clave estable",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y pruebas en verde",
+        "at": "2026-10-12"
       }
     ]
   }

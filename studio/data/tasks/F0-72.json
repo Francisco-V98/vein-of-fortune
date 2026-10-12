@@ -99,6 +99,51 @@
         "etapa": "cierre",
         "estado": "pendiente"
       }
+    ],
+    "traspasos": [
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Siete etapas y nueve roles",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "disenador",
+        "que": "El flujo no debe cambiar los estados del roadmap",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "disenador",
+        "a": "qa",
+        "que": "Documento 20, equipo.json y siete agentes",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: build estricto sin avisos",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "disenador",
+        "que": "Los empleados no son los reales que necesitamos: analiza y crea todos",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "disenador",
+        "a": "qa",
+        "que": "21 roles en 7 departamentos y 19 agentes",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: build estricto sin avisos",
+        "at": "2026-10-12"
+      }
     ]
   }
 }

@@ -213,6 +213,12 @@ def check_pipeline(tid, act, equipo):
     spec = pipe.get("especialista")
     if spec is not None and not roles.get(spec, {}).get("especialista"):
         warn("%s: el especialista del flujo no existe o no es de producción: %s" % (tid, spec))
+    for i, x in enumerate(pipe.get("traspasos", [])):
+        for campo in ("de", "a"):
+            if x.get(campo) not in roles:
+                warn("%s: el traspaso %d tiene un rol inexistente en '%s': %s" % (tid, i + 1, campo, x.get(campo)))
+        if x.get("tipo", "entrega") not in ("entrega", "devolucion"):
+            warn("%s: tipo de traspaso inválido en el traspaso %d: %s" % (tid, i + 1, x.get("tipo")))
     vistos = set()
     for item in pipe.get("etapas", []):
         if item.get("etapa") not in etapas:

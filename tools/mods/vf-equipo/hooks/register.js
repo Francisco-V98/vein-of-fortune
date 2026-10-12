@@ -169,27 +169,108 @@ export function estadoDeRoles(lista, vivos, roles, fase, ordenFases, pendientesA
   return { estado, tarea }
 }
 
-// Los roles por los que pasa una tarea, en orden, sin repetir seguidos y sin etapas omitidas
-export function rutaDe(t) {
-  const ruta = []
-  for (const p of t.pipeline) {
-    if (p.estado === 'omitida' || !p.rolEfectivo) continue
-    if (ruta.length && ruta[ruta.length - 1].rol === p.rolEfectivo) {
-      if (p.estado === 'activa') ruta[ruta.length - 1].estado = 'activa'
-      continue
-    }
-    ruta.push({ rol: p.rolEfectivo, estado: p.estado })
-  }
-  return ruta
-}
-
-// Los hallazgos de una tarea con los roles que los dejaron y los que los resolvieron
-export function hallazgosDe(t) {
+// Los hallazgos de una tarea, con los roles que los dejaron y los que los resolvieron, y el texto del globo
+export function hallazgosDe(t, nombre) {
+  const nom = nombre || ((x) => x)
   const lista = []
   for (const p of t.pipeline) {
-    for (const h of p.hallazgos || []) lista.push({ de: h.de, a: h.resuelto_por || '', estado: h.estado })
+    for (const h of p.hallazgos || []) {
+      const titulo = [(h.estado === 'resuelto' ? 'Hallazgo resuelto' : 'Hallazgo abierto') + ' · ' + nom(h.de), h.texto]
+      if (h.estado === 'resuelto') titulo.push('Lo resolvió ' + nom(h.resuelto_por || '') + ': ' + (h.como || ''))
+      lista.push({ de: h.de, a: h.resuelto_por || '', estado: h.estado, texto: h.texto, como: h.como || '', titulo })
+    }
   }
   return lista
+}
+
+// El número de una pasada: 1.ª, 2.ª…
+export function ordinal(n) {
+  return n + '.ª'
+}
+
+function fechaCorta(at) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(at || '')
+  if (!m) return ''
+  const meses = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic']
+  return Number(m[3]) + ' ' + meses[Number(m[2]) - 1]
+}
+
+// El registro de traspasos de una tarea: el que trae su archivo o, si no, el que sale de las etapas hechas
+export function traspasosDe(actividad, pipeline) {
+  const explicito = actividad && actividad.pipeline && Array.isArray(actividad.pipeline.traspasos) ? actividad.pipeline.traspasos : null
+  if (explicito) return explicito.map((x, i) => ({ n: i + 1, de: x.de, a: x.a, que: x.que || '', at: x.at || '', tipo: x.tipo || 'entrega' }))
+  const lista = []
+  const activas = pipeline.filter((p) => p.estado !== 'omitida' && p.rolEfectivo)
+  for (let i = 0; i < activas.length - 1; i++) {
+    const de = activas[i]
+    const a = activas[i + 1]
+    if (de.rolEfectivo === a.rolEfectivo || de.estado !== 'hecha') continue
+    lista.push({ n: lista.length + 1, de: de.rolEfectivo, a: a.rolEfectivo, que: de.entrega || '', at: de.at || '', tipo: 'entrega' })
+  }
+  return lista
+}
+
+// Las líneas del plano: una por cada par de roles, con todas sus pasadas en orden. Las que faltan por recorrer van punteadas.
+// `nombre` convierte el id de un rol en su nombre.
+export function lineasDe(traspasos, pipeline, rolActivo, nombre) {
+  const grupos = []
+  const porClave = {}
+  for (const x of traspasos) {
+    const clave = x.de + '>' + x.a
+    if (!porClave[clave]) {
+      porClave[clave] = { de: x.de, a: x.a, pasadas: [] }
+      grupos.push(porClave[clave])
+    }
+    porClave[clave].pasadas.push(x)
+  }
+  const ultima = traspasos.length ? traspasos[traspasos.length - 1] : null
+  for (const g of grupos) {
+    const esUltima = ultima && g.de === ultima.de && g.a === ultima.a && g.a === rolActivo
+    g.estado = esUltima ? 'activa' : 'hecha'
+    g.titulo = [nombre(g.de) + ' → ' + nombre(g.a) + (g.pasadas.length > 1 ? ' · ' + g.pasadas.length + ' pasadas' : '')]
+    for (const [i, x] of g.pasadas.entries()) {
+      const cuando = fechaCorta(x.at)
+      g.titulo.push(ordinal(i + 1) + ' pasada' + (cuando ? ' · ' + cuando : '') + (x.tipo === 'devolucion' ? ' · devolución' : '') + (x.que ? ': ' + x.que : ''))
+    }
+  }
+  // lo que falta por recorrer
+  const activas = pipeline.filter((p) => p.estado !== 'omitida' && p.rolEfectivo)
+  for (let i = 0; i < activas.length - 1; i++) {
+    const de = activas[i]
+    const a = activas[i + 1]
+    if (de.rolEfectivo === a.rolEfectivo || de.estado === 'hecha') continue
+    const clave = de.rolEfectivo + '>' + a.rolEfectivo
+    if (porClave[clave]) continue
+    grupos.push({ de: de.rolEfectivo, a: a.rolEfectivo, pasadas: [], estado: 'pendiente', titulo: [nombre(de.rolEfectivo) + ' → ' + nombre(a.rolEfectivo), 'Todavía no ha pasado por aquí'] })
+  }
+  return grupos
+}
+
+// Lo que dice el globo al pasar el ratón por cada empleado
+export function infoDeRoles(roles, lista, elegida, lineas, hallazgos, fase, ordenFases, nombre) {
+  const idx = (f) => Math.max(0, ordenFases.indexOf(f))
+  const info = {}
+  for (const r of roles) {
+    const l = [r.nombre + ' · ' + r.tipo, r.hace]
+    if (idx(r.desde) > idx(fase)) l.push('En reserva: se une en ' + r.desde)
+    const ahora = []
+    for (const t of lista) {
+      const p = t.pipeline.find((x) => x.estado === 'activa' && x.rolEfectivo === r.id)
+      if (p) ahora.push(t.id + ' · ' + (p.etapa || ''))
+    }
+    if (ahora.length) l.push('Trabaja en: ' + ahora.join(', '))
+    if (elegida) {
+      const enviadas = lineas.filter((x) => x.de === r.id).reduce((a, x) => a + x.pasadas.length, 0)
+      const recibidas = lineas.filter((x) => x.a === r.id).reduce((a, x) => a + x.pasadas.length, 0)
+      if (enviadas || recibidas) l.push('En ' + elegida + ': recibió ' + recibidas + ' y entregó ' + enviadas + ' veces')
+      for (const h of hallazgos) {
+        if (h.de === r.id) l.push('Dejó un hallazgo (' + (h.estado === 'resuelto' ? 'resuelto' : 'abierto') + '): ' + h.texto)
+        if (h.a === r.id && h.estado === 'resuelto') l.push('Resolvió: ' + h.como)
+      }
+    }
+    info[r.id] = l
+  }
+  return info
 }
 
 // ---------- lectura de datos ----------
@@ -234,7 +315,7 @@ async function cargar($) {
           const conEspecialista = especialista ? { pipeline: { especialista } } : null
           const pipeline = pipelineDe(t.status, actividad, equipo.etapas).map((p) => ({ ...p, rolEfectivo: p.por || rolDe(p.etapa, conEspecialista, equipo.etapas) }))
           const etapa = etapaActual(pipeline)
-          lista.push({ id: t.id, titulo: t.title, estado: t.status, pipeline, etapa, rol: rolDe(etapa, actividad, equipo.etapas), especialista, hito: hito.id, fase: fase.id })
+          lista.push({ id: t.id, titulo: t.title, estado: t.status, pipeline, etapa, rol: rolDe(etapa, actividad, equipo.etapas), especialista, hito: hito.id, fase: fase.id, traspasos: traspasosDe(actividad, pipeline) })
         }
       }
     }
@@ -456,6 +537,9 @@ function vistaOficina(ctx, acc) {
   const items = accionesDelAutor(tareas, prs)
   const t = tareaElegida()
   const vivos = vivosAhora()
+  const activo = t ? t.pipeline.find((p) => p.estado === 'activa') : null
+  const lineas = t ? lineasDe(t.traspasos, t.pipeline, activo ? activo.rolEfectivo : '', nombreRol) : []
+  const hall = t ? hallazgosDe(t, nombreRol) : []
   if (escritorio) {
     const { estado, tarea } = estadoDeRoles(tareas, agentes, equipo.roles, faseActual, ordenFases, items.length)
     const enEstudio = equipo.roles.filter((r) => estado[r.id] !== 'reserva').length
@@ -465,12 +549,13 @@ function vistaOficina(ctx, acc) {
       roles: equipo.roles,
       estado,
       tarea,
-      ruta: t ? rutaDe(t) : [],
-      hallazgos: t ? hallazgosDe(t) : [],
+      lineas,
+      hallazgos: hall,
+      info: infoDeRoles(equipo.roles, tareas, t ? t.id : '', lineas, hall, faseActual, ordenFases, nombreRol),
       pendientesAutor: items.length,
       pie: 'Fase ' + faseActual + ' · ' + enEstudio + ' de ' + equipo.roles.length + ' en el estudio',
     })
-    filas.push(Svg({ alt: 'Plano del estudio con los empleados', width: o.ancho, height: o.alto, source: o.svg }))
+    filas.push(Svg({ key: 'plano', alt: 'Plano del estudio con los empleados', width: o.ancho, height: o.alto, source: o.svg }))
   } else {
     const conteo = contarPorEtapa(tareas)
     filas.push(Text({ bold: true, children: [equipo.etapas.map((s) => s.glifo + ' ' + (conteo[s.id] || 0)).join('  →  ')] }))
@@ -487,7 +572,32 @@ function vistaOficina(ctx, acc) {
   filas.push(selectorTareas(ctx, acc))
   filas.push(Text({ bold: true, wrap: 'wrap', children: [t.id + ' · ' + t.titulo] }))
   const pr = prDeTarea(t.id, prs)
-  filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['Ahora: ' + nombreEtapa(t.etapa) + ' (' + nombreRol(t.rol) + ')' + (pr ? ' · PR #' + pr.number : '') + ' · el recorrido va dibujado en el plano'] }))
+  filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['Ahora: ' + nombreEtapa(t.etapa) + ' (' + nombreRol(t.rol) + ')' + (pr ? ' · PR #' + pr.number : '') + ' · pasa el ratón por el plano para ver el detalle'] }))
+  filas.push(Text({ children: [' '] }))
+  filas.push(...historial(ctx, lineas))
+  return filas
+}
+
+// El historial por línea: cada vez que el trabajo pasó de un rol a otro, en orden
+function historial(ctx, lineas) {
+  const { Text, Box } = ctx
+  const filas = [titulo(Text, 'Historial de traspasos')]
+  const conPasadas = lineas.filter((l) => l.pasadas.length > 0)
+  if (conPasadas.length === 0) filas.push(Text({ dimColor: true, children: ['Todavía no hay traspasos en esta tarea.'] }))
+  for (const l of conPasadas) {
+    filas.push(
+      Box({
+        flexDirection: 'column',
+        borderStyle: 'round',
+        paddingX: 1,
+        marginBottom: 1,
+        children: [
+          Text({ bold: true, children: [nombreRol(l.de) + ' → ' + nombreRol(l.a) + (l.pasadas.length > 1 ? '  ·  ' + l.pasadas.length + ' pasadas' : '')] }),
+          ...l.pasadas.map((x, i) => Text({ dimColor: i < l.pasadas.length - 1, wrap: 'wrap', children: [ordinal(i + 1) + (fechaCorta(x.at) ? ' · ' + fechaCorta(x.at) : '') + (x.tipo === 'devolucion' ? ' · devolución' : '') + (x.que ? ': ' + x.que : '')] })),
+        ],
+      }),
+    )
+  }
   return filas
 }
 
@@ -518,7 +628,7 @@ function vistaTraspasos(ctx, acc) {
   })
   if (escritorio) {
     const d = svgTraspasos(lineas, ancho)
-    filas.push(Svg({ alt: 'Diagrama de traspasos de la tarea', width: d.ancho, height: d.alto, source: d.svg }))
+    filas.push(Svg({ key: 'traspasos', alt: 'Diagrama de traspasos de la tarea', width: d.ancho, height: d.alto, source: d.svg }))
   } else {
     for (const l of lineas) {
       filas.push(Text({ bold: l.estado === 'activa', dimColor: l.estado === 'omitida' || l.estado === 'pendiente', wrap: 'wrap', children: [GLIFO_ESTADO[l.estado] + ' ' + l.nombre + ' · ' + l.quien + (l.nota ? ' — ' + l.nota : '')] }))
@@ -604,7 +714,7 @@ function vistaEquipo(ctx) {
         Text({ dimColor: true, wrap: 'wrap', children: ['Entrega: ' + rol.entrega] }),
       ]
       if (suyas.length) cuerpo.push(Text({ color: 'yellow', children: ['Ahora: ' + suyas.map((t) => t.id).join(', ')] }))
-      const avatar = escritorio ? Svg({ alt: rol.nombre, width: 48, height: 48, source: svgAvatar(rol.nombre, i, vivo || suyas.length > 0, rol.tipo === 'humano') }) : Text({ bold: true, children: [(vivo ? '●' : '○') + ' '] })
+      const avatar = escritorio ? Svg({ key: 'avatar-' + rol.id, alt: rol.nombre, width: 48, height: 48, source: svgAvatar(rol.nombre, i, vivo || suyas.length > 0, rol.tipo === 'humano') }) : Text({ bold: true, children: [(vivo ? '●' : '○') + ' '] })
       filas.push(Box({ flexDirection: 'row', columnGap: 2, borderStyle: 'round', paddingX: 1, marginBottom: 1, children: [avatar, Box({ flexDirection: 'column', flexShrink: 1, children: cuerpo })] }))
     }
   }

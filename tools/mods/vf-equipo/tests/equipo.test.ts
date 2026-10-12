@@ -1,6 +1,6 @@
 import { expect, mock, test } from 'claude-code/testing'
-import { accionesDelAutor, contarPorEtapa, estadoDeRoles, etapaActual, firmaDe, hallazgosDe, mensajeAutor, pipelineDe, prDeTarea, rolDe, rolDeAgente, rutaDe } from '../hooks/register.js'
-import { envolverTexto, iniciales, svgFlujo, svgOficina, svgTraspasos } from '../hooks/vis.js'
+import { accionesDelAutor, contarPorEtapa, estadoDeRoles, etapaActual, firmaDe, hallazgosDe, infoDeRoles, lineasDe, mensajeAutor, ordinal, pipelineDe, prDeTarea, rolDe, rolDeAgente, traspasosDe } from '../hooks/register.js'
+import { envolverTexto, fijarFase, iniciales, svgFlujo, svgOficina, svgTraspasos } from '../hooks/vis.js'
 
 const ETAPAS = [
   { id: 'ideacion', nombre: 'Ideación', rol: 'ideador', glifo: 'I' },
@@ -127,12 +127,11 @@ test('el texto se parte en líneas y el diagrama muestra hallazgos y traspasos',
   expect(svgFlujo(ETAPAS, { produccion: 2 }, ['autor', 'playtest'], 600).split('<circle').length - 1).toBe(10)
 })
 
-test('el estado de cada rol, la ruta y los hallazgos salen de las tareas', async () => {
+test('el estado de cada rol y los hallazgos salen de las tareas', async () => {
   const pipeline = [
     { etapa: 'ideacion', estado: 'omitida', rolEfectivo: 'ideador', hallazgos: [] },
-    { etapa: 'produccion', estado: 'activa', rolEfectivo: 'narrador', hallazgos: [{ de: 'narrador', estado: 'abierto' }] },
-    { etapa: 'qa', estado: 'pendiente', rolEfectivo: 'autor', hallazgos: [{ de: 'autor', estado: 'resuelto', resuelto_por: 'narrador' }] },
-    { etapa: 'autor', estado: 'pendiente', rolEfectivo: 'autor', hallazgos: [] },
+    { etapa: 'produccion', estado: 'activa', rolEfectivo: 'narrador', hallazgos: [{ de: 'narrador', estado: 'abierto', texto: 'Falta un dato' }] },
+    { etapa: 'qa', estado: 'pendiente', rolEfectivo: 'autor', hallazgos: [{ de: 'autor', estado: 'resuelto', resuelto_por: 'narrador', texto: 'Cambiar el tono', como: 'Se reescribió' }] },
   ]
   const tarea = { id: 'F0-41', pipeline }
   const { estado, tarea: quien } = estadoDeRoles([tarea], [], ROLES, 'F0', ['F0', 'F1'], 0)
@@ -143,20 +142,80 @@ test('el estado de cada rol, la ruta y los hallazgos salen de las tareas', async
   expect(estadoDeRoles([], [], ROLES, 'F1', ['F0', 'F1'], 2).estado.dev).toBe('libre')
   expect(estadoDeRoles([], [], ROLES, 'F0', ['F0', 'F1'], 2).estado.autor).toBe('trabajando')
   expect(estadoDeRoles([], [{ type: 'narrador', status: 'running' }], ROLES, 'F0', ['F0', 'F1'], 0).estado.narrador).toBe('trabajando')
-  expect(rutaDe(tarea).map((r) => r.rol)).toEqual(['narrador', 'autor'])
-  expect(hallazgosDe(tarea).length).toBe(2)
+  const h = hallazgosDe(tarea, (id: string) => id.toUpperCase())
+  expect(h.length).toBe(2)
+  expect(h[1].titulo.join(' ')).toContain('Lo resolvió NARRADOR: Se reescribió')
 })
 
-test('el plano de la oficina coloca a todos, anima a quien trabaja y dibuja el recorrido', async () => {
+test('las pasadas repetidas por la misma línea se numeran y se cuentan', async () => {
+  const actividad = {
+    pipeline: {
+      traspasos: [
+        { de: 'narrador', a: 'qa', que: 'v1', at: '2026-10-12' },
+        { de: 'qa', a: 'autor', que: 'ok', at: '2026-10-12' },
+        { de: 'autor', a: 'narrador', que: 'ajustes', at: '2026-10-13', tipo: 'devolucion' },
+        { de: 'narrador', a: 'qa', que: 'v2', at: '2026-10-13' },
+      ],
+    },
+  }
+  const pipeline = [
+    { etapa: 'produccion', estado: 'hecha', rolEfectivo: 'narrador', hallazgos: [] },
+    { etapa: 'qa', estado: 'activa', rolEfectivo: 'qa', hallazgos: [] },
+    { etapa: 'autor', estado: 'pendiente', rolEfectivo: 'autor', hallazgos: [] },
+    { etapa: 'cierre', estado: 'pendiente', rolEfectivo: 'coordinador', hallazgos: [] },
+  ]
+  const log = traspasosDe(actividad, pipeline)
+  expect(log.length).toBe(4)
+  expect(log[2].tipo).toBe('devolucion')
+  const lineas = lineasDe(log, pipeline, 'qa', (id: string) => id)
+  const nq = lineas.find((l) => l.de === 'narrador' && l.a === 'qa')
+  expect(nq.pasadas.length).toBe(2)
+  expect(nq.estado).toBe('activa')
+  expect(nq.titulo[1]).toContain('1.ª pasada · 12 oct: v1')
+  expect(nq.titulo[2]).toContain('2.ª pasada · 13 oct: v2')
+  expect(lineas.find((l) => l.de === 'autor' && l.a === 'narrador').titulo[1]).toContain('devolución')
+  // lo que falta por recorrer sale punteado y sin pasadas
+  const pendiente = lineas.find((l) => l.de === 'autor' && l.a === 'coordinador')
+  expect(pendiente.estado).toBe('pendiente')
+  expect(pendiente.pasadas.length).toBe(0)
+  expect(ordinal(3)).toBe('3.ª')
+  const info = infoDeRoles(ROLES, [], 'F0-41', lineas, [], 'F0', ['F0', 'F1'], (id: string) => id)
+  expect(info.autor.join(' ')).toContain('recibió 1 y entregó 1')
+  expect(info.dev.join(' ')).toContain('En reserva')
+})
+
+test('las animaciones arrancan en la fase del reloj para no reiniciarse al redibujar', async () => {
+  const a = fijarFase('<svg><animate attributeName="r" dur="2s" repeatCount="indefinite"/><animateMotion dur="4s" begin="1s" repeatCount="indefinite" path="M0,0"/></svg>', 5000)
+  expect(a).toContain('<animate attributeName="r" dur="2s" repeatCount="indefinite" begin="-1.00s"/>')
+  expect(a).toContain('begin="-0.00s"')
+  // el mismo instante da siempre el mismo dibujo; otro instante cambia la fase
+  expect(fijarFase('<svg><animate dur="2s"/></svg>', 5000)).toBe(fijarFase('<svg><animate dur="2s"/></svg>', 5000))
+  expect(fijarFase('<svg><animate dur="2s"/></svg>', 5500)).not.toBe(fijarFase('<svg><animate dur="2s"/></svg>', 5000))
+})
+
+test('sin registro de traspasos se derivan de las etapas hechas', async () => {
+  const pipeline = [
+    { etapa: 'produccion', estado: 'hecha', rolEfectivo: 'narrador', entrega: 'Texto', at: '2026-10-12', hallazgos: [] },
+    { etapa: 'qa', estado: 'activa', rolEfectivo: 'qa', hallazgos: [] },
+  ]
+  const log = traspasosDe({}, pipeline)
+  expect(log).toEqual([{ n: 1, de: 'narrador', a: 'qa', que: 'Texto', at: '2026-10-12', tipo: 'entrega' }])
+})
+
+test('el plano de la oficina coloca a todos, anima a quien trabaja, marca a Fran y trae globos de información', async () => {
   const estado = { narrador: 'trabajando', dev: 'reserva', autor: 'libre' }
+  const lineas = [
+    { de: 'narrador', a: 'autor', estado: 'activa', pasadas: [{ n: 1 }, { n: 2 }], titulo: ['Narrador → Autor · 2 pasadas', '1.ª pasada: v1', '2.ª pasada: v2'] },
+  ]
   const o = svgOficina({
     ancho: 580,
     deptos: DEPTOS,
     roles: ROLES,
     estado,
     tarea: { narrador: 'F0-41' },
-    ruta: [{ rol: 'narrador', estado: 'hecha' }, { rol: 'autor', estado: 'activa' }],
-    hallazgos: [{ de: 'narrador', a: '', estado: 'abierto' }],
+    lineas,
+    hallazgos: [{ de: 'narrador', a: '', estado: 'abierto', titulo: ['Hallazgo abierto', 'Falta un dato'] }],
+    info: { narrador: ['Narrador · agente', 'Escribe'] },
     pendientesAutor: 2,
     pie: 'Fase F0',
   })
@@ -164,6 +223,12 @@ test('el plano de la oficina coloca a todos, anima a quien trabaja y dibuja el r
   expect(o.svg).toContain('F0-41')
   expect(o.svg).toContain('<animateMotion')
   expect(o.svg).toContain('Dev · F1')
+  expect(o.svg).toContain('TÚ')
+  expect(o.svg).toContain('★ Autor')
+  expect(o.svg).toContain('<title>Narrador · agente')
+  expect(o.svg).toContain('2.ª pasada: v2')
+  expect(o.svg).toContain('×2')
+  expect(o.svg).toContain('Falta un dato')
   expect(o.alto).toBeGreaterThan(100)
 })
 

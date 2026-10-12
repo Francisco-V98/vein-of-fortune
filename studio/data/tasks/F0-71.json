@@ -32,7 +32,7 @@
   ],
   "evidence": [],
   "pipeline": {
-    "especialista": "desarrollador",
+    "especialista": "herramientas",
     "etapas": [
       {
         "etapa": "ideacion",
@@ -56,7 +56,7 @@
         "at": "2026-10-12",
         "nota": "Mod /estado escrito por el coordinador",
         "entrega": "Mod con tres pestañas",
-        "por": "desarrollador"
+        "por": "herramientas"
       },
       {
         "etapa": "qa",
@@ -76,7 +76,7 @@
             "de": "autor",
             "texto": "Las barras de bloques salían con trama y la lista no tenía jerarquía visual",
             "estado": "resuelto",
-            "resuelto_por": "desarrollador",
+            "resuelto_por": "herramientas",
             "como": "Rediseño con anillo de progreso, medidores, barras limpias y tarjetas en SVG"
           }
         ]
@@ -88,6 +88,51 @@
       {
         "etapa": "cierre",
         "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Qué puede mostrar un panel y de dónde sale cada dato",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "herramientas",
+        "que": "Criterios: leer solo archivos del repositorio y probar con claude plugin test",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "Mod /estado v1 con barras de texto",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y tres pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "herramientas",
+        "que": "Las barras salían con trama y la lista no tenía jerarquía visual",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "v2 con anillo de progreso, medidores y tarjetas en SVG",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y tres pruebas en verde",
+        "at": "2026-10-12"
       }
     ]
   }

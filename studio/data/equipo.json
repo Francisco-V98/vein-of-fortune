@@ -82,8 +82,8 @@
     },
     {
       "id": "autor",
-      "nombre": "Francisco (autor)",
-      "corto": "Autor",
+      "nombre": "Fran (autor)",
+      "corto": "Fran",
       "tipo": "humano",
       "agente": null,
       "especialista": false,

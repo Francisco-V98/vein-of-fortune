@@ -31,8 +31,28 @@ function t(x, y, texto, tam, color, extra) {
   return '<text x="' + x + '" y="' + y + '" font-family="' + FUENTE + '" font-size="' + tam + '" fill="' + color + '"' + (extra || '') + '>' + esc(texto) + '</text>'
 }
 
+// Hace que cada animación arranque en la fase que le toca según el reloj. Así, cuando la app vuelve a
+// dibujar el SVG (por ejemplo al hacer scroll), las animaciones siguen donde iban en lugar de reiniciarse.
+export function fijarFase(svg, ahoraMs) {
+  const ahora = (ahoraMs === undefined ? Date.now() : ahoraMs) / 1000
+  return svg.replace(/<(animate|animateTransform|animateMotion)\b([^>]*)>/g, (m, etiqueta, atributos) => {
+    const d = /dur="([\d.]+)s"/.exec(atributos)
+    if (!d) return m
+    const dur = Number(d[1])
+    if (!(dur > 0)) return m
+    const cierra = atributos.endsWith('/')
+    const base = cierra ? atributos.slice(0, -1) : atributos
+    const b = /begin="([\d.]+)s"/.exec(base)
+    const desfase = b ? Number(b[1]) : 0
+    const fase = ((((ahora - desfase) % dur) + dur) % dur).toFixed(2)
+    const nuevo = b ? base.replace(/begin="[\d.]+s"/, 'begin="-' + fase + 's"') : base + ' begin="-' + fase + 's"'
+    return '<' + etiqueta + nuevo + (cierra ? '/' : '') + '>'
+  })
+}
+
 function envolver(ancho, alto, partes) {
-  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + ancho + ' ' + alto + '" width="' + ancho + '" height="' + alto + '">' + partes.join('') + '</svg>'
+  const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + ancho + ' ' + alto + '" width="' + ancho + '" height="' + alto + '">' + partes.join('') + '</svg>'
+  return fijarFase(svg)
 }
 
 // Iniciales de un nombre de rol: «Diseñador de sistemas» → DS
@@ -243,12 +263,16 @@ const COLOR_DEPTO = {
 const PELO = ['#2b2b33', '#6b4a2f', '#c9a15a', '#8a3b2e', '#d8d8d8', '#3b3b55', '#7a5a3a']
 
 // Un empleado sentado en su escritorio. estado: 'trabajando' | 'libre' | 'reserva'
-function empleado(x, y, rol, indice, estado, tarea, pendientes) {
+function empleado(x, y, rol, indice, estado, tarea, pendientes, info) {
   const cx = x + 44
   const color = COLOR_DEPTO[rol.depto] || C.tenue
   const pelo = PELO[indice % PELO.length]
   const p = []
   const reserva = estado === 'reserva'
+  p.push('<g>')
+  if (info && info.length) p.push('<title>' + info.map(esc).join('&#10;') + '</title>')
+  // zona sensible para el ratón: cubre el escritorio y a la persona
+  p.push('<rect x="' + (x + 4) + '" y="' + (y + 4) + '" width="80" height="84" fill="#000" fill-opacity="0.001"/>')
   p.push('<g opacity="' + (reserva ? 0.45 : 1) + '">')
   // escritorio y monitor
   p.push('<rect x="' + (x + 12) + '" y="' + (y + 50) + '" width="64" height="18" rx="4" fill="#27394a" stroke="' + C.borde + '"/>')
@@ -304,7 +328,14 @@ function empleado(x, y, rol, indice, estado, tarea, pendientes) {
     }
   }
   // placa con el nombre
-  p.push(t(cx, y + 80, reserva ? rol.corto + ' · ' + rol.desde : rol.corto, 10, estado === 'trabajando' ? C.ambar : reserva ? C.tenue : C.suave, ' text-anchor="middle" font-weight="' + (estado === 'trabajando' ? 700 : 500) + '"'))
+  const humano = rol.tipo === 'humano'
+  if (humano) {
+    // la marca de Fran: un aro bajo sus pies y una etiqueta «TÚ»
+    p.push('<ellipse cx="' + cx + '" cy="' + (y + 72) + '" rx="34" ry="6" fill="' + C.ambar + '" fill-opacity="0.18"/>')
+    p.push('<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="1.4s" repeatCount="indefinite"/><rect x="' + (cx - 38) + '" y="' + (y + 12) + '" width="26" height="14" rx="7" fill="' + C.vinoClaro + '"/>' + t(cx - 25, y + 22, 'TÚ', 9, C.texto, ' text-anchor="middle" font-weight="800"') + '</g>')
+  }
+  p.push(t(cx, y + 80, reserva ? rol.corto + ' · ' + rol.desde : humano ? '★ ' + rol.corto : rol.corto, 10, estado === 'trabajando' || humano ? C.ambar : reserva ? C.tenue : C.suave, ' text-anchor="middle" font-weight="' + (estado === 'trabajando' || humano ? 700 : 500) + '"'))
+  p.push('</g>')
   return p.join('')
 }
 
@@ -355,7 +386,7 @@ export function svgOficina(op) {
         const cx = ex + 44
         centros[rol.id] = { x: cx, y: ey + 52 }
         const est = op.estado[rol.id] || 'libre'
-        capaSalas.push('<g transform="translate(' + cx + ' ' + (ey + 80) + ') scale(1.2) translate(' + -cx + ' ' + -(ey + 80) + ')">' + empleado(ex, ey, rol, op.roles.indexOf(rol), est, op.tarea[rol.id] || '', rol.tipo === 'humano' ? op.pendientesAutor : 0) + '</g>')
+        capaSalas.push('<g transform="translate(' + cx + ' ' + (ey + 80) + ') scale(1.2) translate(' + -cx + ' ' + -(ey + 80) + ')">' + empleado(ex, ey, rol, op.roles.indexOf(rol), est, op.tarea[rol.id] || '', rol.tipo === 'humano' ? op.pendientesAutor : 0, (op.info && op.info[rol.id]) || []) + '</g>')
       })
       x += w + margen
     })
@@ -363,36 +394,50 @@ export function svgOficina(op) {
   })
   partes.push(capaSalas.join(''))
 
-  // la ruta de la tarea elegida: paquetes que viajan entre escritorios
+  // las líneas de traspaso de la tarea elegida: cada una con su historial de pasadas
   const capaRuta = []
-  const ruta = op.ruta || []
-  for (let i = 0; i < ruta.length - 1; i++) {
-    const a = centros[ruta[i].rol]
-    const b = centros[ruta[i + 1].rol]
-    if (!a || !b || ruta[i].rol === ruta[i + 1].rol) continue
-    const hecho = ruta[i].estado === 'hecha' || ruta[i].estado === 'omitida'
-    const hacia = ruta[i + 1].estado === 'activa'
-    const medioY = Math.min(a.y, b.y) - 44 - (i % 2) * 16
-    const d = 'M' + a.x + ',' + (a.y - 16) + ' C' + a.x + ',' + medioY + ' ' + b.x + ',' + medioY + ' ' + b.x + ',' + (b.y - 16)
+  const lineas = op.lineas || []
+  lineas.forEach((l, i) => {
+    const a = centros[l.de]
+    const b = centros[l.a]
+    if (!a || !b || l.de === l.a) return
+    const hecho = l.estado === 'hecha'
+    const hacia = l.estado === 'activa'
+    // las pasadas de ida y vuelta entre los mismos dos roles no se montan: cada sentido sube a una altura distinta
+    const medioY = Math.min(a.y, b.y) - 44 - (i % 3) * 14 - (a.x > b.x ? 10 : 0)
+    // si los dos están en la misma columna la curva se abre hacia un lado para no taparlos
+    const dx = Math.abs(a.x - b.x) < 30 ? (a.y > b.y ? 40 : -40) + (i % 3) * 10 : 0
+    const d = 'M' + a.x + ',' + (a.y - 16) + ' C' + (a.x + dx) + ',' + medioY + ' ' + (b.x + dx) + ',' + medioY + ' ' + b.x + ',' + (b.y - 16)
     const color = hecho ? C.suave : hacia ? C.ambar : C.borde
-    capaRuta.push('<path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="' + (hecho || hacia ? 2.5 : 2) + '" stroke-linecap="round" stroke-opacity="' + (hecho || hacia ? 0.9 : 0.7) + '" stroke-dasharray="' + (hecho ? '' : '6 6') + '"' + (hacia ? '><animate attributeName="stroke-dashoffset" values="12;0" dur="0.7s" repeatCount="indefinite"/></path>' : '/>'))
-    capaRuta.push('<circle cx="' + b.x + '" cy="' + (b.y - 16) + '" r="4" fill="' + color + '"/>')
+    const grosor = (hecho || hacia ? 2.5 : 2) + Math.min(2, (l.pasadas.length - 1) * 0.5)
+    const titulo = l.titulo ? '<title>' + l.titulo.map(esc).join('&#10;') + '</title>' : ''
+    capaRuta.push('<g>' + titulo + '<path d="' + d + '" fill="none" stroke="#000" stroke-opacity="0.001" stroke-width="16"/>' +
+      '<path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="' + grosor.toFixed(1) + '" stroke-linecap="round" stroke-opacity="' + (hecho || hacia ? 0.9 : 0.7) + '" stroke-dasharray="' + (hecho || hacia ? '' : '6 6') + '"' + (hacia ? '><animate attributeName="stroke-dashoffset" values="12;0" dur="0.7s" repeatCount="indefinite"/></path>' : '/>') +
+      '<circle cx="' + b.x + '" cy="' + (b.y - 16) + '" r="4" fill="' + color + '"/>')
     if (hecho || hacia) {
       capaRuta.push('<g><rect x="-6" y="-5" width="12" height="10" rx="2" fill="' + C.laton + '" stroke="' + C.ambar + '"/><rect x="-6" y="-1" width="12" height="2" fill="' + C.ambar + '"/><animateMotion dur="' + (hacia ? 1.8 : 3.6) + 's" begin="' + i * 0.4 + 's" repeatCount="indefinite" path="' + d + '"/></g>')
     }
-  }
+    if (l.pasadas.length > 1) {
+      // contador de pasadas en el punto medio de la curva
+      const mx = (a.x + 3 * (a.x + dx) + 3 * (b.x + dx) + b.x) / 8
+      const my = ((a.y - 16) + 3 * medioY + 3 * medioY + (b.y - 16)) / 8
+      capaRuta.push('<circle cx="' + mx.toFixed(1) + '" cy="' + my.toFixed(1) + '" r="9" fill="' + C.fondo + '" stroke="' + color + '" stroke-width="2"/>' + t(mx.toFixed(1), (my + 3.5).toFixed(1), '×' + l.pasadas.length, 9, C.texto, ' text-anchor="middle" font-weight="800"'))
+    }
+    capaRuta.push('</g>')
+  })
   // hallazgos: la bandera va de quien lo dejó a quien lo resolvió; los abiertos laten sobre quien lo dejó
   for (const h of op.hallazgos || []) {
     const a = centros[h.de]
     if (!a) continue
+    const titulo = h.titulo ? '<title>' + h.titulo.map(esc).join('&#10;') + '</title>' : ''
     if (h.estado === 'resuelto' && centros[h.a] && h.de !== h.a) {
       const b = centros[h.a]
       const medioY = Math.min(a.y, b.y) - 24
       const d = 'M' + a.x + ',' + (a.y - 24) + ' Q' + (a.x + b.x) / 2 + ',' + medioY + ' ' + b.x + ',' + (b.y - 24)
-      capaRuta.push('<path d="' + d + '" fill="none" stroke="' + C.vinoClaro + '" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4"/>')
-      capaRuta.push('<g><polygon points="0,-7 9,-3.5 0,0" fill="' + C.vinoClaro + '"/><rect x="-1" y="-7" width="1.8" height="12" fill="' + C.texto + '"/><animateMotion dur="4.5s" repeatCount="indefinite" path="' + d + '"/></g>')
+      capaRuta.push('<g>' + titulo + '<path d="' + d + '" fill="none" stroke="#000" stroke-opacity="0.001" stroke-width="14"/><path d="' + d + '" fill="none" stroke="' + C.vinoClaro + '" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4"/>' +
+        '<g><polygon points="0,-7 9,-3.5 0,0" fill="' + C.vinoClaro + '"/><rect x="-1" y="-7" width="1.8" height="12" fill="' + C.texto + '"/><animateMotion dur="4.5s" repeatCount="indefinite" path="' + d + '"/></g></g>')
     } else if (h.estado !== 'resuelto') {
-      capaRuta.push('<g><circle cx="' + (a.x + 26) + '" cy="' + (a.y - 34) + '" r="8" fill="' + C.vinoClaro + '" stroke="' + C.fondo + '" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="1s" repeatCount="indefinite"/></circle>' + t(a.x + 26, a.y - 30, '!', 11, C.texto, ' text-anchor="middle" font-weight="800"') + '</g>')
+      capaRuta.push('<g>' + titulo + '<circle cx="' + (a.x + 26) + '" cy="' + (a.y - 34) + '" r="8" fill="' + C.vinoClaro + '" stroke="' + C.fondo + '" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="1s" repeatCount="indefinite"/></circle>' + t(a.x + 26, a.y - 30, '!', 11, C.texto, ' text-anchor="middle" font-weight="800"') + '</g>')
     }
   }
   partes.push(capaRuta.join(''))
