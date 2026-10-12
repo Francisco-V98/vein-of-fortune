@@ -32,6 +32,22 @@
       "by": "claude",
       "note": "Modelo y poses rehechos en chibi con las mismas proporciones; expresiones corregidas en triste y cansancio.",
       "ref": "rama studio/F0-60-piloto-hojas-de-reme"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pide que el cansancio sea menos exagerado y que el modelo y las poses de todos los personajes tengan la estética del sprite del ministro.",
+      "ref": "rama studio/F0-60-piloto-hojas-de-reme"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Modelo y poses rehechos con píxeles grandes y colores planos; cansancio suavizado.",
+      "ref": "rama studio/F0-60-piloto-hojas-de-reme"
     }
   ],
   "comments": [
@@ -49,6 +65,16 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Se rehicieron el modelo (dos veces, para igualar proporciones con las poses), las poses y las expresiones (solo se cambiaron los paneles 3 y 6; los otros cuatro quedaron idénticos). Coste de esta ronda: 4 créditos."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "La cara de cansancio es demasiado exagerada. El modelo y las poses deben tener la estética del sprite del ministro y todos los personajes deben llevar esa estética."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Tercera ronda: modelo y poses rehechos con la estética del ministro (píxeles grandes, colores planos, sin textura fina) y el panel de cansancio suavizado, el resto de las expresiones idénticas. Las poses quedan algo más finas de píxel que el modelo; si prefieres el mismo tamaño de píxel en ambas, se ajusta en la siguiente hoja. Coste de esta ronda: 3 créditos."
     }
   ],
   "evidence": [

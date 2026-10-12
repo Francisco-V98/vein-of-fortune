@@ -132,7 +132,9 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 | **Expresiones** | **Estilo detallado** como los retratos de diálogo. Seis, **iguales para todos**: la **por defecto** según su personalidad, feliz, triste (llorando), enojo, susto y cansancio (bostezando, no triste) |
 | **Poses** | **Chibi pixel art** de cuerpo entero: estático, caminando (ciclo de 4 fotogramas de lado, más de frente y de espalda) y gestos al hablar |
 
-**Proporciones chibi:** la cabeza ocupa cerca del 40 % de la altura, cuerpo compacto, extremidades cortas, ojos grandes y sencillos, contorno negro grueso y píxeles visibles. El modelo y las poses de un mismo personaje deben tener las mismas proporciones.
+**Estética chibi de referencia ✅:** el sprite del ministro (`ministro-corregido.png`). Todos los personajes del modelo y las poses llevan esa estética: píxeles grandes y claramente visibles (cada personaje de unos 100 píxeles de alto), colores planos con 2 a 3 tonos por material, sombreado simple de bordes duros, contorno negro grueso, **sin textura fina, sin hebras de pelo y sin degradados**, ojos grandes y sencillos con un solo punto de brillo, boca pequeña, cabeza de cerca del 40 % de la altura y cuerpo compacto. El modelo y las poses de un mismo personaje tienen las mismas proporciones.
+
+**Expresiones ✅:** las seis tienen los mismos gestos para todos, sutiles y legibles. El **cansancio** es discreto (párpados pesados, ojeras leves, boca relajada), no exagerado y distinto de triste.
 
 **Hojas de NPC:** una por tipo (frente, espalda, un lado y dos expresiones). Los 35 tipos están en el registro del mundo (`studio/data/world.json`): Ministerio, Comisión del Éter, Consorcio Arvel, Unión, Los Faroleros, prensa, empleados, civiles, enemigos humanos y criaturas de La Fosa. Los jefes de zona quedan diferidos (⏳ F0-69).
 
