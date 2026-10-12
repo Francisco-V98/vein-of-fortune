@@ -1,5 +1,5 @@
 import { expect, mock, test } from 'claude-code/testing'
-import { accionesDelAutor, contarPorEtapa, estadoDeRoles, etapaActual, firmaDe, hallazgosDe, infoDeRoles, lineasDe, mensajeAutor, ordinal, pipelineDe, prDeTarea, rolDe, rolDeAgente, traspasosDe } from '../hooks/register.js'
+import { accionesDelAutor, contarPorEtapa, estadoDeRoles, etapaActual, firmaDe, hallazgosDe, infoDeRoles, lineasDe, mensajeAutor, ordinal, pipelineDe, prDeTarea, rolDe, rolDeAgente, seleccionDe, traspasosDe } from '../hooks/register.js'
 import { envolverTexto, fijarFase, iniciales, svgFlujo, svgOficina, svgTraspasos } from '../hooks/vis.js'
 
 const ETAPAS = [
@@ -193,6 +193,17 @@ test('las animaciones arrancan en la fase del reloj para no reiniciarse al redib
   expect(fijarFase('<svg><animate dur="2s"/></svg>', 5500)).not.toBe(fijarFase('<svg><animate dur="2s"/></svg>', 5000))
 })
 
+test('lo que se toca con un clic implica a sus roles y lleva su texto', async () => {
+  const info = { narrador: ['Narrador · agente', 'Escribe'] }
+  const lineas = [{ clave: 'narrador>autor', de: 'narrador', a: 'autor', titulo: ['Narrador → Autor', '1.ª pasada: v1'], pasadas: [{}] }]
+  const hallazgos = [{ clave: 'h0', de: 'autor', a: 'narrador', titulo: ['Hallazgo resuelto · Autor', 'Cambiar el tono'] }]
+  expect(seleccionDe(null, info, lineas, hallazgos)).toBeNull()
+  expect(seleccionDe({ tipo: 'rol', id: 'narrador' }, info, lineas, hallazgos)?.roles).toEqual(['narrador'])
+  expect(seleccionDe({ tipo: 'linea', id: 'narrador>autor' }, info, lineas, hallazgos)?.roles).toEqual(['narrador', 'autor'])
+  expect(seleccionDe({ tipo: 'hallazgo', id: 'h0' }, info, lineas, hallazgos)?.titulo[1]).toBe('Cambiar el tono')
+  expect(seleccionDe({ tipo: 'linea', id: 'no-existe' }, info, lineas, hallazgos)).toBeNull()
+})
+
 test('sin registro de traspasos se derivan de las etapas hechas', async () => {
   const pipeline = [
     { etapa: 'produccion', estado: 'hecha', rolEfectivo: 'narrador', entrega: 'Texto', at: '2026-10-12', hallazgos: [] },
@@ -283,6 +294,18 @@ test('/equipo dibuja el diagrama y la bandeja, y los botones llevan al autor has
   await ui.press({ key: 'ok-pr-9' })
   await ui.press({ key: 'fin-pr-9' })
   expect(enviados[1]).toContain('Puedes fusionarlo')
+
+  // Tocar a un empleado resalta su escritorio y abre una tarjeta que se cierra con la ✕
+  await ui.press({ key: 'p-narrador' })
+  expect(await ui.find({ type: 'Text', text: /Narrador · agente/ })).toBeDefined()
+  expect((await ui.find({ type: 'Svg' })).props.source).toContain('stroke-dasharray="6 5"')
+  await ui.press({ key: 'cerrar-detalle' })
+  expect(await ui.find({ type: 'Text', text: /Narrador · agente/ })).toBeUndefined()
+  // Tocar otra vez el mismo botón también la cierra
+  await ui.press({ key: 'p-autor' })
+  expect(await ui.find({ key: 'cerrar-detalle' })).toBeDefined()
+  await ui.press({ key: 'p-autor' })
+  expect(await ui.find({ key: 'cerrar-detalle' })).toBeUndefined()
 
   // En la pestaña de traspasos se ve el detalle de la tarea
   await ui.press({ key: 'tab-traspasos' })

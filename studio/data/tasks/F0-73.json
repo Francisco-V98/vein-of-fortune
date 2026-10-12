@@ -53,6 +53,16 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "Cada línea del plano guarda ahora su historial de pasadas (1.ª, 2.ª…) con la fecha y lo que se entregó, y muestra un contador ×N cuando se repite; en la pestaña Oficina hay además una lista con ese historial. Los personajes y las banderas llevan un globo con su información. Los dibujos tienen clave estable para que el scroll no reinicie la animación. Tu personaje se llama Fran, lleva la etiqueta TÚ y una estrella en la placa. Falta confirmar en la app que el globo aparece al pasar el ratón: depende de que se muestren los títulos del SVG; si no, lo pasamos a botones."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "El hover no funciona. Mejor con clic, y que el mensaje que salga se pueda cerrar con una ✕, para no depender del hover."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "En la pestaña Oficina hay ahora tres filas de botones: Personas, Traspasos y Hallazgos. Al tocar uno se resalta en el plano lo que implica (el resto se atenúa) y se abre una tarjeta con su detalle y una ✕ Cerrar (tecla x); tocar el mismo botón otra vez también la cierra. Los globos del ratón quedan en el dibujo por si algún día la app los muestra."
     }
   ],
   "evidence": [],
@@ -116,7 +126,7 @@
             "texto": "La animación se reinicia al hacer scroll y falta información al pasar el ratón por las líneas y los personajes",
             "estado": "resuelto",
             "resuelto_por": "herramientas",
-            "como": "Dibujos con clave estable, globos con información y historial por línea; el globo al pasar el ratón depende de que la app muestre los títulos del SVG (por confirmar)"
+            "como": "Dibujos con clave estable y animación sincronizada con el reloj; el detalle se abre con un clic (tarjeta con ✕ para cerrar), porque el ratón no muestra los globos en la app"
           }
         ]
       },
@@ -210,6 +220,25 @@
         "de": "qa",
         "a": "autor",
         "que": "QA aprobado: validación y pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "herramientas",
+        "que": "El hover no funciona: quiere que todo el detalle se abra con un clic y se cierre con una ✕",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "v5: detalle con clic en personas, traspasos y hallazgos, con tarjeta que se cierra con ✕",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y catorce pruebas en verde",
         "at": "2026-10-12"
       }
     ]

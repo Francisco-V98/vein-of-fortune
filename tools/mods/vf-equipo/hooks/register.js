@@ -27,6 +27,7 @@ let ordenFases = []
 let agentes = []
 let prs = []
 let seleccion = ''
+let elegido = null
 let acciones = {}
 let firmaDatos = ''
 let actualizado = ''
@@ -177,10 +178,25 @@ export function hallazgosDe(t, nombre) {
     for (const h of p.hallazgos || []) {
       const titulo = [(h.estado === 'resuelto' ? 'Hallazgo resuelto' : 'Hallazgo abierto') + ' · ' + nom(h.de), h.texto]
       if (h.estado === 'resuelto') titulo.push('Lo resolvió ' + nom(h.resuelto_por || '') + ': ' + (h.como || ''))
-      lista.push({ de: h.de, a: h.resuelto_por || '', estado: h.estado, texto: h.texto, como: h.como || '', titulo })
+      lista.push({ clave: 'h' + lista.length, de: h.de, a: h.resuelto_por || '', estado: h.estado, texto: h.texto, como: h.como || '', titulo })
     }
   }
   return lista
+}
+
+// Lo que se eligió con un clic: a quién implica, para resaltarlo en el plano, y el texto de su tarjeta
+export function seleccionDe(sel, info, lineas, hallazgos) {
+  if (!sel) return null
+  if (sel.tipo === 'rol') return { tipo: 'rol', id: sel.id, roles: [sel.id], titulo: info[sel.id] || [] }
+  if (sel.tipo === 'linea') {
+    const l = lineas.find((x) => x.clave === sel.id)
+    return l ? { tipo: 'linea', id: l.clave, roles: [l.de, l.a], titulo: l.titulo } : null
+  }
+  if (sel.tipo === 'hallazgo') {
+    const h = hallazgos.find((x) => x.clave === sel.id)
+    return h ? { tipo: 'hallazgo', id: h.clave, roles: [h.de, h.a].filter(Boolean), titulo: h.titulo } : null
+  }
+  return null
 }
 
 // El número de una pasada: 1.ª, 2.ª…
@@ -218,7 +234,7 @@ export function lineasDe(traspasos, pipeline, rolActivo, nombre) {
   for (const x of traspasos) {
     const clave = x.de + '>' + x.a
     if (!porClave[clave]) {
-      porClave[clave] = { de: x.de, a: x.a, pasadas: [] }
+      porClave[clave] = { clave, de: x.de, a: x.a, pasadas: [] }
       grupos.push(porClave[clave])
     }
     porClave[clave].pasadas.push(x)
@@ -241,7 +257,7 @@ export function lineasDe(traspasos, pipeline, rolActivo, nombre) {
     if (de.rolEfectivo === a.rolEfectivo || de.estado === 'hecha') continue
     const clave = de.rolEfectivo + '>' + a.rolEfectivo
     if (porClave[clave]) continue
-    grupos.push({ de: de.rolEfectivo, a: a.rolEfectivo, pasadas: [], estado: 'pendiente', titulo: [nombre(de.rolEfectivo) + ' → ' + nombre(a.rolEfectivo), 'Todavía no ha pasado por aquí'] })
+    grupos.push({ clave, de: de.rolEfectivo, a: a.rolEfectivo, pasadas: [], estado: 'pendiente', titulo: [nombre(de.rolEfectivo) + ' → ' + nombre(a.rolEfectivo), 'Todavía no ha pasado por aquí'] })
   }
   return grupos
 }
@@ -442,7 +458,7 @@ export function register(on) {
     const redibujar = () => $.ui.invalidate('ui.render')
     const escritorio = e.surface === 'desktop'
     const ancho = Math.max(320, Math.min(600, Math.round((e.props && e.props.bodyColumns ? e.props.bodyColumns : 60) * 9)))
-    const ctx = { Box, Text, Button, Svg, Link, escritorio, ancho }
+    const ctx = { Box, Text, Button, Svg, Link, escritorio, ancho, redibujar }
 
     const pestana = (nombre, etiqueta, tecla) =>
       Button({
@@ -540,6 +556,8 @@ function vistaOficina(ctx, acc) {
   const activo = t ? t.pipeline.find((p) => p.estado === 'activa') : null
   const lineas = t ? lineasDe(t.traspasos, t.pipeline, activo ? activo.rolEfectivo : '', nombreRol) : []
   const hall = t ? hallazgosDe(t, nombreRol) : []
+  const info = infoDeRoles(equipo.roles, tareas, t ? t.id : '', lineas, hall, faseActual, ordenFases, nombreRol)
+  const sel = seleccionDe(elegido, info, lineas, hall)
   if (escritorio) {
     const { estado, tarea } = estadoDeRoles(tareas, agentes, equipo.roles, faseActual, ordenFases, items.length)
     const enEstudio = equipo.roles.filter((r) => estado[r.id] !== 'reserva').length
@@ -551,7 +569,8 @@ function vistaOficina(ctx, acc) {
       tarea,
       lineas,
       hallazgos: hall,
-      info: infoDeRoles(equipo.roles, tareas, t ? t.id : '', lineas, hall, faseActual, ordenFases, nombreRol),
+      info,
+      seleccion: sel,
       pendientesAutor: items.length,
       pie: 'Fase ' + faseActual + ' · ' + enEstudio + ' de ' + equipo.roles.length + ' en el estudio',
     })
@@ -562,6 +581,8 @@ function vistaOficina(ctx, acc) {
     for (const v of vivos) filas.push(Text({ children: ['● ' + v.nombre + (v.detalle ? ' · ' + v.detalle : '')] }))
     if (vivos.length === 0) filas.push(Text({ dimColor: true, children: ['Nadie trabaja ahora en esta sesión.'] }))
   }
+  filas.push(...tarjetaSeleccion(ctx, sel))
+  filas.push(...fichasDeClic(ctx, lineas, hall))
   filas.push(Text({ dimColor: true, children: ['Hechas ' + hechas + ' · en marcha ' + tareas.length + ' · fase ' + faseActual] }))
   filas.push(Text({ children: [' '] }))
   if (tareas.length === 0) {
@@ -572,10 +593,98 @@ function vistaOficina(ctx, acc) {
   filas.push(selectorTareas(ctx, acc))
   filas.push(Text({ bold: true, wrap: 'wrap', children: [t.id + ' · ' + t.titulo] }))
   const pr = prDeTarea(t.id, prs)
-  filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['Ahora: ' + nombreEtapa(t.etapa) + ' (' + nombreRol(t.rol) + ')' + (pr ? ' · PR #' + pr.number : '') + ' · pasa el ratón por el plano para ver el detalle'] }))
+  filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['Ahora: ' + nombreEtapa(t.etapa) + ' (' + nombreRol(t.rol) + ')' + (pr ? ' · PR #' + pr.number : '') + ' · toca un empleado, una línea o un hallazgo para ver su detalle'] }))
   filas.push(Text({ children: [' '] }))
   filas.push(...historial(ctx, lineas))
   return filas
+}
+
+// La tarjeta con el detalle de lo que se tocó, con una ✕ para cerrarla
+function tarjetaSeleccion(ctx, sel) {
+  const { Text, Box, Button } = ctx
+  if (!sel) return []
+  const etiqueta = sel.tipo === 'rol' ? 'Empleado' : sel.tipo === 'linea' ? 'Traspaso' : 'Hallazgo'
+  const [cabeza, ...resto] = sel.titulo
+  return [
+    Box({
+      flexDirection: 'column',
+      borderStyle: 'round',
+      paddingX: 1,
+      marginTop: 1,
+      marginBottom: 1,
+      children: [
+        Box({
+          flexDirection: 'row',
+          columnGap: 2,
+          children: [
+            Text({ bold: true, backgroundColor: 'yellow', color: 'black', children: [' ' + etiqueta + ' ']}),
+            Button({ key: 'cerrar-detalle', label: '✕ Cerrar', plain: true, hotkey: 'x', onPress: () => cerrarSeleccion(ctx) }),
+          ],
+        }),
+        Text({ bold: true, wrap: 'wrap', children: [cabeza || ''] }),
+        ...resto.map((l) => Text({ wrap: 'wrap', children: [l] })),
+      ],
+    }),
+  ]
+}
+
+function cerrarSeleccion(ctx) {
+  elegido = null
+  ctx.redibujar()
+}
+
+// Los botones para tocar un empleado, una línea o un hallazgo del plano
+function fichasDeClic(ctx, lineas, hall) {
+  const { Text, Box, Button, redibujar } = ctx
+  const alternar = (tipo, id) => {
+    elegido = elegido && elegido.tipo === tipo && elegido.id === id ? null : { tipo, id }
+    redibujar()
+  }
+  const activa = (tipo, id) => Boolean(elegido && elegido.tipo === tipo && elegido.id === id)
+  const idx = (f) => Math.max(0, ordenFases.indexOf(f))
+  const filas = [Text({ dimColor: true, children: ['Toca para ver el detalle'] })]
+  filas.push(Text({ bold: true, color: 'cyan', children: ['Personas'] }))
+  filas.push(
+    Box({
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      columnGap: 2,
+      children: equipo.roles.map((r) =>
+        Button({ key: 'p-' + r.id, label: (r.tipo === 'humano' ? '★ ' : '') + r.corto, plain: true, dimColor: !activa('rol', r.id) && idx(r.desde) > idx(faseActual), onPress: () => alternar('rol', r.id) }),
+      ),
+    }),
+  )
+  const conLinea = lineas.filter((l) => l.pasadas.length > 0)
+  if (conLinea.length) {
+    filas.push(Text({ bold: true, color: 'cyan', children: ['Traspasos'] }))
+    filas.push(
+      Box({
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        columnGap: 2,
+        children: conLinea.map((l) => Button({ key: 'l-' + l.clave, label: nombreCorto(l.de) + ' → ' + nombreCorto(l.a) + (l.pasadas.length > 1 ? ' ×' + l.pasadas.length : ''), plain: true, dimColor: !activa('linea', l.clave), onPress: () => alternar('linea', l.clave) })),
+      }),
+    )
+  }
+  if (hall.length) {
+    filas.push(Text({ bold: true, color: 'cyan', children: ['Hallazgos'] }))
+    filas.push(
+      Box({
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        columnGap: 2,
+        children: hall.map((h) => Button({ key: 'h-' + h.clave, label: (h.estado === 'resuelto' ? '✓ ' : '⚑ ') + nombreCorto(h.de), plain: true, dimColor: !activa('hallazgo', h.clave), onPress: () => alternar('hallazgo', h.clave) })),
+      }),
+    )
+  }
+  filas.push(Text({ children: [' '] }))
+  return filas
+}
+
+function nombreCorto(id) {
+  if (!equipo) return id
+  const r = equipo.roles.find((x) => x.id === id)
+  return r ? r.corto : id
 }
 
 // El historial por línea: cada vez que el trabajo pasó de un rol a otro, en orden

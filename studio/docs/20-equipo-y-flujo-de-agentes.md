@@ -95,7 +95,7 @@ Las etapas «Revisión del autor» y «Prueba del autor» son tuyas. En el panel
 3. Pulsas **Terminé mi parte**. El panel envía un mensaje a la conversación y la acción queda como enviada.
 4. El coordinador decide: si todo se aprobó, la tarea sigue su flujo; si hubo ajustes, los asigna al especialista que corresponda, el trabajo vuelve a la etapa que toque y, al terminar, vuelve a tu bandeja.
 
-El panel **se actualiza solo**: mira los datos cada pocos segundos, los PR cada rato y también al terminar cada turno. Tu personaje en la oficina se llama **Fran**: lleva la etiqueta «TÚ» y una estrella en la placa. Al pasar el ratón por un empleado, una línea o una bandera aparece un globo con su información (qué hace cada uno, qué pasó de quién a quién y en qué pasada).
+El panel **se actualiza solo**: mira los datos cada pocos segundos, los PR cada rato y también al terminar cada turno. Tu personaje en la oficina se llama **Fran**: lleva la etiqueta «TÚ» y una estrella en la placa. Todo el detalle se abre **con un clic**, sin depender del ratón: en la pestaña Oficina, los botones de Personas, Traspasos y Hallazgos abren una tarjeta con la información (qué hace cada uno, qué pasó de quién a quién y en qué pasada), resaltan en el plano lo que implica y se cierran con la ✕.
 
 ## Los mods de Claude Code ✅
 

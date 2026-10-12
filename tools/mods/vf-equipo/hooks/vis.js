@@ -263,13 +263,16 @@ const COLOR_DEPTO = {
 const PELO = ['#2b2b33', '#6b4a2f', '#c9a15a', '#8a3b2e', '#d8d8d8', '#3b3b55', '#7a5a3a']
 
 // Un empleado sentado en su escritorio. estado: 'trabajando' | 'libre' | 'reserva'
-function empleado(x, y, rol, indice, estado, tarea, pendientes, info) {
+function empleado(x, y, rol, indice, estado, tarea, pendientes, info, resalte) {
   const cx = x + 44
   const color = COLOR_DEPTO[rol.depto] || C.tenue
   const pelo = PELO[indice % PELO.length]
   const p = []
   const reserva = estado === 'reserva'
-  p.push('<g>')
+  p.push('<g opacity="' + (resalte === 'no' ? 0.38 : 1) + '">')
+  if (resalte === 'si') {
+    p.push('<ellipse cx="' + cx + '" cy="' + (y + 48) + '" rx="44" ry="42" fill="' + C.ambar + '" fill-opacity="0.08" stroke="' + C.ambar + '" stroke-width="2.5" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1.1s" repeatCount="indefinite"/></ellipse>')
+  }
   if (info && info.length) p.push('<title>' + info.map(esc).join('&#10;') + '</title>')
   // zona sensible para el ratón: cubre el escritorio y a la persona
   p.push('<rect x="' + (x + 4) + '" y="' + (y + 4) + '" width="80" height="84" fill="#000" fill-opacity="0.001"/>')
@@ -339,6 +342,12 @@ function empleado(x, y, rol, indice, estado, tarea, pendientes, info) {
   return p.join('')
 }
 
+// Si hay algo elegido, quién queda resaltado y quién se atenúa
+function resalteDe(seleccion, rolId) {
+  if (!seleccion) return ''
+  return seleccion.roles && seleccion.roles.includes(rolId) ? 'si' : 'no'
+}
+
 // Plano de oficina completo. Devuelve { svg, alto, ancho, centros } donde centros[rol] = {x, y}
 export function svgOficina(op) {
   const W = Math.max(360, Math.min(op.ancho, 600))
@@ -386,7 +395,7 @@ export function svgOficina(op) {
         const cx = ex + 44
         centros[rol.id] = { x: cx, y: ey + 52 }
         const est = op.estado[rol.id] || 'libre'
-        capaSalas.push('<g transform="translate(' + cx + ' ' + (ey + 80) + ') scale(1.2) translate(' + -cx + ' ' + -(ey + 80) + ')">' + empleado(ex, ey, rol, op.roles.indexOf(rol), est, op.tarea[rol.id] || '', rol.tipo === 'humano' ? op.pendientesAutor : 0, (op.info && op.info[rol.id]) || []) + '</g>')
+        capaSalas.push('<g transform="translate(' + cx + ' ' + (ey + 80) + ') scale(1.2) translate(' + -cx + ' ' + -(ey + 80) + ')">' + empleado(ex, ey, rol, op.roles.indexOf(rol), est, op.tarea[rol.id] || '', rol.tipo === 'humano' ? op.pendientesAutor : 0, (op.info && op.info[rol.id]) || [], resalteDe(op.seleccion, rol.id)) + '</g>')
       })
       x += w + margen
     })
@@ -411,7 +420,10 @@ export function svgOficina(op) {
     const color = hecho ? C.suave : hacia ? C.ambar : C.borde
     const grosor = (hecho || hacia ? 2.5 : 2) + Math.min(2, (l.pasadas.length - 1) * 0.5)
     const titulo = l.titulo ? '<title>' + l.titulo.map(esc).join('&#10;') + '</title>' : ''
-    capaRuta.push('<g>' + titulo + '<path d="' + d + '" fill="none" stroke="#000" stroke-opacity="0.001" stroke-width="16"/>' +
+    const sel = op.seleccion
+    const esSel = Boolean(sel && sel.tipo === 'linea' && sel.id === l.clave)
+    const atenuada = Boolean(sel) && !esSel
+    capaRuta.push('<g opacity="' + (atenuada ? 0.22 : 1) + '">' + titulo + (esSel ? '<path d="' + d + '" fill="none" stroke="' + C.ambar + '" stroke-opacity="0.28" stroke-width="12" stroke-linecap="round"/>' : '') + '<path d="' + d + '" fill="none" stroke="#000" stroke-opacity="0.001" stroke-width="16"/>' +
       '<path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="' + grosor.toFixed(1) + '" stroke-linecap="round" stroke-opacity="' + (hecho || hacia ? 0.9 : 0.7) + '" stroke-dasharray="' + (hecho || hacia ? '' : '6 6') + '"' + (hacia ? '><animate attributeName="stroke-dashoffset" values="12;0" dur="0.7s" repeatCount="indefinite"/></path>' : '/>') +
       '<circle cx="' + b.x + '" cy="' + (b.y - 16) + '" r="4" fill="' + color + '"/>')
     if (hecho || hacia) {
@@ -430,14 +442,16 @@ export function svgOficina(op) {
     const a = centros[h.de]
     if (!a) continue
     const titulo = h.titulo ? '<title>' + h.titulo.map(esc).join('&#10;') + '</title>' : ''
+    const selH = op.seleccion
+    const opH = selH && !(selH.tipo === 'hallazgo' && selH.id === h.clave) ? 0.22 : 1
     if (h.estado === 'resuelto' && centros[h.a] && h.de !== h.a) {
       const b = centros[h.a]
       const medioY = Math.min(a.y, b.y) - 24
       const d = 'M' + a.x + ',' + (a.y - 24) + ' Q' + (a.x + b.x) / 2 + ',' + medioY + ' ' + b.x + ',' + (b.y - 24)
-      capaRuta.push('<g>' + titulo + '<path d="' + d + '" fill="none" stroke="#000" stroke-opacity="0.001" stroke-width="14"/><path d="' + d + '" fill="none" stroke="' + C.vinoClaro + '" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4"/>' +
+      capaRuta.push('<g opacity="' + opH + '">' + titulo + '<path d="' + d + '" fill="none" stroke="#000" stroke-opacity="0.001" stroke-width="14"/><path d="' + d + '" fill="none" stroke="' + C.vinoClaro + '" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4"/>' +
         '<g><polygon points="0,-7 9,-3.5 0,0" fill="' + C.vinoClaro + '"/><rect x="-1" y="-7" width="1.8" height="12" fill="' + C.texto + '"/><animateMotion dur="4.5s" repeatCount="indefinite" path="' + d + '"/></g></g>')
     } else if (h.estado !== 'resuelto') {
-      capaRuta.push('<g>' + titulo + '<circle cx="' + (a.x + 26) + '" cy="' + (a.y - 34) + '" r="8" fill="' + C.vinoClaro + '" stroke="' + C.fondo + '" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="1s" repeatCount="indefinite"/></circle>' + t(a.x + 26, a.y - 30, '!', 11, C.texto, ' text-anchor="middle" font-weight="800"') + '</g>')
+      capaRuta.push('<g opacity="' + opH + '">' + titulo + '<circle cx="' + (a.x + 26) + '" cy="' + (a.y - 34) + '" r="8" fill="' + C.vinoClaro + '" stroke="' + C.fondo + '" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="1s" repeatCount="indefinite"/></circle>' + t(a.x + 26, a.y - 30, '!', 11, C.texto, ' text-anchor="middle" font-weight="800"') + '</g>')
     }
   }
   partes.push(capaRuta.join(''))
