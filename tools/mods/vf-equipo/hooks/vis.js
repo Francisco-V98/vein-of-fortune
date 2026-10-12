@@ -405,6 +405,7 @@ export function svgOficina(op) {
 
   // las líneas de traspaso de la tarea elegida: cada una con su historial de pasadas
   const capaRuta = []
+  const anclas = {}
   const lineas = op.lineas || []
   lineas.forEach((l, i) => {
     const a = centros[l.de]
@@ -420,6 +421,7 @@ export function svgOficina(op) {
     const color = hecho ? C.suave : hacia ? C.ambar : C.borde
     const grosor = (hecho || hacia ? 2.5 : 2) + Math.min(2, (l.pasadas.length - 1) * 0.5)
     const titulo = l.titulo ? '<title>' + l.titulo.map(esc).join('&#10;') + '</title>' : ''
+    anclas['linea:' + l.clave] = { x: (a.x + 3 * (a.x + dx) + 3 * (b.x + dx) + b.x) / 8, y: ((a.y - 16) + 6 * medioY + (b.y - 16)) / 8 }
     const sel = op.seleccion
     const esSel = Boolean(sel && sel.tipo === 'linea' && sel.id === l.clave)
     const atenuada = Boolean(sel) && !esSel
@@ -448,9 +450,11 @@ export function svgOficina(op) {
       const b = centros[h.a]
       const medioY = Math.min(a.y, b.y) - 24
       const d = 'M' + a.x + ',' + (a.y - 24) + ' Q' + (a.x + b.x) / 2 + ',' + medioY + ' ' + b.x + ',' + (b.y - 24)
+      anclas['hallazgo:' + h.clave] = { x: (a.x + b.x) / 2, y: ((a.y - 24) + 2 * medioY + (b.y - 24)) / 4 }
       capaRuta.push('<g opacity="' + opH + '">' + titulo + '<path d="' + d + '" fill="none" stroke="#000" stroke-opacity="0.001" stroke-width="14"/><path d="' + d + '" fill="none" stroke="' + C.vinoClaro + '" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4"/>' +
         '<g><polygon points="0,-7 9,-3.5 0,0" fill="' + C.vinoClaro + '"/><rect x="-1" y="-7" width="1.8" height="12" fill="' + C.texto + '"/><animateMotion dur="4.5s" repeatCount="indefinite" path="' + d + '"/></g></g>')
     } else if (h.estado !== 'resuelto') {
+      anclas['hallazgo:' + h.clave] = { x: a.x + 26, y: a.y - 34 }
       capaRuta.push('<g opacity="' + opH + '">' + titulo + '<circle cx="' + (a.x + 26) + '" cy="' + (a.y - 34) + '" r="8" fill="' + C.vinoClaro + '" stroke="' + C.fondo + '" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="1s" repeatCount="indefinite"/></circle>' + t(a.x + 26, a.y - 30, '!', 11, C.texto, ' text-anchor="middle" font-weight="800"') + '</g>')
     }
   }
@@ -477,5 +481,48 @@ export function svgOficina(op) {
     })
     partes.push(t(lx + 12, ly + altoSala - 8, recortar(op.pie || '', Math.floor((w - 20) / 5.2)), 10, C.tenue))
   }
+  // la ventana flotante: se dibuja dentro del plano, junto a lo que se tocó
+  if (op.seleccion && op.seleccion.titulo && op.seleccion.titulo.length) {
+    const sel = op.seleccion
+    const anclaRol = centros[sel.id]
+    const ancla = sel.tipo === 'rol' ? (anclaRol ? { x: anclaRol.x, y: anclaRol.y - 30 } : null) : anclas[sel.tipo + ':' + sel.id]
+    if (ancla) partes.push(ventanaFlotante(sel, ancla, W, alto))
+  }
   return { svg: envolver(W, alto, partes), alto, ancho: W, centros }
+}
+
+// Una ventana flotante dentro del dibujo: título, texto y una ✕ para cerrarla (el botón de debajo del plano la cierra)
+function ventanaFlotante(sel, ancla, W, alto) {
+  const ancho = Math.min(268, W - 16)
+  const chars = Math.floor((ancho - 24) / 5.9)
+  const [cabeza, ...resto] = sel.titulo
+  const lineas = []
+  envolverTexto(cabeza || '', chars - 4).forEach((l) => lineas.push({ t: l, negrita: true }))
+  for (const r of resto) envolverTexto(r, chars).forEach((l) => lineas.push({ t: l, negrita: false }))
+  const lineasMax = lineas.slice(0, 20)
+  if (lineas.length > 20) lineasMax[19] = { t: lineasMax[19].t + ' …', negrita: false }
+  const h = 34 + lineasMax.length * 14 + 12
+  let x = Math.round(ancla.x - ancho / 2)
+  x = Math.max(8, Math.min(x, W - ancho - 8))
+  let y = Math.round(ancla.y - h - 26)
+  const arriba = y >= 8
+  if (!arriba) y = Math.min(alto - h - 8, Math.round(ancla.y + 30))
+  const px = Math.max(x + 14, Math.min(ancla.x, x + ancho - 14))
+  const py = arriba ? y + h : y
+  const p = []
+  p.push('<g>')
+  p.push('<line x1="' + ancla.x + '" y1="' + ancla.y + '" x2="' + px + '" y2="' + py + '" stroke="' + C.ambar + '" stroke-width="2"/>')
+  p.push('<circle cx="' + ancla.x + '" cy="' + ancla.y + '" r="5" fill="' + C.ambar + '" stroke="' + C.fondo + '" stroke-width="2"/>')
+  p.push('<rect x="' + (x + 3) + '" y="' + (y + 4) + '" width="' + ancho + '" height="' + h + '" rx="12" fill="#000" fill-opacity="0.35"/>')
+  p.push('<rect x="' + x + '" y="' + y + '" width="' + ancho + '" height="' + h + '" rx="12" fill="' + C.tarjeta + '" stroke="' + C.ambar + '" stroke-width="1.5"/>')
+  p.push('<rect x="' + x + '" y="' + y + '" width="' + ancho + '" height="24" rx="12" fill="' + C.fondo + '"/><rect x="' + x + '" y="' + (y + 12) + '" width="' + ancho + '" height="12" fill="' + C.fondo + '"/>')
+  p.push(t(x + 12, y + 16, sel.tipo === 'rol' ? 'EMPLEADO' : sel.tipo === 'linea' ? 'TRASPASO' : 'HALLAZGO', 9, C.ambar, ' font-weight="800" letter-spacing="1"'))
+  // la ✕ del cierre
+  p.push('<circle cx="' + (x + ancho - 16) + '" cy="' + (y + 12) + '" r="8" fill="' + C.vinoClaro + '"/>')
+  p.push('<path d="M' + (x + ancho - 19.5) + ' ' + (y + 8.5) + ' l7 7 M' + (x + ancho - 12.5) + ' ' + (y + 8.5) + ' l-7 7" stroke="' + C.texto + '" stroke-width="2" stroke-linecap="round"/>')
+  lineasMax.forEach((l, i) => {
+    p.push(t(x + 12, y + 40 + i * 14, l.t, 11, l.negrita ? C.texto : C.suave, l.negrita ? ' font-weight="700"' : ''))
+  })
+  p.push('</g>')
+  return p.join('')
 }

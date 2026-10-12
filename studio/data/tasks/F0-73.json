@@ -63,6 +63,16 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "En la pestaña Oficina hay ahora tres filas de botones: Personas, Traspasos y Hallazgos. Al tocar uno se resalta en el plano lo que implica (el resto se atenúa) y se abre una tarjeta con su detalle y una ✕ Cerrar (tecla x); tocar el mismo botón otra vez también la cierra. Los globos del ratón quedan en el dibujo por si algún día la app los muestra."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Me parece bien, pero me refería a una ventana flotante dentro del entorno animado: que al tocar un personaje, una línea o algo así salga qué significa cada uno."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "El detalle sale ahora como ventana flotante dentro del plano, anclada junto al empleado, la línea o el hallazgo elegido, con su título, su texto, una ✕ y un cable que la une a lo que se tocó. El plano resalta lo implicado y atenúa el resto. Los botones de Personas, Traspasos y Hallazgos siguen siendo la forma de abrirla, porque la app no envía clics desde dentro del dibujo; se cierra con el botón «✕ Cerrar ventana» (tecla x) o volviendo a tocar el mismo botón."
     }
   ],
   "evidence": [],
@@ -233,6 +243,25 @@
         "de": "herramientas",
         "a": "qa",
         "que": "v5: detalle con clic en personas, traspasos y hallazgos, con tarjeta que se cierra con ✕",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y catorce pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "herramientas",
+        "que": "Quiere la ventana flotante dentro del entorno animado, al tocar un personaje o una línea",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "v6: ventana flotante dentro del plano, anclada a lo que se toca",
         "at": "2026-10-12"
       },
       {

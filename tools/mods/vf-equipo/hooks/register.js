@@ -581,7 +581,7 @@ function vistaOficina(ctx, acc) {
     for (const v of vivos) filas.push(Text({ children: ['● ' + v.nombre + (v.detalle ? ' · ' + v.detalle : '')] }))
     if (vivos.length === 0) filas.push(Text({ dimColor: true, children: ['Nadie trabaja ahora en esta sesión.'] }))
   }
-  filas.push(...tarjetaSeleccion(ctx, sel))
+  filas.push(...(escritorio ? barraSeleccion(ctx, sel) : tarjetaSeleccion(ctx, sel)))
   filas.push(...fichasDeClic(ctx, lineas, hall))
   filas.push(Text({ dimColor: true, children: ['Hechas ' + hechas + ' · en marcha ' + tareas.length + ' · fase ' + faseActual] }))
   filas.push(Text({ children: [' '] }))
@@ -624,6 +624,20 @@ function tarjetaSeleccion(ctx, sel) {
         Text({ bold: true, wrap: 'wrap', children: [cabeza || ''] }),
         ...resto.map((l) => Text({ wrap: 'wrap', children: [l] })),
       ],
+    }),
+  ]
+}
+
+// En la app de escritorio el detalle sale como ventana flotante dentro del plano; aquí solo va el botón para cerrarla
+function barraSeleccion(ctx, sel) {
+  const { Text, Box, Button } = ctx
+  if (!sel) return [Text({ dimColor: true, wrap: 'wrap', children: ['Toca un botón de abajo y el detalle sale como una ventana dentro del plano.'] })]
+  const nombre = sel.titulo && sel.titulo.length ? sel.titulo[0] : ''
+  return [
+    Box({
+      flexDirection: 'row',
+      columnGap: 2,
+      children: [Button({ key: 'cerrar-detalle', label: '✕ Cerrar ventana', hotkey: 'x', onPress: () => cerrarSeleccion(ctx) }), Text({ dimColor: true, wrap: 'wrap', children: [nombre] })],
     }),
   ]
 }
