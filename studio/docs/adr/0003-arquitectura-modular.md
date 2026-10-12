@@ -1,6 +1,6 @@
 # ADR-0003 · Arquitectura modular por cortes verticales y capas
 
-**Estado:** 🟡 Propuesta · **Fecha:** 2026-10-11
+**Estado:** ✅ Aceptada · **Fecha:** 2026-10-11
 
 ## Contexto
 

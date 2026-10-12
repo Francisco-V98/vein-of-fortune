@@ -16,6 +16,22 @@
       "by": "claude",
       "note": "Primera ejecución real en GitHub: los 5 trabajos pasan en verde.",
       "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "qa",
+      "by": "claude",
+      "note": "QA: los 5 trabajos pasaron en GitHub en los tres PR y en las dos subidas a main.",
+      "ref": "PR #3 · fusionado en main (4ec1f16)"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "qa",
+      "to": "done",
+      "by": "claude",
+      "note": "Fusionado. Falta activar la protección de main (F0-35).",
+      "ref": "PR #3 · fusionado en main (4ec1f16)"
     }
   ],
   "comments": [

@@ -1,6 +1,6 @@
 # ADR-0004 · Comunicación entre módulos por api pública y eventos de dominio
 
-**Estado:** 🟡 Propuesta · **Fecha:** 2026-10-11
+**Estado:** ✅ Aceptada · **Fecha:** 2026-10-11
 
 ## Contexto
 

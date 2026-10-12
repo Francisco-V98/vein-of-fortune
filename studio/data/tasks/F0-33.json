@@ -16,6 +16,22 @@
       "by": "claude",
       "note": "9 pruebas pasan; probado con asuntos válidos e inválidos.",
       "ref": "rama chore/F0-34-herramientas-ci-y-convenciones · PR #3"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "qa",
+      "by": "claude",
+      "note": "QA: 9 pruebas pasan en la CI de GitHub y el trabajo de commits valida el PR.",
+      "ref": "PR #3 · fusionado en main (4ec1f16)"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "qa",
+      "to": "done",
+      "by": "claude",
+      "note": "Fusionado.",
+      "ref": "PR #3 · fusionado en main (4ec1f16)"
     }
   ],
   "comments": [],
