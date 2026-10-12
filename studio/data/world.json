@@ -6,65 +6,636 @@
     "mineral_zones_max": 3,
     "fuente": "docs/02-extraccion.md: cada mineral aparece en 2–3 zonas"
   },
-  "acts": ["I", "II", "III", "IV"],
+  "acts": [
+    "I",
+    "II",
+    "III",
+    "IV"
+  ],
   "zones": [
-    {"id": "galerias-hollin", "name": "Galerías del Hollín", "region": "Cuenca del Hollín", "act": "I"},
-    {"id": "canon-ferroso", "name": "Cañón Ferroso", "region": "Cuenca del Hollín", "act": "II"},
-    {"id": "sierra-alta", "name": "Minas de Sierra Alta", "region": "Sierra Alta", "act": "II"},
-    {"id": "salares", "name": "Salares del Litoral", "region": "Salares del Litoral", "act": "II"},
-    {"id": "cavernas", "name": "Cavernas de Cristal", "region": "Cavernas de Cristal", "act": "III"},
-    {"id": "fosa", "name": "La Fosa del Éter", "region": "La Fosa", "act": "IV"}
+    {
+      "id": "galerias-hollin",
+      "name": "Galerías del Hollín",
+      "region": "Cuenca del Hollín",
+      "act": "I"
+    },
+    {
+      "id": "canon-ferroso",
+      "name": "Cañón Ferroso",
+      "region": "Cuenca del Hollín",
+      "act": "II"
+    },
+    {
+      "id": "sierra-alta",
+      "name": "Minas de Sierra Alta",
+      "region": "Sierra Alta",
+      "act": "II"
+    },
+    {
+      "id": "salares",
+      "name": "Salares del Litoral",
+      "region": "Salares del Litoral",
+      "act": "II"
+    },
+    {
+      "id": "cavernas",
+      "name": "Cavernas de Cristal",
+      "region": "Cavernas de Cristal",
+      "act": "III"
+    },
+    {
+      "id": "fosa",
+      "name": "La Fosa del Éter",
+      "region": "La Fosa",
+      "act": "IV"
+    }
   ],
   "minigames": [
-    {"id": "picado", "name": "Picado", "act": "I"},
-    {"id": "perforacion", "name": "Perforación", "act": "I"},
-    {"id": "regateo", "name": "Regateo", "act": "I"},
-    {"id": "cribado", "name": "Cribado", "act": "II"},
-    {"id": "cincelado", "name": "Cincelado", "act": "II"},
-    {"id": "detonacion", "name": "Detonación", "act": "III"},
-    {"id": "contencion", "name": "Contención", "act": "IV"}
+    {
+      "id": "picado",
+      "name": "Picado",
+      "act": "I"
+    },
+    {
+      "id": "perforacion",
+      "name": "Perforación",
+      "act": "I"
+    },
+    {
+      "id": "regateo",
+      "name": "Regateo",
+      "act": "I"
+    },
+    {
+      "id": "cribado",
+      "name": "Cribado",
+      "act": "II"
+    },
+    {
+      "id": "cincelado",
+      "name": "Cincelado",
+      "act": "II"
+    },
+    {
+      "id": "detonacion",
+      "name": "Detonación",
+      "act": "III"
+    },
+    {
+      "id": "contencion",
+      "name": "Contención",
+      "act": "IV"
+    }
   ],
   "minerals": [
-    {"id": "carbon", "name": "Carbón", "volatility": "baja-media", "base_price": null, "sectors": [], "minigames": ["picado", "detonacion"], "zones": {"galerias-hollin": "principal", "canon-ferroso": "secundario"}},
-    {"id": "hierro", "name": "Hierro", "volatility": "baja", "base_price": null, "sectors": [], "minigames": ["picado", "perforacion"], "zones": {"canon-ferroso": "principal", "galerias-hollin": "secundario", "sierra-alta": "secundario"}},
-    {"id": "cobre", "name": "Cobre", "volatility": "media", "base_price": null, "sectors": [], "minigames": ["perforacion"], "zones": {"sierra-alta": "principal", "canon-ferroso": "secundario"}},
-    {"id": "salitre", "name": "Salitre", "volatility": "media-alta", "base_price": null, "sectors": [], "minigames": ["cribado"], "zones": {"salares": "principal"}},
-    {"id": "plata", "name": "Plata", "volatility": "media", "base_price": null, "sectors": [], "minigames": ["perforacion", "cribado"], "zones": {"sierra-alta": "principal", "salares": "secundario", "cavernas": "secundario"}},
-    {"id": "oro", "name": "Oro", "volatility": "baja-media", "base_price": null, "sectors": [], "minigames": ["cribado", "perforacion"], "zones": {"cavernas": "principal", "sierra-alta": "secundario", "fosa": "secundario"}},
-    {"id": "cuarzo", "name": "Cuarzo", "volatility": "media", "base_price": null, "sectors": [], "minigames": ["cincelado"], "zones": {"cavernas": "principal", "salares": "secundario"}},
-    {"id": "esmeralda", "name": "Esmeralda", "volatility": "alta", "base_price": null, "sectors": [], "minigames": ["cincelado"], "zones": {"cavernas": "principal", "fosa": "secundario"}},
-    {"id": "diamante", "name": "Diamante", "volatility": "alta", "base_price": null, "sectors": [], "minigames": ["cincelado"], "zones": {"fosa": "principal", "cavernas": "secundario"}},
-    {"id": "aetherita", "name": "Aetherita", "volatility": "muy alta", "base_price": null, "sectors": [], "minigames": ["contencion"], "zones": {"fosa": "principal"}}
+    {
+      "id": "carbon",
+      "name": "Carbón",
+      "volatility": "baja-media",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "picado",
+        "detonacion"
+      ],
+      "zones": {
+        "galerias-hollin": "principal",
+        "canon-ferroso": "secundario"
+      }
+    },
+    {
+      "id": "hierro",
+      "name": "Hierro",
+      "volatility": "baja",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "picado",
+        "perforacion"
+      ],
+      "zones": {
+        "canon-ferroso": "principal",
+        "galerias-hollin": "secundario",
+        "sierra-alta": "secundario"
+      }
+    },
+    {
+      "id": "cobre",
+      "name": "Cobre",
+      "volatility": "media",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "perforacion"
+      ],
+      "zones": {
+        "sierra-alta": "principal",
+        "canon-ferroso": "secundario"
+      }
+    },
+    {
+      "id": "salitre",
+      "name": "Salitre",
+      "volatility": "media-alta",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "cribado"
+      ],
+      "zones": {
+        "salares": "principal"
+      }
+    },
+    {
+      "id": "plata",
+      "name": "Plata",
+      "volatility": "media",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "perforacion",
+        "cribado"
+      ],
+      "zones": {
+        "sierra-alta": "principal",
+        "salares": "secundario",
+        "cavernas": "secundario"
+      }
+    },
+    {
+      "id": "oro",
+      "name": "Oro",
+      "volatility": "baja-media",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "cribado",
+        "perforacion"
+      ],
+      "zones": {
+        "cavernas": "principal",
+        "sierra-alta": "secundario",
+        "fosa": "secundario"
+      }
+    },
+    {
+      "id": "cuarzo",
+      "name": "Cuarzo",
+      "volatility": "media",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "cincelado"
+      ],
+      "zones": {
+        "cavernas": "principal",
+        "salares": "secundario"
+      }
+    },
+    {
+      "id": "esmeralda",
+      "name": "Esmeralda",
+      "volatility": "alta",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "cincelado"
+      ],
+      "zones": {
+        "cavernas": "principal",
+        "fosa": "secundario"
+      }
+    },
+    {
+      "id": "diamante",
+      "name": "Diamante",
+      "volatility": "alta",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "cincelado"
+      ],
+      "zones": {
+        "fosa": "principal",
+        "cavernas": "secundario"
+      }
+    },
+    {
+      "id": "aetherita",
+      "name": "Aetherita",
+      "volatility": "muy alta",
+      "base_price": null,
+      "sectors": [],
+      "minigames": [
+        "contencion"
+      ],
+      "zones": {
+        "fosa": "principal"
+      }
+    }
   ],
   "mechanics": [
-    {"id": "escaner", "name": "Escáner / detector", "act": "I", "needs_minerals": ["cuarzo"], "fuente": "docs/05: el detector depende del cuarzo; docs/09: el escáner es instantáneo en el MVP"},
-    {"id": "taller", "name": "Taller y refinado", "act": "II"}
+    {
+      "id": "escaner",
+      "name": "Escáner / detector",
+      "act": "I",
+      "needs_minerals": [
+        "cuarzo"
+      ],
+      "fuente": "docs/05: el detector depende del cuarzo; docs/09: el escáner es instantáneo en el MVP"
+    },
+    {
+      "id": "taller",
+      "name": "Taller y refinado",
+      "act": "II"
+    }
   ],
   "recipes": [
-    {"id": "acero", "name": "Acero", "inputs": [["hierro"], ["carbon"]]},
-    {"id": "conductor", "name": "Conductor", "inputs": [["cobre"], ["plata"]]},
-    {"id": "oscilador", "name": "Oscilador", "inputs": [["cuarzo"]]},
-    {"id": "joyeria", "name": "Joyería", "inputs": [["oro", "plata"], ["esmeralda", "diamante"]]},
-    {"id": "polvora", "name": "Pólvora", "inputs": [["salitre"], ["carbon"]]},
-    {"id": "celda-eter", "name": "Celda de éter", "inputs": [["aetherita"], ["cuarzo"]]}
+    {
+      "id": "acero",
+      "name": "Acero",
+      "inputs": [
+        [
+          "hierro"
+        ],
+        [
+          "carbon"
+        ]
+      ]
+    },
+    {
+      "id": "conductor",
+      "name": "Conductor",
+      "inputs": [
+        [
+          "cobre"
+        ],
+        [
+          "plata"
+        ]
+      ]
+    },
+    {
+      "id": "oscilador",
+      "name": "Oscilador",
+      "inputs": [
+        [
+          "cuarzo"
+        ]
+      ]
+    },
+    {
+      "id": "joyeria",
+      "name": "Joyería",
+      "inputs": [
+        [
+          "oro",
+          "plata"
+        ],
+        [
+          "esmeralda",
+          "diamante"
+        ]
+      ]
+    },
+    {
+      "id": "polvora",
+      "name": "Pólvora",
+      "inputs": [
+        [
+          "salitre"
+        ],
+        [
+          "carbon"
+        ]
+      ]
+    },
+    {
+      "id": "celda-eter",
+      "name": "Celda de éter",
+      "inputs": [
+        [
+          "aetherita"
+        ],
+        [
+          "cuarzo"
+        ]
+      ]
+    }
   ],
   "factions": [
-    {"id": "ministerio", "name": "Ministerio de Recursos"},
-    {"id": "comision", "name": "Comisión del Éter", "parent": "ministerio"},
-    {"id": "consorcio", "name": "Consorcio Arvel"},
-    {"id": "union", "name": "Unión de Mineros del Hollín"},
-    {"id": "faroleros", "name": "Los Faroleros"},
-    {"id": "teletipo", "name": "Teletipo Meridiano"}
+    {
+      "id": "ministerio",
+      "name": "Ministerio de Recursos"
+    },
+    {
+      "id": "comision",
+      "name": "Comisión del Éter",
+      "parent": "ministerio"
+    },
+    {
+      "id": "consorcio",
+      "name": "Consorcio Arvel"
+    },
+    {
+      "id": "union",
+      "name": "Unión de Mineros del Hollín"
+    },
+    {
+      "id": "faroleros",
+      "name": "Los Faroleros"
+    },
+    {
+      "id": "teletipo",
+      "name": "Teletipo Meridiano"
+    }
   ],
   "characters": [
-    {"id": "protagonista", "name": "Protagonista", "act": "I", "faction": null, "aka": []},
-    {"id": "anselmo", "name": "Anselmo Vidal", "act": "I", "faction": "comision", "aka": ["Anselmo Vidal (en cintas)"], "nota": "Está presente desde el Acto I por la libreta y las primeras cintas (docs/19)"},
-    {"id": "reme", "name": "Doña Remedios «Reme» Salgado", "act": "I", "faction": "variable", "aka": ["Doña Reme"]},
-    {"id": "teo", "name": "Teo Cárdenas", "act": "I", "faction": "union", "aka": ["El Viejo Teo"]},
-    {"id": "quiroga", "name": "Inspector Quiroga", "act": "I", "faction": "ministerio", "aka": []},
-    {"id": "lucia", "name": "Lucía Montalvo", "act": "I", "faction": "teletipo", "aka": []},
-    {"id": "esteban", "name": "Esteban Arvel", "act": "II", "faction": "consorcio", "aka": []},
-    {"id": "casilda", "name": "Casilda Ibarra", "act": "II", "faction": "faroleros", "aka": ["Casilda «la Faro»"]},
-    {"id": "duenas", "name": "Ministro Aurelio Dueñas", "act": "III", "faction": "ministerio", "aka": ["Ministro Dueñas"]}
+    {
+      "id": "protagonista",
+      "name": "Protagonista",
+      "act": "I",
+      "faction": null,
+      "aka": []
+    },
+    {
+      "id": "anselmo",
+      "name": "Anselmo Vidal",
+      "act": "I",
+      "faction": "comision",
+      "aka": [
+        "Anselmo Vidal (en cintas)"
+      ],
+      "nota": "Está presente desde el Acto I por la libreta y las primeras cintas (docs/19)"
+    },
+    {
+      "id": "reme",
+      "name": "Doña Remedios «Reme» Salgado",
+      "act": "I",
+      "faction": "variable",
+      "aka": [
+        "Doña Reme"
+      ]
+    },
+    {
+      "id": "teo",
+      "name": "Teo Cárdenas",
+      "act": "I",
+      "faction": "union",
+      "aka": [
+        "El Viejo Teo"
+      ]
+    },
+    {
+      "id": "quiroga",
+      "name": "Inspector Quiroga",
+      "act": "I",
+      "faction": "ministerio",
+      "aka": []
+    },
+    {
+      "id": "lucia",
+      "name": "Lucía Montalvo",
+      "act": "I",
+      "faction": "teletipo",
+      "aka": []
+    },
+    {
+      "id": "esteban",
+      "name": "Esteban Arvel",
+      "act": "II",
+      "faction": "consorcio",
+      "aka": []
+    },
+    {
+      "id": "casilda",
+      "name": "Casilda Ibarra",
+      "act": "II",
+      "faction": "faroleros",
+      "aka": [
+        "Casilda «la Faro»"
+      ]
+    },
+    {
+      "id": "duenas",
+      "name": "Ministro Aurelio Dueñas",
+      "act": "III",
+      "faction": "ministerio",
+      "aka": [
+        "Ministro Dueñas"
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "inspector-licencias",
+      "name": "Inspector de licencias",
+      "group": "Ministerio",
+      "faction": "ministerio"
+    },
+    {
+      "id": "escribiente",
+      "name": "Escribiente del Ministerio",
+      "group": "Ministerio",
+      "faction": "ministerio"
+    },
+    {
+      "id": "soldado-ministerio",
+      "name": "Soldado del Ministerio",
+      "group": "Ministerio",
+      "faction": "ministerio"
+    },
+    {
+      "id": "oficial-ministerio",
+      "name": "Oficial del Ministerio",
+      "group": "Ministerio",
+      "faction": "ministerio"
+    },
+    {
+      "id": "perito-comision",
+      "name": "Perito de la Comisión del Éter",
+      "group": "Comisión del Éter",
+      "faction": "comision"
+    },
+    {
+      "id": "guardia-fosa",
+      "name": "Guardia de La Fosa",
+      "group": "Comisión del Éter",
+      "faction": "comision"
+    },
+    {
+      "id": "guardia-empresa",
+      "name": "Guardia de empresa",
+      "group": "Consorcio Arvel",
+      "faction": "consorcio"
+    },
+    {
+      "id": "ejecutivo-consorcio",
+      "name": "Ejecutivo del Consorcio",
+      "group": "Consorcio Arvel",
+      "faction": "consorcio"
+    },
+    {
+      "id": "capataz",
+      "name": "Capataz",
+      "group": "Consorcio Arvel",
+      "faction": "consorcio"
+    },
+    {
+      "id": "minero-sindicalista",
+      "name": "Minero sindicalista",
+      "group": "Unión",
+      "faction": "union"
+    },
+    {
+      "id": "delegado-union",
+      "name": "Delegado de la Unión",
+      "group": "Unión",
+      "faction": "union"
+    },
+    {
+      "id": "cobrador-farolero",
+      "name": "Cobrador farolero",
+      "group": "Los Faroleros",
+      "faction": "faroleros"
+    },
+    {
+      "id": "maton-farolero",
+      "name": "Matón farolero",
+      "group": "Los Faroleros",
+      "faction": "faroleros"
+    },
+    {
+      "id": "informante",
+      "name": "Informante",
+      "group": "Los Faroleros",
+      "faction": "faroleros"
+    },
+    {
+      "id": "reportero",
+      "name": "Reportero",
+      "group": "Prensa",
+      "faction": "teletipo"
+    },
+    {
+      "id": "voceador",
+      "name": "Voceador de periódicos",
+      "group": "Prensa",
+      "faction": "teletipo"
+    },
+    {
+      "id": "empleado-minero",
+      "name": "Empleado minero",
+      "group": "Empleados",
+      "faction": null
+    },
+    {
+      "id": "empleado-dependiente",
+      "name": "Empleado dependiente",
+      "group": "Empleados",
+      "faction": null
+    },
+    {
+      "id": "empleado-guardia",
+      "name": "Empleado guardia",
+      "group": "Empleados",
+      "faction": null
+    },
+    {
+      "id": "empleado-refinador",
+      "name": "Empleado refinador",
+      "group": "Empleados",
+      "faction": null
+    },
+    {
+      "id": "empleado-analista",
+      "name": "Empleado analista",
+      "group": "Empleados",
+      "faction": null
+    },
+    {
+      "id": "vecino",
+      "name": "Vecino",
+      "group": "Civiles",
+      "faction": null
+    },
+    {
+      "id": "vecina",
+      "name": "Vecina",
+      "group": "Civiles",
+      "faction": null
+    },
+    {
+      "id": "comerciante",
+      "name": "Comerciante",
+      "group": "Civiles",
+      "faction": null
+    },
+    {
+      "id": "cliente-obrero",
+      "name": "Cliente obrero",
+      "group": "Civiles",
+      "faction": null
+    },
+    {
+      "id": "cliente-elite",
+      "name": "Cliente de la élite",
+      "group": "Civiles",
+      "faction": null
+    },
+    {
+      "id": "saqueador",
+      "name": "Saqueador",
+      "group": "Enemigos humanos",
+      "faction": null
+    },
+    {
+      "id": "banda-rival",
+      "name": "Miembro de banda rival",
+      "group": "Enemigos humanos",
+      "faction": null
+    },
+    {
+      "id": "contrabandista",
+      "name": "Contrabandista",
+      "group": "Enemigos humanos",
+      "faction": null
+    },
+    {
+      "id": "inspector-corrupto",
+      "name": "Inspector corrupto",
+      "group": "Enemigos humanos",
+      "faction": "ministerio"
+    },
+    {
+      "id": "cazarrecompensas",
+      "name": "Cazarrecompensas",
+      "group": "Enemigos humanos",
+      "faction": null
+    },
+    {
+      "id": "soldado-fosa",
+      "name": "Soldado de La Fosa",
+      "group": "Enemigos humanos",
+      "faction": "ministerio"
+    },
+    {
+      "id": "criatura-rastrera",
+      "name": "Criatura rastrera de La Fosa",
+      "group": "Criaturas",
+      "faction": null
+    },
+    {
+      "id": "criatura-cristalina",
+      "name": "Criatura cristalina de La Fosa",
+      "group": "Criaturas",
+      "faction": null
+    },
+    {
+      "id": "criatura-eterea",
+      "name": "Criatura etérea de La Fosa",
+      "group": "Criaturas",
+      "faction": null
+    }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "id": "F0-59",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pide fichas de imágenes de cada personaje y NPC de todas las facciones y aprueba el presupuesto de unos 86 créditos.",
+      "ref": "rama studio/F0-59-hito-de-personajes-y-npc"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "35 tipos de NPC en el registro del mundo y formato de las hojas en el documento 12.",
+      "ref": "rama studio/F0-59-hito-de-personajes-y-npc"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Quiero fichas de imágenes de cada personaje con ángulos (frente, espalda, ambos lados), caminando, estático y las mismas expresiones para todos (por defecto, feliz, triste, enojado, asustado, cansado). También NPC de diferentes facciones, desempeños, mineros, militares, enemigos y todos los que puedan aparecer. Aprobó 3 hojas por personaje y el presupuesto completo."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Los jefes de zona no están definidos en el diseño y quedan diferidos a F0-69. Si el personaje se animará en el juego se decide más adelante."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Documento 12 · Hojas de personajes y NPC",
+      "path": "12-direccion-de-arte"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Registro del mundo con los 35 NPC",
+      "path": "data/world.json"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "El registro es íntegro (con prueba nueva para NPC), el build en modo estricto es correcto y las pruebas de herramientas están en verde."
+    }
+  ]
+}

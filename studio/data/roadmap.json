@@ -626,6 +626,120 @@
               "done_when": "Cada documento por encima de la meta."
             }
           ]
+        },
+        {
+          "id": "F0.13",
+          "name": "Personajes: hojas de modelo y NPC",
+          "tasks": [
+            {
+              "id": "F0-59",
+              "title": "Lista de personajes y NPC, vistas y expresiones",
+              "est": 2,
+              "status": "review",
+              "prio": "P1",
+              "desc": "Registrar en el registro del mundo los 35 tipos de NPC por grupo y fijar el formato de las hojas: vistas (frente, espalda, ambos lados y tres cuartos), poses (estático, caminando y gestos) y las 6 expresiones comunes (por defecto según personalidad, feliz, triste, enojado, asustado y cansado).",
+              "done_when": "Lista de NPC en el registro del mundo y formato de hojas acordado."
+            },
+            {
+              "id": "F0-60",
+              "title": "Piloto: tres hojas de Reme",
+              "est": 3,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Hoja de modelo, hoja de expresiones y hoja de poses de Reme, a partir de su retrato y su sprite aprobados, para validar el formato antes de producir el resto.",
+              "done_when": "Las tres hojas de Reme aprobadas por el autor."
+            },
+            {
+              "id": "F0-61",
+              "title": "Hojas del protagonista, hombre y mujer",
+              "est": 4,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Tres hojas de cada versión del protagonista (modelo, expresiones y poses), con la lámpara de minero como rasgo común.",
+              "done_when": "Seis hojas aprobadas."
+            },
+            {
+              "id": "F0-62",
+              "title": "Hojas de Anselmo, Teo, Quiroga y Lucía",
+              "est": 5,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Tres hojas de cada personaje. Anselmo se genera como foto desgastada y como silueta de las cintas, según su retrato aprobado.",
+              "done_when": "Doce hojas aprobadas."
+            },
+            {
+              "id": "F0-63",
+              "title": "Hojas de Esteban, Casilda y el Ministro",
+              "est": 4,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Tres hojas de cada personaje.",
+              "done_when": "Nueve hojas aprobadas."
+            },
+            {
+              "id": "F0-64",
+              "title": "NPC del Ministerio, la Comisión del Éter y el Consorcio",
+              "est": 4,
+              "status": "backlog",
+              "prio": "P2",
+              "desc": "Una hoja por tipo: inspector de licencias, escribiente, soldado, oficial, perito de la Comisión, guardia de La Fosa, guardia de empresa, ejecutivo y capataz.",
+              "done_when": "Nueve hojas aprobadas."
+            },
+            {
+              "id": "F0-65",
+              "title": "NPC de la Unión, Los Faroleros y la prensa",
+              "est": 4,
+              "status": "backlog",
+              "prio": "P2",
+              "desc": "Una hoja por tipo: minero sindicalista, delegado, cobrador, matón, informante, reportero y voceador.",
+              "done_when": "Siete hojas aprobadas."
+            },
+            {
+              "id": "F0-66",
+              "title": "NPC empleados y civiles",
+              "est": 5,
+              "status": "backlog",
+              "prio": "P2",
+              "desc": "Una hoja por tipo: los cinco empleados (minero, dependiente, guardia, refinador y analista) y los cinco civiles (vecino, vecina, comerciante, cliente obrero y cliente de la élite).",
+              "done_when": "Diez hojas aprobadas."
+            },
+            {
+              "id": "F0-67",
+              "title": "NPC enemigos y criaturas",
+              "est": 4,
+              "status": "backlog",
+              "prio": "P2",
+              "desc": "Una hoja por tipo: saqueador, banda rival, contrabandista, inspector corrupto, cazarrecompensas, soldado de La Fosa y tres criaturas de La Fosa.",
+              "done_when": "Nueve hojas aprobadas."
+            },
+            {
+              "id": "F0-68",
+              "title": "Galería de personajes y NPC en el hub",
+              "est": 5,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Vista del hub con todas las hojas por personaje y por grupo de NPC, y registro de las imágenes en assets.json.",
+              "done_when": "Galería visible en el hub con todas las hojas."
+            },
+            {
+              "id": "F0-69",
+              "title": "Decidir los jefes de zona y sus hojas",
+              "est": 3,
+              "status": "backlog",
+              "prio": "P2",
+              "desc": "El documento 02 menciona jefes ocasionales con un duelo de timing, pero no define cuáles son. Decidirlos con el autor y generar su hoja. Hasta entonces queda diferido.",
+              "done_when": "Un jefe por zona definido y con su hoja."
+            },
+            {
+              "id": "F0-70",
+              "title": "Decidir si los personajes llevan animación de movimiento",
+              "est": 1,
+              "status": "backlog",
+              "prio": "P2",
+              "desc": "El autor indicó que quizás los personajes no tengan animaciones de movimiento en el juego. Decidirlo con el autor una vez vistas las hojas de poses y fijar qué se anima (por ejemplo solo retratos con expresiones).",
+              "done_when": "Decisión de animación registrada en el documento 12."
+            }
+          ]
         }
       ],
       "confidence": "alta"

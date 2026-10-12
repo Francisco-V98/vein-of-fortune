@@ -120,6 +120,24 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 - La paleta funciona en todos los tipos de imagen: personajes, minerales, edificios, interfaz y mapa.
 - El vinotinto está presente en casi todas las imágenes; hay que **controlar su dosis** para que no pierda fuerza y para que la Aetherita siga siendo especial.
 
+## Hojas de personajes y NPC ✅
+
+**Requisito del autor:** tener de cada personaje el material más detallado posible, porque de ahí parte el arte final. Se generan con IA a partir de los retratos y sprites aprobados y se guardan en `studio/assets-ref/personajes/<id>/`.
+
+**Tres hojas por personaje principal** (protagonista hombre y mujer, y los 8 del elenco):
+
+| Hoja | Contenido |
+|---|---|
+| **Modelo** | Cuerpo entero y pose estática: de frente, de espalda, de ambos lados y en tres cuartos |
+| **Expresiones** | Seis, **iguales para todos**: la **por defecto** según su personalidad, feliz, triste, enojado, asustado y cansado |
+| **Poses** | Estático, caminando (ciclo de 4 fotogramas de lado, más de frente y de espalda) y gestos al hablar |
+
+**Hojas de NPC:** una por tipo (frente, espalda, un lado y dos expresiones). Los 35 tipos están en el registro del mundo (`studio/data/world.json`): Ministerio, Comisión del Éter, Consorcio Arvel, Unión, Los Faroleros, prensa, empleados, civiles, enemigos humanos y criaturas de La Fosa. Los jefes de zona quedan diferidos (⏳ F0-69).
+
+**Calidad:** generación en calidad media a 2K, que equilibra detalle y costo. Se revisa y aprueba cada hoja antes de pasar a la siguiente.
+
+**Animación:** ⏳ F0-70 Si los personajes llevarán animación de movimiento en el juego se decide más adelante; las poses de caminar sirven de referencia en cualquier caso.
+
 ## Decisiones técnicas de arte pendientes
 
 - ❓ **Resolución base (horizontal).** Sugerencia a probar: **480×270** (escala ×4 hasta 1920×1080); alternativa 384×216 (×5). Hay que cuidar el escalado entero y las distintas proporciones de pantalla de Android (por ejemplo 20:9): diseñar el contenido importante en una zona 16:9 y extender el fondo hacia los bordes. Las primeras pruebas eran verticales y quedan superadas.
