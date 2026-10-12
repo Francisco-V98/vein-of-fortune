@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Mod /estado escrito, validado y con tres pruebas en verde.",
       "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el panel /estado desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [
@@ -28,6 +36,11 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "El mod vf-estado abre con /estado un panel con tres pestañas: Resumen (avance por tareas y por horas, estados, limpieza y coherencia, fases, rama y PR), Hitos y En curso. Se refresca solo cada 30 segundos y con el botón Actualizar. Está en tools/mods/vf-estado; falta instalarlo y verlo en la app."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Terminé mi parte: revisé el entregable y está aprobado. Pásala a la siguiente etapa del flujo."
     }
   ],
   "evidence": [],
@@ -68,9 +81,9 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Falta que lo pruebes en la app",
+        "nota": "Aprobado por el autor con «Todo bien» y «Terminé mi parte»",
         "hallazgos": [
           {
             "de": "autor",
@@ -87,7 +100,9 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Tarea cerrada; el PR #32 se fusiona con F0-72 y F0-73"
       }
     ],
     "traspasos": [
@@ -132,6 +147,12 @@
         "de": "qa",
         "a": "autor",
         "que": "QA aprobado: validación y tres pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: «Terminé mi parte» sin ajustes",
         "at": "2026-10-12"
       }
     ]

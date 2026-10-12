@@ -749,7 +749,7 @@
               "id": "F0-71",
               "title": "Mod de Claude Code: panel de estado del proyecto (/estado)",
               "est": 4,
-              "status": "review",
+              "status": "done",
               "prio": "P2",
               "desc": "Panel dentro de Claude Code con el avance del roadmap, la limpieza y coherencia del diseño, las tareas en curso y los PR abiertos.",
               "done_when": "Mod validado, con pruebas en verde y aprobado por el autor."
