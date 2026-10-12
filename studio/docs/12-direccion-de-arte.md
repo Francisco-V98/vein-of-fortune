@@ -140,7 +140,14 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 
 **Ministro Dueñas, versión canónica ✅:** la del retrato aprobado: pelo blanco peinado hacia atrás, gafas redondas de latón, **sin barba**, guerrera azul marino de cuello alto con laureles dorados, charreteras, faja vinotinto y blanca, tres medallas y la carpeta. Reemplaza la barba y el abrigo largo del sprite que sirvió para fijar el estilo de los modelos.
 
-**Hojas de NPC:** una por tipo (frente, espalda, un lado y dos expresiones). Los 35 tipos están en el registro del mundo (`studio/data/world.json`): Ministerio, Comisión del Éter, Consorcio Arvel, Unión, Los Faroleros, prensa, empleados, civiles, enemigos humanos y criaturas de La Fosa. Los jefes de zona quedan diferidos (⏳ F0-69).
+**Hojas de NPC ✅:** los 35 tipos están en el registro del mundo (`studio/data/world.json`). Formato mixto:
+
+| Grupos | Formato |
+|---|---|
+| Ministerio, Comisión del Éter, Consorcio Arvel, Unión, Los Faroleros, prensa, empleados y civiles (26 tipos) | **Hoja de grupo** con 2 o 3 tipos: cada uno de frente, de lado, de espalda y una cara con su expresión predeterminada, en chibi pixel art con la estética del modelo |
+| Enemigos humanos y criaturas de La Fosa (9 tipos) | **Una hoja por tipo**: de frente, de lado, de espalda y dos expresiones, porque son los que más se ven |
+
+Los jefes de zona quedan diferidos (⏳ F0-69).
 
 **Calidad:** generación en calidad media a 2K, que equilibra detalle y costo. Se revisa y aprueba cada hoja antes de pasar a la siguiente.
 

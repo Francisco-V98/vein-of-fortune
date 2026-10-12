@@ -680,7 +680,7 @@
               "id": "F0-64",
               "title": "NPC del Ministerio, la Comisión del Éter y el Consorcio",
               "est": 4,
-              "status": "backlog",
+              "status": "review",
               "prio": "P2",
               "desc": "Una hoja por tipo: inspector de licencias, escribiente, soldado, oficial, perito de la Comisión, guardia de La Fosa, guardia de empresa, ejecutivo y capataz.",
               "done_when": "Nueve hojas aprobadas."
