@@ -36,7 +36,7 @@ def integrity(world):
     acts = world.get("acts", [])
     idx = _act_index(acts)
     seen = {}
-    for kind in ("zones", "minigames", "minerals", "mechanics", "recipes", "factions", "characters"):
+    for kind in ("zones", "minigames", "minerals", "mechanics", "recipes", "factions", "characters", "npcs"):
         for item in world.get(kind, []):
             key = (kind, item.get("id"))
             if key in seen:
@@ -76,6 +76,11 @@ def integrity(world):
     for c in world.get("characters", []):
         if c.get("faction") not in (None, "variable") and c["faction"] not in factions:
             errors.append("personaje %s con facción inexistente: %s" % (c["id"], c["faction"]))
+    for npc in world.get("npcs", []):
+        if npc.get("faction") not in (None,) and npc["faction"] not in factions:
+            errors.append("npc %s con facción inexistente: %s" % (npc["id"], npc["faction"]))
+        if not npc.get("group"):
+            errors.append("npc %s sin grupo" % npc["id"])
     return errors
 
 

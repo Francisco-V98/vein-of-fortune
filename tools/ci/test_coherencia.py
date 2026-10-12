@@ -42,6 +42,11 @@ class Integridad(unittest.TestCase):
         w["characters"][0]["faction"] = "no"
         self.assertEqual(len(coherence.integrity(w)), 4)
 
+    def test_npc_con_faccion_inexistente_o_sin_grupo(self):
+        w = copy.deepcopy(WORLD)
+        w["npcs"] = [{"id": "n1", "name": "N1", "group": "G", "faction": "no"}, {"id": "n2", "name": "N2", "faction": None}]
+        self.assertEqual(len(coherence.integrity(w)), 2)
+
     def test_id_repetido(self):
         w = copy.deepcopy(WORLD)
         w["zones"].append(dict(w["zones"][0]))
