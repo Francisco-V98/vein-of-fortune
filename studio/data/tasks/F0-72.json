@@ -1,0 +1,77 @@
+{
+  "id": "F0-72",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza tras la petición del autor de crear mods para el proyecto.",
+      "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 20, equipo.json y siete subagentes escritos; build.py valida el flujo.",
+      "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Quiero un segundo mod con diferentes agentes o empleados (ideador, analista, diseñador, desarrollador, QA y los que convengan) para ver cómo uno le pasa el trabajo al otro hasta que la tarea queda cerrada, sin cabos sueltos, y donde yo también esté para revisar y probar el juego."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Propuesta de siete etapas (ideación, análisis, producción, QA técnico, revisión del autor, prueba del autor y cierre) y nueve roles: siete agentes en .claude/agents, el autor y el coordinador. El flujo de cada tarea va en un bloque pipeline de su archivo de actividad y build.py lo valida. Las etapas y los roles están en 🟡 hasta que el autor los confirme; los agentes aún no se han usado en una tarea real."
+    }
+  ],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "disenador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Etapas y roles pensados a partir de tu petición"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Cruzado con el flujo del documento 15"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Documento 20, equipo.json y agentes"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Build estricto sin avisos"
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-12",
+        "nota": "Falta que confirmes etapas y roles"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ]
+  }
+}

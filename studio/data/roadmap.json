@@ -740,6 +740,48 @@
               "done_when": "Decisión de animación registrada en el documento 12."
             }
           ]
+        },
+        {
+          "id": "F0.14",
+          "name": "Mods y equipo de agentes",
+          "tasks": [
+            {
+              "id": "F0-71",
+              "title": "Mod de Claude Code: panel de estado del proyecto (/estado)",
+              "est": 4,
+              "status": "review",
+              "prio": "P2",
+              "desc": "Panel dentro de Claude Code con el avance del roadmap, la limpieza y coherencia del diseño, las tareas en curso y los PR abiertos.",
+              "done_when": "Mod validado, con pruebas en verde y aprobado por el autor."
+            },
+            {
+              "id": "F0-72",
+              "title": "Equipo de agentes: etapas, roles y especialistas (documento 20)",
+              "est": 4,
+              "status": "review",
+              "prio": "P2",
+              "desc": "Definir las etapas del flujo, los roles del equipo (ideador, analista, diseñador, narrador, director de arte, desarrollador, QA, autor y coordinador) y los siete subagentes, con el registro del avance por tarea.",
+              "done_when": "Documento 20 y definiciones de los agentes acordados con el autor."
+            },
+            {
+              "id": "F0-73",
+              "title": "Mod de Claude Code: tablero del equipo (/equipo)",
+              "est": 6,
+              "status": "review",
+              "prio": "P2",
+              "desc": "Tablero con las etapas del flujo, el número de tareas en cada una, quién trabaja ahora y los botones del autor para aprobar o devolver.",
+              "done_when": "Mod validado, con pruebas en verde y aprobado por el autor."
+            },
+            {
+              "id": "F0-74",
+              "title": "Mostrar el flujo de cada tarea en el hub",
+              "est": 3,
+              "status": "backlog",
+              "prio": "P3",
+              "desc": "En la vista de tarea del hub, dibujar las etapas con su estado y quién las hizo, usando el bloque pipeline de la tarea.",
+              "done_when": "Vista de tarea con el flujo visible en el hub."
+            }
+          ]
         }
       ],
       "confidence": "alta"

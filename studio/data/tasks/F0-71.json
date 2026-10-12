@@ -1,0 +1,77 @@
+{
+  "id": "F0-71",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza tras la petición del autor de crear mods para el proyecto.",
+      "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Mod /estado escrito, validado y con tres pruebas en verde.",
+      "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Quiero hacer dos mods: primero un panel de visualización de progreso y estadísticas."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "El mod vf-estado abre con /estado un panel con tres pestañas: Resumen (avance por tareas y por horas, estados, limpieza y coherencia, fases, rama y PR), Hitos y En curso. Se refresca solo cada 30 segundos y con el botón Actualizar. Está en tools/mods/vf-estado; falta instalarlo y verlo en la app."
+    }
+  ],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "desarrollador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Investigué la documentación de los mods"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "La app incluye Claude Code 2.1.295, que ya admite mods"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Mod escrito por el coordinador"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "claude plugin validate y 3 pruebas en verde"
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-12",
+        "nota": "Falta instalarlo y probarlo"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ]
+  }
+}

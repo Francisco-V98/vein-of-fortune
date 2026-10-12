@@ -75,6 +75,8 @@ Las tareas que no producen comportamiento (documentos, decisiones, estudio) pasa
 
 El estado de la tarea refleja siempre el de su rama, y queda registrado en el historial con el campo `ref` (rama, PR o commit).
 
+Dentro de estos estados, cada tarea recorre un flujo por etapas con un equipo de especialistas (ideación, análisis, producción, QA técnico, revisión y prueba del autor, y cierre); está descrito en [20](20-equipo-y-flujo-de-agentes.md).
+
 ## Pull requests 🟡
 
 - **Pequeños:** idealmente menos de ~400 líneas de cambio.

@@ -1,0 +1,19 @@
+{
+  "name": "vein-mods",
+  "owner": {
+    "name": "Veta de Fortuna"
+  },
+  "description": "Mods de Claude Code para el estudio de Veta de Fortuna",
+  "plugins": [
+    {
+      "name": "vf-estado",
+      "source": "./vf-estado",
+      "description": "Panel de progreso y estadísticas del proyecto (comando /estado)"
+    },
+    {
+      "name": "vf-equipo",
+      "source": "./vf-equipo",
+      "description": "Tablero del equipo de especialistas y del flujo de cada tarea (comando /equipo)"
+    }
+  ]
+}

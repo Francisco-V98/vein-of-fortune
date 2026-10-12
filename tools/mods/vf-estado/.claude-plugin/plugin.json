@@ -1,0 +1,6 @@
+{
+  "name": "vf-estado",
+  "version": "0.1.0",
+  "description": "Panel de progreso y estadísticas de Veta de Fortuna: avance del roadmap, limpieza y coherencia del diseño, tareas en curso y PR abiertos",
+  "author": { "name": "Veta de Fortuna" }
+}

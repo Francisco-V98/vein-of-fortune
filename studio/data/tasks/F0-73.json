@@ -1,0 +1,73 @@
+{
+  "id": "F0-73",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza tras la petición del autor de crear mods para el proyecto.",
+      "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Mod /equipo escrito, validado y con cinco pruebas en verde.",
+      "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "El mod vf-equipo abre con /equipo un panel con tres pestañas: Flujo (dibujo con las siete etapas y el número de tareas en cada una en la app de escritorio, quién trabaja ahora según los subagentes activos y las tareas por etapa), Equipo (cada rol, lo que hace y en qué está) y Tarea (el flujo de una tarea y, si te toca, los botones Aprobar y Devolver, que envían un mensaje como si lo escribieras tú). Los mods no escriben archivos. Falta instalarlo y verlo en la app."
+    }
+  ],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "desarrollador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Diseño del panel y de los botones del autor"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Los botones envían mensajes y no tocan archivos"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Mod escrito por el coordinador"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "claude plugin validate y 5 pruebas en verde"
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-12",
+        "nota": "Falta instalarlo y probarlo"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "pendiente",
+        "nota": "Probar los botones en la app"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ]
+  }
+}

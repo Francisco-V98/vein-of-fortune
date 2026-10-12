@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "nota": "Fuente de verdad del equipo de especialistas y del flujo de cada tarea. La leen el mod /equipo de Claude Code y build.py. Los especialistas agente tienen su definición en .claude/agents/<agente>.md.",
+  "etapas": [
+    {
+      "id": "ideacion",
+      "nombre": "Ideación",
+      "rol": "ideador",
+      "glifo": "I",
+      "que": "Explorar opciones y proponer una recomendación."
+    },
+    {
+      "id": "analisis",
+      "nombre": "Análisis",
+      "rol": "analista",
+      "glifo": "A",
+      "que": "Comprobar coherencia, números, riesgos y dependencias, y fijar los criterios de aceptación."
+    },
+    {
+      "id": "produccion",
+      "nombre": "Producción",
+      "rol": "especialista",
+      "glifo": "P",
+      "que": "Hacer el trabajo: documento, narrativa, arte o código, según la tarea."
+    },
+    {
+      "id": "qa",
+      "nombre": "QA",
+      "rol": "qa",
+      "glifo": "Q",
+      "que": "Verificar que todo pasa: build estricto, pruebas, enlaces y coherencia."
+    },
+    {
+      "id": "autor",
+      "nombre": "Revisión del autor",
+      "rol": "autor",
+      "glifo": "R",
+      "que": "Revisar el entregable (documento, arte, código): aprobar o devolver con comentarios."
+    },
+    {
+      "id": "playtest",
+      "nombre": "Prueba del autor",
+      "rol": "autor",
+      "glifo": "T",
+      "que": "Jugar y probar: que sea divertido, que se vea bien, que el tono funcione. Solo en tareas con algo que probar."
+    },
+    {
+      "id": "cierre",
+      "nombre": "Cierre",
+      "rol": "coordinador",
+      "glifo": "C",
+      "que": "Fusionar, cerrar la tarea, limpiar ramas y actualizar el registro."
+    }
+  ],
+  "estados_etapa": [
+    "pendiente",
+    "activa",
+    "hecha",
+    "omitida"
+  ],
+  "roles": [
+    {
+      "id": "ideador",
+      "nombre": "Ideador",
+      "tipo": "agente",
+      "agente": "ideador",
+      "especialista": false,
+      "hace": "Propone al menos tres opciones con ventajas y riesgos y recomienda una.",
+      "entrega": "Opciones y recomendación"
+    },
+    {
+      "id": "analista",
+      "nombre": "Analista",
+      "tipo": "agente",
+      "agente": "analista",
+      "especialista": false,
+      "hace": "Cruza la propuesta con los documentos y el registro del mundo, revisa números y riesgos, y escribe los criterios de aceptación.",
+      "entrega": "Informe de coherencia y criterios"
+    },
+    {
+      "id": "disenador",
+      "nombre": "Diseñador de sistemas",
+      "tipo": "agente",
+      "agente": "disenador-sistemas",
+      "especialista": true,
+      "hace": "Escribe y edita los documentos de diseño, la economía y el registro del mundo.",
+      "entrega": "Documentos de diseño en ✅ / 🟡 / ❓"
+    },
+    {
+      "id": "narrador",
+      "nombre": "Narrador",
+      "tipo": "agente",
+      "agente": "narrador",
+      "especialista": true,
+      "hace": "Escribe historia, personajes, diálogos y la biblia narrativa con la voz acordada.",
+      "entrega": "Texto narrativo consistente"
+    },
+    {
+      "id": "arte",
+      "nombre": "Director de arte",
+      "tipo": "agente",
+      "agente": "director-arte",
+      "especialista": true,
+      "hace": "Escribe los encargos de arte, revisa las imágenes contra el estilo acordado y mantiene las reglas visuales.",
+      "entrega": "Encargos y revisiones de arte"
+    },
+    {
+      "id": "desarrollador",
+      "nombre": "Desarrollador",
+      "tipo": "agente",
+      "agente": "desarrollador",
+      "especialista": true,
+      "hace": "Programa el hub, las herramientas y, más adelante, el juego, con código limpio y modular.",
+      "entrega": "Código con pruebas"
+    },
+    {
+      "id": "qa",
+      "nombre": "QA",
+      "tipo": "agente",
+      "agente": "qa",
+      "especialista": false,
+      "hace": "Ejecuta el build estricto, las pruebas y las comprobaciones, y reporta sin editar nada.",
+      "entrega": "Informe de QA aprobado o con fallos"
+    },
+    {
+      "id": "autor",
+      "nombre": "Francisco (autor)",
+      "tipo": "humano",
+      "agente": null,
+      "especialista": false,
+      "hace": "Revisa los entregables y juega y prueba el juego: diversión, detalles visuales, tono. Aprueba o devuelve.",
+      "entrega": "Aprobación o comentarios"
+    },
+    {
+      "id": "coordinador",
+      "nombre": "Coordinador (Claude)",
+      "tipo": "principal",
+      "agente": null,
+      "especialista": false,
+      "hace": "Reparte el trabajo entre los especialistas, mantiene el roadmap, fusiona y cierra las tareas.",
+      "entrega": "Tareas cerradas y registro al día"
+    }
+  ],
+  "reglas": [
+    "Cada tarea elige qué etapas aplican; las que no hacen falta se marcan como omitidas, nunca se borran.",
+    "Una etapa pasa a hecha solo cuando entrega lo que dice su rol; la siguiente no empieza antes.",
+    "Producción la hace el especialista que corresponda a la tarea (diseñador, narrador, director de arte o desarrollador).",
+    "La prueba del autor (jugar y probar) se omite en las tareas que no tienen nada que probar todavía.",
+    "El autor aprueba o devuelve; si devuelve, la tarea vuelve a Producción con el comentario.",
+    "Nada cierra sin QA técnico aprobado, salvo tareas de solo decisión que pasan directo a la revisión del autor."
+  ]
+}
