@@ -99,10 +99,10 @@
       "label": "Personajes",
       "glyph": "☺",
       "cells": [
-        ["Doña Reme", "El Viejo Teo", "Inspector Quiroga", "Lucía Montalvo"],
+        ["Doña Reme", "El Viejo Teo", "Inspector Quiroga", "Lucía Montalvo", "Anselmo Vidal"],
         ["Esteban Arvel", "Casilda «la Faro»"],
         ["Ministro Dueñas"],
-        ["Anselmo Vidal (en cintas)"]
+        []
       ]
     },
     {

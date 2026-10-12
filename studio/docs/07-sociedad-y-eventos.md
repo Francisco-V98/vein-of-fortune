@@ -29,7 +29,7 @@ Pocas, claras, con efectos simples en el juego. Cada una tiene un medidor de rel
 
 | Facción | Qué controla | Qué da / qué quita |
 |---|---|---|
-| Gobierno / Ministerio de Minas | Licencias, impuestos, acceso a zonas | Permisos y contratos oficiales; multas y trabas si te enemistas |
+| Gobierno / Ministerio de Recursos | Licencias, impuestos, acceso a zonas | Permisos y contratos oficiales; multas y trabas si te enemistas |
 | Casas industriales | Grandes compradores y precios | Contratos grandes; competencia y presión de precios |
 | Sindicato minero | Mano de obra y huelgas | Apoyo y ayuda en zonas; huelgas si los ignoras |
 | Organización criminal ("protectores") | Extorsión, mercado negro | Protección y acceso a negocios oscuros; saqueos/cobros si no pagas |

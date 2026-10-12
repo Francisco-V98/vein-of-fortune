@@ -16,7 +16,7 @@ Qué pasa, qué se desbloquea y qué hace falta en cada acto. Se ve como cuadro 
 | Se cierra cuando… | Reabres el puesto, pagas las primeras cuotas y tienes tu primer contacto con empleados | Eliges con qué facción te alías | Te aceptan en el círculo de poder | Decides qué hacer con la verdad y el poder |
 | Zonas | Galerías del Hollín | Cañón Ferroso, Sierra Alta, Salares | Cavernas de Cristal | La Fosa del Éter |
 | Minerales | Carbón, hierro | Cobre, salitre, plata | Oro, cuarzo, esmeralda | Diamante, Aetherita |
-| Personajes | Reme, Teo, Quiroga, Lucía | Esteban Arvel, Casilda | Ministro Dueñas | Anselmo (en cintas) |
+| Personajes | Reme, Teo, Quiroga, Lucía, Anselmo (como rastro: libreta, lámpara y firma) | Esteban Arvel, Casilda | Ministro Dueñas | — (Anselmo se revela al final: cintas completas y acta de calibración) |
 | Estatus | Buscador → Minero con licencia | → Comerciante | → Empresario | → Magnate |
 
 El detalle completo (mecánicas, mercado y eventos, arte) está en el cuadro del hub.

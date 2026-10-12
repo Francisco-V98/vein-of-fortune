@@ -31,7 +31,7 @@
 
 ## Voz ✅
 
-- **Español neutro latinoamericano, con tuteo.** Sin regionalismos fuertes, para que se entienda en todas partes y se pueda traducir.
+- **Español neutro latinoamericano, con tuteo.** Sin regionalismos fuertes, para que se entienda en todas partes y se pueda traducir. La interfaz y el narrador siempre tutean; solo Quiroga, Dueñas y el personal oficial hablan de usted, como rasgo de formalidad (ver [18](18-biblia-narrativa.md)).
 - **Inglés cercano**, con "you" directo y frases cortas.
 - Frases cortas y concretas. Verbos en lugar de sustantivos abstractos.
 - Evitar la jerga financiera pesada: se explica con ejemplos del mundo.

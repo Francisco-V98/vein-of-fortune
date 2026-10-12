@@ -1,0 +1,267 @@
+{
+  "id": "F0-41",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza la biblia narrativa con el flujo de especialistas: primero la ideación de la estructura.",
+      "ref": "rama studio/F0-41-biblia-narrativa-estructura"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 18 completo con reglas, nueve fichas de voz, glosario ES/EN y anexo; QA aprobado tras dos pasadas.",
+      "ref": "rama studio/F0-41-biblia-narrativa-estructura"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la biblia narrativa desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Se ejecutaron las dos primeras etapas con subagentes reales: el ideador propuso tres estructuras y el analista verificó contra los documentos. Ambos informes están en esta conversación; las decisiones que quedan son del autor antes de que el narrador y el localizador escriban el documento 18."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Decisiones: estructura por entidades con el documento 19 como fuente; Aetherita es el mineral y éter el fenómeno; Quiroga y Dueñas de usted y el resto de tú; se traduce casi todo al inglés."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Decisiones del glosario: La Fosa es the Pit; la Faro es the Beacon; mal del éter es ether sickness y Comisión del Éter es Ether Commission; confirmo todas las demás traducciones propuestas. El personal figurante del Ministerio y la Comisión habla de usted; el protagonista tutea a doña Reme y al resto de los que tutean; hay variantes de género en los apelativos; la gente de la calle puede decir «el éter» por el mineral (nunca la interfaz, el narrador ni los titulares); y se corrige la celda de Anselmo del Acto IV."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "F0-41 recorrió el flujo con subagentes reales: el ideador propuso tres estructuras, el analista verificó cinco comprobaciones y fijó ocho criterios, el narrador escribió el documento 18, el localizador completó el glosario, y QA lo devolvió una vez (limpieza 44 %, ✅ sin respaldo, marcas incoherentes) y lo aprobó en la segunda pasada. Tus decisiones están aplicadas y la celda de Anselmo corregida: limpieza 49 % → 65 % y coherencia 68 % → 70 %."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Terminé mi parte: revisé el entregable y está aprobado. Pásala a la siguiente etapa del flujo."
+    }
+  ],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Tres estructuras: por actos (A), por entidades (B) y por escenas y decisiones (C); recomienda B con un anexo de cronología y bifurcaciones",
+        "por": "ideador",
+        "entrega": "Tres opciones, recomendación, lista de términos del glosario y siete preguntas para el autor"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "analista",
+        "nota": "Se verificaron las cinco comprobaciones del ideador contra los documentos",
+        "entrega": "Informe con criterios de aceptación (8) y seis preguntas para el autor",
+        "hallazgos": [
+          {
+            "de": "analista",
+            "texto": "Aetherita y éter se usan a veces como sinónimos y no hay una regla escrita (doc 12 y 13 frente a docs 05 y 03)",
+            "estado": "abierto"
+          },
+          {
+            "de": "analista",
+            "texto": "El doc 07 dice «Ministerio de Minas» en una tabla y «Ministerio de Recursos» en todo lo demás",
+            "estado": "abierto"
+          },
+          {
+            "de": "analista",
+            "texto": "El tuteo y el usted de cada personaje solo se deduce de las líneas de ejemplo; el doc 13 dice «con tuteo» sin matices",
+            "estado": "abierto"
+          },
+          {
+            "de": "analista",
+            "texto": "El anexo de cronología se solapa con F0-43, F0-44 y F0-45, y las fichas del doc 19 ya cubren casi F0-42",
+            "estado": "abierto"
+          }
+        ]
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "Documento 18 corregido con las decisiones del autor y los fallos de QA; celda de Anselmo corregida en story.json y doc 17",
+        "at": "2026-10-12",
+        "por": "narrador",
+        "entrega": "Documento 18 con el glosario en ✅, sin ❓ y con limpieza propia del 88 %",
+        "hallazgos": [
+          {
+            "de": "narrador",
+            "texto": "El doc 12 llama «fragmento de éter» al mineral y choca con la regla Aetherita mineral / éter fenómeno",
+            "estado": "resuelto",
+            "resuelto_por": "localizador",
+            "como": "La línea del doc 12 pasó a «fragmento de Aetherita»"
+          },
+          {
+            "de": "narrador",
+            "texto": "La celda del Acto IV del mapa de historia pone «Anselmo Vidal (en cintas)» y choca con el registro, que lo sitúa en el Acto I",
+            "estado": "resuelto",
+            "resuelto_por": "narrador",
+            "como": "La celda del Acto IV de story.json y del doc 17 dice ahora que aparece desde el Acto I y se revela en el IV"
+          },
+          {
+            "de": "localizador",
+            "texto": "El glosario tiene 13 traducciones al inglés discutibles (La Fosa, la Faro, mal del éter, Puerto Meridiano…) que solo el autor puede confirmar",
+            "estado": "resuelto",
+            "resuelto_por": "autor",
+            "como": "El autor decidió las 13 dudas: the Pit, the Beacon, ether sickness, Ether Commission y confirmó el resto"
+          }
+        ]
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "qa",
+        "nota": "Segunda pasada: de 7 fallos quedó 1 (celda de Anselmo en C11), corregido; build estricto, pruebas, enlaces y ⏳ en verde",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "texto": "La limpieza global bajó del 49 % al 44 % por unas 180 traducciones en 🟡 y 23 ❓ nuevas del documento 18",
+            "estado": "resuelto",
+            "resuelto_por": "narrador",
+            "como": "Limpieza 65 %, fuentes de los ✅ aclaradas, marcas unificadas y un solo ⏳ por cada asunto de las cintas"
+          },
+          {
+            "de": "qa",
+            "texto": "Villa Brasa, Los Faroleros y las cinco estadísticas estaban en ✅ sin respaldo del autor, y hay marcas incoherentes entre 1.6 y 5.1, 1.3 y 1.11",
+            "estado": "resuelto",
+            "resuelto_por": "narrador",
+            "como": "Limpieza 65 %, fuentes de los ✅ aclaradas, marcas unificadas y un solo ⏳ por cada asunto de las cintas"
+          },
+          {
+            "de": "qa",
+            "texto": "Las cintas citan ⏳ F0-43 en una línea y ⏳ F0-45 en otra",
+            "estado": "resuelto",
+            "resuelto_por": "narrador",
+            "como": "Limpieza 65 %, fuentes de los ✅ aclaradas, marcas unificadas y un solo ⏳ por cada asunto de las cintas"
+          },
+          {
+            "de": "qa",
+            "texto": "La comprobación C11 seguía en 1 hallazgo: la celda de Anselmo del mapa de historia no coincidía con el registro",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "Anselmo Vidal pasa a la celda de personajes del Acto I y la del Acto IV queda sin nuevos; coherencia 68 % → 70 %"
+          }
+        ],
+        "entrega": "Informe de QA aprobado: limpieza 65 %, coherencia 70 %, conexiones rotas 0"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Aprobado por el autor con «Todo bien» y «Terminé mi parte»"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Tarea cerrada y PR #33 fusionado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: tres opciones para la estructura de la biblia, la voz de cada personaje y el glosario ES/EN",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Tres opciones de estructura y una lista de términos e incoherencias por comprobar",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Informe: cuatro hallazgos y seis preguntas que decide el autor antes de producir",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Decisiones del autor: estructura por entidades con el 19 como fuente, Aetherita mineral y éter fenómeno, usted solo para Quiroga y Dueñas, se traduce casi todo al inglés",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "narrador",
+        "a": "localizador",
+        "que": "Documento 18 con el capítulo 6 (glosario) vacío para que el localizador lo complete en ES/EN",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "localizador",
+        "a": "qa",
+        "que": "Documento 18 con el glosario ES/EN completo y el doc 12 corregido",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "narrador",
+        "que": "QA con fallos: limpieza 44 %, ✅ sin respaldo, marcas incoherentes y un ⏳ distinto para las cintas",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Decisiones del autor sobre las 13 dudas de traducción y las 5 preguntas pendientes, y la corrección de la celda de Anselmo",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "narrador",
+        "a": "qa",
+        "que": "Documento 18 corregido: limpieza 65 %, coherencia 68 %, sin ❓",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "QA con un fallo: la celda de Anselmo seguía sin cuadrar con el registro (C11)",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Celda de Anselmo en el Acto I; coherencia 70 %",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: limpieza 65 %, coherencia 70 %, sin ❓ en el documento 18",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: «Terminé mi parte» sin ajustes",
+        "at": "2026-10-12"
+      }
+    ]
+  }
+}
