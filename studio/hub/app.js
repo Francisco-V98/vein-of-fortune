@@ -627,7 +627,7 @@
     return head(s) + '<div class="sc">' + figLink(s.image, s.caption) + '<ul class="sc-list">' + s.items.map(function (it) { return '<li><b>' + esc(it.name) + '</b><span>' + esc(it.tension) + '</span></li>'; }).join('') + '</ul></div>' + note(s);
   }
   function marketChart() {
-    return '<svg class="mk-chart" viewBox="0 0 440 250" role="img" aria-label="Ejemplo: tras una noticia, el valor justo cambia y el precio lo alcanza con retraso">' +
+    return '<svg class="mkt-chart" viewBox="0 0 440 250" role="img" aria-label="Ejemplo: tras una noticia, el valor justo cambia y el precio lo alcanza con retraso">' +
       '<g stroke="#2a3d4a" stroke-width="1"><line x1="30" y1="24" x2="30" y2="214"/><line x1="30" y1="214" x2="430" y2="214"/></g>' +
       '<line x1="210" y1="30" x2="210" y2="214" stroke="#8fb0ba" stroke-dasharray="3 4"/>' +
       '<path d="M30 124 H210 V82 H430" fill="none" stroke="#e3b25c" stroke-width="2" stroke-dasharray="6 5"/>' +
@@ -638,7 +638,7 @@
       '<line x1="170" y1="16" x2="194" y2="16" stroke="#c23b55" stroke-width="2.6"/><text x="200" y="20" fill="#c9dcdf" font-size="12">Precio (llega con retraso)</text></svg>';
   }
   function lMarket(s) {
-    return head(s) + '<div class="mk"><div class="mk-left">' + marketChart() + '</div><div class="mk-right">' + s.points.map(function (p) {
+    return head(s) + '<div class="mkt"><div class="mkt-left">' + marketChart() + '</div><div class="mkt-right">' + s.points.map(function (p) {
       return '<div class="sl-tile">' + glyph(p.glyph) + '<div><strong>' + esc(p.title) + '</strong><small>' + inline(p.text) + '</small></div></div>';
     }).join('') + '</div></div>' + note(s);
   }
