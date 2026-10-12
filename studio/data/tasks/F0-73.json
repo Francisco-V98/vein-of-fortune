@@ -33,6 +33,16 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "Segunda versión del mod: diagrama de traspasos con las entregas, los hallazgos y quién los resolvió; actualización automática (mira los datos cada 3 segundos, los PR cada 45 y también al terminar cada turno); y la bandeja «Te toca a ti» con tus tareas en revisión o prueba y los PR abiertos. Cada una sigue el recorrido Todo bien o Salieron ajustes (los ajustes los comentas por el chat) y Terminé mi parte, que envía el mensaje y deja la acción como enviada hasta que el coordinador la mueva."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "La estética de /estado me gustó muchísimo, la de /equipo no: la quiero más dinámica y estética, con animaciones, como un jueguito automático de gestión pero muy simple."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "/equipo pasa a una pestaña Oficina: el estudio en planta con siete salas, un escritorio por empleado y personajes que teclean cuando trabajan, duermen cuando están libres y quedan en sombra si aún no se incorporan. Los paquetes viajan por el recorrido de la tarea, las banderas llevan los hallazgos de quien los dejó a quien los resolvió y un globo muestra en qué tarea trabaja cada uno. El detalle pasó a la pestaña Traspasos y el reparto de roles a Equipo."
     }
   ],
   "evidence": [],

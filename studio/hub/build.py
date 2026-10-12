@@ -192,6 +192,10 @@ def load_equipo():
     for rol in roles.values():
         if rol["tipo"] not in ("agente", "humano", "principal"):
             warn("equipo.json: tipo de rol inválido en %s: %s" % (rol["id"], rol["tipo"]))
+        if rol.get("depto") not in {d["id"] for d in data.get("deptos", [])}:
+            warn("equipo.json: el rol %s tiene un departamento inexistente: %s" % (rol["id"], rol.get("depto")))
+        if not re.match(r"^F[0-6]$", str(rol.get("desde", ""))):
+            warn("equipo.json: el rol %s tiene una fase de incorporación inválida: %s" % (rol["id"], rol.get("desde")))
         agent_file = STUDIO.parent / ".claude" / "agents" / ("%s.md" % rol["agente"]) if rol.get("agente") else None
         if agent_file is not None and not agent_file.exists():
             warn("equipo.json: el rol %s apunta al agente %s, que no existe en .claude/agents" % (rol["id"], rol["agente"]))

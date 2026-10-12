@@ -5,11 +5,11 @@ Dos mods, en un marketplace local llamado `vein-mods`. Documentación del equipo
 | Mod | Comando | Para qué |
 |---|---|---|
 | `vf-estado` | `/estado` | Panel de progreso y estadísticas del proyecto |
-| `vf-equipo` | `/equipo` | Tablero del equipo de especialistas y del flujo de cada tarea |
+| `vf-equipo` | `/equipo` | La oficina del estudio: quién trabaja en qué, los traspasos de cada tarea y lo que te toca a ti |
 
 ## Seguridad
 
-Un mod corre con tus mismos permisos y sin aislamiento. Lee el código antes de instalarlo: está en `hooks/register.js` de cada mod. Estos dos solo leen archivos del repositorio y ejecutan `python3 studio/hub/build.py`, `git` y `gh pr list` (`vf-estado`). Los botones de `vf-equipo` envían un mensaje con tu nombre solo cuando los pulsas.
+Un mod corre con tus mismos permisos y sin aislamiento. Lee el código antes de instalarlo: está en `hooks/register.js` de cada mod. Estos dos solo leen archivos del repositorio y ejecutan `python3 studio/hub/build.py`, `git` y `gh pr list` (`vf-estado`). Los botones de `vf-equipo` envían un mensaje con tu nombre solo cuando los pulsas, y `gh pr list` lo ejecuta para ver los PR abiertos.
 
 ## Instalar
 

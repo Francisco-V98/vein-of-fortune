@@ -228,3 +228,195 @@ export function svgTraspasos(filas, ancho) {
   })
   return { svg: envolver(W, y, partes.concat(huecos)), alto: y, ancho: W }
 }
+
+// ---------- la oficina: un estudio en planta, con empleados que trabajan y paquetes que viajan ----------
+
+const COLOR_DEPTO = {
+  direccion: '#B8893A',
+  estrategia: '#8FB0BA',
+  diseno: '#C23B55',
+  narrativa: '#E3B25C',
+  arte: '#9A2640',
+  ingenieria: '#5B7C8C',
+  calidad: '#36505F',
+}
+const PELO = ['#2b2b33', '#6b4a2f', '#c9a15a', '#8a3b2e', '#d8d8d8', '#3b3b55', '#7a5a3a']
+
+// Un empleado sentado en su escritorio. estado: 'trabajando' | 'libre' | 'reserva'
+function empleado(x, y, rol, indice, estado, tarea, pendientes) {
+  const cx = x + 44
+  const color = COLOR_DEPTO[rol.depto] || C.tenue
+  const pelo = PELO[indice % PELO.length]
+  const p = []
+  const reserva = estado === 'reserva'
+  p.push('<g opacity="' + (reserva ? 0.45 : 1) + '">')
+  // escritorio y monitor
+  p.push('<rect x="' + (x + 12) + '" y="' + (y + 50) + '" width="64" height="18" rx="4" fill="#27394a" stroke="' + C.borde + '"/>')
+  p.push('<rect x="' + (x + 12) + '" y="' + (y + 50) + '" width="64" height="4" rx="2" fill="#36505F"/>')
+  p.push('<rect x="' + (cx - 11) + '" y="' + (y + 36) + '" width="22" height="15" rx="2" fill="#0e161d" stroke="' + (estado === 'trabajando' ? C.ambar : C.borde) + '"/>')
+  if (estado === 'trabajando') {
+    p.push('<rect x="' + (cx - 8) + '" y="' + (y + 39) + '" width="16" height="9" rx="1" fill="' + C.texto + '"><animate attributeName="opacity" values="0.9;0.35;0.8;0.4;0.9" dur="1.1s" repeatCount="indefinite"/></rect>')
+  } else if (!reserva) {
+    p.push('<rect x="' + (cx - 8) + '" y="' + (y + 39) + '" width="16" height="9" rx="1" fill="' + C.borde + '"/>')
+  }
+  // persona
+  const cuerpo = reserva ? 'none' : color
+  const piel = reserva ? 'none' : '#E8B98F'
+  const trazo = reserva ? ' stroke="' + C.tenue + '" stroke-dasharray="2 3"' : ''
+  p.push('<g>')
+  if (estado === 'trabajando') p.push('<animateTransform attributeName="transform" type="translate" values="0 0;0 -1.5;0 0" dur="0.6s" repeatCount="indefinite"/>')
+  p.push('<rect x="' + (cx - 8) + '" y="' + (y + 28) + '" width="16" height="12" rx="3" fill="' + cuerpo + '"' + trazo + '/>')
+  p.push('<rect x="' + (cx - 5) + '" y="' + (y + 16) + '" width="10" height="11" rx="3" fill="' + piel + '"' + trazo + '/>')
+  if (!reserva) {
+    p.push('<rect x="' + (cx - 6) + '" y="' + (y + 14) + '" width="12" height="5" rx="2" fill="' + pelo + '"/>')
+    if (estado === 'trabajando') {
+      p.push('<rect x="' + (cx - 3) + '" y="' + (y + 21) + '" width="2" height="2" fill="#17232C"/><rect x="' + (cx + 1) + '" y="' + (y + 21) + '" width="2" height="2" fill="#17232C"/>')
+    } else {
+      p.push('<rect x="' + (cx - 3) + '" y="' + (y + 22) + '" width="2" height="1" fill="#17232C"/><rect x="' + (cx + 1) + '" y="' + (y + 22) + '" width="2" height="1" fill="#17232C"/>')
+    }
+  }
+  p.push('</g>')
+  // brazos que teclean
+  if (estado === 'trabajando') {
+    p.push('<rect x="' + (cx - 12) + '" y="' + (y + 40) + '" width="5" height="4" fill="#E8B98F"><animate attributeName="y" values="' + (y + 40) + ';' + (y + 43) + ';' + (y + 40) + '" dur="0.35s" repeatCount="indefinite"/></rect>')
+    p.push('<rect x="' + (cx + 7) + '" y="' + (y + 43) + '" width="5" height="4" fill="#E8B98F"><animate attributeName="y" values="' + (y + 43) + ';' + (y + 40) + ';' + (y + 43) + '" dur="0.35s" repeatCount="indefinite"/></rect>')
+  }
+  p.push('</g>')
+  // z z z cuando está libre
+  if (estado === 'libre') {
+    p.push('<text x="' + (cx + 8) + '" y="' + (y + 14) + '" font-family="' + FUENTE + '" font-size="10" font-weight="700" fill="' + C.tenue + '">z<animate attributeName="opacity" values="0;1;0" dur="2.4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;5 -8" dur="2.4s" repeatCount="indefinite"/></text>')
+  }
+  // globo con la tarea en la que trabaja
+  if (estado === 'trabajando' && tarea) {
+    const w = Math.round(tarea.length * 6.2 + 12)
+    p.push('<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="1.8s" repeatCount="indefinite"/>')
+    p.push('<rect x="' + (cx - w / 2) + '" y="' + (y - 6) + '" width="' + w + '" height="16" rx="8" fill="' + C.ambar + '"/>')
+    p.push('<polygon points="' + (cx - 4) + ',' + (y + 10) + ' ' + (cx + 4) + ',' + (y + 10) + ' ' + cx + ',' + (y + 15) + '" fill="' + C.ambar + '"/>')
+    p.push(t(cx, y + 6, tarea, 10, C.fondo, ' text-anchor="middle" font-weight="800"'))
+    p.push('</g>')
+  }
+  // bandeja con pendientes (solo el autor)
+  if (rol.tipo === 'humano') {
+    p.push('<rect x="' + (x + 58) + '" y="' + (y + 44) + '" width="16" height="7" rx="1" fill="#C9DCDF"/><rect x="' + (x + 60) + '" y="' + (y + 41) + '" width="12" height="4" fill="#8FB0BA"/>')
+    if (pendientes > 0) {
+      p.push('<circle cx="' + (x + 74) + '" cy="' + (y + 38) + '" r="8" fill="' + C.vinoClaro + '" stroke="' + C.fondo + '" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="1.2s" repeatCount="indefinite"/></circle>')
+      p.push(t(x + 74, y + 42, pendientes, 10, C.texto, ' text-anchor="middle" font-weight="800"'))
+    }
+  }
+  // placa con el nombre
+  p.push(t(cx, y + 80, reserva ? rol.corto + ' · ' + rol.desde : rol.corto, 10, estado === 'trabajando' ? C.ambar : reserva ? C.tenue : C.suave, ' text-anchor="middle" font-weight="' + (estado === 'trabajando' ? 700 : 500) + '"'))
+  return p.join('')
+}
+
+// Plano de oficina completo. Devuelve { svg, alto, ancho, centros } donde centros[rol] = {x, y}
+export function svgOficina(op) {
+  const W = Math.max(360, Math.min(op.ancho, 600))
+  const margen = 8
+  const capacidad = 6
+  const celda = Math.floor((W - margen * 3 - 16) / capacidad)
+  const altoSala = 26 + 108 + 6
+  const partes = []
+  const centros = {}
+  const salas = op.deptos.map((d) => ({ depto: d, roles: op.roles.filter((r) => r.depto === d.id) })).filter((s) => s.roles.length > 0)
+  // empaqueta las salas por filas de hasta `capacidad` escritorios
+  const filas = []
+  let actual = []
+  let usados = 0
+  for (const sala of salas) {
+    if (usados + sala.roles.length > capacidad && actual.length) {
+      filas.push({ salas: actual, usados })
+      actual = []
+      usados = 0
+    }
+    actual.push(sala)
+    usados += sala.roles.length
+  }
+  if (actual.length) filas.push({ salas: actual, usados })
+  const alto = margen + filas.length * (altoSala + margen)
+  partes.push('<defs><pattern id="suelo" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="' + C.fondo + '"/><rect width="8" height="8" fill="#1b2a35"/><rect x="8" y="8" width="8" height="8" fill="#1b2a35"/></pattern></defs>')
+  partes.push('<rect width="' + W + '" height="' + alto + '" rx="14" fill="url(#suelo)"/>')
+  const capaSalas = []
+  let ultimaLibre = null
+  filas.forEach((fila, fi) => {
+    const y = margen + fi * (altoSala + margen)
+    // reparte el ancho sobrante entre las salas de la fila
+    const ancho = W - margen * (fila.salas.length + 1)
+    let x = margen
+    fila.salas.forEach((sala) => {
+      const w = Math.round((ancho * sala.roles.length) / (fila.usados + (fi === filas.length - 1 && fila.usados < capacidad ? capacidad - fila.usados : 0)))
+      const activa = sala.roles.some((r) => op.estado[r.id] === 'trabajando')
+      capaSalas.push('<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + altoSala + '" rx="12" fill="' + C.tarjeta + '" fill-opacity="0.85" stroke="' + (activa ? C.ambar : C.borde) + '"/>')
+      capaSalas.push('<rect x="' + (x + 10) + '" y="' + (y + 9) + '" width="6" height="6" rx="1.5" fill="' + (COLOR_DEPTO[sala.depto.id] || C.tenue) + '"/>')
+      capaSalas.push(t(x + 22, y + 16, sala.depto.nombre.toUpperCase(), 10, C.suave, ' font-weight="700" letter-spacing="0.8"'))
+      const cw = w / sala.roles.length
+      sala.roles.forEach((rol, k) => {
+        const ex = x + k * cw + (cw - 88) / 2
+        const ey = y + 46
+        const cx = ex + 44
+        centros[rol.id] = { x: cx, y: ey + 52 }
+        const est = op.estado[rol.id] || 'libre'
+        capaSalas.push('<g transform="translate(' + cx + ' ' + (ey + 80) + ') scale(1.2) translate(' + -cx + ' ' + -(ey + 80) + ')">' + empleado(ex, ey, rol, op.roles.indexOf(rol), est, op.tarea[rol.id] || '', rol.tipo === 'humano' ? op.pendientesAutor : 0) + '</g>')
+      })
+      x += w + margen
+    })
+    if (fi === filas.length - 1 && fila.usados < capacidad) ultimaLibre = { x, y, w: W - margen - x }
+  })
+  partes.push(capaSalas.join(''))
+
+  // la ruta de la tarea elegida: paquetes que viajan entre escritorios
+  const capaRuta = []
+  const ruta = op.ruta || []
+  for (let i = 0; i < ruta.length - 1; i++) {
+    const a = centros[ruta[i].rol]
+    const b = centros[ruta[i + 1].rol]
+    if (!a || !b || ruta[i].rol === ruta[i + 1].rol) continue
+    const hecho = ruta[i].estado === 'hecha' || ruta[i].estado === 'omitida'
+    const hacia = ruta[i + 1].estado === 'activa'
+    const medioY = Math.min(a.y, b.y) - 44 - (i % 2) * 16
+    const d = 'M' + a.x + ',' + (a.y - 16) + ' C' + a.x + ',' + medioY + ' ' + b.x + ',' + medioY + ' ' + b.x + ',' + (b.y - 16)
+    const color = hecho ? C.suave : hacia ? C.ambar : C.borde
+    capaRuta.push('<path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="' + (hecho || hacia ? 2.5 : 2) + '" stroke-linecap="round" stroke-opacity="' + (hecho || hacia ? 0.9 : 0.7) + '" stroke-dasharray="' + (hecho ? '' : '6 6') + '"' + (hacia ? '><animate attributeName="stroke-dashoffset" values="12;0" dur="0.7s" repeatCount="indefinite"/></path>' : '/>'))
+    capaRuta.push('<circle cx="' + b.x + '" cy="' + (b.y - 16) + '" r="4" fill="' + color + '"/>')
+    if (hecho || hacia) {
+      capaRuta.push('<g><rect x="-6" y="-5" width="12" height="10" rx="2" fill="' + C.laton + '" stroke="' + C.ambar + '"/><rect x="-6" y="-1" width="12" height="2" fill="' + C.ambar + '"/><animateMotion dur="' + (hacia ? 1.8 : 3.6) + 's" begin="' + i * 0.4 + 's" repeatCount="indefinite" path="' + d + '"/></g>')
+    }
+  }
+  // hallazgos: la bandera va de quien lo dejó a quien lo resolvió; los abiertos laten sobre quien lo dejó
+  for (const h of op.hallazgos || []) {
+    const a = centros[h.de]
+    if (!a) continue
+    if (h.estado === 'resuelto' && centros[h.a] && h.de !== h.a) {
+      const b = centros[h.a]
+      const medioY = Math.min(a.y, b.y) - 24
+      const d = 'M' + a.x + ',' + (a.y - 24) + ' Q' + (a.x + b.x) / 2 + ',' + medioY + ' ' + b.x + ',' + (b.y - 24)
+      capaRuta.push('<path d="' + d + '" fill="none" stroke="' + C.vinoClaro + '" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4"/>')
+      capaRuta.push('<g><polygon points="0,-7 9,-3.5 0,0" fill="' + C.vinoClaro + '"/><rect x="-1" y="-7" width="1.8" height="12" fill="' + C.texto + '"/><animateMotion dur="4.5s" repeatCount="indefinite" path="' + d + '"/></g>')
+    } else if (h.estado !== 'resuelto') {
+      capaRuta.push('<g><circle cx="' + (a.x + 26) + '" cy="' + (a.y - 34) + '" r="8" fill="' + C.vinoClaro + '" stroke="' + C.fondo + '" stroke-width="2"><animate attributeName="r" values="8;10;8" dur="1s" repeatCount="indefinite"/></circle>' + t(a.x + 26, a.y - 30, '!', 11, C.texto, ' text-anchor="middle" font-weight="800"') + '</g>')
+    }
+  }
+  partes.push(capaRuta.join(''))
+
+  // leyenda en el hueco que queda en la última fila
+  if (ultimaLibre && ultimaLibre.w > 120) {
+    const { x: lx, y: ly, w } = ultimaLibre
+    const items = [
+      ['paquete', 'Un paquete: el trabajo pasa de uno a otro'],
+      ['bandera', 'Una bandera: un hallazgo y quién lo resolvió'],
+      ['alerta', 'Un hallazgo sin resolver'],
+      ['reserva', 'Sin color: se une en su fase'],
+    ]
+    partes.push('<rect x="' + lx + '" y="' + ly + '" width="' + w + '" height="' + altoSala + '" rx="12" fill="' + C.tarjeta + '" fill-opacity="0.6" stroke="' + C.borde + '"/>')
+    partes.push(t(lx + 12, ly + 17, 'CÓMO LEERLO', 10, C.suave, ' font-weight="700" letter-spacing="0.8"'))
+    items.forEach(([k, texto], i) => {
+      const iy = ly + 38 + i * 19
+      if (k === 'paquete') partes.push('<rect x="' + (lx + 12) + '" y="' + (iy - 8) + '" width="12" height="10" rx="2" fill="' + C.laton + '" stroke="' + C.ambar + '"/>')
+      if (k === 'bandera') partes.push('<polygon points="' + (lx + 14) + ',' + (iy - 9) + ' ' + (lx + 24) + ',' + (iy - 5) + ' ' + (lx + 14) + ',' + (iy - 1) + '" fill="' + C.vinoClaro + '"/><rect x="' + (lx + 13) + '" y="' + (iy - 9) + '" width="1.8" height="12" fill="' + C.texto + '"/>')
+      if (k === 'alerta') partes.push('<circle cx="' + (lx + 18) + '" cy="' + (iy - 3) + '" r="6" fill="' + C.vinoClaro + '"/>')
+      if (k === 'reserva') partes.push('<rect x="' + (lx + 12) + '" y="' + (iy - 9) + '" width="12" height="11" rx="3" fill="none" stroke="' + C.tenue + '" stroke-dasharray="2 3"/>')
+      partes.push(t(lx + 32, iy, recortar(texto, Math.floor((w - 44) / 5.4)), 10, C.suave))
+    })
+    partes.push(t(lx + 12, ly + altoSala - 8, recortar(op.pie || '', Math.floor((w - 20) / 5.2)), 10, C.tenue))
+  }
+  return { svg: envolver(W, alto, partes), alto, ancho: W, centros }
+}

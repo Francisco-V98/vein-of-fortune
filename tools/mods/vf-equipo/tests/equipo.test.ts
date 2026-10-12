@@ -1,6 +1,6 @@
 import { expect, mock, test } from 'claude-code/testing'
-import { accionesDelAutor, contarPorEtapa, etapaActual, firmaDe, mensajeAutor, pipelineDe, prDeTarea, rolDe, rolDeAgente } from '../hooks/register.js'
-import { envolverTexto, iniciales, svgFlujo, svgTraspasos } from '../hooks/vis.js'
+import { accionesDelAutor, contarPorEtapa, estadoDeRoles, etapaActual, firmaDe, hallazgosDe, mensajeAutor, pipelineDe, prDeTarea, rolDe, rolDeAgente, rutaDe } from '../hooks/register.js'
+import { envolverTexto, iniciales, svgFlujo, svgOficina, svgTraspasos } from '../hooks/vis.js'
 
 const ETAPAS = [
   { id: 'ideacion', nombre: 'Ideación', rol: 'ideador', glifo: 'I' },
@@ -12,10 +12,12 @@ const ETAPAS = [
   { id: 'cierre', nombre: 'Cierre', rol: 'coordinador', glifo: 'C' },
 ]
 const ROLES = [
-  { id: 'narrador', nombre: 'Narrador', tipo: 'agente', agente: 'narrador', hace: 'Escribe', entrega: 'Texto' },
-  { id: 'autor', nombre: 'Autor', tipo: 'humano', agente: null, hace: 'Revisa', entrega: 'Aprobación' },
+  { id: 'narrador', nombre: 'Narrador', corto: 'Narrador', tipo: 'agente', agente: 'narrador', depto: 'narrativa', desde: 'F0', hace: 'Escribe', entrega: 'Texto' },
+  { id: 'dev', nombre: 'Desarrollador de juego', corto: 'Dev', tipo: 'agente', agente: 'desarrollador-juego', depto: 'ingenieria', desde: 'F1', hace: 'Programa', entrega: 'Código' },
+  { id: 'autor', nombre: 'Autor', corto: 'Autor', tipo: 'humano', agente: null, depto: 'direccion', desde: 'F0', hace: 'Revisa', entrega: 'Aprobación' },
 ]
-const EQUIPO = { etapas: ETAPAS, roles: ROLES, reglas: ['Una regla'] }
+const DEPTOS = [{ id: 'narrativa', nombre: 'Narrativa' }, { id: 'ingenieria', nombre: 'Ingeniería' }, { id: 'direccion', nombre: 'Dirección' }]
+const EQUIPO = { etapas: ETAPAS, roles: ROLES, deptos: DEPTOS, reglas: ['Una regla'] }
 const ROADMAP = {
   phases: [
     {
@@ -125,6 +127,46 @@ test('el texto se parte en líneas y el diagrama muestra hallazgos y traspasos',
   expect(svgFlujo(ETAPAS, { produccion: 2 }, ['autor', 'playtest'], 600).split('<circle').length - 1).toBe(10)
 })
 
+test('el estado de cada rol, la ruta y los hallazgos salen de las tareas', async () => {
+  const pipeline = [
+    { etapa: 'ideacion', estado: 'omitida', rolEfectivo: 'ideador', hallazgos: [] },
+    { etapa: 'produccion', estado: 'activa', rolEfectivo: 'narrador', hallazgos: [{ de: 'narrador', estado: 'abierto' }] },
+    { etapa: 'qa', estado: 'pendiente', rolEfectivo: 'autor', hallazgos: [{ de: 'autor', estado: 'resuelto', resuelto_por: 'narrador' }] },
+    { etapa: 'autor', estado: 'pendiente', rolEfectivo: 'autor', hallazgos: [] },
+  ]
+  const tarea = { id: 'F0-41', pipeline }
+  const { estado, tarea: quien } = estadoDeRoles([tarea], [], ROLES, 'F0', ['F0', 'F1'], 0)
+  expect(estado.narrador).toBe('trabajando')
+  expect(quien.narrador).toBe('F0-41')
+  expect(estado.dev).toBe('reserva')
+  expect(estado.autor).toBe('libre')
+  expect(estadoDeRoles([], [], ROLES, 'F1', ['F0', 'F1'], 2).estado.dev).toBe('libre')
+  expect(estadoDeRoles([], [], ROLES, 'F0', ['F0', 'F1'], 2).estado.autor).toBe('trabajando')
+  expect(estadoDeRoles([], [{ type: 'narrador', status: 'running' }], ROLES, 'F0', ['F0', 'F1'], 0).estado.narrador).toBe('trabajando')
+  expect(rutaDe(tarea).map((r) => r.rol)).toEqual(['narrador', 'autor'])
+  expect(hallazgosDe(tarea).length).toBe(2)
+})
+
+test('el plano de la oficina coloca a todos, anima a quien trabaja y dibuja el recorrido', async () => {
+  const estado = { narrador: 'trabajando', dev: 'reserva', autor: 'libre' }
+  const o = svgOficina({
+    ancho: 580,
+    deptos: DEPTOS,
+    roles: ROLES,
+    estado,
+    tarea: { narrador: 'F0-41' },
+    ruta: [{ rol: 'narrador', estado: 'hecha' }, { rol: 'autor', estado: 'activa' }],
+    hallazgos: [{ de: 'narrador', a: '', estado: 'abierto' }],
+    pendientesAutor: 2,
+    pie: 'Fase F0',
+  })
+  expect(Object.keys(o.centros).sort()).toEqual(['autor', 'dev', 'narrador'])
+  expect(o.svg).toContain('F0-41')
+  expect(o.svg).toContain('<animateMotion')
+  expect(o.svg).toContain('Dev · F1')
+  expect(o.alto).toBeGreaterThan(100)
+})
+
 test('/equipo dibuja el diagrama y la bandeja, y los botones llevan al autor hasta enviar su parte', async ($, on) => {
   mock.clock(on)
   on('command.register', () => ({ value: undefined }))
@@ -156,7 +198,7 @@ test('/equipo dibuja el diagrama y la bandeja, y los botones llevan al autor has
   await new Promise((r) => setTimeout(r, 200))
 
   const ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
-  // El diagrama, el flujo y los especialistas se dibujan como SVG
+  // El plano de la oficina se dibuja como SVG
   expect(await ui.find({ type: 'Svg' })).toBeDefined()
   // La bandeja muestra la tarea en revisión con su PR y los PR sueltos
   expect(await ui.find({ type: 'Text', text: 'En revisión' })).toBeDefined()
@@ -176,10 +218,15 @@ test('/equipo dibuja el diagrama y la bandeja, y los botones llevan al autor has
   await ui.press({ key: 'ok-pr-9' })
   await ui.press({ key: 'fin-pr-9' })
   expect(enviados[1]).toContain('Puedes fusionarlo')
+
+  // En la pestaña de traspasos se ve el detalle de la tarea
+  await ui.press({ key: 'tab-traspasos' })
+  expect(await ui.find({ type: 'Svg' })).toBeDefined()
   await ui.unmount()
 
   // En la terminal se dibuja con texto
   const terminal = await $.ui.mount({ ...PANE, surface: 'terminal' })
+  await terminal.press({ key: 'tab-oficina' })
   expect(await terminal.find({ type: 'Text', text: /I 0  →  A 0  →  P 1/ })).toBeDefined()
   await terminal.unmount()
 })

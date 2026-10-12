@@ -4,7 +4,7 @@
 // Se actualiza solo. Solo lee archivos del repositorio y ejecuta `gh pr list`. Los botones de la bandeja
 // envían un mensaje a la conversación como si lo escribieras tú, solo cuando los pulsas; no modifican archivos.
 
-import { svgAhora, svgAvatar, svgFlujo, svgTraspasos } from './vis.js'
+import { svgAvatar, svgOficina, svgTraspasos } from './vis.js'
 
 const PANE = 'vf-equipo'
 const EQUIPO = 'studio/data/equipo.json'
@@ -18,10 +18,12 @@ const PRS_MS = 45000
 const GLIFO_ESTADO = { pendiente: '○', activa: '▶', hecha: '●', omitida: '–' }
 
 // Estado del panel
-let tab = 'flujo'
+let tab = 'oficina'
 let equipo = null
 let tareas = []
 let hechas = 0
+let faseActual = 'F0'
+let ordenFases = []
 let agentes = []
 let prs = []
 let seleccion = ''
@@ -140,6 +142,56 @@ export function firmaDe(archivosDatos, archivosTareas) {
     .join('|')
 }
 
+// Qué hace cada rol ahora: reserva si aún no se incorpora, trabajando si tiene una etapa activa o un agente en marcha
+export function estadoDeRoles(lista, vivos, roles, fase, ordenFases, pendientesAutor) {
+  const estado = {}
+  const tarea = {}
+  const idx = (f) => {
+    const i = ordenFases.indexOf(f)
+    return i < 0 ? 0 : i
+  }
+  for (const r of roles) estado[r.id] = idx(r.desde) > idx(fase) ? 'reserva' : 'libre'
+  for (const t of lista) {
+    for (const p of t.pipeline) {
+      if (p.estado !== 'activa') continue
+      const rol = p.rolEfectivo
+      if (rol && estado[rol] !== 'reserva' && rol !== 'autor') {
+        estado[rol] = 'trabajando'
+        if (!tarea[rol]) tarea[rol] = t.id
+      }
+    }
+  }
+  for (const a of vivos) {
+    const r = roles.find((x) => x.agente && x.agente === a.type)
+    if (r && estado[r.id] !== 'reserva') estado[r.id] = 'trabajando'
+  }
+  if (pendientesAutor > 0) estado.autor = 'trabajando'
+  return { estado, tarea }
+}
+
+// Los roles por los que pasa una tarea, en orden, sin repetir seguidos y sin etapas omitidas
+export function rutaDe(t) {
+  const ruta = []
+  for (const p of t.pipeline) {
+    if (p.estado === 'omitida' || !p.rolEfectivo) continue
+    if (ruta.length && ruta[ruta.length - 1].rol === p.rolEfectivo) {
+      if (p.estado === 'activa') ruta[ruta.length - 1].estado = 'activa'
+      continue
+    }
+    ruta.push({ rol: p.rolEfectivo, estado: p.estado })
+  }
+  return ruta
+}
+
+// Los hallazgos de una tarea con los roles que los dejaron y los que los resolvieron
+export function hallazgosDe(t) {
+  const lista = []
+  for (const p of t.pipeline) {
+    for (const h of p.hallazgos || []) lista.push({ de: h.de, a: h.resuelto_por || '', estado: h.estado })
+  }
+  return lista
+}
+
 // ---------- lectura de datos ----------
 
 async function leerJson($, ruta) {
@@ -169,16 +221,20 @@ async function cargar($) {
   const lista = []
   hechas = 0
   if (roadmap) {
+    ordenFases = (roadmap.phases || []).map((f) => f.id)
+    const abierta = (roadmap.phases || []).find((f) => (f.milestones || []).some((m) => (m.tasks || []).some((t) => t.status !== 'done' && t.status !== 'dropped')))
+    faseActual = abierta ? abierta.id : ordenFases[ordenFases.length - 1] || 'F0'
     for (const fase of roadmap.phases || []) {
       for (const hito of fase.milestones || []) {
         for (const t of hito.tasks || []) {
           if (t.status === 'done') hechas += 1
           if (!EN_MARCHA.includes(t.status)) continue
           const actividad = await leerJson($, DIR_TAREAS + '/' + t.id + '.json')
-          const pipeline = pipelineDe(t.status, actividad, equipo.etapas)
-          const etapa = etapaActual(pipeline)
           const especialista = actividad && actividad.pipeline && actividad.pipeline.especialista ? actividad.pipeline.especialista : ''
-          lista.push({ id: t.id, titulo: t.title, estado: t.status, pipeline, etapa, rol: rolDe(etapa, actividad, equipo.etapas), especialista, hito: hito.id })
+          const conEspecialista = especialista ? { pipeline: { especialista } } : null
+          const pipeline = pipelineDe(t.status, actividad, equipo.etapas).map((p) => ({ ...p, rolEfectivo: p.por || rolDe(p.etapa, conEspecialista, equipo.etapas) }))
+          const etapa = etapaActual(pipeline)
+          lista.push({ id: t.id, titulo: t.title, estado: t.status, pipeline, etapa, rol: rolDe(etapa, actividad, equipo.etapas), especialista, hito: hito.id, fase: fase.id })
         }
       }
     }
@@ -323,27 +379,26 @@ export function register(on) {
     const cabecera = Box({
       flexDirection: 'row',
       columnGap: 3,
-      children: [pestana('flujo', 'Flujo', '1'), pestana('equipo', 'Equipo', '2'), Text({ dimColor: true, children: [actualizado ? 'se actualiza solo · ' + actualizado : 'cargando…'] })],
+      children: [pestana('oficina', 'Oficina', '1'), pestana('traspasos', 'Traspasos', '2'), pestana('equipo', 'Equipo', '3'), Text({ dimColor: true, children: [actualizado ? 'en vivo · ' + actualizado : 'cargando…'] })],
     })
 
     const filas = []
     if (error) filas.push(Text({ color: 'yellow', children: [error] }))
     if (!equipo) {
       filas.push(Text({ dimColor: true, children: ['Cargando el equipo…'] }))
-    } else if (tab === 'flujo') {
-      filas.push(
-        ...vistaFlujo(ctx, {
-          elegir: (id) => {
-            seleccion = id
-            redibujar()
-          },
-          decidir: (clave, valor) => guardarAccion($, clave, valor),
-          enviar: async (accion, decision) => {
-            await guardarAccion($, accion.clave, { decision, enviado: true })
-            await $.prompt.submit({ text: mensajeAutor(accion, decision), asUser: true })
-          },
-        }),
-      )
+    } else if (tab === 'oficina' || tab === 'traspasos') {
+      const acc = {
+        elegir: (id) => {
+          seleccion = id
+          redibujar()
+        },
+        decidir: (clave, valor) => guardarAccion($, clave, valor),
+        enviar: async (accion, decision) => {
+          await guardarAccion($, accion.clave, { decision, enviado: true })
+          await $.prompt.submit({ text: mensajeAutor(accion, decision), asUser: true })
+        },
+      }
+      filas.push(...(tab === 'oficina' ? vistaOficina(ctx, acc) : vistaTraspasos(ctx, acc)))
     } else {
       filas.push(...vistaEquipo(ctx))
     }
@@ -358,84 +413,102 @@ function titulo(Text, texto) {
   return Text({ bold: true, color: 'cyan', children: [texto] })
 }
 
-function etapasHumanas() {
-  return equipo.etapas.filter((e) => equipo.roles.some((r) => r.id === e.rol && r.tipo === 'humano')).map((e) => e.id)
-}
-
-function vistaFlujo(ctx, acc) {
-  const { Text, Box, Button, Svg, escritorio, ancho } = ctx
-  const filas = []
-  const conteo = contarPorEtapa(tareas)
-
-  // 1. Lo que te toca a ti
-  filas.push(titulo(Text, 'Te toca a ti'))
-  const items = accionesDelAutor(tareas, prs)
-  if (items.length === 0) filas.push(Text({ dimColor: true, children: ['Nada pendiente de ti. ✓'] }))
-  for (const item of items) filas.push(tarjetaAccion(ctx, item, acciones[item.clave], acc))
-  filas.push(Text({ children: [' '] }))
-
-  // 2. El flujo en una mirada
-  if (escritorio) {
-    filas.push(Svg({ alt: 'Flujo de las tareas por etapa', width: Math.min(ancho, 600), height: 128, source: svgFlujo(equipo.etapas, conteo, etapasHumanas(), ancho) }))
-  } else {
-    filas.push(Text({ bold: true, children: [equipo.etapas.map((s) => s.glifo + ' ' + (conteo[s.id] || 0)).join('  →  ')] }))
-  }
-  filas.push(Text({ dimColor: true, children: ['Hechas ' + hechas + ' · en marcha ' + tareas.length + (escritorio ? ' · el aro punteado marca dónde participas tú' : '')] }))
-  filas.push(Text({ children: [' '] }))
-
-  // 3. Quién trabaja ahora
-  const vivos = agentes
+function vivosAhora() {
+  return agentes
     .filter((a) => a.status === 'running' || a.status === 'waiting')
     .map((a) => {
       const rol = rolDeAgente(a.type, equipo.roles)
       return { nombre: rol ? nombreRol(rol) : a.type, detalle: a.description || '' }
     })
-  filas.push(titulo(Text, 'Ahora trabajando'))
-  if (escritorio) {
-    filas.push(Svg({ alt: 'Especialistas activos', width: Math.min(ancho, 600), height: Math.max(40, 12 + vivos.length * 26), source: svgAhora(vivos, ancho) }))
-  } else if (vivos.length === 0) {
-    filas.push(Text({ dimColor: true, children: ['Nadie trabaja ahora en esta sesión.'] }))
-  } else {
-    for (const v of vivos) filas.push(Text({ children: ['● ' + v.nombre + (v.detalle ? ' · ' + v.detalle : '')] }))
-  }
-  filas.push(Text({ children: [' '] }))
+}
 
-  // 4. Diagrama de traspasos de la tarea elegida
-  filas.push(titulo(Text, 'Traspasos de la tarea'))
+// Los botones para elegir la tarea que se está mirando
+function selectorTareas(ctx, acc) {
+  const { Box, Button } = ctx
+  return Box({
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    columnGap: 2,
+    children: tareas.map((t) => {
+      const def = equipo.etapas.find((e) => e.id === t.etapa)
+      return Button({ key: 'sel-' + t.id, label: t.id + ' ' + (def ? def.glifo : ''), plain: true, dimColor: t.id !== seleccion, onPress: () => acc.elegir(t.id) })
+    }),
+  })
+}
+
+function tareaElegida() {
+  return tareas.find((x) => x.id === seleccion) || tareas[0] || null
+}
+
+function bandeja(ctx, acc) {
+  const { Text } = ctx
+  const filas = [titulo(Text, 'Te toca a ti')]
+  const items = accionesDelAutor(tareas, prs)
+  if (items.length === 0) filas.push(Text({ dimColor: true, children: ['Nada pendiente de ti. ✓'] }))
+  for (const item of items) filas.push(tarjetaAccion(ctx, item, acciones[item.clave], acc))
+  return filas
+}
+
+// La oficina: el estudio en planta, con quién trabaja en qué y el recorrido de la tarea elegida
+function vistaOficina(ctx, acc) {
+  const { Text, Svg, escritorio, ancho } = ctx
+  const filas = [...bandeja(ctx, acc), Text({ children: [' '] }), titulo(Text, 'El estudio ahora')]
+  const items = accionesDelAutor(tareas, prs)
+  const t = tareaElegida()
+  const vivos = vivosAhora()
+  if (escritorio) {
+    const { estado, tarea } = estadoDeRoles(tareas, agentes, equipo.roles, faseActual, ordenFases, items.length)
+    const enEstudio = equipo.roles.filter((r) => estado[r.id] !== 'reserva').length
+    const o = svgOficina({
+      ancho,
+      deptos: equipo.deptos,
+      roles: equipo.roles,
+      estado,
+      tarea,
+      ruta: t ? rutaDe(t) : [],
+      hallazgos: t ? hallazgosDe(t) : [],
+      pendientesAutor: items.length,
+      pie: 'Fase ' + faseActual + ' · ' + enEstudio + ' de ' + equipo.roles.length + ' en el estudio',
+    })
+    filas.push(Svg({ alt: 'Plano del estudio con los empleados', width: o.ancho, height: o.alto, source: o.svg }))
+  } else {
+    const conteo = contarPorEtapa(tareas)
+    filas.push(Text({ bold: true, children: [equipo.etapas.map((s) => s.glifo + ' ' + (conteo[s.id] || 0)).join('  →  ')] }))
+    for (const v of vivos) filas.push(Text({ children: ['● ' + v.nombre + (v.detalle ? ' · ' + v.detalle : '')] }))
+    if (vivos.length === 0) filas.push(Text({ dimColor: true, children: ['Nadie trabaja ahora en esta sesión.'] }))
+  }
+  filas.push(Text({ dimColor: true, children: ['Hechas ' + hechas + ' · en marcha ' + tareas.length + ' · fase ' + faseActual] }))
+  filas.push(Text({ children: [' '] }))
   if (tareas.length === 0) {
     filas.push(Text({ dimColor: true, children: ['No hay tareas en marcha.'] }))
     return filas
   }
-  filas.push(
-    Box({
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      columnGap: 2,
-      children: tareas.map((t) => {
-        const def = equipo.etapas.find((e) => e.id === t.etapa)
-        return Button({
-          key: 'sel-' + t.id,
-          label: t.id + ' ' + (def ? def.glifo : ''),
-          plain: true,
-          dimColor: t.id !== seleccion,
-          onPress: () => acc.elegir(t.id),
-        })
-      }),
-    }),
-  )
-  const t = tareas.find((x) => x.id === seleccion) || tareas[0]
-  const conEspecialista = t.especialista ? { pipeline: { especialista: t.especialista } } : null
+  filas.push(titulo(Text, 'Tarea que se mira'))
+  filas.push(selectorTareas(ctx, acc))
   filas.push(Text({ bold: true, wrap: 'wrap', children: [t.id + ' · ' + t.titulo] }))
   const pr = prDeTarea(t.id, prs)
-  filas.push(Text({ dimColor: true, children: ['Estado ' + t.estado + ' · hito ' + t.hito + ' · ahora: ' + nombreEtapa(t.etapa) + ' (' + nombreRol(t.rol) + ')' + (pr ? ' · PR #' + pr.number : '')] }))
+  filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['Ahora: ' + nombreEtapa(t.etapa) + ' (' + nombreRol(t.rol) + ')' + (pr ? ' · PR #' + pr.number : '') + ' · el recorrido va dibujado en el plano'] }))
+  return filas
+}
+
+// El detalle de una tarea: quién le pasa a quién, qué entregó cada uno y los hallazgos
+function vistaTraspasos(ctx, acc) {
+  const { Text, Svg, escritorio, ancho } = ctx
+  const filas = []
+  if (tareas.length === 0) return [Text({ dimColor: true, children: ['No hay tareas en marcha.'] })]
+  filas.push(titulo(Text, 'Tarea'))
+  filas.push(selectorTareas(ctx, acc))
+  const t = tareaElegida()
+  filas.push(Text({ bold: true, wrap: 'wrap', children: [t.id + ' · ' + t.titulo] }))
+  const pr = prDeTarea(t.id, prs)
+  filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['Estado ' + t.estado + ' · hito ' + t.hito + ' · ahora: ' + nombreEtapa(t.etapa) + ' (' + nombreRol(t.rol) + ')' + (pr ? ' · PR #' + pr.number : '')] }))
   filas.push(Text({ children: [' '] }))
   const lineas = t.pipeline.map((p, i) => {
-    const rolId = p.por || rolDe(p.etapa, conEspecialista, equipo.etapas)
     const sig = t.pipeline[i + 1]
     return {
       nombre: nombreEtapa(p.etapa),
-      quien: nombreRol(rolId),
-      indice: indiceRol(rolId),
+      quien: nombreRol(p.rolEfectivo),
+      indice: indiceRol(p.rolEfectivo),
       estado: p.estado,
       nota: p.inferido ? '' : p.nota,
       entrega: p.entrega,
@@ -451,7 +524,7 @@ function vistaFlujo(ctx, acc) {
       filas.push(Text({ bold: l.estado === 'activa', dimColor: l.estado === 'omitida' || l.estado === 'pendiente', wrap: 'wrap', children: [GLIFO_ESTADO[l.estado] + ' ' + l.nombre + ' · ' + l.quien + (l.nota ? ' — ' + l.nota : '')] }))
       if (l.entrega) filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['    Entrega: ' + l.entrega] }))
       for (const h of l.hallazgos) {
-        filas.push(Text({ color: h.estado === 'resuelto' ? undefined : 'yellow', wrap: 'wrap', children: ['    ' + (h.estado === 'resuelto' ? '✓' : '⚑') + ' ' + h.de + ': ' + h.texto]}))
+        filas.push(Text({ color: h.estado === 'resuelto' ? undefined : 'yellow', wrap: 'wrap', children: ['    ' + (h.estado === 'resuelto' ? '✓' : '⚑') + ' ' + h.de + ': ' + h.texto] }))
         if (h.estado === 'resuelto' && h.como) filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['      Lo resolvió ' + h.resuelto_por + ': ' + h.como] }))
       }
     }
@@ -515,17 +588,25 @@ function tarjetaAccion(ctx, item, estado, acc) {
 function vistaEquipo(ctx) {
   const { Text, Box, Svg, escritorio } = ctx
   const filas = []
-  equipo.roles.forEach((rol, i) => {
-    const suyas = tareas.filter((t) => t.rol === rol.id)
-    const vivo = Boolean(rol.agente) && agentes.some((a) => a.type === rol.agente && (a.status === 'running' || a.status === 'waiting'))
-    const cuerpo = [
-      Box({ flexDirection: 'row', columnGap: 1, children: [Text({ bold: true, children: [rol.nombre] }), Text({ dimColor: true, children: ['· ' + rol.tipo] })] }),
-      Text({ wrap: 'wrap', children: [rol.hace] }),
-      Text({ dimColor: true, wrap: 'wrap', children: ['Entrega: ' + rol.entrega] }),
-    ]
-    if (suyas.length) cuerpo.push(Text({ color: 'yellow', children: ['Ahora: ' + suyas.map((t) => t.id).join(', ')] }))
-    const avatar = escritorio ? Svg({ alt: rol.nombre, width: 48, height: 48, source: svgAvatar(rol.nombre, i, vivo || suyas.length > 0, rol.tipo === 'humano') }) : Text({ bold: true, children: [(vivo ? '●' : '○') + ' '] })
-    filas.push(Box({ flexDirection: 'row', columnGap: 2, borderStyle: 'round', paddingX: 1, marginBottom: 1, children: [avatar, Box({ flexDirection: 'column', flexShrink: 1, children: cuerpo })] }))
-  })
+  const idx = (f) => Math.max(0, ordenFases.indexOf(f))
+  for (const depto of equipo.deptos) {
+    const roles = equipo.roles.filter((r) => r.depto === depto.id)
+    if (roles.length === 0) continue
+    filas.push(Text({ bold: true, color: 'cyan', children: [depto.nombre] }))
+    for (const rol of roles) {
+      const i = equipo.roles.indexOf(rol)
+      const suyas = tareas.filter((t) => t.rol === rol.id)
+      const reserva = idx(rol.desde) > idx(faseActual)
+      const vivo = Boolean(rol.agente) && agentes.some((a) => a.type === rol.agente && (a.status === 'running' || a.status === 'waiting'))
+      const cuerpo = [
+        Box({ flexDirection: 'row', columnGap: 1, children: [Text({ bold: true, dimColor: reserva, children: [rol.nombre] }), Text({ dimColor: true, children: ['· ' + rol.tipo + (reserva ? ' · se une en ' + rol.desde : '')] })] }),
+        Text({ wrap: 'wrap', dimColor: reserva, children: [rol.hace] }),
+        Text({ dimColor: true, wrap: 'wrap', children: ['Entrega: ' + rol.entrega] }),
+      ]
+      if (suyas.length) cuerpo.push(Text({ color: 'yellow', children: ['Ahora: ' + suyas.map((t) => t.id).join(', ')] }))
+      const avatar = escritorio ? Svg({ alt: rol.nombre, width: 48, height: 48, source: svgAvatar(rol.nombre, i, vivo || suyas.length > 0, rol.tipo === 'humano') }) : Text({ bold: true, children: [(vivo ? '●' : '○') + ' '] })
+      filas.push(Box({ flexDirection: 'row', columnGap: 2, borderStyle: 'round', paddingX: 1, marginBottom: 1, children: [avatar, Box({ flexDirection: 'column', flexShrink: 1, children: cuerpo })] }))
+    }
+  }
   return filas
 }

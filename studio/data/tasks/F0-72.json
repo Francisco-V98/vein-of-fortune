@@ -28,6 +28,16 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "Propuesta de siete etapas (ideación, análisis, producción, QA técnico, revisión del autor, prueba del autor y cierre) y nueve roles: siete agentes en .claude/agents, el autor y el coordinador. El flujo de cada tarea va en un bloque pipeline de su archivo de actividad y build.py lo valida. Las etapas y los roles están en 🟡 hasta que el autor los confirme; los agentes aún no se han usado en una tarea real."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "No siento que estos sean los empleados reales que necesitamos. Quiero que analices y crees todos los que vamos a utilizar; tienes libertad para proponerlo todo."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Se revisó el roadmap fase por fase y el equipo pasa a 21 roles en 7 departamentos: se añaden economista, diseñador de contenido, diseñador UI/UX, localizador, diseñador de sonido, arquitecto, desarrollador de herramientas, ingeniero de seguridad, asesor legal, responsable de lanzamiento, revisor de código y diseñador de pruebas. Cada rol tiene su fase de incorporación y su agente en .claude/agents (19 agentes). Los que aún no se incorporan quedan en reserva en el plano."
     }
   ],
   "evidence": [],
