@@ -285,7 +285,7 @@
               "title": "Guion día a día del Acto I",
               "est": 6,
               "status": "backlog",
-              "desc": "Los primeros 7 a 10 días con objetivo de aprendizaje, qué se desbloquea y qué decisión toma el jugador cada día.",
+              "desc": "Los primeros 7 a 10 días con objetivo de aprendizaje, qué se desbloquea y qué decisión toma el jugador cada día. Se escribe después de la biblia narrativa (F0.11).",
               "done_when": "Guion de días aprobado.",
               "prio": "P1"
             },
@@ -450,6 +450,84 @@
               "prio": "P1",
               "desc": "Página «El juego» con 28 láminas que resumen la idea, la jugabilidad, el mundo, la historia, el arte, cómo se construye y el plan, para tener todo en un solo lugar. Cada lámina enlaza a su documento fuente.",
               "done_when": "La página se abre desde el hub, se navega con teclado, funciona en móvil, se puede imprimir y todas las fuentes e imágenes existen."
+            }
+          ]
+        },
+        {
+          "id": "F0.11",
+          "name": "Biblia narrativa",
+          "tasks": [
+            {
+              "id": "F0-41",
+              "title": "Biblia narrativa: estructura, voz y glosario",
+              "est": 3,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Documento 18 con la estructura de la biblia narrativa, las reglas de escritura (tono, voz por personaje, cómo se nombra a las facciones y a la Aetherita) y un glosario de términos de Valdoria en español e inglés.",
+              "done_when": "Estructura y reglas de escritura acordadas con el autor."
+            },
+            {
+              "id": "F0-42",
+              "title": "Fichas a fondo del elenco",
+              "est": 6,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Ficha de cada uno de los 8 personajes: qué quiere, qué oculta, cómo habla, cómo trata al protagonista y cómo cambia en cada acto. Incluye las relaciones entre ellos.",
+              "done_when": "Las 8 fichas acordadas con el autor."
+            },
+            {
+              "id": "F0-43",
+              "title": "Pasado de Valdoria y de la Aetherita",
+              "est": 4,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Cronología de lo que pasó antes del juego: el descubrimiento de la Aetherita, el nacimiento de la Comisión del Éter, los Faroleros, la Unión y lo que hizo Anselmo hasta desaparecer.",
+              "done_when": "Cronología acordada y sin contradicciones con los documentos 05, 07 y 08."
+            },
+            {
+              "id": "F0-44",
+              "title": "Acto II: las tres variantes de quién está detrás de Reme",
+              "est": 5,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Cómo cambia el Acto II si la facción detrás de Reme es el Consorcio Arvel, Los Faroleros o el Ministerio: escenas, aliados, conflictos y consecuencias de cada una.",
+              "done_when": "Las 3 variantes descritas y acordadas con el autor."
+            },
+            {
+              "id": "F0-45",
+              "title": "Árbol de decisiones y consecuencias de los cuatro actos",
+              "est": 6,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Las bifurcaciones grandes (acreedor del Acto II, alianza, destino de la Aetherita) y las consecuencias pequeñas de cada acto, con qué las dispara y qué cambia en el mundo, el mercado y los personajes.",
+              "done_when": "Árbol completo acordado y visible en el hub."
+            },
+            {
+              "id": "F0-46",
+              "title": "Finales, epílogos e hilos abiertos",
+              "est": 4,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Un epílogo para cada decisión sobre la Aetherita, el destino de cada personaje y de cada facción según las alianzas, y los hilos que quedan abiertos para una segunda parte.",
+              "done_when": "Finales y epílogos acordados con el autor."
+            },
+            {
+              "id": "F0-47",
+              "title": "Umbrales que activan cada acto",
+              "est": 3,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Reglas concretas para pasar de un acto al siguiente (estatus, deuda, logros, relación con facciones) de modo que se puedan cumplir de varias maneras y no obliguen a seguir la trama al pie de la letra.",
+              "done_when": "Umbrales definidos para los 4 actos y acordados con el autor."
+            },
+            {
+              "id": "F0-48",
+              "title": "Lectura final y coherencia de la biblia narrativa",
+              "est": 2,
+              "status": "backlog",
+              "prio": "P2",
+              "desc": "Revisión de que la biblia no se contradice con los documentos del juego, actualización del mapa de historia y de la presentación, y lista de lo que falta para empezar los guiones.",
+              "done_when": "Biblia revisada y sin contradicciones; mapa de historia actualizado."
             }
           ]
         }
