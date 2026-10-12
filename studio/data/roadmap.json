@@ -184,7 +184,7 @@
               "id": "F0-15",
               "title": "Sistema interno de tareas con estados, evidencias y comentarios",
               "est": 10,
-              "status": "review",
+              "status": "done",
               "desc": "Reemplaza a Trello. El tablero vive dentro del hub; los estados se guardan en el código y los cambia Claude. Cada tarea tiene historial de estados, comentarios y evidencias.",
               "done_when": "El hub muestra el tablero con historial, evidencias y comentarios por tarea, y el build valida la coherencia.",
               "prio": "P1"
@@ -193,7 +193,7 @@
               "id": "F0-30",
               "title": "Backlog desglosado con prioridades y línea de tiempo por horas",
               "est": 5,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Desglosar las tareas gruesas en tareas de 2 a 12 horas, añadir las que faltaban (pruebas, reservas para errores, audio, arte por pieza), asignar prioridad P0 a P3 y ofrecer una línea de tiempo en horas.",
               "done_when": "El hub muestra el backlog completo con prioridades, el alcance por prioridad y la línea de tiempo en horas."
@@ -242,7 +242,7 @@
               "id": "F0-19",
               "title": "Documento de marca: personalidad, voz y tono en ES y EN",
               "est": 4,
-              "status": "review",
+              "status": "done",
               "desc": "Personalidad, voz (tuteo en español, tono cercano en inglés), tono, frases de marca y reglas de escritura.",
               "done_when": "Documento de marca acordado.",
               "prio": "P1"
@@ -317,7 +317,7 @@
               "id": "F0-26",
               "title": "Reorganizar en game/ y studio/",
               "est": 3,
-              "status": "review",
+              "status": "done",
               "desc": "Mover documentos, hub, datos y assets de referencia a studio/. game/ queda para el proyecto Godot.",
               "done_when": "Estructura creada y el hub sigue funcionando.",
               "prio": "P1"
@@ -326,7 +326,7 @@
               "id": "F0-27",
               "title": "Reglas de extracción y exclusión de studio/",
               "est": 2,
-              "status": "review",
+              "status": "done",
               "desc": "Cómo ignorar studio/ o extraerlo con su historial a otro repositorio.",
               "done_when": "Procedimiento documentado y probado.",
               "prio": "P1"
@@ -335,7 +335,7 @@
               "id": "F0-28",
               "title": "Renombrar el proyecto con el nombre elegido",
               "est": 2,
-              "status": "review",
+              "status": "done",
               "desc": "Reemplazar el nombre en documentos, hub, README y configuración.",
               "done_when": "No quedan referencias al nombre provisional.",
               "prio": "P1"
@@ -344,7 +344,7 @@
               "id": "F0-29",
               "title": "Repositorio privado en GitHub",
               "est": 3,
-              "status": "review",
+              "status": "done",
               "desc": "Preparar .gitignore, README y primer commit; subir cuando el nombre esté definido.",
               "done_when": "El repositorio existe, es privado y tiene el primer commit.",
               "prio": "P1"
