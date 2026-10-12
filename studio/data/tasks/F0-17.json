@@ -1,0 +1,54 @@
+{
+  "id": "F0-17",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Siguiente tarea en el orden del plan.",
+      "ref": "rama studio/F0-17-arte-de-referencia-corregido"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Flechas recoloreadas a cian y vinotinto y ministro nuevo pegado en la hoja de sprites.",
+      "ref": "rama studio/F0-17-arte-de-referencia-corregido"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Las flechas se corrigieron recoloreando los píxeles (sin gasto). Para el ministro se generaron 5 variantes por 1,25 créditos en total; el autor descargó la elegida al escritorio y se pegó en la hoja de sprites. Subir la hoja completa al servicio para editarla fue bloqueado por el sistema de permisos, por eso el sprite se compuso en local."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Hoja de sprites corregida",
+      "path": "evidence/F0-17/sprites-corregido.png"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Terminal de mercado corregida",
+      "path": "evidence/F0-17/ui-mercado-corregido.png"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Documento 12 · Dirección de arte",
+      "path": "12-direccion-de-arte"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "Las tres imágenes nuevas están registradas en assets.json y existen; las originales quedan marcadas como superadas; build en modo estricto correcto."
+    }
+  ]
+}
