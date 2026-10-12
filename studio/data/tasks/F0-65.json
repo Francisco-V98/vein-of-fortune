@@ -1,0 +1,53 @@
+{
+  "id": "F0-65",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Tras aprobar F0-64 se sigue con la Unión, Los Faroleros y la prensa, con la hoja del Consorcio como referencia.",
+      "ref": "rama studio/F0-65-npc-union-faroleros-y-prensa"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Dos hojas de grupo con seis tipos.",
+      "ref": "rama studio/F0-65-npc-union-faroleros-y-prensa"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Aprobadas las hojas del Ministerio, la Comisión y el Consorcio; continuar."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "El voceador de periódicos pasó a la hoja de civiles (F0-66) para que cada hoja tenga tres tipos. Los diseños de cada tipo son propuestas mías: por ejemplo, el delegado lleva una campanilla además del papel enrollado. Coste: 2 créditos."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "NPC Unión y prensa (minero sindicalista, delegado y reportero)",
+      "path": "evidence/F0-65/union-prensa.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "NPC Los Faroleros (cobrador, matón e informante)",
+      "path": "evidence/F0-65/faroleros.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "Las dos imágenes existen, están registradas en assets.json y el build en modo estricto es correcto."
+    }
+  ]
+}
