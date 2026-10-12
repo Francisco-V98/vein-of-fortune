@@ -13,6 +13,7 @@ Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/qa/cases.json       catálogo de casos de prueba y sus resultados
   - studio/data/qa/bugs/BUG-*.json  registro de errores
   - studio/data/presentation.json   láminas de la página «El juego» (resumen curado del diseño)
+  - studio/data/story.json          mapa de historia: actos, carriles y tareas relacionadas
 
 Regla de coherencia: si el estado de una tarea no es "backlog", debe existir su
 archivo de actividad y el último movimiento del historial debe llevar a ese estado.
@@ -47,7 +48,7 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 GROUPS = [
     ("Diseño del juego", ["00", "01", "02", "03", "04", "09"]),
-    ("Mundo y narrativa", ["05", "07", "08"]),
+    ("Mundo y narrativa", ["05", "07", "08", "17"]),
     ("Marca y arte", ["12", "13"]),
     ("Técnico y legal", ["10", "11"]),
     ("Arquitectura y calidad", ["14", "15"]),
@@ -294,6 +295,30 @@ def load_presentation(doc_ids):
     return {"sections": sections, "slides": data.get("slides", [])}
 
 
+def load_story(task_ids):
+    """Carga y valida el mapa de historia (actos y carriles)."""
+    path = DATA / "story.json"
+    if not path.exists():
+        return {"acts": [], "lanes": [], "after": ""}
+    data = load_json(path)
+    acts = data.get("acts", [])
+    for act in acts:
+        for key in ("n", "title", "color", "place", "time", "closes"):
+            if not act.get(key):
+                warn("Acto %s sin '%s'" % (act.get("n", "?"), key))
+        for tid in act.get("tasks", []):
+            if tid not in task_ids:
+                warn("El acto %s cita una tarea inexistente: %s" % (act.get("n", "?"), tid))
+    lane_ids = set()
+    for lane in data.get("lanes", []):
+        if lane.get("id") in lane_ids:
+            warn("Carril repetido en el mapa de historia: %s" % lane.get("id"))
+        lane_ids.add(lane.get("id"))
+        if len(lane.get("cells", [])) != len(acts):
+            warn("El carril %s tiene %d celdas y hay %d actos" % (lane.get("id"), len(lane.get("cells", [])), len(acts)))
+    return {"acts": acts, "lanes": data.get("lanes", []), "after": data.get("after", "")}
+
+
 def build_assets(assets):
     for img in assets["images"]:
         path = STUDIO / img["file"]
@@ -331,6 +356,7 @@ def build_hub():
         "palette": load_json(DATA / "palette.json"),
         "qa": load_qa(task_ids),
         "presentation": load_presentation({d["id"] for d in docs}),
+        "story": load_story(task_ids),
     }
 
 

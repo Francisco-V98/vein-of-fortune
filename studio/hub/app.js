@@ -271,7 +271,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('mapa', 'Mapa de historia', '⌖') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -840,6 +840,36 @@
     else if (k === 'f' || k === 'F') { e.preventDefault(); toggleFullscreen(); }
   });
 
+  /* ---------- mapa de historia ---------- */
+  function viewStory() {
+    var st = H.story || { acts: [], lanes: [], after: '' };
+    var byId = {};
+    TASKS.forEach(function (t) { byId[t.id] = t; });
+    var h = '<p class="eyebrow">Diseño del juego</p><h1 class="page-title">Mapa de historia</h1><p class="page-lead">Los cuatro actos en columnas y, en filas, lo que pasa y se desbloquea en cada uno. Los actos se activan por umbrales y se pueden recorrer con más o menos desvíos, así que la duración es orientativa. Documento: ' + '<a href="#/docs/17-mapa-de-historia">17 · Mapa de historia</a>.</p>';
+    h += '<div class="story" style="--n:' + st.acts.length + '">';
+    h += '<div class="st-row st-head"><div class="st-lab"></div>' + st.acts.map(function (a) {
+      return '<div class="st-act" style="--c:' + esc(a.color) + '"><span class="st-n">Acto ' + esc(a.n) + '</span><h2>' + esc(a.title) + '</h2><small>' + esc(a.place) + '</small><span class="st-time">⏱ ' + esc(a.time) + '</span></div>';
+    }).join('') + '</div>';
+    h += '<div class="st-row st-close"><div class="st-lab"><span class="gl" aria-hidden="true">⚑</span>Se cierra cuando</div>' + st.acts.map(function (a) {
+      return '<div class="st-cell" style="--c:' + esc(a.color) + '"><p>' + esc(a.closes) + '</p></div>';
+    }).join('') + '</div>';
+    st.lanes.forEach(function (l) {
+      h += '<div class="st-row"><div class="st-lab"><span class="gl" aria-hidden="true">' + esc(l.glyph || '•') + '</span>' + esc(l.label) + '</div>' + st.acts.map(function (a, i) {
+        var cell = l.cells[i] || [];
+        return '<div class="st-cell" style="--c:' + esc(a.color) + '"><ul>' + cell.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>';
+      }).join('') + '</div>';
+    });
+    h += '<div class="st-row"><div class="st-lab"><span class="gl" aria-hidden="true">▤</span>Tareas del plan</div>' + st.acts.map(function (a) {
+      return '<div class="st-cell" style="--c:' + esc(a.color) + '"><ul class="st-tasks">' + (a.tasks || []).map(function (id) {
+        var t = byId[id];
+        return t ? '<li>' + statusPill(t.status) + ' <a href="#/tarea/' + esc(t.id) + '"><span class="tid">' + esc(t.id) + '</span> ' + esc(t.title) + '</a></li>' : '';
+      }).join('') + '</ul></div>';
+    }).join('') + '</div>';
+    h += '</div>';
+    if (st.after) h += '<p class="st-after">' + esc(st.after) + '</p>';
+    return h;
+  }
+
   /* ---------- QA ---------- */
   var RESULT_LABEL = { 'not-run': 'Sin ejecutar', pass: 'Aprobado', fail: 'Fallido', blocked: 'Bloqueado', skipped: 'Omitido' };
   var SEVERITY_LABEL = { S1: 'Crítico', S2: 'Grave', S3: 'Moderado', S4: 'Menor' };
@@ -1097,6 +1127,7 @@
       case 'tablero': html = viewBoard(); title += ' · Tablero'; break;
       case 'qa': html = viewQA(); title += ' · QA'; break;
       case 'juego': html = viewGame(); title += ' · El juego'; break;
+      case 'mapa': html = viewStory(); title += ' · Mapa de historia'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
       case 'sonido': html = viewSound(); title += ' · Sonido'; break;

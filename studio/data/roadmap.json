@@ -275,7 +275,7 @@
               "id": "F0-22",
               "title": "Story map por actos",
               "est": 8,
-              "status": "backlog",
+              "status": "review",
               "desc": "Línea de tiempo de los 4 actos con carriles: narrativa, mecánicas que se desbloquean, mercado y eventos, zonas, personajes, estatus y arte necesario. Visible en el hub.",
               "done_when": "Story map completo y visible en el hub.",
               "prio": "P1"
