@@ -1,0 +1,53 @@
+{
+  "id": "F0-42",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor responde la propuesta de fichas y pide fichas claras y detalladas, incluida la del protagonista.",
+      "ref": "rama docs/F0-42-elenco-a-fondo"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 19 con 9 fichas (protagonista y 8 personajes), la verdad sobre Anselmo, la tabla de pistas y la red de relaciones.",
+      "ref": "rama docs/F0-42-elenco-a-fondo"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Quiero fichas claras y detalladas de cada uno: lore, arquetipo, forma de hablar, personalidad, trasfondo, emociones, intenciones, acciones y conexiones. Anselmo vivo pero se cree muerto y enfermo, y cómplice que se descubre al final del último capítulo, dejando abierta una continuación. Reme traiciona por obligación y al final se une al protagonista. El Ministro es el enemigo claro, duro y no tan razonable."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Mi opinión sobre el giro de Anselmo: funciona si se siembran pistas desde el Acto I, si su motivo es ambiguo y no simplemente malo, y si la revelación añade una pregunta sin invalidar la decisión del Acto IV. Todo está en el documento 19. Los nombres de lugares y los datos nuevos (aldea del protagonista, edades, cargos) son propuestas mías hasta revisarlas en F0-43. El documento 08 queda actualizado con las tres decisiones."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Documento 19 · Elenco a fondo",
+      "path": "19-elenco-a-fondo"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Ficha de Reme en el hub",
+      "path": "evidence/F0-42/ficha-reme.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "El documento se muestra con 28 tablas, sin marcas rotas; se corrigió un choque de clases CSS que partía los marcadores ✅ y 🟡 en varias líneas; build en modo estricto correcto."
+    }
+  ]
+}
