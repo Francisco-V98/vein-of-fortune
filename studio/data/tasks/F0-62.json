@@ -1,0 +1,46 @@
+{
+  "id": "F0-62",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se sigue con Anselmo, Teo, Quiroga y Lucía una vez aprobado el protagonista. Primero las hojas de modelo.",
+      "ref": "rama studio/F0-62-hojas-del-elenco-secundario"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Cuatro hojas de modelo generadas con la de Reme como referencia de formato y estilo y el retrato aprobado de cada uno como referencia de identidad. Anselmo se dibuja como la persona de la foto, con la libreta en el bolsillo; la sonrisa salió más tímida que en su retrato. Faltan la aprobación del autor, las poses y las expresiones."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Anselmo · Hoja de modelo",
+      "path": "evidence/F0-62/anselmo-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Teo · Hoja de modelo",
+      "path": "evidence/F0-62/teo-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Quiroga · Hoja de modelo",
+      "path": "evidence/F0-62/quiroga-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Lucía · Hoja de modelo",
+      "path": "evidence/F0-62/lucia-modelo.jpg"
+    }
+  ]
+}
