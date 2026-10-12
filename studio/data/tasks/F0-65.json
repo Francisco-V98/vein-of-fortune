@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Dos hojas de grupo con seis tipos.",
       "ref": "rama studio/F0-65-npc-union-faroleros-y-prensa"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las dos hojas de NPC de la Unión, la prensa y Los Faroleros.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
