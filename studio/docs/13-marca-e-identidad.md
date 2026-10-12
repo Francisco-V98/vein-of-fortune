@@ -12,7 +12,7 @@
 - El título es **localizado por idioma**: cada idioma usa el suyo. El logotipo debe funcionar con las dos versiones (ver más abajo).
 - **Valdoria** es el nombre del mundo y se mantiene. No se usa como título.
 - Verificaciones hechas el 2026-10-11: sin coincidencias exactas en una búsqueda web preliminar y sin registro DNS para los `.com` de las dos versiones. **No es una búsqueda de marca registrada**; falta la revisión formal (ver [11](11-legal-y-cumplimiento.md)).
-- Subtítulo ❓: el autor pidió más propuestas (ver [Subtítulo](#subtítulo)).
+- Subtítulo ✅: *El éxito se gana a pico y pala* / *Success is earned with pick and shovel* (ver [Subtítulo](#subtítulo)).
 
 ## Esencia de la marca 🟡
 
@@ -73,23 +73,13 @@ Elegida por el autor el 2026-10-12. Tiene filo, pero la personalidad de la marca
 
 Las otras dos opciones, *Escarba. Negocia. Asciende.* y *Un optimista en un mundo de cínicos.*, quedan como texto de presentación y descripción de tienda. ⏳ F5-35
 
-### Subtítulo
+### Subtítulo ✅
 
-❓ Pendiente de elegir. El autor pidió propuestas en la línea de *La fortuna se cava*: una frase corta, de refrán, que no repita las palabras del título (nada de «fortuna» ni «veta»).
+| Español | English |
+|---|---|
+| **El éxito se gana a pico y pala** | **Success is earned with pick and shovel** |
 
-| # | Español | English |
-|---|---|---|
-| 1 | La suerte se cava | Luck is dug |
-| 2 | Lo bueno se desentierra | The good stuff gets dug up |
-| 3 | El futuro se cava | The future is dug |
-| 4 | La esperanza se cava | Hope is dug |
-| 5 | Lo que vale está más abajo | What's worth it lies deeper |
-| 6 | Se cava hondo, se vende alto | Dig deep, sell high |
-| 7 | Nada se regala: todo se cava | Nothing is handed out: it's all dug |
-| 8 | El éxito se gana a pico y pala | Success is earned with pick and shovel |
-| 9 | Sin subtítulo | No subtitle |
-
-Se descartaron *La fortuna se cava* (repite «fortuna» del título) y las opciones largas anteriores.
+Elegido por el autor el 2026-10-12 entre nueve propuestas con forma de refrán que no repiten las palabras del título. Va debajo del título en la tienda y en la pantalla de título. Se descartó *La fortuna se cava* porque repetía «fortuna».
 
 ## Identidad visual
 
@@ -159,7 +149,7 @@ Paleta fría con **vinotinto** como acento principal y **latón** como detalle m
 |---|---|---|
 | Nombre y esencia | ✅ elegido | F0-18 |
 | Documento de marca | 🟡 en revisión | F0-19 |
-| Guía visual (tipografía, usos) | 🟡 propuesta, falta el subtítulo | F0-20 |
+| Guía visual (tipografía, usos) | 🟡 en revisión | F0-20 |
 | Wordmark provisional | ❓ pendiente | F0-21 |
 | Logo definitivo | ❓ pendiente | F3-28 |
 | Ícono y pantalla de título | ❓ pendiente | F3-29 |
@@ -168,7 +158,6 @@ Paleta fría con **vinotinto** como acento principal y **latón** como detalle m
 
 ## Pendiente
 
-- ❓ Elegir el subtítulo (propuestas en la tabla de arriba).
 - ⏳ F1-18 Verificar la licencia y los glifos de Pixelify Sans.
 - ❓ Diseño del wordmark en ambos idiomas.
 - ❓ Búsqueda de marca formal del título.

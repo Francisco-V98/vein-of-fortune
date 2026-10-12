@@ -8,6 +8,14 @@
       "by": "claude",
       "note": "Se escribe la guía visual en el documento 13 y se piden al autor las decisiones de marca.",
       "ref": "rama studio/F0-20-guia-visual-de-marca"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Frase de marca, subtítulo, símbolo y fuente candidata decididos; guía visual escrita en el documento 13.",
+      "ref": "rama studio/F0-20-guia-visual-de-marca"
     }
   ],
   "comments": [
@@ -30,6 +38,16 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "Nueve propuestas nuevas en el documento 13, en forma de frase corta o refrán y sin repetir «fortuna» ni «veta»."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Subtítulo: «El éxito se gana a pico y pala»."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "El subtítulo queda ✅ en el documento 13. Con él, todas las decisiones de marca de esta tarea están tomadas; la tarea pasa a revisión a la espera de que el autor apruebe la guía visual."
     }
   ],
   "evidence": []
