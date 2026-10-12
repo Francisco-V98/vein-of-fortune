@@ -156,7 +156,7 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 | Minas de Sierra Alta | Jefe de seguridad del Consorcio | Abrigo azul pizarra con cuello de piel, gorra con gafas de aviador subidas, brazalete vinotinto y porra |
 | Salares del Litoral | Aduanero Mayor | Uniforme beige manchado de sal, banda vinotinta, medalla de latón, libro de registro y sello |
 | Cavernas de Cristal | Cazarrecompensas Mayor | Gabán carbón, sombrero con cristal cian, grilletes en el cinturón, espuelas y, en el collar, una cápsula de cristal sellada con un fragmento de éter a la vista |
-| La Fosa del Éter | Coronel de la Comisión | Capote verde oliva oscuro, charreteras doradas, gorra con broche de cristal, guantes blancos y bastón negro |
+| La Fosa del Éter | Coronel de la Comisión | Capote verde oliva oscuro, banda vinotinta, charreteras doradas, gorra con estrella dorada de metal, guantes blancos y bastón negro |
 
 ✅ **Regla del éter en el arte:** el éter nunca va suelto sobre el cuerpo de un personaje sano. Solo aparece contenido en una cápsula de cristal sellada, o en los mutados de La Fosa.
 
