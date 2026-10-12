@@ -1,0 +1,53 @@
+{
+  "id": "F0-49",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pide que todo esté decidido, sin ambigüedades, y que se mida la limpieza en todo el proyecto.",
+      "ref": "rama studio/F0-49-medidor-de-limpieza"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Medidor en el build y en el hub, regla en el documento 15 y en la plantilla de PR, y 8 pruebas.",
+      "ref": "rama studio/F0-49-medidor-de-limpieza"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Todo debe tener ✅ salvo lo que dependa de algo posterior, que debe quedar claro. Necesito un porcentaje de limpieza, acercarlo al 100 % y tenerlo presente en todo el proyecto para siempre."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "El punto de partida es 46 %. La meta de 90 % por documento es una propuesta mía. El medidor solo mide si algo está decidido; la coherencia entre documentos la cubre F0-50."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Vista Limpieza del diseño",
+      "path": "evidence/F0-49/limpieza.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Documento 15 · Limpieza del diseño",
+      "path": "15-flujo-de-trabajo-y-calidad"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "Vista revisada en el navegador sin errores de consola; build en modo estricto correcto; pruebas de herramientas en verde."
+    }
+  ]
+}
