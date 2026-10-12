@@ -716,7 +716,7 @@
               "id": "F0-68",
               "title": "Galería de personajes y NPC en el hub",
               "est": 5,
-              "status": "backlog",
+              "status": "review",
               "prio": "P1",
               "desc": "Vista del hub con todas las hojas por personaje y por grupo de NPC, y registro de las imágenes en assets.json.",
               "done_when": "Galería visible en el hub con todas las hojas."

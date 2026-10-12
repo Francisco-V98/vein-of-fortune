@@ -420,6 +420,62 @@ def build_assets(assets):
     return assets
 
 
+def load_gallery(world, assets):
+    """Resuelve la galería de personajes y NPC contra world.json y assets.json."""
+    data = load_json(DATA / "galeria.json")
+    registered = {i["file"] for i in assets["images"]}
+    names = {c["id"]: c for c in world["characters"]}
+    npcs = {n["id"]: n for n in world["npcs"]}
+    factions = {f["id"]: f["name"] for f in world["factions"]}
+    covered_chars, covered_npcs, covered_files = set(), set(), set()
+    people = []
+    for p in data["personajes"]:
+        ch = names.get(p["personaje"])
+        if not ch:
+            warn("galeria.json: personaje inexistente en world.json: %s" % p["personaje"])
+            continue
+        covered_chars.add(ch["id"])
+        sheets = []
+        for tipo in ("modelo", "poses", "expresiones"):
+            f = "assets-ref/personajes/%s/%s.webp" % (p["id"], tipo)
+            if f not in registered:
+                warn("galeria.json: hoja sin registrar en assets.json: %s" % f)
+                continue
+            covered_files.add(f)
+            sheets.append({"tipo": tipo, "file": f})
+        people.append({"id": p["id"], "name": p.get("nombre") or ch["name"], "act": ch["act"], "faction": factions.get(ch["faction"], "Variable" if ch["faction"] == "variable" else ""), "sheets": sheets})
+    sections = []
+    for sec in data["secciones"]:
+        sheets = []
+        for h in sec["hojas"]:
+            if h["file"] not in registered:
+                warn("galeria.json: hoja sin registrar en assets.json: %s" % h["file"])
+            covered_files.add(h["file"])
+            people_npc = []
+            for nid in h["npcs"]:
+                n = npcs.get(nid)
+                if not n:
+                    warn("galeria.json: NPC inexistente en world.json: %s" % nid)
+                    continue
+                if nid in covered_npcs:
+                    warn("galeria.json: NPC en más de una hoja: %s" % nid)
+                covered_npcs.add(nid)
+                people_npc.append({"id": nid, "name": n["name"], "faction": factions.get(n.get("faction"), "")})
+            sheets.append({"file": h["file"], "npcs": people_npc})
+        sections.append({"id": sec["id"], "title": sec["titulo"], "lead": sec["lead"], "sheets": sheets})
+    for cid in names:
+        if cid not in covered_chars:
+            warn("galeria.json: personaje sin hojas en la galería: %s" % cid)
+    for nid in npcs:
+        if nid not in covered_npcs:
+            warn("galeria.json: NPC sin hoja en la galería: %s" % nid)
+    for i in assets["images"]:
+        f = i["file"]
+        if (f.startswith("assets-ref/personajes/") or f.startswith("assets-ref/npc/")) and f not in covered_files:
+            warn("galeria.json: imagen de personajes o NPC que no sale en la galería: %s" % f)
+    return {"people": people, "sections": sections}
+
+
 def build_hub():
     roadmap = load_json(DATA / "roadmap.json")
     activity = load_activity()
@@ -435,13 +491,15 @@ def build_hub():
     story = load_story(task_ids)
     for msg in coherence.integrity(world):
         warn("world.json: %s" % msg)
+    assets = build_assets(load_json(DATA / "assets.json"))
     return {
         "generated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "config": load_json(DATA / "config.json"),
         "docs": docs,
         "groups": groups,
         "roadmap": roadmap,
-        "assets": build_assets(load_json(DATA / "assets.json")),
+        "assets": assets,
+        "gallery": load_gallery(world, assets),
         "palette": load_json(DATA / "palette.json"),
         "qa": load_qa(task_ids),
         "presentation": load_presentation({d["id"] for d in docs}),

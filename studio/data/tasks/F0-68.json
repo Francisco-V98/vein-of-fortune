@@ -1,0 +1,29 @@
+{
+  "id": "F0-68",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza la galería en el hub, rama apilada sobre F0-67.",
+      "ref": "rama studio/F0-68-galeria-personajes-hub"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Vista «Personajes y NPC» del hub con las 48 hojas.",
+      "ref": "rama studio/F0-68-galeria-personajes-hub"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Vista nueva del hub en #/personajes: 10 personajes (modelo, poses y expresiones) y 18 hojas de NPC agrupadas en facciones, empleados y civiles, enemigos humanos y criaturas. Cada imagen abre el visor grande con flechas, y hay un índice por sección. Los nombres, facciones y actos salen de world.json; studio/data/galeria.json solo dice qué hoja cubre a quién y build.py avisa si falta un personaje, un NPC o una imagen. Probada en escritorio y en móvil (375 px) sin errores en consola."
+    }
+  ],
+  "evidence": []
+}
