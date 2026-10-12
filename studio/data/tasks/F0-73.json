@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Mod /equipo escrito, validado y con cinco pruebas en verde.",
       "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [
@@ -73,6 +81,11 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "El detalle sale ahora como ventana flotante dentro del plano, anclada junto al empleado, la línea o el hallazgo elegido, con su título, su texto, una ✕ y un cable que la une a lo que se tocó. El plano resalta lo implicado y atenúa el resto. Los botones de Personas, Traspasos y Hallazgos siguen siendo la forma de abrirla, porque la app no envía clics desde dentro del dibujo; se cierra con el botón «✕ Cerrar ventana» (tecla x) o volviendo a tocar el mismo botón."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Terminé mi parte: revisé el entregable y está aprobado. Pásala a la siguiente etapa del flujo."
     }
   ],
   "evidence": [],
@@ -113,9 +126,9 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Falta que lo pruebes en la app",
+        "nota": "Aprobado por el autor con «Todo bien» y «Terminé mi parte»",
         "hallazgos": [
           {
             "de": "autor",
@@ -142,12 +155,15 @@
       },
       {
         "etapa": "playtest",
-        "estado": "pendiente",
-        "nota": "Probar los botones en la app"
+        "estado": "hecha",
+        "nota": "El autor probó el panel en la app y lo aprobó",
+        "at": "2026-10-12"
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Tarea cerrada y PR #32 fusionado"
       }
     ],
     "traspasos": [
@@ -268,6 +284,12 @@
         "de": "qa",
         "a": "autor",
         "que": "QA aprobado: validación y catorce pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: «Terminé mi parte» sin ajustes",
         "at": "2026-10-12"
       }
     ]

@@ -758,7 +758,7 @@
               "id": "F0-72",
               "title": "Equipo de agentes: etapas, roles y especialistas (documento 20)",
               "est": 4,
-              "status": "review",
+              "status": "done",
               "prio": "P2",
               "desc": "Definir las etapas del flujo, los roles del equipo (ideador, analista, diseñador, narrador, director de arte, desarrollador, QA, autor y coordinador) y los siete subagentes, con el registro del avance por tarea.",
               "done_when": "Documento 20 y definiciones de los agentes acordados con el autor."
@@ -767,7 +767,7 @@
               "id": "F0-73",
               "title": "Mod de Claude Code: tablero del equipo (/equipo)",
               "est": 6,
-              "status": "review",
+              "status": "done",
               "prio": "P2",
               "desc": "Tablero con las etapas del flujo, el número de tareas en cada una, quién trabaja ahora y los botones del autor para aprobar o devolver.",
               "done_when": "Mod validado, con pruebas en verde y aprobado por el autor."
