@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Documento 19 con 9 fichas (protagonista y 8 personajes), la verdad sobre Anselmo, la tabla de pistas y la red de relaciones.",
       "ref": "rama docs/F0-42-elenco-a-fondo"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor revisó y aprobó el PR y se fusionó en main.",
+      "ref": "PR #12"
     }
   ],
   "comments": [
