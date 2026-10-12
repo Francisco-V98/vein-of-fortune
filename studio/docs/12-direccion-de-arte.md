@@ -155,10 +155,10 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 | Cañón Ferroso | Cabecilla de la banda rival | Pañuelo rojo, gabán naranja óxido, hombreras de hierro remachadas, cinturón de cadena y garrote liso en la mano derecha apoyado en el suelo |
 | Minas de Sierra Alta | Jefe de seguridad del Consorcio | Abrigo azul pizarra con cuello de piel, gorra con gafas de aviador subidas, brazalete vinotinto y porra |
 | Salares del Litoral | Aduanero Mayor | Uniforme beige manchado de sal, banda vinotinta, medalla de latón, libro de registro y sello |
-| Cavernas de Cristal | Cazarrecompensas Mayor | Gabán carbón, sombrero con cristal cian, grilletes en el cinturón, espuelas y, en el collar, una cápsula de cristal sellada con un fragmento de éter a la vista |
+| Cavernas de Cristal | Cazarrecompensas Mayor | Gabán carbón, sombrero con medallón de latón, grilletes en el cinturón, espuelas y, en el collar, una cápsula de cristal sellada con un fragmento de éter a la vista |
 | La Fosa del Éter | Coronel de la Comisión | Capote verde oliva oscuro, banda vinotinta, charreteras doradas, gorra con estrella dorada de metal, guantes blancos y bastón negro |
 
-✅ **Regla del éter en el arte:** el éter nunca va suelto sobre el cuerpo de un personaje sano. Solo aparece contenido en una cápsula de cristal sellada, o en los mutados de La Fosa.
+✅ **Regla del éter en el arte:** el éter nunca va suelto sobre el cuerpo de un personaje sano. Solo aparece contenido en una cápsula de cristal sellada, o en los mutados de La Fosa. El cian de la paleta es el aura del éter, así que tampoco se usa en adornos de personajes sanos.
 
 El ministro Dueñas sigue siendo el antagonista narrativo y no tiene duelo de jefe.
 
