@@ -680,7 +680,7 @@
               "id": "F0-64",
               "title": "NPC del Ministerio, la Comisión del Éter y el Consorcio",
               "est": 4,
-              "status": "backlog",
+              "status": "done",
               "prio": "P2",
               "desc": "Una hoja por tipo: inspector de licencias, escribiente, soldado, oficial, perito de la Comisión, guardia de La Fosa, guardia de empresa, ejecutivo y capataz.",
               "done_when": "Nueve hojas aprobadas."
@@ -691,8 +691,8 @@
               "est": 4,
               "status": "backlog",
               "prio": "P2",
-              "desc": "Una hoja por tipo: minero sindicalista, delegado, cobrador, matón, informante, reportero y voceador.",
-              "done_when": "Siete hojas aprobadas."
+              "desc": "Una hoja de grupo por 3 tipos: minero sindicalista, delegado de la Unión y reportero; cobrador, matón e informante de Los Faroleros. El voceador de periódicos pasa a la hoja de civiles (F0-66) para que cada hoja tenga tres tipos.",
+              "done_when": "Seis tipos aprobados en dos hojas."
             },
             {
               "id": "F0-66",
@@ -700,8 +700,8 @@
               "est": 5,
               "status": "backlog",
               "prio": "P2",
-              "desc": "Una hoja por tipo: los cinco empleados (minero, dependiente, guardia, refinador y analista) y los cinco civiles (vecino, vecina, comerciante, cliente obrero y cliente de la élite).",
-              "done_when": "Diez hojas aprobadas."
+              "desc": "Hojas de grupo con tres tipos: los cinco empleados (minero, dependiente, guardia, refinador y analista), los cinco civiles (vecino, vecina, comerciante, cliente obrero y cliente de la élite) y el voceador de periódicos.",
+              "done_when": "Once tipos aprobados en cuatro hojas."
             },
             {
               "id": "F0-67",
