@@ -548,9 +548,9 @@ main.is-deck { padding: 0; max-width: none; }
 .sc-list span { color: var(--muted); font-family: var(--mono); font-size: 12.5px; text-align: right; }
 
 /* Mercado */
-.mk { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; align-items: center; }
-.mk-chart { width: 100%; height: auto; background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 6px; }
-.mk-right { display: grid; gap: 10px; }
+.mkt { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; align-items: center; }
+.mkt-chart { width: 100%; height: auto; background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 6px; }
+.mkt-right { display: grid; gap: 10px; }
 
 /* Escalera de información */
 .ld { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: end; min-height: 280px; }
@@ -712,7 +712,7 @@ main.is-deck { padding: 0; max-width: none; }
 @media (max-width: 1100px) {
   .ag-grid, .sp-grid, .ld, .ac, .cr, .pl-grid, .cl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sl-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cy, .sc, .mk, .mp, .ft, .br, .ar-detail, .stt { grid-template-columns: 1fr; }
+  .cy, .sc, .mkt, .mp, .ft, .br, .ar-detail, .stt { grid-template-columns: 1fr; }
   .fl { grid-auto-flow: row; grid-auto-columns: auto; }
   .fl li::after, .ac li::after { content: none; }
   .mo { height: auto; grid-template-columns: 1fr 1fr; grid-template-rows: none; }
