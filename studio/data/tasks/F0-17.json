@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Flechas recoloreadas a cian y vinotinto y ministro nuevo pegado en la hoja de sprites.",
       "ref": "rama studio/F0-17-arte-de-referencia-corregido"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor revisó y aprobó el PR con el sprite del ministro y las flechas corregidas.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [

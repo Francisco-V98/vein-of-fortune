@@ -217,7 +217,7 @@
               "id": "F0-17",
               "title": "Corregir arte de referencia: sprite del ministro y flechas de interfaz sin rojo/verde",
               "est": 1,
-              "status": "review",
+              "status": "done",
               "desc": "El ministro salió parecido a un sacerdote; las flechas de precio usan rojo y verde.",
               "done_when": "Versiones corregidas guardadas en assets.",
               "prio": "P2"
@@ -635,7 +635,7 @@
               "id": "F0-59",
               "title": "Lista de personajes y NPC, vistas y expresiones",
               "est": 2,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Registrar en el registro del mundo los 35 tipos de NPC por grupo y fijar el formato de las hojas: vistas (frente, espalda, ambos lados y tres cuartos), poses (estático, caminando y gestos) y las 6 expresiones comunes (por defecto según personalidad, feliz, triste, enojado, asustado y cansado).",
               "done_when": "Lista de NPC en el registro del mundo y formato de hojas acordado."
@@ -716,7 +716,7 @@
               "id": "F0-68",
               "title": "Galería de personajes y NPC en el hub",
               "est": 5,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Vista del hub con todas las hojas por personaje y por grupo de NPC, y registro de las imágenes en assets.json.",
               "done_when": "Galería visible en el hub con todas las hojas."

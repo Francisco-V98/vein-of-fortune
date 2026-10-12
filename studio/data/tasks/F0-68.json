@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Vista «Personajes y NPC» del hub con las 48 hojas.",
       "ref": "rama studio/F0-68-galeria-personajes-hub"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor revisó y aprobó la galería de personajes y NPC en el hub.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
