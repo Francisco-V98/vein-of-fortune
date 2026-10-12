@@ -95,8 +95,8 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 |---|---|---|
 | `minerales-v2.png` | 10 minerales corregidos | ✅ Siluetas y colores distintos; **Aetherita** vinotinto cristalina destaca claramente |
 | `retratos-a.png`, `retratos-b.png` | Retratos de diálogo: Reme, Teo, Quiroga, Lucía, Esteban, Casilda, Ministro Dueñas y foto de Anselmo | ✅ Muy buenos; expresivos, coherentes y con la paleta |
-| `sprites.png` | Sprites pequeños tipo Stardew (protagonistas hombre y mujer y elenco) | 🟡 Funcionan como guía; el ministro salió parecido a un sacerdote (estola con cruces) y hay que corregirlo |
-| `ui-mercado.png` | Terminal de mercado (lista, gráfico, teletipo, bloques del día) | 🟡 Buen punto de partida; usa flechas rojo/verde, que va contra la regla de accesibilidad |
+| `sprites.png` → `sprites-corregido.png` | Sprites pequeños tipo Stardew (protagonistas hombre y mujer y elenco) | ✅ Funcionan como guía. El ministro original parecía un sacerdote (estola con cruces); se reemplazó por un funcionario severo de abrigo azul marino y faja vinotinto, sin símbolos religiosos (`ministro-corregido.png`) |
+| `ui-mercado.png` → `ui-mercado-corregido.png` | Terminal de mercado (lista, gráfico, teletipo, bloques del día) | ✅ Buen punto de partida. Las flechas rojo/verde se cambiaron por ▲ cian (sube) y ▼ vinotinto (baja), que cumple la regla de accesibilidad |
 | `ui-tienda.png` | Pantalla de la tienda con corte transversal | ✅ Muy buena base; comunica el "taller + mostrador + almacén" |
 | `edificios.png` | 9 edificios (tienda, taller, almacén, casa, Ministerio, Consorcio, Unión, bar, periódico) | ✅ Consistentes entre sí; en isométrica |
 | `mapa-valdoria.png` | Mapa ilustrado con las 6 regiones y vías de tren | ✅ Muy bueno; viable como **imagen estática con zonas tocables** |
