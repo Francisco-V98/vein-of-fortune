@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "Se empieza el pasado de Valdoria y de la Aetherita con el flujo de especialistas.",
       "ref": "rama studio/F0-43-pasado-de-valdoria"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 21 con la cronología del pasado, ⏳ F0-43 resueltos en la biblia y el elenco; QA aprobado tras dos pasadas y limpieza 67 %.",
+      "ref": "rama studio/F0-43-pasado-de-valdoria"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el pasado de Valdoria desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [],
@@ -102,10 +118,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "autor",
-        "nota": "El autor revisa el documento 21 y los cambios en la biblia y el elenco"
+        "nota": "El autor revisó el documento 21 y aprobó la tarea desde /equipo"
       },
       {
         "etapa": "playtest",
@@ -113,7 +129,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #34 fusionado"
       }
     ],
     "traspasos": [
@@ -201,6 +220,12 @@
         "de": "qa",
         "a": "autor",
         "que": "Entrega para tu revisión: documento 21, biblia y elenco",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-12"
       }
     ]
