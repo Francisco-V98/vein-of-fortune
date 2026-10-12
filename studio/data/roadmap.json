@@ -548,7 +548,7 @@
               "id": "F0-50",
               "title": "Registro del mundo y comprobaciones de coherencia",
               "est": 8,
-              "status": "backlog",
+              "status": "review",
               "prio": "P0",
               "desc": "Registro de minerales, zonas, minijuegos, mecánicas, recetas, facciones y personajes como fuente de verdad, con comprobaciones contra las reglas del diseño y el mapa de historia, y vista de coherencia en el hub.",
               "done_when": "Registro validado en el build y vista de coherencia con sus hallazgos en el hub."
