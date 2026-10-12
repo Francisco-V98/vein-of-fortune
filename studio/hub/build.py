@@ -14,6 +14,7 @@ Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/qa/bugs/BUG-*.json  registro de errores
   - studio/data/presentation.json   láminas de la página «El juego» (resumen curado del diseño)
   - studio/data/story.json          mapa de historia: actos, carriles y tareas relacionadas
+  - studio/data/world.json          registro del mundo: minerales, zonas, minijuegos, recetas, facciones y personajes
 
 Limpieza del diseño (ver studio/docs/15-flujo-de-trabajo-y-calidad.md):
   limpieza = ✅ / (✅ + 🟡 + ❓)  por documento y en total. Meta: lo más cerca posible de 100 %.
@@ -30,6 +31,9 @@ import json
 import pathlib
 import re
 import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import coherence  # noqa: E402
 
 HUB = pathlib.Path(__file__).resolve().parent
 STUDIO = HUB.parent
@@ -427,6 +431,10 @@ def build_hub():
     task_ids = {t["id"] for p in roadmap["phases"] for m in p["milestones"] for t in m["tasks"]}
     task_status = {t["id"]: t["status"] for p in roadmap["phases"] for m in p["milestones"] for t in m["tasks"]}
     cleanliness = analyze_docs(docs, task_status)
+    world = load_json(DATA / "world.json")
+    story = load_story(task_ids)
+    for msg in coherence.integrity(world):
+        warn("world.json: %s" % msg)
     return {
         "generated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "config": load_json(DATA / "config.json"),
@@ -437,8 +445,10 @@ def build_hub():
         "palette": load_json(DATA / "palette.json"),
         "qa": load_qa(task_ids),
         "presentation": load_presentation({d["id"] for d in docs}),
-        "story": load_story(task_ids),
+        "story": story,
         "cleanliness": cleanliness,
+        "world": world,
+        "coherence": coherence.check(world, story),
     }
 
 
@@ -466,6 +476,8 @@ def main():
         "Limpieza del diseño: %s %% (meta %d %%) · ✅ %d · 🟡 %d · ❓ %d · ⏳ %d · conexiones rotas: %d"
         % (c["pct"], c["target"], c["ok"], c["prop"], c["open"], c["wait"], c["problems"])
     )
+    co = hub["coherence"]
+    print("Coherencia: %s %% · %d de %d comprobaciones con hallazgos" % (co["pct"], co["failed"], co["total"]))
     if warnings:
         print("%d aviso(s)." % len(warnings))
         if strict:

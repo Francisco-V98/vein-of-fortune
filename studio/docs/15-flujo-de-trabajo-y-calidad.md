@@ -143,6 +143,18 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 3. El panel **Limpieza del diseño** del hub muestra el porcentaje de cada documento, la lista de puntos por cerrar y las conexiones rotas. `python3 studio/hub/build.py --strict` informa el resumen y falla si hay conexiones rotas.
 4. 🟡 Más adelante la integración continua impedirá que la limpieza de un documento baje respecto de `main`.
 
+**Coherencia ✅:** además de decidido, el diseño debe ser **coherente**: sin cabos sueltos en la historia, sin contradicciones entre documentos y sin números que rompan la economía. Es una segunda medida, independiente de la limpieza:
+
+| Qué | Cómo |
+|---|---|
+| **Registro del mundo** | `studio/data/world.json` es la fuente de verdad de minerales, zonas, minijuegos, mecánicas, recetas, facciones y personajes |
+| **Integridad** | Lo que el registro referencia debe existir. Un error hace fallar el build |
+| **Comprobaciones de coherencia** | Reglas del diseño, mapa de historia y números base se contrastan con el registro. Cada incumplimiento es un hallazgo: baja el porcentaje, no falla el build, y se resuelve decidiendo o corrigiendo |
+| **Dónde se ve** | Hub, «Coherencia del diseño» |
+| **Próximos pasos** | Hilos narrativos y cabos sueltos (F0-51), números base de la economía (F0-52) y simulador de equilibrio (F0-53) |
+
+Es normal que ambos porcentajes empiecen bajos: suben a medida que se cierran las tareas y se profundiza el diseño. La meta es llegar al lanzamiento lo más cerca posible del 100 %.
+
 ## Pruebas 🟡
 
 | Nivel | Proporción orientativa | Qué cubre |

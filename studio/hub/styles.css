@@ -432,6 +432,18 @@ details.case p { margin: 4px 0 0; font-size: 14px; }
 .cln-problems li { color: #ef8da0; }
 @media (max-width: 860px) { .cln-summary { grid-template-columns: 1fr; } .cln-bar { width: 90px; } }
 
+/* Coherencia del diseño */
+.cph-matrix th, .cph-matrix td { padding: 8px 10px; }
+.cph-z { text-align: center; min-width: 78px; }
+.cph-z span { display: block; font-size: 12px; line-height: 1.2; }
+.cph-z small { color: var(--muted); font-family: var(--mono); font-size: 11px; }
+.cph-c { text-align: center; font-family: var(--mono); }
+.cph-bad { color: #ef8da0; font-weight: 700; background: color-mix(in srgb, #c23b55 14%, transparent); }
+.cph-st { flex: none; display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 6px; border-radius: 13px; font-family: var(--mono); font-size: 12.5px; font-weight: 700; }
+.cph-st.ok { background: color-mix(in srgb, #4fb6a5 22%, transparent); color: #4fb6a5; }
+.cph-st.bad { background: color-mix(in srgb, #c23b55 25%, transparent); color: #ef8da0; }
+.cph-find li { grid-template-columns: 20px 1fr; }
+
 /* Presentación del juego */
 main.is-deck { padding: 0; max-width: none; }
 .deck-wrap { position: relative; height: calc(100vh - 57px); display: flex; flex-direction: column; background: var(--bg); }

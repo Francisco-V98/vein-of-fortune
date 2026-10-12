@@ -25,7 +25,7 @@
 - [ ] Sin secretos ni datos personales
 - [ ] Accesible: no depende solo del color; funciona con táctil y con mando
 - [ ] Documentación y ADR actualizados si corresponde
-- [ ] Diseño: la limpieza no baja; lo pendiente está marcado con ⏳ y su tarea; sin conexiones rotas
+- [ ] Diseño: la limpieza no baja; lo pendiente está marcado con ⏳ y su tarea; sin conexiones rotas; la coherencia no baja
 - [ ] Mensajes de commit con la convención y el ID de la tarea
 
 ## Notas para la revisión y para QA

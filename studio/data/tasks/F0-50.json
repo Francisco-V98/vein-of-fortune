@@ -1,0 +1,53 @@
+{
+  "id": "F0-50",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pide que el diseño sea decidido y coherente: sin cabos sueltos ni números que rompan la economía.",
+      "ref": "rama studio/F0-50-registro-del-mundo"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Registro del mundo, 11 reglas de coherencia con 92 comprobaciones, vista en el hub y 11 pruebas.",
+      "ref": "rama studio/F0-50-registro-del-mundo"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Necesito que sea tanto decidido como coherente. Todo se irá ajustando según vayamos definiendo, pero la idea es llegar al final con todo lo más alto posible."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "El punto de partida es 68 % de coherencia con 29 hallazgos reales: el detector necesita cuarzo y llega antes que él, el oro, el cuarzo y el diamante aparecen antes en las zonas de lo que dice el mapa de historia, y Salitre y Aetherita aparecen en una sola zona contra la regla de 2–3. Ninguno se corrigió: son decisiones del autor. Los números base de los 10 minerales están sin definir (F0-52)."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Vista Coherencia del diseño",
+      "path": "evidence/F0-50/coherencia.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Registro del mundo",
+      "path": "data/world.json"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "Registro íntegro y 92 comprobaciones evaluadas; vista sin errores de consola; build en modo estricto correcto; 28 pruebas de herramientas en verde."
+    }
+  ]
+}
