@@ -14,6 +14,14 @@
       "to": "review",
       "by": "claude",
       "note": "Procedimiento probado en local sobre el repositorio real."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [

@@ -14,6 +14,14 @@
       "to": "review",
       "by": "claude",
       "note": "Backlog desglosado de 190 a 423 tareas de entre 2 y 20 horas, con prioridad P0 a P3, vista de alcance, línea de tiempo en horas y tablero sin filtro de fase por defecto."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [

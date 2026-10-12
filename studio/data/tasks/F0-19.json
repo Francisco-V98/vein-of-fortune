@@ -14,6 +14,14 @@
       "to": "review",
       "by": "claude",
       "note": "Documento 13 redactado: nombre, esencia, personalidad, voz, tono, frases, identidad visual y piezas. Pendiente de la revisión del autor."
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [],
