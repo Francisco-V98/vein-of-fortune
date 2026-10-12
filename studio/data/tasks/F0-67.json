@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Nueve hojas: seis enemigos humanos y tres criaturas de La Fosa.",
       "ref": "rama studio/F0-67-npc-enemigos-y-criaturas"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las nueve hojas: seis enemigos humanos y tres criaturas de La Fosa (con la rastrera rehecha).",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
@@ -58,6 +66,11 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "Se rehízo la rastrera con la hoja anterior y la del Consorcio como referencia, pidiendo cuatro extremidades visibles en las tres vistas sobre una misma línea de suelo. De dos variantes se eligió la que muestra los dos pies con sus garras de frente y de espalda, y el pie cercano de lado. Coste: 2 créditos."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Listo, continuemos."
     }
   ],
   "evidence": [

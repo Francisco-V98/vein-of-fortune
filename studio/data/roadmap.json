@@ -707,7 +707,7 @@
               "id": "F0-67",
               "title": "NPC enemigos y criaturas",
               "est": 4,
-              "status": "review",
+              "status": "done",
               "prio": "P2",
               "desc": "Una hoja por tipo: saqueador, banda rival, contrabandista, inspector corrupto, cazarrecompensas, soldado de La Fosa y tres criaturas de La Fosa.",
               "done_when": "Nueve hojas aprobadas."
