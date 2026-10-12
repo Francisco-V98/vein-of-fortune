@@ -275,7 +275,7 @@
               "id": "F0-22",
               "title": "Story map por actos",
               "est": 8,
-              "status": "review",
+              "status": "done",
               "desc": "Línea de tiempo de los 4 actos con carriles: narrativa, mecánicas que se desbloquean, mercado y eventos, zonas, personajes, estatus y arte necesario. Visible en el hub.",
               "done_when": "Story map completo y visible en el hub.",
               "prio": "P1"
@@ -446,7 +446,7 @@
               "id": "F0-40",
               "title": "Página de presentación del juego en el hub",
               "est": 6,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Página «El juego» con 28 láminas que resumen la idea, la jugabilidad, el mundo, la historia, el arte, cómo se construye y el plan, para tener todo en un solo lugar. Cada lámina enlaza a su documento fuente.",
               "done_when": "La página se abre desde el hub, se navega con teclado, funciona en móvil, se puede imprimir y todas las fuentes e imágenes existen."
@@ -470,7 +470,7 @@
               "id": "F0-42",
               "title": "Fichas a fondo del elenco",
               "est": 6,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Ficha de cada uno de los 8 personajes: qué quiere, qué oculta, cómo habla, cómo trata al protagonista y cómo cambia en cada acto. Incluye las relaciones entre ellos.",
               "done_when": "Las 8 fichas acordadas con el autor."
@@ -539,7 +539,7 @@
               "id": "F0-49",
               "title": "Medidor de limpieza del diseño y comprobación de conexiones",
               "est": 3,
-              "status": "review",
+              "status": "done",
               "prio": "P0",
               "desc": "Limpieza por documento (✅ ÷ (✅ + 🟡 + ❓)), marca de lo diferido con su tarea, enlaces y tareas citadas comprobados, vista en el hub y regla en el flujo de trabajo.",
               "done_when": "El porcentaje se ve en el hub, el build falla con conexiones rotas y la regla está en el documento 15 y en la plantilla de PR."
@@ -548,7 +548,7 @@
               "id": "F0-50",
               "title": "Registro del mundo y comprobaciones de coherencia",
               "est": 8,
-              "status": "review",
+              "status": "done",
               "prio": "P0",
               "desc": "Registro de minerales, zonas, minijuegos, mecánicas, recetas, facciones y personajes como fuente de verdad, con comprobaciones contra las reglas del diseño y el mapa de historia, y vista de coherencia en el hub.",
               "done_when": "Registro validado en el build y vista de coherencia con sus hallazgos en el hub."
