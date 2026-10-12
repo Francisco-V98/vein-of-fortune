@@ -1,0 +1,63 @@
+{
+  "nota": "Galería de personajes y NPC del hub. Los nombres, facciones y actos salen de world.json y las imágenes de assets.json; aquí solo se dice qué hoja cubre a quién. build.py avisa si falta algún personaje o NPC, o si una hoja no está registrada.",
+  "personajes": [
+    { "id": "protagonista-hombre", "nombre": "Protagonista (hombre)", "personaje": "protagonista" },
+    { "id": "protagonista-mujer", "nombre": "Protagonista (mujer)", "personaje": "protagonista" },
+    { "id": "anselmo", "personaje": "anselmo" },
+    { "id": "reme", "personaje": "reme" },
+    { "id": "teo", "personaje": "teo" },
+    { "id": "quiroga", "personaje": "quiroga" },
+    { "id": "lucia", "personaje": "lucia" },
+    { "id": "esteban", "personaje": "esteban" },
+    { "id": "casilda", "personaje": "casilda" },
+    { "id": "duenas", "personaje": "duenas" }
+  ],
+  "secciones": [
+    {
+      "id": "facciones",
+      "titulo": "NPC de las facciones",
+      "lead": "Tres tipos por hoja, con la misma altura y la misma cabeza grande para que se lean igual en pantalla.",
+      "hojas": [
+        { "file": "assets-ref/npc/ministerio-1.webp", "npcs": ["inspector-licencias", "escribiente", "soldado-ministerio"] },
+        { "file": "assets-ref/npc/ministerio-comision-2.webp", "npcs": ["oficial-ministerio", "perito-comision", "guardia-fosa"] },
+        { "file": "assets-ref/npc/consorcio.webp", "npcs": ["guardia-empresa", "ejecutivo-consorcio", "capataz"] },
+        { "file": "assets-ref/npc/union-prensa.webp", "npcs": ["minero-sindicalista", "delegado-union", "reportero"] },
+        { "file": "assets-ref/npc/faroleros.webp", "npcs": ["cobrador-farolero", "maton-farolero", "informante"] }
+      ]
+    },
+    {
+      "id": "empleados-civiles",
+      "titulo": "Empleados y civiles",
+      "lead": "Los empleados pueden parecerse entre sí; lo que cambia es el oficio.",
+      "hojas": [
+        { "file": "assets-ref/npc/empleados-1.webp", "npcs": ["empleado-minero", "empleado-dependiente", "empleado-guardia"] },
+        { "file": "assets-ref/npc/empleados-2-voceador.webp", "npcs": ["empleado-refinador", "empleado-analista", "voceador"] },
+        { "file": "assets-ref/npc/civiles-1.webp", "npcs": ["vecino", "vecina", "comerciante"] },
+        { "file": "assets-ref/npc/civiles-2.webp", "npcs": ["cliente-obrero", "cliente-elite"] }
+      ]
+    },
+    {
+      "id": "enemigos",
+      "titulo": "Enemigos humanos",
+      "lead": "Una hoja por tipo: de frente, de lado, de espalda, predeterminada y enojo.",
+      "hojas": [
+        { "file": "assets-ref/npc/enemigos/saqueador.webp", "npcs": ["saqueador"] },
+        { "file": "assets-ref/npc/enemigos/banda-rival.webp", "npcs": ["banda-rival"] },
+        { "file": "assets-ref/npc/enemigos/contrabandista.webp", "npcs": ["contrabandista"] },
+        { "file": "assets-ref/npc/enemigos/inspector-corrupto.webp", "npcs": ["inspector-corrupto"] },
+        { "file": "assets-ref/npc/enemigos/cazarrecompensas.webp", "npcs": ["cazarrecompensas"] },
+        { "file": "assets-ref/npc/enemigos/soldado-fosa.webp", "npcs": ["soldado-fosa"] }
+      ]
+    },
+    {
+      "id": "criaturas",
+      "titulo": "Criaturas de La Fosa",
+      "lead": "Humanos mutados por la Aetherita. Una hoja por criatura: de frente, de lado, de espalda, predeterminada y atacando.",
+      "hojas": [
+        { "file": "assets-ref/npc/criaturas/rastrera.webp", "npcs": ["criatura-rastrera"] },
+        { "file": "assets-ref/npc/criaturas/cristalina.webp", "npcs": ["criatura-cristalina"] },
+        { "file": "assets-ref/npc/criaturas/eterea.webp", "npcs": ["criatura-eterea"] }
+      ]
+    }
+  ]
+}

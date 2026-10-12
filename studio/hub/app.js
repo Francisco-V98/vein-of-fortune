@@ -271,7 +271,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('mapa', 'Mapa de historia', '⌖') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('mapa', 'Mapa de historia', '⌖') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -1063,6 +1063,41 @@
     return h;
   }
 
+  /* ---------- galería de personajes y NPC ---------- */
+  function viewGallery() {
+    var G = H.gallery;
+    var byFile = {};
+    H.assets.images.forEach(function (i) { byFile[i.file] = i; });
+    var list = [];
+    function shot(file, label, cls) {
+      var a = byFile[file];
+      if (!a) return '';
+      list.push(a);
+      return '<button class="gx-shot ' + (cls || '') + '" type="button" data-action="open-img" data-index="' + (list.length - 1) + '"><img loading="lazy" src="../' + esc(file) + '" alt="' + esc(a.title) + '"><span>' + esc(label) + '</span></button>';
+    }
+    var TIPO = { modelo: 'Modelo', poses: 'Poses', expresiones: 'Expresiones' };
+    var nSheets = G.people.reduce(function (n, p) { return n + p.sheets.length; }, 0) + G.sections.reduce(function (n, s) { return n + s.sheets.length; }, 0);
+    var h = '<p class="eyebrow">Recursos</p><h1 class="page-title">Personajes y NPC</h1><p class="page-lead">Todas las hojas de personajes y NPC en un solo sitio: ' + G.people.length + ' personajes con hoja de modelo, de poses y de expresiones, y ' + G.sections.reduce(function (n, s) { return n + s.sheets.length; }, 0) + ' hojas de NPC, enemigos y criaturas (' + nSheets + ' en total). Toca una imagen para verla grande y pasa a la siguiente con las flechas. Estilo: <a href="#/docs/12-direccion-de-arte">12 · Dirección de arte</a>.</p>';
+    h += '<nav class="gx-index" aria-label="Secciones de la galería"><a class="chip" href="#/personajes?h=gx-personajes">Personajes</a>' + G.sections.map(function (s) { return '<a class="chip" href="#/personajes?h=gx-' + esc(s.id) + '">' + esc(s.title) + '</a>'; }).join('') + '</nav>';
+    h += '<h2 class="section-title" id="gx-personajes">Personajes <small>' + G.people.length + '</small></h2><div class="gx-people">';
+    G.people.forEach(function (p) {
+      h += '<article class="gx-card"><header class="gx-head"><h3>' + esc(p.name) + '</h3><div class="gx-tags">' + (p.faction ? '<span class="chip">' + esc(p.faction) + '</span>' : '') + '<span class="chip">Acto ' + esc(p.act) + '</span></div></header><div class="gx-sheets">' + p.sheets.map(function (sh) { return shot(sh.file, TIPO[sh.tipo]); }).join('') + '</div></article>';
+    });
+    h += '</div>';
+    G.sections.forEach(function (sec) {
+      h += '<h2 class="section-title" id="gx-' + esc(sec.id) + '">' + esc(sec.title) + ' <small>' + sec.sheets.length + ' hojas</small></h2><p class="gx-lead">' + esc(sec.lead) + '</p><div class="gx-npcs">';
+      sec.sheets.forEach(function (sh) {
+        var label = sh.npcs.map(function (n) { return n.name; }).join(' · ');
+        var facs = [];
+        sh.npcs.forEach(function (n) { if (n.faction && facs.indexOf(n.faction) < 0) facs.push(n.faction); });
+        h += '<article class="gx-card">' + shot(sh.file, label, 'gx-wide') + '<div class="gx-tags">' + facs.map(function (f) { return '<span class="chip">' + esc(f) + '</span>'; }).join('') + '</div></article>';
+      });
+      h += '</div>';
+    });
+    lb.list = list;
+    return h;
+  }
+
   function viewArt() {
     var imgs = H.assets.images;
     var cats = ['Todas'];
@@ -1201,6 +1236,7 @@
       case 'limpieza': html = viewClean(); title += ' · Limpieza del diseño'; break;
       case 'coherencia': html = viewCoherence(); title += ' · Coherencia del diseño'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
+      case 'personajes': html = viewGallery(); title += ' · Personajes y NPC'; anchor = r.query.h || null; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
       case 'sonido': html = viewSound(); title += ' · Sonido'; break;
       case 'paleta': html = viewPalette(); title += ' · Paleta'; break;
