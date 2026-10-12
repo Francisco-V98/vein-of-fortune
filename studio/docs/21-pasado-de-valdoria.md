@@ -56,7 +56,7 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 | **27 años** | Nace la **Comisión del Éter**, dentro del Ministerio, para custodiar el mineral, estudiar el fenómeno y controlar La Fosa | Dueñas 33 (técnico de la Comisión), Reme 35, Quiroga 23 | ✅ |
 | **21 años** | **Reme presta a Anselmo** para pagar sus equipos de ensayo en La Fosa: el Ministerio reembolsa tarde y él no puede esperar | Reme 41, Anselmo 37 | ✅ |
 | **20 años** | **Primera Expedición a La Fosa.** Dueñas dirige desde el campamento, Anselmo es el perito y Teo, minero veterano. Dura unos ocho meses. Confirma la veta. Empieza el mal del éter en la cuadrilla. A Teo lo evacuan al primer mes con un brazo roto y al volver firma el silencio a cambio de una pensión | Dueñas 40, Anselmo 38, Teo 44, protagonista 2 (aún en Vega Mansa) | ✅ |
-| **20 a 17 años** | La **cuadrilla enferma**: los que bajaron a la veta mueren de «tos de mina» en uno a tres años 🟡. Quedan con vida Dueñas, Anselmo y Teo (por qué Anselmo sobrevive, en la sección 4). El Consorcio Arvel pagó el equipo mayor de la expedición a cambio de preferencia en los contratos | Anselmo 38 a 41, Teo 44 a 47 | ✅ el hito; 🟡 lo marcado |
+| **20 a 17 años** | La **cuadrilla enferma**: los que bajaron a la veta mueren de «tos de mina» en uno a tres años 🟡. Anselmo pasa a la Comisión como **ingeniero de calibración** tras la expedición ✅. Quedan con vida Dueñas, Anselmo y Teo (por qué Anselmo sobrevive, en la sección 4). El Consorcio Arvel pagó el equipo mayor de la expedición a cambio de preferencia en los contratos | Anselmo 38 a 41, Teo 44 a 47 | ✅ el hito; 🟡 lo marcado |
 | **17 años** | **Empieza la electrificación con Aetherita**, después de la primera extracción seria. El Ministerio pone la red; el Consorcio gana el contrato de las celdas y desde entonces **financia un fondo reservado de la Comisión** | Dueñas 43, Casilda 28 | ✅ |
 | **15 años** | **Casilda organiza a los faroleros** para **«cobrar la luz»** | Casilda 30 | ✅ |
 | **14 años** | **Anselmo visita Vega Mansa** y presta la lámpara a su sobrino o sobrina. Es la única vez que se ven | Anselmo 44, protagonista 8 | ✅ |
@@ -75,9 +75,9 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 
 ---
 
-## 3 · Tabla de edades ✅
+## 3 · Tabla de edades 🟡
 
-**Estado:** ✅ la tabla y las edades, y la subsección sobre Dueñas, confirmadas por el autor el 2026-10-12.
+**Estado:** ✅ la tabla y las edades, y de la subsección sobre Dueñas lo que lleva ✅ (confirmado por el autor el 2026-10-12); 🟡 solo lo que se marca dentro de esa subsección.
 
 Edad en cada hito. Las de hoy vienen de [19](19-elenco-a-fondo.md) y siguen siendo aproximadas. El autor confirmó la tabla entera el 2026-10-12. «—» es que aún no había nacido.
 
@@ -99,13 +99,13 @@ Edad en cada hito. Las de hoy vienen de [19](19-elenco-a-fondo.md) y siguen sien
 - **Esteban (28) y Lucía (32)** no tienen hito en el pasado. Lucía nació dos años antes del hallazgo; Esteban, dos años después.
 - Teo empezó a minar a los 14, así que a la expedición llegó con **30 años de oficio**: de ahí «minero veterano».
 
-### Por qué Dueñas ya mandaba a los 40 ✅
+### Por qué Dueñas ya mandaba a los 40 🟡
 
 En [19](19-elenco-a-fondo.md) Dueñas aparece como «joven funcionario» de la expedición. A los 40 no es joven, y aquí no se le humaniza.
 
-- **Joven solo frente a la cúpula ✅.** La cúpula del Ministerio de entonces rondaba los 60. A los 40, Dueñas era el técnico más joven con la confianza de esa cúpula. Eso es todo lo que significa «joven».
-- **Ya era quien decidía.** Llevaba más de quince años de funcionario y había redactado el reglamento de la Comisión ✅. Eligió a Anselmo para la expedición ✅ y decidió **no bajar a la veta**: dirigió desde el campamento ✅. Por eso no enfermó ✅.
-- **No es inocencia ni duda ✅.** A los 20 vio cómo una huelga mal contenida casi destruye la República. A los 40 aplicó esa lección a la Aetherita: ninguna grieta en la mentira. No sale de la expedición con remordimiento, sino con método.
+- **Joven solo frente a la cúpula ✅.** A los 40, Dueñas era el técnico más joven con la confianza de la cúpula del Ministerio ✅. Esa cúpula rondaba los 60 🟡. Eso es todo lo que significa «joven».
+- **Ya era quien decidía.** Llevaba más de quince años de funcionario 🟡 y había redactado el reglamento de la Comisión ✅. Eligió a Anselmo para la expedición ✅ y decidió **no bajar a la veta**: dirigió desde el campamento ✅. Por eso no enfermó ✅.
+- **No es inocencia ni duda.** A los 20 vio cómo una huelga mal contenida casi destruye la República 🟡 (la misma huelga de la cronología, también 🟡). A los 40 aplicó esa lección a la Aetherita: ninguna grieta en la mentira ✅. No sale de la expedición con remordimiento, sino con método 🟡.
 - Sigue siendo duro, inflexible y poco razonable ✅ ([19](19-elenco-a-fondo.md)). La edad no lo ablanda: lo vuelve más seguro.
 
 ---
@@ -138,9 +138,9 @@ La cuadrilla murió en uno a tres años con siete meses de exposición. Anselmo 
 
 ---
 
-## 5 · La muerte pública de Anselmo ✅
+## 5 · La muerte pública de Anselmo 🟡
 
-**Estado:** ✅ todo, confirmado por el autor el 2026-10-12: la versión pública (cuándo, de qué, dónde, cremación sin registro, certificado de Quiroga en Villa Brasa, cenizas y aviso por carta), la verdad detrás (traslado a Cumbre Clara, sello, orden sellada, copia de Quiroga, testamento), el trato, el abono y los titulares de los medios. El lugar donde vive hoy queda abierto.
+**Estado:** ✅ todo, confirmado por el autor el 2026-10-12: la versión pública (cuándo, de qué, dónde, cremación sin registro, certificado de Quiroga en Villa Brasa, cenizas y aviso por carta), la verdad detrás (traslado a Cumbre Clara, sello, orden sellada, copia de Quiroga, testamento), el trato, el abono y los titulares de los medios. El lugar donde vive hoy queda abierto. 🟡 Solo cuatro detalles que añade este documento y que el autor no vio: el libro de cremaciones de la comarca, que el sello no sea el del registro civil, que Quiroga se ponga nervioso con el certificado y que la firma del testamento sea la de los papeles de la herencia.
 
 | Dato | Versión pública |
 |---|---|
@@ -151,13 +151,13 @@ La cuadrilla murió en uno a tres años con siete meses de exposición. Anselmo 
 | **Quién tramitó el papel** | El **certificado de defunción** se tramitó en **Villa Brasa**, ante el **Inspector Quiroga** ✅ |
 | **Cómo se avisó a la familia** | Por carta, después de la cremación ✅ |
 
-### La verdad detrás ✅
+### La verdad detrás 🟡
 
-- Lo detuvieron en invierno ✅ y, lo llevaron a Cumbre Clara ✅. No murió: **aceptó el trato** ✅. Dónde vive hoy **no se define**: es el hilo abierto que pide el canon para una continuación ✅.
-- El sanatorio certificó una **cremación que nadie vio y que nadie registró** ✅. La pista no es «no apareció el cuerpo», sino **«sin registro de cremación»** ✅: el libro de cremaciones de la comarca no tiene ese día ✅.
-- El **sello del certificado es irregular** ✅: es el del sanatorio, no el del registro civil.
-- Quiroga lo tramitó por una orden sellada de la Comisión, con una «gestión» de por medio ✅. Guardó una copia en su archivo, su seguro de vida ✅, y allí también la carta de la cinta 6 que retuvo (sección 7) ✅. Por eso se pone nervioso cuando alguien menciona el certificado.
-- El **testamento** lo firmó Anselmo antes de que lo detuvieran ✅. Esa firma es la de los papeles de la herencia del Acto I.
+- Lo detuvieron en invierno ✅ y lo llevaron a Cumbre Clara ✅. No murió: **aceptó el trato** ✅. Dónde vive hoy **no se define**: es el hilo abierto que pide el canon para una continuación ✅.
+- El sanatorio certificó una **cremación que nadie vio y que nadie registró** ✅. La pista no es «no apareció el cuerpo», sino **«sin registro de cremación»** ✅: el libro de cremaciones de la comarca no tiene ese día 🟡.
+- El **sello del certificado es irregular** ✅: es el del sanatorio ✅, no el del registro civil 🟡.
+- Quiroga lo tramitó por una orden sellada de la Comisión, con una «gestión» de por medio ✅. Guardó una copia en su archivo, su seguro de vida ✅, y allí también la carta de la cinta 6 que retuvo (sección 7) ✅. Por eso se pone nervioso cuando alguien menciona el certificado 🟡.
+- El **testamento** lo firmó Anselmo antes de que lo detuvieran ✅. Esa firma es la de los papeles de la herencia del Acto I 🟡.
 
 ### El trato ✅
 
@@ -204,13 +204,13 @@ El autor confirmó el trato el 2026-10-12, tal como está escrito en la tabla: c
 
 ---
 
-## 7 · Las ocho cintas ✅
+## 7 · Las ocho cintas 🟡
 
-**Estado:** ✅ las ocho cintas en título, fecha y hecho verificable, y el humor y la forma de comprobarlo de las cintas 1 a 6, incluido que Quiroga retuvo la carta de la cinta 6 y guardó copia (confirmado el 2026-10-12; la 7 y la 8, antes, con quien cortó la octava abierto). En qué acto aparece cada una y dónde las escondió ⏳ F0-45.
+**Estado:** ✅ las ocho cintas en título, fecha y hecho verificable, y el humor y la forma de comprobarlo de las cintas 1 a 6, incluido que Quiroga retuvo la carta de la cinta 6 y guardó copia (confirmado el 2026-10-12; la 7 y la 8, antes, con quien cortó la octava abierto); 🟡 el humor de la 7 y la 8, que sigue la regla 1.7 de [18](18-biblia-narrativa.md), marcada 🟡 en la biblia. En qué acto aparece cada una y dónde las escondió ⏳ F0-45.
 
-Anselmo grabó las ocho cintas en las **últimas semanas antes de que lo detuvieran** (hace 2 años, otoño e invierno) y las **escondió él mismo** en lugares de su vida. Todas son **anteriores al trato** ✅: por eso en ninguna menciona el trato ni su estado actual. Hablan de hechos del pasado, cada uno con una fecha de esta cronología y una forma de comprobarlo.
+Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuvieran** (hace 2 años, entre otoño e invierno) y las **escondió él mismo** en lugares de su vida. Todas son **anteriores al trato** ✅: por eso en ninguna menciona el trato ni su estado actual. Hablan de hechos del pasado, cada uno con una fecha de esta cronología y una forma de comprobarlo.
 
-| # | Título | Hecho verificable | Fecha | Cómo se comprueba (1 a 6) | Humor (1 a 6) |
+| # | Título | Hecho verificable | Fecha | Cómo se comprueba (1 a 6) | Humor (1 a 6 ✅; 7 y 8 🟡) |
 |---|---|---|---|---|---|
 | 1 | **La lámpara y el sobrino** ✅ | Anselmo visita Vega Mansa y presta su lámpara a su sobrino o sobrina. Es la única vez que se ven | Hace 14 años | La libreta anota el viaje con fecha | Bromista |
 | 2 | **La Escuela y Dueñas** ✅ | Anselmo (beca de los huérfanos de Pozo Negro) y Dueñas comparten aula. Dueñas es el primero de la promoción. Años después elige a Anselmo para la expedición | Hace 40 años (la Escuela) y hace 21 (la elección, un año antes de partir, cuando prepara los equipos que paga Reme) | Registro de promociones de la Escuela de Minas | Irónico |
@@ -218,11 +218,11 @@ Anselmo grabó las ocho cintas en las **últimas semanas antes de que lo detuvie
 | 4 | **Los primeros enfermos y Teo** ✅ | Los primeros enfermos de la cuadrilla. Evacuación de Teo y su silencio firmado a cambio de la pensión | Hace 20 años | Registro mensual de la pensión de Teo | Serio |
 | 5 | **Lo que midió** ✅ | Sus informes numerados de calibración. El último, contra el que se dobló la cuota | Hace 4 años | Informes del Archivo de la Comisión | Técnico y cansado |
 | 6 | **La denuncia que preparó** ✅ | El dossier con copias de los informes y la carta a la redacción de La Voz del Hollín. La carta nunca llegó (Quiroga la retuvo y guardó copia) | Hace 2 años (otoño) | La copia del archivo de Quiroga | Firme y asustado |
-| 7 | **La detención** ✅ | Anselmo graba la noche anterior. Tiene una orden de traslado «a revisión médica» y sabe que es una detención («si estás oyendo esto, ya me detuvieron»). **No nombra el trato**: aún no existe | Hace 2 años (invierno) | La orden de traslado de la Comisión | Casi apagado |
-| 8 | **Cortada** ✅ | Empieza a contar qué piensa hacer y la cinta se corta a media frase. Falta el final | La misma noche | Es el carrete que se corta | Sin humor |
+| 7 | **La detención** ✅ | Anselmo graba la noche anterior. Tiene una orden de traslado «a revisión médica» y sabe que es una detención («si estás oyendo esto, ya me detuvieron»). **No nombra el trato**: aún no existe | Hace 2 años (invierno) | La orden de traslado de la Comisión | Casi apagado 🟡 |
+| 8 | **Cortada** ✅ | Empieza a contar qué piensa hacer y la cinta se corta a media frase. Falta el final | La misma noche | Es el carrete que se corta | Sin humor 🟡 |
 
 - **La octava cortada.** La cinta se corta porque llegaron a buscarlo. **Quién cortó el carrete se deja abierto** ✅ (decisión del autor, 2026-10-12): puede ser el azar, un guardia o el propio Anselmo, y el jugador nunca lo sabe con certeza.
-- **El humor se apaga** de la primera a la octava ✅ ([18](18-biblia-narrativa.md), 1.7).
+- **El humor se apaga** de la primera a la octava 🟡 ([18](18-biblia-narrativa.md), 1.7, que sigue 🟡). El orden de las seis primeras es ✅; «casi apagado» y «sin humor» en la 7 y la 8 aún no.
 - **Dónde aparecen en el juego.** Las ocho cintas se encuentran a lo largo de la historia y se completan en el **Acto IV**, como indica la fila de narrativa de `studio/data/story.json`. La asignación de cada cinta a un acto y el lugar donde las dejó Anselmo ⏳ F0-45
 - El texto final y la voz de cada cinta ⏳ F4-151
 - «Cinta» es la pieza de historia y «carrete» el objeto ✅ (1.6 de [18](18-biblia-narrativa.md)).
@@ -311,7 +311,7 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 | III | Lucía oyó que «alguien de la Comisión recibe cartas con la letra de un muerto» | **Pocas semanas** 🟡: los informes de calibración que Anselmo escribe a mano para la Comisión desde el trato |
 | III | El abono sigue llegando y Teo jura que no es él | **Hace 2 años, el trato** ✅. Teo dice la verdad: él no lo paga 🟡 |
 | IV | La octava cinta termina cortada | **Hace 2 años, la noche de la detención** (cintas 7 y 8) ✅ |
-| IV (final) | El acta de calibración firmada por Anselmo | **Pocas semanas** 🟡. La firma es la de los papeles de la herencia |
+| IV (final) | El acta de calibración firmada por Anselmo | **Pocas semanas** 🟡. La firma es la de los papeles de la herencia 🟡 |
 
 ---
 

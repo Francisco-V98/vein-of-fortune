@@ -29,12 +29,12 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 
 > **Decisión del autor ✅:** Anselmo **está vivo, pero se cree que murió enfermo**. Es **cómplice** de la Comisión del Éter. El protagonista lo descubre **al final del último acto** y queda con ganas de saber qué pasó, dónde está y por qué decidió lo que decidió. Eso deja la puerta abierta a **capítulos o actualizaciones futuras**.
 
-**Cómo encaja ✅** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md); solo se marcan 🟡 los dos datos que no vio, «18 años» y «hace pocas semanas»):
+**Cómo encaja ✅🟡** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md); solo se marcan 🟡 lo que no vio: «18 años», «hace pocas semanas» y la convicción del punto 4):
 
 1. Hace veinte años Anselmo, Teo y Aurelio Dueñas, entonces un funcionario de unos 40 años y «joven» solo frente a la cúpula del Ministerio ✅, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar. Fechas y edades en [21](21-pasado-de-valdoria.md).
 2. Anselmo lo documentó en una libreta y grabó **ocho cintas**. Calibró durante 18 años 🟡 los límites de exposición, y cada calibración agravó su mal ✅. Hace dos años intentó denunciarlo y la Comisión lo detuvo.
 3. Estaba ya enfermo. La Comisión le ofreció un trato: **tratamiento paliativo** (el único que existe), **su silencio y su trabajo** como perito de La Fosa, y que Reme, Teo y su heredero no sufrieran represalias. A cambio, **su muerte oficial**.
-4. Desde entonces vive en secreto, ayudando a la Comisión a calibrar los límites de exposición. Cree que desde dentro salva más vidas que estando muerto. En la práctica, ayuda a que se siga ocultando.
+4. Desde entonces vive en secreto, ayudando a la Comisión a calibrar los límites de exposición. Cree que desde dentro salva más vidas que estando muerto 🟡. En la práctica, ayuda a que se siga ocultando.
 5. Las cintas son lo último que grabó **antes** del trato: su último acto de honestidad.
 
 **La revelación (final del Acto IV, después de la decisión sobre la Aetherita):** el protagonista encuentra un **acta de calibración de la Comisión firmada por Anselmo con fecha de hace pocas semanas** 🟡. No hay discurso ni explicación. Solo una firma que reconoce.

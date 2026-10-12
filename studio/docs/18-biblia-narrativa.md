@@ -328,7 +328,7 @@ Nombres definidos en [07](07-sociedad-y-eventos.md) y registrados en `studio/dat
 
 - **La facción detrás de Reme** es el Consorcio Arvel, Los Faroleros o el Ministerio, según la partida ✅ ([08](08-historia-y-personaje.md)). Las escenas, los aliados y las consecuencias de cada una ⏳ F0-44
 - **Casas industriales** es el nombre de la categoría en [07](07-sociedad-y-eventos.md). Dentro del juego, la casa que se ve es el Consorcio Arvel. La única otra casa con nombre es **Casa Ormeño** (plata y joyería, Puerto Meridiano): un nombre de ambiente que solo sale en noticias y glosario, sin zona ni jefe ✅ ([21](21-pasado-de-valdoria.md)). Talavera e Hijos y Fundiciones Soria están descartadas.
-- Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21 · Orígenes](21-pasado-de-valdoria.md): la Unión nace del derrumbe de Pozo Negro, la Comisión nace con el hallazgo de la Aetherita y los Faroleros pierden el oficio con la electrificación.
+- Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21 · Orígenes](21-pasado-de-valdoria.md): la Unión nace del derrumbe de Pozo Negro, el hallazgo de la Aetherita es de hace 30 años y la Comisión nace 3 años después (hace 27), antes en una oficina de ensayo sin nombre, y los Faroleros pierden el oficio con la electrificación.
 - Los figurantes de cada facción (perito, guardia, capataz, delegado, cobrador…) están en el registro del mundo. Su voz sigue la de su facción.
 
 ---

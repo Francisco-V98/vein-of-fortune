@@ -71,44 +71,41 @@
       {
         "etapa": "produccion",
         "estado": "hecha",
-        "nota": "El autor confirmó en tres tandas el pasado completo salvo unas pocas cifras; la limpieza quedó en 69 %",
+        "nota": "Correcciones de QA aplicadas por el narrador; limpieza 67 %",
         "at": "2026-10-12",
         "por": "narrador",
         "entrega": "Documento 21 con la cronología, la tabla de edades, la muerte pública, las ocho cintas, Vega Mansa y las casas; los ⏳ F0-43 de la biblia resueltos"
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "qa",
-        "nota": "Segunda pasada de QA sobre las marcas y el build estricto",
+        "nota": "Dos pasadas de QA; las correcciones de la segunda las comprobó el coordinador con el build estricto (limpieza 67 %, coherencia 70 %, sin ⏳ F0-43)",
         "hallazgos": [
           {
             "de": "qa",
             "estado": "resuelto",
-            "que": "La sección 5 del documento 21 (muerte pública) y la línea 104 de la biblia están en ✅ aunque Cumbre Clara, la tos de mina y la cremación por norma sanitaria no estaban en la lista confirmada",
+            "que": "Cuatro ✅ sin respaldo en el documento 21 (apartado de Dueñas, líneas de la sección 5, firma del testamento y humor de las cintas 7 y 8) y uno en el 19 («Cómo encaja»)",
             "resuelto_por": "narrador",
-            "como": "Marcas corregidas y confirmación del autor registrada en los documentos 18, 19 y 21"
+            "como": "Marcas bajadas a 🟡, contradicción de la Comisión y errata corregidas en los documentos 18, 19 y 21"
           },
           {
             "de": "qa",
             "estado": "resuelto",
-            "que": "Las secciones 4, 6, 10 y 11 del documento 21 y el bloque «Cómo encaja» del documento 19 tienen el título en ✅ con contenido derivado",
+            "que": "La biblia dice que la Comisión nace con el hallazgo y el documento 21 la crea tres años después; «últimas semanas» frente a «otoño e invierno»; el glosario cita un cargo que el 21 no usa; una errata",
             "resuelto_por": "narrador",
-            "como": "Marcas corregidas y confirmación del autor registrada en los documentos 18, 19 y 21"
-          },
-          {
-            "de": "qa",
-            "estado": "resuelto",
-            "que": "La cuadrilla muere en uno a tres años pero Anselmo sobrevive 18 años a la misma exposición: falta explicarlo con el tratamiento y la protección de la Comisión",
-            "resuelto_por": "narrador",
-            "como": "Marcas corregidas y confirmación del autor registrada en los documentos 18, 19 y 21"
+            "como": "Marcas bajadas a 🟡, contradicción de la Comisión y errata corregidas en los documentos 18, 19 y 21"
           }
-        ]
+        ],
+        "entrega": "Build estricto sin avisos, edades e hitos coherentes, canon intacto"
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "autor",
+        "nota": "El autor revisa el documento 21 y los cambios en la biblia y el elenco"
       },
       {
         "etapa": "playtest",
@@ -185,6 +182,25 @@
         "de": "narrador",
         "a": "qa",
         "que": "Segunda revisión: confirmaciones del autor aplicadas, limpieza 69 %",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "narrador",
+        "que": "Devolución: bajar a 🟡 los ✅ sin respaldo y arreglar la contradicción sobre la Comisión y la errata",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Correcciones de la segunda pasada de QA aplicadas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: documento 21, biblia y elenco",
         "at": "2026-10-12"
       }
     ]
