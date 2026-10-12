@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Seis jefes decididos y con hoja; documentos 02 y 12 actualizados.",
       "ref": "rama studio/F0-69-jefes-de-zona"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó los seis jefes de zona tras los ajustes del cabecilla, el cazarrecompensas y el coronel.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
@@ -48,6 +56,11 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "El coronel se rehízo desde cero, sin usar la hoja anterior como referencia, solo la del Consorcio. Cara limpia y ojos oscuros como las demás hojas, y como no debe haber éter suelto, el broche de cristal de la gorra pasó a ser una estrella dorada de metal. De dos variantes se eligió la que lleva el bastón visible en las tres vistas. Coste: 2 créditos."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Listo, ahora sí."
     }
   ],
   "evidence": [

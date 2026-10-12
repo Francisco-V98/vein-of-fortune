@@ -725,7 +725,7 @@
               "id": "F0-69",
               "title": "Decidir los jefes de zona y sus hojas",
               "est": 3,
-              "status": "review",
+              "status": "done",
               "prio": "P2",
               "desc": "El documento 02 menciona jefes ocasionales con un duelo de timing, pero no define cuáles son. Decidirlos con el autor y generar su hoja. Hasta entonces queda diferido.",
               "done_when": "Un jefe por zona definido y con su hoja."
