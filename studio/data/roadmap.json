@@ -530,6 +530,102 @@
               "done_when": "Biblia revisada y sin contradicciones; mapa de historia actualizado."
             }
           ]
+        },
+        {
+          "id": "F0.12",
+          "name": "Limpieza y coherencia del diseño",
+          "tasks": [
+            {
+              "id": "F0-49",
+              "title": "Medidor de limpieza del diseño y comprobación de conexiones",
+              "est": 3,
+              "status": "review",
+              "prio": "P0",
+              "desc": "Limpieza por documento (✅ ÷ (✅ + 🟡 + ❓)), marca de lo diferido con su tarea, enlaces y tareas citadas comprobados, vista en el hub y regla en el flujo de trabajo.",
+              "done_when": "El porcentaje se ve en el hub, el build falla con conexiones rotas y la regla está en el documento 15 y en la plantilla de PR."
+            },
+            {
+              "id": "F0-50",
+              "title": "Registro del mundo y comprobaciones de coherencia",
+              "est": 8,
+              "status": "backlog",
+              "prio": "P0",
+              "desc": "Registro de minerales, zonas, minijuegos, mecánicas, recetas, facciones y personajes como fuente de verdad, con comprobaciones contra las reglas del diseño y el mapa de historia, y vista de coherencia en el hub.",
+              "done_when": "Registro validado en el build y vista de coherencia con sus hallazgos en el hub."
+            },
+            {
+              "id": "F0-51",
+              "title": "Registro de hilos narrativos y cabos sueltos",
+              "est": 6,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Cada pista, promesa o secreto con dónde se siembra, dónde se resuelve y qué cambia. El build marca lo sembrado sin resolver y lo resuelto sin sembrar, y los personajes que desaparecen de un acto. Parte de la biblia narrativa (F0.11).",
+              "done_when": "Registro cargado con los hilos de la biblia y comprobaciones activas en el hub."
+            },
+            {
+              "id": "F0-52",
+              "title": "Modelo económico: números base",
+              "est": 10,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Decidir con el autor los números base: precio y volatilidad de cada mineral, sectores de demanda, spreads, costos de herramientas, salarios, deuda y duración del día. Se cargan en el registro del mundo.",
+              "done_when": "Todos los minerales con precio base, volatilidad y demanda; costos y salarios acordados."
+            },
+            {
+              "id": "F0-53",
+              "title": "Simulador de economía y progresión con reglas de equilibrio",
+              "est": 16,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Simulación sin interfaz de miles de días. Comprueba que no hay bucles de ganancia infinita, que la deuda del Acto I se paga en su plazo sin ser trivial, que mejorar una herramienta no se paga sola en una expedición, que los ingresos por hora crecen de forma razonable y que no hay una zona siempre óptima.",
+              "done_when": "Simulador en las pruebas automáticas con las reglas de equilibrio como casos y resultados visibles en el hub."
+            },
+            {
+              "id": "F0-54",
+              "title": "Pasada de cierre: diseño del juego (01, 02, 03, 04, 09)",
+              "est": 10,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Presentar al autor los puntos 🟡 y ❓ de los documentos de núcleo, extracción, comercio, progresión y minijuegos, decidirlos y dejarlos ✅ o ⏳ con su tarea.",
+              "done_when": "Cada documento por encima de la meta de limpieza."
+            },
+            {
+              "id": "F0-55",
+              "title": "Pasada de cierre: mundo, historia y sociedad (05, 07, 08, 17, 19)",
+              "est": 6,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Cerrar con el autor los puntos abiertos de mundo y minerales, sociedad, historia, mapa de historia y elenco, y resolver los hallazgos de coherencia del registro del mundo.",
+              "done_when": "Cada documento por encima de la meta y sin hallazgos de coherencia en mundo e historia."
+            },
+            {
+              "id": "F0-56",
+              "title": "Pasada de cierre: marca y arte (12, 13)",
+              "est": 5,
+              "status": "backlog",
+              "prio": "P2",
+              "desc": "Cerrar los puntos abiertos de dirección de arte y de marca e identidad: subtítulo, lema, tipografía y logotipo.",
+              "done_when": "Ambos documentos por encima de la meta."
+            },
+            {
+              "id": "F0-57",
+              "title": "Pasada de cierre: técnico, legal y arquitectura (10, 11, 14)",
+              "est": 6,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Cerrar los puntos abiertos de herramientas, legal y cumplimiento y arquitectura modular.",
+              "done_when": "Cada documento por encima de la meta."
+            },
+            {
+              "id": "F0-58",
+              "title": "Pasada de cierre: flujo, QA y plan (06, 15, 16)",
+              "est": 4,
+              "status": "backlog",
+              "prio": "P2",
+              "desc": "Cerrar los puntos abiertos del plan, el flujo de trabajo y la calidad.",
+              "done_when": "Cada documento por encima de la meta."
+            }
+          ]
         }
       ],
       "confidence": "alta"

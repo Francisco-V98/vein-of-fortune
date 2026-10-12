@@ -119,8 +119,29 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 - [ ] Formato y lint sin avisos.
 - [ ] Textos en ES y EN; sin cadenas fijas.
 - [ ] Documentación y registro de decisiones al día si corresponde.
+- [ ] Si toca documentos de diseño: la limpieza no baja, lo que queda sin cerrar está marcado como diferido, con su tarea, y no hay conexiones rotas (hub, «Limpieza del diseño»).
 - [ ] Evidencia en la tarea (captura, resultado de pruebas o nota).
 - [ ] PR revisado y fusionado.
+
+## Limpieza del diseño ✅
+
+**Requisito del autor:** todo debe quedar **✅ acordado**, sin ambigüedades, y todo debe **conectar y funcionar bien**. Solo puede quedar sin cerrar lo que depende de algo que se verá después, y eso debe quedar **dicho de forma explícita**. Aplica a todo el proyecto, para siempre. No hace falta un 100 % absoluto, pero sí acercarse lo más posible.
+
+**Cómo se mide:**
+
+| Qué | Regla |
+|---|---|
+| **Limpieza** de un documento | ✅ ÷ (✅ + 🟡 + ❓), en porcentaje. También se calcula para todo el diseño |
+| **Diferido** | `⏳ F0-43` marca algo que depende de una tarea posterior. No resta, pero debe nombrar una tarea que exista y que no esté terminada; si la tarea se termina, el punto debe resolverse |
+| **Conexión** | Los enlaces entre documentos y las tareas citadas deben existir. Una conexión rota es un error del build |
+| **Meta** | 🟡 Como mínimo 90 % por documento (umbral propuesto) y acercarse al 100 % |
+
+**Cómo se atiende:**
+
+1. Un documento nuevo no se da por terminado mientras tenga puntos 🟡 o ❓ que se puedan decidir ya. Lo que no se puede decidir todavía se marca como diferido, con la tarea de la que depende.
+2. Los puntos abiertos se cierran en **pasadas de cierre por documento**: se presentan al autor, se decide, y se convierten en ✅. Cada pasada tiene su tarea en el roadmap.
+3. El panel **Limpieza del diseño** del hub muestra el porcentaje de cada documento, la lista de puntos por cerrar y las conexiones rotas. `python3 studio/hub/build.py --strict` informa el resumen y falla si hay conexiones rotas.
+4. 🟡 Más adelante la integración continua impedirá que la limpieza de un documento baje respecto de `main`.
 
 ## Pruebas 🟡
 

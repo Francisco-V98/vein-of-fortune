@@ -15,6 +15,12 @@ Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/presentation.json   láminas de la página «El juego» (resumen curado del diseño)
   - studio/data/story.json          mapa de historia: actos, carriles y tareas relacionadas
 
+Limpieza del diseño (ver studio/docs/15-flujo-de-trabajo-y-calidad.md):
+  limpieza = ✅ / (✅ + 🟡 + ❓)  por documento y en total. Meta: lo más cerca posible de 100 %.
+  ⏳ <ID de tarea> marca algo que depende de una tarea posterior: no resta limpieza, pero
+  debe nombrar una tarea que exista y que no esté terminada.
+  Además se revisan las conexiones: enlaces entre documentos y referencias a tareas.
+
 Regla de coherencia: si el estado de una tarea no es "backlog", debe existir su
 archivo de actividad y el último movimiento del historial debe llevar a ese estado.
 Así, que una tarea esté "En proceso" siempre implica que alguien editó sus datos.
@@ -295,6 +301,79 @@ def load_presentation(doc_ids):
     return {"sections": sections, "slides": data.get("slides", [])}
 
 
+CLEAN_TARGET = 90  # meta orientativa de limpieza por documento (%)
+WAIT_RE = re.compile(r"\u23f3\s*(F\d-\d{2,3})")
+TASK_REF_RE = re.compile(r"\bF\d-\d{2,3}\b")
+LINK_RE = re.compile(r"\]\(([^)\s]+)\)")
+
+
+def analyze_docs(docs, task_status):
+    """Calcula la limpieza y las conexiones de cada documento (ver docstring)."""
+    totals = {"ok": 0, "prop": 0, "open": 0, "wait": 0}
+    problems_total = 0
+    for doc in docs:
+        in_code, heading = False, ""
+        counts = {"ok": 0, "prop": 0, "open": 0, "wait": 0}
+        items, problems = [], []
+        for n, line in enumerate(doc["md"].splitlines(), start=1):
+            if line.strip().startswith("```"):
+                in_code = not in_code
+                continue
+            if in_code:
+                continue
+            if line.startswith("#"):
+                heading = line.lstrip("# ").strip()
+            line = re.sub(r"`[^`]*`", "", line)  # los ejemplos entre comillas invertidas no cuentan
+            counts["ok"] += line.count("✅")
+            counts["prop"] += line.count("🟡")
+            counts["open"] += line.count("❓")
+            waits = WAIT_RE.findall(line)
+            counts["wait"] += line.count("\u23f3")
+            kinds = [k for k, m in (("prop", "🟡"), ("open", "❓"), ("wait", "\u23f3")) if m in line]
+            if kinds:
+                text = re.sub(r"[*_`]", "", line).strip(" |-•")
+                items.append({"line": n, "kinds": kinds, "heading": heading, "text": text[:220]})
+            if "\u23f3" in line:
+                if not waits:
+                    problems.append("línea %d: ⏳ sin tarea de la que dependa" % n)
+                for tid in waits:
+                    if tid not in task_status:
+                        problems.append("línea %d: ⏳ depende de una tarea inexistente (%s)" % (n, tid))
+                    elif task_status[tid] == "done":
+                        problems.append("línea %d: ⏳ depende de %s, que ya está terminada: debe resolverse" % (n, tid))
+        base = DOCS / "adr" if doc["id"].startswith("adr-") else DOCS
+        for ref in sorted(set(TASK_REF_RE.findall(re.sub(r"`[^`]*`", "", re.sub(r"```.*?```", "", doc["md"], flags=re.S))))):
+            if ref not in task_status:
+                problems.append("cita una tarea que no existe: %s" % ref)
+        for link in LINK_RE.findall(doc["md"]):
+            target = link.split("#")[0]
+            if target.endswith(".md") and not target.startswith("http") and not (base / target).exists():
+                problems.append("enlace roto: %s" % link)
+        decided = counts["ok"] + counts["prop"] + counts["open"]
+        doc["counts"] = {"ok": counts["ok"], "prop": counts["prop"], "open": counts["open"]}
+        doc["clean"] = {
+            "pct": round(100 * counts["ok"] / decided) if decided else None,
+            "wait": counts["wait"],
+            "items": items,
+            "problems": problems,
+        }
+        for k in totals:
+            totals[k] += counts[k]
+        problems_total += len(problems)
+        for msg in problems:
+            warn("%s: %s" % (doc["id"], msg))
+    decided = totals["ok"] + totals["prop"] + totals["open"]
+    return {
+        "pct": round(100 * totals["ok"] / decided) if decided else None,
+        "target": CLEAN_TARGET,
+        "ok": totals["ok"],
+        "prop": totals["prop"],
+        "open": totals["open"],
+        "wait": totals["wait"],
+        "problems": problems_total,
+    }
+
+
 def load_story(task_ids):
     """Carga y valida el mapa de historia (actos y carriles)."""
     path = DATA / "story.json"
@@ -346,6 +425,8 @@ def build_hub():
     if any(d["group"] == ADR_GROUP for d in docs):
         groups.append(ADR_GROUP)
     task_ids = {t["id"] for p in roadmap["phases"] for m in p["milestones"] for t in m["tasks"]}
+    task_status = {t["id"]: t["status"] for p in roadmap["phases"] for m in p["milestones"] for t in m["tasks"]}
+    cleanliness = analyze_docs(docs, task_status)
     return {
         "generated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "config": load_json(DATA / "config.json"),
@@ -357,6 +438,7 @@ def build_hub():
         "qa": load_qa(task_ids),
         "presentation": load_presentation({d["id"] for d in docs}),
         "story": load_story(task_ids),
+        "cleanliness": cleanliness,
     }
 
 
@@ -378,6 +460,11 @@ def main():
     print(
         "OK: %d documentos, %d tareas (%s), %d imágenes -> %s"
         % (len(hub["docs"]), len(tasks), resumen, len(hub["assets"]["images"]), out.relative_to(STUDIO.parent))
+    )
+    c = hub["cleanliness"]
+    print(
+        "Limpieza del diseño: %s %% (meta %d %%) · ✅ %d · 🟡 %d · ❓ %d · ⏳ %d · conexiones rotas: %d"
+        % (c["pct"], c["target"], c["ok"], c["prop"], c["open"], c["wait"], c["problems"])
     )
     if warnings:
         print("%d aviso(s)." % len(warnings))
