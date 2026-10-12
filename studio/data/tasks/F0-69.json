@@ -1,0 +1,71 @@
+{
+  "id": "F0-69",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor aceptó la propuesta de un jefe humano por zona; se generan las seis hojas.",
+      "ref": "rama studio/F0-69-jefes-de-zona"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Seis jefes decididos y con hoja; documentos 02 y 12 actualizados.",
+      "ref": "rama studio/F0-69-jefes-de-zona"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Aceptada la propuesta de jefes: uno por zona, el de La Fosa es el Coronel de la Comisión y el ministro Dueñas sigue siendo el antagonista narrativo."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Seis hojas de jefe (Capataz Mayor, cabecilla de la banda rival, jefe de seguridad del Consorcio, Aduanero Mayor, Cazarrecompensas Mayor y Coronel de la Comisión), cada una con de frente, de lado, de espalda, predeterminada y enojo, con la hoja del Consorcio como referencia. Los pedí con las manos y las armas muy simples para evitar los defectos de los enemigos anteriores. Se añadieron al registro del mundo (grupo «Jefes de zona»), a la galería del hub, a la tabla de zonas del documento 02 y a una tabla de rasgos en el documento 12. Coste: 8 créditos (dos reintentos por límite de la API)."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Jefe de zona · Capataz Mayor",
+      "path": "evidence/F0-69/capataz-mayor.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Jefe de zona · Cabecilla de la banda rival",
+      "path": "evidence/F0-69/cabecilla-banda-rival.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Jefe de zona · Jefe de seguridad del Consorcio",
+      "path": "evidence/F0-69/jefe-seguridad-consorcio.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Jefe de zona · Aduanero Mayor",
+      "path": "evidence/F0-69/aduanero-mayor.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Jefe de zona · Cazarrecompensas Mayor",
+      "path": "evidence/F0-69/cazarrecompensas-mayor.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Jefe de zona · Coronel de la Comisión",
+      "path": "evidence/F0-69/coronel-comision.jpg"
+    }
+  ]
+}

@@ -147,7 +147,18 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 | Ministerio, Comisión del Éter, Consorcio Arvel, Unión, Los Faroleros, prensa, empleados y civiles (26 tipos) | **Hoja de grupo** con 2 o 3 tipos: cada uno de frente, de lado, de espalda y una cara con su expresión predeterminada, en chibi pixel art con la estética del modelo |
 | Enemigos humanos y criaturas de La Fosa (9 tipos) | **Una hoja por tipo**: de frente, de lado, de espalda y dos expresiones, porque son los que más se ven |
 
-Los jefes de zona quedan diferidos (⏳ F0-69).
+**Jefes de zona ✅:** un jefe humano por zona (tabla del [documento 02](02-extraccion.md)), con una hoja por jefe de frente, de lado, de espalda, predeterminada y enojo, en el mismo estilo chibi. Sus fichas están en el registro del mundo y se ven en la galería del hub (`#/personajes`).
+
+| Zona | Jefe | Rasgos que lo hacen reconocible |
+|---|---|---|
+| Galerías del Hollín | Capataz Mayor | Bombín con lámpara de latón, bigote gris, chaleco vinotinto, silbato y bastón con punta de hierro |
+| Cañón Ferroso | Cabecilla de la banda rival | Pañuelo rojo, gabán naranja óxido, hombrera de hierro remachada, cinturón de cadena y garrote liso |
+| Minas de Sierra Alta | Jefe de seguridad del Consorcio | Abrigo azul pizarra con cuello de piel, gorra con gafas de aviador subidas, brazalete vinotinto y porra |
+| Salares del Litoral | Aduanero Mayor | Uniforme beige manchado de sal, banda vinotinta, medalla de latón, libro de registro y sello |
+| Cavernas de Cristal | Cazarrecompensas Mayor | Gabán carbón, sombrero con cristal cian, hombrera de cristal vino, grilletes en el cinturón y espuelas |
+| La Fosa del Éter | Coronel de la Comisión | Capote verde oliva oscuro, charreteras doradas, gorra con broche de cristal, guantes blancos y bastón negro |
+
+El ministro Dueñas sigue siendo el antagonista narrativo y no tiene duelo de jefe.
 
 **Calidad:** generación en calidad media a 2K, que equilibra detalle y costo. Se revisa y aprueba cada hoja antes de pasar a la siguiente.
 
