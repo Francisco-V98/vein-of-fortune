@@ -1,0 +1,40 @@
+{
+  "id": "F0-63",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se sigue con Esteban, Casilda y el Ministro tras aprobar las hojas del grupo anterior. Primero los modelos.",
+      "ref": "rama studio/F0-63-hojas-de-esteban-casilda-y-el-ministro"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Modelos generados con el de Reme como referencia de formato y el retrato aprobado de cada uno. El Ministro sigue su retrato (gafas redondas de latón, sin barba, guerrera con laureles, faja y medallas) y no la barba del sprite que se usó para elegir el estilo: conviene que el autor confirme cuál es la versión canónica. En Casilda aparecen dos broches de farol (uno en cada solapa) y su retrato tiene uno."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Esteban · Hoja de modelo",
+      "path": "evidence/F0-63/esteban-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Casilda · Hoja de modelo",
+      "path": "evidence/F0-63/casilda-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Ministro Dueñas · Hoja de modelo",
+      "path": "evidence/F0-63/duenas-modelo.jpg"
+    }
+  ]
+}
