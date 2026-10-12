@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Cuatro hojas de grupo con once tipos.",
       "ref": "rama studio/F0-66-npc-empleados-y-civiles"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las hojas, dijo que no le molesta que los empleados se parezcan y pidió corregir lo necesario: se limpió la mancha de la cliente de la élite.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
@@ -28,6 +36,16 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Los empleados llevan un pin de lámpara de minero como emblema de la tienda. La hoja de civiles 2 tiene dos filas y deja la tercera vacía para mantener el mismo tamaño. En la cliente de la élite quedó una mancha de hollín en la mejilla, heredada del obrero; es un detalle menor que se corrige si el autor lo pide. Los empleados se parecen bastante entre sí: si se quiere variedad (más mujeres, otras edades), se añade en una segunda pasada. Coste: 4 créditos."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Los empleados no me molesta que se parezcan; corrige el resto de cosas que sea necesario."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Se regeneró la hoja de civiles 2 sin la mancha de hollín en la cara de la cliente de la élite (1 crédito)."
     }
   ],
   "evidence": [
