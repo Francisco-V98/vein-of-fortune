@@ -27,14 +27,14 @@ Lore:
 
 ### Zonas de la versión completa ✅ (6, desbloqueo en este orden)
 
-| # | Zona | Región | Peligros | Quién molesta |
-|---|---|---|---|---|
-| 1 | Galerías del Hollín | Cuenca del Hollín | Gas, polvo, derrumbes | Capataces, saqueadores |
-| 2 | Cañón Ferroso | Cuenca del Hollín | Calor, desprendimientos | Rivales, bandas |
-| 3 | Minas de Sierra Alta | Sierra Alta | Frío, altitud, falta de aire | Guardias de empresa |
-| 4 | Salares del Litoral | Salares del Litoral | Sed, calor, gases | Contrabandistas, inspectores corruptos |
-| 5 | Cavernas de Cristal | Cavernas de Cristal | Cristales cortantes, desorientación | Cazarrecompensas |
-| 6 | La Fosa del Éter | La Fosa | Radiación de éter, inestabilidad | Militares, criaturas mutadas |
+| # | Zona | Región | Peligros | Quién molesta | Jefe de zona ✅ |
+|---|---|---|---|---|---|
+| 1 | Galerías del Hollín | Cuenca del Hollín | Gas, polvo, derrumbes | Capataces, saqueadores | Capataz Mayor |
+| 2 | Cañón Ferroso | Cuenca del Hollín | Calor, desprendimientos | Rivales, bandas | Cabecilla de la banda rival |
+| 3 | Minas de Sierra Alta | Sierra Alta | Frío, altitud, falta de aire | Guardias de empresa | Jefe de seguridad del Consorcio |
+| 4 | Salares del Litoral | Salares del Litoral | Sed, calor, gases | Contrabandistas, inspectores corruptos | Aduanero Mayor |
+| 5 | Cavernas de Cristal | Cavernas de Cristal | Cristales cortantes, desorientación | Cazarrecompensas | Cazarrecompensas Mayor |
+| 6 | La Fosa del Éter | La Fosa | Radiación de éter, inestabilidad | Militares, criaturas mutadas | Coronel de la Comisión |
 
 ✅ Las zonas están ambientadas en Valdoria (ver [05](05-mundo-y-minerales.md) para regiones y distribución de minerales).
 

@@ -636,6 +636,42 @@
       "name": "Criatura etérea de La Fosa",
       "group": "Criaturas",
       "faction": null
+    },
+    {
+      "id": "capataz-mayor",
+      "name": "Capataz Mayor",
+      "group": "Jefes de zona",
+      "faction": "consorcio"
+    },
+    {
+      "id": "cabecilla-banda-rival",
+      "name": "Cabecilla de la banda rival",
+      "group": "Jefes de zona",
+      "faction": null
+    },
+    {
+      "id": "jefe-seguridad-consorcio",
+      "name": "Jefe de seguridad del Consorcio",
+      "group": "Jefes de zona",
+      "faction": "consorcio"
+    },
+    {
+      "id": "aduanero-mayor",
+      "name": "Aduanero Mayor",
+      "group": "Jefes de zona",
+      "faction": "ministerio"
+    },
+    {
+      "id": "cazarrecompensas-mayor",
+      "name": "Cazarrecompensas Mayor",
+      "group": "Jefes de zona",
+      "faction": null
+    },
+    {
+      "id": "coronel-comision",
+      "name": "Coronel de la Comisión",
+      "group": "Jefes de zona",
+      "faction": "comision"
     }
   ]
 }
