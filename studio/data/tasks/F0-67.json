@@ -1,0 +1,58 @@
+{
+  "id": "F0-67",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se sigue con los enemigos humanos, una hoja por tipo. Las tres criaturas de La Fosa quedan para después de que el autor confirme su diseño.",
+      "ref": "rama studio/F0-67-npc-enemigos-y-criaturas"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Seis hojas de enemigos humanos: saqueador, banda rival, contrabandista, inspector corrupto, cazarrecompensas y soldado de La Fosa, cada una con de frente, de lado, de espalda y dos expresiones (predeterminada y enojo), con la hoja del Consorcio como referencia. Faltan las tres criaturas: el documento 02 solo dice «criaturas mutadas» y el autor aún no ha confirmado la propuesta (humanos mutados por la Aetherita: reptante, cristalino y etéreo). En la hoja de la banda rival el rótulo PREDETERMINADA salió con un carácter raro. Coste: 6 créditos."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Enemigo · Saqueador",
+      "path": "evidence/F0-67/saqueador.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Enemigo · Banda rival",
+      "path": "evidence/F0-67/banda-rival.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Enemigo · Contrabandista",
+      "path": "evidence/F0-67/contrabandista.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Enemigo · Inspector corrupto",
+      "path": "evidence/F0-67/inspector-corrupto.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Enemigo · Cazarrecompensas",
+      "path": "evidence/F0-67/cazarrecompensas.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Enemigo · Soldado de La Fosa",
+      "path": "evidence/F0-67/soldado-fosa.jpg"
+    }
+  ]
+}
