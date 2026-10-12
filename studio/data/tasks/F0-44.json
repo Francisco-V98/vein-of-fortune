@@ -1,0 +1,143 @@
+{
+  "id": "F0-44",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empiezan las tres variantes del Acto II con el flujo de especialistas.",
+      "ref": "rama studio/F0-44-acto-ii-tres-variantes"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "ideador",
+        "nota": "Tres enfoques: A columna común con piezas de variante, B tres actos paralelos, C núcleo fijo con filtros; recomienda A",
+        "entrega": "Tres enfoques, bosquejo de las tres variantes, escenas comunes, conexión con las cintas y siete preguntas"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "analista",
+        "nota": "El enfoque A encaja con el Acto II salvo tres choques graves con mecánicas del Acto III, con canon general y con las pruebas del Acto IV",
+        "entrega": "Comprobación de mecánicas, personajes y ⏳ F0-44, criterios de aceptación y diez preguntas",
+        "hallazgos": [
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "La luz cortada, los generadores de Casilda y el mercado negro no pueden ser de una sola variante: son canon general del Acto II",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 22 y en los documentos 06, 08, 17, 18, 19 y 21"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Los contratos oficiales a largo plazo y las cuotas del Ministerio son del Acto III; hay que adelantarlos o limitarlos con un ⏳",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 22 y en los documentos 06, 08, 17, 18, 19 y 21"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Las pruebas distintas por variante en el Acto IV exceden a Reme y pertenecen a F0-45 y F0-46",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 22 y en los documentos 06, 08, 17, 18, 19 y 21"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "La orden de Reme debe doler igual en las tres variantes, y Quiroga y Teo deben conservar sus pistas en todas",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 22 y en los documentos 06, 08, 17, 18, 19 y 21"
+          }
+        ]
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "El narrador escribió el documento 22; limpieza 67 %, coherencia 70 %",
+        "at": "2026-10-12",
+        "por": "narrador",
+        "entrega": "Documento 22 con las seis escenas ancla, la tabla de las tres variantes, la huelga, la alianza y la nota de coste; los ⏳ F0-44 resueltos"
+      },
+      {
+        "etapa": "qa",
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "qa",
+        "nota": "QA comprueba el build estricto, las marcas, la coherencia con el canon y las dependencias del documento 22"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: tres enfoques para las variantes del Acto II según quién esté detrás de Reme",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Enfoque A con bosquejo de las tres variantes del Acto II por comprobar",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Comprobación del enfoque A con tres choques graves y diez preguntas para el autor",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Escribir el documento de las tres variantes del Acto II con las decisiones del autor y cerrar los ⏳ F0-44",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Documento 22 escrito y ⏳ F0-44 resueltos; faltan los términos nuevos del glosario",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "localizador",
+        "que": "Traducir al inglés los términos nuevos del documento 22 para el glosario",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "localizador",
+        "a": "coordinador",
+        "que": "Cuatro términos nuevos traducidos al inglés",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 22 y los cambios en 06, 08, 17, 18, 19, 21 y story.json",
+        "at": "2026-10-12"
+      }
+    ]
+  }
+}

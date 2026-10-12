@@ -54,7 +54,7 @@ Después del Acto IV: **sandbox** con la capa de imperio (ver [04](04-progresion
 - **Tío: Anselmo Vidal.** Antes de desaparecer dejó una libreta y **cintas de grabación** (carretes). Se encuentran a lo largo del juego y revelan la verdad del Acto IV (equivalente a los holotapes de Fallout).
 - **Acreedor: Doña Remedios "Reme" Salgado**, prestamista local amable. En el Acto I parece una vecina que da tiempo; en el Acto II se descubre que responde a una facción mayor.
 - **La facción detrás de Reme cambia según la partida**: Consorcio Arvel, Los Faroleros o el Ministerio. Esto cumple "mismos hitos, otras circunstancias".
-- 🟡 El Acto II necesita entonces 3 variantes. No afecta al MVP (solo Acto I).
+- ✅ El Acto II tiene 3 variantes: una columna común de seis escenas con piezas propias por variante, descritas en [22](22-acto-ii-variantes.md). No afecta al MVP (solo Acto I).
 - ✅ **Anselmo está vivo, pero se cree que murió enfermo.** Es cómplice de la Comisión del Éter y el protagonista lo descubre al final del Acto IV, lo que deja abierta una continuación. Detalle y pistas en [19](19-elenco-a-fondo.md).
 - ✅ **Reme traiciona en el Acto II por obligación, no por decisión propia**, y al final del Acto IV se une al protagonista para resolver el caso del tío.
 - ✅ **El Ministro Dueñas es el enemigo claro**: duro e inflexible, convencido de que sostiene la nación, con una razón que no es tan razonable.
@@ -100,4 +100,4 @@ Cualquier opción cambia la partida, pero **el sistema se reabsorbe y todo sigue
 
 - ❓ ¿Cuántas escenas/diálogos tiene el Acto I y con qué formato (viñetas, texto, retratos)?
 - ❓ Idiomas: español primero; inglés después.
-- ❓ Qué pasa exactamente en cada variante del Acto II.
+- ✅ Estructura de las variantes del Acto II decidida por el autor (sorteo oculto, alianza entre tres facciones, huelga que depende del jugador). El detalle escena por escena queda como propuesta en [22](22-acto-ii-variantes.md).

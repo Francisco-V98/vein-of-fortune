@@ -12,6 +12,7 @@ Es la guía de escritura de Veta de Fortuna: **cómo se nombra cada cosa, cómo 
 | [05](05-mundo-y-minerales.md), [07](07-sociedad-y-eventos.md) | Mundo, minerales, facciones y medios |
 | [17 · Mapa de historia](17-mapa-de-historia.md) | Hitos de cada acto |
 | [21 · Pasado de Valdoria](21-pasado-de-valdoria.md) | **Fuente de las fechas** de lo que pasó antes del juego: cronología, edades, muerte pública de Anselmo, cintas, aldea y casas |
+| [22 · Acto II: variantes de Reme](22-acto-ii-variantes.md) | **Fuente de las escenas del Acto II**: qué cambia si Reme responde al Consorcio, al Ministerio o a Los Faroleros |
 
 ## Estructura de esta biblia ✅
 
@@ -27,7 +28,7 @@ El autor eligió una estructura **por entidades**, con el documento 19 como fuen
 | 6 · Glosario ES/EN | Cada término en español e inglés con su estado y las reglas de traducción |
 | Anexo · Cronología y bifurcaciones | Los cuatro actos con sus hitos y variantes |
 
-Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. F0-43 se resolvió en [21](21-pasado-de-valdoria.md). Las tareas F0-44, F0-45 y F0-46 **no se resuelven aquí**: la biblia deja el hueco señalado y no inventa su contenido.
+Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. F0-43 se resolvió en [21](21-pasado-de-valdoria.md) y F0-44 en [22](22-acto-ii-variantes.md). Las tareas F0-45 y F0-46 **no se resuelven aquí**: la biblia deja el hueco señalado y no inventa su contenido.
 
 ---
 
@@ -241,7 +242,7 @@ En cada ficha, los **rasgos de voz** y las **líneas de ejemplo** vienen del 19 
 | **Nunca dice** | Nunca alza la voz ni insulta. Nunca nombra a la facción que está detrás de ella antes de que el Acto II la revele 🟡 |
 | **Ficha completa** | [19 · Reme](19-elenco-a-fondo.md) |
 
-La facción detrás de Reme cambia por partida (ver capítulo 3). Cómo suena Reme en cada una de las tres variantes ⏳ F0-44
+La facción detrás de Reme cambia por partida (ver capítulo 3). Cómo suena Reme en cada una de las tres variantes está en [22](22-acto-ii-variantes.md) (secciones 3 y 5).
 
 ### 2.4 Teo Cárdenas, «el Viejo Teo»
 
@@ -326,7 +327,7 @@ Nombres definidos en [07](07-sociedad-y-eventos.md) y registrados en `studio/dat
 | **Los Faroleros** ✅ | los Faroleros | Nacieron como el gremio que encendía los faroles de los puertos y hoy «cobran la luz» ✅. Hablan de luz y deuda de luz. El farol rojo es su emblema; el protagonista usa la lámpara ([13](13-marca-e-identidad.md)) |
 | **Prensa** ✅ | los medios | Tres medios con sesgos distintos (1.10) |
 
-- **La facción detrás de Reme** es el Consorcio Arvel, Los Faroleros o el Ministerio, según la partida ✅ ([08](08-historia-y-personaje.md)). Las escenas, los aliados y las consecuencias de cada una ⏳ F0-44
+- **La facción detrás de Reme** es el Consorcio Arvel, Los Faroleros o el Ministerio, según la partida ✅ ([08](08-historia-y-personaje.md)). Las escenas, los aliados y las consecuencias de cada una están en [22](22-acto-ii-variantes.md).
 - **Casas industriales** es el nombre de la categoría en [07](07-sociedad-y-eventos.md). Dentro del juego, la casa que se ve es el Consorcio Arvel. La única otra casa con nombre es **Casa Ormeño** (plata y joyería, Puerto Meridiano): un nombre de ambiente que solo sale en noticias y glosario, sin zona ni jefe ✅ ([21](21-pasado-de-valdoria.md)). Talavera e Hijos y Fundiciones Soria están descartadas.
 - Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21 · Orígenes](21-pasado-de-valdoria.md): la Unión nace del derrumbe de Pozo Negro, el hallazgo de la Aetherita es de hace 30 años y la Comisión nace 3 años después (hace 27), antes en una oficina de ensayo sin nombre, y los Faroleros pierden el oficio con la electrificación.
 - Los figurantes de cada facción (perito, guardia, capataz, delegado, cobrador…) están en el registro del mundo. Su voz sigue la de su facción.
@@ -398,7 +399,7 @@ Es la lista oficial de cómo se dice cada cosa en español y en inglés. **Cada 
 | Marca | Significado |
 |---|---|
 | ✅ decidido | Lo fijó el autor o ya está en otro documento. Se copia tal cual |
-| 🟡 propuesta | Hoy no hay ninguna fila así. Un término nuevo entra con esta marca: el español se define en el documento de origen, el localizador propone el inglés y el autor lo confirma en lote |
+| 🟡 propuesta | Hoy son las cuatro filas de F0-44 (6.11). Un término nuevo entra con esta marca: el español se define en el documento de origen, el localizador propone el inglés y el autor lo confirma en lote |
 
 **Fuente de todo el capítulo ✅:** decisión del autor, F0-41 (2026-10-12), que confirmó todo el glosario propuesto, incluidas *the Pit*, *the Beacon*, *ether sickness* y *Ether Commission*. Las filas que citan otro documento (13, 07, 04) conservan esa fuente. Las siete filas que añadió F0-43 (Vega Mansa, la Primera Expedición, Casa Ormeño, Pozo Negro, Sanatorio de Cumbre Clara, secreto de Estado e ingeniero de calibración) las confirmó el autor el 2026-10-12. Un término nuevo entra aquí como propuesta, con su marca de «sin confirmar», hasta que el autor lo apruebe.
 
@@ -630,7 +631,11 @@ Los 7 del registro del mundo ([02](02-extraccion.md), [09](09-minijuegos.md)). N
 | cobrar la luz | charging for the light | ✅ | Lo que hacen los Lamplighters. Juego de palabras: ver 6.13 |
 | la deuda de luz | the light debt | ✅ | Lo que dice Casilda |
 | la protección | protection | ✅ | Extorsión disfrazada de servicio |
+| el fondo reservado | the reserve fund | 🟡 | Fondo secreto de la Comisión del Éter que paga el Consorcio ([22](22-acto-ii-variantes.md)). Con *the* y minúscula. Suena a caja de ahorro corriente, y eso le conviene: nadie sospecha. Se evitan *slush fund* (acusa por adelantos) y *black fund*. No se confunde con «el fondo» a secas del Ministerio, que es su fondo de crédito (*the credit fund*). ❓ Autor: ¿prefieres *secret fund*? |
+| la caja común | the common purse | 🟡 | La caja del gremio de los Lamplighters ([22](22-acto-ii-variantes.md)). *Purse* es el bolsillo compartido de un grupo y no suena a banco ni a fantasía (se evita *common chest*). Perdona o cobra «su parte»: *takes its cut*. Con *the* y minúscula |
+| las cuentas (del puesto) | the accounts | 🟡 | La contabilidad que el Ministerio pide entregar ([22](22-acto-ii-variantes.md)): *hand over your accounts*. Siempre *accounts*, nunca *books*, igual que en español nunca «libros»: así no choca con *ledger* (libro) ni con *notebook* (libreta, 6.11). Neutro en género |
 | el mercado negro | the black market | ✅ | |
+| el contacto (del mercado negro) | black market contact | 🟡 | Quien te abre el mercado negro ([22](22-acto-ii-variantes.md)). Sin guion y sin *the* de título; en el habla, *the contact*. Se evita *fence* (receptador de lo robado) y *dealer*. Neutro en género. No es el «contacto» de A1, que es cada facción citándote |
 | el apagón · la huelga · el saqueo | blackout · strike · looting | ✅ | Eventos sociales ([07](07-sociedad-y-eventos.md)). *Strike* ✅ en 6.7 |
 | trámite · gestión · atención | procedure · processing · courtesy | ✅ | Los tres eufemismos de Quiroga. Nunca *bribe* |
 | secreto de Estado | state secret | ✅ | Lo que el Ministerio declara sobre la Aetherita ([21](21-pasado-de-valdoria.md)). Minúscula; traducción directa y de uso común |
@@ -689,7 +694,7 @@ Los cuatro actos tal como están en [17](17-mapa-de-historia.md) y `studio/data/
 | Acto | Hito que lo cierra ✅ | Variantes y bifurcaciones |
 |---|---|---|
 | **I · El recién llegado** (Villa Brasa) | Reabres el puesto, pagas las primeras cuotas y tienes el primer contacto con los empleados | No tiene bifurcación grande. La facción detrás de Reme ya está decidida, pero no se revela. Consecuencias pequeñas ⏳ F0-45 |
-| **II · Aprender las reglas** (Hollín, Sierra Alta, Salares) | Eliges con qué facción te alías | **3 variantes** ✅: Reme responde al Consorcio Arvel, a Los Faroleros o al Ministerio. Contenido de cada una ⏳ F0-44. Bifurcación grande: la alianza ⏳ F0-45 |
+| **II · Aprender las reglas** (Hollín, Sierra Alta, Salares) | Eliges con qué facción te alías | **3 variantes** ✅: Reme responde al Consorcio Arvel, a Los Faroleros o al Ministerio. Contenido de cada una en [22](22-acto-ii-variantes.md). Bifurcación grande: la alianza ⏳ F0-45 |
 | **III · El ascenso** (Puerto Meridiano, Cavernas de Cristal) | Te aceptan en el círculo de poder | Esteban puede ser aliado o enemigo según cómo lo trates (tema abierto en el apartado «Pendiente» de [19](19-elenco-a-fondo.md)). Consecuencias ⏳ F0-45 |
 | **IV · La cima** (La Fosa del Éter) | Decides qué hacer con la verdad y el poder | **3 salidas** ✅: **revelarla** (la Aetherita se desploma), **callarla** o **venderla** (moneda de poder). Teo muere, se reconcilia o se va según tus decisiones ✅. Epílogos de cada salida ⏳ F0-46 |
 
@@ -714,7 +719,7 @@ En `story.json` y en el [17](17-mapa-de-historia.md) Anselmo aparece ya en la ce
 
 ## Pendiente
 
-- ⏳ F0-44 Las tres variantes del Acto II.
+- ⏳ F4-179 Textos de las tres variantes del Acto II (la estructura está en [22](22-acto-ii-variantes.md)).
 - ⏳ F0-45 Árbol de decisiones y consecuencias; en qué acto aparece cada cinta (las ocho están en [21](21-pasado-de-valdoria.md)).
 - ⏳ F0-46 Epílogos de las tres salidas del Acto IV.
 - ⏳ F1-18 Cifras finales del formato de diálogo y del nombre de la tienda, con la fuente real.

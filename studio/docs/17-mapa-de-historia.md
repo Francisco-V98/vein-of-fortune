@@ -26,6 +26,7 @@ El detalle completo (mecánicas, mercado y eventos, arte) está en el cuadro del
 1. **Zonas:** se reparten como en el cuadro (1 en el Acto I, 3 en el II, 1 en el III y 1 en el IV).
 2. **Empleados:** el Acto I **termina con el primer contacto** (se habla de ellos, aparece un candidato en el periódico, pero todavía no se puede contratar). La contratación queda **implementada en el Acto II** como está en [04](04-progresion-y-meta.md).
 3. **Mercado negro:** entra en el **Acto II**, cuando conoces a los Faroleros, con el indicador de vigilancia ([03](03-comercio.md)).
+4. **Variantes del Acto II** (quién está detrás de Reme): una columna común de seis escenas con piezas propias por variante, sorteo oculto al empezar y alianza final entre el Consorcio, el Ministerio y Los Faroleros. Escena por escena en [22](22-acto-ii-variantes.md).
 
 ## Duración ✅
 
@@ -44,6 +45,5 @@ El modo historia **no obliga a seguir la trama con exactitud**: el jugador puede
 
 - ❓ **Narrativa en detalle:** hoy están definidos el gancho, los cuatro actos, el elenco y la verdad de la Aetherita. Falta bajar cada acto a escenas, diálogos, decisiones y consecuencias (guion). El roadmap ya tiene el guion día a día y el storyboard del Acto I (F0-23, F0-24) y los guiones de los actos II–IV (F4-128, F4-135, F4-142), pero con poco tiempo asignado para el nivel de detalle que se busca.
 - ❓ **Cierre de la historia:** la decisión final se reabsorbe y el país sigue igual, lo que puede dejar la sensación de historia inconclusa. Ideas 🟡 por explorar: epílogo propio para cada decisión sobre la Aetherita, un resumen del destino de cada personaje y de cada facción según tus alianzas, y dejar hilos abiertos que apunten a una continuación o segunda parte.
-- ❓ Qué pasa exactamente en cada una de las tres variantes del Acto II (quién está detrás de Reme).
 - ❓ Umbrales concretos que activan cada acto.
 - ❓ Cuántas bifurcaciones grandes y cuántas consecuencias pequeñas por acto.
