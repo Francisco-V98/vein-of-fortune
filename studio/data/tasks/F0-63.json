@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Modelos aprobados; poses y expresiones de los tres generadas.",
       "ref": "rama studio/F0-63-hojas-de-esteban-casilda-y-el-ministro"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las nueve hojas de Esteban, Casilda y el Ministro y dejó a Esteban como está. El elenco principal queda completo.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
