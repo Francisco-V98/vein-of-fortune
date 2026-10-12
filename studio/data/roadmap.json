@@ -689,7 +689,7 @@
               "id": "F0-65",
               "title": "NPC de la Unión, Los Faroleros y la prensa",
               "est": 4,
-              "status": "backlog",
+              "status": "done",
               "prio": "P2",
               "desc": "Una hoja de grupo por 3 tipos: minero sindicalista, delegado de la Unión y reportero; cobrador, matón e informante de Los Faroleros. El voceador de periódicos pasa a la hoja de civiles (F0-66) para que cada hoja tenga tres tipos.",
               "done_when": "Seis tipos aprobados en dos hojas."
