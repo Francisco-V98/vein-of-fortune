@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "35 tipos de NPC en el registro del mundo y formato de las hojas en el documento 12.",
       "ref": "rama studio/F0-59-hito-de-personajes-y-npc"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor revisó y aprobó la lista de 35 NPC y el formato de las hojas.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
