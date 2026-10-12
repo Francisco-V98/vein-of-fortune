@@ -133,3 +133,98 @@ export function svgLinea(filas, ancho) {
   })
   return envolver(W, H, partes)
 }
+
+// Parte un texto en líneas de un ancho aproximado en caracteres
+export function envolverTexto(texto, max) {
+  const palabras = String(texto).split(/\s+/).filter(Boolean)
+  const lineas = []
+  let actual = ''
+  for (const p of palabras) {
+    if ((actual + ' ' + p).trim().length > max && actual) {
+      lineas.push(actual)
+      actual = p
+    } else {
+      actual = (actual + ' ' + p).trim()
+    }
+  }
+  if (actual) lineas.push(actual)
+  return lineas
+}
+
+// Diagrama de traspasos de una tarea: una estación por etapa, con quién la hace, lo que entrega,
+// los hallazgos que dejó y cómo los resolvió quien correspondía, y las flechas de «pasa a».
+// Cada fila: { nombre, quien, indice, estado, nota, entrega, siguiente, hallazgos: [{ de, texto, estado, resuelto_por, como }] }
+export function svgTraspasos(filas, ancho) {
+  const W = Math.max(340, Math.min(ancho, 600))
+  const xTexto = 60
+  const maxChars = Math.max(30, Math.floor((W - xTexto - 14) / 6.2))
+  const partes = []
+  let y = 6
+  const huecos = []
+  filas.forEach((f, i) => {
+    const lineasNota = f.nota ? envolverTexto(f.nota, maxChars) : []
+    const lineasEntrega = f.entrega ? envolverTexto('Entrega: ' + f.entrega, maxChars) : []
+    const bloquesHallazgo = (f.hallazgos || []).map((h) => {
+      const abierto = h.estado !== 'resuelto'
+      const titulo = envolverTexto((abierto ? 'Hallazgo' : 'Hallazgo resuelto') + ' · ' + h.de + ': ' + h.texto, maxChars - 4)
+      const como = !abierto && h.como ? envolverTexto('Lo resolvió ' + (h.resuelto_por || '') + ': ' + h.como, maxChars - 4) : []
+      return { abierto, titulo, como }
+    })
+    const altoHallazgos = bloquesHallazgo.reduce((a, b) => a + 12 + (b.titulo.length + b.como.length) * 14 + 6, 0)
+    const alto = 46 + lineasNota.length * 14 + lineasEntrega.length * 14 + altoHallazgos
+    const activa = f.estado === 'activa'
+    const apagada = f.estado === 'pendiente' || f.estado === 'omitida'
+    const cy = y + 22
+    if (activa) {
+      partes.push('<rect x="2" y="' + (y - 4) + '" width="' + (W - 4) + '" height="' + (alto + 4) + '" rx="12" fill="' + C.vino + '" fill-opacity="0.22" stroke="' + C.ambar + '" stroke-opacity="0.6"/>')
+    }
+    // avatar
+    const color = AVATARES[(f.indice || 0) % AVATARES.length]
+    partes.push('<circle cx="30" cy="' + cy + '" r="17" fill="' + (apagada ? C.fondo : color) + '" stroke="' + (activa ? C.ambar : f.estado === 'hecha' ? C.suave : C.borde) + '" stroke-width="3"' + (f.estado === 'omitida' ? ' stroke-dasharray="3 4"' : '') + '>' + (activa ? '<animate attributeName="stroke-opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/>' : '') + '</circle>')
+    partes.push(t(30, cy + 5, iniciales(f.quien), 13, apagada ? C.tenue : C.fondo, ' text-anchor="middle" font-weight="800"'))
+    if (f.estado === 'hecha') {
+      partes.push('<circle cx="43" cy="' + (cy - 13) + '" r="7" fill="' + C.suave + '" stroke="' + C.fondo + '" stroke-width="2"/>')
+      partes.push('<path d="M40 ' + (cy - 13) + ' l2.4 2.6 l4.2 -5" fill="none" stroke="' + C.fondo + '" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>')
+    }
+    // texto de la estación
+    let ty = y + 18
+    partes.push(t(xTexto, ty, f.nombre, 14, apagada ? C.tenue : C.texto, ' font-weight="' + (activa ? 800 : 700) + '"'))
+    const etiqueta = (f.estado === 'activa' ? 'AHORA · ' : f.estado === 'omitida' ? 'omitida · ' : '') + f.quien
+    partes.push(t(xTexto, ty + 15, etiqueta, 11, activa ? C.ambar : C.tenue, activa ? ' font-weight="700"' : ''))
+    ty += 32
+    for (const l of lineasNota) {
+      partes.push(t(xTexto, ty, l, 12, C.suave))
+      ty += 14
+    }
+    for (const l of lineasEntrega) {
+      partes.push(t(xTexto, ty, l, 12, C.ambar, ' font-style="italic"'))
+      ty += 14
+    }
+    for (const b of bloquesHallazgo) {
+      const h = 6 + (b.titulo.length + b.como.length) * 14 + 6
+      partes.push('<rect x="' + (xTexto - 2) + '" y="' + (ty - 2) + '" width="' + (W - xTexto - 8) + '" height="' + h + '" rx="8" fill="' + C.fondo + '" stroke="' + (b.abierto ? C.vinoClaro : C.borde) + '"/>')
+      partes.push('<rect x="' + (xTexto - 2) + '" y="' + (ty - 2) + '" width="4" height="' + h + '" rx="2" fill="' + (b.abierto ? C.vinoClaro : C.suave) + '"/>')
+      let by = ty + 12
+      b.titulo.forEach((l, j) => {
+        partes.push(t(xTexto + 10, by, (j === 0 ? (b.abierto ? '⚑ ' : '✓ ') : '') + l, 11, b.abierto ? C.texto : C.suave))
+        by += 14
+      })
+      b.como.forEach((l) => {
+        partes.push(t(xTexto + 10, by, l, 11, C.ambar))
+        by += 14
+      })
+      ty += h + 6
+    }
+    // flecha hacia la siguiente estación
+    const finY = y + alto
+    if (i < filas.length - 1) {
+      const sig = filas[i + 1]
+      const hecha = f.estado === 'hecha' || f.estado === 'omitida'
+      partes.push('<line x1="30" y1="' + (cy + 20) + '" x2="30" y2="' + (finY + 14) + '" stroke="' + (hecha ? C.suave : C.borde) + '" stroke-width="2"' + (hecha ? '' : ' stroke-dasharray="3 4"') + '/>')
+      partes.push('<polygon points="25,' + (finY + 12) + ' 35,' + (finY + 12) + ' 30,' + (finY + 20) + '" fill="' + (hecha ? C.suave : C.borde) + '"/>')
+      huecos.push(t(xTexto, finY + 14, 'pasa a ' + sig.quien, 10, sig.estado === 'activa' ? C.ambar : C.tenue))
+    }
+    y += alto + 24
+  })
+  return { svg: envolver(W, y, partes.concat(huecos)), alto: y, ancho: W }
+}

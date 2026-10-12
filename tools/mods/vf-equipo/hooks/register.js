@@ -1,16 +1,19 @@
-// Tablero del equipo de Veta de Fortuna: /equipo abre un panel que muestra en qué etapa va cada
-// tarea (ideación, análisis, producción, QA, revisión del autor y cierre), qué especialistas
-// trabajan ahora y los botones con los que el autor aprueba o devuelve una tarea.
-// Solo lee archivos del repositorio. Los botones del autor envían un mensaje como si lo escribiera
-// el autor; no modifican ningún archivo por su cuenta.
+// Tablero del equipo de Veta de Fortuna: /equipo abre un panel con el diagrama de traspasos de cada tarea
+// (quién le pasa el trabajo a quién, qué entregó cada uno, qué hallazgos dejó y quién los resolvió),
+// los especialistas que trabajan ahora y una bandeja con lo que te toca a ti: revisar, aprobar un PR o probar.
+// Se actualiza solo. Solo lee archivos del repositorio y ejecuta `gh pr list`. Los botones de la bandeja
+// envían un mensaje a la conversación como si lo escribieras tú, solo cuando los pulsas; no modifican archivos.
 
-import { svgAhora, svgAvatar, svgFlujo, svgLinea } from './vis.js'
+import { svgAhora, svgAvatar, svgFlujo, svgTraspasos } from './vis.js'
 
 const PANE = 'vf-equipo'
 const EQUIPO = 'studio/data/equipo.json'
 const ROADMAP = 'studio/data/roadmap.json'
-const TAREAS = 'studio/data/tasks/'
+const DIR_DATOS = 'studio/data'
+const DIR_TAREAS = 'studio/data/tasks'
 const EN_MARCHA = ['sprint', 'doing', 'qa', 'review']
+const SONDEO_MS = 3000
+const PRS_MS = 45000
 
 const GLIFO_ESTADO = { pendiente: '○', activa: '▶', hecha: '●', omitida: '–' }
 
@@ -20,8 +23,11 @@ let equipo = null
 let tareas = []
 let hechas = 0
 let agentes = []
+let prs = []
 let seleccion = ''
-let cargando = false
+let acciones = {}
+let firmaDatos = ''
+let actualizado = ''
 let error = ''
 
 // ---------- lógica pura (se prueba sin sesión) ----------
@@ -33,7 +39,16 @@ export function pipelineDe(estadoTarea, actividad, etapas) {
   if (explicito) {
     return ids.map((id) => {
       const x = explicito.find((p) => p.etapa === id)
-      return { etapa: id, estado: x ? x.estado : 'pendiente', nota: x ? x.nota || '' : '', at: x ? x.at || '' : '', inferido: false }
+      return {
+        etapa: id,
+        estado: x ? x.estado : 'pendiente',
+        nota: x ? x.nota || '' : '',
+        at: x ? x.at || '' : '',
+        entrega: x ? x.entrega || '' : '',
+        por: x ? x.por || '' : '',
+        hallazgos: x && Array.isArray(x.hallazgos) ? x.hallazgos : [],
+        inferido: false,
+      }
     })
   }
   const por = {
@@ -45,7 +60,7 @@ export function pipelineDe(estadoTarea, actividad, etapas) {
     done: { ideacion: 'hecha', analisis: 'hecha', produccion: 'hecha', qa: 'hecha', autor: 'hecha', playtest: 'hecha', cierre: 'hecha' },
   }
   const mapa = por[estadoTarea] || por.backlog
-  return ids.map((id) => ({ etapa: id, estado: mapa[id] || 'pendiente', nota: 'Inferido del estado de la tarea', at: '', inferido: true }))
+  return ids.map((id) => ({ etapa: id, estado: mapa[id] || 'pendiente', nota: '', at: '', entrega: '', por: '', hallazgos: [], inferido: true }))
 }
 
 // La etapa en la que está la tarea: la activa, o si no la primera pendiente
@@ -79,6 +94,52 @@ export function rolDeAgente(tipo, roles) {
   return r ? r.id : ''
 }
 
+// El PR abierto cuya rama lleva el ID de la tarea, si hay
+export function prDeTarea(id, lista) {
+  return lista.find((p) => typeof p.headRefName === 'string' && (p.headRefName.includes('/' + id + '-') || p.headRefName.endsWith('/' + id))) || null
+}
+
+// Lo que le toca al autor: tareas en su etapa y PR abiertos que ninguna tarea cubre
+export function accionesDelAutor(lista, listaPrs) {
+  const items = []
+  const cubiertos = new Set()
+  for (const t of lista) {
+    if (t.etapa !== 'autor' && t.etapa !== 'playtest') continue
+    const pr = prDeTarea(t.id, listaPrs)
+    if (pr) cubiertos.add(pr.number)
+    items.push({ clave: t.id + ':' + t.etapa, id: t.id, titulo: t.titulo, tipo: t.etapa === 'autor' ? 'revisar' : 'probar', pr })
+  }
+  for (const pr of listaPrs) {
+    if (cubiertos.has(pr.number)) continue
+    items.push({ clave: 'pr-' + pr.number, id: 'PR #' + pr.number, titulo: pr.title, tipo: 'pr', pr })
+  }
+  return items
+}
+
+// El mensaje que se envía cuando el autor termina su parte
+export function mensajeAutor(accion, decision) {
+  const que = accion.tipo === 'pr' ? 'el ' + accion.id : 'la tarea ' + accion.id + ' (' + accion.titulo + ')'
+  if (decision === 'aprobado') {
+    if (accion.tipo === 'pr') return 'Terminé mi parte en ' + que + ': lo revisé y lo apruebo. Puedes fusionarlo.'
+    if (accion.tipo === 'probar') return 'Terminé mi parte en ' + que + ': la probé y todo está bien. Ciérrala y sigue con el flujo.'
+    return 'Terminé mi parte en ' + que + ': revisé el entregable y está aprobado. Pásala a la siguiente etapa del flujo.'
+  }
+  return (
+    'Terminé mi parte en ' + que + ': dejé ajustes en el chat, en mis comentarios de arriba. Revísalos, decide qué especialista los resuelve y devuelve el trabajo a la etapa que corresponda; ' +
+    'cuando esté listo vuelvo a revisar.'
+  )
+}
+
+// Firma de los archivos que importan: cambia cuando alguien edita el roadmap, el equipo o una tarea
+export function firmaDe(archivosDatos, archivosTareas) {
+  const interesa = archivosDatos.filter((a) => a.name === 'roadmap.json' || a.name === 'equipo.json')
+  return interesa
+    .concat(archivosTareas)
+    .map((a) => a.name + ':' + a.size)
+    .sort()
+    .join('|')
+}
+
 // ---------- lectura de datos ----------
 
 async function leerJson($, ruta) {
@@ -89,14 +150,17 @@ async function leerJson($, ruta) {
   }
 }
 
+function elegirSeleccion() {
+  if (seleccion && tareas.find((t) => t.id === seleccion)) return
+  const trabajando = tareas.find((t) => t.etapa !== 'autor' && t.etapa !== 'playtest' && t.etapa !== 'cierre')
+  seleccion = trabajando ? trabajando.id : tareas.length ? tareas[0].id : ''
+}
+
 async function cargar($) {
-  cargando = true
   error = ''
-  $.ui.invalidate('ui.render')
   const eq = await leerJson($, EQUIPO)
   if (!eq) {
     error = 'No se pudo leer ' + EQUIPO
-    cargando = false
     $.ui.invalidate('ui.render')
     return
   }
@@ -110,19 +174,11 @@ async function cargar($) {
         for (const t of hito.tasks || []) {
           if (t.status === 'done') hechas += 1
           if (!EN_MARCHA.includes(t.status)) continue
-          const actividad = await leerJson($, TAREAS + t.id + '.json')
+          const actividad = await leerJson($, DIR_TAREAS + '/' + t.id + '.json')
           const pipeline = pipelineDe(t.status, actividad, equipo.etapas)
           const etapa = etapaActual(pipeline)
-          lista.push({
-            id: t.id,
-            titulo: t.title,
-            estado: t.status,
-            pipeline,
-            etapa,
-            rol: rolDe(etapa, actividad, equipo.etapas),
-            especialista: actividad && actividad.pipeline && actividad.pipeline.especialista ? actividad.pipeline.especialista : '',
-            hito: hito.id,
-          })
+          const especialista = actividad && actividad.pipeline && actividad.pipeline.especialista ? actividad.pipeline.especialista : ''
+          lista.push({ id: t.id, titulo: t.title, estado: t.status, pipeline, etapa, rol: rolDe(etapa, actividad, equipo.etapas), especialista, hito: hito.id })
         }
       }
     }
@@ -130,9 +186,25 @@ async function cargar($) {
     error = 'No se pudo leer ' + ROADMAP
   }
   tareas = lista
-  if (!seleccion || !tareas.find((t) => t.id === seleccion)) seleccion = tareas.length ? tareas[0].id : ''
-  cargando = false
+  elegirSeleccion()
+  const ahora = new Date()
+  actualizado = String(ahora.getHours()).padStart(2, '0') + ':' + String(ahora.getMinutes()).padStart(2, '0') + ':' + String(ahora.getSeconds()).padStart(2, '0')
   $.ui.invalidate('ui.render')
+}
+
+// Mira si cambió algo en los datos y, solo entonces, los vuelve a cargar
+async function sondear($) {
+  try {
+    const datos = await $.fs.list(DIR_DATOS)
+    const tareasDir = await $.fs.list(DIR_TAREAS)
+    const firma = firmaDe(datos, tareasDir)
+    if (firma !== firmaDatos) {
+      firmaDatos = firma
+      await cargar($)
+    }
+  } catch (e) {
+    error = 'No se pudo vigilar los datos'
+  }
 }
 
 async function refrescarAgentes($) {
@@ -148,10 +220,40 @@ async function refrescarAgentes($) {
   }
 }
 
+async function cargarPrs($) {
+  try {
+    const r = await $.process.run(['gh', 'pr', 'list', '--json', 'number,title,headRefName,url', '--limit', '30'], { timeoutMs: 20000 })
+    const lista = r.exitCode === 0 ? JSON.parse(r.stdout) : []
+    if (JSON.stringify(lista) !== JSON.stringify(prs)) {
+      prs = lista
+      $.ui.invalidate('ui.render')
+    }
+  } catch (e) {
+    prs = []
+  }
+}
+
+// Guarda lo que el autor decidió en cada acción, para que sobreviva a un reinicio
+async function guardarAccion($, clave, valor) {
+  acciones = { ...acciones, [clave]: valor }
+  $.ui.invalidate('ui.render')
+  try {
+    await $.store.set('acciones', acciones)
+  } catch (e) {
+    error = 'No se pudo guardar tu decisión'
+  }
+}
+
 function nombreRol(id) {
   if (!equipo) return id
   const r = equipo.roles.find((x) => x.id === id)
   return r ? r.nombre : id
+}
+
+function indiceRol(id) {
+  if (!equipo) return 0
+  const i = equipo.roles.findIndex((x) => x.id === id)
+  return i < 0 ? 0 : i
 }
 
 function nombreEtapa(id) {
@@ -164,29 +266,46 @@ function nombreEtapa(id) {
 
 export function register(on) {
   on('session.start', async ($, e, next) => {
-    $.clock.every(30000, () => cargar($))
-    $.clock.every(4000, () => refrescarAgentes($))
+    try {
+      const guardadas = await $.store.get('acciones')
+      if (guardadas && typeof guardadas === 'object') acciones = guardadas
+    } catch (err) {
+      acciones = {}
+    }
+    // Se actualiza solo: mira los datos y los especialistas cada pocos segundos, y los PR cada rato
+    $.clock.every(SONDEO_MS, () => sondear($))
+    $.clock.every(SONDEO_MS, () => refrescarAgentes($))
+    $.clock.every(PRS_MS, () => cargarPrs($))
     await $.command.register({
       name: 'equipo',
-      description: 'Tablero del equipo: en qué etapa va cada tarea y quién trabaja ahora',
+      description: 'Tablero del equipo: traspasos, hallazgos y lo que te toca a ti',
       immediate: true,
     })
     return next(e)
   })
 
+  // Al terminar cada turno el trabajo suele haber cambiado: se actualiza sin esperar al sondeo
+  on('turn.complete', async ($, e, next) => {
+    sondear($)
+    refrescarAgentes($)
+    return next(e)
+  })
+
   on('command.run', { command: 'equipo' }, async ($) => {
     await $.ui.open({ id: PANE, title: 'Equipo', focus: true, closeOnEscape: true })
-    cargar($)
+    sondear($)
     refrescarAgentes($)
+    cargarPrs($)
     return {}
   })
 
   on('ui.render', { component: 'Pane' }, async ($, e, next) => {
     if (e.requestId !== PANE) return next(e)
-    const { Box, Text, Button, Input, Select, Svg } = $.ui.resolve(e)
+    const { Box, Text, Button, Svg, Link } = $.ui.resolve(e)
     const redibujar = () => $.ui.invalidate('ui.render')
     const escritorio = e.surface === 'desktop'
     const ancho = Math.max(320, Math.min(600, Math.round((e.props && e.props.bodyColumns ? e.props.bodyColumns : 60) * 9)))
+    const ctx = { Box, Text, Button, Svg, Link, escritorio, ancho }
 
     const pestana = (nombre, etiqueta, tecla) =>
       Button({
@@ -204,40 +323,29 @@ export function register(on) {
     const cabecera = Box({
       flexDirection: 'row',
       columnGap: 3,
-      children: [
-        pestana('flujo', 'Flujo', '1'),
-        pestana('equipo', 'Equipo', '2'),
-        pestana('tarea', 'Tarea', '3'),
-        Button({ key: 'actualizar', label: cargando ? 'Actualizando…' : 'Actualizar', hotkey: 'r', plain: true, onPress: () => cargar($) }),
-      ],
+      children: [pestana('flujo', 'Flujo', '1'), pestana('equipo', 'Equipo', '2'), Text({ dimColor: true, children: [actualizado ? 'se actualiza solo · ' + actualizado : 'cargando…'] })],
     })
 
     const filas = []
     if (error) filas.push(Text({ color: 'yellow', children: [error] }))
     if (!equipo) {
-      filas.push(Text({ dimColor: true, children: [cargando ? 'Cargando el equipo…' : 'Sin datos todavía.'] }))
+      filas.push(Text({ dimColor: true, children: ['Cargando el equipo…'] }))
     } else if (tab === 'flujo') {
-      filas.push(...vistaFlujo({ Text, Box, Svg, escritorio, ancho }))
-    } else if (tab === 'equipo') {
-      filas.push(...vistaEquipo({ Text, Box, Svg, escritorio }))
-    } else {
       filas.push(
-        ...vistaTarea({ Text, Box, Button, Input, Select, Svg, escritorio, ancho }, {
-          elegir: (valor) => {
-            seleccion = valor
+        ...vistaFlujo(ctx, {
+          elegir: (id) => {
+            seleccion = id
             redibujar()
           },
-          aprobar: (t) =>
-            $.prompt.submit({
-              text: t.etapa === 'autor'
-                ? 'Apruebo la revisión de la tarea ' + t.id + ' (' + t.titulo + '). Pásala a la siguiente etapa del flujo.'
-                : 'Aprobé la prueba de la tarea ' + t.id + ' (' + t.titulo + '). Ciérrala como hecha y sigue con lo que toca.',
-              asUser: true,
-            }),
-          devolver: (t, comentario) =>
-            $.prompt.submit({ text: 'Devuelvo la tarea ' + t.id + ' (' + t.titulo + ') a producción con este comentario: ' + comentario, asUser: true }),
+          decidir: (clave, valor) => guardarAccion($, clave, valor),
+          enviar: async (accion, decision) => {
+            await guardarAccion($, accion.clave, { decision, enviado: true })
+            await $.prompt.submit({ text: mensajeAutor(accion, decision), asUser: true })
+          },
         }),
       )
+    } else {
+      filas.push(...vistaEquipo(ctx))
     }
 
     return Box({ flexDirection: 'column', children: [cabecera, Text({ children: [' '] }), ...filas] })
@@ -246,24 +354,27 @@ export function register(on) {
 
 // ---------- vistas ----------
 
-function etapasHumanas() {
-  return equipo.etapas.filter((e) => equipo.roles.some((r) => r.id === e.rol && r.tipo === 'humano')).map((e) => e.id)
-}
-
 function titulo(Text, texto) {
   return Text({ bold: true, color: 'cyan', children: [texto] })
 }
 
-function vistaFlujo({ Text, Box, Svg, escritorio, ancho }) {
+function etapasHumanas() {
+  return equipo.etapas.filter((e) => equipo.roles.some((r) => r.id === e.rol && r.tipo === 'humano')).map((e) => e.id)
+}
+
+function vistaFlujo(ctx, acc) {
+  const { Text, Box, Button, Svg, escritorio, ancho } = ctx
   const filas = []
   const conteo = contarPorEtapa(tareas)
-  const vivos = agentes
-    .filter((a) => a.status === 'running' || a.status === 'waiting')
-    .map((a) => {
-      const rol = rolDeAgente(a.type, equipo.roles)
-      return { nombre: rol ? nombreRol(rol) : a.type, detalle: a.description || '' }
-    })
 
+  // 1. Lo que te toca a ti
+  filas.push(titulo(Text, 'Te toca a ti'))
+  const items = accionesDelAutor(tareas, prs)
+  if (items.length === 0) filas.push(Text({ dimColor: true, children: ['Nada pendiente de ti. ✓'] }))
+  for (const item of items) filas.push(tarjetaAccion(ctx, item, acciones[item.clave], acc))
+  filas.push(Text({ children: [' '] }))
+
+  // 2. El flujo en una mirada
   if (escritorio) {
     filas.push(Svg({ alt: 'Flujo de las tareas por etapa', width: Math.min(ancho, 600), height: 128, source: svgFlujo(equipo.etapas, conteo, etapasHumanas(), ancho) }))
   } else {
@@ -272,6 +383,13 @@ function vistaFlujo({ Text, Box, Svg, escritorio, ancho }) {
   filas.push(Text({ dimColor: true, children: ['Hechas ' + hechas + ' · en marcha ' + tareas.length + (escritorio ? ' · el aro punteado marca dónde participas tú' : '')] }))
   filas.push(Text({ children: [' '] }))
 
+  // 3. Quién trabaja ahora
+  const vivos = agentes
+    .filter((a) => a.status === 'running' || a.status === 'waiting')
+    .map((a) => {
+      const rol = rolDeAgente(a.type, equipo.roles)
+      return { nombre: rol ? nombreRol(rol) : a.type, detalle: a.description || '' }
+    })
   filas.push(titulo(Text, 'Ahora trabajando'))
   if (escritorio) {
     filas.push(Svg({ alt: 'Especialistas activos', width: Math.min(ancho, 600), height: Math.max(40, 12 + vivos.length * 26), source: svgAhora(vivos, ancho) }))
@@ -282,123 +400,132 @@ function vistaFlujo({ Text, Box, Svg, escritorio, ancho }) {
   }
   filas.push(Text({ children: [' '] }))
 
-  filas.push(titulo(Text, 'Tareas por etapa'))
-  const vacias = []
-  for (const etapa of equipo.etapas) {
-    const aqui = tareas.filter((t) => t.etapa === etapa.id)
-    if (aqui.length === 0) {
-      vacias.push(etapa.nombre)
-      continue
+  // 4. Diagrama de traspasos de la tarea elegida
+  filas.push(titulo(Text, 'Traspasos de la tarea'))
+  if (tareas.length === 0) {
+    filas.push(Text({ dimColor: true, children: ['No hay tareas en marcha.'] }))
+    return filas
+  }
+  filas.push(
+    Box({
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      columnGap: 2,
+      children: tareas.map((t) => {
+        const def = equipo.etapas.find((e) => e.id === t.etapa)
+        return Button({
+          key: 'sel-' + t.id,
+          label: t.id + ' ' + (def ? def.glifo : ''),
+          plain: true,
+          dimColor: t.id !== seleccion,
+          onPress: () => acc.elegir(t.id),
+        })
+      }),
+    }),
+  )
+  const t = tareas.find((x) => x.id === seleccion) || tareas[0]
+  const conEspecialista = t.especialista ? { pipeline: { especialista: t.especialista } } : null
+  filas.push(Text({ bold: true, wrap: 'wrap', children: [t.id + ' · ' + t.titulo] }))
+  const pr = prDeTarea(t.id, prs)
+  filas.push(Text({ dimColor: true, children: ['Estado ' + t.estado + ' · hito ' + t.hito + ' · ahora: ' + nombreEtapa(t.etapa) + ' (' + nombreRol(t.rol) + ')' + (pr ? ' · PR #' + pr.number : '')] }))
+  filas.push(Text({ children: [' '] }))
+  const lineas = t.pipeline.map((p, i) => {
+    const rolId = p.por || rolDe(p.etapa, conEspecialista, equipo.etapas)
+    const sig = t.pipeline[i + 1]
+    return {
+      nombre: nombreEtapa(p.etapa),
+      quien: nombreRol(rolId),
+      indice: indiceRol(rolId),
+      estado: p.estado,
+      nota: p.inferido ? '' : p.nota,
+      entrega: p.entrega,
+      hallazgos: (p.hallazgos || []).map((h) => ({ ...h, de: nombreRol(h.de), resuelto_por: nombreRol(h.resuelto_por) })),
+      siguiente: sig ? nombreEtapa(sig.etapa) : '',
     }
-    filas.push(
+  })
+  if (escritorio) {
+    const d = svgTraspasos(lineas, ancho)
+    filas.push(Svg({ alt: 'Diagrama de traspasos de la tarea', width: d.ancho, height: d.alto, source: d.svg }))
+  } else {
+    for (const l of lineas) {
+      filas.push(Text({ bold: l.estado === 'activa', dimColor: l.estado === 'omitida' || l.estado === 'pendiente', wrap: 'wrap', children: [GLIFO_ESTADO[l.estado] + ' ' + l.nombre + ' · ' + l.quien + (l.nota ? ' — ' + l.nota : '')] }))
+      if (l.entrega) filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['    Entrega: ' + l.entrega] }))
+      for (const h of l.hallazgos) {
+        filas.push(Text({ color: h.estado === 'resuelto' ? undefined : 'yellow', wrap: 'wrap', children: ['    ' + (h.estado === 'resuelto' ? '✓' : '⚑') + ' ' + h.de + ': ' + h.texto]}))
+        if (h.estado === 'resuelto' && h.como) filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['      Lo resolvió ' + h.resuelto_por + ': ' + h.como] }))
+      }
+    }
+  }
+  return filas
+}
+
+// Tarjeta de una acción del autor, con el recorrido: empezar → aprobado o ajustes → terminé mi parte
+function tarjetaAccion(ctx, item, estado, acc) {
+  const { Text, Box, Button, Link } = ctx
+  const decision = estado && estado.decision ? estado.decision : ''
+  const enviado = Boolean(estado && estado.enviado)
+  const etiqueta = item.tipo === 'pr' ? 'Revisar PR' : item.tipo === 'probar' ? 'Probar el juego' : 'Revisar entregable'
+  const hijos = [
+    Box({
+      flexDirection: 'row',
+      columnGap: 2,
+      children: [Text({ bold: true, backgroundColor: 'yellow', color: 'black', children: [' ' + etiqueta + ' ']}), Text({ bold: true, children: [item.id] })],
+    }),
+    Text({ wrap: 'wrap', children: [item.titulo] }),
+  ]
+  if (item.pr && item.pr.url) hijos.push(Link({ href: item.pr.url, label: 'Abrir el PR #' + item.pr.number }))
+
+  if (enviado) {
+    hijos.push(Text({ dimColor: true, wrap: 'wrap', children: ['Enviado (' + (decision === 'aprobado' ? 'aprobado' : 'con ajustes') + '). Esperando al coordinador…'] }))
+    hijos.push(Button({ key: 'deshacer-' + item.clave, label: 'Deshacer', plain: true, hotkey: 'z', onPress: () => acc.decidir(item.clave, {}) }))
+  } else if (!decision) {
+    hijos.push(Text({ dimColor: true, children: ['1) Haz tu revisión. 2) Dime cómo salió.'] }))
+    hijos.push(
       Box({
-        flexDirection: 'column',
-        borderStyle: 'round',
-        paddingX: 1,
-        marginBottom: 1,
+        flexDirection: 'row',
+        columnGap: 2,
         children: [
-          Text({ bold: true, color: 'yellow', children: [etapa.glifo + '  ' + etapa.nombre + '  ·  ' + aqui.length]}),
-          ...aqui.flatMap((t) => [
-            Box({ flexDirection: 'row', columnGap: 2, children: [Text({ bold: true, children: [t.id] }), Text({ dimColor: true, children: [nombreRol(t.rol)] })] }),
-            Text({ wrap: 'wrap', children: [t.titulo] }),
-          ]),
+          Button({ key: 'ok-' + item.clave, label: 'Todo bien', hotkey: 'a', onPress: () => acc.decidir(item.clave, { decision: 'aprobado' }) }),
+          Button({ key: 'aj-' + item.clave, label: 'Salieron ajustes', hotkey: 'j', onPress: () => acc.decidir(item.clave, { decision: 'ajustes' }) }),
+        ],
+      }),
+    )
+  } else {
+    hijos.push(
+      Text({
+        color: decision === 'aprobado' ? undefined : 'yellow',
+        wrap: 'wrap',
+        children: [decision === 'aprobado' ? 'Marcado como aprobado. Cuando quieras, pulsa «Terminé mi parte» para que siga el flujo.' : 'Cuéntame los ajustes en el chat. Cuando termines de escribirlos, pulsa «Terminé mi parte».'],
+      }),
+    )
+    hijos.push(
+      Box({
+        flexDirection: 'row',
+        columnGap: 2,
+        children: [
+          Button({ key: 'fin-' + item.clave, label: 'Terminé mi parte', hotkey: 't', onPress: () => acc.enviar(item, decision) }),
+          Button({ key: 'cambiar-' + item.clave, label: 'Cambiar', plain: true, onPress: () => acc.decidir(item.clave, {}) }),
         ],
       }),
     )
   }
-  if (vacias.length) filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['Sin tareas en: ' + vacias.join(', ')] }))
-  filas.push(Text({ children: [' '] }))
-  filas.push(titulo(Text, 'Reglas del flujo'))
-  for (const r of equipo.reglas) filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['· ' + r] }))
-  return filas
+  return Box({ flexDirection: 'column', borderStyle: 'round', paddingX: 1, marginBottom: 1, children: hijos })
 }
 
-function vistaEquipo({ Text, Box, Svg, escritorio }) {
+function vistaEquipo(ctx) {
+  const { Text, Box, Svg, escritorio } = ctx
   const filas = []
   equipo.roles.forEach((rol, i) => {
     const suyas = tareas.filter((t) => t.rol === rol.id)
     const vivo = Boolean(rol.agente) && agentes.some((a) => a.type === rol.agente && (a.status === 'running' || a.status === 'waiting'))
     const cuerpo = [
-      Box({
-        flexDirection: 'row',
-        columnGap: 1,
-        children: [Text({ bold: true, children: [rol.nombre] }), Text({ dimColor: true, children: ['· ' + rol.tipo] })],
-      }),
+      Box({ flexDirection: 'row', columnGap: 1, children: [Text({ bold: true, children: [rol.nombre] }), Text({ dimColor: true, children: ['· ' + rol.tipo] })] }),
       Text({ wrap: 'wrap', children: [rol.hace] }),
       Text({ dimColor: true, wrap: 'wrap', children: ['Entrega: ' + rol.entrega] }),
     ]
     if (suyas.length) cuerpo.push(Text({ color: 'yellow', children: ['Ahora: ' + suyas.map((t) => t.id).join(', ')] }))
-    const avatar = escritorio
-      ? Svg({ alt: rol.nombre, width: 48, height: 48, source: svgAvatar(rol.nombre, i, vivo || suyas.length > 0, rol.tipo === 'humano') })
-      : Text({ bold: true, children: [(vivo ? '●' : '○') + ' '] })
-    filas.push(
-      Box({
-        flexDirection: 'row',
-        columnGap: 2,
-        borderStyle: 'round',
-        paddingX: 1,
-        marginBottom: 1,
-        children: [avatar, Box({ flexDirection: 'column', flexShrink: 1, children: cuerpo })],
-      }),
-    )
+    const avatar = escritorio ? Svg({ alt: rol.nombre, width: 48, height: 48, source: svgAvatar(rol.nombre, i, vivo || suyas.length > 0, rol.tipo === 'humano') }) : Text({ bold: true, children: [(vivo ? '●' : '○') + ' '] })
+    filas.push(Box({ flexDirection: 'row', columnGap: 2, borderStyle: 'round', paddingX: 1, marginBottom: 1, children: [avatar, Box({ flexDirection: 'column', flexShrink: 1, children: cuerpo })] }))
   })
-  return filas
-}
-
-function vistaTarea({ Text, Box, Button, Input, Select, Svg, escritorio, ancho }, acciones) {
-  const filas = []
-  if (tareas.length === 0) return [Text({ dimColor: true, children: ['No hay tareas en marcha.'] })]
-  filas.push(
-    Select({
-      key: 'tarea',
-      label: 'Tarea',
-      value: seleccion,
-      options: tareas.map((t) => ({ value: t.id, label: t.id + ' · ' + t.titulo.slice(0, 40) })),
-      onSelect: acciones.elegir,
-    }),
-  )
-  const t = tareas.find((x) => x.id === seleccion) || tareas[0]
-  const conEspecialista = t.especialista ? { pipeline: { especialista: t.especialista } } : null
-  filas.push(Text({ children: [' '] }))
-  filas.push(Text({ bold: true, wrap: 'wrap', children: [t.id + ' · ' + t.titulo] }))
-  filas.push(Text({ dimColor: true, children: ['Estado ' + t.estado + ' · hito ' + t.hito] }))
-  filas.push(Text({ children: [' '] }))
-  const lineas = t.pipeline.map((p) => ({
-    nombre: nombreEtapa(p.etapa),
-    quien: nombreRol(rolDe(p.etapa, conEspecialista, equipo.etapas)),
-    estado: p.estado,
-    nota: p.inferido ? '' : p.nota,
-  }))
-  if (escritorio) {
-    filas.push(Svg({ alt: 'Flujo de la tarea', width: Math.min(ancho, 600), height: lineas.length * 54 + 8, source: svgLinea(lineas, ancho) }))
-  } else {
-    for (const l of lineas) {
-      filas.push(Text({ bold: l.estado === 'activa', dimColor: l.estado === 'omitida' || l.estado === 'pendiente', children: [GLIFO_ESTADO[l.estado] + ' ' + l.nombre + ' · ' + l.quien + (l.nota ? ' — ' + l.nota : '')] }))
-    }
-  }
-  if (t.etapa === 'autor' || t.etapa === 'playtest') {
-    filas.push(Text({ children: [' '] }))
-    filas.push(
-      Box({
-        flexDirection: 'column',
-        borderStyle: 'round',
-        paddingX: 1,
-        children: [
-          Text({ bold: true, color: 'yellow', children: [t.etapa === 'autor' ? 'Te toca revisar esta tarea' : 'Te toca jugar y probar esta tarea'] }),
-          Button({ key: 'aprobar', label: t.etapa === 'autor' ? 'Aprobar revisión' : 'Aprobar prueba', hotkey: 'a', onPress: () => acciones.aprobar(t) }),
-          Input({
-            key: 'devolver',
-            label: 'Devolver',
-            placeholder: 'Escribe qué cambiar y pulsa Enter',
-            value: '',
-            submitLabel: 'devolver',
-            onSubmit: (texto) => {
-              if (texto.trim()) acciones.devolver(t, texto.trim())
-            },
-          }),
-        ],
-      }),
-    )
-  }
   return filas
 }

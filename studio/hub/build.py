@@ -218,6 +218,15 @@ def check_pipeline(tid, act, equipo):
         vistos.add(item.get("etapa"))
         if item.get("estado") not in estados:
             warn("%s: estado de etapa inválido en %s: %s" % (tid, item.get("etapa"), item.get("estado")))
+        if item.get("por") is not None and item["por"] not in roles:
+            warn("%s: la etapa %s la hace un rol inexistente: %s" % (tid, item.get("etapa"), item["por"]))
+        for h in item.get("hallazgos", []):
+            if h.get("de") not in roles:
+                warn("%s: un hallazgo de %s viene de un rol inexistente: %s" % (tid, item.get("etapa"), h.get("de")))
+            if h.get("estado") not in ("abierto", "resuelto"):
+                warn("%s: estado de hallazgo inválido en %s: %s" % (tid, item.get("etapa"), h.get("estado")))
+            if h.get("estado") == "resuelto" and (h.get("resuelto_por") not in roles or not h.get("como")):
+                warn("%s: un hallazgo resuelto en %s necesita resuelto_por y como" % (tid, item.get("etapa")))
 
 
 def check_roadmap(roadmap, activity, equipo=None):

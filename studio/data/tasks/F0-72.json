@@ -38,25 +38,42 @@
         "etapa": "ideacion",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Etapas y roles pensados a partir de tu petición"
+        "nota": "Etapas y roles pensados a partir de tu petición",
+        "entrega": "Siete etapas y nueve roles",
+        "por": "ideador"
       },
       {
         "etapa": "analisis",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Cruzado con el flujo del documento 15"
+        "nota": "Cruzado con el flujo del documento 15",
+        "entrega": "Criterio: el flujo no cambia los estados del roadmap",
+        "por": "analista",
+        "hallazgos": [
+          {
+            "de": "analista",
+            "texto": "El documento 15 pone la revisión del autor antes de QA y el nuevo flujo pone el QA técnico antes",
+            "estado": "resuelto",
+            "resuelto_por": "disenador",
+            "como": "Los estados del roadmap no cambian y el documento 20 explica la correspondencia"
+          }
+        ]
       },
       {
         "etapa": "produccion",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Documento 20, equipo.json y agentes"
+        "nota": "Documento 20, equipo.json y siete agentes",
+        "entrega": "Documentos y definiciones de los agentes",
+        "por": "disenador"
       },
       {
         "etapa": "qa",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Build estricto sin avisos"
+        "nota": "Build estricto sin avisos",
+        "entrega": "Informe de QA: aprobado",
+        "por": "qa"
       },
       {
         "etapa": "autor",

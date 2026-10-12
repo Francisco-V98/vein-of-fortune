@@ -23,6 +23,16 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "El mod vf-equipo abre con /equipo un panel con tres pestañas: Flujo (dibujo con las siete etapas y el número de tareas en cada una en la app de escritorio, quién trabaja ahora según los subagentes activos y las tareas por etapa), Equipo (cada rol, lo que hace y en qué está) y Tarea (el flujo de una tarea y, si te toca, los botones Aprobar y Devolver, que envían un mensaje como si lo escribieras tú). Los mods no escriben archivos. Falta instalarlo y verlo en la app."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Quiero que la visual del equipo sea como un diagrama: quién le pasa a quién, cómo se hizo, qué tarea se ejecuta ahora, los hallazgos de cada uno y cómo los soluciona quien corresponde. Que se actualice sola y que yo tenga botones para decir que terminé mi parte: revisar, aprobar un PR o probar a mano, ya sea aprobando o con ajustes que te comento por el chat."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Segunda versión del mod: diagrama de traspasos con las entregas, los hallazgos y quién los resolvió; actualización automática (mira los datos cada 3 segundos, los PR cada 45 y también al terminar cada turno); y la bandeja «Te toca a ti» con tus tareas en revisión o prueba y los PR abiertos. Cada una sigue el recorrido Todo bien o Salieron ajustes (los ajustes los comentas por el chat) y Terminé mi parte, que envía el mensaje y deja la acción como enviada hasta que el coordinador la mueva."
     }
   ],
   "evidence": [],
@@ -33,31 +43,55 @@
         "etapa": "ideacion",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Diseño del panel y de los botones del autor"
+        "nota": "Diseño del panel y de los botones del autor",
+        "entrega": "Un panel con flujo, equipo y botones",
+        "por": "ideador"
       },
       {
         "etapa": "analisis",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Los botones envían mensajes y no tocan archivos"
+        "nota": "Los botones envían mensajes y no tocan archivos",
+        "entrega": "Criterio: nada se escribe sin que el autor lo pida",
+        "por": "analista"
       },
       {
         "etapa": "produccion",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Mod escrito por el coordinador"
+        "nota": "Segunda versión: diagrama de traspasos, bandeja del autor y actualización automática",
+        "entrega": "Mod con diagrama, bandeja y sondeo",
+        "por": "desarrollador"
       },
       {
         "etapa": "qa",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "claude plugin validate y 5 pruebas en verde"
+        "nota": "claude plugin validate y ocho pruebas en verde",
+        "entrega": "Informe de QA: aprobado",
+        "por": "qa"
       },
       {
         "etapa": "autor",
         "estado": "activa",
         "at": "2026-10-12",
-        "nota": "Falta instalarlo y probarlo"
+        "nota": "Falta que lo pruebes en la app",
+        "hallazgos": [
+          {
+            "de": "autor",
+            "texto": "El panel era una lista de texto: quería ver quién le pasa a quién, los hallazgos y cómo se resolvieron",
+            "estado": "resuelto",
+            "resuelto_por": "desarrollador",
+            "como": "Diagrama de traspasos con hallazgos y resoluciones"
+          },
+          {
+            "de": "autor",
+            "texto": "La actualización con la tecla R era manual y no había forma de saber qué me tocaba a mí",
+            "estado": "resuelto",
+            "resuelto_por": "desarrollador",
+            "como": "Actualización automática y bandeja «Te toca a ti» con Todo bien, Salieron ajustes y Terminé mi parte"
+          }
+        ]
       },
       {
         "etapa": "playtest",

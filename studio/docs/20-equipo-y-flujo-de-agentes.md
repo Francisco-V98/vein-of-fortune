@@ -47,15 +47,38 @@ La fuente de verdad del equipo y las etapas es `studio/data/equipo.json`. El ava
 "pipeline": {
   "especialista": "narrador",
   "etapas": [
-    { "etapa": "ideacion", "estado": "hecha", "at": "2026-10-12", "nota": "Tres opciones" },
-    { "etapa": "analisis", "estado": "activa" }
+    {
+      "etapa": "analisis", "estado": "hecha", "at": "2026-10-12",
+      "nota": "Cruzado con los documentos 08, 17 y 19",
+      "entrega": "Informe y criterios de aceptación",
+      "hallazgos": [
+        { "de": "analista", "texto": "Anselmo aparece en dos actos distintos", "estado": "resuelto",
+          "resuelto_por": "narrador", "como": "Se fija en el Acto I y se actualiza el mapa" }
+      ]
+    },
+    { "etapa": "produccion", "estado": "activa" }
   ]
 }
 ```
 
-Los estados de una etapa son `pendiente`, `activa`, `hecha` y `omitida`. Si una tarea no trae `pipeline`, los mods lo infieren del estado del roadmap: `doing` es producción activa, `review` es la revisión del autor, `qa` es la prueba del autor y `done` es todo hecho. `build.py` valida el bloque y avisa si una etapa, un estado o un especialista no existen.
+- Los estados de una etapa son `pendiente`, `activa`, `hecha` y `omitida`.
+- `entrega` es lo que esa etapa le pasa a la siguiente. `por` permite indicar un rol distinto del habitual.
+- Un **hallazgo** lo deja un rol (`de`) y lo resuelve otro (`resuelto_por`, con `como`); mientras no esté resuelto queda `abierto`. Así se ve qué encontró cada especialista y cómo lo solucionó el que correspondía.
+- Si una tarea no trae `pipeline`, los mods lo infieren del estado del roadmap: `doing` es producción activa, `review` es la revisión del autor, `qa` es la prueba del autor y `done` es todo hecho.
+- `build.py` valida el bloque y avisa si una etapa, un estado, un rol o un hallazgo no existen.
 
 Relación con el flujo de [15](15-flujo-de-trabajo-y-calidad.md): los estados del roadmap (`doing`, `review`, `qa`, `done`) siguen igual; el flujo por etapas detalla lo que pasa dentro de ellos.
+
+## Cómo participa el autor ✅
+
+Las etapas «Revisión del autor» y «Prueba del autor» son tuyas. En el panel `/equipo`, la bandeja **Te toca a ti** muestra, con su etiqueta, lo que tienes pendiente: **Revisar entregable**, **Revisar PR** (con el enlace) o **Probar el juego**. Cada acción sigue el mismo recorrido:
+
+1. Haces tu revisión o tu prueba.
+2. Dices cómo salió: **Todo bien** o **Salieron ajustes**. Si hay ajustes, me los comentas por el chat.
+3. Pulsas **Terminé mi parte**. El panel envía un mensaje a la conversación y la acción queda como enviada.
+4. El coordinador decide: si todo se aprobó, la tarea sigue su flujo; si hubo ajustes, los asigna al especialista que corresponda, el trabajo vuelve a la etapa que toque y, al terminar, vuelve a tu bandeja.
+
+El panel **se actualiza solo**: mira los datos cada pocos segundos, los PR cada rato y también al terminar cada turno.
 
 ## Los mods de Claude Code ✅
 
@@ -64,9 +87,9 @@ Dos mods del repositorio, en `tools/mods/` (un marketplace local llamado `vein-m
 | Mod | Comando | Qué muestra |
 |---|---|---|
 | `vf-estado` | `/estado` | Avance del roadmap por fase, hito y estado; limpieza y coherencia del diseño; tareas en curso; rama y PR abiertos |
-| `vf-equipo` | `/equipo` | El flujo por etapas con cuántas tareas hay en cada una, quién trabaja ahora, el equipo y el detalle de cada tarea, con los botones del autor para aprobar o devolver |
+| `vf-equipo` | `/equipo` | Un diagrama de traspasos por tarea (quién le pasa a quién, qué entregó cada uno, hallazgos y cómo se resolvieron), los especialistas que trabajan ahora y la bandeja «Te toca a ti» con los botones del autor |
 
-- Los botones del autor envían un mensaje como si lo escribiera él; los mods **no modifican archivos** por su cuenta.
+- Los botones del autor envían un mensaje como si lo escribiera él, solo cuando los pulsa; los mods **no modifican archivos** por su cuenta.
 - Un mod corre con los mismos permisos del usuario y sin aislamiento. Por eso solo se instalan los de este repositorio, tras revisar el código. Cada uno se valida con `claude plugin validate` y se prueba con `claude plugin test`.
 - Instalación y uso en `tools/mods/README.md`.
 

@@ -38,31 +38,48 @@
         "etapa": "ideacion",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Investigué la documentación de los mods"
+        "nota": "Se investigó la documentación de los mods",
+        "entrega": "Qué puede mostrar un panel y de dónde sale cada dato",
+        "por": "ideador"
       },
       {
         "etapa": "analisis",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "La app incluye Claude Code 2.1.295, que ya admite mods"
+        "nota": "La app incluye Claude Code 2.1.295, que ya admite mods",
+        "entrega": "Criterios: leer solo archivos del repositorio y probar con claude plugin test",
+        "por": "analista"
       },
       {
         "etapa": "produccion",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Mod escrito por el coordinador"
+        "nota": "Mod /estado escrito por el coordinador",
+        "entrega": "Mod con tres pestañas",
+        "por": "desarrollador"
       },
       {
         "etapa": "qa",
         "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "claude plugin validate y 3 pruebas en verde"
+        "nota": "claude plugin validate y tres pruebas en verde",
+        "entrega": "Informe de QA: aprobado",
+        "por": "qa"
       },
       {
         "etapa": "autor",
         "estado": "activa",
         "at": "2026-10-12",
-        "nota": "Falta instalarlo y probarlo"
+        "nota": "Falta que lo pruebes en la app",
+        "hallazgos": [
+          {
+            "de": "autor",
+            "texto": "Las barras de bloques salían con trama y la lista no tenía jerarquía visual",
+            "estado": "resuelto",
+            "resuelto_por": "desarrollador",
+            "como": "Rediseño con anillo de progreso, medidores, barras limpias y tarjetas en SVG"
+          }
+        ]
       },
       {
         "etapa": "playtest",
