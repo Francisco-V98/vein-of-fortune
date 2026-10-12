@@ -644,7 +644,7 @@
               "id": "F0-60",
               "title": "Piloto: tres hojas de Reme",
               "est": 3,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Hoja de modelo, hoja de expresiones y hoja de poses de Reme, a partir de su retrato y su sprite aprobados, para validar el formato antes de producir el resto.",
               "done_when": "Las tres hojas de Reme aprobadas por el autor."

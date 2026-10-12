@@ -64,6 +64,14 @@
       "by": "claude",
       "note": "Poses rehechas usando la hoja de modelo como única referencia.",
       "ref": "rama studio/F0-60-piloto-hojas-de-reme"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las tres hojas de Reme y dio por hecho el personaje.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
