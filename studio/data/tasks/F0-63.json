@@ -1,0 +1,108 @@
+{
+  "id": "F0-63",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se sigue con Esteban, Casilda y el Ministro tras aprobar las hojas del grupo anterior. Primero los modelos.",
+      "ref": "rama studio/F0-63-hojas-de-esteban-casilda-y-el-ministro"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Modelos aprobados; poses y expresiones de los tres generadas.",
+      "ref": "rama studio/F0-63-hojas-de-esteban-casilda-y-el-ministro"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las nueve hojas de Esteban, Casilda y el Ministro y dejó a Esteban como está. El elenco principal queda completo.",
+      "ref": "aprobación del autor en la conversación"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Modelos generados con el de Reme como referencia de formato y el retrato aprobado de cada uno. El Ministro sigue su retrato (gafas redondas de latón, sin barba, guerrera con laureles, faja y medallas) y no la barba del sprite que se usó para elegir el estilo: conviene que el autor confirme cuál es la versión canónica. En Casilda aparecen dos broches de farol (uno en cada solapa) y su retrato tiene uno."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Aprobados los modelos de Esteban, Casilda y el Ministro."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Poses desde cada modelo y expresiones en el estilo común. Se tomó como versión canónica del Ministro la del retrato (gafas, sin barba, guerrera con laureles) y quedó fijada en el documento 12. En Esteban, el cansancio y el enojo muestran una ojera marcada; si se quiere más suave, se rehace. Coste de esta ronda: 6 créditos."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Esteban · Hoja de modelo",
+      "path": "evidence/F0-63/esteban-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Casilda · Hoja de modelo",
+      "path": "evidence/F0-63/casilda-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Ministro Dueñas · Hoja de modelo",
+      "path": "evidence/F0-63/duenas-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Esteban · Hoja de poses",
+      "path": "evidence/F0-63/esteban-poses.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Esteban · Hoja de expresiones",
+      "path": "evidence/F0-63/esteban-expresiones.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Casilda · Hoja de poses",
+      "path": "evidence/F0-63/casilda-poses.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Casilda · Hoja de expresiones",
+      "path": "evidence/F0-63/casilda-expresiones.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Ministro Dueñas · Hoja de poses",
+      "path": "evidence/F0-63/duenas-poses.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Ministro Dueñas · Hoja de expresiones",
+      "path": "evidence/F0-63/duenas-expresiones.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "Las nueve imágenes existen, están registradas en assets.json y el build en modo estricto es correcto."
+    }
+  ]
+}
