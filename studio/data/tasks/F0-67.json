@@ -8,6 +8,14 @@
       "by": "claude",
       "note": "Se sigue con los enemigos humanos, una hoja por tipo. Las tres criaturas de La Fosa quedan para después de que el autor confirme su diseño.",
       "ref": "rama studio/F0-67-npc-enemigos-y-criaturas"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Nueve hojas: seis enemigos humanos y tres criaturas de La Fosa.",
+      "ref": "rama studio/F0-67-npc-enemigos-y-criaturas"
     }
   ],
   "comments": [
@@ -35,6 +43,11 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "El rótulo PREDETERMINADA de la banda rival se corrigió repintándolo a mano a partir de otra hoja (sin gasto de créditos). Se siguió con las criaturas según la propuesta de humanos mutados por la Aetherita."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Tres criaturas de La Fosa, humanos mutados por la Aetherita: la rastrera (minero a cuatro patas con el casco y la lámpara rotos), la cristalina (soldado corpulento con cristales vino en hombros, pecho y puño) y la etérea (humano traslúcido que flota, con las piernas hechas niebla). Cada hoja trae de frente, de lado, de espalda, predeterminada y atacando, con la hoja del Consorcio como referencia. Coste: 3 créditos. Con esto quedan las nueve hojas de la tarea."
     }
   ],
   "evidence": [
@@ -73,6 +86,24 @@
       "type": "image",
       "title": "Enemigo · Soldado de La Fosa",
       "path": "evidence/F0-67/soldado-fosa.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Criatura · Rastrera de La Fosa",
+      "path": "evidence/F0-67/rastrera.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Criatura · Cristalina de La Fosa",
+      "path": "evidence/F0-67/cristalina.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Criatura · Etérea de La Fosa",
+      "path": "evidence/F0-67/eterea.jpg"
     }
   ]
 }
