@@ -470,7 +470,7 @@
               "id": "F0-42",
               "title": "Fichas a fondo del elenco",
               "est": 6,
-              "status": "backlog",
+              "status": "review",
               "prio": "P1",
               "desc": "Ficha de cada uno de los 8 personajes: qué quiere, qué oculta, cómo habla, cómo trata al protagonista y cómo cambia en cada acto. Incluye las relaciones entre ellos.",
               "done_when": "Las 8 fichas acordadas con el autor."
