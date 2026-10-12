@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Poses y expresiones generadas para las dos versiones tras aprobar los modelos.",
       "ref": "rama studio/F0-61-hojas-del-protagonista"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las hojas del protagonista tras corregir el rótulo de las poses de la mujer y el estilo de las expresiones de Reme.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
@@ -33,6 +41,16 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Las poses salen del modelo como única referencia. En las poses de la mujer hay un rótulo mal escrito («FASOO 2») y un tercer fotograma de frente sobrante; se corrige si el autor lo pide. Coste de esta ronda: 4 créditos."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Arreglar el rótulo de las poses de la mujer y hacer que las expresiones de Reme se parezcan a las del protagonista; después queda aprobado."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Poses de la mujer regeneradas con exactamente 8 fotogramas de caminar y los rótulos correctos. Coste de las dos correcciones: 2 créditos."
     }
   ],
   "evidence": [
