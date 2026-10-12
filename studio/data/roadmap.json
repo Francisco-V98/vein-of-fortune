@@ -734,7 +734,7 @@
               "id": "F0-70",
               "title": "Decidir si los personajes llevan animación de movimiento",
               "est": 1,
-              "status": "backlog",
+              "status": "done",
               "prio": "P2",
               "desc": "El autor indicó que quizás los personajes no tengan animaciones de movimiento en el juego. Decidirlo con el autor una vez vistas las hojas de poses y fijar qué se anima (por ejemplo solo retratos con expresiones).",
               "done_when": "Decisión de animación registrada en el documento 12."

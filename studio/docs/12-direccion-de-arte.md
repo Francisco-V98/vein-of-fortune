@@ -151,7 +151,11 @@ Los jefes de zona quedan diferidos (⏳ F0-69).
 
 **Calidad:** generación en calidad media a 2K, que equilibra detalle y costo. Se revisa y aprueba cada hoja antes de pasar a la siguiente.
 
-**Animación:** ⏳ F0-70 Si los personajes llevarán animación de movimiento en el juego se decide más adelante; las poses de caminar sirven de referencia en cualquier caso.
+**Animación ✅:** el movimiento se define según la necesidad y casi todo el tiempo los personajes son **estáticos**.
+- **Versión 1:** sprites estáticos y retratos con expresiones en los diálogos. Como mucho, alguna caminata suelta del protagonista; casi no hay caminatas.
+- **Después de la versión 1:** el protagonista podrá tener algunos movimientos en ciertas zonas o escenas, buscando un punto medio entre costo y vida en pantalla.
+- Los NPC y los enemigos no llevan ciclos de caminar; si más adelante hace falta movimiento en alguno, se pide como tarea aparte.
+- Las poses de caminar de las hojas quedan como referencia para cuando se decida animar.
 
 ## Decisiones técnicas de arte pendientes
 

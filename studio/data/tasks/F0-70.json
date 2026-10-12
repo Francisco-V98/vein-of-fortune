@@ -1,0 +1,29 @@
+{
+  "id": "F0-70",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se pregunta al autor qué animación llevan los personajes, una vez vistas las hojas de poses.",
+      "ref": "rama studio/F0-70-decision-de-animacion"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor decidió: en la versión 1 todo es estático (como mucho alguna caminata del protagonista) y el movimiento se define según la necesidad. Queda en el documento 12.",
+      "ref": "decisión del autor en la conversación"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Los movimientos hay que definirlos según la necesidad: si es el personaje principal podrá tener algunos movimientos en algunas zonas, pero la mayoría del tiempo será estático; hay que buscar un punto medio. Para la versión uno serán temas estáticos, quizás alguna caminata, pero casi no habrá caminatas."
+    }
+  ],
+  "evidence": []
+}
