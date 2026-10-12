@@ -1,0 +1,34 @@
+{
+  "id": "F0-61",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Tras aprobar a Reme, se sigue con el protagonista en sus dos versiones. Primero las hojas de modelo, que definen la estética.",
+      "ref": "rama studio/F0-61-hojas-del-protagonista"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Hojas de modelo de hombre y mujer generadas con la hoja de modelo de Reme como referencia de formato y estilo, y los sprites aprobados como referencia de identidad. Falta la aprobación del autor para generar las poses (desde el modelo) y las expresiones."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Protagonista (hombre) · Hoja de modelo",
+      "path": "evidence/F0-61/protagonista-hombre-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Protagonista (mujer) · Hoja de modelo",
+      "path": "evidence/F0-61/protagonista-mujer-modelo.jpg"
+    }
+  ]
+}
