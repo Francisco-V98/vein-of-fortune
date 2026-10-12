@@ -16,6 +16,22 @@
       "by": "claude",
       "note": "Tres hojas de grupo con nueve tipos de NPC.",
       "ref": "rama studio/F0-64-npc-ministerio-comision-y-consorcio"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor señala inconsistencia de personajes y formas en las dos primeras hojas y dice que la que le gustó es la del Consorcio Arvel.",
+      "ref": "rama studio/F0-64-npc-ministerio-comision-y-consorcio"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Las dos hojas se rehicieron con la del Consorcio como referencia de estilo y proporciones.",
+      "ref": "rama studio/F0-64-npc-ministerio-comision-y-consorcio"
     }
   ],
   "comments": [
@@ -28,6 +44,16 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "El autor no eligió entre una hoja por tipo y hojas de grupo, así que se aplicó la recomendación: grupo para los de fondo y una hoja por tipo para enemigos y criaturas; queda registrado en el documento 12. La hoja del Ministerio 1 se regeneró porque la visera del escribiente le tapaba los ojos. Las descripciones de cada tipo son propuestas mías que el autor aprueba al ver las hojas. Coste: 4 créditos."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Hay inconsistencia en los personajes y sus formas en la primera y la segunda imagen; la que me gustó es la de los NPC del Consorcio Arvel."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Las dos hojas se rehicieron usando la del Consorcio como referencia: mismo alto, misma cabeza grande y mismos ojos en los tres personajes de cada hoja, también con casco (visera subida). La del Ministerio 2 se regeneró otra vez porque el oficial heredó la «A» del Consorcio en la gorra; ahora lleva el laurel con pilar del Ministerio. La regla queda en mi memoria para el resto de las hojas de NPC. Coste de esta ronda: 3 créditos."
     }
   ],
   "evidence": [
