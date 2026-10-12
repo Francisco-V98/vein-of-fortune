@@ -369,7 +369,7 @@ Regiones y zonas en [05](05-mundo-y-minerales.md) y [02](02-extraccion.md); nomb
 | **La libreta de Anselmo** ✅ | Guía las primeras misiones del Acto I ([19 · ficha de Anselmo](19-elenco-a-fondo.md), «Acciones en el juego») | Letra manuscrita, sin fecha de cierre en la última anotación |
 | **Las cintas y los carretes** ✅ | Grabaciones de Anselmo (1.6) | «Cinta» para la historia, «carrete» para el objeto |
 | **El acta de calibración** ✅ | Documento de la Comisión firmado por Anselmo; se revela al final del Acto IV (decisión del autor, F0-41) | Es la última escena de la historia. Sin discurso: una firma que el protagonista reconoce. Que sea «de hace pocas semanas» es propuesta de [19 · «La verdad sobre Anselmo»](19-elenco-a-fondo.md) 🟡 |
-| **El certificado de defunción** ✅ | Papel con un sello irregular 🟡 y **sin registro de cremación** ✅ | Lo procesó Quiroga. Pista del Acto II ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
+| **El certificado de defunción** ✅ | Papel con un sello irregular (el del sanatorio) ✅ y **sin registro de cremación** ✅ | Lo procesó Quiroga, con una orden sellada de la Comisión. Pista del Acto II ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
 | **El abono anónimo** ✅ | Pago misterioso a la deuda, el sueldo de Anselmo según el trato | Reme lo atribuye a «algún vecino bondadoso» ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
 | **La licencia, el puesto y la deuda** ✅ | La herencia del protagonista | Los tres se nombran siempre juntos en la primera mención 🟡 (misma marca en 6.11) |
 

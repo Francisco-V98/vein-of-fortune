@@ -29,9 +29,9 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 
 > **Decisión del autor ✅:** Anselmo **está vivo, pero se cree que murió enfermo**. Es **cómplice** de la Comisión del Éter. El protagonista lo descubre **al final del último acto** y queda con ganas de saber qué pasó, dónde está y por qué decidió lo que decidió. Eso deja la puerta abierta a **capítulos o actualizaciones futuras**.
 
-**Cómo encaja ✅** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md); solo se marcan 🟡 los dos datos que no vio):
+**Cómo encaja ✅** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md); solo se marcan 🟡 los dos datos que no vio, «18 años» y «hace pocas semanas»):
 
-1. Hace veinte años Anselmo, Teo y Aurelio Dueñas, entonces un funcionario de unos 40 años y «joven» solo frente a la cúpula del Ministerio 🟡, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar. Fechas y edades en [21](21-pasado-de-valdoria.md).
+1. Hace veinte años Anselmo, Teo y Aurelio Dueñas, entonces un funcionario de unos 40 años y «joven» solo frente a la cúpula del Ministerio ✅, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar. Fechas y edades en [21](21-pasado-de-valdoria.md).
 2. Anselmo lo documentó en una libreta y grabó **ocho cintas**. Calibró durante 18 años 🟡 los límites de exposición, y cada calibración agravó su mal ✅. Hace dos años intentó denunciarlo y la Comisión lo detuvo.
 3. Estaba ya enfermo. La Comisión le ofreció un trato: **tratamiento paliativo** (el único que existe), **su silencio y su trabajo** como perito de La Fosa, y que Reme, Teo y su heredero no sufrieran represalias. A cambio, **su muerte oficial**.
 4. Desde entonces vive en secreto, ayudando a la Comisión a calibrar los límites de exposición. Cree que desde dentro salva más vidas que estando muerto. En la práctica, ayuda a que se siga ocultando.
@@ -53,7 +53,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 |---|---|---|
 | I | Un abono anónimo a la deuda que Reme atribuye a "algún vecino bondadoso" | Reme |
 | I | La libreta de Anselmo termina con una anotación **sin fecha de cierre** | Libreta |
-| II | El certificado de defunción de Anselmo tiene un sello irregular 🟡 y **no hay registro de cremación** ✅ | Inspector Quiroga |
+| II | El certificado de defunción de Anselmo tiene un sello irregular ✅ y **no hay registro de cremación** ✅ | Inspector Quiroga |
 | II | Teo cambia de tema cuando se menciona el último viaje a La Fosa | Teo |
 | III | Lucía oyó que "alguien de la Comisión recibe cartas con la letra de un muerto" | Lucía |
 | III | El abono anónimo sigue llegando y Teo jura que no es él | Reme y Teo |
@@ -139,7 +139,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | **Rol** | Acreedora del protagonista y de Anselmo |
 | **Aparece** | Acto I, Villa Brasa |
 
-**Trasfondo 🟡.** Hija de mineras y viuda de un capataz. Montó su casa de préstamos con dinero que ella misma pidió a una facción mayor, y desde entonces **su propia deuda está en manos de otros**. Prestó a Anselmo, hace unos 21 años ✅ y antes de la expedición, para que pagara equipos de ensayo en La Fosa. Lo quería como a un hermano menor.
+**Trasfondo.** Hija de mineras y viuda de un capataz. Montó su casa de préstamos hace unos 25 años ✅ con dinero que ella misma pidió a una facción mayor, y desde entonces **su propia deuda está en manos de otros**. Prestó a Anselmo, hace unos 21 años ✅ y antes de la expedición, para que pagara equipos de ensayo en La Fosa. Lo quería como a un hermano menor 🟡.
 
 **Personalidad.** Cálida, generosa con el que está al lado y despiadada con la cuenta. Sabe que su amabilidad es parte de su negocio y también que, a veces, es de verdad. Su contradicción: **cuida a quien debe y a la vez es quien lo cobra**.
 
@@ -246,7 +246,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 
 **Conexiones.** Con **el Ministerio**, su jefe lejano; con **Casilda**, enemigos corteses; con **Lucía**, se evitan; con **Anselmo**, su certificado.
 
-**Secreto y pistas.** Guarda un archivo con todos los sobornos, como seguro de vida, y sabe que el certificado de Anselmo no tiene registro de cremación ✅.
+**Secreto y pistas.** Guarda un archivo con todos los sobornos, como seguro de vida, y sabe que el certificado de Anselmo no tiene registro de cremación ✅. Lo tramitó con una orden sellada de la Comisión y guardó copia en ese archivo, junto con la carta de la cinta 6 que retuvo ✅ ([21](21-pasado-de-valdoria.md)).
 
 ## Lucía Montalvo
 

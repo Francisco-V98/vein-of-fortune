@@ -71,17 +71,17 @@
       {
         "etapa": "produccion",
         "estado": "hecha",
-        "nota": "El narrador bajó a 🟡 lo que el autor no había confirmado y el autor confirmó en lote la muerte pública, la supervivencia de Anselmo, los orígenes y las cintas 1 a 6; la limpieza quedó en 64 %",
+        "nota": "El autor confirmó en tres tandas el pasado completo salvo unas pocas cifras; la limpieza quedó en 69 %",
         "at": "2026-10-12",
         "por": "narrador",
         "entrega": "Documento 21 con la cronología, la tabla de edades, la muerte pública, las ocho cintas, Vega Mansa y las casas; los ⏳ F0-43 de la biblia resueltos"
       },
       {
         "etapa": "qa",
-        "estado": "pendiente",
+        "estado": "activa",
         "at": "2026-10-12",
         "por": "qa",
-        "nota": "QA devolvió la tarea a producción: ✅ sin respaldo del autor en las secciones 4, 5, 6, 10 y 11 del documento 21 y en el bloque «Cómo encaja» del 19, y un hueco narrativo sobre cómo sobrevive Anselmo",
+        "nota": "Segunda pasada de QA sobre las marcas y el build estricto",
         "hallazgos": [
           {
             "de": "qa",
@@ -179,6 +179,12 @@
         "de": "narrador",
         "a": "coordinador",
         "que": "Marcas corregidas y confirmaciones del autor aplicadas; pendiente repetir QA",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "narrador",
+        "a": "qa",
+        "que": "Segunda revisión: confirmaciones del autor aplicadas, limpieza 69 %",
         "at": "2026-10-12"
       }
     ]
