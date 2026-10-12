@@ -55,6 +55,9 @@ Después del Acto IV: **sandbox** con la capa de imperio (ver [04](04-progresion
 - **Acreedor: Doña Remedios "Reme" Salgado**, prestamista local amable. En el Acto I parece una vecina que da tiempo; en el Acto II se descubre que responde a una facción mayor.
 - **La facción detrás de Reme cambia según la partida**: Consorcio Arvel, Los Faroleros o el Ministerio. Esto cumple "mismos hitos, otras circunstancias".
 - 🟡 El Acto II necesita entonces 3 variantes. No afecta al MVP (solo Acto I).
+- ✅ **Anselmo está vivo, pero se cree que murió enfermo.** Es cómplice de la Comisión del Éter y el protagonista lo descubre al final del Acto IV, lo que deja abierta una continuación. Detalle y pistas en [19](19-elenco-a-fondo.md).
+- ✅ **Reme traiciona en el Acto II por obligación, no por decisión propia**, y al final del Acto IV se une al protagonista para resolver el caso del tío.
+- ✅ **El Ministro Dueñas es el enemigo claro**: duro e inflexible, convencido de que sostiene la nación, con una razón que no es tan razonable.
 
 ## Decisiones que cambian la historia ✅
 
