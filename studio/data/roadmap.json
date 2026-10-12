@@ -698,7 +698,7 @@
               "id": "F0-66",
               "title": "NPC empleados y civiles",
               "est": 5,
-              "status": "backlog",
+              "status": "review",
               "prio": "P2",
               "desc": "Hojas de grupo con tres tipos: los cinco empleados (minero, dependiente, guardia, refinador y analista), los cinco civiles (vecino, vecina, comerciante, cliente obrero y cliente de la élite) y el voceador de periódicos.",
               "done_when": "Once tipos aprobados en cuatro hojas."

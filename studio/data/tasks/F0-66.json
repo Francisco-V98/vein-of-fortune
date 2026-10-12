@@ -1,0 +1,65 @@
+{
+  "id": "F0-66",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Tras aprobar F0-65 se siguen los empleados, los civiles y el voceador.",
+      "ref": "rama studio/F0-66-npc-empleados-y-civiles"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Cuatro hojas de grupo con once tipos.",
+      "ref": "rama studio/F0-66-npc-empleados-y-civiles"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Aprobadas las hojas de la Unión, la prensa y Los Faroleros; continuar con F0-66."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Los empleados llevan un pin de lámpara de minero como emblema de la tienda. La hoja de civiles 2 tiene dos filas y deja la tercera vacía para mantener el mismo tamaño. En la cliente de la élite quedó una mancha de hollín en la mejilla, heredada del obrero; es un detalle menor que se corrige si el autor lo pide. Los empleados se parecen bastante entre sí: si se quiere variedad (más mujeres, otras edades), se añade en una segunda pasada. Coste: 4 créditos."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "NPC Empleados · 1 (minero, dependiente y guardia)",
+      "path": "evidence/F0-66/empleados-1.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "NPC Empleados · 2 y voceador (refinador, analista y voceador)",
+      "path": "evidence/F0-66/empleados-2-voceador.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "NPC Civiles · 1 (vecino, vecina y comerciante)",
+      "path": "evidence/F0-66/civiles-1.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "NPC Civiles · 2 (cliente obrero y cliente de la élite)",
+      "path": "evidence/F0-66/civiles-2.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "Las cuatro imágenes existen, están registradas en assets.json y el build en modo estricto es correcto."
+    }
+  ]
+}
