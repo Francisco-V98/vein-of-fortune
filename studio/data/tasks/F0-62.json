@@ -8,6 +8,14 @@
       "by": "claude",
       "note": "Se sigue con Anselmo, Teo, Quiroga y Lucía una vez aprobado el protagonista. Primero las hojas de modelo.",
       "ref": "rama studio/F0-62-hojas-del-elenco-secundario"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Modelos aprobados; poses y expresiones de los cuatro generadas y corregidas.",
+      "ref": "rama studio/F0-62-hojas-del-elenco-secundario"
     }
   ],
   "comments": [
@@ -15,6 +23,16 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Cuatro hojas de modelo generadas con la de Reme como referencia de formato y estilo y el retrato aprobado de cada uno como referencia de identidad. Anselmo se dibuja como la persona de la foto, con la libreta en el bolsillo; la sonrisa salió más tímida que en su retrato. Faltan la aprobación del autor, las poses y las expresiones."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Los cuatro modelos nuevos me gustaron."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Poses desde cada modelo y expresiones en el estilo aprobado. Se regeneraron dos hojas por defectos: las poses de Anselmo (rótulo «CONTACTO 11») y las expresiones de Lucía (aparecían unas gafas que no lleva). En el cansancio de Lucía la ojera de un ojo queda algo marcada. Teo tiene un gesto de tos en las poses, un guiño a su enfermedad oculta. Coste de esta ronda: 10 créditos."
     }
   ],
   "evidence": [
@@ -41,6 +59,60 @@
       "type": "image",
       "title": "Lucía · Hoja de modelo",
       "path": "evidence/F0-62/lucia-modelo.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Anselmo · Hoja de poses",
+      "path": "evidence/F0-62/anselmo-poses.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Anselmo · Hoja de expresiones",
+      "path": "evidence/F0-62/anselmo-expresiones.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Teo · Hoja de poses",
+      "path": "evidence/F0-62/teo-poses.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Teo · Hoja de expresiones",
+      "path": "evidence/F0-62/teo-expresiones.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Quiroga · Hoja de poses",
+      "path": "evidence/F0-62/quiroga-poses.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Quiroga · Hoja de expresiones",
+      "path": "evidence/F0-62/quiroga-expresiones.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Lucía · Hoja de poses",
+      "path": "evidence/F0-62/lucia-poses.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Lucía · Hoja de expresiones",
+      "path": "evidence/F0-62/lucia-expresiones.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "Las doce imágenes existen, están registradas en assets.json y el build en modo estricto es correcto."
     }
   ]
 }

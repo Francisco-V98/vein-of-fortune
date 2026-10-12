@@ -662,7 +662,7 @@
               "id": "F0-62",
               "title": "Hojas de Anselmo, Teo, Quiroga y Lucía",
               "est": 5,
-              "status": "doing",
+              "status": "review",
               "prio": "P1",
               "desc": "Tres hojas de cada personaje. Anselmo se genera como foto desgastada y como silueta de las cintas, según su retrato aprobado.",
               "done_when": "Doce hojas aprobadas."
