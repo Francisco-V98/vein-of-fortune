@@ -89,14 +89,25 @@ Paleta fría con **vinotinto** como acento principal y **latón** como detalle m
 
 ### Símbolo ✅
 
-**La lámpara de minero** (confirmada por el autor el 2026-10-12). Aparece en el arte de la mina y en los protagonistas, y conecta con el optimismo (la luz en la oscuridad). Se evita el farol rojo porque es el emblema de Los Faroleros.
+**La moneda de minero** (elegida por el autor el 2026-10-12): una moneda de latón con aro grueso y, dentro, tres ideas del juego en una sola imagen:
+- **Lámpara:** un casco de minero de latón con una lámpara redonda de borde de acero al frente.
+- **Éter:** en la lente de la lámpara, tres puntas de Aetherita en vinotinto con un contorno cian fino; es el único cian y rosado de la marca porque es la propia Aetherita.
+- **Comercio:** tres barras escalonadas (acero, vinotinto y ámbar) bajo el casco, como un gráfico que sube.
 
-### Logotipo 🟡 (por diseñar)
+Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre debajo. Se evita el farol rojo porque es el emblema de Los Faroleros. Las piezas están en `studio/assets-ref/marca/`.
 
-- **Wordmark** en pixel art, con una **veta vinotinto** que recorre las letras. Una versión para cada idioma con la misma estructura, de modo que el símbolo y el trazo sean compartidos.
-- **Símbolo + wordmark** en horizontal y apilado.
-- **Ícono de la app:** la lámpara de minero sobre fondo pizarra con una veta vinotinto; legible a tamaño pequeño.
-- **Pantalla de título:** escena de la mina con el wordmark.
+### Logotipo ✅ (versión provisional)
+
+| Pieza | Archivo |
+|---|---|
+| Logo apilado (icono grande y nombre debajo) | `logo-apilado-es.webp`, `logo-apilado-en.webp` |
+| Logo horizontal (icono y nombre al lado) | `logo-horizontal-es.webp`, `logo-horizontal-en.webp` |
+| Icono solo | `icono-moneda.webp` |
+| Icono de app (cuadrado redondeado) | `icono-app.webp` |
+| Tableros de presentación | `logo-tablero-es.webp`, `logo-tablero-en.webp` |
+
+- **Nombre:** letras de pixel art macizas, en un azul acero pálido (cerca de *Hielo medio*, no blanco puro), con contorno azul marino y una sombra de un píxel. Una versión por idioma con la misma estructura (*Veta de Fortuna* y *Vein of Fortune*).
+- **Provisional:** es la versión de trabajo para el hub, el README y las pruebas; el logo definitivo y el arte de la pantalla de título son F3-28 y F3-29.
 
 ### Tipografía
 
@@ -107,17 +118,17 @@ Paleta fría con **vinotinto** como acento principal y **latón** como detalle m
 
 ### Guía visual 🟡 (F0-20)
 
-**Colores de marca.** Fondo pizarra (`#17232C` o `#0E161D`), texto hielo claro (`#C9DCDF`), acento vinotinto (`#9A2640`) y un toque de latón (`#B8893A`) o ámbar (`#E3B25C`) para la luz de la lámpara. El vinotinto no pasa del 5 % de cualquier pieza. El rojo-rosado y el cian de la Aetherita no son colores de marca.
+**Colores de marca.** Fondo pizarra (`#17232C` o `#0E161D`), latón (`#B8893A`) y ámbar (`#E3B25C`) para la moneda, vinotinto (`#9A2640`) como acento y azul acero pálido para el nombre. El vinotinto no pasa del 5 % de cualquier pieza. El rojo-rosado y el cian solo aparecen en el cristal del icono, que es la Aetherita.
 
-**Símbolo (lámpara de minero).**
-- Se dibuja sobre una cuadrícula de pixel art de 32 × 32 y se escala solo por múltiplos enteros (×2, ×3, ×4).
-- Versiones: color (cuerpo pizarra y acero, luz ámbar, veta vinotinta), de un solo color (hielo claro sobre fondo oscuro) y de un solo color oscuro (sobre fondo claro).
-- Área libre alrededor: la mitad del ancho de la lámpara. Tamaño mínimo: 32 px de alto en pantalla.
-- Siempre con luz encendida; nunca roja (el farol rojo es de Los Faroleros).
+**Símbolo (moneda de minero).**
+- Pixel art con píxeles visibles; se escala solo por múltiplos enteros (×2, ×3, ×4).
+- Área libre alrededor: la mitad del ancho del aro. Tamaño mínimo: 32 px de alto en pantalla.
+- El casco, la lámpara, el cristal y las tres barras siempre van juntos; no se quita ninguno.
+- Nunca en rojo ni con un farol en lugar de la lámpara.
 
-**Wordmark.** Pixel art con una veta vinotinta que recorre las letras. Una versión por idioma (*Veta de Fortuna* y *Vein of Fortune*) con la misma estructura. Se usa sobre fondos oscuros; en claro solo la versión de un color oscuro. Detalle y primera versión en F0-21.
+**Nombre.** Pixel art macizo, en la versión de cada idioma. Se usa sobre fondos oscuros; en un fondo claro se coloca sobre una placa pizarra.
 
-**Texto de marca.** Pixelify Sans en títulos y botones; se escribe en minúsculas con mayúscula inicial, sin todo en mayúsculas salvo etiquetas cortas.
+**Texto del juego.** Pixelify Sans en títulos y botones; el nombre del logo es un dibujo, no la fuente.
 
 ### Usos incorrectos 🟡
 
@@ -126,7 +137,8 @@ Paleta fría con **vinotinto** como acento principal y **latón** como detalle m
 - No colocar el logotipo sobre fondos que reduzcan su contraste.
 - No mezclar los dos idiomas en un mismo logotipo.
 - No poner el símbolo en rojo ni cambiar la lámpara por un farol.
-- No añadir sombras, brillos o degradados al wordmark.
+- No añadir degradados, brillos ni partículas al logo, ni más detalle al cristal.
+- No volver el nombre blanco puro ni cambiar su color.
 
 ## Reglas de escritura 🟡
 
@@ -150,7 +162,7 @@ Paleta fría con **vinotinto** como acento principal y **latón** como detalle m
 | Nombre y esencia | ✅ elegido | F0-18 |
 | Documento de marca | 🟡 en revisión | F0-19 |
 | Guía visual (tipografía, usos) | 🟡 en revisión | F0-20 |
-| Wordmark provisional | ❓ pendiente | F0-21 |
+| Logo provisional (apilado, horizontal, icono y icono de app) | ✅ hecho (`studio/assets-ref/marca/`) | F0-21 |
 | Logo definitivo | ❓ pendiente | F3-28 |
 | Ícono y pantalla de título | ❓ pendiente | F3-29 |
 | Arte clave y capturas de tienda ES/EN | ❓ pendiente | F5-43 y F5-35 |

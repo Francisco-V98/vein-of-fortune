@@ -260,7 +260,7 @@
               "id": "F0-21",
               "title": "Wordmark provisional del nombre elegido",
               "est": 5,
-              "status": "backlog",
+              "status": "done",
               "desc": "Versión provisional del logotipo en pixel art para el hub, el README y las pruebas.",
               "done_when": "Wordmark provisional guardado en studio.",
               "prio": "P2"

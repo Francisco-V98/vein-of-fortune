@@ -1,0 +1,96 @@
+{
+  "id": "F0-21",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se generan dos variantes del wordmark por idioma con la lámpara y la veta vinotinta.",
+      "ref": "rama studio/F0-21-wordmark-provisional"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Wordmark provisional en español e inglés guardado en studio.",
+      "ref": "rama studio/F0-21-wordmark-provisional"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pidió rehacer el logo: más simple, con icono grande y texto debajo, que el icono funcione solo, y que destaque la lámpara, el éter y el comercio.",
+      "ref": "rama studio/F0-21-wordmark-provisional"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Logo en pixel art: moneda de minero con casco, lámpara, éter y barras; versiones apilada, horizontal, icono y icono de app, en español e inglés.",
+      "ref": "rama studio/F0-21-wordmark-provisional"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el logo provisional («usemos este»).",
+      "ref": "aprobación del autor en la conversación"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Dos wordmarks provisionales en pixel art, uno por idioma: la lámpara de minero a la izquierda y el título en letras hielo con contorno negro, con una veta vinotinta que recorre las letras. De cuatro candidatas se eligieron las que mejor se leen; para que el símbolo sea el mismo en los dos idiomas, la lámpara de la versión en inglés se sustituyó por la de la versión en español (retoque a mano, sin gasto extra). Es provisional: el logo definitivo con tipografía propia es F3-28. Coste: 4 créditos."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Tres cosas que resaltar en el logo: la lámpara, el éter y el comercio con sus gráficas. El icono debe funcionar sin el texto, y también grande con el texto abajo. Referencia de una lámina de marca. Algo simple, lindo y que transmita el juego al 100 %."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "No me gustó ningún logo ni el texto del nombre; hazlo simple, minimalista y estilizado."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Me gusta la tercera propuesta (moneda con lámpara) pero se ve muy formal: quiero más pixel art y más alineado al videojuego, y cambiar la gema porque parece un diamante; que transmita más el éter."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Me gusta esta, pero el casco perdió la forma, el éter tiene demasiado detalle y el texto se ve muy blanco; una sola propuesta con un modelo más inteligente."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Ok, usemos este entonces."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Se probaron cuatro rondas de conceptos (pixel con aro, vectores minimalistas, versión pixel de la moneda y una última con el modelo Nano Banana 2.1 de razonamiento alto). El elegido es la moneda de minero: casco de latón con lámpara, tres puntas de Aetherita con un contorno cian fino y tres barras escalonadas, con el nombre en pixel art de un azul acero pálido. Se recortaron las piezas de la lámina (apilado, horizontal, icono y icono de app), en español e inglés, y se eliminaron los wordmarks y candidatos anteriores. Coste total de la tarea: unos 14 créditos."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Logo · Tablero en español",
+      "path": "evidence/F0-21/logo-tablero-es.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Logo · Tablero en inglés",
+      "path": "evidence/F0-21/logo-tablero-en.jpg"
+    }
+  ]
+}
