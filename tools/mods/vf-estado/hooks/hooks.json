@@ -1,0 +1,4 @@
+{
+  "description": "Panel de estado del proyecto",
+  "modules": ["./register.js"]
+}

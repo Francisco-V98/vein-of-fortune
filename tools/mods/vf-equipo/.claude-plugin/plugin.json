@@ -1,0 +1,6 @@
+{
+  "name": "vf-equipo",
+  "version": "0.1.0",
+  "description": "Tablero del equipo de especialistas de Veta de Fortuna: en qué etapa va cada tarea, quién trabaja ahora y dónde entra el autor",
+  "author": { "name": "Veta de Fortuna" }
+}

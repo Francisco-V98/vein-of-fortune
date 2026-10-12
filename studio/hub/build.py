@@ -61,7 +61,7 @@ GROUPS = [
     ("Mundo y narrativa", ["05", "07", "08", "17", "19"]),
     ("Marca y arte", ["12", "13"]),
     ("Técnico y legal", ["10", "11"]),
-    ("Arquitectura y calidad", ["14", "15"]),
+    ("Arquitectura y calidad", ["14", "15", "20"]),
     ("Plan y decisiones", ["06"]),
 ]
 ADR_GROUP = "Decisiones de arquitectura (ADR)"
@@ -173,7 +173,73 @@ def check_activity(tid, status, act):
             e["exists"] = bool(rel) and (STUDIO / rel).exists()
 
 
-def check_roadmap(roadmap, activity):
+def load_equipo():
+    """Carga y valida el equipo de especialistas y las etapas del flujo."""
+    path = DATA / "equipo.json"
+    if not path.exists():
+        return {"etapas": [], "roles": [], "reglas": [], "estados_etapa": []}
+    data = load_json(path)
+    roles = {r["id"]: r for r in data.get("roles", [])}
+    if len(roles) != len(data.get("roles", [])):
+        warn("equipo.json: hay roles con el mismo id")
+    etapas = set()
+    for etapa in data.get("etapas", []):
+        if etapa["id"] in etapas:
+            warn("equipo.json: etapa repetida: %s" % etapa["id"])
+        etapas.add(etapa["id"])
+        if etapa["rol"] != "especialista" and etapa["rol"] not in roles:
+            warn("equipo.json: la etapa %s usa un rol inexistente: %s" % (etapa["id"], etapa["rol"]))
+    for rol in roles.values():
+        if rol["tipo"] not in ("agente", "humano", "principal"):
+            warn("equipo.json: tipo de rol inválido en %s: %s" % (rol["id"], rol["tipo"]))
+        if rol.get("depto") not in {d["id"] for d in data.get("deptos", [])}:
+            warn("equipo.json: el rol %s tiene un departamento inexistente: %s" % (rol["id"], rol.get("depto")))
+        if not re.match(r"^F[0-6]$", str(rol.get("desde", ""))):
+            warn("equipo.json: el rol %s tiene una fase de incorporación inválida: %s" % (rol["id"], rol.get("desde")))
+        agent_file = STUDIO.parent / ".claude" / "agents" / ("%s.md" % rol["agente"]) if rol.get("agente") else None
+        if agent_file is not None and not agent_file.exists():
+            warn("equipo.json: el rol %s apunta al agente %s, que no existe en .claude/agents" % (rol["id"], rol["agente"]))
+    return data
+
+
+def check_pipeline(tid, act, equipo):
+    """Valida el flujo por etapas de una tarea, si lo trae."""
+    pipe = act.get("pipeline")
+    if pipe is None:
+        return
+    roles = {r["id"]: r for r in equipo["roles"]}
+    etapas = {e["id"] for e in equipo["etapas"]}
+    estados = set(equipo["estados_etapa"])
+    spec = pipe.get("especialista")
+    if spec is not None and not roles.get(spec, {}).get("especialista"):
+        warn("%s: el especialista del flujo no existe o no es de producción: %s" % (tid, spec))
+    for i, x in enumerate(pipe.get("traspasos", [])):
+        for campo in ("de", "a"):
+            if x.get(campo) not in roles:
+                warn("%s: el traspaso %d tiene un rol inexistente en '%s': %s" % (tid, i + 1, campo, x.get(campo)))
+        if x.get("tipo", "entrega") not in ("entrega", "devolucion"):
+            warn("%s: tipo de traspaso inválido en el traspaso %d: %s" % (tid, i + 1, x.get("tipo")))
+    vistos = set()
+    for item in pipe.get("etapas", []):
+        if item.get("etapa") not in etapas:
+            warn("%s: etapa de flujo inválida: %s" % (tid, item.get("etapa")))
+        if item.get("etapa") in vistos:
+            warn("%s: etapa de flujo repetida: %s" % (tid, item.get("etapa")))
+        vistos.add(item.get("etapa"))
+        if item.get("estado") not in estados:
+            warn("%s: estado de etapa inválido en %s: %s" % (tid, item.get("etapa"), item.get("estado")))
+        if item.get("por") is not None and item["por"] not in roles:
+            warn("%s: la etapa %s la hace un rol inexistente: %s" % (tid, item.get("etapa"), item["por"]))
+        for h in item.get("hallazgos", []):
+            if h.get("de") not in roles:
+                warn("%s: un hallazgo de %s viene de un rol inexistente: %s" % (tid, item.get("etapa"), h.get("de")))
+            if h.get("estado") not in ("abierto", "resuelto"):
+                warn("%s: estado de hallazgo inválido en %s: %s" % (tid, item.get("etapa"), h.get("estado")))
+            if h.get("estado") == "resuelto" and (h.get("resuelto_por") not in roles or not h.get("como")):
+                warn("%s: un hallazgo resuelto en %s necesita resuelto_por y como" % (tid, item.get("etapa")))
+
+
+def check_roadmap(roadmap, activity, equipo=None):
     seen = set()
     targets = roadmap["meta"]["targets"]
     for phase in roadmap["phases"]:
@@ -197,6 +263,8 @@ def check_roadmap(roadmap, activity):
                     warn("Prioridad inválida o ausente en %s: %s" % (tid, task.get("prio")))
                 act = activity.get(tid, {})
                 check_activity(tid, task["status"], act)
+                if equipo is not None:
+                    check_pipeline(tid, act, equipo)
                 task["history"] = act.get("history", [])
                 task["comments"] = act.get("comments", [])
                 task["evidence"] = act.get("evidence", [])
@@ -479,7 +547,8 @@ def load_gallery(world, assets):
 def build_hub():
     roadmap = load_json(DATA / "roadmap.json")
     activity = load_activity()
-    check_roadmap(roadmap, activity)
+    equipo = load_equipo()
+    check_roadmap(roadmap, activity, equipo)
     docs = build_docs()
     groups = [g for g, _ in GROUPS]
     if any(d["group"] == ADR_GROUP for d in docs):
@@ -504,6 +573,7 @@ def build_hub():
         "qa": load_qa(task_ids),
         "presentation": load_presentation({d["id"] for d in docs}),
         "story": story,
+        "equipo": equipo,
         "cleanliness": cleanliness,
         "world": world,
         "coherence": coherence.check(world, story),

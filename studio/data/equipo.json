@@ -1,0 +1,363 @@
+{
+  "version": 2,
+  "nota": "Fuente de verdad del equipo y del flujo de cada tarea. La leen el mod /equipo de Claude Code y build.py. Cada rol de tipo agente tiene su definición en .claude/agents/<agente>.md. «desde» es la fase en la que el rol se incorpora al estudio.",
+  "etapas": [
+    {
+      "id": "ideacion",
+      "nombre": "Ideación",
+      "rol": "ideador",
+      "glifo": "I",
+      "que": "Explorar opciones y proponer una recomendación."
+    },
+    {
+      "id": "analisis",
+      "nombre": "Análisis",
+      "rol": "analista",
+      "glifo": "A",
+      "que": "Comprobar coherencia, números, riesgos y dependencias, y fijar los criterios de aceptación.",
+      "apoyo": [
+        "legal"
+      ]
+    },
+    {
+      "id": "produccion",
+      "nombre": "Producción",
+      "rol": "especialista",
+      "glifo": "P",
+      "que": "Hacer el trabajo: documento, narrativa, arte o código, según la tarea."
+    },
+    {
+      "id": "qa",
+      "nombre": "QA",
+      "rol": "qa",
+      "glifo": "Q",
+      "que": "Verificar que todo pasa: build estricto, pruebas, enlaces y coherencia.",
+      "apoyo": [
+        "revisor"
+      ]
+    },
+    {
+      "id": "autor",
+      "nombre": "Revisión del autor",
+      "rol": "autor",
+      "glifo": "R",
+      "que": "Revisar el entregable (documento, arte, código): aprobar o devolver con comentarios."
+    },
+    {
+      "id": "playtest",
+      "nombre": "Prueba del autor",
+      "rol": "autor",
+      "glifo": "T",
+      "que": "Jugar y probar: que sea divertido, que se vea bien, que el tono funcione. Solo en tareas con algo que probar.",
+      "apoyo": [
+        "playtest"
+      ]
+    },
+    {
+      "id": "cierre",
+      "nombre": "Cierre",
+      "rol": "coordinador",
+      "glifo": "C",
+      "que": "Fusionar, cerrar la tarea, limpiar ramas y actualizar el registro."
+    }
+  ],
+  "estados_etapa": [
+    "pendiente",
+    "activa",
+    "hecha",
+    "omitida"
+  ],
+  "roles": [
+    {
+      "id": "coordinador",
+      "nombre": "Coordinador (Claude)",
+      "corto": "Coordinador",
+      "tipo": "principal",
+      "agente": null,
+      "especialista": false,
+      "depto": "direccion",
+      "desde": "F0",
+      "hace": "Reparte el trabajo entre los especialistas, mantiene el roadmap, genera las imágenes, fusiona y cierra las tareas.",
+      "entrega": "Tareas cerradas y registro al día"
+    },
+    {
+      "id": "autor",
+      "nombre": "Fran (autor)",
+      "corto": "Fran",
+      "tipo": "humano",
+      "agente": null,
+      "especialista": false,
+      "depto": "direccion",
+      "desde": "F0",
+      "hace": "Revisa los entregables y los PR, juega y prueba el juego (diversión, detalles visuales, tono), y aprueba o devuelve.",
+      "entrega": "Aprobación o comentarios"
+    },
+    {
+      "id": "ideador",
+      "nombre": "Ideador e investigador",
+      "corto": "Ideador",
+      "tipo": "agente",
+      "agente": "ideador",
+      "especialista": false,
+      "depto": "estrategia",
+      "desde": "F0",
+      "hace": "Explora opciones y referencias (juegos parecidos, mercado) y propone al menos tres alternativas con una recomendación.",
+      "entrega": "Opciones y recomendación"
+    },
+    {
+      "id": "analista",
+      "nombre": "Analista de coherencia",
+      "corto": "Analista",
+      "tipo": "agente",
+      "agente": "analista",
+      "especialista": false,
+      "depto": "estrategia",
+      "desde": "F0",
+      "hace": "Cruza lo propuesto con los documentos y el registro del mundo; revisa números, riesgos y dependencias; fija los criterios de aceptación.",
+      "entrega": "Informe de coherencia y criterios"
+    },
+    {
+      "id": "legal",
+      "nombre": "Asesor legal y de licencias",
+      "corto": "Legal",
+      "tipo": "agente",
+      "agente": "asesor-legal",
+      "especialista": true,
+      "depto": "estrategia",
+      "desde": "F0",
+      "hace": "Vigila la licencia de cada fuente, imagen y sonido, la privacidad, las reglas de las tiendas y la clasificación por edades.",
+      "entrega": "Registro de licencias y requisitos"
+    },
+    {
+      "id": "lanzamiento",
+      "nombre": "Responsable de lanzamiento",
+      "corto": "Lanzam.",
+      "tipo": "agente",
+      "agente": "responsable-lanzamiento",
+      "especialista": true,
+      "depto": "estrategia",
+      "desde": "F5",
+      "hace": "Prepara la ficha de tienda, el kit de prensa, las capturas, la comunidad y las métricas en producción.",
+      "entrega": "Material de lanzamiento"
+    },
+    {
+      "id": "disenador",
+      "nombre": "Diseñador de sistemas",
+      "corto": "Sistemas",
+      "tipo": "agente",
+      "agente": "disenador-sistemas",
+      "especialista": true,
+      "depto": "diseno",
+      "desde": "F0",
+      "hace": "Escribe y edita el diseño del juego: bucle central, progresión, riesgo y el registro del mundo.",
+      "entrega": "Documentos de diseño en ✅ / 🟡 / ❓"
+    },
+    {
+      "id": "economista",
+      "nombre": "Economista y balance",
+      "corto": "Economía",
+      "tipo": "agente",
+      "agente": "economista",
+      "especialista": true,
+      "depto": "diseno",
+      "desde": "F0",
+      "hace": "Modela precios, demanda, mercado y recompensas, y comprueba con simulaciones que la economía no se rompa.",
+      "entrega": "Tablas y simulaciones de balance"
+    },
+    {
+      "id": "contenido",
+      "nombre": "Diseñador de contenido",
+      "corto": "Contenido",
+      "tipo": "agente",
+      "agente": "disenador-contenido",
+      "especialista": true,
+      "depto": "diseno",
+      "desde": "F0",
+      "hace": "Diseña zonas, minerales, eventos, empleados y encuentros con sus parámetros.",
+      "entrega": "Fichas de contenido"
+    },
+    {
+      "id": "uiux",
+      "nombre": "Diseñador UI/UX",
+      "corto": "UI/UX",
+      "tipo": "agente",
+      "agente": "disenador-ui-ux",
+      "especialista": true,
+      "depto": "diseno",
+      "desde": "F0",
+      "hace": "Diseña pantallas, flujos, información por capas y accesibilidad para móvil.",
+      "entrega": "Flujos y maquetas de pantallas"
+    },
+    {
+      "id": "narrador",
+      "nombre": "Narrador",
+      "corto": "Narrador",
+      "tipo": "agente",
+      "agente": "narrador",
+      "especialista": true,
+      "depto": "narrativa",
+      "desde": "F0",
+      "hace": "Escribe la historia, los personajes y los diálogos con la voz acordada, sin romper el canon.",
+      "entrega": "Texto narrativo consistente"
+    },
+    {
+      "id": "localizador",
+      "nombre": "Localizador ES/EN",
+      "corto": "Localizador",
+      "tipo": "agente",
+      "agente": "localizador",
+      "especialista": true,
+      "depto": "narrativa",
+      "desde": "F0",
+      "hace": "Mantiene el glosario y adapta los textos entre español neutro con tuteo e inglés cercano.",
+      "entrega": "Glosario y textos en dos idiomas"
+    },
+    {
+      "id": "arte",
+      "nombre": "Director de arte",
+      "corto": "Arte",
+      "tipo": "agente",
+      "agente": "director-arte",
+      "especialista": true,
+      "depto": "arte",
+      "desde": "F0",
+      "hace": "Escribe los encargos de arte y revisa cada imagen contra el estilo acordado.",
+      "entrega": "Encargos y revisiones de arte"
+    },
+    {
+      "id": "sonido",
+      "nombre": "Diseñador de sonido",
+      "corto": "Sonido",
+      "tipo": "agente",
+      "agente": "disenador-sonido",
+      "especialista": true,
+      "depto": "arte",
+      "desde": "F1",
+      "hace": "Planifica efectos, voces en blips y música, y su licencia.",
+      "entrega": "Plan y encargos de sonido"
+    },
+    {
+      "id": "arquitecto",
+      "nombre": "Arquitecto de software",
+      "corto": "Arquitecto",
+      "tipo": "agente",
+      "agente": "arquitecto",
+      "especialista": true,
+      "depto": "ingenieria",
+      "desde": "F0",
+      "hace": "Define módulos, capas, datos y decisiones de arquitectura (ADR) y vigila la deuda técnica.",
+      "entrega": "ADR y estructura del proyecto"
+    },
+    {
+      "id": "desarrollador",
+      "nombre": "Desarrollador de juego",
+      "corto": "Dev juego",
+      "tipo": "agente",
+      "agente": "desarrollador-juego",
+      "especialista": true,
+      "depto": "ingenieria",
+      "desde": "F1",
+      "hace": "Programa el juego en Godot con código limpio, modular y probado.",
+      "entrega": "Código del juego con pruebas"
+    },
+    {
+      "id": "herramientas",
+      "nombre": "Desarrollador de herramientas",
+      "corto": "Herramientas",
+      "tipo": "agente",
+      "agente": "desarrollador-herramientas",
+      "especialista": true,
+      "depto": "ingenieria",
+      "desde": "F0",
+      "hace": "Mantiene el hub, la integración continua y los mods del estudio.",
+      "entrega": "Herramientas del estudio"
+    },
+    {
+      "id": "seguridad",
+      "nombre": "Ingeniero de seguridad",
+      "corto": "Seguridad",
+      "tipo": "agente",
+      "agente": "ingeniero-seguridad",
+      "especialista": true,
+      "depto": "ingenieria",
+      "desde": "F1",
+      "hace": "Revisa la seguridad, la integridad de los datos guardados y la privacidad.",
+      "entrega": "Informe de seguridad"
+    },
+    {
+      "id": "revisor",
+      "nombre": "Revisor de código",
+      "corto": "Revisor",
+      "tipo": "agente",
+      "agente": "revisor-codigo",
+      "especialista": false,
+      "depto": "calidad",
+      "desde": "F1",
+      "hace": "Revisa cada cambio de código antes de que llegue al autor: errores, claridad y arquitectura.",
+      "entrega": "Revisión de código"
+    },
+    {
+      "id": "qa",
+      "nombre": "QA técnico",
+      "corto": "QA",
+      "tipo": "agente",
+      "agente": "qa",
+      "especialista": false,
+      "depto": "calidad",
+      "desde": "F0",
+      "hace": "Ejecuta el build estricto, las pruebas y las comprobaciones, y reporta sin editar nada.",
+      "entrega": "Informe de QA aprobado o con fallos"
+    },
+    {
+      "id": "playtest",
+      "nombre": "Diseñador de pruebas",
+      "corto": "Pruebas",
+      "tipo": "agente",
+      "agente": "disenador-pruebas",
+      "especialista": false,
+      "depto": "calidad",
+      "desde": "F0",
+      "hace": "Prepara los casos de prueba y las guías de playtest para que el autor pruebe con método.",
+      "entrega": "Guía de prueba para el autor"
+    }
+  ],
+  "reglas": [
+    "Cada tarea elige qué etapas aplican; las que no hacen falta se marcan como omitidas, nunca se borran.",
+    "Una etapa pasa a hecha solo cuando entrega lo que dice su rol; la siguiente no empieza antes.",
+    "Producción la hace el especialista que corresponda a la tarea.",
+    "El autor aprueba o devuelve; si devuelve, la tarea vuelve a Producción con el comentario.",
+    "La prueba del autor se omite en las tareas que no tienen nada que probar todavía; si la hay, el diseñador de pruebas le prepara la guía.",
+    "Nada cierra sin QA técnico aprobado, salvo tareas de solo decisión; si hay código, antes lo revisa el revisor de código.",
+    "Un rol se incorpora al estudio en su fase («desde»); antes de eso queda en reserva."
+  ],
+  "deptos": [
+    {
+      "id": "direccion",
+      "nombre": "Dirección"
+    },
+    {
+      "id": "estrategia",
+      "nombre": "Estrategia y análisis"
+    },
+    {
+      "id": "diseno",
+      "nombre": "Diseño"
+    },
+    {
+      "id": "narrativa",
+      "nombre": "Narrativa y lenguaje"
+    },
+    {
+      "id": "arte",
+      "nombre": "Arte y sonido"
+    },
+    {
+      "id": "ingenieria",
+      "nombre": "Ingeniería"
+    },
+    {
+      "id": "calidad",
+      "nombre": "Calidad"
+    }
+  ]
+}

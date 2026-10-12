@@ -1,0 +1,160 @@
+{
+  "id": "F0-71",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza tras la petición del autor de crear mods para el proyecto.",
+      "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Mod /estado escrito, validado y con tres pruebas en verde.",
+      "ref": "rama studio/F0-71-mods-panel-y-equipo"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el panel /estado desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Quiero hacer dos mods: primero un panel de visualización de progreso y estadísticas."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "El mod vf-estado abre con /estado un panel con tres pestañas: Resumen (avance por tareas y por horas, estados, limpieza y coherencia, fases, rama y PR), Hitos y En curso. Se refresca solo cada 30 segundos y con el botón Actualizar. Está en tools/mods/vf-estado; falta instalarlo y verlo en la app."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Terminé mi parte: revisé el entregable y está aprobado. Pásala a la siguiente etapa del flujo."
+    }
+  ],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Se investigó la documentación de los mods",
+        "entrega": "Qué puede mostrar un panel y de dónde sale cada dato",
+        "por": "ideador"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "La app incluye Claude Code 2.1.295, que ya admite mods",
+        "entrega": "Criterios: leer solo archivos del repositorio y probar con claude plugin test",
+        "por": "analista"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Mod /estado escrito por el coordinador",
+        "entrega": "Mod con tres pestañas",
+        "por": "herramientas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "claude plugin validate y tres pruebas en verde",
+        "entrega": "Informe de QA: aprobado",
+        "por": "qa"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Aprobado por el autor con «Todo bien» y «Terminé mi parte»",
+        "hallazgos": [
+          {
+            "de": "autor",
+            "texto": "Las barras de bloques salían con trama y la lista no tenía jerarquía visual",
+            "estado": "resuelto",
+            "resuelto_por": "herramientas",
+            "como": "Rediseño con anillo de progreso, medidores, barras limpias y tarjetas en SVG"
+          }
+        ]
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Tarea cerrada; el PR #32 se fusiona con F0-72 y F0-73"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Qué puede mostrar un panel y de dónde sale cada dato",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "herramientas",
+        "que": "Criterios: leer solo archivos del repositorio y probar con claude plugin test",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "Mod /estado v1 con barras de texto",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y tres pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "herramientas",
+        "que": "Las barras salían con trama y la lista no tenía jerarquía visual",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "que": "v2 con anillo de progreso, medidores y tarjetas en SVG",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "QA aprobado: validación y tres pruebas en verde",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: «Terminé mi parte» sin ajustes",
+        "at": "2026-10-12"
+      }
+    ]
+  }
+}
