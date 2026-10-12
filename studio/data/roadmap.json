@@ -437,6 +437,21 @@
               "done_when": "La vista QA se muestra en el hub."
             }
           ]
+        },
+        {
+          "id": "F0.10",
+          "name": "Presentación del juego",
+          "tasks": [
+            {
+              "id": "F0-40",
+              "title": "Página de presentación del juego en el hub",
+              "est": 6,
+              "status": "review",
+              "prio": "P1",
+              "desc": "Página «El juego» con 28 láminas que resumen la idea, la jugabilidad, el mundo, la historia, el arte, cómo se construye y el plan, para tener todo en un solo lugar. Cada lámina enlaza a su documento fuente.",
+              "done_when": "La página se abre desde el hub, se navega con teclado, funciona en móvil, se puede imprimir y todas las fuentes e imágenes existen."
+            }
+          ]
         }
       ],
       "confidence": "alta"

@@ -271,7 +271,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -531,6 +531,315 @@
   }
 
 
+
+  /* ---------- presentación del juego ---------- */
+  var deck = { idx: 0, io: null, n: 0, ids: [], secOf: [], first: {} };
+
+  function pres() { return H.presentation || { sections: [], slides: [] }; }
+  function secById(id) { return pres().sections.filter(function (x) { return x.id === id; })[0]; }
+  function docLabel(id) {
+    var d = H.docs.filter(function (x) { return x.id === id; })[0];
+    return d ? d.title : id;
+  }
+  function arNum(ar) { var p = String(ar).split('/'); return parseFloat(p[0]) / parseFloat(p[1] || 1); }
+  function clamp01(x) { return Math.max(0, Math.min(1, x)); }
+  /* Recorta una celda de una hoja de arte: col y row cuentan desde 0; fx y fy son el punto de interés dentro de la celda. */
+  function cropStyle(c, arn) {
+    var cw = 1 / c.cols, ch = 1 / c.rows, zoom = c.zoom || 1;
+    var vw = cw / zoom;
+    var vh = vw * (c.w / c.h) / arn;
+    if (vh > 1) { vh = 1; vw = vh * arn * (c.h / c.w); }
+    var cx = (c.col + (c.fx == null ? 0.5 : c.fx)) * cw;
+    var cy = (c.row + (c.fy == null ? 0.5 : c.fy)) * ch;
+    var px = vw >= 1 ? 50 : clamp01((cx - vw / 2) / (1 - vw)) * 100;
+    var py = vh >= 1 ? 50 : clamp01((cy - vh / 2) / (1 - vh)) * 100;
+    return 'background-image:url(../' + c.file + ');background-size:' + (100 / vw).toFixed(2) + '% auto;background-position:' + px.toFixed(2) + '% ' + py.toFixed(2) + '%;';
+  }
+  function cropBox(sheet, ar, label) {
+    return '<div class="cropbox" role="img" aria-label="' + esc(label || '') + '" style="aspect-ratio:' + ar + ';' + cropStyle(sheet, arNum(ar)) + '"></div>';
+  }
+  function sourceChips(s) {
+    if (!s.source || !s.source.length) return '';
+    return '<span class="sl-src">Fuente: ' + s.source.map(function (id) { return '<a href="#/docs/' + esc(id) + '">' + esc(docLabel(id)) + '</a>'; }).join(' · ') + '</span>';
+  }
+  function kicker(s) {
+    var sec = secById(s.section);
+    return '<p class="sl-kicker">' + (sec ? '<span class="sl-sec"><b>' + esc(sec.n) + '</b> ' + esc(sec.title) + '</span>' : '') + (s.kicker ? '<span>' + esc(s.kicker) + '</span>' : '') + '</p>';
+  }
+  function head(s) {
+    return kicker(s) + (s.title ? '<h2 class="sl-title">' + inline(s.title) + '</h2>' : '') + (s.lead ? '<p class="sl-lead">' + inline(s.lead) + '</p>' : '');
+  }
+  function glyph(g, cls) { return g ? '<span class="gl ' + (cls || '') + '" aria-hidden="true">' + esc(g) + '</span>' : ''; }
+  function chips(list) { return list && list.length ? '<div class="sl-chips">' + list.map(function (c) { return '<span class="sl-chip">' + esc(c) + '</span>'; }).join('') + '</div>' : ''; }
+  function note(s) { return s.foot ? '<p class="sl-note">' + inline(s.foot) + '</p>' : ''; }
+  function tiles(list, col) {
+    return list && list.length ? '<div class="sl-tiles' + (col ? ' col' : '') + '">' + list.map(function (t) { return '<div class="sl-tile">' + glyph(t.glyph) + '<div><small>' + esc(t.label) + '</small><strong>' + inline(t.value) + '</strong></div></div>'; }).join('') + '</div>' : '';
+  }
+  function bigStats(list) {
+    return list && list.length ? '<div class="sl-stats">' + list.map(function (st) { return '<div><b>' + esc(st.n) + '</b><span>' + esc(st.l) + '</span></div>'; }).join('') + '</div>' : '';
+  }
+  function figLink(file, caption, cls) {
+    return '<figure class="sl-fig ' + (cls || '') + '"><a href="../' + esc(file) + '" target="_blank" rel="noopener"><img loading="lazy" src="../' + esc(file) + '" alt="' + esc(caption || '') + '"></a>' + (caption ? '<figcaption>' + esc(caption) + '</figcaption>' : '') + '</figure>';
+  }
+
+  function lCover(s) {
+    return '<img class="bg-img" src="../' + esc(s.image) + '" alt=""><div class="bg-over bg-over-l"></div><div class="cover-body"><p class="sl-kicker"><span>' + esc(s.kicker) + '</span></p><h1 class="cover-title">' + esc(s.title) + '</h1><p class="cover-en">' + esc(s.titleEn) + '</p><p class="cover-tag">' + esc(s.tagline) + '</p>' + chips(s.chips) + '<p class="sl-hint">Flechas, Inicio y Fin para moverte · F: pantalla completa</p></div>';
+  }
+  function lAgenda(s) {
+    var slides = pres().slides;
+    return head(s) + '<div class="ag-grid">' + pres().sections.map(function (sec) {
+      var count = slides.filter(function (x) { return x.section === sec.id; }).length;
+      return '<button type="button" class="ag-item" data-action="deck-go" data-index="' + deck.first[sec.id] + '" style="--acc:' + esc(sec.accent) + '"><span class="ag-n">' + esc(sec.n) + '</span><h3>' + esc(sec.title) + '</h3><p>' + esc(sec.blurb) + '</p><small>' + count + ' láminas</small></button>';
+    }).join('') + '</div>';
+  }
+  function lSection(s) {
+    var sec = secById(s.section);
+    return '<img class="bg-img" src="../' + esc(sec.image) + '" alt=""><div class="bg-over bg-over-c"></div><div class="sec-body"><span class="sec-n">' + esc(sec.n) + '</span><h2 class="sec-title">' + esc(sec.title) + '</h2><p class="sec-blurb">' + esc(sec.blurb) + '</p></div>';
+  }
+  function lStatement(s) {
+    return kicker(s) + '<blockquote class="st-quote">' + inline(s.statement) + '</blockquote>' + (s.author ? '<p class="st-author">' + inline(s.author) + '</p>' : '') + tiles(s.tiles);
+  }
+  function lSpecs(s) {
+    return head(s) + '<div class="sp-grid">' + s.items.map(function (it) {
+      return '<div class="sp-item">' + glyph(it.glyph) + '<div><small>' + esc(it.label) + '</small><strong>' + inline(it.value) + '</strong></div></div>';
+    }).join('') + '</div>';
+  }
+  function rangeVisual(rows) {
+    return '<div class="rg">' + rows.map(function (r) {
+      return '<div class="rg-row"><span>' + esc(r.label) + '</span><div class="rg-bar"><i style="left:' + r.min + '%;width:' + Math.max(2, r.max - r.min) + '%"></i></div><b>' + r.min + '–' + r.max + '%</b></div>';
+    }).join('') + '</div>';
+  }
+  function lCards(s) {
+    return head(s) + bigStats(s.stats) + '<div class="sl-cards' + (s.big ? ' big' : '') + '" style="--cols:' + (s.cols || 3) + '">' + s.cards.map(function (c, k) {
+      return '<article class="sl-card">' + (s.numbered ? glyph(String(k + 1), 'num') : glyph(c.glyph)) + (c.tag ? '<span class="sl-tag">' + esc(c.tag) + '</span>' : '') + '<h3>' + inline(c.title) + '</h3>' + (c.text ? '<p>' + inline(c.text) + '</p>' : '') + (c.ranges ? rangeVisual(c.ranges) : '') + chips(c.chips) + '</article>';
+    }).join('') + '</div>' + note(s);
+  }
+  function lDay(s) {
+    return head(s) + '<div class="day-track">' + s.blocks.map(function (b, i) {
+      return '<div class="day-block b' + i + '">' + glyph(b.glyph) + '<h3>' + esc(b.name) + '</h3><p>' + esc(b.text) + '</p></div>';
+    }).join('<span class="day-arrow" aria-hidden="true">›</span>') + '</div><p class="day-cost">' + inline(s.cost) + '</p><div class="day-free"><strong>' + esc(s.free.title) + '</strong>' + s.free.items.map(function (it) { return '<span class="sl-chip">' + esc(it) + '</span>'; }).join('') + '</div>' + note(s);
+  }
+  function lCycle(s) {
+    var box = function (b, cls) { return '<div class="cy-box ' + cls + '"><h3>' + esc(b.title) + '</h3><ul>' + b.points.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul></div>'; };
+    return head(s) + '<div class="cy">' + box(s.left, 'cy-l') + '<div class="cy-mid"><div class="cy-arrow cy-to-r"><span>' + esc(s.toRight) + '</span></div><div class="cy-arrow cy-to-l"><span>' + esc(s.toLeft) + '</span></div></div>' + box(s.right, 'cy-r') + '</div>';
+  }
+  function lShowcase(s) {
+    return head(s) + '<div class="sc">' + figLink(s.image, s.caption) + '<ul class="sc-list">' + s.items.map(function (it) { return '<li><b>' + esc(it.name) + '</b><span>' + esc(it.tension) + '</span></li>'; }).join('') + '</ul></div>' + note(s);
+  }
+  function marketChart() {
+    return '<svg class="mk-chart" viewBox="0 0 440 250" role="img" aria-label="Ejemplo: tras una noticia, el valor justo cambia y el precio lo alcanza con retraso">' +
+      '<g stroke="#2a3d4a" stroke-width="1"><line x1="30" y1="24" x2="30" y2="214"/><line x1="30" y1="214" x2="430" y2="214"/></g>' +
+      '<line x1="210" y1="30" x2="210" y2="214" stroke="#8fb0ba" stroke-dasharray="3 4"/>' +
+      '<path d="M30 124 H210 V82 H430" fill="none" stroke="#e3b25c" stroke-width="2" stroke-dasharray="6 5"/>' +
+      '<polyline fill="none" stroke="#c23b55" stroke-width="2.6" stroke-linejoin="round" points="30,130 50,120 70,128 90,116 110,124 130,130 150,118 170,126 190,122 210,124 230,116 250,106 270,96 290,88 310,82 330,78 350,86 370,80 390,84 410,78 430,82"/>' +
+      '<text x="216" y="44" fill="#8fb0ba" font-size="12">Noticia: huelga en el Hollín</text>' +
+      '<text x="34" y="236" fill="#5b7c8c" font-size="11">tiempo →</text>' +
+      '<line x1="40" y1="16" x2="64" y2="16" stroke="#e3b25c" stroke-width="2" stroke-dasharray="6 5"/><text x="70" y="20" fill="#c9dcdf" font-size="12">Valor justo</text>' +
+      '<line x1="170" y1="16" x2="194" y2="16" stroke="#c23b55" stroke-width="2.6"/><text x="200" y="20" fill="#c9dcdf" font-size="12">Precio (llega con retraso)</text></svg>';
+  }
+  function lMarket(s) {
+    return head(s) + '<div class="mk"><div class="mk-left">' + marketChart() + '</div><div class="mk-right">' + s.points.map(function (p) {
+      return '<div class="sl-tile">' + glyph(p.glyph) + '<div><strong>' + esc(p.title) + '</strong><small>' + inline(p.text) + '</small></div></div>';
+    }).join('') + '</div></div>' + note(s);
+  }
+  function lLadder(s) {
+    return head(s) + '<div class="ld">' + s.steps.map(function (st, i) {
+      return '<div class="ld-step" style="--lv:' + (i + 1) + '"><span class="sl-tag">' + esc(st.tag) + '</span><h3>' + esc(st.title) + '</h3><p>' + esc(st.text) + '</p></div>';
+    }).join('') + '</div>' + note(s);
+  }
+  function lMeter(s) {
+    return head(s) + bigStats(s.facts) + '<div class="mt"><div class="mt-bar">' + s.zones.map(function (z) { return '<i style="flex:' + z.w + ';background:' + esc(z.color) + '"></i>'; }).join('') + '</div><div class="mt-zones">' + s.zones.map(function (z) {
+      return '<div style="flex:' + z.w + '"><b style="color:' + esc(z.color) + '">' + esc(z.name) + '</b><small>' + esc(z.range) + '</small><p>' + esc(z.text) + '</p></div>';
+    }).join('') + '</div></div><div class="mt-low"><strong>' + esc(s.lowerTitle) + '</strong>' + chips(s.lower) + '</div>';
+  }
+  function lFlow(s) {
+    return head(s) + '<ol class="fl' + (s.colored ? ' colored' : '') + '">' + s.steps.map(function (st) {
+      return '<li' + (s.colored ? ' class="s-' + esc(st.title) + '"' : '') + '>' + glyph(st.glyph) + '<h3>' + esc(st.title) + '</h3><p>' + esc(st.text) + '</p></li>';
+    }).join('') + '</ol>' + chips(s.chips) + (s.warn ? '<p class="fl-warn">' + inline(s.warn) + '</p>' : '');
+  }
+  function lScale(s) {
+    var heat = ['#4fb6a5', '#e3b25c', '#ef8da0', '#c23b55'];
+    return head(s) + '<div class="sc-bar">' + heat.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join('') + '</div><div class="sc-levels">' + s.levels.map(function (l, i) {
+      return '<div class="sc-level" style="--c:' + heat[i] + '"><h3>' + esc(l.name) + '</h3><p>' + esc(l.text) + '</p></div>';
+    }).join('') + '</div><div class="sl-cards" style="--cols:3">' + s.facts.map(function (f) {
+      return '<article class="sl-card">' + glyph(f.glyph) + '<h3>' + esc(f.title) + '</h3><p>' + esc(f.text) + '</p></article>';
+    }).join('') + '</div>';
+  }
+  function lMap(s) {
+    return head(s) + '<div class="mp"><div class="mp-img"><img loading="lazy" src="../' + esc(s.image) + '" alt="Mapa de Valdoria">' + s.spots.map(function (sp) {
+      return '<span class="mp-pin" style="left:' + (sp.x * 100) + '%;top:' + (sp.y * 100) + '%" title="' + esc(sp.name) + '">' + sp.n + '</span>';
+    }).join('') + '</div><ol class="mp-legend">' + s.spots.map(function (sp) {
+      return '<li><span class="mp-n">' + sp.n + '</span><div><b>' + esc(sp.name) + '</b><small>' + esc(sp.text) + '</small></div></li>';
+    }).join('') + '</ol></div>';
+  }
+  function lCrops(s) {
+    var ar = s.ar || '1/1';
+    return head(s) + '<div class="cr' + (s.compact ? ' compact' : '') + '" style="--cols:' + s.cols + '">' + s.items.map(function (it) {
+      return '<figure class="cr-item' + (it.hot ? ' hot' : '') + '">' + cropBox(it.sheet, ar, it.title) + '<figcaption><b>' + esc(it.title) + '</b>' + (it.tag ? '<span class="sl-tag">' + esc(it.tag) + '</span>' : '') + (it.text ? '<small>' + esc(it.text) + '</small>' : '') + '</figcaption></figure>';
+    }).join('') + '</div>' + note(s);
+  }
+  function lFeature(s) {
+    var m = s.media;
+    var media = '<figure class="ft-media' + (m.glow ? ' glow' : '') + '">' + cropBox(m.sheet, m.ar || '1/1', m.caption) + (m.caption ? '<figcaption>' + esc(m.caption) + '</figcaption>' : '') + '</figure>';
+    var body = kicker(s) + '<h2 class="sl-title">' + inline(s.title) + '</h2><p class="sl-lead">' + inline(s.text) + '</p>' + tiles(s.tiles, true) +
+      (s.outcomes ? '<div class="ft-out">' + s.outcomes.map(function (o, i) { return '<div class="ft-o"><span class="gl num">' + (i + 1) + '</span><div><strong>' + esc(o.title) + '</strong><small>' + esc(o.text) + '</small></div></div>'; }).join('') + '</div>' : '') + note(s);
+    return '<div class="ft"><div>' + media + '</div><div>' + body + '</div></div>';
+  }
+  function lActs(s) {
+    return head(s) + '<ol class="ac">' + s.acts.map(function (a) {
+      return '<li>' + cropBox(a.sheet, '16/10', a.title) + '<span class="ac-n">' + esc(a.n) + '</span><span class="sl-tag">' + esc(a.tag) + '</span><h3>' + esc(a.title) + '</h3><p>' + esc(a.text) + '</p></li>';
+    }).join('') + '</ol>' + note(s);
+  }
+  function lPalette(s) {
+    var p = H.palette;
+    return head(s) + '<div class="pl-grid">' + p.colors.map(function (c) {
+      return '<div class="pl-sw"><i style="background:' + esc(c.hex) + '"></i><b>' + esc(c.name) + '</b><small>' + esc(c.hex) + '</small></div>';
+    }).join('') + '</div><div class="pl-bar">' + p.proportion.map(function (x) { return '<i style="width:' + x.pct + '%;background:' + esc(x.color) + '"></i>'; }).join('') + '</div><div class="pl-leg">' + p.proportion.map(function (x) {
+      return '<span><i style="background:' + esc(x.color) + '"></i>' + esc(x.label) + ' ' + x.pct + '%</span>';
+    }).join('') + '</div><ul class="pl-rules">' + s.rules.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul>';
+  }
+  function lMosaic(s) {
+    return head(s) + '<div class="mo">' + s.images.map(function (im, i) { return figLink(im.file, im.caption, 'mo-' + i); }).join('') + '</div>' + chips(s.chips) + note(s);
+  }
+  function lBrand(s) {
+    return head(s) + '<div class="br"><div>' + chips(s.chips) + '<div class="br-bubbles">' + s.voice.map(function (v) {
+      return '<div class="bubble"><span class="sl-tag">' + esc(v.lang) + '</span><p>' + inline(v.text) + '</p></div>';
+    }).join('') + '</div></div><div class="br-tags">' + s.taglines.map(function (t) { return '<p class="br-es">' + esc(t.es) + '</p><p class="br-en">' + esc(t.en) + '</p>'; }).join('') + '<p class="br-sym">Símbolo de marca: ' + esc(s.symbol) + '</p></div></div>';
+  }
+  function lArch(s) {
+    return head(s) + '<div class="ar"><div class="ar-app">' + esc(s.app) + '</div><div class="ar-mods">' + s.modules.map(function (m) { return '<span>' + esc(m) + '</span>'; }).join('') + '</div><div class="ar-detail"><div class="ar-layers">' + s.layers.map(function (l, i) {
+      return '<div class="ar-layer l' + i + '"><b>' + esc(l.name) + '</b><small>' + esc(l.text) + '</small></div>';
+    }).join('') + '</div><div class="ar-badges">' + chips(s.badges) + '<p class="ar-cap">Cada módulo tiene estas capas. Las dependencias apuntan hacia el dominio.</p></div></div></div>';
+  }
+  var PHASE_COLORS = ['#8fb0ba', '#86c5e8', '#4fb6a5', '#e3b25c', '#c23b55', '#b8893a', '#5b7c8c'];
+  function lPlan(s) {
+    var live = TASKS.filter(function (t) { return t.status !== 'dropped'; });
+    var total = live.reduce(function (a, t) { return a + t.est; }, 0);
+    var cum = 0, segs = '', gates = '', rows = '';
+    phases.forEach(function (p, i) {
+      var l = live.filter(function (t) { return t.phase.id === p.id; });
+      var hrs = l.reduce(function (a, t) { return a + t.est; }, 0);
+      var dn = l.filter(function (t) { return t.status === 'done'; }).reduce(function (a, t) { return a + t.est; }, 0);
+      cum += hrs;
+      segs += '<div class="pb-seg' + (p.target === 'Evolutivo' ? ' later' : '') + '" style="flex:' + hrs + ';--c:' + PHASE_COLORS[i % PHASE_COLORS.length] + '" title="' + esc(p.name) + '"><i style="width:' + (hrs ? 100 * dn / hrs : 0) + '%"></i><b>' + esc(p.id) + '</b><small>' + num(hrs) + ' h</small></div>';
+      if (p.gate) gates += '<span class="pb-gate" style="left:' + (100 * cum / total) + '%" title="' + esc(p.gate) + '">◆<em>hora ' + num(cum) + '</em></span>';
+      rows += '<tr><td><b>' + esc(p.id) + '</b> ' + esc(p.name) + '</td><td>' + esc(p.target) + '</td><td class="num-cell">' + num(hrs) + ' h</td><td class="num-cell">' + num(cum) + ' h</td></tr>';
+    });
+    var launch = live.filter(function (t) { return t.target !== 'Evolutivo'; });
+    var lh = launch.reduce(function (a, t) { return a + t.est; }, 0);
+    var cp = 0;
+    var pri = PRIOS.map(function (p) {
+      var h = launch.filter(function (t) { return t.prio === p; }).reduce(function (a, t) { return a + t.est; }, 0);
+      cp += h;
+      return '<div class="pr-seg" style="flex:' + h + ';background:' + PRIO_COLOR[p] + '"><b>' + p + '</b><small>' + num(h) + ' h · acum. ' + num(cp) + '</small></div>';
+    }).join('');
+    return head(s) + '<div class="pb-wrap"><div class="pb">' + segs + '</div>' + gates + '</div><p class="sl-note">Barra proporcional a las horas de cada fase; el relleno claro es lo hecho. ◆ marca las puertas de decisión: <b>¿es divertido?</b> y <b>¿seguimos hacia la versión 1?</b></p>' +
+      '<h3 class="sl-sub">Hasta el lanzamiento: ' + num(lh) + ' h por prioridad</h3><div class="pr">' + pri + '</div><details class="pl-det"><summary>Ver tabla de fases</summary><div class="table-wrap"><table><thead><tr><th>Fase</th><th>Objetivo</th><th class="num-cell">Horas</th><th class="num-cell">Acumuladas</th></tr></thead><tbody>' + rows + '</tbody></table></div></details>';
+  }
+  function lStatus(s) {
+    var adr = H.docs.filter(function (d) { return d.id.indexOf('adr-') === 0; }).length;
+    var live = TASKS.filter(function (t) { return t.status !== 'dropped'; });
+    var done = live.filter(function (t) { return t.status === 'done'; });
+    var tot = live.reduce(function (a, t) { return a + t.est; }, 0);
+    var dh = done.reduce(function (a, t) { return a + t.est; }, 0);
+    var pct = Math.round(100 * dh / tot);
+    var by = function (st) { return live.filter(function (t) { return t.status === st; }).length; };
+    var card = function (label, value, sub) { return '<div class="st-card"><small>' + esc(label) + '</small><b>' + value + '</b><span>' + sub + '</span></div>'; };
+    var queue = TASKS.filter(function (t) { return t.status !== 'done' && t.status !== 'dropped'; })
+      .map(function (t, idx) { return { t: t, idx: idx }; })
+      .sort(function (a, b) { return (QUEUE_ORDER[a.t.status] - QUEUE_ORDER[b.t.status]) || (PRANK[a.t.prio] - PRANK[b.t.prio]) || (a.idx - b.idx); }).slice(0, 5);
+    return head(s) + '<div class="stt"><div class="ring" style="--p:' + pct + '"><b>' + pct + '%</b><span>del plan</span></div><div class="st-grid">' +
+      card('Tareas', live.length, done.length + ' finalizadas · ' + by('review') + ' en revisión') +
+      card('Documentos', H.docs.length - adr, adr + ' decisiones (ADR)') +
+      card('Casos de QA', (H.qa && H.qa.cases ? H.qa.cases.length : 0), 'sin ejecutar aún') +
+      card('Arte de referencia', H.assets.images.length, 'imágenes con IA') + '</div></div>' +
+      '<h3 class="sl-sub">Lo siguiente</h3><ul class="sl-next">' + queue.map(function (q) { return '<li><span class="tid">' + esc(q.t.id) + '</span> ' + esc(q.t.title) + ' ' + statusPill(q.t.status) + '</li>'; }).join('') + '</ul>';
+  }
+  function lChecklist(s) {
+    return head(s) + '<div class="cl">' + s.items.map(function (it) {
+      return '<div class="cl-item"><span class="cl-box" aria-hidden="true"></span><div><strong>' + esc(it.title) + '</strong><small>' + esc(it.text) + '</small></div></div>';
+    }).join('') + '</div>';
+  }
+  function lClosing(s) {
+    return '<img class="bg-img" src="../' + esc(s.image) + '" alt=""><div class="bg-over bg-over-c"></div><div class="sec-body"><p class="sl-kicker"><span>' + esc(s.kicker) + '</span></p><h2 class="cover-title">' + esc(s.title) + '</h2>' + s.taglines.map(function (t, i) { return '<p class="' + (i ? 'cover-en' : 'cover-tag') + '">' + esc(t) + '</p>'; }).join('') + '</div>';
+  }
+  var LAYOUTS = { cover: lCover, section: lSection, closing: lClosing };
+  var BODY = { agenda: lAgenda, statement: lStatement, specs: lSpecs, cards: lCards, day: lDay, cycle: lCycle, showcase: lShowcase, market: lMarket, ladder: lLadder, meter: lMeter, flow: lFlow, scale: lScale, map: lMap, crops: lCrops, feature: lFeature, acts: lActs, palette: lPalette, mosaic: lMosaic, brand: lBrand, arch: lArch, plan: lPlan, status: lStatus, checklist: lChecklist };
+
+  function slideHtml(s, i, n) {
+    var sec = secById(s.section);
+    var style = sec ? ' style="--acc:' + esc(sec.accent) + '"' : '';
+    var h = '<section class="slide lay-' + esc(s.layout) + '" id="slide-' + esc(s.id) + '" data-idx="' + i + '"' + style + ' aria-label="' + esc(s.title || (sec && sec.title) || s.id) + '">';
+    if (LAYOUTS[s.layout]) h += LAYOUTS[s.layout](s);
+    else h += '<div class="slide-body">' + (BODY[s.layout] ? BODY[s.layout](s) : '') + '</div>';
+    h += '<div class="sl-foot">' + sourceChips(s) + '<span class="sl-num">' + (sec ? esc(sec.n) + ' · ' + esc(sec.title) + ' · ' : '') + (i + 1) + ' / ' + n + '</span></div></section>';
+    return h;
+  }
+  function viewGame() {
+    var p = pres();
+    var slides = p.slides;
+    if (!slides.length) return '<div class="notice">No hay láminas. Revisa <code>studio/data/presentation.json</code>.</div>';
+    deck.n = slides.length;
+    deck.ids = slides.map(function (s) { return s.id; });
+    deck.secOf = slides.map(function (s) { return s.section || ''; });
+    deck.first = {};
+    slides.forEach(function (s, i) { if (s.section && deck.first[s.section] == null) deck.first[s.section] = i; });
+    var pills = p.sections.map(function (sec) {
+      return '<button type="button" class="deck-pill" data-sec="' + esc(sec.id) + '" data-action="deck-go" data-index="' + deck.first[sec.id] + '" style="--acc:' + esc(sec.accent) + '" title="' + esc(sec.title) + '"><i></i><b>' + esc(sec.n) + '</b><span>' + esc(sec.title) + '</span></button>';
+    }).join('');
+    return '<div class="deck-wrap" id="deckWrap"><div class="deck-bar"><div class="deck-title"><strong>El juego</strong><span id="deckCount">1 / ' + slides.length + '</span></div><div class="deck-pills">' + pills + '</div><div class="deck-actions">' +
+      '<button class="chip" type="button" data-action="deck-prev" aria-label="Lámina anterior">‹</button><button class="chip" type="button" data-action="deck-next" aria-label="Lámina siguiente">›</button>' +
+      '<button class="chip" type="button" data-action="deck-full" title="Tecla F">Pantalla completa</button><button class="chip" type="button" data-action="deck-print" title="Imprimir o guardar como PDF">PDF</button></div><div class="deck-prog"><i id="deckProg"></i></div></div>' +
+      '<div class="deck" id="deck" tabindex="0" aria-label="Presentación del juego">' + slides.map(function (s, i) { return slideHtml(s, i, slides.length); }).join('') + '</div></div>';
+  }
+  function setDeckIdx(i) {
+    deck.idx = i;
+    var c = $('#deckCount');
+    if (c) c.textContent = (i + 1) + ' / ' + deck.n;
+    var pr = $('#deckProg');
+    if (pr) pr.style.width = (100 * (i + 1) / deck.n) + '%';
+    $all('.deck-pill').forEach(function (b) { if (b.getAttribute('data-sec') === deck.secOf[i]) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+  }
+  function gotoSlide(i) {
+    if (i < 0 || i >= deck.n) return;
+    var el = document.getElementById('slide-' + deck.ids[i]);
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (el) el.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
+    setDeckIdx(i);
+  }
+  function initDeck() {
+    var d = $('#deck');
+    if (!d || !('IntersectionObserver' in window)) { setDeckIdx(0); return; }
+    deck.io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) setDeckIdx(+en.target.getAttribute('data-idx')); });
+    }, { root: d, threshold: 0.55 });
+    $all('.slide', d).forEach(function (el) { deck.io.observe(el); });
+    setDeckIdx(0);
+  }
+  function teardownDeck() {
+    if (deck.io) { deck.io.disconnect(); deck.io = null; }
+    if (document.fullscreenElement && document.exitFullscreen) { try { document.exitFullscreen(); } catch (e) { /* sin acción */ } }
+  }
+  function toggleFullscreen() {
+    var w = $('#deckWrap');
+    if (!w) return;
+    try {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (w.requestFullscreen) w.requestFullscreen();
+    } catch (e) { toast('Tu navegador no permite pantalla completa aquí'); }
+  }
+  document.addEventListener('keydown', function (e) {
+    if (parseHash().segs[0] !== 'juego' || !$('#lightbox').hidden) return;
+    var tag = (e.target && e.target.tagName) || '';
+    if (/INPUT|SELECT|TEXTAREA/.test(tag) || e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ') { e.preventDefault(); gotoSlide(deck.idx + 1); }
+    else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') { e.preventDefault(); gotoSlide(deck.idx - 1); }
+    else if (k === 'Home') { e.preventDefault(); gotoSlide(0); }
+    else if (k === 'End') { e.preventDefault(); gotoSlide(deck.n - 1); }
+    else if (k === 'f' || k === 'F') { e.preventDefault(); toggleFullscreen(); }
+  });
+
   /* ---------- QA ---------- */
   var RESULT_LABEL = { 'not-run': 'Sin ejecutar', pass: 'Aprobado', fail: 'Fallido', blocked: 'Bloqueado', skipped: 'Omitido' };
   var SEVERITY_LABEL = { S1: 'Crítico', S2: 'Grave', S3: 'Moderado', S4: 'Menor' };
@@ -787,6 +1096,7 @@
       case 'linea': html = viewTimeline(); title += ' · Línea de tiempo'; break;
       case 'tablero': html = viewBoard(); title += ' · Tablero'; break;
       case 'qa': html = viewQA(); title += ' · QA'; break;
+      case 'juego': html = viewGame(); title += ' · El juego'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
       case 'sonido': html = viewSound(); title += ' · Sonido'; break;
@@ -801,6 +1111,8 @@
         break;
       default: html = '<div class="notice">Página no encontrada. <a href="#/">Volver al inicio</a>.</div>';
     }
+    teardownDeck();
+    main.className = key === 'juego' ? 'is-deck' : '';
     main.innerHTML = html;
     document.title = title;
     setActive(activeKey);
@@ -810,6 +1122,7 @@
       if ($('.tl-wrap')) $('.tl-wrap').scrollLeft = tlScroll;
       return;
     }
+    if (key === 'juego') initDeck();
     var target = anchor && document.getElementById(anchor);
     if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
   }
@@ -861,6 +1174,11 @@
     else if (act === 'rm-hide') { state.rm.hideDone = !state.rm.hideDone; render(true); }
     else if (act === 'art-cat') { state.art.cat = val; render(); }
     else if (act === 'qa-area') { state.qa.area = val; render(true); }
+    else if (act === 'deck-go') { gotoSlide(+el.getAttribute('data-index')); }
+    else if (act === 'deck-next') { gotoSlide(deck.idx + 1); }
+    else if (act === 'deck-prev') { gotoSlide(deck.idx - 1); }
+    else if (act === 'deck-full') { toggleFullscreen(); }
+    else if (act === 'deck-print') { window.print(); }
     else if (act === 'qa-type') { state.qa.type = val; render(true); }
     else if (act === 'open-img') { openLightbox(+el.getAttribute('data-index'), el); }
     else if (act === 'tl-select') { state.tl.sel = state.tl.sel === val ? null : val; render(true); }

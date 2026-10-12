@@ -12,6 +12,7 @@ Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/evidence/<ID>/...        archivos de evidencia
   - studio/data/qa/cases.json       catálogo de casos de prueba y sus resultados
   - studio/data/qa/bugs/BUG-*.json  registro de errores
+  - studio/data/presentation.json   láminas de la página «El juego» (resumen curado del diseño)
 
 Regla de coherencia: si el estado de una tarea no es "backlog", debe existir su
 archivo de actividad y el último movimiento del historial debe llevar a ese estado.
@@ -33,6 +34,10 @@ EVIDENCE = STUDIO / "evidence"
 VALID_STATUS = ["backlog", "sprint", "doing", "review", "qa", "done", "dropped"]
 VALID_PRIO = ["P0", "P1", "P2", "P3"]
 MAX_EST = 20  # una tarea más grande debe desglosarse
+SLIDE_LAYOUTS = [
+    "cover", "agenda", "section", "statement", "specs", "cards", "day", "cycle", "showcase", "market", "ladder", "meter",
+    "flow", "scale", "map", "crops", "feature", "acts", "palette", "mosaic", "brand", "arch", "plan", "status", "checklist", "closing",
+]
 VALID_RESULT = ["not-run", "pass", "fail", "blocked", "skipped"]
 VALID_SEVERITY = ["S1", "S2", "S3", "S4"]
 VALID_BUG_STATUS = ["abierto", "triaje", "en-correccion", "corregido", "verificado", "cerrado", "no-se-corrige"]
@@ -236,6 +241,59 @@ def load_qa(task_ids):
     return qa
 
 
+def _walk_files(node):
+    """Rutas de imagen (claves 'file' e 'image') dentro de una lámina o sección."""
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if k in ("file", "image") and isinstance(v, str):
+                yield v
+            else:
+                yield from _walk_files(v)
+    elif isinstance(node, list):
+        for v in node:
+            yield from _walk_files(v)
+
+
+def load_presentation(doc_ids):
+    """Carga y valida las láminas de la presentación del juego."""
+    path = DATA / "presentation.json"
+    if not path.exists():
+        return {"sections": [], "slides": []}
+    data = load_json(path)
+    sections = data.get("sections", [])
+    section_ids = set()
+    for sec in sections:
+        section_ids.add(sec.get("id"))
+        for key in ("id", "n", "title", "blurb", "accent", "image"):
+            if not sec.get(key):
+                warn("Sección %s sin '%s'" % (sec.get("id", "?"), key))
+    seen = set()
+    for s in data.get("slides", []):
+        sid = s.get("id", "?")
+        if sid in seen:
+            warn("Lámina repetida: %s" % sid)
+        seen.add(sid)
+        layout = s.get("layout")
+        if layout not in SLIDE_LAYOUTS:
+            warn("Lámina %s con diseño desconocido: %s" % (sid, layout))
+        if s.get("section") and s["section"] not in section_ids:
+            warn("La lámina %s usa una sección inexistente: %s" % (sid, s["section"]))
+        if layout not in ("section", "statement", "cover", "closing") and not s.get("title"):
+            warn("La lámina %s no tiene título" % sid)
+        if layout not in ("cover", "agenda", "closing") and not s.get("section"):
+            warn("La lámina %s no pertenece a ninguna sección" % sid)
+        for src in s.get("source", []):
+            if src not in doc_ids:
+                warn("La lámina %s cita un documento inexistente: %s" % (sid, src))
+        for f in _walk_files(s):
+            if not (STUDIO / f).exists():
+                warn("La lámina %s usa una imagen que no existe: %s" % (sid, f))
+    for f in _walk_files(sections):
+        if not (STUDIO / f).exists():
+            warn("Una sección usa una imagen que no existe: %s" % f)
+    return {"sections": sections, "slides": data.get("slides", [])}
+
+
 def build_assets(assets):
     for img in assets["images"]:
         path = STUDIO / img["file"]
@@ -272,6 +330,7 @@ def build_hub():
         "assets": build_assets(load_json(DATA / "assets.json")),
         "palette": load_json(DATA / "palette.json"),
         "qa": load_qa(task_ids),
+        "presentation": load_presentation({d["id"] for d in docs}),
     }
 
 

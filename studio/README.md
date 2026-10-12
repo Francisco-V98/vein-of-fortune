@@ -113,6 +113,7 @@ Después, en el repositorio original, se puede quitar con `git rm -r studio`.
 | Fases, hitos y tareas | `data/roadmap.json` |
 | Historial, comentarios y evidencias | `data/tasks/<ID>.json` y `evidence/<ID>/` |
 | Imágenes y notas de arte | `data/assets.json` |
+| Láminas de la página «El juego» | `data/presentation.json` |
 | Colores | `data/palette.json` |
 | Título y etiquetas | `data/config.json` |
 | Audio de referencia | `assets-ref/audio/` |
