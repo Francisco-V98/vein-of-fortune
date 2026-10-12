@@ -16,6 +16,22 @@
       "by": "claude",
       "note": "Tres hojas generadas: modelo, expresiones y poses. Falta la aprobación del formato antes de producir el resto.",
       "ref": "rama studio/F0-60-piloto-hojas-de-reme"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pide que el modelo y las poses sean chibi pixel art como el ministro, y que triste y cansancio se distingan en las expresiones.",
+      "ref": "rama studio/F0-60-piloto-hojas-de-reme"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Modelo y poses rehechos en chibi con las mismas proporciones; expresiones corregidas en triste y cansancio.",
+      "ref": "rama studio/F0-60-piloto-hojas-de-reme"
     }
   ],
   "comments": [
@@ -23,6 +39,16 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Se generaron con calidad media a 2K (1 crédito cada una, 3 en total) y se guardan como WebP (unos 300–550 KB) con tools/art/guardar_hoja.py. En las poses, los gestos al hablar se ven de medio cuerpo y el ciclo de caminar de lado tiene 4 fotogramas. Si el formato se aprueba se replica con el resto del elenco y los NPC."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Las expresiones me sirven detalladas como están, pero el modelo y las poses deben ser full pixel art y chibi como el ministro. Triste y cansancio se ven igual y hay que cambiarlas; el resto quedó perfecto."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Se rehicieron el modelo (dos veces, para igualar proporciones con las poses), las poses y las expresiones (solo se cambiaron los paneles 3 y 6; los otros cuatro quedaron idénticos). Coste de esta ronda: 4 créditos."
     }
   ],
   "evidence": [
@@ -48,7 +74,7 @@
       "at": "2026-10-11",
       "type": "note",
       "title": "Verificación",
-      "text": "Las tres imágenes existen, están registradas en assets.json y el build en modo estricto es correcto."
+      "text": "Las tres imágenes existen, están registradas en assets.json, el modelo y las poses comparten proporciones y el build en modo estricto es correcto."
     }
   ]
 }
