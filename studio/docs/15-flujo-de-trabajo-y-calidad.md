@@ -134,7 +134,7 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 | Qué | Regla |
 |---|---|
 | **Limpieza** de un documento | ✅ ÷ (✅ + 🟡 + ❓), en porcentaje. También se calcula para todo el diseño |
-| **Diferido** | `⏳ F0-43` marca algo que depende de una tarea posterior. No resta, pero debe nombrar una tarea que exista y que no esté terminada; si la tarea se termina, el punto debe resolverse |
+| **Diferido** | `⏳ F0-45` marca algo que depende de una tarea posterior. No resta, pero debe nombrar una tarea que exista y que no esté terminada; si la tarea se termina, el punto debe resolverse |
 | **Conexión** | Los enlaces entre documentos y las tareas citadas deben existir. Una conexión rota es un error del build |
 | **Meta** | 🟡 Como mínimo 90 % por documento (umbral propuesto) y acercarse al 100 % |
 
