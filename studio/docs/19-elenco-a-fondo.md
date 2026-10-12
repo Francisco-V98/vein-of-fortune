@@ -166,6 +166,8 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | III | Distante pero atenta; no se atreve a ayudar abiertamente |
 | IV | Al final, se convierte en **la persona más cercana al protagonista** ✅ y se une para resolver el caso. El protagonista, ya con estatus, dinero e influencia, puede darle protección ✅ |
 
+Cómo cambia su papel en el Acto II según la facción que esté detrás de ella: [22](22-acto-ii-variantes.md).
+
 **Conexiones.** Con **Anselmo**, deuda y afecto; con **Teo**, vecinos de siempre; con **su facción** (Consorcio, Faroleros o Ministerio), una correa corta; con **el protagonista**, el vínculo que más cuesta y más se recompensa.
 
 **Secreto y pistas.** Los abonos anónimos a la deuda no son de un vecino. Los recibe y los esconde porque su facción se lo pidió; al final los entrega como prueba.
@@ -412,6 +414,5 @@ Anselmo ── amistad rota ── Ministro Dueñas ── protege ── Esteba
 
 - ✅ Aldea del protagonista: **Vega Mansa**, sin región propia en el mapa; detalles de su familia en [21](21-pasado-de-valdoria.md).
 - ❓ Qué hace Esteban según cómo lo trates (aliado o enemigo) y cómo se refleja en el mercado.
-- ⏳ F0-44 Las tres variantes de Reme según quién esté detrás de ella.
 - ❓ Fichas de personajes secundarios (capataces, clientes, empleados con nombre).
 - ❓ Diseño visual de cada ficha para los retratos finales (F4-190).

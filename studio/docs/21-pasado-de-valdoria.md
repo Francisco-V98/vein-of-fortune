@@ -200,7 +200,7 @@ El autor confirmó el trato el 2026-10-12, tal como está escrito en la tabla: c
 - **Su razón propia, en las tres 🟡.** El abono mantiene la deuda del protagonista a flote. Si habla, la Comisión lo corta y la deuda se dispara. Calla por culpa y por cariño.
 - **Qué sabe.** Reme sabe que el pago no es de un vecino y que viene del Estado por vía de la Comisión ✅. **No sabe que Anselmo está vivo**: lo sospecha ✅. Así su alianza final sigue siendo una sorpresa para ella también 🟡.
 - Al final del Acto IV entrega los comprobantes como prueba ([19](19-elenco-a-fondo.md)).
-- Cómo suena ese silencio en cada variante ⏳ F0-44
+- Cómo suena ese silencio en cada variante: [22](22-acto-ii-variantes.md), escena A6 y sección 3.
 
 ---
 
@@ -319,7 +319,6 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 
 - ⏳ F0-45 En qué acto aparece cada cinta y dónde las dejó Anselmo; consecuencias de cada hallazgo.
 - ⏳ F4-151 Texto final y voz de las ocho cintas, a partir de la sección 7.
-- ⏳ F0-44 Cómo suena el silencio de Reme sobre el abono en cada una de las tres variantes (sección 6).
 - ⏳ F0-23 Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8).
 - ⏳ F0-46 Dónde está Anselmo hoy y qué pasa con el hilo abierto en los epílogos (sección 5).
 - ⏳ F0-51 Registro de hilos: dónde se siembra cada pista de la sección 11 y dónde se resuelve.
