@@ -71,10 +71,19 @@ test('/estado abre el panel y dibuja el avance', async ($, on) => {
   await $.command.run({ command: 'estado', args: '' })
   await new Promise((r) => setTimeout(r, 100))
 
+  // En la app de escritorio el resumen es un dibujo SVG con el porcentaje dentro
   const ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
-  expect(await ui.find({ type: 'Text', text: 'Avance del proyecto' })).toBeDefined()
-  expect(await ui.find({ type: 'Text', text: /33 %/ })).toBeDefined()
+  const dibujo = await ui.find({ type: 'Svg' })
+  expect(dibujo).toBeDefined()
+  expect(dibujo.props.source).toContain('33 %')
   await ui.press({ key: 'tab-curso' })
   expect(await ui.find({ type: 'Text', text: /F0-02/ })).toBeDefined()
   await ui.unmount()
+
+  // En la terminal se dibuja con texto
+  const terminal = await $.ui.mount({ ...PANE, surface: 'terminal' })
+  await terminal.press({ key: 'tab-resumen' })
+  expect(await terminal.find({ type: 'Text', text: 'Avance del proyecto' })).toBeDefined()
+  expect(await terminal.find({ type: 'Text', text: /33 %/ })).toBeDefined()
+  await terminal.unmount()
 })

@@ -4,6 +4,8 @@
 // Solo lee archivos del repositorio. Los botones del autor envían un mensaje como si lo escribiera
 // el autor; no modifican ningún archivo por su cuenta.
 
+import { svgAhora, svgAvatar, svgFlujo, svgLinea } from './vis.js'
+
 const PANE = 'vf-equipo'
 const EQUIPO = 'studio/data/equipo.json'
 const ROADMAP = 'studio/data/roadmap.json'
@@ -75,34 +77,6 @@ export function contarPorEtapa(lista) {
 export function rolDeAgente(tipo, roles) {
   const r = roles.find((x) => x.agente && x.agente === tipo)
   return r ? r.id : ''
-}
-
-// Dibujo del flujo para la app de escritorio: seis nodos unidos por flechas
-export function svgFlujo(etapas, conteo, actual, ancho) {
-  const w = Math.max(360, Math.min(ancho, 640))
-  const h = 110
-  const paso = w / etapas.length
-  const partes = []
-  partes.push('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h + '">')
-  partes.push('<rect width="' + w + '" height="' + h + '" rx="10" fill="#17232C"/>')
-  etapas.forEach((e, i) => {
-    const cx = Math.round(paso * i + paso / 2)
-    if (i < etapas.length - 1) {
-      partes.push('<line x1="' + (cx + 22) + '" y1="44" x2="' + (cx + paso - 22) + '" y2="44" stroke="#5B7C8C" stroke-width="2"/>')
-      partes.push('<polygon points="' + (cx + paso - 22) + ',39 ' + (cx + paso - 14) + ',44 ' + (cx + paso - 22) + ',49" fill="#5B7C8C"/>')
-    }
-    const n = conteo[e.id] || 0
-    const activo = e.id === actual || n > 0
-    partes.push('<circle cx="' + cx + '" cy="44" r="22" fill="' + (activo ? '#9A2640' : '#22333F') + '" stroke="' + (activo ? '#E3B25C' : '#36505F') + '" stroke-width="3"/>')
-    partes.push('<text x="' + cx + '" y="51" text-anchor="middle" font-family="monospace" font-size="20" font-weight="bold" fill="#C9DCDF">' + e.glifo + '</text>')
-    if (n > 0) {
-      partes.push('<circle cx="' + (cx + 18) + '" cy="24" r="10" fill="#E3B25C"/>')
-      partes.push('<text x="' + (cx + 18) + '" y="28" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#17232C">' + n + '</text>')
-    }
-    partes.push('<text x="' + cx + '" y="88" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#8FB0BA">' + e.nombre.replace('Revisión del autor', 'Revisión').replace('Prueba del autor', 'Prueba') + '</text>')
-  })
-  partes.push('</svg>')
-  return partes.join('')
 }
 
 // ---------- lectura de datos ----------
@@ -211,6 +185,8 @@ export function register(on) {
     if (e.requestId !== PANE) return next(e)
     const { Box, Text, Button, Input, Select, Svg } = $.ui.resolve(e)
     const redibujar = () => $.ui.invalidate('ui.render')
+    const escritorio = e.surface === 'desktop'
+    const ancho = Math.max(320, Math.min(600, Math.round((e.props && e.props.bodyColumns ? e.props.bodyColumns : 60) * 9)))
 
     const pestana = (nombre, etiqueta, tecla) =>
       Button({
@@ -241,12 +217,12 @@ export function register(on) {
     if (!equipo) {
       filas.push(Text({ dimColor: true, children: [cargando ? 'Cargando el equipo…' : 'Sin datos todavía.'] }))
     } else if (tab === 'flujo') {
-      filas.push(...vistaFlujo({ Text, Svg }, e))
+      filas.push(...vistaFlujo({ Text, Box, Svg, escritorio, ancho }))
     } else if (tab === 'equipo') {
-      filas.push(...vistaEquipo({ Text }))
+      filas.push(...vistaEquipo({ Text, Box, Svg, escritorio }))
     } else {
       filas.push(
-        ...vistaTarea({ Text, Box, Button, Input, Select }, {
+        ...vistaTarea({ Text, Box, Button, Input, Select, Svg, escritorio, ancho }, {
           elegir: (valor) => {
             seleccion = valor
             redibujar()
@@ -270,56 +246,106 @@ export function register(on) {
 
 // ---------- vistas ----------
 
-function vistaFlujo({ Text, Svg }, e) {
+function etapasHumanas() {
+  return equipo.etapas.filter((e) => equipo.roles.some((r) => r.id === e.rol && r.tipo === 'humano')).map((e) => e.id)
+}
+
+function titulo(Text, texto) {
+  return Text({ bold: true, color: 'cyan', children: [texto] })
+}
+
+function vistaFlujo({ Text, Box, Svg, escritorio, ancho }) {
   const filas = []
   const conteo = contarPorEtapa(tareas)
-  const ancho = Math.round((e.props && e.props.bodyColumns ? e.props.bodyColumns : 60) * 8)
-  if (e.surface === 'desktop') {
-    filas.push(Svg({ alt: 'Flujo de las tareas por etapa', width: Math.max(360, Math.min(ancho, 640)), height: 110, source: svgFlujo(equipo.etapas, conteo, '', ancho) }))
+  const vivos = agentes
+    .filter((a) => a.status === 'running' || a.status === 'waiting')
+    .map((a) => {
+      const rol = rolDeAgente(a.type, equipo.roles)
+      return { nombre: rol ? nombreRol(rol) : a.type, detalle: a.description || '' }
+    })
+
+  if (escritorio) {
+    filas.push(Svg({ alt: 'Flujo de las tareas por etapa', width: Math.min(ancho, 600), height: 128, source: svgFlujo(equipo.etapas, conteo, etapasHumanas(), ancho) }))
   } else {
     filas.push(Text({ bold: true, children: [equipo.etapas.map((s) => s.glifo + ' ' + (conteo[s.id] || 0)).join('  →  ')] }))
   }
-  filas.push(Text({ dimColor: true, children: ['Hechas: ' + hechas + ' · en marcha: ' + tareas.length] }))
+  filas.push(Text({ dimColor: true, children: ['Hechas ' + hechas + ' · en marcha ' + tareas.length + (escritorio ? ' · el aro punteado marca dónde participas tú' : '')] }))
   filas.push(Text({ children: [' '] }))
 
-  const vivos = agentes.filter((a) => a.status === 'running' || a.status === 'waiting')
-  filas.push(Text({ bold: true, children: ['Ahora trabajando'] }))
-  if (vivos.length === 0) filas.push(Text({ dimColor: true, children: ['Ningún especialista activo en esta sesión.'] }))
-  for (const a of vivos) {
-    const rol = rolDeAgente(a.type, equipo.roles)
-    filas.push(Text({ children: ['● ' + (rol ? nombreRol(rol) : a.type) + (a.description ? ' · ' + a.description : '')] }))
+  filas.push(titulo(Text, 'Ahora trabajando'))
+  if (escritorio) {
+    filas.push(Svg({ alt: 'Especialistas activos', width: Math.min(ancho, 600), height: Math.max(40, 12 + vivos.length * 26), source: svgAhora(vivos, ancho) }))
+  } else if (vivos.length === 0) {
+    filas.push(Text({ dimColor: true, children: ['Nadie trabaja ahora en esta sesión.'] }))
+  } else {
+    for (const v of vivos) filas.push(Text({ children: ['● ' + v.nombre + (v.detalle ? ' · ' + v.detalle : '')] }))
   }
   filas.push(Text({ children: [' '] }))
 
+  filas.push(titulo(Text, 'Tareas por etapa'))
+  const vacias = []
   for (const etapa of equipo.etapas) {
     const aqui = tareas.filter((t) => t.etapa === etapa.id)
-    filas.push(Text({ bold: true, color: aqui.length ? 'yellow' : undefined, dimColor: aqui.length === 0, children: [etapa.glifo + ' ' + etapa.nombre + ' (' + aqui.length + ')'] }))
-    for (const t of aqui) {
-      filas.push(Text({ children: ['  ' + t.id + ' · ' + nombreRol(t.rol)] }))
-      filas.push(Text({ dimColor: true, children: ['    ' + t.titulo] }))
+    if (aqui.length === 0) {
+      vacias.push(etapa.nombre)
+      continue
     }
+    filas.push(
+      Box({
+        flexDirection: 'column',
+        borderStyle: 'round',
+        paddingX: 1,
+        marginBottom: 1,
+        children: [
+          Text({ bold: true, color: 'yellow', children: [etapa.glifo + '  ' + etapa.nombre + '  ·  ' + aqui.length]}),
+          ...aqui.flatMap((t) => [
+            Box({ flexDirection: 'row', columnGap: 2, children: [Text({ bold: true, children: [t.id] }), Text({ dimColor: true, children: [nombreRol(t.rol)] })] }),
+            Text({ wrap: 'wrap', children: [t.titulo] }),
+          ]),
+        ],
+      }),
+    )
   }
+  if (vacias.length) filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['Sin tareas en: ' + vacias.join(', ')] }))
   filas.push(Text({ children: [' '] }))
-  filas.push(Text({ bold: true, children: ['Reglas del flujo'] }))
-  for (const r of equipo.reglas) filas.push(Text({ dimColor: true, children: ['· ' + r] }))
+  filas.push(titulo(Text, 'Reglas del flujo'))
+  for (const r of equipo.reglas) filas.push(Text({ dimColor: true, wrap: 'wrap', children: ['· ' + r] }))
   return filas
 }
 
-function vistaEquipo({ Text }) {
+function vistaEquipo({ Text, Box, Svg, escritorio }) {
   const filas = []
-  for (const rol of equipo.roles) {
+  equipo.roles.forEach((rol, i) => {
     const suyas = tareas.filter((t) => t.rol === rol.id)
-    const vivo = rol.agente && agentes.some((a) => a.type === rol.agente && (a.status === 'running' || a.status === 'waiting'))
-    filas.push(Text({ bold: true, children: [(vivo ? '● ' : '○ ') + rol.nombre + '  [' + rol.tipo + ']'] }))
-    filas.push(Text({ children: ['  ' + rol.hace] }))
-    filas.push(Text({ dimColor: true, children: ['  Entrega: ' + rol.entrega] }))
-    if (suyas.length) filas.push(Text({ color: 'yellow', children: ['  Ahora: ' + suyas.map((t) => t.id).join(', ')] }))
-    filas.push(Text({ children: [' '] }))
-  }
+    const vivo = Boolean(rol.agente) && agentes.some((a) => a.type === rol.agente && (a.status === 'running' || a.status === 'waiting'))
+    const cuerpo = [
+      Box({
+        flexDirection: 'row',
+        columnGap: 1,
+        children: [Text({ bold: true, children: [rol.nombre] }), Text({ dimColor: true, children: ['· ' + rol.tipo] })],
+      }),
+      Text({ wrap: 'wrap', children: [rol.hace] }),
+      Text({ dimColor: true, wrap: 'wrap', children: ['Entrega: ' + rol.entrega] }),
+    ]
+    if (suyas.length) cuerpo.push(Text({ color: 'yellow', children: ['Ahora: ' + suyas.map((t) => t.id).join(', ')] }))
+    const avatar = escritorio
+      ? Svg({ alt: rol.nombre, width: 48, height: 48, source: svgAvatar(rol.nombre, i, vivo || suyas.length > 0, rol.tipo === 'humano') })
+      : Text({ bold: true, children: [(vivo ? '●' : '○') + ' '] })
+    filas.push(
+      Box({
+        flexDirection: 'row',
+        columnGap: 2,
+        borderStyle: 'round',
+        paddingX: 1,
+        marginBottom: 1,
+        children: [avatar, Box({ flexDirection: 'column', flexShrink: 1, children: cuerpo })],
+      }),
+    )
+  })
   return filas
 }
 
-function vistaTarea({ Text, Box, Button, Input, Select }, acciones) {
+function vistaTarea({ Text, Box, Button, Input, Select, Svg, escritorio, ancho }, acciones) {
   const filas = []
   if (tareas.length === 0) return [Text({ dimColor: true, children: ['No hay tareas en marcha.'] })]
   filas.push(
@@ -332,29 +358,45 @@ function vistaTarea({ Text, Box, Button, Input, Select }, acciones) {
     }),
   )
   const t = tareas.find((x) => x.id === seleccion) || tareas[0]
+  const conEspecialista = t.especialista ? { pipeline: { especialista: t.especialista } } : null
   filas.push(Text({ children: [' '] }))
-  filas.push(Text({ bold: true, children: [t.id + ' · ' + t.titulo] }))
-  filas.push(Text({ dimColor: true, children: ['Estado: ' + t.estado + ' · hito ' + t.hito] }))
+  filas.push(Text({ bold: true, wrap: 'wrap', children: [t.id + ' · ' + t.titulo] }))
+  filas.push(Text({ dimColor: true, children: ['Estado ' + t.estado + ' · hito ' + t.hito] }))
   filas.push(Text({ children: [' '] }))
-  for (const p of t.pipeline) {
-    const quien = nombreRol(rolDe(p.etapa, t.especialista ? { pipeline: { especialista: t.especialista } } : null, equipo.etapas))
-    filas.push(Text({ bold: p.estado === 'activa', dimColor: p.estado === 'omitida' || p.estado === 'pendiente', children: [GLIFO_ESTADO[p.estado] + ' ' + nombreEtapa(p.etapa).padEnd(20) + quien] }))
-    if (p.nota && !p.inferido) filas.push(Text({ dimColor: true, children: ['    ' + p.nota + (p.at ? ' (' + p.at + ')' : '')] }))
+  const lineas = t.pipeline.map((p) => ({
+    nombre: nombreEtapa(p.etapa),
+    quien: nombreRol(rolDe(p.etapa, conEspecialista, equipo.etapas)),
+    estado: p.estado,
+    nota: p.inferido ? '' : p.nota,
+  }))
+  if (escritorio) {
+    filas.push(Svg({ alt: 'Flujo de la tarea', width: Math.min(ancho, 600), height: lineas.length * 54 + 8, source: svgLinea(lineas, ancho) }))
+  } else {
+    for (const l of lineas) {
+      filas.push(Text({ bold: l.estado === 'activa', dimColor: l.estado === 'omitida' || l.estado === 'pendiente', children: [GLIFO_ESTADO[l.estado] + ' ' + l.nombre + ' · ' + l.quien + (l.nota ? ' — ' + l.nota : '')] }))
+    }
   }
   if (t.etapa === 'autor' || t.etapa === 'playtest') {
     filas.push(Text({ children: [' '] }))
-    filas.push(Text({ bold: true, color: 'yellow', children: [t.etapa === 'autor' ? 'Te toca revisar esta tarea' : 'Te toca jugar y probar esta tarea'] }))
-    filas.push(Button({ key: 'aprobar', label: t.etapa === 'autor' ? 'Aprobar revisión' : 'Aprobar prueba', hotkey: 'a', onPress: () => acciones.aprobar(t) }))
     filas.push(
-      Input({
-        key: 'devolver',
-        label: 'Devolver',
-        placeholder: 'Escribe qué cambiar y pulsa Enter',
-        value: '',
-        submitLabel: 'devolver',
-        onSubmit: (texto) => {
-          if (texto.trim()) acciones.devolver(t, texto.trim())
-        },
+      Box({
+        flexDirection: 'column',
+        borderStyle: 'round',
+        paddingX: 1,
+        children: [
+          Text({ bold: true, color: 'yellow', children: [t.etapa === 'autor' ? 'Te toca revisar esta tarea' : 'Te toca jugar y probar esta tarea'] }),
+          Button({ key: 'aprobar', label: t.etapa === 'autor' ? 'Aprobar revisión' : 'Aprobar prueba', hotkey: 'a', onPress: () => acciones.aprobar(t) }),
+          Input({
+            key: 'devolver',
+            label: 'Devolver',
+            placeholder: 'Escribe qué cambiar y pulsa Enter',
+            value: '',
+            submitLabel: 'devolver',
+            onSubmit: (texto) => {
+              if (texto.trim()) acciones.devolver(t, texto.trim())
+            },
+          }),
+        ],
       }),
     )
   }

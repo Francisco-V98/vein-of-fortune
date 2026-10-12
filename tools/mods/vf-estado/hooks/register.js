@@ -2,6 +2,8 @@
 // la limpieza y la coherencia del diseño, las tareas en curso y los PR abiertos.
 // Solo lee archivos del repositorio y ejecuta `python3 studio/hub/build.py` y `git`/`gh` de lectura.
 
+import { COLOR_ESTADO, svgEstados, svgFilas, svgMedidas, svgResumen } from './vis.js'
+
 const PANE = 'vf-estado'
 const ROADMAP = 'studio/data/roadmap.json'
 const ESTADOS = ['backlog', 'sprint', 'doing', 'review', 'qa', 'done']
@@ -18,6 +20,7 @@ const ANCHO_BARRA = 24
 
 // Estado del panel
 let tab = 'resumen'
+let faseElegida = ''
 let datos = null
 let medidas = null
 let ramas = null
@@ -141,8 +144,11 @@ export function register(on) {
 
   on('ui.render', { component: 'Pane' }, async ($, e, next) => {
     if (e.requestId !== PANE) return next(e)
-    const { Box, Text, Button } = $.ui.resolve(e)
+    const { Box, Text, Button, Svg } = $.ui.resolve(e)
+    const escritorio = e.surface === 'desktop'
+    const ancho = Math.max(320, Math.min(560, Math.round((e.props && e.props.bodyColumns ? e.props.bodyColumns : 60) * 9)))
     const redibujar = () => $.ui.invalidate('ui.render')
+    const ctx = { Text, Box, Button, Svg, escritorio, ancho, redibujar }
 
     const pestana = (nombre, etiqueta, tecla) =>
       Button({
@@ -179,11 +185,11 @@ export function register(on) {
     if (!datos) {
       filas.push(Text({ dimColor: true, children: [cargando ? 'Cargando el roadmap…' : 'Sin datos todavía.'] }))
     } else if (tab === 'resumen') {
-      filas.push(...vistaResumen(Text, Box, datos, medidas, ramas))
+      filas.push(...vistaResumen(ctx, datos, medidas, ramas))
     } else if (tab === 'hitos') {
-      filas.push(...vistaHitos(Text, datos))
+      filas.push(...vistaHitos(ctx, datos))
     } else {
-      filas.push(...vistaCurso(Text, datos))
+      filas.push(...vistaCurso(ctx, datos))
     }
 
     return Box({
@@ -193,64 +199,111 @@ export function register(on) {
   })
 }
 
-function vistaResumen(Text, Box, d, medidas, ramas) {
+const ORDEN_BARRA = ['done', 'review', 'qa', 'doing', 'sprint', 'backlog']
+
+function titulo(Text, texto) {
+  return Text({ bold: true, color: 'cyan', children: [texto] })
+}
+
+function svg(Svg, fuente, ancho, alto, alt) {
+  return Svg({ alt, width: ancho, height: alto, source: fuente })
+}
+
+function vistaResumen(ctx, d, medidas, ramas) {
+  const { Text, Svg, escritorio, ancho } = ctx
   const t = d.total
   const filas = []
-  filas.push(Text({ bold: true, children: ['Avance del proyecto'] }))
-  filas.push(Text({ children: [barra(t.hechas, t.n) + ' ' + porcentaje(t.hechas, t.n) + ' %  (' + t.hechas + ' de ' + t.n + ' tareas)'] }))
-  filas.push(Text({ dimColor: true, children: ['Por horas estimadas: ' + porcentaje(t.estHechas, t.est) + ' %  (' + t.estHechas + ' de ' + t.est + ' h)'] }))
-  filas.push(Text({ children: [' '] }))
-  filas.push(Text({ bold: true, children: ['Por estado'] }))
-  for (const e of ESTADOS) {
-    filas.push(Text({ children: [GLIFO[e] + ' ' + ETIQUETA[e].padEnd(12) + String(t.porEstado[e]).padStart(4)] }))
-  }
-  filas.push(Text({ children: [' '] }))
-  filas.push(Text({ bold: true, children: ['Calidad del diseño'] }))
-  if (medidas && medidas.limpieza !== null) {
-    filas.push(Text({ children: ['Limpieza    ' + barra(medidas.limpieza, 100, 16) + ' ' + medidas.limpieza + ' %  (meta 90 %)'] }))
+  if (escritorio) {
+    filas.push(svg(Svg, svgResumen(t, ancho), ancho, 156, 'Avance del proyecto'))
+    filas.push(Text({ children: [' '] }))
+    filas.push(titulo(Text, 'Por estado'))
+    filas.push(svg(Svg, svgEstados(t.porEstado, ORDEN_BARRA, ETIQUETA, ancho), ancho, 78, 'Tareas por estado'))
+    filas.push(Text({ children: [' '] }))
+    filas.push(titulo(Text, 'Calidad del diseño'))
+    filas.push(svg(Svg, svgMedidas(medidas, ancho), ancho, 106, 'Limpieza y coherencia'))
+    filas.push(Text({ children: [' '] }))
+    filas.push(titulo(Text, 'Por fase'))
+    const fases = d.fases.map((f) => ({ codigo: f.id, nombre: f.nombre, hechas: f.hechas, n: f.n }))
+    filas.push(svg(Svg, svgFilas(fases, ancho), ancho, fases.length * 30, 'Avance por fase'))
   } else {
-    filas.push(Text({ dimColor: true, children: ['Limpieza: pulsa Actualizar (r)'] }))
-  }
-  if (medidas && medidas.coherencia !== null) {
-    filas.push(Text({ children: ['Coherencia  ' + barra(medidas.coherencia, 100, 16) + ' ' + medidas.coherencia + ' %  (' + medidas.hallazgos + ' hallazgos)'] }))
-  }
-  filas.push(Text({ children: [' '] }))
-  filas.push(Text({ bold: true, children: ['Por fase'] }))
-  for (const f of d.fases) {
-    filas.push(Text({ children: [f.id.padEnd(3) + ' ' + barra(f.hechas, f.n, 16) + ' ' + String(porcentaje(f.hechas, f.n)).padStart(3) + ' %  ' + f.hechas + '/' + f.n + '  ' + f.nombre] }))
+    filas.push(titulo(Text, 'Avance del proyecto'))
+    filas.push(Text({ children: [barra(t.hechas, t.n) + ' ' + porcentaje(t.hechas, t.n) + ' %  (' + t.hechas + ' de ' + t.n + ' tareas)'] }))
+    filas.push(Text({ dimColor: true, children: ['Por horas estimadas: ' + porcentaje(t.estHechas, t.est) + ' %'] }))
+    filas.push(Text({ children: [ESTADOS.map((e) => GLIFO[e] + ' ' + ETIQUETA[e] + ' ' + t.porEstado[e]).join('  ')] }))
+    filas.push(Text({ children: [' '] }))
+    filas.push(titulo(Text, 'Calidad del diseño'))
+    if (medidas && medidas.limpieza !== null) filas.push(Text({ children: ['Limpieza ' + barra(medidas.limpieza, 100, 16) + ' ' + medidas.limpieza + ' % (meta 90 %)'] }))
+    else filas.push(Text({ dimColor: true, children: ['Limpieza: pulsa Actualizar (r)'] }))
+    if (medidas && medidas.coherencia !== null) filas.push(Text({ children: ['Coherencia ' + barra(medidas.coherencia, 100, 16) + ' ' + medidas.coherencia + ' %'] }))
+    filas.push(Text({ children: [' '] }))
+    filas.push(titulo(Text, 'Por fase'))
+    for (const f of d.fases) filas.push(Text({ children: [f.id + ' ' + barra(f.hechas, f.n, 16) + ' ' + porcentaje(f.hechas, f.n) + ' %  ' + f.hechas + '/' + f.n + '  ' + f.nombre] }))
   }
   if (ramas) {
     filas.push(Text({ children: [' '] }))
-    filas.push(Text({ bold: true, children: ['Git'] }))
-    filas.push(Text({ children: ['Rama: ' + (ramas.actual || '—')] }))
+    filas.push(titulo(Text, 'Git'))
+    filas.push(Text({ children: ['Rama  ' + (ramas.actual || '—')] }))
     if (ramas.prs.length === 0) filas.push(Text({ dimColor: true, children: ['Sin PR abiertos'] }))
     for (const pr of ramas.prs) filas.push(Text({ children: ['PR ' + pr.number + '  ' + pr.title] }))
   }
   return filas
 }
 
-function vistaHitos(Text, d) {
-  const filas = []
-  for (const f of d.fases) {
-    filas.push(Text({ bold: true, children: [f.id + ' · ' + f.nombre + '  ' + f.hechas + '/' + f.n] }))
-    for (const h of f.hitos) {
-      const marca = h.n > 0 && h.hechas === h.n ? '■' : h.hechas > 0 ? '▣' : '□'
-      filas.push(Text({
-        dimColor: h.hechas === 0,
-        children: [marca + ' ' + h.id.padEnd(6) + barra(h.hechas, h.n, 12) + ' ' + String(h.hechas).padStart(2) + '/' + String(h.n).padEnd(2) + ' ' + h.nombre],
-      }))
-    }
-    filas.push(Text({ children: [' '] }))
+function vistaHitos(ctx, d) {
+  const { Text, Box, Button, Svg, escritorio, ancho, redibujar } = ctx
+  // La fase que se muestra: la elegida, o la primera que aún tiene trabajo pendiente
+  const activa = d.fases.find((f) => f.id === faseElegida) || d.fases.find((f) => f.hechas < f.n) || d.fases[0]
+  const selector = Box({
+    flexDirection: 'row',
+    columnGap: 2,
+    children: d.fases.map((f) =>
+      Button({
+        key: 'fase-' + f.id,
+        label: f.id,
+        plain: true,
+        dimColor: f.id !== activa.id,
+        onPress: () => {
+          faseElegida = f.id
+          redibujar()
+        },
+      }),
+    ),
+  })
+  const filas = [selector, Text({ children: [' '] }), Text({ bold: true, color: 'cyan', children: [activa.id + ' · ' + activa.nombre + '  ' + activa.hechas + '/' + activa.n] }), Text({ children: [' '] })]
+  const hitos = activa.hitos.map((h) => ({ codigo: h.id, nombre: h.nombre, hechas: h.hechas, n: h.n }))
+  if (escritorio) {
+    filas.push(svg(Svg, svgFilas(hitos, ancho, { colCodigo: 52 }), ancho, hitos.length * 30, 'Avance por hito'))
+  } else {
+    for (const h of hitos) filas.push(Text({ dimColor: h.hechas === 0, children: [(h.hechas === h.n && h.n > 0 ? '■ ' : '□ ') + h.codigo + ' ' + barra(h.hechas, h.n, 12) + ' ' + h.hechas + '/' + h.n + ' ' + h.nombre] }))
   }
   return filas
 }
 
-function vistaCurso(Text, d) {
-  const filas = [Text({ bold: true, children: ['Tareas en movimiento (' + d.enCurso.length + ')'] })]
+function vistaCurso(ctx, d) {
+  const { Text, Box } = ctx
+  const filas = [titulo(Text, 'Tareas en movimiento (' + d.enCurso.length + ')'), Text({ children: [' '] })]
   if (d.enCurso.length === 0) filas.push(Text({ dimColor: true, children: ['Ninguna tarea en curso, en revisión ni en QA.'] }))
   for (const t of d.enCurso) {
-    filas.push(Text({ children: [GLIFO[t.estado] + ' ' + t.id + '  ' + ETIQUETA[t.estado] + (t.prio ? ' · ' + t.prio : '')] }))
-    filas.push(Text({ dimColor: true, children: ['    ' + t.titulo] }))
+    filas.push(
+      Box({
+        flexDirection: 'column',
+        borderStyle: 'round',
+        paddingX: 1,
+        marginBottom: 1,
+        children: [
+          Box({
+            flexDirection: 'row',
+            columnGap: 2,
+            children: [
+              Text({ bold: true, backgroundColor: COLOR_ESTADO[t.estado], color: t.estado === 'review' ? 'white' : 'black', children: [' ' + ETIQUETA[t.estado] + ' '] }),
+              Text({ bold: true, children: [t.id] }),
+              Text({ dimColor: true, children: [(t.prio || '') + ' · hito ' + t.hito] }),
+            ],
+          }),
+          Text({ wrap: 'wrap', children: [t.titulo] }),
+        ],
+      }),
+    )
   }
   return filas
 }

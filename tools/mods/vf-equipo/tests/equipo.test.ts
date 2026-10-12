@@ -1,5 +1,6 @@
 import { expect, mock, test } from 'claude-code/testing'
-import { contarPorEtapa, etapaActual, pipelineDe, rolDe, rolDeAgente, svgFlujo } from '../hooks/register.js'
+import { contarPorEtapa, etapaActual, pipelineDe, rolDe, rolDeAgente } from '../hooks/register.js'
+import { iniciales, svgFlujo, svgLinea } from '../hooks/vis.js'
 
 const ETAPAS = [
   { id: 'ideacion', nombre: 'Ideación', rol: 'ideador', glifo: 'I' },
@@ -74,10 +75,18 @@ test('cuenta tareas por etapa y relaciona agentes con roles', async () => {
 })
 
 test('el dibujo del flujo es un SVG con un nodo por etapa', async () => {
-  const svg = svgFlujo(ETAPAS, { produccion: 2 }, 'produccion', 600)
+  const svg = svgFlujo(ETAPAS, { produccion: 2 }, ['autor', 'playtest'], 600)
   expect(svg.startsWith('<svg')).toBe(true)
-  expect(svg.split('<circle').length - 1).toBe(8)
+  expect(svg.split('<circle').length - 1).toBe(10)
   expect(svg).toContain('>Revisión<')
+})
+
+test('las iniciales y la línea de tiempo se dibujan', async () => {
+  expect(iniciales('Diseñador de sistemas')).toBe('DS')
+  expect(iniciales('Francisco (autor)')).toBe('FR')
+  const linea = svgLinea([{ nombre: 'Ideación', quien: 'Ideador', estado: 'hecha', nota: 'Tres opciones' }, { nombre: 'Análisis', quien: 'Analista', estado: 'activa', nota: '' }], 500)
+  expect(linea).toContain('Ideación')
+  expect(linea).toContain('<animate')
 })
 
 test('/equipo dibuja el flujo, la tarea en revisión y los botones del autor', async ($, on) => {
