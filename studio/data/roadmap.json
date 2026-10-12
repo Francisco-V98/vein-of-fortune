@@ -217,7 +217,7 @@
               "id": "F0-17",
               "title": "Corregir arte de referencia: sprite del ministro y flechas de interfaz sin rojo/verde",
               "est": 1,
-              "status": "backlog",
+              "status": "review",
               "desc": "El ministro salió parecido a un sacerdote; las flechas de precio usan rojo y verde.",
               "done_when": "Versiones corregidas guardadas en assets.",
               "prio": "P2"
