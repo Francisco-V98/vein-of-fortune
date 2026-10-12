@@ -75,17 +75,21 @@ Las otras dos opciones, *Escarba. Negocia. Asciende.* y *Un optimista en un mund
 
 ### Subtítulo
 
-❓ El autor pidió más propuestas. Candidatos para elegir (español / inglés):
+❓ Pendiente de elegir. El autor pidió propuestas en la línea de *La fortuna se cava*: una frase corta, de refrán, que no repita las palabras del título (nada de «fortuna» ni «veta»).
 
 | # | Español | English |
 |---|---|---|
-| 1 | Un cuento de minería y comercio | A tale of mining and trade |
-| 2 | Minas, mercados y una deuda por pagar | Mines, markets and a debt to pay |
-| 3 | Cava hondo, vende caro | Dig deep, sell high |
-| 4 | Una historia de vetas, deudas y fortunas | A story of veins, debts and fortunes |
-| 5 | Minería y comercio en Valdoria | Mining and trade in Valdoria |
-| 6 | La fortuna se cava | Fortune is dug |
-| 7 | Sin subtítulo | Sin subtítulo |
+| 1 | La suerte se cava | Luck is dug |
+| 2 | Lo bueno se desentierra | The good stuff gets dug up |
+| 3 | El futuro se cava | The future is dug |
+| 4 | La esperanza se cava | Hope is dug |
+| 5 | Lo que vale está más abajo | What's worth it lies deeper |
+| 6 | Se cava hondo, se vende alto | Dig deep, sell high |
+| 7 | Nada se regala: todo se cava | Nothing is handed out: it's all dug |
+| 8 | El éxito se gana a pico y pala | Success is earned with pick and shovel |
+| 9 | Sin subtítulo | No subtitle |
+
+Se descartaron *La fortuna se cava* (repite «fortuna» del título) y las opciones largas anteriores.
 
 ## Identidad visual
 
