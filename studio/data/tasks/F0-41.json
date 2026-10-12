@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Documento 18 completo con reglas, nueve fichas de voz, glosario ES/EN y anexo; QA aprobado tras dos pasadas.",
       "ref": "rama studio/F0-41-biblia-narrativa-estructura"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la biblia narrativa desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [
@@ -38,6 +46,11 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "F0-41 recorrió el flujo con subagentes reales: el ideador propuso tres estructuras, el analista verificó cinco comprobaciones y fijó ocho criterios, el narrador escribió el documento 18, el localizador completó el glosario, y QA lo devolvió una vez (limpieza 44 %, ✅ sin respaldo, marcas incoherentes) y lo aprobó en la segunda pasada. Tus decisiones están aplicadas y la celda de Anselmo corregida: limpieza 49 % → 65 % y coherencia 68 % → 70 %."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "Terminé mi parte: revisé el entregable y está aprobado. Pásala a la siguiente etapa del flujo."
     }
   ],
   "evidence": [],
@@ -153,9 +166,9 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
-        "nota": "Falta que revises el documento 18 y las decisiones aplicadas"
+        "nota": "Aprobado por el autor con «Todo bien» y «Terminé mi parte»"
       },
       {
         "etapa": "playtest",
@@ -163,7 +176,9 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Tarea cerrada y PR #33 fusionado"
       }
     ],
     "traspasos": [
@@ -239,6 +254,12 @@
         "de": "qa",
         "a": "autor",
         "que": "QA aprobado: limpieza 65 %, coherencia 70 %, sin ❓ en el documento 18",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: «Terminé mi parte» sin ajustes",
         "at": "2026-10-12"
       }
     ]
