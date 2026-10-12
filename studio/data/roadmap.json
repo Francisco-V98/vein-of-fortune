@@ -653,7 +653,7 @@
               "id": "F0-61",
               "title": "Hojas del protagonista, hombre y mujer",
               "est": 4,
-              "status": "backlog",
+              "status": "done",
               "prio": "P1",
               "desc": "Tres hojas de cada versión del protagonista (modelo, expresiones y poses), con la lámpara de minero como rasgo común.",
               "done_when": "Seis hojas aprobadas."
@@ -662,7 +662,7 @@
               "id": "F0-62",
               "title": "Hojas de Anselmo, Teo, Quiroga y Lucía",
               "est": 5,
-              "status": "backlog",
+              "status": "done",
               "prio": "P1",
               "desc": "Tres hojas de cada personaje. Anselmo se genera como foto desgastada y como silueta de las cintas, según su retrato aprobado.",
               "done_when": "Doce hojas aprobadas."
