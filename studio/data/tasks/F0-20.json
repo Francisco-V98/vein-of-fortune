@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Frase de marca, subtítulo, símbolo y fuente candidata decididos; guía visual escrita en el documento 13.",
       "ref": "rama studio/F0-20-guia-visual-de-marca"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la guía visual de marca.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
@@ -48,6 +56,11 @@
       "at": "2026-10-12",
       "by": "claude",
       "text": "El subtítulo queda ✅ en el documento 13. Con él, todas las decisiones de marca de esta tarea están tomadas; la tarea pasa a revisión a la espera de que el autor apruebe la guía visual."
+    },
+    {
+      "at": "2026-10-12",
+      "by": "autor",
+      "text": "PR confirmados, el cazarrecompensas queda perfecto; todo confirmado y listo para avanzar."
     }
   ],
   "evidence": []
