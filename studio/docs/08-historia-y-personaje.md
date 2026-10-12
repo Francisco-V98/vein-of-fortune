@@ -79,7 +79,7 @@ La historia **cambia según las decisiones del jugador** (alianzas, qué hace co
 
 ## La verdad detrás de la Aetherita ✅
 
-**La Aetherita enferma a quienes la extraen** ("el mal del éter"). La Comisión del Éter, dentro del Ministerio, lo oculta porque la economía y el ejército dependen de ella. Anselmo lo descubrió, y por eso desapareció.
+**La Aetherita enferma a quienes la extraen** ("el mal del éter"). La Comisión del Éter, dentro del Ministerio, lo oculta porque la economía y el ejército dependen de ella. Anselmo lo descubrió, y por eso desapareció. Lo que pasó antes del juego (hallazgo, Comisión, expedición y muerte pública de Anselmo) está en [21](21-pasado-de-valdoria.md).
 
 En el Acto IV, ya en la cima, el jugador elige qué hacer con esa información:
 

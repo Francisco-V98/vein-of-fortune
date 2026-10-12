@@ -2,7 +2,7 @@
 
 > ⚠️ **Contiene spoilers de toda la historia.** Es material para el equipo, no para el jugador.
 
-Fichas completas del protagonista y los 8 personajes principales de [08](08-historia-y-personaje.md). Las decisiones del autor van marcadas ✅; lo que propongo y falta acordar, 🟡. Los nombres de lugares nuevos o los datos inventados para dar cuerpo a un personaje también son 🟡 hasta que se revisen en el pasado de Valdoria (F0-43).
+Fichas completas del protagonista y los 8 personajes principales de [08](08-historia-y-personaje.md). Las decisiones del autor van marcadas ✅; lo que propongo y falta acordar, 🟡. Los nombres de lugares nuevos o los datos inventados para dar cuerpo a un personaje también son 🟡 hasta que el autor los confirme. Las fechas, las edades de cada hito y la aldea ya están en [21 · Pasado de Valdoria](21-pasado-de-valdoria.md).
 
 ## Cómo leer una ficha
 
@@ -29,15 +29,15 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 
 > **Decisión del autor ✅:** Anselmo **está vivo, pero se cree que murió enfermo**. Es **cómplice** de la Comisión del Éter. El protagonista lo descubre **al final del último acto** y queda con ganas de saber qué pasó, dónde está y por qué decidió lo que decidió. Eso deja la puerta abierta a **capítulos o actualizaciones futuras**.
 
-**Cómo encaja (propuesta 🟡):**
+**Cómo encaja (confirmado por el autor el 2026-10-12 ✅; solo «hace pocas semanas» sigue 🟡):**
 
-1. Hace veinte años Anselmo, Teo y un joven funcionario, Aurelio Dueñas, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar.
-2. Anselmo lo documentó en una libreta y grabó **ocho cintas**. Intentó denunciarlo y la Comisión lo detuvo.
+1. Hace veinte años Anselmo, Teo y Aurelio Dueñas, entonces un funcionario de unos 40 años y «joven» solo frente a la cúpula del Ministerio, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar. Fechas y edades en [21](21-pasado-de-valdoria.md).
+2. Anselmo lo documentó en una libreta y grabó **ocho cintas**. Calibró durante 18 años los límites de exposición, y cada año de exposición agravó su mal. Hace dos años intentó denunciarlo y la Comisión lo detuvo.
 3. Estaba ya enfermo. La Comisión le ofreció un trato: **tratamiento paliativo** (el único que existe), **su silencio y su trabajo** como perito de La Fosa, y que Reme, Teo y su heredero no sufrieran represalias. A cambio, **su muerte oficial**.
 4. Desde entonces vive en secreto, ayudando a la Comisión a calibrar los límites de exposición. Cree que desde dentro salva más vidas que estando muerto. En la práctica, ayuda a que se siga ocultando.
 5. Las cintas son lo último que grabó **antes** del trato: su último acto de honestidad.
 
-**La revelación (final del Acto IV, después de la decisión sobre la Aetherita):** el protagonista encuentra un **acta de calibración de la Comisión firmada por Anselmo con fecha de hace pocas semanas**. No hay discurso ni explicación. Solo una firma que reconoce.
+**La revelación (final del Acto IV, después de la decisión sobre la Aetherita):** el protagonista encuentra un **acta de calibración de la Comisión firmada por Anselmo con fecha de hace pocas semanas** 🟡. No hay discurso ni explicación. Solo una firma que reconoce.
 
 **Por qué creo que el giro funciona, con ajustes:**
 
@@ -53,7 +53,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 |---|---|---|
 | I | Un abono anónimo a la deuda que Reme atribuye a "algún vecino bondadoso" | Reme |
 | I | La libreta de Anselmo termina con una anotación **sin fecha de cierre** | Libreta |
-| II | El certificado de defunción de Anselmo tiene un sello irregular y **no se encontró cuerpo** | Inspector Quiroga |
+| II | El certificado de defunción de Anselmo tiene un sello irregular y **no hay registro de cremación** | Inspector Quiroga |
 | II | Teo cambia de tema cuando se menciona el último viaje a La Fosa | Teo |
 | III | Lucía oyó que "alguien de la Comisión recibe cartas con la letra de un muerto" | Lucía |
 | III | El abono anónimo sigue llegando y Teo jura que no es él | Reme y Teo |
@@ -65,12 +65,12 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | | |
 |---|---|
 | **Arquetipo** | El recién llegado optimista (el inocente que aprende las reglas) |
-| **Edad** | Unos 22 años 🟡 |
+| **Edad** | Unos 22 años ✅ |
 | **Nombre** | Lo elige el jugador, una sola palabra ✅ |
 | **Género** | El jugador elige hombre o mujer ✅; los diálogos son neutros cuando se puede |
 | **Aparece** | Desde la primera pantalla; se mueve entre todas las zonas |
 
-**Trasfondo 🟡.** Hijo o hija de aparceros de una aldea agrícola de las tierras bajas del sur. Una cosecha perdida por una helada tardía dejó a la familia debiendo al banco agrario. El protagonista sale a buscar trabajo para mandar dinero a casa y, justo entonces, llega la carta de la herencia de un tío al que conoció una sola vez de niño: Anselmo, el único pariente que ya había "salido a hacer fortuna". La herencia es una licencia, un puesto en el mercado de Villa Brasa y una deuda. De Anselmo conserva un recuerdo: **la lámpara de minero** que le prestó una noche para ver las estrellas. Es el símbolo de la marca.
+**Trasfondo.** Hijo o hija de aparceros de **Vega Mansa** ✅, una aldea agrícola de las tierras bajas del sur. Su padre, hermano de Anselmo, dejó el Hollín tras el derrumbe de Pozo Negro y juró que ningún hijo bajaría a una mina ✅ ([21](21-pasado-de-valdoria.md)). Una cosecha perdida por una helada tardía dejó a la familia debiendo al banco agrario. El protagonista sale a buscar trabajo para mandar dinero a casa y, justo entonces, llega la carta de la herencia de un tío al que conoció una sola vez de niño, hace unos 14 años ✅: Anselmo, el único pariente que ya había "salido a hacer fortuna". La herencia es una licencia, un puesto en el mercado de Villa Brasa y una deuda. De Anselmo conserva un recuerdo: **la lámpara de minero** que le prestó una noche para ver las estrellas. Es el símbolo de la marca.
 
 **Personalidad.** Cálido, ingenioso, directo y con humor ligero. Confía rápido, aprende rápido y no se rinde. Es terco de un modo que a veces es virtud y a veces ceguera. Su contradicción: **cree que si trabaja bien el mundo lo premiará**, y Valdoria se encargará de enseñarle lo contrario sin llegar a quitarle del todo la fe. Nunca es cínico ni ingenuo del todo: es el *optimista terco* de la marca ([13](13-marca-e-identidad.md)).
 
@@ -104,11 +104,11 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | | |
 |---|---|
 | **Arquetipo** | El mentor ausente que resulta ser humano |
-| **Edad** | Unos 58 años 🟡 |
+| **Edad** | Unos 58 años ✅ |
 | **Rol** | Tío del protagonista; perito y topógrafo; el misterio de fondo |
 | **Aparece** | Nunca en persona hasta una posible continuación; en cintas, libreta y firma |
 
-**Trasfondo.** Hijo de mineros del Hollín, estudió en la Escuela de Minas con una beca y salió como perito de ensayo. Formó parte de la primera expedición a La Fosa tras el hallazgo de la Aetherita. Allí vio enfermar a su cuadrilla, lo documentó y lo grabó. Fue capturado por la Comisión del Éter, que le ofreció el trato descrito arriba. Murió oficialmente.
+**Trasfondo.** Hijo de mineros del Hollín, estudió en la Escuela de Minas con una beca y salió como perito de ensayo. Formó parte de la primera expedición a La Fosa tras el hallazgo de la Aetherita. Allí vio enfermar a su cuadrilla, lo documentó y lo grabó. Después calibró durante 18 años los límites de exposición para la Comisión, como ingeniero de calibración. Fue capturado por la Comisión del Éter, que le ofreció el trato descrito arriba. Murió oficialmente.
 
 **Personalidad.** Cariñoso, bromista, curioso, de los que le explican todo a un niño. Valiente al descubrir y frágil al decidir. Su contradicción: **quiere la verdad pública, pero no puede pagar su precio**.
 
@@ -124,7 +124,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 - "Si estás oyendo esto, la lámpara llegó a tus manos. Cuídala: se apaga rápido."
 - "Aprendí tarde que callar también es una forma de cobrar."
 
-**Acciones en el juego.** No juega, pero **habla**: las ocho cintas se encuentran en las zonas y cada una desbloquea una pieza de la verdad. La libreta guía las primeras misiones del Acto I. Su firma en el acta final es la última escena.
+**Acciones en el juego.** No juega, pero **habla**: las ocho cintas se encuentran a lo largo de la historia, se completan en el Acto IV y cada una desbloquea una pieza de la verdad; el contenido de cada una está en [21](21-pasado-de-valdoria.md) y en qué acto aparece cada una ⏳ F0-45 La libreta guía las primeras misiones del Acto I. Su firma en el acta final es la última escena.
 
 **Arco.** Del héroe ausente (I) a la sospecha (II y III), la verdad parcial (IV) y la pregunta final.
 
@@ -135,11 +135,11 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | | |
 |---|---|
 | **Arquetipo** | La prestamista bondadosa con filo (la aliada que traiciona) |
-| **Edad** | Unos 62 años 🟡 |
+| **Edad** | Unos 62 años ✅ |
 | **Rol** | Acreedora del protagonista y de Anselmo |
 | **Aparece** | Acto I, Villa Brasa |
 
-**Trasfondo 🟡.** Hija de mineras y viuda de un capataz. Montó su casa de préstamos con dinero que ella misma pidió a una facción mayor, y desde entonces **su propia deuda está en manos de otros**. Prestó a Anselmo para que pagara equipos de ensayo en La Fosa. Lo quería como a un hermano menor.
+**Trasfondo 🟡.** Hija de mineras y viuda de un capataz. Montó su casa de préstamos con dinero que ella misma pidió a una facción mayor, y desde entonces **su propia deuda está en manos de otros**. Prestó a Anselmo, hace unos 21 años ✅ y antes de la expedición, para que pagara equipos de ensayo en La Fosa. Lo quería como a un hermano menor.
 
 **Personalidad.** Cálida, generosa con el que está al lado y despiadada con la cuenta. Sabe que su amabilidad es parte de su negocio y también que, a veces, es de verdad. Su contradicción: **cuida a quien debe y a la vez es quien lo cobra**.
 
@@ -175,11 +175,11 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | | |
 |---|---|
 | **Arquetipo** | El viejo mentor con culpa |
-| **Edad** | Unos 64 años 🟡 |
+| **Edad** | Unos 64 años ✅ |
 | **Rol** | Minero veterano, amigo de Anselmo, mentor del tutorial |
 | **Aparece** | Acto I, la mina del Hollín |
 
-**Trasfondo 🟡.** Minero desde los 14 años. Estuvo en La Fosa con Anselmo y vio enfermar a compañeros. Firmó el silencio a cambio de una **pensión** para su esposa enferma, que luego murió. Hoy cobra esa pensión y la odia.
+**Trasfondo 🟡.** Minero desde los 14 años. Estuvo en La Fosa con Anselmo solo el primer mes (lo evacuaron con un brazo roto) ✅ y vio enfermar a compañeros. Firmó el silencio a cambio de una **pensión** para su esposa enferma, que luego murió. Hoy cobra esa pensión y la odia.
 
 **Personalidad.** Seco, paciente, honrado en lo pequeño y cobarde en lo grande, y lo sabe. Su contradicción: **enseña a otros a no tener miedo, pero él lo tuvo una vez y no se lo perdona**.
 
@@ -213,7 +213,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | | |
 |---|---|
 | **Arquetipo** | El funcionario corrupto metódico |
-| **Edad** | Unos 50 años 🟡 |
+| **Edad** | Unos 50 años ✅ |
 | **Rol** | Inspector de licencias del Ministerio en Villa Brasa |
 | **Aparece** | Acto I |
 
@@ -246,14 +246,14 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 
 **Conexiones.** Con **el Ministerio**, su jefe lejano; con **Casilda**, enemigos corteses; con **Lucía**, se evitan; con **Anselmo**, su certificado.
 
-**Secreto y pistas.** Guarda un archivo con todos los sobornos, como seguro de vida, y sabe que el certificado de Anselmo no tiene cuerpo.
+**Secreto y pistas.** Guarda un archivo con todos los sobornos, como seguro de vida, y sabe que el certificado de Anselmo no tiene registro de cremación.
 
 ## Lucía Montalvo
 
 | | |
 |---|---|
 | **Arquetipo** | La periodista ambigua |
-| **Edad** | Unos 32 años 🟡 |
+| **Edad** | Unos 32 años ✅ |
 | **Rol** | Periodista del Teletipo Meridiano; fuente de rumores |
 | **Aparece** | Acto I |
 
@@ -293,7 +293,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | | |
 |---|---|
 | **Arquetipo** | El rival privilegiado |
-| **Edad** | Unos 28 años 🟡 |
+| **Edad** | Unos 28 años ✅ |
 | **Rol** | Heredero del Consorcio Arvel; rival comerciante |
 | **Aparece** | Acto II |
 
@@ -330,11 +330,11 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | | |
 |---|---|
 | **Arquetipo** | La jefa criminal con código |
-| **Edad** | Unos 45 años 🟡 |
+| **Edad** | Unos 45 años ✅ |
 | **Rol** | Jefa de Los Faroleros |
 | **Aparece** | Acto II |
 
-**Trasfondo 🟡.** Hija y nieta de faroleros. De niña encendía los faroles del puerto. Vio cómo el Ministerio dejaba a oscuras los barrios que no pagaban y organizó a los suyos para **cobrar la luz** antes que el Estado. Hoy protege y extorsiona con la misma mano.
+**Trasfondo 🟡.** Hija y nieta de faroleros. De niña encendía los faroles del puerto. Vio cómo el Ministerio dejaba a oscuras los barrios que no pagaban tras la electrificación (hace 17 años ✅) y, a los 30 ✅, organizó a los suyos para **cobrar la luz** antes que el Estado ([21](21-pasado-de-valdoria.md)). Hoy protege y extorsiona con la misma mano.
 
 **Personalidad.** Tranquila, de pocas palabras y mirada larga. Pragmática y capaz de ternura con los suyos. Su contradicción: **protege al barrio cobrándole**.
 
@@ -367,7 +367,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | | |
 |---|---|
 | **Arquetipo** | El antagonista que cree salvar la nación |
-| **Edad** | Unos 60 años 🟡 |
+| **Edad** | Unos 60 años ✅ |
 | **Rol** | Ministro de Recursos; rostro del Estado; **enemigo claro** ✅ |
 | **Aparece** | Acto III |
 
@@ -410,8 +410,8 @@ Anselmo ── amistad rota ── Ministro Dueñas ── protege ── Esteba
 
 ## Pendiente
 
-- ❓ Nombre de la aldea del protagonista y detalles de su familia (F0-43).
+- ✅ Aldea del protagonista: **Vega Mansa**, sin región propia en el mapa; detalles de su familia en [21](21-pasado-de-valdoria.md).
 - ❓ Qué hace Esteban según cómo lo trates (aliado o enemigo) y cómo se refleja en el mercado.
-- ❓ Las tres variantes de Reme según quién esté detrás de ella (F0-44).
+- ⏳ F0-44 Las tres variantes de Reme según quién esté detrás de ella.
 - ❓ Fichas de personajes secundarios (capataces, clientes, empleados con nombre).
 - ❓ Diseño visual de cada ficha para los retratos finales (F4-190).

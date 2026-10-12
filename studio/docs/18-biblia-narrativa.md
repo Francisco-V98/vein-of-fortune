@@ -11,6 +11,7 @@ Es la guía de escritura de Veta de Fortuna: **cómo se nombra cada cosa, cómo 
 | [13 · Marca e identidad](13-marca-e-identidad.md) | Voz de la marca, tono por contexto y voz de los medios |
 | [05](05-mundo-y-minerales.md), [07](07-sociedad-y-eventos.md) | Mundo, minerales, facciones y medios |
 | [17 · Mapa de historia](17-mapa-de-historia.md) | Hitos de cada acto |
+| [21 · Pasado de Valdoria](21-pasado-de-valdoria.md) | **Fuente de las fechas** de lo que pasó antes del juego: cronología, edades, muerte pública de Anselmo, cintas, aldea y casas |
 
 ## Estructura de esta biblia ✅
 
@@ -26,7 +27,7 @@ El autor eligió una estructura **por entidades**, con el documento 19 como fuen
 | 6 · Glosario ES/EN | Cada término en español e inglés con su estado y las reglas de traducción |
 | Anexo · Cronología y bifurcaciones | Los cuatro actos con sus hitos y variantes |
 
-Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. Esas tareas (F0-43, F0-44, F0-45 y F0-46) **no se resuelven aquí**: la biblia deja el hueco señalado y no inventa su contenido.
+Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. F0-43 se resolvió en [21](21-pasado-de-valdoria.md). Las tareas F0-44, F0-45 y F0-46 **no se resuelven aquí**: la biblia deja el hueco señalado y no inventa su contenido.
 
 ---
 
@@ -100,7 +101,7 @@ La verdad (la Aetherita enferma a quien la extrae y la Comisión lo oculta) **se
 
 - **Una sombra por escena, como máximo.** Si el jugador se queda con una pregunta, funciona; con tres respuestas a medias, se nota el truco.
 - Las pistas de Anselmo y de la verdad ya están repartidas en la tabla «Pistas sembradas» de [19](19-elenco-a-fondo.md); esta biblia no las repite ni añade más.
-- Cómo se cuenta públicamente la muerte de Anselmo (fecha, causa y lugar) ⏳ F0-43
+- **Cómo se cuenta públicamente la muerte de Anselmo** 🟡: hace 2 años, a fines de invierno, de «tos de mina» (neumonía), en el Sanatorio de Cumbre Clara, cremado «por norma sanitaria» ✅ (confirmado por el autor, F0-43). Detalle en [21 · La muerte pública](21-pasado-de-valdoria.md).
 
 ### 1.5 Ministerio de Recursos ✅
 
@@ -119,8 +120,8 @@ La verdad (la Aetherita enferma a quien la extrae y la Comisión lo oculta) **se
 
 - Ambas palabras ya existen en el canon ([08](08-historia-y-personaje.md)). La separación entre las dos y su traducción (*tape* y *reel*, 6.11) son decisión del autor, F0-41.
 - Se evitan «casete», «disco» y «holotape»: la tecnología es de teletipos y válvulas.
-- Las **ocho cintas** (con la octava cortada) son una propuesta de [19](19-elenco-a-fondo.md), apartados «La verdad sobre Anselmo» y «Pistas sembradas» 🟡.
-- Cuántas cintas hay y la historia de cada una ⏳ F0-43
+- Las **ocho cintas** (con la octava cortada) vienen de [19](19-elenco-a-fondo.md), apartados «La verdad sobre Anselmo» y «Pistas sembradas», y la 7 y la 8 las confirmó el autor en F0-43 ✅. **Quién cortó la octava se deja abierto**: el jugador nunca lo sabe con certeza ✅.
+- La historia de cada cinta, con su fecha y el hecho que la respalda, está en [21 · Las ocho cintas](21-pasado-de-valdoria.md).
 - En qué acto aparece cada cinta ⏳ F0-45
 
 ### 1.7 El humor 🟡
@@ -326,8 +327,8 @@ Nombres definidos en [07](07-sociedad-y-eventos.md) y registrados en `studio/dat
 | **Prensa** ✅ | los medios | Tres medios con sesgos distintos (1.10) |
 
 - **La facción detrás de Reme** es el Consorcio Arvel, Los Faroleros o el Ministerio, según la partida ✅ ([08](08-historia-y-personaje.md)). Las escenas, los aliados y las consecuencias de cada una ⏳ F0-44
-- **Casas industriales** es el nombre de la categoría en [07](07-sociedad-y-eventos.md). Dentro del juego, la casa que se ve es el Consorcio Arvel. Si aparecen otras casas con nombre ⏳ F0-43
-- Orígenes de la Comisión, de los Faroleros y de la Unión ⏳ F0-43
+- **Casas industriales** es el nombre de la categoría en [07](07-sociedad-y-eventos.md). Dentro del juego, la casa que se ve es el Consorcio Arvel. La única otra casa con nombre es **Casa Ormeño** (plata y joyería, Puerto Meridiano): un nombre de ambiente que solo sale en noticias y glosario, sin zona ni jefe ✅ ([21](21-pasado-de-valdoria.md)). Talavera e Hijos y Fundiciones Soria están descartadas.
+- Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21 · Orígenes](21-pasado-de-valdoria.md): la Unión nace del derrumbe de Pozo Negro, la Comisión nace con el hallazgo de la Aetherita y los Faroleros pierden el oficio con la electrificación.
 - Los figurantes de cada facción (perito, guardia, capataz, delegado, cobrador…) están en el registro del mundo. Su voz sigue la de su facción.
 
 ---
@@ -348,10 +349,13 @@ Regiones y zonas en [05](05-mundo-y-minerales.md) y [02](02-extraccion.md); nomb
 | **Cavernas de Cristal** ✅ | Región y zona | III | Cuarzo y gemas, cuevas inestables; disputada entre todos |
 | **La Fosa / La Fosa del Éter** ✅ | Región militarizada; «La Fosa del Éter» es el nombre oficial de la zona de minado | IV | En el habla y los textos, «La Fosa». «La Fosa del Éter» en títulos de zona y documentos oficiales |
 | **Escuela de Minas** ✅ | Donde estudiaron Anselmo y Dueñas | Antes del juego | Solo se menciona; no se visita 🟡 |
+| **Vega Mansa** ✅ | Aldea agrícola de las tierras bajas del sur; la del protagonista | Antes del juego y Acto I | Solo se menciona; no se visita. Fuera de las seis regiones del mapa. Detalle en [21](21-pasado-de-valdoria.md) |
+| **Pozo Negro** ✅ | Pozo del Hollín donde ocurrió el derrumbe de hace 40 años | Antes del juego | Memoria de la Unión; no se visita |
+| **Sanatorio de Cumbre Clara** ✅ | Sanatorio de la Comisión en la Sierra Alta, donde murió Anselmo en público | Antes del juego | Solo se menciona; es el lugar de la versión pública |
 
 - Los lugares con significado se traducen al inglés; los nombres propios sin significado se mantienen. El detalle está en el capítulo 6 (6.4 y 6.5).
-- La aldea del protagonista y su familia ⏳ F0-43
-- La primera expedición a La Fosa y el descubrimiento de la Aetherita («hace unas décadas», [05](05-mundo-y-minerales.md)) ⏳ F0-43
+- **La aldea del protagonista** es **Vega Mansa** ✅; su padre, hermano de Anselmo, dejó el Hollín tras un derrumbe y juró que ningún hijo bajaría a una mina ([21](21-pasado-de-valdoria.md)).
+- **El descubrimiento de la Aetherita** fue hace unos 30 años y **la Primera Expedición a La Fosa**, hace 20 («hace unas décadas», [05](05-mundo-y-minerales.md)). Fechas y personas en [21](21-pasado-de-valdoria.md).
 
 ---
 
@@ -365,7 +369,7 @@ Regiones y zonas en [05](05-mundo-y-minerales.md) y [02](02-extraccion.md); nomb
 | **La libreta de Anselmo** ✅ | Guía las primeras misiones del Acto I ([19 · ficha de Anselmo](19-elenco-a-fondo.md), «Acciones en el juego») | Letra manuscrita, sin fecha de cierre en la última anotación |
 | **Las cintas y los carretes** ✅ | Grabaciones de Anselmo (1.6) | «Cinta» para la historia, «carrete» para el objeto |
 | **El acta de calibración** ✅ | Documento de la Comisión firmado por Anselmo; se revela al final del Acto IV (decisión del autor, F0-41) | Es la última escena de la historia. Sin discurso: una firma que el protagonista reconoce. Que sea «de hace pocas semanas» es propuesta de [19 · «La verdad sobre Anselmo»](19-elenco-a-fondo.md) 🟡 |
-| **El certificado de defunción** 🟡 | Papel con un sello irregular, sin cuerpo | Lo procesó Quiroga. Pista del Acto II ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
+| **El certificado de defunción** 🟡 | Papel con un sello irregular y **sin registro de cremación** | Lo procesó Quiroga. Pista del Acto II ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
 | **El abono anónimo** 🟡 | Pago misterioso a la deuda | Reme lo atribuye a «algún vecino bondadoso» ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
 | **La licencia, el puesto y la deuda** ✅ | La herencia del protagonista | Los tres se nombran siempre juntos en la primera mención 🟡 (misma marca en 6.11) |
 
@@ -394,9 +398,9 @@ Es la lista oficial de cómo se dice cada cosa en español y en inglés. **Cada 
 | Marca | Significado |
 |---|---|
 | ✅ decidido | Lo fijó el autor o ya está en otro documento. Se copia tal cual |
-| ⏳ F0-43 | Depende del pasado de Valdoria. No se traduce hasta que esa tarea lo defina |
+| 🟡 propuesta | Hoy no hay ninguna fila así. Un término nuevo entra con esta marca: el español se define en el documento de origen, el localizador propone el inglés y el autor lo confirma en lote |
 
-**Fuente de todo el capítulo ✅:** decisión del autor, F0-41 (2026-10-12), que confirmó todo el glosario propuesto, incluidas *the Pit*, *the Beacon*, *ether sickness* y *Ether Commission*. Las filas que citan otro documento (13, 07, 04) conservan esa fuente. Un término nuevo entra aquí como propuesta, con su marca de «sin confirmar», hasta que el autor lo apruebe.
+**Fuente de todo el capítulo ✅:** decisión del autor, F0-41 (2026-10-12), que confirmó todo el glosario propuesto, incluidas *the Pit*, *the Beacon*, *ether sickness* y *Ether Commission*. Las filas que citan otro documento (13, 07, 04) conservan esa fuente. Las siete filas que añadió F0-43 (Vega Mansa, la Primera Expedición, Casa Ormeño, Pozo Negro, Sanatorio de Cumbre Clara, secreto de Estado e ingeniero de calibración) las confirmó el autor el 2026-10-12. Un término nuevo entra aquí como propuesta, con su marca de «sin confirmar», hasta que el autor lo apruebe.
 
 - **Criterio del autor ✅:** «se traduce casi todo al inglés»: instituciones, grupos, estadísticas, medios y lugares con significado. Se mantienen **Valdoria**, los **nombres de personas** y **the Hollín**.
 - **Voz inglesa ✅** ([13](13-marca-e-identidad.md)): cercana, con «you» directo y frases cortas. **Inglés americano ✅** (*saltpeter*, *jewelry*, *color*), decisión del autor, F0-41.
@@ -482,9 +486,11 @@ Productos del taller (recetas del registro del mundo) ✅: Acero → *Steel*; Co
 | Escuela de Minas | School of Mines | ✅ | Donde estudiaron Anselmo y Dueñas. Es otra institución distinta del Ministry (1.5) |
 | la tienda | the shop | ✅ | La del protagonista. Nombre propio de la tienda: lo elige el jugador, no se traduce |
 | el puesto (en el mercado) | the stall | ✅ | Parte de la herencia (6.11) |
-| la aldea del protagonista | sin traducir | ⏳ F0-43 | Su nombre y su pasado se definen en F0-43 |
-| la primera expedición a La Fosa | sin traducir | ⏳ F0-43 | Cómo se llama y cuándo ocurrió, en F0-43 |
-| otras casas industriales con nombre | sin traducir | ⏳ F0-43 | Hoy solo existe el Consorcio Arvel |
+| Vega Mansa | Gentle Meadow | ✅ | La aldea del protagonista ([21](21-pasado-de-valdoria.md)). «Vega» = prado fértil de tierras bajas, «mansa» = apacible. Mismo criterio que *Ember Town*: lugar con significado, se traduce. Sin *the* (es aldea) |
+| la Primera Expedición | the First Expedition | ✅ | La primera expedición a La Fosa, hace 20 años. Con mayúsculas por ser un hito con nombre propio; *the* en minúscula en medio de frase |
+| Casa Ormeño | Ormeño House | ✅ | Casa industrial de ambiente: plata y joyería. «Ormeño» es un apellido y no se traduce (como *Arvel*). *House* sigue a *Industrial Houses* (6.6); se pospone para que suene a empresa y no a dinastía de fantasía. Sin *the* |
+| Pozo Negro | Black Shaft | ✅ | El derrumbe de hace 40 años, del que nace la Unión. Mina del Hollín: *shaft* es el término de mina. Se evita *Black Pit* para no chocar con *the Pit* (La Fosa). Sin *the*; el hecho: *the Black Shaft collapse* |
+| Sanatorio de Cumbre Clara | Clear Summit Sanatorium | ✅ | Dónde murió Anselmo en público. «Cumbre Clara» es el nombre del lugar, en la Sierra Alta (*the High Range*); se traduce como *Clear Summit*. *Sanatorium* es la forma americana habitual para este tipo de centro |
 
 ### 6.6 Facciones y subgrupos
 
@@ -616,7 +622,7 @@ Los 7 del registro del mundo ([02](02-extraccion.md), [09](09-minijuegos.md)). N
 | la cinta | the tape | ✅ | Pieza de historia: «You found a tape» (1.6). Nunca *cassette* ni *holotape*. Decisión del autor, F0-41 |
 | el carrete | the reel | ✅ | El objeto físico (1.6). Decisión del autor, F0-41 |
 | el acta de calibración | the calibration record | ✅ | Documento de la Comisión firmado por Anselmo |
-| el certificado de defunción | the death certificate | ✅ | Sello irregular, sin cuerpo |
+| el certificado de defunción | the death certificate | ✅ | Sello irregular, sin registro de cremación |
 | el abono anónimo | the anonymous payment | ✅ | Pago misterioso a la deuda |
 | la licencia · el puesto · la deuda | the license, the stall and the debt | ✅ | La herencia. La traducción está decidida; la regla de nombrarlos juntos en la primera mención es 🟡 (5.1) |
 | la cuota (de la deuda) | payment | ✅ | «No te angusties por la cuota» → *Don't fret over the payment* ([13](13-marca-e-identidad.md)) |
@@ -627,6 +633,7 @@ Los 7 del registro del mundo ([02](02-extraccion.md), [09](09-minijuegos.md)). N
 | el mercado negro | the black market | ✅ | |
 | el apagón · la huelga · el saqueo | blackout · strike · looting | ✅ | Eventos sociales ([07](07-sociedad-y-eventos.md)). *Strike* ✅ en 6.7 |
 | trámite · gestión · atención | procedure · processing · courtesy | ✅ | Los tres eufemismos de Quiroga. Nunca *bribe* |
+| secreto de Estado | state secret | ✅ | Lo que el Ministerio declara sobre la Aetherita ([21](21-pasado-de-valdoria.md)). Minúscula; traducción directa y de uso común |
 
 ### 6.12 Cargos, oficios y estatus
 
@@ -641,6 +648,7 @@ La escalera de estatus es provisional también en español ([07](07-sociedad-y-e
 | Magnate | Magnate | ✅ | Último escalón. Se escribe igual |
 | prestamista | moneylender | ✅ | Rol de Reme: *the local moneylender* |
 | perito de ensayo | assayer | ✅ | Oficio de Anselmo antes de la primera expedición |
+| ingeniero de calibración | calibration engineer | ✅ | Cargo de Anselmo para la Comisión después de la expedición ([21](21-pasado-de-valdoria.md)). Minúscula (es un oficio) y neutro en género. Va con *calibration record* (6.11) |
 | minero veterano | veteran miner | ✅ | Rol de Teo |
 | periodista | journalist | ✅ | Rol de Lucía |
 | heredero | heir | ✅ | Rol de Esteban |
@@ -686,7 +694,7 @@ Los cuatro actos tal como están en [17](17-mapa-de-historia.md) y `studio/data/
 | **IV · La cima** (La Fosa del Éter) | Decides qué hacer con la verdad y el poder | **3 salidas** ✅: **revelarla** (la Aetherita se desploma), **callarla** o **venderla** (moneda de poder). Teo muere, se reconcilia o se va según tus decisiones ✅. Epílogos de cada salida ⏳ F0-46 |
 
 - La cantidad de bifurcaciones grandes (acreedor del Acto II, alianza y destino de la Aetherita) es una propuesta 🟡 de [08](08-historia-y-personaje.md); el árbol completo de decisiones y consecuencias ⏳ F0-45
-- **Antes del Acto I.** Cronología de lo que pasó antes del juego (descubrimiento de la Aetherita, nacimiento de la Comisión, Faroleros, Unión y lo que hizo Anselmo) ⏳ F0-43. Lo único que hay hoy es la propuesta de [19](19-elenco-a-fondo.md): la primera expedición a La Fosa fue hace unos veinte años 🟡 ([19 · «La verdad sobre Anselmo»](19-elenco-a-fondo.md)).
+- **Antes del Acto I.** La cronología completa está en [21](21-pasado-de-valdoria.md). En resumen, hace 40 años el derrumbe de Pozo Negro (nace la Unión), hace 30 el hallazgo de la Aetherita, hace 27 nace la Comisión, hace 20 la Primera Expedición, hace 17 empieza la electrificación y hace 2 Anselmo es detenido y acepta el trato ✅.
 
 ### Dónde está Anselmo en cada acto ✅
 
@@ -695,7 +703,7 @@ Los cuatro actos tal como están en [17](17-mapa-de-historia.md) y `studio/data/
 | Acto | Cómo aparece | Qué sabe el jugador |
 |---|---|---|
 | **I** | La **libreta** guía las primeras misiones ✅; la **lámpara** es su recuerdo ✅; su **firma** está en los papeles de la herencia ✅ | Es el tío que desapareció y murió enfermo. Nada más |
-| **II y III** | Las pistas de [19 · «Pistas sembradas»](19-elenco-a-fondo.md): el certificado sin cuerpo, las evasivas de Teo, la letra de un muerto que oye Lucía. Cintas sueltas, repartidas «a lo largo del juego» ✅ ([08](08-historia-y-personaje.md)); en qué acto se encuentra cada una ⏳ F0-45 | Sospecha, no certeza |
+| **II y III** | Las pistas de [19 · «Pistas sembradas»](19-elenco-a-fondo.md): el certificado sin registro de cremación, las evasivas de Teo, la letra de un muerto que oye Lucía. Cintas sueltas, repartidas «a lo largo del juego» ✅ ([08](08-historia-y-personaje.md)); en qué acto se encuentra cada una ⏳ F0-45 | Sospecha, no certeza |
 | **IV** | Las cintas completas ✅ y, al final, el **acta de calibración** con su firma ✅ | Descubre que está vivo y que colaboró con la Comisión |
 
 La firma de los papeles de la herencia (Acto I) es lo que hace que el final funcione: el acta no explica nada, **solo se reconoce una firma que ya se había visto** ([19 · «La verdad sobre Anselmo»](19-elenco-a-fondo.md)).
@@ -706,8 +714,7 @@ En `story.json` y en el [17](17-mapa-de-historia.md) Anselmo aparece ya en la ce
 
 ## Pendiente
 
-- ⏳ F0-43 Pasado de Valdoria, de la Aetherita y de Anselmo; cuántas cintas hay y la historia de cada una; aldea del protagonista, primera expedición y otras casas industriales con nombre.
 - ⏳ F0-44 Las tres variantes del Acto II.
-- ⏳ F0-45 Árbol de decisiones y consecuencias; en qué acto aparece cada cinta.
+- ⏳ F0-45 Árbol de decisiones y consecuencias; en qué acto aparece cada cinta (las ocho están en [21](21-pasado-de-valdoria.md)).
 - ⏳ F0-46 Epílogos de las tres salidas del Acto IV.
 - ⏳ F1-18 Cifras finales del formato de diálogo y del nombre de la tienda, con la fuente real.

@@ -1,0 +1,150 @@
+{
+  "id": "F0-43",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el pasado de Valdoria y de la Aetherita con el flujo de especialistas.",
+      "ref": "rama studio/F0-43-pasado-de-valdoria"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "nota": "Tres cronologías: A el hallazgo del Ministerio, B la cuadrilla y la catástrofe, C el pacto con el Consorcio; recomienda A con injertos de B y C",
+        "por": "ideador",
+        "entrega": "Tres cronologías, recomendación, la muerte pública de Anselmo, las ocho cintas, dos aldeas, tres casas industriales y seis preguntas"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "analista",
+        "nota": "La cronología A encaja con los documentos 05, 07, 08, 18 y 19 salvo dos choques graves que se corrigen en producción",
+        "entrega": "Comprobación de edades, pistas, lugares y ⏳ F0-43, criterios de aceptación y seis preguntas",
+        "hallazgos": [
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "El Estado electrifica con Aetherita hace 22 años, antes de la primera expedición a La Fosa de hace 20: sin extracción previa no hay electrificación. Hay que mover la electrificación después de la expedición",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 21 y en los documentos 18 y 19"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Anselmo ya está enfermo hace 20 años pero denuncia hace 2: son 18 años enfermo mientras Teo solo tiene tos incipiente. Hay que decir que la exposición continua de la calibración es lo que lo agrava",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 21 y en los documentos 18 y 19"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Talavera, Soria y el Consorcio compiten por las mismas zonas de Sierra Alta y el Hollín; hay que reubicar o descartar las casas nuevas",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 21 y en los documentos 18 y 19"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Teo aparece como capataz pero el documento 19 lo llama minero veterano, y Reme es viuda de un capataz",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 21 y en los documentos 18 y 19"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "El certificado dice cremado pero la pista dice que no se encontró cuerpo: se reformula como sin registro de cremación",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 21 y en los documentos 18 y 19"
+          }
+        ]
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "El narrador escribió el documento 21 y el localizador tradujo los términos nuevos; el autor confirmó las cifras, Reme y Teo, la cinta 8 abierta y el glosario; la limpieza subió de 65 a 68 %",
+        "at": "2026-10-12",
+        "por": "narrador",
+        "entrega": "Documento 21 con la cronología, la tabla de edades, la muerte pública, las ocho cintas, Vega Mansa y las casas; los ⏳ F0-43 de la biblia resueltos"
+      },
+      {
+        "etapa": "qa",
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "qa",
+        "nota": "QA comprueba el build estricto, la coherencia, las edades y que no quede ningún ⏳ F0-43"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: tres cronologías posibles del pasado de Valdoria, la Aetherita, la Comisión, los Faroleros, la Unión y Anselmo",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Tres cronologías y una propuesta de muerte pública, cintas, aldea y casas industriales por comprobar",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Comprobación de la cronología A con dos choques graves y seis preguntas para el autor",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Escribir el documento del pasado de Valdoria con las decisiones del autor y cerrar los ⏳ F0-43",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Documento 21 y ⏳ F0-43 resueltos; faltan la traducción de los términos nuevos y la confirmación del autor de las cifras propuestas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "localizador",
+        "que": "Traducir al inglés los términos nuevos del documento 21 para el glosario",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "localizador",
+        "a": "coordinador",
+        "que": "Siete términos nuevos traducidos al inglés para el glosario",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 21 y los cambios en 18 y 19 antes de la revisión del autor",
+        "at": "2026-10-12"
+      }
+    ]
+  }
+}

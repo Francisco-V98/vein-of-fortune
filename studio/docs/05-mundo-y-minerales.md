@@ -50,7 +50,7 @@ Mínimo **10 minerales**, cada uno con lore, utilidad y necesidad dentro del jue
 | 7 | **Cuarzo** | Medio, clave tecnológica | Hace funcionar radios y teletipos. **El detector del jugador depende de él** |
 | 8 | **Esmeralda** | Lujo / volátil | Prestigio de la élite; el precio sigue las modas |
 | 9 | **Diamante** | Volátil | Herramientas de corte y lujo extremo |
-| 10 | **Aetherita** | Volátil / estratégico | Combustible casi milagroso, descubierto hace unas décadas en La Fosa. Peligroso, y nadie sabe bien qué es. Eje del misterio principal |
+| 10 | **Aetherita** | Volátil / estratégico | Combustible casi milagroso, descubierto hace unos 30 años en La Fosa (cronología en [21](21-pasado-de-valdoria.md)). Peligroso, y nadie sabe bien qué es. Eje del misterio principal |
 
 🟡 La lista y los lores son una propuesta aceptada en general; los detalles (por ejemplo quién demanda cada uno, precios base, cadena de refinado) se afinan en el diseño del mercado.
 

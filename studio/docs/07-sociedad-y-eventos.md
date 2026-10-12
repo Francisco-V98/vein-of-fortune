@@ -45,6 +45,8 @@ Pocas, claras, con efectos simples en el juego. Cada una tiene un medidor de rel
 | Organización criminal | **Los Faroleros**: nacieron como el gremio que encendía los faroles de los puertos y hoy "cobran la luz" (conecta con apagones y extorsión) |
 | Prensa | **El Heraldo Meridiano**, **La Voz del Hollín**, **Teletipo Meridiano** |
 
+Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21](21-pasado-de-valdoria.md). Casa Ormeño (plata y joyería, Puerto Meridiano) es la única otra casa industrial con nombre ✅: un nombre de ambiente para noticias y glosario, sin zona ni jefe.
+
 ### Medios de prensa ✅
 
 Tres medios con sesgos distintos, para que el jugador aprenda a **cruzar fuentes**:
