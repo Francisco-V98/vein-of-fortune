@@ -1,0 +1,131 @@
+{
+  "acts": [
+    {
+      "n": "I",
+      "title": "El recién llegado",
+      "color": "#e3b25c",
+      "place": "Villa Brasa · Cuenca del Hollín",
+      "time": "1,5–3 h",
+      "closes": "Reabres el puesto, pagas las primeras cuotas de la deuda y tienes tu primer contacto con los empleados.",
+      "tasks": ["F0-23", "F0-24", "F3-16", "F3-17", "F3-31", "F3-32", "F3-30"]
+    },
+    {
+      "n": "II",
+      "title": "Aprender las reglas",
+      "color": "#8fb0ba",
+      "place": "Cuenca del Hollín · Sierra Alta · Salares",
+      "time": "4–10 h",
+      "closes": "Eliges con qué facción te alías.",
+      "tasks": ["F4-127", "F4-128", "F4-179", "F4-134", "F4-71"]
+    },
+    {
+      "n": "III",
+      "title": "El ascenso",
+      "color": "#4fb6a5",
+      "place": "Puerto Meridiano · Cavernas de Cristal",
+      "time": "4–10 h",
+      "closes": "Te aceptan en el círculo de poder.",
+      "tasks": ["F4-135", "F4-136", "F4-180", "F4-141"]
+    },
+    {
+      "n": "IV",
+      "title": "La cima",
+      "color": "#c23b55",
+      "place": "La Fosa del Éter",
+      "time": "3–6 h",
+      "closes": "Decides qué hacer con la verdad de la Aetherita y con tu poder.",
+      "tasks": ["F4-142", "F4-181", "F4-148", "F4-151", "F4-149"]
+    }
+  ],
+  "after": "Después del Acto IV el juego sigue como sandbox: sucursales, mercados de otras ciudades y eventos de temporada.",
+  "lanes": [
+    {
+      "id": "narrativa",
+      "label": "Narrativa",
+      "glyph": "✎",
+      "cells": [
+        ["Llegas a Villa Brasa", "Heredas la licencia, el puesto y la deuda de tu tío Anselmo", "Teo te enseña el oficio y Reme te da tiempo para pagar", "Te llega la primera noticia de que necesitarás ayuda"],
+        ["Descubres que la política manda", "Se revela qué facción está detrás de Reme (varía por partida)", "Primera huelga grande", "Los Faroleros te ofrecen protección"],
+        ["Viajas a Puerto Meridiano y entras a la bolsa", "Dilemas morales: favores, sobornos, información", "Conoces al Ministro Dueñas"],
+        ["Encuentras las cintas de Anselmo", "Descubres el mal del éter y a la Comisión que lo oculta", "Revelar, callar o vender la verdad"]
+      ]
+    },
+    {
+      "id": "mecanicas",
+      "label": "Mecánicas que se desbloquean",
+      "glyph": "⚙",
+      "cells": [
+        ["Día de 3 bloques", "Escáner instantáneo", "Picado, Perforación y Regateo", "Tienda modesta y herramientas de nivel 1–2", "Primer contacto con empleados (aún no se pueden contratar)"],
+        ["Contratación de empleados y contratos por tiempo", "Cribado y Cincelado", "Taller y refinado", "Mercado negro con indicador de vigilancia"],
+        ["Detonación", "Rol de analista", "Contratos oficiales y a largo plazo", "Estilo de vida y cosméticos"],
+        ["Contención (Aetherita)", "Herramientas de nivel 5", "Automatización de minijuegos", "Capa de imperio"]
+      ]
+    },
+    {
+      "id": "mercado",
+      "label": "Mercado y eventos",
+      "glyph": "▲",
+      "cells": [
+        ["Información básica: precio y flecha", "Una noticia sencilla por día", "Sin eventos graves"],
+        ["Prensa con sesgos y rumores falsos", "Huelga, apagón y saqueo", "Los precios reaccionan a los eventos"],
+        ["Análisis y tabulador de valor justo", "Contratos y cuotas del Ministerio", "El mercado reacciona a la política"],
+        ["Secreto de Estado: la Aetherita es explosiva", "Si revelas la verdad, su precio se desploma"]
+      ]
+    },
+    {
+      "id": "zonas",
+      "label": "Zonas",
+      "glyph": "◭",
+      "cells": [
+        ["Galerías del Hollín"],
+        ["Cañón Ferroso", "Minas de Sierra Alta", "Salares del Litoral"],
+        ["Cavernas de Cristal"],
+        ["La Fosa del Éter"]
+      ]
+    },
+    {
+      "id": "minerales",
+      "label": "Minerales",
+      "glyph": "◆",
+      "cells": [
+        ["Carbón", "Hierro"],
+        ["Cobre", "Salitre", "Plata"],
+        ["Oro", "Cuarzo", "Esmeralda"],
+        ["Diamante", "Aetherita"]
+      ]
+    },
+    {
+      "id": "personajes",
+      "label": "Personajes",
+      "glyph": "☺",
+      "cells": [
+        ["Doña Reme", "El Viejo Teo", "Inspector Quiroga", "Lucía Montalvo"],
+        ["Esteban Arvel", "Casilda «la Faro»"],
+        ["Ministro Dueñas"],
+        ["Anselmo Vidal (en cintas)"]
+      ]
+    },
+    {
+      "id": "estatus",
+      "label": "Estatus",
+      "glyph": "↑",
+      "cells": [
+        ["Buscador", "Minero con licencia"],
+        ["Minero con licencia", "Comerciante"],
+        ["Comerciante", "Empresario"],
+        ["Empresario", "Magnate"]
+      ]
+    },
+    {
+      "id": "arte",
+      "label": "Arte necesario",
+      "glyph": "▣",
+      "cells": [
+        ["Villa Brasa", "Mina del Hollín", "Tienda (interior)", "4 retratos"],
+        ["3 zonas más", "Taller", "2 retratos", "Pantalla de contratos"],
+        ["Puerto Meridiano y la bolsa", "Cavernas de Cristal", "1 retrato"],
+        ["La Fosa", "Escenas de las cintas", "3 finales"]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "F0-22",
+  "history": [
+    {
+      "at": "2026-10-11",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el mapa de historia después de fusionar la presentación.",
+      "ref": "rama docs/F0-22-mapa-de-historia"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 17 y vista en el hub con los 4 actos y 8 carriles, con las decisiones del autor sobre zonas, empleados, mercado negro y duración.",
+      "ref": "rama docs/F0-22-mapa-de-historia"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Zonas bien repartidas. El Acto I cierra con el primer contacto con empleados y en el Acto II queda implementada la contratación. El mercado negro entra en el Acto II. La duración va en tiempo real y varía según cómo lo aborde el jugador. Quiero desglosar y definir mucho más la narrativa; siento la historia algo rara e inconclusa."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "El detalle de la narrativa no está cubierto: el roadmap solo tiene el guion y storyboard del Acto I y un guion por acto con 6 h cada uno. Queda anotado como pendiente en el documento 17 con ideas para el cierre. Las duraciones son orientativas y se calibran con el prototipo."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-11",
+      "type": "image",
+      "title": "Mapa de historia en el hub",
+      "path": "evidence/F0-22/mapa-de-historia.jpg"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "doc",
+      "title": "Documento 17 · Mapa de historia",
+      "path": "17-mapa-de-historia"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "file",
+      "title": "Datos del mapa",
+      "path": "data/story.json"
+    },
+    {
+      "at": "2026-10-11",
+      "type": "note",
+      "title": "Verificación",
+      "text": "11 filas, 4 actos y 21 enlaces a tareas válidos; sin errores en la consola; build en modo estricto correcto."
+    }
+  ]
+}
