@@ -64,21 +64,48 @@
       {
         "etapa": "produccion",
         "estado": "hecha",
-        "nota": "El narrador escribió el documento 22; limpieza 67 %, coherencia 70 %",
+        "nota": "Correcciones de QA aplicadas por el narrador; limpieza 66 %",
         "at": "2026-10-12",
         "por": "narrador",
         "entrega": "Documento 22 con las seis escenas ancla, la tabla de las tres variantes, la huelga, la alianza y la nota de coste; los ⏳ F0-44 resueltos"
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "qa",
-        "nota": "QA comprueba el build estricto, las marcas, la coherencia con el canon y las dependencias del documento 22"
+        "nota": "QA aprobó el build, el canon y las dependencias; las tres correcciones de la devolución las comprobó el coordinador con el build estricto (limpieza 66 %, coherencia 70 %)",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "La frase de las consecuencias pequeñas y distintas por variante, y dos frases mixtas de las escenas 249 y 275, llevan ✅ sin que el autor las decidiera",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 22"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El mercado negro es canon general del Acto II pero en las variantes del Consorcio y del Ministerio solo se abre por una escena opcional",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 22"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Las escenas A1, A4 y A5 se juegan siempre pero el criterio solo da por obligatorias las tres piezas únicas",
+            "resuelto_por": "narrador",
+            "como": "Corregido en el documento 22"
+          }
+        ],
+        "entrega": "Build estricto sin avisos, ⏳ válidos y canon intacto"
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "autor",
+        "nota": "El autor revisa el documento 22 y acuerda las variantes (criterio de cierre de la tarea)"
       },
       {
         "etapa": "playtest",
@@ -136,6 +163,25 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Revisar el documento 22 y los cambios en 06, 08, 17, 18, 19, 21 y story.json",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "narrador",
+        "que": "Devolución: bajar a 🟡 los ✅ sin respaldo, hacer obligatorio el primer contacto del mercado negro y alinear las escenas obligatorias",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Correcciones de la devolución de QA aplicadas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: documento 22 con las tres variantes del Acto II",
         "at": "2026-10-12"
       }
     ]

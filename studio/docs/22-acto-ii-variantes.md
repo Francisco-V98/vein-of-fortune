@@ -28,8 +28,10 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 | Alianza | Se elige entre **tres facciones**: Consorcio Arvel, Ministerio y Los Faroleros. **La Unión y Teo son un hilo, no una facción aliable** ✅ |
 | Reme y la alianza | Si te alías con la facción de Reme, **su correa se afloja, pero entras en su cadena**. Si te alías con otra, **ella paga un costo** ✅ |
 | Reme después | En el Acto III queda **distante pero atenta**; en el IV sigue siendo **tu mayor aliada** ✅ |
-| Huelga | La primera huelga grande **depende de ti**, con consecuencias **pequeñas y distintas por variante**. **Sube el precio del mineral en todas las partidas** y el **apagón posterior es común** ✅ |
+| Huelga | La primera huelga grande **depende de ti**. **Sube el precio del mineral en todas las partidas** y el **apagón posterior es común** ✅ |
 | Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión del Éter. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Dueñas es el enemigo claro, duro e inflexible ✅ |
+
+**No decidido por el autor 🟡.** Que la huelga tenga consecuencias pequeñas y distintas por variante es propuesta del narrador (sección 7). Tampoco está decidido dónde ocurre el primer contacto con el mercado negro en cada variante (sección 8).
 
 ---
 
@@ -42,25 +44,25 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 | A1 | **La política manda** | Común, con capa | Acto I cerrado (puesto reabierto y primeras cuotas pagadas) y primera zona del Acto II desbloqueada | Contacto respondido (aceptas, rechazas o pospones). Queda en cola la visita de A2 |
 | A2 | **La orden de Reme** | **Única** | A1 resuelta y tu próxima visita a Reme para pagar una cuota | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
 | A3 | **El primer conflicto** | **Única** | A2 resuelta y primera expedición o venta en la zona de tu variante | Conflicto resuelto, con un costo. La facción fija su postura ante la huelga |
-| A4 | **La primera huelga** | Común, con capa | A3 resuelta. El evento de huelga llega con aviso previo en las noticias | Bando elegido, precio subido, apagón vivido, Teo y la Unión movidos |
+| A4 | **La primera huelga** | Común, con capa | A3 resuelta. El evento de huelga llega con aviso previo en las noticias | Bando elegido, precio subido, apagón vivido, mercado negro abierto (primer contacto con Casilda, si aún no lo tenías), Teo y la Unión movidos |
 | A5 | **Las tres ofertas** | Común, con capa | A4 resuelta y estatus mínimo de Comerciante (umbral propuesto) | Alianza elegida. **Cierra el Acto II** |
 | A6 | **El cierre de Reme** | **Única** | Justo después de A5 | Costo o alivio de Reme, su silencio sobre el abono y el sobre sin remitente. Abre el Acto III |
 
 - El **orden** de A1 a A6 es fijo; el **ritmo** no. Entre una escena y otra el jugador comercia, mina y explora, como pide el modo historia.
-- A2, A3 y A6 son las **piezas únicas obligatorias**. A1, A4 y A5 también se juegan siempre, porque llevan el hito del acto.
-- El hito del Acto II es **elegir con qué facción te alías** ✅ ([17](17-mapa-de-historia.md)): lo cierra A5. A6 es la última pantalla del acto, no una condición para pasar al III.
+- **Regla de obligatoriedad 🟡.** Las seis anclas se juegan en toda partida, cada una al cumplirse su umbral: el disparador de cada escena es la anterior resuelta y A5 lleva el hito. Lo que separa a las tres **únicas** (A2, A3 y A6) de las tres **comunes** (A1, A4 y A5) no es poder saltarlas, sino que las únicas se escriben tres veces y las comunes una vez, con capa. Lo único que se puede saltar son las **opcionales** O1 a O4.
+- El hito del Acto II es **elegir con qué facción te alías** ✅ ([17](17-mapa-de-historia.md)). En este diseño lo cierra A5 🟡. A6 es la última pantalla del acto, no una condición para pasar al III.
 - **A1 común.** Los tres medios cuentan el mismo decreto, que abre las zonas del Acto II con la firma de Dueñas, y cada uno lo lee con su tono. La capa es el contacto de la facción.
 - **Una sombra por escena, como máximo** ([18](18-biblia-narrativa.md), 1.4): Teo y La Fosa en A4, el certificado de Quiroga en A5 y el sobre sin remitente en A6.
 
 ### Escenas opcionales 🟡
 
-Se activan por umbral y se pueden saltar. Si el jugador no vio antes a Esteban o a Casilda, A5 los presenta.
+Se activan por umbral y se pueden saltar. Si el jugador no conoció antes a Esteban, A5 lo presenta; Casilda ya apareció en A2 o en A4.
 
 | Opción | Qué es | Disparador | Capa por variante |
 |---|---|---|---|
 | O1 · Lo que vende Lucía | Descubres que vende información a más de una parte | Comprar tres rumores | A quién vende además: a Esteban, a Quiroga o a los informantes de Casilda |
 | O2 · Esteban gana un contrato | Esteban se queda con un contrato de hierro o de cobre | Rechazar o tardar en un contrato de esos minerales | Es central en la variante del Consorcio (A3); en las otras dos es de fondo |
-| O3 · Casilda abre la puerta de noche | Primer contacto del mercado negro con Casilda | Primer apagón, o la orden de A2 en la variante de Los Faroleros | Los modificadores de la sección 8 |
+| O3 · Casilda te cita de noche | Un primer trato de prueba con Casilda, ya con el mercado negro abierto. Es un camino extra, no el primer contacto | Mercado negro abierto (A2 o A4) y una visita nocturna | Igual en las tres. No cambia los modificadores de la sección 8, que rigen desde el primer contacto |
 | O4 · El certificado a solas | Quiroga, nervioso, deja caer el certificado de Anselmo | Primera visita a su oficina después de A2 | Igual en las tres. Si no ocurre, A5 siembra la pista |
 
 ---
@@ -74,7 +76,7 @@ Se activan por umbral y se pueden saltar. Si el jugador no vio antes a Esteban o
 | **A1** · contacto (capa) | **Esteban** te cita y ofrece «comprar tu deuda». No sabe que el Consorcio ya está en la cadena de Reme | **Quiroga** te cita para un «trámite»: tu licencia necesita revisión | Un **cobrador farolero** te espera a la salida del puesto: la luz «se paga» |
 | **A2** · la orden (única) | Reme pide **vender con exclusividad** al Consorcio. La orden la trae un **ejecutivo del Consorcio**, no Esteban | Reme pide **entregar tus cuentas** y **no vender a Los Faroleros** | Reme pide **pagar la «deuda de luz»** (una cuota extra) y **abrir el contacto del mercado negro** con Casilda |
 | **A3** · primer conflicto (única) | **Contratos de hierro y cobre** en Sierra Alta: Esteban te quita contratos mientras el Consorcio ofrece prima a cambio de la exclusividad | **Licencias e inspecciones** en Villa Brasa: revisión de tu licencia, el «trámite» de Quiroga y un rumor de cuotas ⏳ F4-74 | **Cobros en los Salares**: un cobrador y matones cobran la luz en cada viaje ⏳ F4-86 |
-| **A4** · huelga (capa) | El Consorcio quiere **romper la huelga** con guardias de empresa y se beneficia con su stock | El Ministerio declara la huelga irregular y **revisa licencias**; luego corta la luz | Casilda ofrece luz a los huelguistas y sus informantes anotan quién apoya |
+| **A4** · huelga (capa) | El Consorcio quiere **romper la huelga** con guardias de empresa y se beneficia con su stock. En el apagón, Casilda abre en persona la puerta de noche: **primer contacto con el mercado negro** 🟡 | El Ministerio declara la huelga irregular y **revisa licencias**; luego corta la luz. En el apagón, Casilda abre en persona la puerta de noche: **primer contacto con el mercado negro** 🟡 | Casilda ofrece luz a los huelguistas y sus informantes anotan quién apoya. El mercado negro ya está abierto desde A2 |
 | **A5** · ofertas (capa) | La oferta del Consorcio se presenta primero y trae la **compra de tu deuda** con una cláusula sobre la de Reme | La oferta del Ministerio se presenta primero, por **carta con sello y firma de Dueñas** que entrega Quiroga | La oferta de Casilda se presenta primero: **protección** en persona y una cláusula sobre la deuda de Reme |
 | **A6** · cierre (única) | Reme calla el abono: investigarlo lleva al **fondo reservado**. Si eliges otra facción, el Consorcio le retira el crédito | Reme calla el abono: es la **misma cadena**. Si eliges otra, el fondo de crédito le retira la línea | Reme calla el abono: los **informantes** vieron el giro. Si eliges otra, la caja común le cobra su parte |
 
@@ -146,7 +148,7 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 | **Quiroga** | Siembra la pista del certificado. Formal, de usted, todo es «trámite» | Vende licencias a quien paga; no da órdenes | Es la cara del Ministerio en A1 y A3 | Tregua cortés con Casilda; se aparta |
 | **Lucía** | Vende información a más de una parte | También a Esteban | También a Quiroga | También a los informantes de Casilda |
 | **Esteban** | Rival que quita contratos. No sabe qué financia el Consorcio. Dice «amigo» | Abre A1 y es el rostro de A3, pero **no da la orden** | Rival de fondo (O2) y oferta de A5 | Rival de fondo (O2) y oferta de A5 |
-| **Casilda** | Ofrece protección, vende luz en los apagones y abre el mercado negro | Aparece tras el apagón (O3) y en A5 | Aparece tras el apagón (O3) y en A5 | Actúa desde A1 por su cobrador; aparece en persona al final de A3 |
+| **Casilda** | Ofrece protección, vende luz en los apagones y abre el mercado negro | Aparece en el apagón de A4, donde abre el mercado negro, y en A5 | Aparece en el apagón de A4, donde abre el mercado negro, y en A5 | Actúa desde A1 por su cobrador; aparece en persona al final de A3 |
 | **Dueñas** | Ausente. Solo decretos y firma 🟡: el de zonas (A1), el corte de luz (A4) y la carta de A5. Sin retrato ni líneas | — | Firma además la revisión de licencias (A3) | — |
 | **Anselmo** | Solo rastro: el abono y el sobre sin remitente (A6) | — | — | — |
 
@@ -187,7 +189,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 | Ministerio | «El Ministerio informa que revisará licencias en Cañón Ferroso, pero el paro sigue.» | «Inspectores en la boca de la mina: ¿quién revisa al Ministerio?» | «MINISTERIO PREPARA CORTE DE LUZ EN EL HOLLÍN SI SIGUE EL PARO. SIN CONFIRMAR» |
 | Los Faroleros | «Incidentes aislados en el Litoral durante el paro, pero la autoridad los atiende.» | «Los Faroleros ofrecen luz a los huelguistas. La Unión duda.» | «CASILDA IBARRA TIENE GENERADORES LISTOS PARA EL HOLLÍN. SIN CONFIRMAR» |
 
-**El apagón** que sigue es común: el Ministerio lo decreta con la firma de Dueñas y Los Faroleros venden luz en él (sección 4). Su modelo y el generador ⏳ F4-78 y ⏳ F4-79
+**El apagón** que sigue es común: el Ministerio lo decreta con la firma de Dueñas y Los Faroleros venden luz en él (sección 4). En las variantes del Consorcio y del Ministerio, ahí mismo Casilda abre el mercado negro (sección 8). Su modelo y el generador ⏳ F4-78 y ⏳ F4-79
 
 ---
 
@@ -203,7 +205,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 | Ministerio | Carbón | Sensible a huelgas e invierno | Quiroga y las tasas del Ministerio |
 | Los Faroleros | Salitre | Sensible a Los Faroleros y a los puertos | Casilda, con la luz del apagón |
 
-**El mercado negro** se abre en las tres. En la variante de Los Faroleros lo abre la orden de A2, antes de la huelga; en las otras dos, Casilda después del primer apagón (O3). Hasta que eliges alianza, cada variante lo toca con un modificador pequeño; al elegir alianza se sustituye por el de la alianza ⏳ F4-133
+**El mercado negro** se abre en las tres, y su primer contacto ocurre siempre en una escena obligatoria 🟡. En la variante de Los Faroleros lo abre la orden de A2, antes de la huelga. En las del Consorcio y del Ministerio lo abre Casilda en persona durante el apagón de A4. O3 queda como camino extra y no es la puerta de entrada. Hasta que eliges alianza, cada variante lo toca con un modificador pequeño; al elegir alianza se sustituye por el de la alianza ⏳ F4-133
 
 | Variante | Prima del mercado negro | Vigilancia por operación |
 |---|---|---|
@@ -227,7 +229,7 @@ Los modificadores son 🟡 y no cambian los tramos del indicador (Tranquilo, Obs
 
 **Estado:** el reparto de facciones y la regla de Reme son decisión del autor (sección 1); lo que ofrece cada facción y lo que le cuesta a Reme es propuesta. Los efectos de cada alianza ⏳ F4-133
 
-**Las tres ofertas.** Las tres llegan siempre, en A5. La Unión y Teo no se ofrecen como alianza: son un hilo ✅
+**Las tres ofertas.** Las tres llegan siempre, en A5 🟡. La Unión y Teo no se ofrecen como alianza: son un hilo ✅ (sección 1)
 
 | Facción | Quién la trae | Forma de la oferta |
 |---|---|---|
@@ -246,7 +248,8 @@ La Unión no es aliable, pero su medidor se mueve: baja si te alías con el Cons
 | Los Faroleros | La caja común perdona la parte de Reme. Tu deuda de luz se suma a tu deuda | La caja común le cobra su parte y Casilda cobra la luz de su casa |
 
 - **Aviso antes de elegir.** Propuesta: A5 muestra una sola línea de Reme, sin cifras («Haz lo que te convenga, criatura. A mí me costará lo que me cueste»), y el costo exacto se ve en A6. Si el autor prefiere la sorpresa, se quita.
-- **Cómo suena Reme en A6.** Si te alías con su facción: «Respiro, criatura. Pero ahora estamos en la misma cadena.» Si te alías con otra: «Hiciste lo que te convenía. Lo mío lo pago yo.» No te reprocha nada, porque en el Acto IV será tu mayor aliada ✅
+- **Cómo suena Reme en A6.** Si te alías con su facción: «Respiro, criatura. Pero ahora estamos en la misma cadena.» Si te alías con otra: «Hiciste lo que te convenía. Lo mío lo pago yo.» Las dos líneas son propuesta 🟡.
+- **Sin reproche.** Propuesta 🟡: Reme no te reprocha nada en A6. Lo que es canon ✅ es que en el Acto IV será tu mayor aliada.
 - En el Acto III queda **distante pero atenta**, sin atreverse a ayudar abiertamente ✅ ([19](19-elenco-a-fondo.md)).
 
 ---
@@ -272,7 +275,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 
 **Estado:** el hito y la actitud de Reme en el Acto III y el IV son decisión del autor; las pruebas por variante son una ampliación de canon propuesta.
 
-- El Acto II se cierra al elegir alianza (A5) ✅. Los umbrales exactos ⏳ F0-47
+- El Acto II se cierra al elegir alianza ✅. En este diseño lo lleva la escena A5 🟡. Los umbrales exactos ⏳ F0-47
 - **Reme.** Traiciona por obligación en A2 ✅, queda distante pero atenta en el Acto III ✅ y es tu mayor aliada en el IV ✅.
 - **Las pruebas del Acto IV.** Los comprobantes del abono son comunes ([19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md)) y no cambian. Propuesta de ampliación, sin tocar la sección 6 de [21](21-pasado-de-valdoria.md): además entrega una prueba propia de su variante ⏳ F0-45 y ⏳ F0-46
 
@@ -292,13 +295,13 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 |---|---|---|---|
 | Escenas únicas (A2, A3 y A6, por tres variantes) | 9 | 108 cajas | ⏳ F4-129, F4-130 y F4-131 (guion); ⏳ F4-179 (textos) |
 | Escenas comunes (A1, A4 y A5) | 3 | 42 cajas | ⏳ F4-128, F4-132 y F4-133 |
-| Capas (A1, A4 y A5, por tres variantes) | 9 | 36 cajas, 15 titulares y 3 etiquetas de precio | ⏳ F4-179 |
-| **Obligatorio** | **21** | **≈ 204 textos (≈ 3.000 palabras)** | |
+| Capas (A1, A4 y A5, por tres variantes) | 9 | 40 cajas (36 de la capa y 4 del primer contacto con el mercado negro en A4), 15 titulares y 3 etiquetas de precio | ⏳ F4-179 |
+| **Obligatorio** (las seis anclas, sección 2) | **21** | **≈ 208 textos (≈ 3.100 palabras)** | |
 | Escenas opcionales (O1 a O4) | 4 | ≈ 56 textos | ⏳ F4-179 |
 | Pistas del Acto I | 3 | ≈ 6 textos | ⏳ F0-23 y F3-16 |
 
-- **Frente a tres actos paralelos.** Serían 18 escenas completas (≈ 234 textos). El ahorro en texto es modesto (≈ 13 %); la ganancia grande es en guion, arte y pruebas, porque la columna común se escribe y se prueba una vez.
-- **F4-179** (6 h) cubre ≈ 204 textos solo si el ritmo es de unos 35 por hora; con los opcionales queda justa. Conviene revisarla al empezar F4-128.
+- **Frente a tres actos paralelos.** Serían 18 escenas completas (≈ 238 textos, con el mismo primer contacto con el mercado negro). El ahorro en texto es modesto (≈ 13 %); la ganancia grande es en guion, arte y pruebas, porque la columna común se escribe y se prueba una vez.
+- **F4-179** (6 h) cubre ≈ 208 textos solo si el ritmo es de unos 35 por hora; con los opcionales queda justa. Conviene revisarla al empezar F4-128.
 - **Traducciones.** El inglés suma el mismo número de textos. El Acto I tiene su tarea (F3-30), pero **no hay una tarea de traducción del Acto II**; el flujo y el glosario son ⏳ F1-20
 - **Arte.** El Acto II ya tiene sus dos retratos (Esteban y Casilda), sin nuevos retratos. Las tres pistas del Acto I son props pequeños ⏳ F4-134
 - **Pruebas.** Hay 81 caminos (3 variantes × 3 respuestas a la orden × 3 bandos en la huelga × 3 alianzas). Se recorren forzando la variante desde la consola ⏳ F1-23
@@ -329,11 +332,11 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 | Papel de cada personaje por variante | Sí | Sección 6 |
 | La orden de Reme duele igual y Reme no alza la voz | Sí | Sección 5 |
 | Huelga que depende del jugador, con consecuencias por variante | Sí | Sección 7 |
-| Luz cortada, luz de Casilda y mercado negro como canon general | Sí | Secciones 4 y 8 |
+| Luz cortada, luz de Casilda y mercado negro como canon general | Sí: el primer contacto es obligatorio en las tres variantes | Secciones 3, 4 y 8 |
 | Contratos oficiales y cuotas anticipados solo como rumor | Sí | Sección 8 |
 | Alianza final y costo para Reme | Sí | Sección 9 |
 | Sorteo oculto y pistas del Acto I | Sí | Sección 10 |
 | Pruebas del Acto IV como ampliación sin tocar el 21 | Sí | Sección 11 |
 | Dueñas solo en decretos y firma; sin mal del éter ni cintas | Sí | Secciones 6 y 7 |
-| Escenas por umbral; solo las tres piezas únicas son obligatorias | Sí | Sección 2 |
+| Escenas por umbral; solo las tres piezas únicas son obligatorias | Con matiz 🟡 | Sección 2: las seis anclas se juegan por umbral, porque cada una dispara la siguiente y A5 lleva el hito; solo O1 a O4 se pueden saltar. Pregunta para el autor |
 | Nota de coste para F4-128, F4-179 y traducciones | Sí | Sección 12 |
