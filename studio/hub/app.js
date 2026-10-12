@@ -271,7 +271,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('mapa', 'Mapa de historia', '⌖') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('mapa', 'Mapa de historia', '⌖') + link('limpieza', 'Limpieza del diseño', '◌') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -362,11 +362,48 @@
     });
     h += '</div>';
 
-    h += '<h2 class="section-title">Estado del diseño <small>✅ acordado · 🟡 propuesta · ❓ abierto</small></h2><div class="table-wrap"><table><thead><tr><th>Documento</th><th class="num-cell">✅</th><th class="num-cell">🟡</th><th class="num-cell">❓</th></tr></thead><tbody>';
-    H.docs.forEach(function (d) {
-      h += '<tr><td><a href="#/docs/' + d.id + '">' + esc(d.title) + '</a></td><td class="num-cell">' + d.counts.ok + '</td><td class="num-cell">' + d.counts.prop + '</td><td class="num-cell">' + d.counts.open + '</td></tr>';
+    h += '<h2 class="section-title">Limpieza del diseño <small>✅ acordado ÷ (✅ + 🟡 + ❓) · meta ' + H.cleanliness.target + ' %</small></h2>' + cleanTable(H.docs.slice().sort(function (a, b) { return cleanSort(a) - cleanSort(b); }).slice(0, 8)) + '<p class="clean-more"><a href="#/limpieza">Ver todos los documentos y los puntos abiertos →</a></p>';
+    return h;
+  }
+
+  /* ---------- limpieza del diseño ---------- */
+  function cleanSort(d) { return d.clean.pct === null ? 101 : d.clean.pct; }
+  function cleanLevel(p) { return p === null ? 'na' : p >= H.cleanliness.target ? 'good' : p >= 60 ? 'mid' : 'low'; }
+  function cleanChip(d) {
+    var p = d.clean.pct;
+    return '<span class="chip clean-chip ' + cleanLevel(p) + '" title="✅ ÷ (✅ + 🟡 + ❓). Meta ' + H.cleanliness.target + ' %">Limpieza ' + (p === null ? 'n/a' : p + ' %') + '</span>';
+  }
+  function cleanBar(p) {
+    return '<span class="cln-bar ' + cleanLevel(p) + '" role="img" aria-label="Limpieza ' + (p === null ? 'no aplica' : p + ' por ciento') + '"><i style="width:' + (p || 0) + '%"></i><b style="left:' + H.cleanliness.target + '%"></b></span>';
+  }
+  function cleanTable(docs) {
+    var h = '<div class="table-wrap"><table><thead><tr><th>Documento</th><th>Limpieza</th><th class="num-cell">✅</th><th class="num-cell">🟡</th><th class="num-cell">❓</th><th class="num-cell">⏳</th></tr></thead><tbody>';
+    docs.forEach(function (d) {
+      var p = d.clean.pct;
+      h += '<tr><td><a href="#/docs/' + d.id + '">' + esc(d.title) + '</a></td><td class="cln-cell">' + cleanBar(p) + '<span class="cln-pct">' + (p === null ? 'n/a' : p + ' %') + '</span></td><td class="num-cell">' + d.counts.ok + '</td><td class="num-cell">' + d.counts.prop + '</td><td class="num-cell">' + d.counts.open + '</td><td class="num-cell">' + d.clean.wait + '</td></tr>';
     });
-    h += '</tbody></table></div>';
+    return h + '</tbody></table></div>';
+  }
+  function viewClean() {
+    var c = H.cleanliness;
+    var docs = H.docs.slice().sort(function (a, b) { return cleanSort(a) - cleanSort(b); });
+    var pending = docs.filter(function (d) { return d.clean.pct !== null && d.clean.pct < c.target; }).length;
+    var h = '<p class="eyebrow">Calidad</p><h1 class="page-title">Limpieza del diseño</h1><p class="page-lead">Todo debe quedar <strong>✅ acordado</strong>, sin ambigüedades. Lo que depende de algo posterior se marca <strong>⏳ con la tarea de la que depende</strong> y no resta. Cada documento se mide como ✅ ÷ (✅ + 🟡 + ❓): la meta es acercarse al 100 % y, como referencia mínima, ' + c.target + ' %. Además se comprueba que todo conecte: enlaces entre documentos y tareas citadas.</p>';
+    h += '<div class="cln-summary"><div class="ring" style="--p:' + (c.pct || 0) + '"><b>' + (c.pct === null ? '—' : c.pct + '%') + '</b><span>del diseño</span></div><div class="st-grid">' +
+      '<div class="st-card"><small>✅ Acordado</small><b>' + c.ok + '</b><span>puntos cerrados</span></div>' +
+      '<div class="st-card"><small>🟡 + ❓ Por cerrar</small><b>' + (c.prop + c.open) + '</b><span>' + c.prop + ' propuestas · ' + c.open + ' abiertos</span></div>' +
+      '<div class="st-card"><small>⏳ Diferido</small><b>' + c.wait + '</b><span>depende de una tarea posterior</span></div>' +
+      '<div class="st-card"><small>Conexiones rotas</small><b>' + c.problems + '</b><span>' + (c.problems ? 'hay que corregirlas' : 'todo conecta') + '</span></div></div></div>';
+    h += '<h2 class="section-title">Por documento <small>' + pending + ' por debajo de la meta</small></h2>' + cleanTable(docs);
+    h += '<h2 class="section-title">Puntos por cerrar</h2><p class="page-lead">Cada punto 🟡 u ❓ es algo por confirmar con el autor o por decidir. Se atienden en pasadas de cierre por documento.</p>';
+    docs.forEach(function (d) {
+      if (!d.clean.items.length && !d.clean.problems.length) return;
+      h += '<details class="cln-doc"><summary><span class="cln-name">' + esc(d.title) + '</span>' + cleanChip(d) + '<small>' + d.clean.items.length + ' punto(s)' + (d.clean.problems.length ? ' · ' + d.clean.problems.length + ' conexión(es) rota(s)' : '') + '</small></summary>';
+      if (d.clean.problems.length) h += '<ul class="cln-problems">' + d.clean.problems.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+      h += '<ul class="cln-items">' + d.clean.items.map(function (it) {
+        return '<li><span class="cln-k">' + it.kinds.map(function (k) { return k === 'prop' ? '🟡' : k === 'open' ? '❓' : '⏳'; }).join('') + '</span><span><small>' + esc(it.heading) + ' · línea ' + it.line + '</small><br>' + esc(it.text) + '</span></li>';
+      }).join('') + '</ul></details>';
+    });
     return h;
   }
 
@@ -986,7 +1023,7 @@
     if (!d) return '<div class="notice">No existe el documento «' + esc(id) + '».</div>';
     var r = mdToHtml(d.md);
     var h = '<div class="doc-layout"><article class="prose">';
-    h += '<div class="doc-meta"><span class="chip">' + esc(d.group) + '</span><span class="chip" title="Acordado">✅ ' + d.counts.ok + '</span><span class="chip" title="Propuesta">🟡 ' + d.counts.prop + '</span><span class="chip" title="Abierto">❓ ' + d.counts.open + '</span><a class="chip" href="../docs/' + (d.id.indexOf('adr-') === 0 ? 'adr/' + esc(d.id.slice(4)) : esc(d.id)) + '.md" target="_blank" rel="noopener">Abrir archivo .md</a></div>';
+    h += '<div class="doc-meta"><span class="chip">' + esc(d.group) + '</span>' + cleanChip(d) + '<span class="chip" title="Acordado">✅ ' + d.counts.ok + '</span><span class="chip" title="Propuesta">🟡 ' + d.counts.prop + '</span><span class="chip" title="Abierto">❓ ' + d.counts.open + '</span><a class="chip" href="../docs/' + (d.id.indexOf('adr-') === 0 ? 'adr/' + esc(d.id.slice(4)) : esc(d.id)) + '.md" target="_blank" rel="noopener">Abrir archivo .md</a></div>';
     h += r.html + '</article>';
     h += '<nav class="toc" aria-label="En este documento"><div class="toc-title">En este documento</div>' +
       r.toc.map(function (t) { return '<a class="l' + t.level + '" href="#/docs/' + d.id + '?h=' + t.id + '">' + esc(t.text) + '</a>'; }).join('') + '</nav></div>';
@@ -1128,6 +1165,7 @@
       case 'qa': html = viewQA(); title += ' · QA'; break;
       case 'juego': html = viewGame(); title += ' · El juego'; break;
       case 'mapa': html = viewStory(); title += ' · Mapa de historia'; break;
+      case 'limpieza': html = viewClean(); title += ' · Limpieza del diseño'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
       case 'sonido': html = viewSound(); title += ' · Sonido'; break;

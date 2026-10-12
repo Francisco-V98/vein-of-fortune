@@ -412,6 +412,26 @@ details.case p { margin: 4px 0 0; font-size: 14px; }
 .st-after { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
 @media (max-width: 860px) { .st-lab { position: static; } }
 
+/* Limpieza del diseño */
+.cln-bar { position: relative; display: inline-block; width: 150px; height: 9px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line-2); vertical-align: middle; }
+.cln-bar i { position: absolute; left: 0; top: -1px; bottom: -1px; border-radius: 999px; background: var(--c, var(--muted)); }
+.cln-bar b { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--text); opacity: 0.55; }
+.cln-bar.good { --c: #4fb6a5; } .cln-bar.mid { --c: #e3b25c; } .cln-bar.low { --c: #c23b55; } .cln-bar.na { --c: var(--muted); }
+.cln-cell { white-space: nowrap; }
+.cln-pct { margin-left: 10px; font-family: var(--mono); font-size: 12.5px; }
+.clean-chip.good { border-color: #4fb6a5; color: #4fb6a5; } .clean-chip.mid { border-color: #e3b25c; color: #e3b25c; } .clean-chip.low { border-color: #c23b55; color: #ef8da0; }
+.clean-more { margin: 10px 0 0; font-size: 14px; }
+.cln-summary { display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; margin: 6px 0 22px; }
+.cln-summary .ring { --acc: #e3b25c; }
+.cln-doc { margin: 8px 0; background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--radius); }
+.cln-doc summary { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; padding: 10px 14px; cursor: pointer; }
+.cln-name { font-weight: 600; }
+.cln-doc small { color: var(--muted); }
+.cln-items, .cln-problems { list-style: none; margin: 0; padding: 4px 14px 12px; display: grid; gap: 8px; font-size: 13.5px; }
+.cln-items li { display: grid; grid-template-columns: 34px 1fr; gap: 8px; border-top: 1px solid var(--line); padding-top: 8px; }
+.cln-problems li { color: #ef8da0; }
+@media (max-width: 860px) { .cln-summary { grid-template-columns: 1fr; } .cln-bar { width: 90px; } }
+
 /* Presentación del juego */
 main.is-deck { padding: 0; max-width: none; }
 .deck-wrap { position: relative; height: calc(100vh - 57px); display: flex; flex-direction: column; background: var(--bg); }
