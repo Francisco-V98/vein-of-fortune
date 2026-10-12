@@ -128,9 +128,15 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 
 | Hoja | Contenido |
 |---|---|
-| **Modelo** | Cuerpo entero y pose estática: de frente, de espalda, de ambos lados y en tres cuartos |
-| **Expresiones** | Seis, **iguales para todos**: la **por defecto** según su personalidad, feliz, triste, enojado, asustado y cansado |
-| **Poses** | Estático, caminando (ciclo de 4 fotogramas de lado, más de frente y de espalda) y gestos al hablar |
+| **Modelo** | **Chibi pixel art** como el sprite del ministro: cuerpo entero y pose estática, de frente, tres cuartos, ambos lados y espalda |
+| **Expresiones** | **Estilo detallado** como los retratos de diálogo. Seis, **iguales para todos**: la **por defecto** según su personalidad, feliz, triste (llorando), enojo, susto y cansancio (bostezando, no triste) |
+| **Poses** | **Chibi pixel art** de cuerpo entero: estático, caminando (ciclo de 4 fotogramas de lado, más de frente y de espalda) y gestos al hablar |
+
+**Orden de producción ✅:** de cada personaje se hace primero la **hoja de modelo**, que **define la estética completa** (rasgos, colores, tamaño de píxel y proporciones). Después se hace la hoja de **poses usando la de modelo como única referencia**, para que sea el mismo diseño. Las **expresiones** se hacen en estilo detallado a partir del retrato y del modelo. Una hoja no se da por buena hasta que el autor la aprueba.
+
+**Estética chibi de referencia ✅:** el sprite del ministro (`ministro-corregido.png`). Todos los personajes del modelo y las poses llevan esa estética: píxeles grandes y claramente visibles (cada personaje de unos 100 píxeles de alto), colores planos con 2 a 3 tonos por material, sombreado simple de bordes duros, contorno negro grueso, **sin textura fina, sin hebras de pelo y sin degradados**, ojos grandes y sencillos con un solo punto de brillo, boca pequeña, cabeza de cerca del 40 % de la altura y cuerpo compacto. El modelo y las poses de un mismo personaje tienen las mismas proporciones.
+
+**Expresiones ✅:** las seis tienen los mismos gestos para todos, sutiles y legibles. El **cansancio** es discreto (párpados pesados, ojeras leves, boca relajada), no exagerado y distinto de triste.
 
 **Hojas de NPC:** una por tipo (frente, espalda, un lado y dos expresiones). Los 35 tipos están en el registro del mundo (`studio/data/world.json`): Ministerio, Comisión del Éter, Consorcio Arvel, Unión, Los Faroleros, prensa, empleados, civiles, enemigos humanos y criaturas de La Fosa. Los jefes de zona quedan diferidos (⏳ F0-69).
 
