@@ -150,7 +150,7 @@ Paleta fría con **vinotinto** como acento principal y **latón** como detalle m
 | Nombre y esencia | ✅ elegido | F0-18 |
 | Documento de marca | 🟡 en revisión | F0-19 |
 | Guía visual (tipografía, usos) | 🟡 en revisión | F0-20 |
-| Wordmark provisional | ❓ pendiente | F0-21 |
+| Wordmark provisional | 🟡 en revisión (`studio/assets-ref/marca/`) | F0-21 |
 | Logo definitivo | ❓ pendiente | F3-28 |
 | Ícono y pantalla de título | ❓ pendiente | F3-29 |
 | Arte clave y capturas de tienda ES/EN | ❓ pendiente | F5-43 y F5-35 |

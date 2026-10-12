@@ -1,0 +1,42 @@
+{
+  "id": "F0-21",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se generan dos variantes del wordmark por idioma con la lámpara y la veta vinotinta.",
+      "ref": "rama studio/F0-21-wordmark-provisional"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Wordmark provisional en español e inglés guardado en studio.",
+      "ref": "rama studio/F0-21-wordmark-provisional"
+    }
+  ],
+  "comments": [
+    {
+      "at": "2026-10-12",
+      "by": "claude",
+      "text": "Dos wordmarks provisionales en pixel art, uno por idioma: la lámpara de minero a la izquierda y el título en letras hielo con contorno negro, con una veta vinotinta que recorre las letras. De cuatro candidatas se eligieron las que mejor se leen; para que el símbolo sea el mismo en los dos idiomas, la lámpara de la versión en inglés se sustituyó por la de la versión en español (retoque a mano, sin gasto extra). Es provisional: el logo definitivo con tipografía propia es F3-28. Coste: 4 créditos."
+    }
+  ],
+  "evidence": [
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Wordmark provisional · Veta de Fortuna",
+      "path": "evidence/F0-21/wordmark-es.jpg"
+    },
+    {
+      "at": "2026-10-12",
+      "type": "image",
+      "title": "Wordmark provisional · Vein of Fortune",
+      "path": "evidence/F0-21/wordmark-en.jpg"
+    }
+  ]
+}
