@@ -32,6 +32,14 @@
       "by": "claude",
       "note": "Las dos hojas se rehicieron con la del Consorcio como referencia de estilo y proporciones.",
       "ref": "rama studio/F0-64-npc-ministerio-comision-y-consorcio"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las tres hojas de NPC del Ministerio, la Comisión del Éter y el Consorcio.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
