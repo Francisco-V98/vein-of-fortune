@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Modelos aprobados; poses y expresiones de los cuatro generadas y corregidas.",
       "ref": "rama studio/F0-62-hojas-del-elenco-secundario"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las doce hojas de Anselmo, Teo, Quiroga y Lucía.",
+      "ref": "aprobación del autor en la conversación"
     }
   ],
   "comments": [
