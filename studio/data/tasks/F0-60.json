@@ -48,6 +48,22 @@
       "by": "claude",
       "note": "Modelo y poses rehechos con píxeles grandes y colores planos; cansancio suavizado.",
       "ref": "rama studio/F0-60-piloto-hojas-de-reme"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "review",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor aprobó el modelo y las expresiones y pide que las poses salgan de la hoja de modelo.",
+      "ref": "rama studio/F0-60-piloto-hojas-de-reme"
+    },
+    {
+      "at": "2026-10-11",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Poses rehechas usando la hoja de modelo como única referencia.",
+      "ref": "rama studio/F0-60-piloto-hojas-de-reme"
     }
   ],
   "comments": [
@@ -75,6 +91,16 @@
       "at": "2026-10-11",
       "by": "claude",
       "text": "Tercera ronda: modelo y poses rehechos con la estética del ministro (píxeles grandes, colores planos, sin textura fina) y el panel de cansancio suavizado, el resto de las expresiones idénticas. Las poses quedan algo más finas de píxel que el modelo; si prefieres el mismo tamaño de píxel en ambas, se ajusta en la siguiente hoja. Coste de esta ronda: 3 créditos."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "autor",
+      "text": "Me gustaron las expresiones y la hoja de modelo. Las poses no se parecen tanto al modelo: la idea es partir de la hoja de modelo y hacer las poses con ella como referencia, igual para todos los demás, porque el modelo define la estética completa."
+    },
+    {
+      "at": "2026-10-11",
+      "by": "claude",
+      "text": "Cuarta ronda (1 crédito): las poses se generaron con la hoja de modelo como única referencia. Queda fijado en el documento 12 el orden de producción: modelo, luego poses desde el modelo, y expresiones en estilo detallado."
     }
   ],
   "evidence": [
