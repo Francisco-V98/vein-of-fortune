@@ -271,7 +271,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('mapa', 'Mapa de historia', '⌖') + link('limpieza', 'Limpieza del diseño', '◌') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('mapa', 'Mapa de historia', '⌖') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -362,7 +362,7 @@
     });
     h += '</div>';
 
-    h += '<h2 class="section-title">Limpieza del diseño <small>✅ acordado ÷ (✅ + 🟡 + ❓) · meta ' + H.cleanliness.target + ' %</small></h2>' + cleanTable(H.docs.slice().sort(function (a, b) { return cleanSort(a) - cleanSort(b); }).slice(0, 8)) + '<p class="clean-more"><a href="#/limpieza">Ver todos los documentos y los puntos abiertos →</a></p>';
+    h += '<h2 class="section-title">Limpieza del diseño <small>✅ acordado ÷ (✅ + 🟡 + ❓) · meta ' + H.cleanliness.target + ' %</small></h2>' + cleanTable(H.docs.slice().sort(function (a, b) { return cleanSort(a) - cleanSort(b); }).slice(0, 8)) + '<p class="clean-more"><a href="#/limpieza">Ver todos los documentos y los puntos abiertos →</a> · Coherencia con el registro del mundo: <strong>' + H.coherence.pct + ' %</strong> <a href="#/coherencia">Ver hallazgos →</a></p>';
     return h;
   }
 
@@ -403,6 +403,39 @@
       h += '<ul class="cln-items">' + d.clean.items.map(function (it) {
         return '<li><span class="cln-k">' + it.kinds.map(function (k) { return k === 'prop' ? '🟡' : k === 'open' ? '❓' : '⏳'; }).join('') + '</span><span><small>' + esc(it.heading) + ' · línea ' + it.line + '</small><br>' + esc(it.text) + '</span></li>';
       }).join('') + '</ul></details>';
+    });
+    return h;
+  }
+
+  /* ---------- coherencia del diseño ---------- */
+  function actOf(list, i) { return list[i] || ''; }
+  function viewCoherence() {
+    var co = H.coherence, w = H.world, st = H.story;
+    var acts = w.acts;
+    var h = '<p class="eyebrow">Calidad</p><h1 class="page-title">Coherencia del diseño</h1><p class="page-lead">El <a href="../data/world.json" target="_blank" rel="noopener">registro del mundo</a> es la fuente de verdad de minerales, zonas, minijuegos, recetas y personajes. Aquí se comprueba que las reglas, el mapa de historia y los números base no se contradigan ni queden sin definir. Un hallazgo es algo por decidir o por corregir: al principio hay muchos y se resuelven a medida que se cierran las tareas.</p>';
+    h += '<div class="cln-summary"><div class="ring" style="--p:' + (co.pct || 0) + '"><b>' + (co.pct === null ? '—' : co.pct + '%') + '</b><span>coherente</span></div><div class="st-grid">' +
+      '<div class="st-card"><small>Comprobaciones</small><b>' + co.total + '</b><span>entre ' + co.checks.length + ' reglas</span></div>' +
+      '<div class="st-card"><small>Hallazgos</small><b>' + co.failed + '</b><span>por decidir o corregir</span></div>' +
+      '<div class="st-card"><small>Minerales</small><b>' + w.minerals.length + '</b><span>' + w.zones.length + ' zonas · ' + w.recipes.length + ' recetas</span></div>' +
+      '<div class="st-card"><small>Personajes</small><b>' + w.characters.length + '</b><span>' + w.factions.length + ' facciones</span></div></div></div>';
+    h += '<h2 class="section-title">Minerales y zonas</h2><p class="page-lead">● zona principal · ○ zona secundaria. Las columnas muestran el acto en que se abre cada zona; la última compara cuándo aparece el mineral según las zonas con cuándo lo pone el mapa de historia.</p>';
+    h += '<div class="table-wrap"><table class="cph-matrix"><thead><tr><th>Mineral</th>' + w.zones.map(function (z) { return '<th class="cph-z"><span>' + esc(z.name) + '</span><small>Acto ' + esc(z.act) + '</small></th>'; }).join('') + '<th>Minijuegos</th><th>Según zonas</th><th>Mapa de historia</th></tr></thead><tbody>';
+    var stMin = (st.lanes.filter(function (l) { return l.id === 'minerales'; })[0] || { cells: [] }).cells;
+    w.minerals.forEach(function (m) {
+      var first = w.zones.filter(function (z) { return m.zones[z.id]; }).map(function (z) { return z.act; }).sort(function (a, b) { return acts.indexOf(a) - acts.indexOf(b); })[0];
+      var inStory = ''; stMin.forEach(function (cell, i) { if (cell.indexOf(m.name) >= 0) inStory = acts[i]; });
+      h += '<tr><td><b>' + esc(m.name) + '</b></td>' + w.zones.map(function (z) {
+        var r = m.zones[z.id];
+        return '<td class="cph-c">' + (r === 'principal' ? '●' : r === 'secundario' ? '○' : '') + '</td>';
+      }).join('') + '<td>' + esc(m.minigames.map(function (g) { var x = w.minigames.filter(function (y) { return y.id === g; })[0]; return x ? x.name : g; }).join(', ')) + '</td><td class="cph-c">' + esc(first || '—') + '</td><td class="cph-c' + (inStory !== first ? ' cph-bad' : '') + '">' + esc(inStory || '—') + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+    h += '<h2 class="section-title">Comprobaciones</h2>';
+    co.checks.forEach(function (c) {
+      var ok = c.failed === 0;
+      h += '<details class="cln-doc"' + (ok ? '' : ' open') + '><summary><span class="cph-st ' + (ok ? 'ok' : 'bad') + '">' + (ok ? '✓' : c.failed) + '</span><span class="cln-name">' + esc(c.title) + '</span><small>' + esc(c.area) + ' · ' + (c.total - c.failed) + ' de ' + c.total + ' en orden</small></summary>';
+      if (c.findings.length) h += '<ul class="cln-items cph-find">' + c.findings.map(function (f) { return '<li><span class="cln-k">•</span><span>' + esc(f) + '</span></li>'; }).join('') + '</ul>';
+      h += '</details>';
     });
     return h;
   }
@@ -1166,6 +1199,7 @@
       case 'juego': html = viewGame(); title += ' · El juego'; break;
       case 'mapa': html = viewStory(); title += ' · Mapa de historia'; break;
       case 'limpieza': html = viewClean(); title += ' · Limpieza del diseño'; break;
+      case 'coherencia': html = viewCoherence(); title += ' · Coherencia del diseño'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
       case 'sonido': html = viewSound(); title += ' · Sonido'; break;
