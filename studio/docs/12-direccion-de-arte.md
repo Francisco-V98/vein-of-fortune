@@ -152,11 +152,13 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 | Zona | Jefe | Rasgos que lo hacen reconocible |
 |---|---|---|
 | Galerías del Hollín | Capataz Mayor | Bombín con lámpara de latón, bigote gris, chaleco vinotinto, silbato y bastón con punta de hierro |
-| Cañón Ferroso | Cabecilla de la banda rival | Pañuelo rojo, gabán naranja óxido, hombrera de hierro remachada, cinturón de cadena y garrote liso |
+| Cañón Ferroso | Cabecilla de la banda rival | Pañuelo rojo, gabán naranja óxido, hombreras de hierro remachadas, cinturón de cadena y garrote liso en la mano derecha apoyado en el suelo |
 | Minas de Sierra Alta | Jefe de seguridad del Consorcio | Abrigo azul pizarra con cuello de piel, gorra con gafas de aviador subidas, brazalete vinotinto y porra |
 | Salares del Litoral | Aduanero Mayor | Uniforme beige manchado de sal, banda vinotinta, medalla de latón, libro de registro y sello |
-| Cavernas de Cristal | Cazarrecompensas Mayor | Gabán carbón, sombrero con cristal cian, hombrera de cristal vino, grilletes en el cinturón y espuelas |
+| Cavernas de Cristal | Cazarrecompensas Mayor | Gabán carbón, sombrero con cristal cian, grilletes en el cinturón, espuelas y, en el collar, una cápsula de cristal sellada con un fragmento de éter a la vista |
 | La Fosa del Éter | Coronel de la Comisión | Capote verde oliva oscuro, charreteras doradas, gorra con broche de cristal, guantes blancos y bastón negro |
+
+✅ **Regla del éter en el arte:** el éter nunca va suelto sobre el cuerpo de un personaje sano. Solo aparece contenido en una cápsula de cristal sellada, o en los mutados de La Fosa.
 
 El ministro Dueñas sigue siendo el antagonista narrativo y no tiene duelo de jefe.
 
