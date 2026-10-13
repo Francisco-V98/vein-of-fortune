@@ -1,0 +1,162 @@
+{
+  "id": "F0-82",
+  "history": [
+    {
+      "at": "2026-10-13",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pidió una visión de zonas y edificios para el mapa vivo, dividida en versiones.",
+      "ref": "rama studio/F0-82-zonas-y-edificios"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 26 con el catálogo de zonas y edificios por versiones y 37 tareas nuevas en el roadmap; QA aprobado y limpieza 71 %.",
+      "ref": "rama studio/F0-82-zonas-y-edificios"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el catálogo de zonas y edificios desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "contenido",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "ideador",
+        "nota": "Recomienda que la zona sea la región, con un asentamiento y la boca de mina como una edificación más; catálogo de seis regiones y Puerto Meridiano repartido en MVP, V1 y V2",
+        "entrega": "Tres alternativas de estructura, catálogo por zona, casas y mansiones, casino, resto de comercios, versiones y once preguntas"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida",
+        "nota": "El autor revisó el catálogo del ideador en el chat y decidió estructura, alcance de V1, casas, casino y nombres; el contraste con los documentos lo hace QA"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "contenido",
+        "nota": "Correcciones de QA aplicadas y confirmaciones del autor en lote; limpieza 71 %",
+        "entrega": "Documento 26 con el catálogo de 44 edificaciones por zona, casas, casino, versiones y razones; documentos 02, 04, 05, 06, 07, 11, 17, 18 y 21 alineados; 37 tareas nuevas en el roadmap"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "qa",
+        "nota": "QA aprobó el build, las tareas, las sumas de horas y el canon; sus correcciones las comprobó el coordinador con el build estricto y las pruebas (limpieza 71 %, coherencia 86 %)",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Hay ✅ sin respaldo del autor en el reparto por versiones, los nombres de las casas, la concesionaria y la sastrería, el Salón del Farol y los actos por asentamiento",
+            "resuelto_por": "contenido",
+            "como": "Marcas corregidas con las confirmaciones del autor, cuenta de 44 edificaciones más la aduana evolutiva y horas por edificación de 6 a 10"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "El auto de V1 pasa a ser solo estatus y aspecto, el efecto funcional llega con la concesionaria de V2.1 y las ranuras de la casa pasan a F4.7 antes de la casa mejorable"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El catálogo tiene 45 filas porque incluye la aduana como evolutivo, pero el total y F0-83 dicen 44; las horas por edificación de las tareas F4 no cuadran con el supuesto de 8 a 10 horas",
+            "resuelto_por": "contenido",
+            "como": "Marcas corregidas con las confirmaciones del autor, cuenta de 44 edificaciones más la aduana evolutiva y horas por edificación de 6 a 10"
+          }
+        ],
+        "entrega": "Build estricto, 49 pruebas en verde, 37 tareas nuevas y canon intacto"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "autor",
+        "nota": "El autor revisó el documento 26 y las tareas nuevas y aprobó desde /equipo"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #44 fusionado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: catálogo de edificios por zona y su reparto en MVP, V1, V2 y evolutivos",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "ideador",
+        "a": "coordinador",
+        "que": "Catálogo de edificios por zona y reparto en versiones, con once preguntas para el autor",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "contenido",
+        "que": "Escribir el documento 26 con el catálogo de zonas y edificios y las versiones",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "contenido",
+        "a": "coordinador",
+        "que": "Documento 26 entregado con la lista de tareas por crear",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 26, los cambios en 02, 04, 05, 06, 07, 11, 17, 18 y 21 y las tareas nuevas del roadmap",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "qa",
+        "a": "contenido",
+        "que": "Devolución: bajar a 🟡 los ✅ sin respaldo, decidir si la aduana cuenta y alinear las horas por edificación",
+        "at": "2026-10-13",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "contenido",
+        "a": "coordinador",
+        "que": "Correcciones de la devolución de QA y confirmaciones aplicadas",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: documento 26 con las zonas, los edificios y las versiones",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
+        "at": "2026-10-13"
+      }
+    ]
+  }
+}

@@ -131,6 +131,8 @@ Se aplica el pilar "la información es poder": del candidato se ven al inicio so
 - Desbloquea proveedores, clientes y contratos mejores.
 - Bonos **pequeños**, para que no sea obligatorio comprarlo todo.
 
+✅ Lo que decidió el autor (2026-10-13; detalle en [26](26-zonas-y-edificios.md)): la V1 trae la casa mejorable con ranuras de decoración, la ropa por escalón de estatus (solo cambia el sprite pequeño) y un auto (⏳ F4-110, ⏳ F4-111, ⏳ F4-112), y después llegan, en la V2.1, las casas y mansiones por zona, la decoración, la joyería comprable, la concesionaria y la sastrería, y en la V2.2, las embarcaciones, la pesca y las inversiones. 🟡 Propuesta: el auto de V1 es solo estatus y aspecto, sin efecto en el viaje.
+
 ❓ Qué stats suben con qué compras.
 
 ## Logros
@@ -174,6 +176,7 @@ Se aplica el pilar "la información es poder": del candidato se ven al inicio so
 
 🟡 Para que el tramo final no se vacíe (se hará después del MVP, pero el diseño debe prever que existirá):
 
+- ✅ Casas y mansiones, joyería, embarcaciones, pesca e inversiones se reparten en la V2.1 y la V2.2 (decisión del autor, 2026-10-13; [26](26-zonas-y-edificios.md)).
 - Sucursales o más tiendas.
 - Mercados de otras ciudades.
 - Eventos de temporada.

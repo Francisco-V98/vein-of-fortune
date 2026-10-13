@@ -16,6 +16,7 @@ Es la guía de escritura de Veta de Fortuna: **cómo se nombra cada cosa, cómo 
 | [23 · Árbol de decisiones](23-arbol-de-decisiones.md) | **Fuente de las decisiones**: qué eliges en cada acto, qué banderas y medidores guarda el juego y cómo se reúnen las ramas |
 | [24 · Umbrales de acto](24-umbrales-de-acto.md) | **Fuente de las puertas**: qué hace falta para pasar de un acto al siguiente, los tramos de los medidores y la red anti-atasco |
 | [25 · Finales y epílogos](25-finales-y-epilogos.md) | **Fuente del cierre**: cabecera, tarjetas por piezas, acta de calibración y los hilos que quedan abiertos |
+| [26 · Zonas y edificios](26-zonas-y-edificios.md) | **Fuente de los lugares jugables**: asentamientos, edificaciones, casas, casino y versiones |
 
 ## Estructura de esta biblia ✅
 
@@ -337,7 +338,7 @@ Nombres definidos en [07](07-sociedad-y-eventos.md) y registrados en `studio/dat
 
 - **La facción de Reme** es el Consorcio Arvel, Los Faroleros o el Ministerio, según la partida ✅ ([08](08-historia-y-personaje.md)). Se dice siempre «la facción de Reme», nunca «el acreedor» ✅.
 - **Relación con las facciones ✅** (decisión del autor, 2026-10-12). Solo hay cuatro medidores de relación: la Unión, Esteban, Lucía y Teo. El Consorcio, el Ministerio y Los Faroleros **no tienen medidor propio**: con ellos cuenta la alianza que elijas en el Acto II ([23](23-arbol-de-decisiones.md), sección 2.2). Los textos no dicen «tu reputación con el Ministerio» como si fuera una cifra. Las escenas, los aliados y las consecuencias de cada una están en [22](22-acto-ii-variantes.md).
-- **Casas industriales** es el nombre de la categoría en [07](07-sociedad-y-eventos.md). Dentro del juego, la casa que se ve es el Consorcio Arvel. La única otra casa con nombre es **Casa Ormeño** (plata y joyería, Puerto Meridiano): un nombre de ambiente que solo sale en noticias y glosario, sin zona ni jefe ✅ ([21](21-pasado-de-valdoria.md)). Talavera e Hijos y Fundiciones Soria están descartadas.
+- **Casas industriales** es el nombre de la categoría en [07](07-sociedad-y-eventos.md). Dentro del juego, la casa que se ve es el Consorcio Arvel. La única otra casa con nombre es **Casa Ormeño** (plata y joyería, Puerto Meridiano): un nombre de ambiente que sale en noticias y glosario y, desde la V1, es una tienda insignia en la capital, sin zona propia, jefe, dueño ni medidor ✅ ([21](21-pasado-de-valdoria.md) y [26](26-zonas-y-edificios.md)). Talavera e Hijos y Fundiciones Soria están descartadas.
 - Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21 · Orígenes](21-pasado-de-valdoria.md): la Unión nace del derrumbe de Pozo Negro, el hallazgo de la Aetherita es de hace 30 años y la Comisión nace 3 años después (hace 27), antes en una oficina de ensayo sin nombre, y los Faroleros pierden el oficio con la electrificación.
 - Los figurantes de cada facción (perito, guardia, capataz, delegado, cobrador…) están en el registro del mundo. Su voz sigue la de su facción.
 
@@ -354,8 +355,13 @@ Regiones y zonas en [05](05-mundo-y-minerales.md) y [02](02-extraccion.md); nomb
 | **Galerías del Hollín** ✅ | Primera zona de minado | I | Es donde Teo enseña el oficio |
 | **Cañón Ferroso** ✅ | Zona de minado del Hollín | II | Hierro y huelga |
 | **Sierra Alta** ✅ | Región y zona («Minas de Sierra Alta») | II | Frío, pueblos de empresa, casas industriales |
+| **Altafría** ✅ | Pueblo de empresa del Consorcio en Sierra Alta; su asentamiento | II | Frío y Consorcio: economato, platería, contratos y el viejo taller de ensayo. Un pueblo pequeño, no una ciudad |
 | **Salares del Litoral** ✅ | Región y zona | II | Salitre, puertos, contrabando |
+| **Salinas Blancas** ✅ | Puerto de los Salares; su asentamiento | II | Faroleros y contrabando: lonja, bar del Farol y, más adelante, astillero. Luz de puerto, nunca de lujo |
 | **Puerto Meridiano** ✅ | La capital: bolsa, prensa, élite | III | Donde el tono se vuelve más formal, aunque el narrador y la interfaz siguen tuteando |
+| **Casa Ormeño** ✅ | Tienda insignia de joyería de plata en la capital | III | Voz de lujo discreto; sin dueño ni medidor ([21](21-pasado-de-valdoria.md)) |
+| **Salón del Farol** ✅ | Casino de Los Faroleros en la capital, de noche | V2 | Luz ámbar y nunca rojo emisivo; el azar se nombra con claridad, sin reclamo ([26](26-zonas-y-edificios.md)) |
+| **Las mansiones** ✅ | Paseo Marítimo, Colina de la Bolsa y Barrio Alto, en la capital | V2 | Casas de la élite; cada una con su vista ([26](26-zonas-y-edificios.md)) |
 | **Cavernas de Cristal** ✅ | Región y zona | III | Cuarzo y gemas, cuevas inestables; disputada entre todos |
 | **La Fosa / La Fosa del Éter** ✅ | Región militarizada; «La Fosa del Éter» es el nombre oficial de la zona de minado | IV | En el habla y los textos, «La Fosa». «La Fosa del Éter» en títulos de zona y documentos oficiales |
 | **Escuela de Minas** ✅ | Donde estudiaron Anselmo y Montenegro | Antes del juego | Solo se menciona; no se visita 🟡 |
@@ -408,7 +414,7 @@ Es la lista oficial de cómo se dice cada cosa en español y en inglés. **Cada 
 | Marca | Significado |
 |---|---|
 | ✅ decidido | Lo fijó el autor o ya está en otro documento. Se copia tal cual |
-| 🟡 propuesta | Hoy son las cuatro filas de F0-44, los ocho términos de epílogo de F0-46 y los quince de la lectura final F0-48 (tramo, medidor, vía, diario, misión de rescate, reproductor, aval, sello, monopolio, círculo, vigilancia, puerta, entrada, escena y facción de Reme), todos en 6.11 y «sin traducir» ⏳ F1-20. Un término nuevo entra con esta marca: el español se define en el documento de origen, el localizador propone el inglés y el autor lo confirma en lote |
+| 🟡 propuesta | Hoy son las cuatro filas de F0-44, los ocho términos de epílogo de F0-46 y los quince de la lectura final F0-48 (tramo, medidor, vía, diario, misión de rescate, reproductor, aval, sello, monopolio, círculo, vigilancia, puerta, entrada, escena y facción de Reme), todos en 6.11 y «sin traducir» ⏳ F1-20, y los términos de zonas y edificios de F0-82 (6.5 y 6.11), que también esperan su inglés ⏳ F1-20. Un término nuevo entra con esta marca: el español se define en el documento de origen, el localizador propone el inglés y el autor lo confirma en lote |
 
 **Fuente de todo el capítulo ✅:** decisión del autor, F0-41 (2026-10-12), que confirmó todo el glosario propuesto, incluidas *the Pit*, *the Beacon*, *ether sickness* y *Ether Commission*. Las filas que citan otro documento (13, 07, 04) conservan esa fuente. Las siete filas que añadió F0-43 (Vega Mansa, la Primera Expedición, Casa Ormeño, Pozo Negro, Sanatorio de Cumbre Clara, secreto de Estado e ingeniero de calibración) las confirmó el autor el 2026-10-12. Un término nuevo entra aquí como propuesta, con su marca de «sin confirmar», hasta que el autor lo apruebe.
 
@@ -470,7 +476,7 @@ Productos del taller (recetas del registro del mundo) ✅: Acero → *Steel*; Co
 | 1 · Galerías del Hollín | Hollín Galleries | ✅ | *Gallery* es un túnel de mina. «Hollín» no se traduce (nunca *Soot*) |
 | 2 · Cañón Ferroso | Ferrous Canyon | ✅ | «Ferroso» = de hierro |
 | 3 · Minas de Sierra Alta | High Range Mines | ✅ | En el habla: *the High Range* |
-| 4 · Salares del Litoral | Coastal Salt Flats | ✅ | La zona y la región se llaman igual |
+| 4 · Salares del Litoral | Coastal Salt Flats | ✅ | La zona y la región se llaman igual. Su puerto es Salinas Blancas (6.5): no se confunden |
 | 5 · Cavernas de Cristal | Crystal Caverns | ✅ | Traducción directa |
 | 6 · La Fosa del Éter | the Ether Pit | ✅ | Ver 6.2 |
 
@@ -498,7 +504,11 @@ Productos del taller (recetas del registro del mundo) ✅: Acero → *Steel*; Co
 | el puesto (en el mercado) | the stall | ✅ | Parte de la herencia (6.11) |
 | Vega Mansa | Gentle Meadow | ✅ | La aldea del protagonista ([21](21-pasado-de-valdoria.md)). «Vega» = prado fértil de tierras bajas, «mansa» = apacible. Mismo criterio que *Ember Town*: lugar con significado, se traduce. Sin *the* (es aldea) |
 | la Primera Expedición | the First Expedition | ✅ | La primera expedición a La Fosa, hace 20 años. Con mayúsculas por ser un hito con nombre propio; *the* en minúscula en medio de frase |
-| Casa Ormeño | Ormeño House | ✅ | Casa industrial de ambiente: plata y joyería. «Ormeño» es un apellido y no se traduce (como *Arvel*). *House* sigue a *Industrial Houses* (6.6); se pospone para que suene a empresa y no a dinastía de fantasía. Sin *the* |
+| Altafría | Highchill | ✅ en español · 🟡 en inglés | Pueblo de empresa de Sierra Alta. El nombre español lo decidió el autor (2026-10-13). *Highchill* es la propuesta del autor, aceptada, pendiente de confirmar en lote. Sin *the* |
+| Salinas Blancas | White Salt Flats | ✅ en español · 🟡 en inglés | Puerto de los Salares. El nombre español lo decidió el autor (2026-10-13). *White Salt Flats* es la propuesta del autor, aceptada, pendiente de confirmar en lote; se cuida que no suene a *Coastal Salt Flats* (la región). Sin *the* |
+| Salón del Farol | sin traducir ⏳ F1-20 | ✅ en español · 🟡 en inglés | El casino de Los Faroleros en Puerto Meridiano, de noche ([26](26-zonas-y-edificios.md)). El inglés debe ir de la mano del emblema de los Lamplighters (6.11, el farol vinotinto). El localizador propone el inglés y el autor lo confirma en lote |
+| Paseo Marítimo · Colina de la Bolsa · Barrio Alto | sin traducir ⏳ F1-20 | ✅ en español · 🟡 en inglés | Las tres mansiones de la capital, con vista al mar, a la ciudad y a un jardín ([26](26-zonas-y-edificios.md)). Los nombres en español los decidió el autor (2026-10-13). El localizador propone el inglés y el autor lo confirma en lote |
+| Casa Ormeño | Ormeño House | ✅ | Casa industrial de ambiente: plata y joyería, y tienda insignia en la capital desde la V1 ([26](26-zonas-y-edificios.md)). «Ormeño» es un apellido y no se traduce (como *Arvel*). *House* sigue a *Industrial Houses* (6.6); se pospone para que suene a empresa y no a dinastía de fantasía. Sin *the* |
 | Pozo Negro | Black Shaft | ✅ | El derrumbe de hace 40 años, del que nace la Unión. Mina del Hollín: *shaft* es el término de mina. Se evita *Black Pit* para no chocar con *the Pit* (La Fosa). Sin *the*; el hecho: *the Black Shaft collapse* |
 | Sanatorio de Cumbre Clara | Clear Summit Sanatorium | ✅ | Dónde murió Anselmo en público. «Cumbre Clara» es el nombre del lugar, en la Sierra Alta (*the High Range*); se traduce como *Clear Summit*. *Sanatorium* es la forma americana habitual para este tipo de centro |
 
@@ -648,6 +658,10 @@ Los 7 del registro del mundo ([02](02-extraccion.md), [09](09-minijuegos.md)). N
 | el apagón · la huelga · el saqueo | blackout · strike · looting | ✅ | Eventos sociales ([07](07-sociedad-y-eventos.md)). *Strike* ✅ en 6.7 |
 | trámite · gestión · atención | procedure · processing · courtesy | ✅ | Los tres eufemismos de Quiroga. Nunca *bribe* |
 | secreto de Estado | state secret | ✅ | Lo que el Ministerio declara sobre la Aetherita ([21](21-pasado-de-valdoria.md)). Minúscula; traducción directa y de uso común |
+| asentamiento · zona de minado · edificación | sin traducir ⏳ F1-20 | 🟡 | Términos del equipo para el mapa vivo ([26](26-zonas-y-edificios.md)): el asentamiento es el lugar poblado de una zona; la zona de minado es cada una de las seis de [02](02-extraccion.md); la edificación es cada sitio al que se entra. «Zona» a secas es la del mapa. El localizador propone el inglés y el autor lo confirma en lote |
+| boca de mina | sin traducir ⏳ F1-20 | 🟡 | La edificación por la que se entra a una zona de minado ([26](26-zonas-y-edificios.md)). El localizador propone el inglés (por ejemplo *mine entrance*) y el autor lo confirma en lote |
+| ranura de decoración · tienda insignia | sin traducir ⏳ F1-20 | 🟡 | Los cinco huecos fijos de una casa para poner objetos, y la tienda principal de una casa industrial sin dueño ([26](26-zonas-y-edificios.md)). El localizador propone el inglés y el autor lo confirma en lote |
+| economato · lonja · platería · herrería · tasadores · la Lotería | sin traducir ⏳ F1-20 | 🟡 | Los comercios nuevos de la V1 y la lotería semanal del Ministerio ([26](26-zonas-y-edificios.md)). *Economato* es la tienda de una empresa para sus obreros. El localizador propone el inglés y el autor lo confirma en lote |
 | epílogo | sin traducir ⏳ F1-20 | 🟡 | El cierre del Acto IV: cabecera y tarjetas. El acta de calibración es la última escena, no una pieza del epílogo ([25](25-finales-y-epilogos.md)). El localizador propone el inglés y el autor lo confirma en lote |
 | cabecera | sin traducir ⏳ F1-20 | 🟡 | La pantalla que abre el epílogo, con rótulo, frase del narrador y titular ([25](25-finales-y-epilogos.md), sección 4). El localizador propone el inglés y el autor lo confirma en lote |
 | tarjeta | sin traducir ⏳ F1-20 | 🟡 | Cada noticia corta del epílogo, de un personaje, facción, mundo o mercado ([25](25-finales-y-epilogos.md)). El localizador propone el inglés y el autor lo confirma en lote |
@@ -754,6 +768,6 @@ En `story.json` y en el [17](17-mapa-de-historia.md) Anselmo aparece ya en la ce
 - ⏳ F4-179 Textos de las tres variantes del Acto II (la estructura está en [22](22-acto-ii-variantes.md)).
 - ✅ Hechas F0-41 (esta biblia), F0-42 (fichas), F0-43 ([21](21-pasado-de-valdoria.md)), F0-44 ([22](22-acto-ii-variantes.md)), F0-45 ([23](23-arbol-de-decisiones.md)), F0-46 ([25](25-finales-y-epilogos.md)) y F0-47 ([24](24-umbrales-de-acto.md)). La lectura final F0-48 se cierra con esta pasada: términos unificados (puerta, entrada, pieza, escena, facción de Reme), reglas de voz de los medios y 1.2 al día.
 - ✅ Epílogos de las tres salidas del Acto IV: resueltos en [25](25-finales-y-epilogos.md).
-- ⏳ F1-20 Inglés de los términos del glosario que están «sin traducir» en 6.11: los ocho de epílogo, las cuatro filas de F0-44 y los quince de la lectura final, más el farol vinotinto.
+- ⏳ F1-20 Inglés de los términos del glosario que están «sin traducir» en 6.5 y 6.11: los ocho de epílogo, las cuatro filas de F0-44, los quince de la lectura final y los de zonas y edificios (F0-82), más el farol vinotinto, *Highchill* y *White Salt Flats*.
 - ⏳ F0-80 Pasada de cierre con el autor de los documentos 18 y 21 a 25, para llevar a 90 % o más la limpieza de cada uno.
 - ⏳ F1-18 Cifras finales del formato de diálogo y del nombre de la tienda, con la fuente real.

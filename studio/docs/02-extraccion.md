@@ -38,6 +38,8 @@ Lore:
 
 ✅ Las zonas están ambientadas en Valdoria (ver [05](05-mundo-y-minerales.md) para regiones y distribución de minerales).
 
+✅ Estas seis son **zonas de minado**: cada una se entra por la boca de mina de un asentamiento (Villa Brasa atiende las dos del Hollín). En el mapa, «zona» es la región completa con su asentamiento ([26](26-zonas-y-edificios.md)).
+
 🟡 Los "enemigos" de las primeras zonas son **personas** (capataces, bandas, inspectores que piden soborno), no monstruos. Encaja con el tono y con los encuentros por decisión (pagar, negociar, pelear, huir). Las criaturas aparecen solo en La Fosa, por la Aetherita.
 
 ❓ Fichas completas por zona (usar la plantilla anterior).

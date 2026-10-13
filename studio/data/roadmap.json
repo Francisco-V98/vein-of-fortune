@@ -624,6 +624,15 @@
               "prio": "P2",
               "desc": "Cerrar los puntos abiertos del plan, el flujo de trabajo y la calidad.",
               "done_when": "Cada documento por encima de la meta."
+            },
+            {
+              "id": "F0-83",
+              "status": "backlog",
+              "title": "Registro de zonas y edificaciones en `world.json`, con su validación en el hub",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Seis asentamientos y las 44 edificaciones con ID, rol, versión y enlaces a minerales, recetas y facciones; el build comprueba que todo exista. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]
         },
@@ -843,6 +852,15 @@
               "prio": "P1",
               "desc": "Repasar con el autor los documentos 18 y 21 a 25 hasta llevar cada uno a un 90 % o más de limpieza, confirmando lo que siga en propuesta y aplazando solo lo que cumpla la regla del documento 15.",
               "done_when": "Cada uno de los documentos 18 y 21 a 25 llega al 90 % de limpieza o tiene sus puntos abiertos aplazados con una tarea que no condiciona nada anterior."
+            },
+            {
+              "id": "F0-82",
+              "title": "Zonas y edificios: catálogo y versiones (MVP, V1, V2 y evolutivos)",
+              "est": 8,
+              "status": "done",
+              "prio": "P1",
+              "desc": "Estructura de mapa, zonas y edificaciones donde entras a cada edificio por separado. Qué edificios lleva cada zona según su temática (tiendas específicas, joyerías con joyas de la zona, casas y mansiones con distintas vistas, pesca en el puerto, casino, vehículos, embarcaciones, inversiones) y en qué versión entra cada uno, sin que nada se vea puesto sin razón.",
+              "done_when": "Catálogo de edificios por zona acordado con el autor, con la estructura mapa-zona-edificio y la división en MVP, V1, V2 y evolutivos, y sin contradicciones con el mundo y la economía."
             }
           ]
         }
@@ -1726,8 +1744,8 @@
       "name": "Vertical slice",
       "target": "MVP",
       "hours": [
-        300,
-        495
+        306,
+        501
       ],
       "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido finales, información por capas, noticias, encuentros y progresión base.",
       "gate": "Puerta B: ¿se sigue hacia la v1 y se piensa en publicar?",
@@ -2122,6 +2140,15 @@
               "prio": "P1",
               "desc": "Documento práctico para producir contenido.",
               "done_when": "Guía escrita y probada una vez."
+            },
+            {
+              "id": "F3-46",
+              "status": "backlog",
+              "title": "Navegador zona a edificación y horarios por bloque",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Lista de edificaciones de Villa Brasa en el MVP con apertura por bloque. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]
         },
@@ -2213,8 +2240,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        1025,
-        1925
+        1135,
+        2075
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -3037,25 +3064,40 @@
               "done_when": "Los pisos de estatus del documento 24 se cumplen con las horas por acto del documento 17 y ninguna puerta se puede atascar."
             },
             {
+              "id": "F4-226",
+              "status": "backlog",
+              "title": "Ranuras de decoración de la casa base",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Cinco ranuras fijas con un objeto inicial. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
               "id": "F4-110",
               "status": "backlog",
               "title": "Casa: mejoras y bonos pasivos",
               "est": 6,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Casa de V1: nace completa y con cinco ranuras de decoración (F4-226) y se mejora con bonos pasivos pequeños. Según el documento 26.",
+              "done_when": "La casa de V1 se compra, tiene sus cinco ranuras con un objeto inicial y sus mejoras dan un bono pequeño."
             },
             {
               "id": "F4-111",
               "status": "backlog",
               "title": "Ropa",
               "est": 4,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Ropa de V1: un traje por escalón de estatus; solo cambia el sprite pequeño, sin tocar las hojas de modelo. Según el documento 26.",
+              "done_when": "Cada escalón de estatus tiene su traje y el sprite pequeño lo muestra."
             },
             {
               "id": "F4-112",
               "status": "backlog",
               "title": "Auto",
               "est": 4,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Auto de V1: se compra como estatus y aspecto, sin efecto en el viaje. El efecto funcional pequeño llega con la concesionaria de la versión 2.1 (F6-57). Según el documento 26.",
+              "done_when": "El auto se compra, se ve en el sprite y en la casa y no cambia el viaje."
             },
             {
               "id": "F4-113",
@@ -3513,6 +3555,87 @@
               "title": "Navegación entre mapa, ciudad y edificios",
               "est": 6,
               "prio": "P1"
+            },
+            {
+              "id": "F4-217",
+              "status": "backlog",
+              "title": "Vista de zona: Villa Brasa, Altafría y Salinas Blancas",
+              "est": 12,
+              "prio": "P1",
+              "desc": "Los tres asentamientos isométricos con edificaciones tocables. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F4-218",
+              "status": "backlog",
+              "title": "Vista de zona: campamentos de las Cavernas y de la Fosa",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Los dos campamentos. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F4-219",
+              "status": "backlog",
+              "title": "Herrería y economato",
+              "est": 16,
+              "prio": "P1",
+              "desc": "Exterior, interior y mercancía. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F4-220",
+              "status": "backlog",
+              "title": "Platería y lonja con almacén de salitre",
+              "est": 16,
+              "prio": "P1",
+              "desc": "Exterior, interior y mercancía. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F4-221",
+              "status": "backlog",
+              "title": "Tasadores y Casa Ormeño",
+              "est": 16,
+              "prio": "P1",
+              "desc": "Exterior, interior y mercancía. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F4-222",
+              "status": "backlog",
+              "title": "Edificios de historia: taller de ensayo, estación y pensión",
+              "est": 15,
+              "prio": "P1",
+              "desc": "Exterior, interior y el sitio de cada cinta. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F4-223",
+              "status": "backlog",
+              "title": "Edificios de historia: campamento de ensayo, campamento de la Primera Expedición y barracón",
+              "est": 15,
+              "prio": "P1",
+              "desc": "Exterior, interior y el sitio de cada cinta. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F4-224",
+              "status": "backlog",
+              "title": "Casa de Reme y oficina de Quiroga definitivas",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Exterior e interior. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F4-225",
+              "status": "backlog",
+              "title": "Mostrador de preparación en las seis bocas de mina",
+              "est": 10,
+              "prio": "P1",
+              "desc": "Equipo propio de cada zona. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]
         },
@@ -4403,8 +4526,8 @@
       "name": "Evolutivo",
       "target": "Evolutivo",
       "hours": [
-        305,
-        570
+        690,
+        1040
       ],
       "goal": "Ideas para después del lanzamiento. El casino es la primera actualización prevista; el resto se prioriza según cómo vaya el proyecto.",
       "gate": null,
@@ -4532,6 +4655,15 @@
               "title": "Pruebas y reserva de la actualización",
               "est": 10,
               "prio": "P1"
+            },
+            {
+              "id": "F6-46",
+              "status": "backlog",
+              "title": "Lotería del Ministerio",
+              "est": 12,
+              "prio": "P2",
+              "desc": "Sorteo semanal, ventanilla y publicación en el Heraldo. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]
         },
@@ -4764,6 +4896,234 @@
               "title": "Idioma adicional: alemán",
               "est": 20,
               "prio": "P3"
+            }
+          ]
+        },
+        {
+          "id": "F6.8",
+          "name": "V2.1: casas, mansiones, joyería comprable y comercios de lujo",
+          "tasks": [
+            {
+              "id": "F6-47",
+              "status": "backlog",
+              "title": "Inmobiliaria y compra de casas",
+              "est": 14,
+              "prio": "P2",
+              "desc": "Comprar, vender y elegir la casa base. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-48",
+              "status": "backlog",
+              "title": "Chalet de Altafría y caserón de Salinas Blancas",
+              "est": 18,
+              "prio": "P2",
+              "desc": "Exterior e interior de las dos casas. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-49",
+              "status": "backlog",
+              "title": "Mansiones del Paseo Marítimo y de la Colina de la Bolsa",
+              "est": 20,
+              "prio": "P2",
+              "desc": "Dos mansiones con vista propia. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-50",
+              "status": "backlog",
+              "title": "Mansión del Barrio Alto",
+              "est": 12,
+              "prio": "P2",
+              "desc": "La tercera, con vista al jardín. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-51",
+              "status": "backlog",
+              "title": "Decoración: objetos de Hollín, Altafría y Salinas Blancas",
+              "est": 20,
+              "prio": "P2",
+              "desc": "Unos 15 objetos para las cinco ranuras. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-52",
+              "status": "backlog",
+              "title": "Decoración: objetos de Cavernas y Puerto Meridiano",
+              "est": 20,
+              "prio": "P2",
+              "desc": "Unos 15 objetos más. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-53",
+              "status": "backlog",
+              "title": "Impuesto predial y saqueo de casas",
+              "est": 14,
+              "prio": "P2",
+              "desc": "Sumidero, riesgo y balance. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-54",
+              "status": "backlog",
+              "title": "Joyería comprable: dueño, compra y precio",
+              "est": 16,
+              "prio": "P2",
+              "desc": "El joyero, la compra del negocio y su historia breve. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-55",
+              "status": "backlog",
+              "title": "Joyería comprable: banco de trabajo y clientela",
+              "est": 18,
+              "prio": "P2",
+              "desc": "Cincelado, Regateo y empleados. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-56",
+              "status": "backlog",
+              "title": "Joyas por zona: taller de talla y mostrador sin sello",
+              "est": 20,
+              "prio": "P2",
+              "desc": "Las dos joyerías de zona. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-57",
+              "status": "backlog",
+              "title": "Concesionaria y vehículos",
+              "est": 20,
+              "prio": "P2",
+              "desc": "Carreta, camioneta y automóvil. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-58",
+              "status": "backlog",
+              "title": "Sastrería y ropa cosmética",
+              "est": 20,
+              "prio": "P2",
+              "desc": "Trajes y cosméticos del sprite pequeño. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-59",
+              "status": "backlog",
+              "title": "Textos ES/EN de V2.1",
+              "est": 14,
+              "prio": "P2",
+              "desc": "Todo lo anterior en los dos idiomas. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-60",
+              "status": "backlog",
+              "title": "Pruebas de V2.1",
+              "est": 12,
+              "prio": "P2",
+              "desc": "Casos y regresión. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-61",
+              "status": "backlog",
+              "title": "Reserva de V2.1",
+              "est": 12,
+              "prio": "P2",
+              "desc": "Correcciones. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            }
+          ]
+        },
+        {
+          "id": "F6.9",
+          "name": "V2.2: pesca, embarcaciones e inversiones",
+          "tasks": [
+            {
+              "id": "F6-62",
+              "status": "backlog",
+              "title": "Pesca: muelle, peces y variante del Cribado",
+              "est": 20,
+              "prio": "P3",
+              "desc": "Pesca con el motor del Cribado. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-63",
+              "status": "backlog",
+              "title": "Astillero y embarcaciones",
+              "est": 20,
+              "prio": "P3",
+              "desc": "Bote, pesquero y barcaza. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-64",
+              "status": "backlog",
+              "title": "Puerto deportivo y yate",
+              "est": 14,
+              "prio": "P3",
+              "desc": "Solo estatus. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-65",
+              "status": "backlog",
+              "title": "Inversiones en la Bolsa: sectores, spread y tope",
+              "est": 20,
+              "prio": "P3",
+              "desc": "Agricultura, tecnología y pesca. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-66",
+              "status": "backlog",
+              "title": "Inversiones: noticias de sector y balance",
+              "est": 14,
+              "prio": "P3",
+              "desc": "Con el simulador de mercado. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-67",
+              "status": "backlog",
+              "title": "Pesca: precios, lonja y balance",
+              "est": 10,
+              "prio": "P3",
+              "desc": "Pescado como mercancía. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-68",
+              "status": "backlog",
+              "title": "Textos ES/EN de V2.2",
+              "est": 8,
+              "prio": "P3",
+              "desc": "Todo lo anterior en los dos idiomas. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-69",
+              "status": "backlog",
+              "title": "Pruebas de V2.2",
+              "est": 12,
+              "prio": "P3",
+              "desc": "Casos y regresión de pesca, embarcaciones e inversiones. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F6-70",
+              "status": "backlog",
+              "title": "Reserva de V2.2",
+              "est": 12,
+              "prio": "P3",
+              "desc": "Correcciones de pesca, embarcaciones e inversiones. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]
         }
