@@ -1,0 +1,130 @@
+{
+  "id": "F0-48",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza la lectura final y de coherencia de la biblia narrativa con el flujo de especialistas.",
+      "ref": "rama studio/F0-48-lectura-final-biblia"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Es una auditoría: no hay opciones que explorar"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "analista",
+        "nota": "Las dos auditorías cruzaron la narrativa y el diseño del juego: el apellido nuevo está limpio y las fechas, edades, cupos y tramos coinciden; quedan decisiones que condicionan trabajo futuro y errores mecánicos",
+        "entrega": "Auditoría A de la narrativa y auditoría B del diseño del juego contra la biblia, con celdas del mapa y de la presentación por actualizar y lo que falta para los guiones",
+        "hallazgos": [
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "El diseño dice un medidor por facción y la narrativa fija cuatro medidores, y existen tres tareas F4 para los de las facciones",
+            "resuelto_por": "narrador",
+            "como": "Aplicado en los documentos de diseño y de narrativa, en los datos y en el roadmap con las decisiones del autor"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "El periodo de la cuota y el primer vencimiento del Acto I no están definidos aunque el texto del Acto I y el árbol los usan",
+            "resuelto_por": "narrador",
+            "como": "Aplicado en los documentos de diseño y de narrativa, en los datos y en el roadmap con las decisiones del autor"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "La Aetherita se negocia en el mercado negro del Acto III pero el mapa la sitúa en el IV, y el escáner del Acto I necesita cuarzo que aparece después",
+            "resuelto_por": "narrador",
+            "como": "Aplicado en los documentos de diseño y de narrativa, en los datos y en el roadmap con las decisiones del autor"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "La vigilancia se mide a la vez en puntos, en porcentaje y por lugares, y la escalera de estatus es tentativa en un documento y confirmada en otros",
+            "resuelto_por": "narrador",
+            "como": "Aplicado en los documentos de diseño y de narrativa, en los datos y en el roadmap con las decisiones del autor"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "El cian y el rojo del farol chocan con la regla de color de la Aetherita",
+            "resuelto_por": "narrador",
+            "como": "Aplicado en los documentos de diseño y de narrativa, en los datos y en el roadmap con las decisiones del autor"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Hay ✅ y 🟡 mezclados, siete preguntas abiertas en el documento 25, tres usos de «puerta» y dos de «pieza», el glosario sin once términos y celdas del mapa y de la presentación desactualizadas",
+            "resuelto_por": "narrador",
+            "como": "Aplicado en los documentos de diseño y de narrativa, en los datos y en el roadmap con las decisiones del autor"
+          }
+        ]
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "narrador",
+        "entrega": "Once decisiones del autor y dieciocho correcciones mecánicas aplicadas en 28 archivos, con tareas nuevas y descripciones en el roadmap",
+        "nota": "Dos narradores trabajaron en paralelo, uno en el diseño y los datos y otro en la narrativa; limpieza 71 % y coherencia 86 %"
+      },
+      {
+        "etapa": "qa",
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "qa",
+        "nota": "QA comprueba el build, las marcas, los restos de nombres antiguos y que no se hayan roto las referencias"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: leer la biblia narrativa y los documentos del juego buscando contradicciones, cifras que no coinciden y términos sin glosario",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Dos auditorías con hallazgos mecánicos y decisiones que condicionan el futuro, y la lista de lo que falta para los guiones",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Dos partes aplicadas y verificadas con el build estricto y las pruebas",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar los cambios de la lectura final en los documentos, los datos y el roadmap",
+        "at": "2026-10-13"
+      }
+    ]
+  }
+}

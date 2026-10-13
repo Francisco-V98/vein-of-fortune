@@ -42,7 +42,7 @@
           ],
           "mundo": "Tu padre contesta con una carta corta: sabe que rompiste su juramento.",
           "mercado": "—",
-          "personajes": "Protagonista: duerme tranquilo. El padre: dolido, pero no te cierra la puerta."
+          "personajes": "Protagonista: duerme en paz. El padre: dolido, pero no te da la espalda."
         },
         {
           "id": "parte",
@@ -73,7 +73,7 @@
       "acto": "I",
       "nivel": "pequena",
       "titulo": "Pagar a Reme antes o después del plazo",
-      "dispara": "Llega el día de la primera cuota de la deuda.",
+      "dispara": "Vence la primera cuota de la deuda (el día 7; cada cuota vence cada 7 días).",
       "opciones": [
         {
           "id": "antes",
@@ -97,12 +97,12 @@
         },
         {
           "id": "tarde",
-          "texto": "Pides una semana más.",
+          "texto": "Pides una prórroga de una semana.",
           "fija": [
             "f-pago-reme"
           ],
-          "mundo": "Reme te da el tiempo, pero la cuota sube.",
-          "mercado": "Interés de la deuda: +1 punto ⏳ F0-52.",
+          "mundo": "Reme te da una semana más, con un pequeño recargo.",
+          "mercado": "Recargo pequeño por la prórroga ⏳ F0-52.",
           "personajes": "Reme: te da el plazo con un consejo que suena a aviso."
         }
       ],
@@ -436,7 +436,7 @@
             "f-certificado"
           ],
           "mundo": "Quiroga se vuelve dependiente de ti.",
-          "mercado": "Vigilancia -10 en Villa Brasa.",
+          "mercado": "Vigilancia -10 puntos.",
           "personajes": "Quiroga: te teme y te necesita."
         }
       ],
@@ -502,8 +502,8 @@
           "fija": [
             "f-quiroga-salida"
           ],
-          "mundo": "Quiroga te abre puertas en las oficinas.",
-          "mercado": "Vigilancia -10 en Puerto Meridiano.",
+          "mundo": "Quiroga te facilita los trámites en las oficinas.",
+          "mercado": "Vigilancia -10 puntos.",
           "personajes": "Quiroga: leal a su manera; guarda su archivo como seguro."
         },
         {
@@ -513,7 +513,7 @@
             "f-quiroga-salida"
           ],
           "mundo": "Quiroga espera.",
-          "mercado": "Vigilancia -5 en Puerto Meridiano.",
+          "mercado": "Vigilancia -5 puntos.",
           "personajes": "Quiroga: nervioso; su archivo es su seguro."
         },
         {
@@ -595,7 +595,7 @@
           "texto": "Pagas una «gestión» para bajarla.",
           "fija": [],
           "mundo": "La cuota baja, pero queda registro.",
-          "mercado": "Cuota -30 % y vigilancia +10.",
+          "mercado": "Cuota -30 % y vigilancia +10 puntos.",
           "personajes": "Quiroga o su oficial cobra la gestión."
         },
         {
@@ -603,7 +603,7 @@
           "texto": "Rechazas el contrato.",
           "fija": [],
           "mundo": "El contrato pasa a otro proveedor.",
-          "mercado": "Pierdes la prima del contrato; vigilancia +10.",
+          "mercado": "Pierdes la prima del contrato; vigilancia +10 puntos.",
           "personajes": "El Ministerio te mira más."
         }
       ],
@@ -697,7 +697,7 @@
       "acto": "III",
       "nivel": "mediana",
       "titulo": "El monopolio de la Aetherita negra",
-      "dispara": "Casilda negocia el monopolio del mercado negro de Aetherita en la capital.",
+      "dispara": "Casilda negocia el monopolio de la Aetherita en el mercado negro de la capital. En el III la Aetherita solo se compra ahí, como mercancía escasa; no se extrae hasta el IV.",
       "opciones": [
         {
           "id": "aceptar",
@@ -706,7 +706,7 @@
             "f-monopolio"
           ],
           "mundo": "Casilda manda en la venta clandestina de Aetherita.",
-          "mercado": "Prima negra de Aetherita +10 puntos; vigilancia -20 %.",
+          "mercado": "Prima negra de Aetherita +10 puntos; la vigilancia sube un 20 % más despacio.",
           "personajes": "Casilda: socia interesada."
         },
         {
@@ -726,7 +726,7 @@
             "f-monopolio"
           ],
           "mundo": "El Consorcio o el Ministerio ocupan el hueco.",
-          "mercado": "Prima +0 puntos; vigilancia +10 %.",
+          "mercado": "Prima +0 puntos; la vigilancia sube un 10 % más rápido.",
           "personajes": "Casilda: cobra la luz de lo que toque."
         }
       ],
@@ -785,33 +785,33 @@
       "acto": "III",
       "nivel": "grande",
       "titulo": "Cómo entras al círculo",
-      "dispara": "Con el estatus de Empresario, dos vías de tres y una puerta abierta. Tres puertas, un solo encuentro con Montenegro, que cierra el acto.",
+      "dispara": "Con el estatus de Empresario, dos vías de tres y una entrada abierta. Tres entradas, un solo encuentro con Montenegro, que cierra el acto.",
       "opciones": [
         {
           "id": "aval",
           "texto": "Esteban te avala.",
           "fija": [
-            "f-puerta"
+            "f-entrada"
           ],
-          "mundo": "Entras por la puerta del Consorcio.",
+          "mundo": "Entras al círculo con el aval del Consorcio.",
           "mercado": "Compras de hierro y cobre al Consorcio 2 a 3 % más baratas.",
-          "personajes": "Esteban te debe un favor en el IV. Requiere su medidor en tramo alto; si no lo tienes, el aval se muestra bloqueado con el motivo y quedan las otras dos puertas."
+          "personajes": "Esteban te debe un favor en el IV. Requiere su medidor en tramo alto; si no lo tienes, el aval se muestra bloqueado con el motivo y quedan las otras dos entradas."
         },
         {
           "id": "sello",
           "texto": "Entras con el sello de Montenegro.",
           "fija": [
-            "f-puerta"
+            "f-entrada"
           ],
           "mundo": "Es una firma y nada más: no te protege ni te ata. Montenegro no te debe nada.",
-          "mercado": "Licencia ampliada; vigilancia +10.",
+          "mercado": "Licencia ampliada; vigilancia +10 puntos.",
           "personajes": "Quiroga te debe un favor en el IV, porque tramitó el sello."
         },
         {
           "id": "presion",
           "texto": "Entras con la presión de tu alianza.",
           "fija": [
-            "f-puerta",
+            "f-entrada",
             "m-union"
           ],
           "mundo": "Tu alianza empuja y el círculo cede.",
@@ -874,7 +874,7 @@
       "acto": "IV",
       "nivel": "mediana",
       "titulo": "Esteban descubre el fondo reservado",
-      "dispara": "El libro del fondo reservado sale a la luz y Esteban debe elegir. Lo resuelve su medidor: alto se une, medio se aparta y bajo defiende al Consorcio. La puerta del aval ya garantiza el tramo alto.",
+      "dispara": "El libro del fondo reservado sale a la luz y Esteban debe elegir. Lo resuelve su medidor: alto se une, medio se aparta y bajo defiende al Consorcio. El aval ya garantiza el tramo alto.",
       "opciones": [
         {
           "id": "se-une",
@@ -888,7 +888,7 @@
           "id": "consorcio",
           "texto": "Esteban defiende al Consorcio.",
           "fija": [],
-          "mundo": "El Consorcio te cierra puertas.",
+          "mundo": "El Consorcio te cierra el acceso a sus contratos.",
           "mercado": "El hierro y el cobre suben 3 a 5 puntos como revancha.",
           "personajes": "Esteban: enemigo. Con su medidor en tramo bajo."
         },
@@ -903,7 +903,7 @@
       ],
       "lee": [
         "m-esteban",
-        "f-puerta"
+        "f-entrada"
       ],
       "estado": "prop"
     },
@@ -948,7 +948,7 @@
       "lee": [
         "f-quiroga-salida",
         "f-certificado",
-        "f-puerta"
+        "f-entrada"
       ],
       "estado": "prop"
     },
@@ -980,12 +980,12 @@
           "texto": "Montenegro intenta borrarte.",
           "fija": [],
           "mundo": "Suspende tus licencias y manda cerrar tus zonas, pero falla. Se activa si la Unión está en tramo alto y llevas al menos dos pruebas y no vendes al Ministerio.",
-          "mercado": "Tus ventas caen a la mitad durante tres días y la vigilancia pasa a Bajo investigación.",
+          "mercado": "Tus ventas caen a la mitad durante tres días y la vigilancia sube a Bajo investigación (una redada).",
           "personajes": "Montenegro: «No le pregunto qué opina»"
         }
       ],
       "lee": [
-        "f-puerta",
+        "f-entrada",
         "f-familia",
         "f-reme-proteccion",
         "m-union",
@@ -1079,7 +1079,7 @@
       "lee": [
         "f-destino",
         "f-monopolio",
-        "f-puerta"
+        "f-entrada"
       ],
       "estado": "ok"
     },
@@ -1213,9 +1213,9 @@
       ]
     },
     {
-      "id": "f-puerta",
+      "id": "f-entrada",
       "tipo": "eleccion",
-      "descripcion": "Puerta al círculo: aval de Esteban, sello de Montenegro o presión de tu alianza. Fija quién te debe un favor en el IV.",
+      "descripcion": "Entrada al círculo: aval de Esteban, sello de Montenegro o presión de tu alianza. Fija quién te debe un favor en el IV.",
       "personajes": [
         "Esteban Arvel",
         "Ministro Aurelio Montenegro",

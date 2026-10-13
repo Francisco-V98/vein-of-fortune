@@ -25,11 +25,13 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 
 **Casi todos se comprometieron por sobrevivir.** Reme traiciona por obligación, Teo firmó un silencio por una pensión, Quiroga se vende, Lucía vende información, Anselmo se quedó callado a cambio de vivir. Nadie en Valdoria es limpio, y por eso la pregunta del jugador es la misma que la del tema: *"No cambias el país, pero cambias tu lugar en él"*. El protagonista es el único que llega sin deudas morales, y la historia es qué hace con las suyas cuando empiece a tenerlas.
 
-## La verdad sobre Anselmo ✅🟡
+## La verdad sobre Anselmo 🟡
+
+**Estado:** ✅ el canon del recuadro, la cronología de [21](21-pasado-de-valdoria.md) y la revelación final; 🟡 solo «18 años» y la convicción del punto 4 de abajo.
 
 > **Decisión del autor ✅:** Anselmo **está vivo, pero se cree que murió enfermo**. Es **cómplice** de la Comisión del Éter. El protagonista lo descubre **al final del último acto** y queda con ganas de saber qué pasó, dónde está y por qué decidió lo que decidió. Eso deja la puerta abierta a **capítulos o actualizaciones futuras**.
 
-**Cómo encaja ✅🟡** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md); solo se marcan 🟡 lo que no vio: «18 años» y la convicción del punto 4):
+**Cómo encaja** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md), salvo «18 años» y la convicción del punto 4):
 
 1. Hace veinte años Anselmo, Teo y Aurelio Montenegro, entonces un funcionario de unos 40 años y «joven» solo frente a la cúpula del Ministerio ✅, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar. Fechas y edades en [21](21-pasado-de-valdoria.md).
 2. Anselmo lo documentó en una libreta y grabó **ocho cintas**. Calibró durante 18 años 🟡 los límites de exposición, y cada calibración agravó su mal ✅. Hace dos años intentó denunciarlo y la Comisión lo detuvo.
@@ -124,7 +126,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 - "Si estás oyendo esto, la lámpara llegó a tus manos. Cuídala: se apaga rápido."
 - "Aprendí tarde que callar también es una forma de cobrar."
 
-**Acciones en el juego.** No juega, pero **habla**: las ocho cintas se recogen a lo largo de la historia (1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV) ✅, se **oyen en el Acto IV** con un reproductor ✅ y cada una desbloquea una pieza de la verdad; el contenido de cada una está en [21](21-pasado-de-valdoria.md) y dónde las dejó Anselmo, en [23](23-arbol-de-decisiones.md) (sección 7). La libreta guía las primeras misiones del Acto I. Su firma en el acta final es la última escena.
+**Acciones en el juego.** No juega, pero **habla**: las ocho cintas se recogen a lo largo de la historia (1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV) ✅, se **oyen en el Acto IV** con un reproductor ✅ y cada una desbloquea un fragmento de la verdad; el contenido de cada una está en [21](21-pasado-de-valdoria.md) y dónde las dejó Anselmo, en [23](23-arbol-de-decisiones.md) (sección 7). La libreta guía las primeras misiones del Acto I. Su firma en el acta final es la última escena.
 
 **Arco.** Del héroe ausente (I) a la sospecha (II y III), la verdad parcial (IV) y la pregunta final.
 
@@ -152,7 +154,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 **Emociones.** Ternura contenida; vergüenza cuando traiciona; alivio cuando por fin puede elegir. Se quiebra cuando debe presionar a alguien que aprecia.
 
 **Voz.** Cálida, con diminutivos y consejos que son amenazas. Dice "criatura" para no marcar género.
-- "Con calma, criatura. Yo en tu lugar pagaría antes del jueves."
+- "Con calma, criatura. Yo en tu lugar pagaría esta semana."
 - "No es que me duela cobrarte. Es que me duele que no sea otro."
 
 **Acciones en el juego.** Gestiona la **deuda**: cuotas, plazos e intereses. Ofrece tiempo y crédito, y en el Acto II **ejecuta la orden de su facción** (la que cambia por partida) contra el protagonista. Al final, es fuente de información y apoyo.
@@ -166,7 +168,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | III | Distante pero atenta; no se atreve a ayudar abiertamente |
 | IV | Al final, se convierte en **la persona más cercana al protagonista** ✅ y se une para resolver el caso. El protagonista, ya con estatus, dinero e influencia, puede darle protección ✅. Si revelas, la Comisión corta el abono que ella recibía; si no, sigue llegando ✅ |
 
-Cómo cambia su papel en el Acto II según la facción que esté detrás de ella: [22](22-acto-ii-variantes.md).
+Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-variantes.md).
 
 **Conexiones.** Con **Anselmo**, deuda y afecto; con **Teo**, vecinos de siempre; con **su facción** (Consorcio, Faroleros o Ministerio), una correa corta; con **el protagonista**, el vínculo que más cuesta y más se recompensa.
 
@@ -288,7 +290,7 @@ Cómo cambia su papel en el Acto II según la facción que esté detrás de ella
 
 **Conexiones.** Con **Quiroga**, desconfianza; con **Esteban**, usa su apellido para entrar a lugares; con **la Comisión**, una fuente que no nombra; con **el protagonista**, una amistad con intereses.
 
-**Secreto y pistas.** Sabe de las cintas y de la firma que sigue viva, y se lo calla hasta tener la historia completa.
+**Secreto y pistas.** Sabe de las cintas y reconoce la letra y la firma de Anselmo en las cartas que recibe la Comisión ✅. Se lo calla hasta tener la historia completa. Nunca llega a saber que Anselmo vive ni ve el acta ✅. El momento en que reconoce la firma ⏳ F4-139.
 
 ## Esteban Arvel
 
@@ -315,7 +317,7 @@ Cómo cambia su papel en el Acto II según la facción que esté detrás de ella
 - "Qué gusto verte, amigo. Qué lástima lo del contrato."
 - "No es personal. Es negocio. Es decir, es completamente personal."
 
-**Acciones en el juego.** Compite por **contratos y compras grandes**, sube y baja el precio al comprar, y es la puerta al círculo de la capital si lo tratas bien.
+**Acciones en el juego.** Compite por **contratos y compras grandes**, sube y baja el precio al comprar, y es una de las entradas al círculo de la capital (el aval) si lo tratas bien.
 
 **Arco por acto.**
 
@@ -359,7 +361,7 @@ Cómo cambia su papel en el Acto II según la facción que esté detrás de ella
 | Acto | Estado |
 |---|---|
 | II | Ofrece protección y pone a prueba al protagonista |
-| III | Negocia el monopolio del mercado negro de Aetherita |
+| III | Negocia el monopolio de la venta clandestina de Aetherita (en el III la Aetherita solo se compra en el mercado negro, como mercancía escasa) ✅ |
 | IV | Quiere comprar o controlar la verdad |
 
 **Conexiones.** Con **el Ministerio**, enemigo histórico; con **Quiroga**, una tregua; con **Reme**, a veces es quien está detrás de su deuda; con **el protagonista**, aliada interesada.
@@ -387,7 +389,7 @@ Cómo cambia su papel en el Acto II según la facción que esté detrás de ella
 
 **Voz.** Seca, imperativa, sin humor. No alza la voz.
 - "No le pregunto qué opina. Le informo qué va a hacer."
-- "La verdad es un lujo. Valdoria no puede permitírselo."
+- "Valdoria se sostiene con cuotas, no con opiniones."
 
 **Acciones en el juego.** Controla **licencias, cuotas y contratos oficiales**, cierra zonas y aplica **inspecciones y redadas** si el jugador se pasa. En el Acto IV es el obstáculo principal.
 
@@ -414,5 +416,5 @@ Anselmo ── amistad rota ── Ministro Montenegro ── protege ── Est
 
 - ✅ Aldea del protagonista: **Vega Mansa**, sin región propia en el mapa; detalles de su familia en [21](21-pasado-de-valdoria.md).
 - ✅ Esteban tiene un medidor propio entre los cuatro del árbol, personal y no el del Consorcio; 🟡 se refleja en el mercado con un 2 a 4 % sobre lo que compra ([23](23-arbol-de-decisiones.md)).
-- ❓ Fichas de personajes secundarios (capataces, clientes, empleados con nombre).
-- ❓ Diseño visual de cada ficha para los retratos finales (F4-190).
+- ⏳ F4-172 Fichas breves de los personajes secundarios con nombre (clientes y empleados). Los figurantes por tipo, como el capataz, ya tienen hoja en F0-64.
+- ⏳ F4-190 Diseño visual de cada ficha para los retratos finales.

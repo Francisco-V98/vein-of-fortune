@@ -48,6 +48,8 @@ Lore:
 
 🟡 El detector muestra **rangos** (ej. "oro: 20–40 %") y no valores exactos. La precisión mejora con mejores escáneres → la información es progresión.
 
+✅ El protagonista empieza con un **detector básico heredado de Anselmo**. No depende del cuarzo: el cuarzo solo lo mejora más adelante.
+
 ✅ Las probabilidades de aparición y obtención se calibran para que no sea fácil ganar mucho dinero rápido ni terminar el juego pronto.
 
 ## Herramientas
@@ -64,9 +66,9 @@ Lore:
 
 ✅ **5 niveles por herramienta** (a revisar si en el prototipo hace falta ampliar). Los minerales de mayor nivel exigen herramientas de mayor nivel.
 
-🟡 Tipos: pico, taladro, cincel, cribas, detonadores; cada uno cubre un tipo de minijuego.
+🟡 Tipos: pico, taladro, cincel, criba y explosivo (los de [09](09-minijuegos.md)); cada uno cubre un tipo de minijuego.
 
-🟡 Mejorar una herramienta requiere **minerales específicos** (ej. hierro para el pico, diamante para el cincel, cuarzo para el detector). Así los minerales tienen utilidad real.
+🟡 Mejorar una herramienta requiere **minerales específicos** (ej. hierro para el pico, diamante para el cincel, cuarzo para mejorar el detector). Así los minerales tienen utilidad real.
 
 🟡 Los niveles altos de equipo requieren licencias o contactos (influencia), no solo dinero.
 

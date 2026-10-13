@@ -94,7 +94,7 @@ Paleta fría con **vinotinto** como acento principal y **latón** como detalle m
 - **Éter:** en la lente de la lámpara, tres puntas de Aetherita en vinotinto con un contorno cian fino; es el único cian y rosado de la marca porque es la propia Aetherita.
 - **Comercio:** tres barras escalonadas (acero, vinotinto y ámbar) bajo el casco, como un gráfico que sube.
 
-Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre debajo. Se evita el farol rojo porque es el emblema de Los Faroleros. Las piezas están en `studio/assets-ref/marca/`.
+Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre debajo. Se evita el farol porque es el emblema de Los Faroleros (vinotinto mate con luz ámbar, nunca rojo emisivo ✅). Las piezas están en `studio/assets-ref/marca/`.
 
 ### Logotipo ✅ (versión provisional)
 
@@ -160,16 +160,16 @@ Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre deb
 | Pieza | Estado | Tarea |
 |---|---|---|
 | Nombre y esencia | ✅ elegido | F0-18 |
-| Documento de marca | 🟡 en revisión | F0-19 |
-| Guía visual (tipografía, usos) | 🟡 en revisión | F0-20 |
+| Documento de marca | ✅ hecho; sus puntos 🟡 se cierran en ⏳ F0-56 | F0-19 |
+| Guía visual (tipografía, usos) | ✅ hecha; sus puntos 🟡 se cierran en ⏳ F0-56 | F0-20 |
 | Logo provisional (apilado, horizontal, icono y icono de app) | ✅ hecho (`studio/assets-ref/marca/`) | F0-21 |
-| Logo definitivo | ❓ pendiente | F3-28 |
-| Ícono y pantalla de título | ❓ pendiente | F3-29 |
-| Arte clave y capturas de tienda ES/EN | ❓ pendiente | F5-43 y F5-35 |
-| Kit de prensa | ❓ pendiente | F5-44 |
+| Logo definitivo | ⏳ F3-28 pendiente | F3-28 |
+| Ícono y pantalla de título | ⏳ F3-29 pendiente | F3-29 |
+| Arte clave y capturas de tienda ES/EN | ⏳ F5-43 pendiente | F5-43 y F5-35 |
+| Kit de prensa | ⏳ F5-44 pendiente | F5-44 |
 
 ## Pendiente
 
 - ⏳ F1-18 Verificar la licencia y los glifos de Pixelify Sans.
-- ❓ Diseño del wordmark en ambos idiomas.
-- ❓ Búsqueda de marca formal del título.
+- ⏳ F3-28 Diseño del wordmark definitivo en ambos idiomas.
+- ⏳ F5-29 Búsqueda de marca formal del título.
