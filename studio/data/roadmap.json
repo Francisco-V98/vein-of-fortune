@@ -515,7 +515,7 @@
               "id": "F0-47",
               "title": "Umbrales que activan cada acto",
               "est": 3,
-              "status": "backlog",
+              "status": "done",
               "prio": "P1",
               "desc": "Reglas concretas para pasar de un acto al siguiente (estatus, deuda, logros, relación con facciones) de modo que se puedan cumplir de varias maneras y no obliguen a seguir la trama al pie de la letra.",
               "done_when": "Umbrales definidos para los 4 actos y acordados con el autor."
@@ -807,6 +807,15 @@
               "prio": "P1",
               "desc": "Decidir con el autor lo que condiciona los finales y los umbrales: medidor de Esteban, comprador de la Aetherita, quién publica, quién entrega el reproductor, quién ordena el trato de Anselmo, la pensión de Teo, el costo de Reme y la fecha del acta.",
               "done_when": "Las ocho decisiones están en ✅ en los documentos 19, 21, 22 y 23 y en decisions.json."
+            },
+            {
+              "id": "F0-78",
+              "title": "Diseñar el diario, la cola de historia y la misión de rescate",
+              "est": 3,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Las tres piezas anti-atasco de los umbrales de acto: un diario que lista las vías que faltan para pasar de acto, la cola donde espera la historia mientras el jugador hace sandbox, y la misión de rescate que se ofrece tras mucho tiempo sin avanzar.",
+              "done_when": "Las tres piezas diseñadas y acordadas con el autor, sin que la deuda ni ningún umbral puedan atascar la partida."
             }
           ]
         }
@@ -2630,7 +2639,9 @@
               "status": "backlog",
               "title": "Modelo de relaciones por facción",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Modelo de los medidores de relación (Unión, Esteban, Lucía, Teo y los que se añadan). Debe respetar los tramos del documento 24: bajo <35, medio 35–54, alto 55+, con arranques 50, Esteban 40 y Teo 60, y los efectos de 5, 10 y 20 por opción del documento 23.",
+              "done_when": "Los caminos mínimos del documento 24 (sección 6) siguen valiendo: el aval de Esteban se alcanza sin la escena opcional en las tres variantes y los tramos bajos de Lucía y Teo son alcanzables; si cambia un tamaño de efecto, se rehace antes esa sección."
             },
             {
               "id": "F4-62",
@@ -2984,7 +2995,9 @@
               "status": "backlog",
               "title": "Escalera de estatus y condiciones de ascenso",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Requisitos y cifras de cada estatus (Buscador a Magnate). Debe respetar los pisos del documento 24: Comerciante en la escena A5 del Acto II, Empresario en el círculo del Acto III, y Magnate como premio al cerrar el acta, no como puerta.",
+              "done_when": "Los pisos de estatus del documento 24 se cumplen con las horas por acto del documento 17 y ninguna puerta se puede atascar."
             },
             {
               "id": "F4-110",
@@ -3033,7 +3046,9 @@
               "status": "backlog",
               "title": "Primeros 30 logros",
               "est": 8,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Los primeros 30 logros. Deben incluir los que cuentan para la vía de logros del documento 24 (cuatro y diez como propuesta) sin exigir una decisión moral concreta.",
+              "done_when": "La vía de logros de las puertas del documento 24 se puede cumplir con los 30 primeros logros por más de un camino."
             },
             {
               "id": "F4-117",
@@ -3164,7 +3179,9 @@
               "status": "backlog",
               "title": "Alianza: elección y consecuencias",
               "est": 5,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Consecuencias de elegir alianza en la escena A5 del Acto II. Debe respetar el documento 24 (sección 7): ninguna alianza cierra la puerta del Acto III y cada una deja al menos una vía abierta; el costo de Reme se muestra antes de elegir.",
+              "done_when": "Las tres alianzas dejan al menos una vía abierta para la puerta del círculo y el costo de Reme se ve antes de elegir."
             },
             {
               "id": "F4-134",

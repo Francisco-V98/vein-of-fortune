@@ -38,26 +38,26 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 
 ## 2 · Las seis escenas ancla 🟡
 
-**Estado:** propuesta del narrador a partir de la sección 1. Los disparadores son **umbrales y no fechas** (modo historia no lineal, [17](17-mapa-de-historia.md)); sus cifras exactas ⏳ F0-47
+**Estado:** ✅ los disparadores son **eventos tuyos y no fechas**, van encadenados y los piden A2, A3, A4 y A5 como indica [24](24-umbrales-de-acto.md) (decisión del autor, 2026-10-12); 🟡 las escenas y su contenido, propuesta del narrador a partir de la sección 1
 
 | # | Escena | Tipo | Disparador | Salida |
 |---|---|---|---|---|
-| A1 | **La política manda** | Común, con capa | Acto I cerrado (puesto reabierto y primeras cuotas pagadas) y primera zona del Acto II desbloqueada | Contacto respondido (aceptas, rechazas o pospones). Queda en cola la visita de A2 |
-| A2 | **La orden de Reme** | **Única** | A1 resuelta y tu próxima visita a Reme para pagar una cuota | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
-| A3 | **El primer conflicto** | **Única** | A2 resuelta y primera expedición o venta en la zona de tu variante | Conflicto resuelto, con un costo. La facción fija su postura ante la huelga |
-| A4 | **La primera huelga** | Común, con capa | A3 resuelta. El evento de huelga llega con aviso previo en las noticias | Bando elegido, precio subido, apagón vivido, mercado negro abierto (primer contacto con Casilda, si aún no lo tenías), Teo y la Unión movidos |
-| A5 | **Las tres ofertas** | Común, con capa | A4 resuelta y estatus mínimo de Comerciante (umbral propuesto) | Alianza elegida. **Cierra el Acto II** |
-| A6 | **El cierre de Reme** | **Única** | Justo después de A5 | Costo o alivio de Reme, su silencio sobre el abono y el sobre sin remitente. Abre el Acto III |
+| A1 | **La política manda** | Común, con capa | Acto I cerrado: puesto reabierto, primera cuota atendida y primer contacto con los empleados ✅. El decreto de A1 es lo que abre las zonas del II 🟡 ⏳ F4-128 | Contacto respondido (aceptas, rechazas o pospones). Queda en cola la orden de A2 |
+| A2 | **La orden de Reme** | **Única** | A1 resuelta y tu primera cuota atendida después de A1 (pagada o prorrogada) ✅ | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
+| A3 | **El primer conflicto** | **Única** | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | Conflicto resuelto, con un costo. La facción fija su postura ante la huelga |
+| A4 | **La primera huelga** | Común, con capa | A3 resuelta, aviso en las noticias y una acción tuya, sin plazo en días ✅ | Bando elegido, precio subido, apagón vivido, mercado negro abierto (primer contacto con Casilda, si aún no lo tenías), Teo y la Unión movidos |
+| A5 | **Las tres ofertas** | Común, con capa | A4 resuelta, estatus de Comerciante y dos vías de tres entre deuda, logros y relación ✅ | Alianza elegida. **Cierra el Acto II** |
+| A6 | **El cierre de Reme** | **Única** | A5 resuelta, justo después ✅ | Costo o alivio de Reme, su silencio sobre el abono y el sobre sin remitente. Abre el Acto III |
 
 - El **orden** de A1 a A6 es fijo; el **ritmo** no. Entre una escena y otra el jugador comercia, mina y explora, como pide el modo historia.
-- **Regla de obligatoriedad 🟡.** Las seis anclas se juegan en toda partida, cada una al cumplirse su umbral: el disparador de cada escena es la anterior resuelta y A5 lleva el hito. Lo que separa a las tres **únicas** (A2, A3 y A6) de las tres **comunes** (A1, A4 y A5) no es poder saltarlas, sino que las únicas se escriben tres veces y las comunes una vez, con capa. Lo único que se puede saltar son las **opcionales** O1 a O4.
-- El hito del Acto II es **elegir con qué facción te alías** ✅ ([17](17-mapa-de-historia.md)). En este diseño lo cierra A5 🟡. A6 es la última pantalla del acto, no una condición para pasar al III.
+- **Regla de obligatoriedad ✅.** Las seis anclas se juegan en toda partida, cada una al cumplirse su disparador: cada escena espera a la anterior resuelta y A5 lleva el piso de estatus y las vías ([24](24-umbrales-de-acto.md)). Lo que separa a las tres **únicas** (A2, A3 y A6) de las tres **comunes** (A1, A4 y A5) no es poder saltarlas, sino que las únicas se escriben tres veces y las comunes una vez, con capa. Lo único que se puede saltar son las **opcionales** O1 a O4, que no puntúan para ninguna puerta.
+- El hito del Acto II es **elegir con qué facción te alías** ✅ ([17](17-mapa-de-historia.md)). Lo cierra A5 ✅. A6 es la última pantalla del acto, no una condición para pasar al III.
 - **A1 común.** Los tres medios cuentan el mismo decreto, que abre las zonas del Acto II con la firma de Dueñas, y cada uno lo lee con su tono. La capa es el contacto de la facción.
 - **Una sombra por escena, como máximo** ([18](18-biblia-narrativa.md), 1.4): Teo y La Fosa en A4, el certificado de Quiroga en A5 y el sobre sin remitente en A6.
 
 ### Escenas opcionales 🟡
 
-Se activan por umbral y se pueden saltar. Si el jugador no conoció antes a Esteban, A5 lo presenta; Casilda ya apareció en A2 o en A4.
+Se activan por evento tuyo, no por calendario, se pueden saltar y no puntúan para ninguna puerta ✅ ([24](24-umbrales-de-acto.md)). Si el jugador no conoció antes a Esteban, A5 lo presenta; Casilda ya apareció en A2 o en A4.
 
 | Opción | Qué es | Disparador | Capa por variante |
 |---|---|---|---|
@@ -160,7 +160,7 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 
 ## 7 · La primera huelga: depende de ti 🟡
 
-**Estado:** ✅ la huelga ocurre en las tres partidas (el precio sube en todas) y tú decides tu bando: apoyar, abstenerte o romper (decisión del autor, 2026-10-12); 🟡 las consecuencias pequeñas por variante.
+**Estado:** ✅ la huelga ocurre en las tres partidas (el precio sube en todas) y tú decides tu bando: apoyar, abstenerte o romper, y romper baja mucho a Teo y a la Unión (decisión del autor, 2026-10-12); 🟡 las consecuencias pequeñas por variante.
 
 Lo común está en la sección 4. Además, mientras dura, Cañón Ferroso se cierra, como permite [07](07-sociedad-y-eventos.md).
 
@@ -172,7 +172,7 @@ Lo común está en la sección 4. Además, mientras dura, Cañón Ferroso se cie
 | **Abstenerte** | Sigues con tu negocio y no tomas parte |
 | **Romper** | Vendes el mineral que pide el comprador que quiere la huelga rota |
 
-**Consecuencias pequeñas por variante.** Teo y la Unión reaccionan igual en las tres (apoyar los acerca, romper los aleja); la capa es lo que cambia:
+**Consecuencias pequeñas por variante.** Teo y la Unión reaccionan igual en las tres (apoyar los acerca, romper los aleja mucho: baja a Teo y a la Unión ≈ 20 ✅, decisión del autor, 2026-10-12); la capa es lo que cambia:
 
 | Variante | Si apoyas | Si rompes |
 |---|---|---|
@@ -276,7 +276,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 
 **Estado:** el hito y la actitud de Reme en el Acto III y el IV son decisión del autor; las pruebas por variante son una ampliación de canon propuesta.
 
-- El Acto II se cierra al elegir alianza ✅. En este diseño lo lleva la escena A5 🟡. Los umbrales exactos ⏳ F0-47
+- El Acto II se cierra al elegir alianza ✅. Lo lleva la escena A5 ✅, con los umbrales de [24](24-umbrales-de-acto.md).
 - **Reme.** Traiciona por obligación en A2 ✅, queda distante pero atenta en el Acto III ✅ y es tu mayor aliada en el IV ✅.
 - **Las pruebas del Acto IV.** Los comprobantes del abono son comunes ([19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md)) y no cambian. Propuesta de ampliación, sin tocar la sección 6 de [21](21-pasado-de-valdoria.md): además entrega una prueba propia de su variante (reparto en [23](23-arbol-de-decisiones.md), sección 8) y su epílogo ⏳ F0-46
 
@@ -314,7 +314,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 
 - ✅ Las ramas de A2, A4 y A5 están en [23](23-arbol-de-decisiones.md). 🟡 Las pruebas distintas del Acto IV y el acto de cada cinta, también ahí.
 - ⏳ F0-46 Epílogo de Reme y de cada facción según la alianza.
-- ⏳ F0-47 Umbrales exactos de A1 a A6 y de las escenas opcionales.
+- ✅ Umbrales de A1 a A6 y de las escenas opcionales: resueltos en [24](24-umbrales-de-acto.md). El evaluador ⏳ F4-127
 - ⏳ F0-23 Las tres pistas del Acto I y su lugar en los días del tutorial.
 - ⏳ F0-52 Cifras: cuota extra, adelanto de la cuota, modificadores de precio y de vigilancia.
 - ⏳ F4-128 Guion de la columna común; F4-129, F4-130 y F4-131 guion de las piezas únicas; F4-132 la huelga; F4-133 la alianza.
@@ -339,5 +339,5 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 | Sorteo oculto y pistas del Acto I | Sí | Sección 10 |
 | Pruebas del Acto IV como ampliación sin tocar el 21 | Sí | Sección 11 |
 | Dueñas solo en decretos y firma; sin mal del éter ni cintas | Sí | Secciones 6 y 7 |
-| Escenas por umbral; solo las tres piezas únicas son obligatorias | Con matiz 🟡 | Sección 2: las seis anclas se juegan por umbral, porque cada una dispara la siguiente y A5 lleva el hito; solo O1 a O4 se pueden saltar. Pregunta para el autor |
+| Escenas por evento; las seis anclas son obligatorias | Sí ✅ | Sección 2 y [24](24-umbrales-de-acto.md): las seis anclas van encadenadas y A5 lleva el hito; solo O1 a O4 se pueden saltar |
 | Nota de coste para F4-128, F4-179 y traducciones | Sí | Sección 12 |
