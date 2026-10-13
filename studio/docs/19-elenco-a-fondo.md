@@ -29,7 +29,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 
 > **Decisión del autor ✅:** Anselmo **está vivo, pero se cree que murió enfermo**. Es **cómplice** de la Comisión del Éter. El protagonista lo descubre **al final del último acto** y queda con ganas de saber qué pasó, dónde está y por qué decidió lo que decidió. Eso deja la puerta abierta a **capítulos o actualizaciones futuras**.
 
-**Cómo encaja ✅🟡** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md); solo se marcan 🟡 lo que no vio: «18 años», «hace pocas semanas» y la convicción del punto 4):
+**Cómo encaja ✅🟡** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md); solo se marcan 🟡 lo que no vio: «18 años» y la convicción del punto 4):
 
 1. Hace veinte años Anselmo, Teo y Aurelio Dueñas, entonces un funcionario de unos 40 años y «joven» solo frente a la cúpula del Ministerio ✅, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar. Fechas y edades en [21](21-pasado-de-valdoria.md).
 2. Anselmo lo documentó en una libreta y grabó **ocho cintas**. Calibró durante 18 años 🟡 los límites de exposición, y cada calibración agravó su mal ✅. Hace dos años intentó denunciarlo y la Comisión lo detuvo.
@@ -37,7 +37,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 4. Desde entonces vive en secreto, ayudando a la Comisión a calibrar los límites de exposición. Cree que desde dentro salva más vidas que estando muerto 🟡. En la práctica, ayuda a que se siga ocultando.
 5. Las cintas son lo último que grabó **antes** del trato: su último acto de honestidad.
 
-**La revelación (final del Acto IV, después de la decisión sobre la Aetherita):** el protagonista encuentra un **acta de calibración de la Comisión firmada por Anselmo con fecha de hace pocas semanas** 🟡. No hay discurso ni explicación. Solo una firma que reconoce.
+**La revelación (final del Acto IV, después de la decisión sobre la Aetherita):** el protagonista encuentra un **acta de calibración de la Comisión firmada por Anselmo con fecha de hace pocas semanas** ✅. No hay discurso ni explicación. Solo una firma que reconoce.
 
 **Por qué creo que el giro funciona, con ajustes:**
 
@@ -413,6 +413,6 @@ Anselmo ── amistad rota ── Ministro Dueñas ── protege ── Esteba
 ## Pendiente
 
 - ✅ Aldea del protagonista: **Vega Mansa**, sin región propia en el mapa; detalles de su familia en [21](21-pasado-de-valdoria.md).
-- ✅ Esteban tiene un medidor propio entre los cuatro del árbol; 🟡 es personal (no el del Consorcio) y se refleja en el mercado con un 2 a 4 % sobre lo que compra ([23](23-arbol-de-decisiones.md)).
+- ✅ Esteban tiene un medidor propio entre los cuatro del árbol, personal y no el del Consorcio; 🟡 se refleja en el mercado con un 2 a 4 % sobre lo que compra ([23](23-arbol-de-decisiones.md)).
 - ❓ Fichas de personajes secundarios (capataces, clientes, empleados con nombre).
 - ❓ Diseño visual de cada ficha para los retratos finales (F4-190).

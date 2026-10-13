@@ -434,7 +434,7 @@
       "acto": "II",
       "nivel": "grande",
       "titulo": "La alianza",
-      "dispara": "Escena A5 de 22: tras la huelga y con estatus de Comerciante, llegan las tres ofertas. Cierra el Acto II.",
+      "dispara": "Escena A5 de 22: tras la huelga y con estatus de Comerciante, llegan las tres ofertas, y se te muestra antes el costo que cada una tiene para Reme. Cierra el Acto II.",
       "opciones": [
         {
           "id": "consorcio",
@@ -1065,7 +1065,7 @@
         "f-monopolio",
         "f-puerta"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iv-lucia-publica",
@@ -1104,7 +1104,7 @@
         "f-destino",
         "f-comprador"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iv-teo",

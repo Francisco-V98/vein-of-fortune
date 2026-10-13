@@ -14,7 +14,7 @@ Qué pasó **antes del juego**: el descubrimiento de la Aetherita, el nacimiento
 2. El Ministerio halla la Aetherita (hace 30), crea la Comisión (hace 27) y manda la primera expedición a La Fosa (hace 20). La cuadrilla enferma.
 3. La electrificación con Aetherita empieza después (hace 17). Deja sin oficio a los faroleros, y Casilda empieza a «cobrar la luz» (hace 15).
 4. Anselmo calibra durante 18 años 🟡 los límites de exposición. Hace 2 años intenta denunciar, lo detienen y acepta el trato: muere en público, sigue vivo en secreto.
-5. Hace pocas semanas 🟡 firma un acta de calibración. Esa firma es la última escena del juego.
+5. Hace pocas semanas ✅ firma un acta de calibración. Esa firma es la última escena del juego.
 
 ---
 
@@ -63,8 +63,8 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 | **8 años** | **Dueñas es nombrado ministro de Recursos** | Dueñas 52 | ✅ |
 | **4 años** | El Ministerio dobla la cuota de extracción y la Comisión alarga el turno máximo **contra el informe de Anselmo** | Anselmo 54, Dueñas 56 | ✅ |
 | **2 años (otoño)** | Anselmo **prepara la denuncia**, deja el testamento firmado y empieza a grabar las cintas | Anselmo 56 | ✅ |
-| **2 años (invierno)** | La noche antes graba y esconde las dos últimas cintas. **Lo detienen** y acepta el trato. A **fines de invierno** muere en público | Anselmo 56, Dueñas 58 (ordena el trato 🟡), Quiroga 48 (tramita el certificado) | ✅ el hito; 🟡 lo marcado |
-| **Pocas semanas** | Anselmo **firma el acta de calibración** | Anselmo 58 | 🟡 («pocas semanas», sin confirmar) |
+| **2 años (invierno)** | La noche antes graba y esconde las dos últimas cintas. **Lo detienen** y acepta el trato. A **fines de invierno** muere en público | Anselmo 56, Dueñas 58 (ordena el trato ✅), Quiroga 48 (tramita el certificado) | ✅ el hito; 🟡 lo marcado |
+| **Pocas semanas** | Anselmo **firma el acta de calibración** | Anselmo 58 | ✅ (decisión del autor, 2026-10-12) |
 | **Hoy** | El protagonista hereda la licencia, el puesto y la deuda | Protagonista 22 | ✅ |
 
 ### Lo que sabe el país y lo que no 🟡
