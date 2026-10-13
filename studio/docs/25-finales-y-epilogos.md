@@ -29,14 +29,14 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | Voz | Las cuenta el Heraldo Meridiano, La Voz del Hollín o el Teletipo Meridiano ✅. El Heraldo no admite nada sin un «pero»; el Teletipo termina siempre en SIN CONFIRMAR y no puede cerrar a Teo ni a Reme ✅ |
 | El acta | Última escena para todos, **sin discurso**, igual en las tres salidas. Cambia solo el fondo: ruido de calle lejano si revelas, oficina muda si callas, el sello del comprador en la carpeta si vendes. Una línea del protagonista de **8 palabras o menos** que no explica nada. Último plano: **la lámpara**. Magnate llega como un aviso silencioso al volver al sandbox ✅ |
 | Anselmo | **Vivo y secreto en las tres salidas**. El acta no cuenta como prueba y Lucía no la publica. Si revelas, la Comisión corta el abono mensual de Reme (hilo vivo para una segunda parte); si callas o vendes, el abono sigue llegando. No hay misión de buscarlo en el sandbox ✅ |
-| Dueñas | Una **regla única de prioridad**: si vendes al Ministerio, te compra con el sello; si la Unión está alta y conservas al menos 2 pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor. Si revelas, queda **bajo investigación con resultado abierto**, con un comunicado oficial de una línea ✅. Su desenlace se decide **al cerrar el acto, con el comprador ya fijado** ✅ |
+| Montenegro | Una **regla única de prioridad**: si vendes al Ministerio, te compra con el sello; si la Unión está alta y conservas al menos 2 pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor. Si revelas, queda **bajo investigación con resultado abierto**, con un comunicado oficial de una línea ✅. Su desenlace se decide **al cerrar el acto, con el comprador ya fijado** ✅ |
 | Lucía | Si callas o vendes: con su medidor **bajo** filtra una versión a medias; en **medio o alto** calla ✅. Si revelas, lo de [23](23-arbol-de-decisiones.md): alto publica contigo, medio no publica, bajo publica sin ti ✅ |
 | Herencia | «Por qué te dejaron heredar» **no se escribe ahora**: queda como hilo para una segunda parte. No se siembra nada en el Acto I ni se toca F0-23 ✅ |
-| Estado | Se guardan, como **estado legible con nombres estables**, las banderas, la variante oculta de Reme y los resultados calculados de Esteban, Dueñas, Lucía y Teo, para releer el epílogo desde el diario ✅ |
+| Estado | Se guardan, como **estado legible con nombres estables**, las banderas, la variante oculta de Reme y los resultados calculados de Esteban, Montenegro, Lucía y Teo, para releer el epílogo desde el diario ✅ |
 | Quién | Escribe el narrador. El motor es F4-210 y la traducción F4-211 ✅ |
 | Aetherita | Al revelar, **cae, rebota y sube** (su extracción es difícil y el mineral es limitado) y queda **algo por debajo del precio de antes**. No deja de valer ni se acaba el mercado ✅ |
 | Vender al Ministerio | El Ministerio se queda con **tu prueba** (los comprobantes y las cintas que usas), **no con el archivo de Quiroga** ✅ |
-| Ya decidido antes | Teo se queda, se va o muere. Reme siempre es tu mayor aliada, sin reproche. La cinta 8 queda cortada y quién la cortó, abierto. Ninguna salida es la correcta. Tono: esperanza con filo, sin cinismo. Dueñas no se humaniza ✅ |
+| Ya decidido antes | Teo se queda, se va o muere. Reme siempre es tu mayor aliada, sin reproche. La cinta 8 queda cortada y quién la cortó, abierto. Ninguna salida es la correcta. Tono: esperanza con filo, sin cinismo. Montenegro no se humaniza ✅ |
 
 ---
 
@@ -105,8 +105,8 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 
 ### 5.1 · Cómo se eligen
 
-- Cada tema devuelve **una pieza** por partida, con una regla en orden: se aplica la primera que se cumple. Dueñas puede devolver dos (DU-04 solo si revelas).
-- Por partida salen **17 piezas** (18 si revelas): 1 de cabecera, 8 de personajes (Reme, Esteban, Casilda, Quiroga, Lucía, Teo, Dueñas y la Unión), 3 de facciones, 2 de mundo, 2 de mercado y 1 de familia.
+- Cada tema devuelve **una pieza** por partida, con una regla en orden: se aplica la primera que se cumple. Montenegro puede devolver dos (DU-04 solo si revelas).
+- Por partida salen **17 piezas** (18 si revelas): 1 de cabecera, 8 de personajes (Reme, Esteban, Casilda, Quiroga, Lucía, Teo, Montenegro y la Unión), 3 de facciones, 2 de mundo, 2 de mercado y 1 de familia.
 - Las piezas con dos líneas muestran **una** según la condición que se indica.
 
 | Tema | Piezas | Reparto |
@@ -118,7 +118,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | Quiroga | QU-01 a QU-03 | 3 |
 | Lucía | LU-01 a LU-04 | 4 |
 | Teo | TE-01 a TE-03 | 3 |
-| Dueñas | DU-01 a DU-04 | 4 |
+| Montenegro | DU-01 a DU-04 | 4 |
 | Unión | UN-01 a UN-03 | 3 |
 | Facciones | FC-01 a FC-06 | 6 |
 | Mundo | MU-01 a MU-06 | 6 |
@@ -179,14 +179,14 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | TE-02 | Se va | `e-teo` | Voz | «Teo Cárdenas deja el Hollín. No dice adónde ni guarda rencor. Los suyos le dejan el sitio en la mesa.» |
 | TE-03 | Muere | `e-teo` | Voz | «La Unión anuncia un acto en memoria de Teo Cárdenas, minero veterano. Se espera que acudan todos los que aprendieron con él.» |
 
-**Dueñas.** Regla única, en este orden ✅: (1) vendes al Ministerio, DU-01; (2) si no, Unión alta y al menos 2 pruebas, DU-02; (3) en el resto, DU-03. DU-04 se suma si revelas. Nunca cae, no se arrepiente ni nombra sucesor ✅. Siempre se conservan al menos tres pruebas ([23](23-arbol-de-decisiones.md), sección 8), así que en la práctica solo importa la Unión.
+**Montenegro.** Regla única, en este orden ✅: (1) vendes al Ministerio, DU-01; (2) si no, Unión alta y al menos 2 pruebas, DU-02; (3) en el resto, DU-03. DU-04 se suma si revelas. Nunca cae, no se arrepiente ni nombra sucesor ✅. Siempre se conservan al menos tres pruebas ([23](23-arbol-de-decisiones.md), sección 8), así que en la práctica solo importa la Unión.
 
 | ID | Cuándo | Lee | Medio | Ejemplo 🟡 |
 |---|---|---|---|---|
-| DU-01 | Te compra con el sello | `f-comprador` | Heraldo | «El Ministerio informa de que `{nombre}` cuenta con el sello del ministro Dueñas, pero no precisa qué espera a cambio.» |
-| DU-02 | Intenta borrarte y falla | `e-duenas`, `e-union` | Teletipo | «DUEÑAS INTENTA CERRAR LAS LICENCIAS DE `{tienda}`. LA UNIÓN SE PLANTA. SE ESPERA QUE NO LO LOGRE. SIN CONFIRMAR» |
-| DU-03 | Te amenaza | `e-duenas` | Heraldo | «El ministro Dueñas recuerda que las licencias se renuevan, pero no todas se renuevan igual. No hace más comentarios.» |
-| DU-04 | Comunicado oficial, solo si revelas | `f-destino` | Heraldo | «El Ministerio informa de que el ministro Dueñas queda bajo investigación, pero continúa en funciones.» |
+| DU-01 | Te compra con el sello | `f-comprador` | Heraldo | «El Ministerio informa de que `{nombre}` cuenta con el sello del ministro Montenegro, pero no precisa qué espera a cambio.» |
+| DU-02 | Intenta borrarte y falla | `e-montenegro`, `e-union` | Teletipo | «MONTENEGRO INTENTA CERRAR LAS LICENCIAS DE `{tienda}`. LA UNIÓN SE PLANTA. SE ESPERA QUE NO LO LOGRE. SIN CONFIRMAR» |
+| DU-03 | Te amenaza | `e-montenegro` | Heraldo | «El ministro Montenegro recuerda que las licencias se renuevan, pero no todas se renuevan igual. No hace más comentarios.» |
+| DU-04 | Comunicado oficial, solo si revelas | `f-destino` | Heraldo | «El Ministerio informa de que el ministro Montenegro queda bajo investigación, pero continúa en funciones.» |
 
 **Unión.** Se elige por `e-union`. Cubre todas las salidas, también las que no son revelar.
 
@@ -250,7 +250,7 @@ Los 81 caminos del Acto II (3 variantes × 3 respuestas a la orden × 3 bandos e
 
 ### 6.2 · Garantías
 
-Se enumeraron los estados válidos de las variables de selección (unos 459.000, con el aval ligado a Esteban en tramo alto). En todos, cada tema devuelve exactamente una pieza (Dueñas, dos si revelas), no se repite ninguna y las 54 son alcanzables. El motor repite la comprobación con banderas forzadas ⏳ F4-210.
+Se enumeraron los estados válidos de las variables de selección (unos 459.000, con el aval ligado a Esteban en tramo alto). En todos, cada tema devuelve exactamente una pieza (Montenegro, dos si revelas), no se repite ninguna y las 54 son alcanzables. El motor repite la comprobación con banderas forzadas ⏳ F4-210.
 
 **Estados que no existen**, para no escribir piezas de más:
 
@@ -270,7 +270,7 @@ Se enumeraron los estados válidos de las variables de selección (unos 459.000,
 | Lucía al callar o vender | Sin pieza | LU-04, con filtración si el tramo es bajo y silencio si es medio o alto |
 | Teo muere y piezas de la Unión | La Unión «lo recuerda» | UN-0x no nombra a Teo; solo TE-03 lo hace |
 | Reme protegida y misma facción aliada | La facción de Reme se enemista con tu alianza | FC-0x no promete buena relación sin matiz: usa «mantiene» y «se espera» |
-| Dueñas amenaza y Reme protegida | «Pierde fuerza» | DU-03 no nombra a nadie |
+| Montenegro amenaza y Reme protegida | «Pierde fuerza» | DU-03 no nombra a nadie |
 | Revelas y Lucía publica | El Teletipo publica pero no puede confirmar | LU-01 sigue terminando en SIN CONFIRMAR |
 | Anselmo | Una tarjeta podría delatarlo | Ninguna lo nombra vivo ni cita el acta (sección 2) |
 
@@ -302,7 +302,7 @@ Cubren las 54 piezas y las dos líneas de las piezas que las tienen. Los tramos 
 | Anselmo vivo | Dónde está, por qué firmó y qué fue de su trato. No hay misión de buscarlo | El acta. Sin tarea: es un hilo para una segunda parte, y el destino del trato también |
 | El abono | Si revelas, la Comisión lo corta; si no, sigue llegando | Cola de RE-01 a RE-03 |
 | La cinta 8 | Quién la cortó | LU-01 («hasta donde llegan») y las cintas ([21](21-pasado-de-valdoria.md), sección 7) |
-| Dueñas investigado | El resultado de la investigación | DU-04 |
+| Montenegro investigado | El resultado de la investigación | DU-04 |
 | Por qué te dejaron heredar | **No se escribe, no se siembra y no se toca F0-23** | Fuera del juego |
 
 ### 7.2 · No pueden quedar abiertos 🟡
@@ -326,7 +326,7 @@ Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas l
 
 ## 8 · Estado legible que se guarda 🟡
 
-**Estado:** ✅ que se guardan banderas, variante oculta y resultados de Esteban, Dueñas, Lucía y Teo con nombres estables, y que el de Dueñas se fija al cerrar el acto con el comprador ya fijado; 🟡 los nombres exactos de la tabla, los valores y que se añadan `e-union` y `e-abono`. No van a `decisions.json`: la validación del hub solo admite banderas de elección y medidores, y exige que alguna decisión las fije y las lea. Su modelo ⏳ F2-01.
+**Estado:** ✅ que se guardan banderas, variante oculta y resultados de Esteban, Montenegro, Lucía y Teo con nombres estables, y que el de Montenegro se fija al cerrar el acto con el comprador ya fijado; 🟡 los nombres exactos de la tabla, los valores y que se añadan `e-union` y `e-abono`. No van a `decisions.json`: la validación del hub solo admite banderas de elección y medidores, y exige que alguna decisión las fije y las lea. Su modelo ⏳ F2-01.
 
 El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo debe releerse desde el diario igual que se vio. Se fijan una vez y no se recalculan.
 
@@ -334,7 +334,7 @@ El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo de
 |---|---|---|---|
 | `e-variante-reme` | consorcio, ministerio, faroleros | Al empezar la partida (el sorteo de [22](22-acto-ii-variantes.md)) | RE-01 a RE-03 |
 | `e-esteban` | se-une, se-aparta, defiende | Al resolver `n-iv-esteban` | ES-01 a ES-04, ME-05 |
-| `e-duenas` | compra, borra, amenaza | Al cerrar el IV, con el comprador ya fijado | DU-01 a DU-03 |
+| `e-montenegro` | compra, borra, amenaza | Al cerrar el IV, con el comprador ya fijado | DU-01 a DU-03 |
 | `e-lucia` | contigo, voz, tu, filtra, calla | Al resolver `n-iv-lucia-publica` | LU-01 a LU-04 |
 | `e-teo` | queda, va, muere | Al resolver `n-iv-teo` | TE-01 a TE-03 |
 | `e-union` | alto, medio, bajo | Al cerrar el IV (congela `m-union`) | H-01, H-02, DU-02, UN-01 a UN-03 |
@@ -362,21 +362,21 @@ El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo de
 |---|---|---|
 | [17](17-mapa-de-historia.md) | Se cierra el pendiente del cierre de la historia; el cierre del IV incluye el epílogo | ✅ la forma del cierre; 🟡 el texto del pendiente |
 | [18](18-biblia-narrativa.md) | El acta con su línea breve y la lámpara; los pendientes de F0-46 pasan a este documento; los términos nuevos entran al glosario como «sin traducir» ⏳ F1-20 | ✅ el acta y la lámpara; 🟡 el traslado de pendientes y los términos |
-| [19](19-elenco-a-fondo.md) | Anselmo secreto, Lucía, Dueñas y el abono; el gancho de la herencia queda fuera | ✅ |
+| [19](19-elenco-a-fondo.md) | Anselmo secreto, Lucía, Montenegro y el abono; el gancho de la herencia queda fuera | ✅ |
 | [21](21-pasado-de-valdoria.md) | Dónde está Anselmo hoy: hilo abierto | ✅ |
 | [22](22-acto-ii-variantes.md) | Epílogo de Reme y el estado de la variante | ✅ Reme siempre aliada; 🟡 RE-01 a RE-03 y el nombre `e-variante-reme` |
-| [23](23-arbol-de-decisiones.md) y `decisions.json` | Regla única de Dueñas y su desenlace al cerrar el acto, Lucía al callar o vender, el Ministerio se queda con tu prueba, y la caída con rebote de la Aetherita | ✅ |
-| [24](24-umbrales-de-acto.md) | Orden de cierre y la regla de Dueñas (sin depender de la puerta) | ✅ |
+| [23](23-arbol-de-decisiones.md) y `decisions.json` | Regla única de Montenegro y su desenlace al cerrar el acto, Lucía al callar o vender, el Ministerio se queda con tu prueba, y la caída con rebote de la Aetherita | ✅ |
+| [24](24-umbrales-de-acto.md) | Orden de cierre y la regla de Montenegro (sin depender de la puerta) | ✅ |
 | [08](08-historia-y-personaje.md), `story.json` y `presentation.json` | La Aetherita cae, rebota y queda algo por debajo | ✅ |
 
 ---|---|---|
 | [17](17-mapa-de-historia.md) | Se cierra el pendiente del cierre de la historia; el cierre del IV incluye el epílogo | ✅ |
 | [18](18-biblia-narrativa.md) | El acta con su línea breve y la lámpara; los pendientes de F0-46 pasan a este documento | ✅ |
-| [19](19-elenco-a-fondo.md) | Anselmo secreto, Lucía, Dueñas y el abono; el gancho de la herencia queda fuera | ✅ |
+| [19](19-elenco-a-fondo.md) | Anselmo secreto, Lucía, Montenegro y el abono; el gancho de la herencia queda fuera | ✅ |
 | [21](21-pasado-de-valdoria.md) | Dónde está Anselmo hoy: hilo abierto | ✅ |
 | [22](22-acto-ii-variantes.md) | Epílogo de Reme y el estado de la variante | ✅ |
-| [23](23-arbol-de-decisiones.md) y `decisions.json` | Regla única de Dueñas, Lucía al callar o vender, el comprador Ministerio y los desenlaces calculados | ✅ las decisiones del autor; 🟡 el momento de evaluación de Dueñas |
-| [24](24-umbrales-de-acto.md) | Orden de cierre y la regla de Dueñas | ✅ |
+| [23](23-arbol-de-decisiones.md) y `decisions.json` | Regla única de Montenegro, Lucía al callar o vender, el comprador Ministerio y los desenlaces calculados | ✅ las decisiones del autor; 🟡 el momento de evaluación de Montenegro |
+| [24](24-umbrales-de-acto.md) | Orden de cierre y la regla de Montenegro | ✅ |
 
 ---
 
@@ -390,7 +390,7 @@ El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo de
 6. ¿Aceptas los nombres del estado legible y que se guarden también `e-union` y `e-abono`?
 7. ¿Cuál de las líneas del acta prefieres, o propones otra?
 
-Ya decididas el 2026-10-12 y fuera de esta lista: el Ministerio se queda con tu prueba y no con el archivo de Quiroga, el desenlace de Dueñas se decide al cerrar el acto con el comprador ya fijado, y la Aetherita cae, rebota y queda algo por debajo ✅.
+Ya decididas el 2026-10-12 y fuera de esta lista: el Ministerio se queda con tu prueba y no con el archivo de Quiroga, el desenlace de Montenegro se decide al cerrar el acto con el comprador ya fijado, y la Aetherita cae, rebota y queda algo por debajo ✅.
 
 ---
 

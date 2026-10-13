@@ -10,7 +10,7 @@ Qué pasó **antes del juego**: el descubrimiento de la Aetherita, el nacimiento
 
 ## Resumen en cinco líneas
 
-1. Un derrumbe (hace 40 años) crea la Unión y marca a Anselmo, a Teo, a Dueñas y al padre del protagonista.
+1. Un derrumbe (hace 40 años) crea la Unión y marca a Anselmo, a Teo, a Montenegro y al padre del protagonista.
 2. El Ministerio halla la Aetherita (hace 30), crea la Comisión (hace 27) y manda la primera expedición a La Fosa (hace 20). La cuadrilla enferma.
 3. La electrificación con Aetherita empieza después (hace 17). Deja sin oficio a los faroleros, y Casilda empieza a «cobrar la luz» (hace 15).
 4. Anselmo calibra durante 18 años 🟡 los límites de exposición. Hace 2 años intenta denunciar, lo detienen y acepta el trato: muere en público, sigue vivo en secreto.
@@ -20,7 +20,7 @@ Qué pasó **antes del juego**: el descubrimiento de la Aetherita, el nacimiento
 
 ## 1 · Decisiones del autor ✅
 
-Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología y aldea, la confirmación en lote de las cifras y los datos de esta página, la confirmación en lote de la muerte pública, la supervivencia de Anselmo, los orígenes y las cintas 1 a 6, y la confirmación, sin cambios, de los detalles de la muerte pública, de Reme, de Dueñas y de los ejemplos de voz.
+Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología y aldea, la confirmación en lote de las cifras y los datos de esta página, la confirmación en lote de la muerte pública, la supervivencia de Anselmo, los orígenes y las cintas 1 a 6, y la confirmación, sin cambios, de los detalles de la muerte pública, de Reme, de Montenegro y de los ejemplos de voz.
 
 | Tema | Decisión |
 |---|---|
@@ -28,9 +28,9 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 | Aldea del protagonista | **Vega Mansa**, donde su padre, hermano de Anselmo, dejó el Hollín tras un derrumbe y juró que ningún hijo bajaría a una mina ✅ |
 | Teo | **Minero veterano**, no capataz. La cuadrilla de la expedición no tiene capataz que cuente. Reme es **viuda de un capataz**: no se confunden ✅ |
 | Casas industriales | Las nuevas son **solo nombres de ambiente** en noticias y glosario: sin zona propia ni jefe. Se conserva **Casa Ormeño**; se descartan **Talavera e Hijos** y **Fundiciones Soria**, porque chocan con el Consorcio y la Unión ✅ |
-| Cifras de la cronología | Electrificación a los **17** años, «cobrar la luz» a los **15**, préstamo de Reme a los **21**, visita de Anselmo a Vega Mansa a los **14**, Dueñas ministro a los **8**, cuota doblada a los **4**, cuadrilla de **unas 12 personas**, expedición de **8 meses** y todas las edades de la tabla de la sección 3 ✅ |
+| Cifras de la cronología | Electrificación a los **17** años, «cobrar la luz» a los **15**, préstamo de Reme a los **21**, visita de Anselmo a Vega Mansa a los **14**, Montenegro ministro a los **8**, cuota doblada a los **4**, cuadrilla de **unas 12 personas**, expedición de **8 meses** y todas las edades de la tabla de la sección 3 ✅ |
 | Quién sabe qué | **Reme sospecha, pero no sabe, que Anselmo está vivo.** Oculta el abono por la cláusula del trato y porque su facción se lo pide ✅ |
-| La expedición | **Teo** fue evacuado al primer mes con un brazo roto (por eso solo tiene tos incipiente). **Dueñas** dirigió desde el campamento y nunca bajó a la veta ✅ |
+| La expedición | **Teo** fue evacuado al primer mes con un brazo roto (por eso solo tiene tos incipiente). **Montenegro** dirigió desde el campamento y nunca bajó a la veta ✅ |
 | La familia | El padre del protagonista es **hermano menor de Anselmo**, y ambos perdieron a su padre en Pozo Negro ✅ |
 | Cintas 7 y 8 | La **7** se graba la noche antes de la detención. La **8** aparece cortada y **quién la cortó se deja abierto**: el jugador nunca lo sabe con certeza ✅ |
 | Muerte pública | Hace **2 años**, a **fines de invierno**, de **«tos de mina»** (neumonía), en el **Sanatorio de Cumbre Clara** (Sierra Alta, lo lleva la Comisión). Cremación supuesta «por norma sanitaria» y **sin registro de cremación**. El certificado lo tramitó **Quiroga en Villa Brasa**. El trato y el abono, como están en la sección 5 ✅ |
@@ -39,31 +39,31 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 | Cintas 1 a 6 | Títulos, fecha y hecho verificable de la sección 7. Se recogen así: 1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV, y todas se oyen en el IV ✅ (sección 7) |
 | Detalles de la muerte pública | Cenizas esparcidas sin urna y aviso a la familia por carta tras la cremación. Lo detienen y lo trasladan a Cumbre Clara. El sello del certificado es irregular (el del sanatorio). Quiroga lo tramitó con una orden sellada de la Comisión y guardó copia como seguro de vida, junto con la carta de la cinta 6 que retuvo. Anselmo firmó el testamento antes de la detención ✅ |
 | Reme | Montó su casa de préstamos hace unos 25 años con dinero de una facción mayor. Recibió una carta sin firma que le pide callar. Sabe que el pago viene del Estado por la Comisión y no sabe que Anselmo vive. El equipo quedó en el campamento y la deuda creció. La tabla de razones por facción, tal como está en la sección 6 ✅ |
-| Dueñas a los 40 | Era el técnico más joven con la confianza de la cúpula, redactó el reglamento de la Comisión y eligió a Anselmo. Su lección: ninguna grieta en la mentira. Sigue duro, inflexible y poco razonable ✅ |
+| Montenegro a los 40 | Era el técnico más joven con la confianza de la cúpula, redactó el reglamento de la Comisión y eligió a Anselmo. Su lección: ninguna grieta en la mentira. Sigue duro, inflexible y poco razonable ✅ |
 | Voz | Los titulares de los medios sobre la muerte de Anselmo, los de Casa Ormeño y el humor y la comprobación de las cintas 1 a 6 ✅ |
-| Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Dueñas es el enemigo claro, duro e inflexible ✅ |
+| Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Montenegro es el enemigo claro, duro e inflexible ✅ |
 
 ---
 
 ## 2 · Cronología por hitos 🟡
 
-**Estado:** ✅ el hito y sus cifras, confirmados por el autor el 2026-10-12, y con ellos el silencio firmado de Teo, el testamento y la parte de Dueñas; 🟡 los detalles que se marcan dentro de la fila, propuestos por este documento. Las edades se calculan a partir de las de hoy (tabla de la sección 3).
+**Estado:** ✅ el hito y sus cifras, confirmados por el autor el 2026-10-12, y con ellos el silencio firmado de Teo, el testamento y la parte de Montenegro; 🟡 los detalles que se marcan dentro de la fila, propuestos por este documento. Las edades se calculan a partir de las de hoy (tabla de la sección 3).
 
 | Hace | Qué pasó | Quién estaba (edad) | Estado |
 |---|---|---|---|
-| **40 años** | **Derrumbe de Pozo Negro**, en la Cuenca del Hollín. Cae la galería principal y mueren decenas de mineros 🟡, entre ellos el padre de Anselmo y de su hermano menor. Sigue una huelga larga con disturbios que casi acaban con la República 🟡. De ahí nace la Unión | Teo 24 (sobrevive: estaba en otro turno 🟡), Anselmo 18, su hermano menor 15 (deja el Hollín y jura que ningún hijo bajará a una mina), Dueñas 20 (estudia en la Escuela de Minas y vive los disturbios) | ✅ el hito; 🟡 lo marcado |
-| **30 años** | Un **geólogo del Ministerio halla Aetherita en La Fosa**. El Ministerio lo declara **secreto de Estado**. Solo hay muestras pequeñas. Anselmo, perito de ensayo, analiza las primeras | Anselmo 28, Dueñas 30, Teo 34 (en el Hollín), Casilda 15 (enciende faroles en el puerto) | ✅ |
-| **27 años** | Nace la **Comisión del Éter**, dentro del Ministerio, para custodiar el mineral, estudiar el fenómeno y controlar La Fosa | Dueñas 33 (técnico de la Comisión), Reme 35, Quiroga 23 | ✅ |
+| **40 años** | **Derrumbe de Pozo Negro**, en la Cuenca del Hollín. Cae la galería principal y mueren decenas de mineros 🟡, entre ellos el padre de Anselmo y de su hermano menor. Sigue una huelga larga con disturbios que casi acaban con la República 🟡. De ahí nace la Unión | Teo 24 (sobrevive: estaba en otro turno 🟡), Anselmo 18, su hermano menor 15 (deja el Hollín y jura que ningún hijo bajará a una mina), Montenegro 20 (estudia en la Escuela de Minas y vive los disturbios) | ✅ el hito; 🟡 lo marcado |
+| **30 años** | Un **geólogo del Ministerio halla Aetherita en La Fosa**. El Ministerio lo declara **secreto de Estado**. Solo hay muestras pequeñas. Anselmo, perito de ensayo, analiza las primeras | Anselmo 28, Montenegro 30, Teo 34 (en el Hollín), Casilda 15 (enciende faroles en el puerto) | ✅ |
+| **27 años** | Nace la **Comisión del Éter**, dentro del Ministerio, para custodiar el mineral, estudiar el fenómeno y controlar La Fosa | Montenegro 33 (técnico de la Comisión), Reme 35, Quiroga 23 | ✅ |
 | **21 años** | **Reme presta a Anselmo** para pagar sus equipos de ensayo en La Fosa: el Ministerio reembolsa tarde y él no puede esperar | Reme 41, Anselmo 37 | ✅ |
-| **20 años** | **Primera Expedición a La Fosa.** Dueñas dirige desde el campamento, Anselmo es el perito y Teo, minero veterano. Dura unos ocho meses. Confirma la veta. Empieza el mal del éter en la cuadrilla. A Teo lo evacuan al primer mes con un brazo roto y al volver firma el silencio a cambio de una pensión | Dueñas 40, Anselmo 38, Teo 44, protagonista 2 (aún en Vega Mansa) | ✅ |
-| **20 a 17 años** | La **cuadrilla enferma**: los que bajaron a la veta mueren de «tos de mina» en uno a tres años 🟡. Anselmo pasa a la Comisión como **ingeniero de calibración** tras la expedición ✅. Quedan con vida Dueñas, Anselmo y Teo (por qué Anselmo sobrevive, en la sección 4). El Consorcio Arvel pagó el equipo mayor de la expedición a cambio de preferencia en los contratos | Anselmo 38 a 41, Teo 44 a 47 | ✅ el hito; 🟡 lo marcado |
-| **17 años** | **Empieza la electrificación con Aetherita**, después de la primera extracción seria. El Ministerio pone la red; el Consorcio gana el contrato de las celdas y desde entonces **financia un fondo reservado de la Comisión** | Dueñas 43, Casilda 28 | ✅ |
+| **20 años** | **Primera Expedición a La Fosa.** Montenegro dirige desde el campamento, Anselmo es el perito y Teo, minero veterano. Dura unos ocho meses. Confirma la veta. Empieza el mal del éter en la cuadrilla. A Teo lo evacuan al primer mes con un brazo roto y al volver firma el silencio a cambio de una pensión | Montenegro 40, Anselmo 38, Teo 44, protagonista 2 (aún en Vega Mansa) | ✅ |
+| **20 a 17 años** | La **cuadrilla enferma**: los que bajaron a la veta mueren de «tos de mina» en uno a tres años 🟡. Anselmo pasa a la Comisión como **ingeniero de calibración** tras la expedición ✅. Quedan con vida Montenegro, Anselmo y Teo (por qué Anselmo sobrevive, en la sección 4). El Consorcio Arvel pagó el equipo mayor de la expedición a cambio de preferencia en los contratos | Anselmo 38 a 41, Teo 44 a 47 | ✅ el hito; 🟡 lo marcado |
+| **17 años** | **Empieza la electrificación con Aetherita**, después de la primera extracción seria. El Ministerio pone la red; el Consorcio gana el contrato de las celdas y desde entonces **financia un fondo reservado de la Comisión** | Montenegro 43, Casilda 28 | ✅ |
 | **15 años** | **Casilda organiza a los faroleros** para **«cobrar la luz»** | Casilda 30 | ✅ |
 | **14 años** | **Anselmo visita Vega Mansa** y presta la lámpara a su sobrino o sobrina. Es la única vez que se ven | Anselmo 44, protagonista 8 | ✅ |
-| **8 años** | **Dueñas es nombrado ministro de Recursos** | Dueñas 52 | ✅ |
-| **4 años** | El Ministerio dobla la cuota de extracción y la Comisión alarga el turno máximo **contra el informe de Anselmo** | Anselmo 54, Dueñas 56 | ✅ |
+| **8 años** | **Montenegro es nombrado ministro de Recursos** | Montenegro 52 | ✅ |
+| **4 años** | El Ministerio dobla la cuota de extracción y la Comisión alarga el turno máximo **contra el informe de Anselmo** | Anselmo 54, Montenegro 56 | ✅ |
 | **2 años (otoño)** | Anselmo **prepara la denuncia**, deja el testamento firmado y empieza a grabar las cintas | Anselmo 56 | ✅ |
-| **2 años (invierno)** | La noche antes graba y esconde las dos últimas cintas. **Lo detienen** y acepta el trato. A **fines de invierno** muere en público | Anselmo 56, Dueñas 58 (ordena el trato ✅), Quiroga 48 (tramita el certificado) | ✅ el hito; 🟡 lo marcado |
+| **2 años (invierno)** | La noche antes graba y esconde las dos últimas cintas. **Lo detienen** y acepta el trato. A **fines de invierno** muere en público | Anselmo 56, Montenegro 58 (ordena el trato ✅), Quiroga 48 (tramita el certificado) | ✅ el hito; 🟡 lo marcado |
 | **Pocas semanas** | Anselmo **firma el acta de calibración** | Anselmo 58 | ✅ (decisión del autor, 2026-10-12) |
 | **Hoy** | El protagonista hereda la licencia, el puesto y la deuda | Protagonista 22 | ✅ |
 
@@ -77,11 +77,11 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 
 ## 3 · Tabla de edades 🟡
 
-**Estado:** ✅ la tabla y las edades, y de la subsección sobre Dueñas lo que lleva ✅ (confirmado por el autor el 2026-10-12); 🟡 solo lo que se marca dentro de esa subsección.
+**Estado:** ✅ la tabla y las edades, y de la subsección sobre Montenegro lo que lleva ✅ (confirmado por el autor el 2026-10-12); 🟡 solo lo que se marca dentro de esa subsección.
 
 Edad en cada hito. Las de hoy vienen de [19](19-elenco-a-fondo.md) y siguen siendo aproximadas. El autor confirmó la tabla entera el 2026-10-12. «—» es que aún no había nacido.
 
-| Hito (hace) | Anselmo | Dueñas | Teo | Reme | Casilda | Quiroga | Protagonista |
+| Hito (hace) | Anselmo | Montenegro | Teo | Reme | Casilda | Quiroga | Protagonista |
 |---|---|---|---|---|---|---|---|
 | 40 años · Pozo Negro | 18 | 20 | 24 | 22 | 5 | 10 | — |
 | 30 años · el hallazgo | 28 | 30 | 34 | 32 | 15 | 20 | — |
@@ -91,7 +91,7 @@ Edad en cada hito. Las de hoy vienen de [19](19-elenco-a-fondo.md) y siguen sien
 | 17 años · la electrificación | 41 | 43 | 47 | 45 | 28 | 33 | 5 |
 | 15 años · «cobrar la luz» | 43 | 45 | 49 | 47 | 30 | 35 | 7 |
 | 14 años · la visita a Vega Mansa | 44 | 46 | 50 | 48 | 31 | 36 | 8 |
-| 8 años · Dueñas, ministro | 50 | 52 | 56 | 54 | 37 | 42 | 14 |
+| 8 años · Montenegro, ministro | 50 | 52 | 56 | 54 | 37 | 42 | 14 |
 | 4 años · la cuota doblada | 54 | 56 | 60 | 58 | 41 | 46 | 18 |
 | 2 años · detención y muerte pública | 56 | 58 | 62 | 60 | 43 | 48 | 20 |
 | **Hoy** | **58** | **60** | **64** | **62** | **45** | **50** | **22** |
@@ -99,11 +99,11 @@ Edad en cada hito. Las de hoy vienen de [19](19-elenco-a-fondo.md) y siguen sien
 - **Esteban (28) y Lucía (32)** no tienen hito en el pasado. Lucía nació dos años antes del hallazgo; Esteban, dos años después.
 - Teo empezó a minar a los 14, así que a la expedición llegó con **30 años de oficio**: de ahí «minero veterano».
 
-### Por qué Dueñas ya mandaba a los 40 🟡
+### Por qué Montenegro ya mandaba a los 40 🟡
 
-En [19](19-elenco-a-fondo.md) Dueñas aparece como «joven funcionario» de la expedición. A los 40 no es joven, y aquí no se le humaniza.
+En [19](19-elenco-a-fondo.md) Montenegro aparece como «joven funcionario» de la expedición. A los 40 no es joven, y aquí no se le humaniza.
 
-- **Joven solo frente a la cúpula ✅.** A los 40, Dueñas era el técnico más joven con la confianza de la cúpula del Ministerio ✅. Esa cúpula rondaba los 60 🟡. Eso es todo lo que significa «joven».
+- **Joven solo frente a la cúpula ✅.** A los 40, Montenegro era el técnico más joven con la confianza de la cúpula del Ministerio ✅. Esa cúpula rondaba los 60 🟡. Eso es todo lo que significa «joven».
 - **Ya era quien decidía.** Llevaba más de quince años de funcionario 🟡 y había redactado el reglamento de la Comisión ✅. Eligió a Anselmo para la expedición ✅ y decidió **no bajar a la veta**: dirigió desde el campamento ✅. Por eso no enfermó ✅.
 - **No es inocencia ni duda.** A los 20 vio cómo una huelga mal contenida casi destruye la República 🟡 (la misma huelga de la cronología, también 🟡). A los 40 aplicó esa lección a la Aetherita: ninguna grieta en la mentira ✅. No sale de la expedición con remordimiento, sino con método 🟡.
 - Sigue siendo duro, inflexible y poco razonable ✅ ([19](19-elenco-a-fondo.md)). La edad no lo ablanda: lo vuelve más seguro.
@@ -112,14 +112,14 @@ En [19](19-elenco-a-fondo.md) Dueñas aparece como «joven funcionario» de la e
 
 ## 4 · Cómo enfermó cada uno 🟡
 
-**Estado:** ✅ las cifras (cuadrilla de unas doce personas, expedición de ocho meses, Teo evacuado al primer mes, Dueñas sin bajar a la veta) y, desde el 2026-10-12, por qué Anselmo sobrevive y por qué denuncia, la tapadera de la «tos de mina» y quién nombró el «mal del éter»; 🟡 la regla de acumulación, las exposiciones de la tabla y lo que se marca dentro.
+**Estado:** ✅ las cifras (cuadrilla de unas doce personas, expedición de ocho meses, Teo evacuado al primer mes, Montenegro sin bajar a la veta) y, desde el 2026-10-12, por qué Anselmo sobrevive y por qué denuncia, la tapadera de la «tos de mina» y quién nombró el «mal del éter»; 🟡 la regla de acumulación, las exposiciones de la tabla y lo que se marca dentro.
 
 El mal del éter **se acumula con la exposición** 🟡. Con esta regla, lo que cuentan [19](19-elenco-a-fondo.md) y [08](08-historia-y-personaje.md) encaja sin contradicción.
 
 | Quién | Exposición | Hoy |
 |---|---|---|
 | **La cuadrilla** (unas doce personas ✅, sin contar la escolta 🟡) | Siete meses seguidos en la veta (los ocho de la expedición, menos el primero) 🟡 | Todos murieron en uno a tres años 🟡, de «tos de mina» |
-| **Dueñas** | Ninguna: nunca bajó a la veta ✅ | Sano ✅ |
+| **Montenegro** | Ninguna: nunca bajó a la veta ✅ | Sano ✅ |
 | **Teo** | Un solo mes. Lo evacuaron con el brazo roto y **no volvió a La Fosa** ✅ | Tos incipiente a los 64 años ✅ ([19](19-elenco-a-fondo.md)) |
 | **Anselmo** | Enfermó en la expedición (síntomas leves desde el segundo mes 🟡). Después, **18 años de campañas anuales de calibración en La Fosa** 🟡: cada año lo expuso de nuevo | Enfermo avanzado, con tratamiento paliativo ✅ |
 
@@ -213,7 +213,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 | # | Título | Hecho verificable | Fecha | Cómo se comprueba (1 a 6) | Humor (1 a 6 ✅; 7 y 8 🟡) |
 |---|---|---|---|---|---|
 | 1 | **La lámpara y el sobrino** ✅ | Anselmo visita Vega Mansa y presta su lámpara a su sobrino o sobrina. Es la única vez que se ven | Hace 14 años | La libreta anota el viaje con fecha | Bromista |
-| 2 | **La Escuela y Dueñas** ✅ | Anselmo (beca de los huérfanos de Pozo Negro) y Dueñas comparten aula. Dueñas es el primero de la promoción. Años después elige a Anselmo para la expedición | Hace 40 años (la Escuela) y hace 21 (la elección, un año antes de partir, cuando prepara los equipos que paga Reme) | Registro de promociones de la Escuela de Minas | Irónico |
+| 2 | **La Escuela y Montenegro** ✅ | Anselmo (beca de los huérfanos de Pozo Negro) y Montenegro comparten aula. Montenegro es el primero de la promoción. Años después elige a Anselmo para la expedición | Hace 40 años (la Escuela) y hace 21 (la elección, un año antes de partir, cuando prepara los equipos que paga Reme) | Registro de promociones de la Escuela de Minas | Irónico |
 | 3 | **El hallazgo y la expedición** ✅ | Las primeras muestras de Aetherita y la lista de la cuadrilla de la Primera Expedición, con sus nombres | Hace 30 y hace 20 años | Acta de la expedición, Archivo de la Comisión | Curioso |
 | 4 | **Los primeros enfermos y Teo** ✅ | Los primeros enfermos de la cuadrilla. Evacuación de Teo y su silencio firmado a cambio de la pensión | Hace 20 años | Registro mensual de la pensión de Teo | Serio |
 | 5 | **Lo que midió** ✅ | Sus informes numerados de calibración. El último, contra el que se dobló la cuota | Hace 4 años | Informes del Archivo de la Comisión | Técnico y cansado |
@@ -284,7 +284,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 - **Gremio de faroles del puerto** ✅ ([07](07-sociedad-y-eventos.md)). Durante generaciones encendían y cuidaban los faroles de gas de Puerto Meridiano y de los puertos del Litoral. Tenían una caja común y un **farol rojo** como señal. Casilda es hija y nieta de faroleros ✅.
 - **Hace 17 años** ✅, con la electrificación, el Ministerio retira los faroles de los barrios que pagan la tarifa de la red 🟡. Los barrios pobres quedan con luz racionada o a oscuras 🟡. Los faroleros pierden el oficio.
 - **Hace 15 años** ✅, Casilda (30 años) organiza a los suyos para **«cobrar la luz»** antes que el Estado ✅: mantienen el barrio iluminado con lámparas, generadores pequeños y conexiones, y cobran la «deuda de luz» 🟡.
-- **Su enemistad histórica con Dueñas 🟡.** Dueñas firmó el plan de tarifa que dejó a oscuras esos barrios 🟡.
+- **Su enemistad histórica con Montenegro 🟡.** Montenegro firmó el plan de tarifa que dejó a oscuras esos barrios 🟡.
 - **Por qué quiere que el Hollín no dependa del Ministerio** ✅ ([19](19-elenco-a-fondo.md)). La red nueva llega al Hollín la última y peor, y el Ministerio la corta después de cada huelga, como castigo. Los Faroleros se mueven tierra adentro desde los puertos y venden luz propia en esos apagones. Casilda no quiere que el interruptor del Hollín esté en manos del Ministerio.
 - Su base sigue en los **Salares del Litoral**, el puerto y el contrabando 🟡.
 

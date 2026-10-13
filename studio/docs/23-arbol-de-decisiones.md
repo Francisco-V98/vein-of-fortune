@@ -26,16 +26,16 @@ Decisiones del 2026-10-12 (F0-45), más las que ya estaban en [22](22-acto-ii-va
 | Pequeñas por acto | **3 en el I, 5 en el II, 5 en el III y 5 en el IV** ✅ |
 | Estado que se guarda | **Unas 14 banderas de elección y 4 medidores**: Unión, Esteban, Lucía y Teo ✅ |
 | Las tres grandes | **Alianza** (II, escena A5), **cómo entras al círculo** (III) y **destino de la Aetherita** (IV: revelar, callar o vender) ✅ |
-| Cómo entras al círculo | Tres puertas: el **aval de Esteban**, el **sello de Dueñas** (solo vale como firma, sin humanizarlo) o la **presión de tu alianza**. Todas llegan al **mismo encuentro con Dueñas** y la puerta fija **quién te debe un favor en el IV** ✅ |
+| Cómo entras al círculo | Tres puertas: el **aval de Esteban**, el **sello de Montenegro** (solo vale como firma, sin humanizarlo) o la **presión de tu alianza**. Todas llegan al **mismo encuentro con Montenegro** y la puerta fija **quién te debe un favor en el IV** ✅ |
 | Destino de Teo | Se queda si su confianza es alta o media, se va si es baja y **muere si no hubo revisión en el III**, también si le propones y aceptas su no (la opción respetuosa tiene costo). Si chocan, gana el no haberlo atendido. La revisión solo puede decir «tos de mina» ✅ |
 | Tramos de los medidores | **Bajo menos de 35, medio 35 a 54, alto 55 o más**, para Unión, Esteban, Lucía y Teo ✅ ([24](24-umbrales-de-acto.md)) |
 | Lucía y el reproductor | Con tramo alto, Lucía publica contigo y entrega el reproductor. Con medio no publica (lo publicas tú, con costo alto y poco alcance) y con bajo publica en La Voz sin ti. Con medio o bajo, el reproductor lo entrega Reme ✅ |
 | Aval de Esteban | Basta su medidor en tramo alto. Si no, se muestra bloqueado con el motivo y quedan el sello y la presión de tu alianza ✅ |
 | Cintas | Se recogen antes (**1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV**) pero solo se oyen en el Acto IV, con un reproductor ✅ |
 | Acreedor del Acto II | Es un **sorteo** al empezar la partida, **no una bifurcación jugable** ✅ |
-| Acto II | La **huelga depende de ti** (apoyar, abstenerte o romper), la **orden de Reme** tiene tres salidas (aceptar, negociar o rechazar), la alianza es entre Consorcio, Ministerio y Faroleros, y **Dueñas no aparece** en el II ✅ |
+| Acto II | La **huelga depende de ti** (apoyar, abstenerte o romper), la **orden de Reme** tiene tres salidas (aceptar, negociar o rechazar), la alianza es entre Consorcio, Ministerio y Faroleros, y **Montenegro no aparece** en el II ✅ |
 | Reme | Siempre termina como **tu mayor aliada** ✅ |
-| Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión del Éter. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Dueñas es el enemigo claro, duro e inflexible ✅ |
+| Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión del Éter. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Montenegro es el enemigo claro, duro e inflexible ✅ |
 
 ---
 
@@ -55,8 +55,8 @@ Decisiones del 2026-10-12 (F0-45), más las que ya estaban en [22](22-acto-ii-va
 
 - **Bandera de elección.** Guarda qué opción elegiste (dos o tres valores). Una decisión puede **fijar** una bandera y otra puede **leerla**. Una decisión solo lee banderas que se fijaron antes, en su acto o en uno anterior.
 - **Medidor.** Número de 0 a 100. Arranca en 50, salvo Teo (60) y Esteban (40). Cada opción lo mueve poco (≈ 5), normal (≈ 10) o mucho (≈ 20) ⏳ F4-61. Los tramos son *bajo* (0 a 34), *medio* (35 a 54) y *alto* (55 o más) ✅, y qué desbloquea cada uno está en [24](24-umbrales-de-acto.md), sección 5. Los caminos a cada tramo que debe conservar F4-61 están en la sección 6 de ese documento
-- **Los cuatro medidores.** **Unión** es el de la facción ([22](22-acto-ii-variantes.md), sección 9). **Esteban** es personal, no el del Consorcio ✅. **Lucía** y **Teo** miden cuánto confían en ti. **Dueñas no tiene medidor** ✅.
-- **Desenlaces calculados.** Lo que hacen Esteban, Lucía, Dueñas y Teo en el IV no guarda una bandera nueva: se calcula leyendo medidores y banderas. El epílogo ([25](25-finales-y-epilogos.md)) lee las mismas y guarda los resultados como estado legible con nombres estables ✅ (sección 8 de ese documento, ⏳ F2-01); no son banderas del árbol, así que no cambian los cupos.
+- **Los cuatro medidores.** **Unión** es el de la facción ([22](22-acto-ii-variantes.md), sección 9). **Esteban** es personal, no el del Consorcio ✅. **Lucía** y **Teo** miden cuánto confían en ti. **Montenegro no tiene medidor** ✅.
+- **Desenlaces calculados.** Lo que hacen Esteban, Lucía, Montenegro y Teo en el IV no guarda una bandera nueva: se calcula leyendo medidores y banderas. El epílogo ([25](25-finales-y-epilogos.md)) lee las mismas y guarda los resultados como estado legible con nombres estables ✅ (sección 8 de ese documento, ⏳ F2-01); no son banderas del árbol, así que no cambian los cupos.
 - **El sorteo no es una decisión.** La variante de Reme se fija antes de A1 y es oculta. Las decisiones del II la leen sin guardarla como bandera.
 
 ### 2.3 Cuellos de botella
@@ -68,7 +68,7 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 | `c-i-cierre` | I | Las tres consecuencias del I se pierden en el mismo cierre: reabres el puesto, atiendes la primera cuota y tienes el primer contacto con los empleados. | `n-i-herencia`, `n-i-reme-plazo`, `n-i-lucia-rumor` |
 | `c-ii-apagon` | II | El apagón del Hollín es común (22, sección 4): el conflicto, el contacto y la huelga cambian cómo lo vives, no si ocurre. | `n-ii-contacto`, `n-ii-conflicto`, `n-ii-huelga` |
 | `c-ii-cierre` | II | A6: Reme calla el abono y paga o respira según su facción y tu alianza. Siempre termina como tu aliada. | `n-ii-orden`, `n-ii-huelga`, `n-ii-alianza` |
-| `c-iii-encuentro` | III | Las tres puertas llegan al mismo encuentro con Dueñas. Cambian lo que te debe cada uno, no la escena. | `n-iii-circulo`, `n-iii-monopolio`, `n-iii-contrato-oficial`, `n-iii-esteban-trato` |
+| `c-iii-encuentro` | III | Las tres puertas llegan al mismo encuentro con Montenegro. Cambian lo que te debe cada uno, no la escena. | `n-iii-circulo`, `n-iii-monopolio`, `n-iii-contrato-oficial`, `n-iii-esteban-trato` |
 | `c-iv-pruebas` | IV | Todas las ramas llegan al enfrentamiento con al menos dos pruebas (sección 8). | `n-iv-reme-proteccion`, `n-iv-esteban`, `n-iv-quiroga-archivo` |
 | `c-iv-acta` | IV | Revelar, callar o vender terminan en la misma última escena: el acta de calibración y la firma de Anselmo. | `n-iv-aetherita`, `n-iv-comprador`, `n-iv-lucia-publica`, `n-iv-teo` |
 
@@ -77,7 +77,7 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 - **Ninguna puerta de acto lee `f-pago-reme` ni `f-orden-reme`** ✅ ([24](24-umbrales-de-acto.md)): Reme nunca cierra una puerta. `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme; no lo usa para decidir 🟡.
 - **Ninguna rama cierra la ruta de Reme.** Rechazar su orden cambia el costo, no lo que puedes hacer después. Siempre termina como tu mayor aliada.
 - **Cada ruta del IV conserva al menos dos pruebas** (sección 8). Nada de lo que hagas con el archivo de Quiroga destruye la copia del certificado ni la carta de la cinta 6.
-- **Ningún personaje aparece antes de su acto:** Esteban y Casilda en el II, Dueñas en el III. En el II, Dueñas es solo decreto y firma.
+- **Ningún personaje aparece antes de su acto:** Esteban y Casilda en el II, Montenegro en el III. En el II, Montenegro es solo decreto y firma.
 - **Anselmo solo como sombra antes del IV**, con una sombra como máximo por escena. Las cintas se recogen en una misión, nunca dentro de una de las seis escenas ancla del II, y no se pueden oír hasta el IV.
 - **Los avisos son justos.** Toda decisión con una consecuencia grave se anuncia antes: la tos de Teo se ve y los demás la comentan antes de la revisión.
 - **El mercado se mide en puntos o en %.** La caída y el rebote de la Aetherita respetan el tope diario de variación de [03](03-comercio.md) ⏳ F0-52
@@ -188,7 +188,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 | Puerta | Quién te debe el favor | Dónde lo cobras |
 |---|---|---|
 | Aval de Esteban | Esteban | `n-iv-esteban` |
-| Sello de Dueñas | Quiroga (tramitó el sello); Dueñas no te debe nada | `n-iv-quiroga-archivo` |
+| Sello de Montenegro | Quiroga (tramitó el sello); Montenegro no te debe nada | `n-iv-quiroga-archivo` |
 | Presión de tu alianza | La facción aliada | `n-iv-comprador` |
 
 **`n-iii-quiroga-salida` · Quiroga pide una salida** (pequeña)
@@ -228,7 +228,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 
 **`n-iii-contrato-oficial` · Contrato oficial con cuota** (pequeña)
 - **Dispara:** Primer contrato oficial del Ministerio, con cuota. Dilema de sobornos ⏳ F4-138.
-- **Cumples la cuota.** → *Mundo:* Dueñas lo anota: eres un proveedor fiable. *Mercado:* Cuota de un 10 % del volumen del contrato ⏳ F0-52. *Personajes:* Quiroga: nada que cobrar.
+- **Cumples la cuota.** → *Mundo:* Montenegro lo anota: eres un proveedor fiable. *Mercado:* Cuota de un 10 % del volumen del contrato ⏳ F0-52. *Personajes:* Quiroga: nada que cobrar.
 - **Pagas una «gestión» para bajarla.** → *Mundo:* La cuota baja, pero queda registro. *Mercado:* Cuota -30 % y vigilancia +10. *Personajes:* Quiroga o su oficial cobra la gestión.
 - **Rechazas el contrato.** → *Mundo:* El contrato pasa a otro proveedor. *Mercado:* Pierdes la prima del contrato; vigilancia +10. *Personajes:* El Ministerio te mira más.
 - **Fija:** —. **Lee:** `f-alianza`.
@@ -241,19 +241,19 @@ La puerta que elijas decide quién te debe un favor en el IV:
 - **Fija:** `f-monopolio`. **Lee:** `f-alianza`.
 
 **`n-iii-circulo` · Cómo entras al círculo** (grande) ✅
-- **Dispara:** Con el estatus de Empresario, dos vías de tres y una puerta abierta ([24](24-umbrales-de-acto.md)). Tres puertas, un solo encuentro con Dueñas, que cierra el acto.
+- **Dispara:** Con el estatus de Empresario, dos vías de tres y una puerta abierta ([24](24-umbrales-de-acto.md)). Tres puertas, un solo encuentro con Montenegro, que cierra el acto.
 - **Esteban te avala.** → *Mundo:* Entras por la puerta del Consorcio. *Mercado:* Compras de hierro y cobre al Consorcio 2 a 3 % más baratas. *Personajes:* Esteban te debe un favor en el IV. Requiere su medidor en tramo alto ✅; si no lo tienes, el aval se muestra bloqueado con el motivo y quedan las otras dos puertas ✅.
-- **Entras con el sello de Dueñas.** → *Mundo:* Es una firma y nada más: no te protege ni te ata. Dueñas no te debe nada. *Mercado:* Licencia ampliada; vigilancia +10. *Personajes:* Quiroga te debe un favor en el IV, porque tramitó el sello.
+- **Entras con el sello de Montenegro.** → *Mundo:* Es una firma y nada más: no te protege ni te ata. Montenegro no te debe nada. *Mercado:* Licencia ampliada; vigilancia +10. *Personajes:* Quiroga te debe un favor en el IV, porque tramitó el sello.
 - **Entras con la presión de tu alianza.** → *Mundo:* Tu alianza empuja y el círculo cede. *Mercado:* Prima de contratos de tu alianza +3 a +5 puntos. *Personajes:* La facción aliada te debe un favor en el IV. Con el Consorcio o el Ministerio, la Unión baja ✅ (ajuste D de [24](24-umbrales-de-acto.md)).
 - **Fija:** `f-puerta`, y `m-union` si entras por la presión de tu alianza. **Lee:** `f-alianza`, `m-esteban`, `m-union`.
 
-**Cuello:** `c-iii-encuentro`. Dueñas te evalúa y te deja subir porque le sirves. No se le humaniza.
+**Cuello:** `c-iii-encuentro`. Montenegro te evalúa y te deja subir porque le sirves. No se le humaniza.
 
 ---
 
 ## 6 · Acto IV: la cima 🟡
 
-**Estado:** ✅ la grande (revelar, callar o vender), el destino de Teo, que el comprador se elige entre Casilda, el Consorcio y el Ministerio, que Lucía publica contigo en tramo alto, no publica en medio (lo publicas tú) y publica en La Voz del Hollín en bajo, y que el reproductor lo entrega Lucía en tramo alto y si no Reme (decisiones del autor, 2026-10-12); ✅ también qué hace cada tramo de Esteban en `n-iv-esteban` y de la Unión en `n-iv-duenas` y `n-iv-aetherita`, y que «borrarte» solo ocurre con la Unión alta; 🟡 los demás efectos de las dos medianas y de las otras pequeñas. Orden de juego: las cintas y el reproductor, Reme, Esteban, el archivo de Quiroga, el enfrentamiento con Dueñas, la Aetherita, el comprador, el desenlace de Dueñas, Lucía, Teo y el acta 🟡; que el desenlace de Dueñas se decide al cerrar el acto, con el comprador ya fijado, es ✅. ✅ Dueñas actúa con una regla única de prioridad y Lucía tiene pieza también al callar o vender; Anselmo sigue vivo y secreto en las tres salidas, y el abono se corta solo si revelas ([25](25-finales-y-epilogos.md)). Vender al Ministerio no es callar: el Ministerio se queda con tu prueba (los comprobantes y las cintas que usas) y contigo, no con el archivo de Quiroga ✅. Al revelar, la Aetherita cae, rebota y queda algo por debajo del precio de antes ✅. El reproductor lo entrega Lucía si su medidor está en tramo alto; con medio o bajo, Reme ✅; el objeto ⏳ F4-150. Si Lucía está en tramo bajo, publica en La Voz del Hollín, a donde iba la cinta 6 ✅. Los tramos y lo que desbloquean: [24](24-umbrales-de-acto.md), sección 5.
+**Estado:** ✅ la grande (revelar, callar o vender), el destino de Teo, que el comprador se elige entre Casilda, el Consorcio y el Ministerio, que Lucía publica contigo en tramo alto, no publica en medio (lo publicas tú) y publica en La Voz del Hollín en bajo, y que el reproductor lo entrega Lucía en tramo alto y si no Reme (decisiones del autor, 2026-10-12); ✅ también qué hace cada tramo de Esteban en `n-iv-esteban` y de la Unión en `n-iv-montenegro` y `n-iv-aetherita`, y que «borrarte» solo ocurre con la Unión alta; 🟡 los demás efectos de las dos medianas y de las otras pequeñas. Orden de juego: las cintas y el reproductor, Reme, Esteban, el archivo de Quiroga, el enfrentamiento con Montenegro, la Aetherita, el comprador, el desenlace de Montenegro, Lucía, Teo y el acta 🟡; que el desenlace de Montenegro se decide al cerrar el acto, con el comprador ya fijado, es ✅. ✅ Montenegro actúa con una regla única de prioridad y Lucía tiene pieza también al callar o vender; Anselmo sigue vivo y secreto en las tres salidas, y el abono se corta solo si revelas ([25](25-finales-y-epilogos.md)). Vender al Ministerio no es callar: el Ministerio se queda con tu prueba (los comprobantes y las cintas que usas) y contigo, no con el archivo de Quiroga ✅. Al revelar, la Aetherita cae, rebota y queda algo por debajo del precio de antes ✅. El reproductor lo entrega Lucía si su medidor está en tramo alto; con medio o bajo, Reme ✅; el objeto ⏳ F4-150. Si Lucía está en tramo bajo, publica en La Voz del Hollín, a donde iba la cinta 6 ✅. Los tramos y lo que desbloquean: [24](24-umbrales-de-acto.md), sección 5.
 
 **`n-iv-reme-proteccion` · Proteger a Reme** (pequeña)
 - **Dispara:** Reme se une a ti y te entrega los comprobantes del abono. Ahora tienes estatus para protegerla.
@@ -276,12 +276,12 @@ La puerta que elijas decide quién te debe un favor en el IV:
 - **Lo vendes a quien lo pague.** → *Mundo:* El archivo cambia de manos. *Mercado:* Ingreso grande ⏳ F0-52. *Personajes:* Quiroga: queda a merced del comprador.
 - **Fija:** `f-archivo`. **Lee:** `f-quiroga-salida`, `f-certificado`, `f-puerta`.
 
-**`n-iv-duenas` · Dueñas se mueve contra ti** (mediana)
-- **Dispara:** Enfrentamiento en La Fosa. Dueñas actúa con una **regla única de prioridad** ✅ (decisión del autor, 2026-10-12): si vendes al Ministerio, te compra con el sello; si no, y la Unión está en tramo alto y llevas al menos dos pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor, y nunca se humaniza. Su desenlace se calcula al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12), sin bandera nueva.
-- **Dueñas intenta comprarte.** → *Mundo:* Te ofrece una concesión de Aetherita a cambio de callar y, si vendes al Ministerio, te compra con el sello ✅. *Personajes:* Dueñas: seco, sin disculpas ni ruego.
-- **Dueñas te amenaza.** → *Mundo:* Nombra a Teo, a Reme y a tu familia. Se activa en el resto de los casos ✅. Pierde fuerza si protegiste a Reme. *Personajes:* Dueñas: no alza la voz.
-- **Dueñas intenta borrarte.** → *Mundo:* Suspende tus licencias y manda cerrar tus zonas, pero **falla** ✅. Se activa si la Unión está en tramo alto y llevas al menos dos pruebas y no vendes al Ministerio. *Mercado:* Tus ventas caen a la mitad durante tres días y la vigilancia pasa a Bajo investigación. *Personajes:* Dueñas: «No le pregunto qué opina»
-- **Si revelas:** Dueñas queda bajo investigación, con resultado abierto, y el Ministerio emite un comunicado de una línea ✅.
+**`n-iv-montenegro` · Montenegro se mueve contra ti** (mediana)
+- **Dispara:** Enfrentamiento en La Fosa. Montenegro actúa con una **regla única de prioridad** ✅ (decisión del autor, 2026-10-12): si vendes al Ministerio, te compra con el sello; si no, y la Unión está en tramo alto y llevas al menos dos pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor, y nunca se humaniza. Su desenlace se calcula al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12), sin bandera nueva.
+- **Montenegro intenta comprarte.** → *Mundo:* Te ofrece una concesión de Aetherita a cambio de callar y, si vendes al Ministerio, te compra con el sello ✅. *Personajes:* Montenegro: seco, sin disculpas ni ruego.
+- **Montenegro te amenaza.** → *Mundo:* Nombra a Teo, a Reme y a tu familia. Se activa en el resto de los casos ✅. Pierde fuerza si protegiste a Reme. *Personajes:* Montenegro: no alza la voz.
+- **Montenegro intenta borrarte.** → *Mundo:* Suspende tus licencias y manda cerrar tus zonas, pero **falla** ✅. Se activa si la Unión está en tramo alto y llevas al menos dos pruebas y no vendes al Ministerio. *Mercado:* Tus ventas caen a la mitad durante tres días y la vigilancia pasa a Bajo investigación. *Personajes:* Montenegro: «No le pregunto qué opina»
+- **Si revelas:** Montenegro queda bajo investigación, con resultado abierto, y el Ministerio emite un comunicado de una línea ✅.
 - **Fija:** —. **Lee:** `f-puerta`, `f-familia`, `f-reme-proteccion`, `m-union`, `f-comprador`.
 
 **`n-iv-aetherita` · El destino de la Aetherita** (grande) ✅
@@ -295,7 +295,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 - **Dispara:** Elegiste vender. Vender al Ministerio no es callar: el Ministerio se queda con tu prueba (los comprobantes y las cintas que usas) y contigo ✅. No se queda con el archivo de Quiroga ✅. Si entraste por la presión de tu alianza, la facción aliada te paga mejor.
 - **A Casilda.** → *Mundo:* Casilda controla la verdad y su mercado negro. *Mercado:* Prima negra de Aetherita +10 a +15 puntos. *Personajes:* Casilda: aliada interesada.
 - **Al Consorcio.** → *Mundo:* El Consorcio financia el silencio ahora a tu nombre. *Mercado:* La Aetherita sube un 8 a 12 %. *Personajes:* Esteban: atrapado en su apellido.
-- **Al Ministerio.** → *Mundo:* Dueñas te deja subir y se queda con tu prueba (los comprobantes y las cintas que usas), no con el archivo de Quiroga ✅ (si lo protegiste, sigue a salvo). *Mercado:* La Aetherita se mantiene (0 a +3 %) por la cuota. *Personajes:* Dueñas gana; tú te vuelves una pieza de la Comisión.
+- **Al Ministerio.** → *Mundo:* Montenegro te deja subir y se queda con tu prueba (los comprobantes y las cintas que usas), no con el archivo de Quiroga ✅ (si lo protegiste, sigue a salvo). *Mercado:* La Aetherita se mantiene (0 a +3 %) por la cuota. *Personajes:* Montenegro gana; tú te vuelves una pieza de la Comisión.
 - **Fija:** `f-comprador`. **Lee:** `f-destino`, `f-monopolio`, `f-puerta`.
 
 **`n-iv-lucia-publica` · Quién publica** (pequeña)
@@ -323,7 +323,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 | # | Título | Se recoge en el acto ✅ | Dónde la dejó Anselmo 🟡 |
 |---|---|---|---|
 | 1 | La lámpara y el sobrino | I | Puesto de Villa Brasa: doble fondo del cajón de la caja, junto a la libreta. |
-| 2 | La Escuela y Dueñas | II | Minas de Sierra Alta: casillero del viejo taller de ensayo. |
+| 2 | La Escuela y Montenegro | II | Minas de Sierra Alta: casillero del viejo taller de ensayo. |
 | 3 | El hallazgo y la expedición | III | Puerto Meridiano: consigna de la estación, con una etiqueta de Anselmo. |
 | 4 | Los primeros enfermos y Teo | III | Cavernas de Cristal: campamento de ensayo bajo el cuarzo. |
 | 5 | Lo que midió | III | Puerto Meridiano: pensión donde Anselmo se alojaba al entregar sus informes. |
@@ -356,7 +356,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 | Copia del certificado y carta de la cinta 6 | Archivo de Quiroga | No: no se puede destruir |
 | Cuentas del Consorcio con la Comisión | Esteban, si se une a ti | Sí |
 
-Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conservas los comprobantes, la prueba de Reme y las cintas: **al menos tres**. Si vendes al Ministerio, él se queda con esas pruebas al cerrar la venta ✅; para entonces la regla de Dueñas ya mandó con el sello, así que el conteo no importa ✅. El archivo de Quiroga no entra en esa venta ✅.
+Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conservas los comprobantes, la prueba de Reme y las cintas: **al menos tres**. Si vendes al Ministerio, él se queda con esas pruebas al cerrar la venta ✅; para entonces la regla de Montenegro ya mandó con el sello, así que el conteo no importa ✅. El archivo de Quiroga no entra en esa venta ✅.
 
 ---
 
@@ -366,21 +366,21 @@ Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conserv
 
 | Bandera | Tipo | Valores | La fija | La leen |
 |---|---|---|---|---|
-| `f-familia` | elección | todo / a medias / nada | `n-i-herencia` | `n-iv-duenas` |
+| `f-familia` | elección | todo / a medias / nada | `n-i-herencia` | `n-iv-montenegro` |
 | `f-pago-reme` | elección | antes / a tiempo / tarde | `n-i-reme-plazo` | `n-ii-orden` |
 | `f-orden-reme` | elección | aceptar / negociar / rechazar | `n-ii-orden` | `n-ii-conflicto`, `n-ii-alianza` |
 | `f-huelga` | elección | apoyar / abstenerte / romper | `n-ii-huelga` | `n-ii-alianza` |
 | `f-alianza` | elección | Consorcio / Ministerio / Faroleros | `n-ii-alianza` | `n-iii-esteban-trato`, `n-iii-contrato-oficial`, `n-iii-monopolio`, `n-iii-circulo`, `n-iv-reme-proteccion` |
 | `f-certificado` | elección | copia / callar / presionar | `n-ii-certificado` | `n-iii-quiroga-salida`, `n-iii-lucia-letra`, `n-iv-quiroga-archivo` |
-| `f-puerta` | elección | aval / sello / presión | `n-iii-circulo` | `n-iv-esteban`, `n-iv-quiroga-archivo`, `n-iv-duenas`, `n-iv-comprador` |
+| `f-puerta` | elección | aval / sello / presión | `n-iii-circulo` | `n-iv-esteban`, `n-iv-quiroga-archivo`, `n-iv-montenegro`, `n-iv-comprador` |
 | `f-monopolio` | elección | aceptar / compartir / rechazar | `n-iii-monopolio` | `n-iv-comprador` |
 | `f-teo-revision` | elección | sí / no | `n-iii-revision-teo` | `n-iv-teo` |
 | `f-quiroga-salida` | elección | ayudar / prometer / rechazar | `n-iii-quiroga-salida` | `n-iv-quiroga-archivo` |
-| `f-reme-proteccion` | elección | proteger / saldar / dejar | `n-iv-reme-proteccion` | `n-iv-duenas` |
+| `f-reme-proteccion` | elección | proteger / saldar / dejar | `n-iv-reme-proteccion` | `n-iv-montenegro` |
 | `f-archivo` | elección | proteger / usar / vender | `n-iv-quiroga-archivo` | `n-iv-aetherita` |
 | `f-destino` | elección | revelar / callar / vender | `n-iv-aetherita` | `n-iv-comprador`, `n-iv-lucia-publica` |
 | `f-comprador` | elección | Casilda / Consorcio / Ministerio | `n-iv-comprador` | `n-iv-lucia-publica` |
-| `m-union` | medidor | 0 a 100 | `n-ii-conflicto`, `n-ii-huelga`, `n-ii-alianza`, `n-iii-circulo` | `n-iii-circulo`, `n-iv-duenas`, `n-iv-aetherita` |
+| `m-union` | medidor | 0 a 100 | `n-ii-conflicto`, `n-ii-huelga`, `n-ii-alianza`, `n-iii-circulo` | `n-iii-circulo`, `n-iv-montenegro`, `n-iv-aetherita` |
 | `m-esteban` | medidor | 0 a 100 | `n-ii-contacto`, `n-ii-esteban-contrato`, `n-iii-esteban-trato` | `n-ii-esteban-contrato`, `n-iii-circulo`, `n-iv-esteban` |
 | `m-lucia` | medidor | 0 a 100 | `n-i-lucia-rumor`, `n-ii-lucia`, `n-iii-lucia-letra` | `n-ii-lucia`, `n-iv-aetherita`, `n-iv-lucia-publica` |
 | `m-teo` | medidor | 0 a 100 | `n-ii-huelga`, `n-iii-abono`, `n-iii-revision-teo` | `n-iii-revision-teo`, `n-iv-teo` |
@@ -414,7 +414,7 @@ Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conserv
 | Acreedor del Acto II como sorteo, no bifurcación | Sí | Sección 1; corregido en 08 y 18 |
 | Reparto de las cintas y dónde las dejó Anselmo | Sí, con el lugar 🟡 | Sección 7 |
 | Pruebas de Reme por variante y mínimo de dos pruebas por ruta | Sí | Sección 8 |
-| Cobertura de lo que el bosquejo no tocaba: monopolio de Casilda, Dueñas, Esteban en el IV y pequeñas del I | Sí | Secciones 3, 5 y 6 |
+| Cobertura de lo que el bosquejo no tocaba: monopolio de Casilda, Montenegro, Esteban en el IV y pequeñas del I | Sí | Secciones 3, 5 y 6 |
 | Los 14 pendientes de F0-45 y las dos preguntas abiertas, resueltos | Sí | 08, 17, 18, 19, 21 y 22 |
 | Fila de narrativa del IV: «Oyes las cintas» | Sí | `story.json` |
 

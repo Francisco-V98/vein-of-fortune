@@ -57,7 +57,7 @@ Después del Acto IV: **sandbox** con la capa de imperio (ver [04](04-progresion
 - ✅ El Acto II tiene 3 variantes: una columna común de seis escenas con piezas propias por variante, descritas en [22](22-acto-ii-variantes.md). No afecta al MVP (solo Acto I).
 - ✅ **Anselmo está vivo, pero se cree que murió enfermo.** Es cómplice de la Comisión del Éter y el protagonista lo descubre al final del Acto IV, lo que deja abierta una continuación. Detalle y pistas en [19](19-elenco-a-fondo.md).
 - ✅ **Reme traiciona en el Acto II por obligación, no por decisión propia**, y al final del Acto IV se une al protagonista para resolver el caso del tío.
-- ✅ **El Ministro Dueñas es el enemigo claro**: duro e inflexible, convencido de que sostiene la nación, con una razón que no es tan razonable.
+- ✅ **El Ministro Montenegro es el enemigo claro**: duro e inflexible, convencido de que sostiene la nación, con una razón que no es tan razonable.
 
 ## Decisiones que cambian la historia ✅
 
@@ -73,7 +73,7 @@ La historia **cambia según las decisiones del jugador** (alianzas, qué hace co
 | **Lucía Montalvo** | Periodista del Teletipo Meridiano | Fuente de rumores; moralmente ambigua |
 | **Esteban Arvel** | Heredero del Consorcio Arvel | Rival comerciante: tiene todo lo que el protagonista debe ganar |
 | **Casilda Ibarra, "la Faro"** | Jefa de Los Faroleros | Extorsión y mercado negro |
-| **Ministro Aurelio Dueñas** | Rostro del Estado | Antagonista principal |
+| **Ministro Aurelio Montenegro** | Rostro del Estado | Antagonista principal |
 
 **MVP:** Reme, Teo, Quiroga y Lucía. Los demás entran en actos posteriores.
 

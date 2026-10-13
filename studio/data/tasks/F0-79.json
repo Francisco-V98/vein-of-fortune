@@ -1,0 +1,72 @@
+{
+  "id": "F0-79",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pidió cambiar el apellido del Ministro en todo el proyecto.",
+      "ref": "rama studio/F0-79-apellido-del-ministro"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Apellido cambiado a Montenegro en 25 archivos, la carpeta de arte y las imágenes de evidencia; build estricto y pruebas en verde.",
+      "ref": "rama studio/F0-79-apellido-del-ministro"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "coordinador",
+        "nota": "El autor eligió Montenegro y mantener el nombre de pila; el coordinador hizo el cambio en todo el proyecto",
+        "entrega": "Apellido, identificadores, carpeta de arte e imágenes de evidencia renombrados"
+      },
+      {
+        "etapa": "qa",
+        "estado": "omitida",
+        "nota": "Tarea de solo cambio mecánico: el coordinador comprobó que no queda el apellido antiguo, el build estricto y las pruebas"
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "autor",
+        "nota": "El autor revisa el cambio"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Entrega para tu revisión: el apellido del Ministro cambiado a Montenegro en todo el proyecto",
+        "at": "2026-10-12"
+      }
+    ]
+  }
+}

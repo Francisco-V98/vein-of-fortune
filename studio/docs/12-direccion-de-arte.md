@@ -94,7 +94,7 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 | Archivo | Qué es | Veredicto |
 |---|---|---|
 | `minerales-v2.png` | 10 minerales corregidos | ✅ Siluetas y colores distintos; **Aetherita** vinotinto cristalina destaca claramente |
-| `retratos-a.png`, `retratos-b.png` | Retratos de diálogo: Reme, Teo, Quiroga, Lucía, Esteban, Casilda, Ministro Dueñas y foto de Anselmo | ✅ Muy buenos; expresivos, coherentes y con la paleta |
+| `retratos-a.png`, `retratos-b.png` | Retratos de diálogo: Reme, Teo, Quiroga, Lucía, Esteban, Casilda, Ministro Montenegro y foto de Anselmo | ✅ Muy buenos; expresivos, coherentes y con la paleta |
 | `sprites.png` → `sprites-corregido.png` | Sprites pequeños tipo Stardew (protagonistas hombre y mujer y elenco) | ✅ Funcionan como guía. El ministro original parecía un sacerdote (estola con cruces); se reemplazó por un funcionario severo de abrigo azul marino y faja vinotinto, sin símbolos religiosos (`ministro-corregido.png`) |
 | `ui-mercado.png` → `ui-mercado-corregido.png` | Terminal de mercado (lista, gráfico, teletipo, bloques del día) | ✅ Buen punto de partida. Las flechas rojo/verde se cambiaron por ▲ cian (sube) y ▼ vinotinto (baja), que cumple la regla de accesibilidad |
 | `ui-tienda.png` | Pantalla de la tienda con corte transversal | ✅ Muy buena base; comunica el "taller + mostrador + almacén" |
@@ -138,7 +138,7 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 
 **Expresiones ✅:** retrato de busto en pixel art con la estética del modelo: ojos grandes y expresivos, sombreado plano suave y el mismo tamaño de píxel, como en las hojas del protagonista y de Reme. Las seis tienen los mismos gestos para todos, sutiles y legibles: la **predeterminada** según la personalidad, feliz (riendo), triste (con una lágrima), enojo, susto y cansancio. El **cansancio** es discreto (párpados pesados, ojeras leves, boca relajada), no exagerado y distinto de triste.
 
-**Ministro Dueñas, versión canónica ✅:** la del retrato aprobado: pelo blanco peinado hacia atrás, gafas redondas de latón, **sin barba**, guerrera azul marino de cuello alto con laureles dorados, charreteras, faja vinotinto y blanca, tres medallas y la carpeta. Reemplaza la barba y el abrigo largo del sprite que sirvió para fijar el estilo de los modelos.
+**Ministro Montenegro, versión canónica ✅:** la del retrato aprobado: pelo blanco peinado hacia atrás, gafas redondas de latón, **sin barba**, guerrera azul marino de cuello alto con laureles dorados, charreteras, faja vinotinto y blanca, tres medallas y la carpeta. Reemplaza la barba y el abrigo largo del sprite que sirvió para fijar el estilo de los modelos.
 
 **Hojas de NPC ✅:** los 35 tipos están en el registro del mundo (`studio/data/world.json`). Formato mixto:
 
@@ -160,7 +160,7 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 
 ✅ **Regla del éter en el arte:** el éter nunca va suelto sobre el cuerpo de un personaje sano. Solo aparece contenido en una cápsula de cristal sellada, o en los mutados de La Fosa. El cian de la paleta es el aura del éter, así que tampoco se usa en adornos de personajes sanos.
 
-El ministro Dueñas sigue siendo el antagonista narrativo y no tiene duelo de jefe.
+El ministro Montenegro sigue siendo el antagonista narrativo y no tiene duelo de jefe.
 
 **Calidad:** generación en calidad media a 2K, que equilibra detalle y costo. Se revisa y aprueba cada hoja antes de pasar a la siguiente.
 
