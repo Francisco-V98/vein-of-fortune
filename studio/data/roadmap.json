@@ -821,7 +821,7 @@
               "id": "F0-79",
               "title": "Cambiar el apellido del Ministro de Dueñas a Montenegro",
               "est": 1,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "El autor decidió cambiar el apellido del Ministro Aurelio Dueñas por Montenegro en todo el proyecto: documentos, datos, tareas, agentes, identificadores, carpetas y nombres de imágenes.",
               "done_when": "No queda el apellido antiguo ni su identificador en ningún archivo salvo este registro y el historial de git, y el build estricto y las pruebas pasan."

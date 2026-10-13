@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Apellido cambiado a Montenegro en 25 archivos, la carpeta de arte y las imágenes de evidencia; build estricto y pruebas en verde.",
       "ref": "rama studio/F0-79-apellido-del-ministro"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el cambio de apellido desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [],
@@ -46,10 +54,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "autor",
-        "nota": "El autor revisa el cambio"
+        "nota": "El autor revisó el cambio de apellido y lo aprobó desde /equipo"
       },
       {
         "etapa": "playtest",
@@ -57,7 +65,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #41 fusionado"
       }
     ],
     "traspasos": [
@@ -65,6 +76,12 @@
         "de": "coordinador",
         "a": "autor",
         "que": "Entrega para tu revisión: el apellido del Ministro cambiado a Montenegro en todo el proyecto",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-12"
       }
     ]
