@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "Se empieza el árbol de decisiones y consecuencias con el flujo de especialistas.",
       "ref": "rama studio/F0-45-arbol-de-decisiones"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 23, decisions.json, vista #/decisiones y validaciones del hub; QA aprobado con correcciones, limpieza 66 % y coherencia 83 %.",
+      "ref": "rama studio/F0-45-arbol-de-decisiones"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el árbol de decisiones y la vista del hub desde el PR #36.",
+      "ref": "aprobación del autor en el PR #36"
     }
   ],
   "comments": [],
@@ -100,10 +116,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "autor",
-        "nota": "El autor revisa el documento 23 y la vista #/decisiones del hub"
+        "nota": "El autor revisó el documento 23 y la vista #/decisiones y aprobó el PR #36"
       },
       {
         "etapa": "playtest",
@@ -111,7 +127,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #36 fusionado"
       }
     ],
     "traspasos": [
@@ -167,6 +186,12 @@
         "de": "qa",
         "a": "autor",
         "que": "Entrega para tu revisión: documento 23 y la vista #/decisiones",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-12"
       }
     ]
