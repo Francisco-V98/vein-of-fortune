@@ -52,7 +52,7 @@ Decisiones del 2026-10-12 (F0-45), más las que ya estaban en [22](22-acto-ii-va
 
 - **Bandera de elección.** Guarda qué opción elegiste (dos o tres valores). Una decisión puede **fijar** una bandera y otra puede **leerla**. Una decisión solo lee banderas que se fijaron antes, en su acto o en uno anterior.
 - **Medidor.** Número de 0 a 100. Arranca en 50, salvo Teo (60) y Esteban (40). Cada opción lo mueve poco (≈ 5), normal (≈ 10) o mucho (≈ 20); los tramos *bajo*, *medio* y *alto* ⏳ F0-47 y las cifras ⏳ F4-61
-- **Los cuatro medidores.** **Unión** es el de la facción ([22](22-acto-ii-variantes.md), sección 9). **Esteban** es personal, no el del Consorcio. **Lucía** y **Teo** miden cuánto confían en ti.
+- **Los cuatro medidores.** **Unión** es el de la facción ([22](22-acto-ii-variantes.md), sección 9). **Esteban** es personal, no el del Consorcio ✅. **Lucía** y **Teo** miden cuánto confían en ti.
 - **Desenlaces calculados.** Lo que hacen Esteban, Lucía y Dueñas en el IV no guarda una bandera nueva: se calcula leyendo medidores y banderas. El epílogo ⏳ F0-46 lee las mismas.
 - **El sorteo no es una decisión.** La variante de Reme se fija antes de A1 y es oculta. Las decisiones del II la leen sin guardarla como bandera.
 
@@ -248,7 +248,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 
 ## 6 · Acto IV: la cima 🟡
 
-**Estado:** ✅ la grande (revelar, callar o vender) y el destino de Teo; 🟡 las dos medianas, las otras cuatro pequeñas y los efectos. Orden de juego: las cintas y el reproductor, Reme, Esteban, el archivo de Quiroga, Dueñas, la Aetherita, el comprador, Lucía, Teo y el acta. Vender al Ministerio no es callar: el Ministerio se queda con la prueba y contigo. El reproductor lo entrega Lucía si confía en ti; si no, Reme ⏳ F4-150. Si Lucía no confía, publica en La Voz del Hollín, a donde iba la cinta 6.
+**Estado:** ✅ la grande (revelar, callar o vender), el destino de Teo, que el comprador se elige entre Casilda, el Consorcio y el Ministerio, que Lucía publica contigo o, si no confía, La Voz del Hollín, y que el reproductor lo entrega Lucía si confías en ella y si no Reme (decisiones del autor, 2026-10-12); 🟡 las dos medianas, las otras pequeñas y los efectos. Orden de juego: las cintas y el reproductor, Reme, Esteban, el archivo de Quiroga, Dueñas, la Aetherita, el comprador, Lucía, Teo y el acta. Vender al Ministerio no es callar: el Ministerio se queda con la prueba y contigo ✅. El reproductor lo entrega Lucía si confía en ti; si no, Reme ✅; el objeto ⏳ F4-150. Si Lucía no confía, publica en La Voz del Hollín, a donde iba la cinta 6 ✅.
 
 **`n-iv-reme-proteccion` · Proteger a Reme** (pequeña)
 - **Dispara:** Reme se une a ti y te entrega los comprobantes del abono. Ahora tienes estatus para protegerla.
@@ -312,7 +312,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 
 ## 7 · Las ocho cintas 🟡
 
-**Estado:** ✅ el acto en que se recoge cada una y que todas se oyen en el IV; 🟡 el lugar donde las dejó Anselmo y el reproductor. Títulos y fechas en [21](21-pasado-de-valdoria.md), sección 7.
+**Estado:** ✅ el acto en que se recoge cada una, que todas se oyen en el IV y quién entrega el reproductor (Lucía si confías en ella, si no Reme); 🟡 el lugar donde las dejó Anselmo. Títulos y fechas en [21](21-pasado-de-valdoria.md), sección 7.
 
 | # | Título | Se recoge en el acto ✅ | Dónde la dejó Anselmo 🟡 |
 |---|---|---|---|
@@ -388,7 +388,7 @@ Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conserv
 | Riesgo | Por qué importa | Cómo se contiene |
 |---|---|---|
 | Demasiados caminos | 13 banderas de tres valores y una de dos son unos 3 millones de combinaciones nominales | Se prueban por **cuello de botella**, no por camino. Los recorridos principales son 81: 3 variantes por 3 alianzas por 3 puertas por 3 destinos |
-| Variantes de Reme por alianza | El costo de Reme cambia con su facción y con tu alianza: 9 casos ([22](22-acto-ii-variantes.md), sección 9) | Una sola escena A6 con tres capas |
+| Variantes de Reme por alianza | El costo de Reme cambia con su facción y con tu alianza: 9 casos, y se muestra antes de elegir ([22](22-acto-ii-variantes.md), sección 9) | Una sola escena A6 con tres capas |
 | Medidores sin tramo | Sin umbrales, `n-iv-esteban`, `n-iv-lucia-publica` y `n-iv-teo` no se pueden probar | Tres tramos por medidor (bajo, medio, alto) ⏳ F0-47 |
 | Textos que se multiplican | Cada pequeña añade un diálogo por opción | Las pequeñas cambian una frase o un medidor, no una escena |
 | Muertes que parecen injustas | Teo muere por no haberlo llevado a revisión | Avisos antes (sección 2.4) y una sola regla que lo decide |

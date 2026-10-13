@@ -798,6 +798,15 @@
               "prio": "P3",
               "desc": "Convertir la vista #/decisiones del hub, hoy de columnas y tarjetas, en un dibujo SVG con las ramas, los cuellos de botella y las banderas conectadas.",
               "done_when": "Árbol dibujado con conexiones visibles y filtros por acto, nivel y personaje."
+            },
+            {
+              "id": "F0-77",
+              "title": "Cerrar las decisiones de finales y personajes del árbol",
+              "est": 1,
+              "status": "doing",
+              "prio": "P1",
+              "desc": "Decidir con el autor lo que condiciona los finales y los umbrales: medidor de Esteban, comprador de la Aetherita, quién publica, quién entrega el reproductor, quién ordena el trato de Anselmo, la pensión de Teo, el costo de Reme y la fecha del acta.",
+              "done_when": "Las ocho decisiones están en ✅ en los documentos 19, 21, 22 y 23 y en decisions.json."
             }
           ]
         }

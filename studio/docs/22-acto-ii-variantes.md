@@ -145,7 +145,7 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 | Personaje | En las tres | Consorcio Arvel | Ministerio | Los Faroleros |
 |---|---|---|---|---|
 | **Reme** | Cálida, sin alzar la voz. Pide perdón en A2 | Habla de «la casa» y del crédito | Habla de «los papeles» y de «arriba» | Habla de «el barrio» y de «la luz» |
-| **Teo** | Cambia de tema si nombras La Fosa. Se une a la huelga y escoge bando | La empresa amenaza con despedir a los huelguistas | Revisan los papeles de su pensión 🟡 | Rechaza la luz de Casilda: no quiere deberle a nadie |
+| **Teo** | Cambia de tema si nombras La Fosa. Se une a la huelga y escoge bando | La empresa amenaza con despedir a los huelguistas | Ponen en revisión su pensión ✅ | Rechaza la luz de Casilda: no quiere deberle a nadie |
 | **Quiroga** | Siembra la pista del certificado. Formal, de usted, todo es «trámite» | Vende licencias a quien paga; no da órdenes | Es la cara del Ministerio en A1 y A3 | Tregua cortés con Casilda; se aparta |
 | **Lucía** | Vende información a más de una parte | También a Esteban | También a Quiroga | También a los informantes de Casilda |
 | **Esteban** | Rival que quita contratos. No sabe qué financia el Consorcio. Dice «amigo» | Abre A1 y es el rostro de A3, pero **no da la orden** | Rival de fondo (O2) y oferta de A5 | Rival de fondo (O2) y oferta de A5 |
@@ -228,7 +228,7 @@ Los modificadores son 🟡 y no cambian los tramos del indicador (Tranquilo, Obs
 
 ## 9 · La alianza final y el costo para Reme 🟡
 
-**Estado:** el reparto de facciones y la regla de Reme son decisión del autor (sección 1); lo que ofrece cada facción y lo que le cuesta a Reme es propuesta. Los efectos de cada alianza ⏳ F4-133
+**Estado:** el reparto de facciones, la regla de Reme, el costo de cada caso y que se muestre antes de elegir son decisión del autor (2026-10-12); lo que ofrece cada facción es propuesta. Los efectos de cada alianza ⏳ F4-133
 
 **Las tres ofertas.** Las tres llegan siempre, en A5 🟡. La Unión y Teo no se ofrecen como alianza: son un hilo ✅ (sección 1)
 
@@ -240,7 +240,7 @@ Los modificadores son 🟡 y no cambian los tramos del indicador (Tranquilo, Obs
 
 La Unión no es aliable, pero su medidor se mueve: baja si te alías con el Consorcio o con el Ministerio y se mantiene si te alías con Los Faroleros ⏳ F4-64
 
-**El costo para Reme.** La regla es del autor; el contenido de cada casilla es propuesta. Siempre es el capital que su facción le prestó hace unos 25 años ([21](21-pasado-de-valdoria.md), sección 6):
+**El costo para Reme ✅.** La regla y el contenido de cada casilla los confirmó el autor. Siempre es el capital que su facción le prestó hace unos 25 años ([21](21-pasado-de-valdoria.md), sección 6):
 
 | Facción de Reme | Si te alías con ella: la correa se afloja, pero entras en su cadena | Si te alías con otra: Reme paga |
 |---|---|---|
@@ -248,7 +248,7 @@ La Unión no es aliable, pero su medidor se mueve: baja si te alías con el Cons
 | Ministerio | El fondo renueva la línea de Reme. Tus cuotas y el abono salen de la misma cadena | El fondo le retira la línea y su licencia de prestamista queda en revisión |
 | Los Faroleros | La caja común perdona la parte de Reme. Tu deuda de luz se suma a tu deuda | La caja común le cobra su parte y Casilda cobra la luz de su casa |
 
-- **Aviso antes de elegir.** Propuesta: A5 muestra una sola línea de Reme, sin cifras («Haz lo que te convenga, criatura. A mí me costará lo que me cueste»), y el costo exacto se ve en A6. Si el autor prefiere la sorpresa, se quita.
+- **Aviso antes de elegir ✅.** A5 muestra el costo para Reme de cada alianza antes de que elijas (decisión del autor, 2026-10-12): eliges sabiendo lo que le cuesta a ella. A6 muestra cómo lo paga o cómo respira.
 - **Cómo suena Reme en A6.** Si te alías con su facción: «Respiro, criatura. Pero ahora estamos en la misma cadena.» Si te alías con otra: «Hiciste lo que te convenía. Lo mío lo pago yo.» Las dos líneas son propuesta 🟡.
 - **Sin reproche.** Propuesta 🟡: Reme no te reprocha nada en A6. Lo que es canon ✅ es que en el Acto IV será tu mayor aliada.
 - En el Acto III queda **distante pero atenta**, sin atreverse a ayudar abiertamente ✅ ([19](19-elenco-a-fondo.md)).
