@@ -1,0 +1,138 @@
+{
+  "id": "F0-47",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empiezan los umbrales de acto con el flujo de especialistas.",
+      "ref": "rama studio/F0-47-umbrales-de-acto"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "ideador",
+        "nota": "Tres modelos: A puerta por acto con vías k de n, B puntuación acumulada, C umbrales por escena; recomienda A con un piso de estatus",
+        "entrega": "Tres modelos, bosquejo por acto, red anti-atasco, valores a decidir o calibrar y ocho preguntas"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "analista",
+        "nota": "El modelo A es viable con cinco correcciones; el análisis clasificó cada punto abierto entre decidir ahora y aplazar con su tarea",
+        "entrega": "Comprobación de estatus, logros, medidores y ⏳ F0-47, clasificación de puntos abiertos, diez criterios de aceptación y nueve preguntas",
+        "hallazgos": [
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "El Acto I no puede exigir Minero con licencia ni el logro del tutorial: el estatus y los logros llegan en la fase 4, después del Acto I",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 24 y en los documentos 17, 22 y 23, con la tarea nueva F0-78 para el diario, la cola y la misión de rescate"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "No hay medidor de relación para las tres facciones aliables; solo existen los de la Unión, Esteban, Lucía y Teo",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 24 y en los documentos 17, 22 y 23, con la tarea nueva F0-78 para el diario, la cola y la misión de rescate"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "La deuda puede regalar o romper la vía: el Consorcio pasa tu deuda a la casa y la deuda de luz de los Faroleros se suma a la tuya",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 24 y en los documentos 17, 22 y 23, con la tarea nueva F0-78 para el diario, la cola y la misión de rescate"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "El bosquejo omite el primer contacto con empleados, que cierra el Acto I, y dos tramos de medidor coinciden con sus valores de arranque",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 24 y en los documentos 17, 22 y 23, con la tarea nueva F0-78 para el diario, la cola y la misión de rescate"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Diario, cola de historia y misión de rescate no existen en ningún documento ni tarea del roadmap",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 24 y en los documentos 17, 22 y 23, con la tarea nueva F0-78 para el diario, la cola y la misión de rescate"
+          }
+        ]
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "narrador",
+        "nota": "El narrador escribió el documento 24 y el autor confirmó los ajustes en dos tandas; limpieza 70 %",
+        "entrega": "Documento 24 con las puertas de los cuatro actos, los tramos de medidor, las vías, los disparadores por eventos y la red anti-atasco; los ⏳ F0-47 resueltos"
+      },
+      {
+        "etapa": "qa",
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "qa",
+        "nota": "QA comprueba el build, las marcas, las aplazamientos con su tarea y la coherencia de los umbrales"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: tres modelos de umbral para activar cada acto y sus escenas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Modelo A de puertas por acto con piso de estatus por comprobar",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Comprobación del modelo A con cinco hallazgos, la clasificación de puntos abiertos y nueve preguntas para el autor",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Escribir el documento 24 con los umbrales de los cuatro actos y cerrar los ⏳ F0-47",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Documento 24 escrito y confirmaciones del autor aplicadas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 24 y los cambios en 08, 17, 18, 22, 23, decisions.json y story.json",
+        "at": "2026-10-12"
+      }
+    ]
+  }
+}

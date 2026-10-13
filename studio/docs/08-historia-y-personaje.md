@@ -17,16 +17,16 @@ El protagonista **hereda la licencia, el puesto en el mercado y la deuda** de un
 
 | Acto | Qué pasa | Se cierra cuando… |
 |---|---|---|
-| **I · El recién llegado** | Tutorial en la Cuenca del Hollín: aprende a minar y vender, conoce a los primeros personajes | Reabre el puesto y paga las primeras cuotas de la deuda |
+| **I · El recién llegado** | Tutorial en la Cuenca del Hollín: aprende a minar y vender, conoce a los primeros personajes | Reabre el puesto, atiende la primera cuota de la deuda (pagada o prorrogada) y tiene el primer contacto con los empleados |
 | **II · Aprender las reglas** | Descubre que la política manda: facciones, protección, primera huelga grande | Elige con quién se alía |
 | **III · El ascenso** | Llega a la capital (Puerto Meridiano), entra a la bolsa, aparecen dilemas morales | Es aceptado en el círculo de poder |
-| **IV · La cima** | Descubre qué le pasó a su tío y qué hay detrás de la Aetherita. Escala hasta lo más alto | Decide qué hacer con su poder |
+| **IV · La cima** | Descubre qué le pasó a su tío y qué hay detrás de la Aetherita. Escala hasta lo más alto | Decide qué hacer con su poder y cierra el acta de calibración |
 
 Después del Acto IV: **sandbox** con la capa de imperio (ver [04](04-progresion-y-meta.md)).
 
 ## Reglas de diseño narrativo 🟡
 
-1. **Los actos se activan por umbrales** (estatus, logros, relación con facciones, deuda pagada), no por fechas. Así la historia convive con el mundo procedural y con el juego libre.
+1. **Los actos se activan por umbrales** (estatus, logros, relación con facciones, deuda pagada), no por fechas. Así la historia convive con el mundo procedural y con el juego libre. Reglas concretas en [24](24-umbrales-de-acto.md).
 2. **Los hitos son fijos; las circunstancias varían.** Cada partida cuenta la misma historia con otro mundo: otra facción hostil, otros eventos, otros precios.
 3. **Permadeath y narrativa:** una partida es una historia completa. Si en hardcore mueres, la nueva partida arranca desde el Acto I. Se estudiará una forma de acelerar o resumir los actos ya vistos.
 4. **MVP:** solo Cuenca del Hollín y Acto I, que ya prueba el loop completo y la voz del juego.

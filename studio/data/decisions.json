@@ -10,6 +10,20 @@
       "II": 5,
       "III": 5,
       "IV": 5
+    },
+    "tramos": {
+      "bajo": [
+        0,
+        34
+      ],
+      "medio": [
+        35,
+        54
+      ],
+      "alto": [
+        55,
+        100
+      ]
     }
   },
   "nodes": [
@@ -298,7 +312,7 @@
           ],
           "mundo": "Vendes el mineral que pide quien quiere la huelga rota. Luego llega el mismo apagón.",
           "mercado": "Mismo movimiento de precios; la prima de contrato de tu variante sube 3 a 5 puntos.",
-          "personajes": "Teo y la Unión se alejan. Tu variante añade una consecuencia pequeña (22, sección 7)."
+          "personajes": "Teo y la Unión se alejan mucho. Tu variante añade una consecuencia pequeña (22, sección 7)."
         }
       ],
       "lee": [],
@@ -523,7 +537,7 @@
       "acto": "III",
       "nivel": "pequena",
       "titulo": "Esteban te pide algo en la bolsa",
-      "dispara": "Esteban, guardián del círculo de la capital, te encuentra en la bolsa.",
+      "dispara": "Esteban, guardián del círculo de la capital, te encuentra en la bolsa, antes de que elijas puerta.",
       "opciones": [
         {
           "id": "apoyar",
@@ -533,7 +547,7 @@
           ],
           "mundo": "Esteban te presenta a gente del círculo.",
           "mercado": "El mineral que compra sube un 2 a 4 %.",
-          "personajes": "Esteban: confía en ti."
+          "personajes": "Esteban: confía mucho en ti."
         },
         {
           "id": "limite",
@@ -631,7 +645,7 @@
           ],
           "mundo": "Lucía sigue por su cuenta.",
           "mercado": "—",
-          "personajes": "Lucía: confía menos."
+          "personajes": "Lucía: no te cree y confía mucho menos."
         }
       ],
       "lee": [
@@ -672,7 +686,7 @@
           ],
           "mundo": "Teo se encierra en su silencio.",
           "mercado": "—",
-          "personajes": "Teo: le duele."
+          "personajes": "Teo: le duele mucho."
         }
       ],
       "lee": [],
@@ -745,7 +759,7 @@
           "fija": [
             "f-teo-revision"
           ],
-          "mundo": "No hay revisión.",
+          "mundo": "No hay revisión y no habrá otra ocasión: en el IV Teo muere. La opción te lo avisa antes de elegir.",
           "mercado": "—",
           "personajes": "Teo: sin cambio."
         },
@@ -771,7 +785,7 @@
       "acto": "III",
       "nivel": "grande",
       "titulo": "Cómo entras al círculo",
-      "dispara": "Tras las ofertas del II y el ascenso a Empresario. Tres puertas, un solo encuentro con Dueñas.",
+      "dispara": "Con el estatus de Empresario, dos vías de tres y una puerta abierta. Tres puertas, un solo encuentro con Dueñas, que cierra el acto.",
       "opciones": [
         {
           "id": "aval",
@@ -781,7 +795,7 @@
           ],
           "mundo": "Entras por la puerta del Consorcio.",
           "mercado": "Compras de hierro y cobre al Consorcio 2 a 3 % más baratas.",
-          "personajes": "Esteban te debe un favor en el IV. Requiere su medidor sobre el umbral ⏳ F0-47."
+          "personajes": "Esteban te debe un favor en el IV. Requiere su medidor en tramo alto; si no lo tienes, el aval se muestra bloqueado con el motivo y quedan las otras dos puertas."
         },
         {
           "id": "sello",
@@ -797,7 +811,8 @@
           "id": "presion",
           "texto": "Entras con la presión de tu alianza.",
           "fija": [
-            "f-puerta"
+            "f-puerta",
+            "m-union"
           ],
           "mundo": "Tu alianza empuja y el círculo cede.",
           "mercado": "Prima de contratos de tu alianza +3 a +5 puntos.",
@@ -859,7 +874,7 @@
       "acto": "IV",
       "nivel": "mediana",
       "titulo": "Esteban descubre el fondo reservado",
-      "dispara": "El libro del fondo reservado sale a la luz y Esteban debe elegir. Lo resuelve su medidor y la puerta que usaste.",
+      "dispara": "El libro del fondo reservado sale a la luz y Esteban debe elegir. Lo resuelve su medidor: alto se une, medio se aparta y bajo defiende al Consorcio. La puerta del aval ya garantiza el tramo alto.",
       "opciones": [
         {
           "id": "se-une",
@@ -867,7 +882,7 @@
           "fija": [],
           "mundo": "Las cuentas del Consorcio con la Comisión entran a tus pruebas.",
           "mercado": "—",
-          "personajes": "Esteban: cambia su apellido por una verdad. Requiere su medidor alto o la puerta del aval."
+          "personajes": "Esteban: cambia su apellido por una verdad. Con su medidor en tramo alto; si entraste por el aval, es el favor que te debe."
         },
         {
           "id": "consorcio",
@@ -875,7 +890,7 @@
           "fija": [],
           "mundo": "El Consorcio te cierra puertas.",
           "mercado": "El hierro y el cobre suben 3 a 5 puntos como revancha.",
-          "personajes": "Esteban: enemigo."
+          "personajes": "Esteban: enemigo. Con su medidor en tramo bajo."
         },
         {
           "id": "aparta",
@@ -883,7 +898,7 @@
           "fija": [],
           "mundo": "No ayuda ni estorba.",
           "mercado": "—",
-          "personajes": "Esteban: sin camino claro; queda para el epílogo."
+          "personajes": "Esteban: sin camino claro; queda para el epílogo. Con su medidor en tramo medio."
         }
       ],
       "lee": [
@@ -964,7 +979,7 @@
           "id": "borrar",
           "texto": "Dueñas intenta borrarte.",
           "fija": [],
-          "mundo": "Suspende tus licencias y manda cerrar tus zonas. Se activa si la Unión está alta y llevas al menos dos pruebas.",
+          "mundo": "Suspende tus licencias y manda cerrar tus zonas. Se activa si la Unión está en tramo alto y llevas al menos dos pruebas.",
           "mercado": "Tus ventas caen a la mitad durante tres días y la vigilancia pasa a Bajo investigación.",
           "personajes": "Dueñas: «No le pregunto qué opina»"
         }
@@ -982,7 +997,7 @@
       "acto": "IV",
       "nivel": "grande",
       "titulo": "El destino de la Aetherita",
-      "dispara": "Con la verdad en la mano y las ocho cintas oídas.",
+      "dispara": "Con la verdad en la mano y las ocho cintas oídas. Antes de elegir se te muestra quién publicaría (el tramo de Lucía) y cómo está la Unión.",
       "opciones": [
         {
           "id": "revelar",
@@ -990,7 +1005,7 @@
           "fija": [
             "f-destino"
           ],
-          "mundo": "La verdad sale: caos social, el Ministerio contraataca.",
+          "mundo": "La verdad sale: caos social, el Ministerio contraataca. Con la Unión en tramo alto, sale contigo y el caos se contiene; con la Unión en tramo bajo, nadie te respalda en el Hollín.",
           "mercado": "La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario ⏳ F4-147.",
           "personajes": "Te separas de Anselmo."
         },
@@ -1072,7 +1087,7 @@
       "acto": "IV",
       "nivel": "pequena",
       "titulo": "Quién publica",
-      "dispara": "La verdad sale a la luz o se filtra. Depende de cómo trataste a Lucía.",
+      "dispara": "La verdad sale a la luz o se filtra. Depende del tramo de Lucía: alto, publica contigo; medio, no publica y lo publicas tú; bajo, publica sin ti.",
       "opciones": [
         {
           "id": "contigo",
@@ -1094,8 +1109,8 @@
           "id": "nadie",
           "texto": "Nadie publica.",
           "fija": [],
-          "mundo": "Lucía guarda la historia.",
-          "mercado": "—",
+          "mundo": "Lucía guarda la historia y lo publicas tú.",
+          "mercado": "Publicar te cuesta caro ⏳ F0-52 y llega a poca gente: la caída es más lenta.",
           "personajes": "Lucía: se queda con las ganas."
         }
       ],
@@ -1111,7 +1126,7 @@
       "acto": "IV",
       "nivel": "pequena",
       "titulo": "El destino de Teo",
-      "dispara": "Teo confiesa lo que firmó. Se queda si su confianza es alta, se va si es baja y muere si no lo llevaste a revisión. Si chocan, gana el no haberlo atendido.",
+      "dispara": "Teo confiesa lo que firmó. Se queda si hubo revisión y su confianza es media o alta, se va si hubo revisión y es baja, y muere si no hubo revisión, también si le propusiste y aceptaste su no. Si chocan, gana el no haberlo atendido.",
       "opciones": [
         {
           "id": "queda",
@@ -1217,7 +1232,7 @@
     {
       "id": "f-teo-revision",
       "tipo": "eleccion",
-      "descripcion": "Si llevaste a Teo a revisión en el III (sí o no). Sin revisión, muere en el IV.",
+      "descripcion": "Si llevaste a Teo a revisión en el III (sí o no). Sin revisión, muere en el IV, también si le propones y aceptas su no.",
       "personajes": [
         "Teo Cárdenas"
       ]
@@ -1268,7 +1283,7 @@
     {
       "id": "m-union",
       "tipo": "medidor",
-      "descripcion": "Relación con la Unión de Mineros del Hollín, de 0 a 100. Umbrales en F4-61.",
+      "descripcion": "Relación con la Unión de Mineros del Hollín, de 0 a 100. Tramos: bajo 0 a 34, medio 35 a 54, alto 55 o más. Movimientos en F4-61.",
       "personajes": [
         "Teo Cárdenas"
       ]
@@ -1276,7 +1291,7 @@
     {
       "id": "m-esteban",
       "tipo": "medidor",
-      "descripcion": "Confianza de Esteban hacia ti, de 0 a 100. Es personal, no el del Consorcio.",
+      "descripcion": "Confianza de Esteban hacia ti, de 0 a 100. Es personal, no el del Consorcio. Tramos: bajo 0 a 34, medio 35 a 54, alto 55 o más.",
       "personajes": [
         "Esteban Arvel"
       ]
@@ -1284,7 +1299,7 @@
     {
       "id": "m-lucia",
       "tipo": "medidor",
-      "descripcion": "Confianza de Lucía hacia ti, de 0 a 100.",
+      "descripcion": "Confianza de Lucía hacia ti, de 0 a 100. Tramos: bajo 0 a 34, medio 35 a 54, alto 55 o más.",
       "personajes": [
         "Lucía Montalvo"
       ]
@@ -1292,7 +1307,7 @@
     {
       "id": "m-teo",
       "tipo": "medidor",
-      "descripcion": "Confianza de Teo hacia ti, de 0 a 100.",
+      "descripcion": "Confianza de Teo hacia ti, de 0 a 100. Tramos: bajo 0 a 34, medio 35 a 54, alto 55 o más.",
       "personajes": [
         "Teo Cárdenas"
       ]
