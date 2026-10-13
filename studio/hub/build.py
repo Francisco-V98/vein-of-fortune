@@ -16,6 +16,7 @@ Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/story.json          mapa de historia: actos, carriles y tareas relacionadas
   - studio/data/world.json          registro del mundo: minerales, zonas, minijuegos, recetas, facciones y personajes
   - studio/data/decisions.json      árbol de decisiones: nodos, banderas, cuellos, cintas y pruebas del Acto IV
+  - studio/data/hilos.json          registro de hilos narrativos: dónde se siembra y se resuelve cada pista, promesa o secreto
 
 Limpieza del diseño (ver studio/docs/15-flujo-de-trabajo-y-calidad.md):
   limpieza = ✅ / (✅ + 🟡 + ❓)  por documento y en total. Meta: lo más cerca posible de 100 %.
@@ -634,6 +635,88 @@ def load_decisions(world):
     return data
 
 
+HILO_ID = re.compile(r"^h-[a-z0-9]+(-[a-z0-9]+)*$")
+HILO_ENTRY_STATES = ["ok", "prop"]
+
+
+def _check_hilo_entries(hid, key, entries):
+    """Valida las siembras o resoluciones de un hilo (acto, dónde y estado)."""
+    for e in entries:
+        if not isinstance(e, dict):
+            warn("hilos.json: %s tiene una entrada de '%s' que no es un objeto" % (hid, key))
+            continue
+        if e.get("acto") not in coherence.HILO_ACTOS:
+            warn("hilos.json: %s tiene un acto desconocido en '%s': %s" % (hid, key, e.get("acto")))
+        if not e.get("donde"):
+            warn("hilos.json: %s tiene una entrada de '%s' sin 'donde'" % (hid, key))
+        if e.get("estado") not in HILO_ENTRY_STATES:
+            warn("hilos.json: %s tiene un estado inválido en '%s': %s" % (hid, key, e.get("estado")))
+
+
+def check_hilos(data, world, decisions=None):
+    """Valida el registro de hilos narrativos (comprobaciones 1 a 5 de F0-51). Los errores salen con warn()."""
+    meta = data.get("meta", {})
+    for key, want in (("actos", coherence.HILO_ACTOS), ("tipos", coherence.HILO_TIPOS), ("estados", coherence.HILO_ESTADOS)):
+        if meta.get(key, want) != want:
+            warn("hilos.json: meta.%s debe ser %s y es %s" % (key, want, meta.get(key)))
+    names = _character_names(world)
+    node_ids = {n["id"] for n in (decisions or {}).get("nodes", [])}
+    tape_ids = {t["n"] for t in (decisions or {}).get("cintas", [])} or set(range(1, TAPE_COUNT + 1))
+    seen = set()
+    for h in data.get("hilos", []):
+        hid = h.get("id", "?")
+        if not HILO_ID.match(str(hid)):
+            warn("hilos.json: el id %s debe empezar por 'h-' y ir en minúsculas y con guiones" % hid)
+        if hid in seen:
+            warn("hilos.json: hilo repetido: %s" % hid)
+        seen.add(hid)
+        if not h.get("titulo"):
+            warn("hilos.json: %s no tiene título" % hid)
+        if h.get("tipo") not in coherence.HILO_TIPOS:
+            warn("hilos.json: %s tiene un tipo inválido: %s" % (hid, h.get("tipo")))
+        if h.get("estado") not in coherence.HILO_ESTADOS:
+            warn("hilos.json: %s tiene un estado inválido: %s" % (hid, h.get("estado")))
+        if not h.get("siembra"):
+            warn("hilos.json: %s no tiene ninguna siembra" % hid)
+        _check_hilo_entries(hid, "siembra", h.get("siembra", []))
+        _check_hilo_entries(hid, "resuelve", h.get("resuelve", []))
+        if h.get("estado") == "resuelto" and not h.get("resuelve"):
+            warn("hilos.json: %s está marcado como resuelto y no tiene resolución" % hid)
+        if h.get("estado") in coherence.HILO_ABIERTOS and not h.get("motivo"):
+            warn("hilos.json: %s está %s y no dice el motivo" % (hid, h.get("estado")))
+        if h.get("resuelve") and not h.get("siembra"):
+            warn("hilos.json: %s se resuelve y no se siembra en ningún sitio" % hid)
+        first = min([coherence.HILO_ACTOS.index(e["acto"]) for e in h.get("siembra", []) if e.get("acto") in coherence.HILO_ACTOS], default=None)
+        for e in h.get("resuelve", []):
+            if first is not None and e.get("acto") in coherence.HILO_ACTOS and coherence.HILO_ACTOS.index(e["acto"]) < first:
+                warn("hilos.json: %s se resuelve en el Acto %s, antes de sembrarse en el Acto %s" % (hid, e["acto"], coherence.HILO_ACTOS[first]))
+        for who in h.get("personajes", []):
+            if who not in names:
+                warn("hilos.json: %s nombra a un personaje que no está en world.json: %s" % (hid, who))
+        for e in h.get("siembra", []) + h.get("resuelve", []):
+            nodes, tapes = coherence.hilo_refs(e.get("ref"))
+            for nid in nodes:
+                if nid not in node_ids:
+                    warn("hilos.json: %s cita un nodo inexistente en decisions.json: %s" % (hid, nid))
+            for n in tapes:
+                if n not in tape_ids:
+                    warn("hilos.json: %s cita una cinta inexistente: %s" % (hid, n))
+
+
+def load_hilos(world, decisions=None, story=None):
+    """Carga y valida el registro de hilos. Si el archivo no existe se trata como vacío."""
+    path = DATA / "hilos.json"
+    data = load_json(path) if path.exists() else {}
+    data = {"meta": data.get("meta", {}), "hilos": data.get("hilos", [])}
+    check_hilos(data, world, decisions)
+    a = coherence.hilos_analisis(data, world, story or {}, decisions)
+    data["resumen"] = {
+        "total": a["total"], "por_estado": a["por_estado"], "por_tipo": a["por_tipo"],
+        "sin_resolver": a["sin_resolver"], "sin_sembrar": a["sin_sembrar"] + a["antes"], "faltan": a["faltan"],
+    }
+    return data
+
+
 def build_assets(assets):
     for img in assets["images"]:
         path = STUDIO / img["file"]
@@ -723,6 +806,7 @@ def build_hub():
     world = load_json(DATA / "world.json")
     story = load_story(task_ids)
     decisions = load_decisions(world)
+    hilos = load_hilos(world, decisions, story)
     for msg in coherence.integrity(world):
         warn("world.json: %s" % msg)
     assets = build_assets(load_json(DATA / "assets.json"))
@@ -742,7 +826,8 @@ def build_hub():
         "cleanliness": cleanliness,
         "world": world,
         "decisions": decisions,
-        "coherence": coherence.check(world, story, decisions),
+        "hilos": hilos,
+        "coherence": coherence.check(world, story, decisions, hilos),
     }
 
 
@@ -772,6 +857,9 @@ def main():
     )
     co = hub["coherence"]
     print("Coherencia: %s %% · %d de %d comprobaciones con hallazgos" % (co["pct"], co["failed"], co["total"]))
+    r = hub["hilos"]["resumen"]
+    print("Hilos: %d · sembrados sin resolver %d · resueltos sin sembrar %d · personajes que faltan %d"
+          % (r["total"], len(r["sin_resolver"]), len(r["sin_sembrar"]), len(r["faltan"])))
     if warnings:
         print("%d aviso(s)." % len(warnings))
         if strict:
