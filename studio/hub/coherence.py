@@ -7,8 +7,9 @@ minijuegos, mecánicas, recetas, facciones y personajes. Aquí se comprueba que:
   - el diseño es coherente: reglas del juego, mapa de historia y números base no se
     contradicen ni quedan sin definir (hallazgo: baja el porcentaje, pero no falla el build).
 
-Uso desde build.py:  result = coherence.check(world, story)
+Uso desde build.py:  result = coherence.check(world, story, decisions)
 """
+import re
 
 SEV_ERROR = "error"
 
@@ -84,7 +85,94 @@ def integrity(world):
     return errors
 
 
-def check(world, story):
+def _flag_acts(decisions):
+    """Actos en que se fija y se lee cada bandera: (fija, lee), como {bandera: [actos]}."""
+    acts = {n["id"]: n["acto"] for n in decisions.get("nodes", [])}
+    sets, reads = {}, {}
+    for n in decisions.get("nodes", []):
+        for o in n.get("opciones", []):
+            for fid in o.get("fija", []):
+                sets.setdefault(fid, []).append(n["acto"])
+        for fid in n.get("lee", []):
+            reads.setdefault(fid, []).append(n["acto"])
+    return sets, reads, acts
+
+
+def _decision_checks(world, story, decisions, add):
+    """Cruces del árbol de decisiones con el registro del mundo y el mapa de historia (C12 a C15)."""
+    acts = world.get("acts", [])
+    idx = _act_index(acts)
+    flags = decisions.get("flags", [])
+    sets, reads, node_act = _flag_acts(decisions)
+    first_set = {f: min(a, key=lambda x: idx[x]) for f, a in sets.items() if all(x in idx for x in a)}
+
+    # C12 banderas <-> nodos
+    bad = []
+    for f in flags:
+        fid = f["id"]
+        if fid not in sets:
+            bad.append("%s no la fija ninguna decisión" % fid)
+        elif fid not in reads:
+            bad.append("%s se fija y no la lee ninguna decisión" % fid)
+        elif fid in first_set and any(idx.get(a, 0) < idx[first_set[fid]] for a in reads[fid]):
+            bad.append("%s se lee en el Acto %s, antes de fijarse en el Acto %s" % (
+                fid, min(reads[fid], key=lambda x: idx.get(x, 0)), first_set[fid]))
+    add("C12", "Decisiones", "Cada bandera se fija y se lee, y nunca se lee antes de fijarse", len(flags), bad)
+
+    # C13 cuellos <-> actos
+    cuellos = decisions.get("cuellos", [])
+    bad = []
+    for a in acts:
+        if not any(c.get("acto") == a for c in cuellos):
+            bad.append("El Acto %s no tiene ningún cuello donde las ramas se reúnan" % a)
+    for c in cuellos:
+        for nid in c.get("recibe", []):
+            if node_act.get(nid) != c.get("acto"):
+                bad.append("%s (Acto %s) recibe %s, que es del Acto %s" % (c["id"], c.get("acto"), nid, node_act.get(nid, "—")))
+    add("C13", "Decisiones", "Cada acto tiene cuellos y cada cuello solo reúne ramas de su acto",
+        len(acts) + sum(len(c.get("recibe", [])) for c in cuellos), bad)
+
+    # C14 personajes de las banderas <-> registro
+    chars = {}
+    for c in world.get("characters", []):
+        chars[c["name"]] = c
+        for alias in c.get("aka", []):
+            chars[alias] = c
+    pairs = [(f, who) for f in flags for who in f.get("personajes", [])]
+    bad = []
+    for f, who in pairs:
+        c = chars.get(who)
+        if c is None:
+            bad.append("%s nombra a %s, que no está en el registro de personajes" % (f["id"], who))
+        elif f["id"] in first_set and idx.get(c["act"], 0) > idx[first_set[f["id"]]]:
+            bad.append("%s se fija en el Acto %s, antes de que %s aparezca (Acto %s)" % (f["id"], first_set[f["id"]], c["name"], c["act"]))
+    add("C14", "Decisiones", "Los personajes de cada bandera existen y ya han aparecido cuando se fija", len(pairs), bad)
+
+    # C15 cintas <-> mapa de historia (se recogen a lo largo de la historia y se oyen al final)
+    tapes = decisions.get("cintas", [])
+    last = acts[-1] if acts else None
+    bad = ["La cinta %s se recoge en el Acto %s, que no existe o llega después de oírse" % (t["n"], t.get("acto"))
+           for t in tapes if t.get("acto") not in idx]
+    mentions = 0
+    for lane_id in ("narrativa", "arte"):
+        for i, cell in enumerate(_lane(story, lane_id)):
+            for text in cell:
+                if "cinta" not in text.lower():
+                    continue
+                mentions += 1
+                if i < len(acts) and acts[i] != last:
+                    bad.append("El mapa de historia nombra las cintas en el Acto %s (fila %s) y se oyen en el %s" % (acts[i], lane_id, last))
+                since = re.search(r"desde el Acto ([IVX]+)", text)
+                if since and tapes:
+                    first = min((t["acto"] for t in tapes if t.get("acto") in idx), key=lambda a: idx[a], default=None)
+                    if since.group(1) != first:
+                        bad.append("El mapa de historia las recoge «desde el Acto %s» y la primera cinta es del Acto %s" % (since.group(1), first))
+    if tapes and not mentions:
+        bad.append("El mapa de historia no menciona las cintas del árbol de decisiones")
+    add("C15", "Decisiones", "El reparto de las cintas coincide con las filas del mapa de historia", len(tapes) + mentions + (0 if mentions else 1), bad)
+
+
+def check(world, story, decisions=None):
     """Evalúa las comprobaciones de coherencia. Devuelve un resumen listo para el hub."""
     acts = world.get("acts", [])
     idx = _act_index(acts)
@@ -184,6 +272,9 @@ def check(world, story):
             elif c["act"] != acts[i]:
                 bad.append("%s: el mapa de historia lo pone en el Acto %s y el registro en el %s" % (name, acts[i], c["act"]))
     add("C11", "Historia", "Los personajes del mapa de historia coinciden con el registro", total, bad)
+
+    if decisions and decisions.get("nodes"):
+        _decision_checks(world, story, decisions, add)
 
     total = sum(c["total"] for c in checks)
     failed = sum(c["failed"] for c in checks)
