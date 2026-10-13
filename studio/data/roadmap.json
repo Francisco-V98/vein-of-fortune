@@ -499,7 +499,7 @@
               "est": 6,
               "status": "done",
               "prio": "P1",
-              "desc": "Las bifurcaciones grandes (alianza del Acto II, cómo entras al círculo del Acto III y destino de la Aetherita; el acreedor del Acto II es un sorteo, no una decisión) y las consecuencias pequeñas de cada acto, con qué las dispara y qué cambia en el mundo, el mercado y los personajes.",
+              "desc": "Las bifurcaciones grandes (alianza del Acto II, cómo entras al círculo del Acto III y destino de la Aetherita; la facción de Reme del Acto II es un sorteo, no una decisión) y las consecuencias pequeñas de cada acto, con qué las dispara y qué cambia en el mundo, el mercado y los personajes.",
               "done_when": "Árbol completo acordado y visible en el hub."
             },
             {
@@ -1894,8 +1894,8 @@
               "title": "Deuda: cuotas y cierre del Acto I",
               "est": 4,
               "status": "backlog",
-              "desc": "Pagos periódicos a Reme.",
-              "done_when": "Pagar las primeras cuotas cierra el acto.",
+              "desc": "Pagos semanales a Reme: la cuota llega cada 7 días y la primera vence el día 7; si no puedes pagar, se prorroga una semana con un pequeño recargo (montos ⏳ F0-52).",
+              "done_when": "Atender la primera cuota, pagada o prorrogada, junto con reabrir el puesto y el primer contacto con los empleados cierra el Acto I, según el documento 24.",
               "prio": "P0"
             }
           ]
@@ -3185,21 +3185,27 @@
               "status": "backlog",
               "title": "Variante de la facción de Reme: Consorcio Arvel",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Variante del Acto II en la que la facción de Reme es el Consorcio Arvel: la oferta de Esteban de comprar tu deuda, la orden de vender con exclusividad y el cierre de Reme (documento 22).",
+              "done_when": "Las escenas únicas de la variante Consorcio están escritas y jugables, con disparadores por eventos y sin contradicciones con el documento 22."
             },
             {
               "id": "F4-130",
               "status": "backlog",
               "title": "Variante de la facción de Reme: Los Faroleros",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Variante del Acto II en la que la facción de Reme es Los Faroleros: el cobrador de Casilda, la deuda de luz, el mercado negro y el cierre de Reme (documento 22).",
+              "done_when": "Las escenas únicas de la variante Faroleros están escritas y jugables, con disparadores por eventos y sin contradicciones con el documento 22."
             },
             {
               "id": "F4-131",
               "status": "backlog",
               "title": "Variante de la facción de Reme: Ministerio",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Variante del Acto II en la que la facción de Reme es el Ministerio: el trámite de Quiroga, la revisión de licencias, la entrega de cuentas y el cierre de Reme (documento 22).",
+              "done_when": "Las escenas únicas de la variante Ministerio están escritas y jugables, con disparadores por eventos y sin contradicciones con el documento 22."
             },
             {
               "id": "F4-132",
@@ -3217,7 +3223,7 @@
               "est": 5,
               "prio": "P1",
               "desc": "Consecuencias de elegir alianza en la escena A5 del Acto II. Debe respetar el documento 24 (sección 7): ninguna alianza cierra la puerta del Acto III y cada una deja al menos una vía abierta; el costo de Reme se muestra antes de elegir.",
-              "done_when": "Las tres alianzas dejan al menos una vía abierta para la puerta del círculo y el costo de Reme se ve antes de elegir."
+              "done_when": "Las tres alianzas dejan al menos una vía abierta para la entrada al círculo y el costo de Reme se ve antes de elegir."
             },
             {
               "id": "F4-134",
@@ -3287,7 +3293,9 @@
               "status": "backlog",
               "title": "Acto III: arte",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Arte y retratos del Acto III: Puerto Meridiano, la bolsa, las Cavernas de Cristal y el encuentro con Montenegro, según el documento 12.",
+              "done_when": "El arte del Acto III está aprobado por el autor, sin texto dentro del arte y con la paleta del éter respetada."
             },
             {
               "id": "F4-142",
@@ -3865,7 +3873,7 @@
               "title": "Textos finales de las 54 piezas de los epílogos",
               "est": 6,
               "prio": "P0",
-              "desc": "Escribir los textos definitivos en español de las 54 piezas del documento 25 (cabecera, personajes, facciones, mundo, mercado y familia) en la voz de cada medio, en prospectivo y sin cifras escritas, con una línea breve del protagonista en el acta.",
+              "desc": "Escribir los textos definitivos en español de las 54 piezas del documento 25 (cabecera, personajes, facciones, mundo, mercado y familia) en la voz de cada medio, en prospectivo y sin cifras escritas.",
               "done_when": "Las 54 piezas tienen su texto final en español, respetan el canon y las reglas del documento 25, y la traducción queda para F4-211."
             },
             {

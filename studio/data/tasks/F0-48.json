@@ -82,14 +82,26 @@
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
         "por": "qa",
-        "nota": "QA comprueba el build, las marcas, los restos de nombres antiguos y que no se hayan roto las referencias"
+        "nota": "QA aprobó el build, los restos de nombres antiguos y los renombres; sus cinco arreglos y observaciones los aplicó el coordinador y comprobó con el build estricto y las pruebas (limpieza 71 %, coherencia 86 %)",
+        "entrega": "Build estricto, 49 pruebas en verde, restos limpios y ⏳ válidos",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "Corregidos la palabra entrada en decisions.json y el roadmap, el cierre del Acto I en F3-17, las descripciones de F4-129 a F4-131 y F4-141, las líneas de ejemplo en 🟡 y el ejemplo del documento 15"
+          }
+        ]
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "autor",
+        "nota": "El autor revisa los cambios de la lectura final en los documentos, los datos y el roadmap"
       },
       {
         "etapa": "playtest",
@@ -123,6 +135,12 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Revisar los cambios de la lectura final en los documentos, los datos y el roadmap",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: lectura final de la biblia con tus decisiones aplicadas",
         "at": "2026-10-13"
       }
     ]

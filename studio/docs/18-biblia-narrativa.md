@@ -246,7 +246,7 @@ En cada ficha, los **rasgos de voz** y las **líneas de ejemplo** vienen del 19 
 | **Tratamiento** | Tú, con cariño ✅ |
 | **Cómo llama al protagonista** | **«Criatura»** ✅, que no marca género. Usa el nombre solo en los momentos que pesan 🟡 |
 | **Rasgos de voz** | Cálida, con diminutivos y consejos que son amenazas |
-| **Líneas de ejemplo** | «Con calma, criatura. Yo en tu lugar pagaría esta semana.» · «No es que me duela cobrarte. Es que me duele que no sea otro.» |
+| **Líneas de ejemplo** | «Con calma, criatura. Yo en tu lugar pagaría esta semana.» · «No es que me duela cobrarte. Es que me duele que no sea otro.» 🟡 (guía de tono hasta F4-179) |
 | **Nunca dice** | Nunca alza la voz ni insulta. Nunca nombra a su facción antes de que el Acto II la revele 🟡 |
 | **Ficha completa** | [19 · Reme](19-elenco-a-fondo.md) |
 
@@ -316,7 +316,7 @@ La facción de Reme cambia por partida (ver capítulo 3). Cómo suena Reme en ca
 | **Tratamiento** | **Usted** ✅; el protagonista le responde de usted ✅ |
 | **Cómo llama al protagonista** | «Usted». El nombre solo en el enfrentamiento del Acto IV 🟡 |
 | **Rasgos de voz** | Seca e imperativa, sin humor. No alza la voz. Duro e inflexible ✅ |
-| **Líneas de ejemplo** | «No le pregunto qué opina. Le informo qué va a hacer.» · «Valdoria se sostiene con cuotas, no con opiniones.» |
+| **Líneas de ejemplo** | «No le pregunto qué opina. Le informo qué va a hacer.» · «Valdoria se sostiene con cuotas, no con opiniones.» 🟡 (guía de tono hasta F4-181) |
 | **Nunca dice** | Ni una broma, ni «por favor» como ruego, ni una disculpa. Antes del Acto IV no dice «mal del éter» 🟡 |
 | **Ficha completa** | [19 · Montenegro](19-elenco-a-fondo.md) |
 

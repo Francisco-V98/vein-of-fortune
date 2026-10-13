@@ -154,7 +154,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 **Emociones.** Ternura contenida; vergüenza cuando traiciona; alivio cuando por fin puede elegir. Se quiebra cuando debe presionar a alguien que aprecia.
 
 **Voz.** Cálida, con diminutivos y consejos que son amenazas. Dice "criatura" para no marcar género.
-- "Con calma, criatura. Yo en tu lugar pagaría esta semana."
+- "Con calma, criatura. Yo en tu lugar pagaría esta semana." 🟡
 - "No es que me duela cobrarte. Es que me duele que no sea otro."
 
 **Acciones en el juego.** Gestiona la **deuda**: cuotas, plazos e intereses. Ofrece tiempo y crédito, y en el Acto II **ejecuta la orden de su facción** (la que cambia por partida) contra el protagonista. Al final, es fuente de información y apoyo.
@@ -389,7 +389,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 
 **Voz.** Seca, imperativa, sin humor. No alza la voz.
 - "No le pregunto qué opina. Le informo qué va a hacer."
-- "Valdoria se sostiene con cuotas, no con opiniones."
+- "Valdoria se sostiene con cuotas, no con opiniones." 🟡
 
 **Acciones en el juego.** Controla **licencias, cuotas y contratos oficiales**, cierra zonas y aplica **inspecciones y redadas** si el jugador se pasa. En el Acto IV es el obstáculo principal.
 

@@ -537,7 +537,7 @@
       "acto": "III",
       "nivel": "pequena",
       "titulo": "Esteban te pide algo en la bolsa",
-      "dispara": "Esteban, guardián del círculo de la capital, te encuentra en la bolsa, antes de que elijas puerta.",
+      "dispara": "Esteban, guardián del círculo de la capital, te encuentra en la bolsa, antes de que elijas entrada.",
       "opciones": [
         {
           "id": "apoyar",
