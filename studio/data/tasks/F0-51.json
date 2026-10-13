@@ -30,19 +30,31 @@
         "estado": "hecha",
         "at": "2026-10-13",
         "por": "narrador",
-        "nota": "El narrador cargó los hilos y el desarrollador de herramientas construyó la validación y la vista; el coordinador añadió la fila «En escena» y ajustó C18 para que solo desaparezca quien ya entró en escena; limpieza 71 % y coherencia 94 %",
-        "entrega": "hilos.json con 45 hilos, validación y chequeos C16 a C19 en el build, vista #/hilos en el hub y 25 pruebas nuevas; fila «En escena» en el mapa de historia"
+        "nota": "El narrador cargó los hilos y el desarrollador de herramientas construyó la validación y la vista; el coordinador añadió la fila «En escena», ajustó C18 y añadió sus pruebas; el autor decidió cinco hilos; limpieza 71 % y coherencia 94 %",
+        "entrega": "hilos.json con 45 hilos, validación y chequeos C16 a C19 en el build, vista #/hilos en el hub y 27 pruebas nuevas; fila «En escena» en el mapa de historia"
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
         "por": "qa",
-        "nota": "QA comprueba el build, las pruebas, la vista del hub, las marcas y que los hilos cuadren con los documentos"
+        "nota": "QA aprobó el build, el esquema, los datos y el código del hub; las pruebas que faltaban de C18 se añadieron y el autor decidió la deuda familiar, que quedó según el estatus al cerrar (77 pruebas, limpieza 71 %, coherencia 94 %)",
+        "entrega": "Build estricto, 77 pruebas en verde y registro con 45 hilos sin sembrados sin resolver",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "Se añadieron tres pruebas de la regla de C18 y el autor decidió que la deuda familiar depende del estatus al cerrar, sin mecánica nueva"
+          }
+        ]
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "autor",
+        "nota": "El autor revisa el registro de hilos y la vista #/hilos del hub"
       },
       {
         "etapa": "playtest",
@@ -82,6 +94,12 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Revisar hilos.json, el código del hub, las pruebas y los documentos tocados",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: el registro de hilos y la vista #/hilos",
         "at": "2026-10-13"
       }
     ]

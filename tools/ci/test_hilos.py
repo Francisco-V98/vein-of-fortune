@@ -180,6 +180,25 @@ class Coherencia(unittest.TestCase):
         r = coherence.hilos_analisis(registro(hilo(personajes=["Teo"])), WORLD, STORY, DECISIONS)
         self.assertEqual(r["faltan"][0]["actos"], ["II", "III"])
 
+    def test_personaje_que_debuta_despues_de_la_siembra_no_desaparece_antes(self):
+        # Teo no está en el II ni el III. Si el hilo se siembra en el II y se resuelve en el IV, Teo debuta en el IV: no se le echa de menos antes.
+        h = hilo(personajes=["Teo"])
+        h["siembra"][0]["acto"] = "II"
+        r = coherence.hilos_analisis(registro(h), WORLD, STORY, DECISIONS)
+        self.assertEqual(r["faltan"], [])
+
+    def test_personaje_que_nunca_sale_en_el_tramo_falta_todo_el_tramo(self):
+        world = copy.deepcopy(WORLD)
+        world["characters"].append({"id": "q", "name": "Quiroga", "act": "I", "aka": []})
+        r = coherence.hilos_analisis(registro(hilo(personajes=["Quiroga"])), world, STORY, DECISIONS)
+        self.assertEqual(r["faltan"][0]["actos"], ["I", "II", "III", "IV"])
+
+    def test_fila_en_escena_manda_sobre_la_de_entradas(self):
+        # Con la fila «En escena», Teo está presente en los cuatro actos y no desaparece.
+        story = {"lanes": STORY["lanes"] + [{"id": "enescena", "cells": [["Teo"]] * 4}]}
+        r = coherence.hilos_analisis(registro(hilo(personajes=["Teo"])), WORLD, story, DECISIONS)
+        self.assertEqual(r["faltan"], [])
+
     def test_personaje_por_alias_no_desaparece(self):
         self.assertEqual(failed(registro(hilo(personajes=["Doña Reme"])))["C18"], 0)
 

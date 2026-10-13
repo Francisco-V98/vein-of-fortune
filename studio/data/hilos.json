@@ -1308,7 +1308,7 @@
       "siembra": [
         {
           "acto": "I",
-          "donde": "La cosecha perdida dejó a la familia debiendo al banco agrario; el protagonista busca trabajo para mandar dinero a casa",
+          "donde": "La cosecha perdida dejó a la familia debiendo al banco agrario; el protagonista busca trabajo para ayudar a su familia; el desenlace depende del estatus con el que cierres el acta, sin envíos de dinero",
           "ref": "doc 19 Protagonista · doc 21 §8",
           "estado": "ok"
         }
@@ -1316,12 +1316,12 @@
       "resuelve": [
         {
           "acto": "IV",
-          "donde": "La carta de la familia dice si la deuda con el banco agrario se paga o se alivia, según lo que enviaste",
+          "donde": "La carta de la familia dice si la deuda con el banco agrario se paga si entras en el acta como Empresario o Magnate y se alivia con un estatus menor",
           "ref": "doc 25 §5.3 (FM-01 a FM-03) y §7.2 · decisión del autor 2026-10-13",
           "estado": "ok"
         }
       ],
-      "cambia": "Es la razón de salir de casa. La carta de Vega Mansa lo cierra: la deuda se paga o se alivia según lo que enviaste, sin cifras.",
+      "cambia": "Es la razón de salir de casa. La carta de Vega Mansa lo cierra: la deuda se paga (Empresario o Magnate) o se alivia (estatus menor) según el estatus al cerrar el acta, sin cifras.",
       "estado": "resuelto",
       "motivo": ""
     }
