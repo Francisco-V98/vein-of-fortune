@@ -9,7 +9,7 @@ Qué hace falta para pasar de un acto al siguiente, y cómo se cumple de varias 
 ## Resumen en cinco líneas
 
 1. Cada acto tiene **una puerta** con tres capas: un **hito de historia**, un **piso de estatus** (solo en A5 y en el círculo del III) y **vías «k de n»** (dos de tres entre deuda, logros y relación).
-2. Los cuatro medidores (Unión, Esteban, Lucía y Teo) tienen **tres tramos**: bajo (menos de 35), medio (35 a 54) y alto (55 o más).
+2. Los cuatro medidores (Unión, Esteban, Lucía y Teo) tienen **tres tramos**: bajo (menos de 35), medio (35 a 54) y alto (55 o más). Las facciones no tienen medidor propio: se miden por la alianza elegida.
 3. Las escenas ancla **se disparan por eventos tuyos**, no por calendario, y van encadenadas: cada una espera a la anterior.
 4. Nada atasca la partida: el juego sigue como **sandbox**, la historia espera en una **cola**, un **diario** lista lo que falta y una **misión de rescate** llega tras mucho tiempo sin avanzar. **La deuda nunca bloquea.**
 5. Para entrar al **IV** hacen falta el encuentro con Montenegro y las **cintas 1 a 5**.
@@ -23,18 +23,18 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Tema | Decisión |
 |---|---|
 | Modelo | **Una puerta por acto** con vías «k de n» (dos de tres entre deuda, logros y relación). **Piso de estatus solo en dos puertas**: A5 del Acto II (Comerciante) y el círculo del Acto III (Empresario). Las anclas A1 a A6 van **encadenadas**: cada una se dispara con la anterior resuelta ✅ |
-| Acto I | Se cierra al **reabrir el puesto, atender la primera cuota** (pagada o prorrogada) y tener el **primer contacto con los empleados**. «Minero con licencia» es el **premio** del cierre, no un requisito ✅ |
+| Acto I | Se cierra al **reabrir el puesto, atender la primera cuota** (pagada o prorrogada) y tener el **primer contacto con los empleados**. La cuota vence **cada 7 días y la primera, el día 7**; si no puedes pagar, se prorroga una semana con un pequeño recargo ⏳ F0-52. «Minero con licencia» es el **premio** del cierre, no un requisito ✅ |
 | Tramos | Para los cuatro medidores: **bajo menos de 35, medio 35 a 54, alto 55 o más**. Arrancan en 50; Esteban en 40 y Teo en 60 ✅ |
 | Tramo medio | Teo **se queda** (si lo llevaste a revisión). Lucía **no publica**, así que lo publicas tú con costo alto y poco alcance. El **reproductor** lo entrega Lucía solo en tramo alto; con medio o bajo lo entrega Reme ✅ |
 | Aval de Esteban | Basta su medidor en tramo alto. Si no lo tienes, el aval se muestra **bloqueado con el motivo**, y siempre quedan el sello de Montenegro y la presión de tu alianza ✅ |
 | Vía de relación | Se cumple si **al menos uno de los cuatro medidores** está en tramo alto ✅ |
-| Vía de deuda | Cuenta **solo lo que pagas tú** (% de capital pagado de tu bolsillo). Lo que asume el Consorcio no regala la vía ✅. La deuda de luz de los Faroleros no la rompe 🟡 |
+| Vía de deuda | Cuenta **solo lo que pagas tú** (% de capital pagado de tu bolsillo). Lo que asume el Consorcio no regala la vía ✅ |
 | Cintas | Las cintas **1 a 5 son obligatorias** para entrar al IV, no caducan por tiempo ni por decisiones, y tienen una **misión persistente** si faltan ✅ |
 | Red anti-atasco | El juego sigue como sandbox, **la historia espera en cola**, **el diario lista las vías que faltan** y **la misión de rescate** llega tras mucho tiempo sin avanzar. La deuda nunca bloquea. Las tres piezas se diseñan aparte ✅ ⏳ F0-78 |
 | Teo | **Sin revisión muere**, también si le propones y aceptas su no: la opción respetuosa tiene costo ✅ |
 | Magnate y cierre del IV | Magnate se concede al **cerrar el acta de calibración** y **no es puerta**. El IV cierra con la cabecera, las tarjetas y el acta tras la decisión sobre la Aetherita; Magnate llega como un aviso silencioso al volver al sandbox ✅ ([25](25-finales-y-epilogos.md)) |
 | Disparadores | Van **por eventos del jugador y no por calendario**: A2 tras atender tu primera cuota después de A1; A3 tras tu primera venta o expedición en la zona; A4 tras el aviso de noticias y una acción tuya, sin plazo en días. Las opcionales O1 a O4 **no puntúan** para ninguna puerta ✅ |
-| Círculo y entrada al IV | El círculo pide **Empresario + dos vías de tres + una puerta abierta** y cierra en el encuentro con Montenegro. El IV entra con ese encuentro resuelto y las cintas 1 a 5 recogidas. Montenegro **no tiene medidor**. Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`, Reme nunca cierra puertas y ninguna facción es mejor por defecto ✅. `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme, sin usarlo para decidir 🟡 |
+| Círculo y puerta al IV | El círculo pide **Empresario + dos vías de tres + una entrada abierta** y cierra en el encuentro con Montenegro. El IV entra con ese encuentro resuelto y las cintas 1 a 5 recogidas. Montenegro **no tiene medidor**. Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`, Reme nunca cierra puertas y ninguna facción es mejor por defecto ✅ |
 
 ---
 
@@ -44,7 +44,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 |---|---|---|
 | **Hito de historia** | La escena o el evento que cierra el acto. Siempre se exige ✅ | Las cuatro puertas ✅ |
 | **Piso de estatus** | Un escalón mínimo de la escalera de [07](07-sociedad-y-eventos.md) ✅ | Solo A5 (Comerciante) y el círculo del III (Empresario) ✅ |
-| **Vías «k de n»** | Cumplir **dos de tres**: deuda, logros o relación ✅ | A5 y el círculo del III. El Acto I y la entrada al IV no tienen vías ✅ |
+| **Vías «k de n»** | Cumplir **dos de tres**: deuda, logros o relación ✅ | A5 y el círculo del III. El Acto I y la puerta al IV no tienen vías ✅ |
 
 - Ninguna vía es obligatoria por sí sola: basta cualquier par de las tres ✅.
 - Las opcionales O1 a O4 pueden mover un medidor, pero **ninguna puerta las necesita** ✅ (se comprueba en la sección 6).
@@ -59,8 +59,8 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 |---|---|---|---|---|---|
 | **I → II** | Reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes el primer contacto con los empleados ✅ | Ninguno. «Minero con licencia» es el premio ✅ | Ninguna ✅ | El paso al II y la escena A1 ✅ | La deuda total, los logros, las cintas y el estatus ✅ |
 | **II → III** (A5) | A4 resuelta: viviste la huelga y el apagón ✅ | **Comerciante** ✅ | Dos de tres ✅ | La escena A5 y, con ella, el cierre del II ✅ | A1 a A4 (solo piden la anterior), Reme y las opcionales ✅ |
-| **III · el círculo** | Una puerta abierta; el círculo cierra en el encuentro con Montenegro ✅ | **Empresario** ✅ | Dos de tres ✅ | El círculo y el encuentro con Montenegro ✅ | Un aval bloqueado: quedan el sello y la presión de tu alianza ✅ |
-| **III → IV** (entrada) | Encuentro con Montenegro resuelto ✅ | Ninguno ✅ | Ninguna ✅ | La entrada al IV, hasta tener las cintas 1 a 5 ✅ | Cualquier medidor, la deuda y la alianza elegida ✅ |
+| **III · el círculo** | Una entrada abierta; el círculo cierra en el encuentro con Montenegro ✅ | **Empresario** ✅ | Dos de tres ✅ | El círculo y el encuentro con Montenegro ✅ | Un aval bloqueado: quedan el sello y la presión de tu alianza ✅ |
+| **III → IV** | Encuentro con Montenegro resuelto ✅ | Ninguno ✅ | Ninguna ✅ | La puerta al IV, hasta tener las cintas 1 a 5 ✅ | Cualquier medidor, la deuda y la alianza elegida ✅ |
 | **IV → sandbox** | Cerrar el acta de calibración, tras la decisión sobre la Aetherita ✅ | Ninguno. Magnate es el premio, no una puerta ✅ | Ninguna ✅ | Nada: el sandbox empieza al cerrar el acta ✅ | — |
 
 ---
@@ -106,9 +106,9 @@ Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el t
 | **Unión** | Cuenta para la vía de relación ✅. En `n-iv-montenegro`, Montenegro intenta borrarte y falla ✅. En `n-iv-aetherita`, la Unión sale contigo si revelas ✅ | No cuenta para la vía de relación ✅. Sin efecto propio en el IV ✅ | En `n-iv-aetherita`, nadie te respalda en el Hollín si revelas ✅ |
 
 - **Teo sin revisión muere, sea cual sea su tramo** ✅. Si el medidor y la revisión chocan, gana el no haberlo atendido ✅. Esto incluye la opción respetuosa «se lo propones y aceptas su no» ✅.
-- **Esteban.** El aval se lee en el momento de elegir puerta ✅. 🟡 Como `n-iii-esteban-trato` ocurre antes, el medidor ya trae lo que hiciste en la bolsa. Después de la puerta, el medidor de Esteban no se mueve, así que el tramo del IV es el de la puerta ⏳ F4-61.
+- **Esteban.** El aval se lee en el momento de elegir entrada ✅. 🟡 Como `n-iii-esteban-trato` ocurre antes, el medidor ya trae lo que hiciste en la bolsa. Después de la entrada, el medidor de Esteban no se mueve, así que el tramo del IV es el de la entrada ⏳ F4-61.
 - **Lucía.** 🟡 Antes de decidir sobre la Aetherita se te muestra quién publicaría, para elegir con aviso ⏳ F4-142. `n-iv-lucia-publica` se activa si la verdad sale.
-- **Unión.** En `n-iv-montenegro`, «borrarte» pide Unión alta y al menos dos pruebas, y falla ✅. Si vendes al Ministerio, te compra con el sello y esa regla manda primero ✅. Como siempre conservas al menos tres ([23](23-arbol-de-decisiones.md), sección 8), en la práctica solo importa la Unión: es el castigo de quien tiene gente detrás ✅. Con Unión media o baja, y si no vendes al Ministerio, te amenaza ✅: la puerta que usaste ya no decide qué hace Montenegro. Su desenlace se decide al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12).
+- **Unión.** En `n-iv-montenegro`, «borrarte» pide Unión alta y al menos dos pruebas, y falla ✅. Si vendes al Ministerio, te compra con el sello y esa regla manda primero ✅. Como siempre conservas al menos tres ([23](23-arbol-de-decisiones.md), sección 8), en la práctica solo importa la Unión: es el castigo de quien tiene gente detrás ✅. Con Unión media o baja, y si no vendes al Ministerio, te amenaza ✅: la entrada que usaste ya no decide qué hace Montenegro. Su desenlace se decide al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12).
 - **Montenegro** no tiene tramos ✅.
 
 ---
@@ -184,7 +184,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 | Escena | Se dispara cuando… | Detalle |
 |---|---|---|
 | **A1** · La política manda | Cierras el Acto I ✅ | 🟡 El decreto de A1 es lo que abre las zonas del II; no es una condición previa ⏳ F4-128 |
-| **A2** · La orden de Reme | A1 resuelta y atiendes tu primera cuota después de A1 ✅ | Pagada o prorrogada. Si ya saldaste la deuda, A2 llega en tu siguiente visita a Reme 🟡 ⏳ F0-52. El periodo de la cuota ⏳ F0-52 |
+| **A2** · La orden de Reme | A1 resuelta y atiendes tu primera cuota después de A1 ✅ | Pagada o prorrogada. Las cuotas vencen cada 7 días ✅. Si ya saldaste la deuda, A2 llega en tu siguiente visita a Reme 🟡 ⏳ F0-52 |
 | **A3** · El primer conflicto | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | 🟡 Zona: Sierra Alta (Consorcio), Villa Brasa (Ministerio) y Salares (Faroleros), como en [22](22-acto-ii-variantes.md) ⏳ F4-128 |
 | **A4** · La primera huelga | A3 resuelta, el aviso en las noticias y una acción tuya ✅, sin plazo en días ✅ | 🟡 «Acción tuya»: tu siguiente bloque de expedición, venta, taller o cierre del puesto. Cuántas acciones separan el aviso del cierre ⏳ F4-132 |
 | **A5** · Las tres ofertas | A4 resuelta, estatus de Comerciante y dos vías de tres ✅ | Cierra el Acto II ✅. El estatus y sus cifras ⏳ F4-109 |
@@ -195,7 +195,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 
 ---
 
-## 9 · Las cintas 1 a 5 y la entrada al IV 🟡
+## 9 · Las cintas 1 a 5 y la puerta al IV 🟡
 
 **Estado:** ✅ las cintas 1 a 5 son obligatorias, no caducan y tienen misión persistente; 🟡 el estado intermedio, el orden y La Fosa, que se cierran al escribir el IV ⏳ F4-142. El contenido de la misión ⏳ F4-150
 
@@ -205,7 +205,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 | 2 | II | Minas de Sierra Alta |
 | 3 a 5 | III | Puerto Meridiano y Cavernas de Cristal |
 
-- **Entrada al IV** ✅: encuentro con Montenegro resuelto y cintas 1 a 5 recogidas.
+- **Puerta al IV** ✅: encuentro con Montenegro resuelto y cintas 1 a 5 recogidas.
 - **No caducan** ✅ por tiempo ni por decisiones. Ninguna decisión puede cerrar el camino a una cinta ✅.
 - **Misión persistente** ✅: si falta una, queda en el diario con su lugar hasta que la recojas. No bloquea los actos anteriores.
 - **Estado intermedio.** 🟡 El orden entre el encuentro con Montenegro y las cintas es libre. Si tienes el encuentro y faltan cintas, el III está cerrado y el IV espera en la cola, mientras sigues en sandbox.
@@ -289,13 +289,15 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 - ⏳ F0-78 Diseño del diario, la cola de historia y la misión de rescate.
 - ⏳ F0-53 «Mucho tiempo sin avanzar», en horas de juego.
 - ⏳ F4-109 Escalera de estatus: requisitos de Comerciante y de Empresario, y su patrimonio ⏳ F0-52
-- ⏳ F0-52 Periodo de la cuota, mora, suma de los abonos anónimos y umbral de deuda (25 % y 50 % propuestos).
+- ⏳ F0-52 Montos de la cuota y del recargo de la prórroga, mora, suma de los abonos anónimos y umbral de deuda (25 % y 50 % propuestos). El periodo (cada 7 días) ya está decidido ✅.
 - ⏳ F4-132 Aviso previo de la huelga (cuántas acciones lo separan del cierre).
 - ⏳ F4-61 Cifras de los medidores (deltas), conservando los caminos de la sección 6.
 - ⏳ F4-115 Sistema de logros y ⏳ F4-116 los primeros 30 y el umbral de logros (4 y 10 propuestos).
 - ⏳ F4-127 Evaluador de las puertas.
 - ⏳ F4-150 Misión persistente de las cintas.
 - ⏳ F0-23 Escena del primer contacto con los empleados, en el guion del Acto I.
+- ✅ F0-47 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión: «puerta» es solo el paso entre actos, el círculo se abre por «entrada» y la cuota vence cada 7 días.
+- ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.
 
 ---
 
@@ -304,7 +306,7 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 | Criterio de la tarea | Cumplido | Dónde |
 |---|---|---|
 | Umbrales definidos para los cuatro actos | Sí | Secciones 3 y 8 |
-| Se pueden cumplir de varias maneras | Sí: dos de tres vías y una puerta siempre abierta | Secciones 2, 4 y 7 |
+| Se pueden cumplir de varias maneras | Sí: dos de tres vías y una entrada siempre abierta | Secciones 2, 4 y 7 |
 | No obligan a seguir la trama al pie de la letra | Sí: eventos tuyos, sandbox y cola | Secciones 8 a 10 |
 | Medidores con tramos y lo que desbloquean | Sí | Secciones 5 y 6 |
 | Acordados con el autor | Sí: todas las preguntas respondidas; solo quedan aplazadas las cifras de deuda y de logros | Sección 1 y «Decisiones tomadas» |

@@ -47,10 +47,10 @@ Mínimo **10 minerales**, cada uno con lore, utilidad y necesidad dentro del jue
 | 4 | **Salitre** | Estratégico | Pólvora y fertilizante. Su comercio pasa por puertos que controla el crimen organizado |
 | 5 | **Plata** | Medio | Contactos eléctricos, fotografía y joyería |
 | 6 | **Oro** | Lujo | Reserva del Estado y símbolo de estatus. La corrupción lo mueve |
-| 7 | **Cuarzo** | Medio, clave tecnológica | Hace funcionar radios y teletipos. **El detector del jugador depende de él** |
+| 7 | **Cuarzo** | Medio, clave tecnológica | Hace funcionar radios y teletipos. **El detector básico es una herencia de Anselmo y no depende del cuarzo; el cuarzo lo mejora más adelante** ✅ |
 | 8 | **Esmeralda** | Lujo / volátil | Prestigio de la élite; el precio sigue las modas |
 | 9 | **Diamante** | Volátil | Herramientas de corte y lujo extremo |
-| 10 | **Aetherita** | Volátil / estratégico | Combustible casi milagroso, descubierto hace unos 30 años en La Fosa (cronología en [21](21-pasado-de-valdoria.md)). Peligroso, y nadie sabe bien qué es. Eje del misterio principal |
+| 10 | **Aetherita** | Volátil / estratégico | Combustible casi milagroso, descubierto hace unos 30 años en La Fosa (cronología en [21](21-pasado-de-valdoria.md)). Peligroso, y nadie sabe bien qué es. Eje del misterio principal. ✅ En el Acto III solo se ve su precio y únicamente se compra en el mercado negro (Casilda), como mercancía escasa; la extracción no ocurre hasta el Acto IV ([03](03-comercio.md)) |
 
 🟡 La lista y los lores son una propuesta aceptada en general; los detalles (por ejemplo quién demanda cada uno, precios base, cadena de refinado) se afinan en el diseño del mercado.
 
@@ -88,4 +88,4 @@ Lore:
 
 - ❓ Fichas completas de cada mineral.
 - ❓ Cadena de refinado (mena → lingote → aleación): qué requiere cada paso.
-- ❓ Nombres de facciones, ciudades y personajes recurrentes.
+- ✅ Nombres de facciones ([07](07-sociedad-y-eventos.md)), ciudades (Villa Brasa y Puerto Meridiano, [08](08-historia-y-personaje.md)) y personajes recurrentes ([19](19-elenco-a-fondo.md)): definidos.

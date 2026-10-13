@@ -499,7 +499,7 @@
               "est": 6,
               "status": "done",
               "prio": "P1",
-              "desc": "Las bifurcaciones grandes (alianza del Acto II, cómo entras al círculo del Acto III y destino de la Aetherita; el acreedor del Acto II es un sorteo, no una decisión) y las consecuencias pequeñas de cada acto, con qué las dispara y qué cambia en el mundo, el mercado y los personajes.",
+              "desc": "Las bifurcaciones grandes (alianza del Acto II, cómo entras al círculo del Acto III y destino de la Aetherita; la facción de Reme del Acto II es un sorteo, no una decisión) y las consecuencias pequeñas de cada acto, con qué las dispara y qué cambia en el mundo, el mercado y los personajes.",
               "done_when": "Árbol completo acordado y visible en el hub."
             },
             {
@@ -524,7 +524,7 @@
               "id": "F0-48",
               "title": "Lectura final y coherencia de la biblia narrativa",
               "est": 2,
-              "status": "backlog",
+              "status": "done",
               "prio": "P2",
               "desc": "Revisión de que la biblia no se contradice con los documentos del juego, actualización del mapa de historia y de la presentación, y lista de lo que falta para empezar los guiones.",
               "done_when": "Biblia revisada y sin contradicciones; mapa de historia actualizado."
@@ -834,6 +834,15 @@
               "prio": "P2",
               "desc": "Mod de Claude Code con el comando /consumo: ventana de cinco horas y semanal, tokens por prompt e historial por día, modelo y subagentes, para ver en qué y cuándo se va el consumo.",
               "done_when": "El mod valida, pasa sus pruebas, el autor lo revisa y lo instala y el panel muestra el consumo real de una sesión."
+            },
+            {
+              "id": "F0-80",
+              "title": "Pasada de cierre: biblia y documentos de pasado, variantes, árbol, umbrales y finales (18 y 21 a 25)",
+              "est": 6,
+              "status": "backlog",
+              "prio": "P1",
+              "desc": "Repasar con el autor los documentos 18 y 21 a 25 hasta llevar cada uno a un 90 % o más de limpieza, confirmando lo que siga en propuesta y aplazando solo lo que cumpla la regla del documento 15.",
+              "done_when": "Cada uno de los documentos 18 y 21 a 25 llega al 90 % de limpieza o tiene sus puntos abiertos aplazados con una tarea que no condiciona nada anterior."
             }
           ]
         }
@@ -1894,8 +1903,8 @@
               "title": "Deuda: cuotas y cierre del Acto I",
               "est": 4,
               "status": "backlog",
-              "desc": "Pagos periódicos a Reme.",
-              "done_when": "Pagar las primeras cuotas cierra el acto.",
+              "desc": "Pagos semanales a Reme: la cuota llega cada 7 días y la primera vence el día 7; si no puedes pagar, se prorroga una semana con un pequeño recargo (montos ⏳ F0-52).",
+              "done_when": "Atender la primera cuota, pagada o prorrogada, junto con reabrir el puesto y el primer contacto con los empleados cierra el Acto I, según el documento 24.",
               "prio": "P0"
             }
           ]
@@ -2655,39 +2664,47 @@
             {
               "id": "F4-61",
               "status": "backlog",
-              "title": "Modelo de relaciones por facción",
+              "title": "Modelo de los cuatro medidores de relación",
               "est": 6,
               "prio": "P1",
-              "desc": "Modelo de los medidores de relación (Unión, Esteban, Lucía, Teo y los que se añadan). Debe respetar los tramos del documento 24: bajo <35, medio 35–54, alto 55+, con arranques 50, Esteban 40 y Teo 60, y los efectos de 5, 10 y 20 por opción del documento 23.",
+              "desc": "Modelo de los medidores de la Unión, Esteban, Lucía y Teo (0 a 100, arranques 50, 40, 50 y 60). Las facciones no tienen medidor propio. Debe respetar los tramos del documento 24 (bajo menos de 35, medio 35 a 54, alto 55 o más) y los efectos de 5, 10 y 20 por opción del documento 23.",
               "done_when": "Los caminos mínimos del documento 24 (sección 6) siguen valiendo: el aval de Esteban se alcanza sin la escena opcional en las tres variantes y los tramos bajos de Lucía y Teo son alcanzables; si cambia un tamaño de efecto, se rehace antes esa sección."
             },
             {
               "id": "F4-62",
               "status": "backlog",
-              "title": "Efectos de la relación con el Ministerio",
+              "title": "Alianza con el Ministerio",
               "est": 4,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Efectos de aliarte con el Ministerio en el mundo y el mercado: licencia ampliada, trámite preferente y cuotas. El Ministerio no tiene medidor propio: se mide por la alianza elegida (documentos 23 y 24).",
+              "done_when": "Los efectos de la alianza con el Ministerio están en el juego, sin un medidor de relación propio, y respetan las puertas del documento 24."
             },
             {
               "id": "F4-63",
               "status": "backlog",
-              "title": "Efectos de la relación con el Consorcio Arvel",
+              "title": "Alianza con el Consorcio Arvel",
               "est": 4,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Efectos de aliarte con el Consorcio Arvel: contratos grandes, compra de tu deuda y el fondo reservado. No tiene medidor propio: se mide por la alianza elegida (documentos 23 y 24).",
+              "done_when": "Los efectos de la alianza con el Consorcio están en el juego, sin un medidor de relación propio, y respetan las puertas del documento 24."
             },
             {
               "id": "F4-64",
               "status": "backlog",
               "title": "Efectos de la relación con la Unión",
               "est": 4,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Efectos del medidor de la Unión, que baja si te alías con el Consorcio o el Ministerio y se mantiene con Los Faroleros.",
+              "done_when": "El medidor de la Unión se mueve como dice el documento 23."
             },
             {
               "id": "F4-65",
               "status": "backlog",
-              "title": "Efectos de la relación con Los Faroleros",
+              "title": "Alianza con Los Faroleros",
               "est": 4,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Efectos de aliarte con Los Faroleros: protección, luz y mercado negro. No tienen medidor propio: se mide por la alianza elegida (documentos 23 y 24).",
+              "done_when": "Los efectos de la alianza con Los Faroleros están en el juego, sin un medidor de relación propio, y respetan las puertas del documento 24."
             },
             {
               "id": "F4-66",
@@ -2986,7 +3003,9 @@
               "status": "backlog",
               "title": "Lealtad: huelga de empleados",
               "est": 4,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Lealtad de los empleados y su huelga, que puede sumarse a la huelga grande del Acto II.",
+              "done_when": "Los empleados pueden unirse a la huelga y su lealtad cambia."
             },
             {
               "id": "F4-107",
@@ -3014,7 +3033,7 @@
               "title": "Escalera de estatus y condiciones de ascenso",
               "est": 8,
               "prio": "P1",
-              "desc": "Requisitos y cifras de cada estatus (Buscador a Magnate). Debe respetar los pisos del documento 24: Comerciante en la escena A5 del Acto II, Empresario en el círculo del Acto III, y Magnate como premio al cerrar el acta, no como puerta.",
+              "desc": "Requisitos y cifras de cada estatus (Heredero a Magnate). Debe respetar los pisos del documento 24: Comerciante en la escena A5 del Acto II, Empresario en el círculo del Acto III, y Magnate como premio al cerrar el acta, no como puerta.",
               "done_when": "Los pisos de estatus del documento 24 se cumplen con las horas por acto del documento 17 y ninguna puerta se puede atascar."
             },
             {
@@ -3057,7 +3076,9 @@
               "status": "backlog",
               "title": "Sistema de logros",
               "est": 6,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Sistema de logros que alimenta la vía de logros de las puertas del documento 24.",
+              "done_when": "Los logros se guardan y cuentan para las puertas."
             },
             {
               "id": "F4-116",
@@ -3155,42 +3176,54 @@
               "status": "backlog",
               "title": "Regla de activación de actos por umbrales",
               "est": 6,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "Evaluador de las puertas de los cuatro actos: lee estatus, deuda, logros y medidores según el documento 24 y abre cada acto.",
+              "done_when": "Con banderas forzadas (F1-23) cada puerta se abre o se bloquea como dice el documento 24, y la partida nunca se atasca."
             },
             {
               "id": "F4-128",
               "status": "backlog",
               "title": "Acto II: guion y escenas",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Guion y escenas del Acto II: las seis escenas ancla A1 a A6 y las opcionales del documento 22.",
+              "done_when": "El guion del Acto II está escrito para las seis anclas, con disparadores por eventos y sin contradicciones con el documento 22."
             },
             {
               "id": "F4-129",
               "status": "backlog",
-              "title": "Variante del acreedor: Consorcio Arvel",
+              "title": "Variante de la facción de Reme: Consorcio Arvel",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Variante del Acto II en la que la facción de Reme es el Consorcio Arvel: la oferta de Esteban de comprar tu deuda, la orden de vender con exclusividad y el cierre de Reme (documento 22).",
+              "done_when": "Las escenas únicas de la variante Consorcio están escritas y jugables, con disparadores por eventos y sin contradicciones con el documento 22."
             },
             {
               "id": "F4-130",
               "status": "backlog",
-              "title": "Variante del acreedor: Los Faroleros",
+              "title": "Variante de la facción de Reme: Los Faroleros",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Variante del Acto II en la que la facción de Reme es Los Faroleros: el cobrador de Casilda, la deuda de luz, el mercado negro y el cierre de Reme (documento 22).",
+              "done_when": "Las escenas únicas de la variante Faroleros están escritas y jugables, con disparadores por eventos y sin contradicciones con el documento 22."
             },
             {
               "id": "F4-131",
               "status": "backlog",
-              "title": "Variante del acreedor: Ministerio",
+              "title": "Variante de la facción de Reme: Ministerio",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Variante del Acto II en la que la facción de Reme es el Ministerio: el trámite de Quiroga, la revisión de licencias, la entrega de cuentas y el cierre de Reme (documento 22).",
+              "done_when": "Las escenas únicas de la variante Ministerio están escritas y jugables, con disparadores por eventos y sin contradicciones con el documento 22."
             },
             {
               "id": "F4-132",
               "status": "backlog",
               "title": "Primera huelga grande",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "La primera huelga grande: aviso de noticias, tus tres bandos (apoyar, abstenerte o romper) y las consecuencias por variante.",
+              "done_when": "La huelga se juega con los tres bandos y sus consecuencias, y sube el precio del mineral en todas las partidas."
             },
             {
               "id": "F4-133",
@@ -3199,133 +3232,169 @@
               "est": 5,
               "prio": "P1",
               "desc": "Consecuencias de elegir alianza en la escena A5 del Acto II. Debe respetar el documento 24 (sección 7): ninguna alianza cierra la puerta del Acto III y cada una deja al menos una vía abierta; el costo de Reme se muestra antes de elegir.",
-              "done_when": "Las tres alianzas dejan al menos una vía abierta para la puerta del círculo y el costo de Reme se ve antes de elegir."
+              "done_when": "Las tres alianzas dejan al menos una vía abierta para la entrada al círculo y el costo de Reme se ve antes de elegir."
             },
             {
               "id": "F4-134",
               "status": "backlog",
               "title": "Acto II: arte y retratos",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Arte y retratos del Acto II según el documento 12.",
+              "done_when": "Retratos y escenas del Acto II aprobados por el autor, sin texto dentro del arte."
             },
             {
               "id": "F4-135",
               "status": "backlog",
               "title": "Acto III: guion y escenas",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Guion y escenas del Acto III, con el médico del dispensario y la entrada al círculo.",
+              "done_when": "El guion del Acto III está escrito con las tres entradas al círculo y la revisión de Teo."
             },
             {
               "id": "F4-136",
               "status": "backlog",
               "title": "Bolsa de la capital (narrativa)",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "La bolsa de la capital como escena narrativa del Acto III.",
+              "done_when": "La bolsa funciona como escena y presenta a Esteban si el jugador no lo conocía."
             },
             {
               "id": "F4-137",
               "status": "backlog",
               "title": "Dilema moral 1",
               "est": 4,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Primer dilema moral del Acto III (el archivo de Quiroga).",
+              "done_when": "El dilema está escrito con sus tres salidas y sus banderas del documento 23."
             },
             {
               "id": "F4-138",
               "status": "backlog",
               "title": "Dilema moral 2",
               "est": 4,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Segundo dilema moral del Acto III (el contrato oficial con cuota).",
+              "done_when": "El dilema está escrito con sus tres salidas y sus banderas del documento 23."
             },
             {
               "id": "F4-139",
               "status": "backlog",
               "title": "Dilema moral 3",
               "est": 4,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Tercer dilema moral del Acto III (el abono y Teo).",
+              "done_when": "El dilema está escrito con sus tres salidas y sus banderas del documento 23."
             },
             {
               "id": "F4-140",
               "status": "backlog",
               "title": "Círculo de poder",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "El círculo de poder: encuentro con Montenegro y las tres entradas (aval, sello o presión de tu alianza).",
+              "done_when": "Las tres entradas llegan al mismo encuentro con Montenegro y fijan quién te debe un favor en el IV."
             },
             {
               "id": "F4-141",
               "status": "backlog",
               "title": "Acto III: arte",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Arte y retratos del Acto III: Puerto Meridiano, la bolsa, las Cavernas de Cristal y el encuentro con Montenegro, según el documento 12.",
+              "done_when": "El arte del Acto III está aprobado por el autor, sin texto dentro del arte y con la paleta del éter respetada."
             },
             {
               "id": "F4-142",
               "status": "backlog",
               "title": "Acto IV: guion y escenas",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Guion y escenas del Acto IV, incluido el acta de calibración y sus tres fondos.",
+              "done_when": "El guion del Acto IV está escrito y el acta es la última escena en las tres salidas."
             },
             {
               "id": "F4-143",
               "status": "backlog",
               "title": "Verdad de la Aetherita: revelación",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "La revelación de la verdad de la Aetherita en el Acto IV.",
+              "done_when": "La revelación se juega y fija las banderas del documento 23."
             },
             {
               "id": "F4-144",
               "status": "backlog",
               "title": "Salida: revelar la verdad",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Salida de revelar la verdad: la publicación por Lucía o La Voz del Hollín y sus consecuencias.",
+              "done_when": "La salida de revelar funciona con los tres casos de Lucía y el desplome que rebota."
             },
             {
               "id": "F4-145",
               "status": "backlog",
               "title": "Salida: callar la verdad",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Salida de callar la verdad y sus consecuencias.",
+              "done_when": "La salida de callar funciona y deja a Lucía filtrando solo si su medidor es bajo."
             },
             {
               "id": "F4-146",
               "status": "backlog",
               "title": "Salida: vender la verdad",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Salida de vender la verdad: el comprador entre Casilda, el Consorcio o el Ministerio.",
+              "done_when": "La salida de vender funciona con los tres compradores y sus consecuencias."
             },
             {
               "id": "F4-147",
               "status": "backlog",
               "title": "Colapso del mercado de la Aetherita",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "El precio de la Aetherita al revelar: cae, rebota y queda algo por debajo, dentro del tope diario de variación.",
+              "done_when": "El precio cae y rebota como dice el documento 25 y no llega a cero."
             },
             {
               "id": "F4-148",
               "status": "backlog",
               "title": "Acto IV: arte",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Arte del Acto IV: La Fosa, la cabecera y los tres fondos del acta.",
+              "done_when": "El arte del Acto IV está aprobado por el autor, con la paleta del éter respetada."
             },
             {
               "id": "F4-149",
               "status": "backlog",
               "title": "Transición a sandbox tras el Acto IV",
               "est": 5,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Paso al sandbox tras el acta: Magnate, el abono según la salida y los ecos del epílogo.",
+              "done_when": "Al cerrar el acta empieza el sandbox con el estado guardado y los epilogos releíbles desde el diario."
             },
             {
               "id": "F4-150",
               "status": "backlog",
               "title": "Sistema de cintas coleccionables de Anselmo",
               "est": 5,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "El reproductor de cintas (lo entrega Lucía si confías en ella, si no Reme) y el sistema de cintas.",
+              "done_when": "Las ocho cintas se recogen en su acto y se oyen en el IV con el reproductor."
             },
             {
               "id": "F4-151",
               "status": "backlog",
               "title": "Ocho cintas: guion y sonido",
               "est": 8,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Guion y sonido de las ocho cintas, la octava cortada.",
+              "done_when": "Las ocho cintas tienen texto y sonido definitivos, con el humor que se apaga."
             }
           ]
         },
@@ -3456,7 +3525,9 @@
               "status": "backlog",
               "title": "Variación del mundo por semilla",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Variación del mundo por semilla, incluido el sorteo oculto de la variante de Reme.",
+              "done_when": "La semilla fija la variante de Reme y se guarda en el estado de la partida."
             },
             {
               "id": "F4-169",
@@ -3539,21 +3610,27 @@
               "status": "backlog",
               "title": "Textos del Acto II",
               "est": 6,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "Textos del Acto II en español para las variantes, la huelga y la alianza.",
+              "done_when": "Los textos del Acto II están escritos y alineados con el documento 22."
             },
             {
               "id": "F4-180",
               "status": "backlog",
               "title": "Textos del Acto III",
               "est": 6,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "Textos del Acto III en español.",
+              "done_when": "Los textos del Acto III están escritos y alineados con los documentos 23 y 24."
             },
             {
               "id": "F4-181",
               "status": "backlog",
               "title": "Textos del Acto IV",
               "est": 6,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "Textos del Acto IV en español.",
+              "done_when": "Los textos del Acto IV están escritos y alineados con los documentos 24 y 25."
             },
             {
               "id": "F4-182",
@@ -3805,8 +3882,44 @@
               "title": "Textos finales de las 54 piezas de los epílogos",
               "est": 6,
               "prio": "P0",
-              "desc": "Escribir los textos definitivos en español de las 54 piezas del documento 25 (cabecera, personajes, facciones, mundo, mercado y familia) en la voz de cada medio, en prospectivo y sin cifras escritas, con una línea breve del protagonista en el acta.",
+              "desc": "Escribir los textos definitivos en español de las 54 piezas del documento 25 (cabecera, personajes, facciones, mundo, mercado y familia) en la voz de cada medio, en prospectivo y sin cifras escritas.",
               "done_when": "Las 54 piezas tienen su texto final en español, respetan el canon y las reglas del documento 25, y la traducción queda para F4-211."
+            },
+            {
+              "id": "F4-213",
+              "status": "backlog",
+              "title": "Licencias: sello, revisión, ampliación y suspensión",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Sistema de licencias que usan el Ministerio y la variante Ministerio del Acto II: revisión de la licencia, ampliación como oferta de alianza, trámite preferente y suspensión como castigo.",
+              "done_when": "La licencia se puede revisar, ampliar y suspender con las reglas de los documentos 22 y 23 y sin atascar la partida."
+            },
+            {
+              "id": "F4-214",
+              "status": "backlog",
+              "title": "Rumores: comprarlos y contárselos a Lucía",
+              "est": 5,
+              "prio": "P2",
+              "desc": "Mecánica de rumores del Teletipo que se pueden comprar, verificar y contar a Lucía, que mueve su medidor (documento 23).",
+              "done_when": "El jugador puede comprar un rumor y contárselo a Lucía con el efecto previsto en su medidor."
+            },
+            {
+              "id": "F4-215",
+              "status": "backlog",
+              "title": "Exclusividad de venta y entrega de cuentas",
+              "est": 5,
+              "prio": "P1",
+              "desc": "Reglas de la orden de Reme en las variantes Consorcio y Ministerio: vender con exclusividad al Consorcio y entregar tus cuentas al Ministerio, con sus efectos y su salida (documento 22).",
+              "done_when": "Las dos órdenes se pueden aceptar, negociar o rechazar y cambian el mercado como dice el documento 22."
+            },
+            {
+              "id": "F4-216",
+              "status": "backlog",
+              "title": "Plantilla de guion con identificadores y condiciones",
+              "est": 4,
+              "prio": "P0",
+              "desc": "Formato común para escribir los guiones de los cuatro actos, con identificadores de escena, condiciones de activación y banderas, para que el motor y los traductores lo lean.",
+              "done_when": "Hay una plantilla acordada y los guiones del Acto I la usan sin cambios."
             }
           ]
         }

@@ -132,12 +132,15 @@ Categorías: producción, política, laboral, tecnológico, clima, guerra/exteri
 - Precios mejores que el spot (rango orientativo +20–40 %, variable por mineral).
 - Ventas **sin impuesto** y sin licencia.
 - Acceso a bienes restringidos o en cuota (por ejemplo Aetherita o grandes volúmenes de salitre).
+- ✅ **Aetherita en el Acto III:** su precio ya se ve, pero solo se compra aquí, con Casilda, como mercancía escasa. La extracción no ocurre hasta el Acto IV.
 - Se opera principalmente en el **bloque de noche**, con un contacto y volumen limitado por noche.
-- Acceso mediante reputación con Los Faroleros o contactos.
+- Acceso por contacto: Casilda y Los Faroleros abren el mercado negro en el Acto II. ✅ Los Faroleros no tienen medidor propio: se miden por la alianza que elijas ([07](07-sociedad-y-eventos.md)).
 
 ### Indicador de vigilancia 🟡
 
-Un medidor de 0 a 100 que **sube** con cada operación negra (según volumen y valor) y **baja** con el tiempo.
+✅ Es **un solo indicador global**, de 0 a 100, que **sube** con cada operación negra (según volumen y valor) y **baja** con el tiempo. Los cambios se cuentan en **puntos** (por ejemplo, «vigilancia +10»); el «%» solo sirve para el ritmo con que sube o baja por sí solo, y las cifras ⏳ F0-52. No hay un indicador por lugar.
+
+🟡 Tramos:
 
 | Nivel | Rango | Consecuencias |
 |---|---|---|
@@ -146,7 +149,9 @@ Un medidor de 0 a 100 que **sube** con cada operación negra (según volumen y v
 | Vigilado | 60–85 | Inspecciones frecuentes, multas fuertes, contratos oficiales bloqueados |
 | Bajo investigación | 85+ | Redada: confiscación del stock negro, cierre temporal de la tienda, licencia en riesgo, posible arresto (pierde días) |
 
-Cómo bajarlo: esperar, **sobornar al Inspector Quiroga** (a cambio de más corrupción y dependencia), tener buena reputación con el Ministerio, pagar a Los Faroleros (que alivian inspecciones pero suben tu deuda con ellos), contratar guardias.
+✅ Llegar a «Bajo investigación» es la redada: no es una falla de la partida, es la consecuencia que describe la fila de arriba.
+
+🟡 Cómo bajarlo: esperar, **sobornar al Inspector Quiroga** (a cambio de más corrupción y dependencia), tomar decisiones de la historia que lo bajan (por ejemplo, conseguirle el retiro a Quiroga, [23](23-arbol-de-decisiones.md)), pagar a Los Faroleros (que alivian inspecciones pero suben tu deuda con ellos), contratar guardias.
 
 Aplicación del pilar "la información es poder": al principio solo ves el nivel de forma vaga (bajo / medio / alto) y el valor exacto se descubre con fuentes (Quiroga, Lucía).
 

@@ -73,8 +73,8 @@ Ningún empleado dura para siempre. Cada uno trabaja con un **contrato por tiemp
 | Duración | Corta (≈7 días), media (≈30) o larga (≈90) |
 | Contrato corto | Flexible, pero salario más alto y renegociación frecuente |
 | Contrato largo | Salario más bajo y estabilidad, pero despedir cuesta más |
-| Despido anticipado | Cuesta indemnización; sin causa justificada afecta la reputación con la Unión. Despedir a quien robó (con causa) no tiene penalización |
-| Renovación | Depende de Lealtad, salario, trato y relación con la Unión. Se negocia con **Labia** |
+| Despido anticipado | Cuesta indemnización; sin causa justificada baja el medidor de la Unión. Despedir a quien robó (con causa) no tiene penalización |
+| Renovación | Depende de Lealtad, salario, trato y del medidor de la Unión. Se negocia con **Labia** |
 | Se va | Puede irse a la competencia (por ejemplo, al Consorcio Arvel) |
 | Avisos | Notificación unos días antes de que venza, agrupadas para no saturar en mobile |
 
@@ -122,6 +122,8 @@ Se aplica el pilar "la información es poder": del candidato se ven al inicio so
 
 ✅ Mejorar el estilo de vida: casa, ropa, auto, estatus, clase social. Existe un mercado de cosméticos.
 
+✅ La escalera de estatus es _Heredero → Minero con licencia → Comerciante → Empresario → Magnate_ ([07](07-sociedad-y-eventos.md)). ⏳ F4-109 Requisitos de cada ascenso.
+
 🟡 Funciones en el juego:
 
 - Sumidero de dinero a largo plazo.
@@ -161,7 +163,7 @@ Se aplica el pilar "la información es poder": del candidato se ven al inicio so
 ### Salón de la fama y legado 🟡
 
 - **Salón de la fama:** registro de cada partida terminada (patrimonio, días, logros, causa de muerte).
-- **Legado:** al terminar una partida se desbloquean ayudas opcionales para el inicio de las siguientes (ej. herramienta inicial mejor, un contacto, un detector básico, un pequeño capital).
+- **Legado:** al terminar una partida se desbloquean ayudas opcionales para el inicio de las siguientes (ej. herramienta inicial mejor, un contacto, un detector mejorado, un pequeño capital).
 - Hay que evitar que el legado rompa la economía o haga irrelevante el inicio.
 
 ❓ ¿El legado aplica a todas las dificultades o solo a hardcore?

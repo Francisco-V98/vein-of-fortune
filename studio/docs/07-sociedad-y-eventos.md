@@ -25,7 +25,9 @@
 
 ## Facciones 🟡 (borrador)
 
-Pocas, claras, con efectos simples en el juego. Cada una tiene un medidor de relación con el jugador.
+Pocas, claras, con efectos simples en el juego.
+
+✅ **Solo hay cuatro medidores de relación: la Unión, Esteban, Lucía y Teo** ([24](24-umbrales-de-acto.md)). Las facciones restantes (el Consorcio, el Ministerio y Los Faroleros) **no tienen medidor propio**: se miden por la alianza que elijas en el Acto II. Reme y Montenegro tampoco tienen medidor.
 
 | Facción | Qué controla | Qué da / qué quita |
 |---|---|---|
@@ -45,7 +47,7 @@ Pocas, claras, con efectos simples en el juego. Cada una tiene un medidor de rel
 | Organización criminal | **Los Faroleros**: nacieron como el gremio que encendía los faroles de los puertos y hoy "cobran la luz" (conecta con apagones y extorsión) |
 | Prensa | **El Heraldo Meridiano**, **La Voz del Hollín**, **Teletipo Meridiano** |
 
-Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21](21-pasado-de-valdoria.md). Casa Ormeño (plata y joyería, Puerto Meridiano) es la única otra casa industrial con nombre ✅: un nombre de ambiente para noticias y glosario, sin zona ni jefe.
+✅ La Comisión del Éter vive dentro del Ministerio y el registro del mundo la cuenta como sexta facción ([18](18-biblia-narrativa.md), 6.6). Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21](21-pasado-de-valdoria.md). Casa Ormeño (plata y joyería, Puerto Meridiano) es la única otra casa industrial con nombre ✅: un nombre de ambiente para noticias y glosario, sin zona ni jefe.
 
 ### Medios de prensa ✅
 
@@ -65,6 +67,8 @@ Esto da forma a la fiabilidad variable de las noticias (ver [03](03-comercio.md)
 
 El jugador no solo tiene dinero: tiene **conexiones** (a quién conoce, de quién es amigo) y **reputación** (cómo lo ven). Subir en la sociedad es mover esas piezas, igual que en Papers, Please cada decisión tiene un costo moral y práctico.
 
+✅ En números, la reputación se reduce a los cuatro medidores y a la alianza elegida; ninguna otra facción tiene un medidor aparte.
+
 ## Corrupción como mecánica 🟡
 
 - El jugador **elige cuánto se mancha las manos** — no es obligatorio jugar sucio.
@@ -76,7 +80,9 @@ El jugador no solo tiene dinero: tiene **conexiones** (a quién conoce, de quié
 
 ✅ El jugador crece cada vez más en la sociedad.
 
-🟡 Escalera de estatus (nombres tentativos): _Buscador → Minero con licencia → Comerciante → Empresario → Magnate_. Cada escalón desbloquea contactos, zonas, contratos y opciones de estilo de vida.
+✅ Escalera de estatus: _Heredero → Minero con licencia → Comerciante → Empresario → Magnate_. En inglés, _Heir_; el primer escalón tiene la variante de género _Heredera_ (regla de variantes de género, [18](18-biblia-narrativa.md), 1.2). Los cinco nombres están decididos.
+
+🟡 Cada escalón desbloquea contactos, zonas, contratos y opciones de estilo de vida. ⏳ F4-109 Requisitos y cifras de cada ascenso.
 
 ## Notas de producción
 
@@ -86,8 +92,8 @@ El jugador no solo tiene dinero: tiene **conexiones** (a quién conoce, de quié
 ## Pendiente
 
 - ✅ La nación es **Valdoria**; regiones definidas en [05](05-mundo-y-minerales.md).
-- ✅ Facciones: las 5 propuestas (Gobierno, Casas industriales, Sindicato minero, Organización criminal, Prensa).
+- ✅ Facciones: 6 en el registro del mundo, las 5 propuestas (Gobierno, Casas industriales, Sindicato minero, Organización criminal, Prensa) más la Comisión del Éter, que vive dentro del Ministerio ([18](18-biblia-narrativa.md), 6.6).
 - ✅ Nombres de facciones y medios definidos (arriba).
-- ❓ ¿Los eventos son aleatorios, guionizados o ligados a la relación con facciones?
-- ❓ ¿Cuánta narrativa lineal hay (historia con actos) frente a sandbox puro?
-- ❓ Personajes recurrentes: proveedores, rivales, clientes importantes.
+- ✅ Los eventos de la historia están guionizados y los dispara una acción tuya, no el calendario ([24](24-umbrales-de-acto.md)). ⏳ F4-168 Cuáles eventos sueltos varían por partida y con qué frecuencia; el saqueo, ⏳ F4-84.
+- ✅ Cuatro actos con umbrales y, al cerrar el IV, sandbox; dentro de cada acto puedes desviarte ([08](08-historia-y-personaje.md), [17](17-mapa-de-historia.md) y [24](24-umbrales-de-acto.md)).
+- ✅ Personajes recurrentes: el elenco está en [19](19-elenco-a-fondo.md) (rival: Esteban Arvel) y los clientes y demás figurantes en `world.json`. ⏳ F4-114 Proveedores desbloqueables por estatus.

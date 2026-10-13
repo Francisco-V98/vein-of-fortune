@@ -63,11 +63,11 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-10 | Época: retrofuturismo industrial, sin apocalipsis (reemplaza "industrial con toque fantástico") |
 | 2026-10-10 | Nación: República de Valdoria; 5 regiones + capital |
 | 2026-10-10 | 6 zonas de minado y 10 minerales con distribución por zona |
-| 2026-10-10 | 5 facciones aceptadas |
+| 2026-10-10 | 5 facciones aceptadas (hoy 6 en el registro, con la Comisión del Éter dentro del Ministerio; ver 07) |
 | 2026-10-10 | Historia en 4 actos, luego sandbox; sin final definitivo |
-| 2026-10-10 | Gancho: heredar licencia, puesto y deuda de un tío desaparecido |
+| 2026-10-10 | Gancho: heredar licencia, puesto y deuda de un tío (hoy: que murió en público hace dos años; ver 08) |
 | 2026-10-10 | Facciones con nombre: Ministerio de Recursos, Consorcio Arvel, la Unión, Los Faroleros; tres medios de prensa |
-| 2026-10-10 | Tío Anselmo Vidal con cintas de grabación; acreedor Doña Reme, cuya facción cambia según la partida |
+| 2026-10-10 | Tío Anselmo Vidal con cintas de grabación; Doña Reme, que cobra en nombre de una facción que cambia según la partida |
 | 2026-10-10 | Elenco de 7 personajes; MVP con 4 |
 | 2026-10-10 | Verdad de la Aetherita (enferma a quien la extrae) con 3 salidas en el Acto IV |
 | 2026-10-10 | La historia cambia según las decisiones del jugador |
@@ -134,3 +134,10 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-11 | Fusionados en main los PR #3 (herramientas y CI), #2 (documentos) y #1 (estado QA y catálogo); la CI de GitHub pasa en todos |
 | 2026-10-11 | CLI de GitHub instalada y autenticada; los PR se crean desde la terminal |
 | 2026-10-10 | Personaje personalizable: nombre de una palabra, tienda con espacios, hombre o mujer (1 modelo de cada uno en v1) |
+| 2026-10-12 | Medidores de relación: solo cuatro (Unión, Esteban, Lucía y Teo); el Consorcio, el Ministerio y Los Faroleros se miden por la alianza elegida |
+| 2026-10-12 | Cuota de la deuda del Acto I cada 7 días, la primera el día 7; si no puedes pagarla, una semana más con un pequeño recargo (montos ⏳ F0-52) |
+| 2026-10-12 | Aetherita en el Acto III: precio visible y compra solo en el mercado negro (Casilda), como mercancía escasa; la extracción llega en el IV |
+| 2026-10-12 | El Acto I empieza con un detector básico heredado de Anselmo; el cuarzo lo mejora más adelante |
+| 2026-10-12 | Vigilancia: un indicador global de 0 a 100 que sube con las operaciones negras; los cambios se cuentan en puntos |
+| 2026-10-12 | Escalera de estatus: el primer escalón se llama «Heredero» (*Heir*) y los cinco nombres quedan decididos |
+| 2026-10-12 | Colores: la subida de los gráficos va en azul hielo y el farol de Los Faroleros es vinotinto mate con luz ámbar; el cian y el rojo-rosado son solo de la Aetherita |

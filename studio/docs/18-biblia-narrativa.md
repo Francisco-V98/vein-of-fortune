@@ -13,6 +13,9 @@ Es la guía de escritura de Veta de Fortuna: **cómo se nombra cada cosa, cómo 
 | [17 · Mapa de historia](17-mapa-de-historia.md) | Hitos de cada acto |
 | [21 · Pasado de Valdoria](21-pasado-de-valdoria.md) | **Fuente de las fechas** de lo que pasó antes del juego: cronología, edades, muerte pública de Anselmo, cintas, aldea y casas |
 | [22 · Acto II: variantes de Reme](22-acto-ii-variantes.md) | **Fuente de las escenas del Acto II**: qué cambia si Reme responde al Consorcio, al Ministerio o a Los Faroleros |
+| [23 · Árbol de decisiones](23-arbol-de-decisiones.md) | **Fuente de las decisiones**: qué eliges en cada acto, qué banderas y medidores guarda el juego y cómo se reúnen las ramas |
+| [24 · Umbrales de acto](24-umbrales-de-acto.md) | **Fuente de las puertas**: qué hace falta para pasar de un acto al siguiente, los tramos de los medidores y la red anti-atasco |
+| [25 · Finales y epílogos](25-finales-y-epilogos.md) | **Fuente del cierre**: cabecera, tarjetas por piezas, acta de calibración y los hilos que quedan abiertos |
 
 ## Estructura de esta biblia ✅
 
@@ -28,7 +31,7 @@ El autor eligió una estructura **por entidades**, con el documento 19 como fuen
 | 6 · Glosario ES/EN | Cada término en español e inglés con su estado y las reglas de traducción |
 | Anexo · Cronología y bifurcaciones | Los cuatro actos con sus hitos y variantes |
 
-Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. F0-43 se resolvió en [21](21-pasado-de-valdoria.md) y F0-44 en [22](22-acto-ii-variantes.md). F0-45 se resolvió en [23](23-arbol-de-decisiones.md). F0-46 se resolvió en [25](25-finales-y-epilogos.md).
+Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. F0-43 se resolvió en [21](21-pasado-de-valdoria.md) y F0-44 en [22](22-acto-ii-variantes.md). F0-45 se resolvió en [23](23-arbol-de-decisiones.md), F0-46 en [25](25-finales-y-epilogos.md) y F0-47 en [24](24-umbrales-de-acto.md). Con eso, F0-41 a F0-47 están hechas, y la lectura final F0-48 cierra la coherencia de esta biblia con los documentos 21 a 25. La pasada de cierre con el autor es ⏳ F0-80.
 
 ---
 
@@ -62,6 +65,7 @@ Decisión del autor, F0-41 (2026-10-12).
 
 - El protagonista solo trata de usted a Quiroga, a Montenegro y al personal figurante oficial. A todos los demás los tutea.
 - **Apelativos con género ✅.** Los dos tics que marcan género van con **variante** para la protagonista mujer: Quiroga «estimado» y «estimada», Esteban «amigo» y «amiga». Es la única excepción a la regla de textos neutros. Los demás apelativos son neutros: «criatura» (Reme) y «aprendiz» (Teo).
+- **Nombres de estatus con género.** El primer escalón se llama **«Heredero»** y, para la protagonista mujer, **«Heredera»** ✅ (decisión del autor, 2026-10-12, con esta misma regla de variantes). «Comerciante» y «Magnate» son neutros; las variantes de los otros escalones están en 6.12.
 
 ### 1.3 Aetherita, éter y mal del éter ✅
 
@@ -100,6 +104,7 @@ La verdad (la Aetherita enferma a quien la extrae y la Comisión lo oculta) **se
 | Síntomas **sin nombre**: «tos de mina», gente que vuelve callada, silencios | Una causa o un culpable |
 | Rumores sin confirmar (Teletipo Meridiano) y evasivas de Teo, Quiroga y Lucía | Cifras de enfermos o de muertos |
 
+- **Aetherita en el Acto III ✅** (decisión del autor, 2026-10-12): el precio es visible y solo se compra en el mercado negro, a Casilda, como mercancía escasa. Nadie la extrae hasta el Acto IV. Es una sombra más: lo que cuesta y quién la vende, nunca por qué.
 - **Una sombra por escena, como máximo.** Si el jugador se queda con una pregunta, funciona; con tres respuestas a medias, se nota el truco.
 - Las pistas de Anselmo y de la verdad ya están repartidas en la tabla «Pistas sembradas» de [19](19-elenco-a-fondo.md); esta biblia no las repite ni añade más.
 - **Cómo se cuenta públicamente la muerte de Anselmo** ✅: hace 2 años, a fines de invierno, de «tos de mina» (neumonía), en el Sanatorio de Cumbre Clara, cremado «por norma sanitaria» y sin registro de cremación. Confirmado por el autor el 2026-10-12 (F0-43). Detalle en [21 · La muerte pública](21-pasado-de-valdoria.md).
@@ -116,7 +121,7 @@ La verdad (la Aetherita enferma a quien la extrae y la Comisión lo oculta) **se
 
 | Palabra | Qué es | Dónde se usa |
 |---|---|---|
-| **Cinta** | Cada grabación de Anselmo, como pieza de historia | Diálogos, diario, títulos y notificaciones: «Encontraste una cinta» |
+| **Cinta** | Cada grabación de Anselmo, como grabación de historia | Diálogos, diario, títulos y notificaciones: «Encontraste una cinta» |
 | **Carrete** | El soporte físico donde viene grabada | Objetos, inventario, arte y descripciones: «un carrete con la etiqueta desgastada» |
 
 - Ambas palabras ya existen en el canon ([08](08-historia-y-personaje.md)). La separación entre las dos y su traducción (*tape* y *reel*, 6.11) son decisión del autor, F0-41.
@@ -165,6 +170,7 @@ El nombre es **una sola palabra** y lo elige el jugador ✅ ([08](08-historia-y-
 - No se parte una caja en mitad de una frase corta, un refrán ni un nombre.
 - **Ejemplo.** La frase de Quiroga «Sin sello no hay licencia, y sin licencia no hay minería. Sin minería, no hay deuda que pagar. Ya ve.» tiene 101 caracteres: pasa de 100, así que se divide en dos cajas («…no hay minería.» y «Sin minería, no hay deuda que pagar. Ya ve.»).
 - Las cifras exactas se validan con la fuente real ⏳ F1-18
+- Los textos de las opciones de `decisions.json` son descripciones para el equipo, no el texto de los botones: 28 de sus 81 opciones pasan de 28 caracteres 🟡. El botón final se escribe al guionizar cada acto, con el límite de arriba ⏳ F4-128, ⏳ F4-135 y ⏳ F4-142.
 
 ### 1.10 Medios de prensa
 
@@ -179,6 +185,8 @@ La voz de cada medio está en [13](13-marca-e-identidad.md) y su sesgo en [07](0
 - Un mismo suceso puede salir en los tres medios con tres tonos: así el jugador aprende a **cruzar fuentes**.
 - Los medios nombran el mineral como **Aetherita** (ver 1.3). «El éter» solo aparece en citas textuales de personas.
 - Los medios cuentan lo que pasa y el jugador lee sus decisiones en ellos. No se burlan de los mineros ni de ninguna clase social ✅ ([13](13-marca-e-identidad.md)).
+- **Voz sobre el protagonista ✅** (decisión del autor, 2026-10-12). Los medios hablan de él en **tercera persona con `{nombre}`** («el comerciante {nombre}»), nunca de tú ni de usted. El Ministerio tampoco lo tutea en la prosa de los medios («El Ministerio informa de que la licencia de {nombre}…», no «tu licencia»). Quiroga, Montenegro y el personal oficial siguen hablándole de usted cuando se dirigen a él directamente (1.2). El narrador y las cabeceras del epílogo sí tutean.
+- **Género en esa voz 🟡.** El artículo y el cargo marcan género («el comerciante» frente a «la comerciante»). Para no duplicar textos se prefiere el nombre solo («{nombre} cuenta con…»); si hace falta el cargo, se usa la variante de 1.2.
 
 ### 1.11 Inglés y localización ✅
 
@@ -238,11 +246,11 @@ En cada ficha, los **rasgos de voz** y las **líneas de ejemplo** vienen del 19 
 | **Tratamiento** | Tú, con cariño ✅ |
 | **Cómo llama al protagonista** | **«Criatura»** ✅, que no marca género. Usa el nombre solo en los momentos que pesan 🟡 |
 | **Rasgos de voz** | Cálida, con diminutivos y consejos que son amenazas |
-| **Líneas de ejemplo** | «Con calma, criatura. Yo en tu lugar pagaría antes del jueves.» · «No es que me duela cobrarte. Es que me duele que no sea otro.» |
-| **Nunca dice** | Nunca alza la voz ni insulta. Nunca nombra a la facción que está detrás de ella antes de que el Acto II la revele 🟡 |
+| **Líneas de ejemplo** | «Con calma, criatura. Yo en tu lugar pagaría esta semana.» · «No es que me duela cobrarte. Es que me duele que no sea otro.» 🟡 (guía de tono hasta F4-179) |
+| **Nunca dice** | Nunca alza la voz ni insulta. Nunca nombra a su facción antes de que el Acto II la revele 🟡 |
 | **Ficha completa** | [19 · Reme](19-elenco-a-fondo.md) |
 
-La facción detrás de Reme cambia por partida (ver capítulo 3). Cómo suena Reme en cada una de las tres variantes está en [22](22-acto-ii-variantes.md) (secciones 3 y 5).
+La facción de Reme cambia por partida (ver capítulo 3). Cómo suena Reme en cada una de las tres variantes está en [22](22-acto-ii-variantes.md) (secciones 3 y 5).
 
 ### 2.4 Teo Cárdenas, «el Viejo Teo»
 
@@ -308,7 +316,7 @@ La facción detrás de Reme cambia por partida (ver capítulo 3). Cómo suena Re
 | **Tratamiento** | **Usted** ✅; el protagonista le responde de usted ✅ |
 | **Cómo llama al protagonista** | «Usted». El nombre solo en el enfrentamiento del Acto IV 🟡 |
 | **Rasgos de voz** | Seca e imperativa, sin humor. No alza la voz. Duro e inflexible ✅ |
-| **Líneas de ejemplo** | «No le pregunto qué opina. Le informo qué va a hacer.» · «La verdad es un lujo. Valdoria no puede permitírselo.» |
+| **Líneas de ejemplo** | «No le pregunto qué opina. Le informo qué va a hacer.» · «Valdoria se sostiene con cuotas, no con opiniones.» 🟡 (guía de tono hasta F4-181) |
 | **Nunca dice** | Ni una broma, ni «por favor» como ruego, ni una disculpa. Antes del Acto IV no dice «mal del éter» 🟡 |
 | **Ficha completa** | [19 · Montenegro](19-elenco-a-fondo.md) |
 
@@ -324,10 +332,11 @@ Nombres definidos en [07](07-sociedad-y-eventos.md) y registrados en `studio/dat
 | **Comisión del Éter** ✅ | la Comisión | Está dentro del Ministerio. Hasta el Acto IV se presenta como el organismo técnico que gestiona La Fosa (1.4). Es quien oculta el mal del éter y con quien Anselmo colabora ✅ |
 | **Consorcio Arvel** ✅ | el Consorcio | Cartel dominado por la familia Arvel. Voz elegante y segura; nunca se llama «cartel» dentro del juego 🟡 |
 | **Unión de Mineros del Hollín** ✅ | la Unión | Sindicato minero. Voz práctica y solidaria. Su prensa es La Voz del Hollín |
-| **Los Faroleros** ✅ | los Faroleros | Nacieron como el gremio que encendía los faroles de los puertos y hoy «cobran la luz» ✅. Hablan de luz y deuda de luz. El farol rojo es su emblema; el protagonista usa la lámpara ([13](13-marca-e-identidad.md)) |
+| **Los Faroleros** ✅ | los Faroleros | Nacieron como el gremio que encendía los faroles de los puertos y hoy «cobran la luz» ✅. Hablan de luz y deuda de luz. El farol vinotinto mate, con luz ámbar, es su emblema (nunca rojo emisivo: el rojo-rosado brillante es de la Aetherita); el protagonista usa la lámpara ([13](13-marca-e-identidad.md)) |
 | **Prensa** ✅ | los medios | Tres medios con sesgos distintos (1.10) |
 
-- **La facción detrás de Reme** es el Consorcio Arvel, Los Faroleros o el Ministerio, según la partida ✅ ([08](08-historia-y-personaje.md)). Las escenas, los aliados y las consecuencias de cada una están en [22](22-acto-ii-variantes.md).
+- **La facción de Reme** es el Consorcio Arvel, Los Faroleros o el Ministerio, según la partida ✅ ([08](08-historia-y-personaje.md)). Se dice siempre «la facción de Reme», nunca «el acreedor» ✅.
+- **Relación con las facciones ✅** (decisión del autor, 2026-10-12). Solo hay cuatro medidores de relación: la Unión, Esteban, Lucía y Teo. El Consorcio, el Ministerio y Los Faroleros **no tienen medidor propio**: con ellos cuenta la alianza que elijas en el Acto II ([23](23-arbol-de-decisiones.md), sección 2.2). Los textos no dicen «tu reputación con el Ministerio» como si fuera una cifra. Las escenas, los aliados y las consecuencias de cada una están en [22](22-acto-ii-variantes.md).
 - **Casas industriales** es el nombre de la categoría en [07](07-sociedad-y-eventos.md). Dentro del juego, la casa que se ve es el Consorcio Arvel. La única otra casa con nombre es **Casa Ormeño** (plata y joyería, Puerto Meridiano): un nombre de ambiente que solo sale en noticias y glosario, sin zona ni jefe ✅ ([21](21-pasado-de-valdoria.md)). Talavera e Hijos y Fundiciones Soria están descartadas.
 - Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21 · Orígenes](21-pasado-de-valdoria.md): la Unión nace del derrumbe de Pozo Negro, el hallazgo de la Aetherita es de hace 30 años y la Comisión nace 3 años después (hace 27), antes en una oficina de ensayo sin nombre, y los Faroleros pierden el oficio con la electrificación.
 - Los figurantes de cada facción (perito, guardia, capataz, delegado, cobrador…) están en el registro del mundo. Su voz sigue la de su facción.
@@ -356,7 +365,7 @@ Regiones y zonas en [05](05-mundo-y-minerales.md) y [02](02-extraccion.md); nomb
 
 - Los lugares con significado se traducen al inglés; los nombres propios sin significado se mantienen. El detalle está en el capítulo 6 (6.4 y 6.5).
 - **La aldea del protagonista** es **Vega Mansa** ✅; su padre, hermano de Anselmo, dejó el Hollín tras un derrumbe y juró que ningún hijo bajaría a una mina ([21](21-pasado-de-valdoria.md)).
-- **El descubrimiento de la Aetherita** fue hace unos 30 años y **la Primera Expedición a La Fosa**, hace 20 («hace unas décadas», [05](05-mundo-y-minerales.md)). Fechas y personas en [21](21-pasado-de-valdoria.md).
+- **El descubrimiento de la Aetherita** fue hace 30 años y **la Primera Expedición a La Fosa**, hace 20 ([05](05-mundo-y-minerales.md) y [21](21-pasado-de-valdoria.md)). Fechas y personas en [21](21-pasado-de-valdoria.md).
 
 ---
 
@@ -369,7 +378,7 @@ Regiones y zonas en [05](05-mundo-y-minerales.md) y [02](02-extraccion.md); nomb
 | **La lámpara de minero** ✅ | Recuerdo de Anselmo y símbolo de la marca ([19 · ficha de Anselmo](19-elenco-a-fondo.md), [13](13-marca-e-identidad.md)) | Siempre es una lámpara, nunca un farol (el farol es de Los Faroleros). Se apaga rápido: es una imagen recurrente de esperanza frágil |
 | **La libreta de Anselmo** ✅ | Guía las primeras misiones del Acto I ([19 · ficha de Anselmo](19-elenco-a-fondo.md), «Acciones en el juego») | Letra manuscrita, sin fecha de cierre en la última anotación |
 | **Las cintas y los carretes** ✅ | Grabaciones de Anselmo (1.6) | «Cinta» para la historia, «carrete» para el objeto |
-| **El acta de calibración** ✅ | Documento de la Comisión firmado por Anselmo; se revela al final del Acto IV (decisión del autor, F0-41) | Es la última escena de la historia, igual en las tres salidas: sin discurso, con una línea del protagonista de ocho palabras o menos que no explica nada, y con la lámpara como último plano ✅ ([25](25-finales-y-epilogos.md)). No cuenta como prueba y nadie la publica ✅. Que sea «de hace pocas semanas» lo confirmó el autor ([21](21-pasado-de-valdoria.md)) |
+| **El acta de calibración** ✅ | Documento de la Comisión firmado por Anselmo; se revela al final del Acto IV (decisión del autor, F0-41) | Es la última escena de la historia (no una pieza del epílogo), igual en las tres salidas: sin discurso, con una línea del protagonista de ocho palabras o menos que no explica nada, y con la lámpara como último plano ✅ ([25](25-finales-y-epilogos.md)). No cuenta como prueba y nadie la publica ✅. Que sea «de hace pocas semanas» lo confirmó el autor ([21](21-pasado-de-valdoria.md)) |
 | **El certificado de defunción** ✅ | Papel con un sello irregular (el del sanatorio) ✅ y **sin registro de cremación** ✅ | Lo procesó Quiroga, con una orden sellada de la Comisión. Pista del Acto II ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
 | **El abono anónimo** ✅ | Pago misterioso a la deuda, el sueldo de Anselmo según el trato | Reme lo atribuye a «algún vecino bondadoso» ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
 | **La licencia, el puesto y la deuda** ✅ | La herencia del protagonista | Los tres se nombran siempre juntos en la primera mención 🟡 (misma marca en 6.11) |
@@ -382,7 +391,7 @@ Los 10 minerales están en [05](05-mundo-y-minerales.md). Aquí solo los que car
 |---|---|---|
 | **Aetherita** ✅ | Combustible casi milagroso, descubierto en La Fosa; eje del misterio | Regla 1.3 y 1.4. El rojo-rosado brillante y el cian son solo suyos ([13](13-marca-e-identidad.md)) |
 | **Carbón** ✅ | «El pan negro» | Lo que Teo enseña y la tos que no es de carbón |
-| **Cuarzo** ✅ | Hace funcionar radios y teletipos; el detector del jugador depende de él | Se nombra cuando se habla de comunicación |
+| **Cuarzo** ✅ | Hace funcionar radios y teletipos y mejora el detector del jugador (el básico lo hereda de Anselmo) ✅ | Se nombra cuando se habla de comunicación |
 | **Oro** ✅ | Reserva del Estado, símbolo de estatus | Lo mueve la corrupción |
 
 - **El éter nunca va suelto sobre el cuerpo de un personaje sano**: solo en una cápsula de cristal sellada o en los mutados de La Fosa ✅ ([12](12-direccion-de-arte.md)). Esta regla de arte vale también para las descripciones.
@@ -399,7 +408,7 @@ Es la lista oficial de cómo se dice cada cosa en español y en inglés. **Cada 
 | Marca | Significado |
 |---|---|
 | ✅ decidido | Lo fijó el autor o ya está en otro documento. Se copia tal cual |
-| 🟡 propuesta | Hoy son las cuatro filas de F0-44 y los ocho términos de epílogo de F0-46, ambos en 6.11 (los de epílogo, «sin traducir» ⏳ F1-20). Un término nuevo entra con esta marca: el español se define en el documento de origen, el localizador propone el inglés y el autor lo confirma en lote |
+| 🟡 propuesta | Hoy son las cuatro filas de F0-44, los ocho términos de epílogo de F0-46 y los quince de la lectura final F0-48 (tramo, medidor, vía, diario, misión de rescate, reproductor, aval, sello, monopolio, círculo, vigilancia, puerta, entrada, escena y facción de Reme), todos en 6.11 y «sin traducir» ⏳ F1-20. Un término nuevo entra con esta marca: el español se define en el documento de origen, el localizador propone el inglés y el autor lo confirma en lote |
 
 **Fuente de todo el capítulo ✅:** decisión del autor, F0-41 (2026-10-12), que confirmó todo el glosario propuesto, incluidas *the Pit*, *the Beacon*, *ether sickness* y *Ether Commission*. Las filas que citan otro documento (13, 07, 04) conservan esa fuente. Las siete filas que añadió F0-43 (Vega Mansa, la Primera Expedición, Casa Ormeño, Pozo Negro, Sanatorio de Cumbre Clara, secreto de Estado e ingeniero de calibración) las confirmó el autor el 2026-10-12. Un término nuevo entra aquí como propuesta, con su marca de «sin confirmar», hasta que el autor lo apruebe.
 
@@ -618,9 +627,9 @@ Los 7 del registro del mundo ([02](02-extraccion.md), [09](09-minijuegos.md)). N
 | Español | English | Estado | Nota de uso |
 |---|---|---|---|
 | la lámpara de minero | the miner's lamp | ✅ | Siempre *lamp*, nunca *lantern* (la linterna es de los Lamplighters) |
-| el farol rojo | the red lantern | ✅ | Emblema de los Lamplighters |
+| el farol vinotinto | sin traducir ⏳ F1-20 | 🟡 | Emblema de Los Faroleros: vinotinto mate con luz ámbar, nunca rojo emisivo (decisión del autor, 2026-10-12). Antes se llamaba «farol rojo» (*the red lantern*); el localizador propone el inglés (por ejemplo *the maroon lantern*) y el autor lo confirma en lote |
 | la libreta de Anselmo | Anselmo's notebook | ✅ | Guía las misiones del Acto I |
-| la cinta | the tape | ✅ | Pieza de historia: «You found a tape» (1.6). Nunca *cassette* ni *holotape*. Decisión del autor, F0-41 |
+| la cinta | the tape | ✅ | Grabación de historia: «You found a tape» (1.6). Nunca *cassette* ni *holotape*. Decisión del autor, F0-41 |
 | el carrete | the reel | ✅ | El objeto físico (1.6). Decisión del autor, F0-41 |
 | el acta de calibración | the calibration record | ✅ | Documento de la Comisión firmado por Anselmo |
 | el certificado de defunción | the death certificate | ✅ | Sello irregular, sin registro de cremación |
@@ -631,40 +640,55 @@ Los 7 del registro del mundo ([02](02-extraccion.md), [09](09-minijuegos.md)). N
 | cobrar la luz | charging for the light | ✅ | Lo que hacen los Lamplighters. Juego de palabras: ver 6.13 |
 | la deuda de luz | the light debt | ✅ | Lo que dice Casilda |
 | la protección | protection | ✅ | Extorsión disfrazada de servicio |
-| el fondo reservado | the reserve fund | 🟡 | Fondo secreto de la Comisión del Éter que paga el Consorcio ([22](22-acto-ii-variantes.md)). Con *the* y minúscula. Suena a caja de ahorro corriente, y eso le conviene: nadie sospecha. Se evitan *slush fund* (acusa por adelantos) y *black fund*. No se confunde con «el fondo» a secas del Ministerio, que es su fondo de crédito (*the credit fund*). ❓ Autor: ¿prefieres *secret fund*? |
-| la caja común | the common purse | 🟡 | La caja del gremio de los Lamplighters ([22](22-acto-ii-variantes.md)). *Purse* es el bolsillo compartido de un grupo y no suena a banco ni a fantasía (se evita *common chest*). Perdona o cobra «su parte»: *takes its cut*. Con *the* y minúscula |
-| las cuentas (del puesto) | the accounts | 🟡 | La contabilidad que el Ministerio pide entregar ([22](22-acto-ii-variantes.md)): *hand over your accounts*. Siempre *accounts*, nunca *books*, igual que en español nunca «libros»: así no choca con *ledger* (libro) ni con *notebook* (libreta, 6.11). Neutro en género |
+| el fondo reservado | sin traducir ⏳ F1-20 | 🟡 | Fondo secreto de la Comisión del Éter que paga el Consorcio ([22](22-acto-ii-variantes.md)). Debe sonar a caja de ahorro corriente, y eso le conviene: nadie sospecha. No se confunde con «el fondo» a secas del Ministerio, que es su fondo de crédito. Propuesta previa: *the reserve fund*, con *the* y minúscula; se evitan *slush fund* y *black fund*. El localizador elige entre *reserve fund* y *secret fund* y el autor lo confirma en lote |
+| la caja común | sin traducir ⏳ F1-20 | 🟡 | La caja del gremio de Los Faroleros ([22](22-acto-ii-variantes.md)). Perdona o cobra «su parte». Propuesta previa: *the common purse* (el bolsillo compartido de un grupo; se evita *common chest*). El autor lo confirma en lote |
+| las cuentas (del puesto) | sin traducir ⏳ F1-20 | 🟡 | La contabilidad que el Ministerio pide entregar ([22](22-acto-ii-variantes.md)). Neutro en género. Propuesta previa: *the accounts* (*hand over your accounts*), nunca *books*, para no chocar con *ledger* ni con *notebook* (libreta, 6.11). El autor lo confirma en lote |
 | el mercado negro | the black market | ✅ | |
-| el contacto (del mercado negro) | black market contact | 🟡 | Quien te abre el mercado negro ([22](22-acto-ii-variantes.md)). Sin guion y sin *the* de título; en el habla, *the contact*. Se evita *fence* (receptador de lo robado) y *dealer*. Neutro en género. No es el «contacto» de A1, que es cada facción citándote |
+| el contacto (del mercado negro) | sin traducir ⏳ F1-20 | 🟡 | Quien te abre el mercado negro ([22](22-acto-ii-variantes.md)). Neutro en género. No es el «contacto» de A1, que es cada facción citándote. Propuesta previa: *black market contact*; en el habla, *the contact*; se evitan *fence* y *dealer*. El autor lo confirma en lote |
 | el apagón · la huelga · el saqueo | blackout · strike · looting | ✅ | Eventos sociales ([07](07-sociedad-y-eventos.md)). *Strike* ✅ en 6.7 |
 | trámite · gestión · atención | procedure · processing · courtesy | ✅ | Los tres eufemismos de Quiroga. Nunca *bribe* |
 | secreto de Estado | state secret | ✅ | Lo que el Ministerio declara sobre la Aetherita ([21](21-pasado-de-valdoria.md)). Minúscula; traducción directa y de uso común |
-| epílogo | sin traducir ⏳ F1-20 | 🟡 | El cierre del Acto IV: cabecera, tarjetas y acta ([25](25-finales-y-epilogos.md)). El localizador propone el inglés y el autor lo confirma en lote |
+| epílogo | sin traducir ⏳ F1-20 | 🟡 | El cierre del Acto IV: cabecera y tarjetas. El acta de calibración es la última escena, no una pieza del epílogo ([25](25-finales-y-epilogos.md)). El localizador propone el inglés y el autor lo confirma en lote |
 | cabecera | sin traducir ⏳ F1-20 | 🟡 | La pantalla que abre el epílogo, con rótulo, frase del narrador y titular ([25](25-finales-y-epilogos.md), sección 4). El localizador propone el inglés y el autor lo confirma en lote |
 | tarjeta | sin traducir ⏳ F1-20 | 🟡 | Cada noticia corta del epílogo, de un personaje, facción, mundo o mercado ([25](25-finales-y-epilogos.md)). El localizador propone el inglés y el autor lo confirma en lote |
-| pieza | sin traducir ⏳ F1-20 | 🟡 | Cada texto de epílogo que el motor elige (54 en total) ([25](25-finales-y-epilogos.md), sección 5). No es la pieza de historia de la cinta. El localizador propone el inglés y el autor lo confirma en lote |
+| pieza | sin traducir ⏳ F1-20 | 🟡 | Solo de los epílogos: cada texto que el motor elige (54 en total) ([25](25-finales-y-epilogos.md), sección 5). Las cintas no son «piezas» y las escenas de un acto tampoco. El localizador propone el inglés y el autor lo confirma en lote |
 | estado legible | sin traducir ⏳ F1-20 | 🟡 | Lo que se guarda para releer el epílogo desde el diario ([25](25-finales-y-epilogos.md), sección 8). Término técnico; el jugador no lo ve. El localizador propone el inglés y el autor lo confirma en lote |
 | «las semanas siguientes» | sin traducir ⏳ F1-20 | 🟡 | Rótulo fijo de la cabecera ([25](25-finales-y-epilogos.md)). Es texto de interfaz: debe quedar en tono de titular de prensa. El localizador propone el inglés y el autor lo confirma en lote |
 | aviso de Magnate | sin traducir ⏳ F1-20 | 🟡 | El aviso silencioso que llega al volver al sandbox tras el acta ([24](24-umbrales-de-acto.md)). *Magnate* ya está en 6.12. El localizador propone el inglés y el autor lo confirma en lote |
 | filtrar (una versión) | sin traducir ⏳ F1-20 | 🟡 | Lo que hace Lucía al callar o vender con su medidor bajo: publica una versión a medias ([25](25-finales-y-epilogos.md), LU-04). Distinto de «publicar». El localizador propone el inglés y el autor lo confirma en lote |
+| tramo (de un medidor) | sin traducir ⏳ F1-20 | 🟡 | Cada medidor tiene tres: bajo (menos de 35), medio (35 a 54) y alto (55 o más) ([24](24-umbrales-de-acto.md), sección 5). Término del equipo: en pantalla se muestra el motivo, no la cifra. El localizador propone el inglés y el autor lo confirma en lote |
+| medidor (de relación) | sin traducir ⏳ F1-20 | 🟡 | Solo hay cuatro: Unión, Esteban, Lucía y Teo, de 0 a 100 ([23](23-arbol-de-decisiones.md), sección 2.2). Las demás facciones no tienen medidor propio. No es el indicador de vigilancia ni el medidor de exposición de Contención. El localizador propone el inglés y el autor lo confirma en lote |
+| vía | sin traducir ⏳ F1-20 | 🟡 | Cada una de las tres formas de cumplir una puerta: deuda, logros o relación; hacen falta dos de tres ([24](24-umbrales-de-acto.md), sección 2). El localizador propone el inglés y el autor lo confirma en lote |
+| diario | sin traducir ⏳ F1-20 | 🟡 | La pantalla que lista lo que falta para pasar de acto y las cintas pendientes ([24](24-umbrales-de-acto.md), sección 10). Su diseño ⏳ F0-78. El localizador propone el inglés y el autor lo confirma en lote |
+| misión de rescate | sin traducir ⏳ F1-20 | 🟡 | El aviso que llega tras mucho tiempo sin avanzar: señala qué falta y cómo, pero no concede nada ([24](24-umbrales-de-acto.md), sección 10). El localizador propone el inglés y el autor lo confirma en lote |
+| reproductor | sin traducir ⏳ F1-20 | 🟡 | El objeto con el que se oyen las ocho cintas en el Acto IV ([23](23-arbol-de-decisiones.md), sección 7). Lo entrega Lucía en tramo alto o, si no, Reme. El objeto ⏳ F4-150. El localizador propone el inglés y el autor lo confirma en lote |
+| aval | sin traducir ⏳ F1-20 | 🟡 | La entrada al círculo que da Esteban: pide su medidor en tramo alto ([23](23-arbol-de-decisiones.md), sección 5). El localizador propone el inglés y el autor lo confirma en lote |
+| sello | sin traducir ⏳ F1-20 | 🟡 | La entrada al círculo con la firma de Montenegro: solo vale como firma. No es el sello de la licencia de Quiroga ni el de sus «trámites» ([23](23-arbol-de-decisiones.md), sección 5). El localizador propone el inglés y el autor lo confirma en lote |
+| monopolio | sin traducir ⏳ F1-20 | 🟡 | El control de la venta clandestina de Aetherita en la capital que negocia Casilda ([23](23-arbol-de-decisiones.md), nodo `n-iii-monopolio`). El localizador propone el inglés y el autor lo confirma en lote |
+| círculo | sin traducir ⏳ F1-20 | 🟡 | El círculo de poder de Puerto Meridiano. Se entra por aval, sello o presión de tu alianza y se cierra en el encuentro con Montenegro ([24](24-umbrales-de-acto.md), sección 3). El localizador propone el inglés y el autor lo confirma en lote |
+| vigilancia | sin traducir ⏳ F1-20 | 🟡 | El indicador global de 0 a 100 que sube con las operaciones negras ([03](03-comercio.md)). Sus cambios se dicen en puntos; el «%» solo describe el ritmo de subida, y nunca se nombra un lugar («en Villa Brasa»). «Bajo investigación» es el nivel de la redada. El localizador propone el inglés y el autor lo confirma en lote |
+| puerta | sin traducir ⏳ F1-20 | 🟡 | Solo el paso de un acto al siguiente ([24](24-umbrales-de-acto.md)). Lo que llevó el nombre de «puerta» al círculo se llama «entrada». El localizador propone el inglés y el autor lo confirma en lote |
+| entrada | sin traducir ⏳ F1-20 | 🟡 | Aval, sello o presión de tu alianza: las tres formas de entrar al círculo ([23](23-arbol-de-decisiones.md), sección 5). La bandera se llama `f-entrada`. El localizador propone el inglés y el autor lo confirma en lote |
+| escena | sin traducir ⏳ F1-20 | 🟡 | Cada tramo de un acto: A1 a A6 y O1 a O4 en el II ([22](22-acto-ii-variantes.md)). Las de un epílogo se llaman «piezas». El localizador propone el inglés y el autor lo confirma en lote |
+| facción de Reme | sin traducir ⏳ F1-20 | 🟡 | La facción que responde por Reme, sorteada al empezar la partida ([22](22-acto-ii-variantes.md)). Nunca «el acreedor». El localizador propone el inglés y el autor lo confirma en lote |
 
 ### 6.12 Cargos, oficios y estatus
 
-La escalera de estatus es provisional también en español ([07](07-sociedad-y-eventos.md)); el inglés la sigue.
+Los cinco nombres de la escalera de estatus los fijó el autor el 2026-10-12 ✅ ([07](07-sociedad-y-eventos.md)). Sus requisitos y cifras ⏳ F4-109.
 
 | Español | English | Estado | Nota de uso |
 |---|---|---|---|
-| Buscador | Prospector | ✅ | Primer escalón. *Seeker* se descarta: suena a fantasía |
-| Minero con licencia | Licensed Miner | ✅ | Segundo escalón |
+| Heredero · Heredera | Heir | ✅ | Primer escalón. Antes se llamaba «Buscador» (*Prospector*): el autor lo cambió el 2026-10-12. «Heredera» es la variante para la protagonista mujer (1.2); en inglés es una sola forma. Mismo término que el rol de Esteban (abajo) |
+| Minero con licencia | Licensed Miner | ✅ | Segundo escalón. Variante «Minera con licencia» para la protagonista 🟡 |
 | Comerciante | Merchant | ✅ | Tercer escalón. Mismo término que el civil de 6.6 |
-| Empresario | Entrepreneur | ✅ | Cuarto escalón. Neutro en género |
+| Empresario | Entrepreneur | ✅ | Cuarto escalón. Variante «Empresaria» para la protagonista 🟡; en inglés es neutro |
 | Magnate | Magnate | ✅ | Último escalón. Se escribe igual |
 | prestamista | moneylender | ✅ | Rol de Reme: *the local moneylender* |
 | perito de ensayo | assayer | ✅ | Oficio de Anselmo antes de la primera expedición |
 | ingeniero de calibración | calibration engineer | ✅ | Cargo de Anselmo para la Comisión después de la expedición ([21](21-pasado-de-valdoria.md)). Minúscula (es un oficio) y neutro en género. Va con *calibration record* (6.11) |
 | minero veterano | veteran miner | ✅ | Rol de Teo |
 | periodista | journalist | ✅ | Rol de Lucía |
-| heredero | heir | ✅ | Rol de Esteban |
+| heredero | heir | ✅ | Rol de Esteban (heredero del Consorcio). Es el mismo término que el primer escalón de arriba |
 
 ### 6.13 Reglas de traducción
 
@@ -701,12 +725,12 @@ Los cuatro actos tal como están en [17](17-mapa-de-historia.md) y `studio/data/
 
 | Acto | Hito que lo cierra ✅ | Variantes y bifurcaciones |
 |---|---|---|
-| **I · El recién llegado** (Villa Brasa) | Reabres el puesto, atiendes la primera cuota y tienes el primer contacto con los empleados | No tiene bifurcación grande. La facción detrás de Reme se sortea al empezar y no se revela. Tiene **3 consecuencias pequeñas** ✅ (cuáles, en [23](23-arbol-de-decisiones.md), sección 3) |
+| **I · El recién llegado** (Villa Brasa) | Reabres el puesto, atiendes la primera cuota (vence el día 7; pagada o prorrogada una semana con un pequeño recargo ⏳ F0-52) y tienes el primer contacto con los empleados | No tiene bifurcación grande. La facción de Reme se sortea al empezar y no se revela. Tiene **3 consecuencias pequeñas** ✅ (cuáles, en [23](23-arbol-de-decisiones.md), sección 3) |
 | **II · Aprender las reglas** (Hollín, Sierra Alta, Salares) | Eliges con qué facción te alías | **3 variantes** ✅: Reme responde al Consorcio Arvel, a Los Faroleros o al Ministerio. Contenido de cada una en [22](22-acto-ii-variantes.md). Bifurcación grande: la alianza ✅, con 2 medianas (la orden de Reme y la huelga) y 5 pequeñas ([23](23-arbol-de-decisiones.md), sección 4) |
-| **III · El ascenso** (Puerto Meridiano, Cavernas de Cristal) | Te aceptan en el círculo de poder | Esteban puede ser aliado o enemigo según cómo lo trates 🟡, y eso lo lleva su medidor ([23](23-arbol-de-decisiones.md), sección 2). Bifurcación grande: **cómo entras al círculo** ✅ (tres puertas), con 2 medianas y 5 pequeñas ([23](23-arbol-de-decisiones.md), sección 5) |
-| **IV · La cima** (La Fosa del Éter) | Decides qué hacer con la verdad y el poder | **3 salidas** ✅: **revelarla** (la Aetherita cae, rebota y queda algo por debajo del precio de antes), **callarla** o **venderla** (moneda de poder). Teo muere, se reconcilia o se va según tus decisiones ✅. Epílogos por piezas en [25](25-finales-y-epilogos.md) ✅ |
+| **III · El ascenso** (Puerto Meridiano, Cavernas de Cristal) | Te aceptan en el círculo de poder | Esteban puede ser aliado o enemigo según cómo lo trates ✅, y eso lo lleva su medidor ([23](23-arbol-de-decisiones.md), sección 2). Bifurcación grande: **cómo entras al círculo** ✅ (tres entradas: aval, sello o presión), con 2 medianas y 5 pequeñas ([23](23-arbol-de-decisiones.md), sección 5) |
+| **IV · La cima** (La Fosa del Éter) | Decides qué hacer con la verdad y el poder | **3 decisiones sobre la Aetherita** ✅: **revelarla** (la Aetherita cae, rebota y queda algo por debajo del precio de antes), **callarla** o **venderla** (moneda de poder). Al vender eliges comprador (Casilda, el Consorcio o el Ministerio): eso da 5 salidas en el epílogo, con 6 cabeceras que suman revelar con la Unión alta y sin ella ✅. Teo muere, se reconcilia o se va según tus decisiones ✅. Epílogos por piezas en [25](25-finales-y-epilogos.md) ✅. El acta de calibración es la última escena, igual en todas |
 
-- Las bifurcaciones grandes son tres ✅: la alianza (II), cómo entras al círculo (III) y el destino de la Aetherita (IV). El acreedor del Acto II **es un sorteo, no una bifurcación** ✅. El árbol completo de decisiones y consecuencias está en [23](23-arbol-de-decisiones.md).
+- Las bifurcaciones grandes son tres ✅: la alianza (II), cómo entras al círculo (III) y el destino de la Aetherita (IV). La facción de Reme **se sortea, no es una bifurcación** ✅. El árbol completo de decisiones y consecuencias está en [23](23-arbol-de-decisiones.md).
 - **Antes del Acto I.** La cronología completa está en [21](21-pasado-de-valdoria.md). En resumen, hace 40 años el derrumbe de Pozo Negro (nace la Unión), hace 30 el hallazgo de la Aetherita, hace 27 nace la Comisión, hace 20 la Primera Expedición, hace 17 empieza la electrificación y hace 2 Anselmo es detenido y acepta el trato ✅.
 
 ### Dónde está Anselmo en cada acto ✅
@@ -715,11 +739,11 @@ Los cuatro actos tal como están en [17](17-mapa-de-historia.md) y `studio/data/
 
 | Acto | Cómo aparece | Qué sabe el jugador |
 |---|---|---|
-| **I** | La **libreta** guía las primeras misiones ✅; la **lámpara** es su recuerdo ✅; su **firma** está en los papeles de la herencia ✅; se recoge la **cinta 1** ✅ | Es el tío que desapareció y murió enfermo. Nada más |
+| **I** | La **libreta** guía las primeras misiones ✅; la **lámpara** es su recuerdo ✅; su **firma** está en los papeles de la herencia ✅; se recoge la **cinta 1** ✅ | Es el tío que murió enfermo hace dos años. Nada más |
 | **II y III** | Las pistas de [19 · «Pistas sembradas»](19-elenco-a-fondo.md): el certificado sin registro de cremación, las evasivas de Teo, la letra de un muerto que oye Lucía. Cintas sueltas, repartidas «a lo largo del juego» ✅ ([08](08-historia-y-personaje.md)): la 2 en el II y la 3 a 5 en el III ✅, sin poder oírlas todavía | Sospecha, no certeza |
 | **IV** | Se recogen las cintas 6 a 8 y se **oyen las ocho** con un reproductor ✅ y, al final, el **acta de calibración** con su firma ✅ | Descubre que está vivo y que colaboró con la Comisión |
 
-La firma de los papeles de la herencia (Acto I) es lo que hace que el final funcione: el acta no explica nada, **solo se reconoce una firma que ya se había visto** ([19 · «La verdad sobre Anselmo»](19-elenco-a-fondo.md)).
+La firma de los papeles de la herencia (Acto I) es **la misma firma del acta de calibración** (final) ✅ y Lucía la reconoce ✅ (decisión del autor, 2026-10-12). Es lo que hace que el final funcione: el acta no explica nada, **solo se reconoce una firma que ya se había visto** ([19 · «La verdad sobre Anselmo»](19-elenco-a-fondo.md)). La siembra de la firma ⏳ F0-23 y el momento en que Lucía la reconoce ⏳ F4-139.
 
 En `story.json` y en el [17](17-mapa-de-historia.md) Anselmo aparece ya en la celda de personajes del **Acto I**, donde entra en la historia como rastro (libreta, lámpara y firma), y la celda del Acto IV queda sin personajes nuevos: su revelación está en el hito del acto (las cintas completas y el acta de calibración).
 
@@ -728,5 +752,8 @@ En `story.json` y en el [17](17-mapa-de-historia.md) Anselmo aparece ya en la ce
 ## Pendiente
 
 - ⏳ F4-179 Textos de las tres variantes del Acto II (la estructura está en [22](22-acto-ii-variantes.md)).
-- ✅ Epílogos de las tres salidas del Acto IV: resueltos en [25](25-finales-y-epilogos.md). Los ocho términos nuevos del glosario (epílogo, cabecera, tarjeta, pieza, estado legible, «las semanas siguientes», aviso de Magnate, filtrar) quedan en 6.11 como «sin traducir» ⏳ F1-20
+- ✅ Hechas F0-41 (esta biblia), F0-42 (fichas), F0-43 ([21](21-pasado-de-valdoria.md)), F0-44 ([22](22-acto-ii-variantes.md)), F0-45 ([23](23-arbol-de-decisiones.md)), F0-46 ([25](25-finales-y-epilogos.md)) y F0-47 ([24](24-umbrales-de-acto.md)). La lectura final F0-48 se cierra con esta pasada: términos unificados (puerta, entrada, pieza, escena, facción de Reme), reglas de voz de los medios y 1.2 al día.
+- ✅ Epílogos de las tres salidas del Acto IV: resueltos en [25](25-finales-y-epilogos.md).
+- ⏳ F1-20 Inglés de los términos del glosario que están «sin traducir» en 6.11: los ocho de epílogo, las cuatro filas de F0-44 y los quince de la lectura final, más el farol vinotinto.
+- ⏳ F0-80 Pasada de cierre con el autor de los documentos 18 y 21 a 25, para llevar a 90 % o más la limpieza de cada uno.
 - ⏳ F1-18 Cifras finales del formato de diálogo y del nombre de la tienda, con la fuente real.
