@@ -1,0 +1,6 @@
+{
+  "name": "vf-consumo",
+  "version": "0.1.0",
+  "description": "Panel de consumo de tokens: ventana de cinco horas y semanal, tokens por prompt y historial por día, modelo y subagentes",
+  "author": { "name": "Veta de Fortuna" }
+}

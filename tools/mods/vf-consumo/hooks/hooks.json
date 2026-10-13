@@ -1,0 +1,4 @@
+{
+  "description": "Panel de consumo de tokens",
+  "modules": ["./register.js"]
+}

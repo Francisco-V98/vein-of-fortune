@@ -827,6 +827,15 @@
               "done_when": "No queda el apellido antiguo ni su identificador en ningún archivo salvo este registro y el historial de git, y el build estricto y las pruebas pasan."
             },
             {
+              "id": "F0-81",
+              "title": "Mod de consumo de tokens (vf-consumo)",
+              "est": 4,
+              "status": "done",
+              "prio": "P2",
+              "desc": "Mod de Claude Code con el comando /consumo: ventana de cinco horas y semanal, tokens por prompt e historial por día, modelo y subagentes, para ver en qué y cuándo se va el consumo.",
+              "done_when": "El mod valida, pasa sus pruebas, el autor lo revisa y lo instala y el panel muestra el consumo real de una sesión."
+            },
+            {
               "id": "F0-80",
               "title": "Pasada de cierre: biblia y documentos de pasado, variantes, árbol, umbrales y finales (18 y 21 a 25)",
               "est": 6,
