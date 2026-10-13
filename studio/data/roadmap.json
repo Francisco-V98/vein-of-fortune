@@ -515,7 +515,7 @@
               "id": "F0-47",
               "title": "Umbrales que activan cada acto",
               "est": 3,
-              "status": "doing",
+              "status": "done",
               "prio": "P1",
               "desc": "Reglas concretas para pasar de un acto al siguiente (estatus, deuda, logros, relación con facciones) de modo que se puedan cumplir de varias maneras y no obliguen a seguir la trama al pie de la letra.",
               "done_when": "Umbrales definidos para los 4 actos y acordados con el autor."

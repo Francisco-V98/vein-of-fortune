@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "Se empiezan los umbrales de acto con el flujo de especialistas.",
       "ref": "rama studio/F0-47-umbrales-de-acto"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 24 con los umbrales de los cuatro actos, ⏳ F0-47 resueltos; QA aprobado tras dos pasadas y limpieza 69 %.",
+      "ref": "rama studio/F0-47-umbrales-de-acto"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó los umbrales de acto desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [],
@@ -122,10 +138,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "autor",
-        "nota": "El autor revisa el documento 24 y acuerda los umbrales de los cuatro actos"
+        "nota": "El autor revisó el documento 24 y aprobó los umbrales desde /equipo"
       },
       {
         "etapa": "playtest",
@@ -133,7 +149,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #39 fusionado"
       }
     ],
     "traspasos": [
@@ -190,6 +209,12 @@
         "de": "qa",
         "a": "autor",
         "que": "Entrega para tu revisión: documento 24 con los umbrales de los cuatro actos",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-12"
       }
     ]
