@@ -73,19 +73,59 @@
         "estado": "hecha",
         "at": "2026-10-12",
         "por": "narrador",
-        "nota": "El narrador escribió el documento 24 y el autor confirmó los ajustes en dos tandas; limpieza 70 %",
+        "nota": "Correcciones de QA aplicadas por el narrador; limpieza 69 %",
         "entrega": "Documento 24 con las puertas de los cuatro actos, los tramos de medidor, las vías, los disparadores por eventos y la red anti-atasco; los ⏳ F0-47 resueltos"
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "qa",
-        "nota": "QA comprueba el build, las marcas, las aplazamientos con su tarea y la coherencia de los umbrales"
+        "nota": "QA aprobó el build, las pruebas y la aritmética de los tramos; las cinco correcciones las comprobó el coordinador con el build estricto y las pruebas (limpieza 69 %, coherencia 83 %)",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El disparador de A1 está desactualizado en el documento 23 y en decisions.json: el decreto de A1 abre las zonas y no es una condición previa",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 23 y 24 y en decisions.json"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "Las restricciones de los documentos 24 se copiaron a la descripción y al criterio de cierre de F4-61, F4-109, F4-116 y F4-133 en el roadmap"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "La sección 7 del documento 24 lleva ✅ que el autor no vio, y dos líneas extienden el ✅ a que la deuda de luz no rompe la vía",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 23 y 24 y en decisions.json"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El camino de Esteban a tramo bajo cuenta una decisión pero hacen falta dos; sigue siendo menos de tres",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 23 y 24 y en decisions.json"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El nodo de la alianza lee f-orden-reme solo para mostrar el costo de Reme: hay que aclararlo para que no parezca una puerta que lo lee",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 23 y 24 y en decisions.json"
+          }
+        ],
+        "entrega": "Build estricto, 49 pruebas en verde, ⏳ válidos y aritmética de los tramos comprobada"
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "autor",
+        "nota": "El autor revisa el documento 24 y acuerda los umbrales de los cuatro actos"
       },
       {
         "etapa": "playtest",
@@ -131,6 +171,25 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Revisar el documento 24 y los cambios en 08, 17, 18, 22, 23, decisions.json y story.json",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "narrador",
+        "que": "Devolución: corregir el disparador de A1, los ✅ de la sección 7, la cuenta de Esteban y la aclaración de f-orden-reme",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Correcciones de la devolución de QA aplicadas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: documento 24 con los umbrales de los cuatro actos",
         "at": "2026-10-12"
       }
     ]

@@ -74,7 +74,7 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 
 ### 2.4 Reglas de seguridad
 
-- **Ninguna puerta de acto lee `f-pago-reme` ni `f-orden-reme`** ✅ ([24](24-umbrales-de-acto.md)): Reme nunca cierra una puerta.
+- **Ninguna puerta de acto lee `f-pago-reme` ni `f-orden-reme`** ✅ ([24](24-umbrales-de-acto.md)): Reme nunca cierra una puerta. `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme; no lo usa para decidir 🟡.
 - **Ninguna rama cierra la ruta de Reme.** Rechazar su orden cambia el costo, no lo que puedes hacer después. Siempre termina como tu mayor aliada.
 - **Cada ruta del IV conserva al menos dos pruebas** (sección 8). Nada de lo que hagas con el archivo de Quiroga destruye la copia del certificado ni la carta de la cinta 6.
 - **Ningún personaje aparece antes de su acto:** Esteban y Casilda en el II, Dueñas en el III. En el II, Dueñas es solo decreto y firma.
@@ -119,7 +119,7 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 **Estado:** ✅ la alianza (grande), la orden de Reme y la huelga (medianas) y sus opciones; 🟡 las cinco pequeñas, todos los efectos y las cifras. El orden de la lista es el de juego. Los efectos propios de cada variante están en [22](22-acto-ii-variantes.md), secciones 7 a 9. La escena O3 (Casilda te cita de noche) es un camino extra y no ramifica 🟡
 
 **`n-ii-contacto` · Responder al primer contacto de la política** (pequeña)
-- **Dispara:** Acto I cerrado y primera zona del II abierta (escena A1 de 22).
+- **Dispara:** Acto I cerrado (escena A1 de 22). El decreto de A1 es lo que abre las zonas del II; no es una condición previa 🟡 ⏳ F4-128.
 - **Aceptas la cita.** → *Mundo:* Queda en cola la orden de Reme para tu próxima cuota. *Personajes:* Esteban, Quiroga o un cobrador farolero (según tu variante) te trata como cliente. Solo con el Consorcio sube el medidor de Esteban.
 - **Rechazas la cita.** → *Mundo:* La facción lo toma como un desaire; la orden de Reme llega igual. *Personajes:* El contacto de tu variante te recuerda. Solo con el Consorcio baja el medidor de Esteban.
 - **La pospones.** → *Mundo:* El contacto vuelve a aparecer en la siguiente zona. *Personajes:* Sin cambios.
@@ -173,6 +173,7 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 - **Te alías con el Ministerio.** → *Mundo:* Licencia ampliada y trámite preferente. *Mercado:* Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133. *Personajes:* Quiroga: tu enlace. La Unión baja. Reme paga o respira según su facción.
 - **Te alías con Los Faroleros.** → *Mundo:* Protección y luz; tu deuda de luz se suma a tu deuda. *Mercado:* Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133. *Personajes:* Casilda: aliada interesada. La Unión se mantiene. Reme paga o respira según su facción.
 - **Fija:** `f-alianza`, `m-union`. **Lee:** `f-orden-reme`, `f-huelga`.
+- **Nota sobre la lectura.** 🟡 El nodo lee `f-orden-reme` solo para mostrar el costo de Reme (que paga o respira). Ninguna puerta lo lee ni lo usa para decidir.
 
 **Cuellos:** `c-ii-apagon` (el apagón común) y `c-ii-cierre` (la escena A6 de Reme). La alianza cierra el acto.
 

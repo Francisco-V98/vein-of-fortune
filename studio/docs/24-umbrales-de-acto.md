@@ -28,13 +28,13 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Tramo medio | Teo **se queda** (si lo llevaste a revisión). Lucía **no publica**, así que lo publicas tú con costo alto y poco alcance. El **reproductor** lo entrega Lucía solo en tramo alto; con medio o bajo lo entrega Reme ✅ |
 | Aval de Esteban | Basta su medidor en tramo alto. Si no lo tienes, el aval se muestra **bloqueado con el motivo**, y siempre quedan el sello de Dueñas y la presión de tu alianza ✅ |
 | Vía de relación | Se cumple si **al menos uno de los cuatro medidores** está en tramo alto ✅ |
-| Vía de deuda | Cuenta **solo lo que pagas tú** (% de capital pagado de tu bolsillo). Lo que asume el Consorcio no regala la vía y la deuda de luz de los Faroleros no la rompe ✅ |
+| Vía de deuda | Cuenta **solo lo que pagas tú** (% de capital pagado de tu bolsillo). Lo que asume el Consorcio no regala la vía ✅. La deuda de luz de los Faroleros no la rompe 🟡 |
 | Cintas | Las cintas **1 a 5 son obligatorias** para entrar al IV, no caducan por tiempo ni por decisiones, y tienen una **misión persistente** si faltan ✅ |
 | Red anti-atasco | El juego sigue como sandbox, **la historia espera en cola**, **el diario lista las vías que faltan** y **la misión de rescate** llega tras mucho tiempo sin avanzar. La deuda nunca bloquea. Las tres piezas se diseñan aparte ✅ ⏳ F0-78 |
 | Teo | **Sin revisión muere**, también si le propones y aceptas su no: la opción respetuosa tiene costo ✅ |
 | Magnate y cierre del IV | Magnate se concede al **cerrar el acta de calibración** y **no es puerta**. El IV cierra con el acta tras la decisión sobre la Aetherita; entonces empieza el sandbox ✅ |
 | Disparadores | Van **por eventos del jugador y no por calendario**: A2 tras atender tu primera cuota después de A1; A3 tras tu primera venta o expedición en la zona; A4 tras el aviso de noticias y una acción tuya, sin plazo en días. Las opcionales O1 a O4 **no puntúan** para ninguna puerta ✅ |
-| Círculo y entrada al IV | El círculo pide **Empresario + dos vías de tres + una puerta abierta** y cierra en el encuentro con Dueñas. El IV entra con ese encuentro resuelto y las cintas 1 a 5 recogidas. Dueñas **no tiene medidor**. Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`, Reme nunca cierra puertas y ninguna facción es mejor por defecto ✅ |
+| Círculo y entrada al IV | El círculo pide **Empresario + dos vías de tres + una puerta abierta** y cierra en el encuentro con Dueñas. El IV entra con ese encuentro resuelto y las cintas 1 a 5 recogidas. Dueñas **no tiene medidor**. Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`, Reme nunca cierra puertas y ninguna facción es mejor por defecto ✅. `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme, sin usarlo para decidir 🟡 |
 
 ---
 
@@ -48,7 +48,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 
 - Ninguna vía es obligatoria por sí sola: basta cualquier par de las tres ✅.
 - Las opcionales O1 a O4 pueden mover un medidor, pero **ninguna puerta las necesita** ✅ (se comprueba en la sección 6).
-- Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`: cómo trates a Reme no abre ni cierra nada ✅.
+- Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`: cómo trates a Reme no abre ni cierra nada ✅. El nodo `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme; ninguna puerta lo usa para decidir 🟡.
 - Dueñas no tiene medidor; la Unión sí, y cuenta como cualquiera de los cuatro ✅.
 
 ---
@@ -71,13 +71,13 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 
 | Vía | Cómo se mide ✅ | Acto II (A5) | Acto III (círculo) | Qué no cuenta ✅ |
 |---|---|---|---|---|
-| **Deuda** | % del capital que pagaste **de tu bolsillo** ✅ | 25 % 🟡 ⏳ F0-52 | 50 % 🟡 ⏳ F0-52 | Lo que asume el Consorcio; los abonos anónimos de Reme; la deuda de luz de los Faroleros no la rompe ✅ |
+| **Deuda** | % del capital que pagaste **de tu bolsillo** ✅ | 25 % 🟡 ⏳ F0-52 | 50 % 🟡 ⏳ F0-52 | Lo que asume el Consorcio ✅; los abonos anónimos de Reme ✅; la deuda de luz de los Faroleros no la rompe 🟡 |
 | **Logros** | Número de logros del sistema ✅ | 4 🟡 ⏳ F4-116 | 10 🟡 ⏳ F4-116 | Ninguno es obligatorio: sirve cualquiera 🟡 ⏳ F4-115 |
 | **Relación** | Al menos un medidor en tramo alto ✅ | Igual ✅ | Igual ✅ | Reme y Dueñas no tienen medidor ✅ |
 
 **Teo arranca en 60 (tramo alto) y la vía de relación nace cumplida** ✅. Es lo buscado: la relación es la vía más fácil, y la deuda y los logros son las que piden esfuerzo. Solo la pierdes si rompes la huelga de Teo y no cuidas a otro medidor.
 
-- **El capital es el de la herencia.** 🟡 El porcentaje se mide sobre el capital original de la deuda de Reme ⏳ F0-52. La deuda de luz de los Faroleros es aparte: no entra en el numerador ni en el denominador ✅.
+- **El capital es el de la herencia.** 🟡 El porcentaje se mide sobre el capital original de la deuda de Reme ⏳ F0-52. La deuda de luz de los Faroleros es aparte: no entra en el numerador ni en el denominador 🟡.
 - **Los abonos anónimos de Reme no cuentan como pagados por ti** ✅, para no regalar la vía. Su suma total debe dejar el umbral alcanzable ⏳ F0-52.
 - **Los logros.** Cuántos hacen falta es la cifra de arriba; cuáles son lo decide el sistema ⏳ F4-115 y los primeros 30 ⏳ F4-116. 🟡 Restricción para esa tarea: los 30 primeros deben incluir al menos 4 que se puedan lograr antes de A5 sin tocar la historia ⏳ F4-116.
 - **La deuda nunca bloquea** ✅. Ninguna puerta exige tenerla saldada y ninguna puerta depende solo de ella.
@@ -130,8 +130,8 @@ Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el t
 
 | Medidor | Alto (55 o más) | Medio (35 a 54) | Bajo (menos de 35) |
 |---|---|---|---|
-| **Esteban** | Apoyarlo en la compra grande: 1 decisión (60) | El arranque (40) | Comprar antes que él: 1 decisión (30) |
-| **Lucía** | Contarle el rumor entero: 1 decisión (60) | El arranque (50) | Decirle que no sabes nada del certificado: 1 decisión (30) |
+| **Esteban** | Apoyarlo en la compra grande: 1 decisión (60) | El arranque (40) | Comprar antes que él. Con el Consorcio y la cita aceptada da 35 (40 + 5 − 10), que es tramo medio; hay que rechazar o posponer la cita y comprar antes: 2 decisiones (25 o 30). Con el Ministerio o los Faroleros, 1 decisión (30) |
+| **Lucía** | Contarle el rumor entero: 1 decisión (60), sin negarle después lo del certificado | El arranque (50) | Decirle que no sabes nada del certificado, sin haberle contado el rumor entero: 1 decisión (30) |
 | **Teo** | El arranque (60). Apoyar la huelga lo sube a 70 | Romper la huelga o dudar de él, con revisión (45) | Romper la huelga y dudar de él, con revisión: 2 decisiones (25) |
 | **Unión** | Con los Faroleros, apoyar la huelga: 1 decisión (60). Con el Consorcio o el Ministerio, apoyar y plantarte: 2 (55) | El arranque (50) | Romper la huelga: 1 decisión (30) |
 
@@ -141,7 +141,7 @@ O2 («Esteban gana un contrato») es opcional y no puede ser la llave del aval. 
 
 | Variante | Hoy: lo mejor sin O2 | Con el ajuste A: apoyarlo en la compra grande |
 |---|---|---|
-| Consorcio | 40 + 5 (cita) + 10 (apoyo normal) = 55. Alto, pero con dos decisiones exactas | 60 (55 si rechazaste la cita). Alto con una decisión |
+| Consorcio | 40 + 5 (cita) + 10 (apoyo normal) = 55. Alto, pero con dos decisiones exactas | 65 si aceptaste la cita, 60 si la pospusiste y 55 si la rechazaste. Alto con una decisión |
 | Ministerio | 40 + 10 = 50. **Medio: no alcanza** | 60. Alto con una decisión |
 | Faroleros | 40 + 10 = 50. **Medio: no alcanza** | 60. Alto con una decisión |
 
@@ -164,16 +164,16 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 
 ## 7 · Las tres alianzas y las vías 🟡
 
-**Estado:** ✅ ninguna facción es mejor por defecto y la deuda no regala ni rompe la vía; 🟡 lo que hace cada alianza con cada vía. Los efectos de cada alianza ⏳ F4-133; el autor no revisó esta sección.
+**Estado:** ✅ ninguna facción es mejor por defecto y lo que asume el Consorcio no cuenta como pagado por ti; 🟡 que la deuda de luz no rompa la vía y lo que hace cada alianza con cada vía. Los efectos de cada alianza ⏳ F4-133; el autor no revisó esta sección.
 
 | Alianza | Deuda | Logros | Relación | Vías abiertas |
 |---|---|---|---|---|
-| **Consorcio Arvel** | Compra tu deuda y cambia el acreedor, no el capital 🟡. Si asumiera una parte, esa parte no cuenta ✅. Sigue abierta | Abierta ✅ | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres. Sin deuda, quedan logros + relación |
-| **Ministerio** | Su oferta no toca tu deuda ✅. Abierta | Abierta ✅ | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres |
-| **Los Faroleros** | La deuda de luz se suma aparte y no rompe la vía ✅. Abierta | Abierta ✅ | La Unión se mantiene ✅ | Las tres |
+| **Consorcio Arvel** | Compra tu deuda y cambia el acreedor, no el capital 🟡. Si asumiera una parte, esa parte no cuenta ✅. Sigue abierta | Abierta 🟡 | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres. Sin deuda, quedan logros + relación |
+| **Ministerio** | Su oferta no toca tu deuda 🟡. Abierta | Abierta 🟡 | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres |
+| **Los Faroleros** | La deuda de luz se suma aparte y no rompe la vía 🟡. Abierta | Abierta 🟡 | La Unión se mantiene ✅ | Las tres |
 
 - **Peor caso.** 🟡 ⏳ F4-133 Aunque el Consorcio dejara tu deuda cerrada para la vía, quedan logros y relación. La relación sigue abierta porque Lucía, Teo y Esteban no dependen de tu alianza (sección 6.2).
-- Ninguna alianza cierra el círculo ✅. Ninguna deja menos de dos vías alcanzables 🟡 ⏳ F4-133.
+- Ninguna alianza cierra el círculo 🟡. Ninguna deja menos de dos vías alcanzables 🟡 ⏳ F4-133.
 
 ---
 

@@ -155,7 +155,7 @@
       "acto": "II",
       "nivel": "pequena",
       "titulo": "Responder al primer contacto de la política",
-      "dispara": "Acto I cerrado y primera zona del II abierta (escena A1 de 22).",
+      "dispara": "Acto I cerrado (escena A1 de 22). El decreto de A1 es lo que abre las zonas del II; no es una condición previa 🟡 ⏳ F4-128.",
       "opciones": [
         {
           "id": "aceptar",
@@ -1180,7 +1180,7 @@
     {
       "id": "f-orden-reme",
       "tipo": "eleccion",
-      "descripcion": "Respuesta a la orden de Reme en el II: aceptar, negociar o rechazar.",
+      "descripcion": "Respuesta a la orden de Reme en el II: aceptar, negociar o rechazar. La alianza (n-ii-alianza) la lee solo para mostrar el costo de Reme; ninguna puerta la lee ni la usa para decidir.",
       "personajes": [
         "Doña Remedios «Reme» Salgado"
       ]
