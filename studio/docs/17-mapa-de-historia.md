@@ -16,7 +16,7 @@ Qué pasa, qué se desbloquea y qué hace falta en cada acto. Se ve como cuadro 
 | Se cierra cuando… | Reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes tu primer contacto con empleados | Eliges con qué facción te alías | Te aceptan en el círculo de poder | Decides qué hacer con la verdad y el poder, y cierras el acta de calibración |
 | Zonas | Galerías del Hollín | Cañón Ferroso, Sierra Alta, Salares | Cavernas de Cristal | La Fosa del Éter |
 | Minerales | Carbón, hierro | Cobre, salitre, plata | Oro, cuarzo, esmeralda | Diamante, Aetherita |
-| Personajes | Reme, Teo, Quiroga, Lucía, Anselmo (como rastro: libreta, lámpara y firma) | Esteban Arvel, Casilda | Ministro Dueñas | — (Anselmo se revela al final: cintas completas y acta de calibración) |
+| Personajes | Reme, Teo, Quiroga, Lucía, Anselmo (como rastro: libreta, lámpara y firma) | Esteban Arvel, Casilda | Ministro Dueñas | — (Anselmo se revela solo al protagonista, al final: cintas completas y acta de calibración) |
 | Estatus | Buscador → Minero con licencia | → Comerciante | → Empresario | → Magnate |
 
 El detalle completo (mecánicas, mercado y eventos, arte) está en el cuadro del hub.
@@ -28,7 +28,8 @@ El detalle completo (mecánicas, mercado y eventos, arte) está en el cuadro del
 3. **Mercado negro:** entra en el **Acto II**, cuando conoces a los Faroleros, con el indicador de vigilancia ([03](03-comercio.md)).
 4. **Variantes del Acto II** (quién está detrás de Reme): una columna común de seis escenas con piezas propias por variante, sorteo oculto al empezar y alianza final entre el Consorcio, el Ministerio y Los Faroleros. Escena por escena en [22](22-acto-ii-variantes.md).
 5. **Árbol de decisiones:** las decisiones y consecuencias de los cuatro actos están en [23](23-arbol-de-decisiones.md) y sus datos en `studio/data/decisions.json`.
-6. **Umbrales:** cada acto tiene una puerta con un hito de historia, un piso de estatus (solo en A5 y en el círculo del III) y vías «dos de tres» entre deuda, logros y relación. Todas las reglas, los tramos de los medidores y la red anti-atasco están en [24](24-umbrales-de-acto.md).
+6. **Finales:** cada salida del IV cierra con una cabecera, tarjetas por piezas y el acta de calibración ([25](25-finales-y-epilogos.md)) ✅.
+7. **Umbrales:** cada acto tiene una puerta con un hito de historia, un piso de estatus (solo en A5 y en el círculo del III) y vías «dos de tres» entre deuda, logros y relación. Todas las reglas, los tramos de los medidores y la red anti-atasco están en [24](24-umbrales-de-acto.md).
 
 ## La puerta del Acto I ✅
 
@@ -50,6 +51,6 @@ El modo historia **no obliga a seguir la trama con exactitud**: el jugador puede
 ## Pendiente de definir
 
 - ❓ **Narrativa en detalle:** hoy están definidos el gancho, los cuatro actos, el elenco y la verdad de la Aetherita. Falta bajar cada acto a escenas, diálogos, decisiones y consecuencias (guion). El roadmap ya tiene el guion día a día y el storyboard del Acto I (F0-23, F0-24) y los guiones de los actos II–IV (F4-128, F4-135, F4-142), pero con poco tiempo asignado para el nivel de detalle que se busca.
-- ❓ **Cierre de la historia:** la decisión final se reabsorbe y el país sigue igual, lo que puede dejar la sensación de historia inconclusa. Ideas 🟡 por explorar: epílogo propio para cada decisión sobre la Aetherita, un resumen del destino de cada personaje y de cada facción según tus alianzas, y dejar hilos abiertos que apunten a una continuación o segunda parte.
+- ✅ **Cierre de la historia:** resuelto en [25](25-finales-y-epilogos.md). Cabecera, tarjetas por piezas (destino de cada personaje, facción, mundo y mercado) y el acta de calibración, con hilos abiertos para una segunda parte.
 - ✅ Umbrales concretos que activan cada acto: resueltos en [24](24-umbrales-de-acto.md). Decididos por el autor (2026-10-12): el modelo de puertas, los tramos, los ajustes de efectos y que la relación nace cumplida. Las cifras de estatus ⏳ F4-109, deuda ⏳ F0-52, logros ⏳ F4-116 y el evaluador ⏳ F4-127 se calibran después.
 - ✅ Cuántas bifurcaciones y consecuencias hay por acto: 3 grandes, 6 medianas y 18 pequeñas (3 en el I, 5 en el II, 5 en el III y 5 en el IV). Árbol en [23](23-arbol-de-decisiones.md).

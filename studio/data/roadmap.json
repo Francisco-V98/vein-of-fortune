@@ -506,7 +506,7 @@
               "id": "F0-46",
               "title": "Finales, epílogos e hilos abiertos",
               "est": 4,
-              "status": "backlog",
+              "status": "done",
               "prio": "P1",
               "desc": "Un epílogo para cada decisión sobre la Aetherita, el destino de cada personaje y de cada facción según las alianzas, y los hilos que quedan abiertos para una segunda parte.",
               "done_when": "Finales y epílogos acordados con el autor."
@@ -3762,6 +3762,33 @@
               "title": "Revisión de arquitectura y deuda técnica, ronda 2",
               "est": 5,
               "prio": "P1"
+            },
+            {
+              "id": "F4-210",
+              "status": "backlog",
+              "title": "Motor de epílogos por piezas",
+              "est": 5,
+              "prio": "P0",
+              "desc": "Pantalla de cabecera y tarjetas del cierre del Acto IV: elige las piezas según las banderas, la variante oculta de Reme y los resultados de Esteban, Dueñas, Lucía y Teo, y permite releerlas desde el diario. Debe respetar el documento 25.",
+              "done_when": "Con banderas forzadas (F1-23) salen las piezas correctas para cada combinación del Acto IV y ninguna tarjeta se contradice con otra."
+            },
+            {
+              "id": "F4-211",
+              "status": "backlog",
+              "title": "Traducción ES/EN de los Actos II a IV y de los epílogos",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Traducir al inglés los textos de las variantes del Acto II, del Acto III, del Acto IV y las 54 piezas de los epílogos, siguiendo el glosario del documento 18. Hoy ninguna tarea cubre esta traducción.",
+              "done_when": "Los textos de los Actos II a IV y de los epílogos están en ES y EN, con el glosario respetado y sin cadenas sin traducir."
+            },
+            {
+              "id": "F4-212",
+              "status": "backlog",
+              "title": "Textos finales de las 54 piezas de los epílogos",
+              "est": 6,
+              "prio": "P0",
+              "desc": "Escribir los textos definitivos en español de las 54 piezas del documento 25 (cabecera, personajes, facciones, mundo, mercado y familia) en la voz de cada medio, en prospectivo y sin cifras escritas, con una línea breve del protagonista en el acta.",
+              "done_when": "Las 54 piezas tienen su texto final en español, respetan el canon y las reglas del documento 25, y la traducción queda para F4-211."
             }
           ]
         }

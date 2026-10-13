@@ -1,0 +1,216 @@
+{
+  "id": "F0-46",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empiezan los finales, epílogos e hilos abiertos con el flujo de especialistas.",
+      "ref": "rama studio/F0-46-finales-y-epilogos"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 25 con los finales y las 54 piezas de epílogo, ⏳ F0-46 resueltos; QA aprobado tras dos pasadas y limpieza 69 %.",
+      "ref": "rama studio/F0-46-finales-y-epilogos"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó los finales y los epílogos desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "ideador",
+        "nota": "Tres formas: A cabecera con tarjetas por piezas, B cinco finales fijos, C cinco años después; recomienda A con el horizonte de las semanas siguientes",
+        "entrega": "Tres formas, bosquejo del acta y de 54 piezas, hilos abiertos y once preguntas, nueve de ellas para decidir ahora"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "analista",
+        "nota": "La forma A encaja con el canon salvo ocho hallazgos; el análisis clasificó nueve puntos como decidir ahora y el resto como aplazables con su tarea",
+        "entrega": "Comprobación de banderas, canon, ⏳ F0-46 y tareas, criterios de aceptación y once preguntas",
+        "hallazgos": [
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Falta un estado legible con la variante de Reme y los resultados calculados de Esteban, Dueñas, Lucía y Teo; las reglas de Dueñas se solapan",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 25 y en los documentos 17, 18, 19, 21, 22, 23 y 24; tareas nuevas F4-210, F4-211 y F4-212"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Lucía no tiene pieza cuando callas o vendes, y el abono mensual puede morir si revelar corta el abono",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 25 y en los documentos 17, 18, 19, 21, 22, 23 y 24; tareas nuevas F4-210, F4-211 y F4-212"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Las tarjetas prospectivas pueden contradecir al sandbox si dicen un porcentaje o un salto de tiempo; el acta sin discurso choca con la línea del protagonista",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 25 y en los documentos 17, 18, 19, 21, 22, 23 y 24; tareas nuevas F4-210, F4-211 y F4-212"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Anselmo debe seguir secreto en los tres finales: el acta no puede contar como prueba ni publicarla Lucía",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 25 y en los documentos 17, 18, 19, 21, 22, 23 y 24; tareas nuevas F4-210, F4-211 y F4-212"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Ninguna tarea del roadmap cubre las 54 piezas, el motor de epílogos ni la traducción de los Actos II a IV",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 25 y en los documentos 17, 18, 19, 21, 22, 23 y 24; tareas nuevas F4-210, F4-211 y F4-212"
+          }
+        ]
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "narrador",
+        "nota": "Correcciones de QA aplicadas por el narrador; limpieza 69 %",
+        "entrega": "Documento 25 con la cabecera, el acta, las 54 piezas, los hilos abiertos y el estado legible; los ⏳ F0-46 resueltos"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "qa",
+        "nota": "QA aprobó el build, la cobertura de las 54 piezas y el canon; sus correcciones las comprobó el coordinador con el build estricto y las pruebas (limpieza 69 %, coherencia 83 %)",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Hay ✅ sin respaldo del autor en el documento 25 y en los documentos 19, 21, 22 y 23: la estabilización del precio, la cifra de palabras, la firma de los papeles de la herencia, el nombre de los estados legibles y la columna de marcas",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 18, 22, 23, 24 y 25 y en decisions.json, con tres decisiones nuevas del autor sobre el precio, el Ministerio y Dueñas"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El documento 24 conserva que con la Unión media o baja Dueñas decide por la puerta usada, y el documento 25 dice que en el resto te amenaza",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 18, 22, 23, 24 y 25 y en decisions.json, con tres decisiones nuevas del autor sobre el precio, el Ministerio y Dueñas"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "decisions.json afirma como hecho lo que el documento 25 deja como propuesta: cuándo se calcula el desenlace de Dueñas y qué se queda el Ministerio",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 18, 22, 23, 24 y 25 y en decisions.json, con tres decisiones nuevas del autor sobre el precio, el Ministerio y Dueñas"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El documento 25 dice en una línea que los textos de las 54 piezas no tienen tarea, aunque F4-212 ya existe; el glosario de la biblia no lista los términos nuevos",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 18, 22, 23, 24 y 25 y en decisions.json, con tres decisiones nuevas del autor sobre el precio, el Ministerio y Dueñas"
+          }
+        ],
+        "entrega": "Build estricto, 49 pruebas en verde, 54 piezas cubiertas y aplazamientos válidos"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "autor",
+        "nota": "El autor revisó el documento 25 y aprobó los finales desde /equipo"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #40 fusionado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: tres formas de estructurar los finales, los epílogos por piezas y los hilos abiertos",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Forma A con 54 piezas y los hilos abiertos por comprobar",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Comprobación de la forma A con cinco hallazgos y once preguntas, nueve para decidir ahora",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Escribir el documento 25 con los finales y los epílogos por piezas y cerrar los ⏳ F0-46",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Documento 25 escrito y ⏳ F0-46 resueltos; faltaba la tarea de los textos finales",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 25 y los cambios en 08, 17, 18, 19, 21, 22, 23, 24, decisions.json y story.json",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "narrador",
+        "que": "Devolución: bajar a 🟡 los ✅ sin respaldo, alinear el documento 24 con la regla de Dueñas, y aplicar el desplome que rebota y el Ministerio con la prueba",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Correcciones de la devolución de QA aplicadas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: documento 25 con los finales y los epílogos por piezas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
+        "at": "2026-10-12"
+      }
+    ]
+  }
+}

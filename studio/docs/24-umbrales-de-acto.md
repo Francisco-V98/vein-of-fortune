@@ -32,7 +32,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Cintas | Las cintas **1 a 5 son obligatorias** para entrar al IV, no caducan por tiempo ni por decisiones, y tienen una **misión persistente** si faltan ✅ |
 | Red anti-atasco | El juego sigue como sandbox, **la historia espera en cola**, **el diario lista las vías que faltan** y **la misión de rescate** llega tras mucho tiempo sin avanzar. La deuda nunca bloquea. Las tres piezas se diseñan aparte ✅ ⏳ F0-78 |
 | Teo | **Sin revisión muere**, también si le propones y aceptas su no: la opción respetuosa tiene costo ✅ |
-| Magnate y cierre del IV | Magnate se concede al **cerrar el acta de calibración** y **no es puerta**. El IV cierra con el acta tras la decisión sobre la Aetherita; entonces empieza el sandbox ✅ |
+| Magnate y cierre del IV | Magnate se concede al **cerrar el acta de calibración** y **no es puerta**. El IV cierra con la cabecera, las tarjetas y el acta tras la decisión sobre la Aetherita; Magnate llega como un aviso silencioso al volver al sandbox ✅ ([25](25-finales-y-epilogos.md)) |
 | Disparadores | Van **por eventos del jugador y no por calendario**: A2 tras atender tu primera cuota después de A1; A3 tras tu primera venta o expedición en la zona; A4 tras el aviso de noticias y una acción tuya, sin plazo en días. Las opcionales O1 a O4 **no puntúan** para ninguna puerta ✅ |
 | Círculo y entrada al IV | El círculo pide **Empresario + dos vías de tres + una puerta abierta** y cierra en el encuentro con Dueñas. El IV entra con ese encuentro resuelto y las cintas 1 a 5 recogidas. Dueñas **no tiene medidor**. Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`, Reme nunca cierra puertas y ninguna facción es mejor por defecto ✅. `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme, sin usarlo para decidir 🟡 |
 
@@ -103,12 +103,12 @@ Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el t
 | **Esteban** | Aval abierto ✅. En `n-iv-esteban` rompe con el Consorcio y te da el libro ✅ | Aval bloqueado, con el motivo ✅. En `n-iv-esteban` se aparta ✅ | Aval bloqueado ✅. En `n-iv-esteban` defiende al Consorcio ✅ |
 | **Lucía** | Publica contigo ✅ y te da el reproductor ✅ | No publica, publicas tú con costo alto y poco alcance ✅. El reproductor lo entrega Reme ✅ | Publica en La Voz del Hollín sin ti ✅. El reproductor lo entrega Reme ✅ |
 | **Teo** | Si hubo revisión, se queda ✅ | Si hubo revisión, se queda ✅ | Si hubo revisión, se va ✅ |
-| **Unión** | Cuenta para la vía de relación ✅. En `n-iv-duenas`, Dueñas intenta borrarte ✅. En `n-iv-aetherita`, la Unión sale contigo si revelas ✅ | No cuenta para la vía de relación ✅. Sin efecto propio en el IV ✅ | En `n-iv-aetherita`, nadie te respalda en el Hollín si revelas ✅ |
+| **Unión** | Cuenta para la vía de relación ✅. En `n-iv-duenas`, Dueñas intenta borrarte y falla ✅. En `n-iv-aetherita`, la Unión sale contigo si revelas ✅ | No cuenta para la vía de relación ✅. Sin efecto propio en el IV ✅ | En `n-iv-aetherita`, nadie te respalda en el Hollín si revelas ✅ |
 
 - **Teo sin revisión muere, sea cual sea su tramo** ✅. Si el medidor y la revisión chocan, gana el no haberlo atendido ✅. Esto incluye la opción respetuosa «se lo propones y aceptas su no» ✅.
 - **Esteban.** El aval se lee en el momento de elegir puerta ✅. 🟡 Como `n-iii-esteban-trato` ocurre antes, el medidor ya trae lo que hiciste en la bolsa. Después de la puerta, el medidor de Esteban no se mueve, así que el tramo del IV es el de la puerta ⏳ F4-61.
 - **Lucía.** 🟡 Antes de decidir sobre la Aetherita se te muestra quién publicaría, para elegir con aviso ⏳ F4-142. `n-iv-lucia-publica` se activa si la verdad sale.
-- **Unión.** En `n-iv-duenas`, «borrarte» pide Unión alta y al menos dos pruebas ✅. Como siempre conservas al menos tres ([23](23-arbol-de-decisiones.md), sección 8), en la práctica solo importa la Unión: es el castigo de quien tiene gente detrás ✅. Con Unión media o baja, Dueñas decide por la puerta que usaste, igual que hoy ✅.
+- **Unión.** En `n-iv-duenas`, «borrarte» pide Unión alta y al menos dos pruebas, y falla ✅. Si vendes al Ministerio, te compra con el sello y esa regla manda primero ✅. Como siempre conservas al menos tres ([23](23-arbol-de-decisiones.md), sección 8), en la práctica solo importa la Unión: es el castigo de quien tiene gente detrás ✅. Con Unión media o baja, y si no vendes al Ministerio, te amenaza ✅: la puerta que usaste ya no decide qué hace Dueñas. Su desenlace se decide al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12).
 - **Dueñas** no tiene tramos ✅.
 
 ---
@@ -256,6 +256,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 | [22](22-acto-ii-variantes.md) | Los disparadores de A1 a A6 pasan a eventos; la regla de obligatoriedad queda cerrada; se resuelven los siete aplazamientos de esta tarea | ✅ |
 | [23](23-arbol-de-decisiones.md) | Tramos, destino de Teo, quién publica y el aval; ajustes A a D | ✅ las decisiones del autor y los ajustes A a D |
 | [17](17-mapa-de-historia.md) | Enlace a este documento y regla de la puerta del Acto I | ✅ |
+| [25](25-finales-y-epilogos.md) | Cierre del IV: cabecera, tarjetas, acta y aviso de Magnate | ✅ |
 | `decisions.json` | `meta.tramos`, textos de los nodos y de las banderas, y la bandera `m-union` en `n-iii-circulo` | ✅ tramos y la bandera `m-union` |
 
 ---
