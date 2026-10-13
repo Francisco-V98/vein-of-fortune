@@ -61,21 +61,27 @@
           },
           {
             "de": "analista",
-            "estado": "abierto",
-            "que": "El trabajo de hub estimado sube de seis a ocho o nueve horas; el dibujo SVG del árbol conviene sacarlo a una tarea nueva"
+            "estado": "resuelto",
+            "que": "El trabajo de hub estimado sube de seis a ocho o nueve horas; el dibujo SVG del árbol conviene sacarlo a una tarea nueva",
+            "resuelto_por": "herramientas",
+            "como": "Vista #/decisiones y filas del mapa con validación estricta, con el dibujo SVG fuera de esta tarea"
           }
         ]
       },
       {
         "etapa": "produccion",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "narrador",
-        "nota": "El narrador escribió el documento 23 y los datos en decisions.json; falta la vista del hub, que construye el desarrollador de herramientas"
+        "nota": "Narrador y herramientas terminaron; el coordinador comprobó los filtros de la vista en el navegador",
+        "entrega": "Documento 23, decisions.json con 27 nodos, vista #/decisiones, filas del mapa y 20 pruebas nuevas"
       },
       {
         "etapa": "qa",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "qa",
+        "nota": "QA comprueba el build, las pruebas, las marcas, el canon y la vista del hub"
       },
       {
         "etapa": "autor",
@@ -123,8 +129,20 @@
       },
       {
         "de": "coordinador",
-        "a": "desarrollador-herramientas",
+        "a": "herramientas",
         "que": "Construir la vista #/decisiones, las filas del mapa, las validaciones de decisions.json y sus pruebas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Vista #/decisiones, validaciones C12 a C15 y 20 pruebas nuevas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 23, decisions.json y la vista del hub antes de la revisión del autor",
         "at": "2026-10-12"
       }
     ]
