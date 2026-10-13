@@ -45,13 +45,13 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 | A3 | **El primer conflicto** | **Única** | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | Conflicto resuelto, con un costo. La facción fija su postura ante la huelga |
 | A4 | **La primera huelga** | Común, con capa | A3 resuelta, aviso en las noticias y una acción tuya, sin plazo en días ✅ | Bando elegido, precio subido, apagón vivido, mercado negro abierto (primer contacto con Casilda, si aún no lo tenías), Teo y la Unión movidos |
 | A5 | **Las tres ofertas** | Común, con capa | A4 resuelta, estatus de Comerciante y dos vías de tres entre deuda, logros y relación ✅ | Alianza elegida. **Cierra el Acto II** |
-| A6 | **El cierre de Reme** | **Única** | A5 resuelta, justo después ✅ | Costo o alivio de Reme, su silencio sobre el abono y el sobre sin remitente. Abre el Acto III |
+| A6 | **El cierre de Reme** | **Única** | A5 resuelta, justo después ✅ | Costo o alivio de Reme y su silencio sobre el abono, que llega en un sobre sin remitente (es el mismo hilo ✅). Abre el Acto III |
 
 - El **orden** de A1 a A6 es fijo; el **ritmo** no. Entre una escena y otra el jugador comercia, mina y explora, como pide el modo historia.
 - **Regla de obligatoriedad ✅.** Las seis anclas se juegan en toda partida, cada una al cumplirse su disparador: cada escena espera a la anterior resuelta y A5 lleva el piso de estatus y las vías ([24](24-umbrales-de-acto.md)). Lo que separa a las tres **únicas** (A2, A3 y A6) de las tres **comunes** (A1, A4 y A5) no es poder saltarlas, sino que las únicas se escriben tres veces y las comunes una vez, con capa. Lo único que se puede saltar son las **opcionales** O1 a O4, que no puntúan para ninguna puerta.
 - El hito del Acto II es **elegir con qué facción te alías** ✅ ([17](17-mapa-de-historia.md)). Lo cierra A5 ✅. A6 es la última pantalla del acto, no una condición para pasar al III.
 - **A1 común.** Los tres medios cuentan el mismo decreto, que abre las zonas del Acto II con la firma de Montenegro, y cada uno lo lee con su tono. La capa es el contacto de la facción.
-- **Una sombra por escena, como máximo** ([18](18-biblia-narrativa.md), 1.4): Teo y La Fosa en A4, el certificado de Quiroga en A5 y el sobre sin remitente en A6.
+- **Una sombra por escena, como máximo** ([18](18-biblia-narrativa.md), 1.4): Teo y La Fosa en A4, el certificado de Quiroga en A5 y el sobre sin remitente (el abono) en A6.
 
 ### Escenas opcionales 🟡
 
@@ -149,10 +149,10 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 | **Esteban** | Rival que quita contratos. No sabe qué financia el Consorcio. Dice «amigo» | Abre A1 y es el rostro de A3, pero **no da la orden** | Rival de fondo (O2) y oferta de A5 | Rival de fondo (O2) y oferta de A5 |
 | **Casilda** | Ofrece protección, vende luz en los apagones y abre el mercado negro | Aparece en el apagón de A4, donde abre el mercado negro, y en A5 | Aparece en el apagón de A4, donde abre el mercado negro, y en A5 | Actúa desde A1 por su cobrador; aparece en persona al final de A3 |
 | **Montenegro** | Ausente. Solo decretos y firma 🟡: el de zonas (A1), el corte de luz (A4) y la carta de A5. Sin retrato ni líneas | — | Firma además la revisión de licencias (A3) | — |
-| **Anselmo** | Solo rastro: el abono y el sobre sin remitente (A6) | — | — | — |
+| **Anselmo** | Solo rastro: el abono, que llega en un sobre sin remitente (A6) | — | — | — |
 
 - Esteban **no** conoce el fondo reservado: un ejecutivo del Consorcio, sin nombre, es quien habla con Reme.
-- El Acto II no nombra el mal del éter ni las cintas. El sobre es una sombra: llega cada mes, sin remitente, y Reme no lo explica.
+- El Acto II no nombra el mal del éter ni las cintas. El sobre es el abono y es una sombra: llega cada mes, sin remitente, y Reme no lo explica. Con la carta sin firma que le pide callar ([21](21-pasado-de-valdoria.md), sección 6), es un solo hilo ✅ (decisión del autor, 2026-10-13).
 
 ---
 

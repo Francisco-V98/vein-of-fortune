@@ -72,6 +72,8 @@ Obrero y humo; manda la Unión. La herrería alimenta el Acero y la tienda atien
 
 Frío y Consorcio. La plata que se afina aquí la compra después Casa Ormeño.
 
+**Cumbre Clara no es un edificio ✅.** El Sanatorio de Cumbre Clara, donde murió Anselmo en público, es solo un nombre (decisión del autor, 2026-10-13): no es zona ni edificación de este catálogo y no se visita ([21](21-pasado-de-valdoria.md)).
+
 | ID | Edificación | Rol | Qué la hace de su zona | Versión | Marca |
 |---|---|---|---|---|---|
 | `ed-af-mina` | Boca de las Minas de Sierra Alta | minijuego (Perforación, Cribado) | Cobre y plata principales; frío y falta de aire; guardias de empresa | V1 | ✅ |

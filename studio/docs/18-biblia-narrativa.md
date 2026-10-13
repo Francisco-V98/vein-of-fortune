@@ -367,7 +367,7 @@ Regiones y zonas en [05](05-mundo-y-minerales.md) y [02](02-extraccion.md); nomb
 | **Escuela de Minas** ✅ | Donde estudiaron Anselmo y Montenegro | Antes del juego | Solo se menciona; no se visita 🟡 |
 | **Vega Mansa** ✅ | Aldea agrícola de las tierras bajas del sur; la del protagonista | Antes del juego y Acto I | Solo se menciona; no se visita. Fuera de las seis regiones del mapa. Detalle en [21](21-pasado-de-valdoria.md) |
 | **Pozo Negro** ✅ | Pozo del Hollín donde ocurrió el derrumbe de hace 40 años | Antes del juego | Memoria de la Unión; no se visita |
-| **Sanatorio de Cumbre Clara** ✅ | Sanatorio de la Comisión en la Sierra Alta, donde murió Anselmo en público | Antes del juego | Solo se menciona; es el lugar de la versión pública |
+| **Sanatorio de Cumbre Clara** ✅ | Sanatorio de la Comisión en la Sierra Alta, donde murió Anselmo en público | Antes del juego | Solo se menciona; es el lugar de la versión pública. Es solo un nombre: no es zona ni edificio visitable ✅ (decisión del autor, 2026-10-13) |
 
 - Los lugares con significado se traducen al inglés; los nombres propios sin significado se mantienen. El detalle está en el capítulo 6 (6.4 y 6.5).
 - **La aldea del protagonista** es **Vega Mansa** ✅; su padre, hermano de Anselmo, dejó el Hollín tras un derrumbe y juró que ningún hijo bajaría a una mina ([21](21-pasado-de-valdoria.md)).
@@ -768,6 +768,7 @@ En `story.json` y en el [17](17-mapa-de-historia.md) Anselmo aparece ya en la ce
 - ⏳ F4-179 Textos de las tres variantes del Acto II (la estructura está en [22](22-acto-ii-variantes.md)).
 - ✅ Hechas F0-41 (esta biblia), F0-42 (fichas), F0-43 ([21](21-pasado-de-valdoria.md)), F0-44 ([22](22-acto-ii-variantes.md)), F0-45 ([23](23-arbol-de-decisiones.md)), F0-46 ([25](25-finales-y-epilogos.md)) y F0-47 ([24](24-umbrales-de-acto.md)). La lectura final F0-48 se cierra con esta pasada: términos unificados (puerta, entrada, pieza, escena, facción de Reme), reglas de voz de los medios y 1.2 al día.
 - ✅ Epílogos de las tres salidas del Acto IV: resueltos en [25](25-finales-y-epilogos.md).
+- ✅ Registro de hilos narrativos y cabos sueltos (F0-51): `studio/data/hilos.json`, con las pistas de [19](19-elenco-a-fondo.md), los hilos de [25](25-finales-y-epilogos.md) (sección 7) y los de [21](21-pasado-de-valdoria.md).
 - ⏳ F1-20 Inglés de los términos del glosario que están «sin traducir» en 6.5 y 6.11: los ocho de epílogo, las cuatro filas de F0-44, los quince de la lectura final y los de zonas y edificios (F0-82), más el farol vinotinto, *Highchill* y *White Salt Flats*.
 - ⏳ F0-80 Pasada de cierre con el autor de los documentos 18 y 21 a 25, para llevar a 90 % o más la limpieza de cada uno.
 - ⏳ F1-18 Cifras finales del formato de diálogo y del nombre de la tienda, con la fuente real.

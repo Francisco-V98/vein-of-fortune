@@ -1,0 +1,89 @@
+{
+  "id": "F0-51",
+  "history": [
+    {
+      "at": "2026-10-13",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el registro de hilos narrativos y cabos sueltos con el flujo de especialistas.",
+      "ref": "rama studio/F0-51-registro-de-hilos"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "El esquema del registro lo fijó el coordinador siguiendo el de las decisiones"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida",
+        "nota": "La extracción de hilos la hace el narrador al cargar el registro y deja las preguntas al autor"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "narrador",
+        "nota": "El narrador cargó los hilos y el desarrollador de herramientas construyó la validación y la vista; el coordinador añadió la fila «En escena» y ajustó C18 para que solo desaparezca quien ya entró en escena; limpieza 71 % y coherencia 94 %",
+        "entrega": "hilos.json con 45 hilos, validación y chequeos C16 a C19 en el build, vista #/hilos en el hub y 25 pruebas nuevas; fila «En escena» en el mapa de historia"
+      },
+      {
+        "etapa": "qa",
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "qa",
+        "nota": "QA comprueba el build, las pruebas, la vista del hub, las marcas y que los hilos cuadren con los documentos"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Cargar en hilos.json cada pista, promesa y secreto con dónde se siembra y dónde se resuelve",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "herramientas",
+        "que": "Construir la validación en el build, las comprobaciones de coherencia y la vista #/hilos del hub sobre el esquema de hilos.json",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Hilos cargados y cuatro decisiones del autor aplicadas",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Validación, chequeos C16 a C19 y vista #/hilos terminadas",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar hilos.json, el código del hub, las pruebas y los documentos tocados",
+        "at": "2026-10-13"
+      }
+    ]
+  }
+}

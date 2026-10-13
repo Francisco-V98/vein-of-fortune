@@ -207,7 +207,7 @@ def _entry_ranks(hilo, key):
 
 
 def _missing_characters(hilo, ids, cells, acts):
-    """Personajes del hilo que faltan en la fila de personajes del mapa de historia entre la siembra y la resolución.
+    """Personajes del hilo que, tras entrar en escena, dejan de estar en la fila «En escena» del mapa de historia antes de la resolución.
 
     Devuelve [(nombre, [actos sin él])]. Va de la primera siembra a la última resolución, ambas incluidas;
     «despues» no tiene celda en el mapa y no se mira.
@@ -219,8 +219,12 @@ def _missing_characters(hilo, ids, cells, acts):
     out = []
     for who in hilo.get("personajes", []):
         cid = ids.get(who)
-        gone = [a for a in span if cid not in cells[acts.index(a)]]
-        if cid and gone:
+        if not cid:
+            continue
+        # Un personaje «desaparece» solo si ya había entrado en escena: antes de su debut no se le echa de menos
+        debut = next((i for i, a in enumerate(span) if cid in cells[acts.index(a)]), None)
+        gone = list(span) if debut is None else [a for a in span[debut:] if cid not in cells[acts.index(a)]]
+        if gone:
             out.append((who, gone))
     return out
 
@@ -233,7 +237,8 @@ def hilos_analisis(hilos, world, story, decisions=None):
     items = [h for h in (hilos or {}).get("hilos", []) if isinstance(h, dict)]
     acts = world.get("acts", [])
     ids = _character_ids(world)
-    cells = [{ids[n] for n in cell if n in ids} for cell in _lane(story, "personajes")]
+    # «En escena» lista quién sigue presente en cada acto; sin esa fila se usa la de entradas
+    cells = [{ids[n] for n in cell if n in ids} for cell in (_lane(story, "enescena") or _lane(story, "personajes"))]
     node_ids = {n["id"] for n in (decisions or {}).get("nodes", [])}
     tape_ids = {t["n"] for t in (decisions or {}).get("cintas", [])} or set(range(1, TAPE_COUNT + 1))
     out = {"total": len(items), "sin_resolver": [], "sin_sembrar": [], "antes": [], "faltan": [], "refs": [], "pares": 0, "refs_total": 0,

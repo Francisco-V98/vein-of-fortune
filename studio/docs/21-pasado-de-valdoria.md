@@ -29,7 +29,9 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 | Teo | **Minero veterano**, no capataz. La cuadrilla de la expedición no tiene capataz que cuente. Reme es **viuda de un capataz**: no se confunden ✅ |
 | Casas industriales | Las nuevas son **solo nombres de ambiente** en noticias y glosario: sin zona propia ni jefe. Se conserva **Casa Ormeño**, que además es una tienda insignia en la capital (decisión del autor, 2026-10-13); se descartan **Talavera e Hijos** y **Fundiciones Soria**, porque chocan con el Consorcio y la Unión ✅ |
 | Cifras de la cronología | Electrificación a los **17** años, «cobrar la luz» a los **15**, préstamo de Reme a los **21**, visita de Anselmo a Vega Mansa a los **14**, Montenegro ministro a los **8**, cuota doblada a los **4**, cuadrilla de **unas 12 personas**, expedición de **8 meses** y todas las edades de la tabla de la sección 3 ✅ |
-| Quién sabe qué | **Reme sospecha, pero no sabe, que Anselmo está vivo.** Oculta el abono por la cláusula del trato y porque su facción se lo pide ✅ |
+| Quién sabe qué | **Reme sospecha, pero no sabe, que Anselmo está vivo, y nunca llega a saberlo**, igual que Lucía ✅ (decisión del autor, 2026-10-13). Oculta el abono por la cláusula del trato y porque su facción se lo pide ✅ |
+| Cumbre Clara | **Es solo un nombre** ✅ (decisión del autor, 2026-10-13): el lugar de la versión pública. No es zona ni edificio visitable, y no tiene hilo propio |
+| El sobre, la carta y el giro | **Son el mismo hilo** ✅ (decisión del autor, 2026-10-13): el sobre sin remitente del Acto II, la carta sin firma que recibe Reme y el giro mensual del abono. Se siembra en el Acto II y se resuelve en el IV con los comprobantes de Reme |
 | La expedición | **Teo** fue evacuado al primer mes con un brazo roto (por eso solo tiene tos incipiente). **Montenegro** dirigió desde el campamento y nunca bajó a la veta ✅ |
 | La familia | El padre del protagonista es **hermano menor de Anselmo**, y ambos perdieron a su padre en Pozo Negro ✅ |
 | Cintas 7 y 8 | La **7** se graba la noche antes de la detención. La **8** aparece cortada y **quién la cortó se deja abierto**: el jugador nunca lo sabe con certeza ✅ |
@@ -146,7 +148,7 @@ La cuadrilla murió en uno a tres años con siete meses de exposición. Anselmo 
 |---|---|
 | **Cuándo** | Hace 2 años, a **fines de invierno** ✅ |
 | **De qué** | De **«tos de mina»** (neumonía) ✅ |
-| **Dónde** | En el **Sanatorio de Cumbre Clara**, en la Sierra Alta. Lo lleva la Comisión del Éter ✅ |
+| **Dónde** | En el **Sanatorio de Cumbre Clara**, en la Sierra Alta. Lo lleva la Comisión del Éter ✅. Es solo un nombre: no se visita ✅ |
 | **Qué pasó con el cuerpo** | Cremado **«por norma sanitaria»**, sin registro de cremación ✅. No hay velorio con cuerpo ni se entrega urna: las cenizas se esparcen en el terreno del sanatorio ✅ |
 | **Quién tramitó el papel** | El **certificado de defunción** se tramitó en **Villa Brasa**, ante el **Inspector Quiroga** ✅ |
 | **Cómo se avisó a la familia** | Por carta, después de la cremación ✅ |
@@ -181,13 +183,13 @@ El autor confirmó el trato el 2026-10-12, tal como está escrito en la tabla: c
 
 ## 6 · El abono anónimo y el préstamo de Reme 🟡
 
-**Estado:** ✅ el préstamo hace 21 años, el equipo que quedó en el campamento y la deuda que creció, la casa de préstamos de hace unos 25 años, el abono como cláusula del trato, la carta sin firma, lo que Reme sabe y no sabe, y la tabla de razones por facción (confirmados el 2026-10-12); 🟡 solo los pagos a ratos de Anselmo, la razón propia de Reme y la sorpresa de su alianza final.
+**Estado:** ✅ el préstamo hace 21 años, el equipo que quedó en el campamento y la deuda que creció, la casa de préstamos de hace unos 25 años, el abono como cláusula del trato, la carta sin firma, lo que Reme sabe y no sabe, y la tabla de razones por facción (confirmados el 2026-10-12); ✅ que Reme nunca llega a saber que Anselmo vive y que el sobre, la carta sin firma y el giro son un solo hilo (decisión del autor, 2026-10-13); 🟡 solo los pagos a ratos de Anselmo y la razón propia de Reme.
 
 **El préstamo.** Reme prestó a Anselmo **hace unos 21 años**, antes de la expedición, para pagar los equipos de ensayo que llevó a La Fosa ✅. El equipo se quedó en el campamento y nunca se lo devolvieron ✅. La deuda creció con los intereses ✅. Anselmo pagó a ratos mientras pudo 🟡.
 
 **La casa de préstamos.** Reme enviudó de un capataz y montó su casa de préstamos **hace unos 25 años** ✅ con dinero que pidió a una facción mayor. Desde entonces su propia deuda está en manos de otros ([19](19-elenco-a-fondo.md)). Que esa facción cambie por partida no cambia la fecha: en cada variante, la facción ya existía como casa grande (el Consorcio), como fondo de crédito minero (el Ministerio) o como caja común del gremio (los Faroleros).
 
-**El abono.** Desde el trato, cada mes llega un giro a nombre de la deuda de Anselmo ✅, sin remitente ✅. Es **su sueldo desde el escondite**: la cláusula del trato ✅.
+**El abono.** Desde el trato, cada mes llega un giro a nombre de la deuda de Anselmo ✅, en un sobre sin remitente ✅. Es **su sueldo desde el escondite**: la cláusula del trato ✅. El sobre del Acto II, la carta sin firma y el giro son **el mismo hilo** ✅ (decisión del autor, 2026-10-13).
 
 **Por qué Reme lo calla.** Desde el trato recibió una carta sin firma y cortés que le pide no investigar ni hablar del abono ✅. Y su facción le pide lo mismo ✅, por razones distintas en cada variante ✅:
 
@@ -198,7 +200,7 @@ El autor confirmó el trato el 2026-10-12, tal como está escrito en la tabla: c
 | **Los Faroleros** | Los informantes de Casilda vieron el giro. Casilda lo guarda como moneda: quiere comprar la verdad en el Acto IV |
 
 - **Su razón propia, en las tres 🟡.** El abono mantiene la deuda del protagonista a flote. Si habla, la Comisión lo corta y la deuda se dispara. Calla por culpa y por cariño.
-- **Qué sabe.** Reme sabe que el pago no es de un vecino y que viene del Estado por vía de la Comisión ✅. **No sabe que Anselmo está vivo**: lo sospecha ✅. Así su alianza final sigue siendo una sorpresa para ella también 🟡.
+- **Qué sabe.** Reme sabe que el pago no es de un vecino y que viene del Estado por vía de la Comisión ✅. **No sabe que Anselmo está vivo**: lo sospecha ✅, y la sospecha nunca se confirma, ni en el Acto IV ni después, igual que la de Lucía ✅ (decisión del autor, 2026-10-13).
 - Al final del Acto IV entrega los comprobantes como prueba ([19](19-elenco-a-fondo.md)). Si revelas, la Comisión corta el abono; si callas o vendes, sigue llegando ✅.
 - Cómo suena ese silencio en cada variante: [22](22-acto-ii-variantes.md), escena A6 y sección 3.
 
@@ -320,6 +322,6 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 - ⏳ F4-151 Texto final y voz de las ocho cintas, a partir de la sección 7.
 - ⏳ F0-23 Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8).
 - ✅ Dónde está Anselmo hoy: queda abierto, como hilo para una segunda parte y sin tarea. Sigue vivo y secreto en las tres salidas; el abono se corta solo si revelas ([25](25-finales-y-epilogos.md), sección 7).
-- ⏳ F0-51 Registro de hilos: dónde se siembra cada pista de la sección 11 y dónde se resuelve.
+- ✅ Registro de hilos: dónde se siembra cada pista de la sección 11 y dónde se resuelve está en `studio/data/hilos.json` (vista del hub en `#/hilos`).
 - ✅ La firma de los papeles de la herencia es la del acta final (decisión del autor, 2026-10-12). F0-43 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión.
 - ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.
