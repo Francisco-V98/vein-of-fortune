@@ -1,0 +1,1429 @@
+{
+  "meta": {
+    "cupos": {
+      "grande": 3,
+      "mediana": 6,
+      "pequena": 18
+    },
+    "por_acto_pequenas": {
+      "I": 3,
+      "II": 5,
+      "III": 5,
+      "IV": 5
+    }
+  },
+  "nodes": [
+    {
+      "id": "n-i-herencia",
+      "acto": "I",
+      "nivel": "pequena",
+      "titulo": "Cómo cuentas la herencia a tu familia",
+      "dispara": "Tu primera noche en Villa Brasa, cuando escribes a Vega Mansa ⏳ F0-23.",
+      "opciones": [
+        {
+          "id": "todo",
+          "texto": "Les cuentas todo: el puesto, la deuda y la mina.",
+          "fija": [
+            "f-familia"
+          ],
+          "mundo": "Tu padre contesta con una carta corta: sabe que rompiste su juramento.",
+          "mercado": "—",
+          "personajes": "Protagonista: duerme tranquilo. El padre: dolido, pero no te cierra la puerta."
+        },
+        {
+          "id": "parte",
+          "texto": "Les cuentas que heredaste un puesto, sin decir mina.",
+          "fija": [
+            "f-familia"
+          ],
+          "mundo": "En casa se alegran sin saber de la mina.",
+          "mercado": "—",
+          "personajes": "Protagonista: carga con un secreto pequeño."
+        },
+        {
+          "id": "nada",
+          "texto": "No dices nada hasta tener algo que mostrar.",
+          "fija": [
+            "f-familia"
+          ],
+          "mundo": "Pasan semanas sin carta de casa.",
+          "mercado": "—",
+          "personajes": "Protagonista: el orgullo le pesa más que la culpa."
+        }
+      ],
+      "lee": [],
+      "estado": "prop"
+    },
+    {
+      "id": "n-i-reme-plazo",
+      "acto": "I",
+      "nivel": "pequena",
+      "titulo": "Pagar a Reme antes o después del plazo",
+      "dispara": "Llega el día de la primera cuota de la deuda.",
+      "opciones": [
+        {
+          "id": "antes",
+          "texto": "Pagas antes del plazo.",
+          "fija": [
+            "f-pago-reme"
+          ],
+          "mundo": "Reme te invita al café y anota que eres de fiar.",
+          "mercado": "Interés de la deuda: -1 punto ⏳ F0-52.",
+          "personajes": "Reme: cálida, con una pizca de culpa."
+        },
+        {
+          "id": "plazo",
+          "texto": "Pagas justo en el plazo.",
+          "fija": [
+            "f-pago-reme"
+          ],
+          "mundo": "Todo sigue su curso.",
+          "mercado": "—",
+          "personajes": "Reme: «Con calma, criatura»."
+        },
+        {
+          "id": "tarde",
+          "texto": "Pides una semana más.",
+          "fija": [
+            "f-pago-reme"
+          ],
+          "mundo": "Reme te da el tiempo, pero la cuota sube.",
+          "mercado": "Interés de la deuda: +1 punto ⏳ F0-52.",
+          "personajes": "Reme: te da el plazo con un consejo que suena a aviso."
+        }
+      ],
+      "lee": [],
+      "estado": "prop"
+    },
+    {
+      "id": "n-i-lucia-rumor",
+      "acto": "I",
+      "nivel": "pequena",
+      "titulo": "Confiar en Lucía con un rumor",
+      "dispara": "Lucía te ofrece un rumor a cambio de otro.",
+      "opciones": [
+        {
+          "id": "contar",
+          "texto": "Le cuentas el rumor entero.",
+          "fija": [
+            "m-lucia"
+          ],
+          "mundo": "El Teletipo lo publica con su SIN CONFIRMAR.",
+          "mercado": "El mineral del rumor se mueve 2 a 3 puntos ese día.",
+          "personajes": "Lucía: confía más en ti."
+        },
+        {
+          "id": "mitad",
+          "texto": "Le cuentas la mitad.",
+          "fija": [
+            "m-lucia"
+          ],
+          "mundo": "Sale una nota vaga.",
+          "mercado": "El mineral del rumor se mueve 1 punto.",
+          "personajes": "Lucía: sospecha, pero te debe una."
+        },
+        {
+          "id": "callar",
+          "texto": "No le cuentas nada.",
+          "fija": [
+            "m-lucia"
+          ],
+          "mundo": "No sale nada.",
+          "mercado": "—",
+          "personajes": "Lucía: toma nota y confía un poco menos."
+        }
+      ],
+      "lee": [],
+      "estado": "prop"
+    },
+    {
+      "id": "n-ii-contacto",
+      "acto": "II",
+      "nivel": "pequena",
+      "titulo": "Responder al primer contacto de la política",
+      "dispara": "Acto I cerrado y primera zona del II abierta (escena A1 de 22).",
+      "opciones": [
+        {
+          "id": "aceptar",
+          "texto": "Aceptas la cita.",
+          "fija": [
+            "m-esteban"
+          ],
+          "mundo": "Queda en cola la orden de Reme para tu próxima cuota.",
+          "mercado": "—",
+          "personajes": "Esteban, Quiroga o un cobrador farolero (según tu variante) te trata como cliente. Solo con el Consorcio sube el medidor de Esteban."
+        },
+        {
+          "id": "rechazar",
+          "texto": "Rechazas la cita.",
+          "fija": [
+            "m-esteban"
+          ],
+          "mundo": "La facción lo toma como un desaire; la orden de Reme llega igual.",
+          "mercado": "—",
+          "personajes": "El contacto de tu variante te recuerda. Solo con el Consorcio baja el medidor de Esteban."
+        },
+        {
+          "id": "posponer",
+          "texto": "La pospones.",
+          "fija": [],
+          "mundo": "El contacto vuelve a aparecer en la siguiente zona.",
+          "mercado": "—",
+          "personajes": "Sin cambios."
+        }
+      ],
+      "lee": [],
+      "estado": "prop"
+    },
+    {
+      "id": "n-ii-orden",
+      "acto": "II",
+      "nivel": "mediana",
+      "titulo": "La orden de Reme",
+      "dispara": "Escena A2 de 22: llega tu próxima cuota a Reme y ella revela la facción que la manda (sorteada al empezar).",
+      "opciones": [
+        {
+          "id": "aceptar",
+          "texto": "Aceptas lo que pide tu facción.",
+          "fija": [
+            "f-orden-reme"
+          ],
+          "mundo": "Cumples la petición de tu variante: vender solo al Consorcio, entregar tus cuentas o pagar la deuda de luz.",
+          "mercado": "Consorcio: prima de contrato +3 a +5 puntos, pero un solo comprador. Ministerio: el Ministerio ve tus cuentas. Faroleros: cuota extra de luz ⏳ F0-52.",
+          "personajes": "Reme: alivio y vergüenza. «Perdóname, criatura. Esto no lo elegí yo»."
+        },
+        {
+          "id": "negociar",
+          "texto": "Negocias con Labia una versión más corta.",
+          "fija": [
+            "f-orden-reme"
+          ],
+          "mundo": "Si la prueba sale bien, cumples solo la mitad de la petición.",
+          "mercado": "La mitad del efecto de aceptar.",
+          "personajes": "Reme: orgullosa de ti, sin decirlo."
+        },
+        {
+          "id": "rechazar",
+          "texto": "Rechazas la orden.",
+          "fija": [
+            "f-orden-reme"
+          ],
+          "mundo": "La cuota de la deuda se adelanta. La ruta sigue abierta.",
+          "mercado": "Adelanto de la cuota ⏳ F0-52; menor si pagaste a tiempo en el Acto I.",
+          "personajes": "Reme: calla un segundo. Su facción le cobra un costo."
+        }
+      ],
+      "lee": [
+        "f-pago-reme"
+      ],
+      "estado": "ok"
+    },
+    {
+      "id": "n-ii-conflicto",
+      "acto": "II",
+      "nivel": "pequena",
+      "titulo": "Resolver el primer conflicto con tu facción",
+      "dispara": "Escena A3 de 22: primera expedición o venta en la zona de tu variante (contratos, licencias o cobros de luz).",
+      "opciones": [
+        {
+          "id": "pagar",
+          "texto": "Pagas el costo y sigues.",
+          "fija": [],
+          "mundo": "El conflicto se cierra sin ruido.",
+          "mercado": "Pierdes 3 a 5 % del valor de tus ventas de esa semana en la zona.",
+          "personajes": "La facción te respeta."
+        },
+        {
+          "id": "ceder",
+          "texto": "Cedes lo que piden.",
+          "fija": [
+            "m-union"
+          ],
+          "mundo": "Pierdes un contrato, pasas una revisión de licencia o dejas una noche de luz a la facción.",
+          "mercado": "—",
+          "personajes": "La Unión lo nota: baja un poco."
+        },
+        {
+          "id": "resistir",
+          "texto": "Te plantas.",
+          "fija": [
+            "m-union"
+          ],
+          "mundo": "El conflicto escala y la facción fija su postura ante la huelga.",
+          "mercado": "Sin prima de la zona esa semana.",
+          "personajes": "La Unión lo nota: sube un poco."
+        }
+      ],
+      "lee": [
+        "f-orden-reme"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-ii-huelga",
+      "acto": "II",
+      "nivel": "mediana",
+      "titulo": "La primera huelga",
+      "dispara": "Escena A4 de 22: el aviso sale en las noticias y la huelga cierra Cañón Ferroso. Ocurre en las tres variantes.",
+      "opciones": [
+        {
+          "id": "apoyar",
+          "texto": "Apoyas la huelga.",
+          "fija": [
+            "f-huelga",
+            "m-union",
+            "m-teo"
+          ],
+          "mundo": "Cierras el puesto un día y entregas mineral a la caja de huelga. Luego llega el apagón, común a todos.",
+          "mercado": "Hierro +8 a +12 % mientras dura el cierre, dentro del tope diario; el segundo mineral de tu variante, +3 a +5 puntos.",
+          "personajes": "Teo y la Unión se acercan. Tu variante añade una consecuencia pequeña (22, sección 7)."
+        },
+        {
+          "id": "abstenerte",
+          "texto": "Te abstienes.",
+          "fija": [
+            "f-huelga"
+          ],
+          "mundo": "Sigues con tu negocio. Llega el mismo apagón.",
+          "mercado": "Mismo movimiento de precios para todos.",
+          "personajes": "Teo y la Unión no cambian. No se activa ninguna consecuencia de variante."
+        },
+        {
+          "id": "romper",
+          "texto": "Rompes la huelga.",
+          "fija": [
+            "f-huelga",
+            "m-union",
+            "m-teo"
+          ],
+          "mundo": "Vendes el mineral que pide quien quiere la huelga rota. Luego llega el mismo apagón.",
+          "mercado": "Mismo movimiento de precios; la prima de contrato de tu variante sube 3 a 5 puntos.",
+          "personajes": "Teo y la Unión se alejan. Tu variante añade una consecuencia pequeña (22, sección 7)."
+        }
+      ],
+      "lee": [],
+      "estado": "ok"
+    },
+    {
+      "id": "n-ii-lucia",
+      "acto": "II",
+      "nivel": "pequena",
+      "titulo": "Lo que vende Lucía",
+      "dispara": "Comprar tres rumores (escena opcional O1 de 22).",
+      "opciones": [
+        {
+          "id": "confrontar",
+          "texto": "La confrontas.",
+          "fija": [
+            "m-lucia"
+          ],
+          "mundo": "Lucía deja de venderte rumores flojos.",
+          "mercado": "—",
+          "personajes": "Lucía: admite a medias y confía más."
+        },
+        {
+          "id": "usar",
+          "texto": "Usas su doble juego.",
+          "fija": [
+            "m-lucia"
+          ],
+          "mundo": "Le das un dato para que llegue a la otra parte (Esteban, Quiroga o los informantes de Casilda).",
+          "mercado": "Un rumor mueve un mineral 2 a 3 puntos.",
+          "personajes": "Lucía: si lo descubre, confía menos."
+        },
+        {
+          "id": "callar",
+          "texto": "Te lo guardas.",
+          "fija": [],
+          "mundo": "Sigues leyendo sus rumores con cuidado.",
+          "mercado": "—",
+          "personajes": "Lucía: no se entera."
+        }
+      ],
+      "lee": [
+        "m-lucia"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-ii-esteban-contrato",
+      "acto": "II",
+      "nivel": "pequena",
+      "titulo": "Esteban se queda un contrato",
+      "dispara": "Rechazas o tardas en un contrato de hierro o cobre (escena opcional O2 de 22).",
+      "opciones": [
+        {
+          "id": "competir",
+          "texto": "Compites por el siguiente contrato.",
+          "fija": [
+            "m-esteban"
+          ],
+          "mundo": "Recuperas el contrato siguiente.",
+          "mercado": "Pierdes 3 a 5 puntos de margen en ese contrato.",
+          "personajes": "Esteban: te respeta, aunque diga «amigo» más seco."
+        },
+        {
+          "id": "ceder",
+          "texto": "Se lo dejas.",
+          "fija": [
+            "m-esteban"
+          ],
+          "mundo": "Esteban se lleva este contrato y el siguiente.",
+          "mercado": "Esteban compra y empuja el precio un 2 a 4 %.",
+          "personajes": "Esteban: más seguro y con menos respeto por ti."
+        },
+        {
+          "id": "sucio",
+          "texto": "Le avisas a Quiroga de su papeleo.",
+          "fija": [
+            "m-esteban"
+          ],
+          "mundo": "Quiroga revisa los papeles de Esteban y se los devuelve con un retraso.",
+          "mercado": "El contrato se retrasa una semana.",
+          "personajes": "Esteban: «No es personal… es completamente personal». Baja mucho."
+        }
+      ],
+      "lee": [
+        "m-esteban"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-ii-certificado",
+      "acto": "II",
+      "nivel": "pequena",
+      "titulo": "El certificado a solas",
+      "dispara": "Primera visita a Quiroga después de la orden (escena opcional O4 de 22). Si no ocurre, A5 siembra la pista.",
+      "opciones": [
+        {
+          "id": "copia",
+          "texto": "Le pides una copia.",
+          "fija": [
+            "f-certificado"
+          ],
+          "mundo": "Quiroga la da con una «gestión» y se pone nervioso.",
+          "mercado": "Una gestión pequeña ⏳ F0-52.",
+          "personajes": "Quiroga: anota que lo sabes."
+        },
+        {
+          "id": "callar",
+          "texto": "Miras el sello y no dices nada.",
+          "fija": [
+            "f-certificado"
+          ],
+          "mundo": "Te quedas con la sombra: sello irregular y sin registro de cremación.",
+          "mercado": "—",
+          "personajes": "Quiroga: respira aliviado."
+        },
+        {
+          "id": "presionar",
+          "texto": "Le dices que sabes lo del sello.",
+          "fija": [
+            "f-certificado"
+          ],
+          "mundo": "Quiroga se vuelve dependiente de ti.",
+          "mercado": "Vigilancia -10 en Villa Brasa.",
+          "personajes": "Quiroga: te teme y te necesita."
+        }
+      ],
+      "lee": [],
+      "estado": "prop"
+    },
+    {
+      "id": "n-ii-alianza",
+      "acto": "II",
+      "nivel": "grande",
+      "titulo": "La alianza",
+      "dispara": "Escena A5 de 22: tras la huelga y con estatus de Comerciante, llegan las tres ofertas. Cierra el Acto II.",
+      "opciones": [
+        {
+          "id": "consorcio",
+          "texto": "Te alías con el Consorcio Arvel.",
+          "fija": [
+            "f-alianza",
+            "m-union"
+          ],
+          "mundo": "Contratos grandes y tu deuda pasa a la casa.",
+          "mercado": "Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133.",
+          "personajes": "Esteban: socio incómodo. La Unión baja. Reme paga o respira según su facción (22, sección 9)."
+        },
+        {
+          "id": "ministerio",
+          "texto": "Te alías con el Ministerio.",
+          "fija": [
+            "f-alianza",
+            "m-union"
+          ],
+          "mundo": "Licencia ampliada y trámite preferente.",
+          "mercado": "Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133.",
+          "personajes": "Quiroga: tu enlace. La Unión baja. Reme paga o respira según su facción."
+        },
+        {
+          "id": "faroleros",
+          "texto": "Te alías con Los Faroleros.",
+          "fija": [
+            "f-alianza"
+          ],
+          "mundo": "Protección y luz; tu deuda de luz se suma a tu deuda.",
+          "mercado": "Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133.",
+          "personajes": "Casilda: aliada interesada. La Unión se mantiene. Reme paga o respira según su facción."
+        }
+      ],
+      "lee": [
+        "f-orden-reme",
+        "f-huelga"
+      ],
+      "estado": "ok"
+    },
+    {
+      "id": "n-iii-quiroga-salida",
+      "acto": "III",
+      "nivel": "pequena",
+      "titulo": "Quiroga pide una salida",
+      "dispara": "Llegas a Puerto Meridiano y Quiroga se ofrece a ayudarte en la capital a cambio de una salida. Dilema de favores ⏳ F4-137.",
+      "opciones": [
+        {
+          "id": "ayudar",
+          "texto": "Le consigues el retiro que busca.",
+          "fija": [
+            "f-quiroga-salida"
+          ],
+          "mundo": "Quiroga te abre puertas en las oficinas.",
+          "mercado": "Vigilancia -10 en Puerto Meridiano.",
+          "personajes": "Quiroga: leal a su manera; guarda su archivo como seguro."
+        },
+        {
+          "id": "prometer",
+          "texto": "Le prometes ayuda para más adelante.",
+          "fija": [
+            "f-quiroga-salida"
+          ],
+          "mundo": "Quiroga espera.",
+          "mercado": "Vigilancia -5 en Puerto Meridiano.",
+          "personajes": "Quiroga: nervioso; su archivo es su seguro."
+        },
+        {
+          "id": "rechazar",
+          "texto": "Lo dejas solo.",
+          "fija": [
+            "f-quiroga-salida"
+          ],
+          "mundo": "Quiroga sigue cobrando por su cuenta.",
+          "mercado": "—",
+          "personajes": "Quiroga: guarda el archivo por si acaso."
+        }
+      ],
+      "lee": [
+        "f-certificado"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iii-esteban-trato",
+      "acto": "III",
+      "nivel": "pequena",
+      "titulo": "Esteban te pide algo en la bolsa",
+      "dispara": "Esteban, guardián del círculo de la capital, te encuentra en la bolsa.",
+      "opciones": [
+        {
+          "id": "apoyar",
+          "texto": "Lo apoyas en una compra grande.",
+          "fija": [
+            "m-esteban"
+          ],
+          "mundo": "Esteban te presenta a gente del círculo.",
+          "mercado": "El mineral que compra sube un 2 a 4 %.",
+          "personajes": "Esteban: confía en ti."
+        },
+        {
+          "id": "limite",
+          "texto": "Aceptas con un límite claro.",
+          "fija": [
+            "m-esteban"
+          ],
+          "mundo": "Trato justo y sin deudas.",
+          "mercado": "El mineral se mueve un 1 a 2 %.",
+          "personajes": "Esteban: te respeta un poco más."
+        },
+        {
+          "id": "contra",
+          "texto": "Compras antes que él.",
+          "fija": [
+            "m-esteban"
+          ],
+          "mundo": "Le ganas la compra.",
+          "mercado": "El mineral baja un 2 a 3 % por la competencia.",
+          "personajes": "Esteban: herido, y todo es personal."
+        }
+      ],
+      "lee": [
+        "f-alianza"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iii-contrato-oficial",
+      "acto": "III",
+      "nivel": "pequena",
+      "titulo": "Contrato oficial con cuota",
+      "dispara": "Primer contrato oficial del Ministerio, con cuota. Dilema de sobornos ⏳ F4-138.",
+      "opciones": [
+        {
+          "id": "cumplir",
+          "texto": "Cumples la cuota.",
+          "fija": [],
+          "mundo": "Dueñas lo anota: eres un proveedor fiable.",
+          "mercado": "Cuota de un 10 % del volumen del contrato ⏳ F0-52.",
+          "personajes": "Quiroga: nada que cobrar."
+        },
+        {
+          "id": "gestion",
+          "texto": "Pagas una «gestión» para bajarla.",
+          "fija": [],
+          "mundo": "La cuota baja, pero queda registro.",
+          "mercado": "Cuota -30 % y vigilancia +10.",
+          "personajes": "Quiroga o su oficial cobra la gestión."
+        },
+        {
+          "id": "rechazar",
+          "texto": "Rechazas el contrato.",
+          "fija": [],
+          "mundo": "El contrato pasa a otro proveedor.",
+          "mercado": "Pierdes la prima del contrato; vigilancia +10.",
+          "personajes": "El Ministerio te mira más."
+        }
+      ],
+      "lee": [
+        "f-alianza"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iii-lucia-letra",
+      "acto": "III",
+      "nivel": "pequena",
+      "titulo": "La letra de un muerto",
+      "dispara": "Lucía oyó que alguien de la Comisión recibe cartas con la letra de un muerto. Dilema de información ⏳ F4-139.",
+      "opciones": [
+        {
+          "id": "compartir",
+          "texto": "Le cuentas lo del certificado.",
+          "fija": [
+            "m-lucia"
+          ],
+          "mundo": "Lucía junta dos cabos y no publica todavía.",
+          "mercado": "—",
+          "personajes": "Lucía: confía más y sabe más de lo que dice."
+        },
+        {
+          "id": "tiempo",
+          "texto": "Le pides que espere.",
+          "fija": [],
+          "mundo": "Lucía espera, con prisa.",
+          "mercado": "—",
+          "personajes": "Lucía: sin cambio."
+        },
+        {
+          "id": "negar",
+          "texto": "Dices que no sabes nada.",
+          "fija": [
+            "m-lucia"
+          ],
+          "mundo": "Lucía sigue por su cuenta.",
+          "mercado": "—",
+          "personajes": "Lucía: confía menos."
+        }
+      ],
+      "lee": [
+        "f-certificado"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iii-abono",
+      "acto": "III",
+      "nivel": "pequena",
+      "titulo": "El abono que sigue llegando",
+      "dispara": "El abono anónimo llega otra vez y Teo jura que no es él.",
+      "opciones": [
+        {
+          "id": "reme",
+          "texto": "Le preguntas a Reme.",
+          "fija": [],
+          "mundo": "Reme cambia de tema: sigue distante pero atenta.",
+          "mercado": "—",
+          "personajes": "Reme: calla. Teo: sin cambio."
+        },
+        {
+          "id": "creer",
+          "texto": "Le crees a Teo.",
+          "fija": [
+            "m-teo"
+          ],
+          "mundo": "Teo respira.",
+          "mercado": "—",
+          "personajes": "Teo: alivio."
+        },
+        {
+          "id": "dudar",
+          "texto": "Dudas de Teo.",
+          "fija": [
+            "m-teo"
+          ],
+          "mundo": "Teo se encierra en su silencio.",
+          "mercado": "—",
+          "personajes": "Teo: le duele."
+        }
+      ],
+      "lee": [],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iii-monopolio",
+      "acto": "III",
+      "nivel": "mediana",
+      "titulo": "El monopolio de la Aetherita negra",
+      "dispara": "Casilda negocia el monopolio del mercado negro de Aetherita en la capital.",
+      "opciones": [
+        {
+          "id": "aceptar",
+          "texto": "Dejas que Casilda lo controle.",
+          "fija": [
+            "f-monopolio"
+          ],
+          "mundo": "Casilda manda en la venta clandestina de Aetherita.",
+          "mercado": "Prima negra de Aetherita +10 puntos; vigilancia -20 %.",
+          "personajes": "Casilda: socia interesada."
+        },
+        {
+          "id": "compartir",
+          "texto": "Pides tu parte.",
+          "fija": [
+            "f-monopolio"
+          ],
+          "mundo": "Tú y Casilda os repartís el negocio.",
+          "mercado": "Prima +5 puntos; vigilancia sin cambio.",
+          "personajes": "Casilda: respeto seco."
+        },
+        {
+          "id": "rechazar",
+          "texto": "No entras.",
+          "fija": [
+            "f-monopolio"
+          ],
+          "mundo": "El Consorcio o el Ministerio ocupan el hueco.",
+          "mercado": "Prima +0 puntos; vigilancia +10 %.",
+          "personajes": "Casilda: cobra la luz de lo que toque."
+        }
+      ],
+      "lee": [
+        "f-alianza"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iii-revision-teo",
+      "acto": "III",
+      "nivel": "mediana",
+      "titulo": "Llevar a Teo a revisión",
+      "dispara": "La tos de Teo se nota en escena y Reme y Lucía lo comentan. La revisión solo puede decir «tos de mina».",
+      "opciones": [
+        {
+          "id": "llevar",
+          "texto": "Lo llevas al médico del dispensario, aunque proteste.",
+          "fija": [
+            "f-teo-revision",
+            "m-teo"
+          ],
+          "mundo": "El médico dice «tos de mina»: reposo y aire.",
+          "mercado": "—",
+          "personajes": "Teo: gruñe y lo agradece."
+        },
+        {
+          "id": "ofrecer",
+          "texto": "Se lo propones y aceptas su no.",
+          "fija": [
+            "f-teo-revision"
+          ],
+          "mundo": "No hay revisión.",
+          "mercado": "—",
+          "personajes": "Teo: sin cambio."
+        },
+        {
+          "id": "callar",
+          "texto": "No sacas el tema.",
+          "fija": [
+            "f-teo-revision",
+            "m-teo"
+          ],
+          "mundo": "No hay revisión y la tos empeora.",
+          "mercado": "—",
+          "personajes": "Teo: confía menos."
+        }
+      ],
+      "lee": [
+        "m-teo"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iii-circulo",
+      "acto": "III",
+      "nivel": "grande",
+      "titulo": "Cómo entras al círculo",
+      "dispara": "Tras las ofertas del II y el ascenso a Empresario. Tres puertas, un solo encuentro con Dueñas.",
+      "opciones": [
+        {
+          "id": "aval",
+          "texto": "Esteban te avala.",
+          "fija": [
+            "f-puerta"
+          ],
+          "mundo": "Entras por la puerta del Consorcio.",
+          "mercado": "Compras de hierro y cobre al Consorcio 2 a 3 % más baratas.",
+          "personajes": "Esteban te debe un favor en el IV. Requiere su medidor sobre el umbral ⏳ F0-47."
+        },
+        {
+          "id": "sello",
+          "texto": "Entras con el sello de Dueñas.",
+          "fija": [
+            "f-puerta"
+          ],
+          "mundo": "Es una firma y nada más: no te protege ni te ata. Dueñas no te debe nada.",
+          "mercado": "Licencia ampliada; vigilancia +10.",
+          "personajes": "Quiroga te debe un favor en el IV, porque tramitó el sello."
+        },
+        {
+          "id": "presion",
+          "texto": "Entras con la presión de tu alianza.",
+          "fija": [
+            "f-puerta"
+          ],
+          "mundo": "Tu alianza empuja y el círculo cede.",
+          "mercado": "Prima de contratos de tu alianza +3 a +5 puntos.",
+          "personajes": "La facción aliada te debe un favor en el IV. Con el Consorcio o el Ministerio, la Unión baja."
+        }
+      ],
+      "lee": [
+        "f-alianza",
+        "m-esteban",
+        "m-union"
+      ],
+      "estado": "ok"
+    },
+    {
+      "id": "n-iv-reme-proteccion",
+      "acto": "IV",
+      "nivel": "pequena",
+      "titulo": "Proteger a Reme",
+      "dispara": "Reme se une a ti y te entrega los comprobantes del abono. Ahora tienes estatus para protegerla.",
+      "opciones": [
+        {
+          "id": "proteger",
+          "texto": "Usas tu influencia para ponerla a salvo.",
+          "fija": [
+            "f-reme-proteccion"
+          ],
+          "mundo": "Reme sale de la cadena de su facción.",
+          "mercado": "—",
+          "personajes": "Reme: aliada, con lágrimas contenidas. Su facción se enemista contigo."
+        },
+        {
+          "id": "saldar",
+          "texto": "Pagas el capital que su facción le prestó.",
+          "fija": [
+            "f-reme-proteccion"
+          ],
+          "mundo": "La deuda de Reme queda en cero.",
+          "mercado": "Gasto grande ⏳ F0-52.",
+          "personajes": "Reme: «criatura», sin ironía."
+        },
+        {
+          "id": "dejar",
+          "texto": "Dejas que decida ella.",
+          "fija": [
+            "f-reme-proteccion"
+          ],
+          "mundo": "Reme conserva su casa de préstamos y te ayuda por su cuenta.",
+          "mercado": "—",
+          "personajes": "Reme: aliada igual."
+        }
+      ],
+      "lee": [
+        "f-alianza"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iv-esteban",
+      "acto": "IV",
+      "nivel": "mediana",
+      "titulo": "Esteban descubre el fondo reservado",
+      "dispara": "El libro del fondo reservado sale a la luz y Esteban debe elegir. Lo resuelve su medidor y la puerta que usaste.",
+      "opciones": [
+        {
+          "id": "se-une",
+          "texto": "Esteban rompe con el Consorcio y te da el libro.",
+          "fija": [],
+          "mundo": "Las cuentas del Consorcio con la Comisión entran a tus pruebas.",
+          "mercado": "—",
+          "personajes": "Esteban: cambia su apellido por una verdad. Requiere su medidor alto o la puerta del aval."
+        },
+        {
+          "id": "consorcio",
+          "texto": "Esteban defiende al Consorcio.",
+          "fija": [],
+          "mundo": "El Consorcio te cierra puertas.",
+          "mercado": "El hierro y el cobre suben 3 a 5 puntos como revancha.",
+          "personajes": "Esteban: enemigo."
+        },
+        {
+          "id": "aparta",
+          "texto": "Esteban se aparta.",
+          "fija": [],
+          "mundo": "No ayuda ni estorba.",
+          "mercado": "—",
+          "personajes": "Esteban: sin camino claro; queda para el epílogo."
+        }
+      ],
+      "lee": [
+        "m-esteban",
+        "f-puerta"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iv-quiroga-archivo",
+      "acto": "IV",
+      "nivel": "pequena",
+      "titulo": "El archivo de Quiroga",
+      "dispara": "Quiroga te ofrece su archivo de sobornos. Si entraste con el sello, te lo debe como favor y no cobra. No se puede destruir la copia del certificado ni la carta de la cinta 6.",
+      "opciones": [
+        {
+          "id": "proteger",
+          "texto": "Lo proteges, con Quiroga incluido.",
+          "fija": [
+            "f-archivo"
+          ],
+          "mundo": "Quiroga se retira con su archivo a salvo.",
+          "mercado": "—",
+          "personajes": "Quiroga: se va a Puerto Meridiano con lo ahorrado."
+        },
+        {
+          "id": "usar",
+          "texto": "Lo usas contra el Ministerio.",
+          "fija": [
+            "f-archivo"
+          ],
+          "mundo": "Los sobornos salen a la luz.",
+          "mercado": "Los contratos oficiales se congelan una semana.",
+          "personajes": "Quiroga: cae con su archivo, salvo que le cumpliste la salida."
+        },
+        {
+          "id": "vender",
+          "texto": "Lo vendes a quien lo pague.",
+          "fija": [
+            "f-archivo"
+          ],
+          "mundo": "El archivo cambia de manos.",
+          "mercado": "Ingreso grande ⏳ F0-52.",
+          "personajes": "Quiroga: queda a merced del comprador."
+        }
+      ],
+      "lee": [
+        "f-quiroga-salida",
+        "f-certificado",
+        "f-puerta"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iv-duenas",
+      "acto": "IV",
+      "nivel": "mediana",
+      "titulo": "Dueñas se mueve contra ti",
+      "dispara": "Enfrentamiento en La Fosa. Dueñas elige cómo según la puerta que usaste, tu gente y tu fuerza. Nunca se humaniza.",
+      "opciones": [
+        {
+          "id": "comprar",
+          "texto": "Dueñas intenta comprarte.",
+          "fija": [],
+          "mundo": "Te ofrece una concesión de Aetherita a cambio de callar. Se activa si entraste con su sello.",
+          "mercado": "—",
+          "personajes": "Dueñas: seco, sin disculpas ni ruego."
+        },
+        {
+          "id": "amenazar",
+          "texto": "Dueñas te amenaza.",
+          "fija": [],
+          "mundo": "Nombra a Teo, a Reme y a tu familia. Se activa si entraste por el aval o por tu alianza. Pierde fuerza si protegiste a Reme.",
+          "mercado": "—",
+          "personajes": "Dueñas: no alza la voz."
+        },
+        {
+          "id": "borrar",
+          "texto": "Dueñas intenta borrarte.",
+          "fija": [],
+          "mundo": "Suspende tus licencias y manda cerrar tus zonas. Se activa si la Unión está alta y llevas al menos dos pruebas.",
+          "mercado": "Tus ventas caen a la mitad durante tres días y la vigilancia pasa a Bajo investigación.",
+          "personajes": "Dueñas: «No le pregunto qué opina»"
+        }
+      ],
+      "lee": [
+        "f-puerta",
+        "f-familia",
+        "f-reme-proteccion",
+        "m-union"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iv-aetherita",
+      "acto": "IV",
+      "nivel": "grande",
+      "titulo": "El destino de la Aetherita",
+      "dispara": "Con la verdad en la mano y las ocho cintas oídas.",
+      "opciones": [
+        {
+          "id": "revelar",
+          "texto": "La revelas.",
+          "fija": [
+            "f-destino"
+          ],
+          "mundo": "La verdad sale: caos social, el Ministerio contraataca.",
+          "mercado": "La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario ⏳ F4-147.",
+          "personajes": "Te separas de Anselmo."
+        },
+        {
+          "id": "callar",
+          "texto": "La callas.",
+          "fija": [
+            "f-destino"
+          ],
+          "mundo": "Sigues ganando; el mal del éter sigue y nadie tiene la prueba.",
+          "mercado": "La Aetherita sube un 5 a 10 % en el mes.",
+          "personajes": "Te pareces a Anselmo."
+        },
+        {
+          "id": "vender",
+          "texto": "La vendes.",
+          "fija": [
+            "f-destino"
+          ],
+          "mundo": "La verdad es moneda de poder: eliges comprador.",
+          "mercado": "Depende del comprador.",
+          "personajes": "Quien compra gana poder sobre ti."
+        }
+      ],
+      "lee": [
+        "f-archivo",
+        "m-union",
+        "m-lucia"
+      ],
+      "estado": "ok"
+    },
+    {
+      "id": "n-iv-comprador",
+      "acto": "IV",
+      "nivel": "pequena",
+      "titulo": "A quién vendes la verdad",
+      "dispara": "Elegiste vender. Vender al Ministerio no es callar: el Ministerio se queda con la prueba y contigo. Si entraste por la presión de tu alianza, la facción aliada te paga mejor.",
+      "opciones": [
+        {
+          "id": "casilda",
+          "texto": "A Casilda.",
+          "fija": [
+            "f-comprador"
+          ],
+          "mundo": "Casilda controla la verdad y su mercado negro.",
+          "mercado": "Prima negra de Aetherita +10 a +15 puntos.",
+          "personajes": "Casilda: aliada interesada."
+        },
+        {
+          "id": "consorcio",
+          "texto": "Al Consorcio.",
+          "fija": [
+            "f-comprador"
+          ],
+          "mundo": "El Consorcio financia el silencio ahora a tu nombre.",
+          "mercado": "La Aetherita sube un 8 a 12 %.",
+          "personajes": "Esteban: atrapado en su apellido."
+        },
+        {
+          "id": "ministerio",
+          "texto": "Al Ministerio.",
+          "fija": [
+            "f-comprador"
+          ],
+          "mundo": "Dueñas te deja subir y se queda con tu archivo.",
+          "mercado": "La Aetherita se mantiene (0 a +3 %) por la cuota.",
+          "personajes": "Dueñas gana; tú te vuelves una pieza de la Comisión."
+        }
+      ],
+      "lee": [
+        "f-destino",
+        "f-monopolio",
+        "f-puerta"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iv-lucia-publica",
+      "acto": "IV",
+      "nivel": "pequena",
+      "titulo": "Quién publica",
+      "dispara": "La verdad sale a la luz o se filtra. Depende de cómo trataste a Lucía.",
+      "opciones": [
+        {
+          "id": "contigo",
+          "texto": "Lucía publica contigo.",
+          "fija": [],
+          "mundo": "Una sola versión, con las cintas completas.",
+          "mercado": "La caída se da en tramos del tope diario, sin pánico extra.",
+          "personajes": "Lucía: una sola lealtad."
+        },
+        {
+          "id": "voz",
+          "texto": "Lucía publica en La Voz del Hollín sin ti.",
+          "fija": [],
+          "mundo": "Sale antes y a medias; la Unión se agita.",
+          "mercado": "Cae al tope el primer día y rebota 5 a 10 puntos si el Heraldo desmiente.",
+          "personajes": "Lucía: te traiciona por la historia."
+        },
+        {
+          "id": "nadie",
+          "texto": "Nadie publica.",
+          "fija": [],
+          "mundo": "Lucía guarda la historia.",
+          "mercado": "—",
+          "personajes": "Lucía: se queda con las ganas."
+        }
+      ],
+      "lee": [
+        "m-lucia",
+        "f-destino",
+        "f-comprador"
+      ],
+      "estado": "prop"
+    },
+    {
+      "id": "n-iv-teo",
+      "acto": "IV",
+      "nivel": "pequena",
+      "titulo": "El destino de Teo",
+      "dispara": "Teo confiesa lo que firmó. Se queda si su confianza es alta, se va si es baja y muere si no lo llevaste a revisión. Si chocan, gana el no haberlo atendido.",
+      "opciones": [
+        {
+          "id": "queda",
+          "texto": "Teo se queda.",
+          "fija": [],
+          "mundo": "Confiesa lo que firmó y sigue contigo en el Hollín.",
+          "mercado": "—",
+          "personajes": "Teo: reconciliado."
+        },
+        {
+          "id": "va",
+          "texto": "Teo se va.",
+          "fija": [],
+          "mundo": "Confiesa a medias y se va.",
+          "mercado": "—",
+          "personajes": "Teo: se despide sin rencor."
+        },
+        {
+          "id": "muere",
+          "texto": "Teo muere.",
+          "fija": [],
+          "mundo": "Muere de «tos de mina».",
+          "mercado": "—",
+          "personajes": "Teo: la Unión lo recuerda."
+        }
+      ],
+      "lee": [
+        "f-teo-revision",
+        "m-teo"
+      ],
+      "estado": "ok"
+    }
+  ],
+  "flags": [
+    {
+      "id": "f-familia",
+      "tipo": "eleccion",
+      "descripcion": "Qué sabe tu familia de Vega Mansa: todo, a medias o nada.",
+      "personajes": [
+        "Protagonista"
+      ]
+    },
+    {
+      "id": "f-pago-reme",
+      "tipo": "eleccion",
+      "descripcion": "Cómo pagaste a Reme el primer plazo: antes, a tiempo o tarde.",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado"
+      ]
+    },
+    {
+      "id": "f-orden-reme",
+      "tipo": "eleccion",
+      "descripcion": "Respuesta a la orden de Reme en el II: aceptar, negociar o rechazar.",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado"
+      ]
+    },
+    {
+      "id": "f-huelga",
+      "tipo": "eleccion",
+      "descripcion": "Bando en la primera huelga: apoyar, abstenerte o romper.",
+      "personajes": [
+        "Teo Cárdenas"
+      ]
+    },
+    {
+      "id": "f-alianza",
+      "tipo": "eleccion",
+      "descripcion": "Alianza que cierra el Acto II: Consorcio, Ministerio o Faroleros.",
+      "personajes": [
+        "Esteban Arvel",
+        "Inspector Quiroga",
+        "Casilda Ibarra"
+      ]
+    },
+    {
+      "id": "f-certificado",
+      "tipo": "eleccion",
+      "descripcion": "Qué hiciste con el certificado de Quiroga: copia, mirar y callar o presionar.",
+      "personajes": [
+        "Inspector Quiroga"
+      ]
+    },
+    {
+      "id": "f-puerta",
+      "tipo": "eleccion",
+      "descripcion": "Puerta al círculo: aval de Esteban, sello de Dueñas o presión de tu alianza. Fija quién te debe un favor en el IV.",
+      "personajes": [
+        "Esteban Arvel",
+        "Ministro Aurelio Dueñas",
+        "Inspector Quiroga"
+      ]
+    },
+    {
+      "id": "f-monopolio",
+      "tipo": "eleccion",
+      "descripcion": "Qué hiciste con el monopolio de Casilda: aceptar, compartir o rechazar.",
+      "personajes": [
+        "Casilda Ibarra"
+      ]
+    },
+    {
+      "id": "f-teo-revision",
+      "tipo": "eleccion",
+      "descripcion": "Si llevaste a Teo a revisión en el III (sí o no). Sin revisión, muere en el IV.",
+      "personajes": [
+        "Teo Cárdenas"
+      ]
+    },
+    {
+      "id": "f-quiroga-salida",
+      "tipo": "eleccion",
+      "descripcion": "Qué hiciste con la salida que pedía Quiroga: ayudar, prometer o rechazar.",
+      "personajes": [
+        "Inspector Quiroga"
+      ]
+    },
+    {
+      "id": "f-reme-proteccion",
+      "tipo": "eleccion",
+      "descripcion": "Cómo ayudas a Reme en el IV: proteger, saldar su deuda o dejar que decida. Siempre es tu aliada.",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado"
+      ]
+    },
+    {
+      "id": "f-archivo",
+      "tipo": "eleccion",
+      "descripcion": "Qué haces con el archivo de Quiroga: proteger, usar o vender.",
+      "personajes": [
+        "Inspector Quiroga"
+      ]
+    },
+    {
+      "id": "f-destino",
+      "tipo": "eleccion",
+      "descripcion": "Destino de la Aetherita: revelar, callar o vender.",
+      "personajes": [
+        "Ministro Aurelio Dueñas",
+        "Lucía Montalvo"
+      ]
+    },
+    {
+      "id": "f-comprador",
+      "tipo": "eleccion",
+      "descripcion": "Si vendes: a Casilda, al Consorcio o al Ministerio.",
+      "personajes": [
+        "Casilda Ibarra",
+        "Esteban Arvel",
+        "Ministro Aurelio Dueñas"
+      ]
+    },
+    {
+      "id": "m-union",
+      "tipo": "medidor",
+      "descripcion": "Relación con la Unión de Mineros del Hollín, de 0 a 100. Umbrales en F4-61.",
+      "personajes": [
+        "Teo Cárdenas"
+      ]
+    },
+    {
+      "id": "m-esteban",
+      "tipo": "medidor",
+      "descripcion": "Confianza de Esteban hacia ti, de 0 a 100. Es personal, no el del Consorcio.",
+      "personajes": [
+        "Esteban Arvel"
+      ]
+    },
+    {
+      "id": "m-lucia",
+      "tipo": "medidor",
+      "descripcion": "Confianza de Lucía hacia ti, de 0 a 100.",
+      "personajes": [
+        "Lucía Montalvo"
+      ]
+    },
+    {
+      "id": "m-teo",
+      "tipo": "medidor",
+      "descripcion": "Confianza de Teo hacia ti, de 0 a 100.",
+      "personajes": [
+        "Teo Cárdenas"
+      ]
+    }
+  ],
+  "cuellos": [
+    {
+      "id": "c-i-cierre",
+      "acto": "I",
+      "titulo": "Se cierra el Acto I",
+      "recibe": [
+        "n-i-herencia",
+        "n-i-reme-plazo",
+        "n-i-lucia-rumor"
+      ]
+    },
+    {
+      "id": "c-ii-apagon",
+      "acto": "II",
+      "titulo": "El apagón común",
+      "recibe": [
+        "n-ii-contacto",
+        "n-ii-conflicto",
+        "n-ii-huelga"
+      ]
+    },
+    {
+      "id": "c-ii-cierre",
+      "acto": "II",
+      "titulo": "El cierre de Reme",
+      "recibe": [
+        "n-ii-orden",
+        "n-ii-huelga",
+        "n-ii-alianza"
+      ]
+    },
+    {
+      "id": "c-iii-encuentro",
+      "acto": "III",
+      "titulo": "El encuentro con Dueñas",
+      "recibe": [
+        "n-iii-circulo",
+        "n-iii-monopolio",
+        "n-iii-contrato-oficial",
+        "n-iii-esteban-trato"
+      ]
+    },
+    {
+      "id": "c-iv-pruebas",
+      "acto": "IV",
+      "titulo": "Las pruebas llegan al enfrentamiento",
+      "recibe": [
+        "n-iv-reme-proteccion",
+        "n-iv-esteban",
+        "n-iv-quiroga-archivo"
+      ]
+    },
+    {
+      "id": "c-iv-acta",
+      "acto": "IV",
+      "titulo": "El acta de calibración",
+      "recibe": [
+        "n-iv-aetherita",
+        "n-iv-comprador",
+        "n-iv-lucia-publica",
+        "n-iv-teo"
+      ]
+    }
+  ],
+  "cintas": [
+    {
+      "n": 1,
+      "acto": "I",
+      "lugar": "Puesto de Villa Brasa: doble fondo del cajón de la caja, junto a la libreta.",
+      "estado": "prop"
+    },
+    {
+      "n": 2,
+      "acto": "II",
+      "lugar": "Minas de Sierra Alta: casillero del viejo taller de ensayo.",
+      "estado": "prop"
+    },
+    {
+      "n": 3,
+      "acto": "III",
+      "lugar": "Puerto Meridiano: consigna de la estación, con una etiqueta de Anselmo.",
+      "estado": "prop"
+    },
+    {
+      "n": 4,
+      "acto": "III",
+      "lugar": "Cavernas de Cristal: campamento de ensayo bajo el cuarzo.",
+      "estado": "prop"
+    },
+    {
+      "n": 5,
+      "acto": "III",
+      "lugar": "Puerto Meridiano: pensión donde Anselmo se alojaba al entregar sus informes.",
+      "estado": "prop"
+    },
+    {
+      "n": 6,
+      "acto": "IV",
+      "lugar": "La Fosa: caja del equipo de ensayo que quedó en el campamento de la Primera Expedición.",
+      "estado": "prop"
+    },
+    {
+      "n": 7,
+      "acto": "IV",
+      "lugar": "La Fosa: bajo la litera del barracón de calibración.",
+      "estado": "prop"
+    },
+    {
+      "n": 8,
+      "acto": "IV",
+      "lugar": "La Fosa: junto al registrador, el carrete cortado y sin etiqueta.",
+      "estado": "prop"
+    }
+  ],
+  "pruebas_iv": [
+    {
+      "variante": "consorcio",
+      "prueba": "El libro del fondo reservado: Reme vio los giros del Consorcio al pedir su préstamo."
+    },
+    {
+      "variante": "ministerio",
+      "prueba": "La orden de la cadena: Reme la recibió por escrito, con sello."
+    },
+    {
+      "variante": "faroleros",
+      "prueba": "El registro de informantes: Casilda le dejó copia al cobrarle la deuda de luz."
+    }
+  ]
+}

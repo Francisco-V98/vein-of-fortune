@@ -36,7 +36,7 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 | Muerte pública | Hace **2 años**, a **fines de invierno**, de **«tos de mina»** (neumonía), en el **Sanatorio de Cumbre Clara** (Sierra Alta, lo lleva la Comisión). Cremación supuesta «por norma sanitaria» y **sin registro de cremación**. El certificado lo tramitó **Quiroga en Villa Brasa**. El trato y el abono, como están en la sección 5 ✅ |
 | Por qué Anselmo sobrevive y denuncia | Tratamiento paliativo, turnos cortos con equipo cerrado, reservado porque la Comisión necesitaba al perito; la cuadrilla no lo recibió. Mal lento, con recaídas agravadas por cada calibración. La Comisión no es «buena». Denuncia porque doblaron la cuota contra su informe. «Tos de mina» es la tapadera, y «mal del éter» lo nombró Anselmo ✅ |
 | Orígenes | La **Comisión** nace de una oficina de ensayo de tres personas. La **Unión** nace del derrumbe de Pozo Negro y el Ministerio la reconoce tras la huelga. Los **Faroleros** son el gremio de faroles del puerto, orientados por Casilda a «cobrar la luz». El **Consorcio** paga el equipo mayor a cambio de preferencia y de un fondo reservado ✅ |
-| Cintas 1 a 6 | Títulos, fecha y hecho verificable de la sección 7. En qué acto aparece cada una sigue abierto (⏳ F0-45) ✅ |
+| Cintas 1 a 6 | Títulos, fecha y hecho verificable de la sección 7. Se recogen así: 1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV, y todas se oyen en el IV ✅ (sección 7) |
 | Detalles de la muerte pública | Cenizas esparcidas sin urna y aviso a la familia por carta tras la cremación. Lo detienen y lo trasladan a Cumbre Clara. El sello del certificado es irregular (el del sanatorio). Quiroga lo tramitó con una orden sellada de la Comisión y guardó copia como seguro de vida, junto con la carta de la cinta 6 que retuvo. Anselmo firmó el testamento antes de la detención ✅ |
 | Reme | Montó su casa de préstamos hace unos 25 años con dinero de una facción mayor. Recibió una carta sin firma que le pide callar. Sabe que el pago viene del Estado por la Comisión y no sabe que Anselmo vive. El equipo quedó en el campamento y la deuda creció. La tabla de razones por facción, tal como está en la sección 6 ✅ |
 | Dueñas a los 40 | Era el técnico más joven con la confianza de la cúpula, redactó el reglamento de la Comisión y eligió a Anselmo. Su lección: ninguna grieta en la mentira. Sigue duro, inflexible y poco razonable ✅ |
@@ -206,7 +206,7 @@ El autor confirmó el trato el 2026-10-12, tal como está escrito en la tabla: c
 
 ## 7 · Las ocho cintas 🟡
 
-**Estado:** ✅ las ocho cintas en título, fecha y hecho verificable, y el humor y la forma de comprobarlo de las cintas 1 a 6, incluido que Quiroga retuvo la carta de la cinta 6 y guardó copia (confirmado el 2026-10-12; la 7 y la 8, antes, con quien cortó la octava abierto); 🟡 el humor de la 7 y la 8, que sigue la regla 1.7 de [18](18-biblia-narrativa.md), marcada 🟡 en la biblia. En qué acto aparece cada una y dónde las escondió ⏳ F0-45.
+**Estado:** ✅ las ocho cintas en título, fecha y hecho verificable, y el humor y la forma de comprobarlo de las cintas 1 a 6, incluido que Quiroga retuvo la carta de la cinta 6 y guardó copia (confirmado el 2026-10-12; la 7 y la 8, antes, con quien cortó la octava abierto); 🟡 el humor de la 7 y la 8, que sigue la regla 1.7 de [18](18-biblia-narrativa.md), marcada 🟡 en la biblia. El acto de cada una ✅ (decisión del autor, 2026-10-12); dónde las escondió Anselmo 🟡 ([23](23-arbol-de-decisiones.md), sección 7).
 
 Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuvieran** (hace 2 años, entre otoño e invierno) y las **escondió él mismo** en lugares de su vida. Todas son **anteriores al trato** ✅: por eso en ninguna menciona el trato ni su estado actual. Hablan de hechos del pasado, cada uno con una fecha de esta cronología y una forma de comprobarlo.
 
@@ -223,7 +223,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 
 - **La octava cortada.** La cinta se corta porque llegaron a buscarlo. **Quién cortó el carrete se deja abierto** ✅ (decisión del autor, 2026-10-12): puede ser el azar, un guardia o el propio Anselmo, y el jugador nunca lo sabe con certeza.
 - **El humor se apaga** de la primera a la octava 🟡 ([18](18-biblia-narrativa.md), 1.7, que sigue 🟡). El orden de las seis primeras es ✅; «casi apagado» y «sin humor» en la 7 y la 8 aún no.
-- **Dónde aparecen en el juego.** Las ocho cintas se encuentran a lo largo de la historia y se completan en el **Acto IV**, como indica la fila de narrativa de `studio/data/story.json`. La asignación de cada cinta a un acto y el lugar donde las dejó Anselmo ⏳ F0-45
+- **Dónde aparecen en el juego.** Las ocho cintas se encuentran a lo largo de la historia y se **oyen** en el **Acto IV** con un reproductor, como indica la fila de narrativa de `studio/data/story.json` («Oyes las cintas»). Se recogen antes: 1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV ✅. El lugar donde las dejó Anselmo y el reparto del reproductor están en [23](23-arbol-de-decisiones.md), sección 7 🟡
 - El texto final y la voz de cada cinta ⏳ F4-151
 - «Cinta» es la pieza de historia y «carrete» el objeto ✅ (1.6 de [18](18-biblia-narrativa.md)).
 
@@ -317,7 +317,6 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 
 ## Pendiente
 
-- ⏳ F0-45 En qué acto aparece cada cinta y dónde las dejó Anselmo; consecuencias de cada hallazgo.
 - ⏳ F4-151 Texto final y voz de las ocho cintas, a partir de la sección 7.
 - ⏳ F0-23 Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8).
 - ⏳ F0-46 Dónde está Anselmo hoy y qué pasa con el hilo abierto en los epílogos (sección 5).

@@ -15,6 +15,7 @@ Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/presentation.json   láminas de la página «El juego» (resumen curado del diseño)
   - studio/data/story.json          mapa de historia: actos, carriles y tareas relacionadas
   - studio/data/world.json          registro del mundo: minerales, zonas, minijuegos, recetas, facciones y personajes
+  - studio/data/decisions.json      árbol de decisiones: nodos, banderas, cuellos, cintas y pruebas del Acto IV
 
 Limpieza del diseño (ver studio/docs/15-flujo-de-trabajo-y-calidad.md):
   limpieza = ✅ / (✅ + 🟡 + ❓)  por documento y en total. Meta: lo más cerca posible de 100 %.
@@ -58,7 +59,7 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 GROUPS = [
     ("Diseño del juego", ["00", "01", "02", "03", "04", "09"]),
-    ("Mundo y narrativa", ["05", "07", "08", "17", "18", "19", "21", "22"]),
+    ("Mundo y narrativa", ["05", "07", "08", "17", "18", "19", "21", "22", "23"]),
     ("Marca y arte", ["12", "13"]),
     ("Técnico y legal", ["10", "11"]),
     ("Arquitectura y calidad", ["14", "15", "20"]),
@@ -470,6 +471,169 @@ def load_story(task_ids):
     return {"acts": acts, "lanes": data.get("lanes", []), "after": data.get("after", "")}
 
 
+DECISION_LEVELS = ["grande", "mediana", "pequena"]
+DECISION_QUOTAS = {"grande": 3, "mediana": 6, "pequena": 18}
+DECISION_SMALL_BY_ACT = {"I": 3, "II": 5, "III": 5, "IV": 5}
+DECISION_STATES = ["ok", "prop"]
+FLAG_KINDS = ["eleccion", "medidor"]
+IV_VARIANTS = ["consorcio", "ministerio", "faroleros"]
+TAPE_COUNT = 8
+
+
+def _character_names(world):
+    """Nombres y alias de los personajes del registro del mundo."""
+    names = set()
+    for c in world.get("characters", []):
+        names.add(c["name"])
+        names.update(c.get("aka", []))
+    return names
+
+
+def _check_decision_nodes(nodes, flag_ids, acts, rank):
+    """Valida cada nodo del árbol. Devuelve (ids de nodos, bandera -> nodos que la fijan, bandera -> nodos que la leen)."""
+    ids, sets, reads = {}, {}, {}
+    for n in nodes:
+        nid = n.get("id", "?")
+        if nid in ids:
+            warn("decisions.json: nodo repetido: %s" % nid)
+        ids[nid] = n
+        if n.get("acto") not in acts:
+            warn("decisions.json: %s tiene un acto desconocido: %s" % (nid, n.get("acto")))
+        if n.get("nivel") not in DECISION_LEVELS:
+            warn("decisions.json: %s tiene un nivel inválido: %s" % (nid, n.get("nivel")))
+        if n.get("estado") not in DECISION_STATES:
+            warn("decisions.json: %s tiene un estado inválido: %s" % (nid, n.get("estado")))
+        for key in ("titulo", "dispara"):
+            if not n.get(key):
+                warn("decisions.json: %s no tiene '%s'" % (nid, key))
+        options = n.get("opciones", [])
+        if len(options) < 2:
+            warn("decisions.json: %s necesita al menos dos opciones" % nid)
+        if len({o.get("id") for o in options}) != len(options):
+            warn("decisions.json: %s tiene opciones con el mismo id" % nid)
+        for o in options:
+            for key in ("id", "texto", "mundo", "mercado", "personajes"):
+                if not o.get(key):
+                    warn("decisions.json: la opción %s de %s no tiene '%s'" % (o.get("id", "?"), nid, key))
+            for fid in o.get("fija", []):
+                if fid not in flag_ids:
+                    warn("decisions.json: %s fija una bandera inexistente: %s" % (nid, fid))
+                else:
+                    sets.setdefault(fid, set()).add(nid)
+        for fid in n.get("lee", []):
+            if fid not in flag_ids:
+                warn("decisions.json: %s lee una bandera inexistente: %s" % (nid, fid))
+            else:
+                reads.setdefault(fid, set()).add(nid)
+    for fid, readers in reads.items():
+        setters = [ids[x]["acto"] for x in sets.get(fid, ()) if ids[x].get("acto") in rank]
+        for nid in readers:
+            if setters and nid in ids and ids[nid].get("acto") in rank and min(rank[a] for a in setters) > rank[ids[nid]["acto"]]:
+                warn("decisions.json: %s (Acto %s) lee %s, que solo se fija en un acto posterior" % (nid, ids[nid]["acto"], fid))
+    return ids, sets, reads
+
+
+def _check_decision_quotas(data, nodes, acts):
+    meta = data.get("meta", {})
+    quotas = meta.get("cupos", {})
+    by_act = meta.get("por_acto_pequenas", {})
+    if quotas != DECISION_QUOTAS:
+        warn("decisions.json: los cupos de meta deben ser %s y son %s" % (DECISION_QUOTAS, quotas))
+    if by_act != DECISION_SMALL_BY_ACT:
+        warn("decisions.json: las pequeñas por acto de meta deben ser %s y son %s" % (DECISION_SMALL_BY_ACT, by_act))
+    for level, want in DECISION_QUOTAS.items():
+        got = sum(1 for n in nodes if n.get("nivel") == level)
+        if got != want:
+            warn("decisions.json: hay %d decisiones '%s' y el cupo es %d" % (got, level, want))
+    for act, want in DECISION_SMALL_BY_ACT.items():
+        got = sum(1 for n in nodes if n.get("nivel") == "pequena" and n.get("acto") == act)
+        if got != want:
+            warn("decisions.json: el Acto %s tiene %d pequeñas y el cupo es %d" % (act, got, want))
+
+
+def _check_decision_bottlenecks(cuellos, ids, acts):
+    seen = set()
+    for c in cuellos:
+        cid = c.get("id", "?")
+        if cid in seen:
+            warn("decisions.json: cuello repetido: %s" % cid)
+        seen.add(cid)
+        if c.get("acto") not in acts:
+            warn("decisions.json: el cuello %s tiene un acto desconocido: %s" % (cid, c.get("acto")))
+        if not c.get("titulo"):
+            warn("decisions.json: el cuello %s no tiene título" % cid)
+        branches = c.get("recibe", [])
+        if len(set(branches)) < 2:
+            warn("decisions.json: el cuello %s recibe %d rama(s) y necesita al menos 2" % (cid, len(set(branches))))
+        for nid in branches:
+            if nid not in ids:
+                warn("decisions.json: el cuello %s recibe un nodo inexistente: %s" % (cid, nid))
+            elif ids[nid].get("acto") != c.get("acto"):
+                warn("decisions.json: el cuello %s (Acto %s) recibe %s, que es del Acto %s" % (cid, c.get("acto"), nid, ids[nid].get("acto")))
+
+
+def check_decisions(data, world):
+    """Valida el árbol de decisiones (ver studio/docs/23-arbol-de-decisiones.md). Los errores salen con warn()."""
+    acts = world.get("acts", [])
+    rank = {a: i for i, a in enumerate(acts)}
+    nodes = data.get("nodes", [])
+    flags = data.get("flags", [])
+    flag_ids = {}
+    names = _character_names(world)
+    for f in flags:
+        fid = f.get("id", "?")
+        if fid in flag_ids:
+            warn("decisions.json: bandera repetida: %s" % fid)
+        flag_ids[fid] = f
+        if f.get("tipo") not in FLAG_KINDS:
+            warn("decisions.json: la bandera %s tiene un tipo inválido: %s" % (fid, f.get("tipo")))
+        if not f.get("descripcion"):
+            warn("decisions.json: la bandera %s no tiene descripción" % fid)
+        if not f.get("personajes"):
+            warn("decisions.json: la bandera %s no nombra personajes" % fid)
+        for who in f.get("personajes", []):
+            if who not in names:
+                warn("decisions.json: la bandera %s nombra a un personaje que no está en world.json: %s" % (fid, who))
+    ids, sets, reads = _check_decision_nodes(nodes, flag_ids, acts, rank)
+    for fid in flag_ids:
+        if fid not in sets:
+            warn("decisions.json: la bandera %s no la fija ninguna decisión" % fid)
+        if fid not in reads:
+            warn("decisions.json: la bandera %s no la lee ninguna decisión" % fid)
+    _check_decision_quotas(data, nodes, acts)
+    _check_decision_bottlenecks(data.get("cuellos", []), ids, acts)
+    tapes = data.get("cintas", [])
+    if sorted(t.get("n") for t in tapes) != list(range(1, TAPE_COUNT + 1)):
+        warn("decisions.json: las cintas deben numerarse del 1 al %d, una vez cada una" % TAPE_COUNT)
+    for t in tapes:
+        if t.get("acto") not in acts:
+            warn("decisions.json: la cinta %s tiene un acto desconocido: %s" % (t.get("n"), t.get("acto")))
+        if not t.get("lugar"):
+            warn("decisions.json: la cinta %s no dice dónde está" % t.get("n"))
+    last = -1
+    for t in sorted(tapes, key=lambda x: x.get("n", 0)):
+        if t.get("acto") in rank:
+            if rank[t["acto"]] < last:
+                warn("decisions.json: la cinta %s se recoge en un acto anterior al de la cinta previa" % t.get("n"))
+            last = max(last, rank[t["acto"]])
+    proofs = data.get("pruebas_iv", [])
+    if sorted(p.get("variante") for p in proofs) != sorted(IV_VARIANTS):
+        warn("decisions.json: pruebas_iv debe tener una prueba por variante (%s)" % ", ".join(IV_VARIANTS))
+    for p in proofs:
+        if not p.get("prueba"):
+            warn("decisions.json: la variante %s del Acto IV no tiene prueba" % p.get("variante"))
+
+
+def load_decisions(world):
+    """Carga y valida el árbol de decisiones."""
+    path = DATA / "decisions.json"
+    if not path.exists():
+        return {"meta": {}, "nodes": [], "flags": [], "cuellos": [], "cintas": [], "pruebas_iv": []}
+    data = load_json(path)
+    check_decisions(data, world)
+    return data
+
+
 def build_assets(assets):
     for img in assets["images"]:
         path = STUDIO / img["file"]
@@ -558,6 +722,7 @@ def build_hub():
     cleanliness = analyze_docs(docs, task_status)
     world = load_json(DATA / "world.json")
     story = load_story(task_ids)
+    decisions = load_decisions(world)
     for msg in coherence.integrity(world):
         warn("world.json: %s" % msg)
     assets = build_assets(load_json(DATA / "assets.json"))
@@ -576,7 +741,8 @@ def build_hub():
         "equipo": equipo,
         "cleanliness": cleanliness,
         "world": world,
-        "coherence": coherence.check(world, story),
+        "decisions": decisions,
+        "coherence": coherence.check(world, story, decisions),
     }
 
 

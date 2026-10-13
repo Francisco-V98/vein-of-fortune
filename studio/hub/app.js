@@ -252,7 +252,8 @@
     board: { phase: 'all', target: 'all', limit: {} },
     tl: { px: 1.1, target: 'launch', rate: 0, sel: null },
     art: { cat: 'Todas' },
-    qa: { area: 'Todas', type: 'Todos' }
+    qa: { area: 'Todas', type: 'Todos' },
+    dc: { act: 'all', level: 'all', who: 'all' }
   };
   var lb = { list: [], idx: 0, opener: null };
 
@@ -271,7 +272,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('mapa', 'Mapa de historia', '⌖') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('mapa', 'Mapa de historia', '⌖') + link('decisiones', 'Árbol de decisiones', '⑂') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -911,6 +912,24 @@
   });
 
   /* ---------- mapa de historia ---------- */
+  /* Filas «Bifurcaciones» y «Consecuencias»: salen de decisions.json, no de story.json. */
+  function decisionRows(st) {
+    var D = H.decisions;
+    if (!D || !D.nodes.length) return '';
+    function cells(fn) {
+      return st.acts.map(function (a) { return '<div class="st-cell" style="--c:' + esc(a.color) + '">' + fn(D.nodes.filter(function (n) { return n.acto === a.n; })) + '</div>'; }).join('');
+    }
+    var forks = cells(function (nodes) {
+      var big = nodes.filter(function (n) { return n.nivel !== 'pequena'; });
+      return big.length ? '<ul>' + big.map(function (n) { return '<li><a href="#/decisiones">' + esc(n.titulo) + '</a> <small>' + esc(LEVEL[n.nivel].label.toLowerCase()) + '</small></li>'; }).join('') + '</ul>' : '<p class="stat-sub">—</p>';
+    });
+    var smalls = cells(function (nodes) {
+      var n = nodes.filter(function (x) { return x.nivel === 'pequena'; }).length;
+      return '<p><a href="#/decisiones">' + n + ' decisiones pequeñas</a></p>';
+    });
+    return '<div class="st-row"><div class="st-lab"><span class="gl" aria-hidden="true">⑂</span>Bifurcaciones</div>' + forks + '</div>' +
+      '<div class="st-row"><div class="st-lab"><span class="gl" aria-hidden="true">↳</span>Consecuencias</div>' + smalls + '</div>';
+  }
   function viewStory() {
     var st = H.story || { acts: [], lanes: [], after: '' };
     var byId = {};
@@ -929,6 +948,7 @@
         return '<div class="st-cell" style="--c:' + esc(a.color) + '"><ul>' + cell.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>';
       }).join('') + '</div>';
     });
+    h += decisionRows(st);
     h += '<div class="st-row"><div class="st-lab"><span class="gl" aria-hidden="true">▤</span>Tareas del plan</div>' + st.acts.map(function (a) {
       return '<div class="st-cell" style="--c:' + esc(a.color) + '"><ul class="st-tasks">' + (a.tasks || []).map(function (id) {
         var t = byId[id];
@@ -938,6 +958,132 @@
     h += '</div>';
     if (st.after) h += '<p class="st-after">' + esc(st.after) + '</p>';
     return h;
+  }
+
+  /* ---------- árbol de decisiones ---------- */
+  var LEVEL = {
+    grande: { label: 'Grande', glyph: '◆' },
+    mediana: { label: 'Mediana', glyph: '◈' },
+    pequena: { label: 'Pequeña', glyph: '◇' }
+  };
+  var LEVEL_ORDER = ['grande', 'mediana', 'pequena'];
+  function decisionMark(estado) {
+    return estado === 'ok' ? '<span class="mk" title="Acordado por el autor">✅</span>' : '<span class="mk" title="Propuesta del narrador pendiente de confirmar">🟡</span>';
+  }
+  function flagChip(id, flags) {
+    var f = flags[id];
+    return '<span class="chip dc-flag ' + (f && f.tipo === 'medidor' ? 'brass' : '') + '" title="' + esc(f ? f.descripcion : id) + '">' + esc(id) + '</span>';
+  }
+  function flagChips(ids, flags) { return ids.map(function (id) { return flagChip(id, flags); }).join(' '); }
+  function nodeFlags(n) {
+    var set = [];
+    n.opciones.forEach(function (o) { o.fija.forEach(function (f) { if (set.indexOf(f) < 0) set.push(f); }); });
+    return set;
+  }
+  function nodeWhos(n, flags) {
+    var out = [];
+    nodeFlags(n).concat(n.lee).forEach(function (id) {
+      ((flags[id] || {}).personajes || []).forEach(function (w) { if (out.indexOf(w) < 0) out.push(w); });
+    });
+    return out;
+  }
+  function decisionOption(o, flags, showFix) {
+    var rows = [['Mundo', o.mundo], ['Mercado', o.mercado], ['Personajes', o.personajes]].filter(function (r) { return r[1] && r[1] !== '—'; });
+    return '<li class="dc-opt"><b>' + esc(o.texto) + '</b><dl>' + rows.map(function (r) { return '<dt>' + r[0] + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>' +
+      (showFix && o.fija.length ? '<div class="dc-fx">→ fija ' + flagChips(o.fija, flags) + '</div>' : '') + '</li>';
+  }
+  function decisionCard(n, flags) {
+    var lv = LEVEL[n.nivel];
+    var fija = nodeFlags(n);
+    var differ = n.opciones.some(function (o) { return o.fija.join() !== n.opciones[0].fija.join(); });  // si todas fijan lo mismo, basta el resumen de abajo
+    var h = '<article class="dc-card dc-' + n.nivel + '" id="' + esc(n.id) + '"><header><span class="dc-level" title="Decisión ' + lv.label.toLowerCase() + '"><span aria-hidden="true">' + lv.glyph + '</span> ' + lv.label + '</span>' + decisionMark(n.estado) + '</header>';
+    h += '<h3>' + esc(n.titulo) + '</h3><p class="dc-trigger"><small>Dispara</small> ' + esc(n.dispara) + '</p>';
+    h += '<ul class="dc-opts">' + n.opciones.map(function (o) { return decisionOption(o, flags, differ); }).join('') + '</ul>';
+    if (n.lee.length || fija.length) {
+      h += '<div class="dc-flow">' + (n.lee.length ? '<span><small>Lee</small> ' + flagChips(n.lee, flags) + '</span>' : '') + (n.lee.length && fija.length ? ' <span class="dc-arrow" aria-hidden="true">→</span> ' : '') + (fija.length ? '<span><small>Fija</small> ' + flagChips(fija, flags) + '</span>' : '') + '</div>';
+    }
+    return h + '</article>';
+  }
+  function decisionBottleneck(c, titles, visible) {
+    return '<div class="dc-neck"><b>⇣ ' + esc(c.titulo) + '</b><small>Reúne ' + c.recibe.map(function (id) { return '<span' + (visible[id] ? '' : ' class="dc-off"') + '>' + esc(titles[id] || id) + '</span>'; }).join(' · ') + '</small></div>';
+  }
+  function decisionColumn(a, D, flags, visible) {
+    var titles = {};
+    D.nodes.forEach(function (n) { titles[n.id] = n.titulo; });
+    var nodes = D.nodes.filter(function (n) { return n.acto === a.n; });
+    var shown = nodes.filter(function (n) { return visible[n.id]; });
+    var necks = D.cuellos.filter(function (c) { return c.acto === a.n; });
+    var h = '<section class="dc-col" style="--c:' + esc(a.color) + '"><div class="dc-col-head"><span class="st-n">Acto ' + esc(a.n) + '</span><h2>' + esc(a.title) + '</h2><small>' + shown.length + ' de ' + nodes.length + ' decisiones</small></div>';
+    var after = {};
+    necks.forEach(function (c) {
+      var pos = -1;
+      shown.forEach(function (n, i) { if (c.recibe.indexOf(n.id) >= 0) pos = i; });
+      if (pos >= 0) (after[pos] = after[pos] || []).push(c);
+    });
+    shown.forEach(function (n, i) {
+      h += decisionCard(n, flags);
+      (after[i] || []).forEach(function (c) { h += decisionBottleneck(c, titles, visible); });
+    });
+    if (!shown.length) h += '<div class="empty">Ninguna decisión con este filtro.</div>';
+    return h + '</section>';
+  }
+  function decisionSummary(D, acts) {
+    var cupos = D.meta.cupos || {};
+    var count = function (lv) { return D.nodes.filter(function (n) { return n.nivel === lv; }).length; };
+    var ok = D.nodes.filter(function (n) { return n.estado === 'ok'; }).length;
+    var h = '<div class="st-grid dc-summary">' + LEVEL_ORDER.map(function (lv) {
+      return '<div class="st-card"><small>' + LEVEL[lv].label + 's</small><b>' + count(lv) + ' / ' + (cupos[lv] || '?') + '</b><span>' + acts.map(function (a) { return a.n + ': ' + D.nodes.filter(function (n) { return n.nivel === lv && n.acto === a.n; }).length; }).join(' · ') + '</span></div>';
+    }).join('') + '<div class="st-card"><small>Estado</small><b>' + ok + ' / ' + D.nodes.length + '</b><span>✅ acordadas · 🟡 ' + (D.nodes.length - ok) + ' propuestas</span></div></div>';
+    h += '<h2 class="section-title">Las ocho cintas</h2><div class="dc-tapes">' + acts.map(function (a) {
+      var t = D.cintas.filter(function (x) { return x.acto === a.n; });
+      return '<div class="dc-tape" style="--c:' + esc(a.color) + '"><span class="st-n">Acto ' + esc(a.n) + '</span><b>' + (t.length ? t.map(function (x) { return x.n; }).join(', ') : '—') + '</b><small>' + t.length + ' cinta(s)</small></div>';
+    }).join('') + '</div><p class="stat-sub">Se recogen a lo largo de la historia y solo se oyen en el Acto IV.</p>';
+    return h;
+  }
+  function decisionFilters(D, acts, who) {
+    var q = state.dc;
+    function filterChips(action, cur, items) {
+      return items.map(function (it) { return '<button class="chip" type="button" data-action="' + action + '" data-value="' + esc(it[0]) + '" aria-pressed="' + (cur === it[0]) + '">' + esc(it[1]) + '</button>'; }).join('');
+    }
+    return '<div class="filters"><div class="filter-group"><span class="filter-label">Acto</span>' + filterChips('dc-act', q.act, [['all', 'Todos']].concat(acts.map(function (a) { return [a.n, a.n]; }))) + '</div>' +
+      '<div class="filter-group"><span class="filter-label">Nivel</span>' + filterChips('dc-level', q.level, [['all', 'Todos']].concat(LEVEL_ORDER.map(function (lv) { return [lv, LEVEL[lv].label]; }))) + '</div>' +
+      '<div class="filter-group"><label class="filter-label" for="dcWho">Personaje</label><select id="dcWho" data-action="dc-who"><option value="all">Todos</option>' + who.map(function (w) { return '<option value="' + esc(w) + '"' + (q.who === w ? ' selected' : '') + '>' + esc(w) + '</option>'; }).join('') + '</select></div></div>';
+  }
+  function decisionFlagTable(D, flags) {
+    var title = {};
+    D.nodes.forEach(function (n) { title[n.id] = n.titulo; });
+    var link = function (id) { return '<a href="#/decisiones?h=' + esc(id) + '" title="' + esc(title[id]) + '">' + esc(title[id]) + '</a>'; };
+    var h = '<h2 class="section-title">Banderas y quién las usa</h2><p class="page-lead">Cada bandera se fija en una decisión y se lee en otras, siempre de un acto igual o posterior. La flecha va de quien la fija a quien la lee.</p><div class="table-wrap"><table><thead><tr><th>Bandera</th><th>Qué guarda</th><th>Personajes</th><th>Fija → Lee</th></tr></thead><tbody>';
+    D.flags.forEach(function (f) {
+      var sets = D.nodes.filter(function (n) { return nodeFlags(n).indexOf(f.id) >= 0; });
+      var reads = D.nodes.filter(function (n) { return n.lee.indexOf(f.id) >= 0; });
+      h += '<tr><td>' + flagChip(f.id, flags) + '</td><td>' + esc(f.descripcion) + '</td><td>' + esc(f.personajes.join(', ')) + '</td><td>' + sets.map(function (n) { return link(n.id); }).join(', ') + ' → ' + (reads.length ? reads.map(function (n) { return link(n.id); }).join(', ') : '—') + '</td></tr>';
+    });
+    return h + '</tbody></table></div>';
+  }
+  function decisionProofs(D) {
+    return '<h2 class="section-title">Pruebas de Reme en el Acto IV</h2><div class="table-wrap"><table><thead><tr><th>Variante</th><th>Prueba</th></tr></thead><tbody>' + D.pruebas_iv.map(function (p) {
+      return '<tr><td><b>' + esc(p.variante) + '</b></td><td>' + esc(p.prueba) + '</td></tr>';
+    }).join('') + '</tbody></table></div>';
+  }
+  function viewDecisions() {
+    var D = H.decisions;
+    var acts = (H.story && H.story.acts) || [];
+    var h = '<p class="eyebrow">Diseño del juego</p><h1 class="page-title">Árbol de decisiones</h1><p class="page-lead">Las decisiones de los cuatro actos: quién las dispara, qué opciones hay y qué cambian en el mundo, el mercado y los personajes. Los cuellos reúnen las ramas de un acto en una misma escena. Documento: <a href="#/docs/23-arbol-de-decisiones">23 · Árbol de decisiones</a>. Contiene spoilers.</p>';
+    if (!D || !D.nodes.length) return h + '<div class="empty">Sin datos: falta studio/data/decisions.json.</div>';
+    var flags = {};
+    D.flags.forEach(function (f) { flags[f.id] = f; });
+    var who = [];
+    D.nodes.forEach(function (n) { nodeWhos(n, flags).forEach(function (w) { if (who.indexOf(w) < 0) who.push(w); }); });
+    who.sort(function (a, b) { return a.localeCompare(b, 'es'); });
+    var q = state.dc;
+    var visible = {};
+    D.nodes.forEach(function (n) {
+      visible[n.id] = (q.act === 'all' || n.acto === q.act) && (q.level === 'all' || n.nivel === q.level) && (q.who === 'all' || nodeWhos(n, flags).indexOf(q.who) >= 0);
+    });
+    h += decisionSummary(D, acts) + '<h2 class="section-title">Decisiones por acto</h2>' + decisionFilters(D, acts, who);
+    h += '<div class="dc-board" style="--n:' + acts.length + '">' + acts.map(function (a) { return decisionColumn(a, D, flags, visible); }).join('') + '</div>';
+    return h + decisionFlagTable(D, flags) + decisionProofs(D);
   }
 
   /* ---------- QA ---------- */
@@ -1225,6 +1371,7 @@
     var activeKey = key;
     var y = window.scrollY;
     var tlScroll = $('.tl-wrap') ? $('.tl-wrap').scrollLeft : 0;
+    var dcScroll = $('.dc-board') ? $('.dc-board').scrollLeft : 0;
     switch (key) {
       case '': html = viewHome(); title += ' · Inicio'; break;
       case 'roadmap': html = viewRoadmap(); title += ' · Roadmap'; break;
@@ -1233,6 +1380,7 @@
       case 'qa': html = viewQA(); title += ' · QA'; break;
       case 'juego': html = viewGame(); title += ' · El juego'; break;
       case 'mapa': html = viewStory(); title += ' · Mapa de historia'; break;
+      case 'decisiones': html = viewDecisions(); title += ' · Árbol de decisiones'; anchor = r.query.h || null; break;
       case 'limpieza': html = viewClean(); title += ' · Limpieza del diseño'; break;
       case 'coherencia': html = viewCoherence(); title += ' · Coherencia del diseño'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
@@ -1259,6 +1407,7 @@
     if (keepScroll) {
       window.scrollTo(0, y);
       if ($('.tl-wrap')) $('.tl-wrap').scrollLeft = tlScroll;
+      if ($('.dc-board')) $('.dc-board').scrollLeft = dcScroll;
       return;
     }
     if (key === 'juego') initDeck();
@@ -1318,6 +1467,8 @@
     else if (act === 'deck-prev') { gotoSlide(deck.idx - 1); }
     else if (act === 'deck-full') { toggleFullscreen(); }
     else if (act === 'deck-print') { window.print(); }
+    else if (act === 'dc-act') { state.dc.act = val; render(true); }
+    else if (act === 'dc-level') { state.dc.level = val; render(true); }
     else if (act === 'qa-type') { state.qa.type = val; render(true); }
     else if (act === 'open-img') { openLightbox(+el.getAttribute('data-index'), el); }
     else if (act === 'tl-select') { state.tl.sel = state.tl.sel === val ? null : val; render(true); }
@@ -1335,6 +1486,7 @@
     var act = el.getAttribute('data-action');
     if (act === 'board-phase') { state.board.phase = el.value; state.board.limit = {}; render(true); }
     else if (act === 'board-target') { state.board.target = el.value; state.board.limit = {}; render(true); }
+    else if (act === 'dc-who') { state.dc.who = el.value; render(true); }
     else if (act === 'tl-target') { state.tl.target = el.value; state.tl.sel = null; render(true); }
     else if (act === 'tl-zoom') { state.tl.px = parseFloat(el.value); render(true); }
     else if (act === 'tl-rate') { state.tl.rate = parseInt(el.value, 10); render(true); }

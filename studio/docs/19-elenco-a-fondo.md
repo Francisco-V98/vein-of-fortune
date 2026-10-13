@@ -124,7 +124,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 - "Si estás oyendo esto, la lámpara llegó a tus manos. Cuídala: se apaga rápido."
 - "Aprendí tarde que callar también es una forma de cobrar."
 
-**Acciones en el juego.** No juega, pero **habla**: las ocho cintas se encuentran a lo largo de la historia, se completan en el Acto IV y cada una desbloquea una pieza de la verdad; el contenido de cada una está en [21](21-pasado-de-valdoria.md) y en qué acto aparece cada una ⏳ F0-45 La libreta guía las primeras misiones del Acto I. Su firma en el acta final es la última escena.
+**Acciones en el juego.** No juega, pero **habla**: las ocho cintas se recogen a lo largo de la historia (1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV) ✅, se **oyen en el Acto IV** con un reproductor ✅ y cada una desbloquea una pieza de la verdad; el contenido de cada una está en [21](21-pasado-de-valdoria.md) y dónde las dejó Anselmo, en [23](23-arbol-de-decisiones.md) (sección 7). La libreta guía las primeras misiones del Acto I. Su firma en el acta final es la última escena.
 
 **Arco.** Del héroe ausente (I) a la sospecha (II y III), la verdad parcial (IV) y la pregunta final.
 
@@ -413,6 +413,6 @@ Anselmo ── amistad rota ── Ministro Dueñas ── protege ── Esteba
 ## Pendiente
 
 - ✅ Aldea del protagonista: **Vega Mansa**, sin región propia en el mapa; detalles de su familia en [21](21-pasado-de-valdoria.md).
-- ❓ Qué hace Esteban según cómo lo trates (aliado o enemigo) y cómo se refleja en el mercado.
+- ✅ Esteban tiene un medidor propio entre los cuatro del árbol; 🟡 es personal (no el del Consorcio) y se refleja en el mercado con un 2 a 4 % sobre lo que compra ([23](23-arbol-de-decisiones.md)).
 - ❓ Fichas de personajes secundarios (capataces, clientes, empleados con nombre).
 - ❓ Diseño visual de cada ficha para los retratos finales (F4-190).
