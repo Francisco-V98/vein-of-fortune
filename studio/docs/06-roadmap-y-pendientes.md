@@ -17,8 +17,8 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 
 ## Ideas futuras (fuera de v1)
 
-- **Casino** ✅ (idea del autor): tragamonedas, ruleta, blackjack, quizás minijuegos de azar. Dinero del juego solamente. Es la V2.0, y se llama Salón del Farol ([26](26-zonas-y-edificios.md)).
-- **Estilo de vida ampliado** ✅ (idea del autor): casas y mansiones por zona, joyería comprable, vehículos, ropa y decoración (V2.1), y mar e inversiones (V2.2) ([26](26-zonas-y-edificios.md)).
+- **Casino** ✅ (idea del autor): tragamonedas, ruleta, blackjack, quizás minijuegos de azar. Dinero del juego solamente. Es la V2.0 y se llama Salón del Farol (decisión del autor, 2026-10-13; [26](26-zonas-y-edificios.md)).
+- **Estilo de vida ampliado** ✅ (idea del autor): casas y mansiones por zona, joyería comprable, vehículos, ropa y decoración, y mar e inversiones. Casas, mansiones, decoración, joyería, concesionaria y sastrería van en la V2.1; mar e inversiones, en la V2.2 (decisión del autor, 2026-10-13; [26](26-zonas-y-edificios.md)).
   - 🟡 Nota: los juegos de azar simulados afectan la clasificación por edad en las tiendas de apps; revisar requisitos antes.
 - Capa de imperio: sucursales, otras ciudades, plantillas más grandes de empleados. (Los empleados básicos entran a mitad del juego, no aquí.)
 - Eventos de temporada.

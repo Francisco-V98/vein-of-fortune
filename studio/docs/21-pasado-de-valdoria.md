@@ -254,7 +254,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 | Fundiciones Soria | — | ✅ Descartada |
 
 - **Qué es ✅.** Una casa de joyería que compra la plata de la Sierra Alta; no tiene mina propia, así que no compite con el Consorcio.
-- **Dónde se usa Casa Ormeño.** En noticias y en el glosario, y desde la V1 como **tienda insignia** en Puerto Meridiano: la joyería de plata a la que se vende la plata afinada de Altafría y se compran piezas de lujo ([26](26-zonas-y-edificios.md)) ✅. Sigue sin zona propia, jefe, dueño, personaje ni medidor de relación, y no aparece en los personajes de `world.json`.
+- **Dónde se usa Casa Ormeño.** En noticias y en el glosario, y desde la V1 como **tienda insignia** en Puerto Meridiano ✅ (decisión del autor, 2026-10-13; [26](26-zonas-y-edificios.md)): es la joyería de plata a la que se vende la plata afinada en Altafría y donde se compran piezas de lujo. Sigue sin zona propia, jefe, dueño, personaje ni medidor de relación, y no aparece en los personajes de `world.json`.
 - **Por qué se descartaron las otras dos.** Talavera compite con el Consorcio por Sierra Alta; Soria funde hierro en el Hollín, donde manda la Unión.
 - **Ejemplos de voz** ✅. Heraldo: «Casa Ormeño presenta su colección de invierno en Puerto Meridiano». Teletipo: «CASA ORMEÑO COMPRA PLATA POR ENCIMA DE MERCADO. SIN CONFIRMAR».
 - En el juego la casa visible sigue siendo el **Consorcio Arvel** ([07](07-sociedad-y-eventos.md)).

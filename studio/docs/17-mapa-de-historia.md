@@ -23,7 +23,7 @@ Qué pasa, qué se desbloquea y qué hace falta en cada acto. Se ve como cuadro 
 
 El detalle completo (mecánicas, mercado y eventos, arte) está en el cuadro del hub.
 
-**Asentamientos por acto** ✅ (decisión del autor, 2026-10-13; los actos no cambian): Villa Brasa en el I; Altafría y Salinas Blancas en el II; Puerto Meridiano y el campamento de las Cavernas en el III; el campamento de la Comisión en la Fosa, en el IV. Catálogo de edificaciones en [26](26-zonas-y-edificios.md).
+**Asentamientos por acto.** ✅ Cada región tiene un asentamiento y los actos de las zonas no cambian (decisión del autor, 2026-10-13). 🟡 Propuesta, sin revisar, de qué asentamiento abre en qué acto: Villa Brasa en el I; Altafría y Salinas Blancas en el II; Puerto Meridiano y el campamento de las Cavernas en el III; el campamento de la Comisión en la Fosa, en el IV. Catálogo de edificaciones en [26](26-zonas-y-edificios.md).
 
 ## Decisiones ✅
 

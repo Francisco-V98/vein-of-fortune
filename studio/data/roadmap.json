@@ -1744,8 +1744,8 @@
       "name": "Vertical slice",
       "target": "MVP",
       "hours": [
-        300,
-        495
+        306,
+        501
       ],
       "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido finales, información por capas, noticias, encuentros y progresión base.",
       "gate": "Puerta B: ¿se sigue hacia la v1 y se piensa en publicar?",
@@ -2240,8 +2240,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        1025,
-        1925
+        1135,
+        2075
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -3064,25 +3064,40 @@
               "done_when": "Los pisos de estatus del documento 24 se cumplen con las horas por acto del documento 17 y ninguna puerta se puede atascar."
             },
             {
+              "id": "F4-226",
+              "status": "backlog",
+              "title": "Ranuras de decoración de la casa base",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Cinco ranuras fijas con un objeto inicial. Según el documento 26 (zonas y edificios).",
+              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
               "id": "F4-110",
               "status": "backlog",
               "title": "Casa: mejoras y bonos pasivos",
               "est": 6,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Casa de V1: nace completa y con cinco ranuras de decoración (F4-226) y se mejora con bonos pasivos pequeños. Según el documento 26.",
+              "done_when": "La casa de V1 se compra, tiene sus cinco ranuras con un objeto inicial y sus mejoras dan un bono pequeño."
             },
             {
               "id": "F4-111",
               "status": "backlog",
               "title": "Ropa",
               "est": 4,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Ropa de V1: un traje por escalón de estatus; solo cambia el sprite pequeño, sin tocar las hojas de modelo. Según el documento 26.",
+              "done_when": "Cada escalón de estatus tiene su traje y el sprite pequeño lo muestra."
             },
             {
               "id": "F4-112",
               "status": "backlog",
               "title": "Auto",
               "est": 4,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Auto de V1: se compra como estatus y aspecto, sin efecto en el viaje. El efecto funcional pequeño llega con la concesionaria de la versión 2.1 (F6-57). Según el documento 26.",
+              "done_when": "El auto se compra, se ve en el sprite y en la casa y no cambia el viaje."
             },
             {
               "id": "F4-113",
@@ -3620,15 +3635,6 @@
               "est": 10,
               "prio": "P1",
               "desc": "Equipo propio de cada zona. Según el documento 26 (zonas y edificios).",
-              "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
-            },
-            {
-              "id": "F4-226",
-              "status": "backlog",
-              "title": "Ranuras de decoración de la casa base",
-              "est": 8,
-              "prio": "P1",
-              "desc": "Cinco ranuras fijas con un objeto inicial. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]
