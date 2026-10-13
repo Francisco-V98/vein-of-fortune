@@ -1,0 +1,66 @@
+{
+  "id": "F0-23",
+  "history": [
+    {
+      "at": "2026-10-13",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el guion día a día del Acto I con el flujo de especialistas.",
+      "ref": "rama studio/F0-23-guion-acto-i"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "ideador",
+        "nota": "Tres estructuras: A siete días ceñidos, B diez días con respiro, C días libres con anclas; recomienda A con tres seguros de C",
+        "entrega": "Tres estructuras, bosquejo de los siete días, qué hace que no se atasque, cifras y ocho preguntas"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "qa",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: tres estructuras para los primeros 7 a 10 días del Acto I, con bosquejo por día",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "ideador",
+        "a": "coordinador",
+        "que": "Bosquejo de siete días del Acto I con ocho preguntas, siete para decidir ahora",
+        "at": "2026-10-13"
+      }
+    ]
+  }
+}
