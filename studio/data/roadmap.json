@@ -780,6 +780,15 @@
               "prio": "P3",
               "desc": "En la vista de tarea del hub, dibujar las etapas con su estado y quién las hizo, usando el bloque pipeline de la tarea.",
               "done_when": "Vista de tarea con el flujo visible en el hub."
+            },
+            {
+              "id": "F0-75",
+              "title": "Dibujar el árbol de decisiones con conexiones",
+              "est": 3,
+              "status": "backlog",
+              "prio": "P3",
+              "desc": "Convertir la vista #/decisiones del hub, hoy de columnas y tarjetas, en un dibujo SVG con las ramas, los cuellos de botella y las banderas conectadas.",
+              "done_when": "Árbol dibujado con conexiones visibles y filtros por acto, nivel y personaje."
             }
           ]
         }

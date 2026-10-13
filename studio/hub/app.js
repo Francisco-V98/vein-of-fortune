@@ -1042,11 +1042,11 @@
   }
   function decisionFilters(D, acts, who) {
     var q = state.dc;
-    function chips(action, cur, items) {
+    function filterChips(action, cur, items) {
       return items.map(function (it) { return '<button class="chip" type="button" data-action="' + action + '" data-value="' + esc(it[0]) + '" aria-pressed="' + (cur === it[0]) + '">' + esc(it[1]) + '</button>'; }).join('');
     }
-    return '<div class="filters"><div class="filter-group"><span class="filter-label">Acto</span>' + chips('dc-act', q.act, [['all', 'Todos']].concat(acts.map(function (a) { return [a.n, a.n]; }))) + '</div>' +
-      '<div class="filter-group"><span class="filter-label">Nivel</span>' + chips('dc-level', q.level, [['all', 'Todos']].concat(LEVEL_ORDER.map(function (lv) { return [lv, LEVEL[lv].label]; }))) + '</div>' +
+    return '<div class="filters"><div class="filter-group"><span class="filter-label">Acto</span>' + filterChips('dc-act', q.act, [['all', 'Todos']].concat(acts.map(function (a) { return [a.n, a.n]; }))) + '</div>' +
+      '<div class="filter-group"><span class="filter-label">Nivel</span>' + filterChips('dc-level', q.level, [['all', 'Todos']].concat(LEVEL_ORDER.map(function (lv) { return [lv, LEVEL[lv].label]; }))) + '</div>' +
       '<div class="filter-group"><label class="filter-label" for="dcWho">Personaje</label><select id="dcWho" data-action="dc-who"><option value="all">Todos</option>' + who.map(function (w) { return '<option value="' + esc(w) + '"' + (q.who === w ? ' selected' : '') + '>' + esc(w) + '</option>'; }).join('') + '</select></div></div>';
   }
   function decisionFlagTable(D, flags) {

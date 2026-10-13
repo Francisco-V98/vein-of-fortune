@@ -78,14 +78,32 @@
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "qa",
-        "nota": "QA comprueba el build, las pruebas, las marcas, el canon y la vista del hub"
+        "nota": "QA aprobó el build, las pruebas, el canon y la vista; sus dos fallos de marcas se corrigieron (el autor confirmó la orden de Reme y la huelga), se creó F0-75 para el dibujo SVG y el coordinador comprobó los filtros en el navegador",
+        "entrega": "Build estricto, 49 pruebas en verde, coherencia 83 % y limpieza 66 %",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "El autor confirmó la orden de Reme y los bandos de la huelga; se bajaron a 🟡 la biblia sobre Esteban y las pruebas del IV; se quitó el pendiente caduco del documento 23 y se renombró la función de chips de los filtros"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "Se creó F0-75 para el dibujo SVG del árbol y se enlazó con un ⏳ en el documento 23"
+          }
+        ]
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "autor",
+        "nota": "El autor revisa el documento 23 y la vista #/decisiones del hub"
       },
       {
         "etapa": "playtest",
@@ -143,6 +161,12 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Revisar el documento 23, decisions.json y la vista del hub antes de la revisión del autor",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: documento 23 y la vista #/decisiones",
         "at": "2026-10-12"
       }
     ]

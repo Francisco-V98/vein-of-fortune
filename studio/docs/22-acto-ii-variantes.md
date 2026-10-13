@@ -312,7 +312,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 
 ## Pendiente
 
-- ✅ Las ramas de A2, A4 y A5, las pruebas distintas del Acto IV y el acto de cada cinta están en [23](23-arbol-de-decisiones.md).
+- ✅ Las ramas de A2, A4 y A5 están en [23](23-arbol-de-decisiones.md). 🟡 Las pruebas distintas del Acto IV y el acto de cada cinta, también ahí.
 - ⏳ F0-46 Epílogo de Reme y de cada facción según la alianza.
 - ⏳ F0-47 Umbrales exactos de A1 a A6 y de las escenas opcionales.
 - ⏳ F0-23 Las tres pistas del Acto I y su lugar en los días del tutorial.

@@ -423,4 +423,4 @@ Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conserv
 - ⏳ F4-147 La curva del desplome de la Aetherita dentro del tope diario.
 - ⏳ F0-52 Cifras de precios, cuotas, gastos y vigilancia.
 - ⏳ F4-135 Guion del Acto III, con el médico del dispensario.
-- **Para el roadmap.** La descripción de F0-45 todavía llama «bifurcación» al acreedor del Acto II: debe decir que es un sorteo y que las tres grandes son la alianza, cómo entras al círculo y el destino de la Aetherita.
+- ⏳ F0-75 Dibujo del árbol con conexiones (SVG) en el hub; la vista actual usa columnas, tarjetas y flechas de texto.
