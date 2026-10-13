@@ -37,7 +37,7 @@ Las marcas siguen el criterio de los demás documentos: la palomita verde es lo 
 ### 1.1 Voz del juego ✅
 
 - **Español neutro latinoamericano con tuteo**, frases cortas y concretas, verbos antes que sustantivos abstractos ([13](13-marca-e-identidad.md)).
-- En la **interfaz y en el narrador siempre se tutea** ✅. El usted existe en la boca de Quiroga, de Dueñas y del personal figurante oficial (ver 1.2).
+- En la **interfaz y en el narrador siempre se tutea** ✅. El usted existe en la boca de Quiroga, de Montenegro y del personal figurante oficial (ver 1.2).
 - **El protagonista es un optimista terco**: cálido, directo, con humor ligero. **Nunca es cínico ni burlón con los trabajadores** ✅. Aligera, no se ríe de nadie.
 - Una idea por frase. Sin jerga financiera pesada: se explica con ejemplos del mundo.
 - Los textos son neutros en género cuando se puede ([08](08-historia-y-personaje.md)); las pocas variantes que se permiten están en 1.2.
@@ -51,8 +51,8 @@ Decisión del autor, F0-41 (2026-10-12).
 | Interfaz y narrador | Jugador | **Tú** ✅ |
 | Inspector Quiroga | Protagonista | **Usted** ✅ |
 | Protagonista | Inspector Quiroga | **Usted** ✅ |
-| Ministro Dueñas | Protagonista | **Usted** ✅ |
-| Protagonista | Ministro Dueñas | **Usted** ✅ |
+| Ministro Montenegro | Protagonista | **Usted** ✅ |
+| Protagonista | Ministro Montenegro | **Usted** ✅ |
 | Personal figurante del Ministerio y de la Comisión del Éter (escribiente, oficial, soldado, perito, guardia) | Protagonista | **Usted** ✅ |
 | Protagonista | Personal figurante oficial | **Usted** ✅ |
 | Doña Reme | Protagonista | **Tú**, con cariño: «criatura» ✅ |
@@ -60,7 +60,7 @@ Decisión del autor, F0-41 (2026-10-12).
 | Anselmo, Teo, Lucía, Esteban y Casilda | Protagonista | **Tú** ✅ |
 | Protagonista | Anselmo, Teo, Lucía, Esteban y Casilda | **Tú** ✅ |
 
-- El protagonista solo trata de usted a Quiroga, a Dueñas y al personal figurante oficial. A todos los demás los tutea.
+- El protagonista solo trata de usted a Quiroga, a Montenegro y al personal figurante oficial. A todos los demás los tutea.
 - **Apelativos con género ✅.** Los dos tics que marcan género van con **variante** para la protagonista mujer: Quiroga «estimado» y «estimada», Esteban «amigo» y «amiga». Es la única excepción a la regla de textos neutros. Los demás apelativos son neutros: «criatura» (Reme) y «aprendiz» (Teo).
 
 ### 1.3 Aetherita, éter y mal del éter ✅
@@ -109,8 +109,8 @@ La verdad (la Aetherita enferma a quien la extrae y la Comisión lo oculta) **se
 **«Ministerio de Recursos»** es el nombre correcto. Después de la primera mención se puede decir **«el Ministerio»**.
 
 - **«Ministerio de Minas» es un error**: no existe en Valdoria. Se corrigió la tabla de [07](07-sociedad-y-eventos.md).
-- El **Ministro Dueñas** es el ministro de Recursos. La **Comisión del Éter** está dentro del Ministerio ✅.
-- La **Escuela de Minas** (donde estudiaron Anselmo y Dueñas, según [19](19-elenco-a-fondo.md), fichas de Anselmo y de Dueñas) es otra institución: no se confunde con el Ministerio.
+- El **Ministro Montenegro** es el ministro de Recursos. La **Comisión del Éter** está dentro del Ministerio ✅.
+- La **Escuela de Minas** (donde estudiaron Anselmo y Montenegro, según [19](19-elenco-a-fondo.md), fichas de Anselmo y de Montenegro) es otra institución: no se confunde con el Ministerio.
 
 ### 1.6 Cinta y carrete ✅
 
@@ -139,7 +139,7 @@ La verdad (la Aetherita enferma a quien la extrae y la Comisión lo oculta) **se
 | Lucía | Ironía rápida, sin confirmar nada |
 | Esteban | Simpático y con filo |
 | Casilda | Una frase corta y seca |
-| Dueñas | **No**: sin humor ✅ |
+| Montenegro | **No**: sin humor ✅ |
 
 ### 1.8 Nombre del protagonista 🟡
 
@@ -186,7 +186,7 @@ La voz de cada medio está en [13](13-marca-e-identidad.md) y su sesgo en [07](0
 
 ### 1.12 Mayúsculas y formas de los nombres 🟡
 
-- Cargo con nombre propio: **mayúscula en la etiqueta** («Ministro Dueñas», «Inspector Quiroga») y **minúscula en el texto corrido** («el ministro Dueñas»). «Doña Reme» en la etiqueta; «doña Reme» en el texto.
+- Cargo con nombre propio: **mayúscula en la etiqueta** («Ministro Montenegro», «Inspector Quiroga») y **minúscula en el texto corrido** («el ministro Montenegro»). «Doña Reme» en la etiqueta; «doña Reme» en el texto.
 - Los grupos llevan el artículo dentro del nombre cuando es parte de él: **Los Faroleros**. «La Unión», «el Ministerio», «el Consorcio» son formas cortas.
 - Las zonas y lugares llevan mayúscula inicial en cada palabra clave: Villa Brasa, Puerto Meridiano, La Fosa.
 - Otras reglas de escritura (frases cortas, nada de texto dentro del arte, sin política real) están en [13](13-marca-e-identidad.md).
@@ -202,7 +202,7 @@ Los 9 personajes del registro del mundo. Cada ficha trae lo necesario para escri
 | Personaje | Trata al protagonista de | El protagonista le responde de |
 |---|---|---|
 | Inspector Quiroga | Usted ✅ | Usted ✅ |
-| Ministro Dueñas | Usted ✅ | Usted ✅ |
+| Ministro Montenegro | Usted ✅ | Usted ✅ |
 | Doña Reme | Tú ✅ («criatura») | «Doña Reme» y tú ✅ |
 | Anselmo, Teo, Lucía, Esteban y Casilda | Tú ✅ | Tú ✅ |
 | Personal figurante del Ministerio y de la Comisión | Usted ✅ | Usted ✅ |
@@ -213,7 +213,7 @@ En cada ficha, los **rasgos de voz** y las **líneas de ejemplo** vienen del 19 
 
 | | |
 |---|---|
-| **Tratamiento** | Usted a Quiroga, a Dueñas y al personal figurante oficial; tú a los demás ✅ |
+| **Tratamiento** | Usted a Quiroga, a Montenegro y al personal figurante oficial; tú a los demás ✅ |
 | **Cómo llama a los demás** | «doña Reme» ✅; «Teo» y a los demás por su nombre 🟡 |
 | **Rasgos de voz** | Frases cortas, preguntas honestas, humor para aligerar sin burlarse. No es el centro: el jugador elige sus respuestas |
 | **Líneas de ejemplo** | «Mi pico se partió. Nada que una buena veta no arregle.» · «No sé cómo se hace, pero dime dónde y aprendo.» |
@@ -301,7 +301,7 @@ La facción detrás de Reme cambia por partida (ver capítulo 3). Cómo suena Re
 | **Nunca dice** | Nunca «extorsión» ni «mafia»: para ella todo es luz y deuda. No ruega ni explica de más 🟡 |
 | **Ficha completa** | [19 · Casilda](19-elenco-a-fondo.md) |
 
-### 2.9 Ministro Aurelio Dueñas
+### 2.9 Ministro Aurelio Montenegro
 
 | | |
 |---|---|
@@ -310,7 +310,7 @@ La facción detrás de Reme cambia por partida (ver capítulo 3). Cómo suena Re
 | **Rasgos de voz** | Seca e imperativa, sin humor. No alza la voz. Duro e inflexible ✅ |
 | **Líneas de ejemplo** | «No le pregunto qué opina. Le informo qué va a hacer.» · «La verdad es un lujo. Valdoria no puede permitírselo.» |
 | **Nunca dice** | Ni una broma, ni «por favor» como ruego, ni una disculpa. Antes del Acto IV no dice «mal del éter» 🟡 |
-| **Ficha completa** | [19 · Dueñas](19-elenco-a-fondo.md) |
+| **Ficha completa** | [19 · Montenegro](19-elenco-a-fondo.md) |
 
 ---
 
@@ -349,7 +349,7 @@ Regiones y zonas en [05](05-mundo-y-minerales.md) y [02](02-extraccion.md); nomb
 | **Puerto Meridiano** ✅ | La capital: bolsa, prensa, élite | III | Donde el tono se vuelve más formal, aunque el narrador y la interfaz siguen tuteando |
 | **Cavernas de Cristal** ✅ | Región y zona | III | Cuarzo y gemas, cuevas inestables; disputada entre todos |
 | **La Fosa / La Fosa del Éter** ✅ | Región militarizada; «La Fosa del Éter» es el nombre oficial de la zona de minado | IV | En el habla y los textos, «La Fosa». «La Fosa del Éter» en títulos de zona y documentos oficiales |
-| **Escuela de Minas** ✅ | Donde estudiaron Anselmo y Dueñas | Antes del juego | Solo se menciona; no se visita 🟡 |
+| **Escuela de Minas** ✅ | Donde estudiaron Anselmo y Montenegro | Antes del juego | Solo se menciona; no se visita 🟡 |
 | **Vega Mansa** ✅ | Aldea agrícola de las tierras bajas del sur; la del protagonista | Antes del juego y Acto I | Solo se menciona; no se visita. Fuera de las seis regiones del mapa. Detalle en [21](21-pasado-de-valdoria.md) |
 | **Pozo Negro** ✅ | Pozo del Hollín donde ocurrió el derrumbe de hace 40 años | Antes del juego | Memoria de la Unión; no se visita |
 | **Sanatorio de Cumbre Clara** ✅ | Sanatorio de la Comisión en la Sierra Alta, donde murió Anselmo en público | Antes del juego | Solo se menciona; es el lugar de la versión pública |
@@ -484,7 +484,7 @@ Productos del taller (recetas del registro del mundo) ✅: Acero → *Steel*; Co
 | Villa Brasa | Ember Town | ✅ | Pueblo inicial en el Hollín. «Brasa» = *ember*; casa con el hollín. Sin *the*. Decisión del autor, F0-41 (firme, no un ejemplo) |
 | Puerto Meridiano | Port Meridian | ✅ | Ver 6.4 |
 | la bolsa (de Puerto Meridiano) | the Exchange | ✅ | Con mayúscula si es el edificio o la institución; *stock exchange* en la explicación |
-| Escuela de Minas | School of Mines | ✅ | Donde estudiaron Anselmo y Dueñas. Es otra institución distinta del Ministry (1.5) |
+| Escuela de Minas | School of Mines | ✅ | Donde estudiaron Anselmo y Montenegro. Es otra institución distinta del Ministry (1.5) |
 | la tienda | the shop | ✅ | La del protagonista. Nombre propio de la tienda: lo elige el jugador, no se traduce |
 | el puesto (en el mercado) | the stall | ✅ | Parte de la herencia (6.11) |
 | Vega Mansa | Gentle Meadow | ✅ | La aldea del protagonista ([21](21-pasado-de-valdoria.md)). «Vega» = prado fértil de tierras bajas, «mansa» = apacible. Mismo criterio que *Ember Town*: lugar con significado, se traduce. Sin *the* (es aldea) |
@@ -565,20 +565,20 @@ Productos del taller (recetas del registro del mundo) ✅: Acero → *Steel*; Co
 
 ### 6.8 Personajes, apodos y tratamiento
 
-**Los nombres de personas no se traducen** ✅ (decisión del autor): Anselmo Vidal, Remedios «Reme» Salgado, Teo Cárdenas, Lucía Montalvo, Esteban Arvel, Casilda Ibarra, Aurelio Dueñas y Quiroga conservan tildes y ñ.
+**Los nombres de personas no se traducen** ✅ (decisión del autor): Anselmo Vidal, Remedios «Reme» Salgado, Teo Cárdenas, Lucía Montalvo, Esteban Arvel, Casilda Ibarra, Aurelio Montenegro y Quiroga conservan tildes y ñ.
 
 | Español | English | Estado | Nota de uso |
 |---|---|---|---|
 | Doña Reme | Doña Reme | ✅ | Se conserva «Doña» como el color local de un honorífico. En inglés va siempre con mayúscula, también en el texto corrido (en español, «doña Reme» en minúscula, 1.12) |
 | el Viejo Teo | Old Teo | ✅ | Como lo nombran los demás. El protagonista dice solo *Teo* |
 | Inspector Quiroga | Inspector Quiroga | ✅ | Cargo + apellido |
-| Ministro Dueñas | Minister Dueñas | ✅ | *the minister* en minúscula si va solo |
+| Ministro Montenegro | Minister Montenegro | ✅ | *the minister* en minúscula si va solo |
 | la Faro (Casilda) | the Beacon | ✅ | Apodo. Un faro es luz que guía y Casilda cobra por esa luz (6.13) |
 | criatura (Reme) | little one | ✅ | Neutro en género |
 | aprendiz (Teo) | apprentice | ✅ | Neutro en género |
 | estimado · estimada (Quiroga) | dear citizen | ✅ | Una sola forma en inglés, formal |
 | amigo · amiga (Esteban) | friend | ✅ | Una sola forma en inglés |
-| tú · usted | you | ✅ | En inglés no hay dos formas. Quiroga, Dueñas y el personal figurante del Ministry y de la Commission marcan el usted con registro formal (sin contracciones), no con *sir/ma'am* |
+| tú · usted | you | ✅ | En inglés no hay dos formas. Quiroga, Montenegro y el personal figurante del Ministry y de la Commission marcan el usted con registro formal (sin contracciones), no con *sir/ma'am* |
 
 ### 6.9 Estadísticas del protagonista
 
@@ -673,14 +673,14 @@ La escalera de estatus es provisional también en español ([07](07-sociedad-y-e
 3. **Mayúsculas en inglés.**
    - Nombres propios en *Title Case*: Ministry of Resources, Ether Commission, Hollín Miners' Union.
    - Formas cortas con mayúscula: *the Ministry*, *the Commission*, *the Consortium*, *the Union*, *the Lamplighters*, *the Pit*. El *the* va en minúscula en medio de frase.
-   - Cargos con nombre en mayúscula (*Inspector Quiroga*, *Minister Dueñas*); solos, en minúscula (*the minister*).
+   - Cargos con nombre en mayúscula (*Inspector Quiroga*, *Minister Montenegro*); solos, en minúscula (*the minister*).
    - Las cinco stats siempre con mayúscula: Stamina, Skill, Eye, Nerve, Gab.
    - *Aetherite* siempre con mayúscula; los demás minerales en minúscula en el texto corrido.
 4. **Sin *the* delante de pueblos y ciudades** (*Ember Town*, *Port Meridian*) y **con *the* delante de regiones y grupos** (*the Hollín*, *the Pit*, *the Lamplighters*).
 5. **Comillas.** Español: «así». Inglés: “así”, con la puntuación dentro.
 6. **Texto dentro de las imágenes:** ninguno ([13](13-marca-e-identidad.md)). Carteles, titulares y etiquetas son texto real, localizable. Los logos tienen una versión por idioma ✅.
 7. **Género.** El inglés casi no marca género: se escribe una sola forma (*friend*, *neighbor*, *dear citizen*). Las variantes «estimado/estimada» y «amigo/amiga» existen solo en español (1.2).
-8. **Tú y usted** se traducen ambos como *you*. El registro formal de Quiroga y Dueñas se marca sin contracciones y con frases completas, no con *sir* ni *ma'am* (que marcarían género).
+8. **Tú y usted** se traducen ambos como *you*. El registro formal de Quiroga y Montenegro se marca sin contracciones y con frases completas, no con *sir* ni *ma'am* (que marcarían género).
 9. **Refranes y expresiones de Teo** (por ejemplo «El carbón no perdona, pero avisa»): no se traducen palabra por palabra. Se escribe un refrán equivalente en inglés, con el mismo humor seco, y se registra aquí.
 10. **Juegos de palabras que necesitan nota:**
     - *Luz*: en español es a la vez la luz y la electricidad (de ahí «cobrar la luz» y los apagones). En inglés *light* cubre las dos ideas en *the light debt*; para el generador y el apagón se usa *power*.

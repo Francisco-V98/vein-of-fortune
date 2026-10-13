@@ -30,7 +30,7 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 | Reme después | En el Acto III queda **distante pero atenta**; en el IV sigue siendo **tu mayor aliada** ✅ |
 | Huelga | La primera huelga grande **depende de ti**. **Sube el precio del mineral en todas las partidas** y el **apagón posterior es común** ✅ |
 | Orden de Reme y huelga | La orden tiene tres salidas (**aceptar, negociar o rechazar**) y la huelga tres bandos (**apoyar, abstenerte o romper**) ✅. El acreedor es un **sorteo**, no una bifurcación jugable ✅ |
-| Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión del Éter. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Dueñas es el enemigo claro, duro e inflexible ✅ |
+| Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión del Éter. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Montenegro es el enemigo claro, duro e inflexible ✅ |
 
 **No decidido por el autor 🟡.** Que la huelga tenga consecuencias pequeñas y distintas por variante es propuesta del narrador (sección 7). Tampoco está decidido dónde ocurre el primer contacto con el mercado negro en cada variante (sección 8).
 
@@ -52,7 +52,7 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 - El **orden** de A1 a A6 es fijo; el **ritmo** no. Entre una escena y otra el jugador comercia, mina y explora, como pide el modo historia.
 - **Regla de obligatoriedad ✅.** Las seis anclas se juegan en toda partida, cada una al cumplirse su disparador: cada escena espera a la anterior resuelta y A5 lleva el piso de estatus y las vías ([24](24-umbrales-de-acto.md)). Lo que separa a las tres **únicas** (A2, A3 y A6) de las tres **comunes** (A1, A4 y A5) no es poder saltarlas, sino que las únicas se escriben tres veces y las comunes una vez, con capa. Lo único que se puede saltar son las **opcionales** O1 a O4, que no puntúan para ninguna puerta.
 - El hito del Acto II es **elegir con qué facción te alías** ✅ ([17](17-mapa-de-historia.md)). Lo cierra A5 ✅. A6 es la última pantalla del acto, no una condición para pasar al III.
-- **A1 común.** Los tres medios cuentan el mismo decreto, que abre las zonas del Acto II con la firma de Dueñas, y cada uno lo lee con su tono. La capa es el contacto de la facción.
+- **A1 común.** Los tres medios cuentan el mismo decreto, que abre las zonas del Acto II con la firma de Montenegro, y cada uno lo lee con su tono. La capa es el contacto de la facción.
 - **Una sombra por escena, como máximo** ([18](18-biblia-narrativa.md), 1.4): Teo y La Fosa en A4, el certificado de Quiroga en A5 y el sobre sin remitente en A6.
 
 ### Escenas opcionales 🟡
@@ -78,7 +78,7 @@ Se activan por evento tuyo, no por calendario, se pueden saltar y no puntúan pa
 | **A2** · la orden (única) | Reme pide **vender con exclusividad** al Consorcio. La orden la trae un **ejecutivo del Consorcio**, no Esteban | Reme pide **entregar tus cuentas** y **no vender a Los Faroleros** | Reme pide **pagar la «deuda de luz»** (una cuota extra) y **abrir el contacto del mercado negro** con Casilda |
 | **A3** · primer conflicto (única) | **Contratos de hierro y cobre** en Sierra Alta: Esteban te quita contratos mientras el Consorcio ofrece prima a cambio de la exclusividad | **Licencias e inspecciones** en Villa Brasa: revisión de tu licencia, el «trámite» de Quiroga y un rumor de cuotas ⏳ F4-74 | **Cobros en los Salares**: un cobrador y matones cobran la luz en cada viaje ⏳ F4-86 |
 | **A4** · huelga (capa) | El Consorcio quiere **romper la huelga** con guardias de empresa y se beneficia con su stock. En el apagón, Casilda abre en persona la puerta de noche: **primer contacto con el mercado negro** 🟡 | El Ministerio declara la huelga irregular y **revisa licencias**; luego corta la luz. En el apagón, Casilda abre en persona la puerta de noche: **primer contacto con el mercado negro** 🟡 | Casilda ofrece luz a los huelguistas y sus informantes anotan quién apoya. El mercado negro ya está abierto desde A2 |
-| **A5** · ofertas (capa) | La oferta del Consorcio se presenta primero y trae la **compra de tu deuda** con una cláusula sobre la de Reme | La oferta del Ministerio se presenta primero, por **carta con sello y firma de Dueñas** que entrega Quiroga | La oferta de Casilda se presenta primero: **protección** en persona y una cláusula sobre la deuda de Reme |
+| **A5** · ofertas (capa) | La oferta del Consorcio se presenta primero y trae la **compra de tu deuda** con una cláusula sobre la de Reme | La oferta del Ministerio se presenta primero, por **carta con sello y firma de Montenegro** que entrega Quiroga | La oferta de Casilda se presenta primero: **protección** en persona y una cláusula sobre la deuda de Reme |
 | **A6** · cierre (única) | Reme calla el abono: investigarlo lleva al **fondo reservado**. Si eliges otra facción, el Consorcio le retira el crédito | Reme calla el abono: es la **misma cadena**. Si eliges otra, el fondo de crédito le retira la línea | Reme calla el abono: los **informantes** vieron el giro. Si eliges otra, la caja común le cobra su parte |
 
 La razón de cada silencio es la de la tabla de [21](21-pasado-de-valdoria.md) (sección 6) y **Reme no la dice nunca** en el Acto II: se oye en cómo calla.
@@ -116,7 +116,7 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 | Quiroga da la pista del certificado: sello irregular y sin registro de cremación ✅ | [19](19-elenco-a-fondo.md) y [21](21-pasado-de-valdoria.md), sección 11 |
 | Esteban es el rival que quita contratos y aún no sabe qué financia el Consorcio ✅ | [19](19-elenco-a-fondo.md), ficha de Esteban |
 | Casilda ofrece protección y pone a prueba al protagonista ✅ | [19](19-elenco-a-fondo.md), ficha de Casilda |
-| Dueñas no aparece en persona hasta el Acto III ✅ | [19](19-elenco-a-fondo.md) y `world.json` |
+| Montenegro no aparece en persona hasta el Acto III ✅ | [19](19-elenco-a-fondo.md) y `world.json` |
 
 ---
 
@@ -150,7 +150,7 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 | **Lucía** | Vende información a más de una parte | También a Esteban | También a Quiroga | También a los informantes de Casilda |
 | **Esteban** | Rival que quita contratos. No sabe qué financia el Consorcio. Dice «amigo» | Abre A1 y es el rostro de A3, pero **no da la orden** | Rival de fondo (O2) y oferta de A5 | Rival de fondo (O2) y oferta de A5 |
 | **Casilda** | Ofrece protección, vende luz en los apagones y abre el mercado negro | Aparece en el apagón de A4, donde abre el mercado negro, y en A5 | Aparece en el apagón de A4, donde abre el mercado negro, y en A5 | Actúa desde A1 por su cobrador; aparece en persona al final de A3 |
-| **Dueñas** | Ausente. Solo decretos y firma 🟡: el de zonas (A1), el corte de luz (A4) y la carta de A5. Sin retrato ni líneas | — | Firma además la revisión de licencias (A3) | — |
+| **Montenegro** | Ausente. Solo decretos y firma 🟡: el de zonas (A1), el corte de luz (A4) y la carta de A5. Sin retrato ni líneas | — | Firma además la revisión de licencias (A3) | — |
 | **Anselmo** | Solo rastro: el abono y el sobre sin remitente (A6) | — | — | — |
 
 - Esteban **no** conoce el fondo reservado: un ejecutivo del Consorcio, sin nombre, es quien habla con Reme.
@@ -190,7 +190,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 | Ministerio | «El Ministerio informa que revisará licencias en Cañón Ferroso, pero el paro sigue.» | «Inspectores en la boca de la mina: ¿quién revisa al Ministerio?» | «MINISTERIO PREPARA CORTE DE LUZ EN EL HOLLÍN SI SIGUE EL PARO. SIN CONFIRMAR» |
 | Los Faroleros | «Incidentes aislados en el Litoral durante el paro, pero la autoridad los atiende.» | «Los Faroleros ofrecen luz a los huelguistas. La Unión duda.» | «CASILDA IBARRA TIENE GENERADORES LISTOS PARA EL HOLLÍN. SIN CONFIRMAR» |
 
-**El apagón** que sigue es común: el Ministerio lo decreta con la firma de Dueñas y Los Faroleros venden luz en él (sección 4). En las variantes del Consorcio y del Ministerio, ahí mismo Casilda abre el mercado negro (sección 8). Su modelo y el generador ⏳ F4-78 y ⏳ F4-79
+**El apagón** que sigue es común: el Ministerio lo decreta con la firma de Montenegro y Los Faroleros venden luz en él (sección 4). En las variantes del Consorcio y del Ministerio, ahí mismo Casilda abre el mercado negro (sección 8). Su modelo y el generador ⏳ F4-78 y ⏳ F4-79
 
 ---
 
@@ -235,7 +235,7 @@ Los modificadores son 🟡 y no cambian los tramos del indicador (Tranquilo, Obs
 | Facción | Quién la trae | Forma de la oferta |
 |---|---|---|
 | Consorcio Arvel | Esteban, o su ejecutivo | Contratos grandes y comprar tu deuda |
-| Ministerio | Quiroga, con una carta firmada por Dueñas | Licencia ampliada y trámite preferente |
+| Ministerio | Quiroga, con una carta firmada por Montenegro | Licencia ampliada y trámite preferente |
 | Los Faroleros | Casilda, en persona | Protección y luz |
 
 La Unión no es aliable, pero su medidor se mueve: baja si te alías con el Consorcio o con el Ministerio y se mantiene si te alías con Los Faroleros ⏳ F4-64
@@ -338,6 +338,6 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 | Alianza final y costo para Reme | Sí | Sección 9 |
 | Sorteo oculto y pistas del Acto I | Sí | Sección 10 |
 | Pruebas del Acto IV como ampliación sin tocar el 21 | Sí | Sección 11 |
-| Dueñas solo en decretos y firma; sin mal del éter ni cintas | Sí | Secciones 6 y 7 |
+| Montenegro solo en decretos y firma; sin mal del éter ni cintas | Sí | Secciones 6 y 7 |
 | Escenas por evento; las seis anclas son obligatorias | Sí ✅ | Sección 2 y [24](24-umbrales-de-acto.md): las seis anclas van encadenadas y A5 lleva el hito; solo O1 a O4 se pueden saltar |
 | Nota de coste para F4-128, F4-179 y traducciones | Sí | Sección 12 |

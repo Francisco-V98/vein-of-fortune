@@ -31,7 +31,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 
 **Cómo encaja ✅🟡** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md); solo se marcan 🟡 lo que no vio: «18 años» y la convicción del punto 4):
 
-1. Hace veinte años Anselmo, Teo y Aurelio Dueñas, entonces un funcionario de unos 40 años y «joven» solo frente a la cúpula del Ministerio ✅, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar. Fechas y edades en [21](21-pasado-de-valdoria.md).
+1. Hace veinte años Anselmo, Teo y Aurelio Montenegro, entonces un funcionario de unos 40 años y «joven» solo frente a la cúpula del Ministerio ✅, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar. Fechas y edades en [21](21-pasado-de-valdoria.md).
 2. Anselmo lo documentó en una libreta y grabó **ocho cintas**. Calibró durante 18 años 🟡 los límites de exposición, y cada calibración agravó su mal ✅. Hace dos años intentó denunciarlo y la Comisión lo detuvo.
 3. Estaba ya enfermo. La Comisión le ofreció un trato: **tratamiento paliativo** (el único que existe), **su silencio y su trabajo** como perito de La Fosa, y que Reme, Teo y su heredero no sufrieran represalias. A cambio, **su muerte oficial**.
 4. Desde entonces vive en secreto, ayudando a la Comisión a calibrar los límites de exposición. Cree que desde dentro salva más vidas que estando muerto 🟡. En la práctica, ayuda a que se siga ocultando.
@@ -364,7 +364,7 @@ Cómo cambia su papel en el Acto II según la facción que esté detrás de ella
 
 **Conexiones.** Con **el Ministerio**, enemigo histórico; con **Quiroga**, una tregua; con **Reme**, a veces es quien está detrás de su deuda; con **el protagonista**, aliada interesada.
 
-## Ministro Aurelio Dueñas
+## Ministro Aurelio Montenegro
 
 | | |
 |---|---|
@@ -403,7 +403,7 @@ Cómo cambia su papel en el Acto II según la facción que esté detrás de ella
 ## Red de relaciones 🟡
 
 ```
-Anselmo ── amistad rota ── Ministro Dueñas ── protege ── Esteban Arvel
+Anselmo ── amistad rota ── Ministro Montenegro ── protege ── Esteban Arvel
    │                           │                              │
    ├─ camaradas ── Teo         ├─ enemistad histórica ── Casilda
    ├─ deuda ── Reme            └─ jefe lejano ── Quiroga

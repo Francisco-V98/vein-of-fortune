@@ -586,7 +586,7 @@
           "id": "cumplir",
           "texto": "Cumples la cuota.",
           "fija": [],
-          "mundo": "Dueñas lo anota: eres un proveedor fiable.",
+          "mundo": "Montenegro lo anota: eres un proveedor fiable.",
           "mercado": "Cuota de un 10 % del volumen del contrato ⏳ F0-52.",
           "personajes": "Quiroga: nada que cobrar."
         },
@@ -785,7 +785,7 @@
       "acto": "III",
       "nivel": "grande",
       "titulo": "Cómo entras al círculo",
-      "dispara": "Con el estatus de Empresario, dos vías de tres y una puerta abierta. Tres puertas, un solo encuentro con Dueñas, que cierra el acto.",
+      "dispara": "Con el estatus de Empresario, dos vías de tres y una puerta abierta. Tres puertas, un solo encuentro con Montenegro, que cierra el acto.",
       "opciones": [
         {
           "id": "aval",
@@ -799,11 +799,11 @@
         },
         {
           "id": "sello",
-          "texto": "Entras con el sello de Dueñas.",
+          "texto": "Entras con el sello de Montenegro.",
           "fija": [
             "f-puerta"
           ],
-          "mundo": "Es una firma y nada más: no te protege ni te ata. Dueñas no te debe nada.",
+          "mundo": "Es una firma y nada más: no te protege ni te ata. Montenegro no te debe nada.",
           "mercado": "Licencia ampliada; vigilancia +10.",
           "personajes": "Quiroga te debe un favor en el IV, porque tramitó el sello."
         },
@@ -953,35 +953,35 @@
       "estado": "prop"
     },
     {
-      "id": "n-iv-duenas",
+      "id": "n-iv-montenegro",
       "acto": "IV",
       "nivel": "mediana",
-      "titulo": "Dueñas se mueve contra ti",
+      "titulo": "Montenegro se mueve contra ti",
       "dispara": "Enfrentamiento en La Fosa. Regla única de prioridad: si vendes al Ministerio, te compra con el sello; si no, y la Unión está en tramo alto y llevas al menos dos pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor. Si revelas queda bajo investigación, con resultado abierto. Su desenlace se calcula al cerrar el acto, con el comprador ya fijado, y no añade bandera nueva.",
       "opciones": [
         {
           "id": "comprar",
-          "texto": "Dueñas intenta comprarte.",
+          "texto": "Montenegro intenta comprarte.",
           "fija": [],
           "mundo": "Te ofrece una concesión de Aetherita a cambio de callar y, si vendes al Ministerio, te compra con el sello.",
           "mercado": "—",
-          "personajes": "Dueñas: seco, sin disculpas ni ruego."
+          "personajes": "Montenegro: seco, sin disculpas ni ruego."
         },
         {
           "id": "amenazar",
-          "texto": "Dueñas te amenaza.",
+          "texto": "Montenegro te amenaza.",
           "fija": [],
           "mundo": "Nombra a Teo, a Reme y a tu familia. Se activa en el resto de los casos. Pierde fuerza si protegiste a Reme.",
           "mercado": "—",
-          "personajes": "Dueñas: no alza la voz."
+          "personajes": "Montenegro: no alza la voz."
         },
         {
           "id": "borrar",
-          "texto": "Dueñas intenta borrarte.",
+          "texto": "Montenegro intenta borrarte.",
           "fija": [],
           "mundo": "Suspende tus licencias y manda cerrar tus zonas, pero falla. Se activa si la Unión está en tramo alto y llevas al menos dos pruebas y no vendes al Ministerio.",
           "mercado": "Tus ventas caen a la mitad durante tres días y la vigilancia pasa a Bajo investigación.",
-          "personajes": "Dueñas: «No le pregunto qué opina»"
+          "personajes": "Montenegro: «No le pregunto qué opina»"
         }
       ],
       "lee": [
@@ -1071,9 +1071,9 @@
           "fija": [
             "f-comprador"
           ],
-          "mundo": "Dueñas te deja subir y se queda con tu prueba (los comprobantes y las cintas que usas), no con el archivo de Quiroga; si lo protegiste, sigue a salvo.",
+          "mundo": "Montenegro te deja subir y se queda con tu prueba (los comprobantes y las cintas que usas), no con el archivo de Quiroga; si lo protegiste, sigue a salvo.",
           "mercado": "La Aetherita se mantiene (0 a +3 %) por la cuota.",
-          "personajes": "Dueñas gana; tú te vuelves una pieza de la Comisión."
+          "personajes": "Montenegro gana; tú te vuelves una pieza de la Comisión."
         }
       ],
       "lee": [
@@ -1215,10 +1215,10 @@
     {
       "id": "f-puerta",
       "tipo": "eleccion",
-      "descripcion": "Puerta al círculo: aval de Esteban, sello de Dueñas o presión de tu alianza. Fija quién te debe un favor en el IV.",
+      "descripcion": "Puerta al círculo: aval de Esteban, sello de Montenegro o presión de tu alianza. Fija quién te debe un favor en el IV.",
       "personajes": [
         "Esteban Arvel",
-        "Ministro Aurelio Dueñas",
+        "Ministro Aurelio Montenegro",
         "Inspector Quiroga"
       ]
     },
@@ -1267,7 +1267,7 @@
       "tipo": "eleccion",
       "descripcion": "Destino de la Aetherita: revelar, callar o vender.",
       "personajes": [
-        "Ministro Aurelio Dueñas",
+        "Ministro Aurelio Montenegro",
         "Lucía Montalvo"
       ]
     },
@@ -1278,7 +1278,7 @@
       "personajes": [
         "Casilda Ibarra",
         "Esteban Arvel",
-        "Ministro Aurelio Dueñas"
+        "Ministro Aurelio Montenegro"
       ]
     },
     {
@@ -1348,7 +1348,7 @@
     {
       "id": "c-iii-encuentro",
       "acto": "III",
-      "titulo": "El encuentro con Dueñas",
+      "titulo": "El encuentro con Montenegro",
       "recibe": [
         "n-iii-circulo",
         "n-iii-monopolio",

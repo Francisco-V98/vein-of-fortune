@@ -12,7 +12,7 @@ Qué hace falta para pasar de un acto al siguiente, y cómo se cumple de varias 
 2. Los cuatro medidores (Unión, Esteban, Lucía y Teo) tienen **tres tramos**: bajo (menos de 35), medio (35 a 54) y alto (55 o más).
 3. Las escenas ancla **se disparan por eventos tuyos**, no por calendario, y van encadenadas: cada una espera a la anterior.
 4. Nada atasca la partida: el juego sigue como **sandbox**, la historia espera en una **cola**, un **diario** lista lo que falta y una **misión de rescate** llega tras mucho tiempo sin avanzar. **La deuda nunca bloquea.**
-5. Para entrar al **IV** hacen falta el encuentro con Dueñas y las **cintas 1 a 5**.
+5. Para entrar al **IV** hacen falta el encuentro con Montenegro y las **cintas 1 a 5**.
 
 ---
 
@@ -26,7 +26,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Acto I | Se cierra al **reabrir el puesto, atender la primera cuota** (pagada o prorrogada) y tener el **primer contacto con los empleados**. «Minero con licencia» es el **premio** del cierre, no un requisito ✅ |
 | Tramos | Para los cuatro medidores: **bajo menos de 35, medio 35 a 54, alto 55 o más**. Arrancan en 50; Esteban en 40 y Teo en 60 ✅ |
 | Tramo medio | Teo **se queda** (si lo llevaste a revisión). Lucía **no publica**, así que lo publicas tú con costo alto y poco alcance. El **reproductor** lo entrega Lucía solo en tramo alto; con medio o bajo lo entrega Reme ✅ |
-| Aval de Esteban | Basta su medidor en tramo alto. Si no lo tienes, el aval se muestra **bloqueado con el motivo**, y siempre quedan el sello de Dueñas y la presión de tu alianza ✅ |
+| Aval de Esteban | Basta su medidor en tramo alto. Si no lo tienes, el aval se muestra **bloqueado con el motivo**, y siempre quedan el sello de Montenegro y la presión de tu alianza ✅ |
 | Vía de relación | Se cumple si **al menos uno de los cuatro medidores** está en tramo alto ✅ |
 | Vía de deuda | Cuenta **solo lo que pagas tú** (% de capital pagado de tu bolsillo). Lo que asume el Consorcio no regala la vía ✅. La deuda de luz de los Faroleros no la rompe 🟡 |
 | Cintas | Las cintas **1 a 5 son obligatorias** para entrar al IV, no caducan por tiempo ni por decisiones, y tienen una **misión persistente** si faltan ✅ |
@@ -34,7 +34,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Teo | **Sin revisión muere**, también si le propones y aceptas su no: la opción respetuosa tiene costo ✅ |
 | Magnate y cierre del IV | Magnate se concede al **cerrar el acta de calibración** y **no es puerta**. El IV cierra con la cabecera, las tarjetas y el acta tras la decisión sobre la Aetherita; Magnate llega como un aviso silencioso al volver al sandbox ✅ ([25](25-finales-y-epilogos.md)) |
 | Disparadores | Van **por eventos del jugador y no por calendario**: A2 tras atender tu primera cuota después de A1; A3 tras tu primera venta o expedición en la zona; A4 tras el aviso de noticias y una acción tuya, sin plazo en días. Las opcionales O1 a O4 **no puntúan** para ninguna puerta ✅ |
-| Círculo y entrada al IV | El círculo pide **Empresario + dos vías de tres + una puerta abierta** y cierra en el encuentro con Dueñas. El IV entra con ese encuentro resuelto y las cintas 1 a 5 recogidas. Dueñas **no tiene medidor**. Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`, Reme nunca cierra puertas y ninguna facción es mejor por defecto ✅. `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme, sin usarlo para decidir 🟡 |
+| Círculo y entrada al IV | El círculo pide **Empresario + dos vías de tres + una puerta abierta** y cierra en el encuentro con Montenegro. El IV entra con ese encuentro resuelto y las cintas 1 a 5 recogidas. Montenegro **no tiene medidor**. Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`, Reme nunca cierra puertas y ninguna facción es mejor por defecto ✅. `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme, sin usarlo para decidir 🟡 |
 
 ---
 
@@ -49,7 +49,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 - Ninguna vía es obligatoria por sí sola: basta cualquier par de las tres ✅.
 - Las opcionales O1 a O4 pueden mover un medidor, pero **ninguna puerta las necesita** ✅ (se comprueba en la sección 6).
 - Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`: cómo trates a Reme no abre ni cierra nada ✅. El nodo `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme; ninguna puerta lo usa para decidir 🟡.
-- Dueñas no tiene medidor; la Unión sí, y cuenta como cualquiera de los cuatro ✅.
+- Montenegro no tiene medidor; la Unión sí, y cuenta como cualquiera de los cuatro ✅.
 
 ---
 
@@ -59,8 +59,8 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 |---|---|---|---|---|---|
 | **I → II** | Reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes el primer contacto con los empleados ✅ | Ninguno. «Minero con licencia» es el premio ✅ | Ninguna ✅ | El paso al II y la escena A1 ✅ | La deuda total, los logros, las cintas y el estatus ✅ |
 | **II → III** (A5) | A4 resuelta: viviste la huelga y el apagón ✅ | **Comerciante** ✅ | Dos de tres ✅ | La escena A5 y, con ella, el cierre del II ✅ | A1 a A4 (solo piden la anterior), Reme y las opcionales ✅ |
-| **III · el círculo** | Una puerta abierta; el círculo cierra en el encuentro con Dueñas ✅ | **Empresario** ✅ | Dos de tres ✅ | El círculo y el encuentro con Dueñas ✅ | Un aval bloqueado: quedan el sello y la presión de tu alianza ✅ |
-| **III → IV** (entrada) | Encuentro con Dueñas resuelto ✅ | Ninguno ✅ | Ninguna ✅ | La entrada al IV, hasta tener las cintas 1 a 5 ✅ | Cualquier medidor, la deuda y la alianza elegida ✅ |
+| **III · el círculo** | Una puerta abierta; el círculo cierra en el encuentro con Montenegro ✅ | **Empresario** ✅ | Dos de tres ✅ | El círculo y el encuentro con Montenegro ✅ | Un aval bloqueado: quedan el sello y la presión de tu alianza ✅ |
+| **III → IV** (entrada) | Encuentro con Montenegro resuelto ✅ | Ninguno ✅ | Ninguna ✅ | La entrada al IV, hasta tener las cintas 1 a 5 ✅ | Cualquier medidor, la deuda y la alianza elegida ✅ |
 | **IV → sandbox** | Cerrar el acta de calibración, tras la decisión sobre la Aetherita ✅ | Ninguno. Magnate es el premio, no una puerta ✅ | Ninguna ✅ | Nada: el sandbox empieza al cerrar el acta ✅ | — |
 
 ---
@@ -73,7 +73,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 |---|---|---|---|---|
 | **Deuda** | % del capital que pagaste **de tu bolsillo** ✅ | 25 % 🟡 ⏳ F0-52 | 50 % 🟡 ⏳ F0-52 | Lo que asume el Consorcio ✅; los abonos anónimos de Reme ✅; la deuda de luz de los Faroleros no la rompe 🟡 |
 | **Logros** | Número de logros del sistema ✅ | 4 🟡 ⏳ F4-116 | 10 🟡 ⏳ F4-116 | Ninguno es obligatorio: sirve cualquiera 🟡 ⏳ F4-115 |
-| **Relación** | Al menos un medidor en tramo alto ✅ | Igual ✅ | Igual ✅ | Reme y Dueñas no tienen medidor ✅ |
+| **Relación** | Al menos un medidor en tramo alto ✅ | Igual ✅ | Igual ✅ | Reme y Montenegro no tienen medidor ✅ |
 
 **Teo arranca en 60 (tramo alto) y la vía de relación nace cumplida** ✅. Es lo buscado: la relación es la vía más fácil, y la deuda y los logros son las que piden esfuerzo. Solo la pierdes si rompes la huelga de Teo y no cuidas a otro medidor.
 
@@ -88,7 +88,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 
 ## 5 · Los tramos de los medidores y lo que desbloquean 🟡
 
-**Estado:** ✅ los tramos, los arranques y lo que desbloquea cada tramo de Esteban (en `n-iv-esteban`), Lucía, Teo y la Unión (en `n-iv-duenas` y `n-iv-aetherita`); ✅ el castigo de que Dueñas solo pueda «borrarte» con la Unión alta; 🟡 tres reglas de lectura menores. Los movimientos de cada decisión ⏳ F4-61
+**Estado:** ✅ los tramos, los arranques y lo que desbloquea cada tramo de Esteban (en `n-iv-esteban`), Lucía, Teo y la Unión (en `n-iv-montenegro` y `n-iv-aetherita`); ✅ el castigo de que Montenegro solo pueda «borrarte» con la Unión alta; 🟡 tres reglas de lectura menores. Los movimientos de cada decisión ⏳ F4-61
 
 | Tramo | Valor ✅ | Quién arranca aquí ✅ |
 |---|---|---|
@@ -103,13 +103,13 @@ Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el t
 | **Esteban** | Aval abierto ✅. En `n-iv-esteban` rompe con el Consorcio y te da el libro ✅ | Aval bloqueado, con el motivo ✅. En `n-iv-esteban` se aparta ✅ | Aval bloqueado ✅. En `n-iv-esteban` defiende al Consorcio ✅ |
 | **Lucía** | Publica contigo ✅ y te da el reproductor ✅ | No publica, publicas tú con costo alto y poco alcance ✅. El reproductor lo entrega Reme ✅ | Publica en La Voz del Hollín sin ti ✅. El reproductor lo entrega Reme ✅ |
 | **Teo** | Si hubo revisión, se queda ✅ | Si hubo revisión, se queda ✅ | Si hubo revisión, se va ✅ |
-| **Unión** | Cuenta para la vía de relación ✅. En `n-iv-duenas`, Dueñas intenta borrarte y falla ✅. En `n-iv-aetherita`, la Unión sale contigo si revelas ✅ | No cuenta para la vía de relación ✅. Sin efecto propio en el IV ✅ | En `n-iv-aetherita`, nadie te respalda en el Hollín si revelas ✅ |
+| **Unión** | Cuenta para la vía de relación ✅. En `n-iv-montenegro`, Montenegro intenta borrarte y falla ✅. En `n-iv-aetherita`, la Unión sale contigo si revelas ✅ | No cuenta para la vía de relación ✅. Sin efecto propio en el IV ✅ | En `n-iv-aetherita`, nadie te respalda en el Hollín si revelas ✅ |
 
 - **Teo sin revisión muere, sea cual sea su tramo** ✅. Si el medidor y la revisión chocan, gana el no haberlo atendido ✅. Esto incluye la opción respetuosa «se lo propones y aceptas su no» ✅.
 - **Esteban.** El aval se lee en el momento de elegir puerta ✅. 🟡 Como `n-iii-esteban-trato` ocurre antes, el medidor ya trae lo que hiciste en la bolsa. Después de la puerta, el medidor de Esteban no se mueve, así que el tramo del IV es el de la puerta ⏳ F4-61.
 - **Lucía.** 🟡 Antes de decidir sobre la Aetherita se te muestra quién publicaría, para elegir con aviso ⏳ F4-142. `n-iv-lucia-publica` se activa si la verdad sale.
-- **Unión.** En `n-iv-duenas`, «borrarte» pide Unión alta y al menos dos pruebas, y falla ✅. Si vendes al Ministerio, te compra con el sello y esa regla manda primero ✅. Como siempre conservas al menos tres ([23](23-arbol-de-decisiones.md), sección 8), en la práctica solo importa la Unión: es el castigo de quien tiene gente detrás ✅. Con Unión media o baja, y si no vendes al Ministerio, te amenaza ✅: la puerta que usaste ya no decide qué hace Dueñas. Su desenlace se decide al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12).
-- **Dueñas** no tiene tramos ✅.
+- **Unión.** En `n-iv-montenegro`, «borrarte» pide Unión alta y al menos dos pruebas, y falla ✅. Si vendes al Ministerio, te compra con el sello y esa regla manda primero ✅. Como siempre conservas al menos tres ([23](23-arbol-de-decisiones.md), sección 8), en la práctica solo importa la Unión: es el castigo de quien tiene gente detrás ✅. Con Unión media o baja, y si no vendes al Ministerio, te amenaza ✅: la puerta que usaste ya no decide qué hace Montenegro. Su desenlace se decide al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12).
+- **Montenegro** no tiene tramos ✅.
 
 ---
 
@@ -205,11 +205,11 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 | 2 | II | Minas de Sierra Alta |
 | 3 a 5 | III | Puerto Meridiano y Cavernas de Cristal |
 
-- **Entrada al IV** ✅: encuentro con Dueñas resuelto y cintas 1 a 5 recogidas.
+- **Entrada al IV** ✅: encuentro con Montenegro resuelto y cintas 1 a 5 recogidas.
 - **No caducan** ✅ por tiempo ni por decisiones. Ninguna decisión puede cerrar el camino a una cinta ✅.
 - **Misión persistente** ✅: si falta una, queda en el diario con su lugar hasta que la recojas. No bloquea los actos anteriores.
-- **Estado intermedio.** 🟡 El orden entre el encuentro con Dueñas y las cintas es libre. Si tienes el encuentro y faltan cintas, el III está cerrado y el IV espera en la cola, mientras sigues en sandbox.
-- **Las cintas 6 a 8** esperan en La Fosa y se recogen dentro del IV ✅. 🟡 Dueñas no puede cerrarte La Fosa antes de que las recojas ⏳ F4-142.
+- **Estado intermedio.** 🟡 El orden entre el encuentro con Montenegro y las cintas es libre. Si tienes el encuentro y faltan cintas, el III está cerrado y el IV espera en la cola, mientras sigues en sandbox.
+- **Las cintas 6 a 8** esperan en La Fosa y se recogen dentro del IV ✅. 🟡 Montenegro no puede cerrarte La Fosa antes de que las recojas ⏳ F4-142.
 
 ---
 
@@ -269,7 +269,7 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 |---|---|---|
 | 1 | ¿Aceptas los ajustes A a D de la sección 6.4? | Sí, los cuatro ✅. Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅ |
 | 2 | Teo arranca en 60 (tramo alto), así que la vía de relación nace cumplida | Aceptado ✅: la relación es la vía más fácil; la deuda y los logros piden esfuerzo |
-| 3 | ¿Qué hace cada tramo de Esteban en `n-iv-esteban` y de la Unión en `n-iv-duenas` y `n-iv-aetherita`? | Lo que dice la sección 5 ✅ |
+| 3 | ¿Qué hace cada tramo de Esteban en `n-iv-esteban` y de la Unión en `n-iv-montenegro` y `n-iv-aetherita`? | Lo que dice la sección 5 ✅ |
 | 4 | Como siempre conservas tres pruebas, «borrarte» depende solo de la Unión alta | Confirmado ✅: es el castigo de quien tiene gente detrás |
 | 5 | ¿Los abonos anónimos cuentan como pagados por ti? | No ✅, para no regalar la vía |
 

@@ -816,6 +816,15 @@
               "prio": "P1",
               "desc": "Las tres piezas anti-atasco de los umbrales de acto: un diario que lista las vías que faltan para pasar de acto, la cola donde espera la historia mientras el jugador hace sandbox, y la misión de rescate que se ofrece tras mucho tiempo sin avanzar.",
               "done_when": "Las tres piezas diseñadas y acordadas con el autor, sin que la deuda ni ningún umbral puedan atascar la partida."
+            },
+            {
+              "id": "F0-79",
+              "title": "Cambiar el apellido del Ministro de Dueñas a Montenegro",
+              "est": 1,
+              "status": "done",
+              "prio": "P1",
+              "desc": "El autor decidió cambiar el apellido del Ministro Aurelio Dueñas por Montenegro en todo el proyecto: documentos, datos, tareas, agentes, identificadores, carpetas y nombres de imágenes.",
+              "done_when": "No queda el apellido antiguo ni su identificador en ningún archivo salvo este registro y el historial de git, y el build estricto y las pruebas pasan."
             }
           ]
         }
@@ -3769,7 +3778,7 @@
               "title": "Motor de epílogos por piezas",
               "est": 5,
               "prio": "P0",
-              "desc": "Pantalla de cabecera y tarjetas del cierre del Acto IV: elige las piezas según las banderas, la variante oculta de Reme y los resultados de Esteban, Dueñas, Lucía y Teo, y permite releerlas desde el diario. Debe respetar el documento 25.",
+              "desc": "Pantalla de cabecera y tarjetas del cierre del Acto IV: elige las piezas según las banderas, la variante oculta de Reme y los resultados de Esteban, Montenegro, Lucía y Teo, y permite releerlas desde el diario. Debe respetar el documento 25.",
               "done_when": "Con banderas forzadas (F1-23) salen las piezas correctas para cada combinación del Acto IV y ninguna tarjeta se contradice con otra."
             },
             {
