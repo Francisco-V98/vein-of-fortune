@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "Se cierran con el autor las decisiones que condicionan los finales, aplicando la regla de no aplazar lo que condiciona el futuro.",
       "ref": "rama studio/F0-77-cierre-decisiones-finales"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Ocho decisiones de finales y personajes escritas en los documentos 19, 21, 22 y 23 y en decisions.json.",
+      "ref": "rama studio/F0-77-cierre-decisiones-finales"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó las decisiones escritas desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [],
@@ -38,10 +54,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "autor",
-        "nota": "El autor revisa cómo quedaron escritas sus decisiones"
+        "nota": "El autor revisó cómo quedaron escritas sus decisiones y las aprobó desde /equipo"
       },
       {
         "etapa": "playtest",
@@ -49,7 +65,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #38 fusionado"
       }
     ],
     "traspasos": [
@@ -57,6 +76,12 @@
         "de": "coordinador",
         "a": "autor",
         "que": "Entrega para tu revisión: las ocho decisiones de finales y personajes ya escritas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-12"
       }
     ]
