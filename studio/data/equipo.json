@@ -14,7 +14,7 @@
       "nombre": "Análisis",
       "rol": "analista",
       "glifo": "A",
-      "que": "Comprobar coherencia, números, riesgos y dependencias, y fijar los criterios de aceptación.",
+      "que": "Comprobar coherencia, números, riesgos y dependencias, fijar los criterios de aceptación y clasificar cada punto abierto: decidir ahora o aplazar con su tarea.",
       "apoyo": [
         "legal"
       ]
@@ -31,7 +31,7 @@
       "nombre": "QA",
       "rol": "qa",
       "glifo": "Q",
-      "que": "Verificar que todo pasa: build estricto, pruebas, enlaces y coherencia.",
+      "que": "Verificar que todo pasa: build estricto, pruebas, enlaces y coherencia, y que ningún aplazamiento condicione trabajo futuro.",
       "apoyo": [
         "revisor"
       ]
@@ -328,7 +328,8 @@
     "El autor aprueba o devuelve; si devuelve, la tarea vuelve a Producción con el comentario.",
     "La prueba del autor se omite en las tareas que no tienen nada que probar todavía; si la hay, el diseñador de pruebas le prepara la guía.",
     "Nada cierra sin QA técnico aprobado, salvo tareas de solo decisión; si hay código, antes lo revisa el revisor de código.",
-    "Un rol se incorpora al estudio en su fase («desde»); antes de eso queda en reserva."
+    "Un rol se incorpora al estudio en su fase («desde»); antes de eso queda en reserva.",
+    "Solo se aplaza un punto abierto si una tarea ya existente lo va a resolver y nada de lo que se hace antes depende de la respuesta; lo que condiciona el futuro se decide con el autor antes de producir."
   ],
   "deptos": [
     {

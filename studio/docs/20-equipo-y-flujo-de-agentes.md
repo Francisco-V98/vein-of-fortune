@@ -22,6 +22,7 @@ Reglas ✅ del flujo, en `studio/data/equipo.json`:
 - Una etapa pasa a **hecha** solo cuando entrega lo que dice su rol; la siguiente no empieza antes.
 - Si el autor devuelve una tarea, vuelve a **Producción** con el comentario.
 - Nada cierra sin QA técnico aprobado, salvo tareas de solo decisión, que pasan directo a la revisión del autor.
+- Solo se aplaza un punto abierto si una tarea ya existente lo va a resolver y nada de lo que se hace antes depende de la respuesta (regla completa en [15](15-flujo-de-trabajo-y-calidad.md)). El **analista** clasifica cada punto abierto como «decidir ahora» o «aplazar con su tarea»; los de «decidir ahora» se presentan al autor en lote antes de producir; el **narrador y los demás productores** no aplazan lo que el analista marcó como «decidir ahora»; **QA** devuelve la tarea si hay un aplazamiento que condiciona trabajo posterior.
 
 ## El equipo ✅
 

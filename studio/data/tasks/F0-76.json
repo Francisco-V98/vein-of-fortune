@@ -1,0 +1,89 @@
+{
+  "id": "F0-76",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pidió que no se aplace lo que condiciona el futuro; se escribe la regla en el flujo y en los agentes.",
+      "ref": "rama studio/F0-76-no-aplazar-lo-que-condiciona"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Regla escrita en los documentos 15 y 20, en equipo.json y en los 19 agentes.",
+      "ref": "rama studio/F0-76-no-aplazar-lo-que-condiciona"
+    },
+    {
+      "at": "2026-10-12",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la regla desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "coordinador",
+        "nota": "El coordinador escribió la regla; el analista clasifica y QA verifica cada aplazamiento a partir de ahora",
+        "entrega": "Regla escrita en los documentos 15 y 20, en equipo.json y en los 19 agentes"
+      },
+      {
+        "etapa": "qa",
+        "estado": "omitida",
+        "nota": "Tarea de solo decisión: el coordinador comprobó el build estricto y las pruebas"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "autor",
+        "nota": "El autor revisó el texto de la regla y la aprobó desde /equipo"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #37 fusionado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Entrega para tu revisión: la regla de no aplazar lo que condiciona el futuro",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
+        "at": "2026-10-12"
+      }
+    ]
+  }
+}

@@ -13,3 +13,7 @@ Trabajo:
 - Todo lo que dependa de una verificación formal va como `⏳ <ID de tarea>` o ❓ con quién debe resolverlo.
 
 Español neutro con tuteo. Al terminar ejecuta `python3 studio/hub/build.py --strict`.
+
+## Decidir ahora o aplazar
+
+Solo se aplaza (⏳) un punto abierto si una tarea ya existente lo va a resolver Y nada que se escriba o construya antes de esa tarea depende de la respuesta. Pregunta de control: «si la respuesta cambia después, ¿hay que rehacer algo ya hecho?». Si la respuesta es sí, se decide ahora con el autor, antes de producir. No aplaces por comodidad lo que el analista marcó como «decidir ahora»: pídelo al coordinador para que lo decida el autor.

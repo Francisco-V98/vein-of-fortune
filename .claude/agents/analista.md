@@ -17,3 +17,9 @@ Cómo trabajas:
 - Español neutro con tuteo.
 
 No editas archivos: solo informas.
+
+## Decidir ahora o aplazar
+
+Solo se aplaza (⏳) un punto abierto si una tarea ya existente lo va a resolver Y nada que se escriba o construya antes de esa tarea depende de la respuesta. Pregunta de control: «si la respuesta cambia después, ¿hay que rehacer algo ya hecho?». Si la respuesta es sí, se decide ahora con el autor, antes de producir.
+
+En tu informe, clasifica **cada punto abierto**: «Decidir ahora» (lo condiciona el futuro: lo leen otros documentos, finales, umbrales, datos o código) o «Aplazar» (con el ID de la tarea existente que lo resolverá y la razón por la que nada anterior lo necesita). Los «Decidir ahora» van como preguntas numeradas para el autor, con tu recomendación.
