@@ -830,7 +830,7 @@
               "id": "F0-81",
               "title": "Mod de consumo de tokens (vf-consumo)",
               "est": 4,
-              "status": "doing",
+              "status": "done",
               "prio": "P2",
               "desc": "Mod de Claude Code con el comando /consumo: ventana de cinco horas y semanal, tokens por prompt e historial por día, modelo y subagentes, para ver en qué y cuándo se va el consumo.",
               "done_when": "El mod valida, pasa sus pruebas, el autor lo revisa y lo instala y el panel muestra el consumo real de una sesión."

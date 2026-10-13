@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "El autor pidió un mod para ver su consumo de tokens y los porcentajes de las ventanas.",
       "ref": "rama studio/F0-81-mod-consumo"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Mod vf-consumo con tres pestañas, historial propio y 16 pruebas; revisión de código y QA aprobados.",
+      "ref": "rama studio/F0-81-mod-consumo"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor revisó el mod, lo instaló y lo aprobó desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [],
@@ -53,21 +69,24 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
         "por": "autor",
-        "nota": "El autor revisa el código del mod y lo prueba en una sesión real"
+        "nota": "El autor revisó el código del mod y lo aprobó desde /equipo"
       },
       {
         "etapa": "playtest",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
         "por": "autor",
-        "nota": "El autor usa el panel unos días para comprobar que las cifras cuadran con lo que ve en la app"
+        "nota": "El autor instaló el mod y lo probó en una sesión real"
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #43 fusionado"
       }
     ],
     "traspasos": [
@@ -94,6 +113,12 @@
         "de": "qa",
         "a": "autor",
         "que": "Entrega para tu revisión y prueba: el mod de consumo, con las instrucciones de instalación en el README",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-13"
       }
     ]
