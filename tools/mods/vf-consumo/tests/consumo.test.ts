@@ -43,10 +43,10 @@ test('un registro suma el hilo principal y los subagentes por separado', async (
 
 test('los puntos de la ventana que gastó un prompt nunca son negativos', async () => {
   const reg = nuevoRegistro({ id: 't2', t: 1, texto: 'x', limites: LIMITES })
-  cerrarRegistro(reg, { cinco: { pct: 31.5 }, semana: { pct: 12.5 } })
+  cerrarRegistro(reg, { cinco: { pct: 31.5, resetsAt: LIMITES.cinco.resetsAt }, semana: { pct: 12.5, resetsAt: LIMITES.semana.resetsAt } })
   expect(puntos(reg.p5)).toBe(1.5)
   expect(puntos(reg.p7)).toBe(0)
-  reg.p5 = [90, 4] // la ventana se reinició entre medias
+  reg.p5 = [90, 4] // el contador bajó
   expect(puntos(reg.p5)).toBe(0)
   expect(puntos([null, 5])).toBeNull()
 })
@@ -71,13 +71,29 @@ test('el resumen por día y por modelo suma lo que se guarda', async () => {
 
 test('cuántos tokens vale un punto sale de lo gastado en la ventana', async () => {
   const reg = acumularTurno(nuevoRegistro({ id: 'c', t: Date.parse('2026-10-13T18:00:00Z'), texto: 'x', limites: LIMITES }), USO_A, false, 1)
-  const por = tokensPorPunto([reg], LIMITES.cinco, 5 * 3600 * 1000)
+  const por = tokensPorPunto([reg], LIMITES.cinco, 5 * 3600 * 1000, Date.parse('2026-10-13T19:00:00Z'))
   expect(por).toBe(Math.round(1000 / 30))
+  expect(tokensPorPunto([reg], LIMITES.cinco, 5 * 3600 * 1000, Date.parse('2026-10-13T21:00:00Z'))).toBeNull()
   expect(tokensPorPunto([], LIMITES.cinco, 5 * 3600 * 1000)).toBeNull()
   expect(tokensPorPunto([reg], null, 5 * 3600 * 1000)).toBeNull()
 })
 
+test('si la ventana se reinicia mientras corre el prompt, sus puntos quedan sin dato', async () => {
+  const reg = nuevoRegistro({ id: 'r', t: 1, texto: 'x', limites: LIMITES })
+  cerrarRegistro(reg, { cinco: { pct: 2, resetsAt: LIMITES.cinco.resetsAt + 5 * 3600 * 1000 }, semana: LIMITES.semana })
+  expect(puntos(reg.p5)).toBeNull()
+  expect(puntos(reg.p7)).toBe(0)
+})
+
+test('un turno sin respuesta no inventa un modelo ni tokens', async () => {
+  const reg = acumularTurno(nuevoRegistro({ id: 'ab', t: 1, texto: 'x', limites: LIMITES }), undefined, false, 800)
+  expect(Object.keys(reg.mod).length).toBe(0)
+  expect(reg.n).toBe(1)
+  expect(reg.nu).toBe(0)
+})
+
 test('el formato de cifras, barras y tiempos', async () => {
+  expect(tokens(999999)).toBe('1,0 M')
   expect(tokens(950)).toBe('950')
   expect(tokens(1500)).toBe('1,5 k')
   expect(tokens(25000)).toBe('25 k')
@@ -148,4 +164,64 @@ test('un turno completo se guarda con sus tokens, sus subagentes y los puntos de
   expect(guardados[0].p5).toEqual([30, 31.5])
   expect(Object.keys(almacen.dias as object).length).toBe(1)
   expect((almacen.muestras as any[]).length).toBe(1)
+})
+
+test('un subagente que termina tarde se suma al último prompt sin contar uno más', async ($, on) => {
+  const almacen: Record<string, unknown> = {}
+  on('command.register', () => ({ value: undefined }))
+  mock.clock(on)
+  on('session.start', () => ({ cwd: '/work/juego' }))
+  on('store.get', (_$, e) => ({ value: almacen[e.key] }))
+  on('store.set', (_$, e) => {
+    almacen[e.key] = e.value
+    return { value: undefined }
+  })
+  on('session.cwd', () => ({ value: '/work/juego' }))
+  on('turn.start', (_$, e) => ({ turnId: e.turnId }))
+  on('turn.complete', (_$, e) => ({ text: e.answer }))
+  on('ui.status', () => ({ value: undefined }))
+  on('session.usage', () => ({ value: { startedAt: 0, context: {}, rateLimits: [] } }))
+
+  await $.session.start({ surface: 'terminal', isInteractive: true, cwd: '/work/juego' })
+  await $.turn.start({ text: 'Lanza un agente', turnId: 'turno-9' })
+  await $.turn.complete({ answer: 'Hecho', durationMs: 1000, isAborted: false, turnId: 'turno-9', reason: 'answer', usage: USO_A })
+  await $.turn.complete({ answer: 'Informe', durationMs: 500, isAborted: false, turnId: 'sub-9', agentId: 'tarde', reason: 'answer', usage: USO_B })
+
+  const guardados = almacen.registros as any[]
+  expect(guardados.length).toBe(1)
+  expect(guardados[0].subN).toBe(1)
+  const dia = Object.values(almacen.dias as Record<string, any>)[0]
+  expect(dia.n).toBe(1)
+  expect(dia.sub).toEqual([50, 100, 3000, 0])
+  expect(dia.uso).toEqual([150, 500, 12000, 500])
+})
+
+test('session.measure actualiza la línea de estado y guarda una muestra', async ($, on) => {
+  const almacen: Record<string, unknown> = {}
+  const estados: string[] = []
+  on('command.register', () => ({ value: undefined }))
+  mock.clock(on)
+  on('session.start', () => ({ cwd: '/work/juego' }))
+  on('store.get', (_$, e) => ({ value: almacen[e.key] }))
+  on('store.set', (_$, e) => {
+    almacen[e.key] = e.value
+    return { value: undefined }
+  })
+  on('ui.status', (_$, e) => {
+    estados.push(String(e.text))
+    return { value: undefined }
+  })
+  on('session.usage', () => ({ value: { startedAt: 0, context: {}, rateLimits: [] } }))
+  on('session.measure', (_$, e) => ({ changed: e.changed }))
+
+  await $.session.start({ surface: 'terminal', isInteractive: true, cwd: '/work/juego' })
+  await $.session.measure({
+    context: {},
+    changed: ['rateLimits'],
+    rateLimits: [{ kind: 'five_hour', percentUsed: 42, resetsAt: '2099-01-01T00:00:00Z' }],
+  })
+
+  expect((almacen.muestras as any[]).length).toBe(1)
+  expect((almacen.muestras as any[])[0][1]).toBe(42)
+  expect(estados[estados.length - 1]).toContain('42')
 })

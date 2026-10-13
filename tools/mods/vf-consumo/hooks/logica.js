@@ -4,7 +4,8 @@
 export const MAX_REGISTROS = 3000
 export const MAX_MUESTRAS = 600
 export const CINCO_HORAS = 5 * 3600 * 1000
-export const SIETE_DIAS = 7 * 24 * 3600 * 1000
+export const UN_DIA = 24 * 3600 * 1000
+export const SIETE_DIAS = 7 * UN_DIA
 
 export const usoVacio = () => [0, 0, 0, 0]
 
@@ -21,6 +22,10 @@ export function usoDe(u) {
 
 export function sumarUso(a, b) {
   return [a[0] + b[0], a[1] + b[1], a[2] + b[2], a[3] + b[3]]
+}
+
+export function restarUso(a, b) {
+  return [a[0] - b[0], a[1] - b[1], a[2] - b[2], a[3] - b[3]]
 }
 
 // Tokens nuevos: lo que no vino de la caché (entrada, salida y caché escrita)
@@ -40,8 +45,11 @@ export function nuevoRegistro({ id, t, texto, proyecto, origen, limites }) {
     subN: 0,
     n: 0,
     ms: 0,
+    nu: 0,
     p5: [l.cinco ? l.cinco.pct : null, null],
     p7: [l.semana ? l.semana.pct : null, null],
+    w5: l.cinco ? l.cinco.resetsAt : null,
+    w7: l.semana ? l.semana.resetsAt : null,
   }
 }
 
@@ -55,8 +63,12 @@ export function acumularTurno(reg, usage, esSub, durMs) {
     reg.n += 1
     reg.ms += Number(durMs) || 0
   }
-  const modelo = (usage && usage.model) || 'desconocido'
-  reg.mod[modelo] = sumarUso(reg.mod[modelo] || usoVacio(), u)
+  // Un turno sin respuesta (interrumpido o con error) no trae modelo ni tokens
+  if (usage) {
+    const modelo = usage.model || 'desconocido'
+    reg.mod[modelo] = sumarUso(reg.mod[modelo] || usoVacio(), u)
+  }
+  reg.nu = frescos(usoRegistro(reg))
   return reg
 }
 
@@ -65,10 +77,14 @@ export function usoRegistro(reg) {
   return Object.values(reg.mod || {}).reduce((acc, u) => sumarUso(acc, u), usoVacio())
 }
 
+// Cierra el registro con las ventanas de ahora. Si una ventana se reinició mientras corría
+// el prompt, sus puntos no se pueden calcular y quedan sin dato.
 export function cerrarRegistro(reg, limites) {
   const l = limites || {}
-  reg.p5[1] = l.cinco ? l.cinco.pct : reg.p5[1]
-  reg.p7[1] = l.semana ? l.semana.pct : reg.p7[1]
+  const mismaVentana = (inicio, fin) => inicio === null || inicio === undefined || !fin || inicio === fin.resetsAt
+  reg.p5[1] = l.cinco && mismaVentana(reg.w5, l.cinco) ? l.cinco.pct : null
+  reg.p7[1] = l.semana && mismaVentana(reg.w7, l.semana) ? l.semana.pct : null
+  reg.nu = frescos(usoRegistro(reg))
   return reg
 }
 
@@ -76,7 +92,7 @@ export function cerrarRegistro(reg, limites) {
 export function puntos(par) {
   if (!par || par[0] === null || par[1] === null) return null
   const d = Math.round((par[1] - par[0]) * 10) / 10
-  return d < 0 ? 0 : d // si la ventana se reinició en medio, no se resta
+  return d < 0 ? 0 : d
 }
 
 // De la lista de ventanas del motor, saca la de cinco horas y la semanal
@@ -108,11 +124,20 @@ export function sumarADia(dias, reg) {
   return dias
 }
 
-export function podar(lista, max = MAX_REGISTROS) {
-  return lista.length > max ? lista.slice(lista.length - max) : lista
+// Suma al resumen por día lo que un subagente gastó después de que el prompt ya se había cerrado,
+// sin contar un prompt más
+export function sumarTardio(dias, t, delta) {
+  const k = claveDia(t)
+  const dia = dias[k] || { n: 0, uso: usoVacio(), sub: usoVacio(), mod: {} }
+  dia.uso = sumarUso(dia.uso, delta.uso)
+  dia.sub = sumarUso(dia.sub, delta.sub)
+  for (const [m, u] of Object.entries(delta.mod)) dia.mod[m] = sumarUso(dia.mod[m] || usoVacio(), u)
+  dias[k] = dia
+  return dias
 }
 
-export function podarMuestras(lista, max = MAX_MUESTRAS) {
+// Se queda con los últimos `max` elementos (registros y muestras usan la misma poda)
+export function podar(lista, max = MAX_REGISTROS) {
   return lista.length > max ? lista.slice(lista.length - max) : lista
 }
 
@@ -122,8 +147,9 @@ export function usoDesde(registros, desdeMs) {
 }
 
 // Estima cuántos tokens nuevos valen un punto de la ventana, con lo gastado y el % usado
-export function tokensPorPunto(registros, ventana, duracion) {
+export function tokensPorPunto(registros, ventana, duracion, ahora) {
   if (!ventana || !ventana.resetsAt || !(ventana.pct > 0)) return null
+  if (ahora !== undefined && ventana.resetsAt < ahora) return null
   const desde = ventana.resetsAt - duracion
   const nuevos = frescos(usoDesde(registros, desde))
   if (nuevos <= 0) return null
@@ -133,7 +159,9 @@ export function tokensPorPunto(registros, ventana, duracion) {
 export function ultimosDias(dias, cuantos, ahoraMs) {
   const filas = []
   for (let i = cuantos - 1; i >= 0; i--) {
-    const k = claveDia(ahoraMs - i * 24 * 3600 * 1000)
+    const f = new Date(ahoraMs)
+    f.setDate(f.getDate() - i) // por calendario: un cambio de horario no repite ni salta un día
+    const k = claveDia(f.getTime())
     const d = dias[k]
     filas.push({ dia: k, n: d ? d.n : 0, uso: d ? d.uso : usoVacio(), sub: d ? d.sub : usoVacio(), mod: d ? d.mod : {} })
   }
@@ -151,7 +179,7 @@ export function porModelo(filas) {
 export function masCaros(registros, desdeMs, cuantos) {
   return registros
     .filter((r) => r.t >= desdeMs)
-    .map((r) => ({ reg: r, nuevos: frescos(usoRegistro(r)) }))
+    .map((r) => ({ reg: r, nuevos: r.nu === undefined ? frescos(usoRegistro(r)) : r.nu }))
     .sort((a, b) => b.nuevos - a.nuevos)
     .slice(0, cuantos)
 }
@@ -160,11 +188,14 @@ export function masCaros(registros, desdeMs, cuantos) {
 
 export function tokens(n) {
   const v = Math.round(n)
-  if (v >= 1e6) return (v / 1e6).toFixed(1).replace('.', ',') + ' M'
+  if (v >= 999500) return (v / 1e6).toFixed(1).replace('.', ',') + ' M'
   if (v >= 1e4) return Math.round(v / 1e3) + ' k'
   if (v >= 1e3) return (v / 1e3).toFixed(1).replace('.', ',') + ' k'
   return String(v)
 }
+
+// 1,5 en lugar de 1.5, para el español
+export const coma = (n) => String(n).replace('.', ',')
 
 export function barra(pct, ancho = 20) {
   const lleno = Math.max(0, Math.min(ancho, Math.round((pct / 100) * ancho)))

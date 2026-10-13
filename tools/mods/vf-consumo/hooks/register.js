@@ -1,10 +1,10 @@
 // Mod de consumo: guarda cuántos tokens gasta cada prompt, cuánto sube cada ventana
 // (cinco horas y semanal) y arma un historial para ver en qué se fue el consumo.
 import {
-  acumularTurno, barra, cerrarRegistro, claveDia, fechaCorta, frescos, hora, leerLimites, masCaros, nombreModelo,
-  nuevoRegistro, podar, podarMuestras, porModelo, porcentaje, puntos, sumarADia, tiempoHasta, tokens,
+  acumularTurno, barra, cerrarRegistro, claveDia, coma, fechaCorta, frescos, hora, leerLimites, masCaros, nombreModelo,
+  nuevoRegistro, podar, porModelo, porcentaje, puntos, restarUso, sumarADia, sumarTardio, tiempoHasta, tokens,
   tokensPorPunto, ultimosDias, usoRegistro, usoVacio, sumarUso,
-  CINCO_HORAS, SIETE_DIAS,
+  CINCO_HORAS, MAX_MUESTRAS, SIETE_DIAS,
 } from './logica.js'
 
 const PANE = 'vf-consumo'
@@ -14,7 +14,10 @@ let registros = []
 let dias = {}
 let muestras = []
 let limites = { cinco: null, semana: null }
-let actual = null
+const abiertos = new Map() // prompts en curso, por id de turno
+let ultimoCerrado = null // el último prompt guardado: recibe lo que un subagente gaste tarde
+let cola = Promise.resolve() // las escrituras al almacén van una detrás de otra
+let temporizador = null
 let tab = 'ahora'
 let orden = 'recientes'
 let abierto = null
@@ -27,36 +30,71 @@ async function cargarAlmacen($) {
     dias = (await $.store.get('dias')) || {}
     muestras = (await $.store.get('muestras')) || []
   } catch (e) {
-    error = 'No se pudo leer el historial: ' + (e && e.message ? e.message : String(e))
+    fallo('No se pudo leer el historial: ', e)
   }
 }
 
-// Lee, suma y guarda de nuevo: así dos sesiones abiertas a la vez no se pisan
-async function guardarRegistro($, reg) {
-  try {
-    const lista = ((await $.store.get('registros')) || []).filter((r) => r.id !== reg.id)
-    lista.push(reg)
-    const nuevoDias = (await $.store.get('dias')) || {}
-    sumarADia(nuevoDias, reg)
-    registros = podar(lista)
-    dias = nuevoDias
-    await $.store.set('registros', registros)
-    await $.store.set('dias', dias)
-  } catch (e) {
-    error = 'No se pudo guardar el historial: ' + (e && e.message ? e.message : String(e))
-  }
+// Encola una escritura: dentro de esta sesión nunca se pisan dos escrituras seguidas.
+// Con dos sesiones abiertas a la vez queda una ventana mínima entre leer y guardar.
+function enCola(tarea) {
+  cola = cola.then(tarea, tarea)
+  return cola
 }
 
-async function guardarMuestra($, ahora) {
-  if (!limites.cinco && !limites.semana) return
-  try {
-    const lista = (await $.store.get('muestras')) || []
-    lista.push([ahora, limites.cinco ? limites.cinco.pct : null, limites.semana ? limites.semana.pct : null])
-    muestras = podarMuestras(lista)
-    await $.store.set('muestras', muestras)
-  } catch (e) {
-    // las muestras son un extra: si falla, no se avisa
-  }
+function fallo(prefijo, e) {
+  error = prefijo + (e && e.message ? e.message : String(e))
+}
+
+// Guarda un prompt cerrado: lee el almacén, lo suma y lo guarda de nuevo.
+// Si el id ya estaba, lo reemplaza y no lo cuenta dos veces en el resumen por día.
+function guardarRegistro($, reg) {
+  return enCola(async () => {
+    try {
+      const lista = (await $.store.get('registros')) || []
+      const nuevoDias = (await $.store.get('dias')) || {}
+      const ya = lista.some((r) => r.id === reg.id)
+      if (!ya) sumarADia(nuevoDias, reg)
+      registros = podar([...lista.filter((r) => r.id !== reg.id), reg])
+      dias = nuevoDias
+      await $.store.set('registros', registros)
+      await $.store.set('dias', dias)
+      error = ''
+    } catch (e) {
+      fallo('No se pudo guardar el historial: ', e)
+    }
+  })
+}
+
+// Un subagente terminó después de que su prompt se cerró: su gasto se suma a ese prompt
+function guardarTardio($, reg, delta) {
+  return enCola(async () => {
+    try {
+      const lista = (await $.store.get('registros')) || []
+      const nuevoDias = (await $.store.get('dias')) || {}
+      sumarTardio(nuevoDias, reg.t, delta)
+      registros = podar([...lista.filter((r) => r.id !== reg.id), reg])
+      dias = nuevoDias
+      await $.store.set('registros', registros)
+      await $.store.set('dias', dias)
+      error = ''
+    } catch (e) {
+      fallo('No se pudo guardar el historial: ', e)
+    }
+  })
+}
+
+function guardarMuestra($, ahora) {
+  if (!limites.cinco && !limites.semana) return Promise.resolve()
+  return enCola(async () => {
+    try {
+      const lista = (await $.store.get('muestras')) || []
+      lista.push([ahora, limites.cinco ? limites.cinco.pct : null, limites.semana ? limites.semana.pct : null])
+      muestras = podar(lista, MAX_MUESTRAS)
+      await $.store.set('muestras', muestras)
+    } catch (e) {
+      // las muestras son un extra: si falla, no se avisa
+    }
+  })
 }
 
 async function leerLimitesAhora($) {
@@ -68,9 +106,12 @@ async function leerLimitesAhora($) {
   }
 }
 
-function textoEstado() {
-  const c = limites.cinco ? porcentaje(limites.cinco.pct) : '—'
-  const s = limites.semana ? porcentaje(limites.semana.pct) : '—'
+// Una ventana cuya hora de reinicio ya pasó está vencida: su porcentaje es una lectura vieja
+const vencida = (v, ahora) => Boolean(v && v.resetsAt && v.resetsAt < ahora)
+
+function textoEstado(ahora) {
+  const c = limites.cinco && !vencida(limites.cinco, ahora) ? porcentaje(limites.cinco.pct) : '—'
+  const s = limites.semana && !vencida(limites.semana, ahora) ? porcentaje(limites.semana.pct) : '—'
   return '5 h ' + c + ' · semana ' + s
 }
 
@@ -79,13 +120,31 @@ function carpeta(ruta) {
   return partes.length ? partes[partes.length - 1] : ''
 }
 
+// Un subagente cuenta dentro del prompt que lo lanzó. Si ese prompt ya se cerró, su gasto se
+// suma al último guardado, para no inventar un prompt que nadie escribió.
+async function registrarSubagente($, e, ahora) {
+  const enCurso = [...abiertos.values()].pop()
+  if (enCurso) {
+    acumularTurno(enCurso, e.usage, true, e.durationMs)
+    return
+  }
+  if (!ultimoCerrado) return
+  const antes = { uso: usoRegistro(ultimoCerrado), sub: ultimoCerrado.sub, mod: { ...ultimoCerrado.mod } }
+  acumularTurno(ultimoCerrado, e.usage, true, e.durationMs)
+  const mod = {}
+  for (const [m, u] of Object.entries(ultimoCerrado.mod)) mod[m] = restarUso(u, antes.mod[m] || usoVacio())
+  const delta = { uso: restarUso(usoRegistro(ultimoCerrado), antes.uso), sub: restarUso(ultimoCerrado.sub, antes.sub), mod }
+  await guardarTardio($, ultimoCerrado, delta)
+}
+
 export function register(on) {
   on('session.start', async ($, e, next) => {
     await cargarAlmacen($)
     await leerLimitesAhora($)
-    $.ui.status(textoEstado())
+    $.ui.status(textoEstado(await $.clock.now()))
     // La cuenta atrás de las ventanas se refresca sola cada minuto
-    $.clock.every(60000, () => $.ui.invalidate('ui.render'))
+    if (temporizador) temporizador.cancel()
+    temporizador = $.clock.every(60000, () => $.ui.invalidate('ui.render'))
     await $.command.register({
       name: 'consumo',
       description: 'Panel de consumo de tokens: ventana de cinco horas, semana, prompts e historial',
@@ -105,9 +164,9 @@ export function register(on) {
       const ahora = await $.clock.now()
       const cwd = await $.session.cwd()
       await leerLimitesAhora($)
-      actual = nuevoRegistro({ id: e.turnId, t: ahora, texto: e.text, proyecto: carpeta(cwd), limites })
+      abiertos.set(e.turnId, nuevoRegistro({ id: e.turnId, t: ahora, texto: e.text, proyecto: carpeta(cwd), limites }))
     } catch (err) {
-      actual = null
+      abiertos.delete(e.turnId)
     }
     return next(e)
   })
@@ -115,27 +174,22 @@ export function register(on) {
   on('turn.complete', async ($, e, next) => {
     try {
       const ahora = await $.clock.now()
-      const esSub = Boolean(e.agentId)
-      if (esSub) {
-        // Subagente: cuenta dentro del prompt que lo lanzó; si ya cerró, va suelto
-        const reg = actual || nuevoRegistro({ id: e.turnId, t: ahora, texto: '(trabajo en segundo plano)', proyecto: '', limites })
-        acumularTurno(reg, e.usage, true, e.durationMs)
-        if (!actual) {
-          await guardarRegistro($, cerrarRegistro(reg, limites))
-        }
+      if (e.agentId) {
+        await registrarSubagente($, e, ahora)
       } else {
-        const reg = actual || nuevoRegistro({ id: e.turnId, t: ahora - (e.durationMs || 0), texto: '', proyecto: '', limites })
+        const reg = abiertos.get(e.turnId) || nuevoRegistro({ id: e.turnId, t: ahora - (e.durationMs || 0), texto: '', proyecto: '', limites })
         acumularTurno(reg, e.usage, false, e.durationMs)
         await leerLimitesAhora($)
         cerrarRegistro(reg, limites)
-        actual = null
+        abiertos.delete(e.turnId)
+        ultimoCerrado = reg
         await guardarRegistro($, reg)
         await guardarMuestra($, ahora)
       }
-      $.ui.status(textoEstado())
+      $.ui.status(textoEstado(ahora))
       $.ui.invalidate('ui.render')
     } catch (err) {
-      error = 'Error al registrar el turno: ' + (err && err.message ? err.message : String(err))
+      fallo('Error al registrar el turno: ', err)
     }
     return next(e)
   })
@@ -145,8 +199,9 @@ export function register(on) {
     try {
       if (e.changed && e.changed.includes('rateLimits')) {
         limites = leerLimites(e.rateLimits)
-        $.ui.status(textoEstado())
-        await guardarMuestra($, await $.clock.now())
+        const ahora = await $.clock.now()
+        $.ui.status(textoEstado(ahora))
+        await guardarMuestra($, ahora)
         $.ui.invalidate('ui.render')
       }
     } catch (err) {
@@ -200,6 +255,7 @@ const vacio = (Text) => Text({ children: [' '] })
 
 function filaVentana(Text, nombre, ventana, ahora) {
   if (!ventana) return linea(Text, nombre + ': sin lectura todavía (aparece tras el primer mensaje)', true)
+  if (vencida(ventana, ahora)) return linea(Text, nombre + ': ventana reiniciada · la lectura se actualiza con el próximo mensaje', true)
   return linea(Text, nombre + ' ' + barra(ventana.pct, 18) + ' ' + porcentaje(ventana.pct) + ' · se reinicia en ' + tiempoHasta(ventana.resetsAt, ahora))
 }
 
@@ -220,8 +276,8 @@ function vistaAhora({ Text, ahora }) {
   filas.push(vacio(Text))
 
   filas.push(titulo(Text, 'Cuánto vale un punto'))
-  const por5 = tokensPorPunto(registros, limites.cinco, CINCO_HORAS)
-  const por7 = tokensPorPunto(registros, limites.semana, SIETE_DIAS)
+  const por5 = tokensPorPunto(registros, limites.cinco, CINCO_HORAS, ahora)
+  const por7 = tokensPorPunto(registros, limites.semana, SIETE_DIAS, ahora)
   filas.push(linea(Text, 'Cinco horas: ' + (por5 ? '≈ ' + tokens(por5) + ' tokens nuevos por 1 %' : 'aún sin datos')))
   filas.push(linea(Text, 'Semana: ' + (por7 ? '≈ ' + tokens(por7) + ' tokens nuevos por 1 %' : 'aún sin datos')))
   filas.push(linea(Text, 'Estimación con lo que este mod vio gastar en cada ventana.', true))
@@ -236,14 +292,14 @@ function vistaAhora({ Text, ahora }) {
 
 function filaPrompt(Text, r) {
   const p = puntos(r.p5)
-  const delta = p === null ? '' : ' · +' + String(p).replace('.', ',') + ' pts'
+  const delta = p === null ? '' : ' · +' + coma(p) + ' pts'
   return linea(Text, hora(r.t) + ' · ' + tokens(frescos(usoRegistro(r))) + delta + ' · ' + r.txt)
 }
 
 function vistaPrompts({ Text, Box, Button, redibujar, filas }) {
   const salida = []
   const base = registros.slice()
-  const lista = orden === 'recientes' ? base.reverse() : base.sort((a, b) => frescos(usoRegistro(b)) - frescos(usoRegistro(a)))
+  const lista = orden === 'recientes' ? base.reverse() : base.sort((a, b) => (b.nu === undefined ? frescos(usoRegistro(b)) : b.nu) - (a.nu === undefined ? frescos(usoRegistro(a)) : a.nu))
   const tamano = Math.max(5, Math.floor((filas - 8) / 2))
   const paginas = Math.max(1, Math.ceil(lista.length / tamano))
   if (pagina >= paginas) pagina = paginas - 1
@@ -282,10 +338,10 @@ function detallePrompt(Text, r) {
   const p5 = puntos(r.p5)
   const p7 = puntos(r.p7)
   const filas = [
-    linea(Text, '   Proyecto: ' + (r.cwd || '—') + ' · ' + r.n + ' turnos · ' + Math.round(r.ms / 1000) + ' s'),
+    linea(Text, '   Proyecto: ' + (r.cwd || '—') + ' · ' + r.n + (r.n === 1 ? ' turno' : ' turnos') + ' · ' + Math.round(r.ms / 1000) + ' s'),
     linea(Text, '   Entrada ' + tokens(u[0]) + ' · Salida ' + tokens(u[1]) + ' · Caché leída ' + tokens(u[2]) + ' · Caché escrita ' + tokens(u[3])),
-    linea(Text, '   Principal ' + tokens(frescos(sumarUso(u, r.sub.map((x) => -x)))) + ' nuevos · Subagentes ' + tokens(frescos(r.sub)) + ' nuevos (' + r.subN + ' turnos)'),
-    linea(Text, '   Ventanas: 5 h ' + (p5 === null ? '—' : '+' + String(p5).replace('.', ',') + ' pts') + ' · semana ' + (p7 === null ? '—' : '+' + String(p7).replace('.', ',') + ' pts')),
+    linea(Text, '   Principal ' + tokens(frescos(restarUso(u, r.sub))) + ' nuevos · Subagentes ' + tokens(frescos(r.sub)) + ' nuevos (' + r.subN + (r.subN === 1 ? ' turno)' : ' turnos)')),
+    linea(Text, '   Ventanas: 5 h ' + (p5 === null ? '—' : '+' + coma(p5) + ' pts') + ' · semana ' + (p7 === null ? '—' : '+' + coma(p7) + ' pts') + ' (incluye el gasto de otras sesiones)'),
   ]
   for (const [m, uso] of Object.entries(r.mod)) filas.push(linea(Text, '   ' + nombreModelo(m) + ': ' + tokens(frescos(uso)) + ' nuevos, ' + tokens(uso[2]) + ' de caché', true))
   filas.push(linea(Text, '   ' + r.txt, true))
@@ -313,7 +369,7 @@ function vistaDias({ Text, ahora }) {
   salida.push(vacio(Text))
 
   salida.push(titulo(Text, 'Lo más caro de la semana'))
-  const caros = masCaros(registros, ahora - SIETE_DIAS, 5)
+  const caros = masCaros(registros, Date.parse(semana[0].dia + 'T00:00:00'), 5)
   if (!caros.length) salida.push(linea(Text, 'Sin datos todavía.', true))
   for (const c of caros) salida.push(linea(Text, fechaCorta(claveDia(c.reg.t)) + ' ' + hora(c.reg.t) + ' · ' + tokens(c.nuevos) + ' · ' + c.reg.txt))
   return salida

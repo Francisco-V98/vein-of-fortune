@@ -32,15 +32,23 @@
         "estado": "hecha",
         "at": "2026-10-13",
         "por": "coordinador",
-        "nota": "El coordinador escribió el mod y sus pruebas; falta la revisión de código",
-        "entrega": "Mod vf-consumo con tres pestañas y 8 pruebas"
+        "nota": "El coordinador escribió el mod y corrigió lo que halló el revisor de código; 12 pruebas",
+        "entrega": "Mod vf-consumo con tres pestañas, historial en el almacén propio y 12 pruebas"
       },
       {
         "etapa": "qa",
         "estado": "activa",
         "at": "2026-10-13",
         "por": "revisor",
-        "nota": "El revisor de código y QA revisan el mod antes de que el autor lo pruebe"
+        "nota": "El revisor de código halló nueve fallos reales y los corrigió el coordinador; QA comprueba la validación, las pruebas y los arreglos",
+        "hallazgos": [
+          {
+            "de": "revisor",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "Subagente tardío, carreras de escritura, prompts solapados, error que no se limpiaba, ventana vencida, reinicio de ventana, turno sin respuesta, cambio de horario y formato de millones corregidos y probados"
+          }
+        ]
       },
       {
         "etapa": "autor",
@@ -60,6 +68,19 @@
         "de": "coordinador",
         "a": "revisor",
         "que": "Revisar el código del mod de consumo antes de la prueba del autor",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "revisor",
+        "a": "coordinador",
+        "que": "Nueve fallos reales y mejoras de claridad en el mod de consumo",
+        "at": "2026-10-13",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Comprobar la validación, las 12 pruebas y los arreglos del mod de consumo",
         "at": "2026-10-13"
       }
     ]
