@@ -28,7 +28,7 @@ El autor eligió una estructura **por entidades**, con el documento 19 como fuen
 | 6 · Glosario ES/EN | Cada término en español e inglés con su estado y las reglas de traducción |
 | Anexo · Cronología y bifurcaciones | Los cuatro actos con sus hitos y variantes |
 
-Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. F0-43 se resolvió en [21](21-pasado-de-valdoria.md) y F0-44 en [22](22-acto-ii-variantes.md). Las tareas F0-45 y F0-46 **no se resuelven aquí**: la biblia deja el hueco señalado y no inventa su contenido.
+Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. F0-43 se resolvió en [21](21-pasado-de-valdoria.md) y F0-44 en [22](22-acto-ii-variantes.md). F0-45 se resolvió en [23](23-arbol-de-decisiones.md). La tarea F0-46 **no se resuelve aquí**: la biblia deja el hueco señalado y no inventa su contenido.
 
 ---
 
@@ -123,7 +123,7 @@ La verdad (la Aetherita enferma a quien la extrae y la Comisión lo oculta) **se
 - Se evitan «casete», «disco» y «holotape»: la tecnología es de teletipos y válvulas.
 - Las **ocho cintas** (con la octava cortada) vienen de [19](19-elenco-a-fondo.md), apartados «La verdad sobre Anselmo» y «Pistas sembradas», y la 7 y la 8 las confirmó el autor en F0-43 ✅. **Quién cortó la octava se deja abierto**: el jugador nunca lo sabe con certeza ✅.
 - La historia de cada cinta, con su fecha y el hecho que la respalda, está en [21 · Las ocho cintas](21-pasado-de-valdoria.md).
-- En qué acto aparece cada cinta ⏳ F0-45
+- Cada cinta se recoge en un acto (1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV) y todas se **oyen en el Acto IV** con un reproductor ✅. Dónde la dejó Anselmo: [23](23-arbol-de-decisiones.md), sección 7.
 
 ### 1.7 El humor 🟡
 
@@ -693,12 +693,12 @@ Los cuatro actos tal como están en [17](17-mapa-de-historia.md) y `studio/data/
 
 | Acto | Hito que lo cierra ✅ | Variantes y bifurcaciones |
 |---|---|---|
-| **I · El recién llegado** (Villa Brasa) | Reabres el puesto, pagas las primeras cuotas y tienes el primer contacto con los empleados | No tiene bifurcación grande. La facción detrás de Reme ya está decidida, pero no se revela. Consecuencias pequeñas ⏳ F0-45 |
-| **II · Aprender las reglas** (Hollín, Sierra Alta, Salares) | Eliges con qué facción te alías | **3 variantes** ✅: Reme responde al Consorcio Arvel, a Los Faroleros o al Ministerio. Contenido de cada una en [22](22-acto-ii-variantes.md). Bifurcación grande: la alianza ⏳ F0-45 |
-| **III · El ascenso** (Puerto Meridiano, Cavernas de Cristal) | Te aceptan en el círculo de poder | Esteban puede ser aliado o enemigo según cómo lo trates (tema abierto en el apartado «Pendiente» de [19](19-elenco-a-fondo.md)). Consecuencias ⏳ F0-45 |
+| **I · El recién llegado** (Villa Brasa) | Reabres el puesto, pagas las primeras cuotas y tienes el primer contacto con los empleados | No tiene bifurcación grande. La facción detrás de Reme se sortea al empezar y no se revela. Tiene **3 consecuencias pequeñas** ✅ (cuáles, en [23](23-arbol-de-decisiones.md), sección 3) |
+| **II · Aprender las reglas** (Hollín, Sierra Alta, Salares) | Eliges con qué facción te alías | **3 variantes** ✅: Reme responde al Consorcio Arvel, a Los Faroleros o al Ministerio. Contenido de cada una en [22](22-acto-ii-variantes.md). Bifurcación grande: la alianza ✅, con 2 medianas (la orden de Reme y la huelga) y 5 pequeñas ([23](23-arbol-de-decisiones.md), sección 4) |
+| **III · El ascenso** (Puerto Meridiano, Cavernas de Cristal) | Te aceptan en el círculo de poder | Esteban puede ser aliado o enemigo según cómo lo trates 🟡, y eso lo lleva su medidor ([23](23-arbol-de-decisiones.md), sección 2). Bifurcación grande: **cómo entras al círculo** ✅ (tres puertas), con 2 medianas y 5 pequeñas ([23](23-arbol-de-decisiones.md), sección 5) |
 | **IV · La cima** (La Fosa del Éter) | Decides qué hacer con la verdad y el poder | **3 salidas** ✅: **revelarla** (la Aetherita se desploma), **callarla** o **venderla** (moneda de poder). Teo muere, se reconcilia o se va según tus decisiones ✅. Epílogos de cada salida ⏳ F0-46 |
 
-- La cantidad de bifurcaciones grandes (acreedor del Acto II, alianza y destino de la Aetherita) es una propuesta 🟡 de [08](08-historia-y-personaje.md); el árbol completo de decisiones y consecuencias ⏳ F0-45
+- Las bifurcaciones grandes son tres ✅: la alianza (II), cómo entras al círculo (III) y el destino de la Aetherita (IV). El acreedor del Acto II **es un sorteo, no una bifurcación** ✅. El árbol completo de decisiones y consecuencias está en [23](23-arbol-de-decisiones.md).
 - **Antes del Acto I.** La cronología completa está en [21](21-pasado-de-valdoria.md). En resumen, hace 40 años el derrumbe de Pozo Negro (nace la Unión), hace 30 el hallazgo de la Aetherita, hace 27 nace la Comisión, hace 20 la Primera Expedición, hace 17 empieza la electrificación y hace 2 Anselmo es detenido y acepta el trato ✅.
 
 ### Dónde está Anselmo en cada acto ✅
@@ -707,9 +707,9 @@ Los cuatro actos tal como están en [17](17-mapa-de-historia.md) y `studio/data/
 
 | Acto | Cómo aparece | Qué sabe el jugador |
 |---|---|---|
-| **I** | La **libreta** guía las primeras misiones ✅; la **lámpara** es su recuerdo ✅; su **firma** está en los papeles de la herencia ✅ | Es el tío que desapareció y murió enfermo. Nada más |
-| **II y III** | Las pistas de [19 · «Pistas sembradas»](19-elenco-a-fondo.md): el certificado sin registro de cremación, las evasivas de Teo, la letra de un muerto que oye Lucía. Cintas sueltas, repartidas «a lo largo del juego» ✅ ([08](08-historia-y-personaje.md)); en qué acto se encuentra cada una ⏳ F0-45 | Sospecha, no certeza |
-| **IV** | Las cintas completas ✅ y, al final, el **acta de calibración** con su firma ✅ | Descubre que está vivo y que colaboró con la Comisión |
+| **I** | La **libreta** guía las primeras misiones ✅; la **lámpara** es su recuerdo ✅; su **firma** está en los papeles de la herencia ✅; se recoge la **cinta 1** ✅ | Es el tío que desapareció y murió enfermo. Nada más |
+| **II y III** | Las pistas de [19 · «Pistas sembradas»](19-elenco-a-fondo.md): el certificado sin registro de cremación, las evasivas de Teo, la letra de un muerto que oye Lucía. Cintas sueltas, repartidas «a lo largo del juego» ✅ ([08](08-historia-y-personaje.md)): la 2 en el II y la 3 a 5 en el III ✅, sin poder oírlas todavía | Sospecha, no certeza |
+| **IV** | Se recogen las cintas 6 a 8 y se **oyen las ocho** con un reproductor ✅ y, al final, el **acta de calibración** con su firma ✅ | Descubre que está vivo y que colaboró con la Comisión |
 
 La firma de los papeles de la herencia (Acto I) es lo que hace que el final funcione: el acta no explica nada, **solo se reconoce una firma que ya se había visto** ([19 · «La verdad sobre Anselmo»](19-elenco-a-fondo.md)).
 
@@ -720,6 +720,5 @@ En `story.json` y en el [17](17-mapa-de-historia.md) Anselmo aparece ya en la ce
 ## Pendiente
 
 - ⏳ F4-179 Textos de las tres variantes del Acto II (la estructura está en [22](22-acto-ii-variantes.md)).
-- ⏳ F0-45 Árbol de decisiones y consecuencias; en qué acto aparece cada cinta (las ocho están en [21](21-pasado-de-valdoria.md)).
 - ⏳ F0-46 Epílogos de las tres salidas del Acto IV.
 - ⏳ F1-18 Cifras finales del formato de diálogo y del nombre de la tienda, con la fuente real.

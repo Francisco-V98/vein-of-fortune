@@ -497,9 +497,9 @@
               "id": "F0-45",
               "title": "Árbol de decisiones y consecuencias de los cuatro actos",
               "est": 6,
-              "status": "backlog",
+              "status": "done",
               "prio": "P1",
-              "desc": "Las bifurcaciones grandes (acreedor del Acto II, alianza, destino de la Aetherita) y las consecuencias pequeñas de cada acto, con qué las dispara y qué cambia en el mundo, el mercado y los personajes.",
+              "desc": "Las bifurcaciones grandes (alianza del Acto II, cómo entras al círculo del Acto III y destino de la Aetherita; el acreedor del Acto II es un sorteo, no una decisión) y las consecuencias pequeñas de cada acto, con qué las dispara y qué cambia en el mundo, el mercado y los personajes.",
               "done_when": "Árbol completo acordado y visible en el hub."
             },
             {
@@ -780,6 +780,15 @@
               "prio": "P3",
               "desc": "En la vista de tarea del hub, dibujar las etapas con su estado y quién las hizo, usando el bloque pipeline de la tarea.",
               "done_when": "Vista de tarea con el flujo visible en el hub."
+            },
+            {
+              "id": "F0-75",
+              "title": "Dibujar el árbol de decisiones con conexiones",
+              "est": 3,
+              "status": "backlog",
+              "prio": "P3",
+              "desc": "Convertir la vista #/decisiones del hub, hoy de columnas y tarjetas, en un dibujo SVG con las ramas, los cuellos de botella y las banderas conectadas.",
+              "done_when": "Árbol dibujado con conexiones visibles y filtros por acto, nivel y personaje."
             }
           ]
         }
