@@ -29,6 +29,7 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 | Reme y la alianza | Si te alías con la facción de Reme, **su correa se afloja, pero entras en su cadena**. Si te alías con otra, **ella paga un costo** ✅ |
 | Reme después | En el Acto III queda **distante pero atenta**; en el IV sigue siendo **tu mayor aliada** ✅ |
 | Huelga | La primera huelga grande **depende de ti**. **Sube el precio del mineral en todas las partidas** y el **apagón posterior es común** ✅ |
+| Orden de Reme y huelga | La orden tiene tres salidas (**aceptar, negociar o rechazar**) y la huelga tres bandos (**apoyar, abstenerte o romper**) ✅. El acreedor es un **sorteo**, no una bifurcación jugable ✅ |
 | Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión del Éter. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Dueñas es el enemigo claro, duro e inflexible ✅ |
 
 **No decidido por el autor 🟡.** Que la huelga tenga consecuencias pequeñas y distintas por variante es propuesta del narrador (sección 7). Tampoco está decidido dónde ocurre el primer contacto con el mercado negro en cada variante (sección 8).
@@ -159,7 +160,7 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 
 ## 7 · La primera huelga: depende de ti 🟡
 
-**Estado:** propuesta. Que la huelga ocurre en las tres partidas lo dice la decisión de la sección 1 (el precio sube en todas); que tú decides de qué lado estás es la lectura de «depende de ti» que propone este documento.
+**Estado:** ✅ la huelga ocurre en las tres partidas (el precio sube en todas) y tú decides tu bando: apoyar, abstenerte o romper (decisión del autor, 2026-10-12); 🟡 las consecuencias pequeñas por variante.
 
 Lo común está en la sección 4. Además, mientras dura, Cañón Ferroso se cierra, como permite [07](07-sociedad-y-eventos.md).
 
@@ -277,7 +278,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 
 - El Acto II se cierra al elegir alianza ✅. En este diseño lo lleva la escena A5 🟡. Los umbrales exactos ⏳ F0-47
 - **Reme.** Traiciona por obligación en A2 ✅, queda distante pero atenta en el Acto III ✅ y es tu mayor aliada en el IV ✅.
-- **Las pruebas del Acto IV.** Los comprobantes del abono son comunes ([19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md)) y no cambian. Propuesta de ampliación, sin tocar la sección 6 de [21](21-pasado-de-valdoria.md): además entrega una prueba propia de su variante ⏳ F0-45 y ⏳ F0-46
+- **Las pruebas del Acto IV.** Los comprobantes del abono son comunes ([19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md)) y no cambian. Propuesta de ampliación, sin tocar la sección 6 de [21](21-pasado-de-valdoria.md): además entrega una prueba propia de su variante (reparto en [23](23-arbol-de-decisiones.md), sección 8) y su epílogo ⏳ F0-46
 
 | Variante | Prueba extra en el Acto IV | Por qué la tiene Reme |
 |---|---|---|
@@ -311,7 +312,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 
 ## Pendiente
 
-- ⏳ F0-45 Árbol de decisiones: las ramas de A2, A4 y A5, las pruebas distintas del Acto IV y en qué acto aparece cada cinta.
+- ✅ Las ramas de A2, A4 y A5, las pruebas distintas del Acto IV y el acto de cada cinta están en [23](23-arbol-de-decisiones.md).
 - ⏳ F0-46 Epílogo de Reme y de cada facción según la alianza.
 - ⏳ F0-47 Umbrales exactos de A1 a A6 y de las escenas opcionales.
 - ⏳ F0-23 Las tres pistas del Acto I y su lugar en los días del tutorial.

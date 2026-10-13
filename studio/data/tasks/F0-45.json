@@ -1,0 +1,132 @@
+{
+  "id": "F0-45",
+  "history": [
+    {
+      "at": "2026-10-12",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el árbol de decisiones y consecuencias con el flujo de especialistas.",
+      "ref": "rama studio/F0-45-arbol-de-decisiones"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "ideador",
+        "nota": "Recomienda capas con cupo, banderas como datos y cuellos de botella como dibujo; en el hub, una vista nueva más filas en el mapa",
+        "entrega": "Tres formas de estructurar el árbol, tres de mostrarlo, bosquejo por acto, reparto de cintas, pruebas de Reme y ocho preguntas"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-12",
+        "por": "analista",
+        "nota": "El bosquejo encaja con los documentos; el análisis encontró huecos de definición, canon de las cintas y trabajo del hub",
+        "entrega": "Comprobación de medidores, canon, 14 ⏳ F0-45, hub y dependencias, diez criterios de aceptación y siete preguntas",
+        "hallazgos": [
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Los medidores de la Unión, Esteban, Lucía y Teo no existen en world.json y hay que definirlos con valores numéricos y un ⏳",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 23, decisions.json y los documentos 08, 18 y story.json"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "Hay que decidir de dónde sale el reproductor de cintas y qué NPC hace la revisión médica de Teo; ninguno está definido",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 23, decisions.json y los documentos 08, 18 y story.json"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "El acreedor del Acto II es un sorteo y no una bifurcación, pero lo siguen llamando así los documentos 08 y 18 y el roadmap",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 23, decisions.json y los documentos 08, 18 y story.json"
+          },
+          {
+            "de": "analista",
+            "estado": "resuelto",
+            "que": "La historia del mapa dice que encuentras las cintas en el Acto IV, y el reparto propuesto las recoge antes: hay que ajustar story.json",
+            "resuelto_por": "narrador",
+            "como": "Resuelto en el documento 23, decisions.json y los documentos 08, 18 y story.json"
+          },
+          {
+            "de": "analista",
+            "estado": "abierto",
+            "que": "El trabajo de hub estimado sube de seis a ocho o nueve horas; el dibujo SVG del árbol conviene sacarlo a una tarea nueva"
+          }
+        ]
+      },
+      {
+        "etapa": "produccion",
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "narrador",
+        "nota": "El narrador escribió el documento 23 y los datos en decisions.json; falta la vista del hub, que construye el desarrollador de herramientas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: tres formas de estructurar el árbol de decisiones y consecuencias de los cuatro actos y de mostrarlo en el hub",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "ideador",
+        "a": "analista",
+        "que": "Bosquejo del árbol con cupos, banderas y cuellos de botella por comprobar",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Comprobación del bosquejo del árbol con cinco hallazgos y siete preguntas para el autor",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Escribir el documento 23 con el árbol, los datos en decisions.json y resolver los ⏳ F0-45",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Documento 23 y decisions.json escritos; ⏳ F0-45 resueltos",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "coordinador",
+        "a": "desarrollador-herramientas",
+        "que": "Construir la vista #/decisiones, las filas del mapa, las validaciones de decisions.json y sus pruebas",
+        "at": "2026-10-12"
+      }
+    ]
+  }
+}

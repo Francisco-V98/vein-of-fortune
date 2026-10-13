@@ -497,9 +497,9 @@
               "id": "F0-45",
               "title": "Árbol de decisiones y consecuencias de los cuatro actos",
               "est": 6,
-              "status": "backlog",
+              "status": "doing",
               "prio": "P1",
-              "desc": "Las bifurcaciones grandes (acreedor del Acto II, alianza, destino de la Aetherita) y las consecuencias pequeñas de cada acto, con qué las dispara y qué cambia en el mundo, el mercado y los personajes.",
+              "desc": "Las bifurcaciones grandes (alianza del Acto II, cómo entras al círculo del Acto III y destino de la Aetherita; el acreedor del Acto II es un sorteo, no una decisión) y las consecuencias pequeñas de cada acto, con qué las dispara y qué cambia en el mundo, el mercado y los personajes.",
               "done_when": "Árbol completo acordado y visible en el hub."
             },
             {

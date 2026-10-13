@@ -58,7 +58,7 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 GROUPS = [
     ("Diseño del juego", ["00", "01", "02", "03", "04", "09"]),
-    ("Mundo y narrativa", ["05", "07", "08", "17", "18", "19", "21", "22"]),
+    ("Mundo y narrativa", ["05", "07", "08", "17", "18", "19", "21", "22", "23"]),
     ("Marca y arte", ["12", "13"]),
     ("Técnico y legal", ["10", "11"]),
     ("Arquitectura y calidad", ["14", "15", "20"]),

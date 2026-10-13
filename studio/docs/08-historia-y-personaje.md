@@ -61,7 +61,7 @@ Después del Acto IV: **sandbox** con la capa de imperio (ver [04](04-progresion
 
 ## Decisiones que cambian la historia ✅
 
-La historia **cambia según las decisiones del jugador** (alianzas, qué hace con la verdad, etc.), aunque la estructura social de Valdoria se mantenga. 🟡 Para controlar el alcance: pocas bifurcaciones grandes (acreedor del Acto II, alianza, destino de la Aetherita) y muchas consecuencias pequeñas (diálogos, precios, relaciones).
+La historia **cambia según las decisiones del jugador** (alianzas, qué hace con la verdad, etc.), aunque la estructura social de Valdoria se mantenga. ✅ Para controlar el alcance: **3 bifurcaciones grandes** (la alianza del Acto II, cómo entras al círculo en el III y el destino de la Aetherita en el IV), 6 medianas y 18 consecuencias pequeñas (diálogos, precios, relaciones). El acreedor del Acto II no es una bifurcación: la facción detrás de Reme **se sortea** al empezar la partida. El árbol completo está en [23](23-arbol-de-decisiones.md).
 
 ## Elenco ✅
 
