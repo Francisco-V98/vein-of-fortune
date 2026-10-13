@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "Se empieza la lectura final y de coherencia de la biblia narrativa con el flujo de especialistas.",
       "ref": "rama studio/F0-48-lectura-final-biblia"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Lectura final con once decisiones del autor y dieciocho correcciones aplicadas en 28 archivos; QA aprobado y limpieza 71 %.",
+      "ref": "rama studio/F0-48-lectura-final-biblia"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la lectura final de la biblia desde el PR #42.",
+      "ref": "aprobación del autor en el PR #42"
     }
   ],
   "comments": [],
@@ -98,10 +114,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
         "por": "autor",
-        "nota": "El autor revisa los cambios de la lectura final en los documentos, los datos y el roadmap"
+        "nota": "El autor revisó los cambios de la lectura final y aprobó el PR #42"
       },
       {
         "etapa": "playtest",
@@ -109,7 +125,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #42 fusionado"
       }
     ],
     "traspasos": [
@@ -141,6 +160,12 @@
         "de": "qa",
         "a": "autor",
         "que": "Entrega para tu revisión: lectura final de la biblia con tus decisiones aplicadas",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-13"
       }
     ]
