@@ -17,7 +17,8 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 
 ## Ideas futuras (fuera de v1)
 
-- **Casino** ✅ (idea del autor): tragamonedas, ruleta, blackjack, quizás minijuegos de azar. Dinero del juego solamente.
+- **Casino** ✅ (idea del autor): tragamonedas, ruleta, blackjack, quizás minijuegos de azar. Dinero del juego solamente. Es la V2.0, y se llama Salón del Farol ([26](26-zonas-y-edificios.md)).
+- **Estilo de vida ampliado** ✅ (idea del autor): casas y mansiones por zona, joyería comprable, vehículos, ropa y decoración (V2.1), y mar e inversiones (V2.2) ([26](26-zonas-y-edificios.md)).
   - 🟡 Nota: los juegos de azar simulados afectan la clasificación por edad en las tiendas de apps; revisar requisitos antes.
 - Capa de imperio: sucursales, otras ciudades, plantillas más grandes de empleados. (Los empleados básicos entran a mitad del juego, no aquí.)
 - Eventos de temporada.
@@ -141,3 +142,8 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-12 | Vigilancia: un indicador global de 0 a 100 que sube con las operaciones negras; los cambios se cuentan en puntos |
 | 2026-10-12 | Escalera de estatus: el primer escalón se llama «Heredero» (*Heir*) y los cinco nombres quedan decididos |
 | 2026-10-12 | Colores: la subida de los gráficos va en azul hielo y el farol de Los Faroleros es vinotinto mate con luz ámbar; el cian y el rojo-rosado son solo de la Aetherita |
+| 2026-10-13 | Mapa vivo: la región es la zona, con un asentamiento y la boca de mina como una edificación más; estructura mapa, zona y edificación (ver 26) |
+| 2026-10-13 | V1 con unos 22 edificios: los 9 del roadmap, la Bolsa, los de historia y 6 comercios (herrería, economato, platería, lonja y salitre, tasadores y Casa Ormeño), con casa mejorable, ropa por estatus y un auto |
+| 2026-10-13 | Casa Ormeño es una tienda insignia sin dueño ni medidor; la joyería comprable es otra, pequeña, y llega en la V2.1 |
+| 2026-10-13 | El juego no se dirige a menores; el casino va en la V2 con moneda del juego, probabilidades visibles, tope diario e interruptor para ocultar el azar |
+| 2026-10-13 | Nombres: Altafría (pueblo de empresa de Sierra Alta, *Highchill*) y Salinas Blancas (puerto de los Salares, *White Salt Flats*) |

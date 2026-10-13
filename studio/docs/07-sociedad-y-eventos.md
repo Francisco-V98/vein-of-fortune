@@ -47,7 +47,7 @@ Pocas, claras, con efectos simples en el juego.
 | Organización criminal | **Los Faroleros**: nacieron como el gremio que encendía los faroles de los puertos y hoy "cobran la luz" (conecta con apagones y extorsión) |
 | Prensa | **El Heraldo Meridiano**, **La Voz del Hollín**, **Teletipo Meridiano** |
 
-✅ La Comisión del Éter vive dentro del Ministerio y el registro del mundo la cuenta como sexta facción ([18](18-biblia-narrativa.md), 6.6). Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21](21-pasado-de-valdoria.md). Casa Ormeño (plata y joyería, Puerto Meridiano) es la única otra casa industrial con nombre ✅: un nombre de ambiente para noticias y glosario, sin zona ni jefe.
+✅ La Comisión del Éter vive dentro del Ministerio y el registro del mundo la cuenta como sexta facción ([18](18-biblia-narrativa.md), 6.6). Los orígenes de la Comisión, de los Faroleros y de la Unión están en [21](21-pasado-de-valdoria.md). Casa Ormeño (plata y joyería, Puerto Meridiano) es la única otra casa industrial con nombre ✅: un nombre de ambiente para noticias y glosario y una tienda insignia en Puerto Meridiano ([26](26-zonas-y-edificios.md)), sin zona propia, jefe, dueño ni medidor.
 
 ### Medios de prensa ✅
 

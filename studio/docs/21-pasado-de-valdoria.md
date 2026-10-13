@@ -27,7 +27,7 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 | Cronología | **A, «El hallazgo del Ministerio»**, con injertos: la cuadrilla enferma (de la cronología B) y el pacto del Consorcio con la Comisión (de la C) ✅ |
 | Aldea del protagonista | **Vega Mansa**, donde su padre, hermano de Anselmo, dejó el Hollín tras un derrumbe y juró que ningún hijo bajaría a una mina ✅ |
 | Teo | **Minero veterano**, no capataz. La cuadrilla de la expedición no tiene capataz que cuente. Reme es **viuda de un capataz**: no se confunden ✅ |
-| Casas industriales | Las nuevas son **solo nombres de ambiente** en noticias y glosario: sin zona propia ni jefe. Se conserva **Casa Ormeño**; se descartan **Talavera e Hijos** y **Fundiciones Soria**, porque chocan con el Consorcio y la Unión ✅ |
+| Casas industriales | Las nuevas son **solo nombres de ambiente** en noticias y glosario: sin zona propia ni jefe. Se conserva **Casa Ormeño**, que además es una tienda insignia en la capital (decisión del autor, 2026-10-13); se descartan **Talavera e Hijos** y **Fundiciones Soria**, porque chocan con el Consorcio y la Unión ✅ |
 | Cifras de la cronología | Electrificación a los **17** años, «cobrar la luz» a los **15**, préstamo de Reme a los **21**, visita de Anselmo a Vega Mansa a los **14**, Montenegro ministro a los **8**, cuota doblada a los **4**, cuadrilla de **unas 12 personas**, expedición de **8 meses** y todas las edades de la tabla de la sección 3 ✅ |
 | Quién sabe qué | **Reme sospecha, pero no sabe, que Anselmo está vivo.** Oculta el abono por la cláusula del trato y porque su facción se lo pide ✅ |
 | La expedición | **Teo** fue evacuado al primer mes con un brazo roto (por eso solo tiene tos incipiente). **Montenegro** dirigió desde el campamento y nunca bajó a la veta ✅ |
@@ -245,7 +245,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 
 ## 9 · Casas industriales ✅
 
-**Estado:** ✅ todo (decisión del autor, 2026-10-12): que son nombres de ambiente, cuál se conserva, qué es Casa Ormeño, por qué se descartaron las otras y los ejemplos de voz.
+**Estado:** ✅ todo (decisión del autor, 2026-10-12): que son nombres de ambiente, cuál se conserva, qué es Casa Ormeño, por qué se descartaron las otras y los ejemplos de voz. Desde 2026-10-13, además, Casa Ormeño es una tienda insignia (abajo).
 
 | Casa | Qué es | Estado |
 |---|---|---|
@@ -254,7 +254,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 | Fundiciones Soria | — | ✅ Descartada |
 
 - **Qué es ✅.** Una casa de joyería que compra la plata de la Sierra Alta; no tiene mina propia, así que no compite con el Consorcio.
-- **Dónde se usa Casa Ormeño.** Solo en noticias y en el glosario. No tiene zona, jefe, personaje ni medidor de relación, y no aparece en `world.json`.
+- **Dónde se usa Casa Ormeño.** En noticias y en el glosario, y desde la V1 como **tienda insignia** en Puerto Meridiano: la joyería de plata a la que se vende la plata afinada de Altafría y se compran piezas de lujo ([26](26-zonas-y-edificios.md)) ✅. Sigue sin zona propia, jefe, dueño, personaje ni medidor de relación, y no aparece en los personajes de `world.json`.
 - **Por qué se descartaron las otras dos.** Talavera compite con el Consorcio por Sierra Alta; Soria funde hierro en el Hollín, donde manda la Unión.
 - **Ejemplos de voz** ✅. Heraldo: «Casa Ormeño presenta su colección de invierno en Puerto Meridiano». Teletipo: «CASA ORMEÑO COMPRA PLATA POR ENCIMA DE MERCADO. SIN CONFIRMAR».
 - En el juego la casa visible sigue siendo el **Consorcio Arvel** ([07](07-sociedad-y-eventos.md)).

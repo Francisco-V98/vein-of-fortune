@@ -25,15 +25,23 @@
       },
       {
         "etapa": "analisis",
-        "estado": "pendiente"
+        "estado": "omitida",
+        "nota": "El autor revisó el catálogo del ideador en el chat y decidió estructura, alcance de V1, casas, casino y nombres; el contraste con los documentos lo hace QA"
       },
       {
         "etapa": "produccion",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "contenido",
+        "nota": "El diseñador de contenido escribió el documento 26 y el coordinador creó las tareas del roadmap; limpieza 71 %, coherencia 86 %",
+        "entrega": "Documento 26 con el catálogo de 44 edificaciones por zona, casas, casino, versiones y razones; documentos 02, 04, 05, 06, 07, 11, 17, 18 y 21 alineados; 36 tareas nuevas en el roadmap"
       },
       {
         "etapa": "qa",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "qa",
+        "nota": "QA comprueba el build, las marcas, los aplazamientos, las tareas nuevas y la coherencia con el mundo y el canon"
       },
       {
         "etapa": "autor",
@@ -59,6 +67,24 @@
         "de": "ideador",
         "a": "coordinador",
         "que": "Catálogo de edificios por zona y reparto en versiones, con once preguntas para el autor",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "contenido",
+        "que": "Escribir el documento 26 con el catálogo de zonas y edificios y las versiones",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "contenido",
+        "a": "coordinador",
+        "que": "Documento 26 entregado con la lista de tareas por crear",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 26, los cambios en 02, 04, 05, 06, 07, 11, 17, 18 y 21 y las tareas nuevas del roadmap",
         "at": "2026-10-13"
       }
     ]

@@ -22,18 +22,20 @@ Con buena energía y ganas de lograr todo lo que quiera, pero que debe **adaptar
 
 ## Regiones ✅
 
-| Región | Identidad | Poder dominante |
-|---|---|---|
-| **Cuenca del Hollín** *(inicio)* | Carbón y hierro, humo, pueblos obreros | Sindicato minero |
-| **Sierra Alta** | Cobre y plata, frío, pueblos de empresa | Casas industriales |
-| **Salares del Litoral** | Salitre, puertos, contrabando | Organización criminal |
-| **Cavernas de Cristal** | Cuarzo y gemas, cuevas inestables | Disputada entre todos |
-| **La Fosa** | Donde apareció la Aetherita; militarizada | Gobierno |
-| **Puerto Meridiano** *(capital)* | Bolsa, prensa, élite, lujo | Gobierno y Casas |
+| Región | Identidad | Poder dominante | Asentamiento |
+|---|---|---|---|
+| **Cuenca del Hollín** *(inicio)* | Carbón y hierro, humo, pueblos obreros | Sindicato minero | Villa Brasa |
+| **Sierra Alta** | Cobre y plata, frío, pueblos de empresa | Casas industriales | Altafría |
+| **Salares del Litoral** | Salitre, puertos, contrabando | Organización criminal | Salinas Blancas |
+| **Cavernas de Cristal** | Cuarzo y gemas, cuevas inestables | Disputada entre todos | Un campamento, sin vivienda (nombre provisional) |
+| **La Fosa** | Donde apareció la Aetherita; militarizada | Gobierno | El campamento de la Comisión, sin vivienda (nombre provisional) |
+| **Puerto Meridiano** *(capital)* | Bolsa, prensa, élite, lujo | Gobierno y Casas | La propia ciudad |
+
+✅ Cada región es una **zona del mapa** con un asentamiento, y la boca de mina es una edificación más de ese asentamiento: Villa Brasa atiende las dos zonas de minado del Hollín. Los nombres **Altafría** y **Salinas Blancas** los decidió el autor (2026-10-13). Catálogo de edificaciones, casas y versiones en [26](26-zonas-y-edificios.md).
 
 ## Zonas de minado
 
-Detalle de zonas, peligros y reglas: ver [02-extraccion.md](02-extraccion.md).
+Detalle de zonas, peligros y reglas: ver [02-extraccion.md](02-extraccion.md). Cada zona de minado se entra por una boca de mina dentro del asentamiento de su región ([26](26-zonas-y-edificios.md)).
 
 ## Minerales ✅
 
@@ -88,4 +90,4 @@ Lore:
 
 - ❓ Fichas completas de cada mineral.
 - ❓ Cadena de refinado (mena → lingote → aleación): qué requiere cada paso.
-- ✅ Nombres de facciones ([07](07-sociedad-y-eventos.md)), ciudades (Villa Brasa y Puerto Meridiano, [08](08-historia-y-personaje.md)) y personajes recurrentes ([19](19-elenco-a-fondo.md)): definidos.
+- ✅ Nombres de facciones ([07](07-sociedad-y-eventos.md)), ciudades y asentamientos (Villa Brasa, Altafría, Salinas Blancas y Puerto Meridiano, [08](08-historia-y-personaje.md) y [26](26-zonas-y-edificios.md)) y personajes recurrentes ([19](19-elenco-a-fondo.md)): definidos.

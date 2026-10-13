@@ -44,8 +44,8 @@ Coherencia: lo que se declare debe coincidir con lo que el juego realmente hace 
 | Tema | Nota |
 |---|---|
 | Temas del juego | Corrupción, extorsión, violencia y negocios ilegales influyen en la clasificación por edad. Mundo y naciones **ficticios**, sin política real |
-| Juegos de azar simulados | El **casino** será una de las primeras actualizaciones tras el lanzamiento, integrado de forma suave. Afecta la clasificación por edad y tiene políticas propias en las tiendas. **Decisión del autor:** se acepta la clasificación que corresponda. Solo moneda del juego, sin dinero real. Revisar los requisitos vigentes antes de implementarlo |
-| Público | Definir si el juego está dirigido o no a menores. Si se dirige a menores aplican reglas mucho más estrictas |
+| Juegos de azar simulados | El **casino** (el Salón del Farol, [26](26-zonas-y-edificios.md)) llega en la V2.0, la primera actualización tras el lanzamiento, integrado de forma suave. Afecta la clasificación por edad y tiene políticas propias en las tiendas. **Decisión del autor** ✅ (2026-10-13): se acepta la clasificación que corresponda; solo moneda del juego, sin dinero real; probabilidades visibles; tope diario; y un interruptor para ocultar el azar. Revisar los requisitos vigentes antes de implementarlo ⏳ F6-13 |
+| Público | ✅ **El juego no se dirige a menores** (decisión del autor, 2026-10-13): los cuestionarios de edad y de público se contestan en consecuencia ⏳ F5-28. Si algún día se dirigiera a menores, aplicarían reglas mucho más estrictas |
 | Textos generados o de usuario | Nombres de personaje y tienda se validan (longitud, caracteres, filtro de palabras ofensivas) |
 
 ## 6 · Protección de datos
@@ -83,5 +83,5 @@ Coherencia: lo que se declare debe coincidir con lo que el juego realmente hace 
 
 - ❓ País de residencia del autor.
 - ⏳ F5-29 Búsqueda de marca formal de «Veta de Fortuna / Vein of Fortune».
-- ❓ Si el público objetivo incluye menores.
+- ✅ El público objetivo no incluye menores (2026-10-13).
 - ❓ Herramientas de IA concretas y sus términos comerciales.
