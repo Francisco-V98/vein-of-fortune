@@ -253,7 +253,8 @@
     tl: { px: 1.1, target: 'launch', rate: 0, sel: null },
     art: { cat: 'Todas' },
     qa: { area: 'Todas', type: 'Todos' },
-    dc: { act: 'all', level: 'all', who: 'all' }
+    dc: { act: 'all', level: 'all', who: 'all' },
+    hl: { act: 'all', tipo: 'all', estado: 'all', who: 'all' }
   };
   var lb = { list: [], idx: 0, opener: null };
 
@@ -272,7 +273,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('mapa', 'Mapa de historia', '⌖') + link('decisiones', 'Árbol de decisiones', '⑂') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('mapa', 'Mapa de historia', '⌖') + link('decisiones', 'Árbol de decisiones', '⑂') + link('hilos', 'Hilos narrativos', '⧉') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -1040,11 +1041,11 @@
     }).join('') + '</div><p class="stat-sub">Se recogen a lo largo de la historia y solo se oyen en el Acto IV.</p>';
     return h;
   }
+  function filterChips(action, cur, items) {
+    return items.map(function (it) { return '<button class="chip" type="button" data-action="' + action + '" data-value="' + esc(it[0]) + '" aria-pressed="' + (cur === it[0]) + '">' + esc(it[1]) + '</button>'; }).join('');
+  }
   function decisionFilters(D, acts, who) {
     var q = state.dc;
-    function filterChips(action, cur, items) {
-      return items.map(function (it) { return '<button class="chip" type="button" data-action="' + action + '" data-value="' + esc(it[0]) + '" aria-pressed="' + (cur === it[0]) + '">' + esc(it[1]) + '</button>'; }).join('');
-    }
     return '<div class="filters"><div class="filter-group"><span class="filter-label">Acto</span>' + filterChips('dc-act', q.act, [['all', 'Todos']].concat(acts.map(function (a) { return [a.n, a.n]; }))) + '</div>' +
       '<div class="filter-group"><span class="filter-label">Nivel</span>' + filterChips('dc-level', q.level, [['all', 'Todos']].concat(LEVEL_ORDER.map(function (lv) { return [lv, LEVEL[lv].label]; }))) + '</div>' +
       '<div class="filter-group"><label class="filter-label" for="dcWho">Personaje</label><select id="dcWho" data-action="dc-who"><option value="all">Todos</option>' + who.map(function (w) { return '<option value="' + esc(w) + '"' + (q.who === w ? ' selected' : '') + '>' + esc(w) + '</option>'; }).join('') + '</select></div></div>';
@@ -1084,6 +1085,96 @@
     h += decisionSummary(D, acts) + '<h2 class="section-title">Decisiones por acto</h2>' + decisionFilters(D, acts, who);
     h += '<div class="dc-board" style="--n:' + acts.length + '">' + acts.map(function (a) { return decisionColumn(a, D, flags, visible); }).join('') + '</div>';
     return h + decisionFlagTable(D, flags) + decisionProofs(D);
+  }
+
+  /* ---------- hilos narrativos ---------- */
+  var THREAD_TYPES = { pista: 'Pista', promesa: 'Promesa', secreto: 'Secreto', conflicto: 'Conflicto' };
+  var THREAD_STATES = { resuelto: 'Resuelto', abierto: 'Abierto', aplazado: 'Aplazado' };
+  var THREAD_ACTS = ['I', 'II', 'III', 'IV', 'despues'];
+  var THREAD_NODE = /\bn-[a-z0-9]+(?:-[a-z0-9]+)*/g;
+  function threadActLabel(a) { return a === 'despues' ? 'Después' : 'Acto ' + a; }
+  /* Acto donde se dibuja el hilo: el de su primera siembra. */
+  function threadHome(t) {
+    var ranks = (t.siembra || []).map(function (e) { return THREAD_ACTS.indexOf(e.acto); }).filter(function (i) { return i >= 0; });
+    return ranks.length ? THREAD_ACTS[Math.min.apply(null, ranks)] : null;
+  }
+  function threadColumns() {
+    var cols = ((H.story && H.story.acts) || []).map(function (a) { return { n: a.n, title: a.title, color: a.color }; });
+    return cols.concat([{ n: 'despues', title: 'Sandbox y segunda parte', color: '#5b7c8c' }]);
+  }
+  /* Una referencia libre («doc 19 §3 · nodo n-ii-x · cinta 3») en chips; los ids de nodo enlazan al árbol de decisiones. */
+  function threadRefChips(ref) {
+    return String(ref || '').split('·').map(function (x) { return x.trim(); }).filter(Boolean).map(function (x) {
+      var node = x.match(THREAD_NODE);
+      return node ? '<a class="chip hl-ref" href="#/decisiones?h=' + esc(node[0]) + '">' + esc(x) + '</a>' : '<span class="chip hl-ref">' + esc(x) + '</span>';
+    }).join(' ');
+  }
+  function threadEntries(label, entries) {
+    if (!entries.length) return '';
+    return '<div class="hl-entries"><small>' + label + '</small><ul>' + entries.map(function (e) {
+      return '<li>' + decisionMark(e.estado) + ' <b>' + esc(e.acto === 'despues' ? 'Después' : e.acto) + '</b> ' + esc(e.donde) + (e.ref ? '<div class="hl-refs">' + threadRefChips(e.ref) + '</div>' : '') + '</li>';
+    }).join('') + '</ul></div>';
+  }
+  function threadCard(t) {
+    var sow = t.siembra || [], solve = t.resuelve || [];
+    var allOk = sow.concat(solve).every(function (e) { return e.estado === 'ok'; });
+    var arrow = solve.length ? '<span class="hl-arrow" title="Se resuelve en"><span aria-hidden="true">→</span> ' + solve.map(function (e) { return esc(e.acto === 'despues' ? 'Después' : e.acto); }).join(', ') + '</span>' : '<span class="hl-arrow hl-open">sin resolver</span>';
+    var h = '<article class="dc-card hl-card hl-' + esc(t.estado) + '" id="' + esc(t.id) + '"><header><span class="dc-level">' + esc(THREAD_TYPES[t.tipo] || t.tipo) + '</span>' + decisionMark(allOk ? 'ok' : 'prop') + '</header>';
+    h += '<h3>' + esc(t.titulo) + '</h3><p class="hl-state"><span class="chip hl-st-' + esc(t.estado) + '">' + esc(THREAD_STATES[t.estado] || t.estado) + '</span> ' + arrow + '</p>';
+    if (t.personajes && t.personajes.length) h += '<p class="hl-who"><small>Personajes</small> ' + t.personajes.map(esc).join(', ') + '</p>';
+    h += threadEntries('Se siembra', sow) + threadEntries('Se resuelve', solve);
+    if (t.cambia) h += '<p class="hl-change"><small>Cambia</small> ' + esc(t.cambia) + '</p>';
+    if (t.motivo) h += '<p class="hl-reason"><small>Motivo</small> ' + esc(t.motivo) + '</p>';
+    return h + '</article>';
+  }
+  function threadColumn(col, list, total) {
+    var h = '<section class="dc-col" style="--c:' + esc(col.color) + '"><div class="dc-col-head"><span class="st-n">' + esc(threadActLabel(col.n)) + '</span><h2>' + esc(col.title) + '</h2><small>' + list.length + ' de ' + total + ' hilos</small></div>';
+    h += list.map(threadCard).join('');
+    if (!list.length) h += '<div class="empty">Ningún hilo con este filtro.</div>';
+    return h + '</section>';
+  }
+  function threadFilters(who) {
+    var q = state.hl;
+    var all = [['all', 'Todos']];
+    return '<div class="filters"><div class="filter-group"><span class="filter-label">Acto</span>' + filterChips('hl-act', q.act, all.concat(THREAD_ACTS.map(function (a) { return [a, a === 'despues' ? 'Después' : a]; }))) + '</div>' +
+      '<div class="filter-group"><span class="filter-label">Tipo</span>' + filterChips('hl-tipo', q.tipo, all.concat(Object.keys(THREAD_TYPES).map(function (k) { return [k, THREAD_TYPES[k]]; }))) + '</div>' +
+      '<div class="filter-group"><span class="filter-label">Estado</span>' + filterChips('hl-estado', q.estado, all.concat(Object.keys(THREAD_STATES).map(function (k) { return [k, THREAD_STATES[k]]; }))) + '</div>' +
+      '<div class="filter-group"><label class="filter-label" for="hlWho">Personaje</label><select id="hlWho" data-action="hl-who"><option value="all">Todos</option>' + who.map(function (w) { return '<option value="' + esc(w) + '"' + (q.who === w ? ' selected' : '') + '>' + esc(w) + '</option>'; }).join('') + '</select></div></div>';
+  }
+  function threadSummary(R) {
+    var by = function (map, k) { return (map && map[k]) || 0; };
+    var h = '<div class="st-grid dc-summary">' +
+      '<div class="st-card"><small>Hilos</small><b>' + R.total + '</b><span>' + Object.keys(THREAD_TYPES).map(function (k) { return THREAD_TYPES[k].toLowerCase() + 's ' + by(R.por_tipo, k); }).join(' · ') + '</span></div>' +
+      '<div class="st-card"><small>Estado</small><b>' + by(R.por_estado, 'resuelto') + ' / ' + R.total + '</b><span>resueltos · ' + by(R.por_estado, 'abierto') + ' abiertos · ' + by(R.por_estado, 'aplazado') + ' aplazados</span></div>' +
+      '<div class="st-card"><small>Sembrados sin resolver</small><b>' + R.sin_resolver.length + '</b><span>sin resolución y sin motivo</span></div>' +
+      '<div class="st-card"><small>Resueltos sin sembrar</small><b>' + R.sin_sembrar.length + '</b><span>o resueltos antes de sembrarse</span></div>' +
+      '<div class="st-card"><small>Personajes que faltan</small><b>' + R.faltan.length + '</b><span>en el mapa de historia entre siembra y resolución</span></div></div>';
+    var review = R.sin_resolver.concat(R.sin_sembrar, R.faltan.map(function (f) { return f.texto; }));
+    h += '<h2 class="section-title">Para revisar</h2>';
+    if (!review.length) return h + '<p class="stat-sub">Nada pendiente: todo hilo sembrado se resuelve o dice por qué sigue abierto.</p>';
+    return h + '<ul class="hl-review">' + review.map(function (msg) {
+      var id = msg.split(' ')[0].replace(/:$/, '');
+      return '<li><a href="#/hilos?h=' + esc(id) + '">' + esc(id) + '</a> ' + esc(msg.slice(msg.indexOf(' ') + 1)) + '</li>';
+    }).join('') + '</ul>';
+  }
+  function viewThreads() {
+    var T = H.hilos;
+    var h = '<p class="eyebrow">Diseño del juego</p><h1 class="page-title">Hilos narrativos</h1><p class="page-lead">Cada pista, promesa o secreto con dónde se siembra, dónde se resuelve y qué cambia. El hilo se dibuja en el acto donde se siembra y la marca → dice dónde se resuelve. Los avisos de abajo salen de las comprobaciones del build. Contiene spoilers.</p>';
+    if (!T || !T.hilos.length) return h + '<div class="empty">Sin hilos cargados.</div>';
+    var who = [];
+    T.hilos.forEach(function (t) { (t.personajes || []).forEach(function (w) { if (who.indexOf(w) < 0) who.push(w); }); });
+    who.sort(function (a, b) { return a.localeCompare(b, 'es'); });
+    var q = state.hl;
+    var cols = threadColumns();
+    h += threadSummary(T.resumen) + '<h2 class="section-title">Hilos por acto</h2>' + threadFilters(who);
+    h += '<div class="dc-board" style="--n:' + cols.length + '">' + cols.map(function (col) {
+      var mine = T.hilos.filter(function (t) { return threadHome(t) === col.n; });
+      var shown = mine.filter(function (t) {
+        return (q.act === 'all' || col.n === q.act) && (q.tipo === 'all' || t.tipo === q.tipo) && (q.estado === 'all' || t.estado === q.estado) && (q.who === 'all' || (t.personajes || []).indexOf(q.who) >= 0);
+      });
+      return threadColumn(col, shown, mine.length);
+    }).join('') + '</div>';
+    return h;
   }
 
   /* ---------- QA ---------- */
@@ -1381,6 +1472,7 @@
       case 'juego': html = viewGame(); title += ' · El juego'; break;
       case 'mapa': html = viewStory(); title += ' · Mapa de historia'; break;
       case 'decisiones': html = viewDecisions(); title += ' · Árbol de decisiones'; anchor = r.query.h || null; break;
+      case 'hilos': html = viewThreads(); title += ' · Hilos narrativos'; anchor = r.query.h || null; break;
       case 'limpieza': html = viewClean(); title += ' · Limpieza del diseño'; break;
       case 'coherencia': html = viewCoherence(); title += ' · Coherencia del diseño'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
@@ -1469,6 +1561,9 @@
     else if (act === 'deck-print') { window.print(); }
     else if (act === 'dc-act') { state.dc.act = val; render(true); }
     else if (act === 'dc-level') { state.dc.level = val; render(true); }
+    else if (act === 'hl-act') { state.hl.act = val; render(true); }
+    else if (act === 'hl-tipo') { state.hl.tipo = val; render(true); }
+    else if (act === 'hl-estado') { state.hl.estado = val; render(true); }
     else if (act === 'qa-type') { state.qa.type = val; render(true); }
     else if (act === 'open-img') { openLightbox(+el.getAttribute('data-index'), el); }
     else if (act === 'tl-select') { state.tl.sel = state.tl.sel === val ? null : val; render(true); }
@@ -1487,6 +1582,7 @@
     if (act === 'board-phase') { state.board.phase = el.value; state.board.limit = {}; render(true); }
     else if (act === 'board-target') { state.board.target = el.value; state.board.limit = {}; render(true); }
     else if (act === 'dc-who') { state.dc.who = el.value; render(true); }
+    else if (act === 'hl-who') { state.hl.who = el.value; render(true); }
     else if (act === 'tl-target') { state.tl.target = el.value; state.tl.sel = null; render(true); }
     else if (act === 'tl-zoom') { state.tl.px = parseFloat(el.value); render(true); }
     else if (act === 'tl-rate') { state.tl.rate = parseInt(el.value, 10); render(true); }

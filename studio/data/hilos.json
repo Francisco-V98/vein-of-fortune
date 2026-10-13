@@ -1,0 +1,1329 @@
+{
+  "meta": {
+    "actos": [
+      "I",
+      "II",
+      "III",
+      "IV",
+      "despues"
+    ],
+    "tipos": [
+      "pista",
+      "promesa",
+      "secreto",
+      "conflicto"
+    ],
+    "estados": [
+      "resuelto",
+      "abierto",
+      "aplazado"
+    ]
+  },
+  "hilos": [
+    {
+      "id": "h-certificado-sin-cremacion",
+      "titulo": "El certificado de defunción sin registro de cremación",
+      "tipo": "pista",
+      "personajes": [
+        "Inspector Quiroga",
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Quiroga deja ver el certificado de Anselmo: sello irregular (el del sanatorio) y ningún registro de cremación; se pone nervioso",
+          "ref": "doc 19 «Pistas sembradas» · doc 21 §5 y §11 · doc 22 §2 (O4) y §4 · nodo n-ii-certificado · bandera f-certificado",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "El acta de calibración cierra la pista; la copia del certificado en el archivo de Quiroga nunca se destruye",
+          "ref": "doc 25 §7.3 · doc 23 §8 · nodo n-iv-quiroga-archivo",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "El jugador entiende que la muerte de Anselmo fue un papel de la Comisión. La copia queda como prueba que ninguna decisión puede perder (23 §8). Cumbre Clara es solo un nombre (decisión del autor, 2026-10-13): el sello del sanatorio no abre ninguna zona ni edificio visitable (26 no le da edificio).",
+      "estado": "resuelto",
+      "motivo": "Decisión del autor (2026-10-13): Cumbre Clara es solo un nombre, no se visita; no hay resolución adicional."
+    },
+    {
+      "id": "h-abono-anonimo",
+      "titulo": "El abono anónimo a la deuda: el giro, el sobre sin remitente y la carta sin firma (el sueldo de Anselmo)",
+      "tipo": "secreto",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado",
+        "Anselmo Vidal",
+        "Teo Cárdenas"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Reme atribuye el giro mensual a la deuda a «algún vecino bondadoso»",
+          "ref": "doc 19 «Pistas sembradas» y ficha de Reme · doc 21 §6 y §11",
+          "estado": "prop"
+        },
+        {
+          "acto": "II",
+          "donde": "A6: cada mes llega un sobre sin remitente con el giro del abono; Reme no lo explica y lo calla por la carta sin firma que le pide no investigar (su razón cambia con la facción)",
+          "ref": "doc 22 §2 (A6), §3 y §6 · doc 21 §6 (carta sin firma, giro y abono) · decisión del autor 2026-10-13 (sobre, carta y giro son el mismo hilo)",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Reme entrega los comprobantes del abono (los sobres de cada mes) como prueba; solo queda resuelto de dónde viene (no es de un vecino)",
+          "ref": "doc 19 ficha de Reme · doc 21 §6 · doc 23 §8 · nodo n-iv-reme-proteccion",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "El sobre sin remitente, la carta sin firma y el giro mensual son una sola cosa: el sueldo de Anselmo desde el escondite, cláusula del trato. Si revelas, la Comisión lo corta; si callas o vendes, sigue llegando. El epílogo lo dice en la cola de las piezas de Reme (RE-01 a RE-03).",
+      "estado": "abierto",
+      "motivo": "Abierto a propósito para una segunda parte (doc 25 §7.1 y §7.3): el giro se corta solo si revelas. Lo resuelto es su origen; lo abierto es qué pasa con él."
+    },
+    {
+      "id": "h-abono-y-teo",
+      "titulo": "El abono sigue llegando y Teo jura que no es él",
+      "tipo": "pista",
+      "personajes": [
+        "Teo Cárdenas",
+        "Doña Remedios «Reme» Salgado"
+      ],
+      "siembra": [
+        {
+          "acto": "III",
+          "donde": "El abono llega otra vez; Teo jura que no lo paga y tú decides si le crees",
+          "ref": "doc 19 «Pistas sembradas» · doc 21 §11 · nodo n-iii-abono · medidor m-teo",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Se cierra: Teo no lo paga (los comprobantes de Reme y la confesión de Teo lo muestran)",
+          "ref": "doc 25 §7.3 · doc 21 §11",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "Teo queda libre de sospecha. Su confianza cambia según le creíste (le crees: alivio; dudas: le duele mucho).",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-libreta-sin-cierre",
+      "titulo": "La libreta que termina sin fecha de cierre",
+      "tipo": "pista",
+      "personajes": [
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "La libreta de Anselmo guía las primeras misiones y su última anotación no tiene fecha de cierre",
+          "ref": "doc 19 «Pistas sembradas» · doc 18 Anexo «Dónde está Anselmo en cada acto» · doc 21 §11",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Se cierra con el acta: la anotación es de la noche antes de la detención, sin fechar",
+          "ref": "doc 25 §7.3 · doc 21 §11",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "La libreta deja de ser una guía de tutorial y pasa a ser el último papel honesto de Anselmo antes del trato.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-letra-de-un-muerto",
+      "titulo": "La letra de un muerto en las cartas de la Comisión",
+      "tipo": "pista",
+      "personajes": [
+        "Lucía Montalvo",
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "III",
+          "donde": "Lucía oyó que alguien de la Comisión recibe cartas con la letra de un muerto y reconoce la firma de Anselmo",
+          "ref": "doc 19 «Pistas sembradas» y ficha de Lucía · doc 18 Anexo · nodo n-iii-lucia-letra · momento exacto: tarea F4-139",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Se cierra con el acta; Lucía reconoce la letra, pero nunca llega a saber que Anselmo vive ni ve el acta",
+          "ref": "doc 25 §1 y §7.3 · piezas LU-01 a LU-04",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Lucía guarda la historia hasta tenerla completa. El jugador sabe algo que ella nunca sabrá.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-silencio-firmado-de-teo",
+      "titulo": "Las evasivas de Teo sobre La Fosa y su pensión",
+      "tipo": "secreto",
+      "personajes": [
+        "Teo Cárdenas",
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Teo cambia de tema cuando se menciona el último viaje a La Fosa (sombra de la huelga, A4)",
+          "ref": "doc 19 «Pistas sembradas» · doc 22 §2 y §4 · doc 21 §11",
+          "estado": "ok"
+        },
+        {
+          "acto": "III",
+          "donde": "Su salud se nota y evita hablar de La Fosa",
+          "ref": "doc 19 ficha de Teo (arco por acto)",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Teo confiesa lo que firmó: su silencio a cambio de la pensión de su esposa enferma",
+          "ref": "nodo n-iv-teo · doc 21 §2 y §7 (cinta 4) · piezas TE-01 a TE-03",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Se entiende por qué calló y por qué odia su pensión. Según las decisiones, Teo se queda, se va o muere.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-tos-de-teo-y-revision",
+      "titulo": "La tos de Teo y la revisión del médico",
+      "tipo": "pista",
+      "personajes": [
+        "Teo Cárdenas"
+      ],
+      "siembra": [
+        {
+          "acto": "III",
+          "donde": "La tos de Teo se nota en escena y Reme y Lucía la comentan antes de que decidas llevarlo a revisión",
+          "ref": "doc 23 §2.4 y §5 · nodo n-iii-revision-teo · bandera f-teo-revision · médico del dispensario: tarea F4-135",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Con revisión se queda o se va; sin revisión muere de «tos de mina», también si aceptaste su no",
+          "ref": "nodo n-iv-teo · doc 24 §5 · piezas TE-01 a TE-03",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "La revisión solo puede decir «tos de mina». Sin ella, la muerte de Teo es consecuencia de no haberlo atendido.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-firma-de-la-herencia",
+      "titulo": "La firma de la herencia es la del acta",
+      "tipo": "pista",
+      "personajes": [
+        "Anselmo Vidal",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "La firma de Anselmo está en los papeles de la herencia (testamento firmado antes de la detención); la escena la escribe el guion del Acto I",
+          "ref": "doc 18 Anexo · doc 21 §5 y §11 · doc 25 §3 · tarea F0-23",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "En el acta de calibración el protagonista reconoce la misma firma, con una línea de ocho palabras o menos",
+          "ref": "doc 25 §3 · doc 19 «La verdad sobre Anselmo»",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "El final funciona porque solo se reconoce una firma que ya se había visto. No se explica nada.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-acta-de-calibracion",
+      "titulo": "El acta de calibración firmada hace pocas semanas",
+      "tipo": "pista",
+      "personajes": [
+        "Anselmo Vidal",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "IV",
+          "donde": "Después de decidir sobre la Aetherita aparece la carpeta con el acta firmada por Anselmo; no es prueba y Lucía no la publica",
+          "ref": "doc 25 §3 · doc 21 §2 · doc 26 ed-fo-barracon · cuello c-iv-acta",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [],
+      "cambia": "Cierra el acto y concede Magnate (aviso silencioso). El último plano es la lámpara. Anselmo sigue vivo y secreto en las tres salidas.",
+      "estado": "abierto",
+      "motivo": "Abierto a propósito: es el hilo de Anselmo (doc 25 §7.3 y §7.1). El acta se ve, pero no se explica por qué firmó."
+    },
+    {
+      "id": "h-anselmo-sigue-vivo",
+      "titulo": "Anselmo está vivo, enfermo y es cómplice de la Comisión",
+      "tipo": "secreto",
+      "personajes": [
+        "Anselmo Vidal",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Solo rastro: libreta, lámpara y firma. El jugador cree que murió enfermo hace dos años",
+          "ref": "doc 18 Anexo «Dónde está Anselmo en cada acto» · doc 08 · doc 17",
+          "estado": "ok"
+        },
+        {
+          "acto": "II",
+          "donde": "Sospecha: el certificado sin cremación y las evasivas de Teo",
+          "ref": "doc 18 Anexo · doc 19 «Pistas sembradas»",
+          "estado": "ok"
+        },
+        {
+          "acto": "III",
+          "donde": "Sospecha: la letra de un muerto y las cintas 3 a 5",
+          "ref": "doc 18 Anexo · doc 19 «Pistas sembradas»",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Al final del acto el protagonista descubre que está vivo y que colaboró con la Comisión",
+          "ref": "doc 08 · doc 19 «La verdad sobre Anselmo» · doc 25 §1",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "El jugador queda con la pregunta de por qué lo hizo. No cambia la decisión sobre la Aetherita: añade una pregunta.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-donde-esta-anselmo-hoy",
+      "titulo": "Dónde está Anselmo hoy y por qué firmó",
+      "tipo": "promesa",
+      "personajes": [
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "IV",
+          "donde": "El acta no dice dónde vive ni por qué firmó; no hay misión de buscarlo en el sandbox",
+          "ref": "doc 25 §7.1 · doc 21 §5 y Pendiente · tarea F4-149",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [],
+      "cambia": "Es el gancho de una segunda parte: capítulos o actualizaciones futuras.",
+      "estado": "abierto",
+      "motivo": "Abierto a propósito para una segunda parte, sin tarea (doc 25 §7.1 y doc 21 Pendiente)."
+    },
+    {
+      "id": "h-trato-de-anselmo",
+      "titulo": "El trato de Anselmo con la Comisión",
+      "tipo": "secreto",
+      "personajes": [
+        "Anselmo Vidal",
+        "Ministro Aurelio Montenegro"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "El abono anónimo es la huella del trato (el sueldo se paga como abono a la deuda con Reme)",
+          "ref": "doc 21 §5 y §6",
+          "estado": "prop"
+        },
+        {
+          "acto": "IV",
+          "donde": "El acta firmada muestra que trabaja para la Comisión; las cláusulas no se cuentan",
+          "ref": "doc 25 §3 · doc 21 §5 (el trato)",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [],
+      "cambia": "Las cláusulas (tratamiento paliativo, silencio y trabajo, sin represalias a Reme, Teo y su heredero, muerte oficial) quedan fuera del juego salvo el abono.",
+      "estado": "abierto",
+      "motivo": "El destino del trato es un hilo abierto a propósito para la segunda parte, sin tarea (doc 25 Pendiente y §7.1)."
+    },
+    {
+      "id": "h-testamento-y-herencia",
+      "titulo": "El testamento y por qué te dejaron heredar",
+      "tipo": "secreto",
+      "personajes": [
+        "Anselmo Vidal",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "despues",
+          "donde": "Se escribe y se siembra solo en la segunda parte: nada en el Acto I ni en F0-23",
+          "ref": "doc 19 «La verdad sobre Anselmo» · doc 25 §1 y §7.1 · doc 21 §1 (testamento firmado antes de la detención)",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [],
+      "cambia": "Heredar el puesto es el gancho del Acto I; la razón de que Anselmo te eligiera no se cuenta.",
+      "estado": "abierto",
+      "motivo": "Decisión del autor (2026-10-12): no se escribe ahora, queda como hilo para una segunda parte (doc 25 §7.1)."
+    },
+    {
+      "id": "h-lampara-y-cinta-1",
+      "titulo": "La lámpara que Anselmo prestó al sobrino y la cinta 1",
+      "tipo": "promesa",
+      "personajes": [
+        "Anselmo Vidal",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "El recuerdo de la lámpara prestada una noche de estrellas; la cinta 1 está en el doble fondo de la caja del puesto",
+          "ref": "doc 19 Protagonista y Anselmo · doc 21 §7 y §8 · doc 26 ed-vb-tienda · cinta 1",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Se oye la cinta 1 («si estás oyendo esto, la lámpara llegó a tus manos») y el último plano del acta es la lámpara",
+          "ref": "doc 25 §3 · doc 18 §5.1 · cinta 1",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "La lámpara es el símbolo de la marca y la imagen final. Siempre una lámpara, nunca un farol.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-cintas-2-a-5",
+      "titulo": "Las cintas 2 a 5: la Escuela, la expedición, los enfermos y los informes",
+      "tipo": "pista",
+      "personajes": [
+        "Anselmo Vidal",
+        "Teo Cárdenas",
+        "Ministro Aurelio Montenegro"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Cinta 2 en el casillero del viejo taller de ensayo de Altafría",
+          "ref": "doc 23 §7 · doc 26 ed-af-taller-ensayo · cinta 2",
+          "estado": "ok"
+        },
+        {
+          "acto": "III",
+          "donde": "Cinta 3 en la consigna de la estación de Puerto Meridiano",
+          "ref": "doc 23 §7 · doc 26 ed-pm-estacion · cinta 3",
+          "estado": "ok"
+        },
+        {
+          "acto": "III",
+          "donde": "Cinta 4 en el campamento de ensayo bajo el cuarzo de las Cavernas",
+          "ref": "doc 23 §7 · doc 26 ed-cv-campamento · cinta 4",
+          "estado": "ok"
+        },
+        {
+          "acto": "III",
+          "donde": "Cinta 5 en la pensión de Puerto Meridiano donde Anselmo entregaba sus informes",
+          "ref": "doc 23 §7 · doc 26 ed-pm-pension · cinta 5",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Se oyen con el reproductor: la Escuela y Montenegro, el hallazgo y la expedición, los primeros enfermos y Teo, y lo que midió",
+          "ref": "doc 21 §7 · doc 23 §7 · doc 24 §9 · tarea F4-151",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Las cintas 1 a 5 son obligatorias para entrar al IV, no caducan y tienen misión persistente si faltan. Dan la verdad por partes.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-cintas-6-y-7",
+      "titulo": "Las cintas 6 y 7: la denuncia y la detención",
+      "tipo": "pista",
+      "personajes": [
+        "Anselmo Vidal",
+        "Inspector Quiroga"
+      ],
+      "siembra": [
+        {
+          "acto": "IV",
+          "donde": "Cinta 6 en la caja del equipo del campamento de la Primera Expedición; cinta 7 bajo la litera del barracón de calibración",
+          "ref": "doc 23 §7 · doc 26 ed-fo-campamento-viejo y ed-fo-barracon · cintas 6 y 7",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Se oyen con las demás: el dossier y la carta a La Voz del Hollín que Quiroga retuvo, y la noche anterior a la detención",
+          "ref": "doc 21 §7 · doc 23 §7 · tarea F4-151",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Cuentan la denuncia que Anselmo preparó y su detención. Ninguna menciona el trato: son anteriores a él.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-cinta-8-cortada",
+      "titulo": "La octava cinta termina cortada",
+      "tipo": "pista",
+      "personajes": [
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "IV",
+          "donde": "El carrete cortado y sin etiqueta junto al registrador del barracón; se corta a media frase",
+          "ref": "doc 19 «Pistas sembradas» · doc 21 §1 y §7 · doc 26 ed-fo-barracon · cinta 8",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [],
+      "cambia": "Falta el final: qué pensaba hacer Anselmo. El jugador nunca sabe quién cortó el carrete.",
+      "estado": "abierto",
+      "motivo": "Abierta a propósito (doc 25 §7.1 y doc 21 §1): quién la cortó es el azar, un guardia o el propio Anselmo, y no se aclara."
+    },
+    {
+      "id": "h-reproductor-de-cintas",
+      "titulo": "El reproductor de cintas",
+      "tipo": "promesa",
+      "personajes": [
+        "Lucía Montalvo",
+        "Doña Remedios «Reme» Salgado"
+      ],
+      "siembra": [
+        {
+          "acto": "III",
+          "donde": "Lucía oye hablar de las cintas: primera sombra de que hay algo que escuchar",
+          "ref": "doc 19 ficha de Lucía · doc 23 §7 · doc 18 6.11",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Lucía entrega el reproductor si su medidor es alto; con medio o bajo lo entrega Reme",
+          "ref": "doc 23 §1 · doc 24 §5 · nodo n-iv-aetherita · objeto: tarea F4-150",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Sin reproductor no se oyen las cintas. Quién lo entrega depende de cómo trataste a Lucía.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-archivo-de-quiroga",
+      "titulo": "El archivo de Quiroga: la copia del certificado y la carta retenida",
+      "tipo": "secreto",
+      "personajes": [
+        "Inspector Quiroga",
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Quiroga se pone nervioso con el certificado; guarda copia en su archivo como seguro de vida",
+          "ref": "doc 19 ficha de Quiroga · doc 21 §1 y §5 · nodo n-ii-certificado",
+          "estado": "prop"
+        },
+        {
+          "acto": "III",
+          "donde": "Quiroga pide una salida y deja ver que su archivo es su seguro",
+          "ref": "doc 19 ficha de Quiroga · nodo n-iii-quiroga-salida",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Quiroga ofrece su archivo; la copia del certificado y la carta de la cinta 6 no se pueden destruir (proteger, usar o vender el resto)",
+          "ref": "nodo n-iv-quiroga-archivo · doc 23 §2.4 y §8 · piezas QU-01 a QU-03 · doc 25 §1",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "El archivo es una de las pruebas que no se pierden. Qué haces con él decide el destino de Quiroga.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-sorteo-oculto-de-la-faccion-de-reme",
+      "titulo": "El sorteo oculto de la facción de Reme",
+      "tipo": "secreto",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Al empezar la partida se sortea la facción de Reme (Consorcio, Ministerio o Faroleros), oculta; el Acto I deja una pista distinta",
+          "ref": "doc 22 §1 y §10 · doc 23 §1 · estado de la partida: tarea F2-01",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "II",
+          "donde": "A2: Reme nombra por primera vez a su facción al dar la orden",
+          "ref": "doc 22 §1 y §5 · nodo n-ii-orden · bandera f-orden-reme",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Se revela de quién es Reme. Cambia la capa del Acto II y las pruebas del IV; no es una bifurcación jugable.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-pista-lampara-de-red",
+      "titulo": "Pista del Consorcio: la lámpara de red con una «A»",
+      "tipo": "pista",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Reme tiene la única lámpara de red de la calle, con una «A» grabada en la base («un regalo de un cliente agradecido»)",
+          "ref": "doc 22 §10 · props: tarea F3-16 · guion: tarea F0-23",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "II",
+          "donde": "A2: la orden de vender solo al Consorcio la trae un ejecutivo de la casa",
+          "ref": "doc 22 §3 y §5",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "La lectura inocente cae: Reme responde al Consorcio.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-pista-deferencia-de-quiroga",
+      "titulo": "Pista del Ministerio: la deferencia de Quiroga",
+      "tipo": "pista",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado",
+        "Inspector Quiroga"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Quiroga saluda a Reme con deferencia y le devuelve un papel sellado sin cobrarle: «Doña Reme, su trámite está en orden»",
+          "ref": "doc 22 §10 · props: tarea F3-16 · guion: tarea F0-23",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "II",
+          "donde": "A2: la orden de entregar las cuentas y no vender a Los Faroleros viene del Ministerio",
+          "ref": "doc 22 §3 y §5",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "La lectura inocente cae: Reme responde al Ministerio.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-pista-farol-vinotinto",
+      "titulo": "Pista de los Faroleros: el farol vinotinto en la ventana",
+      "tipo": "pista",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Reme enciende un farol vinotinto pequeño, con luz ámbar, en la ventana los días de pago («una costumbre de mi madre»)",
+          "ref": "doc 22 §10 · doc 21 §10 · props: tarea F3-16 · guion: tarea F0-23",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "II",
+          "donde": "A2: la orden de pagar la deuda de luz y abrir el contacto con Casilda viene de Los Faroleros",
+          "ref": "doc 22 §3 y §5",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "La lectura inocente cae: Reme responde a Los Faroleros. El farol vinotinto vuelve como sello de Casilda en el acta si le vendes.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-prestamo-de-reme-a-anselmo",
+      "titulo": "El préstamo de Reme a Anselmo «para equipos en La Fosa»",
+      "tipo": "pista",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado",
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "El protagonista hereda la deuda de Anselmo con Reme",
+          "ref": "doc 08 · doc 21 §6",
+          "estado": "ok"
+        },
+        {
+          "acto": "II",
+          "donde": "Cinta 2: Montenegro elige a Anselmo para la expedición un año antes, cuando prepara los equipos que paga Reme",
+          "ref": "doc 21 §7 · cinta 2",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Se entiende para qué era el préstamo: los equipos de ensayo que quedaron en el campamento de La Fosa (cinta 6)",
+          "ref": "doc 21 §6 · doc 19 ficha de Reme · cintas 2 y 6",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "Explica el cariño y la culpa de Reme: prestó antes de la expedición y el equipo nunca volvió.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-deuda-del-protagonista",
+      "titulo": "La deuda heredada y las cuotas cada 7 días",
+      "tipo": "conflicto",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Heredas la deuda: la primera cuota vence el día 7 y las siguientes cada 7 días; si no puedes, prórroga de una semana con recargo",
+          "ref": "doc 08 · doc 17 «La puerta del Acto I» · doc 23 §3 · nodo n-i-reme-plazo · bandera f-pago-reme · cuello c-i-cierre",
+          "estado": "ok"
+        },
+        {
+          "acto": "II",
+          "donde": "A2: rechazar la orden de Reme adelanta la cuota",
+          "ref": "doc 22 §5 · nodo n-ii-orden",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [],
+      "cambia": "Da el objetivo del tutorial y alimenta las vías de las puertas de acto. El epílogo no dice si está pagada.",
+      "estado": "aplazado",
+      "motivo": "⏳ F0-52: la economía decide las cifras y si queda pagada; el epílogo no la nombra y el sandbox la sigue (doc 25 §7.2)."
+    },
+    {
+      "id": "h-traicion-de-reme",
+      "titulo": "Reme traiciona por obligación y acaba siendo la mayor aliada",
+      "tipo": "conflicto",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Vecina amable que da tiempo y cobra con cariño",
+          "ref": "doc 19 ficha de Reme (arco por acto) · doc 08",
+          "estado": "ok"
+        },
+        {
+          "acto": "II",
+          "donde": "A2: sin café, Reme da la orden de su facción y pide perdón («Esto no lo elegí yo»)",
+          "ref": "doc 22 §5 · doc 08 · nodo n-ii-orden",
+          "estado": "ok"
+        },
+        {
+          "acto": "III",
+          "donde": "Distante pero atenta; no se atreve a ayudar abiertamente",
+          "ref": "doc 22 §1 · doc 19 ficha de Reme",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Se une al protagonista y se convierte en su persona más cercana, sin reproche",
+          "ref": "doc 08 · doc 19 ficha de Reme · doc 23 §1 · doc 25 §1",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Reme nunca cierra una puerta de acto. En el epílogo siempre es tu mayor aliada.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-proteccion-de-reme",
+      "titulo": "Proteger a Reme de su facción",
+      "tipo": "promesa",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "A5 muestra el costo para Reme de cada alianza antes de que elijas; A6 muestra cómo lo paga o cómo respira",
+          "ref": "doc 22 §9 · nodo n-ii-alianza · bandera f-alianza",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Con estatus puedes sacarla de la cadena, pagar su capital o dejar que decida",
+          "ref": "doc 19 ficha de Reme · nodo n-iv-reme-proteccion · bandera f-reme-proteccion · piezas RE-01 a RE-03",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Reme sale de la cadena de su facción, salda su deuda o conserva su casa. Si la sacas, su facción se enemista contigo.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-sospecha-de-reme",
+      "titulo": "Reme sospecha, pero nunca sabe, que Anselmo está vivo",
+      "tipo": "secreto",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado",
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "A6: Reme calla el abono sin saber de quién es; solo sospecha",
+          "ref": "doc 21 §1 y §6 · doc 22 §2 (A6)",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Reme se une a ti y entrega los comprobantes; la sospecha nunca se confirma: no llega a saber que Anselmo vive, igual que Lucía",
+          "ref": "doc 21 §6 · doc 19 ficha de Reme · doc 25 §7.3 · decisión del autor 2026-10-13",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Reme nunca llega a saber que Anselmo vive, igual que Lucía. Su alianza final no depende de ese saber.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-prueba-extra-de-reme",
+      "titulo": "La prueba propia de la variante de Reme",
+      "tipo": "pista",
+      "personajes": [
+        "Doña Remedios «Reme» Salgado"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Según su facción, Reme guarda el libro del fondo reservado, la orden sellada de la cadena o la copia del registro de informantes; no se muestra",
+          "ref": "doc 22 §2 (A2) y §11 · doc 23 §8",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Reme entrega esa prueba junto a los comprobantes del abono",
+          "ref": "doc 22 §11 · doc 23 §8 · archivo decisions.json (pruebas_iv)",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "Suma una prueba que no se pierde. Con los comprobantes y las cintas, la ruta del IV conserva siempre al menos tres.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-fondo-reservado-del-consorcio",
+      "titulo": "El fondo reservado del Consorcio y la prueba de Esteban",
+      "tipo": "secreto",
+      "personajes": [
+        "Esteban Arvel"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Un ejecutivo del Consorcio, sin nombre, habla con Reme; Esteban no conoce el fondo reservado",
+          "ref": "doc 22 §6 · doc 21 §6 y §10",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "El libro del fondo reservado sale a la luz y Esteban debe elegir: se une, se aparta o defiende al Consorcio",
+          "ref": "nodo n-iv-esteban · doc 21 §10 · doc 19 ficha de Esteban · piezas ES-01 a ES-04",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "El apellido de Esteban paga un silencio. Si se une, entrega las cuentas del Consorcio con la Comisión (prueba que sí se puede perder).",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-rivalidad-con-esteban",
+      "titulo": "La rivalidad con Esteban",
+      "tipo": "conflicto",
+      "personajes": [
+        "Esteban Arvel",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Esteban te quita contratos de hierro y cobre y te llama «amigo»",
+          "ref": "doc 19 ficha de Esteban · doc 22 §4 y O2 · nodos n-ii-contacto y n-ii-esteban-contrato",
+          "estado": "ok"
+        },
+        {
+          "acto": "III",
+          "donde": "Guardián del círculo de la capital: puede avalarte o cerrarte la puerta",
+          "ref": "doc 19 ficha de Esteban · nodos n-iii-esteban-trato y n-iii-circulo",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Según su medidor, se une a ti, se aparta o defiende al Consorcio",
+          "ref": "nodo n-iv-esteban · medidor m-esteban · doc 24 §5",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "El espejo del protagonista: quien tiene todo frente a quien parte de cero. Cambia el epílogo de Esteban y el mercado de hierro y cobre.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-cobrar-la-luz",
+      "titulo": "«Cobrar la luz» de los Faroleros y Casilda",
+      "tipo": "conflicto",
+      "personajes": [
+        "Casilda Ibarra"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Casilda protege y extorsiona: cobrador farolero, luz propia en el apagón y mercado negro",
+          "ref": "doc 21 §10 · doc 22 §3 y §4 · doc 19 ficha de Casilda",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [],
+      "cambia": "El Hollín no depende del Ministerio mientras pague la deuda de luz. Casilda sigue siendo lo que combatía.",
+      "estado": "abierto",
+      "motivo": "Abierto por diseño: el sistema se reabsorbe y todo sigue igual (doc 08, tema). El epílogo solo lo deja como estado del mundo (piezas CA-02 y CA-04)."
+    },
+    {
+      "id": "h-monopolio-de-casilda",
+      "titulo": "El monopolio de la Aetherita negra",
+      "tipo": "promesa",
+      "personajes": [
+        "Casilda Ibarra"
+      ],
+      "siembra": [
+        {
+          "acto": "III",
+          "donde": "Casilda negocia el monopolio de la venta clandestina de Aetherita; solo se compra en el mercado negro",
+          "ref": "doc 19 ficha de Casilda · doc 17 decisión 8 · nodo n-iii-monopolio · bandera f-monopolio",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Lo que aceptaste decide la prima negra y cómo suena Casilda al comprar la verdad",
+          "ref": "nodo n-iv-comprador · piezas CA-01 a CA-04 y ME-04",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Casilda queda como socia, rival respetuosa o cobradora de lo que toque. Cambia la vigilancia y la prima de la Aetherita.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-favor-del-circulo",
+      "titulo": "La entrada al círculo decide quién te debe un favor",
+      "tipo": "promesa",
+      "personajes": [
+        "Esteban Arvel",
+        "Inspector Quiroga"
+      ],
+      "siembra": [
+        {
+          "acto": "III",
+          "donde": "Entras con el aval de Esteban, el sello de Montenegro o la presión de tu alianza",
+          "ref": "doc 23 §1 y §5 · nodo n-iii-circulo · bandera f-entrada",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Cobras el favor: Esteban, Quiroga o la facción aliada",
+          "ref": "doc 23 §5 · nodos n-iv-esteban, n-iv-quiroga-archivo y n-iv-comprador",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "El sello de Montenegro es solo una firma: quien te debe el favor es Quiroga.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-quiroga-pide-una-salida",
+      "titulo": "Quiroga pide una salida",
+      "tipo": "promesa",
+      "personajes": [
+        "Inspector Quiroga"
+      ],
+      "siembra": [
+        {
+          "acto": "III",
+          "donde": "En Puerto Meridiano Quiroga se ofrece a ayudarte a cambio de una salida (el retiro)",
+          "ref": "doc 19 ficha de Quiroga · nodo n-iii-quiroga-salida · bandera f-quiroga-salida · tarea F4-137",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Si le conseguiste el retiro se salva aunque uses su archivo; si no, cae",
+          "ref": "doc 25 §1 (QU-02) · nodo n-iv-quiroga-archivo",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Quiroga se retira a Puerto Meridiano, cae con su archivo o queda a merced del comprador.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-comision-y-mal-del-eter",
+      "titulo": "La Comisión del Éter y el mal del éter",
+      "tipo": "secreto",
+      "personajes": [
+        "Anselmo Vidal",
+        "Teo Cárdenas",
+        "Ministro Aurelio Montenegro"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Sombras: la Comisión es el organismo técnico de La Fosa y las dudas sobre la muerte del tío son el misterio de fondo",
+          "ref": "doc 08 gancho · doc 18 1.4 y capítulo 3 · doc 21 §10",
+          "estado": "ok"
+        },
+        {
+          "acto": "II",
+          "donde": "Una sombra por escena: Teo y La Fosa (A4)",
+          "ref": "doc 18 1.4 · doc 22 §2 y §4",
+          "estado": "prop"
+        },
+        {
+          "acto": "III",
+          "donde": "La tos de Teo («tos de mina») y el precio de la Aetherita sin explicación",
+          "ref": "doc 18 1.4 · doc 17 decisión 8 · doc 23 §2.4",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Se nombra por primera vez el mal del éter y la Comisión que lo oculta; decides revelarla, callarla o venderla",
+          "ref": "doc 08 · nodo n-iv-aetherita · bandera f-destino",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "La Aetherita enferma a quienes la extraen. Según la salida, el mercado cae y rebota, se sostiene o sube; el sistema se reabsorbe.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-secreto-de-estado-aetherita",
+      "titulo": "El secreto de Estado de la Aetherita",
+      "tipo": "secreto",
+      "personajes": [
+        "Ministro Aurelio Montenegro",
+        "Casilda Ibarra"
+      ],
+      "siembra": [
+        {
+          "acto": "III",
+          "donde": "La Aetherita tiene precio visible pero solo se compra en el mercado negro, como mercancía escasa; nadie dice por qué",
+          "ref": "doc 17 decisión 8 · doc 18 1.4 · doc 21 §2",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Revelarla hace caer el precio, que rebota y queda algo por debajo; callar o vender lo sostiene o lo sube",
+          "ref": "nodo n-iv-aetherita · doc 25 §1 · piezas ME-01 a ME-03 · curva: tarea F4-147",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "La historia y la economía se tocan: la volatilidad de la Aetherita es consecuencia del secreto.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-montenegro-enemigo",
+      "titulo": "Montenegro, el enemigo claro",
+      "tipo": "conflicto",
+      "personajes": [
+        "Ministro Aurelio Montenegro",
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Solo decretos y firma: zonas (A1), corte de luz (A4) y la carta de A5",
+          "ref": "doc 22 §6 · doc 19 ficha de Montenegro",
+          "estado": "prop"
+        },
+        {
+          "acto": "III",
+          "donde": "Primer encuentro: te evalúa y te deja subir porque le sirves",
+          "ref": "doc 19 ficha de Montenegro · doc 23 §5 · cuello c-iii-encuentro · nodo n-iii-circulo",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Enfrentamiento en La Fosa con regla única: te compra, intenta borrarte y falla, o te amenaza; nunca cae ni se arrepiente",
+          "ref": "nodo n-iv-montenegro · doc 25 §1 · piezas DU-01 a DU-03",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Duro e inflexible hasta el final, sin humanizarlo. Su desenlace se fija al cerrar el acto con el comprador ya decidido.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-montenegro-investigado",
+      "titulo": "Montenegro bajo investigación y su comunicado",
+      "tipo": "conflicto",
+      "personajes": [
+        "Ministro Aurelio Montenegro"
+      ],
+      "siembra": [
+        {
+          "acto": "IV",
+          "donde": "Si revelas, el Ministerio emite un comunicado de una línea: Montenegro queda bajo investigación pero continúa en funciones",
+          "ref": "doc 25 §1 y §7.1 · pieza DU-04 · nodo n-iv-montenegro",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [],
+      "cambia": "Montenegro no cae ni nombra sucesor. El resultado de la investigación no se cuenta.",
+      "estado": "abierto",
+      "motivo": "Abierto a propósito (doc 25 §7.1): el resultado de la investigación queda para una segunda parte."
+    },
+    {
+      "id": "h-primera-expedicion-a-la-fosa",
+      "titulo": "La Primera Expedición a La Fosa",
+      "tipo": "secreto",
+      "personajes": [
+        "Teo Cárdenas",
+        "Anselmo Vidal",
+        "Ministro Aurelio Montenegro"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "Sombra de A4: Teo evita hablar del último viaje a La Fosa",
+          "ref": "doc 22 §2 y §4 · doc 19 «Pistas sembradas»",
+          "estado": "ok"
+        },
+        {
+          "acto": "III",
+          "donde": "Cinta 3 (el hallazgo y la lista de la cuadrilla) y cinta 4 (los primeros enfermos)",
+          "ref": "doc 21 §7 · doc 23 §7 · cintas 3 y 4",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Las cintas y la confesión de Teo cuentan la expedición: unas doce personas, ocho meses, la cuadrilla murió de «tos de mina» y Montenegro dirigió sin bajar a la veta",
+          "ref": "doc 21 §2 y §4 · nodo n-iv-teo · cintas 3 y 4",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "El jugador entiende de dónde viene el secreto de Estado y por qué Teo y Anselmo callaron.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-pozo-negro",
+      "titulo": "Pozo Negro: el derrumbe que marca a todos",
+      "tipo": "pista",
+      "personajes": [
+        "Teo Cárdenas",
+        "Anselmo Vidal"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "El padre del protagonista dejó el Hollín tras el derrumbe de Pozo Negro; la Unión nace de aquel derrumbe y Teo lo sobrevivió",
+          "ref": "doc 21 §2, §8 y §10 · doc 19 Protagonista · nodo n-i-herencia",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Cinta 2: Anselmo estudia con la beca de los huérfanos de Pozo Negro y comparte aula con Montenegro",
+          "ref": "doc 21 §7 · cinta 2",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "Pozo Negro une a Anselmo, Teo, Montenegro y el padre del protagonista: todos reaccionaron distinto a la misma pérdida.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-huelga-y-la-union",
+      "titulo": "La primera huelga, el apagón y la Unión",
+      "tipo": "conflicto",
+      "personajes": [
+        "Teo Cárdenas"
+      ],
+      "siembra": [
+        {
+          "acto": "II",
+          "donde": "A4: apoyas, te abstienes o rompes la huelga; sube el precio del mineral y llega el apagón decretado con la firma de Montenegro",
+          "ref": "doc 22 §2, §4 y §7 · nodo n-ii-huelga · bandera f-huelga · cuello c-ii-apagon",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "La Unión, según su tramo, sale contigo al revelar, deja que Montenegro intente borrarte o te cierra el Hollín en silencio",
+          "ref": "doc 24 §5 · medidor m-union · nodos n-iv-aetherita y n-iv-montenegro · piezas UN-01 a UN-03",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Romper la huelga baja mucho a Teo y a la Unión. La Unión no es una facción aliable, pero decide cómo termina el Hollín.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-lealtad-de-lucia",
+      "titulo": "Lucía y su única lealtad",
+      "tipo": "conflicto",
+      "personajes": [
+        "Lucía Montalvo"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Fuente simpática de rumores: te ofrece uno a cambio de otro",
+          "ref": "doc 19 ficha de Lucía · nodo n-i-lucia-rumor · medidor m-lucia",
+          "estado": "prop"
+        },
+        {
+          "acto": "II",
+          "donde": "Se descubre que vende información a más de una parte",
+          "ref": "doc 19 ficha de Lucía · doc 22 O1 · nodo n-ii-lucia",
+          "estado": "prop"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "Según su medidor publica contigo, publica sin ti, no publica o filtra a medias; nunca publica el acta",
+          "ref": "nodo n-iv-lucia-publica · doc 25 §1 · piezas LU-01 a LU-04",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Lucía elige una sola lealtad. Cambia quién da la noticia y cuánto cae el mercado.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-vega-mansa-y-el-juramento",
+      "titulo": "Vega Mansa y el juramento del padre",
+      "tipo": "promesa",
+      "personajes": [
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "Al heredar el puesto rompes sin querer el juramento del padre: bajas a la mina que él juró evitar; cómo se lo cuentas decide la reacción",
+          "ref": "doc 21 §8 · doc 19 Protagonista · nodo n-i-herencia · bandera f-familia · escena: tarea F0-23",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "El epílogo de la familia: llega una carta de Vega Mansa según lo que les contaste",
+          "ref": "doc 25 §5.3 (FM-01 a FM-03) y §7.2",
+          "estado": "prop"
+        }
+      ],
+      "cambia": "El padre ya no escribe con reproche, o no pregunta nada. Se cuenta con ternura y humor ligero.",
+      "estado": "resuelto",
+      "motivo": ""
+    },
+    {
+      "id": "h-deuda-del-banco-agrario",
+      "titulo": "La helada tardía y la deuda de la familia con el banco agrario",
+      "tipo": "promesa",
+      "personajes": [
+        "Protagonista"
+      ],
+      "siembra": [
+        {
+          "acto": "I",
+          "donde": "La cosecha perdida dejó a la familia debiendo al banco agrario; el protagonista busca trabajo para ayudar a su familia; el desenlace depende del estatus con el que cierres el acta, sin envíos de dinero",
+          "ref": "doc 19 Protagonista · doc 21 §8",
+          "estado": "ok"
+        }
+      ],
+      "resuelve": [
+        {
+          "acto": "IV",
+          "donde": "La carta de la familia dice si la deuda con el banco agrario se paga si entras en el acta como Empresario o Magnate y se alivia con un estatus menor",
+          "ref": "doc 25 §5.3 (FM-01 a FM-03) y §7.2 · decisión del autor 2026-10-13",
+          "estado": "ok"
+        }
+      ],
+      "cambia": "Es la razón de salir de casa. La carta de Vega Mansa lo cierra: la deuda se paga (Empresario o Magnate) o se alivia (estatus menor) según el estatus al cerrar el acta, sin cifras.",
+      "estado": "resuelto",
+      "motivo": ""
+    }
+  ]
+}

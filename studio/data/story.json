@@ -7,7 +7,15 @@
       "place": "Villa Brasa · Cuenca del Hollín",
       "time": "1,5–3 h",
       "closes": "Reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes tu primer contacto con los empleados.",
-      "tasks": ["F0-23", "F0-24", "F3-16", "F3-17", "F3-31", "F3-32", "F3-30"]
+      "tasks": [
+        "F0-23",
+        "F0-24",
+        "F3-16",
+        "F3-17",
+        "F3-31",
+        "F3-32",
+        "F3-30"
+      ]
     },
     {
       "n": "II",
@@ -16,7 +24,20 @@
       "place": "Cuenca del Hollín · Sierra Alta · Salares",
       "time": "4–10 h",
       "closes": "Eliges con qué facción te alías.",
-      "tasks": ["F4-127", "F4-128", "F4-129", "F4-130", "F4-131", "F4-132", "F4-133", "F4-179", "F4-134", "F4-71", "F4-61", "F4-168"]
+      "tasks": [
+        "F4-127",
+        "F4-128",
+        "F4-129",
+        "F4-130",
+        "F4-131",
+        "F4-132",
+        "F4-133",
+        "F4-179",
+        "F4-134",
+        "F4-71",
+        "F4-61",
+        "F4-168"
+      ]
     },
     {
       "n": "III",
@@ -25,7 +46,15 @@
       "place": "Puerto Meridiano · Cavernas de Cristal",
       "time": "4–10 h",
       "closes": "Te aceptan en el círculo de poder.",
-      "tasks": ["F4-135", "F4-136", "F4-180", "F4-141", "F4-137", "F4-138", "F4-139"]
+      "tasks": [
+        "F4-135",
+        "F4-136",
+        "F4-180",
+        "F4-141",
+        "F4-137",
+        "F4-138",
+        "F4-139"
+      ]
     },
     {
       "n": "IV",
@@ -34,7 +63,21 @@
       "place": "La Fosa del Éter",
       "time": "3–6 h",
       "closes": "Decides qué hacer con la verdad de la Aetherita y con tu poder, y cierras el acta de calibración.",
-      "tasks": ["F4-142", "F4-181", "F4-148", "F4-151", "F4-149", "F4-144", "F4-145", "F4-146", "F4-147", "F4-150", "F4-210", "F4-211", "F4-212"]
+      "tasks": [
+        "F4-142",
+        "F4-181",
+        "F4-148",
+        "F4-151",
+        "F4-149",
+        "F4-144",
+        "F4-145",
+        "F4-146",
+        "F4-147",
+        "F4-150",
+        "F4-210",
+        "F4-211",
+        "F4-212"
+      ]
     }
   ],
   "after": "Después del Acto IV el juego sigue como sandbox con la capa de imperio: sucursales, mercados de otras ciudades y eventos de temporada.",
@@ -44,10 +87,32 @@
       "label": "Narrativa",
       "glyph": "✎",
       "cells": [
-        ["Llegas a Villa Brasa", "Heredas la licencia, el puesto y la deuda de tu tío Anselmo", "Teo te enseña el oficio y Reme te da tiempo: cuota cada 7 días, la primera el día 7; si no puedes, una semana más con un pequeño recargo", "Una pista de quién está detrás de Reme (sorteo oculto) y tres decisiones pequeñas"],
-        ["Descubres que la política manda", "Se revela qué facción está detrás de Reme (varía por partida)", "Reme da una orden en nombre de su facción", "Huelga: apoyas, te abstienes o rompes", "Tres ofertas de alianza y el costo para Reme", "Los Faroleros te ofrecen protección"],
-        ["Viajas a Puerto Meridiano y entras a la bolsa", "Dilemas morales: favores, sobornos, información", "Conoces al Ministro Montenegro", "Entras al círculo por aval, sello o presión de tu alianza"],
-        ["Oyes las cintas de Anselmo, que fuiste recogiendo desde el Acto I", "Descubres el mal del éter y a la Comisión que lo oculta", "Revelar, callar o vender la verdad", "Cabecera, tarjetas y acta de calibración: la firma de Anselmo"]
+        [
+          "Llegas a Villa Brasa",
+          "Heredas la licencia, el puesto y la deuda de tu tío Anselmo",
+          "Teo te enseña el oficio y Reme te da tiempo: cuota cada 7 días, la primera el día 7; si no puedes, una semana más con un pequeño recargo",
+          "Una pista de quién está detrás de Reme (sorteo oculto) y tres decisiones pequeñas"
+        ],
+        [
+          "Descubres que la política manda",
+          "Se revela qué facción está detrás de Reme (varía por partida)",
+          "Reme da una orden en nombre de su facción",
+          "Huelga: apoyas, te abstienes o rompes",
+          "Tres ofertas de alianza y el costo para Reme",
+          "Los Faroleros te ofrecen protección"
+        ],
+        [
+          "Viajas a Puerto Meridiano y entras a la bolsa",
+          "Dilemas morales: favores, sobornos, información",
+          "Conoces al Ministro Montenegro",
+          "Entras al círculo por aval, sello o presión de tu alianza"
+        ],
+        [
+          "Oyes las cintas de Anselmo, que fuiste recogiendo desde el Acto I",
+          "Descubres el mal del éter y a la Comisión que lo oculta",
+          "Revelar, callar o vender la verdad",
+          "Cabecera, tarjetas y acta de calibración: la firma de Anselmo"
+        ]
       ]
     },
     {
@@ -55,10 +120,31 @@
       "label": "Mecánicas que se desbloquean",
       "glyph": "⚙",
       "cells": [
-        ["Día de 3 bloques", "Escáner instantáneo", "Picado, Perforación y Regateo", "Tienda modesta y herramientas de nivel 1–2", "Primer contacto con empleados (aún no se pueden contratar)"],
-        ["Contratación de empleados y contratos por tiempo", "Cribado y Cincelado", "Mejora del detector con cuarzo", "Taller y refinado", "Mercado negro con indicador de vigilancia"],
-        ["Detonación", "Rol de analista", "Contratos oficiales y a largo plazo", "Estilo de vida y cosméticos"],
-        ["Contención (Aetherita)", "Herramientas de nivel 5", "Automatización de minijuegos"]
+        [
+          "Día de 3 bloques",
+          "Escáner instantáneo",
+          "Picado, Perforación y Regateo",
+          "Tienda modesta y herramientas de nivel 1–2",
+          "Primer contacto con empleados (aún no se pueden contratar)"
+        ],
+        [
+          "Contratación de empleados y contratos por tiempo",
+          "Cribado y Cincelado",
+          "Mejora del detector con cuarzo",
+          "Taller y refinado",
+          "Mercado negro con indicador de vigilancia"
+        ],
+        [
+          "Detonación",
+          "Rol de analista",
+          "Contratos oficiales y a largo plazo",
+          "Estilo de vida y cosméticos"
+        ],
+        [
+          "Contención (Aetherita)",
+          "Herramientas de nivel 5",
+          "Automatización de minijuegos"
+        ]
       ]
     },
     {
@@ -66,10 +152,26 @@
       "label": "Mercado y eventos",
       "glyph": "▲",
       "cells": [
-        ["Información básica: precio y flecha", "Un rumor del Teletipo y la sección de empleos", "Sin eventos graves"],
-        ["Prensa con sesgos y rumores falsos", "Huelga y apagón (el saqueo queda procedural, F4-84)", "Los precios reaccionan a los eventos"],
-        ["Análisis y tabulador de valor justo", "Contratos y cuotas del Ministerio", "El mercado reacciona a la política", "Precio de la Aetherita visible; solo se compra en el mercado negro de Casilda, como mercancía escasa"],
-        ["Secreto de Estado: la Aetherita es volátil", "Si revelas la verdad, su precio cae, rebota y queda algo más abajo; si callas o vendes, se sostiene o sube"]
+        [
+          "Información básica: precio y flecha",
+          "Un rumor del Teletipo y la sección de empleos",
+          "Sin eventos graves"
+        ],
+        [
+          "Prensa con sesgos y rumores falsos",
+          "Huelga y apagón (el saqueo queda procedural, F4-84)",
+          "Los precios reaccionan a los eventos"
+        ],
+        [
+          "Análisis y tabulador de valor justo",
+          "Contratos y cuotas del Ministerio",
+          "El mercado reacciona a la política",
+          "Precio de la Aetherita visible; solo se compra en el mercado negro de Casilda, como mercancía escasa"
+        ],
+        [
+          "Secreto de Estado: la Aetherita es volátil",
+          "Si revelas la verdad, su precio cae, rebota y queda algo más abajo; si callas o vendes, se sostiene o sube"
+        ]
       ]
     },
     {
@@ -77,10 +179,20 @@
       "label": "Zonas",
       "glyph": "◭",
       "cells": [
-        ["Galerías del Hollín"],
-        ["Cañón Ferroso", "Minas de Sierra Alta", "Salares del Litoral"],
-        ["Cavernas de Cristal"],
-        ["La Fosa del Éter"]
+        [
+          "Galerías del Hollín"
+        ],
+        [
+          "Cañón Ferroso",
+          "Minas de Sierra Alta",
+          "Salares del Litoral"
+        ],
+        [
+          "Cavernas de Cristal"
+        ],
+        [
+          "La Fosa del Éter"
+        ]
       ]
     },
     {
@@ -88,10 +200,25 @@
       "label": "Minerales",
       "glyph": "◆",
       "cells": [
-        ["Carbón", "Hierro"],
-        ["Cobre", "Salitre", "Plata", "Oro", "Cuarzo"],
-        ["Esmeralda", "Diamante", "Aetherita (solo su precio)"],
-        ["Aetherita"]
+        [
+          "Carbón",
+          "Hierro"
+        ],
+        [
+          "Cobre",
+          "Salitre",
+          "Plata",
+          "Oro",
+          "Cuarzo"
+        ],
+        [
+          "Esmeralda",
+          "Diamante",
+          "Aetherita (solo su precio)"
+        ],
+        [
+          "Aetherita"
+        ]
       ]
     },
     {
@@ -99,10 +226,68 @@
       "label": "Personajes",
       "glyph": "☺",
       "cells": [
-        ["Doña Reme", "El Viejo Teo", "Inspector Quiroga", "Lucía Montalvo", "Anselmo Vidal"],
-        ["Esteban Arvel", "Casilda «la Faro»"],
-        ["Ministro Montenegro"],
+        [
+          "Doña Reme",
+          "El Viejo Teo",
+          "Inspector Quiroga",
+          "Lucía Montalvo",
+          "Anselmo Vidal"
+        ],
+        [
+          "Esteban Arvel",
+          "Casilda «la Faro»"
+        ],
+        [
+          "Ministro Montenegro"
+        ],
         []
+      ]
+    },
+    {
+      "id": "enescena",
+      "label": "En escena",
+      "glyph": "◉",
+      "cells": [
+        [
+          "Protagonista",
+          "Doña Reme",
+          "El Viejo Teo",
+          "Inspector Quiroga",
+          "Lucía Montalvo",
+          "Anselmo Vidal"
+        ],
+        [
+          "Protagonista",
+          "Doña Reme",
+          "El Viejo Teo",
+          "Inspector Quiroga",
+          "Lucía Montalvo",
+          "Anselmo Vidal",
+          "Esteban Arvel",
+          "Casilda «la Faro»"
+        ],
+        [
+          "Protagonista",
+          "Doña Reme",
+          "El Viejo Teo",
+          "Inspector Quiroga",
+          "Lucía Montalvo",
+          "Anselmo Vidal",
+          "Esteban Arvel",
+          "Casilda «la Faro»",
+          "Ministro Montenegro"
+        ],
+        [
+          "Protagonista",
+          "Doña Reme",
+          "El Viejo Teo",
+          "Inspector Quiroga",
+          "Lucía Montalvo",
+          "Anselmo Vidal",
+          "Esteban Arvel",
+          "Casilda «la Faro»",
+          "Ministro Montenegro"
+        ]
       ]
     },
     {
@@ -110,10 +295,22 @@
       "label": "Estatus",
       "glyph": "↑",
       "cells": [
-        ["Heredero", "Minero con licencia"],
-        ["Minero con licencia", "Comerciante"],
-        ["Comerciante", "Empresario"],
-        ["Empresario", "Magnate al cerrar el acta"]
+        [
+          "Heredero",
+          "Minero con licencia"
+        ],
+        [
+          "Minero con licencia",
+          "Comerciante"
+        ],
+        [
+          "Comerciante",
+          "Empresario"
+        ],
+        [
+          "Empresario",
+          "Magnate al cerrar el acta"
+        ]
       ]
     },
     {
@@ -121,10 +318,24 @@
       "label": "Puertas de acto",
       "glyph": "⛶",
       "cells": [
-        ["Reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes el primer contacto con empleados", "Sin estatus, logros ni vías: Minero con licencia es el premio"],
-        ["A4 resuelta: viviste la huelga y el apagón", "Piso de estatus: Comerciante", "Dos de tres vías: deuda, logros o relación"],
-        ["Piso de estatus: Empresario, dos de tres vías y una entrada abierta (aval, sello o presión)", "El círculo cierra en el encuentro con Montenegro", "Para entrar al IV: ese encuentro y las cintas 1 a 5"],
-        ["Cerrar el acta de calibración, tras la decisión sobre la Aetherita", "Magnate es el premio, no una puerta"]
+        [
+          "Reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes el primer contacto con empleados",
+          "Sin estatus, logros ni vías: Minero con licencia es el premio"
+        ],
+        [
+          "A4 resuelta: viviste la huelga y el apagón",
+          "Piso de estatus: Comerciante",
+          "Dos de tres vías: deuda, logros o relación"
+        ],
+        [
+          "Piso de estatus: Empresario, dos de tres vías y una entrada abierta (aval, sello o presión)",
+          "El círculo cierra en el encuentro con Montenegro",
+          "Para entrar al IV: ese encuentro y las cintas 1 a 5"
+        ],
+        [
+          "Cerrar el acta de calibración, tras la decisión sobre la Aetherita",
+          "Magnate es el premio, no una puerta"
+        ]
       ]
     },
     {
@@ -132,10 +343,20 @@
       "label": "Cintas de Anselmo",
       "glyph": "◉",
       "cells": [
-        ["Cinta 1, en Villa Brasa", "No hace falta para cerrar el Acto I: si la dejas, queda como misión persistente"],
-        ["Cinta 2, en Sierra Alta"],
-        ["Cintas 3, 4 y 5, en Puerto Meridiano y Cavernas de Cristal", "Las cintas 1 a 5 son obligatorias para entrar al IV"],
-        ["Cintas 6, 7 y 8, en La Fosa"]
+        [
+          "Cinta 1, en Villa Brasa",
+          "No hace falta para cerrar el Acto I: si la dejas, queda como misión persistente"
+        ],
+        [
+          "Cinta 2, en Sierra Alta"
+        ],
+        [
+          "Cintas 3, 4 y 5, en Puerto Meridiano y Cavernas de Cristal",
+          "Las cintas 1 a 5 son obligatorias para entrar al IV"
+        ],
+        [
+          "Cintas 6, 7 y 8, en La Fosa"
+        ]
       ]
     },
     {
@@ -143,10 +364,29 @@
       "label": "Arte necesario",
       "glyph": "▣",
       "cells": [
-        ["Villa Brasa", "Mina del Hollín", "Tienda (interior)", "4 retratos"],
-        ["3 zonas más", "Taller", "2 retratos", "Pantalla de contratos"],
-        ["Puerto Meridiano y la bolsa", "Cavernas de Cristal", "1 retrato"],
-        ["La Fosa", "Escenas de las cintas", "6 cabeceras y 3 fondos del acta", "Acta de calibración"]
+        [
+          "Villa Brasa",
+          "Mina del Hollín",
+          "Tienda (interior)",
+          "4 retratos"
+        ],
+        [
+          "3 zonas más",
+          "Taller",
+          "2 retratos",
+          "Pantalla de contratos"
+        ],
+        [
+          "Puerto Meridiano y la bolsa",
+          "Cavernas de Cristal",
+          "1 retrato"
+        ],
+        [
+          "La Fosa",
+          "Escenas de las cintas",
+          "6 cabeceras y 3 fondos del acta",
+          "Acta de calibración"
+        ]
       ]
     }
   ]

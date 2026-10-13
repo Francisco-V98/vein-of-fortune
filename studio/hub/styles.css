@@ -832,3 +832,22 @@ main.is-deck { padding: 0; max-width: none; }
 .dc-neck small { color: var(--muted); font-size: 12px; }
 .dc-off { opacity: 0.5; }
 @media (max-width: 860px) { .dc-board { grid-template-columns: repeat(var(--n), 290px); }  }
+
+/* Hilos narrativos (#/hilos): reutiliza el tablero y las tarjetas de las decisiones */
+.hl-card { border-left-color: var(--brass); }
+.hl-resuelto { border-left-color: var(--ok); }
+.hl-aplazado, .hl-abierto { border-left-style: dashed; }
+.hl-state { margin: 0 0 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; }
+.hl-st-resuelto { border-color: var(--ok); color: var(--ok); }
+.hl-st-abierto { border-color: var(--accent-hi); color: #f0a9b6; }
+.hl-st-aplazado { border-color: var(--brass); color: var(--amber); }
+.hl-arrow { color: var(--amber); font-weight: 700; }
+.hl-arrow.hl-open { color: var(--muted); font-weight: 400; font-style: italic; }
+.hl-who, .hl-change, .hl-reason { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+.hl-who small, .hl-change small, .hl-reason small, .hl-entries small { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); margin-right: 4px; }
+.hl-entries { margin-top: 8px; padding: 8px 10px; background: var(--surface-2); border-radius: var(--radius); font-size: 13px; }
+.hl-entries ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 6px; }
+.hl-refs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.hl-ref { padding: 1px 7px; font-size: 11px; text-decoration: none; }
+.hl-review { margin: 0 0 8px; padding-left: 20px; font-size: 14px; color: var(--muted); }
+.hl-review li { margin: 3px 0; }

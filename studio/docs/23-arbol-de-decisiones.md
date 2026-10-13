@@ -343,7 +343,7 @@ La entrada que elijas decide quién te debe un favor en el IV:
 
 ## 8 · Pruebas de Reme en el Acto IV 🟡
 
-**Estado:** ✅ Reme entrega los comprobantes del abono ([21](21-pasado-de-valdoria.md), sección 6); 🟡 la prueba extra de cada variante y el resto del reparto, de [22](22-acto-ii-variantes.md), sección 11.
+**Estado:** ✅ Reme entrega los comprobantes del abono, que son los sobres sin remitente del Acto II y el mismo hilo que la carta sin firma y el giro mensual ([21](21-pasado-de-valdoria.md), sección 6; decisión del autor, 2026-10-13); 🟡 la prueba extra de cada variante y el resto del reparto, de [22](22-acto-ii-variantes.md), sección 11.
 
 | Variante de Reme | Prueba extra de Reme |
 |---|---|
@@ -353,7 +353,7 @@ La entrada que elijas decide quién te debe un favor en el IV:
 
 | Prueba | De quién | Se puede perder |
 |---|---|---|
-| Comprobantes del abono | Reme (común) | No |
+| Comprobantes del abono (los sobres de cada mes) | Reme (común) | No |
 | Prueba extra de su variante | Reme | No |
 | Las ocho cintas | Anselmo | No |
 | Copia del certificado y carta de la cinta 6 | Archivo de Quiroga | No: no se puede destruir |

@@ -72,13 +72,13 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | **Género** | El jugador elige hombre o mujer ✅; los diálogos son neutros cuando se puede |
 | **Aparece** | Desde la primera pantalla; se mueve entre todas las zonas |
 
-**Trasfondo.** Hijo o hija de aparceros de **Vega Mansa** ✅, una aldea agrícola de las tierras bajas del sur. Su padre, hermano de Anselmo, dejó el Hollín tras el derrumbe de Pozo Negro y juró que ningún hijo bajaría a una mina ✅ ([21](21-pasado-de-valdoria.md)). Una cosecha perdida por una helada tardía dejó a la familia debiendo al banco agrario. El protagonista sale a buscar trabajo para mandar dinero a casa y, justo entonces, llega la carta de la herencia de un tío al que conoció una sola vez de niño, hace unos 14 años ✅: Anselmo, el único pariente que ya había "salido a hacer fortuna". La herencia es una licencia, un puesto en el mercado de Villa Brasa y una deuda. De Anselmo conserva un recuerdo: **la lámpara de minero** que le prestó una noche para ver las estrellas. Es el símbolo de la marca.
+**Trasfondo.** Hijo o hija de aparceros de **Vega Mansa** ✅, una aldea agrícola de las tierras bajas del sur. Su padre, hermano de Anselmo, dejó el Hollín tras el derrumbe de Pozo Negro y juró que ningún hijo bajaría a una mina ✅ ([21](21-pasado-de-valdoria.md)). Una cosecha perdida por una helada tardía dejó a la familia debiendo al banco agrario; la carta de Vega Mansa del cierre dice si esa deuda se paga o se alivia, según el estatus con el que entres en el acta de calibración: Empresario o Magnate la pagan y un estatus menor la alivia ✅ (decisión del autor, 2026-10-13). El protagonista sale a buscar trabajo para ayudar a su familia y, justo entonces, llega la carta de la herencia de un tío al que conoció una sola vez de niño, hace unos 14 años ✅: Anselmo, el único pariente que ya había "salido a hacer fortuna". La herencia es una licencia, un puesto en el mercado de Villa Brasa y una deuda. De Anselmo conserva un recuerdo: **la lámpara de minero** que le prestó una noche para ver las estrellas. Es el símbolo de la marca.
 
 **Personalidad.** Cálido, ingenioso, directo y con humor ligero. Confía rápido, aprende rápido y no se rinde. Es terco de un modo que a veces es virtud y a veces ceguera. Su contradicción: **cree que si trabaja bien el mundo lo premiará**, y Valdoria se encargará de enseñarle lo contrario sin llegar a quitarle del todo la fe. Nunca es cínico ni ingenuo del todo: es el *optimista terco* de la marca ([13](13-marca-e-identidad.md)).
 
 | | |
 |---|---|
-| **Quiere** | Pagar la deuda, mandar dinero a casa y no volver con las manos vacías |
+| **Quiere** | Pagar la deuda, sacar adelante a su familia y no volver con las manos vacías |
 | **Necesita** | Aceptar que el mundo tiene reglas injustas sin convertirse en quien las usa; y saber quién fue Anselmo |
 | **Teme** | Decepcionar a su familia y descubrir que el tío que idealizó no era lo que parecía |
 
@@ -172,7 +172,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 
 **Conexiones.** Con **Anselmo**, deuda y afecto; con **Teo**, vecinos de siempre; con **su facción** (Consorcio, Faroleros o Ministerio), una correa corta; con **el protagonista**, el vínculo que más cuesta y más se recompensa.
 
-**Secreto y pistas.** Los abonos anónimos a la deuda no son de un vecino. Los recibe y los esconde porque su facción se lo pidió; al final los entrega como prueba.
+**Secreto y pistas.** Los abonos anónimos a la deuda no son de un vecino. Los recibe, en un sobre sin remitente y con una carta sin firma que le pide callar (todo es un solo hilo ✅), y los esconde porque su facción se lo pidió; al final los entrega como prueba. Sospecha que Anselmo vive y **nunca llega a saberlo**, igual que Lucía ✅ (decisión del autor, 2026-10-13).
 
 ## Teo Cárdenas, "el Viejo Teo"
 

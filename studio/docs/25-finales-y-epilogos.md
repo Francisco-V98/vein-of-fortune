@@ -238,9 +238,11 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 
 | ID | Cuándo | Lee | Medio | Ejemplo (guía) |
 |---|---|---|---|---|
-| FM-01 | Se lo contaste todo | `f-familia` | Narrador | «Llega una carta de Vega Mansa. Tu padre ya no la escribe con reproche. Se espera tu visita cuando haya cosecha.» |
-| FM-02 | A medias | `f-familia` | Narrador | «Llega una carta corta de Vega Mansa. En casa saben del puesto, no de la mina. Se espera que pregunten más de lo que dices.» |
-| FM-03 | Nada | `f-familia` | Narrador | «Después de semanas sin noticias, llega una carta de Vega Mansa. Tu padre no pregunta nada. Se espera que escriba otra.» |
+| FM-01 | Se lo contaste todo | `f-familia` | Narrador | «Llega una carta de Vega Mansa. Tu padre ya no la escribe con reproche. De la deuda con el banco agrario, dice que {deuda-familia}. Se espera tu visita cuando haya cosecha.» |
+| FM-02 | A medias | `f-familia` | Narrador | «Llega una carta corta de Vega Mansa. En casa saben del puesto, no de la mina. De la deuda con el banco agrario, dice que {deuda-familia}. Se espera que pregunten más de lo que dices.» |
+| FM-03 | Nada | `f-familia` | Narrador | «Después de semanas sin noticias, llega una carta de Vega Mansa. Tu padre no pregunta nada. De la deuda con el banco agrario, solo dice que {deuda-familia}. Se espera que escriba otra.» |
+
+**La deuda del banco agrario ✅.** Las tres cartas cierran la deuda de la familia con una sola línea, sin cifras (decisión del autor, 2026-10-13). El hueco `{deuda-familia}` depende solo del **estatus que tenías al entrar en el acta de calibración**: con Empresario o Magnate dice «se paga» y con un estatus menor dice «se alivia» ✅. No hay una acción de enviar dinero a casa ni una mecánica nueva. Magnate se concede **al cerrar** el acta ([24](24-umbrales-de-acto.md)), así que no cuenta para la carta; si contara, todas dirían «se paga». Cuánto patrimonio exige cada estatus sigue en ⏳ F4-109 y ⏳ F0-52.
 
 ---
 
@@ -297,7 +299,7 @@ Cubren las 54 piezas y las dos líneas de las piezas que las tienen. Los tramos 
 
 ## 7 · Hilos abiertos y hilos que se cierran 🟡
 
-**Estado:** ✅ qué queda abierto y qué no se siembra; 🟡 la lista de lo que no puede quedar abierto y el cierre de cada pista de [19](19-elenco-a-fondo.md). El registro de hilos ⏳ F0-51.
+**Estado:** ✅ qué queda abierto y qué no se siembra; 🟡 la lista de lo que no puede quedar abierto y el cierre de cada pista de [19](19-elenco-a-fondo.md). El registro de hilos está en `studio/data/hilos.json`.
 
 ### 7.1 · Quedan abiertos a propósito ✅
 
@@ -311,18 +313,20 @@ Cubren las 54 piezas y las dos líneas de las piezas que las tienen. Los tramos 
 
 ### 7.2 · No pueden quedar abiertos 🟡
 
-Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas las salidas. Las tres facciones aliables también (FC-01 a FC-06). La Aetherita siempre tiene su tarjeta de mercado: si revelas, cae y rebota. La familia siempre contesta. La deuda del protagonista no tiene tarjeta: el epílogo no dice si está pagada, porque eso lo decide la economía ⏳ F0-52 y el sandbox la sigue.
+Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas las salidas. Las tres facciones aliables también (FC-01 a FC-06). La Aetherita siempre tiene su tarjeta de mercado: si revelas, cae y rebota. La familia siempre contesta, y su carta dice si la deuda con el banco agrario se paga o se alivia según tu estatus al entrar en el acta ✅. La deuda del protagonista (la de Reme) no tiene tarjeta: el epílogo no dice si está pagada, porque eso lo decide la economía ⏳ F0-52 y el sandbox la sigue.
 
 ### 7.3 · Las pistas de [19](19-elenco-a-fondo.md) 🟡
 
 | Pista | Cómo termina |
 |---|---|
-| Abono anónimo (I) | Abierta: es el hilo del abono |
+| Abono anónimo (I), con el sobre sin remitente y la carta sin firma (II) | Abierta: es el hilo del abono. El sobre, la carta y el giro son un solo hilo ✅ (decisión del autor, 2026-10-13); Reme entrega los comprobantes en el IV |
 | Libreta sin fecha de cierre (I) | Se cierra con el acta |
 | Certificado sin cremación (II) | Se cierra con el acta; la copia del archivo nunca se destruye |
 | Teo cambia de tema (II) | Se cierra con TE-01 a TE-03 |
 | Letra de un muerto (III) | Se cierra con el acta; Lucía reconoce la letra y la firma de Anselmo, pero nunca llega a saber que vive ✅ |
 | Abono y Teo (III) | Se cierra: Teo no lo paga |
+| Sospecha de Reme (II) | Se cierra: nunca se confirma. Reme no llega a saber que Anselmo vive, igual que Lucía ✅ (decisión del autor, 2026-10-13) |
+| Deuda de la familia con el banco agrario (I) | Se cierra con FM-01 a FM-03: se paga (Empresario o Magnate) o se alivia (estatus menor) según el estatus al entrar en el acta ✅ (decisión del autor, 2026-10-13) |
 | Octava cinta cortada (IV) | Abierta |
 | Acta firmada (IV) | Abierta: es el hilo de Anselmo |
 
@@ -404,7 +408,7 @@ Los textos de ejemplo de las tablas siguen como guía hasta que se escriban ⏳ 
 - ⏳ F4-149 Sandbox y ecos del epílogo; no incluye ninguna misión de buscar a Anselmo ✅.
 - ⏳ F4-147 Curva y nivel del desplome de la Aetherita, junto con ⏳ F0-52.
 - ⏳ F4-150 El reproductor, y ⏳ F4-151 el texto y la voz de las cintas.
-- ⏳ F0-51 Registro de los hilos de la sección 7.
+- ✅ Registro de los hilos de la sección 7: `studio/data/hilos.json`, con su vista en el hub (`#/hilos`).
 - ⏳ F1-20 Inglés de los ocho términos de epílogo del glosario (epílogo, cabecera, tarjeta, pieza, estado legible, «las semanas siguientes», aviso de Magnate, filtrar), ya anotados en [18](18-biblia-narrativa.md) 6.11 como «sin traducir», junto con los demás términos nuevos de esa tabla.
 - ⏳ F4-212 Textos finales de las 54 piezas, en español. La traducción es ⏳ F4-211 y el motor ⏳ F4-210.
 - ✅ El destino del trato de Anselmo en la segunda parte es un hilo abierto a propósito, sin tarea (sección 7.1).

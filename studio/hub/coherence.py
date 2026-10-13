@@ -7,11 +7,20 @@ minijuegos, mecánicas, recetas, facciones y personajes. Aquí se comprueba que:
   - el diseño es coherente: reglas del juego, mapa de historia y números base no se
     contradicen ni quedan sin definir (hallazgo: baja el porcentaje, pero no falla el build).
 
-Uso desde build.py:  result = coherence.check(world, story, decisions)
+Uso desde build.py:  result = coherence.check(world, story, decisions, hilos)
 """
 import re
 
 SEV_ERROR = "error"
+
+# Registro de hilos narrativos (studio/data/hilos.json). Los actos incluyen «despues»: la segunda parte o el sandbox tras el acta.
+HILO_ACTOS = ["I", "II", "III", "IV", "despues"]
+HILO_TIPOS = ["pista", "promesa", "secreto", "conflicto"]
+HILO_ESTADOS = ["resuelto", "abierto", "aplazado"]
+HILO_ABIERTOS = ("abierto", "aplazado")
+TAPE_COUNT = 8
+_NODE_REF = re.compile(r"\bn-[a-z0-9]+(?:-[a-z0-9]+)*")
+_TAPE_REF = re.compile(r"\bcintas?\s+(\d+(?:\s*(?:,|y|–|-|a)\s*\d+)*)", re.IGNORECASE)
 
 
 def _act_index(acts):
@@ -172,7 +181,111 @@ def _decision_checks(world, story, decisions, add):
     add("C15", "Decisiones", "El reparto de las cintas coincide con las filas del mapa de historia", len(tapes) + mentions + (0 if mentions else 1), bad)
 
 
-def check(world, story, decisions=None):
+def hilo_refs(ref):
+    """Nodos de decisions.json (n-...) y números de cinta que cita el texto de una referencia."""
+    nodes = _NODE_REF.findall(ref or "")
+    tapes = [int(n) for m in _TAPE_REF.findall(ref or "") for n in re.findall(r"\d+", m)]
+    return nodes, tapes
+
+
+def _character_ids(world):
+    """Id de personaje por nombre y por alias."""
+    out = {}
+    for c in world.get("characters", []):
+        out[c["name"]] = c["id"]
+        for alias in c.get("aka", []):
+            out[alias] = c["id"]
+    return out
+
+
+def _entries(hilo, key):
+    return [e for e in hilo.get(key, []) if isinstance(e, dict)]
+
+
+def _entry_ranks(hilo, key):
+    return [HILO_ACTOS.index(e["acto"]) for e in _entries(hilo, key) if e.get("acto") in HILO_ACTOS]
+
+
+def _missing_characters(hilo, ids, cells, acts):
+    """Personajes del hilo que, tras entrar en escena, dejan de estar en la fila «En escena» del mapa de historia antes de la resolución.
+
+    Devuelve [(nombre, [actos sin él])]. Va de la primera siembra a la última resolución, ambas incluidas;
+    «despues» no tiene celda en el mapa y no se mira.
+    """
+    sowed, solved = _entry_ranks(hilo, "siembra"), _entry_ranks(hilo, "resuelve")
+    if not sowed or not solved or max(solved) <= min(sowed):
+        return []
+    span = [a for a in HILO_ACTOS[min(sowed):max(solved) + 1] if a in acts and acts.index(a) < len(cells)]
+    out = []
+    for who in hilo.get("personajes", []):
+        cid = ids.get(who)
+        if not cid:
+            continue
+        # Un personaje «desaparece» solo si ya había entrado en escena: antes de su debut no se le echa de menos
+        debut = next((i for i, a in enumerate(span) if cid in cells[acts.index(a)]), None)
+        gone = list(span) if debut is None else [a for a in span[debut:] if cid not in cells[acts.index(a)]]
+        if gone:
+            out.append((who, gone))
+    return out
+
+
+def hilos_analisis(hilos, world, story, decisions=None):
+    """Cruza el registro de hilos con el mundo, el mapa de historia y el árbol de decisiones.
+
+    Devuelve los hallazgos por tipo, listos para C16 a C19, y los conteos del resumen.
+    """
+    items = [h for h in (hilos or {}).get("hilos", []) if isinstance(h, dict)]
+    acts = world.get("acts", [])
+    ids = _character_ids(world)
+    # «En escena» lista quién sigue presente en cada acto; sin esa fila se usa la de entradas
+    cells = [{ids[n] for n in cell if n in ids} for cell in (_lane(story, "enescena") or _lane(story, "personajes"))]
+    node_ids = {n["id"] for n in (decisions or {}).get("nodes", [])}
+    tape_ids = {t["n"] for t in (decisions or {}).get("cintas", [])} or set(range(1, TAPE_COUNT + 1))
+    out = {"total": len(items), "sin_resolver": [], "sin_sembrar": [], "antes": [], "faltan": [], "refs": [], "pares": 0, "refs_total": 0,
+           "por_estado": {}, "por_tipo": {}}
+    for h in items:
+        hid = h.get("id", "?")
+        out["por_estado"][h.get("estado")] = out["por_estado"].get(h.get("estado"), 0) + 1
+        out["por_tipo"][h.get("tipo")] = out["por_tipo"].get(h.get("tipo"), 0) + 1
+        sowed, solved = _entries(h, "siembra"), _entries(h, "resuelve")
+        if h.get("estado") == "resuelto" and not solved:
+            out["sin_resolver"].append("%s está sembrado y marcado como resuelto, pero no dice dónde se resuelve" % hid)
+        elif h.get("estado") in HILO_ABIERTOS and not h.get("motivo") and not solved:
+            out["sin_resolver"].append("%s está sembrado, sin resolver y sin motivo (estado %s)" % (hid, h.get("estado")))
+        if solved and not sowed:
+            out["sin_sembrar"].append("%s se resuelve y no se siembra en ningún sitio" % hid)
+        elif sowed and solved:
+            first = min(_entry_ranks(h, "siembra"), default=None)
+            for e in solved:
+                if first is not None and e.get("acto") in HILO_ACTOS and HILO_ACTOS.index(e["acto"]) < first:
+                    out["antes"].append("%s se resuelve en el Acto %s, antes de sembrarse en el Acto %s" % (hid, e["acto"], HILO_ACTOS[first]))
+        sowed_r, solved_r = _entry_ranks(h, "siembra"), _entry_ranks(h, "resuelve")
+        if sowed_r and solved_r and max(solved_r) > min(sowed_r):
+            out["pares"] += len([w for w in h.get("personajes", []) if w in ids])
+        for who, gone in _missing_characters(h, ids, cells, acts):
+            out["faltan"].append({"hilo": hid, "personaje": who, "actos": gone,
+                                  "texto": "%s: %s no sale en el mapa de historia en el Acto %s, entre la siembra (Acto %s) y la resolución (Acto %s)" % (
+                                      hid, who, ", ".join(gone), HILO_ACTOS[min(sowed_r)], HILO_ACTOS[max(solved_r)])})
+        for e in sowed + solved:
+            nodes, tapes = hilo_refs(e.get("ref"))
+            out["refs_total"] += len(nodes) + len(tapes)
+            out["refs"] += ["%s cita el nodo %s, que no existe en decisions.json" % (hid, n) for n in nodes if node_ids and n not in node_ids]
+            out["refs"] += ["%s cita la cinta %d, que no existe" % (hid, t) for t in tapes if t not in tape_ids]
+    return out
+
+
+def _hilo_checks(world, story, decisions, hilos, add):
+    """Cruces del registro de hilos con el mundo, el mapa de historia y las decisiones (C16 a C19)."""
+    a = hilos_analisis(hilos, world, story, decisions)
+    n = a["total"]
+    add("C16", "Hilos", "Todo hilo sembrado se resuelve o dice por qué sigue abierto", n, a["sin_resolver"])
+    add("C17", "Hilos", "Todo hilo resuelto se sembró antes", n, a["sin_sembrar"] + a["antes"])
+    add("C18", "Hilos", "Los personajes de un hilo salen en el mapa de historia de cada acto entre la siembra y la resolución",
+        a["pares"], [f["texto"] for f in a["faltan"]])
+    add("C19", "Hilos", "Los nodos y las cintas que citan los hilos existen", a["refs_total"], a["refs"])
+
+
+def check(world, story, decisions=None, hilos=None):
     """Evalúa las comprobaciones de coherencia. Devuelve un resumen listo para el hub."""
     acts = world.get("acts", [])
     idx = _act_index(acts)
@@ -275,6 +388,8 @@ def check(world, story, decisions=None):
 
     if decisions and decisions.get("nodes"):
         _decision_checks(world, story, decisions, add)
+    if hilos and hilos.get("hilos"):
+        _hilo_checks(world, story, decisions, hilos, add)
 
     total = sum(c["total"] for c in checks)
     failed = sum(c["failed"] for c in checks)

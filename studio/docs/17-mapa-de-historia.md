@@ -7,6 +7,7 @@ Qué pasa, qué se desbloquea y qué hace falta en cada acto. Se ve como cuadro 
 - Cada acto es una **columna** y cada tema (narrativa, mecánicas, mercado, zonas, minerales, personajes, estatus, arte) es una **fila**.
 - Los actos se activan por **umbrales** (estatus, logros, deuda pagada, relación con facciones) y no por fechas ([08](08-historia-y-personaje.md)). Las reglas de cada puerta (el paso de un acto al siguiente) están en [24](24-umbrales-de-acto.md).
 - Después del Acto IV el juego sigue como **sandbox** con la capa de imperio ([04](04-progresion-y-meta.md)).
+- Las pistas, promesas, secretos y conflictos de la historia (dónde se siembra cada uno, dónde se resuelve y qué cambia) están en `studio/data/hilos.json` y se ven en el hub (`#/hilos`).
 
 ## Cuadro resumido
 
