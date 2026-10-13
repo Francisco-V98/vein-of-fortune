@@ -1,0 +1,66 @@
+{
+  "id": "F0-82",
+  "history": [
+    {
+      "at": "2026-10-13",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pidió una visión de zonas y edificios para el mapa vivo, dividida en versiones.",
+      "ref": "rama studio/F0-82-zonas-y-edificios"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "contenido",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "ideador",
+        "nota": "Recomienda que la zona sea la región, con un asentamiento y la boca de mina como una edificación más; catálogo de seis regiones y Puerto Meridiano repartido en MVP, V1 y V2",
+        "entrega": "Tres alternativas de estructura, catálogo por zona, casas y mansiones, casino, resto de comercios, versiones y once preguntas"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "qa",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: catálogo de edificios por zona y su reparto en MVP, V1, V2 y evolutivos",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "ideador",
+        "a": "coordinador",
+        "que": "Catálogo de edificios por zona y reparto en versiones, con once preguntas para el autor",
+        "at": "2026-10-13"
+      }
+    ]
+  }
+}

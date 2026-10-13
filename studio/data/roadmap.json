@@ -843,6 +843,15 @@
               "prio": "P1",
               "desc": "Repasar con el autor los documentos 18 y 21 a 25 hasta llevar cada uno a un 90 % o más de limpieza, confirmando lo que siga en propuesta y aplazando solo lo que cumpla la regla del documento 15.",
               "done_when": "Cada uno de los documentos 18 y 21 a 25 llega al 90 % de limpieza o tiene sus puntos abiertos aplazados con una tarea que no condiciona nada anterior."
+            },
+            {
+              "id": "F0-82",
+              "title": "Zonas y edificios: catálogo y versiones (MVP, V1, V2 y evolutivos)",
+              "est": 8,
+              "status": "doing",
+              "prio": "P1",
+              "desc": "Estructura de mapa, zonas y edificaciones donde entras a cada edificio por separado. Qué edificios lleva cada zona según su temática (tiendas específicas, joyerías con joyas de la zona, casas y mansiones con distintas vistas, pesca en el puerto, casino, vehículos, embarcaciones, inversiones) y en qué versión entra cada uno, sin que nada se vea puesto sin razón.",
+              "done_when": "Catálogo de edificios por zona acordado con el autor, con la estructura mapa-zona-edificio y la división en MVP, V1, V2 y evolutivos, y sin contradicciones con el mundo y la economía."
             }
           ]
         }
