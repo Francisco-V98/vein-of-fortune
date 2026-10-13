@@ -957,7 +957,7 @@
       "acto": "IV",
       "nivel": "mediana",
       "titulo": "Dueñas se mueve contra ti",
-      "dispara": "Enfrentamiento en La Fosa. Regla única de prioridad: si vendes al Ministerio, te compra con el sello; si no, y la Unión está en tramo alto y llevas al menos dos pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor. Si revelas queda bajo investigación, con resultado abierto. Su desenlace se calcula al cerrar el acto.",
+      "dispara": "Enfrentamiento en La Fosa. Regla única de prioridad: si vendes al Ministerio, te compra con el sello; si no, y la Unión está en tramo alto y llevas al menos dos pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor. Si revelas queda bajo investigación, con resultado abierto. Su desenlace se calcula al cerrar el acto, con el comprador ya fijado, y no añade bandera nueva.",
       "opciones": [
         {
           "id": "comprar",
@@ -1007,7 +1007,7 @@
             "f-destino"
           ],
           "mundo": "La verdad sale: caos social, el Ministerio contraataca. Con la Unión en tramo alto, sale contigo y el caos se contiene; con la Unión en tramo bajo, nadie te respalda en el Hollín.",
-          "mercado": "La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario ⏳ F4-147.",
+          "mercado": "La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario; después rebota y sube, y queda algo por debajo del precio de antes. No deja de valer ⏳ F4-147.",
           "personajes": "Te separas de Anselmo. La Comisión corta el abono mensual de Reme."
         },
         {
@@ -1043,7 +1043,7 @@
       "acto": "IV",
       "nivel": "pequena",
       "titulo": "A quién vendes la verdad",
-      "dispara": "Elegiste vender. Vender al Ministerio no es callar: el Ministerio se queda con la prueba y contigo. Si entraste por la presión de tu alianza, la facción aliada te paga mejor.",
+      "dispara": "Elegiste vender. Vender al Ministerio no es callar: el Ministerio se queda con tu prueba (los comprobantes y las cintas que usas) y contigo, no con el archivo de Quiroga. Si entraste por la presión de tu alianza, la facción aliada te paga mejor.",
       "opciones": [
         {
           "id": "casilda",
@@ -1071,7 +1071,7 @@
           "fija": [
             "f-comprador"
           ],
-          "mundo": "Dueñas te deja subir y se queda con tu prueba, no con el archivo de Quiroga.",
+          "mundo": "Dueñas te deja subir y se queda con tu prueba (los comprobantes y las cintas que usas), no con el archivo de Quiroga; si lo protegiste, sigue a salvo.",
           "mercado": "La Aetherita se mantiene (0 a +3 %) por la cuota.",
           "personajes": "Dueñas gana; tú te vuelves una pieza de la Comisión."
         }

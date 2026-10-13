@@ -73,19 +73,53 @@
         "estado": "hecha",
         "at": "2026-10-12",
         "por": "narrador",
-        "nota": "El narrador escribió el documento 25 y se crearon las tareas F4-210, F4-211 y F4-212; limpieza 69 %",
+        "nota": "Correcciones de QA aplicadas por el narrador; limpieza 69 %",
         "entrega": "Documento 25 con la cabecera, el acta, las 54 piezas, los hilos abiertos y el estado legible; los ⏳ F0-46 resueltos"
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-12",
         "por": "qa",
-        "nota": "QA comprueba el build, las marcas, los aplazamientos y la cobertura de combinaciones del documento 25"
+        "nota": "QA aprobó el build, la cobertura de las 54 piezas y el canon; sus correcciones las comprobó el coordinador con el build estricto y las pruebas (limpieza 69 %, coherencia 83 %)",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Hay ✅ sin respaldo del autor en el documento 25 y en los documentos 19, 21, 22 y 23: la estabilización del precio, la cifra de palabras, la firma de los papeles de la herencia, el nombre de los estados legibles y la columna de marcas",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 18, 22, 23, 24 y 25 y en decisions.json, con tres decisiones nuevas del autor sobre el precio, el Ministerio y Dueñas"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El documento 24 conserva que con la Unión media o baja Dueñas decide por la puerta usada, y el documento 25 dice que en el resto te amenaza",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 18, 22, 23, 24 y 25 y en decisions.json, con tres decisiones nuevas del autor sobre el precio, el Ministerio y Dueñas"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "decisions.json afirma como hecho lo que el documento 25 deja como propuesta: cuándo se calcula el desenlace de Dueñas y qué se queda el Ministerio",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 18, 22, 23, 24 y 25 y en decisions.json, con tres decisiones nuevas del autor sobre el precio, el Ministerio y Dueñas"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El documento 25 dice en una línea que los textos de las 54 piezas no tienen tarea, aunque F4-212 ya existe; el glosario de la biblia no lista los términos nuevos",
+            "resuelto_por": "narrador",
+            "como": "Corregido en los documentos 18, 22, 23, 24 y 25 y en decisions.json, con tres decisiones nuevas del autor sobre el precio, el Ministerio y Dueñas"
+          }
+        ],
+        "entrega": "Build estricto, 49 pruebas en verde, 54 piezas cubiertas y aplazamientos válidos"
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-12",
+        "por": "autor",
+        "nota": "El autor revisa el documento 25 y acuerda los finales y los epílogos"
       },
       {
         "etapa": "playtest",
@@ -131,6 +165,25 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Revisar el documento 25 y los cambios en 08, 17, 18, 19, 21, 22, 23, 24, decisions.json y story.json",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "narrador",
+        "que": "Devolución: bajar a 🟡 los ✅ sin respaldo, alinear el documento 24 con la regla de Dueñas, y aplicar el desplome que rebota y el Ministerio con la prueba",
+        "at": "2026-10-12",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Correcciones de la devolución de QA aplicadas",
+        "at": "2026-10-12"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: documento 25 con los finales y los epílogos por piezas",
         "at": "2026-10-12"
       }
     ]

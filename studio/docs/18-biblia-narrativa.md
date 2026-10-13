@@ -399,7 +399,7 @@ Es la lista oficial de cómo se dice cada cosa en español y en inglés. **Cada 
 | Marca | Significado |
 |---|---|
 | ✅ decidido | Lo fijó el autor o ya está en otro documento. Se copia tal cual |
-| 🟡 propuesta | Hoy son las cuatro filas de F0-44 (6.11). Un término nuevo entra con esta marca: el español se define en el documento de origen, el localizador propone el inglés y el autor lo confirma en lote |
+| 🟡 propuesta | Hoy son las cuatro filas de F0-44 y los ocho términos de epílogo de F0-46, ambos en 6.11 (los de epílogo, «sin traducir» ⏳ F1-20). Un término nuevo entra con esta marca: el español se define en el documento de origen, el localizador propone el inglés y el autor lo confirma en lote |
 
 **Fuente de todo el capítulo ✅:** decisión del autor, F0-41 (2026-10-12), que confirmó todo el glosario propuesto, incluidas *the Pit*, *the Beacon*, *ether sickness* y *Ether Commission*. Las filas que citan otro documento (13, 07, 04) conservan esa fuente. Las siete filas que añadió F0-43 (Vega Mansa, la Primera Expedición, Casa Ormeño, Pozo Negro, Sanatorio de Cumbre Clara, secreto de Estado e ingeniero de calibración) las confirmó el autor el 2026-10-12. Un término nuevo entra aquí como propuesta, con su marca de «sin confirmar», hasta que el autor lo apruebe.
 
@@ -639,6 +639,14 @@ Los 7 del registro del mundo ([02](02-extraccion.md), [09](09-minijuegos.md)). N
 | el apagón · la huelga · el saqueo | blackout · strike · looting | ✅ | Eventos sociales ([07](07-sociedad-y-eventos.md)). *Strike* ✅ en 6.7 |
 | trámite · gestión · atención | procedure · processing · courtesy | ✅ | Los tres eufemismos de Quiroga. Nunca *bribe* |
 | secreto de Estado | state secret | ✅ | Lo que el Ministerio declara sobre la Aetherita ([21](21-pasado-de-valdoria.md)). Minúscula; traducción directa y de uso común |
+| epílogo | sin traducir ⏳ F1-20 | 🟡 | El cierre del Acto IV: cabecera, tarjetas y acta ([25](25-finales-y-epilogos.md)). El localizador propone el inglés y el autor lo confirma en lote |
+| cabecera | sin traducir ⏳ F1-20 | 🟡 | La pantalla que abre el epílogo, con rótulo, frase del narrador y titular ([25](25-finales-y-epilogos.md), sección 4). El localizador propone el inglés y el autor lo confirma en lote |
+| tarjeta | sin traducir ⏳ F1-20 | 🟡 | Cada noticia corta del epílogo, de un personaje, facción, mundo o mercado ([25](25-finales-y-epilogos.md)). El localizador propone el inglés y el autor lo confirma en lote |
+| pieza | sin traducir ⏳ F1-20 | 🟡 | Cada texto de epílogo que el motor elige (54 en total) ([25](25-finales-y-epilogos.md), sección 5). No es la pieza de historia de la cinta. El localizador propone el inglés y el autor lo confirma en lote |
+| estado legible | sin traducir ⏳ F1-20 | 🟡 | Lo que se guarda para releer el epílogo desde el diario ([25](25-finales-y-epilogos.md), sección 8). Término técnico; el jugador no lo ve. El localizador propone el inglés y el autor lo confirma en lote |
+| «las semanas siguientes» | sin traducir ⏳ F1-20 | 🟡 | Rótulo fijo de la cabecera ([25](25-finales-y-epilogos.md)). Es texto de interfaz: debe quedar en tono de titular de prensa. El localizador propone el inglés y el autor lo confirma en lote |
+| aviso de Magnate | sin traducir ⏳ F1-20 | 🟡 | El aviso silencioso que llega al volver al sandbox tras el acta ([24](24-umbrales-de-acto.md)). *Magnate* ya está en 6.12. El localizador propone el inglés y el autor lo confirma en lote |
+| filtrar (una versión) | sin traducir ⏳ F1-20 | 🟡 | Lo que hace Lucía al callar o vender con su medidor bajo: publica una versión a medias ([25](25-finales-y-epilogos.md), LU-04). Distinto de «publicar». El localizador propone el inglés y el autor lo confirma en lote |
 
 ### 6.12 Cargos, oficios y estatus
 
@@ -696,7 +704,7 @@ Los cuatro actos tal como están en [17](17-mapa-de-historia.md) y `studio/data/
 | **I · El recién llegado** (Villa Brasa) | Reabres el puesto, atiendes la primera cuota y tienes el primer contacto con los empleados | No tiene bifurcación grande. La facción detrás de Reme se sortea al empezar y no se revela. Tiene **3 consecuencias pequeñas** ✅ (cuáles, en [23](23-arbol-de-decisiones.md), sección 3) |
 | **II · Aprender las reglas** (Hollín, Sierra Alta, Salares) | Eliges con qué facción te alías | **3 variantes** ✅: Reme responde al Consorcio Arvel, a Los Faroleros o al Ministerio. Contenido de cada una en [22](22-acto-ii-variantes.md). Bifurcación grande: la alianza ✅, con 2 medianas (la orden de Reme y la huelga) y 5 pequeñas ([23](23-arbol-de-decisiones.md), sección 4) |
 | **III · El ascenso** (Puerto Meridiano, Cavernas de Cristal) | Te aceptan en el círculo de poder | Esteban puede ser aliado o enemigo según cómo lo trates 🟡, y eso lo lleva su medidor ([23](23-arbol-de-decisiones.md), sección 2). Bifurcación grande: **cómo entras al círculo** ✅ (tres puertas), con 2 medianas y 5 pequeñas ([23](23-arbol-de-decisiones.md), sección 5) |
-| **IV · La cima** (La Fosa del Éter) | Decides qué hacer con la verdad y el poder | **3 salidas** ✅: **revelarla** (la Aetherita se desploma), **callarla** o **venderla** (moneda de poder). Teo muere, se reconcilia o se va según tus decisiones ✅. Epílogos por piezas en [25](25-finales-y-epilogos.md) ✅ |
+| **IV · La cima** (La Fosa del Éter) | Decides qué hacer con la verdad y el poder | **3 salidas** ✅: **revelarla** (la Aetherita cae, rebota y queda algo por debajo del precio de antes), **callarla** o **venderla** (moneda de poder). Teo muere, se reconcilia o se va según tus decisiones ✅. Epílogos por piezas en [25](25-finales-y-epilogos.md) ✅ |
 
 - Las bifurcaciones grandes son tres ✅: la alianza (II), cómo entras al círculo (III) y el destino de la Aetherita (IV). El acreedor del Acto II **es un sorteo, no una bifurcación** ✅. El árbol completo de decisiones y consecuencias está en [23](23-arbol-de-decisiones.md).
 - **Antes del Acto I.** La cronología completa está en [21](21-pasado-de-valdoria.md). En resumen, hace 40 años el derrumbe de Pozo Negro (nace la Unión), hace 30 el hallazgo de la Aetherita, hace 27 nace la Comisión, hace 20 la Primera Expedición, hace 17 empieza la electrificación y hace 2 Anselmo es detenido y acepta el trato ✅.
@@ -720,5 +728,5 @@ En `story.json` y en el [17](17-mapa-de-historia.md) Anselmo aparece ya en la ce
 ## Pendiente
 
 - ⏳ F4-179 Textos de las tres variantes del Acto II (la estructura está en [22](22-acto-ii-variantes.md)).
-- ✅ Epílogos de las tres salidas del Acto IV: resueltos en [25](25-finales-y-epilogos.md). Los términos nuevos del glosario ⏳ F1-20
+- ✅ Epílogos de las tres salidas del Acto IV: resueltos en [25](25-finales-y-epilogos.md). Los ocho términos nuevos del glosario (epílogo, cabecera, tarjeta, pieza, estado legible, «las semanas siguientes», aviso de Magnate, filtrar) quedan en 6.11 como «sin traducir» ⏳ F1-20
 - ⏳ F1-18 Cifras finales del formato de diálogo y del nombre de la tienda, con la fuente real.

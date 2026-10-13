@@ -278,7 +278,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 
 - El Acto II se cierra al elegir alianza ✅. Lo lleva la escena A5 ✅, con los umbrales de [24](24-umbrales-de-acto.md).
 - **Reme.** Traiciona por obligación en A2 ✅, queda distante pero atenta en el Acto III ✅ y es tu mayor aliada en el IV ✅.
-- **Las pruebas del Acto IV.** Los comprobantes del abono son comunes ([19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md)) y no cambian. Propuesta de ampliación, sin tocar la sección 6 de [21](21-pasado-de-valdoria.md): además entrega una prueba propia de su variante (reparto en [23](23-arbol-de-decisiones.md), sección 8). Su epílogo son las piezas RE-01 a RE-03 de [25](25-finales-y-epilogos.md), con la facción rellenada desde la variante oculta ✅
+- **Las pruebas del Acto IV.** Los comprobantes del abono son comunes ([19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md)) y no cambian. Propuesta de ampliación, sin tocar la sección 6 de [21](21-pasado-de-valdoria.md): además entrega una prueba propia de su variante (reparto en [23](23-arbol-de-decisiones.md), sección 8). Su epílogo son las piezas RE-01 a RE-03 de [25](25-finales-y-epilogos.md), con la facción rellenada desde la variante oculta 🟡
 
 | Variante | Prueba extra en el Acto IV | Por qué la tiene Reme |
 |---|---|---|
@@ -306,14 +306,14 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 - **Traducciones.** El inglés suma el mismo número de textos. El Acto I tiene su tarea (F3-30), pero **no hay una tarea de traducción del Acto II**; el flujo y el glosario son ⏳ F1-20
 - **Arte.** El Acto II ya tiene sus dos retratos (Esteban y Casilda), sin nuevos retratos. Las tres pistas del Acto I son props pequeños ⏳ F4-134
 - **Pruebas.** Hay 81 caminos (3 variantes × 3 respuestas a la orden × 3 bandos en la huelga × 3 alianzas). Se recorren forzando la variante desde la consola ⏳ F1-23
-- **Datos de estado.** Cuatro valores de tres opciones cada uno: variante, respuesta a la orden, bando de la huelga y alianza ⏳ F2-01. La variante se guarda además con un nombre estable (`e-variante-reme`) para releer el epílogo ✅ ([25](25-finales-y-epilogos.md), sección 8)
+- **Datos de estado.** Cuatro valores de tres opciones cada uno: variante, respuesta a la orden, bando de la huelga y alianza ⏳ F2-01. La variante se guarda además con un nombre estable (`e-variante-reme`) para releer el epílogo 🟡 ([25](25-finales-y-epilogos.md), sección 8)
 
 ---
 
 ## Pendiente
 
 - ✅ Las ramas de A2, A4 y A5 están en [23](23-arbol-de-decisiones.md). 🟡 Las pruebas distintas del Acto IV y el acto de cada cinta, también ahí.
-- ✅ Epílogo de Reme y de cada facción según la alianza: resuelto en [25](25-finales-y-epilogos.md) (RE-01 a RE-03 y FC-01 a FC-06).
+- 🟡 Epílogo de Reme y de cada facción según la alianza: propuesto en [25](25-finales-y-epilogos.md) (RE-01 a RE-03 y FC-01 a FC-06). Que Reme sea siempre tu aliada es ✅; las piezas, 🟡.
 - ✅ Umbrales de A1 a A6 y de las escenas opcionales: resueltos en [24](24-umbrales-de-acto.md). El evaluador ⏳ F4-127
 - ⏳ F0-23 Las tres pistas del Acto I y su lugar en los días del tutorial.
 - ⏳ F0-52 Cifras: cuota extra, adelanto de la cuota, modificadores de precio y de vigilancia.

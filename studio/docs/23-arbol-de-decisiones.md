@@ -80,7 +80,7 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 - **Ningún personaje aparece antes de su acto:** Esteban y Casilda en el II, Dueñas en el III. En el II, Dueñas es solo decreto y firma.
 - **Anselmo solo como sombra antes del IV**, con una sombra como máximo por escena. Las cintas se recogen en una misión, nunca dentro de una de las seis escenas ancla del II, y no se pueden oír hasta el IV.
 - **Los avisos son justos.** Toda decisión con una consecuencia grave se anuncia antes: la tos de Teo se ve y los demás la comentan antes de la revisión.
-- **El mercado se mide en puntos o en %.** El desplome de la Aetherita respeta el tope diario de variación de [03](03-comercio.md) ⏳ F0-52
+- **El mercado se mide en puntos o en %.** La caída y el rebote de la Aetherita respetan el tope diario de variación de [03](03-comercio.md) ⏳ F0-52
 - **El protagonista sigue siendo un optimista terco.** Ninguna opción lo hace cínico ni burlón con los trabajadores.
 
 ---
@@ -253,7 +253,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 
 ## 6 · Acto IV: la cima 🟡
 
-**Estado:** ✅ la grande (revelar, callar o vender), el destino de Teo, que el comprador se elige entre Casilda, el Consorcio y el Ministerio, que Lucía publica contigo en tramo alto, no publica en medio (lo publicas tú) y publica en La Voz del Hollín en bajo, y que el reproductor lo entrega Lucía en tramo alto y si no Reme (decisiones del autor, 2026-10-12); ✅ también qué hace cada tramo de Esteban en `n-iv-esteban` y de la Unión en `n-iv-duenas` y `n-iv-aetherita`, y que «borrarte» solo ocurre con la Unión alta; 🟡 los demás efectos de las dos medianas y de las otras pequeñas. Orden de juego: las cintas y el reproductor, Reme, Esteban, el archivo de Quiroga, el enfrentamiento con Dueñas, la Aetherita, el comprador, el desenlace de Dueñas, Lucía, Teo y el acta 🟡. ✅ Dueñas actúa con una regla única de prioridad y Lucía tiene pieza también al callar o vender; Anselmo sigue vivo y secreto en las tres salidas, y el abono se corta solo si revelas ([25](25-finales-y-epilogos.md)). Vender al Ministerio no es callar: el Ministerio se queda con la prueba y contigo ✅. El reproductor lo entrega Lucía si su medidor está en tramo alto; con medio o bajo, Reme ✅; el objeto ⏳ F4-150. Si Lucía está en tramo bajo, publica en La Voz del Hollín, a donde iba la cinta 6 ✅. Los tramos y lo que desbloquean: [24](24-umbrales-de-acto.md), sección 5.
+**Estado:** ✅ la grande (revelar, callar o vender), el destino de Teo, que el comprador se elige entre Casilda, el Consorcio y el Ministerio, que Lucía publica contigo en tramo alto, no publica en medio (lo publicas tú) y publica en La Voz del Hollín en bajo, y que el reproductor lo entrega Lucía en tramo alto y si no Reme (decisiones del autor, 2026-10-12); ✅ también qué hace cada tramo de Esteban en `n-iv-esteban` y de la Unión en `n-iv-duenas` y `n-iv-aetherita`, y que «borrarte» solo ocurre con la Unión alta; 🟡 los demás efectos de las dos medianas y de las otras pequeñas. Orden de juego: las cintas y el reproductor, Reme, Esteban, el archivo de Quiroga, el enfrentamiento con Dueñas, la Aetherita, el comprador, el desenlace de Dueñas, Lucía, Teo y el acta 🟡; que el desenlace de Dueñas se decide al cerrar el acto, con el comprador ya fijado, es ✅. ✅ Dueñas actúa con una regla única de prioridad y Lucía tiene pieza también al callar o vender; Anselmo sigue vivo y secreto en las tres salidas, y el abono se corta solo si revelas ([25](25-finales-y-epilogos.md)). Vender al Ministerio no es callar: el Ministerio se queda con tu prueba (los comprobantes y las cintas que usas) y contigo, no con el archivo de Quiroga ✅. Al revelar, la Aetherita cae, rebota y queda algo por debajo del precio de antes ✅. El reproductor lo entrega Lucía si su medidor está en tramo alto; con medio o bajo, Reme ✅; el objeto ⏳ F4-150. Si Lucía está en tramo bajo, publica en La Voz del Hollín, a donde iba la cinta 6 ✅. Los tramos y lo que desbloquean: [24](24-umbrales-de-acto.md), sección 5.
 
 **`n-iv-reme-proteccion` · Proteger a Reme** (pequeña)
 - **Dispara:** Reme se une a ti y te entrega los comprobantes del abono. Ahora tienes estatus para protegerla.
@@ -277,7 +277,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 - **Fija:** `f-archivo`. **Lee:** `f-quiroga-salida`, `f-certificado`, `f-puerta`.
 
 **`n-iv-duenas` · Dueñas se mueve contra ti** (mediana)
-- **Dispara:** Enfrentamiento en La Fosa. Dueñas actúa con una **regla única de prioridad** ✅ (decisión del autor, 2026-10-12): si vendes al Ministerio, te compra con el sello; si no, y la Unión está en tramo alto y llevas al menos dos pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor, y nunca se humaniza. Su desenlace se calcula al cerrar el acto, con el comprador ya fijado 🟡, sin bandera nueva.
+- **Dispara:** Enfrentamiento en La Fosa. Dueñas actúa con una **regla única de prioridad** ✅ (decisión del autor, 2026-10-12): si vendes al Ministerio, te compra con el sello; si no, y la Unión está en tramo alto y llevas al menos dos pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor, y nunca se humaniza. Su desenlace se calcula al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12), sin bandera nueva.
 - **Dueñas intenta comprarte.** → *Mundo:* Te ofrece una concesión de Aetherita a cambio de callar y, si vendes al Ministerio, te compra con el sello ✅. *Personajes:* Dueñas: seco, sin disculpas ni ruego.
 - **Dueñas te amenaza.** → *Mundo:* Nombra a Teo, a Reme y a tu familia. Se activa en el resto de los casos ✅. Pierde fuerza si protegiste a Reme. *Personajes:* Dueñas: no alza la voz.
 - **Dueñas intenta borrarte.** → *Mundo:* Suspende tus licencias y manda cerrar tus zonas, pero **falla** ✅. Se activa si la Unión está en tramo alto y llevas al menos dos pruebas y no vendes al Ministerio. *Mercado:* Tus ventas caen a la mitad durante tres días y la vigilancia pasa a Bajo investigación. *Personajes:* Dueñas: «No le pregunto qué opina»
@@ -286,16 +286,16 @@ La puerta que elijas decide quién te debe un favor en el IV:
 
 **`n-iv-aetherita` · El destino de la Aetherita** (grande) ✅
 - **Dispara:** Con la verdad en la mano y las ocho cintas oídas. Antes de elegir se te muestra quién publicaría (el tramo de Lucía) y cómo está la Unión 🟡 ⏳ F4-142.
-- **La revelas.** → *Mundo:* La verdad sale: caos social, el Ministerio contraataca. Con la Unión en tramo alto, sale contigo y el caos se contiene; con la Unión en tramo bajo, nadie te respalda en el Hollín ✅. *Mercado:* La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario y se estabiliza más abajo, sin llegar a cero ✅ ⏳ F4-147. *Personajes:* Te separas de Anselmo. La Comisión corta el abono mensual de Reme ✅ (hilo abierto para una segunda parte).
+- **La revelas.** → *Mundo:* La verdad sale: caos social, el Ministerio contraataca. Con la Unión en tramo alto, sale contigo y el caos se contiene; con la Unión en tramo bajo, nadie te respalda en el Hollín ✅. *Mercado:* La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario; después rebota y sube, porque su extracción es difícil y el mineral es limitado, y queda algo por debajo del precio de antes ✅. No deja de valer ni se acaba el mercado ✅. La curva y el nivel exacto ⏳ F4-147 y ⏳ F0-52. *Personajes:* Te separas de Anselmo. La Comisión corta el abono mensual de Reme ✅ (hilo abierto para una segunda parte).
 - **La callas.** → *Mundo:* Sigues ganando; el mal del éter sigue y nadie tiene la prueba. *Mercado:* La Aetherita sube un 5 a 10 % en el mes. *Personajes:* Te pareces a Anselmo. El abono sigue llegando ✅.
 - **La vendes.** → *Mundo:* La verdad es moneda de poder: eliges comprador. *Mercado:* Depende del comprador. *Personajes:* Quien compra gana poder sobre ti.
 - **Fija:** `f-destino`. **Lee:** `f-archivo`, `m-union`, `m-lucia`.
 
 **`n-iv-comprador` · A quién vendes la verdad** (pequeña)
-- **Dispara:** Elegiste vender. Vender al Ministerio no es callar: el Ministerio se queda con la prueba y contigo. Si entraste por la presión de tu alianza, la facción aliada te paga mejor.
+- **Dispara:** Elegiste vender. Vender al Ministerio no es callar: el Ministerio se queda con tu prueba (los comprobantes y las cintas que usas) y contigo ✅. No se queda con el archivo de Quiroga ✅. Si entraste por la presión de tu alianza, la facción aliada te paga mejor.
 - **A Casilda.** → *Mundo:* Casilda controla la verdad y su mercado negro. *Mercado:* Prima negra de Aetherita +10 a +15 puntos. *Personajes:* Casilda: aliada interesada.
 - **Al Consorcio.** → *Mundo:* El Consorcio financia el silencio ahora a tu nombre. *Mercado:* La Aetherita sube un 8 a 12 %. *Personajes:* Esteban: atrapado en su apellido.
-- **Al Ministerio.** → *Mundo:* Dueñas te deja subir y se queda con tu prueba, no con el archivo de Quiroga 🟡 (si lo protegiste, sigue a salvo). *Mercado:* La Aetherita se mantiene (0 a +3 %) por la cuota. *Personajes:* Dueñas gana; tú te vuelves una pieza de la Comisión.
+- **Al Ministerio.** → *Mundo:* Dueñas te deja subir y se queda con tu prueba (los comprobantes y las cintas que usas), no con el archivo de Quiroga ✅ (si lo protegiste, sigue a salvo). *Mercado:* La Aetherita se mantiene (0 a +3 %) por la cuota. *Personajes:* Dueñas gana; tú te vuelves una pieza de la Comisión.
 - **Fija:** `f-comprador`. **Lee:** `f-destino`, `f-monopolio`, `f-puerta`.
 
 **`n-iv-lucia-publica` · Quién publica** (pequeña)
@@ -356,7 +356,7 @@ La puerta que elijas decide quién te debe un favor en el IV:
 | Copia del certificado y carta de la cinta 6 | Archivo de Quiroga | No: no se puede destruir |
 | Cuentas del Consorcio con la Comisión | Esteban, si se une a ti | Sí |
 
-Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conservas los comprobantes, la prueba de Reme y las cintas: **al menos tres**.
+Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conservas los comprobantes, la prueba de Reme y las cintas: **al menos tres**. Si vendes al Ministerio, él se queda con esas pruebas al cerrar la venta ✅; para entonces la regla de Dueñas ya mandó con el sello, así que el conteo no importa ✅. El archivo de Quiroga no entra en esa venta ✅.
 
 ---
 
@@ -426,7 +426,7 @@ Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conserv
 - ✅ Umbrales de los medidores y de cada acto: resueltos en [24](24-umbrales-de-acto.md). El evaluador ⏳ F4-127
 - ⏳ F4-61 Cifras y efectos de los medidores por facción.
 - ⏳ F4-150 El reproductor y el sistema de cintas.
-- ⏳ F4-147 La curva del desplome de la Aetherita dentro del tope diario.
+- ⏳ F4-147 La curva de la caída y el rebote de la Aetherita dentro del tope diario, y el nivel en que queda (algo por debajo del de antes ✅).
 - ⏳ F0-52 Cifras de precios, cuotas, gastos y vigilancia.
 - ⏳ F4-135 Guion del Acto III, con el médico del dispensario.
 - ⏳ F0-75 Dibujo del árbol con conexiones (SVG) en el hub; la vista actual usa columnas, tarjetas y flechas de texto.

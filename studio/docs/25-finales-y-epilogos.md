@@ -23,18 +23,19 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | Tema | Decisión |
 |---|---|
 | Forma | **Forma A**: pantalla de cabecera según `f-destino` (con `f-comprador` si vendes), tarjetas cortas por personaje, facción, mundo y mercado, y por último el acta ✅ |
-| Tamaño | Unas **54 piezas** escritas, unas **17 por partida**, unas **1.900 palabras** en español ✅ |
+| Tamaño | Unas **54 piezas** escritas y unas **17 por partida** ✅. Las unas **1.900 palabras** en español son una estimación del narrador 🟡 |
 | Horizonte | «Las semanas siguientes», sin saltos de años ✅ |
 | Tarjetas | En prospectivo y **sin cifras escritas**: leen el valor real («se anuncia», «se espera», no «cayó un 50 %») ✅ |
 | Voz | Las cuenta el Heraldo Meridiano, La Voz del Hollín o el Teletipo Meridiano ✅. El Heraldo no admite nada sin un «pero»; el Teletipo termina siempre en SIN CONFIRMAR y no puede cerrar a Teo ni a Reme ✅ |
 | El acta | Última escena para todos, **sin discurso**, igual en las tres salidas. Cambia solo el fondo: ruido de calle lejano si revelas, oficina muda si callas, el sello del comprador en la carpeta si vendes. Una línea del protagonista de **8 palabras o menos** que no explica nada. Último plano: **la lámpara**. Magnate llega como un aviso silencioso al volver al sandbox ✅ |
 | Anselmo | **Vivo y secreto en las tres salidas**. El acta no cuenta como prueba y Lucía no la publica. Si revelas, la Comisión corta el abono mensual de Reme (hilo vivo para una segunda parte); si callas o vendes, el abono sigue llegando. No hay misión de buscarlo en el sandbox ✅ |
-| Dueñas | Una **regla única de prioridad**: si vendes al Ministerio, te compra con el sello; si la Unión está alta y conservas al menos 2 pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor. Si revelas, queda **bajo investigación con resultado abierto**, con un comunicado oficial de una línea ✅ |
+| Dueñas | Una **regla única de prioridad**: si vendes al Ministerio, te compra con el sello; si la Unión está alta y conservas al menos 2 pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor. Si revelas, queda **bajo investigación con resultado abierto**, con un comunicado oficial de una línea ✅. Su desenlace se decide **al cerrar el acto, con el comprador ya fijado** ✅ |
 | Lucía | Si callas o vendes: con su medidor **bajo** filtra una versión a medias; en **medio o alto** calla ✅. Si revelas, lo de [23](23-arbol-de-decisiones.md): alto publica contigo, medio no publica, bajo publica sin ti ✅ |
 | Herencia | «Por qué te dejaron heredar» **no se escribe ahora**: queda como hilo para una segunda parte. No se siembra nada en el Acto I ni se toca F0-23 ✅ |
 | Estado | Se guardan, como **estado legible con nombres estables**, las banderas, la variante oculta de Reme y los resultados calculados de Esteban, Dueñas, Lucía y Teo, para releer el epílogo desde el diario ✅ |
 | Quién | Escribe el narrador. El motor es F4-210 y la traducción F4-211 ✅ |
-| Aetherita | El desplome ocurre y se estabiliza en un nivel más bajo, **sin llegar a cero** ✅ |
+| Aetherita | Al revelar, **cae, rebota y sube** (su extracción es difícil y el mineral es limitado) y queda **algo por debajo del precio de antes**. No deja de valer ni se acaba el mercado ✅ |
+| Vender al Ministerio | El Ministerio se queda con **tu prueba** (los comprobantes y las cintas que usas), **no con el archivo de Quiroga** ✅ |
 | Ya decidido antes | Teo se queda, se va o muere. Reme siempre es tu mayor aliada, sin reproche. La cinta 8 queda cortada y quién la cortó, abierto. Ninguna salida es la correcta. Tono: esperanza con filo, sin cinismo. Dueñas no se humaniza ✅ |
 
 ---
@@ -53,7 +54,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | Teletipo | No cierra a Teo ni a Reme: sus tarjetas van en la Voz o el Heraldo ✅ |
 | Nombres | Una tarjeta solo nombra a su personaje. A los demás los cruza con términos neutros («la casa», «la Unión») |
 | Anselmo | Ninguna tarjeta lo nombra vivo, ni habla de su firma ✅. Las cintas se citan como las de un difunto |
-| Mal del éter | Solo aparece en tarjetas de la salida «revelar»; antes de eso, el público no lo sabe ✅ ([18](18-biblia-narrativa.md), 1.4) |
+| Mal del éter | Solo aparece en tarjetas de la salida «revelar»; antes de eso, el público no lo sabe ([18](18-biblia-narrativa.md), 1.4 🟡) |
 | Con el sandbox | Lo que las tarjetas dan por hecho (quién vive, quién se fue, qué se vendió) es canon del sandbox; lo que «se espera» puede cumplirse o no |
 | Variables | `{nombre}` y `{tienda}` como máximo una vez cada una por tarjeta |
 
@@ -64,7 +65,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 **Estado:** ✅ todo lo que describe la sección 1; 🟡 las líneas de ejemplo, el emblema de cada sello y dónde se encuentra la carpeta.
 
 - **Qué es.** El acta que firmó Anselmo hace pocas semanas ([21](21-pasado-de-valdoria.md)) ✅. Se encuentra después de decidir, así que no entra en las pruebas ni en lo que publica Lucía ✅.
-- **Qué pasa.** El protagonista abre la carpeta, reconoce la firma (la de los papeles de la herencia) y dice una línea. Sin discurso ni explicación ✅.
+- **Qué pasa.** El protagonista abre la carpeta, reconoce la firma y dice una línea. Sin discurso ni explicación ✅. Que sea la firma de los papeles de la herencia 🟡 ([21](21-pasado-de-valdoria.md), sección 11).
 - **La línea.** Ocho palabras o menos, sin explicar nada ✅. Ejemplos 🟡: «Esa firma la conozco.» · «Conozco esa letra.» · «Es su firma. La conozco.»
 - **Mismo guion, tres fondos** ✅:
 
@@ -150,7 +151,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 |---|---|---|---|---|
 | CA-01 | Le vendes la verdad | `f-comprador` | Teletipo | «CASILDA IBARRA GUARDA LO QUE COMPRÓ. SE ESPERA MÁS LUZ EN EL HOLLÍN, A SU PRECIO. SIN CONFIRMAR» |
 | CA-02 | Te aliaste con Los Faroleros | `f-alianza` | Teletipo | «LOS FAROLEROS EXTIENDEN SU LUZ POR LOS BARRIOS ALIADOS. LA DEUDA DE LUZ SE COBRA IGUAL. SIN CONFIRMAR» |
-| CA-03 | Aceptaste o compartiste su monopolio | `f-monopolio`, `f-destino` | Teletipo | **Si revelas:** «CASILDA IBARRA PESA EN EL MERCADO NEGRO DE AETHERITA. SE ESPERA QUE LA PRIMA CAIGA CON LA NOTICIA. SIN CONFIRMAR» **Si no:** «…SE ESPERA QUE LA PRIMA SE MANTENGA. SIN CONFIRMAR» |
+| CA-03 | Aceptaste o compartiste su monopolio | `f-monopolio`, `f-destino` | Teletipo | **Si revelas:** «CASILDA IBARRA PESA EN EL MERCADO NEGRO DE AETHERITA. SE ESPERA QUE LA PRIMA CAIGA CON LA NOTICIA Y REBOTE DESPUÉS. SIN CONFIRMAR» **Si no:** «…SE ESPERA QUE LA PRIMA SE MANTENGA. SIN CONFIRMAR» |
 | CA-04 | El resto | — | Voz | «Los Faroleros siguen cobrando la luz en el Hollín. Casilda Ibarra no pide que la quieran: pide que se pague a tiempo.» |
 
 **Quiroga.** Se elige por `f-archivo`. Cubre `f-quiroga-salida` con la segunda línea de QU-02.
@@ -219,11 +220,11 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | MU-05 | Vendes: lo vendido | `f-destino`, `f-comprador` | Teletipo / Heraldo | **Casilda:** «ALGO CAMBIÓ DE MANOS EN EL PUERTO. NADIE DICE QUÉ. LA LUZ NUEVA TIENE DUEÑA. SIN CONFIRMAR» **Consorcio:** «EL CONSORCIO ARVEL PAGA A QUIEN CALLA. NADIE DICE POR QUÉ. SIN CONFIRMAR» **Ministerio:** (Heraldo) «El Ministerio informa de que la Comisión mantiene sus reservas sobre La Fosa, pero agradece la colaboración de `{nombre}`.» |
 | MU-06 | Vendes: el país | `f-destino` | Voz | «Valdoria sigue igual: los mismos contratos y los mismos apagones. Lo que cambia es quién guarda la llave.» |
 
-**Mercado.** Una por salida (ME-01 a ME-03) y una de las dos restantes. Sin cifras ✅. La Aetherita se estabiliza más abajo, sin llegar a cero ✅; la curva y el nivel ⏳ F4-147 y ⏳ F0-52.
+**Mercado.** Una por salida (ME-01 a ME-03) y una de las dos restantes. Sin cifras ✅. Al revelar, la Aetherita cae, rebota y queda algo por debajo del precio de antes ✅; el rebote va en prospectivo y sin cifras. La curva y el nivel exacto ⏳ F4-147 y ⏳ F0-52.
 
 | ID | Cuándo | Lee | Medio | Ejemplo 🟡 |
 |---|---|---|---|---|
-| ME-01 | Revelas | `f-destino` | Teletipo | «AETHERITA CAE POR TRAMOS DIARIOS. SE ESPERA QUE SE ESTABILICE MÁS ABAJO, SIN LLEGAR A CERO. SIN CONFIRMAR» |
+| ME-01 | Revelas | `f-destino` | Teletipo | «AETHERITA CAE POR TRAMOS DIARIOS. SE ESPERA QUE REBOTE Y QUEDE ALGO MÁS ABAJO. SIN CONFIRMAR» |
 | ME-02 | Callas | `f-destino` | Heraldo | «La Aetherita se mantiene firme y se espera que siga al alza, pero el Heraldo recomienda prudencia.» |
 | ME-03 | Vendes | `f-destino`, `f-comprador` | Teletipo / Heraldo | **Casilda:** «LA PRIMA NEGRA DE LA AETHERITA SUBE EN EL PUERTO. CASILDA IBARRA SABE POR QUÉ. SIN CONFIRMAR» **Consorcio:** (Heraldo) «La Aetherita sube con las compras del Consorcio, pero el Heraldo no ve motivo de alarma.» **Ministerio:** (Heraldo) «La Aetherita se mantiene gracias a la cuota oficial, pero se espera que el Ministerio la vigile de cerca.» |
 | ME-04 | Si Esteban no defiende: mercado negro | `f-monopolio` | Teletipo | **Aceptaste o compartiste:** «EL MERCADO NEGRO SE REACOMODA. SE ESPERA MÁS VIGILANCIA DE NOCHE. SIN CONFIRMAR» **Rechazaste:** «EL CONSORCIO Y EL MINISTERIO SE REPARTEN EL HUECO DEL MERCADO NEGRO. SIN CONFIRMAR» |
@@ -263,7 +264,7 @@ Se enumeraron los estados válidos de las variables de selección (unos 459.000,
 | Par | Problema | Resolución |
 |---|---|---|
 | Esteban en tramo alto y comprador Consorcio | Rompió con su casa, y su casa paga tu silencio | ES-04 manda sobre ES-01 con una línea propia para el tramo alto |
-| Comprador Ministerio y `f-archivo` = proteger | [23](23-arbol-de-decisiones.md) decía que se queda «con tu archivo» | Se queda con **la prueba**, no con el archivo de Quiroga; QU-01 sigue en pie. Corregido en 23 y en `decisions.json` |
+| Comprador Ministerio y `f-archivo` = proteger | [23](23-arbol-de-decisiones.md) decía que se queda «con tu archivo» | Se queda con **tu prueba** (los comprobantes y las cintas que usas), no con el archivo de Quiroga ✅; QU-01 sigue en pie. Corregido en 23 y en `decisions.json` |
 | Quiroga: usar el archivo y `f-quiroga-salida` | «Cae, salvo que le cumpliste la salida» | QU-02 tiene dos líneas: sin retiro cae, con retiro se salva |
 | `m-union` fuera de «revelar» | Sin pieza si callas o vendes | UN-01 a UN-03 llevan una línea para cada caso |
 | Lucía al callar o vender | Sin pieza | LU-04, con filtración si el tramo es bajo y silencio si es medio o alto |
@@ -306,7 +307,7 @@ Cubren las 54 piezas y las dos líneas de las piezas que las tienen. Los tramos 
 
 ### 7.2 · No pueden quedar abiertos 🟡
 
-Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas las salidas. Las tres facciones aliables también (FC-01 a FC-06). La Aetherita siempre se estabiliza. La familia siempre contesta. La deuda del protagonista no tiene tarjeta: el epílogo no dice si está pagada, porque eso lo decide la economía ⏳ F0-52 y el sandbox la sigue.
+Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas las salidas. Las tres facciones aliables también (FC-01 a FC-06). La Aetherita siempre tiene su tarjeta de mercado: si revelas, cae y rebota. La familia siempre contesta. La deuda del protagonista no tiene tarjeta: el epílogo no dice si está pagada, porque eso lo decide la economía ⏳ F0-52 y el sandbox la sigue.
 
 ### 7.3 · Las pistas de [19](19-elenco-a-fondo.md) 🟡
 
@@ -325,7 +326,7 @@ Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas l
 
 ## 8 · Estado legible que se guarda 🟡
 
-**Estado:** ✅ que se guardan banderas, variante oculta y resultados de Esteban, Dueñas, Lucía y Teo con nombres estables; 🟡 los nombres exactos, los valores y que se añadan `e-union` y `e-abono`. No van a `decisions.json`: la validación del hub solo admite banderas de elección y medidores, y exige que alguna decisión las fije y las lea. Su modelo ⏳ F2-01.
+**Estado:** ✅ que se guardan banderas, variante oculta y resultados de Esteban, Dueñas, Lucía y Teo con nombres estables, y que el de Dueñas se fija al cerrar el acto con el comprador ya fijado; 🟡 los nombres exactos de la tabla, los valores y que se añadan `e-union` y `e-abono`. No van a `decisions.json`: la validación del hub solo admite banderas de elección y medidores, y exige que alguna decisión las fije y las lea. Su modelo ⏳ F2-01.
 
 El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo debe releerse desde el diario igual que se vio. Se fijan una vez y no se recalculan.
 
@@ -347,7 +348,7 @@ El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo de
 
 | Pieza | Cantidad | Tarea |
 |---|---|---|
-| Textos de las 54 piezas | ≈ 1.900 palabras (≈ 2 h al ritmo de [22](22-acto-ii-variantes.md), sección 12) | Sin tarea propia; ver Pendiente |
+| Textos de las 54 piezas | ≈ 1.900 palabras (≈ 2 h al ritmo de [22](22-acto-ii-variantes.md), sección 12) | ⏳ F4-212 |
 | Motor de epílogos, cabecera y relectura desde el diario | 1 | ⏳ F4-210 |
 | Traducción al inglés de las 54 piezas | ≈ 1.900 palabras | ⏳ F4-211 |
 | Guion, arte y sonido del acta | 1 escena | ⏳ F4-142 |
@@ -359,6 +360,16 @@ El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo de
 
 | Documento | Cambio | Marca |
 |---|---|---|
+| [17](17-mapa-de-historia.md) | Se cierra el pendiente del cierre de la historia; el cierre del IV incluye el epílogo | ✅ la forma del cierre; 🟡 el texto del pendiente |
+| [18](18-biblia-narrativa.md) | El acta con su línea breve y la lámpara; los pendientes de F0-46 pasan a este documento; los términos nuevos entran al glosario como «sin traducir» ⏳ F1-20 | ✅ el acta y la lámpara; 🟡 el traslado de pendientes y los términos |
+| [19](19-elenco-a-fondo.md) | Anselmo secreto, Lucía, Dueñas y el abono; el gancho de la herencia queda fuera | ✅ |
+| [21](21-pasado-de-valdoria.md) | Dónde está Anselmo hoy: hilo abierto | ✅ |
+| [22](22-acto-ii-variantes.md) | Epílogo de Reme y el estado de la variante | ✅ Reme siempre aliada; 🟡 RE-01 a RE-03 y el nombre `e-variante-reme` |
+| [23](23-arbol-de-decisiones.md) y `decisions.json` | Regla única de Dueñas y su desenlace al cerrar el acto, Lucía al callar o vender, el Ministerio se queda con tu prueba, y la caída con rebote de la Aetherita | ✅ |
+| [24](24-umbrales-de-acto.md) | Orden de cierre y la regla de Dueñas (sin depender de la puerta) | ✅ |
+| [08](08-historia-y-personaje.md), `story.json` y `presentation.json` | La Aetherita cae, rebota y queda algo por debajo | ✅ |
+
+---|---|---|
 | [17](17-mapa-de-historia.md) | Se cierra el pendiente del cierre de la historia; el cierre del IV incluye el epílogo | ✅ |
 | [18](18-biblia-narrativa.md) | El acta con su línea breve y la lámpara; los pendientes de F0-46 pasan a este documento | ✅ |
 | [19](19-elenco-a-fondo.md) | Anselmo secreto, Lucía, Dueñas y el abono; el gancho de la herencia queda fuera | ✅ |
@@ -373,13 +384,13 @@ El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo de
 
 1. ¿Aceptas la sexta cabecera (revelar con la Unión alta y sin ella)?
 2. ¿Aceptas ES-04 como resolución de Esteban alto con comprador Consorcio?
-3. ¿Aceptas que el Ministerio se quede con la prueba y no con el archivo de Quiroga?
-4. ¿Aceptas que Quiroga se salve si le conseguiste el retiro, aunque uses su archivo?
-5. ¿Aceptas que el desenlace de Dueñas se calcule al cerrar el IV, con el comprador ya fijado, y que el enfrentamiento en La Fosa sea la escena que lo anticipa?
-6. ¿Dónde filtra Lucía cuando callas o vendes con su tramo bajo? Se propone el Teletipo.
-7. ¿Te parece bien el medio asignado a cada pieza y que la familia la cuente el narrador?
-8. ¿Aceptas los nombres del estado legible y que se guarden también `e-union` y `e-abono`?
-9. ¿Cuál de las líneas del acta prefieres, o propones otra?
+3. ¿Aceptas que Quiroga se salve si le conseguiste el retiro, aunque uses su archivo?
+4. ¿Dónde filtra Lucía cuando callas o vendes con su tramo bajo? Se propone el Teletipo.
+5. ¿Te parece bien el medio asignado a cada pieza y que la familia la cuente el narrador?
+6. ¿Aceptas los nombres del estado legible y que se guarden también `e-union` y `e-abono`?
+7. ¿Cuál de las líneas del acta prefieres, o propones otra?
+
+Ya decididas el 2026-10-12 y fuera de esta lista: el Ministerio se queda con tu prueba y no con el archivo de Quiroga, el desenlace de Dueñas se decide al cerrar el acto con el comprador ya fijado, y la Aetherita cae, rebota y queda algo por debajo ✅.
 
 ---
 
@@ -394,7 +405,7 @@ El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo de
 - ⏳ F4-147 Curva y nivel del desplome de la Aetherita, junto con ⏳ F0-52.
 - ⏳ F4-150 El reproductor, y ⏳ F4-151 el texto y la voz de las cintas.
 - ⏳ F0-51 Registro de los hilos de la sección 7.
-- ⏳ F1-20 Términos nuevos del glosario: epílogo, cabecera, tarjeta, pieza, estado legible.
+- ⏳ F1-20 Inglés de los ocho términos nuevos del glosario (epílogo, cabecera, tarjeta, pieza, estado legible, «las semanas siguientes», aviso de Magnate, filtrar), ya anotados en [18](18-biblia-narrativa.md) 6.11 como «sin traducir».
 - ⏳ F4-212 Textos finales de las 54 piezas, en español. La traducción es ⏳ F4-211 y el motor ⏳ F4-210.
 - El destino del trato de Anselmo en la segunda parte es un hilo abierto sin tarea.
 
