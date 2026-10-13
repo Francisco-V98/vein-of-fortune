@@ -957,13 +957,13 @@
       "acto": "IV",
       "nivel": "mediana",
       "titulo": "Dueñas se mueve contra ti",
-      "dispara": "Enfrentamiento en La Fosa. Dueñas elige cómo según la puerta que usaste, tu gente y tu fuerza. Nunca se humaniza.",
+      "dispara": "Enfrentamiento en La Fosa. Regla única de prioridad: si vendes al Ministerio, te compra con el sello; si no, y la Unión está en tramo alto y llevas al menos dos pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor. Si revelas queda bajo investigación, con resultado abierto. Su desenlace se calcula al cerrar el acto.",
       "opciones": [
         {
           "id": "comprar",
           "texto": "Dueñas intenta comprarte.",
           "fija": [],
-          "mundo": "Te ofrece una concesión de Aetherita a cambio de callar. Se activa si entraste con su sello.",
+          "mundo": "Te ofrece una concesión de Aetherita a cambio de callar y, si vendes al Ministerio, te compra con el sello.",
           "mercado": "—",
           "personajes": "Dueñas: seco, sin disculpas ni ruego."
         },
@@ -971,7 +971,7 @@
           "id": "amenazar",
           "texto": "Dueñas te amenaza.",
           "fija": [],
-          "mundo": "Nombra a Teo, a Reme y a tu familia. Se activa si entraste por el aval o por tu alianza. Pierde fuerza si protegiste a Reme.",
+          "mundo": "Nombra a Teo, a Reme y a tu familia. Se activa en el resto de los casos. Pierde fuerza si protegiste a Reme.",
           "mercado": "—",
           "personajes": "Dueñas: no alza la voz."
         },
@@ -979,7 +979,7 @@
           "id": "borrar",
           "texto": "Dueñas intenta borrarte.",
           "fija": [],
-          "mundo": "Suspende tus licencias y manda cerrar tus zonas. Se activa si la Unión está en tramo alto y llevas al menos dos pruebas.",
+          "mundo": "Suspende tus licencias y manda cerrar tus zonas, pero falla. Se activa si la Unión está en tramo alto y llevas al menos dos pruebas y no vendes al Ministerio.",
           "mercado": "Tus ventas caen a la mitad durante tres días y la vigilancia pasa a Bajo investigación.",
           "personajes": "Dueñas: «No le pregunto qué opina»"
         }
@@ -988,7 +988,8 @@
         "f-puerta",
         "f-familia",
         "f-reme-proteccion",
-        "m-union"
+        "m-union",
+        "f-comprador"
       ],
       "estado": "prop"
     },
@@ -1007,7 +1008,7 @@
           ],
           "mundo": "La verdad sale: caos social, el Ministerio contraataca. Con la Unión en tramo alto, sale contigo y el caos se contiene; con la Unión en tramo bajo, nadie te respalda en el Hollín.",
           "mercado": "La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario ⏳ F4-147.",
-          "personajes": "Te separas de Anselmo."
+          "personajes": "Te separas de Anselmo. La Comisión corta el abono mensual de Reme."
         },
         {
           "id": "callar",
@@ -1017,7 +1018,7 @@
           ],
           "mundo": "Sigues ganando; el mal del éter sigue y nadie tiene la prueba.",
           "mercado": "La Aetherita sube un 5 a 10 % en el mes.",
-          "personajes": "Te pareces a Anselmo."
+          "personajes": "Te pareces a Anselmo. El abono sigue llegando."
         },
         {
           "id": "vender",
@@ -1070,7 +1071,7 @@
           "fija": [
             "f-comprador"
           ],
-          "mundo": "Dueñas te deja subir y se queda con tu archivo.",
+          "mundo": "Dueñas te deja subir y se queda con tu prueba, no con el archivo de Quiroga.",
           "mercado": "La Aetherita se mantiene (0 a +3 %) por la cuota.",
           "personajes": "Dueñas gana; tú te vuelves una pieza de la Comisión."
         }
@@ -1087,7 +1088,7 @@
       "acto": "IV",
       "nivel": "pequena",
       "titulo": "Quién publica",
-      "dispara": "La verdad sale a la luz o se filtra. Depende del tramo de Lucía: alto, publica contigo; medio, no publica y lo publicas tú; bajo, publica sin ti.",
+      "dispara": "La verdad sale a la luz o se filtra. Si revelas, depende del tramo de Lucía: alto, publica contigo; medio, no publica y lo publicas tú; bajo, publica sin ti. Si callas o vendes: con tramo bajo filtra una versión a medias, sin pruebas ni cintas; en medio o alto, calla. Nunca publica el acta.",
       "opciones": [
         {
           "id": "contigo",

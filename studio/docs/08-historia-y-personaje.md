@@ -89,7 +89,7 @@ En el Acto IV, ya en la cima, el jugador elige qué hacer con esa información:
 | **Callarla** | Sigue ganando, con las consecuencias que eso implica |
 | **Venderla** | La usa como moneda de poder con alguna facción |
 
-Cualquier opción cambia la partida, pero **el sistema se reabsorbe y todo sigue igual**. El desplome de la Aetherita es además una consecuencia de mercado: historia y economía se tocan.
+Cualquier opción cambia la partida, pero **el sistema se reabsorbe y todo sigue igual**. El cierre de cada salida (cabecera, tarjetas y acta) está en [25](25-finales-y-epilogos.md) ✅; Anselmo sigue vivo y secreto en las tres. El desplome de la Aetherita es además una consecuencia de mercado: historia y economía se tocan.
 
 ## Lugares ✅
 

@@ -37,7 +37,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 4. Desde entonces vive en secreto, ayudando a la Comisión a calibrar los límites de exposición. Cree que desde dentro salva más vidas que estando muerto 🟡. En la práctica, ayuda a que se siga ocultando.
 5. Las cintas son lo último que grabó **antes** del trato: su último acto de honestidad.
 
-**La revelación (final del Acto IV, después de la decisión sobre la Aetherita):** el protagonista encuentra un **acta de calibración de la Comisión firmada por Anselmo con fecha de hace pocas semanas** ✅. No hay discurso ni explicación. Solo una firma que reconoce.
+**La revelación (final del Acto IV, después de la decisión sobre la Aetherita):** el protagonista encuentra un **acta de calibración de la Comisión firmada por Anselmo con fecha de hace pocas semanas** ✅. No hay discurso ni explicación: una línea breve del protagonista (ocho palabras o menos) y una firma que reconoce. La escena es igual en las tres salidas, el último plano es la lámpara, y **Anselmo sigue vivo y secreto**: el acta no cuenta como prueba y Lucía no la publica ✅ ([25](25-finales-y-epilogos.md)).
 
 **Por qué creo que el giro funciona, con ajustes:**
 
@@ -45,7 +45,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 - **No invalida las decisiones del Acto IV.** La decisión sobre la Aetherita se toma antes, con la información que tiene el jugador. La revelación **añade una pregunta, no cambia la respuesta**.
 - **Espeja el tema.** Anselmo hizo lo que el jugador puede hacer en el Acto IV: se adaptó para seguir vivo y siendo útil. Si el jugador calla o vende, se parece a él; si revela, se separa de él.
 - **Riesgo a evitar:** que "cómplice" lo vuelva simplemente malo. Debe ser ambiguo: lo hizo por salvarse, por proteger a los suyos y por una convicción discutible. Que el jugador no sepa si perdonarlo es lo que lo hace valer.
-- **Opcional para una segunda parte 🟡:** que el trato de Anselmo explique también por qué *dejaron* al protagonista heredar y ascender. Sería un gancho fuerte, pero puede restar libertad al jugador, así que solo conviene si se confirma la continuación.
+- **Gancho de la herencia ✅:** «por qué te dejaron heredar» **no se escribe ahora**. Queda como hilo para una segunda parte, sin sembrar nada en el Acto I ni tocar F0-23 (decisión del autor, 2026-10-12).
 
 ## Pistas sembradas a lo largo del juego 🟡
 
@@ -164,7 +164,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | I | Vecina amable que da tiempo y cobra con cariño |
 | II | **Traiciona por obligación**, no por decisión propia ✅. El jugador siente que le dolió |
 | III | Distante pero atenta; no se atreve a ayudar abiertamente |
-| IV | Al final, se convierte en **la persona más cercana al protagonista** ✅ y se une para resolver el caso. El protagonista, ya con estatus, dinero e influencia, puede darle protección ✅ |
+| IV | Al final, se convierte en **la persona más cercana al protagonista** ✅ y se une para resolver el caso. El protagonista, ya con estatus, dinero e influencia, puede darle protección ✅. Si revelas, la Comisión corta el abono que ella recibía; si no, sigue llegando ✅ |
 
 Cómo cambia su papel en el Acto II según la facción que esté detrás de ella: [22](22-acto-ii-variantes.md).
 
@@ -275,7 +275,7 @@ Cómo cambia su papel en el Acto II según la facción que esté detrás de ella
 - "¿Y si te digo que lo oí en tres sitios? ¿Cambia algo? No, tampoco a mí."
 - "Fuente anónima, claro. Y muy bien informada."
 
-**Acciones en el juego.** Es la **fuente de rumores**: da titulares antes que el resto, con fiabilidad variable. Es también quien puede **publicar** la verdad del Acto IV si el jugador elige revelar.
+**Acciones en el juego.** Es la **fuente de rumores**: da titulares antes que el resto, con fiabilidad variable. Es también quien puede **publicar** la verdad del Acto IV si el jugador elige revelar: con su medidor alto publica contigo, en medio no publica y en bajo publica sin ti. Si callas o vendes, con medidor bajo filtra una versión a medias y en medio o alto calla ✅. Nunca publica el acta.
 
 **Arco por acto.**
 
@@ -284,7 +284,7 @@ Cómo cambia su papel en el Acto II según la facción que esté detrás de ella
 | I | Fuente simpática de rumores |
 | II | Se descubre que vende información a más de una parte |
 | III | Oye hablar de las cintas y de la letra de un muerto |
-| IV | Su decisión de publicar o callar depende de cómo la trataste |
+| IV | Su decisión de publicar o callar depende de cómo la trataste (tramo alto, medio o bajo) ✅ |
 
 **Conexiones.** Con **Quiroga**, desconfianza; con **Esteban**, usa su apellido para entrar a lugares; con **la Comisión**, una fuente que no nombra; con **el protagonista**, una amistad con intereses.
 
@@ -396,7 +396,7 @@ Cómo cambia su papel en el Acto II según la facción que esté detrás de ella
 | Acto | Estado |
 |---|---|
 | III | Primer encuentro; te evalúa; te deja subir porque le sirves |
-| IV | Enfrentamiento: intenta comprarte, amenazarte o borrarte |
+| IV | Enfrentamiento con una regla única: si vendes al Ministerio te compra con el sello; con la Unión alta intenta borrarte y falla; en el resto te amenaza. Nunca cae ni se arrepiente; si revelas, queda bajo investigación con resultado abierto ✅ |
 
 **Conexiones.** Con **Anselmo**, amistad rota; con **Esteban**, protegido; con **Casilda**, enemigos históricos; con **Quiroga**, un subordinado prescindible; con **el protagonista**, la prueba final.
 

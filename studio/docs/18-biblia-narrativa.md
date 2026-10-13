@@ -28,7 +28,7 @@ El autor eligió una estructura **por entidades**, con el documento 19 como fuen
 | 6 · Glosario ES/EN | Cada término en español e inglés con su estado y las reglas de traducción |
 | Anexo · Cronología y bifurcaciones | Los cuatro actos con sus hitos y variantes |
 
-Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. F0-43 se resolvió en [21](21-pasado-de-valdoria.md) y F0-44 en [22](22-acto-ii-variantes.md). F0-45 se resolvió en [23](23-arbol-de-decisiones.md). La tarea F0-46 **no se resuelve aquí**: la biblia deja el hueco señalado y no inventa su contenido.
+Las marcas siguen el criterio de los demás documentos: la palomita verde es lo acordado con el autor o lo que ya está en otro documento, el círculo amarillo es lo que propone esta biblia y el reloj de arena lleva siempre el ID de la tarea de la que depende. F0-43 se resolvió en [21](21-pasado-de-valdoria.md) y F0-44 en [22](22-acto-ii-variantes.md). F0-45 se resolvió en [23](23-arbol-de-decisiones.md). F0-46 se resolvió en [25](25-finales-y-epilogos.md).
 
 ---
 
@@ -369,7 +369,7 @@ Regiones y zonas en [05](05-mundo-y-minerales.md) y [02](02-extraccion.md); nomb
 | **La lámpara de minero** ✅ | Recuerdo de Anselmo y símbolo de la marca ([19 · ficha de Anselmo](19-elenco-a-fondo.md), [13](13-marca-e-identidad.md)) | Siempre es una lámpara, nunca un farol (el farol es de Los Faroleros). Se apaga rápido: es una imagen recurrente de esperanza frágil |
 | **La libreta de Anselmo** ✅ | Guía las primeras misiones del Acto I ([19 · ficha de Anselmo](19-elenco-a-fondo.md), «Acciones en el juego») | Letra manuscrita, sin fecha de cierre en la última anotación |
 | **Las cintas y los carretes** ✅ | Grabaciones de Anselmo (1.6) | «Cinta» para la historia, «carrete» para el objeto |
-| **El acta de calibración** ✅ | Documento de la Comisión firmado por Anselmo; se revela al final del Acto IV (decisión del autor, F0-41) | Es la última escena de la historia. Sin discurso: una firma que el protagonista reconoce. Que sea «de hace pocas semanas» es propuesta de [19 · «La verdad sobre Anselmo»](19-elenco-a-fondo.md) 🟡 |
+| **El acta de calibración** ✅ | Documento de la Comisión firmado por Anselmo; se revela al final del Acto IV (decisión del autor, F0-41) | Es la última escena de la historia, igual en las tres salidas: sin discurso, con una línea del protagonista de ocho palabras o menos que no explica nada, y con la lámpara como último plano ✅ ([25](25-finales-y-epilogos.md)). No cuenta como prueba y nadie la publica ✅. Que sea «de hace pocas semanas» lo confirmó el autor ([21](21-pasado-de-valdoria.md)) |
 | **El certificado de defunción** ✅ | Papel con un sello irregular (el del sanatorio) ✅ y **sin registro de cremación** ✅ | Lo procesó Quiroga, con una orden sellada de la Comisión. Pista del Acto II ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
 | **El abono anónimo** ✅ | Pago misterioso a la deuda, el sueldo de Anselmo según el trato | Reme lo atribuye a «algún vecino bondadoso» ([19 · «Pistas sembradas»](19-elenco-a-fondo.md)) |
 | **La licencia, el puesto y la deuda** ✅ | La herencia del protagonista | Los tres se nombran siempre juntos en la primera mención 🟡 (misma marca en 6.11) |
@@ -696,7 +696,7 @@ Los cuatro actos tal como están en [17](17-mapa-de-historia.md) y `studio/data/
 | **I · El recién llegado** (Villa Brasa) | Reabres el puesto, atiendes la primera cuota y tienes el primer contacto con los empleados | No tiene bifurcación grande. La facción detrás de Reme se sortea al empezar y no se revela. Tiene **3 consecuencias pequeñas** ✅ (cuáles, en [23](23-arbol-de-decisiones.md), sección 3) |
 | **II · Aprender las reglas** (Hollín, Sierra Alta, Salares) | Eliges con qué facción te alías | **3 variantes** ✅: Reme responde al Consorcio Arvel, a Los Faroleros o al Ministerio. Contenido de cada una en [22](22-acto-ii-variantes.md). Bifurcación grande: la alianza ✅, con 2 medianas (la orden de Reme y la huelga) y 5 pequeñas ([23](23-arbol-de-decisiones.md), sección 4) |
 | **III · El ascenso** (Puerto Meridiano, Cavernas de Cristal) | Te aceptan en el círculo de poder | Esteban puede ser aliado o enemigo según cómo lo trates 🟡, y eso lo lleva su medidor ([23](23-arbol-de-decisiones.md), sección 2). Bifurcación grande: **cómo entras al círculo** ✅ (tres puertas), con 2 medianas y 5 pequeñas ([23](23-arbol-de-decisiones.md), sección 5) |
-| **IV · La cima** (La Fosa del Éter) | Decides qué hacer con la verdad y el poder | **3 salidas** ✅: **revelarla** (la Aetherita se desploma), **callarla** o **venderla** (moneda de poder). Teo muere, se reconcilia o se va según tus decisiones ✅. Epílogos de cada salida ⏳ F0-46 |
+| **IV · La cima** (La Fosa del Éter) | Decides qué hacer con la verdad y el poder | **3 salidas** ✅: **revelarla** (la Aetherita se desploma), **callarla** o **venderla** (moneda de poder). Teo muere, se reconcilia o se va según tus decisiones ✅. Epílogos por piezas en [25](25-finales-y-epilogos.md) ✅ |
 
 - Las bifurcaciones grandes son tres ✅: la alianza (II), cómo entras al círculo (III) y el destino de la Aetherita (IV). El acreedor del Acto II **es un sorteo, no una bifurcación** ✅. El árbol completo de decisiones y consecuencias está en [23](23-arbol-de-decisiones.md).
 - **Antes del Acto I.** La cronología completa está en [21](21-pasado-de-valdoria.md). En resumen, hace 40 años el derrumbe de Pozo Negro (nace la Unión), hace 30 el hallazgo de la Aetherita, hace 27 nace la Comisión, hace 20 la Primera Expedición, hace 17 empieza la electrificación y hace 2 Anselmo es detenido y acepta el trato ✅.
@@ -720,5 +720,5 @@ En `story.json` y en el [17](17-mapa-de-historia.md) Anselmo aparece ya en la ce
 ## Pendiente
 
 - ⏳ F4-179 Textos de las tres variantes del Acto II (la estructura está en [22](22-acto-ii-variantes.md)).
-- ⏳ F0-46 Epílogos de las tres salidas del Acto IV.
+- ✅ Epílogos de las tres salidas del Acto IV: resueltos en [25](25-finales-y-epilogos.md). Los términos nuevos del glosario ⏳ F1-20
 - ⏳ F1-18 Cifras finales del formato de diálogo y del nombre de la tienda, con la fuente real.
