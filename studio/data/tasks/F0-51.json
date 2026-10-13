@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "Se empieza el registro de hilos narrativos y cabos sueltos con el flujo de especialistas.",
       "ref": "rama studio/F0-51-registro-de-hilos"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Registro de 45 hilos, validación y chequeos C16 a C19 en el build, vista #/hilos y fila En escena; QA aprobado y coherencia 94 %.",
+      "ref": "rama studio/F0-51-registro-de-hilos"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el registro de hilos desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [],
@@ -51,10 +67,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
         "por": "autor",
-        "nota": "El autor revisa el registro de hilos y la vista #/hilos del hub"
+        "nota": "El autor revisó el registro y la vista #/hilos y aprobó desde /equipo"
       },
       {
         "etapa": "playtest",
@@ -62,7 +78,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #45 fusionado"
       }
     ],
     "traspasos": [
@@ -100,6 +119,12 @@
         "de": "qa",
         "a": "autor",
         "que": "Entrega para tu revisión: el registro de hilos y la vista #/hilos",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-13"
       }
     ]

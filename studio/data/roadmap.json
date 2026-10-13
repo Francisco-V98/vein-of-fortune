@@ -557,7 +557,7 @@
               "id": "F0-51",
               "title": "Registro de hilos narrativos y cabos sueltos",
               "est": 6,
-              "status": "doing",
+              "status": "done",
               "prio": "P1",
               "desc": "Cada pista, promesa o secreto con dónde se siembra, dónde se resuelve y qué cambia. El build marca lo sembrado sin resolver y lo resuelto sin sembrar, y los personajes que desaparecen de un acto. Parte de la biblia narrativa (F0.11).",
               "done_when": "Registro cargado con los hilos de la biblia y comprobaciones activas en el hub."
