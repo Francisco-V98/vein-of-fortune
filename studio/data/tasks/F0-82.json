@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "El autor pidió una visión de zonas y edificios para el mapa vivo, dividida en versiones.",
       "ref": "rama studio/F0-82-zonas-y-edificios"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Documento 26 con el catálogo de zonas y edificios por versiones y 37 tareas nuevas en el roadmap; QA aprobado y limpieza 71 %.",
+      "ref": "rama studio/F0-82-zonas-y-edificios"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el catálogo de zonas y edificios desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [],
@@ -68,10 +84,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
         "por": "autor",
-        "nota": "El autor revisa el documento 26 y las tareas nuevas"
+        "nota": "El autor revisó el documento 26 y las tareas nuevas y aprobó desde /equipo"
       },
       {
         "etapa": "playtest",
@@ -79,7 +95,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #44 fusionado"
       }
     ],
     "traspasos": [
@@ -130,6 +149,12 @@
         "de": "qa",
         "a": "autor",
         "que": "Entrega para tu revisión: documento 26 con las zonas, los edificios y las versiones",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-13"
       }
     ]
