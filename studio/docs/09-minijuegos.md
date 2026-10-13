@@ -66,7 +66,7 @@ Minijuego propio para el final del juego: mantener una energía inestable entre 
 
 ## Escáner ✅
 
-Para el MVP es **instantáneo**: tocar la mena y ver los rangos. El **Ojo** y la herramienta determinan qué tan estrechos son. Un minijuego de sintonización queda como posible mejora futura.
+Para el MVP es **instantáneo**: tocar la mena y ver los rangos. El **Ojo** y la herramienta determinan qué tan estrechos son. El detector básico es una herencia de Anselmo desde el Acto I; el cuarzo lo mejora más adelante. Un minijuego de sintonización queda como posible mejora futura.
 
 ## Tareas de peligro (estilo Among Us) 🟡
 

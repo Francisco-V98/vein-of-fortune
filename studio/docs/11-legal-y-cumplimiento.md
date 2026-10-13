@@ -82,6 +82,6 @@ Coherencia: lo que se declare debe coincidir con lo que el juego realmente hace 
 ## Pendiente
 
 - ❓ País de residencia del autor.
-- ❓ Búsqueda de marca formal de «Veta de Fortuna / Vein of Fortune».
+- ⏳ F5-29 Búsqueda de marca formal de «Veta de Fortuna / Vein of Fortune».
 - ❓ Si el público objetivo incluye menores.
 - ❓ Herramientas de IA concretas y sus términos comerciales.

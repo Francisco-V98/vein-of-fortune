@@ -140,7 +140,7 @@ La cuadrilla murió en uno a tres años con siete meses de exposición. Anselmo 
 
 ## 5 · La muerte pública de Anselmo 🟡
 
-**Estado:** ✅ todo, confirmado por el autor el 2026-10-12: la versión pública (cuándo, de qué, dónde, cremación sin registro, certificado de Quiroga en Villa Brasa, cenizas y aviso por carta), la verdad detrás (traslado a Cumbre Clara, sello, orden sellada, copia de Quiroga, testamento), el trato, el abono y los titulares de los medios. El lugar donde vive hoy queda abierto. 🟡 Solo cuatro detalles que añade este documento y que el autor no vio: el libro de cremaciones de la comarca, que el sello no sea el del registro civil, que Quiroga se ponga nervioso con el certificado y que la firma del testamento sea la de los papeles de la herencia.
+**Estado:** ✅ todo, confirmado por el autor el 2026-10-12: la versión pública (cuándo, de qué, dónde, cremación sin registro, certificado de Quiroga en Villa Brasa, cenizas y aviso por carta), la verdad detrás (traslado a Cumbre Clara, sello, orden sellada, copia de Quiroga, testamento), el trato, el abono y los titulares de los medios. El lugar donde vive hoy queda abierto. 🟡 Solo tres detalles que añade este documento y que el autor no vio: el libro de cremaciones de la comarca, que el sello no sea el del registro civil y que Quiroga se ponga nervioso con el certificado.
 
 | Dato | Versión pública |
 |---|---|
@@ -157,7 +157,7 @@ La cuadrilla murió en uno a tres años con siete meses de exposición. Anselmo 
 - El sanatorio certificó una **cremación que nadie vio y que nadie registró** ✅. La pista no es «no apareció el cuerpo», sino **«sin registro de cremación»** ✅: el libro de cremaciones de la comarca no tiene ese día 🟡.
 - El **sello del certificado es irregular** ✅: es el del sanatorio ✅, no el del registro civil 🟡.
 - Quiroga lo tramitó por una orden sellada de la Comisión, con una «gestión» de por medio ✅. Guardó una copia en su archivo, su seguro de vida ✅, y allí también la carta de la cinta 6 que retuvo (sección 7) ✅. Por eso se pone nervioso cuando alguien menciona el certificado 🟡.
-- El **testamento** lo firmó Anselmo antes de que lo detuvieran ✅. Esa firma es la de los papeles de la herencia del Acto I 🟡.
+- El **testamento** lo firmó Anselmo antes de que lo detuvieran ✅. Esa firma es la de los papeles de la herencia del Acto I ✅ y la misma del acta de calibración final ✅ (decisión del autor, 2026-10-12). La siembra en el Acto I ⏳ F0-23.
 
 ### El trato ✅
 
@@ -193,7 +193,7 @@ El autor confirmó el trato el 2026-10-12, tal como está escrito en la tabla: c
 
 | Si su facción es… ✅ | Por qué le pide callar el abono ✅ |
 |---|---|
-| **El Ministerio** | Es la misma cadena: el abono sale de la Comisión y la orden llega por su acreedor. Obedece |
+| **El Ministerio** | Es la misma cadena: el abono sale de la Comisión y la orden llega por su facción. Obedece |
 | **El Consorcio Arvel** | El Consorcio financia el fondo reservado de la Comisión. Un abono que se investigue lleva a ese dinero |
 | **Los Faroleros** | Los informantes de Casilda vieron el giro. Casilda lo guarda como moneda: quiere comprar la verdad en el Acto IV |
 
@@ -225,7 +225,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 - **El humor se apaga** de la primera a la octava 🟡 ([18](18-biblia-narrativa.md), 1.7, que sigue 🟡). El orden de las seis primeras es ✅; «casi apagado» y «sin humor» en la 7 y la 8 aún no.
 - **Dónde aparecen en el juego.** Las ocho cintas se encuentran a lo largo de la historia y se **oyen** en el **Acto IV** con un reproductor, como indica la fila de narrativa de `studio/data/story.json` («Oyes las cintas»). Se recogen antes: 1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV ✅. El lugar donde las dejó Anselmo y el reparto del reproductor están en [23](23-arbol-de-decisiones.md), sección 7 🟡
 - El texto final y la voz de cada cinta ⏳ F4-151
-- «Cinta» es la pieza de historia y «carrete» el objeto ✅ (1.6 de [18](18-biblia-narrativa.md)).
+- «Cinta» es la grabación de historia y «carrete» el objeto ✅ (1.6 de [18](18-biblia-narrativa.md)).
 
 ---
 
@@ -281,7 +281,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 
 ### Los Faroleros
 
-- **Gremio de faroles del puerto** ✅ ([07](07-sociedad-y-eventos.md)). Durante generaciones encendían y cuidaban los faroles de gas de Puerto Meridiano y de los puertos del Litoral. Tenían una caja común y un **farol rojo** como señal. Casilda es hija y nieta de faroleros ✅.
+- **Gremio de faroles del puerto** ✅ ([07](07-sociedad-y-eventos.md)). Durante generaciones encendían y cuidaban los faroles de gas de Puerto Meridiano y de los puertos del Litoral. Tenían una caja común y un **farol vinotinto con luz ámbar** como señal. Casilda es hija y nieta de faroleros ✅.
 - **Hace 17 años** ✅, con la electrificación, el Ministerio retira los faroles de los barrios que pagan la tarifa de la red 🟡. Los barrios pobres quedan con luz racionada o a oscuras 🟡. Los faroleros pierden el oficio.
 - **Hace 15 años** ✅, Casilda (30 años) organiza a los suyos para **«cobrar la luz»** antes que el Estado ✅: mantienen el barrio iluminado con lámparas, generadores pequeños y conexiones, y cobran la «deuda de luz» 🟡.
 - **Su enemistad histórica con Montenegro 🟡.** Montenegro firmó el plan de tarifa que dejó a oscuras esos barrios 🟡.
@@ -298,7 +298,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 
 ## 11 · De cada pista de [19](19-elenco-a-fondo.md) a su hito 🟡
 
-**Estado:** ✅ los hitos que cubren las decisiones del 2026-10-12 (el trato y el abono, la muerte pública con su sello y sin registro de cremación, la evacuación de Teo con su silencio firmado y las cintas 7 y 8); 🟡 lo que se marca dentro y las filas que apuntan a «pocas semanas».
+**Estado:** ✅ los hitos que cubren las decisiones del 2026-10-12 (el trato y el abono, la muerte pública con su sello y sin registro de cremación, la evacuación de Teo con su silencio firmado y las cintas 7 y 8); 🟡 lo que se marca dentro y la fila de Lucía, que apunta a «pocas semanas».
 
 La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md) tiene ocho filas. Cada una apunta a un hito de este documento.
 
@@ -311,7 +311,7 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 | III | Lucía oyó que «alguien de la Comisión recibe cartas con la letra de un muerto» | **Pocas semanas** 🟡: los informes de calibración que Anselmo escribe a mano para la Comisión desde el trato |
 | III | El abono sigue llegando y Teo jura que no es él | **Hace 2 años, el trato** ✅. Teo dice la verdad: él no lo paga 🟡 |
 | IV | La octava cinta termina cortada | **Hace 2 años, la noche de la detención** (cintas 7 y 8) ✅ |
-| IV (final) | El acta de calibración firmada por Anselmo | **Pocas semanas** 🟡. La firma es la de los papeles de la herencia 🟡 |
+| IV (final) | El acta de calibración firmada por Anselmo | **Pocas semanas** ✅. La firma es la de los papeles de la herencia ✅ ⏳ F0-23 |
 
 ---
 
@@ -321,3 +321,5 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 - ⏳ F0-23 Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8).
 - ✅ Dónde está Anselmo hoy: queda abierto, como hilo para una segunda parte y sin tarea. Sigue vivo y secreto en las tres salidas; el abono se corta solo si revelas ([25](25-finales-y-epilogos.md), sección 7).
 - ⏳ F0-51 Registro de hilos: dónde se siembra cada pista de la sección 11 y dónde se resuelve.
+- ✅ La firma de los papeles de la herencia es la del acta final (decisión del autor, 2026-10-12). F0-43 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión.
+- ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.

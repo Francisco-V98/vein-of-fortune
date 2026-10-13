@@ -239,10 +239,16 @@
       "id": "escaner",
       "name": "Escáner / detector",
       "act": "I",
+      "fuente": "docs/05 y 02: el protagonista empieza con un detector básico heredado de Anselmo, sin cuarzo; docs/09: el escáner es instantáneo en el MVP"
+    },
+    {
+      "id": "mejora-detector",
+      "name": "Mejora del detector con cuarzo",
+      "act": "II",
       "needs_minerals": [
         "cuarzo"
       ],
-      "fuente": "docs/05: el detector depende del cuarzo; docs/09: el escáner es instantáneo en el MVP"
+      "fuente": "docs/05 y 02: el cuarzo mejora el detector básico más adelante; no es requisito del Acto I"
     },
     {
       "id": "taller",

@@ -37,7 +37,9 @@
 - **Aetherita** ✅: cristal **vinotinto translúcido con brillo rojo-rosado y aura cian**. Es el mineral más llamativo del juego a propósito. Para conservar su rareza, el rojo-rosado **brillante** queda reservado a la Aetherita; el resto del juego usa el vinotinto **mate**.
 - Latón/ámbar ✅: detalles mínimos (remaches, marcos, monedas, luz de lámparas); es el "complemento cálido" del vinotinto.
 - Oro: excepción controlada para oro y lujo.
-- **Accesibilidad:** no depender de rojo/verde para señalar subida o bajada; usar flechas, formas y cian vs. vinotinto.
+- **Accesibilidad:** no depender de rojo/verde para señalar subida o bajada; usar flechas, formas y **azul hielo** (sube) vs. vinotinto (baja).
+- ✅ **Cian y rojo-rosado son solo de la Aetherita.** La flecha de subida de los gráficos va en azul hielo, nunca en cian.
+- ✅ **El farol de Los Faroleros** es vinotinto mate con luz ámbar, nunca rojo emisivo.
 
 ## Prueba de estilo ✅ (realizada)
 
@@ -96,7 +98,7 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 | `minerales-v2.png` | 10 minerales corregidos | ✅ Siluetas y colores distintos; **Aetherita** vinotinto cristalina destaca claramente |
 | `retratos-a.png`, `retratos-b.png` | Retratos de diálogo: Reme, Teo, Quiroga, Lucía, Esteban, Casilda, Ministro Montenegro y foto de Anselmo | ✅ Muy buenos; expresivos, coherentes y con la paleta |
 | `sprites.png` → `sprites-corregido.png` | Sprites pequeños tipo Stardew (protagonistas hombre y mujer y elenco) | ✅ Funcionan como guía. El ministro original parecía un sacerdote (estola con cruces); se reemplazó por un funcionario severo de abrigo azul marino y faja vinotinto, sin símbolos religiosos (`ministro-corregido.png`) |
-| `ui-mercado.png` → `ui-mercado-corregido.png` | Terminal de mercado (lista, gráfico, teletipo, bloques del día) | ✅ Buen punto de partida. Las flechas rojo/verde se cambiaron por ▲ cian (sube) y ▼ vinotinto (baja), que cumple la regla de accesibilidad |
+| `ui-mercado.png` → `ui-mercado-corregido.png` | Terminal de mercado (lista, gráfico, teletipo, bloques del día) | ✅ Buen punto de partida. Las flechas rojo/verde se cambiaron por ▲ cian (sube) y ▼ vinotinto (baja), que cumple la regla de accesibilidad. ✅ La regla vigente cambia la subida a azul hielo, porque el cian es solo de la Aetherita; la imagen se conserva como referencia de composición |
 | `ui-tienda.png` | Pantalla de la tienda con corte transversal | ✅ Muy buena base; comunica el "taller + mostrador + almacén" |
 | `edificios.png` | 9 edificios (tienda, taller, almacén, casa, Ministerio, Consorcio, Unión, bar, periódico) | ✅ Consistentes entre sí; en isométrica |
 | `mapa-valdoria.png` | Mapa ilustrado con las 6 regiones y vías de tren | ✅ Muy bueno; viable como **imagen estática con zonas tocables** |

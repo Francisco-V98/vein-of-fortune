@@ -74,7 +74,7 @@ Cada módulo corresponde a un tema de diseño ya documentado. `depende de` son l
 | `shop` | Tienda, ventas, contratos y regateo | market, inventory, day | [03](03-comercio.md) |
 | `crafting` | Refinado y productos | inventory, market | [03](03-comercio.md) |
 | `staff` | Empleados, contratos de trabajo y lealtad | day, extraction, shop | [04](04-progresion-y-meta.md) |
-| `factions` | Relaciones, reputación y vigilancia | day | [07](07-sociedad-y-eventos.md) |
+| `factions` | Alianza, los cuatro medidores de relación y vigilancia | day | [07](07-sociedad-y-eventos.md) |
 | `world_events` | Apagones, huelgas, saqueos y otros eventos | day, factions | [07](07-sociedad-y-eventos.md) |
 | `news` | Prensa: noticias, rumores y sesgos | world_events, market | [03](03-comercio.md) |
 | `story` | Actos, diálogos, cintas y decisiones | day, factions, world_events | [08](08-historia-y-personaje.md) |
