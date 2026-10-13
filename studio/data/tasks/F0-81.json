@@ -32,15 +32,15 @@
         "estado": "hecha",
         "at": "2026-10-13",
         "por": "coordinador",
-        "nota": "El coordinador escribió el mod y corrigió lo que halló el revisor de código; 12 pruebas",
-        "entrega": "Mod vf-consumo con tres pestañas, historial en el almacén propio y 12 pruebas"
+        "nota": "El coordinador escribió el mod, corrigió lo que halló el revisor de código y añadió las pruebas que pidió QA; 16 pruebas",
+        "entrega": "Mod vf-consumo con tres pestañas, historial en el almacén propio y 16 pruebas"
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
-        "por": "revisor",
-        "nota": "El revisor de código halló nueve fallos reales y los corrigió el coordinador; QA comprueba la validación, las pruebas y los arreglos",
+        "por": "qa",
+        "nota": "QA aprobó la validación, las pruebas, la privacidad y los arreglos; las pruebas que faltaban se añadieron y pasan (16 pruebas)",
         "hallazgos": [
           {
             "de": "revisor",
@@ -48,15 +48,22 @@
             "resuelto_por": "coordinador",
             "como": "Subagente tardío, carreras de escritura, prompts solapados, error que no se limpiaba, ventana vencida, reinicio de ventana, turno sin respuesta, cambio de horario y formato de millones corregidos y probados"
           }
-        ]
+        ],
+        "entrega": "Validación y 16 pruebas en verde, build estricto y privacidad comprobada"
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "autor",
+        "nota": "El autor revisa el código del mod y lo prueba en una sesión real"
       },
       {
         "etapa": "playtest",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "autor",
+        "nota": "El autor usa el panel unos días para comprobar que las cifras cuadran con lo que ve en la app"
       },
       {
         "etapa": "cierre",
@@ -81,6 +88,12 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Comprobar la validación, las 12 pruebas y los arreglos del mod de consumo",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión y prueba: el mod de consumo, con las instrucciones de instalación en el README",
         "at": "2026-10-13"
       }
     ]

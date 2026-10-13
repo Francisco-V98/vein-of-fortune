@@ -225,3 +225,66 @@ test('session.measure actualiza la línea de estado y guarda una muestra', async
   expect((almacen.muestras as any[])[0][1]).toBe(42)
   expect(estados[estados.length - 1]).toContain('42')
 })
+
+function almacenado($: any, on: any, limites: any[] = []) {
+  const almacen: Record<string, unknown> = {}
+  on('command.register', () => ({ value: undefined }))
+  mock.clock(on)
+  on('session.start', () => ({ cwd: '/work/juego' }))
+  on('store.get', (_$: any, e: any) => ({ value: almacen[e.key] }))
+  on('store.set', (_$: any, e: any) => {
+    almacen[e.key] = e.value
+    return { value: undefined }
+  })
+  on('session.cwd', () => ({ value: '/work/juego' }))
+  on('turn.start', (_$: any, e: any) => ({ turnId: e.turnId }))
+  on('turn.complete', (_$: any, e: any) => ({ text: e.answer }))
+  on('ui.status', () => ({ value: undefined }))
+  on('ui.open', () => ({ value: { isPlaced: true } }))
+  on('session.usage', () => ({ value: { startedAt: 0, context: {}, rateLimits: limites } }))
+  return almacen
+}
+
+test('dos prompts solapados se cierran cada uno con lo suyo, aunque terminen al revés', async ($, on) => {
+  const almacen = almacenado($, on)
+  await $.session.start({ surface: 'terminal', isInteractive: true, cwd: '/work/juego' })
+  await $.turn.start({ text: 'Primero', turnId: 'p1' })
+  await $.turn.start({ text: 'Segundo', turnId: 'p2' })
+  await $.turn.complete({ answer: 'b', durationMs: 10, isAborted: false, turnId: 'p2', reason: 'answer', usage: USO_B })
+  await $.turn.complete({ answer: 'a', durationMs: 20, isAborted: false, turnId: 'p1', reason: 'answer', usage: USO_A })
+
+  const guardados = almacen.registros as any[]
+  const por = Object.fromEntries(guardados.map((r) => [r.id, r]))
+  expect(guardados.length).toBe(2)
+  expect(por.p1.txt).toBe('Primero')
+  expect(por.p1.nu).toBe(1000)
+  expect(por.p2.txt).toBe('Segundo')
+  expect(por.p2.nu).toBe(150)
+})
+
+test('un turno que se guarda dos veces con el mismo id no se cuenta dos veces por día', async ($, on) => {
+  const almacen = almacenado($, on)
+  await $.session.start({ surface: 'terminal', isInteractive: true, cwd: '/work/juego' })
+  await $.turn.complete({ answer: 'a', durationMs: 10, isAborted: false, turnId: 'igual', reason: 'answer', usage: USO_A })
+  await $.turn.complete({ answer: 'a', durationMs: 10, isAborted: false, turnId: 'igual', reason: 'answer', usage: USO_A })
+
+  expect((almacen.registros as any[]).length).toBe(1)
+  expect(Object.values(almacen.dias as Record<string, any>)[0].n).toBe(1)
+})
+
+test('el panel dice que la ventana se reinició si su hora de reinicio ya pasó', async ($, on) => {
+  almacenado($, on, [{ kind: 'five_hour', percentUsed: 80, resetsAt: '1960-01-01T00:00:00Z' }])
+  await $.session.start({ surface: 'terminal', isInteractive: true, cwd: '/work/juego' })
+  await $.command.run({ command: 'consumo', args: '' })
+  await new Promise((r) => setTimeout(r, 50))
+
+  const ui = await $.ui.mount({ ...PANE, surface: 'terminal' })
+  expect(await ui.find({ type: 'Text', text: /ventana reiniciada/ })).toBeDefined()
+  await ui.unmount()
+})
+
+test('los últimos días son consecutivos y terminan hoy', async () => {
+  const ahora = Date.parse('2026-10-13T12:00:00')
+  const filas = ultimosDias({}, 4, ahora)
+  expect(filas.map((f) => f.dia)).toEqual(['2026-10-10', '2026-10-11', '2026-10-12', '2026-10-13'])
+})
