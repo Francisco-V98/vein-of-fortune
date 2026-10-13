@@ -1,0 +1,67 @@
+{
+  "id": "F0-81",
+  "history": [
+    {
+      "at": "2026-10-13",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor pidió un mod para ver su consumo de tokens y los porcentajes de las ventanas.",
+      "ref": "rama studio/F0-81-mod-consumo"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "El coordinador comprobó en la API de los mods que existen los tokens por turno, los porcentajes de las ventanas y el texto del prompt",
+        "entrega": "Viabilidad confirmada con los eventos de turno y de medida de la sesión"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "El coordinador escribió el mod y sus pruebas; falta la revisión de código",
+        "entrega": "Mod vf-consumo con tres pestañas y 8 pruebas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "revisor",
+        "nota": "El revisor de código y QA revisan el mod antes de que el autor lo pruebe"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "revisor",
+        "que": "Revisar el código del mod de consumo antes de la prueba del autor",
+        "at": "2026-10-13"
+      }
+    ]
+  }
+}

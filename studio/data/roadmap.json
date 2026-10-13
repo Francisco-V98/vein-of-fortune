@@ -825,6 +825,15 @@
               "prio": "P1",
               "desc": "El autor decidió cambiar el apellido del Ministro Aurelio Dueñas por Montenegro en todo el proyecto: documentos, datos, tareas, agentes, identificadores, carpetas y nombres de imágenes.",
               "done_when": "No queda el apellido antiguo ni su identificador en ningún archivo salvo este registro y el historial de git, y el build estricto y las pruebas pasan."
+            },
+            {
+              "id": "F0-81",
+              "title": "Mod de consumo de tokens (vf-consumo)",
+              "est": 4,
+              "status": "doing",
+              "prio": "P2",
+              "desc": "Mod de Claude Code con el comando /consumo: ventana de cinco horas y semanal, tokens por prompt e historial por día, modelo y subagentes, para ver en qué y cuándo se va el consumo.",
+              "done_when": "El mod valida, pasa sus pruebas, el autor lo revisa y lo instala y el panel muestra el consumo real de una sesión."
             }
           ]
         }

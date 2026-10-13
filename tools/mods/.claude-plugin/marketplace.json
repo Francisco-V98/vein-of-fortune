@@ -14,6 +14,11 @@
       "name": "vf-equipo",
       "source": "./vf-equipo",
       "description": "Tablero del equipo de especialistas y del flujo de cada tarea (comando /equipo)"
+    },
+    {
+      "name": "vf-consumo",
+      "source": "./vf-consumo",
+      "description": "Panel de consumo de tokens: ventanas de cinco horas y semanal, prompts e historial (comando /consumo)"
     }
   ]
 }
