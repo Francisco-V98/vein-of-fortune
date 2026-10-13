@@ -138,6 +138,23 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 | **Conexión** | Los enlaces entre documentos y las tareas citadas deben existir. Una conexión rota es un error del build |
 | **Meta** | 🟡 Como mínimo 90 % por documento (umbral propuesto) y acercarse al 100 % |
 
+**Qué se puede aplazar ✅** (regla del autor, 2026-10-12)
+
+Solo se aplaza un punto abierto (`⏳`) si cumple las dos condiciones:
+
+1. **Una tarea existente lo va a resolver** y se sabe cuál es (`⏳ F0-52`).
+2. **Nada que se escriba o construya antes de esa tarea depende de la respuesta.**
+
+Pregunta de control: *«si la respuesta cambia después, ¿hay que rehacer algo ya hecho?»* Si la respuesta es sí, el punto **se decide ahora con el autor, antes de producir**. Si es no, se aplaza con su tarea.
+
+| Se aplaza | No se aplaza |
+|---|---|
+| Cifras de precios y cuotas (las fija la economía en F0-52) | Quién publica la verdad o si un personaje muere (los finales leen esas banderas) |
+| Traducción al inglés de términos (F1-20) | El medidor de un personaje que usarán los umbrales y los epílogos |
+| Textos finales y voces de las cintas (F4-151) | Lo que otro documento ya cita como hecho |
+
+Cada aplazamiento queda justificado en el informe del analista y lo comprueba QA.
+
 **Cómo se atiende:**
 
 1. Un documento nuevo no se da por terminado mientras tenga puntos 🟡 o ❓ que se puedan decidir ya. Lo que no se puede decidir todavía se marca como diferido, con la tarea de la que depende.

@@ -14,3 +14,7 @@ Reglas:
 - Texto real en una fuente pixel, nunca texto dentro de las imágenes.
 - Cada pantalla se explica con su objetivo, qué muestra primero, qué acciones hay y cómo vuelve atrás.
 - Estilo en `studio/docs/12-direccion-de-arte.md`; lo nuevo va 🟡 hasta que el autor lo confirme.
+
+## Decidir ahora o aplazar
+
+Solo se aplaza (⏳) un punto abierto si una tarea ya existente lo va a resolver Y nada que se escriba o construya antes de esa tarea depende de la respuesta. Pregunta de control: «si la respuesta cambia después, ¿hay que rehacer algo ya hecho?». Si la respuesta es sí, se decide ahora con el autor, antes de producir. No aplaces por comodidad lo que el analista marcó como «decidir ahora»: pídelo al coordinador para que lo decida el autor.

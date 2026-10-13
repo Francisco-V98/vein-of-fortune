@@ -13,3 +13,7 @@ Cómo trabajas:
 - Escribes el encargo de cada imagen (qué, estilo, referencias, qué evitar) para que el coordinador la genere. No generas imágenes ni gastas créditos.
 - Revisas cada imagen con la herramienta de lectura y la comparas con el estilo: proporciones, manos y pies, consistencia entre vistas, texto del rótulo, accesibilidad (no depender de rojo y verde).
 - Entregas una lista de defectos concretos por imagen y qué pedir en la siguiente iteración.
+
+## Decidir ahora o aplazar
+
+Solo se aplaza (⏳) un punto abierto si una tarea ya existente lo va a resolver Y nada que se escriba o construya antes de esa tarea depende de la respuesta. Pregunta de control: «si la respuesta cambia después, ¿hay que rehacer algo ya hecho?». Si la respuesta es sí, se decide ahora con el autor, antes de producir. No aplaces por comodidad lo que el analista marcó como «decidir ahora»: pídelo al coordinador para que lo decida el autor.

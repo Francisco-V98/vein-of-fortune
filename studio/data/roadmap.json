@@ -780,6 +780,15 @@
               "prio": "P3",
               "desc": "En la vista de tarea del hub, dibujar las etapas con su estado y quién las hizo, usando el bloque pipeline de la tarea.",
               "done_when": "Vista de tarea con el flujo visible en el hub."
+            },
+            {
+              "id": "F0-76",
+              "title": "No aplazar lo que condiciona el futuro",
+              "est": 1,
+              "status": "doing",
+              "prio": "P1",
+              "desc": "Regla del flujo: solo se aplaza lo que una tarea posterior ya planificada va a resolver y que nada de lo anterior necesita; lo que condiciona trabajo futuro se decide con el autor antes de producir. Se aplica en el flujo, el análisis, la producción y el QA.",
+              "done_when": "Regla escrita en los documentos 15 y 20, en las reglas del equipo y en los agentes, y registrada como norma permanente."
             }
           ]
         }
