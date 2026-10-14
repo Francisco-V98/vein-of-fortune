@@ -33,7 +33,7 @@
         "estado": "hecha",
         "at": "2026-10-13",
         "por": "narrador",
-        "nota": "Correcciones de QA aplicadas por el narrador y el coordinador; el autor decidió el recargo, los peligros, la prensa y los pedidos; limpieza 72 %, coherencia 94 %",
+        "nota": "Correcciones de QA aplicadas por el narrador y el coordinador; el autor decidió el recargo, los peligros, la prensa y los pedidos; limpieza 72 %, coherencia 94 %; el autor pidió aligerar los días 5 y 6 y el narrador los ajustó",
         "entrega": "Documento 27 con el guion de los siete días, los ⏳ F0-23 resueltos, hilos con referencia al guion y tareas del vertical slice reajustadas"
       },
       {
@@ -109,6 +109,19 @@
         "de": "qa",
         "a": "autor",
         "que": "Entrega para tu revisión: documento 27 con el guion día a día del Acto I",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "narrador",
+        "que": "Devolución: aligerar los días 5 y 6 porque siente demasiada información muy rápida",
+        "at": "2026-10-13",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "narrador",
+        "a": "autor",
+        "que": "Días 5 y 6 aligerados: la mejora y el pedido urgente son opcionales y el contacto con empleados pasa al día 7",
         "at": "2026-10-13"
       }
     ]

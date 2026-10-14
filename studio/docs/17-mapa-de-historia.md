@@ -29,7 +29,7 @@ El detalle completo (mecánicas, mercado y eventos, arte) está en el cuadro del
 ## Decisiones ✅
 
 1. **Zonas:** se reparten como en el cuadro (1 en el Acto I, 3 en el II, 1 en el III y 1 en el IV).
-2. **Empleados:** el Acto I **termina con el primer contacto** (se habla de ellos, aparece un candidato en el periódico, pero todavía no se puede contratar). La contratación queda **implementada en el Acto II** como está en [04](04-progresion-y-meta.md).
+2. **Empleados:** el Acto I **termina con el primer contacto** (el día 7, a primera hora; se habla de ellos, aparece un candidato en el periódico, pero todavía no se puede contratar). La contratación queda **implementada en el Acto II** como está en [04](04-progresion-y-meta.md).
 3. **Mercado negro:** entra en el **Acto II**, cuando conoces a los Faroleros, con el indicador de vigilancia ([03](03-comercio.md)).
 4. **Variantes del Acto II** (la facción de Reme): una columna común de seis escenas con escenas propias por variante, sorteo oculto al empezar y alianza final entre el Consorcio, el Ministerio y Los Faroleros. Escena por escena en [22](22-acto-ii-variantes.md).
 5. **Árbol de decisiones:** las decisiones y consecuencias de los cuatro actos están en [23](23-arbol-de-decisiones.md) y sus datos en `studio/data/decisions.json`.

@@ -237,7 +237,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 
 | Te falta… | Qué pasa | Qué ves en el diario |
 |---|---|---|
-| Reabrir el puesto, atender la primera cuota o el contacto con los empleados | El Acto I no cierra; A1 espera ✅ | Las tres condiciones del I, con las que ya cumples. El contacto con los empleados está guionado en [27](27-guion-del-acto-i.md), sección 15 |
+| Reabrir el puesto, atender la primera cuota o el contacto con los empleados | El Acto I no cierra; A1 espera ✅ | Las tres condiciones del I, con las que ya cumples. El contacto con los empleados está guionado en [27](27-guion-del-acto-i.md), sección 15 (día 7, a primera hora) |
 | Atender una cuota (A2) | A2 espera en la cola ✅ | «Reme te espera para la cuota» ⏳ F0-78 |
 | Tu primera venta o expedición en la zona de tu variante (A3) | A3 espera ✅ | La zona donde vender ⏳ F0-78 |
 | Una acción tuya tras el aviso (A4) | La huelga espera ✅ | Nada que hacer: sigue tu juego ⏳ F0-78 |
@@ -295,7 +295,7 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 - ⏳ F4-115 Sistema de logros y ⏳ F4-116 los primeros 30 y el umbral de logros (4 y 10 propuestos).
 - ⏳ F4-127 Evaluador de las puertas.
 - ⏳ F4-150 Misión persistente de las cintas.
-- La escena del primer contacto con los empleados está en el guion del Acto I ([27](27-guion-del-acto-i.md), sección 15).
+- La escena del primer contacto con los empleados está en el guion del Acto I ([27](27-guion-del-acto-i.md), sección 15): día 7, a primera hora, antes de la cuota.
 - ✅ F0-47 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión: «puerta» es solo el paso entre actos, el círculo se abre por «entrada» y la cuota vence cada 7 días.
 - ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.
 
