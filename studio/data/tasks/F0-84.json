@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "El autor aclaró que todo el arte actual es provisional y que el definitivo se hará en pixel art con PixelLab después de las pruebas.",
       "ref": "rama studio/F0-84-assets-provisionales-y-definitivos"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Política de assets provisionales y definitivos en el documento 12 y roadmap reordenado con el arte provisional del slice y la producción definitiva F4.18; QA aprobado.",
+      "ref": "rama studio/F0-84-assets-provisionales-y-definitivos"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la política de assets desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [],
@@ -51,10 +67,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
         "por": "autor",
-        "nota": "El autor revisa la política y el roadmap reordenado"
+        "nota": "El autor revisó la política y el roadmap reordenado y aprobó desde /equipo"
       },
       {
         "etapa": "playtest",
@@ -62,7 +78,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "Tarea cerrada; el PR #47 se fusiona cuando se fusione el #46, sobre el que está apilado"
       }
     ],
     "traspasos": [
@@ -88,6 +107,12 @@
         "de": "qa",
         "a": "autor",
         "que": "Entrega para tu revisión: la política de assets provisionales y definitivos y el roadmap reordenado",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-13"
       }
     ]
