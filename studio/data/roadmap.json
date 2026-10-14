@@ -1852,7 +1852,7 @@
               "title": "Peligros ambientales de la zona 1 y tareas de peligro",
               "est": 10,
               "status": "backlog",
-              "desc": "Gas y derrumbe con sellar fuga y apuntalar. No se usan en los siete días guionizados del Acto I (decisión del autor): entran desde el Acto II o como juego libre después del día 7.",
+              "desc": "Gas y derrumbe con sellar fuga y apuntalar. No se usan en los siete días guionizados del Acto I (decisión del autor): entran desde el Acto II.",
               "done_when": "Los peligros se resuelven con tareas cortas.",
               "prio": "P0"
             },
@@ -1912,7 +1912,7 @@
               "title": "Acto I: Villa Brasa, Reme, Teo, deuda y tutorial guiado",
               "est": 14,
               "status": "backlog",
-              "desc": "Los siete días guiados del Acto I según el documento 27: tres bloques por día, las mecánicas de una en una, la cola de escenas y las reglas para que nunca se atasque. Los textos son de F3-47.",
+              "desc": "Los siete días guiados del Acto I según el documento 27: tres bloques por día, las mecánicas de una en una, la cola de escenas, las tres pistas del sorteo oculto con sus props, la ficha del candidato y las reglas para que nunca se atasque. Los textos son de F3-47.",
               "done_when": "Los siete días se juegan de principio a fin con las tres decisiones pequeñas, la cuota del día 7 y el cierre del acto sin atascos.",
               "prio": "P0"
             },
@@ -1921,8 +1921,8 @@
               "title": "Deuda: cuotas y cierre del Acto I",
               "est": 6,
               "status": "backlog",
-              "desc": "Pagos semanales a Reme: la cuota llega cada 7 días y la primera vence el día 7; si no puedes pagar, se prorroga una semana con un pequeño recargo (montos ⏳ F0-52).",
-              "done_when": "Atender la primera cuota, pagada o prorrogada, junto con reabrir el puesto y el primer contacto con los empleados cierra el Acto I, según el documento 24.",
+              "desc": "Pagos semanales a Reme: la cuota llega cada 7 días y la primera vence el día 7. En Novato e Intermedio, la prórroga desplaza la serie una semana con un pequeño recargo por semana de atraso, y no pagar equivale a prórroga automática. En Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor. La deuda nunca bloquea (montos y recargos ⏳ F0-52).",
+              "done_when": "Atender la primera cuota, pagada o prorrogada según la dificultad, junto con reabrir el puesto y el primer contacto con los empleados, cierra el Acto I según el documento 27.",
               "prio": "P0"
             },
             {
@@ -1987,7 +1987,7 @@
               "title": "Selector de dificultad con parámetros",
               "est": 5,
               "status": "backlog",
-              "desc": "Novato, Intermedio y Difícil como conjuntos de números.",
+              "desc": "Novato, Intermedio, Difícil y Hardcore como conjuntos de números.",
               "done_when": "Elegir dificultad cambia volatilidad, desgaste y pérdidas.",
               "prio": "P1"
             },
@@ -2093,10 +2093,10 @@
             {
               "id": "F3-32",
               "status": "backlog",
-              "title": "Doce contratos de ejemplo con clientes",
+              "title": "Doce pedidos de ejemplo con clientes",
               "est": 4,
               "prio": "P1",
-              "desc": "Variedad de pedidos para el Acto I.",
+              "desc": "Variedad de pedidos de clientes para el Acto I (estándar y urgente con prima, según el documento 27); «contrato» queda para el Acto II en adelante.",
               "done_when": "Se generan contratos distintos."
             },
             {

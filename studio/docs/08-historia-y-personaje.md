@@ -98,6 +98,7 @@ Cualquier opción cambia la partida, pero **el sistema se reabsorbe y todo sigue
 
 ## Pendiente
 
-- ✅ El Acto I se guioniza en siete días ([27](27-guion-del-acto-i.md)): 🟡 29 escenas y unos 350 textos, en cajas de diálogo con retrato ([18](18-biblia-narrativa.md), 1.9). Las escenas clave se dibujan en ⏳ F0-24.
+- ✅ El Acto I se guioniza en siete días ([27](27-guion-del-acto-i.md)).
+- 🟡 El detalle del guion (29 escenas y unos 340 textos, en cajas de diálogo con retrato, [18](18-biblia-narrativa.md), 1.9) es propuesta hasta que el autor lo apruebe. Las escenas clave se dibujan en ⏳ F0-24.
 - ✅ Idiomas: español primero; inglés después. El glosario ES/EN está en [18](18-biblia-narrativa.md), capítulo 6, y el flujo de traducción ⏳ F1-20.
 - ✅ Estructura de las variantes del Acto II decidida por el autor (sorteo oculto, alianza entre tres facciones, huelga que depende del jugador). El detalle escena por escena queda como propuesta en [22](22-acto-ii-variantes.md).

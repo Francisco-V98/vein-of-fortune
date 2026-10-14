@@ -288,7 +288,7 @@
         {
           "acto": "I",
           "donde": "Solo rastro: libreta, lámpara y firma. El jugador cree que murió enfermo hace dos años",
-          "ref": "doc 18 Anexo «Dónde está Anselmo en cada acto» · doc 08 · doc 17 · doc 27 §4 y §17 (sombras de los días 1 y 2)",
+          "ref": "doc 18 Anexo «Dónde está Anselmo en cada acto» · doc 08 · doc 17 · doc 27 §4, §5 y §17 (sombras: día 1, mañana, d1.2 firma; día 1, tarde, d1.4 Teo; día 1, noche, d1.5 libreta y d1.6 lámpara; día 2, noche, d2.4 cinta 1)",
           "estado": "ok"
         },
         {
@@ -580,7 +580,7 @@
         {
           "acto": "I",
           "donde": "Al empezar la partida se sortea la facción de Reme (Consorcio, Ministerio o Faroleros), oculta; el Acto I deja una pista distinta",
-          "ref": "doc 22 §1 y §10 · doc 23 §1 · estado de la partida: tarea F2-01 · doc 27 §13",
+          "ref": "doc 22 §1 y §10 · doc 23 §1 · estado de la partida: tarea F2-01 · doc 27 §13 (el sorteo, antes de d1.1, mañana del día 1; la pista, día 4, noche, d4.4)",
           "estado": "ok"
         }
       ],

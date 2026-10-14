@@ -41,7 +41,7 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 | # | Escena | Tipo | Disparador | Salida |
 |---|---|---|---|---|
 | A1 | **La política manda** | Común, con capa | Acto I cerrado: puesto reabierto, primera cuota atendida (vence el día 7) y primer contacto con los empleados ✅. El decreto de A1 es lo que abre las zonas del II 🟡 ⏳ F4-128 | Contacto respondido (aceptas, rechazas o pospones). Queda en cola la orden de A2 |
-| A2 | **La orden de Reme** | **Única** | A1 resuelta y tu primera cuota atendida después de A1 (pagada o prorrogada una semana con un pequeño recargo ⏳ F0-52) ✅ | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
+| A2 | **La orden de Reme** | **Única** | A1 resuelta y tu primera cuota atendida después de A1 (pagada o prorrogada, según la regla de tu dificultad: [27](27-guion-del-acto-i.md), sección 11; montos ⏳ F0-52) ✅ | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
 | A3 | **El primer conflicto** | **Única** | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | Conflicto resuelto, con un costo. La facción fija su postura ante la huelga |
 | A4 | **La primera huelga** | Común, con capa | A3 resuelta, aviso en las noticias y una acción tuya, sin plazo en días ✅ | Bando elegido, precio subido, apagón vivido, mercado negro abierto (primer contacto con Casilda, si aún no lo tenías), Teo y la Unión movidos |
 | A5 | **Las tres ofertas** | Común, con capa | A4 resuelta, estatus de Comerciante y dos vías de tres entre deuda, logros y relación ✅ | Alianza elegida. **Cierra el Acto II** |

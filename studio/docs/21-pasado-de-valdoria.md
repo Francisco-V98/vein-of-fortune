@@ -241,7 +241,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 - **La helada tardía y el banco agrario** son los de [19](19-elenco-a-fondo.md): la cosecha perdida es lo que empuja al protagonista a salir.
 - **La visita de hace 14 años.** Anselmo llegó a Vega Mansa una sola vez. El padre lo recibió con un silencio incómodo («tu tío trabaja en lo que yo juré dejar» 🟡). Esa noche Anselmo sacó a su sobrino o sobrina a ver las estrellas 🟡 y le prestó la lámpara ✅. Nunca la pidió de vuelta ni volvieron a verse ✅. Es la primera cinta ✅.
 - **La ironía.** Al heredar el puesto y la licencia, el protagonista **rompe sin querer el juramento del padre**: baja a la mina que él juró evitar. Se cuenta con ternura y con humor ligero, sin burla.
-- Cómo se lo cuenta a su familia y cómo reacciona el padre: la carta del día 1 y la respuesta del día 5, en el nodo `n-i-herencia` ([27](27-guion-del-acto-i.md), secciones 4 y 8).
+- 🟡 Cómo se lo cuenta a su familia y cómo reacciona el padre: la carta del día 1 y la respuesta del día 5, en el nodo `n-i-herencia` ([27](27-guion-del-acto-i.md), secciones 4 y 8). Propuesta del guion, a la espera del autor.
 
 ---
 
@@ -320,7 +320,7 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 ## Pendiente
 
 - ⏳ F4-151 Texto final y voz de las ocho cintas, a partir de la sección 7.
-- Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8): resuelto en el guion del Acto I, con la carta del día 1 y la respuesta del día 5 ([27](27-guion-del-acto-i.md)).
+- Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8): 🟡 propuesto en el guion del Acto I, con la carta del día 1 y la respuesta del día 5 ([27](27-guion-del-acto-i.md)), a la espera del autor.
 - ✅ Dónde está Anselmo hoy: queda abierto, como hilo para una segunda parte y sin tarea. Sigue vivo y secreto en las tres salidas; el abono se corta solo si revelas ([25](25-finales-y-epilogos.md), sección 7).
 - ✅ Registro de hilos: dónde se siembra cada pista de la sección 11 y dónde se resuelve está en `studio/data/hilos.json` (vista del hub en `#/hilos`).
 - ✅ La firma de los papeles de la herencia es la del acta final (decisión del autor, 2026-10-12). F0-43 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión.
