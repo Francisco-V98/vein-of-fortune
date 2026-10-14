@@ -23,7 +23,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Tema | Decisión |
 |---|---|
 | Modelo | **Una puerta por acto** con vías «k de n» (dos de tres entre deuda, logros y relación). **Piso de estatus solo en dos puertas**: A5 del Acto II (Comerciante) y el círculo del Acto III (Empresario). Las anclas A1 a A6 van **encadenadas**: cada una se dispara con la anterior resuelta ✅ |
-| Acto I | Se cierra al **reabrir el puesto, atender la primera cuota** (pagada o prorrogada) y tener el **primer contacto con los empleados**. La cuota vence **cada 7 días y la primera, el día 7**; si no puedes pagar, se prorroga una semana con un pequeño recargo ⏳ F0-52. «Minero con licencia» es el **premio** del cierre, no un requisito ✅ |
+| Acto I | Se cierra al **reabrir el puesto, atender la primera cuota** (pagada o prorrogada) y tener el **primer contacto con los empleados**. La cuota vence **cada 7 días y la primera, el día 7**; si no puedes pagar, se prorroga una semana con un pequeño recargo (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor) ⏳ F0-52. «Minero con licencia» es el **premio** del cierre, no un requisito ✅ |
 | Tramos | Para los cuatro medidores: **bajo menos de 35, medio 35 a 54, alto 55 o más**. Arrancan en 50; Esteban en 40 y Teo en 60 ✅ |
 | Tramo medio | Teo **se queda** (si lo llevaste a revisión). Lucía **no publica**, así que lo publicas tú con costo alto y poco alcance. El **reproductor** lo entrega Lucía solo en tramo alto; con medio o bajo lo entrega Reme ✅ |
 | Aval de Esteban | Basta su medidor en tramo alto. Si no lo tienes, el aval se muestra **bloqueado con el motivo**, y siempre quedan el sello de Montenegro y la presión de tu alianza ✅ |
@@ -237,7 +237,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 
 | Te falta… | Qué pasa | Qué ves en el diario |
 |---|---|---|
-| Reabrir el puesto, atender la primera cuota o el contacto con los empleados | El Acto I no cierra; A1 espera ✅ | Las tres condiciones del I, con las que ya cumples. El contacto con los empleados está guionado ⏳ F0-23 |
+| Reabrir el puesto, atender la primera cuota o el contacto con los empleados | El Acto I no cierra; A1 espera ✅ | Las tres condiciones del I, con las que ya cumples. El contacto con los empleados está guionado en [27](27-guion-del-acto-i.md), sección 15 (día 7, a primera hora) |
 | Atender una cuota (A2) | A2 espera en la cola ✅ | «Reme te espera para la cuota» ⏳ F0-78 |
 | Tu primera venta o expedición en la zona de tu variante (A3) | A3 espera ✅ | La zona donde vender ⏳ F0-78 |
 | Una acción tuya tras el aviso (A4) | La huelga espera ✅ | Nada que hacer: sigue tu juego ⏳ F0-78 |
@@ -295,7 +295,7 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 - ⏳ F4-115 Sistema de logros y ⏳ F4-116 los primeros 30 y el umbral de logros (4 y 10 propuestos).
 - ⏳ F4-127 Evaluador de las puertas.
 - ⏳ F4-150 Misión persistente de las cintas.
-- ⏳ F0-23 Escena del primer contacto con los empleados, en el guion del Acto I.
+- La escena del primer contacto con los empleados está en el guion del Acto I ([27](27-guion-del-acto-i.md), sección 15): día 7, a primera hora, antes de la cuota.
 - ✅ F0-47 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión: «puerta» es solo el paso entre actos, el círculo se abre por «entrada» y la cuota vence cada 7 días.
 - ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.
 

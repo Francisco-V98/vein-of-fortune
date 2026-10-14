@@ -32,7 +32,7 @@
       "acto": "I",
       "nivel": "pequena",
       "titulo": "Cómo cuentas la herencia a tu familia",
-      "dispara": "Tu primera noche en Villa Brasa, cuando escribes a Vega Mansa ⏳ F0-23.",
+      "dispara": "Tu primera noche en Villa Brasa (día 1, bloque de noche), cuando escribes a Vega Mansa.",
       "opciones": [
         {
           "id": "todo",
@@ -73,7 +73,7 @@
       "acto": "I",
       "nivel": "pequena",
       "titulo": "Pagar a Reme antes o después del plazo",
-      "dispara": "Vence la primera cuota de la deuda (el día 7; cada cuota vence cada 7 días).",
+      "dispara": "Vence la primera cuota de la deuda (el día 7; cada cuota vence cada 7 días). Puedes pagar antes desde el día 4.",
       "opciones": [
         {
           "id": "antes",
@@ -101,8 +101,8 @@
           "fija": [
             "f-pago-reme"
           ],
-          "mundo": "Reme te da una semana más, con un pequeño recargo.",
-          "mercado": "Recargo pequeño por la prórroga ⏳ F0-52.",
+          "mundo": "En Novato e Intermedio toda la serie se desplaza una semana, con un pequeño recargo por cada semana de atraso, y no pagar equivale a pedirla. En Difícil y Hardcore la cuota atrasada se suma a la del día 14, con un recargo mayor.",
+          "mercado": "Recargo pequeño por cada semana de atraso ({recargo}); en Difícil y Hardcore, mayor ⏳ F0-52.",
           "personajes": "Reme: te da el plazo con un consejo que suena a aviso."
         }
       ],
@@ -114,7 +114,7 @@
       "acto": "I",
       "nivel": "pequena",
       "titulo": "Confiar en Lucía con un rumor",
-      "dispara": "Lucía te ofrece un rumor a cambio de otro.",
+      "dispara": "Lucía te ofrece un rumor a cambio de otro (día 5, bloque de mañana, en tu puesto).",
       "opciones": [
         {
           "id": "contar",

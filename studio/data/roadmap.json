@@ -284,7 +284,7 @@
               "id": "F0-23",
               "title": "Guion día a día del Acto I",
               "est": 6,
-              "status": "backlog",
+              "status": "done",
               "desc": "Los primeros 7 a 10 días con objetivo de aprendizaje, qué se desbloquea y qué decisión toma el jugador cada día. Se escribe después de la biblia narrativa (F0.11).",
               "done_when": "Guion de días aprobado.",
               "prio": "P1"
@@ -1744,8 +1744,8 @@
       "name": "Vertical slice",
       "target": "MVP",
       "hours": [
-        306,
-        501
+        325,
+        520
       ],
       "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido finales, información por capas, noticias, encuentros y progresión base.",
       "gate": "Puerta B: ¿se sigue hacia la v1 y se piensa en publicar?",
@@ -1852,7 +1852,7 @@
               "title": "Peligros ambientales de la zona 1 y tareas de peligro",
               "est": 10,
               "status": "backlog",
-              "desc": "Gas y derrumbe con sellar fuga y apuntalar.",
+              "desc": "Gas y derrumbe con sellar fuga y apuntalar. No se usan en los siete días guionizados del Acto I (decisión del autor): entran desde el Acto II.",
               "done_when": "Los peligros se resuelven con tareas cortas.",
               "prio": "P0"
             },
@@ -1912,18 +1912,27 @@
               "title": "Acto I: Villa Brasa, Reme, Teo, deuda y tutorial guiado",
               "est": 14,
               "status": "backlog",
-              "desc": "Primeros días guiados.",
-              "done_when": "El Acto I se juega de principio a fin.",
+              "desc": "Los siete días guiados del Acto I según el documento 27: tres bloques por día, las mecánicas de una en una, la cola de escenas, las tres pistas del sorteo oculto con sus props, la ficha del candidato y las reglas para que nunca se atasque. Los textos son de F3-47.",
+              "done_when": "Los siete días se juegan de principio a fin con las tres decisiones pequeñas, la cuota del día 7 y el cierre del acto sin atascos.",
               "prio": "P0"
             },
             {
               "id": "F3-17",
               "title": "Deuda: cuotas y cierre del Acto I",
-              "est": 4,
+              "est": 6,
               "status": "backlog",
-              "desc": "Pagos semanales a Reme: la cuota llega cada 7 días y la primera vence el día 7; si no puedes pagar, se prorroga una semana con un pequeño recargo (montos ⏳ F0-52).",
-              "done_when": "Atender la primera cuota, pagada o prorrogada, junto con reabrir el puesto y el primer contacto con los empleados cierra el Acto I, según el documento 24.",
+              "desc": "Pagos semanales a Reme: la cuota llega cada 7 días y la primera vence el día 7. En Novato e Intermedio, la prórroga desplaza la serie una semana con un pequeño recargo por semana de atraso, y no pagar equivale a prórroga automática. En Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor. La deuda nunca bloquea (montos y recargos ⏳ F0-52).",
+              "done_when": "Atender la primera cuota, pagada o prorrogada según la dificultad, junto con reabrir el puesto y el primer contacto con los empleados, cierra el Acto I según el documento 27.",
               "prio": "P0"
+            },
+            {
+              "id": "F3-47",
+              "status": "backlog",
+              "title": "Textos del Acto I: guion de los siete días",
+              "est": 14,
+              "prio": "P0",
+              "desc": "Escribir los textos de los siete días del Acto I según el documento 27: escenas de Reme, Teo, Quiroga y Lucía, la carta a Vega Mansa, las tres decisiones pequeñas, las tres pistas del sorteo y los avisos del tutorial, con las variables {cuota} y {recargo}.",
+              "done_when": "Los textos de los siete días están escritos en español, respetan las voces de la biblia y el documento 27, y la traducción queda para F3-30."
             }
           ]
         },
@@ -1978,7 +1987,7 @@
               "title": "Selector de dificultad con parámetros",
               "est": 5,
               "status": "backlog",
-              "desc": "Novato, Intermedio y Difícil como conjuntos de números.",
+              "desc": "Novato, Intermedio, Difícil y Hardcore como conjuntos de números.",
               "done_when": "Elegir dificultad cambia volatilidad, desgaste y pérdidas.",
               "prio": "P1"
             },
@@ -2060,7 +2069,7 @@
             {
               "id": "F3-30",
               "title": "Traducción inglesa del Acto I y revisión",
-              "est": 10,
+              "est": 13,
               "status": "backlog",
               "desc": "Todos los textos del Acto I en inglés, con tono cercano y revisión.",
               "done_when": "El Acto I se juega completo en inglés y en español.",
@@ -2084,10 +2093,10 @@
             {
               "id": "F3-32",
               "status": "backlog",
-              "title": "Doce contratos de ejemplo con clientes",
+              "title": "Doce pedidos de ejemplo con clientes",
               "est": 4,
               "prio": "P1",
-              "desc": "Variedad de pedidos para el Acto I.",
+              "desc": "Variedad de pedidos de clientes para el Acto I (estándar y urgente con prima, según el documento 27); «contrato» queda para el Acto II en adelante.",
               "done_when": "Se generan contratos distintos."
             },
             {

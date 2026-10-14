@@ -1,0 +1,154 @@
+{
+  "id": "F0-23",
+  "history": [
+    {
+      "at": "2026-10-13",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el guion día a día del Acto I con el flujo de especialistas.",
+      "ref": "rama studio/F0-23-guion-acto-i"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Guion de los siete días del Acto I con los días 5 y 6 aligerados, ⏳ F0-23 resueltos y tareas del vertical slice reajustadas; QA aprobado y limpieza 72 %.",
+      "ref": "rama studio/F0-23-guion-acto-i"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el guion del Acto I desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "ideador",
+        "nota": "Tres estructuras: A siete días ceñidos, B diez días con respiro, C días libres con anclas; recomienda A con tres seguros de C",
+        "entrega": "Tres estructuras, bosquejo de los siete días, qué hace que no se atasque, cifras y ocho preguntas"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida",
+        "nota": "El ideador ya cruzó el bosquejo con los documentos y el registro de hilos y el autor decidió el resto; QA lo comprueba"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "narrador",
+        "nota": "Correcciones de QA aplicadas por el narrador y el coordinador; el autor decidió el recargo, los peligros, la prensa y los pedidos; limpieza 72 %, coherencia 94 %; el autor pidió aligerar los días 5 y 6 y el narrador los ajustó",
+        "entrega": "Documento 27 con el guion de los siete días, los ⏳ F0-23 resueltos, hilos con referencia al guion y tareas del vertical slice reajustadas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "qa",
+        "nota": "QA aprobó el build, los ⏳, las cuentas y las horas; sus nueve puntos de contenido, marcas y roadmap se corrigieron con dos decisiones más del autor y el coordinador comprobó el build y las pruebas (limpieza 72 %, coherencia 94 %)",
+        "entrega": "Build estricto, 77 pruebas en verde, 29 escenas y 350 textos",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "resuelto_por": "narrador",
+            "como": "Aetherita fuera del Acto I, prensa solo con Heraldo y Teletipo, pedidos de cliente, una mecánica nueva por día, marcas corregidas, tareas y datos alineados con el guion"
+          }
+        ]
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "autor",
+        "nota": "El autor revisó el guion de los siete días y lo aprobó desde /equipo"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #46 fusionado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: tres estructuras para los primeros 7 a 10 días del Acto I, con bosquejo por día",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "ideador",
+        "a": "coordinador",
+        "que": "Bosquejo de siete días del Acto I con ocho preguntas, siete para decidir ahora",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Escribir el documento 27 con el guion día a día del Acto I y cerrar los ⏳ F0-23",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Documento 27 escrito con las decisiones del autor aplicadas",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 27, los cambios en 01, 06, 08, 17, 18, 21 a 25, decisions.json, hilos.json y las tareas del roadmap",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Correcciones de QA aplicadas",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: documento 27 con el guion día a día del Acto I",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "narrador",
+        "que": "Devolución: aligerar los días 5 y 6 porque siente demasiada información muy rápida",
+        "at": "2026-10-13",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "narrador",
+        "a": "autor",
+        "que": "Días 5 y 6 aligerados: la mejora y el pedido urgente son opcionales y el contacto con empleados pasa al día 7",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
+        "at": "2026-10-13"
+      }
+    ]
+  }
+}

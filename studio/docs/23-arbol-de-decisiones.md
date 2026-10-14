@@ -25,7 +25,7 @@ Decisiones del 2026-10-12 (F0-45), más las que ya estaban en [22](22-acto-ii-va
 | Cupos | **3 grandes, 6 medianas y 18 pequeñas** ✅ |
 | Pequeñas por acto | **3 en el I, 5 en el II, 5 en el III y 5 en el IV** ✅ |
 | Estado que se guarda | **Unas 14 banderas de elección y 4 medidores**: Unión, Esteban, Lucía y Teo ✅. El Consorcio, el Ministerio y Los Faroleros **no tienen medidor propio**: se miden por la alianza que elijas ✅ |
-| Deuda del Acto I | La cuota vence **cada 7 días y la primera, el día 7**. Si no puedes pagar, se **prorroga una semana con un pequeño recargo**. Los montos y el recargo ⏳ F0-52 ✅ |
+| Deuda del Acto I | La cuota vence **cada 7 días y la primera, el día 7**. Si no puedes pagar, se **prorroga una semana con un pequeño recargo** (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor). Los montos y el recargo ⏳ F0-52 ✅ |
 | Aetherita en el III | El precio es visible y **solo se compra en el mercado negro (Casilda)**, como mercancía escasa. La extracción no ocurre hasta el IV ✅ |
 | Vigilancia | Un **indicador global de 0 a 100** que sube con las operaciones negras. Sus cambios se expresan en **puntos**; el «%» solo describe el ritmo de subida, y nunca se nombra un lugar. «Bajo investigación» es la redada ([03](03-comercio.md)) ✅ |
 | Las tres grandes | **Alianza** (II, escena A5), **cómo entras al círculo** (III) y **destino de la Aetherita** (IV: revelar, callar o vender) ✅ |
@@ -90,24 +90,24 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 
 ## 3 · Acto I: tres consecuencias pequeñas 🟡
 
-**Estado:** ✅ el Acto I no tiene bifurcación grande y tiene 3 pequeñas; 🟡 cuáles son. Se activan en los días del tutorial ⏳ F0-23 y el guion ⏳ F3-16
+**Estado:** ✅ el Acto I no tiene bifurcación grande y tiene 3 pequeñas; 🟡 cuáles son. Se activan en los días del tutorial ([27](27-guion-del-acto-i.md), sección 12) y sus textos ⏳ F3-47
 
 **`n-i-herencia` · Cómo cuentas la herencia a tu familia** (pequeña)
-- **Dispara:** Tu primera noche en Villa Brasa, cuando escribes a Vega Mansa ⏳ F0-23.
+- **Dispara:** Tu primera noche en Villa Brasa (día 1, bloque de noche), cuando escribes a Vega Mansa.
 - **Les cuentas todo: el puesto, la deuda y la mina.** → *Mundo:* Tu padre contesta con una carta corta: sabe que rompiste su juramento. *Personajes:* Protagonista: duerme en paz. El padre: dolido, pero no te da la espalda.
 - **Les cuentas que heredaste un puesto, sin decir mina.** → *Mundo:* En casa se alegran sin saber de la mina. *Personajes:* Protagonista: carga con un secreto pequeño.
 - **No dices nada hasta tener algo que mostrar.** → *Mundo:* Pasan semanas sin carta de casa. *Personajes:* Protagonista: el orgullo le pesa más que la culpa.
 - **Fija:** `f-familia`. **Lee:** —.
 
 **`n-i-reme-plazo` · Pagar a Reme antes o después del plazo** (pequeña)
-- **Dispara:** Vence la primera cuota de la deuda: el día 7 y, después, cada 7 días ✅.
+- **Dispara:** Vence la primera cuota de la deuda: el día 7 y, después, cada 7 días ✅. Puedes pagar antes desde el día 4.
 - **Pagas antes del plazo.** → *Mundo:* Reme te invita al café y anota que eres de fiar. *Mercado:* Interés de la deuda: -1 punto ⏳ F0-52. *Personajes:* Reme: cálida, con una pizca de culpa.
 - **Pagas justo en el plazo.** → *Mundo:* Todo sigue su curso. *Personajes:* Reme: «Con calma, criatura».
-- **Pides una prórroga de una semana.** → *Mundo:* Reme te da una semana más, con un pequeño recargo ✅. *Mercado:* Recargo de la prórroga ⏳ F0-52. *Personajes:* Reme: te da el plazo con un consejo que suena a aviso.
+- **Pides una prórroga de una semana.** → *Mundo:* En Novato e Intermedio toda la serie se desplaza una semana, con un pequeño recargo por cada semana de atraso, y no pagar equivale a pedirla; en Difícil y Hardcore la cuota atrasada se suma a la del día 14 con un recargo mayor que en los otros dos ✅ ([27](27-guion-del-acto-i.md), sección 11). *Mercado:* Recargo de la prórroga ⏳ F0-52. *Personajes:* Reme: te da el plazo con un consejo que suena a aviso.
 - **Fija:** `f-pago-reme`. **Lee:** —.
 
 **`n-i-lucia-rumor` · Confiar en Lucía con un rumor** (pequeña)
-- **Dispara:** Lucía te ofrece un rumor a cambio de otro.
+- **Dispara:** Lucía te ofrece un rumor a cambio de otro (día 5, bloque de mañana, en tu puesto).
 - **Le cuentas el rumor entero.** → *Mundo:* El Teletipo lo publica con su SIN CONFIRMAR. *Mercado:* El mineral del rumor se mueve 2 a 3 puntos ese día. *Personajes:* Lucía: confía más en ti.
 - **Le cuentas la mitad.** → *Mundo:* Sale una nota vaga. *Mercado:* El mineral del rumor se mueve 1 punto. *Personajes:* Lucía: sospecha, pero te debe una.
 - **No le cuentas nada.** → *Mundo:* No sale nada. *Personajes:* Lucía: toma nota y confía un poco menos.

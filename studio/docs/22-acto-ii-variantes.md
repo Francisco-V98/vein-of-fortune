@@ -41,7 +41,7 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 | # | Escena | Tipo | Disparador | Salida |
 |---|---|---|---|---|
 | A1 | **La política manda** | Común, con capa | Acto I cerrado: puesto reabierto, primera cuota atendida (vence el día 7) y primer contacto con los empleados ✅. El decreto de A1 es lo que abre las zonas del II 🟡 ⏳ F4-128 | Contacto respondido (aceptas, rechazas o pospones). Queda en cola la orden de A2 |
-| A2 | **La orden de Reme** | **Única** | A1 resuelta y tu primera cuota atendida después de A1 (pagada o prorrogada una semana con un pequeño recargo ⏳ F0-52) ✅ | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
+| A2 | **La orden de Reme** | **Única** | A1 resuelta y tu primera cuota atendida después de A1 (pagada o prorrogada, según la regla de tu dificultad: [27](27-guion-del-acto-i.md), sección 11; montos ⏳ F0-52) ✅ | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
 | A3 | **El primer conflicto** | **Única** | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | Conflicto resuelto, con un costo. La facción fija su postura ante la huelga |
 | A4 | **La primera huelga** | Común, con capa | A3 resuelta, aviso en las noticias y una acción tuya, sin plazo en días ✅ | Bando elegido, precio subido, apagón vivido, mercado negro abierto (primer contacto con Casilda, si aún no lo tenías), Teo y la Unión movidos |
 | A5 | **Las tres ofertas** | Común, con capa | A4 resuelta, estatus de Comerciante y dos vías de tres entre deuda, logros y relación ✅ | Alianza elegida. **Cierra el Acto II** |
@@ -266,7 +266,7 @@ Las tres facciones aliables no tienen medidor propio: se miden por la alianza qu
 | Ministerio | Quiroga saluda a Reme con deferencia y le devuelve un papel sellado sin cobrarle: «Doña Reme, su trámite está en orden» | Dos vecinos que se respetan |
 | Los Faroleros | Reme enciende un farol vinotinto pequeño, con luz ámbar, en la ventana los días de pago | «Una costumbre de mi madre» |
 
-La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inocente. Su guion ⏳ F0-23 y su texto en el Acto I ⏳ F3-16
+La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inocente. Su guion está en [27](27-guion-del-acto-i.md), sección 13, y su texto en el Acto I ⏳ F3-47
 
 ---
 
@@ -297,7 +297,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 | Capas (A1, A4 y A5, por tres variantes) | 9 | 40 cajas (36 de la capa y 4 del primer contacto con el mercado negro en A4), 15 titulares y 3 etiquetas de precio | ⏳ F4-179 |
 | **Obligatorio** (las seis anclas, sección 2) | **21** | **≈ 208 textos (≈ 3.100 palabras)** | |
 | Escenas opcionales (O1 a O4) | 4 | ≈ 56 textos | ⏳ F4-179 |
-| Pistas del Acto I | 3 | ≈ 6 textos | ⏳ F0-23 y F3-16 |
+| Pistas del Acto I | 3 | ≈ 6 textos | [27](27-guion-del-acto-i.md) y ⏳ F3-47 |
 
 - **Frente a tres actos paralelos.** Serían 18 escenas completas (≈ 238 textos, con el mismo primer contacto con el mercado negro). El ahorro en texto es modesto (≈ 13 %); la ganancia grande es en guion, arte y pruebas, porque la columna común se escribe y se prueba una vez.
 - **F4-179** (6 h) cubre ≈ 208 textos solo si el ritmo es de unos 35 por hora; con los opcionales queda justa. Conviene revisarla al empezar F4-128.
@@ -313,7 +313,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 - ✅ Las ramas de A2, A4 y A5 están en [23](23-arbol-de-decisiones.md). 🟡 Las pruebas distintas del Acto IV y el acto de cada cinta, también ahí.
 - 🟡 Epílogo de Reme y de cada facción según la alianza: propuesto en [25](25-finales-y-epilogos.md) (RE-01 a RE-03 y FC-01 a FC-06). Que Reme sea siempre tu aliada es ✅; las piezas del epílogo, 🟡.
 - ✅ Umbrales de A1 a A6 y de las escenas opcionales: resueltos en [24](24-umbrales-de-acto.md). El evaluador ⏳ F4-127
-- ⏳ F0-23 Las tres pistas del Acto I y su lugar en los días del tutorial; sus props ⏳ F3-16.
+- Las tres pistas del Acto I y su lugar en los días del tutorial están en [27](27-guion-del-acto-i.md), sección 13; sus props ⏳ F3-16.
 - ⏳ F0-52 Cifras: cuota extra, adelanto de la cuota, modificadores de precio y de vigilancia.
 - ⏳ F4-128 Guion de la columna común; F4-129, F4-130 y F4-131 guion de las escenas únicas; F4-132 la huelga; F4-133 la alianza.
 - ⏳ F4-179 Textos del Acto II en español.

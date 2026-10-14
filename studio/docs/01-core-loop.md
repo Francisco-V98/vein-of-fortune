@@ -42,4 +42,4 @@ En mobile las sesiones suelen ser de 5–10 minutos. Meta de diseño: **un día 
 
 - ❓ Duración del "mundo" por día en términos de eventos (cuántas noticias por día, etc.).
 - ❓ Qué pasa si el jugador no hace nada en un bloque (¿se puede saltar?).
-- ⏳ F0-23 Tutorial: estructura de los primeros días (la fija el guion día a día del Acto I).
+- ✅ Tutorial: los primeros siete días del Acto I están guionizados en [27](27-guion-del-acto-i.md), con una mecánica nueva por día como máximo y solo la cuota como fecha dura.
