@@ -80,10 +80,10 @@ Cuatro imágenes generadas con IA (modelo `gpt_image_2_5`, calidad baja, ~0,25 c
 | Personajes y escenas | ✅ Referencia de diseño para el pixel art definitivo; no se reconstruyen a mano |
 | Assets directos del juego | ❌ No: lo generado con IA en las rondas de prueba es provisional |
 
-## Pipeline ✅ (actualizado el 2026-10-13)
+## Pipeline 🟡 (actualizado el 2026-10-13)
 
-1. La IA genera **referencias** e ideas (rápido y barato). Son **provisionales**.
-2. El prototipo y el vertical slice usan esas referencias tal cual (o formas simples con los colores de la paleta). No se limpian ni se reconstruyen.
+1. La IA genera **referencias** e ideas (rápido y barato). Son **provisionales** ✅.
+2. El prototipo y el vertical slice usan esas referencias tal cual (o formas simples con los colores de la paleta). No se limpian ni se reconstruyen ✅.
 3. Solo después de que el vertical slice pase las pruebas y la Puerta B, y cuando el autor lo autorice, el **arte definitivo** se produce en pixel art con **PixelLab**, sobre una cuadrícula fija y con la paleta bloqueada, tomando lo provisional como referencia.
 4. Lo definitivo se separa en piezas: sprites, fondos por capas, íconos, marcos de interfaz.
 5. Todo se guarda con su registro de licencia (ver [11](11-legal-y-cumplimiento.md)).
@@ -205,19 +205,19 @@ El ministro Montenegro sigue siendo el antagonista narrativo y no tiene duelo de
 | Pruebas de estilo (rondas 1 y 2) y su paleta | `prueba-de-estilo/`, `prueba-de-estilo-2/` | Provisional ✅ | ✅ Referencia de dirección; la paleta de este documento sigue vigente |
 | Escenarios (mina, zonas, edificios, tienda, interfaz de mercado y minijuegos) | `prueba-de-estilo-2/` | Provisional ✅ | ✅ Solo referencia de atmósfera; los del storyboard se generan nuevos y baratos |
 | Momentos (escenas clave del Acto I) | No existen aún | — | ✅ Se generan nuevos y baratos para el storyboard |
-| Mapa de Valdoria (`mapa-valdoria.png`) | `prueba-de-estilo-2/` | Provisional ✅ | Se regenera ahora, barato y con las zonas actuales (Altafría, Salinas Blancas y la capital) ✅ (decisión del autor, 2026-10-13); el definitivo se rehace en pixel art ⏳ F4-152 |
+| Mapa de Valdoria (`mapa-valdoria.png`) | `prueba-de-estilo-2/` | Provisional ✅ | Se regenera ahora, barato y con las zonas actuales (Altafría, Salinas Blancas y la capital) ✅ (decisión del autor, 2026-10-13); el definitivo se rehace en pixel art ⏳ F4-233 |
 | Logo y wordmark, íconos de app | `studio/assets-ref/marca/` | Provisional ✅ | ✅ Uso interno (hub, README y pruebas) |
 | Íconos (minerales, herramientas, interfaz) | Recortes de las rondas de prueba | Provisional ✅ | ✅ Referencia de siluetas y colores |
 | Ambiente y animaciones (ciclos de caminar de las hojas de poses) | Hojas de poses | Provisional ✅ | ✅ Referencia de movimiento |
 | Audio y voces | Aún no hay | — | Todo lo que se haga de prueba es provisional |
 
-### Reglas de uso ✅
+### Reglas de uso 🟡
 
-1. **No se invierte tiempo ni créditos en pulir lo provisional.** Si no sirve para la prueba, se genera otro barato o se usa una forma simple con los colores de la paleta.
+1. **No se invierte tiempo ni créditos en pulir lo provisional.** Si no sirve para la prueba, se genera otro barato o se usa una forma simple con los colores de la paleta ✅.
 2. **Todo asset nuevo de prueba se marca provisional** en `studio/data/assets.json` con el campo `estado` (`provisional` o `definitivo`). Lo que no tenga el campo cuenta como provisional (`estado_por_defecto`).
-3. **Nada provisional llega a la tienda**: ni capturas, ni ícono de la app, ni arte clave, ni kit de prensa.
+3. **Nada provisional llega a la tienda**: ni capturas, ni ícono de la app, ni arte clave, ni kit de prensa ✅.
 4. **La producción definitiva empieza cuando el autor la autoriza**, después de que el vertical slice pase las pruebas y la Puerta B (F3-23). Antes no se produce arte final, voces ni audio final.
-5. **Lo provisional también cumple las reglas de dirección de arte**: paleta, regla del éter, accesibilidad sin rojo y verde, y nada de texto dentro del arte. Así el reemplazo no cambia el diseño.
+5. **Lo provisional también cumple las reglas de dirección de arte**: paleta, regla del éter, accesibilidad sin rojo y verde, y nada de texto dentro del arte, salvo el wordmark del logo. Así el reemplazo no cambia el diseño.
 6. **Lo provisional se conserva como referencia** (rasgos, siluetas y colores) y no se edita a mano. Al reemplazarlo, el definitivo toma su lugar en el juego y el provisional queda en `studio/assets-ref/` como histórico.
 7. **El registro de licencias incluye lo provisional**, porque sigue siendo contenido generado por IA ([11](11-legal-y-cumplimiento.md)).
 

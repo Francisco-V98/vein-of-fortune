@@ -256,7 +256,7 @@ Las horas son del autor y se suman a las del roadmap ([06](06-roadmap-y-pendient
 
 | Versión | Fase del roadmap | Edificaciones | Contenido | Horas sobre el roadmap 🟡 |
 |---|---|---|---|---|
-| **MVP** | F2–F3 | 7: tienda, taller, almacén, casa, Reme, Quiroga y boca de las Galerías | Solo Villa Brasa, en lista con arte provisional salvo tienda y mina (⏳ F3-18). Sin mapa | 0 |
+| **MVP** | F2–F3 | 7: tienda, taller, almacén, casa, Reme, Quiroga y boca de las Galerías | Solo Villa Brasa, en lista con arte provisional (⏳ F3-18). Sin mapa | 0 |
 | **V1** | F4–F5 | +23: 18 edificios y 5 bocas de mina | Mapa y vista de zona de las seis zonas (⏳ F4-152, ⏳ F4-165); los 9 del roadmap (⏳ F4-155, ⏳ F4-156), la Bolsa, 6 edificios de historia y 6 comercios; casa mejorable con ranuras, ropa por estatus y un auto | +110 a 150 |
 | **V2.0** | F6, hito F6.1 | +1: Salón del Farol | Casino y Lotería | +12 (la Lotería; el casino son las ~100 h ya estimadas) |
 | **V2.1** | F6, hito nuevo | +10 | Casas por zona y mansiones, catálogo de decoración, joyería comprable, joyas por zona, concesionaria y sastrería | 250 a 300 |

@@ -1963,8 +1963,8 @@
               "title": "Retratos y sprites provisionales de Reme, Teo, Quiroga, Lucía y protagonistas",
               "est": 3,
               "status": "backlog",
-              "desc": "Reutilizar las hojas de personajes que ya existen como retrato y sprite de prueba, sin pulirlas ni rehacerlas; marcado provisional.",
-              "done_when": "Los cinco personajes y los dos protagonistas aparecen en el slice con sus hojas actuales.",
+              "desc": "Reutilizar las hojas de personajes que ya existen (Reme, Teo, Quiroga, Lucía y los dos protagonistas) como retrato y sprite de prueba, sin pulirlas ni rehacerlas; marcado provisional.",
+              "done_when": "Los seis personajes aparecen en el slice con sus hojas actuales.",
               "prio": "P0"
             },
             {
@@ -2258,8 +2258,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        1203,
-        2143
+        1215,
+        2155
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -3468,7 +3468,7 @@
               "title": "Mapa de Valdoria táctil: zonas tocables",
               "est": 8,
               "prio": "P1",
-              "desc": "Mapa de Valdoria táctil con zonas tocables. Usa el mapa provisional actual; el mapa definitivo en pixel art se rehace en la producción definitiva (F4.18)."
+              "desc": "Mapa de Valdoria táctil con zonas tocables. Usa el mapa provisional regenerado para el storyboard; el mapa definitivo en pixel art es F4-233."
             },
             {
               "id": "F4-153",
@@ -3813,7 +3813,8 @@
               "status": "backlog",
               "title": "Música: mina, tienda, capital y Aetherita",
               "est": 12,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Música definitiva de mina, tienda, capital y Aetherita. La música base del Acto I se hace en F4-232."
             },
             {
               "id": "F4-187",
@@ -3869,7 +3870,8 @@
               "status": "backlog",
               "title": "Marcos, botones y componentes de interfaz definitivos (PixelLab)",
               "est": 16,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "Marcos, botones y componentes de interfaz definitivos del resto del juego. La interfaz base del Acto I se rehace en F4-228."
             }
           ]
         },
@@ -4091,11 +4093,11 @@
             {
               "id": "F4-229",
               "status": "backlog",
-              "title": "Pixel art definitivo: retratos y sprites de Reme, Teo, Quiroga, Lucía y protagonistas",
+              "title": "Pixel art definitivo: retratos y sprites de Reme, Teo, Quiroga, Lucía y los dos protagonistas",
               "est": 14,
               "prio": "P1",
-              "desc": "Retrato detallado y sprite pequeño de cada personaje del Acto I en pixel art con PixelLab, con sus animaciones básicas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
-              "done_when": "Los siete personajes del Acto I tienen retrato y sprite definitivos aprobados por el autor."
+              "desc": "Retrato detallado y sprite pequeño de cada uno de los seis personajes del Acto I en pixel art con PixelLab, con sus animaciones básicas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "done_when": "Los seis personajes del Acto I tienen retrato y sprite definitivos aprobados por el autor."
             },
             {
               "id": "F4-230",
@@ -4121,8 +4123,17 @@
               "title": "Audio definitivo del Acto I: interfaz, minería, mercado, blips y música base",
               "est": 10,
               "prio": "P1",
-              "desc": "Sonido y música definitivos del Acto I (con la herramienta que se elija entonces), con licencias registradas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "desc": "Sonido y música definitivos del Acto I (con la herramienta que se elija entonces), con licencias registradas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final. La música del resto del juego es F4-186 y la mezcla final F4-189.",
               "done_when": "El Acto I tiene audio definitivo con licencias en regla."
+            },
+            {
+              "id": "F4-233",
+              "status": "backlog",
+              "title": "Mapa de Valdoria definitivo en pixel art",
+              "est": 12,
+              "prio": "P1",
+              "desc": "Rehacer en pixel art con PixelLab el mapa de Valdoria con todas las zonas (incluidas Altafría, Salinas Blancas y la capital), sustituyendo al mapa provisional que se regeneró para el storyboard. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "done_when": "El mapa definitivo reemplaza al provisional y sus zonas son tocables en F4-152."
             }
           ]
         }
