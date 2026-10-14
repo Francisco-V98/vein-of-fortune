@@ -1,0 +1,77 @@
+{
+  "id": "F0-84",
+  "history": [
+    {
+      "at": "2026-10-13",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor aclaró que todo el arte actual es provisional y que el definitivo se hará en pixel art con PixelLab después de las pruebas.",
+      "ref": "rama studio/F0-84-assets-provisionales-y-definitivos"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "arte",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "La política la dictó el autor"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida",
+        "nota": "El coordinador revisó el roadmap y los documentos de arte"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "arte",
+        "nota": "El director de arte escribió la política; el coordinador reordenó el roadmap (F3.5 provisional, F4.18 definitiva, horas de F3 y F4) y el autor decidió regenerar el mapa ahora",
+        "entrega": "Sección «Assets provisionales y definitivos» en el documento 12, alineados 06, 10, 13 y 15, registro de assets marcado como provisional por defecto y roadmap con el arte provisional del slice y la producción definitiva F4.18"
+      },
+      {
+        "etapa": "qa",
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "qa",
+        "nota": "QA comprueba el build, el roadmap y que la política no contradiga el resto"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "arte",
+        "que": "Escribir la política de assets provisionales y definitivos en el documento 12",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "arte",
+        "a": "coordinador",
+        "que": "Política escrita y lista de tareas del roadmap por ajustar",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 12, el roadmap y el registro de assets",
+        "at": "2026-10-13"
+      }
+    ]
+  }
+}

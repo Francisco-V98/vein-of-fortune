@@ -76,18 +76,19 @@ Cuatro imágenes generadas con IA (modelo `gpt_image_2_5`, calidad baja, ~0,25 c
 | Tablero de inspiración y dirección de arte | ✅ Muy útil |
 | Guía de estilo y paleta | ✅ |
 | Bocetos de pantallas y UI | ✅ Como referencia |
-| Íconos de minerales | 🟡 Utilizables tras reducir, limpiar y fijar la paleta |
-| Personajes y escenas | 🟡 Como base; hay que reconstruir con cuadrícula coherente |
-| Assets directos del juego | ❌ No sin trabajo de limpieza |
+| Íconos de minerales | ✅ Referencia de siluetas y colores para el pixel art definitivo; no se pulen (ver la sección «Assets provisionales y definitivos») |
+| Personajes y escenas | ✅ Referencia de diseño para el pixel art definitivo; no se reconstruyen a mano |
+| Assets directos del juego | ❌ No: lo generado con IA en las rondas de prueba es provisional |
 
-## Pipeline propuesto 🟡
+## Pipeline ✅ (actualizado el 2026-10-13)
 
-1. La IA genera **referencias** e ideas (rápido y barato).
-2. El autor (diseñador) **limpia y reconstruye** sobre una cuadrícula fija, con la paleta bloqueada, para obtener píxeles consistentes.
-3. Los elementos se separan en piezas: sprites, fondos por capas, íconos, marcos de interfaz.
-4. Todo se guarda con su registro de licencia (ver [11](11-legal-y-cumplimiento.md)).
+1. La IA genera **referencias** e ideas (rápido y barato). Son **provisionales**.
+2. El prototipo y el vertical slice usan esas referencias tal cual (o formas simples con los colores de la paleta). No se limpian ni se reconstruyen.
+3. Solo después de que el vertical slice pase las pruebas y la Puerta B, y cuando el autor lo autorice, el **arte definitivo** se produce en pixel art con **PixelLab**, sobre una cuadrícula fija y con la paleta bloqueada, tomando lo provisional como referencia.
+4. Lo definitivo se separa en piezas: sprites, fondos por capas, íconos, marcos de interfaz.
+5. Todo se guarda con su registro de licencia (ver [11](11-legal-y-cumplimiento.md)).
 
-Para el **prototipo (Fase 1)**: formas simples y colores de la paleta; el arte final llega en la Fase 2.
+Para el **prototipo** (F2) y el **vertical slice** (F3): formas simples y referencias provisionales con los colores de la paleta; el arte definitivo llega después de la Puerta B. El detalle está en la sección «Assets provisionales y definitivos», más abajo.
 
 ## Segunda ronda de pruebas ✅ (horizontal)
 
@@ -118,13 +119,13 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 ### Lo que se aprendió
 
 - La IA da muy buen material de **referencia y de dirección**; las composiciones completas (mapa, zonas, tienda) pueden usarse como **imagen estática** con zonas tocables, lo cual encaja con la estética estática.
-- Para sprites, íconos y UI hay que **reconstruir y separar piezas** (ver pipeline arriba).
+- Para sprites, íconos y UI el arte definitivo **reconstruye y separa piezas** en pixel art con PixelLab, después de la Puerta B (ver pipeline arriba). Lo generado en estas rondas es provisional.
 - La paleta funciona en todos los tipos de imagen: personajes, minerales, edificios, interfaz y mapa.
 - El vinotinto está presente en casi todas las imágenes; hay que **controlar su dosis** para que no pierda fuerza y para que la Aetherita siga siendo especial.
 
 ## Hojas de personajes y NPC ✅
 
-**Requisito del autor:** tener de cada personaje el material más detallado posible, porque de ahí parte el arte final. Se generan con IA a partir de los retratos y sprites aprobados y se guardan en `studio/assets-ref/personajes/<id>/`.
+**Requisito del autor:** tener de cada personaje el material más detallado posible, porque de ahí parte el arte definitivo. Se generan con IA a partir de los retratos y sprites aprobados y se guardan en `studio/assets-ref/personajes/<id>/`. ✅ Estas hojas son **provisionales**: sirven de referencia de diseño y se rehacen en pixel art con PixelLab en la producción definitiva (ver la sección «Assets provisionales y definitivos»).
 
 **Tres hojas por personaje principal** (protagonista hombre y mujer, y los 8 del elenco):
 
@@ -164,7 +165,7 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 
 El ministro Montenegro sigue siendo el antagonista narrativo y no tiene duelo de jefe.
 
-**Calidad:** generación en calidad media a 2K, que equilibra detalle y costo. Se revisa y aprueba cada hoja antes de pasar a la siguiente.
+**Calidad de las hojas de referencia:** generación en calidad media a 2K, que equilibra detalle y costo. Se revisa y aprueba cada hoja antes de pasar a la siguiente. Las hojas nuevas que hagan falta para pruebas se generan en calidad baja (ver reglas de uso de la sección siguiente).
 
 **Animación ✅:** el movimiento se define según la necesidad y casi todo el tiempo los personajes son **estáticos**.
 - **Versión 1:** sprites estáticos y retratos con expresiones en los diálogos. Como mucho, alguna caminata suelta del protagonista; casi no hay caminatas.
@@ -172,13 +173,77 @@ El ministro Montenegro sigue siendo el antagonista narrativo y no tiene duelo de
 - Los NPC y los enemigos no llevan ciclos de caminar; si más adelante hace falta movimiento en alguno, se pide como tarea aparte.
 - Las poses de caminar de las hojas quedan como referencia para cuando se decida animar.
 
+## Assets provisionales y definitivos ✅
+
+### Política del autor ✅ (2026-10-13)
+
+- ✅ Todo lo gráfico que existe hoy, **hasta el logo**, se rehará después: personajes, minerales, escenas, ambiente y animaciones.
+- ✅ Todo el arte definitivo se hará en **pixel art con la herramienta PixelLab**.
+- ✅ Lo que hay ahora sirve de **referencia o de uso interno**. Se reemplaza por cosas reales después de hacer pruebas y comprobar que todo funciona a la perfección.
+- ✅ Habrá un momento en que se necesiten los assets reales (píxeles, imágenes, voces, etc.) para la **producción final**, no para pruebas y testeos. Antes de ese momento, el objetivo es **fallar barato y rápido**.
+- ✅ Para el storyboard del Acto I (F0-24): los personajes ya hechos y los minerales se reutilizan como referencia; los escenarios y los momentos se rehacen de forma barata.
+
+### Qué es provisional y qué es definitivo ✅
+
+| | Provisional | Definitivo |
+|---|---|---|
+| Para qué sirve | Referencia, pruebas, prototipo, vertical slice, storyboard y uso interno | Producción final del juego y de la tienda |
+| Cómo se hace | Generado barato (calidad baja, pocas iteraciones), a partir de las referencias aprobadas | Pixel art con PixelLab; voces y audio finales |
+| Acabado | Sin pulir; no se limpia ni se reconstruye | Revisado por el director de arte y aprobado por el autor |
+| Cuánto se invierte | Lo mínimo: ni tiempo ni créditos de más | Presupuesto de producción propio, estimado tras la prueba de PixelLab |
+| Cómo se marca | `estado: provisional` en `studio/data/assets.json` | `estado: definitivo` en `studio/data/assets.json` |
+| Cuándo | Desde ya hasta la Puerta B | Solo después de que el vertical slice pase las pruebas y la Puerta B, y cuando el autor lo autorice |
+| Llega a la tienda | ❌ Nunca | ✅ Sí |
+
+### Qué es provisional hoy ✅
+
+| Asset | Dónde está | Estado | En pruebas y storyboards |
+|---|---|---|---|
+| Hojas de personajes y NPC (modelo, expresiones y poses; protagonistas, elenco, 35 NPC y jefes) | `studio/assets-ref/personajes/`, `npc/` | Provisional ✅ | ✅ Se reutilizan como referencia |
+| Minerales (`minerales-v2.png`) | `studio/assets-ref/prueba-de-estilo-2/` | Provisional ✅ | ✅ Se reutilizan como referencia |
+| Retratos y sprites de la prueba de estilo | `prueba-de-estilo-2/` | Provisional ✅ | ✅ Referencia de diseño |
+| Pruebas de estilo (rondas 1 y 2) y su paleta | `prueba-de-estilo/`, `prueba-de-estilo-2/` | Provisional ✅ | ✅ Referencia de dirección; la paleta de este documento sigue vigente |
+| Escenarios (mina, zonas, edificios, tienda, interfaz de mercado y minijuegos) | `prueba-de-estilo-2/` | Provisional ✅ | ✅ Solo referencia de atmósfera; los del storyboard se generan nuevos y baratos |
+| Momentos (escenas clave del Acto I) | No existen aún | — | ✅ Se generan nuevos y baratos para el storyboard |
+| Mapa de Valdoria (`mapa-valdoria.png`) | `prueba-de-estilo-2/` | Provisional ✅ | Se regenera ahora, barato y con las zonas actuales (Altafría, Salinas Blancas y la capital) ✅ (decisión del autor, 2026-10-13); el definitivo se rehace en pixel art ⏳ F4-152 |
+| Logo y wordmark, íconos de app | `studio/assets-ref/marca/` | Provisional ✅ | ✅ Uso interno (hub, README y pruebas) |
+| Íconos (minerales, herramientas, interfaz) | Recortes de las rondas de prueba | Provisional ✅ | ✅ Referencia de siluetas y colores |
+| Ambiente y animaciones (ciclos de caminar de las hojas de poses) | Hojas de poses | Provisional ✅ | ✅ Referencia de movimiento |
+| Audio y voces | Aún no hay | — | Todo lo que se haga de prueba es provisional |
+
+### Reglas de uso ✅
+
+1. **No se invierte tiempo ni créditos en pulir lo provisional.** Si no sirve para la prueba, se genera otro barato o se usa una forma simple con los colores de la paleta.
+2. **Todo asset nuevo de prueba se marca provisional** en `studio/data/assets.json` con el campo `estado` (`provisional` o `definitivo`). Lo que no tenga el campo cuenta como provisional (`estado_por_defecto`).
+3. **Nada provisional llega a la tienda**: ni capturas, ni ícono de la app, ni arte clave, ni kit de prensa.
+4. **La producción definitiva empieza cuando el autor la autoriza**, después de que el vertical slice pase las pruebas y la Puerta B (F3-23). Antes no se produce arte final, voces ni audio final.
+5. **Lo provisional también cumple las reglas de dirección de arte**: paleta, regla del éter, accesibilidad sin rojo y verde, y nada de texto dentro del arte. Así el reemplazo no cambia el diseño.
+6. **Lo provisional se conserva como referencia** (rasgos, siluetas y colores) y no se edita a mano. Al reemplazarlo, el definitivo toma su lugar en el juego y el provisional queda en `studio/assets-ref/` como histórico.
+7. **El registro de licencias incluye lo provisional**, porque sigue siendo contenido generado por IA ([11](11-legal-y-cumplimiento.md)).
+
+### De la prueba barata a lo definitivo 🟡
+
+1. **Generar barato**: calidad baja, a partir de las referencias aprobadas.
+2. **Marcar** `estado: provisional` en `assets.json`.
+3. **Probar** en el prototipo, el vertical slice o el storyboard.
+4. **Puerta B** (F3-23): el vertical slice pasa las pruebas y el autor decide seguir.
+5. **Autorización del autor** para empezar la producción definitiva.
+6. **Prueba de PixelLab** con un personaje, un mineral y un fondo: flujo, estilo, paleta, tamaños y precio.
+7. **Producción por lotes** en PixelLab, con lo provisional como referencia.
+8. **Revisión** del director de arte contra este documento y aprobación del autor.
+9. **Reemplazo**: se marca `estado: definitivo`, se registra la licencia y se sustituye lo provisional en el juego.
+
+### PixelLab, herramienta del arte definitivo ✅
+
+PixelLab es la herramienta del arte definitivo por decisión del autor. Su flujo de trabajo, estilo, paleta, tamaños y precio se prueban en la **primera tarea de producción definitiva** (paso 6 del flujo). 🟡 Hasta entonces no se contrata ni se gastan créditos en ella. Los tamaños de personajes, íconos y fondos quedan 🟡 hasta esa prueba; los valores actuales (unos 100 píxeles de alto por personaje, ver «Estética chibi de referencia») son los de las referencias, no los del arte definitivo.
+
 ## Decisiones técnicas de arte pendientes
 
 - ❓ **Resolución base (horizontal).** Sugerencia a probar: **480×270** (escala ×4 hasta 1920×1080); alternativa 384×216 (×5). Hay que cuidar el escalado entero y las distintas proporciones de pantalla de Android (por ejemplo 20:9): diseñar el contenido importante en una zona 16:9 y extender el fondo hacia los bordes. Las primeras pruebas eran verticales y quedan superadas.
 - ✅ **Perspectiva.** Los **edificios van en isométrica** (mapa de ciudad) y, al entrar, se muestra su **vista interior** en corte transversal, como la tienda. Las escenas de mina y zonas siguen en vista lateral.
 - ❓ **Nivel de "pixel estricto".** Los retratos son muy detallados (ilustración pixelada) y los sprites son más cercanos a Stardew. Decidir si se mantienen así o se unifican.
-- ❓ Tamaño de íconos (por ejemplo 32×32 o 48×48) y de sprites de personaje.
+- ❓ Tamaño de íconos (por ejemplo 32×32 o 48×48) y de sprites de personaje. Para el arte definitivo se prueba con PixelLab (ver «Assets provisionales y definitivos»).
 - ❓ Fuente pixel para el texto, con licencia clara.
-- ❓ Herramienta de edición de pixel art.
+- ✅ Herramienta de pixel art del arte definitivo: **PixelLab** (autor, 2026-10-13).
 - ❓ Cuántos cuadros de animación se permiten (el estilo es estático; probablemente pocos).
 - ❓ Si el vinotinto exacto es el de la tabla o se prefiere otro tono.

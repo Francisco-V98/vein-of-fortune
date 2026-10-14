@@ -1,5 +1,6 @@
 {
-  "source_note": "Imágenes de referencia generadas con IA (gpt_image_2_5 vía Higgsfield). Los términos de uso comercial deben revisarse antes de publicar.",
+  "source_note": "Imágenes de referencia generadas con IA (gpt_image_2_5 vía Higgsfield). Todas son provisionales: sirven de referencia o de uso interno y se rehacen en pixel art con PixelLab en la producción definitiva (documento 12). Los términos de uso comercial deben revisarse antes de publicar.",
+  "estado_por_defecto": "provisional",
   "images": [
     { "file": "assets-ref/prueba-de-estilo/mina.png", "title": "Mina (vertical, primera ronda)", "category": "Escenas", "round": 1, "status": "superada", "note": "La primera mina en vertical. Gustó la atmósfera; el juego es horizontal." },
     { "file": "assets-ref/prueba-de-estilo/personajes.png", "title": "Protagonistas hombre y mujer", "category": "Personajes", "round": 1, "status": "aprobada", "note": "Base para los protagonistas jugables. Gustó el estilo." },

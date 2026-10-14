@@ -107,7 +107,7 @@ Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre deb
 | Tableros de presentación | `logo-tablero-es.webp`, `logo-tablero-en.webp` |
 
 - **Nombre:** letras de pixel art macizas, en un azul acero pálido (cerca de *Hielo medio*, no blanco puro), con contorno azul marino y una sombra de un píxel. Una versión por idioma con la misma estructura (*Veta de Fortuna* y *Vein of Fortune*).
-- **Provisional:** es la versión de trabajo para el hub, el README y las pruebas; el logo definitivo y el arte de la pantalla de título son F3-28 y F3-29.
+- **Provisional ✅:** el logo y el wordmark son provisionales hasta la producción definitiva en pixel art con PixelLab, después de la Puerta B (política del autor del 2026-10-13, ver [12](12-direccion-de-arte.md)). Son la versión de trabajo para el hub, el README y las pruebas; el logo definitivo y el arte de la pantalla de título son F3-28 y F3-29.
 
 ### Tipografía
 

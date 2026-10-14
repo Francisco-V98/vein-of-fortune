@@ -146,4 +146,5 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-13 | V1 con unos 22 edificios: los 9 del roadmap, la Bolsa, los de historia y 6 comercios (herrería, economato, platería, lonja y salitre, tasadores y Casa Ormeño), con casa mejorable, ropa por estatus y un auto |
 | 2026-10-13 | Casa Ormeño es una tienda insignia sin dueño ni medidor; la joyería comprable es otra, pequeña, y llega en la V2.1 |
 | 2026-10-13 | El juego no se dirige a menores; el casino va en la V2 con moneda del juego, probabilidades visibles, tope diario e interruptor para ocultar el azar |
+| 2026-10-13 | Todo el arte actual, logo incluido, es provisional; el definitivo se hace en pixel art con PixelLab tras la Puerta B (ver [12](12-direccion-de-arte.md), «Assets provisionales y definitivos») |
 | 2026-10-13 | Nombres: Altafría (pueblo de empresa de Sierra Alta, *Highchill*) y Salinas Blancas (puerto de los Salares, *White Salt Flats*) |

@@ -70,10 +70,12 @@ Se juega con **pantalla táctil o con mando**. Cuando hay mando, todo está mape
 
 ### Pipeline 🟡
 
-1. **Prototipo (Fase 1):** formas simples y placeholders; sonidos genéricos. Prioridad: probar la diversión.
+1. **Prototipo y vertical slice:** formas simples, referencias y sonidos genéricos, todo **provisional** ✅ (política del autor, 2026-10-13). Prioridad: probar la diversión y fallar barato.
 2. **Guía de estilo:** paleta, resolución base, tamaño de píxel, reglas de contorno y sombreado.
-3. **Producción:** mezcla de **arte propio** (el autor tiene conocimientos de diseño), **assets comprados o gratuitos con licencia clara** y **generación con IA** retocada a mano para mantener la coherencia.
-4. **Registro de licencias** de todo lo que entra (ver [11](11-legal-y-cumplimiento.md)).
+3. **Producción definitiva:** pixel art con **PixelLab**, voces y audio finales, solo después de que el vertical slice pase las pruebas y la Puerta B ✅. Los assets comprados o gratuitos, si se usan, llevan licencia clara.
+4. **Registro de licencias** de todo lo que entra, incluido lo provisional (ver [11](11-legal-y-cumplimiento.md)).
+
+Detalle de la política y del flujo en [12](12-direccion-de-arte.md), sección «Assets provisionales y definitivos».
 
 ### Prueba de estilo ✅ (realizada; ver [12](12-direccion-de-arte.md))
 
@@ -184,5 +186,6 @@ Principio: **reducir la superficie de ataque y los datos que se manejan**.
 
 - ✅ Godot 4.x con GDScript confirmado por el autor el 2026-10-11.
 - ❓ Estructura de carpetas del proyecto del juego.
-- ❓ Herramientas concretas de arte y audio (después de la prueba de estilo).
+- ✅ Herramienta del arte definitivo: PixelLab (autor, 2026-10-13; ver [12](12-direccion-de-arte.md)).
+- ❓ Herramientas concretas de audio.
 - ❓ Hub de documentación y tablero de tareas (ver [06](06-roadmap-y-pendientes.md)).
