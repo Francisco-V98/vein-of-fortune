@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "Se empieza el guion día a día del Acto I con el flujo de especialistas.",
       "ref": "rama studio/F0-23-guion-acto-i"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Guion de los siete días del Acto I con los días 5 y 6 aligerados, ⏳ F0-23 resueltos y tareas del vertical slice reajustadas; QA aprobado y limpieza 72 %.",
+      "ref": "rama studio/F0-23-guion-acto-i"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó el guion del Acto I desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
     }
   ],
   "comments": [],
@@ -54,10 +70,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-13",
         "por": "autor",
-        "nota": "El autor revisa el guion de los siete días del Acto I"
+        "nota": "El autor revisó el guion de los siete días y lo aprobó desde /equipo"
       },
       {
         "etapa": "playtest",
@@ -65,7 +81,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR #46 fusionado"
       }
     ],
     "traspasos": [
@@ -122,6 +141,12 @@
         "de": "narrador",
         "a": "autor",
         "que": "Días 5 y 6 aligerados: la mejora y el pedido urgente son opcionales y el contacto con empleados pasa al día 7",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
         "at": "2026-10-13"
       }
     ]
