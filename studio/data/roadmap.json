@@ -294,8 +294,8 @@
               "title": "Storyboard de las escenas clave del Acto I",
               "est": 10,
               "status": "backlog",
-              "desc": "Paneles con arte de referencia, texto de diálogo y pantalla de cada escena clave. Barato e iterable.",
-              "done_when": "Storyboard visible en el hub.",
+              "desc": "Storyboard barato de las escenas clave del Acto I (d1.2, d1.6, d2.4, d3.2, d4.4, d7.2 y d7.4 del documento 27): paneles con la descripción, el diálogo, la pantalla del juego dibujada de forma simple y arte provisional. Los personajes y los minerales ya hechos se reutilizan como referencia; los escenarios y los momentos se generan nuevos y baratos; el mapa de Valdoria se regenera ahora, barato y con las zonas actuales (Altafría, Salinas Blancas y la capital). Todo marcado provisional.",
+              "done_when": "Storyboard visible en el hub, con el mapa regenerado, el arte provisional marcado y sin gastar más créditos de los acordados con el autor.",
               "prio": "P2"
             },
             {
@@ -861,6 +861,15 @@
               "prio": "P1",
               "desc": "Estructura de mapa, zonas y edificaciones donde entras a cada edificio por separado. Qué edificios lleva cada zona según su temática (tiendas específicas, joyerías con joyas de la zona, casas y mansiones con distintas vistas, pesca en el puerto, casino, vehículos, embarcaciones, inversiones) y en qué versión entra cada uno, sin que nada se vea puesto sin razón.",
               "done_when": "Catálogo de edificios por zona acordado con el autor, con la estructura mapa-zona-edificio y la división en MVP, V1, V2 y evolutivos, y sin contradicciones con el mundo y la economía."
+            },
+            {
+              "id": "F0-84",
+              "status": "done",
+              "title": "Assets provisionales y definitivos: pixel art con PixelLab cuando toque",
+              "est": 4,
+              "prio": "P1",
+              "desc": "Política del autor: todo lo gráfico actual, incluido el logo, es provisional y sirve de referencia o de uso interno; el arte definitivo se rehace en pixel art con PixelLab, y las voces y demás assets finales, solo cuando las pruebas confirmen que todo funciona. Fija qué es provisional y qué definitivo, cuándo empieza la producción final y marca todo el roadmap en consecuencia.",
+              "done_when": "El documento 12 explica la política, los assets actuales están marcados como provisionales y el roadmap separa el arte provisional del vertical slice de la producción definitiva posterior a la Puerta B."
             }
           ]
         }
@@ -986,10 +995,10 @@
           "tasks": [
             {
               "id": "F1-11",
-              "title": "Fijar paleta final y tamaños de íconos y sprites",
+              "title": "Fijar paleta y tamaños de prueba de íconos y sprites",
               "est": 1,
               "status": "backlog",
-              "desc": "Confirmar la paleta del documento 12 y los tamaños base.",
+              "desc": "Confirmar la paleta del documento 12 y los tamaños base para las pruebas; los tamaños definitivos salen de la prueba de PixelLab (F4.18).",
               "done_when": "Paleta y tamaños definidos.",
               "prio": "P0"
             },
@@ -1744,10 +1753,10 @@
       "name": "Vertical slice",
       "target": "MVP",
       "hours": [
-        325,
-        520
+        277,
+        472
       ],
-      "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido finales, información por capas, noticias, encuentros y progresión base.",
+      "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido PROVISIONALES baratos (se reemplazan después de la Puerta B), información por capas, noticias, encuentros y progresión base.",
       "gate": "Puerta B: ¿se sigue hacia la v1 y se piensa en publicar?",
       "milestones": [
         {
@@ -1938,42 +1947,42 @@
         },
         {
           "id": "F3.5",
-          "name": "Arte y audio finales de la tajada",
+          "name": "Arte y audio provisionales de la tajada (barato; se reemplazan en la producción definitiva)",
           "tasks": [
             {
               "id": "F3-18",
-              "title": "Arte final: mina, tienda (vista interior) e interfaz base",
-              "est": 20,
+              "title": "Arte provisional: mina, tienda (vista interior) e interfaz base",
+              "est": 6,
               "status": "backlog",
-              "desc": "Reconstruir sobre cuadrícula fija a partir de las referencias.",
-              "done_when": "Pantallas con arte final coherente.",
+              "desc": "Reutilizar las pruebas de estilo existentes (mina y tienda) y componer la interfaz base de forma barata, marcado como provisional. El pixel art definitivo con PixelLab viene después de la Puerta B.",
+              "done_when": "Mina, tienda e interfaz base se ven y se juegan en el vertical slice, marcadas provisionales.",
               "prio": "P0"
             },
             {
               "id": "F3-19",
-              "title": "Retratos y sprites de Reme, Teo, Quiroga, Lucía y protagonistas",
-              "est": 14,
+              "title": "Retratos y sprites provisionales de Reme, Teo, Quiroga, Lucía y protagonistas",
+              "est": 3,
               "status": "backlog",
-              "desc": "Retrato detallado y sprite pequeño por personaje.",
-              "done_when": "Los personajes del Acto I tienen retrato y sprite.",
+              "desc": "Reutilizar las hojas de personajes que ya existen (Reme, Teo, Quiroga, Lucía y los dos protagonistas) como retrato y sprite de prueba, sin pulirlas ni rehacerlas; marcado provisional.",
+              "done_when": "Los seis personajes aparecen en el slice con sus hojas actuales.",
               "prio": "P0"
             },
             {
               "id": "F3-20",
-              "title": "Íconos de minerales usados y herramientas",
-              "est": 6,
+              "title": "Íconos provisionales de minerales y herramientas",
+              "est": 2,
               "status": "backlog",
-              "desc": "Siluetas legibles a tamaño pequeño.",
-              "done_when": "Íconos limpios y distinguibles.",
+              "desc": "Recortar las siluetas de los minerales existentes para usarlas como íconos de prueba; marcado provisional.",
+              "done_when": "Los íconos de carbón, hierro y las herramientas del Acto I se ven legibles en el slice.",
               "prio": "P0"
             },
             {
               "id": "F3-21",
-              "title": "Sonidos: interfaz, minería, mercado, blips y música base",
-              "est": 10,
+              "title": "Sonidos provisionales: interfaz, minería, mercado, blips y música base",
+              "est": 4,
               "status": "backlog",
-              "desc": "Referencia sonora: Balatro. Revisar licencias.",
-              "done_when": "El Acto I tiene sonido completo y licencias registradas.",
+              "desc": "Sonidos libres o de bajo costo para probar el slice, con licencia registrada; se reemplazan por el audio definitivo después de la Puerta B. Referencia sonora: Balatro.",
+              "done_when": "El slice tiene sonidos básicos de interfaz, minería y mercado, con licencias registradas.",
               "prio": "P1"
             }
           ]
@@ -1996,7 +2005,7 @@
               "title": "Prueba de la tajada y decisión de seguir hacia la v1",
               "est": 6,
               "status": "backlog",
-              "desc": "Jugar el Acto I completo y decidir si se continúa y si se piensa en publicar.",
+              "desc": "Jugar el Acto I completo con arte provisional y decidir si se continúa y si se piensa en publicar. Si la decisión es seguir, autoriza el inicio de la producción definitiva de assets (pixel art con PixelLab, voces y audio final) en F4.18.",
               "done_when": "Decisión registrada.",
               "prio": "P0"
             }
@@ -2050,20 +2059,20 @@
           "tasks": [
             {
               "id": "F3-28",
-              "title": "Logo definitivo y wordmark",
-              "est": 10,
+              "title": "Logo y wordmark: mantener los provisionales en el slice",
+              "est": 1,
               "status": "backlog",
-              "desc": "A partir de la guía de marca y el wordmark provisional.",
-              "done_when": "Logo aprobado.",
+              "desc": "El slice usa el logo y el wordmark provisionales actuales; el logo definitivo en pixel art llega en la producción definitiva.",
+              "done_when": "El slice muestra el logo provisional sin trabajo de arte nuevo.",
               "prio": "P1"
             },
             {
               "id": "F3-29",
-              "title": "Ícono de la app y pantalla de título",
-              "est": 6,
+              "title": "Ícono de la app y pantalla de título provisionales",
+              "est": 2,
               "status": "backlog",
-              "desc": "Ícono legible a tamaño pequeño y pantalla de título con la marca.",
-              "done_when": "Ícono y pantalla integrados en el juego.",
+              "desc": "Ícono legible a tamaño pequeño y pantalla de título con el logo provisional, solo para probar.",
+              "done_when": "La app tiene un ícono de prueba y una pantalla de título con el logo provisional.",
               "prio": "P1"
             },
             {
@@ -2249,8 +2258,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        1135,
-        2075
+        1215,
+        2155
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -3458,7 +3467,8 @@
               "status": "backlog",
               "title": "Mapa de Valdoria táctil: zonas tocables",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Mapa de Valdoria táctil con zonas tocables. Usa el mapa provisional regenerado para el storyboard; el mapa definitivo en pixel art es F4-233."
             },
             {
               "id": "F4-153",
@@ -3803,7 +3813,8 @@
               "status": "backlog",
               "title": "Música: mina, tienda, capital y Aetherita",
               "est": 12,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Música definitiva de mina, tienda, capital y Aetherita. La música base del Acto I se hace en F4-232."
             },
             {
               "id": "F4-187",
@@ -3835,30 +3846,32 @@
             {
               "id": "F4-190",
               "status": "backlog",
-              "title": "Retratos finales: Esteban, Casilda, Ministro y Anselmo",
+              "title": "Retratos definitivos (PixelLab): Esteban, Casilda, Ministro y Anselmo",
               "est": 10,
               "prio": "P1"
             },
             {
               "id": "F4-191",
               "status": "backlog",
-              "title": "Sprites finales de los personajes restantes",
+              "title": "Sprites definitivos (PixelLab) de los personajes restantes",
               "est": 10,
               "prio": "P1"
             },
             {
               "id": "F4-192",
               "status": "backlog",
-              "title": "Íconos finales de los 10 minerales y de las herramientas",
+              "title": "Íconos definitivos (PixelLab) de los 10 minerales y de las herramientas",
               "est": 12,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "Incluye los íconos del Acto I que el slice dejó provisionales."
             },
             {
               "id": "F4-193",
               "status": "backlog",
-              "title": "Marcos, botones y componentes de interfaz",
+              "title": "Marcos, botones y componentes de interfaz definitivos (PixelLab)",
               "est": 16,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "Marcos, botones y componentes de interfaz definitivos del resto del juego. La interfaz base del Acto I se rehace en F4-228."
             }
           ]
         },
@@ -4052,6 +4065,75 @@
               "prio": "P0",
               "desc": "Formato común para escribir los guiones de los cuatro actos, con identificadores de escena, condiciones de activación y banderas, para que el motor y los traductores lo lean.",
               "done_when": "Hay una plantilla acordada y los guiones del Acto I la usan sin cambios."
+            }
+          ]
+        },
+        {
+          "id": "F4.18",
+          "name": "Producción definitiva de assets (PixelLab y audio final), tras la Puerta B",
+          "tasks": [
+            {
+              "id": "F4-227",
+              "status": "backlog",
+              "title": "Prueba de PixelLab: flujo, estilo, paleta, tamaños, precio y términos comerciales",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Probar PixelLab con un personaje, un mineral y una escena del juego para fijar el flujo, la paleta, los tamaños y el costo real, y comprobar sus términos de uso comercial. Es la primera tarea de la producción definitiva: las demás dependen de ella. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "done_when": "Hay un flujo y tamaños acordados, un costo por asset estimado y los términos comerciales registrados."
+            },
+            {
+              "id": "F4-228",
+              "status": "backlog",
+              "title": "Pixel art definitivo: mina, tienda (vista interior) e interfaz base",
+              "est": 20,
+              "prio": "P1",
+              "desc": "Rehacer en pixel art con PixelLab lo que el vertical slice mostró de forma provisional. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "done_when": "La mina, la tienda y la interfaz base definitivas reemplazan a las provisionales y el autor las aprueba."
+            },
+            {
+              "id": "F4-229",
+              "status": "backlog",
+              "title": "Pixel art definitivo: retratos y sprites de Reme, Teo, Quiroga, Lucía y los dos protagonistas",
+              "est": 14,
+              "prio": "P1",
+              "desc": "Retrato detallado y sprite pequeño de cada uno de los seis personajes del Acto I en pixel art con PixelLab, con sus animaciones básicas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "done_when": "Los seis personajes del Acto I tienen retrato y sprite definitivos aprobados por el autor."
+            },
+            {
+              "id": "F4-230",
+              "status": "backlog",
+              "title": "Logo y wordmark definitivos en pixel art",
+              "est": 10,
+              "prio": "P1",
+              "desc": "Rehacer la moneda de minero y el nombre en ES y EN en pixel art con PixelLab, a partir de la guía de marca. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "done_when": "El logo y el wordmark definitivos reemplazan a los provisionales y funcionan solos y juntos."
+            },
+            {
+              "id": "F4-231",
+              "status": "backlog",
+              "title": "Ícono de la app y pantalla de título definitivos",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Ícono legible a tamaño pequeño y pantalla de título con la marca definitiva. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "done_when": "Ícono y pantalla de título definitivos aprobados."
+            },
+            {
+              "id": "F4-232",
+              "status": "backlog",
+              "title": "Audio definitivo del Acto I: interfaz, minería, mercado, blips y música base",
+              "est": 10,
+              "prio": "P1",
+              "desc": "Sonido y música definitivos del Acto I (con la herramienta que se elija entonces), con licencias registradas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final. La música del resto del juego es F4-186 y la mezcla final F4-189.",
+              "done_when": "El Acto I tiene audio definitivo con licencias en regla."
+            },
+            {
+              "id": "F4-233",
+              "status": "backlog",
+              "title": "Mapa de Valdoria definitivo en pixel art",
+              "est": 12,
+              "prio": "P1",
+              "desc": "Rehacer en pixel art con PixelLab el mapa de Valdoria con todas las zonas (incluidas Altafría, Salinas Blancas y la capital), sustituyendo al mapa provisional que se regeneró para el storyboard. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "done_when": "El mapa definitivo reemplaza al provisional y sus zonas son tocables en F4-152."
             }
           ]
         }
@@ -4277,7 +4359,8 @@
               "status": "backlog",
               "title": "Registro final de licencias de assets y audio",
               "est": 6,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "Registro final de licencias de assets y audio, incluidos los términos comerciales de PixelLab, y comprobación de que ningún asset provisional llega a la tienda."
             },
             {
               "id": "F5-27",

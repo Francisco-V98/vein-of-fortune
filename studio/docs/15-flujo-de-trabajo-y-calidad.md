@@ -122,6 +122,7 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 - [ ] Textos en ES y EN; sin cadenas fijas.
 - [ ] Documentación y registro de decisiones al día si corresponde.
 - [ ] Si toca documentos de diseño: la limpieza no baja, lo que queda sin cerrar está marcado como diferido, con su tarea, y no hay conexiones rotas (hub, «Limpieza del diseño»).
+- [ ] Si crea imágenes o audio de prueba: van marcados como provisionales en `studio/data/assets.json` (campo `estado`) y no se pulen ([12](12-direccion-de-arte.md)).
 - [ ] Evidencia en la tarea (captura, resultado de pruebas o nota).
 - [ ] PR revisado y fusionado.
 

@@ -1,0 +1,120 @@
+{
+  "id": "F0-84",
+  "history": [
+    {
+      "at": "2026-10-13",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor aclaró que todo el arte actual es provisional y que el definitivo se hará en pixel art con PixelLab después de las pruebas.",
+      "ref": "rama studio/F0-84-assets-provisionales-y-definitivos"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Política de assets provisionales y definitivos en el documento 12 y roadmap reordenado con el arte provisional del slice y la producción definitiva F4.18; QA aprobado.",
+      "ref": "rama studio/F0-84-assets-provisionales-y-definitivos"
+    },
+    {
+      "at": "2026-10-13",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la política de assets desde la bandeja de /equipo.",
+      "ref": "aprobación del autor con el botón «Terminé mi parte»"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "arte",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "La política la dictó el autor"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida",
+        "nota": "El coordinador revisó el roadmap y los documentos de arte"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "arte",
+        "nota": "El director de arte escribió la política; el coordinador reordenó el roadmap (F3.5 provisional, F4.18 definitiva, horas de F3 y F4) y el autor decidió regenerar el mapa ahora",
+        "entrega": "Sección «Assets provisionales y definitivos» en el documento 12, alineados 06, 10, 13 y 15, registro de assets marcado como provisional por defecto y roadmap con el arte provisional del slice y la producción definitiva F4.18; tarea F4-233 del mapa definitivo"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "qa",
+        "nota": "QA aprobó el build, las horas y el roadmap; sus siete puntos (aplazamiento del mapa, referencias a F3-28 y F3-29, doble conteo, ✅ de más) se corrigieron y el coordinador comprobó el build y las pruebas",
+        "entrega": "Build estricto, 77 pruebas en verde y roadmap con F3.5 provisional y F4.18 definitiva",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "Se creó F4-233 para el mapa definitivo, se actualizaron las referencias del documento 13, se aclaró el alcance de F4-193, F4-186 y F4-232 y se bajaron a propuesta las marcas de más del documento 12"
+          }
+        ]
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "autor",
+        "nota": "El autor revisó la política y el roadmap reordenado y aprobó desde /equipo"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "coordinador",
+        "nota": "Tarea cerrada; el PR #47 se fusiona cuando se fusione el #46, sobre el que está apilado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "arte",
+        "que": "Escribir la política de assets provisionales y definitivos en el documento 12",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "arte",
+        "a": "coordinador",
+        "que": "Política escrita y lista de tareas del roadmap por ajustar",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 12, el roadmap y el registro de assets",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: la política de assets provisionales y definitivos y el roadmap reordenado",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobado: pasa al cierre",
+        "at": "2026-10-13"
+      }
+    ]
+  }
+}

@@ -107,7 +107,7 @@ Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre deb
 | Tableros de presentación | `logo-tablero-es.webp`, `logo-tablero-en.webp` |
 
 - **Nombre:** letras de pixel art macizas, en un azul acero pálido (cerca de *Hielo medio*, no blanco puro), con contorno azul marino y una sombra de un píxel. Una versión por idioma con la misma estructura (*Veta de Fortuna* y *Vein of Fortune*).
-- **Provisional:** es la versión de trabajo para el hub, el README y las pruebas; el logo definitivo y el arte de la pantalla de título son F3-28 y F3-29.
+- **Provisional ✅:** el logo y el wordmark son provisionales hasta la producción definitiva en pixel art con PixelLab, después de la Puerta B (política del autor del 2026-10-13, ver [12](12-direccion-de-arte.md)). Son la versión de trabajo para el hub, el README y las pruebas; el logo definitivo y el arte de la pantalla de título son F4-230 y F4-231.
 
 ### Tipografía
 
@@ -163,13 +163,13 @@ Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre deb
 | Documento de marca | ✅ hecho; sus puntos 🟡 se cierran en ⏳ F0-56 | F0-19 |
 | Guía visual (tipografía, usos) | ✅ hecha; sus puntos 🟡 se cierran en ⏳ F0-56 | F0-20 |
 | Logo provisional (apilado, horizontal, icono y icono de app) | ✅ hecho (`studio/assets-ref/marca/`) | F0-21 |
-| Logo definitivo | ⏳ F3-28 pendiente | F3-28 |
-| Ícono y pantalla de título | ⏳ F3-29 pendiente | F3-29 |
+| Logo definitivo | ⏳ F4-230 pendiente | F4-230 |
+| Ícono y pantalla de título | ⏳ F4-231 pendiente | F4-231 |
 | Arte clave y capturas de tienda ES/EN | ⏳ F5-43 pendiente | F5-43 y F5-35 |
 | Kit de prensa | ⏳ F5-44 pendiente | F5-44 |
 
 ## Pendiente
 
 - ⏳ F1-18 Verificar la licencia y los glifos de Pixelify Sans.
-- ⏳ F3-28 Diseño del wordmark definitivo en ambos idiomas.
+- ⏳ F4-230 Diseño del wordmark definitivo en ambos idiomas.
 - ⏳ F5-29 Búsqueda de marca formal del título.
