@@ -29,7 +29,7 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 ## Preguntas abiertas
 
 1. Logotipo, wordmark e ícono (ver [13](13-marca-e-identidad.md)).
-2. Guion del Acto I ⏳ F0-23. Las variantes del Acto II están en [22](22-acto-ii-variantes.md).
+2. ✅ Guion del Acto I: [27](27-guion-del-acto-i.md). Las variantes del Acto II están en [22](22-acto-ii-variantes.md).
 3. Fichas completas de cada zona y de cada mineral (plantillas en 02 y 05).
 4. Stats del jugador: cuáles y cómo se suben.
 5. Tutorial: cómo se enseña a leer el mercado.

@@ -25,15 +25,23 @@
       },
       {
         "etapa": "analisis",
-        "estado": "pendiente"
+        "estado": "omitida",
+        "nota": "El ideador ya cruzó el bosquejo con los documentos y el registro de hilos y el autor decidió el resto; QA lo comprueba"
       },
       {
         "etapa": "produccion",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-13",
+        "por": "narrador",
+        "nota": "El narrador escribió el documento 27; el autor decidió dos reglas más (recargo en Difícil y Hardcore y peligros fuera del Acto I); el coordinador reajustó F3-16, F3-17, F3-30 y creó F3-47; limpieza 72 %, coherencia 94 %",
+        "entrega": "Documento 27 con el guion de los siete días, los ⏳ F0-23 resueltos, hilos con referencia al guion y tareas del vertical slice reajustadas"
       },
       {
         "etapa": "qa",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-13",
+        "por": "qa",
+        "nota": "QA comprueba el build, las marcas, los aplazamientos y que el guion cuadre con el canon, la economía y los hilos"
       },
       {
         "etapa": "autor",
@@ -59,6 +67,24 @@
         "de": "ideador",
         "a": "coordinador",
         "que": "Bosquejo de siete días del Acto I con ocho preguntas, siete para decidir ahora",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Escribir el documento 27 con el guion día a día del Acto I y cerrar los ⏳ F0-23",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Documento 27 escrito con las decisiones del autor aplicadas",
+        "at": "2026-10-13"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar el documento 27, los cambios en 01, 06, 08, 17, 18, 21 a 25, decisions.json, hilos.json y las tareas del roadmap",
         "at": "2026-10-13"
       }
     ]

@@ -61,7 +61,7 @@
         {
           "acto": "I",
           "donde": "Reme atribuye el giro mensual a la deuda a «algún vecino bondadoso»",
-          "ref": "doc 19 «Pistas sembradas» y ficha de Reme · doc 21 §6 y §11",
+          "ref": "doc 19 «Pistas sembradas» y ficha de Reme · doc 21 §6 y §11 · doc 27 §4 (día 1, mañana, d1.3)",
           "estado": "prop"
         },
         {
@@ -122,7 +122,7 @@
         {
           "acto": "I",
           "donde": "La libreta de Anselmo guía las primeras misiones y su última anotación no tiene fecha de cierre",
-          "ref": "doc 19 «Pistas sembradas» · doc 18 Anexo «Dónde está Anselmo en cada acto» · doc 21 §11",
+          "ref": "doc 19 «Pistas sembradas» · doc 18 Anexo «Dónde está Anselmo en cada acto» · doc 21 §11 · doc 27 §4 (día 1, noche, d1.5)",
           "estado": "prop"
         }
       ],
@@ -238,8 +238,8 @@
       "siembra": [
         {
           "acto": "I",
-          "donde": "La firma de Anselmo está en los papeles de la herencia (testamento firmado antes de la detención); la escena la escribe el guion del Acto I",
-          "ref": "doc 18 Anexo · doc 21 §5 y §11 · doc 25 §3 · tarea F0-23",
+          "donde": "La firma de Anselmo está en los papeles de la herencia (testamento firmado antes de la detención); Reme los entrega con la llave del puesto",
+          "ref": "doc 18 Anexo · doc 21 §5 y §11 · doc 25 §3 · doc 27 §4 (día 1, mañana, d1.2)",
           "estado": "ok"
         }
       ],
@@ -288,7 +288,7 @@
         {
           "acto": "I",
           "donde": "Solo rastro: libreta, lámpara y firma. El jugador cree que murió enfermo hace dos años",
-          "ref": "doc 18 Anexo «Dónde está Anselmo en cada acto» · doc 08 · doc 17",
+          "ref": "doc 18 Anexo «Dónde está Anselmo en cada acto» · doc 08 · doc 17 · doc 27 §4 y §17 (sombras de los días 1 y 2)",
           "estado": "ok"
         },
         {
@@ -348,7 +348,7 @@
         {
           "acto": "I",
           "donde": "El abono anónimo es la huella del trato (el sueldo se paga como abono a la deuda con Reme)",
-          "ref": "doc 21 §5 y §6",
+          "ref": "doc 21 §5 y §6 · doc 27 §4 (día 1, mañana, d1.3)",
           "estado": "prop"
         },
         {
@@ -396,7 +396,7 @@
         {
           "acto": "I",
           "donde": "El recuerdo de la lámpara prestada una noche de estrellas; la cinta 1 está en el doble fondo de la caja del puesto",
-          "ref": "doc 19 Protagonista y Anselmo · doc 21 §7 y §8 · doc 26 ed-vb-tienda · cinta 1",
+          "ref": "doc 19 Protagonista y Anselmo · doc 21 §7 y §8 · doc 26 ed-vb-tienda · cinta 1 · doc 27 §4, §5 y §14 (día 1, noche, d1.6; día 2, noche, d2.4)",
           "estado": "ok"
         }
       ],
@@ -580,7 +580,7 @@
         {
           "acto": "I",
           "donde": "Al empezar la partida se sortea la facción de Reme (Consorcio, Ministerio o Faroleros), oculta; el Acto I deja una pista distinta",
-          "ref": "doc 22 §1 y §10 · doc 23 §1 · estado de la partida: tarea F2-01",
+          "ref": "doc 22 §1 y §10 · doc 23 §1 · estado de la partida: tarea F2-01 · doc 27 §13",
           "estado": "ok"
         }
       ],
@@ -607,7 +607,7 @@
         {
           "acto": "I",
           "donde": "Reme tiene la única lámpara de red de la calle, con una «A» grabada en la base («un regalo de un cliente agradecido»)",
-          "ref": "doc 22 §10 · props: tarea F3-16 · guion: tarea F0-23",
+          "ref": "doc 22 §10 · props: tarea F3-16 · guion: doc 27 §13 (día 4, noche, d4.4)",
           "estado": "prop"
         }
       ],
@@ -635,7 +635,7 @@
         {
           "acto": "I",
           "donde": "Quiroga saluda a Reme con deferencia y le devuelve un papel sellado sin cobrarle: «Doña Reme, su trámite está en orden»",
-          "ref": "doc 22 §10 · props: tarea F3-16 · guion: tarea F0-23",
+          "ref": "doc 22 §10 · props: tarea F3-16 · guion: doc 27 §13 (día 4, noche, d4.4)",
           "estado": "prop"
         }
       ],
@@ -662,7 +662,7 @@
         {
           "acto": "I",
           "donde": "Reme enciende un farol vinotinto pequeño, con luz ámbar, en la ventana los días de pago («una costumbre de mi madre»)",
-          "ref": "doc 22 §10 · doc 21 §10 · props: tarea F3-16 · guion: tarea F0-23",
+          "ref": "doc 22 §10 · doc 21 §10 · props: tarea F3-16 · guion: doc 27 §13 (día 4, noche, d4.4)",
           "estado": "prop"
         }
       ],
@@ -690,7 +690,7 @@
         {
           "acto": "I",
           "donde": "El protagonista hereda la deuda de Anselmo con Reme",
-          "ref": "doc 08 · doc 21 §6",
+          "ref": "doc 08 · doc 21 §6 · doc 27 §4 (día 1, mañana, d1.3)",
           "estado": "ok"
         },
         {
@@ -723,8 +723,8 @@
       "siembra": [
         {
           "acto": "I",
-          "donde": "Heredas la deuda: la primera cuota vence el día 7 y las siguientes cada 7 días; si no puedes, prórroga de una semana con recargo",
-          "ref": "doc 08 · doc 17 «La puerta del Acto I» · doc 23 §3 · nodo n-i-reme-plazo · bandera f-pago-reme · cuello c-i-cierre",
+          "donde": "Heredas la deuda: la primera cuota vence el día 7 y las siguientes cada 7 días; si no puedes pagar, en Novato e Intermedio la serie se desplaza una semana con recargo y en Difícil y Hardcore la cuota atrasada se suma a la del día 14",
+          "ref": "doc 08 · doc 17 «La puerta del Acto I» · doc 23 §3 · nodo n-i-reme-plazo · bandera f-pago-reme · cuello c-i-cierre · doc 27 §11 (día 7, tarde, d7.2)",
           "estado": "ok"
         },
         {
@@ -751,7 +751,7 @@
         {
           "acto": "I",
           "donde": "Vecina amable que da tiempo y cobra con cariño",
-          "ref": "doc 19 ficha de Reme (arco por acto) · doc 08",
+          "ref": "doc 19 ficha de Reme (arco por acto) · doc 08 · doc 27 §4 y §10 (día 1, mañana; día 7, tarde)",
           "estado": "ok"
         },
         {
@@ -1038,7 +1038,7 @@
         {
           "acto": "I",
           "donde": "Sombras: la Comisión es el organismo técnico de La Fosa y las dudas sobre la muerte del tío son el misterio de fondo",
-          "ref": "doc 08 gancho · doc 18 1.4 y capítulo 3 · doc 21 §10",
+          "ref": "doc 08 gancho · doc 18 1.4 y capítulo 3 · doc 21 §10 · doc 27 §6 (día 3, tarde, d3.3)",
           "estado": "ok"
         },
         {
@@ -1195,7 +1195,7 @@
         {
           "acto": "I",
           "donde": "El padre del protagonista dejó el Hollín tras el derrumbe de Pozo Negro; la Unión nace de aquel derrumbe y Teo lo sobrevivió",
-          "ref": "doc 21 §2, §8 y §10 · doc 19 Protagonista · nodo n-i-herencia",
+          "ref": "doc 21 §2, §8 y §10 · doc 19 Protagonista · nodo n-i-herencia · doc 27 §6 (día 3, mañana, d3.2)",
           "estado": "prop"
         }
       ],
@@ -1249,7 +1249,7 @@
         {
           "acto": "I",
           "donde": "Fuente simpática de rumores: te ofrece uno a cambio de otro",
-          "ref": "doc 19 ficha de Lucía · nodo n-i-lucia-rumor · medidor m-lucia",
+          "ref": "doc 19 ficha de Lucía · nodo n-i-lucia-rumor · medidor m-lucia · doc 27 §6 y §8 (día 3, tarde; día 5, mañana, d5.2)",
           "estado": "prop"
         },
         {
@@ -1282,7 +1282,7 @@
         {
           "acto": "I",
           "donde": "Al heredar el puesto rompes sin querer el juramento del padre: bajas a la mina que él juró evitar; cómo se lo cuentas decide la reacción",
-          "ref": "doc 21 §8 · doc 19 Protagonista · nodo n-i-herencia · bandera f-familia · escena: tarea F0-23",
+          "ref": "doc 21 §8 · doc 19 Protagonista · nodo n-i-herencia · bandera f-familia · escena: doc 27 §4 (día 1, noche, d1.6) y §8 (día 5, noche, d5.4)",
           "estado": "ok"
         }
       ],
@@ -1309,7 +1309,7 @@
         {
           "acto": "I",
           "donde": "La cosecha perdida dejó a la familia debiendo al banco agrario; el protagonista busca trabajo para ayudar a su familia; el desenlace depende del estatus con el que cierres el acta, sin envíos de dinero",
-          "ref": "doc 19 Protagonista · doc 21 §8",
+          "ref": "doc 19 Protagonista · doc 21 §8 · doc 27 §4 (día 1, noche, d1.6)",
           "estado": "ok"
         }
       ],

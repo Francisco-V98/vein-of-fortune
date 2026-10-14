@@ -159,7 +159,7 @@ La cuadrilla murió en uno a tres años con siete meses de exposición. Anselmo 
 - El sanatorio certificó una **cremación que nadie vio y que nadie registró** ✅. La pista no es «no apareció el cuerpo», sino **«sin registro de cremación»** ✅: el libro de cremaciones de la comarca no tiene ese día 🟡.
 - El **sello del certificado es irregular** ✅: es el del sanatorio ✅, no el del registro civil 🟡.
 - Quiroga lo tramitó por una orden sellada de la Comisión, con una «gestión» de por medio ✅. Guardó una copia en su archivo, su seguro de vida ✅, y allí también la carta de la cinta 6 que retuvo (sección 7) ✅. Por eso se pone nervioso cuando alguien menciona el certificado 🟡.
-- El **testamento** lo firmó Anselmo antes de que lo detuvieran ✅. Esa firma es la de los papeles de la herencia del Acto I ✅ y la misma del acta de calibración final ✅ (decisión del autor, 2026-10-12). La siembra en el Acto I ⏳ F0-23.
+- El **testamento** lo firmó Anselmo antes de que lo detuvieran ✅. Esa firma es la de los papeles de la herencia del Acto I ✅ y la misma del acta de calibración final ✅ (decisión del autor, 2026-10-12). Se siembra en el Acto I ([27](27-guion-del-acto-i.md), sección 4).
 
 ### El trato ✅
 
@@ -241,7 +241,7 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 - **La helada tardía y el banco agrario** son los de [19](19-elenco-a-fondo.md): la cosecha perdida es lo que empuja al protagonista a salir.
 - **La visita de hace 14 años.** Anselmo llegó a Vega Mansa una sola vez. El padre lo recibió con un silencio incómodo («tu tío trabaja en lo que yo juré dejar» 🟡). Esa noche Anselmo sacó a su sobrino o sobrina a ver las estrellas 🟡 y le prestó la lámpara ✅. Nunca la pidió de vuelta ni volvieron a verse ✅. Es la primera cinta ✅.
 - **La ironía.** Al heredar el puesto y la licencia, el protagonista **rompe sin querer el juramento del padre**: baja a la mina que él juró evitar. Se cuenta con ternura y con humor ligero, sin burla.
-- Cómo se lo cuenta a su familia y cómo reacciona el padre ⏳ F0-23
+- Cómo se lo cuenta a su familia y cómo reacciona el padre: la carta del día 1 y la respuesta del día 5, en el nodo `n-i-herencia` ([27](27-guion-del-acto-i.md), secciones 4 y 8).
 
 ---
 
@@ -313,14 +313,14 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 | III | Lucía oyó que «alguien de la Comisión recibe cartas con la letra de un muerto» | **Pocas semanas** 🟡: los informes de calibración que Anselmo escribe a mano para la Comisión desde el trato |
 | III | El abono sigue llegando y Teo jura que no es él | **Hace 2 años, el trato** ✅. Teo dice la verdad: él no lo paga 🟡 |
 | IV | La octava cinta termina cortada | **Hace 2 años, la noche de la detención** (cintas 7 y 8) ✅ |
-| IV (final) | El acta de calibración firmada por Anselmo | **Pocas semanas** ✅. La firma es la de los papeles de la herencia ✅ ⏳ F0-23 |
+| IV (final) | El acta de calibración firmada por Anselmo | **Pocas semanas** ✅. La firma es la de los papeles de la herencia ✅ ([27](27-guion-del-acto-i.md), sección 4) |
 
 ---
 
 ## Pendiente
 
 - ⏳ F4-151 Texto final y voz de las ocho cintas, a partir de la sección 7.
-- ⏳ F0-23 Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8).
+- Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8): resuelto en el guion del Acto I, con la carta del día 1 y la respuesta del día 5 ([27](27-guion-del-acto-i.md)).
 - ✅ Dónde está Anselmo hoy: queda abierto, como hilo para una segunda parte y sin tarea. Sigue vivo y secreto en las tres salidas; el abono se corta solo si revelas ([25](25-finales-y-epilogos.md), sección 7).
 - ✅ Registro de hilos: dónde se siembra cada pista de la sección 11 y dónde se resuelve está en `studio/data/hilos.json` (vista del hub en `#/hilos`).
 - ✅ La firma de los papeles de la herencia es la del acta final (decisión del autor, 2026-10-12). F0-43 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión.

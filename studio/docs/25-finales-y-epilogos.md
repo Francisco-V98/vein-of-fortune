@@ -69,7 +69,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 **Estado:** ✅ todo lo que describe la sección 1, incluidas las líneas de ejemplo y que la firma sea la de los papeles de la herencia; 🟡 el emblema de cada sello y dónde se encuentra la carpeta.
 
 - **Qué es.** El acta que firmó Anselmo hace pocas semanas ([21](21-pasado-de-valdoria.md)) ✅. Se encuentra después de decidir, así que no entra en las pruebas ni en lo que publica Lucía ✅.
-- **Qué pasa.** El protagonista abre la carpeta, reconoce la firma y dice una línea. Sin discurso ni explicación ✅. Es la misma firma de los papeles de la herencia del Acto I ✅ (decisión del autor, 2026-10-12; [21](21-pasado-de-valdoria.md), sección 11), que se siembra en ⏳ F0-23.
+- **Qué pasa.** El protagonista abre la carpeta, reconoce la firma y dice una línea. Sin discurso ni explicación ✅. Es la misma firma de los papeles de la herencia del Acto I ✅ (decisión del autor, 2026-10-12; [21](21-pasado-de-valdoria.md), sección 11), que se siembra en el Acto I ([27](27-guion-del-acto-i.md), sección 4).
 - **La línea.** Ocho palabras o menos, sin explicar nada ✅. Ejemplos aceptados como guía ✅: «Esa firma la conozco.» · «Conozco esa letra.» · «Es su firma. La conozco.»
 - **Mismo guion, tres fondos** ✅:
 

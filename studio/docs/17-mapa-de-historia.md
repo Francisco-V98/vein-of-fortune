@@ -40,7 +40,7 @@ El detalle completo (mecánicas, mercado y eventos, arte) está en el cuadro del
 
 ## La puerta del Acto I ✅
 
-El Acto I se cierra cuando **reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes el primer contacto con los empleados**. La primera cuota vence el día 7 y las siguientes, cada 7 días; si no puedes pagar, se prorroga una semana con un pequeño recargo ⏳ F0-52. No pide estatus, logros ni vías: «Minero con licencia» es el **premio** del cierre, no un requisito. Tampoco pide la cinta 1: si la dejas, queda como misión persistente hasta el IV. Detalle y las demás puertas en [24](24-umbrales-de-acto.md).
+El Acto I se cierra cuando **reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes el primer contacto con los empleados**. La primera cuota vence el día 7 y las siguientes, cada 7 días; si no puedes pagar, se prorroga una semana con un pequeño recargo (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor) ⏳ F0-52. No pide estatus, logros ni vías: «Minero con licencia» es el **premio** del cierre, no un requisito. Tampoco pide la cinta 1: si la dejas, queda como misión persistente hasta el IV. Detalle y las demás puertas en [24](24-umbrales-de-acto.md).
 
 ## Duración
 
@@ -57,7 +57,7 @@ El modo historia **no obliga a seguir la trama con exactitud** ✅: el jugador p
 
 ## Pendiente de definir
 
-- ⏳ F0-23 **Narrativa en detalle:** hoy están definidos el gancho, los cuatro actos, el elenco, la verdad de la Aetherita, las decisiones ([23](23-arbol-de-decisiones.md)), los umbrales ([24](24-umbrales-de-acto.md)) y el cierre ([25](25-finales-y-epilogos.md)). Falta bajar cada acto a escenas y diálogos (guion): el guion del Acto I ⏳ F0-23 y su storyboard ⏳ F0-24; los guiones de los actos II a IV ⏳ F4-128, ⏳ F4-135 y ⏳ F4-142, con la plantilla común ⏳ F4-216.
+- **Narrativa en detalle:** hoy están definidos el gancho, los cuatro actos, el elenco, la verdad de la Aetherita, las decisiones ([23](23-arbol-de-decisiones.md)), los umbrales ([24](24-umbrales-de-acto.md)) y el cierre ([25](25-finales-y-epilogos.md)). Falta bajar los actos II a IV a escenas y diálogos (guion). El guion del Acto I está en [27](27-guion-del-acto-i.md) y su storyboard ⏳ F0-24; los guiones de los actos II a IV ⏳ F4-128, ⏳ F4-135 y ⏳ F4-142, con la plantilla común ⏳ F4-216.
 - ✅ **Cierre de la historia:** resuelto en [25](25-finales-y-epilogos.md). Cabecera, tarjetas por piezas (destino de cada personaje, facción, mundo y mercado) y el acta de calibración, con hilos abiertos para una segunda parte.
 - ✅ Umbrales concretos que activan cada acto: resueltos en [24](24-umbrales-de-acto.md). Decididos por el autor (2026-10-12): el modelo de puertas, los tramos, los ajustes de efectos y que la relación nace cumplida. Las cifras de estatus ⏳ F4-109, deuda ⏳ F0-52, logros ⏳ F4-116 y el evaluador ⏳ F4-127 se calibran después.
 - ✅ Cuántas bifurcaciones y consecuencias hay por acto: 3 grandes, 6 medianas y 18 pequeñas (3 en el I, 5 en el II, 5 en el III y 5 en el IV). Árbol en [23](23-arbol-de-decisiones.md).

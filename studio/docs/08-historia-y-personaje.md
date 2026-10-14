@@ -17,7 +17,7 @@ El protagonista **hereda la licencia, el puesto en el mercado y la deuda** de su
 
 | Acto | Qué pasa | Se cierra cuando… |
 |---|---|---|
-| **I · El recién llegado** | Tutorial en la Cuenca del Hollín: aprende a minar y vender, conoce a los primeros personajes | Reabre el puesto, atiende la primera cuota de la deuda (vence el día 7 y, si no puedes pagar, se prorroga una semana con un pequeño recargo ⏳ F0-52) y tiene el primer contacto con los empleados |
+| **I · El recién llegado** | Tutorial en la Cuenca del Hollín: aprende a minar y vender, conoce a los primeros personajes | Reabre el puesto, atiende la primera cuota de la deuda (vence el día 7 y, si no puedes pagar, se prorroga una semana con un pequeño recargo, y en Difícil y Hardcore la cuota atrasada se suma a la del día 14 con un recargo mayor ⏳ F0-52) y tiene el primer contacto con los empleados |
 | **II · Aprender las reglas** | Descubre que la política manda: facciones, protección, primera huelga grande | Elige con quién se alía |
 | **III · El ascenso** | Llega a la capital (Puerto Meridiano), entra a la bolsa, aparecen dilemas morales | Es aceptado en el círculo de poder |
 | **IV · La cima** | Descubre qué le pasó a su tío y qué hay detrás de la Aetherita. Escala hasta lo más alto | Decide qué hacer con su poder y cierra el acta de calibración |
@@ -98,6 +98,6 @@ Cualquier opción cambia la partida, pero **el sistema se reabsorbe y todo sigue
 
 ## Pendiente
 
-- ⏳ F0-23 Cuántas escenas y diálogos tiene el Acto I y con qué formato (viñetas, texto, retratos), en el guion del Acto I; las escenas clave ⏳ F0-24.
+- ✅ El Acto I se guioniza en siete días ([27](27-guion-del-acto-i.md)): 🟡 29 escenas y unos 350 textos, en cajas de diálogo con retrato ([18](18-biblia-narrativa.md), 1.9). Las escenas clave se dibujan en ⏳ F0-24.
 - ✅ Idiomas: español primero; inglés después. El glosario ES/EN está en [18](18-biblia-narrativa.md), capítulo 6, y el flujo de traducción ⏳ F1-20.
 - ✅ Estructura de las variantes del Acto II decidida por el autor (sorteo oculto, alianza entre tres facciones, huelga que depende del jugador). El detalle escena por escena queda como propuesta en [22](22-acto-ii-variantes.md).
