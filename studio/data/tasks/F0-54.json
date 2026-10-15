@@ -8,6 +8,22 @@
       "by": "claude",
       "note": "Se empieza la pasada de cierre del diseño del juego (documentos 01, 02, 03, 04 y 09).",
       "ref": "rama studio/F0-54-cierre-diseno-del-juego"
+    },
+    {
+      "at": "2026-10-15",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR #48"
+    },
+    {
+      "at": "2026-10-15",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea",
+      "ref": "PR #48"
     }
   ],
   "comments": [],
@@ -77,10 +93,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-15",
         "por": "autor",
-        "nota": "El autor revisa los documentos del núcleo cerrados"
+        "nota": "El autor revisó y aprobó el entregable el 2026-10-15"
       },
       {
         "etapa": "playtest",
@@ -88,7 +104,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR fusionado"
       }
     ],
     "traspasos": [
@@ -127,6 +146,13 @@
         "a": "autor",
         "que": "Entrega para tu revisión: documentos 01, 02, 03, 04 y 09 cerrados",
         "at": "2026-10-15"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobación de F0-54",
+        "at": "2026-10-15",
+        "tipo": "entrega"
       }
     ]
   }
