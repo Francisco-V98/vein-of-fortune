@@ -61,7 +61,7 @@ Se activan por evento tuyo, no por calendario, se pueden saltar y no puntúan pa
 |---|---|---|---|
 | O1 · Lo que vende Lucía | Descubres que vende información a más de una parte | Comprar tres rumores | A quién vende además: a Esteban, a Quiroga o a los informantes de Casilda |
 | O2 · Esteban gana un contrato | Esteban se queda con un contrato de hierro o de cobre | Rechazar o tardar en un contrato de esos minerales | Es central en la variante del Consorcio (A3); en las otras dos es de fondo |
-| O3 · Casilda te cita de noche | Un primer trato de prueba con Casilda, ya con el mercado negro abierto. Es un camino extra, no el primer contacto | Mercado negro abierto (A2 o A4) y una visita nocturna | Igual en las tres. No cambia los modificadores de la sección 8, que rigen desde el primer contacto |
+| O3 · Casilda te cita de noche | Un primer trato de prueba con Casilda, ya con el mercado negro abierto. Es un camino extra, no el primer contacto. La visita nocturna de Casilda es una visita, no el modo tienda: la tienda no se abre de noche ✅ ([01](01-core-loop.md)) | Mercado negro abierto (A2 o A4) y una visita nocturna | Igual en las tres. No cambia los modificadores de la sección 8, que rigen desde el primer contacto |
 | O4 · El certificado a solas | Quiroga, nervioso, deja caer el certificado de Anselmo | Primera visita a su oficina después de A2 | Igual en las tres. Si no ocurre, A5 siembra la pista |
 
 ---
@@ -204,7 +204,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 | Ministerio | Carbón | Sensible a huelgas e invierno | Quiroga y las tasas del Ministerio |
 | Los Faroleros | Salitre | Sensible a Los Faroleros y a los puertos | Casilda, con la luz del apagón |
 
-**El mercado negro** se abre en las tres, y su primer contacto ocurre siempre en una escena obligatoria 🟡. En la variante de Los Faroleros lo abre la orden de A2, antes de la huelga. En las del Consorcio y del Ministerio lo abre Casilda en persona durante el apagón de A4. O3 queda como camino extra y no es el primer contacto. Hasta que eliges alianza, cada variante lo toca con un modificador pequeño; al elegir alianza se sustituye por el de la alianza ⏳ F4-133
+**El mercado negro** se abre en las tres, y su primer contacto ocurre siempre en una escena obligatoria 🟡. En la variante de Los Faroleros lo abre la orden de A2, antes de la huelga. En las del Consorcio y del Ministerio lo abre Casilda en persona durante el apagón de A4. O3 queda como camino extra y no es el primer contacto. Los dos lugares del mercado negro son el Bar del Farol de Salinas Blancas y la visita nocturna de Casilda a la tienda; esa visita no es el modo tienda ✅ ([03](03-comercio.md)). Hasta que eliges alianza, cada variante lo toca con un modificador pequeño; al elegir alianza se sustituye por el de la alianza ⏳ F4-133
 
 | Variante | Prima del mercado negro | Ritmo de subida de la vigilancia por operación |
 |---|---|---|
@@ -212,7 +212,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 | Ministerio | Sin cambio | La vigilancia sube un 20 % más rápido: el Ministerio te mira más |
 | Los Faroleros | +5 puntos en salitre | La vigilancia sube un 20 % más despacio: Casilda alivia las inspecciones |
 
-Los modificadores son 🟡 y no cambian los tramos del indicador (Tranquilo, Observado, Vigilado y Bajo investigación). La vigilancia es un indicador global de 0 a 100: sus cambios se dicen en puntos y el «%» solo describe el ritmo de subida. Precios y riesgos ⏳ F4-73
+Los modificadores son 🟡 y no cambian los niveles del indicador (Tranquilo, Observado, Vigilado y Bajo investigación; [03](03-comercio.md)). La vigilancia es un indicador global de 0 a 100: sus cambios se dicen en puntos y el «%» solo describe el ritmo de subida. Precios y riesgos ⏳ F4-73
 
 **Ideas sin mecánica todavía.** Se anotan para no perderlas; ninguna es necesaria para el Acto II:
 

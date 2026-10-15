@@ -44,7 +44,7 @@ Separar en capas, con el contenido en datos:
 | **Datos** | Minerales, zonas, herramientas, noticias, facciones, textos | Archivos de datos (JSON/recursos); cambiar un precio no toca el código |
 | **Interfaz** | Pantallas, minijuegos, HUD | Consume el núcleo, no contiene reglas |
 | **Entrada** | Ratón y teclado, y mando; el táctil queda como adaptador futuro | Capa de acciones (ver abajo) |
-| **Guardado** | Persistencia | Versionado, con migraciones |
+| **Guardado** | Persistencia | Versionado, con migraciones. Punto de control al iniciar cada acción y hasta 5 partidas guardables a elegir ✅ ([01](01-core-loop.md)) |
 | **Plataforma** | Windows y Linux (Steam); móvil más adelante | Tienda (logros, nube, actualizaciones), pantalla (resolución, ventana), ciclo de vida |
 
 Principios:
@@ -190,7 +190,7 @@ Principio: **reducir la superficie de ataque y los datos que se manejan**.
 | Cuentas y autenticación | **Sin cuentas en la v1**: juego offline, sin servidores propios. Nada que autenticar |
 | Datos personales | Casi ninguno: el nombre del personaje y de la tienda son locales y no salen del equipo (Steam Auto-Cloud sincroniza los guardados con la cuenta de Steam, no con servidores propios) |
 | Anuncios y analíticas de terceros | **Ninguno en la v1** (pago único); cada SDK trae recolección de datos y obligaciones |
-| Guardado | Formato versionado, escritura segura (archivo temporal y reemplazo), copia de respaldo y verificación de integridad para detectar corrupción. **Autoguardado instantáneo**: la Steam Deck suspende el juego en cualquier momento |
+| Guardado | Formato versionado, escritura segura (archivo temporal y reemplazo), copia de respaldo y verificación de integridad para detectar corrupción. **Autoguardado instantáneo**: la Steam Deck suspende el juego en cualquier momento. Cada una de las hasta 5 partidas guardables tiene su propio archivo y su punto de control ✅ ([01](01-core-loop.md)) |
 | Nube y partidas ✅ | **Steam Auto-Cloud** con una carpeta de guardados pequeños y hasta **5 partidas**. En **Hardcore manda el guardado local**: no se puede restaurar desde la nube tras morir |
 | Trampas | En un juego de un jugador no es prioridad. Una verificación ligera solo evita corrupción accidental |
 | Validación de entradas | Nombre y tienda con límite de longitud, caracteres permitidos y filtro de palabras ofensivas |

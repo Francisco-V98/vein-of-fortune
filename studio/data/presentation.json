@@ -243,19 +243,20 @@
         {
           "glyph": "☾",
           "name": "Noche",
-          "text": "Tienda, contratos y mercado negro"
+          "text": "Eventos, misiones y mercado negro; la tienda no abre de noche"
         }
       ],
-      "cost": "Una expedición o un turno de tienda cuesta 1 bloque (2 en zonas profundas).",
+      "cost": "Una expedición o abrir la tienda cuesta 1 bloque; viajar no gasta bloque y cuesta un poco de dinero; misiones y trámites cuestan 0, medio o un bloque. Las zonas profundas (Cavernas y La Fosa) cuestan 2 bloques y ocupan Tarde y Noche; La Fosa solo abre 3 días por semana.",
       "free": {
         "title": "Gratis, sin gastar bloques",
         "items": [
           "Leer el mercado",
           "Leer las noticias",
+          "Ver las zonas en el mapa",
           "Organizar el inventario"
         ]
       },
-      "foot": "Al cerrar el día: el mercado avanza, aparecen noticias, las zonas se regeneran y se pagan costos.",
+      "foot": "En cada bloque el mercado se mueve; al cerrar el día aparecen noticias, las zonas se regeneran y se pagan costos.",
       "source": [
         "01-core-loop"
       ]
@@ -561,28 +562,28 @@
       "zones": [
         {
           "name": "Tranquilo",
-          "range": "0–30",
+          "range": "0–29",
           "text": "Nada",
           "color": "#4fb6a5",
           "w": 30
         },
         {
           "name": "Observado",
-          "range": "30–60",
+          "range": "30–59",
           "text": "Inspecciones y multas leves",
           "color": "#e3b25c",
           "w": 30
         },
         {
           "name": "Vigilado",
-          "range": "60–85",
+          "range": "60–84",
           "text": "Multas fuertes y contratos oficiales bloqueados",
           "color": "#ef8da0",
           "w": 25
         },
         {
           "name": "Bajo investigación",
-          "range": "85+",
+          "range": "85–100",
           "text": "Redada: confiscación, cierre y arresto",
           "color": "#c23b55",
           "w": 15

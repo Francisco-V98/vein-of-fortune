@@ -8,7 +8,7 @@ Baja el Acto I a siete días: qué aprende el jugador cada día, qué pasa en su
 
 ## Resumen en cinco líneas
 
-1. El Acto I son **siete días de tres bloques** (mañana, tarde y noche) ✅. Cada día enseña como máximo una mecánica nueva ✅, y los días 5 y 6 son de respiro: lo que traen es opcional ✅. La prensa es solo el Heraldo (noticia oficial) y el Teletipo (rumor) ✅.
+1. El Acto I son **siete días de tres bloques** (mañana, tarde y noche) ✅, y la tienda no se abre de noche ✅. Cada día enseña como máximo una mecánica nueva ✅, y los días 5 y 6 son de respiro: lo que traen es opcional ✅. La prensa es solo el Heraldo (noticia oficial) y el Teletipo (rumor) ✅.
 2. **Solo la cuota es fecha dura**: vence el día 7 ✅. Lo demás se dispara por evento y, si no ocurre, espera en la cola ✅.
 3. El puesto se reabre el **día 2** (trámite de Quiroga más la primera venta) ✅; el primer contacto con los empleados (**día 7, a primera hora**) y la cuota del **día 7** completan la puerta ✅. Entonces Quiroga sella «Minero con licencia» ✅.
 4. Anselmo es solo **rastro** (firma, abono, libreta, lámpara y cinta 1) ✅. Nadie dice «mal del éter» ✅.
@@ -18,7 +18,7 @@ Baja el Acto I a siete días: qué aprende el jugador cada día, qué pasa en su
 
 ## 1 · Decisiones del autor ✅
 
-Decisiones del 2026-10-13 (F0-23), tras la ideación de tres estructuras, el aligeramiento de los días 5 y 6 (demasiada información muy rápida) y las que ya estaban tomadas en otros documentos.
+Decisiones del 2026-10-13 (F0-23) y del 2026-10-15 (F0-54), tras la ideación de tres estructuras, el aligeramiento de los días 5 y 6 (demasiada información muy rápida) y las que ya estaban tomadas en otros documentos.
 
 | Tema | Decisión |
 |---|---|
@@ -29,7 +29,7 @@ Decisiones del 2026-10-13 (F0-23), tras la ideación de tres estructuras, el ali
 | Premio del cierre | Quiroga sella **«Minero con licencia»** el día 7 ✅ |
 | Nombre de la tienda | El jugador lo pone **al colgar el cartel**, el día 2 ✅ |
 | Inicio | **Poco efectivo, el detector heredado de Anselmo y un pico prestado por Teo** ✅ |
-| Riesgo | **Sin pérdida grave ni muerte permanente en los primeros días**, también en Hardcore ✅ (el límite exacto por día está en la sección 2.3) |
+| Riesgo | **Sin pérdida grave ni muerte permanente en los primeros días**, también en Hardcore, y eso incluye el día 3 ✅ (el límite por día está en la sección 2.3) |
 | Peligros ambientales | **Fuera del Acto I**: ni gas ni derrumbes en los siete días. Entran desde el Acto II ✅ (⏳ F3-10) |
 | Fuera del Acto I | **El taller, la herrería, los quioscos y los peligros ambientales.** La prensa llega por Lucía y por la tienda, y la mejora de la herramienta la hace Teo ✅ |
 | Prensa | **Solo el Heraldo (noticia oficial sencilla) y el Teletipo (rumor).** La Voz del Hollín, la prensa con sesgos y el «cruzar fuentes» entran en el Acto II. El día 6 enseña a **confirmar un rumor con la noticia oficial del día siguiente** ✅ |
@@ -37,6 +37,8 @@ Decisiones del 2026-10-13 (F0-23), tras la ideación de tres estructuras, el ali
 | Cuota | Semanal; la primera vence el día 7 ✅ |
 | Puerta del Acto I | Reabrir el puesto, atender la primera cuota (pagada o prorrogada) y tener el primer contacto con los empleados ✅ (la misma puerta) |
 | Primer contacto con los empleados | **Día 7, a primera hora**, como escena corta antes de la cuota: la ficha del candidato sin nombre y «Contratar» bloqueado con su motivo ✅ |
+| «Contratar» bloqueado | El botón se abre al cerrar el Acto I y **también exige una mejora de la tienda**. En el Acto I está bloqueado y su motivo es esa **mejora de la tienda pendiente** ✅ (2026-10-15). El primer contacto sigue siendo la puerta del acto, no contratar ✅ |
+| Bloques y tienda | Viajar no gasta bloque pero cuesta un poco de dinero (⏳ F0-52) y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; **la tienda no se abre de noche**, así que ninguna venta del Acto I cae en la noche. Las zonas profundas (2 bloques) y que La Fosa solo abra 3 días por semana no afectan al Acto I: ninguna se visita en él ✅ (2026-10-15; [01](01-core-loop.md)) |
 | Deuda | La deuda nunca bloquea ✅ |
 | Anselmo | Solo sombras: libreta, lámpara, firma y cinta 1 ✅ |
 | Firma | La firma de los papeles de la herencia es la misma del acta final ✅ |
@@ -50,7 +52,7 @@ Decisiones del 2026-10-13 (F0-23), tras la ideación de tres estructuras, el ali
 
 ## 2 · Reglas del acto 🟡
 
-**Estado:** ✅ las reglas con palomita, que vienen de la sección 1 o de documentos ya confirmados; 🟡 cómo se aplican día a día, los valores por dificultad y si el día 3 cuenta como sin pérdida grave.
+**Estado:** ✅ las reglas con palomita, que vienen de la sección 1 o de documentos ya confirmados; 🟡 cómo se aplican día a día y los valores por dificultad.
 
 ### 2.1 Bloques, escenas y cola
 
@@ -59,6 +61,8 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 | Regla |
 |---|
 | Cada día tiene tres bloques: mañana, tarde y noche. El mercado se mueve una vez por bloque ([03](03-comercio.md)) ✅ |
+| Viajar no gasta bloque pero cuesta un poco de dinero (⏳ F0-52) y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; los trámites, las visitas y las conversaciones cuestan nada, medio bloque o un bloque según su peso ([01](01-core-loop.md)) ✅ |
+| **Ninguna venta cae en la noche**: la tienda no se abre de noche ([01](01-core-loop.md)). Las escenas de noche son de casa, de cierre o de visita, y ninguna abre el modo tienda ✅ |
 | Las escenas se disparan por evento; si no ocurren, pasan a la cola (⏳ F0-78) ✅ |
 | Solo la cuota tiene fecha: el día 7 llega aunque las escenas anteriores no se hayan jugado ✅ |
 | Cada día enseña una mecánica nueva como máximo ✅ |
@@ -68,7 +72,8 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 
 **Cómo se aplican 🟡.**
 
-- Una expedición o atender el puesto gasta un bloque; leer noticias, mirar el mercado y organizar el inventario no gastan ninguno ([01](01-core-loop.md)). Cada bloque tiene una actividad principal y las conversaciones cortas del barrio caben dentro del bloque en que ocurren.
+- Una expedición o abrir el puesto gasta un bloque completo; viajar (que cuesta un poco de dinero, ⏳ F0-52), leer noticias, mirar el mercado y organizar el inventario no gastan ninguno ([01](01-core-loop.md)). Cada bloque tiene una actividad principal y las conversaciones cortas del barrio caben dentro del bloque en que ocurren. El peso exacto de cada escena (nada, medio bloque o un bloque) ⏳ F3-16.
+- Cada día cabe en sus tres bloques con la regla de arriba: las ventas y los pedidos caen en la mañana o en la tarde, y la noche queda para las escenas.
 - El día que se indica en cada escena es el **esperado**. Si el jugador va más rápido, la escena se adelanta solo hasta donde cumple sus requisitos; si va más lento, espera en la cola. La cola suelta las escenas de una en una y en orden, para que nunca se enseñen dos mecánicas nuevas a la vez.
 - Cada día tiene **como máximo una decisión principal**; si hay otra (la del nombre de la tienda el día 2 o `n-i-lucia-rumor` el día 5), es **menor** y cae dentro del mismo día. Los días 5 y 6 no obligan a ninguna principal: ahorrar o mejorar y vender ya o esperar al Heraldo son elecciones libres, sin nodo del árbol.
 - **Ayuda a pedido.** Lo opcional (la mejora, el pedido urgente) no abre ventanas de tutorial: tiene un botón «?» y una frase de Teo que el jugador lee si quiere.
@@ -82,7 +87,7 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 | Villa Brasa y las **Galerías del Hollín**; **carbón** y **hierro** ✅ | Taller, Refinado y Acero (el taller abre en el II) ✅ |
 | Escáner instantáneo, **Picado**, **Perforación** y **Regateo** ✅ | Herrería, quioscos y sede de la Unión (V1, [26](26-zonas-y-edificios.md)) ✅ |
 | Tienda modesta y herramientas de nivel 1 y 2 ✅ | Cañón Ferroso y las demás zonas ✅ |
-| Información básica (precio y flecha), la noticia oficial del Heraldo, un rumor del Teletipo y la sección de empleos ✅ | Contratar de verdad, mercado negro y vigilancia (Acto II) ✅ |
+| Información básica (precio y flecha), la noticia oficial del Heraldo, un rumor del Teletipo y la sección de empleos ✅ | Contratar de verdad (se abre al cerrar el Acto I y exige una mejora de la tienda), mercado negro y vigilancia (Acto II) ✅ |
 | | Capas 3 y 4 de información y la Aetherita ✅ |
 | | La Voz del Hollín, la prensa con sesgos y el «cruzar fuentes»: desde el Acto II ✅ |
 | | Contratos (en el Acto I son «pedidos de cliente») ✅ |
@@ -96,7 +101,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 |---|---|---|---|---|
 | Efectivo, detector y pico del inicio | Los mismos ✅ | Los mismos ✅ | Los mismos ✅ | Los mismos ✅ |
 | Pérdida grave y muerte hasta el día 2 | Ninguna ✅ | Ninguna ✅ | Ninguna ✅ | Ninguna ✅ |
-| Pérdida grave y muerte el día 3 | Ninguna 🟡 | Ninguna 🟡 | Ninguna 🟡 | Ninguna 🟡 |
+| Pérdida grave y muerte el día 3 | Ninguna ✅ | Ninguna ✅ | Ninguna ✅ | Ninguna ✅ |
 | Peligros ambientales en los siete días | Ninguno ✅ | Ninguno ✅ | Ninguno ✅ | Ninguno ✅ |
 | Cuota atrasada del día 7 | Desplaza la serie, con recargo ✅ | Desplaza la serie, con recargo ✅ | Se suma a la del día 14, con recargo mayor ✅ | Se suma a la del día 14, con recargo mayor ✅ |
 
@@ -106,7 +111,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 ## 3 · Los siete días de un vistazo 🟡
 
-**Estado:** ✅ que son siete días, la cuota del día 7, el trámite y la primera venta del día 2, el nombre de la tienda del día 2, el sello del día 7, la prensa de solo Heraldo y Teletipo y el nombre «pedidos de cliente», los días 5 y 6 ligeros (mejora y pedido urgente opcionales, día 6 solo con noticia y rumor) y el primer contacto con los empleados el día 7 a primera hora; 🟡 el resto (qué mecánica va en qué día, incluido contar «escanear y picar» como una sola el día 1, los bloques, qué ocupa la tarde del día 6 y las demás decisiones).
+**Estado:** ✅ que son siete días, la cuota del día 7, el trámite y la primera venta del día 2, el nombre de la tienda del día 2, el sello del día 7, la prensa de solo Heraldo y Teletipo y el nombre «pedidos de cliente», los días 5 y 6 ligeros (mejora y pedido urgente opcionales, día 6 solo con noticia y rumor) y el primer contacto con los empleados el día 7 a primera hora, y que ninguna escena vende ni abre la tienda de noche (decisión del autor, 2026-10-15); 🟡 el resto (qué mecánica va en qué día, incluido contar «escanear y picar» como una sola el día 1, los bloques, qué ocupa la tarde del día 6 y las demás decisiones).
 
 | Día | Se aprende (una mecánica) | Mañana | Tarde | Noche | Decisión del día |
 |---|---|---|---|---|---|
@@ -145,7 +150,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | `d1.2` La llave y los papeles | Mañana | Reme te recibe en su casa. Te da la llave, los papeles de la herencia con la **firma de Anselmo** y la caja con su detector | **Reme:** «Pasa, criatura. Esta es la llave. Y estos, los papeles de tu tío: ahí está su firma.» |
 | `d1.3` El libro de deuda | Mañana | Reme abre el libro: capital, cuota cada 7 días y la primera el día 7. Una línea muestra el **abono** de cada mes | **Reme:** «Este abono llega cada mes. Algún vecino bondadoso, criatura. Yo no pregunto.» |
 | `d1.4` Las Galerías | Tarde | Teo te presta el pico, te enseña a escanear y a picar tres menas de carbón. Dice que fue amigo de tu tío y lo deja ahí | **Teo:** «El carbón no perdona, pero avisa. Escanea primero, aprendiz.» Y, al irse: «Fui amigo de tu tío. Lo demás, otro día.» |
-| `d1.5` El puesto cerrado | Noche | La llave abre el puesto, lleno de polvo. En el cajón del mostrador está la **libreta**; su última anotación no tiene fecha. El primer apunte manda ir a Quiroga | **Narrador:** «La libreta tiene mil apuntes. El último, una sola línea sin fecha.» |
+| `d1.5` El puesto cerrado | Noche | La llave abre el puesto, lleno de polvo; sigue cerrado al público. En el cajón del mostrador está la **libreta**; su última anotación no tiene fecha. El primer apunte manda ir a Quiroga | **Narrador:** «La libreta tiene mil apuntes. El último, una sola línea sin fecha.» |
 | `d1.6` La carta | Noche | En la casa obrera, la lámpara sobre la mesa. Escribes a Vega Mansa (`n-i-herencia`) | **{nombre}:** «Mamá, papá: heredé un puesto. Lo del banco agrario lo arreglo yo.» |
 
 - **Hilos que se siembran:** `h-firma-de-la-herencia` (`d1.2`), `h-abono-anonimo`, `h-trato-de-anselmo`, `h-prestamo-de-reme-a-anselmo` y `h-deuda-del-protagonista` (`d1.3`), `h-traicion-de-reme` (`d1.2` y `d1.3`), `h-anselmo-sigue-vivo` (`d1.4`), `h-libreta-sin-cierre` (`d1.5`), `h-lampara-y-cinta-1`, `h-vega-mansa-y-el-juramento` y `h-deuda-del-banco-agrario` (`d1.6`) y `h-sorteo-oculto-de-la-faccion-de-reme` (el sorteo ocurre antes de `d1.1`).
@@ -174,7 +179,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | `d2.1` El trámite | Mañana | Quiroga pone el puesto a tu nombre. Lo llama «gestión» y la cobra con la primera venta | **Quiroga:** «Es un simple trámite, estimado (estimada). Tan simple que me da pena cobrarlo.» |
 | `d2.2` Surtir los estantes | Tarde | Colocas el carbón de ayer (o el saco que dejó Anselmo en la trastienda) y fijas el precio | **Narrador:** «Queda un saco de carbón en la trastienda. Dos años de polvo y sigue negro.» |
 | `d2.3` La primera venta | Tarde | Llega un cliente obrero. Vendes, eliges el margen y cuelgas el cartel con el nombre. El puesto queda **reabierto** | **Cliente:** «¿Es verdad que reabren el puesto? Aquí compraba mi padre.» |
-| `d2.4` Cierre de caja | Noche | El cajón se atasca; debajo del fondo hay un carrete con el número 1 | **Narrador:** «El cajón suena hueco. Debajo hay un carrete con un número: 1.» |
+| `d2.4` Cierre de caja | Noche | El puesto ya cerró y no se vende: solo cuadras la caja. El cajón se atasca; debajo del fondo hay un carrete con el número 1 | **Narrador:** «El cajón suena hueco. Debajo hay un carrete con un número: 1.» |
 
 - **Noticia guionizada (la primera, de ⏳ F3-31):** el Heraldo dice que el abasto de carbón está garantizado, pero que el frío llega antes. El Teletipo trae el primer **rumor** y el carbón sube un poco en los dos bloques siguientes, así que el rumor era cierto. Los dos pasan por el mostrador, repartidos por el voceador.
   - **Heraldo:** «El Ministerio informa de que el frío llegará antes, pero el carbón está garantizado este invierno.»
@@ -186,7 +191,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 ## 6 · Día 3 · El hierro 🟡
 
-**Estado:** ✅ el hierro es mena secundaria de las Galerías ([05](05-mundo-y-minerales.md)); ✅ la Perforación es del Acto I; ✅ Lucía debuta en el Acto I; ✅ no hay pérdida grave en los primeros días (si el día 3 cuenta, 🟡); ✅ no hay peligros ambientales; 🟡 el taladro prestado, la placa de Pozo Negro, la noticia y el orden.
+**Estado:** ✅ el hierro es mena secundaria de las Galerías ([05](05-mundo-y-minerales.md)); ✅ la Perforación es del Acto I; ✅ Lucía debuta en el Acto I; ✅ no hay pérdida grave en los primeros días, incluido el día 3 (decisión del autor, 2026-10-15); ✅ no hay peligros ambientales; 🟡 el taladro prestado, la placa de Pozo Negro, la noticia y el orden.
 
 | Campo | Contenido |
 |---|---|
@@ -194,7 +199,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | Decisión | ¿Vender el hierro o guardarlo en la trastienda? Guardar cuesta ⏳ F0-52 |
 | Lo cierra | La decisión tomada |
 | Si no haces lo esperado | Sin perforar, no hay hierro y la decisión no existe; Teo te lo vuelve a proponer cuando vuelvas. Lucía espera en la cola |
-| Riesgo | Sobrecalentar daña la mena, pero no hay pérdida grave 🟡. El calor es de la herramienta, no un peligro ambiental ✅: no hay gas ni derrumbes |
+| Riesgo | Sobrecalentar daña la mena, pero no hay pérdida grave ✅. El calor es de la herramienta, no un peligro ambiental ✅: no hay gas ni derrumbes |
 
 **Líneas de ejemplo**
 
@@ -210,7 +215,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 - **La nota del Heraldo con la tienda (de ⏳ F3-31):** «El Ministerio informa de que `{nombre}` reabre «`{tienda}`» en Villa Brasa.»
 - **Hilos que se siembran:** `h-pozo-negro` (`d3.2`), `h-comision-y-mal-del-eter` y `h-lealtad-de-lucia` (`d3.3`).
 - **Sombras:** la Comisión (`d3.3`). No hay sombra de Anselmo.
-- **Regla 🟡:** desde el final del día 3 la pérdida es la normal de la dificultad (sección 2.3). Si el día 3 no cuenta, la regla empieza a mitad de ese día.
+- **Regla ✅:** hasta el día 3 incluido no hay pérdida grave (2026-10-15). Desde el día 4 la pérdida es la normal de la dificultad (sección 2.3).
 
 ---
 
@@ -261,7 +266,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | `d5.4` La respuesta de casa | Noche | Llega la carta de Vega Mansa, según lo que contaste el día 1 | **Padre:** «Sabíamos que te irías. No que bajarías. Escríbenos cada semana.» |
 
 - **Un día de respiro.** La tarde queda libre: puedes salir a las Galerías, vender, mirar el mercado o no hacer nada. No hay mecánica nueva que aprender.
-- **Ayuda a pedido.** La mejora no abre ninguna ventana. Quien quiera saber cuánto cuesta y qué mejora pulsa el «?» del taller de Teo.
+- **Ayuda a pedido.** La mejora no abre ninguna ventana. Quien quiera saber cuánto cuesta y qué mejora pulsa el «?» de la oferta de Teo.
 - **Si no tienes el rumor del cliente** (dejaste ir al cliente el día 4 o no oíste a quien lo contó), Lucía acepta como tuyo lo que viste en el mercado: «el hierro lleva dos días subiendo». Las tres opciones funcionan igual, con el Teletipo titulando «HIERRO SUBIRÍA DESPACIO EN EL HOLLÍN. SIN CONFIRMAR». Así `n-i-lucia-rumor` nunca se queda sin material.
 - **El rumor:** si lo cuentas entero, el Teletipo lo publica esa noche con su SIN CONFIRMAR («HERRERO DE LA CALLE HONDA ACAPARA CARBÓN. SIN CONFIRMAR») y el carbón se mueve 2 a 3 puntos; si cuentas la mitad, sale una nota vaga y se mueve 1; si callas, no sale nada (opciones de [23](23-arbol-de-decisiones.md), sección 3).
 - **La carta de casa:** con «todo», contesta el padre, dolido pero sin darte la espalda; con «parte», se alegran sin saber de la mina; con «nada», no llega carta y `d5.4` no se juega.
@@ -317,9 +322,9 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 | Escena | Bloque | Qué pasa | Quién habla |
 |---|---|---|---|
-| `d7.1` Primera hora | Mañana | El Heraldo confirma el rumor de ayer. Teo pasa por el puesto (si no mejoraste el pico, te lo deja) y te señala la sección de empleos: una **ficha sin nombre** y «Contratar» bloqueado. Es el primer contacto con los empleados (sección 15). Luego revisas la caja y entregas el pedido urgente, si lo aceptaste. El libro marca «hoy» | **Teo:** «Mira la sección de empleos, aprendiz. Un puesto solo no se sostiene. Todavía.» **Narrador:** «Hoy vence la primera cuota. Hay caja, o no la hay; pero hay un camino.» |
+| `d7.1` Primera hora | Mañana | El Heraldo confirma el rumor de ayer. Teo pasa por el puesto (si no mejoraste el pico, te lo deja) y te señala la sección de empleos: una **ficha sin nombre** y «Contratar» bloqueado porque falta mejorar el puesto. Es el primer contacto con los empleados (sección 15). Luego revisas la caja y entregas el pedido urgente, si lo aceptaste. El libro marca «hoy» | **Teo:** «Mira la sección de empleos, aprendiz. Un puesto solo no se sostiene. Todavía.» **Narrador:** «Hoy vence la primera cuota. Hay caja, o no la hay; pero hay un camino.» |
 | `d7.2` La cuota | Tarde | En casa de Reme. Pagas, o pides tiempo (sección 11). Eco de la pista del sorteo | **Reme:** «Con calma, criatura. Yo en tu lugar pagaría esta semana, pero una más no me quita el sueño.» |
-| `d7.3` El sello | Noche | Quiroga llega al puesto al cerrar, con el sello en la mano: «Minero con licencia» («Minera con licencia» para la protagonista) | **Quiroga:** «Queda sellada su licencia, estimado (estimada). Ya lo pagó con el trámite: yo nunca cobro dos veces.» |
+| `d7.3` El sello | Noche | Quiroga llega al puesto ya cerrado, sin abrir la tienda, con el sello en la mano: «Minero con licencia» («Minera con licencia» para la protagonista) | **Quiroga:** «Queda sellada su licencia, estimado (estimada). Ya lo pagó con el trámite: yo nunca cobro dos veces.» |
 | `d7.4` El decreto | Noche | En la calle, un voceador. El Ministerio anuncia un decreto sobre las zonas del Hollín: es el gancho de A1 | **Voceador:** «¡Decreto del Ministerio de Recursos! ¡Se abren nuevas zonas en el Hollín!» |
 
 - **Si prorrogas**, Reme lo dice sin reproche, con un consejo que suena a aviso:
@@ -407,11 +412,12 @@ Solo se ve la pista de la variante sorteada. Los otros dos props no existen en e
 
 ## 15 · El primer contacto con los empleados 🟡
 
-**Estado:** ✅ el Acto I termina con el primer contacto; ✅ se habla de empleados y aparece un candidato en el periódico; ✅ todavía no se puede contratar ([17](17-mapa-de-historia.md)); ✅ la contratación se implementa en el Acto II; ✅ pasa al día 7, a primera hora, como escena corta antes de la cuota (decisión del autor, 2026-10-13); 🟡 la ficha, el motivo del bloqueo, el aviso de Teo y qué medio publica la sección de empleos.
+**Estado:** ✅ el Acto I termina con el primer contacto; ✅ se habla de empleados y aparece un candidato en el periódico; ✅ todavía no se puede contratar ([17](17-mapa-de-historia.md)); ✅ la contratación se implementa en el Acto II; ✅ pasa al día 7, a primera hora, como escena corta antes de la cuota (decisión del autor, 2026-10-13); ✅ el botón «Contratar» se abre al cerrar el Acto I y exige una mejora de la tienda, así que en el Acto I su motivo es esa mejora pendiente (decisión del autor, 2026-10-15); 🟡 la ficha, el texto del aviso, el aviso de Teo y qué medio publica la sección de empleos.
 
 - **Cuándo:** día 7, mañana, a primera hora (`d7.1`), antes de la cuota. Es una escena corta dentro de la primera hora del día, junto al Heraldo que confirma el rumor.
 - **Qué se ve.** Teo señala la sección de empleos (en el Acto I no se nombra el medio que la publica). Hay una **ficha sin nombre** (nombres procedurales ⏳ F4-172): rol «Minero», lo que pide de salario y la Lealtad oculta. Debajo, el botón **«Contratar»**, bloqueado con su motivo.
-- **Motivo del bloqueo.** Texto de ejemplo: «Todavía no puedes contratar. Se abrirá más adelante.» El Acto I no dice cuándo.
+- **Motivo del bloqueo.** Es la **mejora de la tienda pendiente** ✅: el botón no se abre hasta que se cierre el Acto I y el puesto esté mejorado. Texto de ejemplo: «Para contratar, primero hay que mejorar el puesto.» El Acto I no dice cuál mejora ni cuándo; cuál y cuánto cuesta ⏳ F0-52, y la contratación real ⏳ F4-90. El primer contacto es la puerta del acto; contratar no.
+- **Dónde se compra la mejora.** ✅ La mejora de la tienda **se compra en la propia tienda, desde el Acto II, con dinero** (decisión del autor, 2026-10-15; cifra ⏳ F0-52). **No se ofrece en el Acto I**: los siete días mantienen «una mecánica nueva por día» y en ellos el botón «Contratar» se ve bloqueado con ese motivo.
 - **Si no abres la sección,** Teo lo cuenta y la ficha queda pegada en el tablón del puesto. Cuenta igual para la puerta ✅.
 - **Si la primera hora se salta** (llegas al puesto más tarde), la escena se dispara en el primer bloque en que pases por el puesto, antes de la cuota de la tarde; la cola la suelta sin mezclarla con otra mecánica.
 - **Qué se construye.** La ficha del Acto I es una tarjeta fija hecha en ⏳ F3-16, con el texto de ⏳ F3-47. La sección real del periódico es ⏳ F4-94, su sesgo ⏳ F4-96 y la información oculta ⏳ F4-97.
@@ -431,10 +437,10 @@ Solo se ve la pista de la variante sorteada. Los otros dos props no existen en e
 | **Pico** | Nivel 1, prestado por Teo ✅ |
 | **Mejora** | La hace Teo ✅; opcional, con ayuda a pedido ✅ |
 | **Trastienda** | El almacén modesto del puesto, con costo de guardar ⏳ F0-52 ✅ |
-| **Prensa** | Heraldo (noticia oficial) y Teletipo (rumor) ✅ |
+| **Prensa** | Heraldo (noticia oficial) y Teletipo (rumor), gratis en el Acto I ✅ ([03](03-comercio.md)) |
 | **Pedidos de cliente** | Estándar el día 4 y urgente con prima el día 6 (opcional) ✅ |
 
-**Lo que propone el guion.** El pico de nivel 2 puede llegar el día 5 (opcional) y ya es tuyo; la mejora cuesta hierro y dinero (⏳ F0-52); Teo presta un taladro el día 3; reparar es solo pagar, sin minijuego; el Heraldo y el Teletipo llegan al mostrador y el Teletipo también por Lucía; sin el puesto abierto se vende al contado, con peor precio.
+**Lo que propone el guion.** El pico de nivel 2 puede llegar el día 5 (opcional) y ya es tuyo; la mejora cuesta hierro y dinero (⏳ F0-52); Teo presta un taladro el día 3; reparar cuesta dinero y materiales y no es un minijuego ✅ ([02](02-extraccion.md); los materiales ⏳ F0-52); el Heraldo y el Teletipo llegan al mostrador y el Teletipo también por Lucía; sin el puesto abierto se vende al contado, con peor precio.
 
 ---
 
@@ -513,6 +519,7 @@ Tras aligerar los días 5 y 6 (2026-10-13), el total baja de ≈ 340 a ≈ 320 t
 | pedido de cliente | El encargo de un cliente en el Acto I (estándar el día 4, urgente y opcional el día 6). «Contrato» queda para el Acto II en adelante ✅ |
 | pedido urgente · prima | El pedido de cliente urgente (opcional, sin escena) y lo que paga de más |
 | ficha de candidato | La tarjeta del candidato de la sección de empleos, que se ve el día 7 a primera hora |
+| mejora de la tienda | La mejora del puesto que hace falta para poder contratar; se compra en la propia tienda desde el Acto II (cuál y cuánto ⏳ F0-52). No es la mejora de una herramienta, que hace Teo. En el Acto I es el motivo del bloqueo de «Contratar» |
 | cola de historia | Donde esperan las escenas que no se pueden disparar ([24](24-umbrales-de-acto.md), ⏳ F0-78) |
 | sombra | Un rastro de Anselmo o de la Comisión que no revela nada ([18](18-biblia-narrativa.md), 1.4) |
 
@@ -520,11 +527,10 @@ Tras aligerar los días 5 y 6 (2026-10-13), el total baja de ≈ 340 a ≈ 320 t
 
 ## Propuestas por confirmar 🟡
 
-Quedan tres puntos que son propuesta del narrador. Ninguno bloquea nada, pero el autor debe confirmarlos o cambiarlos antes de que ⏳ F3-47 y ⏳ F3-16 los usen. Las dos preguntas anteriores (el recargo en Difícil y Hardcore y los peligros ambientales) ya están respondidas y pasaron a la sección 1 ✅.
+Quedan dos puntos que son propuesta. Ninguno bloquea nada, pero el autor debe confirmarlos o cambiarlos antes de que ⏳ F3-47 y ⏳ F3-16 los usen. Las preguntas anteriores (el recargo en Difícil y Hardcore, los peligros ambientales y hasta qué día no hay pérdida grave, que incluye el día 3) ya están respondidas y pasaron a la sección 1 ✅.
 
 | Punto | Propuesta 🟡 | Qué cambia si el autor prefiere otra cosa |
 |---|---|---|
-| Hasta qué día no hay pérdida grave | **Hasta el día 3 incluido**: las cuatro dificultades empiezan a aplicar su pérdida normal al terminar el día 3 | Si el día 3 no cuenta, la pérdida empieza a mitad de ese día; cambian la sección 2.3 y la regla del día 3 |
 | El día 1: escanear y picar | **Una sola mecánica**, la expedición guiada. Así el día 1 respeta «una mecánica nueva por día» | Si son dos, uno de los dos pasa al día 2 y se mueve el trámite de Quiroga; cambian las secciones 3 a 5 |
 | Las tres pistas del sorteo | **Caen el día 4 de noche** (`d4.4`), con **ecos los días 1 y 7** | Si cae otro día, cambian la sección 13 y los ecos de `d1.2`, `d1.3`, `d7.2` y `d7.3` |
 

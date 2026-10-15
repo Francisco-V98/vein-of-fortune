@@ -29,8 +29,8 @@ El detalle completo (mecánicas, mercado y eventos, arte) está en el cuadro del
 ## Decisiones ✅
 
 1. **Zonas:** se reparten como en el cuadro (1 en el Acto I, 3 en el II, 1 en el III y 1 en el IV).
-2. **Empleados:** el Acto I **termina con el primer contacto** (el día 7, a primera hora; se habla de ellos, aparece un candidato en el periódico, pero todavía no se puede contratar). La contratación queda **implementada en el Acto II** como está en [04](04-progresion-y-meta.md).
-3. **Mercado negro:** entra en el **Acto II**, cuando conoces a los Faroleros, con el indicador de vigilancia ([03](03-comercio.md)).
+2. **Empleados:** el Acto I **termina con el primer contacto** (el día 7, a primera hora; se habla de ellos, aparece un candidato en el periódico, pero todavía no se puede contratar). La contratación queda **implementada en el Acto II** como está en [04](04-progresion-y-meta.md): el botón «Contratar» se abre al cerrar el Acto I y también exige una mejora de la tienda, que se compra en la propia tienda desde el Acto II (en el Acto I está bloqueado por ese motivo). Se empieza con Minero y Dependiente, y el Analista llega en el Acto III (decisión del autor, 2026-10-15).
+3. **Mercado negro:** entra en el **Acto II**, cuando conoces a los Faroleros, con el indicador de vigilancia ([03](03-comercio.md)). Se opera de noche, en el Bar del Farol de Salinas Blancas y con la visita nocturna de Casilda; la tienda no se abre de noche.
 4. **Variantes del Acto II** (la facción de Reme): una columna común de seis escenas con escenas propias por variante, sorteo oculto al empezar y alianza final entre el Consorcio, el Ministerio y Los Faroleros. Escena por escena en [22](22-acto-ii-variantes.md).
 5. **Árbol de decisiones:** las decisiones y consecuencias de los cuatro actos están en [23](23-arbol-de-decisiones.md) y sus datos en `studio/data/decisions.json`.
 6. **Finales:** cada salida del IV cierra con una cabecera, tarjetas por piezas y el acta de calibración ([25](25-finales-y-epilogos.md)) ✅.
@@ -52,6 +52,8 @@ Se mide en **tiempo real de juego**, no en días del calendario del juego ✅. L
 | II | 4–10 h |
 | III | 4–10 h |
 | IV | 3–6 h |
+
+Esas horas dependen de cuántos minutos dura un día de juego ([01](01-core-loop.md)): siete días en 1,5–3 h son 13–26 minutos por día, y la meta de sesiones cortas de 01 apunta a menos. Con esa misma cuenta, un contrato de empleado de 90 días ([04](04-progresion-y-meta.md)) serían entre 20 y 39 horas de juego, más que el Acto II entero. ⏳ F0-52 Los minutos por día y la duración en días de los contratos de 7, 30 y 90.
 
 El modo historia **no obliga a seguir la trama con exactitud** ✅: el jugador puede hacer contratos, expediciones y otras acciones secundarias entre un hito y el siguiente. Por eso la duración depende de cómo lo aborde: quien va directo al siguiente hito termina antes, y quien se dedica al comercio y la exploración tarda más. Los umbrales que activan cada acto deben poder cumplirse de varias maneras.
 

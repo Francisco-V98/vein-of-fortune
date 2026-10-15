@@ -73,6 +73,8 @@ Mínimo **10 minerales**, cada uno con lore, utilidad y necesidad dentro del jue
 | Diamante | | | | | ○ | ● |
 | Aetherita | | | | | | ● |
 
+✅ El **salitre** y la **Aetherita** aparecen en una sola zona: son las excepciones a la regla de «más de una zona» porque están ligados a la historia, y la Aetherita solo sale de La Fosa por canon (decisión del autor, 2026-10-15; [02](02-extraccion.md)).
+
 ### Ficha de mineral (plantilla para detallar)
 
 ```
