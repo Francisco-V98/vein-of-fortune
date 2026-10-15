@@ -57,7 +57,7 @@
         "at": "2026-10-15",
         "por": "disenador",
         "nota": "El diseñador de sistemas aplicó las decisiones de cuatro rondas y una final del autor; el coordinador ajustó el roadmap, la presentación y la comprobación C2; limpieza 78 %, coherencia 94 %",
-        "entrega": "Documentos 01, 02, 03, 04 y 09 cerrados (01 al 97 %, los demás al 100 %), contradicciones con los de historia corregidas, roadmap ajustado y tareas F4-234 y F4-235 creadas"
+        "entrega": "Documentos 01, 02, 03, 04 y 09 cerrados (01 al 97 %, los demás al 100 %), contradicciones con los de historia corregidas, roadmap ajustado y tareas F4-244 y F4-245 creadas"
       },
       {
         "etapa": "qa",
@@ -71,7 +71,7 @@
             "de": "qa",
             "estado": "resuelto",
             "resuelto_por": "coordinador",
-            "como": "Se completaron F4-154 y F2-02 con el costo en dinero y las zonas profundas, se creó F4-235 para la mejora de tienda, se movió la Detonación a F4-48 y se corrigieron textos viejos en los documentos 17 y 26 y en la presentación"
+            "como": "Se completaron F4-154 y F2-02 con el costo en dinero y las zonas profundas, se creó F4-245 para la mejora de tienda, se movió la Detonación a F4-48 y se corrigieron textos viejos en los documentos 17 y 26 y en la presentación"
           }
         ]
       },

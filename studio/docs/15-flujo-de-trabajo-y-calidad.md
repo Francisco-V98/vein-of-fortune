@@ -93,7 +93,7 @@ Dentro de estos estados, cada tarea recorre un flujo por etapas con un equipo de
 - **Textos:** pasan por traducción (ES y EN); nada incrustado en el arte.
 - **Seguridad y privacidad:** sin secretos, sin datos personales en telemetría, entradas validadas.
 - **Rendimiento:** sin trabajo costoso en cada cuadro; sin asignaciones innecesarias.
-- **Accesibilidad:** no depende solo del color; funciona con táctil y con mando.
+- **Accesibilidad:** no depende solo del color; funciona con ratón y teclado y con mando (el táctil, en la fase móvil).
 - **Documentación:** actualizada si cambió el comportamiento o la arquitectura.
 
 ## Integración continua ✅
@@ -192,7 +192,7 @@ Es normal que ambos porcentajes empiecen bajos: suben a medida que se cierran la
 
 - **SemVer** `MAJOR.MINOR.PATCH` para el juego, con etiquetas `vX.Y.Z` en `main`.
 - **`CHANGELOG.md`** en formato *Keep a Changelog*, derivado de los commits.
-- Android: `versionCode` que solo crece; `versionName` igual a la versión del juego.
+- Steam: la versión del juego (`vX.Y.Z`) se registra en cada build subida. Fase móvil (después de la 1.0): en Android, `versionCode` que solo crece y `versionName` igual a la versión del juego ([10](10-tecnico-y-herramientas.md)).
 - Se corta `release/X.Y` cuando una versión está completa; allí solo entran correcciones.
 
 ## Decisiones de arquitectura (ADR) ✅

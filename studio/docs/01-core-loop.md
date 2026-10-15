@@ -57,12 +57,13 @@ Para que ninguna mitad domine, la otra se vuelve necesaria:
 
 **Estado:** el punto de control, las 5 partidas guardables y el azar fijado en el punto de control están confirmados (decisión del autor, 2026-10-15).
 
-En mobile las sesiones suelen ser de 5–10 minutos. Lo que sigue es lo decidido sobre guardado y lo que queda por fijar de duración.
+🟡 En PC (y en la Steam Deck) las sesiones pueden ser más largas que las de un móvil, así que ya no se diseña para sesiones de 5–10 minutos. Meta de diseño propuesta: **un día completo se puede jugar de seguido** y el jugador decide cuántos días juega en cada sesión; la duración objetivo de una sesión sigue abierta hasta el prototipo.
 
 - ✅ **Punto de control al iniciar cada acción.** El juego se puede cerrar en cualquier momento: al volver se retoma desde el inicio de la última acción, y lo que estaba en curso (un minijuego a medias, por ejemplo) se vuelve a empezar.
-- ✅ **Hasta 5 partidas guardables**, y el jugador **elige cuál jugar** al abrir el juego. El estado de partida ⏳ F2-01 y el guardado ⏳ F2-03 lo construyen así ([10](10-tecnico-y-herramientas.md), [14](14-arquitectura-y-modularidad.md)).
+- ✅ **Hasta 5 partidas guardables**, y el jugador **elige cuál jugar** al abrir el juego. El estado de partida ⏳ F2-01 y el guardado ⏳ F2-03 lo construyen así ([10](10-tecnico-y-herramientas.md), [14](14-arquitectura-y-modularidad.md)). En Steam se sincronizan con Auto-Cloud, y en Hardcore manda el guardado local.
 - ✅ **El azar queda fijado al guardar el punto de control.** Cerrar y reabrir a mitad de una acción no repite la tirada, para que nadie esquive una derrota (sobre todo en Hardcore) recargando. El estado de partida lo guarda ⏳ F2-01.
-- ⏳ F0-52 Cuántos minutos dura un bloque y un día completo, para que quepan en sesiones cortas; la duración de cada acto sale de ahí ([17](17-mapa-de-historia.md)).
+- ✅ Se puede cerrar o suspender en cualquier momento sin perder progreso (autoguardado instantáneo): la Steam Deck suspende y no se quiere perder avance (decisión del autor, 2026-10-15).
+- ⏳ F0-52 Cuántos minutos dura un bloque y un día completo; la duración de cada acto sale de ahí ([17](17-mapa-de-historia.md)).
 
 ## Ciclo macro
 

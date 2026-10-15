@@ -5,8 +5,8 @@
 **Estado:** confirmado que son simples, variados, de dos parámetros en tensión (con dos excepciones), con controles táctiles y de mando ([10](10-tecnico-y-herramientas.md)) y que la mejor herramienta los facilita; la duración ⏳ F0-52 y la zona óptima ⏳ F2-16.
 
 - ✅ Minijuegos simples, variados (estilo Dave the Diver), alineados con el juego. Inspiración: pesca de Stardew Valley y minijuegos de Among Us.
-- **Cortos:** 8–15 segundos (se cuadra con los minutos por día, ⏳ F0-52; [01](01-core-loop.md), [17](17-mapa-de-historia.md)). Con unas pocas menas por expedición (cuántas ⏳ F0-52), los minijuegos de un bloque suman unos minutos y respetan las sesiones de mobile.
-- ✅ **Controles táctiles simples:** mantener pulsado, soltar, arrastrar, tocar en el momento justo; con mando hay una variante de cada uno (⏳ F1-07).
+- ✅ **Cortos:** 8–15 segundos (se cuadra con los minutos por día, ⏳ F0-52; [01](01-core-loop.md), [17](17-mapa-de-historia.md)). Con unas pocas menas por expedición (cuántas ⏳ F0-52), los minijuegos de un bloque suman unos minutos y caben en cualquier sesión de PC o de Steam Deck.
+- 🟡 **Controles simples en ratón, teclado y mando:** mantener pulsado (clic izquierdo, una tecla o un botón del mando), soltar, arrastrar con el cursor y pulsar en el momento justo; con mando hay una variante de cada uno (⏳ F1-07). El táctil (mantener pulsado, arrastrar con el dedo y tocar) es una variante de la fase móvil, después de la 1.0 (decisión del autor, 2026-10-15).
 - 🟡 **Dos parámetros en tensión** (fuerza ↔ precisión, etc.). Dos excepciones, porque no hay nada que equilibrar: el **Cincelado** es de precisión pura (si pasa a dos parámetros ⏳ F4-44) y **Tasar** es de observación: se juega con el Ojo, no con parámetros.
 - ✅ Mejor herramienta → el minijuego es más fácil o la zona óptima más amplia.
 - La zona óptima depende del nivel de la herramienta, la **Pericia** del jugador y la dureza del mineral. ⏳ F2-16 Cómo se calcula.
@@ -47,7 +47,7 @@ Los números son ilustrativos y se calibran en el prototipo ⏳ F2-13.
 |---|---|---|---|---|
 | 1 | **Picado** | Pico | Fuerza ↔ Precisión | Mantienes pulsado para cargar fuerza mientras un marcador oscila sobre la mena. Sueltas cuando ambos están en zona. Las menas duras necesitan 2–3 golpes |
 | 2 | **Perforación** | Taladro | Velocidad ↔ Calor | Mantener pulsado avanza más rápido pero sube el calor; soltar enfría. Llegar al fondo sin sobrecalentar |
-| 3 | **Cincelado** | Cincel | Precisión pura | Trazar con el dedo una línea sobre la gema sin salirse del margen. Un error agrieta la pieza y pierdes fragmentos |
+| 3 | **Cincelado** | Cincel | Precisión pura | Trazar con el cursor, con el botón izquierdo pulsado (o con el stick del mando), una línea sobre la gema sin salirse del margen. Un error agrieta la pieza y pierdes fragmentos 🟡 (con ratón; el dedo queda para la variante móvil) |
 | 4 | **Cribado** | Criba | Inclinación ↔ Caudal | Dos deslizadores que mantienen un indicador de flotación en zona mientras la carga cambia |
 | 5 | **Detonación** | Explosivo | Potencia ↔ Ubicación | Ubicar la carga en la fisura y elegir potencia. Mucho rompe la mena; poco la deja atascada. Alto rendimiento, alto riesgo (puede provocar derrumbes). El explosivo es consumible ([02](02-extraccion.md)) |
 
@@ -76,7 +76,7 @@ Minijuego propio para el final del juego: mantener una energía inestable entre 
 
 ## Escáner ✅
 
-Para el MVP es **instantáneo**: tocar la mena y ver los rangos. El **Ojo** y la herramienta determinan qué tan estrechos son. El detector básico es una herencia de Anselmo desde el Acto I; el cuarzo lo mejora más adelante. Un minijuego de sintonización queda como posible mejora futura.
+Para el MVP es **instantáneo**: hacer clic en la mena y ver los rangos. El **Ojo** y la herramienta determinan qué tan estrechos son. El detector básico es una herencia de Anselmo desde el Acto I; el cuarzo lo mejora más adelante. Un minijuego de sintonización queda como posible mejora futura.
 
 ## Tareas de peligro (estilo Among Us) ✅
 
@@ -86,8 +86,8 @@ Se activan cuando aparece un peligro ambiental. Muy cortas (5–8 s). El **Templ
 
 | Tarea | Peligro | Mecánica |
 |---|---|---|
-| **Sellar fuga** | Gas | Tocar válvulas en el orden que se mostró (memoria) |
-| **Apuntalar** | Derrumbe | Arrastrar vigas a su sitio para formar un soporte |
+| **Sellar fuga** | Gas | Hacer clic en las válvulas, o elegirlas con el mando, en el orden que se mostró (memoria) |
+| **Apuntalar** | Derrumbe | Arrastrar con el cursor vigas a su sitio para formar un soporte |
 | **Reparar** | Equipo roto | Conectar cables de colores |
 
 Esta tarea **Reparar** es una emergencia en plena mina. No es lo mismo que **reparar el desgaste** de una herramienta, que se paga con dinero y materiales y no es un minijuego ([02](02-extraccion.md)).
@@ -95,7 +95,7 @@ Esta tarea **Reparar** es una emergencia en plena mina. No es lo mismo que **rep
 ## Encuentros ✅
 
 - ✅ Los normales son por **eventos con decisión**, sin minijuego (ver [02](02-extraccion.md)).
-- Los jefes de zona son **opcionales**, no una puerta ✅. Su duelo (propuesta: un **duelo de timing**, tocar en el momento justo para bloquear o contraatacar, en pocas rondas) ⏳ F4-54.
+- Los jefes de zona son **opcionales**, no una puerta ✅. Su duelo (propuesta: un **duelo de timing**, pulsar en el momento justo para bloquear o contraatacar, en pocas rondas) ⏳ F4-54.
 
 ## Minijuegos de tienda ✅
 
@@ -106,7 +106,7 @@ Esta tarea **Reparar** es una emergencia en plena mina. No es lo mismo que **rep
 | **Regateo** | Tu oferta ↔ Paciencia del cliente | No es de reflejos, es de leer. Subes o bajas el precio con un deslizador; el cliente reacciona con gestos pixel-art y tiene un precio máximo oculto. Cada contraoferta gasta paciencia. **Labia** da más pistas |
 | **Refinado** | Temperatura ↔ Tiempo | Mantener el metal en la banda de temperatura (se ve por su color incandescente) el tiempo justo. Demasiado quema el lote. El taller abre en el Acto II |
 | **Tasar** ✅ | Ojo (observación) | Detectar la gema falsa entre varias ⏳ F4-55 |
-| **Reponer** | — | Arrastrar mercancía a los estantes y fijar precios; más gestión que minijuego |
+| **Reponer** | — | Arrastrar con el cursor la mercancía a los estantes (con mando, elegir estante y mercancía) y fijar precios; más gestión que minijuego |
 
 Los empleados pueden automatizar estas tareas (ver [04](04-progresion-y-meta.md)). Los de la tienda se juegan en el modo tienda, que gasta un bloque y no se abre de noche ([01](01-core-loop.md)). Tasar también se juega en los Tasadores de las Cavernas ([26](26-zonas-y-edificios.md)).
 

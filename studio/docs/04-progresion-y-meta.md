@@ -97,7 +97,7 @@ Detalles:
 | Despido anticipado | Cuesta indemnización ⏳ F0-52. Despedir no mueve el medidor de la Unión, con o sin causa |
 | Renovación | Depende de Lealtad, salario, trato y del tramo de la Unión. Se negocia con **Labia** |
 | Se va | Puede irse a la competencia (por ejemplo, al Consorcio Arvel) |
-| Avisos | ✅ Notificación unos días antes de que venza, agrupadas para no saturar en mobile ⏳ F4-93 |
+| Avisos | Aviso en pantalla unos días antes de que venza, agrupados en el resumen del día para no saturar al jugador (en PC no hay notificaciones del sistema) |
 
 - ⏳ F0-52 Salarios, indemnización y cuántos minutos de juego dura cada contrato de 7, 30 y 90 días frente a los minutos por día ([01](01-core-loop.md), [17](17-mapa-de-historia.md)).
 
@@ -111,7 +111,7 @@ Como en Dave the Diver, hay que invertir para contratar. Canales:
 |---|---|
 | **Sección de empleos del periódico** | Se ve gente que busca trabajo; cambia cada día |
 | **Anuncio propio** | El jugador paga por publicar (rol, salario ofrecido); llegan candidatos en unos días |
-| **Bolsa de la Unión** | Candidatos más fiables y más caros, con condiciones. Está en la sede de la Unión, en la V1 ([26](26-zonas-y-edificios.md)); su construcción es ⏳ F4-234 |
+| **Bolsa de la Unión** | Candidatos más fiables y más caros, con condiciones. Está en la sede de la Unión, en la V1 ([26](26-zonas-y-edificios.md)); su construcción es ⏳ F4-244 |
 | **Recomendaciones** | Vía conexiones. Es **evolutivo**: llega más adelante, sin versión fija ([26](26-zonas-y-edificios.md)) |
 
 ✅ Estos cuatro canales están decididos. ⏳ F4-94 La sección de empleos y ⏳ F4-95 los anuncios propios se construyen con sus tareas.

@@ -157,7 +157,7 @@ El nombre es **una sola palabra** y lo elige el jugador ✅ ([08](08-historia-y-
 - El **nombre de la tienda** sí admite espacios y tiene su propio largo máximo ✅; la cifra ⏳ F1-18
 - El filtro de palabras ofensivas se decide con el resto de validaciones de [08](08-historia-y-personaje.md).
 
-### 1.9 Diálogo en móvil 🟡
+### 1.9 Cajas de diálogo (PC y Steam Deck) 🟡
 
 | Elemento | Máximo |
 |---|---|
@@ -167,7 +167,8 @@ El nombre es **una sola palabra** y lo elige el jugador ✅ ([08](08-historia-y-
 | Opciones de respuesta | **3** botones, de hasta **28** caracteres cada uno |
 | Nombre del personaje | En una etiqueta aparte (no cuenta en el límite) |
 
-- Se avanza con un toque. No hay texto que se desplace.
+- Se avanza con clic, tecla de acción o botón del mando. No hay texto que se desplace.
+- 🟡 Estos límites se calcularon para pantallas pequeñas; se mantienen en PC porque la Steam Deck (1280×800) tiene la misma restricción y así el texto sirve para la fase móvil sin reescribirse.
 - No se parte una caja en mitad de una frase corta, un refrán ni un nombre.
 - **Ejemplo.** La frase de Quiroga «Sin sello no hay licencia, y sin licencia no hay minería. Sin minería, no hay deuda que pagar. Ya ve.» tiene 101 caracteres: pasa de 100, así que se divide en dos cajas («…no hay minería.» y «Sin minería, no hay deuda que pagar. Ya ve.»).
 - Las cifras exactas se validan con la fuente real ⏳ F1-18

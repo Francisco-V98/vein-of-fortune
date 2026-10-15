@@ -10,6 +10,8 @@ El juego es 2D en pixel art, con mucha interfaz y lógica de datos, para móvil 
 
 Se usa **Godot 4.x** con **GDScript**.
 
+> **Enmienda (2026-10-15):** la decisión del motor se mantiene, pero «para móvil primero» deja de ser cierto: el juego se lanza **primero en PC (Windows y Linux, con Steam como meta)** y el móvil llega después de la 1.0. Ver [ADR-0009](0009-pc-primero-movil-despues.md). El texto original se conserva como historial.
+
 ## Alternativas consideradas
 
 - **Unity (C#):** más ecosistema y consolas directas, pero proyectos menos legibles para la IA, editor pesado y licencia con condiciones.

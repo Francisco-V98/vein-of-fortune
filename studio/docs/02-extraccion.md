@@ -139,7 +139,7 @@ Antes de salir, el jugador elige equipo según los peligros de la zona (máscara
 Decisión del autor (2026-10-15):
 
 - ✅ **Energía en 0 durante una expedición:** vuelves con **carga parcial**. Solo se pierde la carga de **esa** expedición, nunca lo que ya está en el almacén.
-- ✅ La pérdida es **parcial**, no total. En mobile, perderlo todo frustra demasiado. Los objetos para asegurar la carga o escapar ⏳ F3-09.
+- ✅ La pérdida es **parcial**, no total, con objetos para asegurar la carga o escapar ⏳ F3-09. Perderlo todo por un solo error de preparación frustraría demasiado; el castigo duro queda para las dificultades altas y el hardcore.
 - ✅ **El día 3 del Acto I todavía no hay pérdida grave**, en ninguna dificultad ([27](27-guion-del-acto-i.md)).
 - ✅ En dificultades altas, la pérdida es mayor ([04](04-progresion-y-meta.md)). El porcentaje de carga que se pierde ⏳ F0-52, y los valores por dificultad ⏳ F3-22.
 - ✅ En **Hardcore** solo mata un **encuentro de riesgo** o un **jefe** (ver [04](04-progresion-y-meta.md)). Quedarse sin energía no mata.

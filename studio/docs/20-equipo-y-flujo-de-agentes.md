@@ -39,7 +39,7 @@ El autor pidió analizar qué empleados necesita de verdad el proyecto. Salen **
 | Diseño | **Diseñador de sistemas** | Agente (`disenador-sistemas`) | F0 | Escribe y edita el diseño del juego: bucle central, progresión, riesgo y el registro del mundo. |
 | Diseño | **Economista y balance** | Agente (`economista`) | F0 | Modela precios, demanda, mercado y recompensas, y comprueba con simulaciones que la economía no se rompa. |
 | Diseño | **Diseñador de contenido** | Agente (`disenador-contenido`) | F0 | Diseña zonas, minerales, eventos, empleados y encuentros con sus parámetros. |
-| Diseño | **Diseñador UI/UX** | Agente (`disenador-ui-ux`) | F0 | Diseña pantallas, flujos, información por capas y accesibilidad para móvil. |
+| Diseño | **Diseñador UI/UX** | Agente (`disenador-ui-ux`) | F0 | Diseña pantallas, flujos, información por capas y accesibilidad en PC y Steam Deck (la fase móvil se suma después). |
 | Narrativa y lenguaje | **Narrador** | Agente (`narrador`) | F0 | Escribe la historia, los personajes y los diálogos con la voz acordada, sin romper el canon. |
 | Narrativa y lenguaje | **Localizador ES/EN** | Agente (`localizador`) | F0 | Mantiene el glosario y adapta los textos entre español neutro con tuteo e inglés cercano. |
 | Arte y sonido | **Director de arte** | Agente (`director-arte`) | F0 | Escribe los encargos de arte y revisa cada imagen contra el estilo acordado. |
