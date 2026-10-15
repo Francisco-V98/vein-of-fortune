@@ -60,7 +60,7 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 GROUPS = [
     ("Diseño del juego", ["00", "01", "02", "03", "04", "09"]),
-    ("Mundo y narrativa", ["05", "07", "08", "17", "18", "19", "21", "22", "23", "24", "25", "26", "27"]),
+    ("Mundo y narrativa", ["05", "07", "08", "17", "18", "19", "21", "22", "23", "24", "25", "26", "27", "28"]),
     ("Marca y arte", ["12", "13"]),
     ("Técnico y legal", ["10", "11"]),
     ("Arquitectura y calidad", ["14", "15", "20"]),
@@ -827,7 +827,7 @@ def build_hub():
         "world": world,
         "decisions": decisions,
         "hilos": hilos,
-        "coherence": coherence.check(world, story, decisions, hilos),
+        "coherence": coherence.check(world, story, decisions, hilos, task_status),
     }
 
 

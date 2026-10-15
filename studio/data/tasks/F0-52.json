@@ -1,0 +1,212 @@
+{
+  "id": "F0-52",
+  "history": [
+    {
+      "at": "2026-10-15",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el modelo económico: números base",
+      "ref": "rama studio/F0-52-numeros-base-de-la-economia"
+    },
+    {
+      "at": "2026-10-15",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-52"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "economista",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Las propuestas de números las hace el economista en producción"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "analista",
+        "nota": "Inventario: ~15 familias de números, 19 decisiones, 14 contradicciones y criterios de aceptación; se decide en 4 o 5 rondas con el autor"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "economista",
+        "nota": "Documento 28 nuevo, cifras cargadas en 20 documentos, world.json y roadmap; sin ⏳ F0-52"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "qa",
+        "nota": "QA devolvió 10 puntos menores (un «90 días» en F0-52, ritmo del Acto II mal rotulado, símbolo de moneda sin tarea, F4-31 contradictoria, deuda de luz en 🟡); se corrigieron y el build estricto y las 108 pruebas pasan",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "La descripción de F0-52 seguía diciendo contratos de 7, 30 y 90 días",
+            "resuelto_por": "coordinador",
+            "como": "Se corrigió a 7, 14 y 30 días"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El documento 28 citaba en negativo la «meta de sesiones cortas» y los contratos de 90 días",
+            "resuelto_por": "coordinador",
+            "como": "Se reescribió sin esas menciones"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Los minutos de ritmo del Acto II usaban el ritmo del final del acto y decían «inicio»",
+            "resuelto_por": "coordinador",
+            "como": "Se corrigieron las cifras (3,8 h y 33 min al inicio) y se rotuló el final del acto"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "F2-20 no recogía la decisión del símbolo de la moneda",
+            "resuelto_por": "coordinador",
+            "como": "Se añadió a su descripción"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Los documentos 03 y 28 decían que F4-31 puede reasignar pesos, contra su descripción",
+            "resuelto_por": "coordinador",
+            "como": "Se unificó: F4-31 construye el modelo y los eventos con los pesos de F0-52"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "La deuda de luz seguía en 🟡 en el doc 24 y se llamaba igual que la cuota extra en el doc 22",
+            "resuelto_por": "coordinador",
+            "como": "Pasa a ✅ y la orden de A2 se llama «cuota extra de luz»"
+          }
+        ]
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-15",
+        "nota": "Esperando la revisión del autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario de todo lo que F0-52 debe fijar, con las restricciones ya decididas",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: inventario de F0-52 con 19 decisiones por orden, 14 contradicciones y criterios de aceptación",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "economista",
+        "que": "Propuesta numérica completa con simulaciones del Acto I",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "economista",
+        "a": "coordinador",
+        "que": "Entrega: propuesta con 16 secciones, 10 decisiones y 14 contradicciones",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "economista",
+        "a": "coordinador",
+        "que": "Entrega: documento 28 y world.json con las cifras",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "disenador",
+        "que": "Cifras en los documentos 01 a 09 y 15",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega: 43 ⏳ F0-52 resueltos",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Cifras en los documentos de historia y datos de decisiones e hilos",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Entrega: 71 ⏳ F0-52 resueltos",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "herramientas",
+        "que": "Comprobaciones C20 a C32 de los datos económicos y pruebas",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Entrega: 13 comprobaciones nuevas y 108 pruebas",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar F0-52",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Devolución: 6 puntos corregidos por la coordinación",
+        "at": "2026-10-15",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Revisión de F0-52: documento 28 y cifras base",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

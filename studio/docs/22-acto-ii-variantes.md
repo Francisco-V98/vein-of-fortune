@@ -41,7 +41,7 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 | # | Escena | Tipo | Disparador | Salida |
 |---|---|---|---|---|
 | A1 | **La política manda** | Común, con capa | Acto I cerrado: puesto reabierto, primera cuota atendida (vence el día 7) y primer contacto con los empleados ✅. El decreto de A1 es lo que abre las zonas del II 🟡 ⏳ F4-128 | Contacto respondido (aceptas, rechazas o pospones). Queda en cola la orden de A2 |
-| A2 | **La orden de Reme** | **Única** | A1 resuelta y tu primera cuota atendida después de A1 (pagada o prorrogada, según la regla de tu dificultad: [27](27-guion-del-acto-i.md), sección 11; montos ⏳ F0-52) ✅ | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
+| A2 | **La orden de Reme** | **Única** | A1 resuelta y tu primera cuota atendida después de A1 (pagada o prorrogada, según la regla de tu dificultad: [27](27-guion-del-acto-i.md), sección 11; montos en [28](28-numeros-base-de-la-economia.md)) ✅ | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
 | A3 | **El primer conflicto** | **Única** | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | Conflicto resuelto, con un costo. La facción fija su postura ante la huelga |
 | A4 | **La primera huelga** | Común, con capa | A3 resuelta, aviso en las noticias y una acción tuya, sin plazo en días ✅ | Bando elegido, precio subido, apagón vivido, mercado negro abierto (primer contacto con Casilda, si aún no lo tenías), Teo y la Unión movidos |
 | A5 | **Las tres ofertas** | Común, con capa | A4 resuelta, estatus de Comerciante y dos vías de tres entre deuda, logros y relación ✅ | Alianza elegida. **Cierra el Acto II** |
@@ -73,7 +73,7 @@ Se activan por evento tuyo, no por calendario, se pueden saltar y no puntúan pa
 | Escena | Consorcio Arvel | Ministerio | Los Faroleros |
 |---|---|---|---|
 | **A1** · contacto (capa) | **Esteban** te cita y ofrece «comprar tu deuda». No sabe que el Consorcio ya está en la cadena de Reme | **Quiroga** te cita para un «trámite»: tu licencia necesita revisión | Un **cobrador farolero** te espera a la salida del puesto: la luz «se paga» |
-| **A2** · la orden (única) | Reme pide **vender con exclusividad** al Consorcio. La orden la trae un **ejecutivo del Consorcio**, no Esteban | Reme pide **entregar tus cuentas** y **no vender a Los Faroleros** (qué cuenta como vender a Los Faroleros antes del mercado negro ⏳ F4-131) | Reme pide **pagar la «deuda de luz»** (una cuota extra) y **abrir el contacto del mercado negro** con Casilda |
+| **A2** · la orden (única) | Reme pide **vender con exclusividad** al Consorcio. La orden la trae un **ejecutivo del Consorcio**, no Esteban | Reme pide **entregar tus cuentas** y **no vender a Los Faroleros** (qué cuenta como vender a Los Faroleros antes del mercado negro ⏳ F4-131) | Reme pide **pagar la «cuota extra de luz»** (960 esquirlas, una sola vez) y **abrir el contacto del mercado negro** con Casilda |
 | **A3** · primer conflicto (única) | **Contratos de hierro y cobre** en Sierra Alta: Esteban te quita contratos mientras el Consorcio ofrece prima a cambio de la exclusividad | **Licencias e inspecciones** en Villa Brasa: revisión de tu licencia, el «trámite» de Quiroga y un rumor de cuotas ⏳ F4-74 | **Cobros en los Salares**: un cobrador y matones cobran la luz en cada viaje ⏳ F4-86 |
 | **A4** · huelga (capa) | El Consorcio quiere **romper la huelga** con guardias de empresa y se beneficia con su stock. En el apagón, Casilda se presenta en persona de noche: **primer contacto con el mercado negro** 🟡 | El Ministerio declara la huelga irregular y **revisa licencias**; luego corta la luz. En el apagón, Casilda se presenta en persona de noche: **primer contacto con el mercado negro** 🟡 | Casilda ofrece luz a los huelguistas y sus informantes anotan quién apoya. El mercado negro ya está abierto desde A2 |
 | **A5** · ofertas (capa) | La oferta del Consorcio se presenta primero y trae la **compra de tu deuda** con una cláusula sobre la de Reme | La oferta del Ministerio se presenta primero, por **carta con sello y firma de Montenegro** que entrega Quiroga | La oferta de Casilda se presenta primero: **protección** en persona y una cláusula sobre la deuda de Reme |
@@ -92,7 +92,7 @@ Reme tutea y dice «criatura»; Quiroga trata de usted ([18](18-biblia-narrativa
 | A1 | Faroleros (cobrador) | «La luz de tu puesto se paga. Alguien te lo explicará esta noche.» |
 | A2 | Consorcio (Reme) | «Desde hoy vendes solo al Consorcio, {nombre}. Lo pide la casa que me prestó.» |
 | A2 | Ministerio (Reme) | «Tráeme tus cuentas, {nombre}, y no vendas más a los Faroleros. Me lo piden de arriba.» |
-| A2 | Faroleros (Reme) | «Paga la deuda de luz, {nombre}. Esta noche ve con Casilda. Yo ya pagué la mía.» |
+| A2 | Faroleros (Reme) | «Paga la cuota de luz, {nombre}. Esta noche ve con Casilda. Yo ya pagué la mía.» |
 | A6 | Consorcio (Reme) | «Ese giro no se pregunta, criatura. Hay cuentas que tienen dueño, y no soy yo.» |
 | A6 | Ministerio (Reme) | «Llega, se descuenta y se calla, criatura. Preguntar solo trae papeles.» |
 | A6 | Faroleros (Reme) | «Alguien vio ese giro, criatura. En el barrio, lo que se ve, se guarda.» |
@@ -131,7 +131,7 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 | 5 | Da tres salidas: **aceptar**, **negociar** (prueba de Labia, una versión más corta) o **rechazar** (la cuota de la deuda se adelanta; las cuotas vencen cada 7 días). Son las mismas tres en cada variante |
 | 6 | **No alza la voz ni insulta.** Se queda un segundo callada y cierra con la misma frase: «Perdóname, criatura. Esto no lo elegí yo» |
 
-- El adelanto de la cuota y el tamaño de la cuota extra ⏳ F0-52
+- ✅ **El adelanto de la cuota** (si rechazas): Reme cobra por adelantado la cuota de la semana siguiente, **la mitad** si pagaste a tiempo en el Acto I y **entera** si prorrogaste. Es un adelanto, no un costo extra: se acredita a las siguientes cuotas y cuenta para la vía de deuda ([24](24-umbrales-de-acto.md)); solo aprieta la caja. **La cuota extra de luz** (si aceptas la orden de Los Faroleros) es de **960 esquirlas**, una vez, igual que una cuota. Cifras en [28](28-numeros-base-de-la-economia.md).
 - Rechazar nunca cierra una ruta: cambia el costo, no lo que puedes hacer después.
 
 ---
@@ -196,7 +196,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 
 **Estado:** ✅ la vigilancia es un indicador global (decisión del autor, 2026-10-12); 🟡 todo lo demás, propuesta. Solo usa lo que ya existe: la subida del precio por huelga ([07](07-sociedad-y-eventos.md)), la prima del mercado negro y el indicador de vigilancia de 0 a 100 ([03](03-comercio.md)). No se inventa ninguna mecánica nueva.
 
-**El precio.** El mineral de la zona cerrada sube en las tres (hierro, en Cañón Ferroso). La capa añade un **segundo mineral** que se mueve de **3 a 5 puntos porcentuales** sobre su tendencia del día; las cifras ⏳ F0-52
+**El precio.** El mineral de la zona cerrada sube en las tres (hierro, en Cañón Ferroso). La capa añade un **segundo mineral** que se mueve de **3 a 5 puntos** de mercado sobre su tendencia del día (un punto es el 1 % del precio base del mineral; [28](28-numeros-base-de-la-economia.md)) ✅
 
 | Variante | Segundo mineral | Por qué ([03](03-comercio.md)) | Quién se beneficia |
 |---|---|---|---|
@@ -212,7 +212,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 | Ministerio | Sin cambio | La vigilancia sube un 20 % más rápido: el Ministerio te mira más |
 | Los Faroleros | +5 puntos en salitre | La vigilancia sube un 20 % más despacio: Casilda alivia las inspecciones |
 
-Los modificadores son 🟡 y no cambian los niveles del indicador (Tranquilo, Observado, Vigilado y Bajo investigación; [03](03-comercio.md)). La vigilancia es un indicador global de 0 a 100: sus cambios se dicen en puntos y el «%» solo describe el ritmo de subida. Precios y riesgos ⏳ F4-73
+Los modificadores son 🟡 y no cambian los niveles del indicador (Tranquilo, Observado, Vigilado y Bajo investigación; [03](03-comercio.md)). La vigilancia es un indicador global de 0 a 100: sus cambios se escriben «vigilancia +10» o «vigilancia −15», sin la palabra «puntos», y el «%» solo describe el ritmo de subida (×1,2 si sube un 20 % más rápido, ×0,8 si más despacio). Precios y riesgos ⏳ F4-73
 
 **Ideas sin mecánica todavía.** Se anotan para no perderlas; ninguna es necesaria para el Acto II:
 
@@ -244,7 +244,7 @@ Las tres facciones aliables no tienen medidor propio: se miden por la alianza qu
 |---|---|---|
 | Consorcio Arvel | La casa renegocia el préstamo de Reme. Tu deuda pasa al Consorcio: Esteban cumple su oferta de A1 sin saber de dónde viene el dinero | El Consorcio retira el crédito de su casa de préstamos y le reclama el capital |
 | Ministerio | El fondo renueva la línea de Reme. Tus cuotas y el abono salen de la misma cadena | El fondo le retira la línea y su licencia de prestamista queda en revisión |
-| Los Faroleros | La caja común perdona la parte de Reme. Tu deuda de luz se suma a tu deuda | La caja común le cobra su parte y Casilda cobra la luz de su casa |
+| Los Faroleros | La caja común perdona la parte de Reme. Tu deuda de luz (3 600 esquirlas, sin interés, que crece un 2 % al mes si no la tocas) se suma aparte de tu deuda y no entra en la vía de deuda | La caja común le cobra su parte y Casilda cobra la luz de su casa |
 
 - **Aviso antes de elegir ✅.** A5 muestra el costo para Reme de cada alianza antes de que elijas (decisión del autor, 2026-10-12): eliges sabiendo lo que le cuesta a ella. A6 muestra cómo lo paga o cómo respira.
 - **Cómo suena Reme en A6.** Si te alías con su facción: «Respiro, criatura. Pero ahora estamos en la misma cadena.» Si te alías con otra: «Era tu decisión, criatura. Lo mío lo pago yo.» Las dos líneas son propuesta 🟡.
@@ -314,7 +314,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 - 🟡 Epílogo de Reme y de cada facción según la alianza: propuesto en [25](25-finales-y-epilogos.md) (RE-01 a RE-03 y FC-01 a FC-06). Que Reme sea siempre tu aliada es ✅; las piezas del epílogo, 🟡.
 - ✅ Umbrales de A1 a A6 y de las escenas opcionales: resueltos en [24](24-umbrales-de-acto.md). El evaluador ⏳ F4-127
 - Las tres pistas del Acto I y su lugar en los días del tutorial están en [27](27-guion-del-acto-i.md), sección 13; sus props ⏳ F3-16.
-- ⏳ F0-52 Cifras: cuota extra, adelanto de la cuota, modificadores de precio y de vigilancia.
+- ✅ Cifras de la cuota extra de luz, del adelanto de la cuota y de los modificadores de precio y de vigilancia: en la sección 7 y en la sección 8 de este documento, con las escalas de [28](28-numeros-base-de-la-economia.md).
 - ⏳ F4-128 Guion de la columna común; F4-129, F4-130 y F4-131 guion de las escenas únicas; F4-132 la huelga; F4-133 la alianza.
 - ⏳ F4-179 Textos del Acto II en español.
 - ⏳ F4-213 Licencias (sello, revisión y ampliación), ⏳ F4-214 rumores que se compran y se cuentan a Lucía y ⏳ F4-215 exclusividad de venta y entrega de cuentas: los sistemas que usan A1, A2, A3, A5 y O1. La plantilla de guion ⏳ F4-216.

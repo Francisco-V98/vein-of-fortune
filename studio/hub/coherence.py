@@ -19,6 +19,13 @@ HILO_TIPOS = ["pista", "promesa", "secreto", "conflicto"]
 HILO_ESTADOS = ["resuelto", "abierto", "aplazado"]
 HILO_ABIERTOS = ("abierto", "aplazado")
 TAPE_COUNT = 8
+
+# Economía (F0-52): ids de sector, orden de las etiquetas de volatilidad y umbrales de vigilancia (ids ASCII como en world.json)
+SECTORS = ["ferrocarril", "energia", "militar", "agricultura", "lujo", "tecnologia"]
+VOLATILITY_ORDER = ["baja", "baja-media", "media", "media-alta", "alta", "muy alta"]
+TIER_MIN, TIER_MAX = 1, 5
+SURVEILLANCE_RANGE = (0, 100)
+_WAIT_REF = re.compile(r"\u23f3\s*([A-Z]\d+-\d+)")
 _NODE_REF = re.compile(r"\bn-[a-z0-9]+(?:-[a-z0-9]+)*")
 _TAPE_REF = re.compile(r"\bcintas?\s+(\d+(?:\s*(?:,|y|–|-|a)\s*\d+)*)", re.IGNORECASE)
 
@@ -285,7 +292,263 @@ def _hilo_checks(world, story, decisions, hilos, add):
     add("C19", "Hilos", "Los nodos y las cintas que citan los hilos existen", a["refs_total"], a["refs"])
 
 
-def check(world, story, decisions=None, hilos=None):
+def _num(x):
+    return isinstance(x, (int, float)) and not isinstance(x, bool)
+
+
+def _int(x):
+    return isinstance(x, int) and not isinstance(x, bool)
+
+
+def _by_int_key(d):
+    """Pares (nivel, valor) de un objeto cuyas claves son niveles en texto («2», «3»...), ordenados por nivel."""
+    return sorted(((int(k), v) for k, v in (d or {}).items() if str(k).isdigit()), key=lambda p: p[0])
+
+
+def _strings(obj):
+    """Todos los textos de una estructura JSON anidada."""
+    if isinstance(obj, str):
+        yield obj
+    elif isinstance(obj, dict):
+        for v in obj.values():
+            yield from _strings(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from _strings(v)
+
+
+def _has_economy(world):
+    return "economy" in world or any("tier" in m or "daily_cap" in m for m in world.get("minerals", []))
+
+
+def _economy_mineral_checks(world, add):
+    """Campos económicos de cada mineral (C20 a C26)."""
+    minerals = world.get("minerals", [])
+    n = len(minerals)
+    prices = [(m, m.get("base_price")) for m in minerals]
+
+    # C20 precio base entero positivo y no todos iguales
+    bad = ["%s: el precio base debe ser un entero mayor que 0 (es %r)" % (m["name"], p) for m, p in prices if not _int(p) or p <= 0]
+    valid = [p for _, p in prices if _int(p) and p > 0]
+    if len(valid) > 1 and len(set(valid)) == 1:
+        bad.append("Todos los minerales tienen el mismo precio base (%d)" % valid[0])
+    add("C20", "Economía", "El precio base de cada mineral es un entero mayor que 0 y no son todos iguales", n, bad)
+
+    # C21 el precio sube con el nivel de herramienta; la Aetherita es lo más caro y el carbón lo más barato
+    bad, tiers = [], {}
+    for m, p in prices:
+        if _int(p) and _int(m.get("tier")):
+            tiers.setdefault(m["tier"], []).append((p, m["name"]))
+    ordered = sorted(tiers)
+    for lo, hi in zip(ordered, ordered[1:]):
+        top, low_name = max(tiers[lo])
+        bottom, high_name = min(tiers[hi])
+        if bottom <= top:
+            bad.append("%s (nivel %d, %d esquirlas) no vale más que %s (nivel %d, %d esquirlas)" % (high_name, hi, bottom, low_name, lo, top))
+    by_id = {m["id"]: m for m in minerals}
+    ranked = sorted((p, m["name"]) for m, p in prices if _int(p))
+    for mid, word, pick in (("carbon", "barato", ranked[:2]), ("aetherita", "caro", ranked[-2:][::-1])):
+        if mid in by_id and len(ranked) > 1:
+            best, other = pick
+            if by_id[mid].get("base_price") != best[0] or best[0] == other[0]:
+                bad.append("%s debe ser el mineral más %s, y el más %s es %s" % (by_id[mid]["name"], word, word, best[1]))
+    add("C21", "Economía", "El precio base sube con el nivel de herramienta; el carbón es lo más barato y la Aetherita lo más caro", n, bad)
+
+    # C22 nivel de herramienta entre 1 y 5
+    add("C22", "Economía", "Cada mineral tiene un nivel de herramienta entre %d y %d" % (TIER_MIN, TIER_MAX), n,
+        ["%s: nivel de herramienta fuera de %d–%d (%r)" % (m["name"], TIER_MIN, TIER_MAX, m.get("tier"))
+         for m in minerals if not _int(m.get("tier")) or not TIER_MIN <= m["tier"] <= TIER_MAX])
+
+    # C23 sectores válidos, al menos 2, pesos enteros positivos que suman 100
+    bad = []
+    for m in minerals:
+        sec = m.get("sectors")
+        if not isinstance(sec, dict):
+            bad.append("%s: los sectores deben ser un objeto sector → peso" % m["name"])
+            continue
+        unknown = [k for k in sec if k not in SECTORS]
+        if unknown:
+            bad.append("%s: sectores desconocidos (%s)" % (m["name"], ", ".join(unknown)))
+        if len(sec) < 2:
+            bad.append("%s: tiene %d sector(es) y debe tener al menos 2" % (m["name"], len(sec)))
+        if any(not _int(w) or w <= 0 for w in sec.values()):
+            bad.append("%s: los pesos de sector deben ser enteros mayores que 0" % m["name"])
+        elif sum(sec.values()) != 100:
+            bad.append("%s: los pesos de sector suman %d y deben sumar 100" % (m["name"], sum(sec.values())))
+    add("C23", "Economía", "Cada mineral tiene al menos 2 sectores válidos, con pesos enteros que suman 100", n, bad)
+
+    # C24 todo sector tiene al menos un mineral
+    used = {k for m in minerals if isinstance(m.get("sectors"), dict) for k in m["sectors"]}
+    add("C24", "Economía", "Cada sector de demanda tiene al menos un mineral", len(SECTORS),
+        ["El sector %s no tiene ningún mineral" % s for s in SECTORS if s not in used])
+
+    # C25 tope diario y volatilidad numérica ordenados como la etiqueta; la Aetherita con el mayor tope
+    bad, rank = [], {}
+    for m in minerals:
+        if m.get("volatility") not in VOLATILITY_ORDER:
+            bad.append("%s: etiqueta de volatilidad desconocida (%r)" % (m["name"], m.get("volatility")))
+        else:
+            rank[m["id"]] = VOLATILITY_ORDER.index(m["volatility"])
+    for field, label in (("daily_cap", "tope diario"), ("volatility_num", "volatilidad numérica")):
+        for m in minerals:
+            if not _num(m.get(field)) or m[field] <= 0:
+                bad.append("%s: %s debe ser un número mayor que 0 (es %r)" % (m["name"], label, m.get(field)))
+        ok = [m for m in minerals if m["id"] in rank and _num(m.get(field)) and m[field] > 0]
+        for a in ok:
+            for b in ok:
+                if rank[a["id"]] < rank[b["id"]] and a[field] > b[field]:
+                    bad.append("%s (%s) tiene %s mayor que %s (%s)" % (a["name"], a["volatility"], label, b["name"], b["volatility"]))
+    if "aetherita" in by_id:
+        caps = [m.get("daily_cap") for m in minerals if m["id"] != "aetherita" and _num(m.get("daily_cap"))]
+        cap = by_id["aetherita"].get("daily_cap")
+        if caps and (not _num(cap) or cap <= max(caps)):
+            bad.append("La Aetherita debe tener el mayor tope diario (%r frente a %r)" % (cap, max(caps)))
+    add("C25", "Economía", "El tope diario y la volatilidad numérica crecen con la etiqueta de volatilidad; la Aetherita tiene el mayor tope",
+        n * 2 + 1, bad)
+
+    # C26 liquidez positiva
+    add("C26", "Economía", "Cada mineral tiene liquidez mayor que 0", n,
+        ["%s: la liquidez debe ser un número mayor que 0 (es %r)" % (m["name"], m.get("liquidity"))
+         for m in minerals if not _num(m.get("liquidity")) or m["liquidity"] <= 0])
+
+
+def _economy_zone_checks(world, add):
+    """Mezcla de menas de cada zona (C30)."""
+    zones = world.get("zones", [])
+    bad = []
+    for z in zones:
+        mix = z.get("zone_mix")
+        if not isinstance(mix, dict) or not mix:
+            bad.append("%s no tiene mezcla de menas" % z["name"])
+            continue
+        if any(not _num(v) or v <= 0 for v in mix.values()):
+            bad.append("%s: los porcentajes de la mezcla deben ser mayores que 0" % z["name"])
+        elif abs(sum(mix.values()) - 100) > 1e-9:
+            bad.append("%s: la mezcla de menas suma %s y debe sumar 100" % (z["name"], sum(mix.values())))
+        here = {m["id"] for m in world.get("minerals", []) if z["id"] in m.get("zones", {})}
+        extra, missing = sorted(set(mix) - here), sorted(here - set(mix))
+        if extra:
+            bad.append("%s: la mezcla incluye minerales que no son de la zona (%s)" % (z["name"], ", ".join(extra)))
+        if missing:
+            bad.append("%s: faltan en la mezcla minerales de la zona (%s)" % (z["name"], ", ".join(missing)))
+    add("C30", "Economía", "La mezcla de menas de cada zona suma 100 y solo lleva minerales de esa zona", len(zones), bad)
+
+
+def _economy_tool_checks(world, add):
+    """Mejoras de herramientas (C27 y C28)."""
+    tools = world.get("economy", {}).get("tools", {})
+    tiers = {m["id"]: m.get("tier") for m in world.get("minerals", [])}
+
+    # C27 regla k−1: el mineral de la mejora al nivel k es de nivel ≤ k−1
+    bad, total = [], 0
+    for kind, steps in tools.get("upgrade_minerals", {}).items():
+        for level, step in _by_int_key(steps):
+            total += 1
+            mineral, qty = step.get("mineral"), step.get("qty")
+            if mineral not in tiers:
+                bad.append("%s al nivel %d usa un mineral inexistente (%s)" % (kind, level, mineral))
+            elif not _int(tiers[mineral]) or tiers[mineral] > level - 1:
+                bad.append("%s al nivel %d usa %s, de nivel %s: debe ser como mucho %d" % (kind, level, mineral, tiers[mineral], level - 1))
+            if not _int(qty) or qty <= 0:
+                bad.append("%s al nivel %d: la cantidad de %s debe ser un entero mayor que 0" % (kind, level, mineral))
+    if not total:
+        bad.append("economy.tools.upgrade_minerals no define ninguna mejora")
+    add("C27", "Economía", "El mineral de cada mejora de herramienta es de nivel ≤ nivel−1", total or 1, bad)
+
+    # C28 costos estrictamente crecientes por nivel (herramientas y detector)
+    bad, total = [], 0
+    series = [("la herramienta " + kind, [(lv, c) for lv, c in _by_int_key(costs)]) for kind, costs in tools.get("upgrade_cost", {}).items()]
+    detector = tools.get("detector", {}).get("levels", [])
+    if detector:
+        series.append(("el detector", [(d.get("level"), d.get("cost")) for d in detector if _int(d.get("level")) and d["level"] > 1]))  # el nivel 1 es el de partida
+    for label, costs in series:
+        total += 1
+        values = [c for _, c in costs]
+        if any(not _num(c) or c <= 0 for c in values):
+            bad.append("%s: todos los costos de mejora deben ser números mayores que 0" % label)
+        elif any(b <= a for a, b in zip(values, values[1:])):
+            bad.append("%s: los costos de mejora no crecen estrictamente por nivel (%s)" % (label, ", ".join(str(c) for c in values)))
+    if not total:
+        bad.append("economy.tools.upgrade_cost no define ningún costo de mejora")
+    add("C28", "Economía", "Los costos de mejora crecen estrictamente con el nivel", total or 1, bad)
+
+
+def _economy_other_checks(world, add, task_status):
+    """Vigilancia (C29), salarios (C31) y marcas de espera (C32)."""
+    econ = world.get("economy", {})
+
+    # C29 umbrales de vigilancia consecutivos, sin huecos ni solapes
+    levels = econ.get("surveillance", {}).get("levels", [])
+    bad = []
+    lo, hi = SURVEILLANCE_RANGE
+    if not levels:
+        bad.append("economy.surveillance.levels no define ningún umbral")
+    else:
+        expect = lo
+        for lv in levels:
+            a, b = lv.get("min"), lv.get("max")
+            if not _int(a) or not _int(b) or a > b:
+                bad.append("%s: umbral inválido (%r–%r)" % (lv.get("id"), a, b))
+                continue
+            if a != expect:
+                bad.append("%s empieza en %d y debería empezar en %d (%s)" % (lv.get("id"), a, expect, "solape" if a < expect else "hueco"))
+            expect = b + 1
+        if expect != hi + 1:
+            bad.append("Los umbrales terminan en %d y deben terminar en %d" % (expect - 1, hi))
+    add("C29", "Economía", "Los umbrales de vigilancia cubren %d–%d en orden y sin solapes" % (lo, hi), len(levels) or 1, bad)
+
+    # C31 salarios positivos y coherentes
+    emp = econ.get("employees", {})
+    bad, total = [], 0
+    sal = [(lv.get("level"), lv.get("salary_per_day")) for lv in emp.get("levels", [])]
+    total += len(sal)
+    if any(not _num(s) or s <= 0 for _, s in sal):
+        bad.append("Los salarios de los empleados deben ser números mayores que 0")
+    elif any(b <= a for (_, a), (_, b) in zip(sal, sal[1:])):
+        bad.append("El salario de los empleados no crece con el nivel (%s)" % ", ".join(str(s) for _, s in sal))
+    for role, by_act in emp.get("support_salary_per_day", {}).items():
+        if isinstance(by_act, dict):
+            total += 1
+            values = [by_act[k] for k in ("II", "III", "IV") if k in by_act]
+            if any(not _num(v) or v <= 0 for v in values) or any(b <= a for a, b in zip(values, values[1:])):
+                bad.append("El salario de apoyo (%s) debe ser positivo y crecer con el acto" % role)
+    mult = _by_int_key(emp.get("contract_salary_mult"))
+    if mult:
+        total += 1
+        values = [v for _, v in mult]
+        if any(not _num(v) or v <= 0 for v in values) or any(b >= a for a, b in zip(values, values[1:])):
+            bad.append("El contrato corto debe pagar más: los multiplicadores deben bajar al alargar el contrato (%s)" % values)
+    phi = _by_int_key(emp.get("dismissal_phi"))
+    if phi:
+        total += 1
+        values = [v for _, v in phi]
+        if any(not _num(v) or not 0 < v <= 1 for v in values) or any(b <= a for a, b in zip(values, values[1:])):
+            bad.append("La indemnización φ debe estar en (0, 1] y crecer con la duración del contrato (%s)" % values)
+    add("C31", "Economía", "Los salarios son positivos, crecen con el nivel y el contrato corto paga más", total or 1, bad)
+
+    # C32 ningún ⏳ del registro apunta a una tarea terminada o inexistente
+    if task_status is not None:
+        refs = [(t, w) for t in _strings(world) for w in _WAIT_REF.findall(t)]
+        bad = []
+        for text, tid in refs:
+            if tid not in task_status:
+                bad.append("world.json: ⏳ %s apunta a una tarea que no existe" % tid)
+            elif task_status[tid] == "done":
+                bad.append("world.json: ⏳ %s apunta a una tarea terminada: debe resolverse" % tid)
+        add("C32", "Economía", "Los ⏳ del registro del mundo apuntan a tareas pendientes que existen", len(refs), sorted(set(bad)))
+
+
+def _economy_checks(world, add, task_status=None):
+    """Campos económicos del registro (F0-52): C20 a C32. Solo corre si el registro los tiene."""
+    if not _has_economy(world):
+        return
+    _economy_mineral_checks(world, add)
+    _economy_tool_checks(world, add)
+    _economy_other_checks(world, add, task_status)
+    _economy_zone_checks(world, add)
+
+
+def check(world, story, decisions=None, hilos=None, task_status=None):
     """Evalúa las comprobaciones de coherencia. Devuelve un resumen listo para el hub."""
     acts = world.get("acts", [])
     idx = _act_index(acts)
@@ -390,6 +653,8 @@ def check(world, story, decisions=None, hilos=None):
         _decision_checks(world, story, decisions, add)
     if hilos and hilos.get("hilos"):
         _hilo_checks(world, story, decisions, hilos, add)
+    _economy_checks(world, add, task_status)
+    checks.sort(key=lambda c: int(c["id"][1:]))
 
     total = sum(c["total"] for c in checks)
     failed = sum(c["failed"] for c in checks)

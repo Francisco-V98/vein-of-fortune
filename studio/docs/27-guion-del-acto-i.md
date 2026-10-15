@@ -2,7 +2,7 @@
 
 > ⚠️ **Contiene spoilers** (las pistas del sorteo oculto y lo que se siembra de Anselmo). Es material para quien escribe, programa o dibuja el Acto I; no es para el jugador.
 
-Baja el Acto I a siete días: qué aprende el jugador cada día, qué pasa en sus tres bloques, qué dice cada quién (en una línea de ejemplo), qué hilos se siembran y qué pasa si no hace lo esperado. Parte de [08](08-historia-y-personaje.md), [17](17-mapa-de-historia.md), [19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md), [22](22-acto-ii-variantes.md), [23](23-arbol-de-decisiones.md) y [24](24-umbrales-de-acto.md), con la voz de [18](18-biblia-narrativa.md). Es un **guion de diseño**: no son los textos finales. Los textos de los siete días los escribe ⏳ F3-47, salvo los de las 3 noticias guionizadas (⏳ F3-31) y los 2 pedidos de cliente guionizados (⏳ F3-32, incluida la tarjeta del pedido urgente opcional), que no cuentan en F3-47; ⏳ F3-16 construye las escenas, la cola, las ayudas y los props, y ⏳ F3-30 lo pasa al inglés. Las cifras (cuota, recargo, precios, efectivo) ⏳ F0-52.
+Baja el Acto I a siete días: qué aprende el jugador cada día, qué pasa en sus tres bloques, qué dice cada quién (en una línea de ejemplo), qué hilos se siembran y qué pasa si no hace lo esperado. Parte de [08](08-historia-y-personaje.md), [17](17-mapa-de-historia.md), [19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md), [22](22-acto-ii-variantes.md), [23](23-arbol-de-decisiones.md) y [24](24-umbrales-de-acto.md), con la voz de [18](18-biblia-narrativa.md). Es un **guion de diseño**: no son los textos finales. Los textos de los siete días los escribe ⏳ F3-47, salvo los de las 3 noticias guionizadas (⏳ F3-31) y los 2 pedidos de cliente guionizados (⏳ F3-32, incluida la tarjeta del pedido urgente opcional), que no cuentan en F3-47; ⏳ F3-16 construye las escenas, la cola, las ayudas y los props, y ⏳ F3-30 lo pasa al inglés. Las cifras (cuota, recargo, precios, efectivo) son las de [28](28-numeros-base-de-la-economia.md) ✅; la moneda es la esquirla y el día 1 es el 22 de otoño (el invierno empieza el día 8).
 
 **Cómo leer las marcas.** La palomita verde es lo que decidió el autor (2026-10-13 para esta tarea) o lo que ya está confirmado en otro documento. El círculo amarillo es propuesta del narrador y espera al autor. El reloj de arena lleva siempre el ID de la tarea de la que depende. Una sección lleva la palomita en el título solo si todo lo que tiene debajo está confirmado; si mezcla, lleva el círculo y una nota «Estado». Las líneas de ejemplo son siempre propuesta: no se marcan una a una, las cubre el título de su tabla.
 
@@ -24,28 +24,28 @@ Decisiones del 2026-10-13 (F0-23) y del 2026-10-15 (F0-54), tras la ideación de
 |---|---|
 | Estructura | **Siete días ceñidos.** Solo la cuota es fecha dura; las demás escenas van por evento y, si no ocurren, pasan a la cola (⏳ F0-78). **Una mecánica nueva por día como máximo** ✅ |
 | Días 5 y 6 ligeros | La **mejora de la herramienta** (día 5) y el **pedido urgente con prima** (día 6) son **opcionales**: ayuda a pedido, sin tutorial forzado; el jugador puede saltarlos y el acto cierra igual. El día 5 es un **día de respiro** (ahorrar o mejorar, el rumor de Lucía y `n-i-lucia-rumor`). El día 6 queda **solo con noticia y rumor**: confirmar el rumor con la noticia oficial del Heraldo, sin pedido obligatorio y sin contacto con empleados ✅ |
-| Prórroga de la cuota del día 7 | En **Novato e Intermedio** desplaza toda la serie una semana, con un pequeño recargo por cada semana de atraso, y **no pagar equivale a prórroga automática con recargo**. En **Difícil y Hardcore** la cuota atrasada se suma a la del día 14, sin desplazar la serie y con un **recargo mayor** que en Novato e Intermedio ✅ (la cifra, ⏳ F0-52) |
+| Prórroga de la cuota del día 7 | En **Novato e Intermedio** desplaza toda la serie una semana, con un recargo por cada semana de atraso (el 4 % de la cuota en Novato y el **6 % en Intermedio**, que son 38 y 58 esquirlas sobre la cuota del día 7), y **no pagar equivale a prórroga automática con recargo**. En **Difícil y Hardcore** la cuota atrasada se suma a la del día 14, sin desplazar la serie y con un **recargo mayor** (12 % y 18 %: 115 y 173 esquirlas) ✅ ([28](28-numeros-base-de-la-economia.md)) |
 | Reabrir el puesto | Es el **trámite de Quiroga más la primera venta**, el día 2 ✅ |
 | Premio del cierre | Quiroga sella **«Minero con licencia»** el día 7 ✅ |
 | Nombre de la tienda | El jugador lo pone **al colgar el cartel**, el día 2 ✅ |
-| Inicio | **Poco efectivo, el detector heredado de Anselmo y un pico prestado por Teo** ✅ |
+| Inicio | **Poco efectivo (120 esquirlas), el detector heredado de Anselmo y un pico prestado por Teo** ✅ |
 | Riesgo | **Sin pérdida grave ni muerte permanente en los primeros días**, también en Hardcore, y eso incluye el día 3 ✅ (el límite por día está en la sección 2.3) |
 | Peligros ambientales | **Fuera del Acto I**: ni gas ni derrumbes en los siete días. Entran desde el Acto II ✅ (⏳ F3-10) |
 | Fuera del Acto I | **El taller, la herrería, los quioscos y los peligros ambientales.** La prensa llega por Lucía y por la tienda, y la mejora de la herramienta la hace Teo ✅ |
 | Prensa | **Solo el Heraldo (noticia oficial sencilla) y el Teletipo (rumor).** La Voz del Hollín, la prensa con sesgos y el «cruzar fuentes» entran en el Acto II. El día 6 enseña a **confirmar un rumor con la noticia oficial del día siguiente** ✅ |
 | Pedidos de cliente | En el Acto I los encargos de clientes son **«pedidos de cliente»**: estándar el día 4 y urgente con prima el día 6 (opcional). «Contrato» queda para el Acto II en adelante ✅ |
-| Cuota | Semanal; la primera vence el día 7 ✅ |
+| Cuota | Semanal; la primera vence el día 7 y es de **960 esquirlas** (720 de capital y 240 de interés) ✅ |
 | Puerta del Acto I | Reabrir el puesto, atender la primera cuota (pagada o prorrogada) y tener el primer contacto con los empleados ✅ (la misma puerta) |
 | Primer contacto con los empleados | **Día 7, a primera hora**, como escena corta antes de la cuota: la ficha del candidato sin nombre y «Contratar» bloqueado con su motivo ✅ |
 | «Contratar» bloqueado | El botón se abre al cerrar el Acto I y **también exige una mejora de la tienda**. En el Acto I está bloqueado y su motivo es esa **mejora de la tienda pendiente** ✅ (2026-10-15). El primer contacto sigue siendo la puerta del acto, no contratar ✅ |
-| Bloques y tienda | Viajar no gasta bloque pero cuesta un poco de dinero (⏳ F0-52) y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; **la tienda no se abre de noche**, así que ninguna venta del Acto I cae en la noche. Las zonas profundas (2 bloques) y que La Fosa solo abra 3 días por semana no afectan al Acto I: ninguna se visita en él ✅ (2026-10-15; [01](01-core-loop.md)) |
+| Bloques y tienda | Viajar no gasta bloque pero cuesta dinero (entre 30 y 150 esquirlas por trayecto; en el Acto I todo ocurre en Villa Brasa y no cuesta nada) y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; **la tienda no se abre de noche**, así que ninguna venta del Acto I cae en la noche. Las zonas profundas (2 bloques) y que La Fosa solo abra 3 días por semana (los días 2, 4 y 6) no afectan al Acto I: ninguna se visita en él ✅ (2026-10-15; [01](01-core-loop.md)) |
 | Deuda | La deuda nunca bloquea ✅ |
 | Anselmo | Solo sombras: libreta, lámpara, firma y cinta 1 ✅ |
 | Firma | La firma de los papeles de la herencia es la misma del acta final ✅ |
 | Reme | Solo sospecha que Anselmo vive y nunca llega a saberlo ✅ |
 | El mal del éter | El Acto I no lo menciona ✅ |
 | Herencia | «Por qué te dejaron heredar» no se escribe ni se siembra en el Acto I ✅ |
-| Variables | La cuota y el recargo se escriben con `{cuota}` y `{recargo}`; los montos ⏳ F0-52 ✅ |
+| Variables | La cuota y el recargo se escriben con `{cuota}` y `{recargo}`. En Intermedio, `{cuota}` del día 7 es 960 esquirlas y `{recargo}` es el 6 % (58 esquirlas) ✅ ([28](28-numeros-base-de-la-economia.md)) |
 | Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión del Éter. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Montenegro es el enemigo claro, duro e inflexible ✅ |
 
 ---
@@ -61,7 +61,7 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 | Regla |
 |---|
 | Cada día tiene tres bloques: mañana, tarde y noche. El mercado se mueve una vez por bloque ([03](03-comercio.md)) ✅ |
-| Viajar no gasta bloque pero cuesta un poco de dinero (⏳ F0-52) y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; los trámites, las visitas y las conversaciones cuestan nada, medio bloque o un bloque según su peso ([01](01-core-loop.md)) ✅ |
+| Viajar no gasta bloque pero cuesta dinero (nada en el Acto I, donde todo ocurre en Villa Brasa) y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; los trámites, las visitas y las conversaciones cuestan nada, medio bloque o un bloque según su peso ([01](01-core-loop.md)) ✅ |
 | **Ninguna venta cae en la noche**: la tienda no se abre de noche ([01](01-core-loop.md)). Las escenas de noche son de casa, de cierre o de visita, y ninguna abre el modo tienda ✅ |
 | Las escenas se disparan por evento; si no ocurren, pasan a la cola (⏳ F0-78) ✅ |
 | Solo la cuota tiene fecha: el día 7 llega aunque las escenas anteriores no se hayan jugado ✅ |
@@ -72,7 +72,7 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 
 **Cómo se aplican 🟡.**
 
-- Una expedición o abrir el puesto gasta un bloque completo; viajar (que cuesta un poco de dinero, ⏳ F0-52), leer noticias, mirar el mercado y organizar el inventario no gastan ninguno ([01](01-core-loop.md)). Cada bloque tiene una actividad principal y las conversaciones cortas del barrio caben dentro del bloque en que ocurren. El peso exacto de cada escena (nada, medio bloque o un bloque) ⏳ F3-16.
+- Una expedición o abrir el puesto gasta un bloque completo; viajar (que cuesta dinero, aunque no en el Acto I), leer noticias, mirar el mercado y organizar el inventario no gastan ninguno ([01](01-core-loop.md)). Cada bloque tiene una actividad principal y las conversaciones cortas del barrio caben dentro del bloque en que ocurren. El peso exacto de cada escena (nada, medio bloque o un bloque) ⏳ F3-16.
 - Cada día cabe en sus tres bloques con la regla de arriba: las ventas y los pedidos caen en la mañana o en la tarde, y la noche queda para las escenas.
 - El día que se indica en cada escena es el **esperado**. Si el jugador va más rápido, la escena se adelanta solo hasta donde cumple sus requisitos; si va más lento, espera en la cola. La cola suelta las escenas de una en una y en orden, para que nunca se enseñen dos mecánicas nuevas a la vez.
 - Cada día tiene **como máximo una decisión principal**; si hay otra (la del nombre de la tienda el día 2 o `n-i-lucia-rumor` el día 5), es **menor** y cae dentro del mismo día. Los días 5 y 6 no obligan a ninguna principal: ahorrar o mejorar y vender ya o esperar al Heraldo son elecciones libres, sin nodo del árbol.
@@ -170,7 +170,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | Decisión | Principal: el **margen**. Menor: el **nombre de la tienda**, al colgar el cartel (la pantalla, ⏳ F3-14) |
 | Lo cierra | La primera venta y el cierre de caja; el puesto queda reabierto |
 | Si no haces lo esperado | Sin ir a Quiroga, el puesto sigue cerrado y la escena espera. Mientras tanto vendes al contado en el mercado, con peor precio |
-| Sin dinero | Quiroga cobra su gestión con la primera venta; si no alcanza, Reme la fía y la suma a la deuda |
+| Sin dinero | Quiroga cobra su gestión (240 esquirlas) con la primera venta; si no alcanza, Reme la fía como «fiado de la gestión», sin interés y fuera de la deuda de la herencia (se paga junto con la siguiente cuota) ✅ |
 
 **Líneas de ejemplo**
 
@@ -181,7 +181,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | `d2.3` La primera venta | Tarde | Llega un cliente obrero. Vendes, eliges el margen y cuelgas el cartel con el nombre. El puesto queda **reabierto** | **Cliente:** «¿Es verdad que reabren el puesto? Aquí compraba mi padre.» |
 | `d2.4` Cierre de caja | Noche | El puesto ya cerró y no se vende: solo cuadras la caja. El cajón se atasca; debajo del fondo hay un carrete con el número 1 | **Narrador:** «El cajón suena hueco. Debajo hay un carrete con un número: 1.» |
 
-- **Noticia guionizada (la primera, de ⏳ F3-31):** el Heraldo dice que el abasto de carbón está garantizado, pero que el frío llega antes. El Teletipo trae el primer **rumor** y el carbón sube un poco en los dos bloques siguientes, así que el rumor era cierto. Los dos pasan por el mostrador, repartidos por el voceador.
+- **Noticia guionizada (la primera, de ⏳ F3-31):** el Heraldo dice que el abasto de carbón está garantizado, pero que el frío llega antes (el día 1 es el 22 de otoño y el invierno empieza el día 8 ✅). El Teletipo trae el primer **rumor** y el carbón sube un poco en los dos bloques siguientes, así que el rumor era cierto. Los dos pasan por el mostrador, repartidos por el voceador.
   - **Heraldo:** «El Ministerio informa de que el frío llegará antes, pero el carbón está garantizado este invierno.»
   - **Teletipo:** «FRÍO ADELANTADO EN EL HOLLÍN. CARBÓN SUBIRÍA. SIN CONFIRMAR»
 - **Hilos que se siembran:** `h-lampara-y-cinta-1` (`d2.4`) 🟡. Las demás escenas no siembran nada nuevo.
@@ -196,7 +196,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | Campo | Contenido |
 |---|---|
 | Se aprende | **Perforación** (velocidad contra calor). El desgaste se ve en la barra de la herramienta al usarla; no es una mecánica aparte |
-| Decisión | ¿Vender el hierro o guardarlo en la trastienda? Guardar cuesta ⏳ F0-52 |
+| Decisión | ¿Vender el hierro o guardarlo en la trastienda? Guardar cuesta muy poco: 9 sacos de hierro un día cuestan 1 esquirla, así que la decisión es pequeña de verdad ✅ ([28](28-numeros-base-de-la-economia.md)) |
 | Lo cierra | La decisión tomada |
 | Si no haces lo esperado | Sin perforar, no hay hierro y la decisión no existe; Teo te lo vuelve a proponer cuando vuelvas. Lucía espera en la cola |
 | Riesgo | Sobrecalentar daña la mena, pero no hay pérdida grave ✅. El calor es de la herramienta, no un peligro ambiental ✅: no hay gas ni derrumbes |
@@ -234,7 +234,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 | Escena | Bloque | Qué pasa | Quién habla |
 |---|---|---|---|
-| `d4.1` El pedido | Mañana | Un cliente obrero (sin nombre, ⏳ F4-172) pide carbón con plazo de tres días. El pedido lleva `{tienda}` (texto de ⏳ F3-32) | **Cliente:** «Necesito carbón para el horno. Pago lo justo, ni un centavo más.» |
+| `d4.1` El pedido | Mañana | Un cliente obrero (sin nombre, ⏳ F4-172) pide 8 sacos de carbón con plazo de tres días, a 448 esquirlas (un 12 % sobre el valor justo; el impuesto de ventas es del 3 %). El pedido lleva `{tienda}` (texto de ⏳ F3-32) | **Cliente:** «Necesito carbón para el horno. Pago lo justo, ni un centavo más.» |
 | `d4.2` Regatear | Mañana | Fijas tu mínimo y juegas el Regateo | **{nombre}:** «Lo justo es lo que los dos podamos sostener.» |
 | `d4.3` Reunir el pedido | Tarde | Una expedición normal, sin escena. Una frase del cliente, que cuenta un rumor útil | **Cliente:** «Entre nos: el herrero de la calle Honda compra todo el carbón que encuentra.» |
 | `d4.4` El café | Noche | Reme te invita a su casa. Aquí está la **pista del sorteo** y la oferta de cobrar antes (sección 13). Desde esta noche la cuota se puede adelantar | **Reme:** «Pasa, criatura, que el café se enfría. Si me adelantas la cuota, te rebajo un puntito.» |
@@ -251,7 +251,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 | Campo | Contenido |
 |---|---|
-| Se aprende | **Nada obligatorio.** Opcional: la **mejora** de una herramienta, que se paga con hierro y dinero y la hace Teo ([02](02-extraccion.md)). Sin tutorial: Teo la ofrece y la ayuda está en un «?» |
+| Se aprende | **Nada obligatorio.** Opcional: la **mejora** de una herramienta, que se paga con hierro y dinero (3 hierro y 200 esquirlas para el pico de nivel 2) y la hace Teo ([02](02-extraccion.md), [28](28-numeros-base-de-la-economia.md)). Sin tutorial: Teo la ofrece y la ayuda está en un «?» |
 | Decisión | Menor, dentro del día: `n-i-lucia-rumor`. Libre, sin nodo: **ahorrar o mejorar** |
 | Lo cierra | La respuesta de casa |
 | Si no haces lo esperado | Si no mejoras, el pico sigue prestado hasta el día 7, cuando Teo te lo deja. Si no tienes hierro, la mejora espera sin plazo. Saltarse `d5.3` no cambia nada: el acto cierra igual ✅ |
@@ -299,7 +299,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
   - **Heraldo, día 7 por la mañana (la confirmación):** «El Ministerio confirma pedidos del ferrocarril, pero asegura que el precio del hierro no se moverá mucho.»
 - **Lo que enseña:** el rumor del Teletipo se adelanta; la noticia oficial del día siguiente lo confirma, aunque la baje de tono. Cruzar medios con distintos sesgos queda para el Acto II ✅.
 - **Si hiciste el trato con Lucía el día 5**, el Teletipo ya publicó tu rumor (el del carbón) esa noche, y el jugador reconoce cómo se ve un rumor sin confirmar. El rumor del ferrocarril que te dio ella queda sin confirmar hasta el Heraldo del día 7.
-- **Pedido urgente (opcional, sin escena):** una tarjeta en el tablón de pedidos, con un cliente del Hollín sin nombre (⏳ F4-172) que pide hierro con prima alta y plazo corto. No lleva tutorial ni diálogo; la ayuda está en un «?». Texto de ⏳ F3-32. Se entrega antes de la tarde del día 7; si no llegas o lo ignoras, no pasa nada (como mucho, una penalización pequeña que nunca bloquea nada).
+- **Pedido urgente (opcional, sin escena):** una tarjeta en el tablón de pedidos, con un cliente del Hollín sin nombre (⏳ F4-172) que pide 6 sacos de hierro con prima alta (un 35 %, 729 esquirlas) y plazo corto. No lleva tutorial ni diálogo; la ayuda está en un «?». Texto de ⏳ F3-32. Se entrega antes de la tarde del día 7; si no llegas o lo ignoras, no pasa nada (como mucho, una penalización de hasta el 5 % del valor, que nunca bloquea nada).
 - **Tarde libre.** No hay escena: expedición, ventas, inventario o pedido urgente, a gusto del jugador.
 - **Hilos que se siembran:** ninguno.
 - **Sombras:** ninguna.
@@ -345,12 +345,12 @@ La cuota vence cada 7 días y la primera, el día 7 ✅. Se puede pagar desde el
 | Qué haces | Novato e Intermedio | Difícil y Hardcore |
 |---|---|---|
 | Pagas la cuota (antes o el día 7) | Pagada. La siguiente vence el día 14 ✅ | Pagada. La siguiente vence el día 14 ✅ |
-| Pides prórroga, no pagas o no vas a Reme | **Toda la serie se desplaza una semana**: la cuota vence el día 14, la siguiente el 21, y así. Lleva un pequeño recargo `{recargo}` por cada semana de atraso. No pagar equivale a prórroga automática con recargo ✅ | **La cuota atrasada se suma a la del día 14**, con un recargo mayor que en Novato e Intermedio: ese día debes dos `{cuota}` más el recargo. La serie no se desplaza ✅ |
+| Pides prórroga, no pagas o no vas a Reme | **Toda la serie se desplaza una semana**: la cuota vence el día 14, la siguiente el 21, y así. Lleva un recargo `{recargo}` por cada semana de atraso (58 esquirlas en Intermedio, el 6 % de `{cuota}`; 960 el día 7). No pagar equivale a prórroga automática con recargo ✅ | **La cuota atrasada se suma a la del día 14**, con un recargo mayor que en Novato e Intermedio: ese día debes dos `{cuota}` más el recargo (960 + 960 + 115 = 2 035 en Difícil y 960 + 960 + 173 = 2 093 en Hardcore). La serie no se desplaza ✅ |
 | Qué guarda `f-pago-reme` | `tarde` | `tarde` |
 
-- **El recargo en Difícil y Hardcore** es mayor que en Novato e Intermedio ✅. `{recargo}` toma el valor de la dificultad. Montos, tope y cuánto mayor ⏳ F0-52.
+- **El recargo en Difícil y Hardcore** es mayor que en Novato e Intermedio ✅. `{recargo}` toma el valor de la dificultad: 4 % (Novato), 6 % (Intermedio), 12 % (Difícil) y 18 % (Hardcore) de la cuota atrasada. El recargo de una misma cuota deja de crecer a las 3 semanas ✅.
 - **Ninguna de las dos reglas cierra una puerta** ✅ ([24](24-umbrales-de-acto.md)): atender la cuota es pagar o dejarla anotada.
-- **Pagar antes** baja un punto el interés de la deuda (`n-i-reme-plazo`; valor ⏳ F0-52).
+- **Pagar antes** baja el interés de la deuda de la herencia 1 pp, del 4 % al 3 % mensual (`n-i-reme-plazo`); con eso la cuota del día 7 sería de 900 esquirlas ✅.
 - **Reme no alza la voz ni reprocha** en ninguna de las tres salidas ✅ ([18](18-biblia-narrativa.md), 2.3).
 - **Si no vas a Reme el día 7**, ella pasa por el puesto al caer la tarde y lo anota con la regla de tu dificultad.
 
@@ -416,8 +416,8 @@ Solo se ve la pista de la variante sorteada. Los otros dos props no existen en e
 
 - **Cuándo:** día 7, mañana, a primera hora (`d7.1`), antes de la cuota. Es una escena corta dentro de la primera hora del día, junto al Heraldo que confirma el rumor.
 - **Qué se ve.** Teo señala la sección de empleos (en el Acto I no se nombra el medio que la publica). Hay una **ficha sin nombre** (nombres procedurales ⏳ F4-172): rol «Minero», lo que pide de salario y la Lealtad oculta. Debajo, el botón **«Contratar»**, bloqueado con su motivo.
-- **Motivo del bloqueo.** Es la **mejora de la tienda pendiente** ✅: el botón no se abre hasta que se cierre el Acto I y el puesto esté mejorado. Texto de ejemplo: «Para contratar, primero hay que mejorar el puesto.» El Acto I no dice cuál mejora ni cuándo; cuál y cuánto cuesta ⏳ F0-52, y la contratación real ⏳ F4-90. El primer contacto es la puerta del acto; contratar no.
-- **Dónde se compra la mejora.** ✅ La mejora de la tienda **se compra en la propia tienda, desde el Acto II, con dinero** (decisión del autor, 2026-10-15; cifra ⏳ F0-52). **No se ofrece en el Acto I**: los siete días mantienen «una mecánica nueva por día» y en ellos el botón «Contratar» se ve bloqueado con ese motivo.
+- **Motivo del bloqueo.** Es la **mejora de la tienda pendiente** ✅: el botón no se abre hasta que se cierre el Acto I y el puesto esté mejorado. Texto de ejemplo: «Para contratar, primero hay que mejorar el puesto.» El Acto I no dice cuál mejora ni cuándo; la mejora es el «puesto ampliado» y cuesta 3 500 esquirlas ✅ ([28](28-numeros-base-de-la-economia.md)); la contratación real ⏳ F4-90. El primer contacto es la puerta del acto; contratar no.
+- **Dónde se compra la mejora.** ✅ La mejora de la tienda **se compra en la propia tienda, desde el Acto II, con dinero** (decisión del autor, 2026-10-15; cuesta 3 500 esquirlas, [28](28-numeros-base-de-la-economia.md)). **No se ofrece en el Acto I**: los siete días mantienen «una mecánica nueva por día» y en ellos el botón «Contratar» se ve bloqueado con ese motivo.
 - **Si no abres la sección,** Teo lo cuenta y la ficha queda pegada en el tablón del puesto. Cuenta igual para la puerta ✅.
 - **Si la primera hora se salta** (llegas al puesto más tarde), la escena se dispara en el primer bloque en que pases por el puesto, antes de la cuota de la tarde; la cola la suelta sin mezclarla con otra mecánica.
 - **Qué se construye.** La ficha del Acto I es una tarjeta fija hecha en ⏳ F3-16, con el texto de ⏳ F3-47. La sección real del periódico es ⏳ F4-94, su sesgo ⏳ F4-96 y la información oculta ⏳ F4-97.
@@ -436,11 +436,11 @@ Solo se ve la pista de la variante sorteada. Los otros dos props no existen en e
 | **Detector básico** | Heredado de Anselmo; no depende del cuarzo ✅ |
 | **Pico** | Nivel 1, prestado por Teo ✅ |
 | **Mejora** | La hace Teo ✅; opcional, con ayuda a pedido ✅ |
-| **Trastienda** | El almacén modesto del puesto, con costo de guardar ⏳ F0-52 ✅ |
+| **Trastienda** | El almacén modesto del puesto (40 unidades), con un costo de guardar mínimo de 1 esquirla por lote y día ✅ |
 | **Prensa** | Heraldo (noticia oficial) y Teletipo (rumor), gratis en el Acto I ✅ ([03](03-comercio.md)) |
 | **Pedidos de cliente** | Estándar el día 4 y urgente con prima el día 6 (opcional) ✅ |
 
-**Lo que propone el guion.** El pico de nivel 2 puede llegar el día 5 (opcional) y ya es tuyo; la mejora cuesta hierro y dinero (⏳ F0-52); Teo presta un taladro el día 3; reparar cuesta dinero y materiales y no es un minijuego ✅ ([02](02-extraccion.md); los materiales ⏳ F0-52); el Heraldo y el Teletipo llegan al mostrador y el Teletipo también por Lucía; sin el puesto abierto se vende al contado, con peor precio.
+**Lo que propone el guion.** El pico de nivel 2 puede llegar el día 5 (opcional) y ya es tuyo; la mejora cuesta 3 hierro y 200 esquirlas ✅; Teo presta un taladro el día 3; reparar cuesta dinero y materiales y no es un minijuego ✅ ([02](02-extraccion.md); los materiales son repuestos de hierro, 1 cada 20 puntos de desgaste ✅); el Heraldo y el Teletipo llegan al mostrador y el Teletipo también por Lucía; sin el puesto abierto se vende al contado, con peor precio.
 
 ---
 
@@ -510,7 +510,7 @@ Tras aligerar los días 5 y 6 (2026-10-13), el total baja de ≈ 340 a ≈ 320 t
 
 | Término | Qué es |
 |---|---|
-| `{cuota}` · `{recargo}` | Las variables de la cuota semanal y del pequeño recargo por atraso |
+| `{cuota}` · `{recargo}` | Las variables de la cuota semanal y del recargo por atraso |
 | recargo | Lo que se suma a la cuota por cada semana de atraso; es mayor en Difícil y Hardcore. No se llama «interés» ni «multa» |
 | prórroga | Dejar la cuota para la semana siguiente. En Novato e Intermedio desplaza la serie; en Difícil y Hardcore se suma a la del día 14 con recargo mayor |
 | cuota atrasada | La cuota del día 7 que no se pagó en Difícil y Hardcore |
@@ -519,7 +519,7 @@ Tras aligerar los días 5 y 6 (2026-10-13), el total baja de ≈ 340 a ≈ 320 t
 | pedido de cliente | El encargo de un cliente en el Acto I (estándar el día 4, urgente y opcional el día 6). «Contrato» queda para el Acto II en adelante ✅ |
 | pedido urgente · prima | El pedido de cliente urgente (opcional, sin escena) y lo que paga de más |
 | ficha de candidato | La tarjeta del candidato de la sección de empleos, que se ve el día 7 a primera hora |
-| mejora de la tienda | La mejora del puesto que hace falta para poder contratar; se compra en la propia tienda desde el Acto II (cuál y cuánto ⏳ F0-52). No es la mejora de una herramienta, que hace Teo. En el Acto I es el motivo del bloqueo de «Contratar» |
+| mejora de la tienda | La mejora del puesto que hace falta para poder contratar; se compra en la propia tienda desde el Acto II (el «puesto ampliado», 3 500 esquirlas). No es la mejora de una herramienta, que hace Teo. En el Acto I es el motivo del bloqueo de «Contratar» |
 | cola de historia | Donde esperan las escenas que no se pueden disparar ([24](24-umbrales-de-acto.md), ⏳ F0-78) |
 | sombra | Un rastro de Anselmo o de la Comisión que no revela nada ([18](18-biblia-narrativa.md), 1.4) |
 
@@ -538,7 +538,7 @@ Quedan dos puntos que son propuesta. Ninguno bloquea nada, pero el autor debe co
 
 ## Pendiente
 
-- ⏳ F0-52 Montos de la cuota, el recargo (y su valor mayor en Difícil y Hardcore), la gestión de Quiroga, el efectivo inicial, los precios, el costo de guardar y de la mejora.
+- ✅ Montos de la cuota, el recargo (y su valor mayor en Difícil y Hardcore), la gestión de Quiroga, el efectivo inicial, los precios, el costo de guardar y de la mejora: fijados en [28](28-numeros-base-de-la-economia.md).
 - ⏳ F0-24 Storyboard de las escenas clave de la sección 19.
 - ⏳ F0-78 Diseño de la cola, el diario y la misión de rescate, que usan las escenas por evento.
 - ⏳ F3-14 Pantalla del nombre de la tienda; ⏳ F1-18 largo máximo.

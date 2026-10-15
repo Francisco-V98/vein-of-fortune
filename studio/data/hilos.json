@@ -669,7 +669,7 @@
       "resuelve": [
         {
           "acto": "II",
-          "donde": "A2: la orden de pagar la deuda de luz y abrir el contacto con Casilda viene de Los Faroleros",
+          "donde": "A2: la orden de pagar la cuota extra de luz y abrir el contacto con Casilda viene de Los Faroleros",
           "ref": "doc 22 §3 y §5",
           "estado": "prop"
         }
@@ -723,7 +723,7 @@
       "siembra": [
         {
           "acto": "I",
-          "donde": "Heredas la deuda: la primera cuota vence el día 7 y las siguientes cada 7 días; si no puedes pagar, en Novato e Intermedio la serie se desplaza una semana con recargo y en Difícil y Hardcore la cuota atrasada se suma a la del día 14",
+          "donde": "Heredas la deuda de la herencia (24 000 esquirlas): la primera cuota, de 960, vence el día 7 y las siguientes cada 7 días; si no puedes pagar, en Novato e Intermedio la serie se desplaza una semana con recargo (6 % de la cuota en Intermedio) y en Difícil y Hardcore la cuota atrasada se suma a la del día 14",
           "ref": "doc 08 · doc 17 «La puerta del Acto I» · doc 23 §3 · nodo n-i-reme-plazo · bandera f-pago-reme · cuello c-i-cierre · doc 27 §11 (día 7, tarde, d7.2)",
           "estado": "ok"
         },
@@ -736,8 +736,8 @@
       ],
       "resuelve": [],
       "cambia": "Da el objetivo del tutorial y alimenta las vías de las puertas de acto. El epílogo no dice si está pagada.",
-      "estado": "aplazado",
-      "motivo": "⏳ F0-52: la economía decide las cifras y si queda pagada; el epílogo no la nombra y el sandbox la sigue (doc 25 §7.2)."
+      "estado": "abierto",
+      "motivo": "Abierto por diseño: la economía ya fija las cifras (capital de 24 000 esquirlas, doc 28), pero si queda pagada lo decide el juego; el epílogo no la nombra y el sandbox la sigue (doc 25 §7.2)."
     },
     {
       "id": "h-traicion-de-reme",

@@ -82,7 +82,7 @@
             "f-pago-reme"
           ],
           "mundo": "Reme te invita al café y anota que eres de fiar.",
-          "mercado": "Interés de la deuda: -1 punto ⏳ F0-52.",
+          "mercado": "Interés de la deuda de la herencia: −1 pp (del 4 % al 3 % mensual), permanente; puedes pagar antes desde el día 4.",
           "personajes": "Reme: cálida, con una pizca de culpa."
         },
         {
@@ -101,8 +101,8 @@
           "fija": [
             "f-pago-reme"
           ],
-          "mundo": "En Novato e Intermedio toda la serie se desplaza una semana, con un pequeño recargo por cada semana de atraso, y no pagar equivale a pedirla. En Difícil y Hardcore la cuota atrasada se suma a la del día 14, con un recargo mayor.",
-          "mercado": "Recargo pequeño por cada semana de atraso ({recargo}); en Difícil y Hardcore, mayor ⏳ F0-52.",
+          "mundo": "En Novato e Intermedio toda la serie se desplaza una semana, con un recargo por cada semana de atraso (6 % de la cuota en Intermedio, 4 % en Novato), y no pagar equivale a pedirla. En Difícil y Hardcore la cuota atrasada se suma a la del día 14, con un recargo mayor (12 % y 18 %).",
+          "mercado": "Recargo por cada semana de atraso ({recargo}): el 6 % de la cuota atrasada en Intermedio (58 esquirlas sobre la cuota del día 7, de 960); 12 % en Difícil y 18 % en Hardcore. Con 4 semanas de atraso acumuladas sube la tasa +1 pp hasta que pagues una cuota completa; nunca cierra una puerta.",
           "personajes": "Reme: te da el plazo con un consejo que suena a aviso."
         }
       ],
@@ -202,8 +202,8 @@
           "fija": [
             "f-orden-reme"
           ],
-          "mundo": "Cumples la petición de tu variante: vender solo al Consorcio, entregar tus cuentas o pagar la deuda de luz.",
-          "mercado": "Consorcio: prima de contrato +3 a +5 puntos, pero un solo comprador. Ministerio: el Ministerio ve tus cuentas. Faroleros: cuota extra de luz ⏳ F0-52.",
+          "mundo": "Cumples la petición de tu variante: vender solo al Consorcio, entregar tus cuentas o pagar la cuota extra de luz.",
+          "mercado": "Consorcio: prima de contrato +3 a +5 puntos, pero un solo comprador. Ministerio: el Ministerio ve tus cuentas. Faroleros: cuota extra de luz de 960 esquirlas, una vez.",
           "personajes": "Reme: alivio y vergüenza. «Perdóname, criatura. Esto no lo elegí yo»."
         },
         {
@@ -223,7 +223,7 @@
             "f-orden-reme"
           ],
           "mundo": "La cuota de la deuda se adelanta. La ruta sigue abierta.",
-          "mercado": "Adelanto de la cuota ⏳ F0-52; menor si pagaste a tiempo en el Acto I.",
+          "mercado": "Adelanto de la cuota: se cobra por adelantado la mitad de la siguiente cuota si pagaste a tiempo en el Acto I y la cuota entera si prorrogaste. Se acredita a las siguientes cuotas, sin costo extra, y cuenta para la vía de deuda.",
           "personajes": "Reme: calla un segundo. Su facción le cobra un costo."
         }
       ],
@@ -416,7 +416,7 @@
             "f-certificado"
           ],
           "mundo": "Quiroga la da con una «gestión» y se pone nervioso.",
-          "mercado": "Una gestión pequeña ⏳ F0-52.",
+          "mercado": "Una gestión pequeña: 400 esquirlas.",
           "personajes": "Quiroga: anota que lo sabes."
         },
         {
@@ -436,7 +436,7 @@
             "f-certificado"
           ],
           "mundo": "Quiroga se vuelve dependiente de ti.",
-          "mercado": "Vigilancia -10 puntos.",
+          "mercado": "Vigilancia −10.",
           "personajes": "Quiroga: te teme y te necesita."
         }
       ],
@@ -478,7 +478,7 @@
           "fija": [
             "f-alianza"
           ],
-          "mundo": "Protección y luz; tu deuda de luz se suma a tu deuda.",
+          "mundo": "Protección y luz; tu deuda de luz (3 600 esquirlas, sin interés, que crece un 2 % al mes si no la tocas) se suma aparte de la deuda de la herencia y no entra en la vía de deuda.",
           "mercado": "Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133.",
           "personajes": "Casilda: aliada interesada. La Unión se mantiene. Reme paga o respira según su facción."
         }
@@ -503,7 +503,7 @@
             "f-quiroga-salida"
           ],
           "mundo": "Quiroga te facilita los trámites en las oficinas.",
-          "mercado": "Vigilancia -10 puntos.",
+          "mercado": "Vigilancia −10.",
           "personajes": "Quiroga: leal a su manera; guarda su archivo como seguro."
         },
         {
@@ -513,7 +513,7 @@
             "f-quiroga-salida"
           ],
           "mundo": "Quiroga espera.",
-          "mercado": "Vigilancia -5 puntos.",
+          "mercado": "Vigilancia −5.",
           "personajes": "Quiroga: nervioso; su archivo es su seguro."
         },
         {
@@ -579,23 +579,23 @@
       "id": "n-iii-contrato-oficial",
       "acto": "III",
       "nivel": "pequena",
-      "titulo": "Contrato oficial con cuota",
-      "dispara": "Primer contrato oficial del Ministerio, con cuota. Dilema de sobornos ⏳ F4-138.",
+      "titulo": "Contrato oficial con cuota de entrega",
+      "dispara": "Primer contrato oficial del Ministerio, con cuota de entrega obligatoria. Dilema de sobornos ⏳ F4-138.",
       "opciones": [
         {
           "id": "cumplir",
-          "texto": "Cumples la cuota.",
+          "texto": "Cumples la cuota de entrega.",
           "fija": [],
           "mundo": "Montenegro lo anota: eres un proveedor fiable.",
-          "mercado": "Cuota de un 10 % del volumen del contrato ⏳ F0-52.",
+          "mercado": "La cuota de entrega es el 10 % del volumen del contrato (no es la cuota de la deuda).",
           "personajes": "Quiroga: nada que cobrar."
         },
         {
           "id": "gestion",
           "texto": "Pagas una «gestión» para bajarla.",
           "fija": [],
-          "mundo": "La cuota baja, pero queda registro.",
-          "mercado": "Cuota -30 % y vigilancia +10 puntos.",
+          "mundo": "La cuota de entrega baja, pero queda registro.",
+          "mercado": "Cuota de entrega −30 % a cambio del 5 % del valor del contrato, y vigilancia +10.",
           "personajes": "Quiroga o su oficial cobra la gestión."
         },
         {
@@ -603,7 +603,7 @@
           "texto": "Rechazas el contrato.",
           "fija": [],
           "mundo": "El contrato pasa a otro proveedor.",
-          "mercado": "Pierdes la prima del contrato; vigilancia +10 puntos.",
+          "mercado": "Pierdes la prima del contrato; vigilancia +10.",
           "personajes": "El Ministerio te mira más."
         }
       ],
@@ -804,7 +804,7 @@
             "f-entrada"
           ],
           "mundo": "Es una firma y nada más: no te protege ni te ata. Montenegro no te debe nada.",
-          "mercado": "Licencia ampliada; vigilancia +10 puntos.",
+          "mercado": "Licencia ampliada; vigilancia +10.",
           "personajes": "Quiroga te debe un favor en el IV, porque tramitó el sello."
         },
         {
@@ -849,8 +849,8 @@
           "fija": [
             "f-reme-proteccion"
           ],
-          "mundo": "La deuda de Reme queda en cero.",
-          "mercado": "Gasto grande ⏳ F0-52.",
+          "mundo": "El préstamo de su facción queda saldado y Reme sale de la cadena.",
+          "mercado": "Gasto grande: 150 000 esquirlas, el capital que su facción le prestó hace 25 años (no es la deuda de la herencia).",
           "personajes": "Reme: «criatura», sin ironía."
         },
         {
@@ -941,7 +941,7 @@
             "f-archivo"
           ],
           "mundo": "El archivo cambia de manos.",
-          "mercado": "Ingreso grande ⏳ F0-52.",
+          "mercado": "Ingreso grande: 200 000 esquirlas.",
           "personajes": "Quiroga: queda a merced del comprador."
         }
       ],
@@ -1007,7 +1007,7 @@
             "f-destino"
           ],
           "mundo": "La verdad sale: caos social, el Ministerio contraataca. Con la Unión en tramo alto, sale contigo y el caos se contiene; con la Unión en tramo bajo, nadie te respalda en el Hollín.",
-          "mercado": "La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario; después rebota y sube, y queda algo por debajo del precio de antes. No deja de valer ⏳ F4-147.",
+          "mercado": "La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario (15 %); después rebota y sube, y queda algo por debajo del precio de antes. No deja de valer ⏳ F4-147.",
           "personajes": "Te separas de Anselmo. La Comisión corta el abono mensual de Reme."
         },
         {
@@ -1111,7 +1111,7 @@
           "texto": "Nadie publica.",
           "fija": [],
           "mundo": "Lucía guarda la historia y lo publicas tú.",
-          "mercado": "Publicar te cuesta caro ⏳ F0-52 y llega a poca gente: la caída es más lenta.",
+          "mercado": "Publicar te cuesta 60 000 esquirlas y llega a poca gente: la caída es más lenta.",
           "personajes": "Lucía: se queda con las ganas."
         }
       ],

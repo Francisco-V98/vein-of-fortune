@@ -40,7 +40,7 @@ Lore:
 
 ✅ Las zonas están ambientadas en Valdoria (ver [05](05-mundo-y-minerales.md) para regiones y distribución de minerales).
 
-✅ Estas seis son **zonas de minado**: cada una se entra por la boca de mina de un asentamiento (Villa Brasa atiende las dos del Hollín). En el mapa, «zona» es la región completa con su asentamiento ([26](26-zonas-y-edificios.md)). Ir de una a otra no gasta bloque pero cuesta un poco de dinero (⏳ F0-52; [01](01-core-loop.md)). Las **Cavernas** y **La Fosa** son zonas profundas: una expedición cuesta 2 bloques y ocupa la Tarde y la Noche, y La Fosa solo abre 3 días por semana (días ⏳ F0-52; [01](01-core-loop.md)).
+✅ Estas seis son **zonas de minado**: cada una se entra por la boca de mina de un asentamiento (Villa Brasa atiende las dos del Hollín). En el mapa, «zona» es la región completa con su asentamiento ([26](26-zonas-y-edificios.md)). Ir de una a otra no gasta bloque pero cuesta un poco de dinero (de 30 a 150 esquirlas por trayecto ✅; [01](01-core-loop.md), [28](28-numeros-base-de-la-economia.md)). Las **Cavernas** y **La Fosa** son zonas profundas: una expedición cuesta 2 bloques y ocupa la Tarde y la Noche, y La Fosa solo abre 3 días por semana, los días 2, 4 y 6 ✅ ([01](01-core-loop.md)).
 
 ✅ Los «enemigos» de las primeras zonas son **personas** (capataces, bandas, inspectores que piden soborno), no monstruos, como muestra la tabla. Encaja con el tono y con los encuentros por decisión (pagar, negociar, pelear, huir). Las criaturas aparecen solo en La Fosa, por la Aetherita.
 
@@ -59,7 +59,11 @@ Lore:
 
 ✅ Las probabilidades de aparición y obtención se calibran para que no sea fácil ganar mucho dinero rápido ni terminar el juego pronto.
 
-- ⏳ F0-52 Cuánta energía gasta cada mena y cuántas menas caben en una expedición.
+- ✅ **Energía:** el **Aguante base es de 25** y es la energía máxima de **cada expedición**: se rellena entera al empezar, y una casa mejor sube un poco la energía inicial (+2 por nivel de casa). Cada mena gasta energía según su mineral: carbón 8 · hierro 10 · cobre 12 · salitre 12 · plata 14 · cuarzo 16 · oro 18 · esmeralda 22 · diamante 26 · Aetherita 34 (cada nivel de herramienta la baja un 10 % del valor base, hasta ×0,6 en el nivel 5).
+- ✅ **Menas por expedición:** variable según tus skills, herramientas y mejoras. Al principio caben **2 a 3** (con 25 de energía, 3 de carbón o 2 de hierro) y el número crece con la recolección: unas 4 en el Acto II, 7 en el III y hasta 10 por bloque en el IV. Los empleados rinden mucho menos que tú, pero escalan igual con sus skills ([04](04-progresion-y-meta.md)).
+- ✅ **Expedición profunda:** gasta **×1,8 de energía** y permite **×1,5 de carga**.
+- ✅ **Consumibles de recarga de energía** y similares: versiones futuras, mucho después de la V1 ([06](06-roadmap-y-pendientes.md)).
+- ✅ **Zonas que se agotan:** cada expedición baja la riqueza de la zona 6 puntos, cada día sube 3 y nunca baja del 40 %, así que rotar de zona rinde más que repetir una ([28](28-numeros-base-de-la-economia.md)).
 
 ## Herramientas ✅
 
@@ -69,7 +73,7 @@ Lore:
 - Cada herramienta sirve para ciertos materiales; los materiales de mayor nivel requieren herramientas mejores.
 - Mejor herramienta → minijuego más fácil / zona óptima más amplia / más probabilidad de obtención.
 
-✅ Categorías de mejoras que el jugador debe ir comprando: más resistencia, más almacenamiento (carga), mejor minado, mejor información (escáner).
+✅ Lo que mejora el jugador al ir comprando: más resistencia, más almacenamiento (carga), mejor minado, mejor información (escáner). Son los cuatro componentes de **cada nivel**: un nivel de herramienta es un paquete que mejora las cuatro cosas a la vez, no cuatro escaleras separadas ✅.
 
 ### Modelo de herramientas ✅
 
@@ -80,13 +84,15 @@ Decisión del autor (2026-10-15):
 | Tipos | **5 tipos**: pico, taladro, cincel, criba y explosivo (los de [09](09-minijuegos.md)); cada uno cubre un tipo de minijuego ✅ |
 | Niveles | **5 niveles por herramienta**, y los minerales de mayor nivel exigen herramientas de mayor nivel ✅ (a revisar si en el prototipo hace falta ampliar, ⏳ F4-60) |
 | Explosivo | Es **consumible**: se gasta con cada uso en lugar de desgastarse ✅ |
-| Reparar | Cuesta **dinero y materiales** ✅. Es otro sumidero de dinero. Los materiales concretos ⏳ F0-52 |
+| Reparar | Cuesta **dinero y materiales** ✅. Es otro sumidero de dinero. Los materiales son **1 repuesto por cada 20 puntos de desgaste**: de hierro en los niveles 1–2, de cobre en el 3, de plata en el 4 y de oro en el 5 ✅ |
 | Mejorar | Requiere **minerales específicos** (ej. hierro para el pico, diamante para el cincel, cuarzo para mejorar el detector). Así los minerales tienen utilidad real ✅ |
 | Qué mineral | El mineral que sube una herramienta al nivel *k* se extrae con una herramienta de nivel *k*−1 ✅. Así nunca hace falta lo que aún no se puede sacar |
 | Facciones | Mejorar es **neutral entre facciones** ✅ |
 | Requisitos | Los niveles altos requieren **estatus, licencia o contacto** (influencia), no solo dinero ✅ (⏳ F4-114 proveedores por estatus, ⏳ F4-213 licencias) |
 
-- ⏳ F0-52 Costos por nivel, de reparar (dinero y materiales) y de mejorar, y el costo del explosivo.
+- ✅ **Costo de mejorar** (un costo en dinero y un mineral por nivel; las cifras del pico, y los otros tipos cuestan ×1,1 la criba, ×1,25 el taladro y ×1,5 el cincel): subir al nivel 2 cuesta **200 esquirlas**, al 3 **1 100**, al 4 **13 000** y al 5 **40 000**, más el mineral de cada subida (hierro para el nivel 2, cobre para el 3, plata para el 4 y esmeralda para el 5 en el pico). Mejorar se paga solo después de 3 a 4 expediciones. El detalle por tipo y mineral está en [28](28-numeros-base-de-la-economia.md).
+- ✅ **Costo de reparar:** dinero por punto de desgaste según el nivel (3 · 5 · 20 · 85 · 240 esquirlas, por el factor del tipo) más los repuestos de arriba; en total, **7–9 % del valor bruto de una expedición** en todos los actos.
+- ✅ **Explosivo:** consumible con **5 potencias** (cada una sirve para los minerales de un nivel) que cuestan **15 · 50 · 130 · 330 · 900 esquirlas**; entra en el Acto III. El **detector** se mejora aparte con cuarzo ([28](28-numeros-base-de-la-economia.md)).
 
 ## Fallos y daño a la mena ✅
 
@@ -141,7 +147,7 @@ Decisión del autor (2026-10-15):
 - ✅ **Energía en 0 durante una expedición:** vuelves con **carga parcial**. Solo se pierde la carga de **esa** expedición, nunca lo que ya está en el almacén.
 - ✅ La pérdida es **parcial**, no total, con objetos para asegurar la carga o escapar ⏳ F3-09. Perderlo todo por un solo error de preparación frustraría demasiado; el castigo duro queda para las dificultades altas y el hardcore.
 - ✅ **El día 3 del Acto I todavía no hay pérdida grave**, en ninguna dificultad ([27](27-guion-del-acto-i.md)).
-- ✅ En dificultades altas, la pérdida es mayor ([04](04-progresion-y-meta.md)). El porcentaje de carga que se pierde ⏳ F0-52, y los valores por dificultad ⏳ F3-22.
+- ✅ En dificultades altas, la pérdida es mayor ([04](04-progresion-y-meta.md)). Se pierde el **35 %** de las unidades de esa expedición en Intermedio y la regla escala con la dificultad (Novato 25 %, Difícil 49 %, Hardcore 70 %; [28](28-numeros-base-de-la-economia.md)) ✅; el ajuste fino por dificultad ⏳ F3-22.
 - ✅ En **Hardcore** solo mata un **encuentro de riesgo** o un **jefe** (ver [04](04-progresion-y-meta.md)). Quedarse sin energía no mata.
 - ✅ **El mal del éter no mata.** Baja temporalmente las stats ([09](09-minijuegos.md)).
 

@@ -25,9 +25,9 @@ Decisiones del 2026-10-12 (F0-45), más las que ya estaban en [22](22-acto-ii-va
 | Cupos | **3 grandes, 6 medianas y 18 pequeñas** ✅ |
 | Pequeñas por acto | **3 en el I, 5 en el II, 5 en el III y 5 en el IV** ✅ |
 | Estado que se guarda | **Unas 14 banderas de elección y 4 medidores**: Unión, Esteban, Lucía y Teo ✅. El Consorcio, el Ministerio y Los Faroleros **no tienen medidor propio**: se miden por la alianza que elijas ✅ |
-| Deuda del Acto I | La cuota vence **cada 7 días y la primera, el día 7**. Si no puedes pagar, se **prorroga una semana con un pequeño recargo** (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor). Los montos y el recargo ⏳ F0-52 ✅ |
+| Deuda del Acto I | La cuota vence **cada 7 días y la primera, el día 7**. Si no puedes pagar, se **prorroga una semana con un recargo del 6 % de la cuota atrasada** en Intermedio (4 % en Novato; en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo del 12 % y el 18 %). La cuota del día 7 es de **960 esquirlas** y su recargo en Intermedio, de 58 ✅ ([28](28-numeros-base-de-la-economia.md)) |
 | Aetherita en el III | El precio es visible y **solo se compra en el mercado negro (Casilda)**, como mercancía escasa. La extracción no ocurre hasta el IV ✅ |
-| Vigilancia | Un **indicador global de 0 a 100** que sube con las operaciones negras. Sus cambios se expresan en **puntos**; el «%» solo describe el ritmo de subida, y nunca se nombra un lugar. «Bajo investigación» es la redada ([03](03-comercio.md)) ✅ |
+| Vigilancia | Un **indicador global de 0 a 100** que sube con las operaciones negras. Sus cambios se escriben «vigilancia +N» o «vigilancia −N», sin la palabra «puntos»; el «%» solo describe el ritmo de subida, y nunca se nombra un lugar. «Bajo investigación» es la redada ([03](03-comercio.md)) ✅ |
 | Las tres grandes | **Alianza** (II, escena A5), **cómo entras al círculo** (III) y **destino de la Aetherita** (IV: revelar, callar o vender) ✅ |
 | Cómo entras al círculo | Tres entradas: el **aval de Esteban**, el **sello de Montenegro** (solo vale como firma, sin humanizarlo) o la **presión de tu alianza**. Todas llegan al **mismo encuentro con Montenegro** y la entrada fija **quién te debe un favor en el IV** ✅. «Puerta» queda para el paso entre actos ([24](24-umbrales-de-acto.md)) ✅ |
 | Destino de Teo | Se queda si su confianza es alta o media, se va si es baja y **muere si no hubo revisión en el III**, también si le propones y aceptas su no (la opción respetuosa tiene costo). Si chocan, gana el no haberlo atendido. La revisión solo puede decir «tos de mina» ✅ |
@@ -44,7 +44,7 @@ Decisiones del 2026-10-12 (F0-45), más las que ya estaban en [22](22-acto-ii-va
 
 ## 2 · Reglas del árbol 🟡
 
-**Estado:** ✅ los cupos, las banderas, los medidores y sus tramos de la sección 1; 🟡 las definiciones de nivel, los cuellos de botella y las reglas de seguridad, que propone el narrador. Todas las cifras de precios y de movimiento de los medidores son orientativas ⏳ F0-52 y ⏳ F4-61
+**Estado:** ✅ los cupos, las banderas, los medidores y sus tramos de la sección 1; 🟡 las definiciones de nivel, los cuellos de botella y las reglas de seguridad, que propone el narrador. Las cifras de precios, cuotas y gastos son las de [28](28-numeros-base-de-la-economia.md) ✅ (base que verifica ⏳ F0-53); las del movimiento de los medidores son orientativas ⏳ F4-61
 
 ### 2.1 Niveles
 
@@ -83,7 +83,7 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 - **Ningún personaje aparece antes de su acto:** Esteban y Casilda en el II, Montenegro en el III. En el II, Montenegro es solo decreto y firma.
 - **Anselmo solo como sombra antes del IV**, con una sombra como máximo por escena. Las cintas se recogen en una misión, nunca dentro de una de las seis escenas ancla del II, y no se pueden oír hasta el IV.
 - **Los avisos son justos.** Toda decisión con una consecuencia grave se anuncia antes: la tos de Teo se ve y los demás la comentan antes de la revisión.
-- **El mercado se mide en puntos o en %; la vigilancia, en puntos** (el % solo como ritmo de subida). La caída y el rebote de la Aetherita respetan el tope diario de variación de [03](03-comercio.md) ⏳ F0-52
+- **Cada magnitud tiene su palabra** ✅: el mercado se mide en **puntos** (un punto es el 1 % del precio base del mineral), el interés de la deuda en **pp** (punto porcentual de la tasa mensual) y la vigilancia como «vigilancia +N»; el «%» solo describe el ritmo de subida o una proporción. La caída y el rebote de la Aetherita respetan su tope diario de variación, del 15 % ([03](03-comercio.md), [28](28-numeros-base-de-la-economia.md))
 - **El protagonista sigue siendo un optimista terco.** Ninguna opción lo hace cínico ni burlón con los trabajadores.
 
 ---
@@ -101,9 +101,9 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 
 **`n-i-reme-plazo` · Pagar a Reme antes o después del plazo** (pequeña)
 - **Dispara:** Vence la primera cuota de la deuda: el día 7 y, después, cada 7 días ✅. Puedes pagar antes desde el día 4.
-- **Pagas antes del plazo.** → *Mundo:* Reme te invita al café y anota que eres de fiar. *Mercado:* Interés de la deuda: -1 punto ⏳ F0-52. *Personajes:* Reme: cálida, con una pizca de culpa.
+- **Pagas antes del plazo.** → *Mundo:* Reme te invita al café y anota que eres de fiar. *Mercado:* Interés de la deuda de la herencia: −1 pp (del 4 % al 3 % mensual), permanente; puedes pagar antes desde el día 4. *Personajes:* Reme: cálida, con una pizca de culpa.
 - **Pagas justo en el plazo.** → *Mundo:* Todo sigue su curso. *Personajes:* Reme: «Con calma, criatura».
-- **Pides una prórroga de una semana.** → *Mundo:* En Novato e Intermedio toda la serie se desplaza una semana, con un pequeño recargo por cada semana de atraso, y no pagar equivale a pedirla; en Difícil y Hardcore la cuota atrasada se suma a la del día 14 con un recargo mayor que en los otros dos ✅ ([27](27-guion-del-acto-i.md), sección 11). *Mercado:* Recargo de la prórroga ⏳ F0-52. *Personajes:* Reme: te da el plazo con un consejo que suena a aviso.
+- **Pides una prórroga de una semana.** → *Mundo:* En Novato e Intermedio toda la serie se desplaza una semana, con un recargo por cada semana de atraso (6 % de la cuota en Intermedio, 4 % en Novato), y no pagar equivale a pedirla; en Difícil y Hardcore la cuota atrasada se suma a la del día 14 con un recargo mayor que en los otros dos ✅ ([27](27-guion-del-acto-i.md), sección 11). *Mercado:* Recargo de la prórroga: {recargo}, que en Intermedio es el 6 % de la cuota atrasada (58 esquirlas sobre la cuota del día 7). Con 4 semanas de atraso acumuladas sube la tasa +1 pp hasta que pagues una cuota completa; nunca cierra una puerta. *Personajes:* Reme: te da el plazo con un consejo que suena a aviso.
 - **Fija:** `f-pago-reme`. **Lee:** —.
 
 **`n-i-lucia-rumor` · Confiar en Lucía con un rumor** (pequeña)
@@ -130,9 +130,9 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 
 **`n-ii-orden` · La orden de Reme** (mediana) ✅
 - **Dispara:** Escena A2 de 22: llega tu próxima cuota a Reme y ella revela la facción que la manda (sorteada al empezar).
-- **Aceptas lo que pide tu facción.** → *Mundo:* Cumples la petición de tu variante: vender solo al Consorcio, entregar tus cuentas o pagar la deuda de luz. *Mercado:* Consorcio: prima de contrato +3 a +5 puntos, pero un solo comprador (exclusividad de venta ⏳ F4-215). Ministerio: el Ministerio ve tus cuentas (entrega de cuentas ⏳ F4-215). Faroleros: cuota extra de luz ⏳ F0-52. *Personajes:* Reme: alivio y vergüenza. «Perdóname, criatura. Esto no lo elegí yo».
+- **Aceptas lo que pide tu facción.** → *Mundo:* Cumples la petición de tu variante: vender solo al Consorcio, entregar tus cuentas o pagar la cuota extra de luz. *Mercado:* Consorcio: prima de contrato +3 a +5 puntos, pero un solo comprador (exclusividad de venta ⏳ F4-215). Ministerio: el Ministerio ve tus cuentas (entrega de cuentas ⏳ F4-215). Faroleros: cuota extra de luz de 960 esquirlas, una vez. *Personajes:* Reme: alivio y vergüenza. «Perdóname, criatura. Esto no lo elegí yo».
 - **Negocias con Labia una versión más corta.** → *Mundo:* Si la prueba sale bien, cumples solo la mitad de la petición. *Mercado:* La mitad del efecto de aceptar. *Personajes:* Reme: orgullosa de ti, sin decirlo.
-- **Rechazas la orden.** → *Mundo:* La cuota de la deuda se adelanta. La ruta sigue abierta. *Mercado:* Adelanto de la cuota ⏳ F0-52; menor si pagaste a tiempo en el Acto I. *Personajes:* Reme: calla un segundo. Su facción le cobra un costo.
+- **Rechazas la orden.** → *Mundo:* La cuota de la deuda se adelanta. La ruta sigue abierta. *Mercado:* Adelanto de la cuota: se cobra por adelantado la mitad de la siguiente cuota si pagaste a tiempo en el Acto I y la cuota entera si prorrogaste. Se acredita a las siguientes cuotas, sin costo extra, y cuenta para la vía de deuda. *Personajes:* Reme: calla un segundo. Su facción le cobra un costo.
 - **Fija:** `f-orden-reme`. **Lee:** `f-pago-reme`.
 
 **`n-ii-conflicto` · Resolver el primer conflicto con tu facción** (pequeña)
@@ -165,16 +165,16 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 
 **`n-ii-certificado` · El certificado a solas** (pequeña)
 - **Dispara:** Primera visita a Quiroga después de la orden (escena opcional O4 de 22). Si no ocurre, A5 siembra la pista.
-- **Le pides una copia.** → *Mundo:* Quiroga la da con una «gestión» y se pone nervioso. *Mercado:* Una gestión pequeña ⏳ F0-52. *Personajes:* Quiroga: anota que lo sabes.
+- **Le pides una copia.** → *Mundo:* Quiroga la da con una «gestión» y se pone nervioso. *Mercado:* Una gestión pequeña: 400 esquirlas. *Personajes:* Quiroga: anota que lo sabes.
 - **Miras el sello y no dices nada.** → *Mundo:* Te quedas con la sombra: sello irregular y sin registro de cremación. *Personajes:* Quiroga: respira aliviado.
-- **Le dices que sabes lo del sello.** → *Mundo:* Quiroga se vuelve dependiente de ti. *Mercado:* Vigilancia -10 puntos. *Personajes:* Quiroga: te teme y te necesita.
+- **Le dices que sabes lo del sello.** → *Mundo:* Quiroga se vuelve dependiente de ti. *Mercado:* Vigilancia −10. *Personajes:* Quiroga: te teme y te necesita.
 - **Fija:** `f-certificado`. **Lee:** —.
 
 **`n-ii-alianza` · La alianza** (grande) ✅
 - **Dispara:** Escena A5 de 22: tras la huelga y con estatus de Comerciante, llegan las tres ofertas. Cierra el Acto II.
 - **Te alías con el Consorcio Arvel.** → *Mundo:* Contratos grandes y tu deuda pasa a la casa. *Mercado:* Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133. *Personajes:* Esteban: socio incómodo. La Unión baja. Reme paga o respira según su facción (22, sección 9).
 - **Te alías con el Ministerio.** → *Mundo:* Licencia ampliada y trámite preferente. *Mercado:* Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133. *Personajes:* Quiroga: tu enlace. La Unión baja. Reme paga o respira según su facción.
-- **Te alías con Los Faroleros.** → *Mundo:* Protección y luz; tu deuda de luz se suma a tu deuda. *Mercado:* Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133. *Personajes:* Casilda: aliada interesada. La Unión se mantiene. Reme paga o respira según su facción.
+- **Te alías con Los Faroleros.** → *Mundo:* Protección y luz; tu deuda de luz (3 600 esquirlas, sin interés, que crece un 2 % al mes si no la tocas) se suma aparte de la deuda de la herencia y no entra en la vía de deuda. *Mercado:* Los modificadores de tu variante se sustituyen por los de la alianza ⏳ F4-133. *Personajes:* Casilda: aliada interesada. La Unión se mantiene. Reme paga o respira según su facción.
 - **Fija:** `f-alianza`, `m-union`. **Lee:** `f-orden-reme`, `f-huelga`.
 - **Nota sobre la lectura.** 🟡 El nodo lee `f-orden-reme` solo para mostrar el costo de Reme (que paga o respira). Ninguna puerta lo lee ni lo usa para decidir.
 
@@ -196,8 +196,8 @@ La entrada que elijas decide quién te debe un favor en el IV:
 
 **`n-iii-quiroga-salida` · Quiroga pide una salida** (pequeña)
 - **Dispara:** Llegas a Puerto Meridiano y Quiroga se ofrece a ayudarte en la capital a cambio de una salida. Dilema de favores ⏳ F4-137.
-- **Le consigues el retiro que busca.** → *Mundo:* Quiroga te facilita los trámites en las oficinas. *Mercado:* Vigilancia -10 puntos. *Personajes:* Quiroga: leal a su manera; guarda su archivo como seguro.
-- **Le prometes ayuda para más adelante.** → *Mundo:* Quiroga espera. *Mercado:* Vigilancia -5 puntos. *Personajes:* Quiroga: nervioso; su archivo es su seguro.
+- **Le consigues el retiro que busca.** → *Mundo:* Quiroga te facilita los trámites en las oficinas. *Mercado:* Vigilancia −10. *Personajes:* Quiroga: leal a su manera; guarda su archivo como seguro.
+- **Le prometes ayuda para más adelante.** → *Mundo:* Quiroga espera. *Mercado:* Vigilancia −5. *Personajes:* Quiroga: nervioso; su archivo es su seguro.
 - **Lo dejas solo.** → *Mundo:* Quiroga sigue cobrando por su cuenta. *Personajes:* Quiroga: guarda el archivo por si acaso.
 - **Fija:** `f-quiroga-salida`. **Lee:** `f-certificado`.
 
@@ -229,11 +229,11 @@ La entrada que elijas decide quién te debe un favor en el IV:
 - **Compras antes que él.** → *Mundo:* Le ganas la compra. *Mercado:* El mineral baja un 2 a 3 % por la competencia. *Personajes:* Esteban: herido, y todo es personal.
 - **Fija:** `m-esteban`. **Lee:** `f-alianza`.
 
-**`n-iii-contrato-oficial` · Contrato oficial con cuota** (pequeña)
-- **Dispara:** Primer contrato oficial del Ministerio, con cuota obligatoria (su definición ⏳ F4-74). Dilema de sobornos ⏳ F4-138.
-- **Cumples la cuota.** → *Mundo:* Montenegro lo anota: eres un proveedor fiable. *Mercado:* Cuota de un 10 % del volumen del contrato ⏳ F0-52. *Personajes:* Quiroga: nada que cobrar.
-- **Pagas una «gestión» para bajarla.** → *Mundo:* La cuota baja, pero queda registro. *Mercado:* Cuota -30 % y vigilancia +10 puntos. *Personajes:* Quiroga o su oficial cobra la gestión.
-- **Rechazas el contrato.** → *Mundo:* El contrato pasa a otro proveedor. *Mercado:* Pierdes la prima del contrato; vigilancia +10 puntos. *Personajes:* El Ministerio te mira más.
+**`n-iii-contrato-oficial` · Contrato oficial con cuota de entrega** (pequeña)
+- **Dispara:** Primer contrato oficial del Ministerio, con cuota de entrega obligatoria (su definición ⏳ F4-74). Dilema de sobornos ⏳ F4-138.
+- **Cumples la cuota de entrega.** → *Mundo:* Montenegro lo anota: eres un proveedor fiable. *Mercado:* La cuota de entrega es el 10 % del volumen del contrato (no es la cuota de la deuda). *Personajes:* Quiroga: nada que cobrar.
+- **Pagas una «gestión» para bajarla.** → *Mundo:* La cuota baja, pero queda registro. *Mercado:* Cuota de entrega −30 % a cambio del 5 % del valor del contrato, y vigilancia +10. *Personajes:* Quiroga o su oficial cobra la gestión.
+- **Rechazas el contrato.** → *Mundo:* El contrato pasa a otro proveedor. *Mercado:* Pierdes la prima del contrato; vigilancia +10. *Personajes:* El Ministerio te mira más.
 - **Fija:** —. **Lee:** `f-alianza`.
 
 **`n-iii-monopolio` · El monopolio de la Aetherita negra** (mediana)
@@ -246,7 +246,7 @@ La entrada que elijas decide quién te debe un favor en el IV:
 **`n-iii-circulo` · Cómo entras al círculo** (grande) ✅
 - **Dispara:** Con el estatus de Empresario, dos vías de tres y una entrada abierta ([24](24-umbrales-de-acto.md)). Tres entradas, un solo encuentro con Montenegro, que cierra el acto.
 - **Esteban te avala.** → *Mundo:* Entras al círculo con el aval del Consorcio. *Mercado:* Compras de hierro y cobre al Consorcio 2 a 3 % más baratas. *Personajes:* Esteban te debe un favor en el IV. Requiere su medidor en tramo alto ✅; si no lo tienes, el aval se muestra bloqueado con el motivo y quedan las otras dos entradas ✅.
-- **Entras con el sello de Montenegro.** → *Mundo:* Es una firma y nada más: no te protege ni te ata. Montenegro no te debe nada. *Mercado:* Licencia ampliada; vigilancia +10 puntos. *Personajes:* Quiroga te debe un favor en el IV, porque tramitó el sello.
+- **Entras con el sello de Montenegro.** → *Mundo:* Es una firma y nada más: no te protege ni te ata. Montenegro no te debe nada. *Mercado:* Licencia ampliada; vigilancia +10. *Personajes:* Quiroga te debe un favor en el IV, porque tramitó el sello.
 - **Entras con la presión de tu alianza.** → *Mundo:* Tu alianza empuja y el círculo cede. *Mercado:* Prima de contratos de tu alianza +3 a +5 puntos. *Personajes:* La facción aliada te debe un favor en el IV. Con el Consorcio o el Ministerio, la Unión baja ✅ (ajuste D de [24](24-umbrales-de-acto.md)).
 - **Fija:** `f-entrada`, y `m-union` si entras por la presión de tu alianza. **Lee:** `f-alianza`, `m-esteban`, `m-union`.
 
@@ -261,7 +261,7 @@ La entrada que elijas decide quién te debe un favor en el IV:
 **`n-iv-reme-proteccion` · Proteger a Reme** (pequeña)
 - **Dispara:** Reme se une a ti y te entrega los comprobantes del abono. Ahora tienes estatus para protegerla.
 - **Usas tu influencia para ponerla a salvo.** → *Mundo:* Reme sale de la cadena de su facción. *Personajes:* Reme: aliada, con lágrimas contenidas. Su facción se enemista contigo.
-- **Pagas el capital que su facción le prestó.** → *Mundo:* La deuda de Reme queda en cero. *Mercado:* Gasto grande ⏳ F0-52. *Personajes:* Reme: «criatura», sin ironía.
+- **Pagas el capital que su facción le prestó.** → *Mundo:* El préstamo de su facción queda saldado y Reme sale de la cadena. *Mercado:* Gasto grande: 150 000 esquirlas, el capital que su facción le prestó hace 25 años (no es la deuda de la herencia). *Personajes:* Reme: «criatura», sin ironía.
 - **Dejas que decida ella.** → *Mundo:* Reme conserva su casa de préstamos y te ayuda por su cuenta. *Personajes:* Reme: aliada igual.
 - **Fija:** `f-reme-proteccion`. **Lee:** `f-alianza`.
 
@@ -276,7 +276,7 @@ La entrada que elijas decide quién te debe un favor en el IV:
 - **Dispara:** Quiroga te ofrece su archivo de sobornos. Si entraste con el sello, te lo debe como favor y no cobra. No se puede destruir la copia del certificado ni la carta de la cinta 6.
 - **Lo proteges, con Quiroga incluido.** → *Mundo:* Quiroga se retira con su archivo a salvo. *Personajes:* Quiroga: se va a Puerto Meridiano con lo ahorrado.
 - **Lo usas contra el Ministerio.** → *Mundo:* Los sobornos salen a la luz. *Mercado:* Los contratos oficiales se congelan una semana. *Personajes:* Quiroga: cae con su archivo, salvo que le cumpliste la salida.
-- **Lo vendes a quien lo pague.** → *Mundo:* El archivo cambia de manos. *Mercado:* Ingreso grande ⏳ F0-52. *Personajes:* Quiroga: queda a merced del comprador.
+- **Lo vendes a quien lo pague.** → *Mundo:* El archivo cambia de manos. *Mercado:* Ingreso grande: 200 000 esquirlas. *Personajes:* Quiroga: queda a merced del comprador.
 - **Fija:** `f-archivo`. **Lee:** `f-quiroga-salida`, `f-certificado`, `f-entrada`.
 
 **`n-iv-montenegro` · Montenegro se mueve contra ti** (mediana)
@@ -289,7 +289,7 @@ La entrada que elijas decide quién te debe un favor en el IV:
 
 **`n-iv-aetherita` · El destino de la Aetherita** (grande) ✅
 - **Dispara:** Con la verdad en la mano y las ocho cintas oídas. Antes de elegir se te muestra quién publicaría (el tramo de Lucía) y cómo está la Unión 🟡 ⏳ F4-142.
-- **La revelas.** → *Mundo:* La verdad sale: caos social, el Ministerio contraataca. Con la Unión en tramo alto, sale contigo y el caos se contiene; con la Unión en tramo bajo, nadie te respalda en el Hollín ✅. *Mercado:* La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario; después rebota y sube, porque su extracción es difícil y el mineral es limitado, y queda algo por debajo del precio de antes ✅. No deja de valer ni se acaba el mercado ✅. La curva y el nivel exacto ⏳ F4-147 y ⏳ F0-52. *Personajes:* Te separas de Anselmo. La Comisión corta el abono mensual de Reme ✅ (hilo abierto para una segunda parte).
+- **La revelas.** → *Mundo:* La verdad sale: caos social, el Ministerio contraataca. Con la Unión en tramo alto, sale contigo y el caos se contiene; con la Unión en tramo bajo, nadie te respalda en el Hollín ✅. *Mercado:* La Aetherita cae un 40 a 60 % en 5 a 8 días, en tramos del tope diario; después rebota y sube, porque su extracción es difícil y el mineral es limitado, y queda algo por debajo del precio de antes ✅. No deja de valer ni se acaba el mercado ✅. El tope diario es del 15 % ✅ y la caída escrita cabe en él; la curva y el nivel exacto ⏳ F4-147. *Personajes:* Te separas de Anselmo. La Comisión corta el abono mensual de Reme ✅ (hilo abierto para una segunda parte).
 - **La callas.** → *Mundo:* Sigues ganando; el mal del éter sigue y nadie tiene la prueba. *Mercado:* La Aetherita sube un 5 a 10 % en el mes. *Personajes:* Te pareces a Anselmo. El abono sigue llegando ✅.
 - **La vendes.** → *Mundo:* La verdad es moneda de poder: eliges comprador. *Mercado:* Depende del comprador. *Personajes:* Quien compra gana poder sobre ti.
 - **Fija:** `f-destino`. **Lee:** `f-archivo`, `m-union`, `m-lucia`.
@@ -305,7 +305,7 @@ La entrada que elijas decide quién te debe un favor en el IV:
 - **Dispara:** La verdad sale a la luz o se filtra. Si revelas, depende del tramo de Lucía: alto, publica contigo; medio, no publica y lo publicas tú; bajo, publica sin ti ✅. Si callas o vendes: con su tramo bajo filtra una versión a medias, sin pruebas ni cintas; en medio o alto, calla ✅. Lucía nunca publica el acta ✅.
 - **Lucía publica contigo.** → *Mundo:* Una sola versión, con las cintas completas. *Mercado:* La caída se da en tramos del tope diario, sin pánico extra. *Personajes:* Lucía: una sola lealtad.
 - **Lucía publica en La Voz del Hollín sin ti.** → *Mundo:* Sale antes y a medias; la Unión se agita. *Mercado:* Cae al tope el primer día y rebota 5 a 10 puntos si el Heraldo desmiente. *Personajes:* Lucía: te traiciona por la historia.
-- **Nadie publica.** → *Mundo:* Lucía guarda la historia y lo publicas tú. *Mercado:* Publicar te cuesta caro ⏳ F0-52 y llega a poca gente: la caída es más lenta. *Personajes:* Lucía: se queda con las ganas.
+- **Nadie publica.** → *Mundo:* Lucía guarda la historia y lo publicas tú. *Mercado:* Publicar te cuesta 60 000 esquirlas y llega a poca gente: la caída es más lenta. *Personajes:* Lucía: se queda con las ganas.
 - **Fija:** —. **Lee:** `m-lucia`, `f-destino`, `f-comprador`.
 
 **`n-iv-teo` · El destino de Teo** (pequeña) ✅
@@ -431,10 +431,10 @@ Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conserv
 - ⏳ F4-61 Cifras y efectos de los medidores por facción.
 - ⏳ F4-150 El reproductor y el sistema de cintas.
 - ⏳ F4-147 La curva de la caída y el rebote de la Aetherita dentro del tope diario, y el nivel en que queda (algo por debajo del de antes ✅).
-- ⏳ F0-52 Cifras de precios, cuotas, gastos y vigilancia.
+- ✅ Cifras de precios, cuotas, gastos y vigilancia: resueltas en [28](28-numeros-base-de-la-economia.md); su verificación con el simulador ⏳ F0-53.
 - ⏳ F4-135 Guion del Acto III, con el médico del dispensario.
 - ⏳ F0-75 Dibujo del árbol con conexiones (SVG) en el hub; la vista actual usa columnas, tarjetas y flechas de texto.
 - ⏳ F4-213 Licencias (sello, revisión, ampliación y suspensión), ⏳ F4-214 rumores comprados y contados a Lucía y ⏳ F4-215 exclusividad de venta y entrega de cuentas: los sistemas que usan las decisiones del II y del III. La plantilla de guion con identificadores y condiciones ⏳ F4-216.
 - ⏳ F4-62, ⏳ F4-63 y ⏳ F4-65 Las alianzas con el Ministerio, el Consorcio y Los Faroleros: sus efectos se definen por la alianza elegida, sin un medidor propio por facción.
-- ✅ F0-45 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión: términos (entrada, facción de Reme), vigilancia en puntos, prórroga de la cuota y pruebas.
+- ✅ F0-45 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión: términos (entrada, facción de Reme), vigilancia como «vigilancia +N», prórroga de la cuota y pruebas.
 - ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.

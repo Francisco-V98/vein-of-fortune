@@ -135,7 +135,7 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 | Qué | Regla |
 |---|---|
 | **Limpieza** de un documento | ✅ ÷ (✅ + 🟡 + ❓), en porcentaje. También se calcula para todo el diseño |
-| **Diferido** | `⏳ F0-52` marca algo que depende de una tarea posterior. No resta, pero debe nombrar una tarea que exista y que no esté terminada; si la tarea se termina, el punto debe resolverse |
+| **Diferido** | `⏳ F2-04` marca algo que depende de una tarea posterior. No resta, pero debe nombrar una tarea que exista y que no esté terminada; si la tarea se termina, el punto debe resolverse |
 | **Conexión** | Los enlaces entre documentos y las tareas citadas deben existir. Una conexión rota es un error del build |
 | **Meta** | 🟡 Como mínimo 90 % por documento (umbral propuesto) y acercarse al 100 % |
 
@@ -143,14 +143,14 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 
 Solo se aplaza un punto abierto (`⏳`) si cumple las dos condiciones:
 
-1. **Una tarea existente lo va a resolver** y se sabe cuál es (`⏳ F0-52`).
+1. **Una tarea existente lo va a resolver** y se sabe cuál es (`⏳ F2-04`).
 2. **Nada que se escriba o construya antes de esa tarea depende de la respuesta.**
 
 Pregunta de control: *«si la respuesta cambia después, ¿hay que rehacer algo ya hecho?»* Si la respuesta es sí, el punto **se decide ahora con el autor, antes de producir**. Si es no, se aplaza con su tarea.
 
 | Se aplaza | No se aplaza |
 |---|---|
-| Cifras de precios y cuotas (las fija la economía en F0-52) | Quién publica la verdad o si un personaje muere (los finales leen esas banderas) |
+| Fórmulas del modelo de precios (las construye F2-04) | Quién publica la verdad o si un personaje muere (los finales leen esas banderas) |
 | Traducción al inglés de términos (F1-20) | El medidor de un personaje que usarán los umbrales y los epílogos |
 | Textos finales y voces de las cintas (F4-151) | Lo que otro documento ya cita como hecho |
 
@@ -171,7 +171,7 @@ Cada aplazamiento queda justificado en el informe del analista y lo comprueba QA
 | **Integridad** | Lo que el registro referencia debe existir. Un error hace fallar el build |
 | **Comprobaciones de coherencia** | Reglas del diseño, mapa de historia y números base se contrastan con el registro. Cada incumplimiento es un hallazgo: baja el porcentaje, no falla el build, y se resuelve decidiendo o corrigiendo |
 | **Dónde se ve** | Hub, «Coherencia del diseño» |
-| **Próximos pasos** | Hilos narrativos y cabos sueltos (F0-51), números base de la economía (F0-52) y simulador de equilibrio (F0-53) |
+| **Próximos pasos** | Hilos narrativos y cabos sueltos (F0-51), números base de la economía (ya acordados) y simulador de equilibrio (F0-53) |
 
 Es normal que ambos porcentajes empiecen bajos: suben a medida que se cierran las tareas y se profundiza el diseño. La meta es llegar al lanzamiento lo más cerca posible del 100 %.
 

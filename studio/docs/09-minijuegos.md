@@ -2,10 +2,10 @@
 
 ## Reglas comunes ✅
 
-**Estado:** confirmado que son simples, variados, de dos parámetros en tensión (con dos excepciones), con controles táctiles y de mando ([10](10-tecnico-y-herramientas.md)) y que la mejor herramienta los facilita; la duración ⏳ F0-52 y la zona óptima ⏳ F2-16.
+**Estado:** confirmado que son simples, variados, de dos parámetros en tensión (con dos excepciones), con controles táctiles y de mando ([10](10-tecnico-y-herramientas.md)) y que la mejor herramienta los facilita; la duración ✅ (8–15 segundos) y la zona óptima ⏳ F2-16.
 
 - ✅ Minijuegos simples, variados (estilo Dave the Diver), alineados con el juego. Inspiración: pesca de Stardew Valley y minijuegos de Among Us.
-- ✅ **Cortos:** 8–15 segundos (se cuadra con los minutos por día, ⏳ F0-52; [01](01-core-loop.md), [17](17-mapa-de-historia.md)). Con unas pocas menas por expedición (cuántas ⏳ F0-52), los minijuegos de un bloque suman unos minutos y caben en cualquier sesión de PC o de Steam Deck.
+- ✅ **Cortos:** 8–15 segundos (se cuadra con el día de 12–15 minutos y el bloque de ≈ 4–5; [01](01-core-loop.md), [17](17-mapa-de-historia.md), [28](28-numeros-base-de-la-economia.md)). Con unas pocas menas por expedición (2 a 3 al principio, hasta 10 por bloque en el Acto IV; [02](02-extraccion.md)), los minijuegos de un bloque suman unos minutos y caben en cualquier sesión de PC o de Steam Deck.
 - 🟡 **Controles simples en ratón, teclado y mando:** mantener pulsado (clic izquierdo, una tecla o un botón del mando), soltar, arrastrar con el cursor y pulsar en el momento justo; con mando hay una variante de cada uno (⏳ F1-07). El táctil (mantener pulsado, arrastrar con el dedo y tocar) es una variante de la fase móvil, después de la 1.0 (decisión del autor, 2026-10-15).
 - 🟡 **Dos parámetros en tensión** (fuerza ↔ precisión, etc.). Dos excepciones, porque no hay nada que equilibrar: el **Cincelado** es de precisión pura (si pasa a dos parámetros ⏳ F4-44) y **Tasar** es de observación: se juega con el Ojo, no con parámetros.
 - ✅ Mejor herramienta → el minijuego es más fácil o la zona óptima más amplia.
