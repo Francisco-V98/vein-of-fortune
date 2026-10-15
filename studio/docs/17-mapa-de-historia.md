@@ -53,7 +53,7 @@ Se mide en **tiempo real de juego**, no en días del calendario del juego ✅. L
 | III | 4–10 h |
 | IV | 3–6 h |
 
-Esas horas dependen de cuántos minutos dura un día de juego ([01](01-core-loop.md)): siete días en 1,5–3 h son 13–26 minutos por día, y la meta de sesiones cortas de 01 apunta a menos. Con esa misma cuenta, un contrato de empleado de 90 días ([04](04-progresion-y-meta.md)) serían entre 7 y 39 horas de juego, más que el Acto II entero. ⏳ F0-52 Los minutos por día y la duración en días de los contratos de 7, 30 y 90.
+Esas horas dependen de cuántos minutos dura un día de juego ([01](01-core-loop.md)): siete días en 1,5–3 h son 13–26 minutos por día, y la meta de sesiones cortas de 01 apunta a menos. Con esa misma cuenta, un contrato de empleado de 90 días ([04](04-progresion-y-meta.md)) serían entre 20 y 39 horas de juego, más que el Acto II entero. ⏳ F0-52 Los minutos por día y la duración en días de los contratos de 7, 30 y 90.
 
 El modo historia **no obliga a seguir la trama con exactitud** ✅: el jugador puede hacer contratos, expediciones y otras acciones secundarias entre un hito y el siguiente. Por eso la duración depende de cómo lo aborde: quien va directo al siguiente hito termina antes, y quien se dedica al comercio y la exploración tarda más. Los umbrales que activan cada acto deben poder cumplirse de varias maneras.
 

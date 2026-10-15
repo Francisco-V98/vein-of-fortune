@@ -333,7 +333,7 @@ Las razones de cada colocación; nada se pone sin una razón de mundo. ✅ Las d
 - ⏳ F0-52 Precios de casas, vehículos, ropa y embarcaciones, impuesto predial y recargo por saqueo.
 - ⏳ F4-109 Qué escalón pide cada traje.
 - ⏳ F4-110, ⏳ F4-111 y ⏳ F4-112 Casa, ropa y auto de V1; ⏳ F4-119 la pantalla donde se compran.
-- ⏳ F4-154 Tiempo y costo de viaje entre zonas; ⏳ F6-57 efecto funcional de los vehículos de V2.1 y ⏳ F6-63 el de las embarcaciones.
+- ⏳ F4-154 Costo en dinero del viaje entre zonas; ⏳ F6-57 efecto funcional de los vehículos de V2.1 y ⏳ F6-63 el de las embarcaciones.
 - ⏳ F6-13 y ⏳ F6-14 Clasificación por edad y juego responsable del casino.
 - ⏳ F1-20 Inglés de los términos nuevos del glosario ([18](18-biblia-narrativa.md)).
 - Siguen 🟡 hasta que el autor las revise: las horas, el número exacto de edificaciones por zona, las ranuras exactas y los objetos de decoración, los vehículos por zona, los efectos de los bonos y la ubicación de la Lotería.

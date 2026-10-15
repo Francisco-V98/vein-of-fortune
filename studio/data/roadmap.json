@@ -1357,7 +1357,7 @@
               "title": "Ciclo de 3 bloques y avance del día",
               "est": 6,
               "status": "backlog",
-              "desc": "Mañana, tarde y noche con eventos de fin de día. Un bloque admite medio bloque. Viajar y ver zonas son gratis; minar y abrir la tienda cuestan un bloque completo y la tienda no se abre de noche; trámites, misiones y eventos cuestan 0, medio o un bloque según su peso. Botón «Esperar» para saltar un bloque (documento 01).",
+              "desc": "Mañana, tarde y noche con eventos de fin de día. Un bloque admite medio bloque. Viajar y ver zonas son gratis; minar y abrir la tienda cuestan un bloque completo y la tienda no se abre de noche; trámites, misiones y eventos cuestan 0, medio o un bloque según su peso. Botón «Esperar» para saltar un bloque (documento 01). La Fosa abre 3 días por semana y las expediciones profundas ocupan Tarde y Noche.",
               "done_when": "Se puede avanzar días consumiendo bloques.",
               "prio": "P0"
             },
@@ -2258,8 +2258,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        1219,
-        2159
+        1225,
+        2165
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -2614,7 +2614,8 @@
               "status": "backlog",
               "title": "Detonación: implementación y variante con mando",
               "est": 10,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Detonación con variante de mando; también se juega en las Galerías (documentos 09 y 26)."
             },
             {
               "id": "F4-49",
@@ -3081,6 +3082,15 @@
               "prio": "P2",
               "desc": "La bolsa de trabajo de la Unión de Mineros (documentos 04 y 26): dónde se publican ofertas y se encuentran candidatos del Hollín, con su relación con el tramo de la Unión pero sin mover el medidor.",
               "done_when": "La Bolsa de la Unión funciona en la versión 1 como un edificio de Villa Brasa y ofrece candidatos sin cambiar el medidor de la Unión."
+            },
+            {
+              "id": "F4-235",
+              "status": "backlog",
+              "title": "Mejora de la tienda y desbloqueo de «Contratar»",
+              "est": 6,
+              "prio": "P1",
+              "desc": "La mejora de la tienda que habilita contratar empleados: se compra en la propia tienda desde el Acto II con dinero (cifra ⏳ F0-52) y, mientras falta, el botón «Contratar» aparece bloqueado con ese motivo (documentos 04 y 27).",
+              "done_when": "Comprar la mejora de tienda desbloquea «Contratar» y antes de comprarla el botón muestra su motivo."
             }
           ]
         },
@@ -3499,10 +3509,10 @@
             {
               "id": "F4-154",
               "status": "backlog",
-              "title": "Viaje entre regiones: zonas profundas",
+              "title": "Viaje entre regiones: costo en dinero y zonas profundas",
               "est": 4,
               "prio": "P2",
-              "desc": "El viaje y ver zonas son gratis; la distancia se nota en las zonas profundas, no en un costo de tiempo (documento 01)."
+              "desc": "El viaje y ver zonas en el mapa no gastan bloque; viajar tiene un pequeño costo en dinero (billete o combustible; cifra ⏳ F0-52) que el auto de V2.1 puede reducir. Las zonas profundas (Cavernas y La Fosa) cuestan 2 bloques, ocupan Tarde y Noche y el juego lo recomienda antes de salir; las Cavernas siempre están abiertas y La Fosa solo abre 3 días por semana (los días de calibración de la Comisión). Documento 01."
             },
             {
               "id": "F4-155",

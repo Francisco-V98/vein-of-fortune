@@ -7,7 +7,7 @@
 - ✅ Minijuegos simples, variados (estilo Dave the Diver), alineados con el juego. Inspiración: pesca de Stardew Valley y minijuegos de Among Us.
 - **Cortos:** 8–15 segundos (se cuadra con los minutos por día, ⏳ F0-52; [01](01-core-loop.md), [17](17-mapa-de-historia.md)). Con unas pocas menas por expedición (cuántas ⏳ F0-52), los minijuegos de un bloque suman unos minutos y respetan las sesiones de mobile.
 - ✅ **Controles táctiles simples:** mantener pulsado, soltar, arrastrar, tocar en el momento justo; con mando hay una variante de cada uno (⏳ F1-07).
-- ✅ **Dos parámetros en tensión** (fuerza ↔ precisión, etc.). Dos excepciones, porque no hay nada que equilibrar: el **Cincelado** es de precisión pura (si pasa a dos parámetros ⏳ F4-44) y **Tasar** es de observación: se juega con el Ojo, no con parámetros.
+- 🟡 **Dos parámetros en tensión** (fuerza ↔ precisión, etc.). Dos excepciones, porque no hay nada que equilibrar: el **Cincelado** es de precisión pura (si pasa a dos parámetros ⏳ F4-44) y **Tasar** es de observación: se juega con el Ojo, no con parámetros.
 - ✅ Mejor herramienta → el minijuego es más fácil o la zona óptima más amplia.
 - La zona óptima depende del nivel de la herramienta, la **Pericia** del jugador y la dureza del mineral. ⏳ F2-16 Cómo se calcula.
 

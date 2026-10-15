@@ -256,7 +256,7 @@
           "Organizar el inventario"
         ]
       },
-      "foot": "Al cerrar el día: el mercado avanza, aparecen noticias, las zonas se regeneran y se pagan costos.",
+      "foot": "En cada bloque el mercado se mueve; al cerrar el día aparecen noticias, las zonas se regeneran y se pagan costos.",
       "source": [
         "01-core-loop"
       ]

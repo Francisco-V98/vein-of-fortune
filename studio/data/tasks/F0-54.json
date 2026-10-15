@@ -56,19 +56,31 @@
         "estado": "hecha",
         "at": "2026-10-15",
         "por": "disenador",
-        "nota": "El diseñador de sistemas aplicó las decisiones de cinco rondas del autor; el coordinador ajustó el roadmap, la presentación y la comprobación C2; limpieza 78 %, coherencia 94 %",
-        "entrega": "Documentos 01, 02, 03, 04 y 09 cerrados (01 al 97 %, los demás al 100 %), contradicciones con los de historia corregidas, roadmap ajustado y tarea F4-234 creada"
+        "nota": "El diseñador de sistemas aplicó las decisiones de cuatro rondas y una final del autor; el coordinador ajustó el roadmap, la presentación y la comprobación C2; limpieza 78 %, coherencia 94 %",
+        "entrega": "Documentos 01, 02, 03, 04 y 09 cerrados (01 al 97 %, los demás al 100 %), contradicciones con los de historia corregidas, roadmap ajustado y tareas F4-234 y F4-235 creadas"
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-15",
         "por": "qa",
-        "nota": "QA comprueba el build, las marcas, los aplazamientos y que no queden contradicciones con la historia"
+        "nota": "QA aprobó el build, las 103 referencias a tareas, las sumas de horas y la coherencia con la historia; sus seis fallos del roadmap, la presentación y los documentos 09, 17 y 26 se corrigieron y el coordinador comprobó el build y las pruebas",
+        "entrega": "Build estricto, 77 pruebas en verde y documentos 01 a 04 y 09 al 97 al 100 %",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "resuelto_por": "coordinador",
+            "como": "Se completaron F4-154 y F2-02 con el costo en dinero y las zonas profundas, se creó F4-235 para la mejora de tienda, se movió la Detonación a F4-48 y se corrigieron textos viejos en los documentos 17 y 26 y en la presentación"
+          }
+        ]
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-15",
+        "por": "autor",
+        "nota": "El autor revisa los documentos del núcleo cerrados"
       },
       {
         "etapa": "playtest",
@@ -108,6 +120,12 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Revisar los documentos 01 a 04 y 09, los cambios en 05, 06, 10, 14, 17, 18, 22, 24, 26 y 27, world.json, presentation.json, coherence.py y el roadmap",
+        "at": "2026-10-15"
+      },
+      {
+        "de": "qa",
+        "a": "autor",
+        "que": "Entrega para tu revisión: documentos 01, 02, 03, 04 y 09 cerrados",
         "at": "2026-10-15"
       }
     ]
