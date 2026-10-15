@@ -322,16 +322,16 @@
     {
       "id": "TC-013",
       "area": "Extracción",
-      "title": "Los minijuegos se completan con táctil y con mando",
+      "title": "Los minijuegos se completan con ratón, teclado y mando",
       "type": "compatibilidad",
       "level": "manual",
       "auto": false,
       "prio": "P0",
       "steps": [
-        "Jugar Picado y Perforación con el dedo",
-        "Repetir con un mando Bluetooth"
+        "Jugar Picado y Perforación con el ratón y con el teclado",
+        "Repetir con un mando (en el PC Windows y en la Steam Deck)"
       ],
-      "expected": "Ambos modos permiten completar el minijuego y el HUD táctil se oculta con mando.",
+      "expected": "Los tres modos permiten completar el minijuego; con mando no se muestra ningún HUD táctil ni hay nada que dependa del hover.",
       "tasks": [
         "F2-14",
         "F1-07"
@@ -921,9 +921,10 @@
       "auto": false,
       "prio": "P0",
       "steps": [
-        "Recorrer todas las pantallas solo con el mando"
+        "Recorrer todas las pantallas solo con el mando",
+        "Repetir en la Steam Deck a 1280×800 si hay una disponible"
       ],
-      "expected": "Todo es accesible por foco y el HUD táctil se oculta.",
+      "expected": "Todo es accesible por foco, no hay HUD táctil y el texto es legible a 1280×800.",
       "tasks": [
         "F1-08"
       ],
@@ -938,7 +939,7 @@
     {
       "id": "TC-039",
       "area": "Rendimiento",
-      "title": "El arranque en frío cumple el presupuesto en gama media",
+      "title": "El arranque en frío cumple el presupuesto en un PC de gama baja",
       "type": "rendimiento",
       "level": "manual",
       "auto": false,
@@ -947,7 +948,7 @@
         "Cerrar el juego por completo",
         "Abrirlo y cronometrar hasta el menú"
       ],
-      "expected": "Arranque dentro del presupuesto (5 s a evaluar).",
+      "expected": "Arranque dentro del presupuesto (cifra por fijar en F1-44).",
       "tasks": [
         "F1-44"
       ],
@@ -985,13 +986,13 @@
     {
       "id": "TC-041",
       "area": "Seguridad",
-      "title": "No hay secretos en el repositorio ni en el APK",
+      "title": "No hay secretos en el repositorio ni en las builds de Windows y Linux",
       "type": "seguridad",
       "level": "unitaria",
       "auto": true,
       "prio": "P0",
       "steps": [
-        "Ejecutar el escaneo de secretos sobre el repositorio y el APK"
+        "Ejecutar el escaneo de secretos sobre el repositorio y sobre las builds exportadas"
       ],
       "expected": "El escaneo no encuentra claves, tokens ni contraseñas.",
       "tasks": [
@@ -1008,15 +1009,15 @@
     {
       "id": "TC-042",
       "area": "Seguridad",
-      "title": "El manifiesto solo pide los permisos necesarios",
+      "title": "La build solo escribe en su carpeta de guardados y diagnóstico",
       "type": "seguridad",
       "level": "manual",
       "auto": false,
       "prio": "P0",
       "steps": [
-        "Revisar el manifiesto del APK"
+        "Jugar una sesión con un monitor de archivos y revisar qué carpetas toca la build de Windows y de Linux"
       ],
-      "expected": "Solo hay permisos esenciales y ningún componente exportado innecesario.",
+      "expected": "El juego solo escribe en su carpeta de guardados y de diagnóstico; no hay ejecutables ni librerías sin explicar en la build.",
       "tasks": [
         "F1-41"
       ],
@@ -1083,7 +1084,7 @@
       "auto": false,
       "prio": "P0",
       "steps": [
-        "Instalar el build de lanzamiento",
+        "Ejecutar la build de lanzamiento de Windows y de Linux",
         "Intentar abrir la consola y los atajos"
       ],
       "expected": "No hay consola, atajos ni overlay de depuración.",
@@ -1172,13 +1173,13 @@
     {
       "id": "TC-049",
       "area": "Instalación",
-      "title": "Instalar, abrir, cerrar y actualizar conserva la partida",
+      "title": "Instalar, abrir, cerrar y actualizar desde Steam conserva la partida",
       "type": "instalación",
       "level": "manual",
       "auto": false,
       "prio": "P0",
       "steps": [
-        "Instalar la versión anterior",
+        "Instalar la versión anterior (Steam o build de prueba)",
         "Jugar y guardar",
         "Actualizar a la nueva"
       ],
@@ -1186,6 +1187,143 @@
       "tasks": [
         "F5-50"
       ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-050",
+      "area": "Accesibilidad",
+      "title": "Todo el juego se maneja con teclado",
+      "type": "accesibilidad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Recorrer todas las pantallas y minijuegos solo con el teclado",
+        "Comprobar que cada acción tiene su atajo y que el foco es visible"
+      ],
+      "expected": "Todo es accesible por foco y atajos, sin usar el ratón; nada esencial depende solo del hover.",
+      "tasks": [
+        "F1-08"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-051",
+      "area": "Guardado",
+      "title": "Steam Auto-Cloud sincroniza hasta 5 partidas y en Hardcore manda el guardado local",
+      "type": "guardado",
+      "level": "manual",
+      "auto": false,
+      "prio": "P0",
+      "steps": [
+        "Crear 5 partidas y sincronizarlas con Steam Auto-Cloud",
+        "Restaurar en otro equipo",
+        "En Hardcore, morir e intentar restaurar la partida desde la nube"
+      ],
+      "expected": "Las 5 partidas se sincronizan; en Hardcore no se recupera la partida muerta desde la nube porque manda el guardado local.",
+      "tasks": [
+        "F5-50"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-052",
+      "area": "Accesibilidad",
+      "title": "El juego se ve y se lee bien en pantallas de PC distintas",
+      "type": "compatibilidad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P1",
+      "steps": [
+        "Probar 1080p, 1440p, 4K y una pantalla ultrapanorámica, en ventana y en pantalla completa",
+        "Probar la Steam Deck a 1280×800 si hay una disponible"
+      ],
+      "expected": "La imagen escala sin deformarse, el texto es legible y nada importante queda fuera de pantalla (criterios finales por decidir en F1-06).",
+      "tasks": [
+        "F1-06"
+      ],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-053",
+      "area": "Extracción",
+      "title": "[Fase móvil] Los minijuegos se completan con el dedo",
+      "type": "compatibilidad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P3",
+      "steps": [
+        "Jugar Picado y Perforación con el dedo",
+        "Repetir Cincelado trazando con el dedo y Reponer arrastrando"
+      ],
+      "expected": "Los minijuegos se completan con toque, trazado y arrastre; el HUD táctil se oculta al usar un mando.",
+      "tasks": [],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-054",
+      "area": "Seguridad",
+      "title": "[Fase móvil] El manifiesto del APK solo pide los permisos necesarios",
+      "type": "seguridad",
+      "level": "manual",
+      "auto": false,
+      "prio": "P3",
+      "steps": [
+        "Revisar el manifiesto del APK"
+      ],
+      "expected": "Solo hay permisos esenciales y ningún componente exportado innecesario.",
+      "tasks": [],
+      "result": {
+        "status": "not-run",
+        "at": null,
+        "build": null,
+        "by": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "TC-055",
+      "area": "Rendimiento",
+      "title": "[Fase móvil] El arranque, el peso y la batería cumplen el presupuesto en Android de gama media",
+      "type": "rendimiento",
+      "level": "manual",
+      "auto": false,
+      "prio": "P3",
+      "steps": [
+        "Medir el arranque en frío, el tamaño de la descarga y la batería en un Android de gama media"
+      ],
+      "expected": "Dentro del presupuesto móvil (arranque ≤ 5 s y descarga ≤ 150 MB, a revisar al empezar el móvil).",
+      "tasks": [],
       "result": {
         "status": "not-run",
         "at": null,

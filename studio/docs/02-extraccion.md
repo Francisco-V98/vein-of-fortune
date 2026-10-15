@@ -120,7 +120,7 @@ Antes de salir, el jugador elige equipo según los peligros de la zona (máscara
 
 ✅ Existe la posibilidad de perder materiales en una expedición si el jugador no está preparado.
 
-🟡 La pérdida es **parcial**, no total, con objetos para asegurar o escapar. En mobile, perderlo todo frustra demasiado.
+🟡 La pérdida es **parcial**, no total, con objetos para asegurar o escapar. Perderlo todo por un solo error de preparación frustraría demasiado y volvería injugable la partida; el castigo duro queda para las dificultades altas y el hardcore (motivo reescrito el 2026-10-15, al pasar de móvil a PC).
 
 🟡 En dificultades altas, la pérdida es mayor. En **hardcore**, la derrota termina la partida (ver [04](04-progresion-y-meta.md)).
 

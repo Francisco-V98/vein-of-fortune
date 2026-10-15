@@ -26,8 +26,8 @@ game/
 ├── src/
 │   ├── kernel/                tipos base compartidos: Result, ids, eventos, azar con semilla
 │   ├── platform/
-│   │   ├── ports/             contratos: entrada, almacenamiento, audio, idioma, reloj, háptica
-│   │   └── adapters/          implementaciones (Android, PC, pruebas); solo `app` las conoce
+│   │   ├── ports/             contratos: entrada, almacenamiento, audio, idioma, reloj, háptica, tienda, pantalla
+│   │   └── adapters/          implementaciones (ratón y teclado, mando, Steam, PC, pruebas; después táctil y móvil); solo `app` las conoce
 │   ├── ui_kit/                tema, tokens de diseño y componentes de interfaz reutilizables
 │   ├── modules/
 │   │   └── <módulo>/
@@ -83,7 +83,7 @@ Cada módulo corresponde a un tema de diseño ya documentado. `depende de` son l
 | `save` | Guardado versionado | — | [10](10-tecnico-y-herramientas.md) |
 | `telemetry` | Diagnóstico local exportable | — | [10](10-tecnico-y-herramientas.md) |
 
-El casino y los logros entrarán más adelante creando su propio módulo, sin tocar los demás.
+El casino y los logros entrarán más adelante creando su propio módulo, sin tocar los demás. Los logros llegan a Steam a través del puerto de tienda.
 
 El grafo es **acíclico**: ningún módulo puede depender, directa o indirectamente, de sí mismo (regla A7).
 
@@ -117,7 +117,24 @@ Reglas de los eventos:
 
 ## Plataforma 🟡
 
-Entrada, almacenamiento, audio, idioma, reloj y háptica son **puertos** con adaptadores intercambiables. Pasar a iOS o a PC es añadir adaptadores, no modificar módulos. Los controles (táctil y mando) viven detrás del puerto de entrada ([10](10-tecnico-y-herramientas.md)).
+El juego se lanza **primero en PC (Windows y Linux, con Steam)** y el móvil llega después de la 1.0 ([ADR-0009](adr/0009-pc-primero-movil-despues.md)). La arquitectura ya lo prevé: la plataforma son **puertos** con adaptadores intercambiables, así que llevar el juego a otro lugar es añadir adaptadores, no modificar módulos.
+
+| Puerto | Qué cubre | Adaptadores |
+|---|---|---|
+| Entrada | Acciones (aceptar, cancelar, mover, usar, menú) y detección del último dispositivo | **Ratón y teclado** y **mando** (Steam Deck incluida); **táctil**: adaptador futuro, fase móvil |
+| Almacenamiento | Guardados, carpeta de guardados y diagnóstico local | Archivos locales; Steam Auto-Cloud sincroniza esa carpeta (hasta 5 partidas; en Hardcore manda el guardado local) |
+| **Plataforma / tienda** | Logros, nube y actualizaciones | Steam (🟡 GodotSteam, [10](10-tecnico-y-herramientas.md)); un adaptador **nulo** para itch.io y pruebas, de modo que el juego corra sin Steam |
+| **Pantalla** | Resolución, modo ventana y pantalla completa, escala | Adaptador de PC; el detalle (resolución base, escala entera con bandas) ⏳ F1-06 |
+| Audio, idioma, reloj | Reproducción, idioma activo, tiempo inyectado | Adaptadores de PC y dobles de pruebas |
+| Háptica | Vibración | Vibración del mando; en la fase móvil, la del teléfono |
+
+Reglas:
+
+- Los módulos solo hablan con los **puertos**; el dominio no usa `Input`, `OS` ni `DisplayServer` (símbolos prohibidos que ya vigila el verificador, regla A4).
+- Los logros los define el módulo que los otorga y los emite como datos; solo el adaptador de tienda los envía a Steam.
+- Nada del dominio sabe que existe Steam. Si Steam no está, el adaptador nulo responde sin hacer nada.
+- Los controles (ratón y teclado, mando) viven detrás del puerto de entrada ([10](10-tecnico-y-herramientas.md)).
+- El **camino al móvil** consiste en escribir el adaptador táctil, la háptica del teléfono y los de almacenamiento y ciclo de vida de Android e iOS. Para no cerrarlo, ninguna interfaz nueva depende solo del hover.
 
 ## Raíz de composición 🟡
 

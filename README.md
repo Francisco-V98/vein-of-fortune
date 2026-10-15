@@ -1,6 +1,6 @@
 # Veta de Fortuna · Vein of Fortune
 
-Juego de gestión, minería y comercio para móvil (Android primero), en pixel art, horizontal, de un jugador y pago único. Español e inglés desde el inicio.
+Juego de gestión, minería y comercio para PC (Steam, Windows y Linux; el móvil llega después de la 1.0), en pixel art, horizontal, de un jugador y pago único. Español e inglés desde el inicio.
 
 Un optimista hereda una deuda, una licencia y un puesto de mercado en **Valdoria**, una nación dura donde el poder, la política y la corrupción mandan. Mina, lee el mercado, negocia y asciende sin cambiar el país, pero cambiando su lugar en él.
 

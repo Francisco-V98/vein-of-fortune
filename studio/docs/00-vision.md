@@ -13,7 +13,7 @@ El jugador empieza con poco y crece: mejores herramientas, mejores zonas, mejor 
 
 ## Enfoque del proyecto ✅
 
-El juego **nace como un proyecto 100 % personal**: se hace para disfrutarlo jugando y construyéndolo. Si resulta divertido y todo va bien, se publica en Android y luego iOS (y, más adelante, PC/consola). Se empieza con un prototipo barato y rápido para comprobar si es divertido, aunque no sea bonito.
+El juego **nace como un proyecto 100 % personal**: se hace para disfrutarlo jugando y construyéndolo. Si resulta divertido y todo va bien, se publica primero en PC (Steam) y, cuando la 1.0 esté estable, llega al móvil (Android e iOS). Se empieza con un prototipo barato y rápido para comprobar si es divertido, aunque no sea bonito.
 
 ## Pilares de diseño
 
@@ -27,10 +27,10 @@ El juego **nace como un proyecto 100 % personal**: se hace para disfrutarlo juga
 
 | Aspecto | Decisión |
 |---|---|
-| Plataforma inicial | ✅ Mobile, **Android primero**; iOS después si todo va bien |
+| Plataforma inicial | ✅ **PC primero**: Windows y Linux, con Steam como tienda y Steam Deck Verified como meta: mando completo, sin HUD táctil y texto legible en 1280×800 (decisión del autor, 2026-10-15). macOS queda para después de la 1.0. Itch.io solo para builds de prueba; GOG y Epic quedan fuera de la 1.0 |
 | Orientación | ✅ **Horizontal (landscape)** |
-| Controles | ✅ Táctil y mando; con mando, el HUD táctil se oculta (ver [10](10-tecnico-y-herramientas.md)) |
-| Futuro | ✅ Posible PC (Steam) y consola si el proyecto funciona |
+| Controles | ✅ Ratón y teclado como control principal (cursor, información al pasar el cursor y atajos), con mando completo; sin HUD táctil en la 1.0 (ver [10](10-tecnico-y-herramientas.md)) |
+| Después de la 1.0 | ✅ Móvil (Android e iOS) como fase propia, cuando la 1.0 esté publicada y estable en Steam; con un adaptador táctil. Las consolas se evalúan aparte. Las actualizaciones V2.x pueden seguir en PC o llegar también al móvil |
 | Modo | ✅ Single-player, mercado simulado (sin servidores en v1) |
 | Modelo de negocio | ✅ Pago único. Sin dinero real dentro del juego |
 | Moneda | ✅ Una sola moneda interna |
@@ -42,7 +42,7 @@ El juego **nace como un proyecto 100 % personal**: se hace para disfrutarlo juga
 
 ## Estética
 
-✅ Sencilla: **pixel art** al estilo de Dave the Diver, con cosas más bien estáticas. Sin gráficos ni movimientos complejos. Conviene para mobile y para un desarrollo realista.
+✅ Sencilla: **pixel art** al estilo de Dave the Diver, con cosas más bien estáticas. Sin gráficos ni movimientos complejos. Conviene para un desarrollo realista.
 
 ✅ Referencias de estilo:
 
