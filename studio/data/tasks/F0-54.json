@@ -1,0 +1,84 @@
+{
+  "id": "F0-54",
+  "history": [
+    {
+      "at": "2026-10-15",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza la pasada de cierre del diseño del juego (documentos 01, 02, 03, 04 y 09).",
+      "ref": "rama studio/F0-54-cierre-diseno-del-juego"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "disenador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Es una pasada de cierre: no hay opciones que explorar"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "analista",
+        "nota": "El analista dejó 14 preguntas en siete rondas, un lote de confirmaciones menores, las contradicciones con los documentos de historia y la lista de números para F0-52",
+        "entrega": "Resumen por documento, siete rondas de decisiones, lote de confirmaciones, contradicciones y números de la economía",
+        "hallazgos": [
+          {
+            "de": "analista",
+            "estado": "abierto",
+            "que": "Catorce puntos del núcleo condicionan la economía, los guiones o los documentos de historia y deben decidirse con el autor antes de cerrar la pasada"
+          },
+          {
+            "de": "analista",
+            "estado": "abierto",
+            "que": "Hay contradicciones entre los documentos 01 a 09 y los de historia sobre la Unión y los empleados, el taller, las ayudas del legado y los resultados de los minijuegos"
+          },
+          {
+            "de": "analista",
+            "estado": "abierto",
+            "que": "La descripción de F0-52 omite impuestos, multas, vigilancia, información y renta, que sí necesitan números"
+          }
+        ]
+      },
+      {
+        "etapa": "produccion",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "qa",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: extraer y clasificar los puntos abiertos de los documentos 01, 02, 03, 04 y 09 para llevarlos al autor por rondas",
+        "at": "2026-10-15"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Catorce preguntas en siete rondas y un lote de confirmaciones para el autor",
+        "at": "2026-10-15"
+      }
+    ]
+  }
+}

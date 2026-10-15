@@ -584,7 +584,7 @@
               "id": "F0-54",
               "title": "Pasada de cierre: diseño del juego (01, 02, 03, 04, 09)",
               "est": 10,
-              "status": "backlog",
+              "status": "doing",
               "prio": "P1",
               "desc": "Presentar al autor los puntos 🟡 y ❓ de los documentos de núcleo, extracción, comercio, progresión y minijuegos, decidirlos y dejarlos ✅ o ⏳ con su tarea.",
               "done_when": "Cada documento por encima de la meta de limpieza."
