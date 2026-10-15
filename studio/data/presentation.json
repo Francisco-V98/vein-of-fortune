@@ -60,7 +60,7 @@
       "titleEn": "Vein of Fortune",
       "tagline": "Un cuento de minería y comercio en Valdoria",
       "chips": [
-        "Android primero",
+        "PC primero",
         "Horizontal",
         "Pixel art",
         "ES y EN",
@@ -141,12 +141,12 @@
         {
           "glyph": "●",
           "label": "Plataforma",
-          "value": "Android primero; luego iOS, PC y consolas"
+          "value": "PC primero (Steam); luego móvil, y consolas aparte"
         },
         {
           "glyph": "▤",
           "label": "Pantalla",
-          "value": "Horizontal · táctil y mando"
+          "value": "Horizontal · ratón, teclado y mando"
         },
         {
           "glyph": "✦",
@@ -409,7 +409,7 @@
           "tension": "Temperatura ↔ Tiempo"
         }
       ],
-      "foot": "MVP: Picado, Perforación y Regateo. De 8 a 15 segundos, con táctil o mando.",
+      "foot": "MVP: Picado, Perforación y Regateo. De 8 a 15 segundos, con ratón, teclado o mando.",
       "source": [
         "09-minijuegos"
       ]
@@ -1700,7 +1700,7 @@
         },
         {
           "title": "Alcance de la primera salida",
-          "text": "El plan completo ronda las 2.500 horas."
+          "text": "El plan completo ronda las 2.600 horas."
         },
         {
           "title": "Storyboard",
@@ -1708,7 +1708,7 @@
         },
         {
           "title": "Dispositivos de prueba",
-          "text": "Reales, con rendimiento medido en el teléfono."
+          "text": "Reales: un PC Windows y, si hay una, la Steam Deck, con rendimiento medido en ellos."
         },
         {
           "title": "Licencias",

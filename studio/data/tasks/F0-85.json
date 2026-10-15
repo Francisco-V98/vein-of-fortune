@@ -1,0 +1,190 @@
+{
+  "id": "F0-85",
+  "history": [
+    {
+      "at": "2026-10-15",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "El autor decidió lanzar primero en PC (Steam) y llevar el juego a móvil después de terminarlo en PC.",
+      "ref": "rama studio/F0-85-lanzamiento-en-pc-primero"
+    },
+    {
+      "at": "2026-10-15",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-85"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "arquitecto",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "La decisión de plataforma la tomó el autor"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "analista",
+        "nota": "Inventario de lo que dependía de Android primero, 12 decisiones y riesgos; el autor decidió 8 puntos el 2026-10-15"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "arquitecto",
+        "nota": "Diseñador de sistemas, arquitecto y asesor legal terminaron; la coordinación movió a F4 las tareas de Steam que necesita la página «Próximamente» y añadió 4 tareas nuevas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "qa",
+        "nota": "QA devolvió 5 grupos de fallos (menciones móviles, horas de F5, privacidad y EULA para la página, texto obsoleto del doc 11, dos ✅ sin respaldo); se corrigieron y el build estricto y las 77 pruebas pasan",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Criterios done_when de F1-07, F1-21, F1-26, F2-14, F2-15, F2-19, F2-20 y F2-25 seguían hablando de táctil, teléfono y APK",
+            "resuelto_por": "coordinador",
+            "como": "Se reescribieron los criterios"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Doc 18 §1.9 «Diálogo en móvil», doc 20, equipo.json y asesor-legal.md mencionaban móvil o Google Play",
+            "resuelto_por": "coordinador",
+            "como": "Se actualizaron a PC y Steam Deck"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "F5-23 (privacidad) y F5-24 (EULA) debían estar en F4.19 antes de F4-240",
+            "resuelto_por": "coordinador",
+            "como": "F5-23 y F5-24 se movieron a F4.19"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Doc 11 describía el orden del roadmap como pendiente de corregir",
+            "resuelto_por": "coordinador",
+            "como": "Se actualizó el texto del doc 11"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Horas de F5 desfasadas 2 h; cifra de presentation.json de 2.500 h",
+            "resuelto_por": "coordinador",
+            "como": "Se corrigieron las horas y la cifra"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Dos ✅ del doc 11 sin decisión del autor (v1 sin IA en vivo y sin azar) pasan a 🟡",
+            "resuelto_por": "coordinador",
+            "como": "Pasan a 🟡"
+          }
+        ]
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-15",
+        "nota": "Esperando la revisión del autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario de todo lo que cambia al lanzar primero en PC con Steam y después en móvil, con las decisiones para el autor",
+        "at": "2026-10-15"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: inventario, 12 decisiones y riesgos",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "disenador",
+        "que": "Visión, hoja de ruta, controles de minijuegos y sesiones para PC",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega: docs 00, 01, 02, 04, 06, 09, 26, config, README y agentes; 8 decisiones de diseño abiertas",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "arquitecto",
+        "que": "ADR-0009, enmiendas a ADR-0001 y 0007, docs 10, 14, 15, 16, 12 y casos de prueba para PC",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "arquitecto",
+        "a": "coordinador",
+        "que": "Entrega: ADR-0009 y documentos técnicos; casos TC-050 a TC-055; build estricto en verde",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "legal",
+        "que": "Verificar requisitos de Steam y actualizar el documento 11",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "legal",
+        "a": "coordinador",
+        "que": "Entrega: documento 11 reescrito para Steam con fuentes verificadas el 2026-10-15; tareas por mover y por crear",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar F0-85: build estricto, pruebas, enlaces, coherencia y que ningún ✅ carezca de decisión del autor",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Devolución: 5 grupos de fallos corregidos por la coordinación",
+        "at": "2026-10-15",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Revisión de F0-85: PC primero, Steam y móvil después, con las decisiones de diseño abiertas",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

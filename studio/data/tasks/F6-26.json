@@ -1,0 +1,15 @@
+{
+  "id": "F6-26",
+  "history": [
+    {
+      "at": "2026-10-15",
+      "from": "backlog",
+      "to": "dropped",
+      "by": "claude",
+      "note": "Absorbida por el hito F4.19 (Logros de Steam) al decidir lanzar primero en PC con Steam.",
+      "ref": "rama studio/F0-85-lanzamiento-en-pc-primero"
+    }
+  ],
+  "comments": [],
+  "evidence": []
+}

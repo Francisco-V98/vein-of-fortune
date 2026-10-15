@@ -870,6 +870,15 @@
               "prio": "P1",
               "desc": "Política del autor: todo lo gráfico actual, incluido el logo, es provisional y sirve de referencia o de uso interno; el arte definitivo se rehace en pixel art con PixelLab, y las voces y demás assets finales, solo cuando las pruebas confirmen que todo funciona. Fija qué es provisional y qué definitivo, cuándo empieza la producción final y marca todo el roadmap en consecuencia.",
               "done_when": "El documento 12 explica la política, los assets actuales están marcados como provisionales y el roadmap separa el arte provisional del vertical slice de la producción definitiva posterior a la Puerta B."
+            },
+            {
+              "id": "F0-85",
+              "status": "review",
+              "title": "Plataforma: lanzar primero en PC (Steam) y después en móvil",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Cambio de plataforma decidido por el autor: el juego se lanza primero en PC, compatible y preparado para Steam, y solo después de terminarlo en PC se lleva a móvil. Revisa todo lo que dependía de Android primero: visión, controles y interfaz, resolución, motor y exportación, legal y tiendas, QA, arte, hoja de ruta y fases.",
+              "done_when": "Los documentos y el roadmap reflejan PC primero con Steam y móvil como una fase posterior, y el autor ha decidido las plataformas, los controles y el modelo de venta."
             }
           ]
         }
@@ -881,10 +890,10 @@
       "name": "Preparación técnica",
       "target": "MVP",
       "hours": [
-        120,
-        190
+        127,
+        197
       ],
-      "goal": "Tener el entorno funcionando, un proyecto Godot que corre en el Android, la estructura de datos y las reglas de arte listas.",
+      "goal": "Tener el entorno funcionando, un proyecto Godot que corre en PC (Windows y Linux), la estructura de datos y las reglas de arte listas.",
       "gate": null,
       "milestones": [
         {
@@ -902,20 +911,20 @@
             },
             {
               "id": "F1-02",
-              "title": "Configurar la exportación a Android",
+              "title": "Configurar la exportación a Windows y Linux",
               "est": 3,
               "status": "backlog",
-              "desc": "Instalar JDK y Android SDK, crear keystore de debug y configurar la exportación.",
-              "done_when": "Un APK de debug se instala en el teléfono.",
+              "desc": "Instalar las plantillas de exportación de Godot y configurar los presets de Windows y Linux. La exportación a Android pasa a la fase móvil. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Un build de prueba arranca en Windows y en Linux.",
               "prio": "P0"
             },
             {
               "id": "F1-03",
-              "title": "Hola mundo en el Android: escena horizontal con un botón táctil",
+              "title": "Hola mundo en PC: escena 16:9 con un botón que responde a ratón, teclado y mando",
               "est": 1.5,
               "status": "backlog",
-              "desc": "Escena mínima en horizontal con texto y un botón que responde al toque.",
-              "done_when": "Se ve y responde en el teléfono en horizontal.",
+              "desc": "Escena mínima con texto y un botón que responde al clic, al teclado y al mando. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "El hola mundo corre en un PC Windows real y responde a ratón, teclado y mando.",
               "prio": "P0"
             },
             {
@@ -944,20 +953,20 @@
           "tasks": [
             {
               "id": "F1-06",
-              "title": "Resolución base y escalado entero",
-              "est": 2,
+              "title": "Resolución base, escalado entero y modos de pantalla",
+              "est": 3,
               "status": "backlog",
-              "desc": "Probar 480x270 (x4) y alternativa 384x216 (x5). Zona 16:9 segura con fondo extendido para 20:9.",
-              "done_when": "Resolución elegida y probada en el teléfono.",
+              "desc": "Probar 480x270 (x4) y 640x360 con escala entera y bandas, en ventana y pantalla completa, 16:9, 16:10 y ultrapanorámico, y 1280x800 de la Steam Deck. La zona segura para 20:9 es de la fase móvil. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Hay una resolución base y un escalado elegidos con pruebas, con ventana y pantalla completa.",
               "prio": "P0"
             },
             {
               "id": "F1-07",
-              "title": "Capa de entrada por acciones: táctil y mando",
+              "title": "Capa de entrada por acciones: ratón, teclado y mando",
               "est": 3,
               "status": "backlog",
-              "desc": "Acciones abstractas, detección del último dispositivo y HUD táctil que se oculta al usar mando.",
-              "done_when": "Con mando conectado el HUD táctil desaparece y todo se maneja con el mando.",
+              "desc": "Acciones abstractas, detección del último dispositivo y glifos de mando; el táctil queda como un adaptador futuro de la fase móvil. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Con mando conectado el juego se maneja entero con el mando y los glifos cambian al último dispositivo usado.",
               "prio": "P0"
             },
             {
@@ -1031,10 +1040,10 @@
             },
             {
               "id": "F1-15",
-              "title": "Probar un mando Bluetooth con la escena de prueba",
+              "title": "Probar un mando con la escena de prueba en PC y en la Steam Deck",
               "est": 1,
               "status": "backlog",
-              "desc": "Conectar un mando al Android y comprobar el mapeo.",
+              "desc": "Conectar un mando al PC y a la Steam Deck si la hay y comprobar el mapeo.",
               "done_when": "Mapeo verificado con un mando real.",
               "prio": "P2"
             }
@@ -1091,11 +1100,11 @@
             },
             {
               "id": "F1-21",
-              "title": "Selector de idioma y detección del idioma del dispositivo",
+              "title": "Selector de idioma y detección del idioma del sistema",
               "est": 2,
               "status": "backlog",
-              "desc": "Idioma inicial según el dispositivo, cambiable desde opciones.",
-              "done_when": "El juego arranca en el idioma del teléfono y se puede cambiar.",
+              "desc": "Idioma inicial según el sistema operativo (o el cliente de Steam), cambiable desde opciones.",
+              "done_when": "El juego arranca en el idioma del sistema y se puede cambiar.",
               "prio": "P2"
             }
           ]
@@ -1143,11 +1152,20 @@
             {
               "id": "F1-26",
               "status": "backlog",
-              "title": "Exportación reproducible por línea de comandos",
+              "title": "Exportación reproducible por línea de comandos para Windows y Linux",
               "est": 3,
               "prio": "P2",
-              "desc": "Para generar el APK sin abrir el editor.",
-              "done_when": "Un comando genera el APK de pruebas."
+              "desc": "Para generar los builds sin abrir el editor y dejarlos listos para integración continua.",
+              "done_when": "Un comando genera los builds de Windows y Linux."
+            },
+            {
+              "id": "F1-45",
+              "status": "backlog",
+              "title": "GodotSteam: inicializar Steam y probar en la Steam Deck",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Integrar GodotSteam como puerto «plataforma/tienda» con una aplicación de prueba de Steam, comprobar que el juego arranca desde Steam y en la Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "El juego arranca desde Steam con GodotSteam inicializado y sin romper el dominio."
             }
           ]
         },
@@ -1272,11 +1290,11 @@
             {
               "id": "F1-39",
               "status": "backlog",
-              "title": "Plan de pruebas y matriz de dispositivos con el Android del autor",
+              "title": "Plan de pruebas y matriz de PC con un PC Windows real",
               "est": 4,
               "prio": "P0",
-              "desc": "Qué se prueba, dónde y con qué dispositivos.",
-              "done_when": "Matriz definida."
+              "desc": "Qué se prueba, dónde y con qué equipos: un PC Windows real, Linux y la Steam Deck si se consigue. El autor trabaja en Mac, así que el PC Windows es un requisito. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Hay un plan de pruebas y una matriz de PC con los equipos disponibles."
             },
             {
               "id": "F1-40",
@@ -1317,10 +1335,10 @@
             {
               "id": "F1-44",
               "status": "backlog",
-              "title": "Presupuestos de rendimiento medidos en el teléfono",
+              "title": "Presupuestos de rendimiento medidos en PC",
               "est": 4,
               "prio": "P1",
-              "desc": "Arranque, cuadros por segundo, memoria y batería.",
+              "desc": "Arranque, cuadros por segundo y memoria en un PC de gama baja y en la Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
               "done_when": "Medidas registradas."
             }
           ]
@@ -1483,8 +1501,8 @@
               "title": "Picado (fuerza y precisión)",
               "est": 8,
               "status": "backlog",
-              "desc": "Mantener para cargar, marcador oscilante, soltar en la zona.",
-              "done_when": "Jugable con táctil y con mando.",
+              "desc": "Mantener para cargar, marcador oscilante, soltar en la zona. Se juega con ratón, teclado y mando.",
+              "done_when": "Jugable con ratón, teclado y mando.",
               "prio": "P0"
             },
             {
@@ -1492,8 +1510,8 @@
               "title": "Perforación (velocidad y calor)",
               "est": 8,
               "status": "backlog",
-              "desc": "Avanzar sin sobrecalentar.",
-              "done_when": "Jugable con táctil y con mando.",
+              "desc": "Avanzar sin sobrecalentar. Se juega con ratón, teclado y mando.",
+              "done_when": "Jugable con ratón, teclado y mando.",
               "prio": "P0"
             },
             {
@@ -1534,8 +1552,8 @@
               "title": "Regateo (oferta y paciencia)",
               "est": 8,
               "status": "backlog",
-              "desc": "Cliente con precio máximo oculto y paciencia.",
-              "done_when": "Jugable con táctil y con mando.",
+              "desc": "Cliente con precio máximo oculto y paciencia. Se juega con ratón, teclado y mando.",
+              "done_when": "Jugable con ratón, teclado y mando.",
               "prio": "P0"
             }
           ]
@@ -1550,7 +1568,7 @@
               "est": 10,
               "status": "backlog",
               "desc": "Interfaz funcional con formas y colores de la paleta.",
-              "done_when": "Se navega entre las pantallas en el teléfono.",
+              "done_when": "Se navega entre las pantallas con ratón, teclado y mando.",
               "prio": "P0"
             },
             {
@@ -1606,8 +1624,8 @@
               "title": "Exportar diagnóstico desde el juego",
               "est": 3,
               "status": "backlog",
-              "desc": "Botón que comparte el archivo con quien lo pida. Nada se envía solo.",
-              "done_when": "El probador exporta el archivo desde el teléfono.",
+              "desc": "Botón que guarda el archivo de diagnóstico en una carpeta para compartirlo con quien lo pida. Nada se envía solo.",
+              "done_when": "El probador guarda el archivo de diagnóstico y lo comparte.",
               "prio": "P1"
             },
             {
@@ -1719,7 +1737,7 @@
             {
               "id": "F2-36",
               "status": "backlog",
-              "title": "Ronda funcional del prototipo en el teléfono con resultados registrados",
+              "title": "Ronda funcional del prototipo en PC con resultados registrados",
               "est": 6,
               "prio": "P0"
             },
@@ -2005,7 +2023,7 @@
               "title": "Prueba de la tajada y decisión de seguir hacia la v1",
               "est": 6,
               "status": "backlog",
-              "desc": "Jugar el Acto I completo con arte provisional y decidir si se continúa y si se piensa en publicar. Si la decisión es seguir, autoriza el inicio de la producción definitiva de assets (pixel art con PixelLab, voces y audio final) en F4.18.",
+              "desc": "Jugar el Acto I completo con arte provisional y decidir si se continúa y si se piensa en publicar. Si la decisión es seguir, autoriza el inicio de la producción definitiva de assets (pixel art con PixelLab, voces y audio final) en F4.18. Aquí se decide también si habrá una demo con el Acto I en Steam.",
               "done_when": "Decisión registrada.",
               "prio": "P0"
             }
@@ -2026,10 +2044,10 @@
             },
             {
               "id": "F3-25",
-              "title": "Gráficas de rendimiento por dispositivo",
+              "title": "Gráficas de rendimiento por equipo",
               "est": 6,
               "status": "backlog",
-              "desc": "Cuadros por segundo, memoria y tiempos de carga por modelo de teléfono.",
+              "desc": "Cuadros por segundo, memoria y tiempos de carga por equipo de PC (gama baja, media y Steam Deck).",
               "done_when": "Se comparan dos dispositivos.",
               "prio": "P2"
             },
@@ -2111,7 +2129,7 @@
             {
               "id": "F3-33",
               "status": "backlog",
-              "title": "Textos de ayuda y descripciones emergentes del vertical slice",
+              "title": "Textos de ayuda y descripciones emergentes (hover) del vertical slice",
               "est": 5,
               "prio": "P2",
               "desc": "Ayuda contextual.",
@@ -2258,8 +2276,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        1215,
-        2155
+        1329,
+        2269
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -2586,7 +2604,8 @@
               "status": "backlog",
               "title": "Cincelado: implementación y variante con mando",
               "est": 10,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Se traza con el ratón; el dedo es de la fase móvil."
             },
             {
               "id": "F4-45",
@@ -3465,10 +3484,10 @@
             {
               "id": "F4-152",
               "status": "backlog",
-              "title": "Mapa de Valdoria táctil: zonas tocables",
+              "title": "Mapa de Valdoria interactivo: zonas con ratón",
               "est": 8,
               "prio": "P1",
-              "desc": "Mapa de Valdoria táctil con zonas tocables. Usa el mapa provisional regenerado para el storyboard; el mapa definitivo en pixel art es F4-233."
+              "desc": "Mapa de Valdoria con zonas que se señalan y se eligen con el ratón, el teclado y el mando. Usa el mapa provisional regenerado para el storyboard; el mapa definitivo en pixel art es F4-233."
             },
             {
               "id": "F4-153",
@@ -4136,6 +4155,190 @@
               "done_when": "El mapa definitivo reemplaza al provisional y sus zonas son tocables en F4-152."
             }
           ]
+        },
+        {
+          "id": "F4.19",
+          "name": "Integración con Steam y ajustes de PC",
+          "tasks": [
+            {
+              "id": "F4-234",
+              "status": "backlog",
+              "title": "Steam Auto-Cloud y las 5 partidas guardables (local en Hardcore)",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Guardado en la nube de Steam con una carpeta de guardados pequeños y hasta 5 partidas; en Hardcore manda el guardado local para que no se pueda restaurar desde la nube tras morir (documentos 01 y 10). Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Las partidas se sincronizan entre equipos y Hardcore no se restaura desde la nube."
+            },
+            {
+              "id": "F4-235",
+              "status": "backlog",
+              "title": "Logros de Steam",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Conectar el sistema de logros (F4-115 y F4-116) con los logros de Steam (puerto «plataforma/tienda»). Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Los logros del juego aparecen en Steam y se desbloquean al cumplirse."
+            },
+            {
+              "id": "F4-236",
+              "status": "backlog",
+              "title": "Steam Input y glifos del mando",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Soporte de Steam Input, glifos del mando y menús navegables con mando para la Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "El juego se navega entero con mando y muestra los glifos correctos."
+            },
+            {
+              "id": "F4-237",
+              "status": "backlog",
+              "title": "Ajustes gráficos y de pantalla: ventana, pantalla completa, escala y vsync",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Opciones de ventana, pantalla completa, escala de interfaz, vsync y relación de aspecto, según la resolución elegida en F1-06. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "El jugador puede cambiar ventana, pantalla completa y escala y se recuerda su elección."
+            },
+            {
+              "id": "F4-238",
+              "status": "backlog",
+              "title": "Hover y tooltips en el mercado y la tienda",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Descripciones emergentes con el ratón en tablas de mercado, precios, herramientas y empleados, y atajos de teclado para lo frecuente. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Cada dato importante del mercado y la tienda tiene su descripción al pasar el ratón y un atajo si es frecuente."
+            },
+            {
+              "id": "F4-239",
+              "status": "backlog",
+              "title": "Lista de verificación de Steam Deck Verified y prueba en la Deck",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Recorrer los requisitos de Steam Deck Verified (mando completo, texto legible en 1280x800, sin HUD táctil) y probar el juego en una Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "El juego cumple la lista de verificación de la Steam Deck y se prueba en la Deck si se consigue."
+            },
+            {
+              "id": "F4-241",
+              "status": "backlog",
+              "title": "Decidir país fiscal y estructura (persona física o sociedad) antes del alta de Steamworks",
+              "est": 2,
+              "prio": "P0",
+              "desc": "El autor decide con un contador local el país de residencia fiscal y si el alta va como persona física o sociedad: de eso depende el formulario fiscal, la retención y el nombre legal del contrato de Steamworks (documento 11). Va antes de F5-22. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Decisión del autor registrada en el documento 11 (✅)."
+            },
+            {
+              "id": "F5-22",
+              "status": "backlog",
+              "title": "Cuenta de Steamworks y alta de la aplicación",
+              "est": 4,
+              "prio": "P0",
+              "desc": "Crear la cuenta de Steamworks, completar la entrevista fiscal y bancaria y pagar la cuota de 100 USD por aplicación (recuperable al llegar a 1.000 USD de ingresos brutos). Los plazos reales (21 o 30 días de espera y de 10 a 30 días de verificación) se confirman en el panel; se planifica con el caso lento y 60 días de margen antes de F4-240. Requiere F4-241. Detalle en el documento 11. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009). Se mueve a F4 porque la página «Próximamente» (F4-240) la necesita antes de abrirse (documento 11)."
+            },
+            {
+              "id": "F5-23",
+              "status": "backlog",
+              "title": "Política de privacidad pública en español e inglés",
+              "est": 6,
+              "prio": "P0",
+              "desc": "Política de privacidad pública en español e inglés. Se mueve a F4 porque la página «Próximamente» (F4-240) puede necesitar su URL (documento 11)."
+            },
+            {
+              "id": "F5-24",
+              "status": "backlog",
+              "title": "Términos de uso",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Términos de uso / EULA. Se mueve a F4 porque la página «Próximamente» (F4-240) puede necesitarlo (documento 11)."
+            },
+            {
+              "id": "F5-27",
+              "status": "backlog",
+              "title": "Cuestionario de contenido, EULA y privacidad de Steam",
+              "est": 4,
+              "prio": "P0",
+              "desc": "Confirma en el panel si Steam pide URL de privacidad y EULA propios. Se mueve a F4 porque la página «Próximamente» (F4-240) la necesita antes de abrirse (documento 11)."
+            },
+            {
+              "id": "F5-28",
+              "status": "backlog",
+              "title": "Clasificación de contenido en Steam y requisitos regionales",
+              "est": 3,
+              "prio": "P0",
+              "desc": "Verifica los requisitos de Brasil y Corea con el cuestionario real. Se mueve a F4 porque la página «Próximamente» (F4-240) la necesita antes de abrirse (documento 11)."
+            },
+            {
+              "id": "F5-29",
+              "status": "backlog",
+              "title": "Búsqueda de marca formal del título",
+              "est": 4,
+              "prio": "P0",
+              "desc": "Se mueve a F4 porque la página «Próximamente» (F4-240) la necesita antes de abrirse (documento 11)."
+            },
+            {
+              "id": "F5-30",
+              "status": "backlog",
+              "title": "Declaración de uso de IA para Steam",
+              "est": 2,
+              "prio": "P0",
+              "desc": "Declara lo que se entrega y consume el jugador: arte definitivo de PixelLab y, si los produce IA, textos, traducciones, música y voces; el autor decide cómo se declaran antes de producir el contenido final. Se mueve a F4 porque la página «Próximamente» (F4-240) la necesita antes de abrirse (documento 11). Usa el registro de licencias tal como esté al abrir la página; la versión final es F5-26."
+            },
+            {
+              "id": "F5-43",
+              "status": "backlog",
+              "title": "Arte clave",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Se mueve a F4 porque la página «Próximamente» (F4-240) la necesita antes de abrirse (documento 11)."
+            },
+            {
+              "id": "F5-33",
+              "status": "backlog",
+              "title": "Ficha de tienda en español",
+              "est": 6,
+              "prio": "P0",
+              "desc": "Incluye el precio (pago único, sin DLC de pago en la v1). Se mueve a F4 porque la página «Próximamente» (F4-240) la necesita antes de abrirse (documento 11)."
+            },
+            {
+              "id": "F5-34",
+              "status": "backlog",
+              "title": "Ficha de tienda en inglés",
+              "est": 6,
+              "prio": "P0",
+              "desc": "Se mueve a F4 porque la página «Próximamente» (F4-240) la necesita antes de abrirse (documento 11)."
+            },
+            {
+              "id": "F5-35",
+              "status": "backlog",
+              "title": "Capturas de pantalla en español e inglés",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Mínimo 5 capturas de juego real, sin material provisional. Se mueve a F4 porque la página «Próximamente» (F4-240) la necesita antes de abrirse (documento 11)."
+            },
+            {
+              "id": "F4-242",
+              "status": "backlog",
+              "title": "Cápsulas de Steam en sus cuatro tamaños",
+              "est": 6,
+              "prio": "P0",
+              "desc": "Las cápsulas que pide Steam para la página, con el logo legible, hechas con el arte definitivo. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Las cuatro cápsulas pasan la revisión de requisitos de Steam."
+            },
+            {
+              "id": "F4-243",
+              "status": "backlog",
+              "title": "Tráiler para la página «Próximamente»",
+              "est": 10,
+              "prio": "P1",
+              "desc": "Tráiler corto con juego real para la página de Steam, sin material provisional. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Tráiler listo y cargado en la página."
+            },
+            {
+              "id": "F4-240",
+              "status": "backlog",
+              "title": "Página «Próximamente» de Steam al final de F4",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Abrir la página de la aplicación en Steam con cápsulas, descripción y etiquetas, con arte definitivo y capturas reales, para empezar a juntar listas de deseos. Se abre al final de F4, con el juego casi completo (decisión del autor). Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009). Antes de abrirla se hacen F4-241, F5-22, F5-27, F5-28, F5-29, F5-30, F5-33, F5-34, F5-35, F5-43, F4-242 y F4-243 (la página necesita 2 semanas públicas y 7 días hábiles de revisión).",
+              "done_when": "La página «Próximamente» está publicada con arte definitivo y sin material provisional."
+            }
+          ]
         }
       ],
       "confidence": "baja"
@@ -4145,10 +4348,10 @@
       "name": "Pulido y lanzamiento",
       "target": "Release 1",
       "hours": [
-        290,
-        545
+        244,
+        499
       ],
-      "goal": "Dejar el juego listo para publicar en Google Play: tutorial, balance, rendimiento, accesibilidad, legal y ficha de tienda.",
+      "goal": "Dejar el juego listo para publicar en Steam: tutorial, balance, rendimiento, accesibilidad, legal y página de tienda.",
       "gate": null,
       "milestones": [
         {
@@ -4240,7 +4443,7 @@
             {
               "id": "F5-11",
               "status": "backlog",
-              "title": "Perfilado en tres gamas de Android",
+              "title": "Perfilado en tres gamas de PC (baja, media y Steam Deck)",
               "est": 8,
               "prio": "P0"
             },
@@ -4261,7 +4464,7 @@
             {
               "id": "F5-14",
               "status": "backlog",
-              "title": "Consumo de batería y calor",
+              "title": "Consumo de energía y calor en portátiles y Steam Deck",
               "est": 4,
               "prio": "P1"
             },
@@ -4316,9 +4519,9 @@
             {
               "id": "F5-21",
               "status": "backlog",
-              "title": "Remapeo de mando",
+              "title": "Remapeo de teclado y mando",
               "est": 6,
-              "prio": "P2"
+              "prio": "P1"
             }
           ]
         },
@@ -4326,27 +4529,6 @@
           "id": "F5.5",
           "name": "Legal y tienda",
           "tasks": [
-            {
-              "id": "F5-22",
-              "status": "backlog",
-              "title": "Cuenta de desarrollador de Google Play",
-              "est": 2,
-              "prio": "P0"
-            },
-            {
-              "id": "F5-23",
-              "status": "backlog",
-              "title": "Política de privacidad pública en español e inglés",
-              "est": 6,
-              "prio": "P0"
-            },
-            {
-              "id": "F5-24",
-              "status": "backlog",
-              "title": "Términos de uso",
-              "est": 3,
-              "prio": "P1"
-            },
             {
               "id": "F5-25",
               "status": "backlog",
@@ -4360,40 +4542,12 @@
               "title": "Registro final de licencias de assets y audio",
               "est": 6,
               "prio": "P0",
-              "desc": "Registro final de licencias de assets y audio, incluidos los términos comerciales de PixelLab, y comprobación de que ningún asset provisional llega a la tienda."
-            },
-            {
-              "id": "F5-27",
-              "status": "backlog",
-              "title": "Formularios de seguridad de datos",
-              "est": 4,
-              "prio": "P0"
-            },
-            {
-              "id": "F5-28",
-              "status": "backlog",
-              "title": "Clasificación de contenido",
-              "est": 3,
-              "prio": "P0"
-            },
-            {
-              "id": "F5-29",
-              "status": "backlog",
-              "title": "Búsqueda de marca formal del título",
-              "est": 4,
-              "prio": "P0"
-            },
-            {
-              "id": "F5-30",
-              "status": "backlog",
-              "title": "Declaración de uso de IA según las tiendas",
-              "est": 2,
-              "prio": "P0"
+              "desc": "Registro final de licencias de assets y audio, incluidos los términos comerciales de PixelLab, y comprobación de que ningún asset provisional llega a la tienda. Si algún material provisional generado con gpt_image_2_5 vía Higgsfield llegara a público, se leen antes sus términos comerciales; suma la captura de los términos de PixelLab (F4-227)."
             },
             {
               "id": "F5-31",
               "status": "backlog",
-              "title": "Prueba cerrada: reclutar testers y coordinar",
+              "title": "Prueba cerrada en Steam (claves) e itch.io: reclutar testers y coordinar",
               "est": 8,
               "prio": "P0"
             }
@@ -4406,29 +4560,8 @@
             {
               "id": "F5-32",
               "status": "backlog",
-              "title": "Build firmado con respaldo seguro de las claves",
+              "title": "Build de lanzamiento para Windows y Linux y respaldo seguro de las claves",
               "est": 5,
-              "prio": "P0"
-            },
-            {
-              "id": "F5-33",
-              "status": "backlog",
-              "title": "Ficha de tienda en español",
-              "est": 6,
-              "prio": "P0"
-            },
-            {
-              "id": "F5-34",
-              "status": "backlog",
-              "title": "Ficha de tienda en inglés",
-              "est": 6,
-              "prio": "P0"
-            },
-            {
-              "id": "F5-35",
-              "status": "backlog",
-              "title": "Capturas de pantalla en español e inglés",
-              "est": 8,
               "prio": "P0"
             },
             {
@@ -4436,7 +4569,7 @@
               "status": "backlog",
               "title": "Tráiler corto",
               "est": 10,
-              "prio": "P2"
+              "prio": "P0"
             },
             {
               "id": "F5-37",
@@ -4468,9 +4601,10 @@
             {
               "id": "F5-40",
               "status": "backlog",
-              "title": "Android vitals de Google Play y umbrales",
+              "title": "Datos de rendimiento y errores en producción (telemetría capa B con Steam)",
               "est": 3,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Confirmar qué informes de fallos y rendimiento ofrece Steamworks y conectarlos como capa B de la telemetría (ADR-0007). Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009)."
             },
             {
               "id": "F5-41",
@@ -4492,13 +4626,6 @@
           "id": "F5.8",
           "name": "Marca y localización de tienda",
           "tasks": [
-            {
-              "id": "F5-43",
-              "status": "backlog",
-              "title": "Arte clave",
-              "est": 6,
-              "prio": "P1"
-            },
             {
               "id": "F5-44",
               "status": "backlog",
@@ -4563,7 +4690,7 @@
             {
               "id": "F5-51",
               "status": "backlog",
-              "title": "Pasada de seguridad final: APK, manifiesto y firma",
+              "title": "Pasada de seguridad final: build de PC y SteamPipe",
               "est": 8,
               "prio": "P0"
             },
@@ -4594,6 +4721,15 @@
               "title": "Decisión de lanzamiento con los errores abiertos",
               "est": 3,
               "prio": "P0"
+            },
+            {
+              "id": "F5-57",
+              "status": "backlog",
+              "title": "Revisión de Valve del build en Windows y Linux",
+              "est": 4,
+              "prio": "P0",
+              "desc": "Subir el build con SteamPipe y atender la revisión de Valve (3 a 5 días hábiles) en Windows y Linux. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "Valve aprueba el build de lanzamiento."
             }
           ]
         },
@@ -4618,10 +4754,10 @@
       "name": "Evolutivo",
       "target": "Evolutivo",
       "hours": [
-        690,
-        1040
+        702,
+        1052
       ],
-      "goal": "Ideas para después del lanzamiento. El casino es la primera actualización prevista; el resto se prioriza según cómo vaya el proyecto.",
+      "goal": "Ideas para después del lanzamiento en Steam. El casino es la primera actualización prevista; el móvil (iOS y Android) llega cuando la 1.0 esté estable; el resto se prioriza según cómo vaya el proyecto.",
       "gate": null,
       "milestones": [
         {
@@ -4634,7 +4770,7 @@
               "title": "Diseño del casino: integración suave en la economía y la historia",
               "est": 8,
               "prio": "P1",
-              "desc": "Quién lo opera (por ejemplo Los Faroleros), dónde está, cómo se integra con el mercado negro y la vigilancia, y cómo funciona como sumidero. Solo moneda del juego."
+              "desc": "Quién lo opera (por ejemplo Los Faroleros), dónde está, cómo se integra con el mercado negro y la vigilancia, y cómo funciona como sumidero. Solo moneda del juego. Aquí se resuelve también el precio base y los DLC (qué va en el juego base y qué se vende aparte), junto con F5-33 y F6-61."
             },
             {
               "id": "F6-02",
@@ -4718,7 +4854,8 @@
               "status": "backlog",
               "title": "Revisión de clasificación por edad y políticas de las tiendas",
               "est": 3,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Revisión de clasificación por edad y de las políticas de las tiendas. Antes de publicar el casino hay que verificar la política de Steam sobre azar simulado con moneda del juego (con el cuestionario real y soporte de Steamworks) y actualizar el cuestionario de contenido de Steam."
             },
             {
               "id": "F6-14",
@@ -4761,7 +4898,7 @@
         },
         {
           "id": "F6.2",
-          "name": "iOS",
+          "name": "Móvil: iOS y Android (después de la 1.0 estable en Steam)",
           "tasks": [
             {
               "id": "F6-18",
@@ -4804,47 +4941,106 @@
               "title": "Revisión de Apple y correcciones",
               "est": 6,
               "prio": "P2"
+            },
+            {
+              "id": "F6-71",
+              "status": "backlog",
+              "title": "Exportación y firma para Android",
+              "est": 6,
+              "prio": "P2",
+              "desc": "Instalar JDK y Android SDK, crear el keystore y configurar la exportación y la firma. Fase móvil: se hace después de que la 1.0 esté publicada y estable en Steam (ADR-0009).",
+              "done_when": "Un build firmado de Android arranca en un dispositivo."
+            },
+            {
+              "id": "F6-72",
+              "status": "backlog",
+              "title": "Interfaz táctil: adaptador de entrada y HUD",
+              "est": 12,
+              "prio": "P2",
+              "desc": "Añadir el adaptador táctil a la capa de entrada, con HUD táctil, tamaño de botones y gestos para los minijuegos. Fase móvil: se hace después de que la 1.0 esté publicada y estable en Steam (ADR-0009).",
+              "done_when": "El juego se juega entero con toque en un teléfono."
+            },
+            {
+              "id": "F6-73",
+              "status": "backlog",
+              "title": "Ajustes de pantalla para móvil: zonas seguras y 20:9",
+              "est": 6,
+              "prio": "P2",
+              "desc": "Zonas seguras, muescas y relaciones de aspecto 20:9 para teléfono. Fase móvil: se hace después de que la 1.0 esté publicada y estable en Steam (ADR-0009).",
+              "done_when": "La interfaz se ve completa en teléfonos con muesca."
+            },
+            {
+              "id": "F6-74",
+              "status": "backlog",
+              "title": "Pruebas en dispositivos Android: gamas, batería y calor",
+              "est": 8,
+              "prio": "P2",
+              "desc": "Matriz de gamas de Android, consumo de batería y calor, y presupuestos de rendimiento móviles. Fase móvil: se hace después de que la 1.0 esté publicada y estable en Steam (ADR-0009).",
+              "done_when": "El juego pasa las pruebas en tres gamas de Android."
+            },
+            {
+              "id": "F6-75",
+              "status": "backlog",
+              "title": "Ficha de Google Play y formularios de seguridad de datos",
+              "est": 8,
+              "prio": "P2",
+              "desc": "Ficha en español e inglés, formularios de seguridad de datos y clasificación de contenido de Google Play. Fase móvil: se hace después de que la 1.0 esté publicada y estable en Steam (ADR-0009).",
+              "done_when": "La ficha y los formularios están listos para enviar."
+            },
+            {
+              "id": "F6-76",
+              "status": "backlog",
+              "title": "Prueba cerrada y revisión de Google Play",
+              "est": 8,
+              "prio": "P2",
+              "desc": "Reclutar testers, coordinar la prueba cerrada y atender la revisión de Google Play. Fase móvil: se hace después de que la 1.0 esté publicada y estable en Steam (ADR-0009).",
+              "done_when": "El juego pasa la prueba cerrada y la revisión."
             }
           ]
         },
         {
           "id": "F6.3",
-          "name": "PC y Steam",
+          "name": "Consolas (evaluación)",
           "tasks": [
             {
               "id": "F6-24",
-              "status": "backlog",
+              "status": "dropped",
               "title": "Exportación a PC",
               "est": 6,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Absorbida por F1-02 y F1-26 tras decidir lanzar primero en PC (2026-10-15)."
             },
             {
               "id": "F6-25",
-              "status": "backlog",
+              "status": "dropped",
               "title": "Teclado y ratón",
               "est": 8,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Absorbida por F1-07 y F4.19 tras decidir lanzar primero en PC (2026-10-15)."
             },
             {
               "id": "F6-26",
-              "status": "backlog",
+              "status": "dropped",
               "title": "Logros de Steam",
               "est": 6,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Absorbida por el hito F4.19 (Logros de Steam) tras decidir lanzar primero en PC (2026-10-15)."
             },
             {
               "id": "F6-27",
-              "status": "backlog",
+              "status": "dropped",
               "title": "Ficha de Steam y declaración de uso de IA",
               "est": 8,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Absorbida por F5-22, F5-30 y la página «Próximamente» de F4.19 tras decidir lanzar primero en PC (2026-10-15)."
             },
             {
               "id": "F6-28",
-              "status": "backlog",
+              "status": "dropped",
               "title": "Pruebas en PC",
               "est": 8,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Absorbida por F1-39 y F5-11 tras decidir lanzar primero en PC (2026-10-15)."
             },
             {
               "id": "F6-29",
@@ -5127,7 +5323,7 @@
               "title": "Reserva de V2.1",
               "est": 12,
               "prio": "P2",
-              "desc": "Correcciones. Según el documento 26 (zonas y edificios).",
+              "desc": "Correcciones. Según el documento 26 (zonas y edificios). Incluye decidir si algo de la V2.1 se vende como DLC o en el juego base (ver ADR-0009).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]

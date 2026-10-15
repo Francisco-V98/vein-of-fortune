@@ -239,7 +239,7 @@ PixelLab es la herramienta del arte definitivo por decisión del autor. Su flujo
 
 ## Decisiones técnicas de arte pendientes
 
-- ❓ **Resolución base (horizontal).** Sugerencia a probar: **480×270** (escala ×4 hasta 1920×1080); alternativa 384×216 (×5). Hay que cuidar el escalado entero y las distintas proporciones de pantalla de Android (por ejemplo 20:9): diseñar el contenido importante en una zona 16:9 y extender el fondo hacia los bordes. Las primeras pruebas eran verticales y quedan superadas.
+- ⏳ F1-06 · **Resolución base y modo ventana.** Con el enfoque de PC primero ([ADR-0009](adr/0009-pc-primero-movil-despues.md)) la pregunta cambia: 480×270 frente a 640×360, escala entera con bandas, ventana y pantalla completa, en 1080p, 1440p, 4K, ultrapanorámico y Steam Deck (1280×800). La zona segura 20:9 era una pregunta móvil y pasa a la fase móvil. No bloquea nada anterior: F1-06 la decide antes de producir arte definitivo. Las primeras pruebas eran verticales y quedan superadas.
 - ✅ **Perspectiva.** Los **edificios van en isométrica** (mapa de ciudad) y, al entrar, se muestra su **vista interior** en corte transversal, como la tienda. Las escenas de mina y zonas siguen en vista lateral.
 - ❓ **Nivel de "pixel estricto".** Los retratos son muy detallados (ilustración pixelada) y los sprites son más cercanos a Stardew. Decidir si se mantienen así o se unifican.
 - ❓ Tamaño de íconos (por ejemplo 32×32 o 48×48) y de sprites de personaje. Para el arte definitivo se prueba con PixelLab (ver «Assets provisionales y definitivos»).

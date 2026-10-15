@@ -76,7 +76,7 @@ Ningún empleado dura para siempre. Cada uno trabaja con un **contrato por tiemp
 | Despido anticipado | Cuesta indemnización; sin causa justificada baja el medidor de la Unión. Despedir a quien robó (con causa) no tiene penalización |
 | Renovación | Depende de Lealtad, salario, trato y del medidor de la Unión. Se negocia con **Labia** |
 | Se va | Puede irse a la competencia (por ejemplo, al Consorcio Arvel) |
-| Avisos | Notificación unos días antes de que venza, agrupadas para no saturar en mobile |
+| Avisos | Aviso en pantalla unos días antes de que venza, agrupados en el resumen del día para no saturar al jugador (en PC no hay notificaciones del sistema) |
 
 Esto crea una tensión interesante: **entrenar a un empleado es una inversión que puede irse con él**. Se mitiga con contratos largos, bonos de permanencia y buen trato.
 

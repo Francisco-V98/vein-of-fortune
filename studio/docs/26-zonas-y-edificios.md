@@ -13,7 +13,7 @@ Cómo está organizado el mapa vivo de Valdoria: qué zonas hay, qué edificacio
 ### 1.1 Los tres niveles ✅
 
 1. **Mapa de Valdoria.** Imagen ilustrada con las seis regiones tocables; las bloqueadas se ven apagadas ([12](12-direccion-de-arte.md), ⏳ F4-152 y ⏳ F4-153).
-2. **Zona.** La región es la zona. Al tocarla entras a la **vista de zona**: el asentamiento en isométrica, con sus edificaciones tocables ([12](12-direccion-de-arte.md), perspectiva).
+2. **Zona.** La región es la zona. Al hacer clic en ella (o elegirla con el mando) entras a la **vista de zona**: el asentamiento en isométrica, con sus edificaciones seleccionables ([12](12-direccion-de-arte.md), perspectiva).
 3. **Edificación.** Eliges a cuál entrar y ves **esa edificación por separado**, en vista interior en corte transversal, como la tienda. La boca de mina es una edificación más: al entrar a ella pasas a la vista lateral de la mina.
 
 La navegación entre los tres niveles es ⏳ F4-167.

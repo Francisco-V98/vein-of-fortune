@@ -26,7 +26,9 @@ Para que ninguna mitad domine, la otra se vuelve necesaria:
 
 ## Ritmo de sesión ❓
 
-En mobile las sesiones suelen ser de 5–10 minutos. Meta de diseño: **un día completo se puede jugar en una sesión corta**, y se puede cerrar en cualquier momento sin perder progreso (autoguardado).
+🟡 En PC (y en la Steam Deck) las sesiones pueden ser más largas que las de un móvil, así que ya no se diseña para sesiones de 5–10 minutos. Meta de diseño propuesta: **un día completo se puede jugar de seguido** y el jugador decide cuántos días juega en cada sesión; la duración objetivo de una sesión sigue abierta hasta el prototipo.
+
+✅ Se puede cerrar o suspender en cualquier momento sin perder progreso (autoguardado instantáneo): la Steam Deck suspende y no se quiere perder avance (decisión del autor, 2026-10-15).
 
 ## Ciclo macro
 

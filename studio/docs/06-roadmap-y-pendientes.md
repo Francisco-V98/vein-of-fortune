@@ -6,25 +6,27 @@
 
 Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 
+✅ **PC primero** (decisión del autor, 2026-10-15): el proyecto Godot corre en PC (Windows y Linux) desde la F1, la F5 lanza en Steam y el móvil (Android e iOS) es una fase propia posterior a la F6, cuando la 1.0 esté publicada y estable. Las horas y los IDs de tareas los reordena el roadmap, no este borrador.
+
 | Fase | Objetivo | Contenido |
 |---|---|---|
 | 0 · Diseño | Cerrar base de diseño | Estos documentos, lore, tabla de minerales/zonas |
 | 1 · Prototipo del núcleo | Probar que el loop es divertido | 1–2 zonas, 3–4 minerales, detector instantáneo, 3 minijuegos (Picado, Perforación, Regateo), mercado simple, tienda básica, ciclo de día |
 | 2 · Vertical slice | Calidad de juego real | Información por capas, noticias, herramientas con desgaste, encuentros, almacén con costos |
 | 3 · Contenido | Llegar al alcance de v1 | 10 minerales, 5–6 zonas, catálogo de minijuegos, dificultad, logros, estilo de vida |
-| 4 · Pulido y lanzamiento mobile | Publicar | Tutorial, balance, guardado, rendimiento, tiendas de apps |
-| 5 · Después | Crecer | Capa de imperio, casino, PC/consola |
+| 4 · Pulido y lanzamiento en Steam | Publicar | Tutorial, balance, guardado, rendimiento, Steam Deck, página y lanzamiento en Steam |
+| 5 · Después | Crecer | Capa de imperio, casino y, como fase propia, el móvil (Android e iOS); consolas evaluadas aparte |
 
 ## Ideas futuras (fuera de v1)
 
 - **Casino** ✅ (idea del autor): tragamonedas, ruleta, blackjack, quizás minijuegos de azar. Dinero del juego solamente. Es la V2.0 y se llama Salón del Farol (decisión del autor, 2026-10-13; [26](26-zonas-y-edificios.md)).
 - **Estilo de vida ampliado** ✅ (idea del autor): casas y mansiones por zona, joyería comprable, vehículos, ropa y decoración, y mar e inversiones. Casas, mansiones, decoración, joyería, concesionaria y sastrería van en la V2.1; mar e inversiones, en la V2.2 (decisión del autor, 2026-10-13; [26](26-zonas-y-edificios.md)).
-  - 🟡 Nota: los juegos de azar simulados afectan la clasificación por edad en las tiendas de apps; revisar requisitos antes.
+  - 🟡 Nota: los juegos de azar simulados afectan la clasificación por edad en las tiendas (Steam y, después, las de apps); revisar requisitos antes.
 - Capa de imperio: sucursales, otras ciudades, plantillas más grandes de empleados. (Los empleados básicos entran a mitad del juego, no aquí.)
 - Eventos de temporada.
 - Calidad de minerales (común, buena, excelente) y requisitos de calidad en contratos.
 - PvP asíncrono (descartado por ahora).
-- Port a PC y consola.
+- Móvil (Android e iOS) ✅, después de la 1.0 publicada y estable en Steam, con un adaptador táctil (2026-10-15). Consolas: se evalúan aparte, sin compromiso.
 
 ## Preguntas abiertas
 
@@ -42,7 +44,7 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 
 | Fecha | Decisión |
 |---|---|
-| 2026-10-10 | Mobile primero; futuro PC/consola |
+| 2026-10-10 | ~~Mobile primero; futuro PC/consola~~ (reemplazada el 2026-10-15: PC primero, móvil después) |
 | 2026-10-10 | Single-player con mercado simulado |
 | 2026-10-10 | Pago único |
 | 2026-10-10 | Mínimo 10 minerales con lore y utilidad |
@@ -89,8 +91,8 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-11 | Aetherita con minijuego propio (Contención) y exposición que enferma |
 | 2026-10-11 | MVP de minijuegos: Picado, Perforación, Regateo |
 | 2026-10-11 | Todo se desarrolla con IA (código, arte, audio); el autor aporta diseño y pruebas |
-| 2026-10-11 | Android primero; iOS solo si todo va bien |
-| 2026-10-11 | Soporte de mando con mapeo completo; el HUD táctil se oculta al usar mando |
+| 2026-10-11 | ~~Android primero; iOS solo si todo va bien~~ (reemplazada el 2026-10-15: PC primero, móvil después) |
+| 2026-10-11 | Soporte de mando con mapeo completo (se mantiene); ~~el HUD táctil se oculta al usar mando~~ (sin HUD táctil en la 1.0, 2026-10-15) |
 | 2026-10-11 | Proyecto personal primero; prototipo barato y rápido para probar la diversión |
 | 2026-10-11 | Seguridad: sin cuentas, anuncios ni analíticas en la v1; guardado seguro |
 | 2026-10-11 | Legal: lista de verificación por etapas (ver 11) |
@@ -111,7 +113,7 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-11 | Juego en español e inglés desde el inicio, con marco de traducción para más idiomas |
 | 2026-10-11 | Voz: español neutro latinoamericano con tuteo; inglés igual de cercano |
 | 2026-10-11 | Estructura aprobada: `game/` y `studio/` en un repositorio; `studio/` ignorable o extraíble |
-| 2026-10-11 | Telemetría por capas aprobada: local exportable, Google Play Vitals y envío opcional futuro |
+| 2026-10-11 | Telemetría por capas aprobada: local exportable, Google Play Vitals y envío opcional futuro (la capa de la tienda deja de ser Google Play Vitals desde el 2026-10-15; ver doc 10) |
 | 2026-10-11 | Se añaden storytelling y storyboard (story map, guion del Acto I, paneles, flujo de pantallas) |
 | 2026-10-11 | Estimación total revisada a unas 850–1.450 h por idiomas, marca, storyboard y métricas |
 | 2026-10-11 | Casino: primera actualización tras el lanzamiento, integrado de forma suave (tragamonedas, ruleta y blackjack); el autor acepta la clasificación por edad que corresponda |
@@ -148,3 +150,13 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-13 | El juego no se dirige a menores; el casino va en la V2 con moneda del juego, probabilidades visibles, tope diario e interruptor para ocultar el azar |
 | 2026-10-13 | Todo el arte actual, logo incluido, es provisional; el definitivo se hace en pixel art con PixelLab tras la Puerta B (ver [12](12-direccion-de-arte.md), «Assets provisionales y definitivos») |
 | 2026-10-13 | Nombres: Altafría (pueblo de empresa de Sierra Alta, *Highchill*) y Salinas Blancas (puerto de los Salares, *White Salt Flats*) |
+| 2026-10-15 | **PC primero, móvil después:** el juego se lanza primero en PC, compatible y preparado para Steam; el móvil (Android e iOS) llega cuando el juego esté completo en PC, es decir, con la 1.0 publicada y estable en Steam. Motor Godot 4.x sin cambios |
+| 2026-10-15 | Plataformas de la 1.0: Windows y Linux; macOS queda para después de la 1.0. Steam Deck Verified como meta: mando completo, sin HUD táctil y texto legible en 1280×800 |
+| 2026-10-15 | Tiendas: Steam como meta e itch.io para builds de prueba; GOG y Epic quedan fuera de la 1.0 |
+| 2026-10-15 | Controles: ratón y teclado como principales (cursor, información al pasar el cursor, atajos y ventanas de información densas) con mando completo. La interfaz táctil queda como adaptador futuro del móvil; no se construye HUD táctil ahora |
+| 2026-10-15 | Página de Steam («Próximamente») al final de la F4, con el juego casi completo y con arte definitivo (la regla «nada provisional llega a la tienda» se mantiene) |
+| 2026-10-15 | Nube y partidas: Steam Auto-Cloud con una carpeta de guardados pequeños y hasta 5 partidas; en Hardcore manda el guardado local (no se restaura desde la nube tras morir) |
+| 2026-10-15 | Fases: la F1 deja un proyecto Godot que corre en PC; la F5 lanza en Steam; la F6 es posterior al lanzamiento. El móvil es una fase propia después, y las actualizaciones V2.x pueden seguir en PC o ir también al móvil |
+| 2026-10-15 | Pruebas en un PC Windows real y, si hay una, en la Steam Deck: requisito de la F1. El autor trabaja en Mac |
+| 2026-10-15 | Sin cambio: pago único sin anuncios ni compras, autoguardado instantáneo (la Steam Deck suspende y no se quiere perder progreso) y los números de F0-52 |
+| 2026-10-15 | 🟡 Propuestas aplazadas a su tarea: resolución base y modo de ventana ⏳ F1-06; precio y DLC (pago único, sin DLC de pago en la v1) ⏳ F5-33, ⏳ F6-01, ⏳ F6-61; demo con el Acto I ⏳ F3-23; declaración de IA de Steam y términos de PixelLab ⏳ F4-227, ⏳ F5-30; casino solo con moneda del juego y cuestionario de Steam sin azar en la v1 ⏳ F6-13 |
