@@ -22,7 +22,7 @@ La navegación entre los tres niveles es ⏳ F4-167.
 
 - **Zona** (del mapa) es la región con su asentamiento. **Zona de minado** son las seis de [02](02-extraccion.md); cada una se entra por su **boca de mina**, dentro de un asentamiento.
 - Cada zona tiene **un asentamiento**. **Villa Brasa atiende las dos zonas de minado del Hollín** (Galerías del Hollín y Cañón Ferroso): desde su vista de zona eliges una de las dos bocas. **Puerto Meridiano** es la zona de la capital y no tiene boca de mina.
-- El asentamiento es donde se comercia, se contrata y se vive; la boca de mina es donde se extrae. Moverte entre zonas cuesta tiempo y dinero ([04](04-progresion-y-meta.md), ⏳ F4-154).
+- El asentamiento es donde se comercia, se contrata y se vive; la boca de mina es donde se extrae. Moverte entre zonas no gasta bloques pero cuesta un poco de dinero (billete o combustible), y ver las zonas en el mapa es gratis ✅ ([01](01-core-loop.md); decisión del autor, 2026-10-15). Las Cavernas y La Fosa son zonas profundas: 2 bloques, Tarde y Noche, y La Fosa solo abre 3 días por semana ✅ (días ⏳ F0-52). La cifra del costo del viaje ⏳ F0-52 y cómo se ve el viaje ⏳ F4-154.
 
 | Zona (región) | Asentamiento | Bocas de mina | Se abre en el acto 🟡 |
 |---|---|---|---|
@@ -38,7 +38,7 @@ Los nombres **Altafría** y **Salinas Blancas**, en español, los decidió el au
 ### 1.3 Dos propuestas dentro de la estructura 🟡
 
 - **Campamentos sin nombre propio.** Las Cavernas y la Fosa no tienen vivienda y su asentamiento es un campamento. Se usan nombres descriptivos («el campamento de las Cavernas», «el campamento de la Comisión») hasta que el autor elija nombres propios; cambiarlos solo toca textos y datos, no estructura.
-- **Horarios por bloque.** Cada edificación declara en qué bloques del día abre (mañana, tarde, noche); el bar de Los Faroleros y el Salón del Farol, solo de noche, como el mercado negro ([03](03-comercio.md)).
+- **Horarios por bloque.** Cada edificación declara en qué bloques del día abre (mañana, tarde, noche); el bar de Los Faroleros y el Salón del Farol, solo de noche, como el mercado negro ([03](03-comercio.md)). La tienda del jugador, en cambio, abre solo de mañana y de tarde: **nunca de noche** ✅ ([01](01-core-loop.md)).
 
 ---
 
@@ -57,12 +57,12 @@ Obrero y humo; manda la Unión. La herrería alimenta el Acero y la tienda atien
 | ID | Edificación | Rol | Qué la hace de su zona | Versión | Marca |
 |---|---|---|---|---|---|
 | `ed-vb-tienda` | Tienda (el puesto reabierto) | vender, comprar, minijuego (Regateo, Reponer) | Mercancía de carbón y hierro; clientes obreros; la cinta 1 está en el doble fondo de la caja | MVP | ✅ |
-| `ed-vb-taller` | Taller | ganar (valor agregado), minijuego (Refinado) | Acero (hierro y carbón) | MVP | ✅ |
+| `ed-vb-taller` | Taller | ganar (valor agregado), minijuego (Refinado) | Acero (hierro y carbón). Se construye en el MVP y **se abre en el Acto II**; el Acto I no lo usa ✅ | MVP | ✅ |
 | `ed-vb-almacen` | Almacén | gastar (alquiler y costo de guardar) | Donde la especulación cuesta de verdad ([03](03-comercio.md)) | MVP | ✅ |
 | `ed-vb-casa` | Casa obrera (casa base) | gastar | Chimeneas y humo en la vista; descanso y decoración (sección 4) | MVP; mejorable en V1 | ✅ |
 | `ed-vb-reme` | Casa de Reme | gastar (cuotas de la deuda) | Reme, la prestamista; su facción cambia según la partida ([22](22-acto-ii-variantes.md)) | MVP | ✅ |
 | `ed-vb-quiroga` | Oficina del Inspector | gastar (licencias, multas, «trámites») | Quiroga; baja o sube la vigilancia ([03](03-comercio.md)) | MVP | ✅ |
-| `ed-vb-mina-galerias` | Boca de las Galerías del Hollín | minijuego (Picado, Perforación) | Carbón principal; Teo enseña el oficio | MVP | ✅ |
+| `ed-vb-mina-galerias` | Boca de las Galerías del Hollín | minijuego (Picado, Perforación y, con el explosivo, Detonación) | Carbón principal; Teo enseña el oficio | MVP | ✅ |
 | `ed-vb-mina-canon` | Boca del Cañón Ferroso | minijuego (Picado, Perforación) | Hierro principal; bandas rivales | V1 | ✅ |
 | `ed-vb-union` | Sede de la Unión | ganar (Bolsa de la Unión: contratar), gastar | Medidor de la Unión, huelgas, Delegado de la Unión | V1 | ✅ |
 | `ed-vb-periodico` | Quiosco y redacción de La Voz del Hollín | comprar (prensa, anuncios), ganar (empleos) | Sesgo sindical; vende también el Heraldo y el Teletipo; Lucía y el voceador pasan por aquí | V1 | ✅ |
@@ -91,7 +91,7 @@ Faroleros y contrabando. El salitre enlaza con la agricultura y la pólvora.
 |---|---|---|---|---|---|
 | `ed-sb-mina` | Boca de los Salares del Litoral | minijuego (Cribado) | Salitre principal; sed y gases; contrabandistas e inspectores corruptos | V1 | ✅ |
 | `ed-sb-lonja` | Lonja y almacén de salitre | vender, comprar | Salitre para agricultura y pólvora; más adelante, el pescado | V1 | ✅ |
-| `ed-sb-bar` | Bar del Farol (Los Faroleros) | comprar y vender en el mercado negro, ganar | Casilda; abre de noche; contacto del mercado negro; joyas sin sello (sección 3) | V1 | ✅ |
+| `ed-sb-bar` | Bar del Farol (Los Faroleros) | comprar y vender en el mercado negro, ganar | Casilda; abre de noche; contacto del mercado negro (también hay una visita nocturna de Casilda a la tienda, que no es el modo tienda); joyas sin sello (sección 3) | V1 | ✅ |
 | `ed-sb-caseron` | Caserón frente al mar | gastar (casa comprable) | Mar abierto (sección 4) | V2.1 | ✅ |
 | `ed-sb-muelle` | Muelle de pesca | minijuego (pesca), vender | Pesca con el motor del Cribado | V2.2 | ✅ |
 | `ed-sb-astillero` | Astillero | comprar (embarcaciones), gastar | Bote, pesquero y barcaza | V2.2 | ✅ |
@@ -105,7 +105,7 @@ Gemas en zona disputada; sin vivienda.
 
 | ID | Edificación | Rol | Qué la hace de su zona | Versión | Marca |
 |---|---|---|---|---|---|
-| `ed-cv-mina` | Boca de las Cavernas de Cristal | minijuego (Cincelado, Perforación, Cribado) | Oro, cuarzo y esmeralda principales; cristales cortantes; cazarrecompensas | V1 | ✅ |
+| `ed-cv-mina` | Boca de las Cavernas de Cristal | minijuego (Cincelado, Perforación, Cribado) | Oro, cuarzo y esmeralda principales; cristales cortantes; cazarrecompensas; siempre abierta, expedición de 2 bloques (Tarde y Noche) ✅ | V1 | ✅ |
 | `ed-cv-tasadores` | Tasadores | vender (gemas), minijuego (Tasar) | Tasan esmeralda, diamante y cuarzo; hay piezas falsas (⏳ F4-55) | V1 | ✅ |
 | `ed-cv-campamento` | Campamento de ensayo | historia | Cinta 4, bajo el cuarzo | V1 | ✅ |
 | `ed-cv-taller-talla` | Taller de talla | minijuego (Cincelado), vender | Joyas de gema tallada (sección 3) | V2.1 | ✅ |
@@ -116,7 +116,7 @@ Sin vivienda, lujo ni azar. Solo historia y la boca de mina.
 
 | ID | Edificación | Rol | Qué la hace de su zona | Versión | Marca |
 |---|---|---|---|---|---|
-| `ed-fo-mina` | Boca de La Fosa del Éter | minijuego (Contención, Cincelado) | Aetherita y diamante principales; mostrador de filtros | V1 | ✅ |
+| `ed-fo-mina` | Boca de La Fosa del Éter | minijuego (Contención, Cincelado) | Aetherita y diamante principales; mostrador de filtros; solo abre 3 días por semana, los de calibración de la Comisión ✅ (días ⏳ F0-52) | V1 | ✅ |
 | `ed-fo-campamento-viejo` | Campamento de la Primera Expedición | historia | Cinta 6, en la caja del equipo de ensayo | V1 | ✅ |
 | `ed-fo-barracon` | Barracón de calibración | historia | Cintas 7 y 8 y el acta de calibración | V1 | ✅ |
 
@@ -238,7 +238,7 @@ El **Salón del Farol** es el casino de Puerto Meridiano. Abre de noche y lo ope
 | Cosa | Lugar temático | Qué hace | Por qué ahí | Versión |
 |---|---|---|---|---|
 | **Ropa**: un traje por escalón de estatus (Heredero a Magnate) | V1: pantalla de estilo de vida ⏳ F4-119; V2.1: sastrería de la capital | Solo cambia el sprite pequeño; las hojas de modelo y los retratos no se rehacen ✅ | La ropa dice a qué clase perteneces ([07](07-sociedad-y-eventos.md)); la sastrería es de la capital | V1 y V2.1 |
-| **Auto**: uno en V1 (⏳ F4-112); en V2.1 tres 🟡 | V1: pantalla de estilo de vida; V2.1 🟡: carreta (herrería de Villa Brasa), camioneta (Altafría), automóvil (concesionaria) | El de V1 es solo estatus y aspecto, sin efecto en el viaje 🟡; el efecto funcional pequeño en tiempo de viaje y carga llega con la concesionaria de V2.1 ⏳ F6-57; ninguno es obligatorio | Cada vehículo es del lugar que lo usa: carreta en el Hollín obrero, camioneta en la sierra del Consorcio, automóvil en la capital | V1 y V2.1 |
+| **Auto**: uno en V1 (⏳ F4-112); en V2.1 tres 🟡 | V1: pantalla de estilo de vida; V2.1 🟡: carreta (herrería de Villa Brasa), camioneta (Altafría), automóvil (concesionaria) | El de V1 es solo estatus y aspecto, sin efecto en el viaje ✅; el viaje cuesta un poco de dinero y eso da sentido al auto ✅ ([01](01-core-loop.md)); el efecto funcional pequeño en tiempo de viaje y carga llega con la concesionaria de V2.1 ⏳ F6-57; ninguno es obligatorio | Cada vehículo es del lugar que lo usa: carreta en el Hollín obrero, camioneta en la sierra del Consorcio, automóvil en la capital | V1 y V2.1 |
 | **Embarcaciones**: bote, pesquero y barcaza | Astillero de Salinas Blancas | El bote y el pesquero mejoran la pesca; la barcaza aligera el transporte de salitre por la costa (efecto ⏳ F6-63) | Solo hay puerto de pesca y carga en los Salares | V2.2 |
 | **Yate** | Puerto deportivo de la capital | Solo estatus | El lujo vive en Puerto Meridiano | V2.2 |
 | **Pesca** | Muelle y lonja de Salinas Blancas | Se juega con el motor del Cribado ([09](09-minijuegos.md): inclinación y caudal, «como la pesca»); el pescado se vende en la lonja | El Cribado es del litoral y la lonja ya es el comercio del puerto | V2.2 |
@@ -256,7 +256,7 @@ Las horas son del autor y se suman a las del roadmap ([06](06-roadmap-y-pendient
 
 | Versión | Fase del roadmap | Edificaciones | Contenido | Horas sobre el roadmap 🟡 |
 |---|---|---|---|---|
-| **MVP** | F2–F3 | 7: tienda, taller, almacén, casa, Reme, Quiroga y boca de las Galerías | Solo Villa Brasa, en lista con arte provisional (⏳ F3-18). Sin mapa | 0 |
+| **MVP** | F2–F3 | 7: tienda, taller, almacén, casa, Reme, Quiroga y boca de las Galerías | Solo Villa Brasa, en lista con arte provisional (⏳ F3-18). Sin mapa. El taller se construye aquí pero se abre en el Acto II ✅ | 0 |
 | **V1** | F4–F5 | +23: 18 edificios y 5 bocas de mina | Mapa y vista de zona de las seis zonas (⏳ F4-152, ⏳ F4-165); los 9 del roadmap (⏳ F4-155, ⏳ F4-156), la Bolsa, 6 edificios de historia y 6 comercios; casa mejorable con ranuras, ropa por estatus y un auto | +110 a 150 |
 | **V2.0** | F6, hito F6.1 | +1: Salón del Farol | Casino y Lotería | +12 (la Lotería; el casino son las ~100 h ya estimadas) |
 | **V2.1** | F6, hito nuevo | +10 | Casas por zona y mansiones, catálogo de decoración, joyería comprable, joyas por zona, concesionaria y sastrería | 250 a 300 |

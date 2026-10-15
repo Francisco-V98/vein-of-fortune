@@ -30,28 +30,41 @@
         "hallazgos": [
           {
             "de": "analista",
-            "estado": "abierto",
-            "que": "Catorce puntos del núcleo condicionan la economía, los guiones o los documentos de historia y deben decidirse con el autor antes de cerrar la pasada"
+            "estado": "resuelto",
+            "que": "Catorce puntos del núcleo condicionan la economía, los guiones o los documentos de historia y deben decidirse con el autor antes de cerrar la pasada",
+            "resuelto_por": "disenador",
+            "como": "Decidido con el autor en cinco rondas y aplicado en los documentos 01, 02, 03, 04 y 09 y en los de historia; roadmap ajustado"
           },
           {
             "de": "analista",
-            "estado": "abierto",
-            "que": "Hay contradicciones entre los documentos 01 a 09 y los de historia sobre la Unión y los empleados, el taller, las ayudas del legado y los resultados de los minijuegos"
+            "estado": "resuelto",
+            "que": "Hay contradicciones entre los documentos 01 a 09 y los de historia sobre la Unión y los empleados, el taller, las ayudas del legado y los resultados de los minijuegos",
+            "resuelto_por": "disenador",
+            "como": "Decidido con el autor en cinco rondas y aplicado en los documentos 01, 02, 03, 04 y 09 y en los de historia; roadmap ajustado"
           },
           {
             "de": "analista",
-            "estado": "abierto",
-            "que": "La descripción de F0-52 omite impuestos, multas, vigilancia, información y renta, que sí necesitan números"
+            "estado": "resuelto",
+            "que": "La descripción de F0-52 omite impuestos, multas, vigilancia, información y renta, que sí necesitan números",
+            "resuelto_por": "disenador",
+            "como": "Decidido con el autor en cinco rondas y aplicado en los documentos 01, 02, 03, 04 y 09 y en los de historia; roadmap ajustado"
           }
         ]
       },
       {
         "etapa": "produccion",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "disenador",
+        "nota": "El diseñador de sistemas aplicó las decisiones de cinco rondas del autor; el coordinador ajustó el roadmap, la presentación y la comprobación C2; limpieza 78 %, coherencia 94 %",
+        "entrega": "Documentos 01, 02, 03, 04 y 09 cerrados (01 al 97 %, los demás al 100 %), contradicciones con los de historia corregidas, roadmap ajustado y tarea F4-234 creada"
       },
       {
         "etapa": "qa",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-15",
+        "por": "qa",
+        "nota": "QA comprueba el build, las marcas, los aplazamientos y que no queden contradicciones con la historia"
       },
       {
         "etapa": "autor",
@@ -77,6 +90,24 @@
         "de": "analista",
         "a": "coordinador",
         "que": "Catorce preguntas en siete rondas y un lote de confirmaciones para el autor",
+        "at": "2026-10-15"
+      },
+      {
+        "de": "coordinador",
+        "a": "disenador",
+        "que": "Aplicar las decisiones del autor y el lote en los documentos 01, 02, 03, 04 y 09 y corregir las contradicciones",
+        "at": "2026-10-15"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Documentos del núcleo cerrados y lista de tareas del roadmap por ajustar",
+        "at": "2026-10-15"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar los documentos 01 a 04 y 09, los cambios en 05, 06, 10, 14, 17, 18, 22, 24, 26 y 27, world.json, presentation.json, coherence.py y el roadmap",
         "at": "2026-10-15"
       }
     ]

@@ -4,7 +4,8 @@
   "rules": {
     "mineral_zones_min": 2,
     "mineral_zones_max": 3,
-    "fuente": "docs/02-extraccion.md: cada mineral aparece en 2–3 zonas"
+    "mineral_zones_excepciones": ["salitre", "aetherita"],
+    "fuente": "docs/02-extraccion.md: cada mineral aparece en 2–3 zonas, salvo el salitre y la Aetherita (excepciones del autor, 2026-10-15)"
   },
   "acts": [
     "I",

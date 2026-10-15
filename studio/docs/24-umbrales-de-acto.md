@@ -23,7 +23,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Tema | Decisión |
 |---|---|
 | Modelo | **Una puerta por acto** con vías «k de n» (dos de tres entre deuda, logros y relación). **Piso de estatus solo en dos puertas**: A5 del Acto II (Comerciante) y el círculo del Acto III (Empresario). Las anclas A1 a A6 van **encadenadas**: cada una se dispara con la anterior resuelta ✅ |
-| Acto I | Se cierra al **reabrir el puesto, atender la primera cuota** (pagada o prorrogada) y tener el **primer contacto con los empleados**. La cuota vence **cada 7 días y la primera, el día 7**; si no puedes pagar, se prorroga una semana con un pequeño recargo (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor) ⏳ F0-52. «Minero con licencia» es el **premio** del cierre, no un requisito ✅ |
+| Acto I | Se cierra al **reabrir el puesto, atender la primera cuota** (pagada o prorrogada) y tener el **primer contacto con los empleados**. La cuota vence **cada 7 días y la primera, el día 7**; si no puedes pagar, se prorroga una semana con un pequeño recargo (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor) ⏳ F0-52. «Minero con licencia» es el **premio** del cierre, no un requisito ✅. El primer contacto con los empleados es la ficha de un candidato con «Contratar» **bloqueado**, y su motivo es la mejora de la tienda pendiente, que se compra en la propia tienda desde el Acto II ✅; contratar de verdad no forma parte de la puerta (decisión del autor, 2026-10-15) |
 | Tramos | Para los cuatro medidores: **bajo menos de 35, medio 35 a 54, alto 55 o más**. Arrancan en 50; Esteban en 40 y Teo en 60 ✅ |
 | Tramo medio | Teo **se queda** (si lo llevaste a revisión). Lucía **no publica**, así que lo publicas tú con costo alto y poco alcance. El **reproductor** lo entrega Lucía solo en tramo alto; con medio o bajo lo entrega Reme ✅ |
 | Aval de Esteban | Basta su medidor en tramo alto. Si no lo tienes, el aval se muestra **bloqueado con el motivo**, y siempre quedan el sello de Montenegro y la presión de tu alianza ✅ |
@@ -108,7 +108,7 @@ Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el t
 - **Teo sin revisión muere, sea cual sea su tramo** ✅. Si el medidor y la revisión chocan, gana el no haberlo atendido ✅. Esto incluye la opción respetuosa «se lo propones y aceptas su no» ✅.
 - **Esteban.** El aval se lee en el momento de elegir entrada ✅. 🟡 Como `n-iii-esteban-trato` ocurre antes, el medidor ya trae lo que hiciste en la bolsa. Después de la entrada, el medidor de Esteban no se mueve, así que el tramo del IV es el de la entrada ⏳ F4-61.
 - **Lucía.** 🟡 Antes de decidir sobre la Aetherita se te muestra quién publicaría, para elegir con aviso ⏳ F4-142. `n-iv-lucia-publica` se activa si la verdad sale.
-- **Unión.** En `n-iv-montenegro`, «borrarte» pide Unión alta y al menos dos pruebas, y falla ✅. Si vendes al Ministerio, te compra con el sello y esa regla manda primero ✅. Como siempre conservas al menos tres ([23](23-arbol-de-decisiones.md), sección 8), en la práctica solo importa la Unión: es el castigo de quien tiene gente detrás ✅. Con Unión media o baja, y si no vendes al Ministerio, te amenaza ✅: la entrada que usaste ya no decide qué hace Montenegro. Su desenlace se decide al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12).
+- **Unión.** En `n-iv-montenegro`, «borrarte» pide Unión alta y al menos dos pruebas, y falla ✅. Si vendes al Ministerio, te compra con el sello y esa regla manda primero ✅. Como siempre conservas al menos tres ([23](23-arbol-de-decisiones.md), sección 8), en la práctica solo importa la Unión: es el castigo de quien tiene gente detrás ✅. Con Unión media o baja, y si no vendes al Ministerio, te amenaza ✅: la entrada que usaste ya no decide qué hace Montenegro. Su desenlace se decide al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12). Los **empleados** solo **leen** el tramo de la Unión (modula su Lealtad); contratar, despedir o publicar una oferta no mueve el medidor ✅ (decisión del autor, 2026-10-15; [04](04-progresion-y-meta.md)).
 - **Montenegro** no tiene tramos ✅.
 
 ---
@@ -226,7 +226,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 
 - 🟡 **Restricciones para las tareas que lo diseñan.**
   - Misión de rescate (F0-78): señala qué falta y cómo; no concede estatus, logros ni medidores.
-  - Estatus ⏳ F4-109: subir a Comerciante o a Empresario no puede exigir una escena de historia ni una puerta, para no crear un ciclo. Una vez cumplido el piso de una puerta, no se pierde por una pérdida de dinero.
+  - Estatus ⏳ F4-109: subir a Comerciante o a Empresario no puede exigir una escena de historia ni una puerta, para no crear un ciclo. Una vez cumplido el piso de una puerta, no se pierde por una pérdida de dinero ni por suspender la licencia ✅ (decisión del autor, 2026-10-15).
   - Mora ⏳ F0-52: qué pasa si no pagas lo define la economía, y nunca puede cerrar una puerta.
 
 ---

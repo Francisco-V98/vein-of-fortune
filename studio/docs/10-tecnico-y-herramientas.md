@@ -39,7 +39,7 @@ Separar en capas, con el contenido en datos:
 | **Datos** | Minerales, zonas, herramientas, noticias, facciones, textos | Archivos de datos (JSON/recursos); cambiar un precio no toca el código |
 | **Interfaz** | Pantallas, minijuegos, HUD | Consume el núcleo, no contiene reglas |
 | **Entrada** | Táctil y mando | Capa de acciones (ver abajo) |
-| **Guardado** | Persistencia | Versionado, con migraciones |
+| **Guardado** | Persistencia | Versionado, con migraciones. Punto de control al iniciar cada acción y hasta 5 partidas guardables a elegir ✅ ([01](01-core-loop.md)) |
 | **Plataforma** | Android/iOS/PC | Permisos, vibración, ciclo de vida |
 
 Principios:
@@ -153,7 +153,7 @@ Principio: **reducir la superficie de ataque y los datos que se manejan**.
 | Cuentas y autenticación | **Sin cuentas en la v1**: juego offline, sin servidores propios. Nada que autenticar |
 | Datos personales | Casi ninguno: el nombre del personaje y de la tienda son locales y no salen del dispositivo |
 | Anuncios y analíticas de terceros | **Ninguno en la v1** (pago único); cada SDK trae recolección de datos y obligaciones |
-| Guardado | Formato versionado, escritura segura (archivo temporal y reemplazo), copia de respaldo y verificación de integridad para detectar corrupción |
+| Guardado | Formato versionado, escritura segura (archivo temporal y reemplazo), copia de respaldo y verificación de integridad para detectar corrupción. Cada una de las hasta 5 partidas guardables tiene su propio archivo y su punto de control ✅ ([01](01-core-loop.md)) |
 | Trampas | En un juego de un jugador no es prioridad. Una verificación ligera solo evita corrupción accidental |
 | Validación de entradas | Nombre y tienda con límite de longitud, caracteres permitidos y filtro de palabras ofensivas |
 | Permisos de Android | El mínimo posible (idealmente solo vibración) |

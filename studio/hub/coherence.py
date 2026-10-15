@@ -306,7 +306,7 @@ def check(world, story, decisions=None, hilos=None):
     lo, hi = rules.get("mineral_zones_min", 2), rules.get("mineral_zones_max", 3)
     add("C2", "Minerales", "Cada mineral aparece en %d–%d zonas (%s)" % (lo, hi, rules.get("fuente", "regla del diseño")), len(minerals),
         ["%s aparece en %d zona(s): %s" % (m["name"], len(m["zones"]), ", ".join(zones[z]["name"] for z in m["zones"] if z in zones))
-         for m in minerals if not lo <= len(m["zones"]) <= hi])
+         for m in minerals if not lo <= len(m["zones"]) <= hi and m["id"] not in rules.get("mineral_zones_excepciones", [])])
     add("C3", "Zonas", "Cada zona tiene al menos un mineral principal", len(zones),
         ["%s no tiene mineral principal" % z["name"] for z in zones.values()
          if not any(m["zones"].get(z["id"]) == "principal" for m in minerals)])

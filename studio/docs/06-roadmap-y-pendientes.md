@@ -29,14 +29,13 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 ## Preguntas abiertas
 
 1. Logotipo, wordmark e ícono (ver [13](13-marca-e-identidad.md)).
-2. 🟡 Guion del Acto I (a la espera de la aprobación del autor): [27](27-guion-del-acto-i.md). Las variantes del Acto II están en [22](22-acto-ii-variantes.md).
-3. Fichas completas de cada zona y de cada mineral (plantillas en 02 y 05).
-4. Stats del jugador: cuáles y cómo se suben.
-5. Tutorial: cómo se enseña a leer el mercado.
-6. ¿Legado aplica a todas las dificultades o solo hardcore?
-7. Motor y arquitectura técnica (decisión posterior).
-8. Estilo visual concreto: referencias de arte.
-9. Cómo se maneja "saltar" un bloque de tiempo.
+2. Guion del Acto I: aprobado por el autor el 2026-10-13, con tres propuestas por confirmar ([27](27-guion-del-acto-i.md)). Las variantes del Acto II están en [22](22-acto-ii-variantes.md).
+3. Fichas completas de cada zona (⏳ F2-10 y ⏳ F4-02 a ⏳ F4-22) y de cada mineral (plantilla en 05).
+4. Tutorial: cómo se enseña a leer el mercado.
+5. Motor y arquitectura técnica (decisión posterior).
+6. Estilo visual concreto: referencias de arte.
+
+Resueltas el 2026-10-15: las stats del jugador ([04](04-progresion-y-meta.md)), el legado (aplica a todas las dificultades) y cómo se salta un bloque (botón «Esperar», [01](01-core-loop.md)).
 
 ## Registro de decisiones
 
@@ -148,3 +147,12 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 | 2026-10-13 | El juego no se dirige a menores; el casino va en la V2 con moneda del juego, probabilidades visibles, tope diario e interruptor para ocultar el azar |
 | 2026-10-13 | Todo el arte actual, logo incluido, es provisional; el definitivo se hace en pixel art con PixelLab tras la Puerta B (ver [12](12-direccion-de-arte.md), «Assets provisionales y definitivos») |
 | 2026-10-13 | Nombres: Altafría (pueblo de empresa de Sierra Alta, *Highchill*) y Salinas Blancas (puerto de los Salares, *White Salt Flats*) |
+| 2026-10-15 | Bloques: viajar y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; la tienda y el comercio nunca se abren de noche; misiones, trámites, eventos y visitas cuestan nada, medio bloque o un bloque según su peso (ver 01) |
+| 2026-10-15 | Guardado: punto de control al iniciar cada acción y hasta 5 partidas guardables a elegir (ver 01) |
+| 2026-10-15 | Herramientas: 5 tipos por 5 niveles, el explosivo es consumible y reparar cuesta dinero y materiales; el salitre y la Aetherita son excepciones a la regla de «más de una zona» (ver 02) |
+| 2026-10-15 | Derrota: sin energía vuelves con carga parcial; en Hardcore solo mata un encuentro de riesgo o un jefe; el mal del éter no mata; el día 3 del Acto I no hay pérdida grave |
+| 2026-10-15 | Legado en todas las dificultades (menor fuera de Hardcore, mayor en Hardcore); «partida terminada» es la muerte en Hardcore o el cierre del acta; las ayudas llegan desde A1 del Acto II |
+| 2026-10-15 | Prensa gratis en el Acto I y de pago y con sesgo desde el Acto II; variación por semilla de probabilidades, precios iniciales, eventos sueltos y algunos nombres |
+| 2026-10-15 | Taller: se construye en el MVP y se abre en el Acto II. Vigilancia en cuatro niveles sin solape (0–29, 30–59, 60–84, 85–100); tras una redada baja a unos 60 |
+| 2026-10-15 | Mercado negro en el Bar del Farol de Salinas Blancas y con la visita nocturna de Casilda, que no es el modo tienda |
+| 2026-10-15 | Los empleados solo leen el tramo de la Unión; «Contratar» se abre al cerrar el Acto I y exige una mejora de la tienda (en el Acto I está bloqueado por ese motivo) |

@@ -80,7 +80,7 @@ Cada módulo corresponde a un tema de diseño ya documentado. `depende de` son l
 | `story` | Actos, diálogos, cintas y decisiones | day, factions, world_events | [08](08-historia-y-personaje.md) |
 | `progression` | Stats por uso, estatus y logros | extraction, shop | [04](04-progresion-y-meta.md) |
 | `lifestyle` | Casa, ropa, auto y cosméticos | progression, inventory | [04](04-progresion-y-meta.md) |
-| `save` | Guardado versionado | — | [10](10-tecnico-y-herramientas.md) |
+| `save` | Guardado versionado, con punto de control por acción y hasta 5 partidas guardables | — | [01](01-core-loop.md), [10](10-tecnico-y-herramientas.md) |
 | `telemetry` | Diagnóstico local exportable | — | [10](10-tecnico-y-herramientas.md) |
 
 El casino y los logros entrarán más adelante creando su propio módulo, sin tocar los demás.
@@ -113,7 +113,7 @@ Reglas de los eventos:
 
 - El contenido se define en archivos de datos con **esquema y validación**; cargar un dato inválido falla de forma clara al arrancar.
 - Los identificadores de contenido son **cadenas estables** (`mineral.hierro`), nunca posiciones.
-- El guardado usa **DTO versionados** con migraciones. Cada módulo ofrece `snapshot()` y `restore()`; el módulo `save` los reúne a través de la raíz de composición, sin conocerlos.
+- El guardado usa **DTO versionados** con migraciones, un **punto de control al iniciar cada acción** y hasta **5 partidas guardables** que el jugador elige ([01](01-core-loop.md)). Cada módulo ofrece `snapshot()` y `restore()`; el módulo `save` los reúne a través de la raíz de composición, sin conocerlos.
 
 ## Plataforma 🟡
 

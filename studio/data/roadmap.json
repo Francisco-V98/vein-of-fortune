@@ -568,7 +568,7 @@
               "est": 10,
               "status": "backlog",
               "prio": "P1",
-              "desc": "Decidir con el autor los números base: precio y volatilidad de cada mineral, sectores de demanda, spreads, costos de herramientas, salarios, deuda y duración del día. Se cargan en el registro del mundo.",
+              "desc": "Decidir con el autor los números base: precio y volatilidad de cada mineral, sectores de demanda, spreads, costos de herramientas, salarios, deuda y duración del día. Se cargan en el registro del mundo. Incluye también impuestos, multas, vigilancia, precios de información, renta, mora, mejora de tienda para contratar, materiales de reparar, energía por mena, pérdida y minutos por día frente a contratos de 7, 30 y 90 días. Incluye los salarios y el entrenamiento de empleados, el impacto del jugador en el precio y el costo del viaje y de la mejora de tienda.",
               "done_when": "Todos los minerales con precio base, volatilidad y demanda; costos y salarios acordados."
             },
             {
@@ -577,7 +577,7 @@
               "est": 16,
               "status": "backlog",
               "prio": "P1",
-              "desc": "Simulación sin interfaz de miles de días. Comprueba que no hay bucles de ganancia infinita, que la deuda del Acto I se paga en su plazo sin ser trivial, que mejorar una herramienta no se paga sola en una expedición, que los ingresos por hora crecen de forma razonable y que no hay una zona siempre óptima.",
+              "desc": "Simulación sin interfaz de miles de días. Comprueba que no hay bucles de ganancia infinita, que la deuda del Acto I se paga en su plazo sin ser trivial, que mejorar una herramienta no se paga sola en una expedición, que los ingresos por hora crecen de forma razonable y que no hay una zona siempre óptima. Debe comprobar también que el impacto del jugador en el precio crece con su volumen y patrimonio sin crear bucles de ganancia (documento 03), y que contratar Mineros empleados no domina al jugador.",
               "done_when": "Simulador en las pruebas automáticas con las reglas de equilibrio como casos y resultados visibles en el hub."
             },
             {
@@ -1333,8 +1333,8 @@
       "name": "Prototipo del núcleo",
       "target": "MVP",
       "hours": [
-        155,
-        245
+        159,
+        249
       ],
       "goal": "Algo jugable aunque feo: un día completo con extracción, mercado y tienda, para comprobar si el loop es divertido.",
       "gate": "Puerta A: ¿es divertido? Si no lo es, se ajusta o se replantea antes de invertir en arte final.",
@@ -1348,25 +1348,25 @@
               "title": "Modelo de estado de partida y semilla",
               "est": 4,
               "status": "backlog",
-              "desc": "Día, bloque, dinero, inventario y semilla aleatoria reproducible.",
+              "desc": "Día, bloque, dinero, inventario y semilla aleatoria reproducible. Guarda también el modo de partida y admite hasta 5 partidas guardables a elegir (documento 01).",
               "done_when": "El estado se crea, modifica y se reproduce con la misma semilla.",
               "prio": "P0"
             },
             {
               "id": "F2-02",
               "title": "Ciclo de 3 bloques y avance del día",
-              "est": 4,
+              "est": 6,
               "status": "backlog",
-              "desc": "Mañana, tarde y noche con eventos de fin de día.",
+              "desc": "Mañana, tarde y noche con eventos de fin de día. Un bloque admite medio bloque. Viajar y ver zonas son gratis; minar y abrir la tienda cuestan un bloque completo y la tienda no se abre de noche; trámites, misiones y eventos cuestan 0, medio o un bloque según su peso. Botón «Esperar» para saltar un bloque (documento 01).",
               "done_when": "Se puede avanzar días consumiendo bloques.",
               "prio": "P0"
             },
             {
               "id": "F2-03",
               "title": "Guardado y carga versionado con escritura segura",
-              "est": 5,
+              "est": 7,
               "status": "backlog",
-              "desc": "Archivo temporal y reemplazo, copia de respaldo y verificación de integridad.",
+              "desc": "Archivo temporal y reemplazo, copia de respaldo y verificación de integridad. Punto de control al iniciar cada acción, con el azar fijado para que recargar no repita el resultado, y hasta 5 partidas guardables a elegir (documento 01).",
               "done_when": "Guardar, cerrar, abrir y continuar funciona; un archivo corrupto se detecta.",
               "prio": "P0"
             }
@@ -1786,7 +1786,7 @@
               "title": "Tres medios de prensa con costo y sesgo",
               "est": 6,
               "status": "backlog",
-              "desc": "El Heraldo Meridiano, La Voz del Hollín y Teletipo Meridiano.",
+              "desc": "El Heraldo Meridiano, La Voz del Hollín y Teletipo Meridiano. En el Acto I las noticias son gratis; desde el Acto II tienen costo y sesgo (documento 03).",
               "done_when": "Los tres medios están disponibles con su carácter.",
               "prio": "P0"
             },
@@ -1828,7 +1828,7 @@
               "title": "Refinado y taller: lingotes y productos básicos",
               "est": 10,
               "status": "backlog",
-              "desc": "Acero y pólvora como primeros productos.",
+              "desc": "Acero y pólvora como primeros productos. El taller se construye aquí pero se abre en el Acto II; el Acto I no lo usa (documentos 26 y 27).",
               "done_when": "Se refina y el producto se vende.",
               "prio": "P0"
             },
@@ -1879,7 +1879,7 @@
               "title": "Herramientas: 5 niveles, reparación y mejora con minerales",
               "est": 8,
               "status": "backlog",
-              "desc": "Mejoras que consumen minerales concretos.",
+              "desc": "Mejoras que consumen minerales concretos. Reparar cuesta dinero y materiales; el mineral de mejora de nivel k se extrae con herramienta de nivel k−1 (documento 02).",
               "done_when": "Se puede mejorar y reparar una herramienta.",
               "prio": "P1"
             },
@@ -2258,8 +2258,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        1215,
-        2155
+        1219,
+        2159
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -2712,7 +2712,7 @@
               "title": "Modelo de los cuatro medidores de relación",
               "est": 6,
               "prio": "P1",
-              "desc": "Modelo de los medidores de la Unión, Esteban, Lucía y Teo (0 a 100, arranques 50, 40, 50 y 60). Las facciones no tienen medidor propio. Debe respetar los tramos del documento 24 (bajo menos de 35, medio 35 a 54, alto 55 o más) y los efectos de 5, 10 y 20 por opción del documento 23.",
+              "desc": "Modelo de los medidores de la Unión, Esteban, Lucía y Teo (0 a 100, arranques 50, 40, 50 y 60). Las facciones no tienen medidor propio. Debe respetar los tramos del documento 24 (bajo menos de 35, medio 35 a 54, alto 55 o más) y los efectos de 5, 10 y 20 por opción del documento 23. Los empleados solo leen el tramo de la Unión para modular su lealtad: contratar, despedir o publicar una oferta no mueve el medidor (documento 04).",
               "done_when": "Los caminos mínimos del documento 24 (sección 6) siguen valiendo: el aval de Esteban se alcanza sin la escena opcional en las tres variantes y los tramos bajos de Lucía y Teo son alcanzables; si cambia un tamaño de efecto, se rehace antes esa sección."
             },
             {
@@ -2763,7 +2763,9 @@
               "status": "backlog",
               "title": "Indicador de vigilancia y sus niveles",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Cuatro niveles sin solape: 0-29, 30-59, 60-84 y 85-100 (cifras exactas ⏳ F0-52); no se llaman «tramos», que son los de los medidores (documento 03).",
+              "done_when": "El indicador global de vigilancia muestra sus cuatro niveles y sube con las operaciones negras."
             },
             {
               "id": "F4-68",
@@ -2777,14 +2779,16 @@
               "status": "backlog",
               "title": "Redada: confiscación, cierre y arresto",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Tras la redada la vigilancia baja a unos 60 y el mercado negro cierra unos días; suspender la licencia no baja el estatus (documentos 03 y 24)."
             },
             {
               "id": "F4-70",
               "status": "backlog",
               "title": "Formas de bajar la vigilancia: soborno, reputación y guardias",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Los sobornos tienen precio creciente y no hay medidor de corrupción (documento 03)."
             },
             {
               "id": "F4-71",
@@ -2798,7 +2802,8 @@
               "status": "backlog",
               "title": "Mercado negro: operación nocturna con volumen limitado",
               "est": 6,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Operación nocturna: en el Bar del Farol de Salinas Blancas, viajando, y con la visita nocturna de Casilda a la tienda, que no es modo tienda. Su costo se mide en bloques (documentos 03 y 22)."
             },
             {
               "id": "F4-73",
@@ -2992,14 +2997,16 @@
               "status": "backlog",
               "title": "Roles y stats de empleado: eficiencia, cuidado y lealtad",
               "est": 8,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Los stats de rendimiento, cuidado y lealtad siguen las reglas de equilibrio del documento 04."
             },
             {
               "id": "F4-99",
               "status": "backlog",
               "title": "Minero automático: expediciones sin minijuego",
               "est": 10,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Un Minero empleado rinde menos que el jugador en promedio y sin minijuego; el entrenamiento lo mejora; los minerales de nivel alto solo los extraen empleados muy entrenados y con la herramienta adecuada; nunca extrae Aetherita; en zonas peligrosas puede herirse (inactivo unos días) o perder la carga de esa expedición (documento 04)."
             },
             {
               "id": "F4-100",
@@ -3065,6 +3072,15 @@
               "title": "Arte de empleados: retratos y sprites",
               "est": 8,
               "prio": "P1"
+            },
+            {
+              "id": "F4-234",
+              "status": "backlog",
+              "title": "Bolsa de la Unión",
+              "est": 6,
+              "prio": "P2",
+              "desc": "La bolsa de trabajo de la Unión de Mineros (documentos 04 y 26): dónde se publican ofertas y se encuentran candidatos del Hollín, con su relación con el tramo de la Unión pero sin mover el medidor.",
+              "done_when": "La Bolsa de la Unión funciona en la versión 1 como un edificio de Villa Brasa y ofrece candidatos sin cambiar el medidor de la Unión."
             }
           ]
         },
@@ -3188,21 +3204,24 @@
               "status": "backlog",
               "title": "Hardcore: permadeath",
               "est": 8,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "La derrota es energía 0 en una expedición: vuelves con carga parcial y solo se pierde esa carga; en Hardcore solo mata un encuentro de riesgo o un jefe; el mal del éter no mata (documento 02)."
             },
             {
               "id": "F4-122",
               "status": "backlog",
               "title": "Salón de la fama",
               "est": 8,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Se alimenta de las partidas terminadas: la muerte en Hardcore o el cierre del acta (documento 04)."
             },
             {
               "id": "F4-123",
               "status": "backlog",
               "title": "Legado: diseño de las ayudas",
               "est": 4,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "El legado aplica a todas las dificultades, con beneficio menor fuera de Hardcore; sus ayudas llegan desde la escena A1 del Acto II y no cambian el Acto I (documento 04)."
             },
             {
               "id": "F4-124",
@@ -3480,9 +3499,10 @@
             {
               "id": "F4-154",
               "status": "backlog",
-              "title": "Viaje entre regiones: tiempo y costo",
-              "est": 6,
-              "prio": "P2"
+              "title": "Viaje entre regiones: zonas profundas",
+              "est": 4,
+              "prio": "P2",
+              "desc": "El viaje y ver zonas son gratis; la distancia se nota en las zonas profundas, no en un costo de tiempo (documento 01)."
             },
             {
               "id": "F4-155",
@@ -3704,7 +3724,8 @@
               "status": "backlog",
               "title": "Automatización de minijuegos dominados (prueba)",
               "est": 10,
-              "prio": "P3"
+              "prio": "P3",
+              "desc": "Incluye la Detonación en las Galerías (documento 09)."
             }
           ]
         },
@@ -4158,9 +4179,10 @@
             {
               "id": "F5-01",
               "status": "backlog",
-              "title": "Tutorial guiado de los primeros 3 días",
+              "title": "Tutorial guiado de los siete días del Acto I",
               "est": 8,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "El Acto I dura siete días según el documento 27: el tutorial guiado cubre esos siete días, no tres."
             },
             {
               "id": "F5-02",
