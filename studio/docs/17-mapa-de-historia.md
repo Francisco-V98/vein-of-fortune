@@ -40,7 +40,7 @@ El detalle completo (mecánicas, mercado y eventos, arte) está en el cuadro del
 
 ## La puerta del Acto I ✅
 
-El Acto I se cierra cuando **reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes el primer contacto con los empleados**. La primera cuota vence el día 7 y las siguientes, cada 7 días; si no puedes pagar, se prorroga una semana con un pequeño recargo (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor) ⏳ F0-52. No pide estatus, logros ni vías: «Minero con licencia» es el **premio** del cierre, no un requisito. Tampoco pide la cinta 1: si la dejas, queda como misión persistente hasta el IV. Detalle y las demás puertas en [24](24-umbrales-de-acto.md).
+El Acto I se cierra cuando **reabres el puesto, atiendes tu primera cuota (pagada o prorrogada) y tienes el primer contacto con los empleados**. La primera cuota vence el día 7 y las siguientes, cada 7 días; si no puedes pagar, se prorroga una semana con un recargo del 6 % de la cuota en Intermedio (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo del 12 % y el 18 %) ✅. La cuota del día 7 es de 960 esquirlas; las cifras están en [28](28-numeros-base-de-la-economia.md). No pide estatus, logros ni vías: «Minero con licencia» es el **premio** del cierre, no un requisito. Tampoco pide la cinta 1: si la dejas, queda como misión persistente hasta el IV. Detalle y las demás puertas en [24](24-umbrales-de-acto.md).
 
 ## Duración
 
@@ -53,7 +53,7 @@ Se mide en **tiempo real de juego**, no en días del calendario del juego ✅. L
 | III | 4–10 h |
 | IV | 3–6 h |
 
-Esas horas dependen de cuántos minutos dura un día de juego ([01](01-core-loop.md)): siete días en 1,5–3 h son 13–26 minutos por día, y la meta de sesiones cortas de 01 apunta a menos. Con esa misma cuenta, un contrato de empleado de 90 días ([04](04-progresion-y-meta.md)) serían entre 20 y 39 horas de juego, más que el Acto II entero. ⏳ F0-52 Los minutos por día y la duración en días de los contratos de 7, 30 y 90.
+Esas horas dependen de cuántos minutos dura un día de juego ([01](01-core-loop.md)): un día dura unos 13 minutos (entre 12 y 15) ✅, así que los siete días del Acto I son unos 91 minutos, el suelo de su rango. Con esa misma cuenta, el Acto II (4–10 h) son 18 a 46 días y el IV (3–6 h), 14 a 28. Los contratos de empleado son de 7, 14 y 30 días ✅ ([04](04-progresion-y-meta.md)): 1,5 h, 3 h y 6,5 h de juego, menos que un acto entero. Un mes y una estación duran 28 días ✅ (unas 6 h de juego). Cifras en [28](28-numeros-base-de-la-economia.md).
 
 El modo historia **no obliga a seguir la trama con exactitud** ✅: el jugador puede hacer contratos, expediciones y otras acciones secundarias entre un hito y el siguiente. Por eso la duración depende de cómo lo aborde: quien va directo al siguiente hito termina antes, y quien se dedica al comercio y la exploración tarda más. Los umbrales que activan cada acto deben poder cumplirse de varias maneras.
 
@@ -61,5 +61,5 @@ El modo historia **no obliga a seguir la trama con exactitud** ✅: el jugador p
 
 - **Narrativa en detalle:** hoy están definidos el gancho, los cuatro actos, el elenco, la verdad de la Aetherita, las decisiones ([23](23-arbol-de-decisiones.md)), los umbrales ([24](24-umbrales-de-acto.md)) y el cierre ([25](25-finales-y-epilogos.md)). Falta bajar los actos II a IV a escenas y diálogos (guion). El guion del Acto I está en [27](27-guion-del-acto-i.md) y su storyboard ⏳ F0-24; los guiones de los actos II a IV ⏳ F4-128, ⏳ F4-135 y ⏳ F4-142, con la plantilla común ⏳ F4-216.
 - ✅ **Cierre de la historia:** resuelto en [25](25-finales-y-epilogos.md). Cabecera, tarjetas por piezas (destino de cada personaje, facción, mundo y mercado) y el acta de calibración, con hilos abiertos para una segunda parte.
-- ✅ Umbrales concretos que activan cada acto: resueltos en [24](24-umbrales-de-acto.md). Decididos por el autor (2026-10-12): el modelo de puertas, los tramos, los ajustes de efectos y que la relación nace cumplida. Las cifras de estatus ⏳ F4-109, deuda ⏳ F0-52, logros ⏳ F4-116 y el evaluador ⏳ F4-127 se calibran después.
+- ✅ Umbrales concretos que activan cada acto: resueltos en [24](24-umbrales-de-acto.md). Decididos por el autor (2026-10-12): el modelo de puertas, los tramos, los ajustes de efectos y que la relación nace cumplida. Las cifras de estatus ⏳ F4-109, logros ⏳ F4-116 y el evaluador ⏳ F4-127 se calibran después; las de deuda ya están fijadas en [28](28-numeros-base-de-la-economia.md) ✅.
 - ✅ Cuántas bifurcaciones y consecuencias hay por acto: 3 grandes, 6 medianas y 18 pequeñas (3 en el I, 5 en el II, 5 en el III y 5 en el IV). Árbol en [23](23-arbol-de-decisiones.md).

@@ -54,7 +54,7 @@ Mínimo **10 minerales**, cada uno con lore, utilidad y necesidad dentro del jue
 | 9 | **Diamante** | Volátil | Herramientas de corte y lujo extremo |
 | 10 | **Aetherita** | Volátil / estratégico | Combustible casi milagroso, descubierto hace unos 30 años en La Fosa (cronología en [21](21-pasado-de-valdoria.md)). Peligroso, y nadie sabe bien qué es. Eje del misterio principal. ✅ En el Acto III solo se ve su precio y únicamente se compra en el mercado negro (Casilda), como mercancía escasa; la extracción no ocurre hasta el Acto IV ([03](03-comercio.md)) |
 
-🟡 La lista y los lores son una propuesta aceptada en general; los detalles (por ejemplo quién demanda cada uno, precios base, cadena de refinado) se afinan en el diseño del mercado.
+🟡 La lista y los lores son una propuesta aceptada en general; los precios base, la volatilidad y los sectores que demandan cada uno están acordados como base ✅ ([28](28-numeros-base-de-la-economia.md)), y el resto de los detalles (por ejemplo la cadena de refinado) se afinan en el diseño del mercado.
 
 ### Distribución por zona
 

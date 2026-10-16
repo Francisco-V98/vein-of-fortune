@@ -22,7 +22,7 @@ La navegación entre los tres niveles es ⏳ F4-167.
 
 - **Zona** (del mapa) es la región con su asentamiento. **Zona de minado** son las seis de [02](02-extraccion.md); cada una se entra por su **boca de mina**, dentro de un asentamiento.
 - Cada zona tiene **un asentamiento**. **Villa Brasa atiende las dos zonas de minado del Hollín** (Galerías del Hollín y Cañón Ferroso): desde su vista de zona eliges una de las dos bocas. **Puerto Meridiano** es la zona de la capital y no tiene boca de mina.
-- El asentamiento es donde se comercia, se contrata y se vive; la boca de mina es donde se extrae. Moverte entre zonas no gasta bloques pero cuesta un poco de dinero (billete o combustible), y ver las zonas en el mapa es gratis ✅ ([01](01-core-loop.md); decisión del autor, 2026-10-15). Las Cavernas y La Fosa son zonas profundas: 2 bloques, Tarde y Noche, y La Fosa solo abre 3 días por semana ✅ (días ⏳ F0-52). La cifra del costo del viaje ⏳ F0-52 y cómo se ve el viaje ⏳ F4-154.
+- El asentamiento es donde se comercia, se contrata y se vive; la boca de mina es donde se extrae. Moverte entre zonas no gasta bloques pero cuesta un poco de dinero (billete o combustible), y ver las zonas en el mapa es gratis ✅ ([01](01-core-loop.md); decisión del autor, 2026-10-15). El trayecto cuesta entre 30 y 150 esquirlas, 0 entre las dos bocas de Villa Brasa y nada en el Acto I, porque todo ocurre en Villa Brasa ✅ ([28](28-numeros-base-de-la-economia.md)). Las Cavernas y La Fosa son zonas profundas: 2 bloques, Tarde y Noche, y La Fosa solo abre 3 días por semana ✅: los días 2, 4 y 6 de cada semana, y el 7 queda libre para la cuota. Cómo se ve el viaje ⏳ F4-154.
 
 | Zona (región) | Asentamiento | Bocas de mina | Se abre en el acto 🟡 |
 |---|---|---|---|
@@ -62,7 +62,7 @@ Obrero y humo; manda la Unión. La herrería alimenta el Acero y la tienda atien
 | `ed-vb-casa` | Casa obrera (casa base) | gastar | Chimeneas y humo en la vista; descanso y decoración (sección 4) | MVP; mejorable en V1 | ✅ |
 | `ed-vb-reme` | Casa de Reme | gastar (cuotas de la deuda) | Reme, la prestamista; su facción cambia según la partida ([22](22-acto-ii-variantes.md)) | MVP | ✅ |
 | `ed-vb-quiroga` | Oficina del Inspector | gastar (licencias, multas, «trámites») | Quiroga; baja o sube la vigilancia ([03](03-comercio.md)) | MVP | ✅ |
-| `ed-vb-mina-galerias` | Boca de las Galerías del Hollín | minijuego (Picado, Perforación y, con el explosivo, Detonación) | Carbón principal; Teo enseña el oficio | MVP | ✅ |
+| `ed-vb-mina-galerias` | Boca de las Galerías del Hollín | minijuego (Picado y Perforación; la Detonación, con el explosivo, desde el Acto III y no en el MVP) | Carbón principal; Teo enseña el oficio | MVP | ✅ |
 | `ed-vb-mina-canon` | Boca del Cañón Ferroso | minijuego (Picado, Perforación) | Hierro principal; bandas rivales | V1 | ✅ |
 | `ed-vb-union` | Sede de la Unión | ganar (Bolsa de la Unión: contratar), gastar | Medidor de la Unión, huelgas, Delegado de la Unión | V1 | ✅ |
 | `ed-vb-periodico` | Quiosco y redacción de La Voz del Hollín | comprar (prensa, anuncios), ganar (empleos) | Sesgo sindical; vende también el Heraldo y el Teletipo; Lucía y el voceador pasan por aquí | V1 | ✅ |
@@ -116,7 +116,7 @@ Sin vivienda, lujo ni azar. Solo historia y la boca de mina.
 
 | ID | Edificación | Rol | Qué la hace de su zona | Versión | Marca |
 |---|---|---|---|---|---|
-| `ed-fo-mina` | Boca de La Fosa del Éter | minijuego (Contención, Cincelado) | Aetherita y diamante principales; mostrador de filtros; solo abre 3 días por semana, los de calibración de la Comisión ✅ (días ⏳ F0-52) | V1 | ✅ |
+| `ed-fo-mina` | Boca de La Fosa del Éter | minijuego (Contención, Cincelado) | Aetherita y diamante principales; mostrador de filtros; solo abre 3 días por semana, los de calibración de la Comisión ✅ (los días 2, 4 y 6 de cada semana) | V1 | ✅ |
 | `ed-fo-campamento-viejo` | Campamento de la Primera Expedición | historia | Cinta 6, en la caja del equipo de ensayo | V1 | ✅ |
 | `ed-fo-barracon` | Barracón de calibración | historia | Cintas 7 y 8 y el acta de calibración | V1 | ✅ |
 
@@ -190,14 +190,15 @@ El autor pidió que el jugador pueda **comprarle una joyería pequeña a su due�
 
 Que existan casas y mansiones con vistas distintas, sus nombres, su lugar y su versión V2.1 son ✅ (decisión del autor, 2026-10-13).
 
-No hay casas en las Cavernas (campamento en zona disputada) ni en la Fosa (militarizada). Precios, impuesto predial y recargo por saqueo ⏳ F0-52; el saqueo ⏳ F4-84.
+No hay casas en las Cavernas (campamento en zona disputada) ni en la Fosa (militarizada). Para V2.1, el orden de magnitud es de 150 000 a 250 000 esquirlas para el chalet y el caserón y de 600 000 a 2,5 millones para las mansiones ✅ ([28](28-numeros-base-de-la-economia.md)). El modelo del saqueo ⏳ F4-84.
 
 ### 4.2 La casa base completa
 
 La casa **llega amueblada y completa** desde el MVP, sin habitaciones por desbloquear. En V1 se mejora (⏳ F4-110) y **nace con ranuras de decoración** ✅; las ranuras (⏳ F4-226) se hacen en el hito F4.7, antes de la casa mejorable. Las ranuras son cinco, fijas 🟡: **sala, despacho, dormitorio, vitrina y exterior**. Cada una acepta un objeto de una región (forja y lámparas del Hollín, pieles y mapas de la sierra, faroles y redes del litoral, geodas de las Cavernas, platería de la capital). En V1 cada ranura trae un objeto inicial; el catálogo variado llega en V2.1.
 
-- **Bonos pequeños 🟡:** la casa recupera más energía al dormir ([04](04-progresion-y-meta.md)); las ranuras no dan bonos de juego, son cosméticas.
-- **Costos:** impuesto predial (sumidero) y riesgo de saqueo, que se mitiga con guardias y protección ([07](07-sociedad-y-eventos.md)).
+- **Bonos pequeños 🟡:** la casa mejor da un poco más de energía al empezar cada expedición: +2 por nivel, hasta +8 en el nivel 4 ✅ ([04](04-progresion-y-meta.md)); las ranuras no dan bonos de juego, son cosméticas.
+- **Precios de la casa base en V1 ✅:** remozada, 4 000 esquirlas; de comerciante, 22 000; de empresario, 110 000; residencia, 450 000 ([28](28-numeros-base-de-la-economia.md)).
+- **Costos:** impuesto predial (sumidero) de un 1 % del valor al mes y riesgo de saqueo, que se mitiga con guardias y protección ([07](07-sociedad-y-eventos.md)). Un seguro contra saqueo cuesta un 0,3 % del valor de la casa al mes; sin él, un saqueo cuesta cerca de un 3 % del efectivo ([28](28-numeros-base-de-la-economia.md)).
 - **Varias casas:** puedes tener varias; duermes en la **casa base activa**, y las otras dan su vista y su decoración y cobran su impuesto.
 
 ### 4.3 Qué se deja para después
@@ -237,10 +238,10 @@ El **Salón del Farol** es el casino de Puerto Meridiano. Abre de noche y lo ope
 
 | Cosa | Lugar temático | Qué hace | Por qué ahí | Versión |
 |---|---|---|---|---|
-| **Ropa**: un traje por escalón de estatus (Heredero a Magnate) | V1: pantalla de estilo de vida ⏳ F4-119; V2.1: sastrería de la capital | Solo cambia el sprite pequeño; las hojas de modelo y los retratos no se rehacen ✅ | La ropa dice a qué clase perteneces ([07](07-sociedad-y-eventos.md)); la sastrería es de la capital | V1 y V2.1 |
-| **Auto**: uno en V1 (⏳ F4-112); en V2.1 tres 🟡 | V1: pantalla de estilo de vida; V2.1 🟡: carreta (herrería de Villa Brasa), camioneta (Altafría), automóvil (concesionaria) | El de V1 es solo estatus y aspecto, sin efecto en el viaje ✅; el viaje cuesta un poco de dinero y eso da sentido al auto ✅ ([01](01-core-loop.md)); el efecto funcional pequeño en tiempo de viaje y carga llega con la concesionaria de V2.1 ⏳ F6-57; ninguno es obligatorio | Cada vehículo es del lugar que lo usa: carreta en el Hollín obrero, camioneta en la sierra del Consorcio, automóvil en la capital | V1 y V2.1 |
+| **Ropa**: un traje por escalón de estatus (Heredero a Magnate) | V1: pantalla de estilo de vida ⏳ F4-119; V2.1: sastrería de la capital | Solo cambia el sprite pequeño; las hojas de modelo y los retratos no se rehacen ✅. Un traje cuesta 300 esquirlas (Minero con licencia), 2 500 (Comerciante), 16 000 (Empresario) o 90 000 (Magnate) ✅ | La ropa dice a qué clase perteneces ([07](07-sociedad-y-eventos.md)); la sastrería es de la capital | V1 y V2.1 |
+| **Auto**: uno en V1 (⏳ F4-112); en V2.1 tres 🟡 | V1: pantalla de estilo de vida; V2.1 🟡: carreta (herrería de Villa Brasa), camioneta (Altafría), automóvil (concesionaria) | El de V1 es solo estatus y aspecto, sin efecto en el viaje ✅, y cuesta 70 000 esquirlas, con un mantenimiento del 0,5 % al mes ✅; el viaje cuesta un poco de dinero y eso da sentido al auto ✅ ([01](01-core-loop.md)); el efecto funcional pequeño en tiempo de viaje y carga llega con la concesionaria de V2.1 ⏳ F6-57; ninguno es obligatorio | Cada vehículo es del lugar que lo usa: carreta en el Hollín obrero, camioneta en la sierra del Consorcio, automóvil en la capital | V1 y V2.1 |
 | **Embarcaciones**: bote, pesquero y barcaza | Astillero de Salinas Blancas | El bote y el pesquero mejoran la pesca; la barcaza aligera el transporte de salitre por la costa (efecto ⏳ F6-63) | Solo hay puerto de pesca y carga en los Salares | V2.2 |
-| **Yate** | Puerto deportivo de la capital | Solo estatus | El lujo vive en Puerto Meridiano | V2.2 |
+| **Yate** | Puerto deportivo de la capital | Solo estatus, de unos 3 millones de esquirlas ✅ | El lujo vive en Puerto Meridiano | V2.2 |
 | **Pesca** | Muelle y lonja de Salinas Blancas | Se juega con el motor del Cribado ([09](09-minijuegos.md): inclinación y caudal, «como la pesca»); el pescado se vende en la lonja | El Cribado es del litoral y la lonja ya es el comercio del puerto | V2.2 |
 | **Inversiones** | Pestaña de la Bolsa, no edificio | Sectores de [03](03-comercio.md): agricultura (la mueve el salitre), tecnología (la mueve el cuarzo) y pesca (la mueven las noticias del litoral; no mueve minerales); con spread y tope | La Bolsa es donde se especula; sin tope sería dinero gratis | V2.2 |
 
@@ -320,7 +321,7 @@ Las razones de cada colocación; nada se pone sin una razón de mundo. ✅ Las d
 
 | Riesgo | Respuesta |
 |---|---|
-| Casas, casino e inversión son sumideros o atajos de dinero | Se calibran con ⏳ F0-52 y ⏳ F5-06; la inversión usa los frenos de [03](03-comercio.md) (spread y tope) |
+| Casas, casino e inversión son sumideros o atajos de dinero | Sus precios ya están en [28](28-numeros-base-de-la-economia.md) ✅ y se ajustan con ⏳ F5-06; la inversión usa los frenos de [03](03-comercio.md) (spread y tope) |
 | Arte: la ropa multiplica piezas y la decoración es el mayor pozo | Ropa solo en el sprite pequeño; ranuras fijas; objetos como íconos, no sprites animados |
 | Legal: azar y público | Sección 5 y [11](11-legal-y-cumplimiento.md); ⏳ F6-13 |
 | Alcance: 44 edificaciones en total | Cada versión se corta sola; V2.1 y V2.2 son recortables sin tocar la historia |
@@ -330,10 +331,10 @@ Las razones de cada colocación; nada se pone sin una razón de mundo. ✅ Las d
 
 ## 10 · Pendiente
 
-- ⏳ F0-52 Precios de casas, vehículos, ropa y embarcaciones, impuesto predial y recargo por saqueo.
+- ✅ Precios de casas, vehículos, ropa y yate, impuesto predial y recargo por saqueo: fijados en [28](28-numeros-base-de-la-economia.md). Los de bote, pesquero y barcaza ⏳ F6-63.
 - ⏳ F4-109 Qué escalón pide cada traje.
 - ⏳ F4-110, ⏳ F4-111 y ⏳ F4-112 Casa, ropa y auto de V1; ⏳ F4-119 la pantalla donde se compran.
-- ⏳ F4-154 Costo en dinero del viaje entre zonas; ⏳ F6-57 efecto funcional de los vehículos de V2.1 y ⏳ F6-63 el de las embarcaciones.
+- ⏳ F4-154 Cómo se ve el viaje entre zonas (su costo en dinero ya está fijado ✅); ⏳ F6-57 efecto funcional de los vehículos de V2.1 y ⏳ F6-63 el de las embarcaciones.
 - ⏳ F6-13 y ⏳ F6-14 Clasificación por edad y juego responsable del casino.
 - ⏳ F1-20 Inglés de los términos nuevos del glosario ([18](18-biblia-narrativa.md)).
 - Siguen 🟡 hasta que el autor las revise: las horas, el número exacto de edificaciones por zona, las ranuras exactas y los objetos de decoración, los vehículos por zona, los efectos de los bonos y la ubicación de la Lotería.

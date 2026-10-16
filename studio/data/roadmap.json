@@ -566,9 +566,9 @@
               "id": "F0-52",
               "title": "Modelo económico: números base",
               "est": 10,
-              "status": "backlog",
+              "status": "done",
               "prio": "P1",
-              "desc": "Decidir con el autor los números base: precio y volatilidad de cada mineral, sectores de demanda, spreads, costos de herramientas, salarios, deuda y duración del día. Se cargan en el registro del mundo. Incluye también impuestos, multas, vigilancia, precios de información, renta, mora, mejora de tienda para contratar, materiales de reparar, energía por mena, pérdida y minutos por día frente a contratos de 7, 30 y 90 días. Incluye los salarios y el entrenamiento de empleados, el impacto del jugador en el precio y el costo del viaje y de la mejora de tienda.",
+              "desc": "Decidir con el autor los números base: precio y volatilidad de cada mineral, sectores de demanda, spreads, costos de herramientas, salarios, deuda y duración del día. Se cargan en el registro del mundo. Incluye también impuestos, multas, vigilancia, precios de información, renta, mora, mejora de tienda para contratar, materiales de reparar, energía por mena, pérdida y minutos por día frente a contratos de 7, 14 y 30 días. Incluye los salarios y el entrenamiento de empleados, el impacto del jugador en el precio y el costo del viaje y de la mejora de tienda.",
               "done_when": "Todos los minerales con precio base, volatilidad y demanda; costos y salarios acordados."
             },
             {
@@ -1375,7 +1375,7 @@
               "title": "Ciclo de 3 bloques y avance del día",
               "est": 6,
               "status": "backlog",
-              "desc": "Mañana, tarde y noche con eventos de fin de día. Un bloque admite medio bloque. Viajar y ver zonas son gratis; minar y abrir la tienda cuestan un bloque completo y la tienda no se abre de noche; trámites, misiones y eventos cuestan 0, medio o un bloque según su peso. Botón «Esperar» para saltar un bloque (documento 01). La Fosa abre 3 días por semana y las expediciones profundas ocupan Tarde y Noche.",
+              "desc": "Mañana, tarde y noche con eventos de fin de día. Un bloque admite medio bloque. Ver zonas en el mapa no cuesta nada y viajar entre regiones cuesta un pequeño precio en dinero (documento 28); minar y abrir la tienda cuestan un bloque completo y la tienda no se abre de noche; trámites, misiones y eventos cuestan 0, medio o un bloque según su peso. Botón «Esperar» para saltar un bloque (documento 01). La Fosa abre 3 días por semana y las expediciones profundas ocupan Tarde y Noche.",
               "done_when": "Se puede avanzar días consumiendo bloques.",
               "prio": "P0"
             },
@@ -1567,7 +1567,7 @@
               "title": "Pantallas placeholder: día, mina, mercado y tienda en horizontal",
               "est": 10,
               "status": "backlog",
-              "desc": "Interfaz funcional con formas y colores de la paleta.",
+              "desc": "Interfaz funcional con formas y colores de la paleta. Incluye decidir con el autor el símbolo o la abreviatura de la moneda (esquirlas) para los precios en pantalla.",
               "done_when": "Se navega entre las pantallas con ratón, teclado y mando.",
               "prio": "P0"
             },
@@ -1948,7 +1948,7 @@
               "title": "Deuda: cuotas y cierre del Acto I",
               "est": 6,
               "status": "backlog",
-              "desc": "Pagos semanales a Reme: la cuota llega cada 7 días y la primera vence el día 7. En Novato e Intermedio, la prórroga desplaza la serie una semana con un pequeño recargo por semana de atraso, y no pagar equivale a prórroga automática. En Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor. La deuda nunca bloquea (montos y recargos ⏳ F0-52).",
+              "desc": "Pagos semanales a Reme: la cuota llega cada 7 días y la primera vence el día 7. En Novato e Intermedio, la prórroga desplaza la serie una semana con un pequeño recargo por semana de atraso, y no pagar equivale a prórroga automática. En Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor. La deuda nunca bloquea (capital 24.000, cuota del día 7 de 960 y recargos por dificultad en el documento 28).",
               "done_when": "Atender la primera cuota, pagada o prorrogada según la dificultad, junto con reabrir el puesto y el primer contacto con los empleados, cierra el Acto I según el documento 27.",
               "prio": "P0"
             },
@@ -2507,7 +2507,9 @@
               "status": "backlog",
               "title": "Sectores de demanda: ferrocarril, energía, militar, agricultura, lujo y tecnología",
               "est": 8,
-              "prio": "P0"
+              "prio": "P0",
+              "desc": "Construir el modelo de demanda por sectores (ferrocarril, energía, militar, agricultura, lujo y tecnología): cada mineral reparte su demanda entre sectores con los pesos del documento 28 (ya cargados en el registro del mundo) y los eventos sectoriales mueven al mineral según su peso. Los pesos los fijó F0-52; esta tarea implementa el modelo y los eventos.",
+              "done_when": "Un evento sectorial mueve cada mineral según su peso en ese sector y las pruebas lo comprueban con los pesos del registro del mundo."
             },
             {
               "id": "F4-32",
@@ -2784,7 +2786,7 @@
               "title": "Indicador de vigilancia y sus niveles",
               "est": 6,
               "prio": "P1",
-              "desc": "Cuatro niveles sin solape: 0-29, 30-59, 60-84 y 85-100 (cifras exactas ⏳ F0-52); no se llaman «tramos», que son los de los medidores (documento 03).",
+              "desc": "Cuatro niveles sin solape: 0-29, 30-59, 60-84 y 85-100 (subida, bajada, multas y redada en el documento 28); no se llaman «tramos», que son los de los medidores (documento 03).",
               "done_when": "El indicador global de vigilancia muestra sus cuatro niveles y sube con las operaciones negras."
             },
             {
@@ -3108,7 +3110,7 @@
               "title": "Mejora de la tienda y desbloqueo de «Contratar»",
               "est": 6,
               "prio": "P1",
-              "desc": "La mejora de la tienda que habilita contratar empleados: se compra en la propia tienda desde el Acto II con dinero (cifra ⏳ F0-52) y, mientras falta, el botón «Contratar» aparece bloqueado con ese motivo (documentos 04 y 27).",
+              "desc": "La mejora de la tienda que habilita contratar empleados: se compra en la propia tienda desde el Acto II con dinero (3.500 esquirlas, documento 28) y, mientras falta, el botón «Contratar» aparece bloqueado con ese motivo (documentos 04 y 27).",
               "done_when": "Comprar la mejora de tienda desbloquea «Contratar» y antes de comprarla el botón muestra su motivo."
             }
           ]
@@ -3531,7 +3533,7 @@
               "title": "Viaje entre regiones: costo en dinero y zonas profundas",
               "est": 4,
               "prio": "P2",
-              "desc": "El viaje y ver zonas en el mapa no gastan bloque; viajar tiene un pequeño costo en dinero (billete o combustible; cifra ⏳ F0-52) que el auto de V2.1 puede reducir. Las zonas profundas (Cavernas y La Fosa) cuestan 2 bloques, ocupan Tarde y Noche y el juego lo recomienda antes de salir; las Cavernas siempre están abiertas y La Fosa solo abre 3 días por semana (los días de calibración de la Comisión). Documento 01."
+              "desc": "El viaje y ver zonas en el mapa no gastan bloque; viajar tiene un pequeño costo en dinero (billete o combustible; tarifas por trayecto en el documento 28) que el auto de V2.1 puede reducir. Las zonas profundas (Cavernas y La Fosa) cuestan 2 bloques, ocupan Tarde y Noche y el juego lo recomienda antes de salir; las Cavernas siempre están abiertas y La Fosa solo abre 3 días por semana (los días de calibración de la Comisión). Documento 01."
             },
             {
               "id": "F4-155",

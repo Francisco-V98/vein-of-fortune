@@ -24,6 +24,7 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
   - 🟡 Nota: los juegos de azar simulados afectan la clasificación por edad en las tiendas (Steam y, después, las de apps); revisar requisitos antes.
 - Capa de imperio: sucursales, otras ciudades, plantillas más grandes de empleados. (Los empleados básicos entran a mitad del juego, no aquí.)
 - Eventos de temporada.
+- **Evolutivo ✅ (decisión del autor, 2026-10-15):** consumibles de recarga de energía y similares: versiones futuras, mucho después de la V1, sin tarea ni fecha.
 - Calidad de minerales (común, buena, excelente) y requisitos de calidad en contratos.
 - PvP asíncrono (descartado por ahora).
 - Móvil (Android e iOS) ✅, después de la 1.0 publicada y estable en Steam, con un adaptador táctil (2026-10-15). Consolas: se evalúan aparte, sin compromiso.
@@ -137,10 +138,10 @@ Resueltas el 2026-10-15: las stats del jugador ([04](04-progresion-y-meta.md)), 
 | 2026-10-11 | CLI de GitHub instalada y autenticada; los PR se crean desde la terminal |
 | 2026-10-10 | Personaje personalizable: nombre de una palabra, tienda con espacios, hombre o mujer (1 modelo de cada uno en v1) |
 | 2026-10-12 | Medidores de relación: solo cuatro (Unión, Esteban, Lucía y Teo); el Consorcio, el Ministerio y Los Faroleros se miden por la alianza elegida |
-| 2026-10-12 | Cuota de la deuda del Acto I cada 7 días, la primera el día 7; si no puedes pagarla, una semana más con un pequeño recargo (montos ⏳ F0-52) |
+| 2026-10-12 | Cuota de la deuda del Acto I cada 7 días, la primera el día 7; si no puedes pagarla, una semana más con un pequeño recargo (montos: cuota de 960 esquirlas el día 7 y recargo de 58 en Intermedio, [28](28-numeros-base-de-la-economia.md)) |
 | 2026-10-12 | Aetherita en el Acto III: precio visible y compra solo en el mercado negro (Casilda), como mercancía escasa; la extracción llega en el IV |
 | 2026-10-12 | El Acto I empieza con un detector básico heredado de Anselmo; el cuarzo lo mejora más adelante |
-| 2026-10-12 | Vigilancia: un indicador global de 0 a 100 que sube con las operaciones negras; los cambios se cuentan en puntos |
+| 2026-10-12 | Vigilancia: un indicador global de 0 a 100 que sube con las operaciones negras; los cambios se escriben «vigilancia +N» |
 | 2026-10-12 | Escalera de estatus: el primer escalón se llama «Heredero» (*Heir*) y los cinco nombres quedan decididos |
 | 2026-10-12 | Colores: la subida de los gráficos va en azul hielo y el farol de Los Faroleros es vinotinto mate con luz ámbar; el cian y el rojo-rosado son solo de la Aetherita |
 | 2026-10-13 | Mapa vivo: la región es la zona, con un asentamiento y la boca de mina como una edificación más; estructura mapa, zona y edificación (ver 26) |
@@ -166,5 +167,8 @@ Resueltas el 2026-10-15: las stats del jugador ([04](04-progresion-y-meta.md)), 
 | 2026-10-15 | Nube y partidas: Steam Auto-Cloud con una carpeta de guardados pequeños y hasta 5 partidas; en Hardcore manda el guardado local (no se restaura desde la nube tras morir) |
 | 2026-10-15 | Fases: la F1 deja un proyecto Godot que corre en PC; la F5 lanza en Steam; la F6 es posterior al lanzamiento. El móvil es una fase propia después, y las actualizaciones V2.x pueden seguir en PC o ir también al móvil |
 | 2026-10-15 | Pruebas en un PC Windows real y, si hay una, en la Steam Deck: requisito de la F1. El autor trabaja en Mac |
-| 2026-10-15 | Sin cambio: pago único sin anuncios ni compras, autoguardado instantáneo (la Steam Deck suspende y no se quiere perder progreso) y los números de F0-52 |
+| 2026-10-15 | Sin cambio: pago único sin anuncios ni compras, autoguardado instantáneo (la Steam Deck suspende y no se quiere perder progreso) y las cifras base de la economía |
 | 2026-10-15 | 🟡 Propuestas aplazadas a su tarea: resolución base y modo de ventana ⏳ F1-06; precio y DLC (pago único, sin DLC de pago en la v1) ⏳ F5-33, ⏳ F6-01, ⏳ F6-61; demo con el Acto I ⏳ F3-23; declaración de IA de Steam y términos de PixelLab ⏳ F4-227, ⏳ F5-30; casino solo con moneda del juego y cuestionario de Steam sin azar en la v1 ⏳ F6-13 |
+| 2026-10-15 | Economía (F0-52): moneda «esquirlas»; día de 12–15 min con tres bloques de unos 4–5 min; semana, mes y estación de 28 días (el día 1 es el 22 de otoño y el invierno empieza el día 8); contratos de 7, 14 y 30 días; La Fosa abre los días 2, 4 y 6 (ver [28](28-numeros-base-de-la-economia.md)) |
+| 2026-10-15 | Economía (F0-52): escala con carbón a 50, deuda de la herencia de 24.000 y cuota del día 7 de 960; «punto» de mercado = 1 % del precio base, «pp» para el interés y «vigilancia +N»; el abono anónimo solo paga intereses y la vía de deuda mide el capital que pagas de tu bolsillo (25 % y 50 % de 24.000), con el Consorcio hasta un 30 % |
+| 2026-10-15 | Economía (F0-52): la energía se rellena en cada expedición (2 a 3 menas al inicio, crece con skills y herramientas); un nivel de herramienta es un paquete (5 niveles, regla del nivel anterior); la Aetherita pide taladro o cincel de nivel 5 con filtro; explosivo desde el Acto III; la Bolsa cobra medio spread y no tiene impuesto de venta; los empleados tienen un papel residual en el Acto IV; los sobornos a Quiroga se recuperan 1 cada 56 días |

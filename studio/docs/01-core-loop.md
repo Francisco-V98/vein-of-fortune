@@ -18,7 +18,7 @@ Decisión del autor (2026-10-15):
 
 | Acción | Cuesta |
 |---|---|
-| Viajar entre zonas | **No gasta bloque**, pero cuesta **un poco de dinero** (billete o combustible; cifra ⏳ F0-52) ✅ |
+| Viajar entre zonas | **No gasta bloque**, pero cuesta **un poco de dinero** (billete o combustible; de 30 a 150 esquirlas por trayecto según el destino, [28](28-numeros-base-de-la-economia.md)) ✅ |
 | Ver las zonas en el mapa | **Gratis** ✅ |
 | Minar (una expedición) | **1 bloque completo**; las zonas profundas, 2 bloques (ver abajo) ✅ |
 | Abrir la tienda y comerciar | **1 bloque completo**, y **nunca de noche** ✅ |
@@ -26,7 +26,7 @@ Decisión del autor (2026-10-15):
 | Mirar el mercado, leer noticias y organizar el inventario | **No consume bloques** ✅ |
 | Varias expediciones al día | Sí, mientras queden bloques, como en Dave the Diver ✅ |
 
-- ✅ **El viaje no gasta bloque pero tiene un pequeño costo en dinero** (decisión del autor, 2026-10-15): el billete o el combustible. Así el auto, que en V1 es solo estatus, gana sentido cuando en V2.1 llegue su pequeño efecto funcional con la concesionaria ([04](04-progresion-y-meta.md), [26](26-zonas-y-edificios.md)). Ver las zonas en el mapa no cuesta nada. La cifra del costo ⏳ F0-52 y el tiempo y costo por trayecto ⏳ F4-154.
+- ✅ **El viaje no gasta bloque pero tiene un pequeño costo en dinero** (decisión del autor, 2026-10-15): el billete o el combustible. Así el auto, que en V1 es solo estatus, gana sentido cuando en V2.1 llegue su pequeño efecto funcional con la concesionaria ([04](04-progresion-y-meta.md), [26](26-zonas-y-edificios.md)). Ver las zonas en el mapa no cuesta nada. El costo por trayecto es de 30 a 150 esquirlas según el destino, y en el Acto I no hay viaje porque todo ocurre en Villa Brasa ✅ ([28](28-numeros-base-de-la-economia.md)); su construcción y los tiempos del trayecto ⏳ F4-154.
 - ✅ **Medio bloque** es la mitad de un bloque: dos medios bloques hacen uno. Sirve para lo que pesa poco (un trámite corto, una visita, una conversación que mueve la historia).
 - ✅ **El modo tienda empieza en el momento en que decides abrirla**, en el bloque que quieras (mañana o tarde, nunca de noche). Desde ahí se comercia y se gestiona: cerrar ventas a clientes y contratos y jugar las dinámicas de la tienda ([03](03-comercio.md)).
 - ✅ **De noche la tienda no se abre.** Sí caben las escenas, las visitas y el mercado negro, que no es el modo tienda (el bar de Salinas Blancas y la visita nocturna de Casilda, [03](03-comercio.md)).
@@ -40,7 +40,7 @@ Decisión del autor (2026-10-15): una expedición a una **zona profunda** (las *
 
 - ✅ **El juego lo recomienda antes de salir:** «Esta expedición ocupa Tarde y Noche; la tienda queda para la Mañana».
 - ✅ **Las Cavernas están siempre abiertas.** Las demás zonas de minado cuestan 1 bloque.
-- ✅ **La Fosa solo abre 3 días por semana**, los días de calibración de la Comisión ([24](24-umbrales-de-acto.md), [26](26-zonas-y-edificios.md)). Los días exactos se calibran en ⏳ F0-52. Esto no afecta al Acto I: la Fosa no se visita hasta el Acto IV ([17](17-mapa-de-historia.md)).
+- ✅ **La Fosa solo abre 3 días por semana**, los días de calibración de la Comisión ([24](24-umbrales-de-acto.md), [26](26-zonas-y-edificios.md)). Los días son el **2, el 4 y el 6 de cada semana** (la semana empieza el día 1 y el día 7 queda libre para la cuota) ✅ ([28](28-numeros-base-de-la-economia.md)). Esto no afecta al Acto I: la Fosa no se visita hasta el Acto IV ([17](17-mapa-de-historia.md)).
 - ⏳ F2-02 Qué pasa si el jugador sale a una zona profunda con la Tarde ya gastada (si puede salir con un solo bloque libre o debe esperar al día siguiente).
 
 ### Por qué la libertad no rompe el juego 🟡
@@ -63,7 +63,8 @@ Para que ninguna mitad domine, la otra se vuelve necesaria:
 - ✅ **Hasta 5 partidas guardables**, y el jugador **elige cuál jugar** al abrir el juego. El estado de partida ⏳ F2-01 y el guardado ⏳ F2-03 lo construyen así ([10](10-tecnico-y-herramientas.md), [14](14-arquitectura-y-modularidad.md)). En Steam se sincronizan con Auto-Cloud, y en Hardcore manda el guardado local.
 - ✅ **El azar queda fijado al guardar el punto de control.** Cerrar y reabrir a mitad de una acción no repite la tirada, para que nadie esquive una derrota (sobre todo en Hardcore) recargando. El estado de partida lo guarda ⏳ F2-01.
 - ✅ Se puede cerrar o suspender en cualquier momento sin perder progreso (autoguardado instantáneo): la Steam Deck suspende y no se quiere perder avance (decisión del autor, 2026-10-15).
-- ⏳ F0-52 Cuántos minutos dura un bloque y un día completo; la duración de cada acto sale de ahí ([17](17-mapa-de-historia.md)).
+- ✅ **Tiempo de juego:** un día completo dura **12–15 minutos** (≈ 13 nominales) y cada bloque **≈ 4–5 minutos**. La semana son 7 días y el **mes y la estación duran 28 días** cada uno (4 estaciones por año); de ahí sale la duración de cada acto ([17](17-mapa-de-historia.md), [28](28-numeros-base-de-la-economia.md)).
+- ✅ **Calendario de arranque:** el día 1 es el 22 de otoño, así que el invierno empieza el día 8, el primer día del Acto II ([28](28-numeros-base-de-la-economia.md)).
 
 ## Ciclo macro
 

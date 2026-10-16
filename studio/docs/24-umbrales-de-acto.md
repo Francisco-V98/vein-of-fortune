@@ -23,7 +23,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Tema | Decisión |
 |---|---|
 | Modelo | **Una puerta por acto** con vías «k de n» (dos de tres entre deuda, logros y relación). **Piso de estatus solo en dos puertas**: A5 del Acto II (Comerciante) y el círculo del Acto III (Empresario). Las anclas A1 a A6 van **encadenadas**: cada una se dispara con la anterior resuelta ✅ |
-| Acto I | Se cierra al **reabrir el puesto, atender la primera cuota** (pagada o prorrogada) y tener el **primer contacto con los empleados**. La cuota vence **cada 7 días y la primera, el día 7**; si no puedes pagar, se prorroga una semana con un pequeño recargo (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo mayor) ⏳ F0-52. «Minero con licencia» es el **premio** del cierre, no un requisito ✅. El primer contacto con los empleados es la ficha de un candidato con «Contratar» **bloqueado**, y su motivo es la mejora de la tienda pendiente, que se compra en la propia tienda desde el Acto II ✅; contratar de verdad no forma parte de la puerta (decisión del autor, 2026-10-15) |
+| Acto I | Se cierra al **reabrir el puesto, atender la primera cuota** (pagada o prorrogada) y tener el **primer contacto con los empleados**. La cuota vence **cada 7 días y la primera, el día 7**; si no puedes pagar, se prorroga una semana con un recargo del 6 % de la cuota en Intermedio (en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo del 12 % y el 18 %) ✅. La cuota del día 7 es de 960 esquirlas ([28](28-numeros-base-de-la-economia.md)). «Minero con licencia» es el **premio** del cierre, no un requisito ✅. El primer contacto con los empleados es la ficha de un candidato con «Contratar» **bloqueado**, y su motivo es la mejora de la tienda pendiente, que se compra en la propia tienda desde el Acto II ✅; contratar de verdad no forma parte de la puerta (decisión del autor, 2026-10-15) |
 | Tramos | Para los cuatro medidores: **bajo menos de 35, medio 35 a 54, alto 55 o más**. Arrancan en 50; Esteban en 40 y Teo en 60 ✅ |
 | Tramo medio | Teo **se queda** (si lo llevaste a revisión). Lucía **no publica**, así que lo publicas tú con costo alto y poco alcance. El **reproductor** lo entrega Lucía solo en tramo alto; con medio o bajo lo entrega Reme ✅ |
 | Aval de Esteban | Basta su medidor en tramo alto. Si no lo tienes, el aval se muestra **bloqueado con el motivo**, y siempre quedan el sello de Montenegro y la presión de tu alianza ✅ |
@@ -67,21 +67,21 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 
 ## 4 · Las tres vías 🟡
 
-**Estado:** ✅ cómo se mide cada vía, qué no cuenta (incluidos los abonos anónimos) y que la relación nace cumplida; 🟡 las cifras de deuda (25 % y 50 %) y de logros (4 y 10), **aplazadas a propósito**: nada anterior depende de ellas, porque las puertas se leen en A5 y en el círculo, y las calibra la economía ⏳ F0-52 (deuda) y ⏳ F4-116 (logros). Si cambian, no hay que rehacer ninguna escena ni regla. ⏳ F4-127 el evaluador.
+**Estado:** ✅ cómo se mide cada vía, qué no cuenta (incluidos los abonos anónimos), que la relación nace cumplida y las cifras de deuda (25 % y 50 % del capital K = 24 000, es decir 6 000 y 12 000 esquirlas; [28](28-numeros-base-de-la-economia.md)); 🟡 las de logros (4 y 10), **aplazadas a propósito**: nada anterior depende de ellas, porque las puertas se leen en A5 y en el círculo, y las calibra ⏳ F4-116. Si cambian, no hay que rehacer ninguna escena ni regla. ⏳ F4-127 el evaluador.
 
 | Vía | Cómo se mide ✅ | Acto II (A5) | Acto III (círculo) | Qué no cuenta ✅ |
 |---|---|---|---|---|
-| **Deuda** | % del capital que pagaste **de tu bolsillo** ✅ | 25 % 🟡 ⏳ F0-52 | 50 % 🟡 ⏳ F0-52 | Lo que asume el Consorcio ✅; los abonos anónimos de Reme ✅; la deuda de luz de los Faroleros no la rompe 🟡 |
+| **Deuda** | % del capital que pagaste **de tu bolsillo** ✅ | 25 % ✅ (6 000 esquirlas) | 50 % ✅ (12 000 esquirlas) | Lo que asume el Consorcio ✅; los abonos anónimos de Reme ✅; los intereses y los recargos ✅; la deuda de luz de los Faroleros no la rompe ✅ |
 | **Logros** | Número de logros del sistema ✅ | 4 🟡 ⏳ F4-116 | 10 🟡 ⏳ F4-116 | Ninguno es obligatorio: sirve cualquiera 🟡 ⏳ F4-115 |
 | **Relación** | Al menos un medidor en tramo alto ✅ | Igual ✅ | Igual ✅ | Reme y Montenegro no tienen medidor ✅ |
 
 **Teo arranca en 60 (tramo alto) y la vía de relación nace cumplida** ✅. Es lo buscado: la relación es la vía más fácil, y la deuda y los logros son las que piden esfuerzo. Solo la pierdes si rompes la huelga de Teo y no cuidas a otro medidor.
 
-- **El capital es el de la herencia.** 🟡 El porcentaje se mide sobre el capital original de la deuda de Reme ⏳ F0-52. La deuda de luz de los Faroleros es aparte: no entra en el numerador ni en el denominador 🟡.
-- **Los abonos anónimos de Reme no cuentan como pagados por ti** ✅, para no regalar la vía. Su suma total debe dejar el umbral alcanzable ⏳ F0-52.
+- **El capital es el de la herencia** ✅. El porcentaje se mide sobre el capital original de la deuda de la herencia, K = 24 000 esquirlas; solo cuenta el capital que amortizas de tu bolsillo. Un adelanto de la cuota (si rechazas la orden de A2) se acredita y cuenta. El fiado de la gestión de Quiroga es una línea aparte, sin interés, fuera de K ✅. La deuda de luz de los Faroleros es aparte: no entra en el numerador ni en el denominador 🟡.
+- **Los abonos anónimos de Reme no cuentan como pagados por ti** ✅, para no regalar la vía. El abono anónimo es de 400 esquirlas al mes, solo paga intereses y nunca amortiza capital ✅, así que no resta nada de lo que te falta. Lo que asuma el Consorcio no pasa del 30 % de K (7 200), para que el 50 % siga siendo alcanzable ✅.
 - **Los logros.** Cuántos hacen falta es la cifra de arriba; cuáles son lo decide el sistema ⏳ F4-115 y los primeros 30 ⏳ F4-116. 🟡 Restricción para esa tarea: los 30 primeros deben incluir al menos 4 que se puedan lograr antes de A5 sin tocar la historia ⏳ F4-116.
 - **La deuda nunca bloquea** ✅. Ninguna puerta exige tenerla saldada y ninguna puerta depende solo de ella.
-- **Siempre hay salida.** 🟡 Deuda y logros se logran jugando, sin importar tus decisiones. Por eso «dos de tres» es siempre alcanzable, aunque pierdas la relación. Lo comprueban ⏳ F0-52 y ⏳ F4-116 al fijar sus cifras.
+- **Siempre hay salida.** 🟡 Deuda y logros se logran jugando, sin importar tus decisiones. Por eso «dos de tres» es siempre alcanzable, aunque pierdas la relación. Lo comprobó la economía al fijar la cifra de deuda ([28](28-numeros-base-de-la-economia.md)): falta entre 960 y 3 840 esquirlas tras las cuotas para el 25 % y entre 1 920 y 7 680 para el 50 %. Lo comprueba ⏳ F4-116 al fijar la de logros.
 - **Cuándo se evalúa.** Lo decide el evaluador ⏳ F4-127. Debe revisar las puertas al ocurrir un evento que mueve una vía (pagar una cuota, ganar un logro, mover un medidor, subir de estatus).
 
 ---
@@ -164,13 +164,13 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 
 ## 7 · Las tres alianzas y las vías 🟡
 
-**Estado:** ✅ ninguna facción es mejor por defecto y lo que asume el Consorcio no cuenta como pagado por ti; 🟡 que la deuda de luz no rompa la vía y lo que hace cada alianza con cada vía. Los efectos de cada alianza ⏳ F4-133; el autor no revisó esta sección.
+**Estado:** ✅ ninguna facción es mejor por defecto y lo que asume el Consorcio no cuenta como pagado por ti; 🟡 lo que hace cada alianza con cada vía. Los efectos de cada alianza ⏳ F4-133; el autor no revisó esta sección.
 
 | Alianza | Deuda | Logros | Relación | Vías abiertas |
 |---|---|---|---|---|
 | **Consorcio Arvel** | Compra tu deuda y cambia el acreedor, no el capital 🟡. Si asumiera una parte, esa parte no cuenta ✅. Sigue abierta | Abierta 🟡 | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres. Sin deuda, quedan logros + relación |
 | **Ministerio** | Su oferta no toca tu deuda 🟡. Abierta | Abierta 🟡 | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres |
-| **Los Faroleros** | La deuda de luz se suma aparte y no rompe la vía 🟡. Abierta | Abierta 🟡 | La Unión se mantiene ✅ | Las tres |
+| **Los Faroleros** | La deuda de luz se suma aparte y no rompe la vía ✅. Abierta | Abierta 🟡 | La Unión se mantiene ✅ | Las tres |
 
 - **Peor caso.** 🟡 ⏳ F4-133 Aunque el Consorcio dejara tu deuda cerrada para la vía, quedan logros y relación. La relación sigue abierta porque Lucía, Teo y Esteban no dependen de tu alianza (sección 6.2).
 - Ninguna alianza cierra el círculo 🟡. Ninguna deja menos de dos vías alcanzables 🟡 ⏳ F4-133.
@@ -184,7 +184,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 | Escena | Se dispara cuando… | Detalle |
 |---|---|---|
 | **A1** · La política manda | Cierras el Acto I ✅ | 🟡 El decreto de A1 es lo que abre las zonas del II; no es una condición previa ⏳ F4-128 |
-| **A2** · La orden de Reme | A1 resuelta y atiendes tu primera cuota después de A1 ✅ | Pagada o prorrogada. Las cuotas vencen cada 7 días ✅. Si ya saldaste la deuda, A2 llega en tu siguiente visita a Reme 🟡 ⏳ F0-52 |
+| **A2** · La orden de Reme | A1 resuelta y atiendes tu primera cuota después de A1 ✅ | Pagada o prorrogada. Las cuotas vencen cada 7 días ✅. Si ya saldaste la deuda, A2 llega en tu siguiente visita a Reme. Con K = 24 000 esquirlas no puede ocurrir antes de A2; queda como salvaguarda ✅ |
 | **A3** · El primer conflicto | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | 🟡 Zona: Sierra Alta (Consorcio), Villa Brasa (Ministerio) y Salares (Faroleros), como en [22](22-acto-ii-variantes.md) ⏳ F4-128 |
 | **A4** · La primera huelga | A3 resuelta, el aviso en las noticias y una acción tuya ✅, sin plazo en días ✅ | 🟡 «Acción tuya»: tu siguiente bloque de expedición, venta, taller o cierre del puesto. Cuántas acciones separan el aviso del cierre ⏳ F4-132 |
 | **A5** · Las tres ofertas | A4 resuelta, estatus de Comerciante y dos vías de tres ✅ | Cierra el Acto II ✅. El estatus y sus cifras ⏳ F4-109 |
@@ -227,7 +227,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 - 🟡 **Restricciones para las tareas que lo diseñan.**
   - Misión de rescate (F0-78): señala qué falta y cómo; no concede estatus, logros ni medidores.
   - Estatus ⏳ F4-109: subir a Comerciante o a Empresario no puede exigir una escena de historia ni una puerta, para no crear un ciclo. Una vez cumplido el piso de una puerta, no se pierde por una pérdida de dinero ni por suspender la licencia ✅ (decisión del autor, 2026-10-15).
-  - Mora ⏳ F0-52: qué pasa si no pagas lo define la economía, y nunca puede cerrar una puerta.
+  - Mora ✅: con 4 semanas de atraso acumuladas la tasa sube +1 pp hasta que pagues una cuota completa y Reme deja de fiar la gestión. Nunca cierra una puerta ([28](28-numeros-base-de-la-economia.md)).
 
 ---
 
@@ -275,12 +275,11 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 
 ## Decisiones aplazadas 🟡
 
-**Estado:** el autor aceptó dejar estas cifras como propuesta y calibrarlas con la economía. Se aplazan con una tarea porque nada que se escriba antes depende de ellas: ninguna escena, texto ni regla cambia si el 25 % pasa a 30 %.
+**Estado:** el autor aceptó dejar estas cifras como propuesta y calibrarlas con la economía. Se aplazan con una tarea porque nada que se escriba antes depende de ellas: ninguna escena, texto ni regla cambia si el 4 pasa a 5.
 
 | # | Qué falta | Propuesta del narrador | Tarea |
 |---|---|---|---|
-| 1 | Umbral de la vía de deuda en A5 y en el círculo | 25 % y 50 % | ⏳ F0-52 |
-| 2 | Umbral de la vía de logros en A5 y en el círculo | 4 y 10 | ⏳ F4-116 |
+| 1 | Umbral de la vía de logros en A5 y en el círculo | 4 y 10 | ⏳ F4-116 |
 
 ---
 
@@ -288,8 +287,8 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 
 - ⏳ F0-78 Diseño del diario, la cola de historia y la misión de rescate.
 - ⏳ F0-53 «Mucho tiempo sin avanzar», en horas de juego.
-- ⏳ F4-109 Escalera de estatus: requisitos de Comerciante y de Empresario, y su patrimonio ⏳ F0-52
-- ⏳ F0-52 Montos de la cuota y del recargo de la prórroga, mora, suma de los abonos anónimos y umbral de deuda (25 % y 50 % propuestos). El periodo (cada 7 días) ya está decidido ✅.
+- ⏳ F4-109 Escalera de estatus: requisitos de Comerciante y de Empresario. El patrimonio es efectivo más stock a valor justo, sin restar la deuda y sin herramientas, casa, ropa ni auto ✅, con pisos orientativos de unas 25 000, 120 000 y 500 000 esquirlas para Comerciante, Empresario y Magnate ([28](28-numeros-base-de-la-economia.md)).
+- ✅ Montos de la cuota (960), del recargo de la prórroga (58 en Intermedio), mora, abonos anónimos y umbral de deuda (25 % y 50 % de K): fijados en [28](28-numeros-base-de-la-economia.md). El periodo (cada 7 días) ya está decidido ✅.
 - ⏳ F4-132 Aviso previo de la huelga (cuántas acciones lo separan del cierre).
 - ⏳ F4-61 Cifras de los medidores (deltas), conservando los caminos de la sección 6.
 - ⏳ F4-115 Sistema de logros y ⏳ F4-116 los primeros 30 y el umbral de logros (4 y 10 propuestos).
@@ -309,4 +308,4 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 | Se pueden cumplir de varias maneras | Sí: dos de tres vías y una entrada siempre abierta | Secciones 2, 4 y 7 |
 | No obligan a seguir la trama al pie de la letra | Sí: eventos tuyos, sandbox y cola | Secciones 8 a 10 |
 | Medidores con tramos y lo que desbloquean | Sí | Secciones 5 y 6 |
-| Acordados con el autor | Sí: todas las preguntas respondidas; solo quedan aplazadas las cifras de deuda y de logros | Sección 1 y «Decisiones tomadas» |
+| Acordados con el autor | Sí: todas las preguntas respondidas; solo queda aplazada la cifra de logros | Sección 1 y «Decisiones tomadas» |

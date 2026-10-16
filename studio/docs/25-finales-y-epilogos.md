@@ -224,7 +224,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | MU-05 | Vendes: lo vendido | `f-destino`, `f-comprador` | Teletipo / Heraldo | **Casilda:** «ALGO CAMBIÓ DE MANOS EN EL PUERTO. NADIE DICE QUÉ. LA LUZ NUEVA TIENE DUEÑA. SIN CONFIRMAR» **Consorcio:** «EL CONSORCIO ARVEL PAGA A QUIEN CALLA. NADIE DICE POR QUÉ. SIN CONFIRMAR» **Ministerio:** (Heraldo) «El Ministerio informa de que la Comisión mantiene sus reservas sobre La Fosa, pero agradece la colaboración de `{nombre}`.» |
 | MU-06 | Vendes: el país | `f-destino` | Voz | «Valdoria sigue igual: los mismos contratos y los mismos apagones. Lo que cambia es quién guarda la llave.» |
 
-**Mercado.** Una por salida (ME-01 a ME-03) y una de las dos restantes. Sin cifras ✅. Al revelar, la Aetherita cae, rebota y queda algo por debajo del precio de antes ✅; el rebote va en prospectivo y sin cifras. La curva y el nivel exacto ⏳ F4-147 y ⏳ F0-52.
+**Mercado.** Una por salida (ME-01 a ME-03) y una de las dos restantes. Sin cifras ✅. Al revelar, la Aetherita cae, rebota y queda algo por debajo del precio de antes ✅; el rebote va en prospectivo y sin cifras. El tope diario de la Aetherita es del 15 % ✅ ([28](28-numeros-base-de-la-economia.md)); la curva y el nivel exacto ⏳ F4-147.
 
 | ID | Cuándo | Lee | Medio | Ejemplo (guía) |
 |---|---|---|---|---|
@@ -242,7 +242,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | FM-02 | A medias | `f-familia` | Narrador | «Llega una carta corta de Vega Mansa. En casa saben del puesto, no de la mina. De la deuda con el banco agrario, dice que {deuda-familia}. Se espera que pregunten más de lo que dices.» |
 | FM-03 | Nada | `f-familia` | Narrador | «Después de semanas sin noticias, llega una carta de Vega Mansa. Tu padre no pregunta nada. De la deuda con el banco agrario, solo dice que {deuda-familia}. Se espera que escriba otra.» |
 
-**La deuda del banco agrario ✅.** Las tres cartas cierran la deuda de la familia con una sola línea, sin cifras (decisión del autor, 2026-10-13). El hueco `{deuda-familia}` depende solo del **estatus que tenías al entrar en el acta de calibración**: con Empresario o Magnate dice «se paga» y con un estatus menor dice «se alivia» ✅. No hay una acción de enviar dinero a casa ni una mecánica nueva. Magnate se concede **al cerrar** el acta ([24](24-umbrales-de-acto.md)), así que no cuenta para la carta; si contara, todas dirían «se paga». Cuánto patrimonio exige cada estatus sigue en ⏳ F4-109 y ⏳ F0-52.
+**La deuda del banco agrario ✅.** Las tres cartas cierran la deuda de la familia con una sola línea, sin cifras (decisión del autor, 2026-10-13). El hueco `{deuda-familia}` depende solo del **estatus que tenías al entrar en el acta de calibración**: con Empresario o Magnate dice «se paga» y con un estatus menor dice «se alivia» ✅. No hay una acción de enviar dinero a casa ni una mecánica nueva. Magnate se concede **al cerrar** el acta ([24](24-umbrales-de-acto.md)), así que no cuenta para la carta; si contara, todas dirían «se paga». El patrimonio es efectivo más stock a valor justo, sin restar la deuda y sin bienes de consumo ✅, con pisos orientativos de 25 000, 120 000 y 500 000 esquirlas ([28](28-numeros-base-de-la-economia.md)); cuánto exige cada estatus lo fija ⏳ F4-109.
 
 ---
 
@@ -313,7 +313,7 @@ Cubren las 54 piezas y las dos líneas de las piezas que las tienen. Los tramos 
 
 ### 7.2 · No pueden quedar abiertos 🟡
 
-Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas las salidas. Las tres facciones aliables también (FC-01 a FC-06). La Aetherita siempre tiene su tarjeta de mercado: si revelas, cae y rebota. La familia siempre contesta, y su carta dice si la deuda con el banco agrario se paga o se alivia según tu estatus al entrar en el acta ✅. La deuda del protagonista (la de Reme) no tiene tarjeta: el epílogo no dice si está pagada, porque eso lo decide la economía ⏳ F0-52 y el sandbox la sigue.
+Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas las salidas. Las tres facciones aliables también (FC-01 a FC-06). La Aetherita siempre tiene su tarjeta de mercado: si revelas, cae y rebota. La familia siempre contesta, y su carta dice si la deuda con el banco agrario se paga o se alivia según tu estatus al entrar en el acta ✅. La deuda del protagonista (la deuda de la herencia) no tiene tarjeta: el epílogo no dice si está pagada, porque eso lo decide el juego (la economía fija K = 24 000 esquirlas, [28](28-numeros-base-de-la-economia.md)) y el sandbox la sigue.
 
 ### 7.3 · Las pistas de [19](19-elenco-a-fondo.md) 🟡
 
@@ -406,7 +406,7 @@ Los textos de ejemplo de las tablas siguen como guía hasta que se escriban ⏳ 
 - ⏳ F4-142 Guion, arte y sonido del acta y del IV.
 - ⏳ F4-109 El aviso silencioso de Magnate.
 - ⏳ F4-149 Sandbox y ecos del epílogo; no incluye ninguna misión de buscar a Anselmo ✅.
-- ⏳ F4-147 Curva y nivel del desplome de la Aetherita, junto con ⏳ F0-52.
+- ⏳ F4-147 Curva y nivel del desplome de la Aetherita, dentro del tope diario del 15 % ✅.
 - ⏳ F4-150 El reproductor, y ⏳ F4-151 el texto y la voz de las cintas.
 - ✅ Registro de los hilos de la sección 7: `studio/data/hilos.json`, con su vista en el hub (`#/hilos`).
 - ⏳ F1-20 Inglés de los ocho términos de epílogo del glosario (epílogo, cabecera, tarjeta, pieza, estado legible, «las semanas siguientes», aviso de Magnate, filtrar), ya anotados en [18](18-biblia-narrativa.md) 6.11 como «sin traducir», junto con los demás términos nuevos de esa tabla.

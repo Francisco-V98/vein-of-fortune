@@ -32,7 +32,7 @@ El jugador tiene **stats** que suben **por uso, hitos y acciones**: subir es sie
 
 ## Empleados ✅
 
-**Estado:** confirmado que aparecen a mitad del juego, cuándo se abre «Contratar», para qué sirven, los roles, las stats de empleado, los contratos por tiempo, los canales de contratación y cómo leen a la Unión; los detalles de contrato ⏳ F4-90 y ⏳ F4-93. Las reglas de equilibrio (más abajo) están confirmadas por el autor (2026-10-15); las cifras ⏳ F0-52 y el comportamiento del Minero automático ⏳ F4-99.
+**Estado:** confirmado que aparecen a mitad del juego, cuándo se abre «Contratar», para qué sirven, los roles, las stats de empleado, los contratos por tiempo, los canales de contratación y cómo leen a la Unión; los detalles de contrato ⏳ F4-90 y ⏳ F4-93. Las reglas de equilibrio (más abajo) están confirmadas por el autor (2026-10-15); las cifras base están acordadas ✅ ([28](28-numeros-base-de-la-economia.md)) y el comportamiento del Minero automático ⏳ F4-99.
 
 ✅ Aparecen **a mitad del juego**, no hace falta un imperio para tener trabajadores. Pueden **minar** y **atender la tienda**. Tienen stats de eficiencia y se pueden mejorar (inspiración: Dave the Diver).
 
@@ -40,7 +40,7 @@ El jugador tiene **stats** que suben **por uso, hitos y acciones**: subir es sie
 
 Decisión del autor (2026-10-15):
 
-- ✅ El botón **«Contratar»** se abre **al cerrar el Acto I** y **también exige una mejora de la tienda**. La mejora **se compra en la propia tienda, desde el Acto II, con dinero** (la tienda sigue sin abrirse de noche, [01](01-core-loop.md)). Cuál es y cuánto cuesta ⏳ F0-52.
+- ✅ El botón **«Contratar»** se abre **al cerrar el Acto I** y **también exige una mejora de la tienda**. La mejora **se compra en la propia tienda, desde el Acto II, con dinero** (la tienda sigue sin abrirse de noche, [01](01-core-loop.md)). Es el **Puesto ampliado** y cuesta **3 500 esquirlas** ✅ ([03](03-comercio.md), [28](28-numeros-base-de-la-economia.md)); ⏳ F4-245 lo construye.
 - ✅ En el Acto I el botón está **bloqueado** y su motivo es esa mejora de la tienda pendiente (el Acto I no la ofrece). El Acto I solo ofrece el primer contacto: la ficha de un candidato ([27](27-guion-del-acto-i.md), sección 15).
 - ✅ Se empieza con **Minero** y **Dependiente**. El **Analista** llega en el Acto III.
 - ✅ Los empleados **nunca extraen Aetherita**.
@@ -91,15 +91,16 @@ Detalles:
 
 | Elemento | Regla |
 |---|---|
-| Duración | ✅ Corta (≈7 días), media (≈30) o larga (≈90), las tres del alcance de F0-52; la duración exacta ⏳ F4-90 |
-| Contrato corto | Flexible, pero salario más alto y renegociación frecuente ⏳ F4-90 |
+| Duración | ✅ Corta (**7 días**), media (**14**) o larga (**30**); son 1,5 h, 3 h y 6,5 h de juego con el día de 13 minutos. Su vencimiento ⏳ F4-90 |
+| Contrato corto | Flexible, pero salario más alto (**×1,30** el de 7 días, **×1,12** el de 14, ×1,00 el de 30 ✅) y renegociación frecuente ⏳ F4-90 |
 | Contrato largo | Salario más bajo y estabilidad, pero despedir cuesta más ⏳ F4-90 |
-| Despido anticipado | Cuesta indemnización ⏳ F0-52. Despedir no mueve el medidor de la Unión, con o sin causa |
+| Despido anticipado | Cuesta una indemnización de `salario × días que faltan × φ`, con φ = **0,25** (7 días), **0,40** (14) o **0,60** (30) ✅. Despedir el primer día de un contrato de 30 días cuesta ≈ 17 días de salario. Despedir no mueve el medidor de la Unión, con o sin causa |
 | Renovación | Depende de Lealtad, salario, trato y del tramo de la Unión. Se negocia con **Labia** |
 | Se va | Puede irse a la competencia (por ejemplo, al Consorcio Arvel) |
 | Avisos | Aviso en pantalla unos días antes de que venza, agrupados en el resumen del día para no saturar al jugador (en PC no hay notificaciones del sistema) |
 
-- ⏳ F0-52 Salarios, indemnización y cuántos minutos de juego dura cada contrato de 7, 30 y 90 días frente a los minutos por día ([01](01-core-loop.md), [17](17-mapa-de-historia.md)).
+- ✅ **Salarios** (por día, en un contrato de 30 días; los de 7 y 14 días llevan el modificador de arriba): Minero **N1 70 · N2 90 · N3 430 · N4 1 000 · N5 1 180 esquirlas**; Dependiente 160 en el Acto II, 620 en el III y 2 800 en el IV; el Refinador cobra igual que el Dependiente, el Guardia el 60 % y el Analista el 140 % (900 en el III y 3 900 en el IV). Cuánto dura cada contrato frente a los minutos por día está en [01](01-core-loop.md) y [17](17-mapa-de-historia.md) ([28](28-numeros-base-de-la-economia.md)).
+- ✅ **Entrenamiento:** subir un nivel cuesta **8 veces el salario diario del nivel siguiente** y 3 días de baja; además el empleado sube 1 nivel por cada 40 días trabajados sin entrenar.
 
 Esto crea una tensión interesante: **entrenar a un empleado es una inversión que puede irse con él**. Se mitiga con contratos largos, bonos de permanencia y buen trato.
 
@@ -114,7 +115,7 @@ Como en Dave the Diver, hay que invertir para contratar. Canales:
 | **Bolsa de la Unión** | Candidatos más fiables y más caros, con condiciones. Está en la sede de la Unión, en la V1 ([26](26-zonas-y-edificios.md)); su construcción es ⏳ F4-244 |
 | **Recomendaciones** | Vía conexiones. Es **evolutivo**: llega más adelante, sin versión fija ([26](26-zonas-y-edificios.md)) |
 
-✅ Estos cuatro canales están decididos. ⏳ F4-94 La sección de empleos y ⏳ F4-95 los anuncios propios se construyen con sus tareas.
+✅ Estos cuatro canales están decididos. La tarifa de contratar es de **3 días de salario** por la sección de empleos del periódico, **6 días** por un anuncio propio (llegan 1–3 candidatos en 2–4 días) y **10 días** más un 15 % de salario por la Bolsa de la Unión ✅. ⏳ F4-94 La sección de empleos y ⏳ F4-95 los anuncios propios se construyen con sus tareas.
 
 ### El periódico importa ✅
 
@@ -134,10 +135,10 @@ Se aplica el pilar «la información es poder»: del candidato se ven al inicio 
 
 ### Reglas de equilibrio ✅
 
-- ✅ Un Minero empleado rinde **menos que el jugador** en promedio y no juega el minijuego. El **entrenamiento** lo mejora ⏳ F0-52 (cuánto rinde y cuánto sube con el entrenamiento).
-- ✅ Los minerales de **nivel alto** solo los extraen empleados **muy entrenados** y con la **herramienta adecuada**; los **básicos** los extrae cualquiera. La **Aetherita**, nunca. ⏳ F0-52 Qué minerales cuentan como de nivel alto y cuánto entrenamiento exigen.
-- ✅ Cuestan salario diario ⏳ F0-52 y contratación; cantidad limitada por espacio.
-- ✅ En **zonas peligrosas** un Minero puede **herirse** (queda inactivo unos días) o **perder la carga** de esa expedición. ⏳ F0-52 Cuántos días de baja y con qué probabilidad según el peligro de la zona.
+- ✅ Un Minero empleado rinde **menos que el jugador** en promedio y no juega el minijuego: su Eficiencia va del **30 % (N1) al 60 % (N5)** de lo que sacaría el jugador, y escala igual con sus skills. Un Minero N1 aporta cerca del 6 % de un día del jugador en el Acto II, y su salario es ≈ 50 % de lo que aporta. El **entrenamiento** lo sube de nivel (arriba).
+- ✅ Los minerales de **nivel alto** solo los extraen empleados **muy entrenados** y con la **herramienta adecuada**; los **básicos** los extrae cualquiera. La **Aetherita**, nunca. «Nivel alto» son los **niveles N4 y N5** (pueden extraer minerales de nivel 4: las gemas); N1 y N2 llegan al nivel 2, y N3 al 3. Cuánto entrenamiento exigen está en el costo de subir de nivel (arriba).
+- ✅ Cuestan salario diario y contratación (arriba); cantidad limitada por espacio: la plantilla máxima sube con el nivel de la tienda (0 · 2 · 3 · 5 · 7 empleados, y de ellos 0 · 1 · 2 · 3 · 4 Mineros). En el **Acto IV** su papel es residual: no se toca la economía del IV.
+- ✅ En **zonas peligrosas** un Minero puede **herirse** (queda inactivo unos días) o **perder la carga** de esa expedición. La probabilidad de herida por expedición va del 1,5 % en las Galerías al 12 % en La Fosa (3 % en el Cañón, 4 % en la Sierra y los Salares, 7 % en las Cavernas), con 3 a 8 días de baja, y la de perder la carga es 1,5 veces esa cifra ✅ ([28](28-numeros-base-de-la-economia.md)).
 - ✅ Los empleados conectan con la sociedad: la **Lealtad** se ve afectada por el tramo de la Unión ✅, por la alianza que elijas y por las huelgas.
 
 ⚠️ Riesgo: que la automatización haga irrelevante al jugador. Por eso el diseño busca que delegar sea rentable pero que lo mejor siga requiriendo al jugador.
@@ -148,7 +149,7 @@ Se aplica el pilar «la información es poder»: del candidato se ven al inicio 
 
 ✅ Mejorar el estilo de vida: casa, ropa, auto, estatus, clase social. Existe un mercado de cosméticos.
 
-✅ La escalera de estatus es _Heredero → Minero con licencia → Comerciante → Empresario → Magnate_ ([07](07-sociedad-y-eventos.md)). ⏳ F4-109 Requisitos de cada ascenso.
+✅ La escalera de estatus es _Heredero → Minero con licencia → Comerciante → Empresario → Magnate_ ([07](07-sociedad-y-eventos.md)). El **patrimonio** es el efectivo más el stock a valor justo, sin restar la deuda y sin contar herramientas, casa, ropa ni auto. Los pisos orientativos son **Comerciante ≈ 25 000, Empresario ≈ 120 000 y Magnate ≈ 500 000 esquirlas** ✅ ([28](28-numeros-base-de-la-economia.md)); ⏳ F4-109 fija los requisitos finales de cada ascenso.
 
 Funciones en el juego ✅:
 
@@ -159,9 +160,15 @@ Funciones en el juego ✅:
 
 ✅ Lo que decidió el autor (2026-10-13; detalle en [26](26-zonas-y-edificios.md)): la V1 trae la casa mejorable con ranuras de decoración, la ropa por escalón de estatus (solo cambia el sprite pequeño) y un auto (⏳ F4-110, ⏳ F4-111, ⏳ F4-112), y después llegan, en la V2.1, las casas y mansiones por zona, la decoración, la joyería comprable, la concesionaria y la sastrería, y en la V2.2, las embarcaciones, la pesca y las inversiones.
 
-✅ **El auto de V1 es solo estatus y aspecto**, sin efecto en el viaje (decisión del autor, 2026-10-15). Viajar no gasta bloque pero cuesta un poco de dinero (billete o combustible), y eso es lo que da sentido al auto cuando en V2.1 gane un efecto funcional pequeño ([01](01-core-loop.md); cifra ⏳ F0-52).
+✅ **El auto de V1 es solo estatus y aspecto**, sin efecto en el viaje (decisión del autor, 2026-10-15). Viajar no gasta bloque pero cuesta un poco de dinero (billete o combustible; de 30 a 150 esquirlas por trayecto), y eso es lo que da sentido al auto cuando en V2.1 gane un efecto funcional pequeño ([01](01-core-loop.md), [28](28-numeros-base-de-la-economia.md)).
 
-✅ Qué stats suben con qué compras: **ninguna** (arriba). Casas, ropa y auto dan solo bonos pasivos pequeños y proveedores. Los precios ⏳ F0-52.
+✅ Qué stats suben con qué compras: **ninguna** (arriba). Casas, ropa y auto dan solo bonos pasivos pequeños y proveedores. Los precios base de V1 ✅ ([28](28-numeros-base-de-la-economia.md)):
+
+| Cosa | Precio (esquirlas) | Bonos y costos |
+|---|---|---|
+| Casa (4 niveles) | 4 000 · 22 000 · 110 000 · 450 000 | +2 de energía inicial por nivel; impuesto predial del 1 % del valor al mes |
+| Ropa (un traje por escalón) | 300 · 2 500 · 16 000 · 90 000 | Solo aspecto |
+| Auto (uno en V1) | 70 000 | Sin efecto en el viaje; mantenimiento del 0,5 % al mes |
 
 ## Logros ✅
 
@@ -186,7 +193,7 @@ Se implementa como un conjunto de parámetros, no como contenido distinto:
 | Margen de error en minijuegos | Amplio → estrecho |
 | Probabilidades de aparición | Más generosas → más tacañas |
 
-⏳ F3-22 Los valores por dificultad y ⏳ F4-120 su ajuste fino. ⏳ F0-52 El porcentaje de carga que se pierde.
+✅ Regla de escala: el **castigo** se multiplica por **0,7 · 1 · 1,4 · 2** (desgaste, multas, pérdida de carga con tope del 75 %, costo de contratar, ruido de los precios ×0,8 · 1 · 1,25 · 1,5 y herida de empleados), y la **ayuda** por 1,15 · 1 · 0,9 · 0,8 (probabilidad de minerales raros). La carga que se pierde es del **25 %** en Novato, **35 %** en Intermedio, **49 %** en Difícil y **70 %** en Hardcore. No cambian con la dificultad el efectivo inicial, la cuota, el capital, el interés ni los precios base; solo el recargo por atraso (4 · 6 · 12 · 18 % por semana) y la mora ([28](28-numeros-base-de-la-economia.md)). ⏳ F3-22 Los valores finos por dificultad y ⏳ F4-120 su ajuste fino.
 
 ## Hardcore: permadeath ✅
 
