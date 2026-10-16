@@ -593,7 +593,7 @@
               "id": "F0-55",
               "title": "Pasada de cierre: mundo, historia y sociedad (05, 07, 08, 17, 19)",
               "est": 6,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Cerrar con el autor los puntos abiertos de mundo y minerales, sociedad, historia, mapa de historia y elenco, y resolver los hallazgos de coherencia del registro del mundo.",
               "done_when": "Cada documento por encima de la meta y sin hallazgos de coherencia en mundo e historia."
