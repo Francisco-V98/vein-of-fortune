@@ -1,0 +1,177 @@
+{
+  "id": "F0-86",
+  "history": [
+    {
+      "at": "2026-10-16",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza la pasada de cierre del guion del Acto I (27)",
+      "ref": "rama studio/F0-86-cierre-guion-acto-i"
+    },
+    {
+      "at": "2026-10-16",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-86"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Es una pasada de cierre: los puntos abiertos se deciden con el autor"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "analista",
+        "nota": "Inventario de las 41 marcas del documento 27, 18 contradicciones y 11 preguntas; el autor las decidió en tres rondas el 2026-10-16"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "narrador",
+        "nota": "Narrador (documento 27 con la sección 21 nueva y los documentos 06, 08, 17, 18, 26 e hilos) y diseñador (documentos 01, 02, 26 y 28) terminaron; la coordinación ajustó 9 tareas del roadmap"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "qa",
+        "nota": "QA aprobó lo mecánico y devolvió fallos menores de contenido (escena d5.4, detalle por escena sin respaldo, pantallas de las escenas clave, Teletipo del día 5, Reponer sin tarea); se corrigieron y el build estricto y las 258 pruebas pasan",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "d5.4 dependía de una escena opcional",
+            "resuelto_por": "narrador",
+            "como": "Disparador corregido y distinción entre opcional y condicional"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Reparto de textos por escena, avisos inventados y sufijos nuevos presentados como decididos",
+            "resuelto_por": "narrador",
+            "como": "Quedan como ejemplo orientativo o convención propuesta que fija F3-47"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Escena d4.3 con lugar sin respaldo",
+            "resuelto_por": "narrador",
+            "como": "Lugar y personajes aplazados a F3-16"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Falta de pantalla del juego en escenas clave",
+            "resuelto_por": "narrador",
+            "como": "Añadida a las escenas que no la tenían"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Teletipo del día 5: el autor lo asignó a F3-47",
+            "resuelto_por": "coordinador",
+            "como": "El 27 y el roadmap lo ponen en F3-47; el titular del decreto queda en F3-31"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Reponer del día 2 sin tarea que lo construya",
+            "resuelto_por": "coordinador",
+            "como": "Añadido a F3-16"
+          }
+        ]
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-16",
+        "nota": "Esperando la revisión del autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario de puntos abiertos del documento 27 y de lo que condiciona a F0-24, F3-16 y F3-47",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: informe de F0-86 con las marcas, contradicciones y 11 preguntas",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Cerrar el documento 27 con la sección 21 de esquema",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Entrega: documento 27 al 100 % y 28 escenas con su tabla maestra",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "disenador",
+        "que": "Cifras del Acto I en los documentos 01, 02, 26 y 28",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega: viaje 42–210, mejora del pico 480 y margen 45 %",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar F0-86",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Devolución: fallos menores de contenido corregidos",
+        "at": "2026-10-16",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Revisión de F0-86: guion del Acto I cerrado con esquema de escenas",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

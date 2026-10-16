@@ -40,7 +40,7 @@ Lore:
 
 ✅ Las zonas están ambientadas en Valdoria (ver [05](05-mundo-y-minerales.md) para regiones y distribución de minerales).
 
-✅ Estas seis son **zonas de minado**: cada una se entra por la boca de mina de un asentamiento (Villa Brasa atiende las dos del Hollín). En el mapa, «zona» es la región completa con su asentamiento ([26](26-zonas-y-edificios.md)). Ir de una a otra no gasta bloque pero cuesta un poco de dinero (de 30 a 150 esquirlas por trayecto ✅; [01](01-core-loop.md), [28](28-numeros-base-de-la-economia.md)). Las **Cavernas** y **La Fosa** son zonas profundas: una expedición cuesta 2 bloques y ocupa la Tarde y la Noche, y La Fosa solo abre 3 días por semana, los días 2, 4 y 6 ✅ ([01](01-core-loop.md)).
+✅ Estas seis son **zonas de minado**: cada una se entra por la boca de mina de un asentamiento (Villa Brasa atiende las dos del Hollín). En el mapa, «zona» es la región completa con su asentamiento ([26](26-zonas-y-edificios.md)). Ir de una a otra no gasta bloque pero cuesta un poco de dinero (de 42 a 210 esquirlas por trayecto ✅; [01](01-core-loop.md), [28](28-numeros-base-de-la-economia.md)). Las **Cavernas** y **La Fosa** son zonas profundas: una expedición cuesta 2 bloques y ocupa la Tarde y la Noche, y La Fosa solo abre 3 días por semana, los días 2, 4 y 6 ✅ ([01](01-core-loop.md)).
 
 ✅ Los «enemigos» de las primeras zonas son **personas** (capataces, bandas, inspectores que piden soborno), no monstruos, como muestra la tabla. Encaja con el tono y con los encuentros por decisión (pagar, negociar, pelear, huir). Las criaturas aparecen solo en La Fosa, por la Aetherita.
 
@@ -93,7 +93,7 @@ Decisión del autor (2026-10-15):
 | Facciones | Mejorar es **neutral entre facciones** ✅ |
 | Requisitos | Los niveles altos requieren **estatus, licencia o contacto** (influencia), no solo dinero ✅ (⏳ F4-114 proveedores por estatus, ⏳ F4-213 licencias) |
 
-- ✅ **Costo de mejorar** (un costo en dinero y un mineral por nivel; las cifras del pico, y los otros tipos cuestan ×1,1 la criba, ×1,25 el taladro y ×1,5 el cincel): subir al nivel 2 cuesta **200 esquirlas**, al 3 **1 100**, al 4 **13 000** y al 5 **40 000**, más el mineral de cada subida (hierro para el nivel 2, cobre para el 3, plata para el 4 y esmeralda para el 5 en el pico). Mejorar se paga solo después de 3 a 4 expediciones. El detalle por tipo y mineral está en [28](28-numeros-base-de-la-economia.md).
+- ✅ **Costo de mejorar** (un costo en dinero y un mineral por nivel; las cifras del pico, y los otros tipos cuestan ×1,1 la criba, ×1,25 el taladro y ×1,5 el cincel): subir al nivel 2 cuesta **480 esquirlas**, al 3 **1 100**, al 4 **13 000** y al 5 **40 000**, más el mineral de cada subida (3 hierro para el nivel 2, cobre para el 3, plata para el 4 y esmeralda para el 5 en el pico). La mejor mejora de cada nivel se paga en pocas expediciones: 1,0 en el nivel 2 (el pico a 480 se paga en 1,04), 3,4 en el 3, 7,1 en el 4 y 3,2 en el 5 ([28](28-numeros-base-de-la-economia.md) §5.2). El detalle por tipo y mineral está en [28](28-numeros-base-de-la-economia.md).
 - ✅ **Costo de reparar:** dinero por punto de desgaste según el nivel (3 · 5 · 20 · 85 · 240 esquirlas, por el factor del tipo) más los repuestos de arriba; en total, **7–9 % del valor bruto de una expedición** en todos los actos.
 - ✅ **Explosivo:** consumible con **5 potencias** (cada una sirve para los minerales de un nivel) que cuestan **15 · 50 · 130 · 330 · 900 esquirlas**; entra en el Acto III. El **detector** se mejora aparte con cuarzo ([28](28-numeros-base-de-la-economia.md)).
 

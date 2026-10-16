@@ -50,7 +50,7 @@
 
 | Medio | Estilo | Ejemplo en español | Example in English |
 |---|---|---|---|
-| El Heraldo Meridiano | Formal y oficialista | «El Ministerio informa que la producción de cobre se mantiene estable.» | "The Ministry reports that copper output remains stable." |
+| El Heraldo Meridiano | Formal y oficialista | «El Ministerio informa de que la producción de cobre se mantiene estable.» | "The Ministry reports that copper output remains stable." |
 | La Voz del Hollín | Combativo y emotivo | «¡El Hollín no cederá! Se anuncia paro.» | "The Hollín will not yield! A strike is announced." |
 | Teletipo Meridiano | Telegráfico | «URGENTE. RUMORES DE PARO EN EL HOLLÍN. SIN CONFIRMAR.» | "URGENT. STRIKE RUMORS IN THE HOLLÍN. UNCONFIRMED." |
 

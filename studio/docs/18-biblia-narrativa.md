@@ -180,7 +180,7 @@ La voz de cada medio está en [13](13-marca-e-identidad.md) y su sesgo en [07](0
 
 | Medio | Sesgo ✅ | Regla de escritura ✅ |
 |---|---|---|
-| El Heraldo Meridiano | Oficialista; minimiza | Formal. «El Ministerio informa que…». Nunca admite un problema sin un «pero» que lo suavice |
+| El Heraldo Meridiano | Oficialista; minimiza | Formal. «El Ministerio informa de que…». Nunca admite un problema sin un «pero» que lo suavice |
 | La Voz del Hollín | Sindical; exagera | Combativo y emotivo. Una sola exclamación por titular |
 | Teletipo Meridiano | Rápido, con rumores sin confirmar | Telegráfico y en mayúsculas. Todo rumor termina en «SIN CONFIRMAR» |
 

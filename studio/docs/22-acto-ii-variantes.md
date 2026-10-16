@@ -185,7 +185,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 | Variante | El Heraldo Meridiano | La Voz del Hollín | Teletipo Meridiano |
 |---|---|---|---|
 | Consorcio | «El Consorcio asegura el hierro durante el paro, pero habrá retrasos en las entregas.» | «Guardias de empresa llegan a Cañón Ferroso: la Unión pide que no crucen.» | «CONSORCIO TRAE GUARDIAS DE SIERRA ALTA. PIDE HIERRO Y COBRE. SIN CONFIRMAR» |
-| Ministerio | «El Ministerio informa que revisará licencias en Cañón Ferroso, pero el paro sigue.» | «Inspectores en la boca de la mina: ¿quién revisa al Ministerio?» | «MINISTERIO PREPARA CORTE DE LUZ EN EL HOLLÍN SI SIGUE EL PARO. SIN CONFIRMAR» |
+| Ministerio | «El Ministerio informa de que revisará licencias en Cañón Ferroso, pero el paro sigue.» | «Inspectores en la boca de la mina: ¿quién revisa al Ministerio?» | «MINISTERIO PREPARA CORTE DE LUZ EN EL HOLLÍN SI SIGUE EL PARO. SIN CONFIRMAR» |
 | Los Faroleros | «Incidentes aislados en el Litoral durante el paro, pero la autoridad los atiende.» | «Los Faroleros ofrecen luz a los huelguistas. La Unión duda.» | «CASILDA IBARRA TIENE GENERADORES LISTOS PARA EL HOLLÍN. SIN CONFIRMAR» |
 
 **El apagón** que sigue es común: el Ministerio lo decreta con la firma de Montenegro y Los Faroleros venden luz en él (sección 4). En las variantes del Consorcio y del Ministerio, ahí mismo Casilda abre el mercado negro (sección 8). Su modelo y el generador ⏳ F4-78 y ⏳ F4-79

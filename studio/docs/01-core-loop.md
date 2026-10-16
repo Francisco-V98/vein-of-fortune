@@ -18,7 +18,7 @@ Decisión del autor (2026-10-15):
 
 | Acción | Cuesta |
 |---|---|
-| Viajar entre zonas | **No gasta bloque**, pero cuesta **un poco de dinero** (billete o combustible; de 30 a 150 esquirlas por trayecto según el destino, [28](28-numeros-base-de-la-economia.md)) ✅ |
+| Viajar entre zonas | **No gasta bloque**, pero cuesta **un poco de dinero** (billete o combustible; de 42 a 210 esquirlas por trayecto según el destino, [28](28-numeros-base-de-la-economia.md)) ✅ |
 | Ver las zonas en el mapa | **Gratis** ✅ |
 | Minar (una expedición) | **1 bloque completo**; las zonas profundas, 2 bloques (ver abajo) ✅ |
 | Abrir la tienda y comerciar | **1 bloque completo**, y **nunca de noche** ✅ |
@@ -26,7 +26,7 @@ Decisión del autor (2026-10-15):
 | Mirar el mercado, leer noticias y organizar el inventario | **No consume bloques** ✅ |
 | Varias expediciones al día | Sí, mientras queden bloques, como en Dave the Diver ✅ |
 
-- ✅ **El viaje no gasta bloque pero tiene un pequeño costo en dinero** (decisión del autor, 2026-10-15): el billete o el combustible. Así el auto, que en V1 es solo estatus, gana sentido cuando en V2.1 llegue su pequeño efecto funcional con la concesionaria ([04](04-progresion-y-meta.md), [26](26-zonas-y-edificios.md)). Ver las zonas en el mapa no cuesta nada. El costo por trayecto es de 30 a 150 esquirlas según el destino, y en el Acto I no hay viaje porque todo ocurre en Villa Brasa ✅ ([28](28-numeros-base-de-la-economia.md)); su construcción y los tiempos del trayecto ⏳ F4-154.
+- ✅ **El viaje no gasta bloque pero tiene un pequeño costo en dinero** (decisión del autor, 2026-10-15): el billete o el combustible. Así el auto, que en V1 es solo estatus, gana sentido cuando en V2.1 llegue su pequeño efecto funcional con la concesionaria ([04](04-progresion-y-meta.md), [26](26-zonas-y-edificios.md)). Ver las zonas en el mapa no cuesta nada. El costo por trayecto es de 42 a 210 esquirlas según el destino, y en el Acto I no hay viaje porque todo ocurre en Villa Brasa ✅ ([28](28-numeros-base-de-la-economia.md)); su construcción y los tiempos del trayecto ⏳ F4-154.
 - ✅ **Medio bloque** es la mitad de un bloque: dos medios bloques hacen uno. Sirve para lo que pesa poco (un trámite corto, una visita, una conversación que mueve la historia).
 - ✅ **El modo tienda empieza en el momento en que decides abrirla**, en el bloque que quieras (mañana o tarde, nunca de noche). Desde ahí se comercia y se gestiona: cerrar ventas a clientes y contratos y jugar las dinámicas de la tienda ([03](03-comercio.md)).
 - ✅ **De noche la tienda no se abre.** Sí caben las escenas, las visitas y el mercado negro, que no es el modo tienda (el bar de Salinas Blancas y la visita nocturna de Casilda, [03](03-comercio.md)).
