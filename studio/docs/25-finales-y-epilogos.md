@@ -4,7 +4,7 @@
 
 Cómo se cierra el Acto IV: la cabecera, las tarjetas por piezas, el acta de calibración y los hilos que quedan abiertos. Parte de [08](08-historia-y-personaje.md), [17](17-mapa-de-historia.md), [19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md), [22](22-acto-ii-variantes.md), [23](23-arbol-de-decisiones.md) y [24](24-umbrales-de-acto.md). Es un documento de **diseño**: define las piezas, qué lee cada una y cómo suenan. Los textos finales no se escriben aquí; los textos de las tablas son **ejemplos de voz**.
 
-**Cómo leer las marcas.** La palomita verde es lo que decidió el autor (2026-10-12, F0-46). El círculo amarillo es propuesta del narrador. El reloj de arena lleva el ID de la tarea existente de la que depende. Un título lleva la palomita solo si todo lo que tiene debajo está confirmado; si mezcla, lleva el círculo y una nota «Estado». En las tablas de piezas, la columna «Ejemplo (guía)» es siempre propuesta 🟡: los textos de ejemplo siguen como guía hasta que se escriban los finales ⏳ F4-212 (piezas), ⏳ F4-142 (acta) y ⏳ F4-151 (cintas).
+**Cómo leer las marcas.** La palomita verde es lo que decidió el autor (2026-10-12, F0-46) y lo que confirmó en la pasada de cierre F0-80 (2026-10-16). No queda ninguna propuesta ni pregunta abierta. El reloj de arena lleva el ID de la tarea existente de la que depende un detalle que nada anterior necesita. En las tablas de piezas, la columna «Ejemplo (guía)» son ejemplos de voz, no los textos finales: siguen como guía hasta que se escriban los finales ⏳ F4-212 (piezas), ⏳ F4-142 (acta) y ⏳ F4-151 (cintas).
 
 ## Resumen en cinco líneas
 
@@ -33,7 +33,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | Montenegro | Una **regla única de prioridad**: si vendes al Ministerio, te compra con el sello; si la Unión está alta y conservas al menos 2 pruebas, intenta borrarte y falla; en el resto, te amenaza. Nunca cae, no se arrepiente ni nombra sucesor. Si revelas, queda **bajo investigación con resultado abierto**, con un comunicado oficial de una línea ✅. Su desenlace se decide **al cerrar el acto, con el comprador ya fijado** ✅ |
 | Lucía | Si callas o vendes: con su medidor **bajo** filtra una versión a medias, **en el Teletipo**; en **medio o alto** calla ✅. Si revelas, lo de [23](23-arbol-de-decisiones.md): alto publica contigo, medio no publica, bajo publica sin ti ✅ |
 | Herencia | «Por qué te dejaron heredar» **no se escribe ahora**: queda como hilo para una segunda parte. No se siembra nada en el Acto I ni se toca F0-23 ✅ |
-| Estado | Se guardan, como **estado legible con nombres estables**, las banderas, la variante oculta de Reme y los resultados calculados de Esteban, Montenegro, Lucía y Teo, para releer el epílogo desde el diario ✅. Los nombres son los de la sección 8, y se guardan también `e-union` y `e-abono` ✅ |
+| Estado | Se guardan, como **estado legible con nombres estables**, las banderas, la variante oculta de Reme y los resultados calculados de Esteban, Montenegro, Lucía y Teo, para releer el epílogo desde el diario ✅. Los nombres son los de la sección 8, y se guardan también `e-union` y `e-abono` ✅, y `e-patrimonio-acta` para la carta de la familia ✅ |
 | Casos de la sección 5 | **ES-04** manda sobre las demás piezas de Esteban si vendes al Consorcio, con una línea para su tramo alto. **QU-02**: Quiroga se salva si le conseguiste el retiro, aunque uses su archivo ✅ |
 | Líneas del acta | Las tres líneas de ejemplo del protagonista en el acta se aceptan como guía; el texto final ⏳ F4-142 ✅ |
 | Quién | Escribe el narrador. El motor es F4-210 y la traducción F4-211 ✅ |
@@ -44,30 +44,30 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 
 ---
 
-## 2 · Reglas de las tarjetas 🟡
+## 2 · Reglas de las tarjetas ✅
 
-**Estado:** ✅ lo que viene de la sección 1, incluida la voz sobre el protagonista; 🟡 los límites de tamaño, las reglas de cruce y el orden de las tarjetas, que propone el narrador (todas las filas sin palomita).
+**Estado:** lo que viene de la sección 1, incluida la voz sobre el protagonista, es decisión del autor (2026-10-12); las reglas de cruce con el estado y entre piezas las confirmó el 2026-10-16 (F0-80). El orden dentro de las tarjetas, los límites de tamaño, la regla de nombres y el uso de variables son guía de redacción que escribe ⏳ F4-212; ninguna se marca como decidida.
 
 | Regla | Qué dice |
 |---|---|
-| Orden | Cabecera, tarjetas y acta ✅. Dentro de las tarjetas: personajes, facciones, mundo, mercado y familia |
+| Orden | Cabecera, tarjetas y acta ✅. Dentro de las tarjetas, guía de redacción: personajes, facciones, mundo, mercado y familia ⏳ F4-212 |
 | Tiempo | Todo en prospectivo: «se anuncia», «se espera», «se prevé». Nada de hechos consumados posteriores al cierre ✅ |
 | Cifras | Ninguna escrita. Si hace falta una magnitud, la tarjeta la lee del estado real ⏳ F4-210 |
-| Tamaño | Hasta 35 palabras por pieza; si lleva dos líneas, hasta 18 cada una (una sola se muestra por partida) |
+| Tamaño | Guía de redacción: hasta 35 palabras por pieza; si lleva dos líneas, hasta 18 cada una (una sola se muestra por partida) ⏳ F4-212 |
 | Medios | Heraldo: formal y con un «pero». Voz: combativa, una sola exclamación por titular. Teletipo: telegráfico, en mayúsculas, termina en SIN CONFIRMAR ✅ ([18](18-biblia-narrativa.md), 1.10) |
 | Teletipo | No cierra a Teo ni a Reme: sus tarjetas van en la Voz o el Heraldo ✅ |
-| Nombres | Una tarjeta solo nombra a su personaje. A los demás los cruza con términos neutros («la casa», «la Unión») |
+| Nombres | Guía de redacción: una tarjeta solo nombra a su personaje. A los demás los cruza con términos neutros («la casa», «la Unión») ⏳ F4-212 |
 | Anselmo | Ninguna tarjeta lo nombra vivo, ni habla de su firma ✅. Las cintas se citan como las de un difunto |
-| Mal del éter | Solo aparece en tarjetas de la salida «revelar»; antes de eso, el público no lo sabe ([18](18-biblia-narrativa.md), 1.4 🟡) |
-| Con el sandbox | Lo que las tarjetas dan por hecho (quién vive, quién se fue, qué se vendió) es canon del sandbox; lo que «se espera» puede cumplirse o no |
-| Variables | `{nombre}` y `{tienda}` como máximo una vez cada una por tarjeta |
+| Mal del éter | Solo aparece en tarjetas de la salida «revelar»; antes de eso, el público no lo sabe ([18](18-biblia-narrativa.md), 1.4 ✅) |
+| Con el sandbox | Lo que las tarjetas dan por hecho (quién vive, quién se fue, qué se vendió) es canon del sandbox; lo que «se espera» puede cumplirse o no ✅ |
+| Variables | Guía de redacción: `{nombre}` y `{tienda}` como máximo una vez cada una por tarjeta ⏳ F4-212 |
 | Voz sobre el protagonista | Tercera persona con `{nombre}` («el comerciante {nombre}») o solo el nombre; nunca de tú ni de usted. El Ministerio tampoco lo tutea en la prosa de los medios ✅ ([18](18-biblia-narrativa.md), 1.10). El narrador de la cabecera y de la familia sí tutea |
 
 ---
 
-## 3 · La escena final: el acta de calibración 🟡
+## 3 · La escena final: el acta de calibración ✅
 
-**Estado:** ✅ todo lo que describe la sección 1, incluidas las líneas de ejemplo y que la firma sea la de los papeles de la herencia; 🟡 el emblema de cada sello y dónde se encuentra la carpeta.
+**Estado:** todo lo que describe la sección 1, incluidas las líneas de ejemplo y que la firma sea la de los papeles de la herencia, es decisión del autor. El arte exacto del emblema de cada sello y dónde se encuentra la carpeta se fijan al escribir el IV ⏳ F4-142.
 
 - **Qué es.** El acta que firmó Anselmo hace pocas semanas ([21](21-pasado-de-valdoria.md)) ✅. Se encuentra después de decidir, así que no entra en las pruebas ni en lo que publica Lucía ✅.
 - **Qué pasa.** El protagonista abre la carpeta, reconoce la firma y dice una línea. Sin discurso ni explicación ✅. Es la misma firma de los papeles de la herencia del Acto I ✅ (decisión del autor, 2026-10-12; [21](21-pasado-de-valdoria.md), sección 11), que se siembra en el Acto I ([27](27-guion-del-acto-i.md), sección 4).
@@ -87,9 +87,9 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 
 ---
 
-## 4 · La cabecera 🟡
+## 4 · La cabecera ✅
 
-**Estado:** ✅ que se elige según `f-destino` y, si vendes, `f-comprador`, la sexta cabecera (revelar con o sin la Unión alta, según `n-iv-aetherita`) y el medio de cada una; 🟡 el esquema y los textos de ejemplo.
+**Estado:** que se elige según `f-destino` y, si vendes, `f-comprador`, la sexta cabecera (revelar con o sin la Unión alta, según `n-iv-aetherita`) y el medio de cada una son decisión del autor (2026-10-12); el esquema lo confirmó el 2026-10-16 (F0-80). Los textos de ejemplo son guía ⏳ F4-212.
 
 **Esquema.** Un rótulo fijo («Las semanas siguientes»), una frase del narrador que tutea y, aparte, un titular de portada en el medio que mejor la cuenta, en tercera persona con `{nombre}`.
 
@@ -104,9 +104,9 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 
 ---
 
-## 5 · Las 54 piezas 🟡
+## 5 · Las 54 piezas ✅
 
-**Estado:** ✅ que son 54, unas 17 por partida y el medio que narra cada pieza; 🟡 el reparto por tema, qué lee cada una y los textos de ejemplo. Los estados `e-…` son los de la sección 8.
+**Estado:** que son 54, unas 17 por partida y el medio que narra cada pieza son decisión del autor (2026-10-12); el reparto por tema y qué lee cada una los confirmó el 2026-10-16 (F0-80). Los textos de ejemplo son guía ⏳ F4-212. Los estados `e-…` son los de la sección 8.
 
 ### 5.1 · Cómo se eligen
 
@@ -133,7 +133,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 
 ### 5.2 · Personajes
 
-**Reme.** Siempre aliada y sin reproche ✅. Se elige por `f-reme-proteccion`. El hueco `{facción-reme}` lo rellena `e-variante-reme`. Todas terminan con una **cola** según `e-abono`: si sigue, «Del giro de cada mes, doña Reme dice que no pregunta.»; si lo cortaron, «Del giro de cada mes, doña Reme dice que este mes no llegó.» 🟡
+**Reme.** Siempre aliada y sin reproche ✅. Se elige por `f-reme-proteccion`. El hueco `{facción-reme}` lo rellena `e-variante-reme`. Todas terminan con una **cola** según `e-abono`: si sigue, «Del giro de cada mes, doña Reme dice que no pregunta.»; si lo cortaron, «Del giro de cada mes, doña Reme dice que este mes no llegó.» ✅ (según `e-abono`, sección 8)
 
 | ID | Cuándo | Lee | Medio | Ejemplo (guía) |
 |---|---|---|---|---|
@@ -243,13 +243,13 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | FM-02 | A medias | `f-familia` | Narrador | «Llega una carta corta de Vega Mansa. En casa saben del puesto, no de la mina. De la deuda con el banco agrario, dice que {deuda-familia}. Se espera que pregunten más de lo que dices.» |
 | FM-03 | Nada | `f-familia` | Narrador | «Después de semanas sin noticias, llega una carta de Vega Mansa. Tu padre no pregunta nada. De la deuda con el banco agrario, solo dice que {deuda-familia}. Se espera que escriba otra.» |
 
-**La deuda del banco agrario ✅.** Las tres cartas cierran la deuda de la familia con una sola línea, sin cifras (decisión del autor, 2026-10-13). El hueco `{deuda-familia}` depende solo del **estatus que tenías al entrar en el acta de calibración**: con Empresario o Magnate dice «se paga» y con un estatus menor dice «se alivia» ✅. No hay una acción de enviar dinero a casa ni una mecánica nueva. Magnate se concede **al cerrar** el acta ([24](24-umbrales-de-acto.md)), así que no cuenta para la carta; si contara, todas dirían «se paga». El patrimonio es efectivo más stock a valor justo, sin restar la deuda y sin bienes de consumo ✅, con pisos orientativos de 15 000, 90 000 y 250 000 esquirlas ([28](28-numeros-base-de-la-economia.md)); cuánto exige cada estatus lo fija ⏳ F4-109.
+**La deuda del banco agrario ✅.** Las tres cartas cierran la deuda de la familia con una sola línea, sin cifras (decisión del autor, 2026-10-13). El hueco `{deuda-familia}` depende solo del **patrimonio con el que entras en el acta de calibración** ✅ (decisión del autor, 2026-10-16, F0-80), que se fija una vez al entrar y se guarda como `e-patrimonio-acta` (sección 8): si llega al piso de Magnate (≈ 250 000 esquirlas, [28](28-numeros-base-de-la-economia.md)) dice «se paga», y si no llega dice «se alivia». Ya no depende del estatus al entrar: para llegar al IV hace falta ser Empresario (el círculo del III lo exige, [24](24-umbrales-de-acto.md)), así que con ese criterio «se alivia» nunca habría salido. Magnate se concede **al cerrar** el acta, así que tampoco cuenta para la carta. El jugador medio llega a ≈ 280 000 al cerrar el IV ([28](28-numeros-base-de-la-economia.md)), así que «se alivia» es la carta del jugador lento. No hay una acción de enviar dinero a casa ni una mecánica nueva. El patrimonio es efectivo más stock a valor justo, sin restar la deuda y sin bienes de consumo ✅; el umbral final lo fija ⏳ F4-109.
 
 ---
 
-## 6 · Cobertura de combinaciones 🟡
+## 6 · Cobertura de combinaciones ✅
 
-**Estado:** ✅ que cada combinación del Acto IV debe tener pieza, que ninguna salida es la correcta y los casos ES-04 y QU-02; 🟡 las demás reglas de cruce y los caminos de prueba.
+**Estado:** que cada combinación del Acto IV debe tener pieza, que ninguna salida es la correcta y los casos ES-04 y QU-02 son decisión del autor (2026-10-12); las demás reglas de cruce y los caminos de prueba los confirmó el 2026-10-16 (F0-80).
 
 ### 6.1 · De los 81 caminos del II a las piezas
 
@@ -257,7 +257,7 @@ Los 81 caminos del Acto II (3 variantes × 3 respuestas a la orden × 3 bandos e
 
 ### 6.2 · Garantías
 
-Se enumeraron los estados válidos de las variables de selección (unos 459.000, con el aval ligado a Esteban en tramo alto). En todos, cada tema devuelve exactamente una pieza (Montenegro, dos si revelas), no se repite ninguna y las 54 son alcanzables. El motor repite la comprobación con banderas forzadas ⏳ F4-210.
+Los estados válidos de las variables de selección son una estimación del narrador, del orden de 459.000 (con el aval ligado a Esteban en tramo alto). La regla es que en todos ellos cada tema devuelve exactamente una pieza (Montenegro, dos si revelas), no se repite ninguna y las 54 son alcanzables. La enumeración exacta la comprueba el motor con banderas forzadas ⏳ F4-210 y la recorre la consola ⏳ F1-23.
 
 **Estados que no existen**, para no escribir piezas de más:
 
@@ -298,9 +298,9 @@ Cubren las 54 piezas y las dos líneas de las piezas que las tienen. Los tramos 
 
 ---
 
-## 7 · Hilos abiertos y hilos que se cierran 🟡
+## 7 · Hilos abiertos y hilos que se cierran ✅
 
-**Estado:** ✅ qué queda abierto y qué no se siembra; 🟡 la lista de lo que no puede quedar abierto y el cierre de cada pista de [19](19-elenco-a-fondo.md). El registro de hilos está en `studio/data/hilos.json`.
+**Estado:** qué queda abierto y qué no se siembra son decisión del autor (2026-10-12); la lista de lo que no puede quedar abierto y el cierre de cada pista de [19](19-elenco-a-fondo.md) (confirmadas por el autor en F0-55, 2026-10-16) siguen esa tabla. El registro de hilos está en `studio/data/hilos.json`.
 
 ### 7.1 · Quedan abiertos a propósito ✅
 
@@ -312,11 +312,11 @@ Cubren las 54 piezas y las dos líneas de las piezas que las tienen. Los tramos 
 | Montenegro investigado | El resultado de la investigación | DU-04 |
 | Por qué te dejaron heredar | **No se escribe, no se siembra y no se toca F0-23** | Fuera del juego |
 
-### 7.2 · No pueden quedar abiertos 🟡
+### 7.2 · No pueden quedar abiertos ✅
 
-Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas las salidas. Las tres facciones aliables también (FC-01 a FC-06). La Aetherita siempre tiene su tarjeta de mercado: si revelas, cae y rebota. La familia siempre contesta, y su carta dice si la deuda con el banco agrario se paga o se alivia según tu estatus al entrar en el acta ✅. La deuda del protagonista (la deuda de la herencia) no tiene tarjeta: el epílogo no dice si está pagada, porque eso lo decide el juego (la economía fija K = 24 000 esquirlas, [28](28-numeros-base-de-la-economia.md)) y el sandbox la sigue.
+Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas las salidas. Las tres facciones aliables también (FC-01 a FC-06). La Aetherita siempre tiene su tarjeta de mercado: si revelas, cae y rebota. La familia siempre contesta, y su carta dice si la deuda con el banco agrario se paga o se alivia según tu patrimonio al entrar en el acta ✅. La deuda del protagonista (la deuda de la herencia) no tiene tarjeta: el epílogo no dice si está pagada, porque eso lo decide el juego (la economía fija K = 24 000 esquirlas, [28](28-numeros-base-de-la-economia.md)) y el sandbox la sigue.
 
-### 7.3 · Las pistas de [19](19-elenco-a-fondo.md) 🟡
+### 7.3 · Las pistas de [19](19-elenco-a-fondo.md) ✅
 
 | Pista | Cómo termina |
 |---|---|
@@ -327,17 +327,17 @@ Teo, Reme, Esteban, Casilda, Quiroga, Lucía y la Unión tienen pieza en todas l
 | Letra de un muerto (III) | Se cierra con el acta; Lucía reconoce la letra y la firma de Anselmo, pero nunca llega a saber que vive ✅ |
 | Abono y Teo (III) | Se cierra: Teo no lo paga |
 | Sospecha de Reme (II) | Se cierra: nunca se confirma. Reme no llega a saber que Anselmo vive, igual que Lucía ✅ (decisión del autor, 2026-10-13) |
-| Deuda de la familia con el banco agrario (I) | Se cierra con FM-01 a FM-03: se paga (Empresario o Magnate) o se alivia (estatus menor) según el estatus al entrar en el acta ✅ (decisión del autor, 2026-10-13) |
+| Deuda de la familia con el banco agrario (I) | Se cierra con FM-01 a FM-03: se paga (patrimonio al entrar en el acta igual o mayor que el piso de Magnate, fijado en `e-patrimonio-acta`) o se alivia (patrimonio menor) ✅ (decisión del autor, 2026-10-16) |
 | Octava cinta cortada (IV) | Abierta |
 | Acta firmada (IV) | Abierta: es el hilo de Anselmo |
 
 ---
 
-## 8 · Estado legible que se guarda 🟡
+## 8 · Estado legible que se guarda ✅
 
-**Estado:** ✅ que se guardan banderas, variante oculta y resultados de Esteban, Montenegro, Lucía y Teo con nombres estables, los nombres exactos de la tabla, que se añadan `e-union` y `e-abono`, y que el de Montenegro se fija al cerrar el acto con el comprador ya fijado; 🟡 los valores. No van a `decisions.json`: la validación del hub solo admite banderas de elección y medidores, y exige que alguna decisión las fije y las lea. Su modelo ⏳ F2-01.
+**Estado:** que se guardan banderas, variante oculta y resultados de Esteban, Montenegro, Lucía y Teo con nombres estables, los nombres exactos de la tabla, que se añadan `e-union` y `e-abono`, y que el de Montenegro se fija al cerrar el acto con el comprador ya fijado son decisión del autor (2026-10-12); los valores los confirmó el 2026-10-16 (F0-80). No van a `decisions.json`: la validación del hub solo admite banderas de elección y medidores, y exige que alguna decisión las fije y las lea. Su modelo ⏳ F2-01.
 
-El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo debe releerse desde el diario igual que se vio. Se fijan una vez y no se recalculan.
+El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo debe releerse desde el diario igual que se vio. Se fijan una vez y no se recalculan. Eso incluye la carta de Vega Mansa (FM-01 a FM-03): lee un estado fijado al entrar en el acta, el patrimonio de ese momento (`e-patrimonio-acta`), y no el patrimonio que tengas después en el sandbox ✅ (decisión del autor, 2026-10-16).
 
 | Nombre | Valores | Cuándo se fija | Lo leen |
 |---|---|---|---|
@@ -348,12 +348,13 @@ El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo de
 | `e-teo` | queda, va, muere | Al resolver `n-iv-teo` | TE-01 a TE-03 |
 | `e-union` | alto, medio, bajo | Al cerrar el IV (congela `m-union`) | H-01, H-02, DU-02, UN-01 a UN-03 |
 | `e-abono` | sigue, cortado | Al fijar `f-destino` | Cola de RE-01 a RE-03 |
+| `e-patrimonio-acta` | paga, alivia (según el patrimonio: ≈ 250 000 es el piso de Magnate de [28](28-numeros-base-de-la-economia.md); umbral final ⏳ F4-109) | Al entrar en el acta, antes de cerrar el IV | FM-01 a FM-03 (el hueco `{deuda-familia}`) |
 
 ---
 
-## 9 · Coste de producción 🟡
+## 9 · Coste de producción
 
-**Estado:** estimación del narrador.
+**Estado:** estimación del narrador, que se afina al empezar ⏳ F4-212.
 
 | Pieza | Cantidad | Tarea |
 |---|---|---|
@@ -370,10 +371,10 @@ El motivo de guardarlos: en el sandbox los medidores se mueven, y el epílogo de
 | Documento | Cambio | Marca |
 |---|---|---|
 | [17](17-mapa-de-historia.md) | Se cierra el pendiente del cierre de la historia; el cierre del IV es epílogo (cabecera y tarjetas) más acta | ✅ |
-| [18](18-biblia-narrativa.md) | El acta con su línea breve y la lámpara; los pendientes de F0-46 pasan a este documento; los términos nuevos entran al glosario como «sin traducir» ⏳ F1-20 | ✅ el acta y la lámpara y el traslado de pendientes; los términos, con inglés propuesto 🟡 ⏳ F1-20 |
+| [18](18-biblia-narrativa.md) | El acta con su línea breve y la lámpara; los pendientes de F0-46 pasan a este documento; los términos nuevos entran al glosario como «sin traducir» ⏳ F1-20 | ✅ el acta y la lámpara y el traslado de pendientes; los términos, con el inglés ⏳ F1-20 |
 | [19](19-elenco-a-fondo.md) | Anselmo secreto, Lucía, Montenegro y el abono; el gancho de la herencia queda fuera | ✅ |
 | [21](21-pasado-de-valdoria.md) | Dónde está Anselmo hoy: hilo abierto | ✅ |
-| [22](22-acto-ii-variantes.md) | Epílogo de Reme y el estado de la variante | ✅ Reme siempre aliada; 🟡 RE-01 a RE-03 y el nombre `e-variante-reme` |
+| [22](22-acto-ii-variantes.md) | Epílogo de Reme y el estado de la variante | ✅ Reme siempre aliada, RE-01 a RE-03 y el nombre `e-variante-reme` (2026-10-16) |
 | [23](23-arbol-de-decisiones.md) y `decisions.json` | Regla única de Montenegro y su desenlace al cerrar el acto, Lucía al callar o vender, el Ministerio se queda con tu prueba, y la caída con rebote de la Aetherita | ✅ |
 | [24](24-umbrales-de-acto.md) | Orden de cierre y la regla de Montenegro (sin depender de la entrada) | ✅ |
 | [08](08-historia-y-personaje.md), `story.json` y `presentation.json` | La Aetherita cae, rebota y queda algo por debajo | ✅ |
@@ -414,7 +415,7 @@ Los textos de ejemplo de las tablas siguen como guía hasta que se escriban ⏳ 
 - ⏳ F4-212 Textos finales de las 54 piezas, en español. La traducción es ⏳ F4-211 y el motor ⏳ F4-210.
 - ✅ El destino del trato de Anselmo en la segunda parte es un hilo abierto a propósito, sin tarea (sección 7.1).
 - ✅ F0-46 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión: preguntas resueltas, tabla duplicada eliminada, voz de los medios en tercera persona y términos unificados (pieza, entrada).
-- ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.
+- ✅ F0-80 cerró este documento con el autor (2026-10-16): no queda ningún punto abierto; lo que depende de otras tareas lleva la tarea que lo resuelve.
 
 ---
 

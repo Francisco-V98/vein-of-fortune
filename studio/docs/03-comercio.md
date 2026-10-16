@@ -236,6 +236,8 @@ Mena → lingote (+valor) → producto, la cadena de refinado. Productos que ali
 
 ✅ **Cada receta tiene su acto** (decisión del autor, 2026-10-16). El taller abre en el Acto II con Acero, Pólvora, Conductor y Oscilador (la primera versión de ⏳ F3-07 empieza con acero y pólvora). La **Joyería** llega en el Acto III, porque ninguna gema existe antes (esmeralda y diamante son tier 4, [26](26-zonas-y-edificios.md)). La **Celda de éter** llega en el Acto IV, con la Aetherita (tier 5).
 
+✅ **La Celda de éter es el único uso rutinario de la Aetherita en productos** (decisión del autor, 2026-10-16). Excepción: puede aparecer, casi nunca, en prendas de joyería (un collar o similar), muy raras y extremadamente caras, hechas con los materiales más caros y súper limitadas. No cambia la receta de Joyería ni ninguna cifra.
+
 ✅ **La Celda de éter no se vende en la tienda ni en los pedidos de cliente.** Solo la compran la **Comisión del Éter** o el **Consorcio**, y fabricarla consume **viales del mismo tope diario de la Aetherita** (5 viales al día en la oficina de la Comisión de Puerto Meridiano, [28](28-numeros-base-de-la-economia.md)): un vial en una Celda es un vial que no vendes a la Comisión ese día. La tienda y los pedidos siguen aceptando solo mercancía propia extraída o refinada, y la Celda queda fuera por esta regla.
 
 ✅ Se hace en el **taller** de la tienda. El taller se construye en el MVP (⏳ F3-07) pero **se abre en el Acto II**: el Acto I no lo usa ([27](27-guion-del-acto-i.md)).

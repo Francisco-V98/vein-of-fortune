@@ -1,0 +1,170 @@
+{
+  "id": "F0-80",
+  "history": [
+    {
+      "at": "2026-10-16",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza la pasada de cierre de la biblia y los documentos 21 a 25",
+      "ref": "rama studio/F0-80-cierre-biblia-y-documentos-narrativos"
+    },
+    {
+      "at": "2026-10-16",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-80"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Es una pasada de cierre: los puntos abiertos se deciden con el autor"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "analista",
+        "nota": "Inventario de 271 propuestas en seis documentos, 14 hallazgos y 12 preguntas más el alcance; el autor decidió en cuatro rondas el 2026-10-16"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "narrador",
+        "nota": "Narrador (18, 21, 22, 23, 24, 25, 26 y datos de decisiones, hilos e historia) y diseñador (20, 28, 06 y 27) terminaron; la coordinación ajustó 7 tareas del roadmap y creó F0-86"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "qa",
+        "nota": "QA devolvió 3 fallos de contenido y varios menores; se corrigieron (tarjetas de los finales a F4-212, tamaños de medidores confirmados por el autor, guion del Acto I, leyendas) y el build estricto y las 258 pruebas pasan",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Límites de tamaño y orden de las tarjetas del documento 25 marcados ✅ sin decisión del autor",
+            "resuelto_por": "narrador",
+            "como": "Vuelven a ⏳ F4-212 y la tarea se amplía"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Tamaños de efecto de los medidores (24 §6) presentados como aceptados sin constancia",
+            "resuelto_por": "coordinador",
+            "como": "El autor los confirmó el 2026-10-16: 5, 10 y 20"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El documento 27 seguía diciendo «propuesta pendiente» de lo que F0-80 cerró",
+            "resuelto_por": "narrador",
+            "como": "Líneas 114, 126, 361 y 376 pasan a confirmadas"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Leyendas y «Estado» de 23 y 24 con símbolos",
+            "resuelto_por": "narrador",
+            "como": "Reescritas con palabras"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Patrimonio al entrar en el acta sin estado guardado",
+            "resuelto_por": "narrador",
+            "como": "Nuevo e-patrimonio-acta en 25 §8, F2-01 y F4-109 lo recogen"
+          }
+        ]
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-16",
+        "nota": "Esperando la revisión del autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario de puntos abiertos de los documentos 18 y 21 a 25",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: informe de F0-80 con 271 propuestas clasificadas y 12 preguntas",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Cerrar 18, 21, 26 y 22 a 25 con sus datos",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Entrega: ocho documentos y los datos sincronizados",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "disenador",
+        "que": "Documentos 20, 28, 06 y 27 (líneas de propuestas)",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega: documento 20 al 100 % y correcciones",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar F0-80",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Devolución: 3 fallos de contenido y menores corregidos",
+        "at": "2026-10-16",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Revisión de F0-80: biblia y documentos 18 a 26 cerrados",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

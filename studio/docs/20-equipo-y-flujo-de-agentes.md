@@ -4,7 +4,7 @@
 
 Tener un **equipo de especialistas** (ideador, analista, diseñador, desarrollador, QA y los que convengan) y poder **ver cómo cada uno le pasa el trabajo al siguiente** hasta que la tarea queda cerrada, sin cabos sueltos. Según la tarea, algunos especialistas no actúan. El **autor también está en el flujo**: revisa los entregables y juega y prueba el juego (diversión, detalles visuales, tono).
 
-## Etapas del flujo 🟡
+## Etapas del flujo ✅
 
 Toda tarea recorre estas etapas en orden. Las que no hacen falta se marcan **omitidas**; nunca se borran.
 
@@ -14,8 +14,8 @@ Toda tarea recorre estas etapas en orden. Las que no hacen falta se marcan **omi
 | 2 | **Análisis** | Analista | Informe de coherencia, riesgos, dependencias y criterios de aceptación |
 | 3 | **Producción** | El especialista que toque: diseñador de sistemas, narrador, director de arte o desarrollador | El trabajo en sí: documento, texto, arte o código |
 | 4 | **QA técnico** | QA | Informe aprobado o con fallos: build estricto, pruebas, enlaces, coherencia |
-| 5 | **Revisión del autor** | Francisco | Aprobación o devolución con comentarios |
-| 6 | **Prueba del autor** | Francisco | Jugar y probar: que sea divertido, que se vea bien, que el tono funcione. Se omite si aún no hay nada que probar |
+| 5 | **Revisión del autor** | Fran (el autor) | Aprobación o devolución con comentarios |
+| 6 | **Prueba del autor** | Fran (el autor) | Jugar y probar: que sea divertido, que se vea bien, que el tono funcione. Se omite si aún no hay nada que probar |
 | 7 | **Cierre** | Coordinador (Claude) | Fusión, tarea cerrada, ramas limpias y registro al día |
 
 Reglas ✅ del flujo, en `studio/data/equipo.json`:
@@ -31,7 +31,7 @@ El autor pidió analizar qué empleados necesita de verdad el proyecto. Salen **
 | Departamento | Rol | Tipo | Se une en | Hace |
 |---|---|---|---|---|
 | Dirección | **Coordinador (Claude)** | Principal | F0 | Reparte el trabajo entre los especialistas, mantiene el roadmap, genera las imágenes, fusiona y cierra las tareas. |
-| Dirección | **Francisco (autor)** | Humano | F0 | Revisa los entregables y los PR, juega y prueba el juego (diversión, detalles visuales, tono), y aprueba o devuelve. |
+| Dirección | **Fran (autor)** | Humano | F0 | Revisa los entregables y los PR, juega y prueba el juego (diversión, detalles visuales, tono), y aprueba o devuelve. |
 | Estrategia y análisis | **Ideador e investigador** | Agente (`ideador`) | F0 | Explora opciones y referencias (juegos parecidos, mercado) y propone al menos tres alternativas con una recomendación. |
 | Estrategia y análisis | **Analista de coherencia** | Agente (`analista`) | F0 | Cruza lo propuesto con los documentos y el registro del mundo; revisa números, riesgos y dependencias; fija los criterios de aceptación. |
 | Estrategia y análisis | **Asesor legal y de licencias** | Agente (`asesor-legal`) | F0 | Vigila la licencia de cada fuente, imagen y sonido, la privacidad, las reglas de las tiendas y la clasificación por edades. |
@@ -113,5 +113,5 @@ Dos mods del repositorio, en `tools/mods/` (un marketplace local llamado `vein-m
 
 ## Pendiente
 
-- ❓ Confirmar con el autor las etapas y los roles propuestos 🟡 y si falta algún especialista (por ejemplo, de economía o de sonido).
+- ✅ Etapas y roles confirmados por el autor (2026-10-16): las siete etapas del flujo y los 21 roles, que ya incluyen al economista y al diseñador de sonido. No falta ningún especialista.
 - ⏳ F0-74 Mostrar el flujo de cada tarea en la vista de tarea del hub.

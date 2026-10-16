@@ -111,7 +111,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 ## 3 · Los siete días de un vistazo 🟡
 
-**Estado:** ✅ que son siete días, la cuota del día 7, el trámite y la primera venta del día 2, el nombre de la tienda del día 2, el sello del día 7, la prensa de solo Heraldo y Teletipo y el nombre «pedidos de cliente», los días 5 y 6 ligeros (mejora y pedido urgente opcionales, día 6 solo con noticia y rumor) y el primer contacto con los empleados el día 7 a primera hora, y que ninguna escena vende ni abre la tienda de noche (decisión del autor, 2026-10-15); 🟡 el resto (qué mecánica va en qué día, incluido contar «escanear y picar» como una sola el día 1, los bloques, qué ocupa la tarde del día 6 y las demás decisiones).
+**Estado:** ✅ que son siete días, la cuota del día 7, el trámite y la primera venta del día 2, el nombre de la tienda del día 2, el sello del día 7, la prensa de solo Heraldo y Teletipo y el nombre «pedidos de cliente», los días 5 y 6 ligeros (mejora y pedido urgente opcionales, día 6 solo con noticia y rumor) y el primer contacto con los empleados el día 7 a primera hora, y que ninguna escena vende ni abre la tienda de noche (decisión del autor, 2026-10-15), y que el día 1 junta «escanear y picar» como una sola mecánica (decisión del autor, 2026-10-16); 🟡 el resto (qué mecánica va en qué día, los bloques, qué ocupa la tarde del día 6 y las demás decisiones).
 
 | Día | Se aprende (una mecánica) | Mañana | Tarde | Noche | Decisión del día |
 |---|---|---|---|---|---|
@@ -123,7 +123,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | **6 · El rumor** | Confirmar un rumor con la noticia oficial | El puesto: el rumor del Teletipo | Libre (el pedido urgente, si quieres, en el tablón) | Casa: mañana lo dice el Heraldo | Ninguna principal. Libre: vender ya o esperar al Heraldo |
 | **7 · La cuota** | La cuota (el primer contacto con empleados no es mecánica: es una ficha bloqueada) | El puesto, primera hora: el Heraldo confirma, Teo señala los empleos; últimas ventas | Casa de Reme: la cuota | El puesto: Quiroga sella y suena el decreto | `n-i-reme-plazo`: antes, justo o prórroga |
 
-- **Una mecánica, un día.** 🟡 Solo el día 1 junta dos acciones, «escanear y picar», y se cuenta como una sola mecánica (la expedición guiada). El desgaste (día 3) forma parte de usar la herramienta, el pedido estándar (día 4) es el escenario del Regateo y el pedido urgente (día 6, opcional) es el mismo pedido con prima. La mejora (día 5) también es opcional: si se salta, no se pierde ninguna mecánica obligatoria. Los bloques, el trato con Reme y la lectura de la prensa no son mecánicas nuevas: son el marco.
+- **Una mecánica, un día.** ✅ Solo el día 1 junta dos acciones, «escanear y picar», y se cuenta como una sola mecánica (la expedición guiada; decisión del autor, 2026-10-16). El desgaste (día 3) forma parte de usar la herramienta, el pedido estándar (día 4) es el escenario del Regateo y el pedido urgente (día 6, opcional) es el mismo pedido con prima. La mejora (día 5) también es opcional: si se salta, no se pierde ninguna mecánica obligatoria. Los bloques, el trato con Reme y la lectura de la prensa no son mecánicas nuevas: son el marco.
 - **Como máximo una decisión principal por día.** Los días 5 y 6 no obligan a ninguna. Los días 2 y 5 llevan además una decisión menor (el nombre de la tienda y el rumor de Lucía), que cae dentro del mismo día.
 - **Escenas.** Son 28 en total: 6, 4, 4, 4, 4, 2 y 4. De ellas, `d5.3` es opcional. Cada escena tiene un código `d<día>.<n>`, por ejemplo `d1.2`.
 - **Noticias y pedidos.** Hay 3 noticias guionizadas (días 2, 3 y 6; la del día 6 se confirma en la mañana del 7) y 2 pedidos de cliente guionizados (el estándar del día 4 y el urgente opcional del día 6, que es una tarjeta sin escena). Sus textos son de ⏳ F3-31 y ⏳ F3-32, no de F3-47. El resto sale al azar de las 10 noticias y los 12 pedidos de ⏳ F3-31 y ⏳ F3-32.
@@ -358,7 +358,7 @@ La cuota vence cada 7 días y la primera, el día 7 ✅. Se puede pagar desde el
 
 ## 12 · Las tres decisiones pequeñas 🟡
 
-**Estado:** ✅ que son tres pequeñas y que sus cupos no cambian ([23](23-arbol-de-decisiones.md)); 🟡 cuáles son, sus opciones, sus banderas y el día y la escena de cada una.
+**Estado:** ✅ que son tres pequeñas, que sus cupos no cambian ([23](23-arbol-de-decisiones.md)) y cuáles son, con sus opciones y sus banderas: la herencia (todo, a medias o nada, fija `f-familia`), el plazo de Reme (antes, a tiempo o prórroga, fija `f-pago-reme`) y el rumor de Lucía (entero, mitad o nada, mueve `m-lucia`) (decisión del autor, 2026-10-16); 🟡 el día y la escena de cada una.
 
 | Nodo | Día y escena | Qué cambia en el guion |
 |---|---|---|
@@ -373,7 +373,7 @@ La cuota vence cada 7 días y la primera, el día 7 ✅. Se puede pagar desde el
 
 ## 13 · Las tres pistas del sorteo oculto 🟡
 
-**Estado:** ✅ que la variante se sortea al empezar y es oculta, y que el Acto I deja una pista distinta por variante ([22](22-acto-ii-variantes.md), sección 1); 🟡 los tres props, que no nombren la facción y se vean sin buscarlos, la lectura inocente y su día y sus ecos (las tres caen el día 4 de noche, con ecos los días 1 y 7: propuesta pendiente).
+**Estado:** ✅ que la variante se sortea al empezar y es oculta, y que el Acto I deja una pista distinta por variante ([22](22-acto-ii-variantes.md), sección 1), y que las tres pistas caen el día 4 de noche, con ecos los días 1 y 7 (decisión del autor, 2026-10-16); 🟡 los tres props, que no nombren la facción y se vean sin buscarlos, y la lectura inocente.
 
 Solo se ve la pista de la variante sorteada. Los otros dos props no existen en esa partida. El sorteo se guarda en el estado de la partida ⏳ F2-01 y se puede forzar desde la consola ⏳ F1-23.
 
@@ -525,14 +525,14 @@ Tras aligerar los días 5 y 6 (2026-10-13), el total baja de ≈ 340 a ≈ 320 t
 
 ---
 
-## Propuestas por confirmar 🟡
+## Puntos confirmados por el autor ✅
 
-Quedan dos puntos que son propuesta. Ninguno bloquea nada, pero el autor debe confirmarlos o cambiarlos antes de que ⏳ F3-47 y ⏳ F3-16 los usen. Las preguntas anteriores (el recargo en Difícil y Hardcore, los peligros ambientales y hasta qué día no hay pérdida grave, que incluye el día 3) ya están respondidas y pasaron a la sección 1 ✅.
+El autor confirmó el 2026-10-16 (F0-80) los dos puntos que estaban en propuesta, así que no queda ninguno pendiente en esta sección. Las preguntas anteriores (el recargo en Difícil y Hardcore, los peligros ambientales y hasta qué día no hay pérdida grave, que incluye el día 3) ya estaban respondidas y pasaron a la sección 1 ✅.
 
-| Punto | Propuesta 🟡 | Qué cambia si el autor prefiere otra cosa |
+| Punto | Decisión ✅ | Qué cambiaría si el autor prefiriera otra cosa |
 |---|---|---|
-| El día 1: escanear y picar | **Una sola mecánica**, la expedición guiada. Así el día 1 respeta «una mecánica nueva por día» | Si son dos, uno de los dos pasa al día 2 y se mueve el trámite de Quiroga; cambian las secciones 3 a 5 |
-| Las tres pistas del sorteo | **Caen el día 4 de noche** (`d4.4`), con **ecos los días 1 y 7** | Si cae otro día, cambian la sección 13 y los ecos de `d1.2`, `d1.3`, `d7.2` y `d7.3` |
+| El día 1: escanear y picar | **Una sola mecánica**, la expedición guiada. Así el día 1 respeta «una mecánica nueva por día» | Si fueran dos, uno de los dos pasaría al día 2 y se movería el trámite de Quiroga; cambiarían las secciones 3 a 5 |
+| Las tres pistas del sorteo | **Caen el día 4 de noche** (`d4.4`), con **ecos los días 1 y 7** | Si cayeran otro día, cambiarían la sección 13 y los ecos de `d1.2`, `d1.3`, `d7.2` y `d7.3` |
 
 ---
 
@@ -569,4 +569,4 @@ Quedan dos puntos que son propuesta. Ninguno bloquea nada, pero el autor debe co
 | Sin atascos y con la deuda sin bloquear | Sí ✅ | Secciones 2, 4 a 11 |
 | Textos y horas de F3-47, F3-16, F3-17, F3-30, F3-31 y F3-32 | Sí ✅ | Sección 19 |
 | Peligros ambientales fuera del Acto I | Sí ✅ | Secciones 1, 2.2 y 2.3 |
-| Tres puntos propuestos, a la espera del autor | Sí 🟡 | Sección «Propuestas por confirmar» |
+| Las dos propuestas (el día 1 como una sola mecánica y las tres pistas el día 4 de noche) | Sí ✅ | Sección «Puntos confirmados por el autor» |

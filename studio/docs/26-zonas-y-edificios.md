@@ -2,13 +2,11 @@
 
 Cómo está organizado el mapa vivo de Valdoria: qué zonas hay, qué edificaciones tiene cada una, qué se compra, vende, gana, gasta o juega en cada sitio, y en qué versión llega cada cosa. Nace de la tarea F0-82 y de las decisiones del autor del 2026-10-13. Las zonas de minado siguen en [02](02-extraccion.md), las regiones y los minerales en [05](05-mundo-y-minerales.md) y el estilo de vida en [04](04-progresion-y-meta.md).
 
-**Cómo leer las marcas.** En las tablas del catálogo, la marca de la última columna habla de la **existencia y la versión** de la edificación: `✅` si el autor decidió las dos cosas y `🟡` si alguna sigue como propuesta. El autor confirmó el catálogo completo en lote (2026-10-13): cada edificación, su rol, lo que la hace propia de su zona y su versión. El detalle de la mercancía exacta de cada edificación se fija al hacerla, y va con el reloj de arena y su tarea. Lo que depende de una tarea del roadmap lleva el reloj de arena y su ID.
+**Cómo leer las marcas.** En las tablas del catálogo, la marca de la última columna habla de la **existencia y la versión** de la edificación. El autor confirmó el catálogo completo en lote (2026-10-13): cada edificación, su rol, lo que la hace propia de su zona y su versión. Su pasada de cierre (2026-10-16, F0-80) dejó este documento sin propuestas por confirmar. El detalle de la mercancía exacta de cada edificación se fija al hacerla, y va con el reloj de arena y su tarea. Lo que depende de una tarea del roadmap lleva el reloj de arena y su ID.
 
 ---
 
-## 1 · Estructura: mapa, zona y edificación 🟡
-
-**Estado:** ✅ la estructura de 1.1 y 1.2 (la región es la zona, con un asentamiento y la boca de mina como edificación), decisión del autor (2026-10-13), los nombres Altafría y Salinas Blancas en español y qué es cada uno; 🟡 los actos de apertura de cada asentamiento, el inglés de los dos nombres y las propuestas de 1.3.
+## 1 · Estructura: mapa, zona y edificación ✅
 
 ### 1.1 Los tres niveles ✅
 
@@ -24,7 +22,7 @@ La navegación entre los tres niveles es ⏳ F4-167.
 - Cada zona tiene **un asentamiento**. **Villa Brasa atiende las dos zonas de minado del Hollín** (Galerías del Hollín y Cañón Ferroso): desde su vista de zona eliges una de las dos bocas. **Puerto Meridiano** es la zona de la capital y no tiene boca de mina.
 - El asentamiento es donde se comercia, se contrata y se vive; la boca de mina es donde se extrae. Moverte entre zonas no gasta bloques pero cuesta un poco de dinero (billete o combustible), y ver las zonas en el mapa es gratis ✅ ([01](01-core-loop.md); decisión del autor, 2026-10-15). El trayecto cuesta entre 30 y 150 esquirlas, 0 entre las dos bocas de Villa Brasa y nada en el Acto I, porque todo ocurre en Villa Brasa ✅ ([28](28-numeros-base-de-la-economia.md)). Las Cavernas y La Fosa son zonas profundas: 2 bloques, Tarde y Noche, y La Fosa solo abre 3 días por semana ✅: los días 2, 4 y 6 de cada semana, y el 7 queda libre para la cuota. Cómo se ve el viaje ⏳ F4-154.
 
-| Zona (región) | Asentamiento | Bocas de mina | Se abre en el acto 🟡 |
+| Zona (región) | Asentamiento | Bocas de mina | Se abre en el acto |
 |---|---|---|---|
 | Cuenca del Hollín | **Villa Brasa** | Galerías del Hollín; Cañón Ferroso (desde el II) | I |
 | Sierra Alta | **Altafría** | Minas de Sierra Alta | II |
@@ -33,18 +31,18 @@ La navegación entre los tres niveles es ⏳ F4-167.
 | La Fosa | campamento de la Comisión (ver 1.3) | La Fosa del Éter | IV |
 | Puerto Meridiano | la propia ciudad | ninguna | III |
 
-Los nombres **Altafría** y **Salinas Blancas**, en español, los decidió el autor ✅; Altafría es el pueblo de empresa del Consorcio en Sierra Alta y Salinas Blancas es el puerto de los Salares, de los Faroleros y del contrabando ✅. 🟡 En inglés, *Highchill* y *White Salt Flats* ([18](18-biblia-narrativa.md), 6.5), pendientes de confirmar en lote ⏳ F1-20. Los actos de la columna anterior son propuesta: los actos de las zonas de minado no cambian ([17](17-mapa-de-historia.md)), pero qué asentamiento abre en cada uno no lo ha revisado el autor.
+Los nombres **Altafría** y **Salinas Blancas**, en español, los decidió el autor ✅; Altafría es el pueblo de empresa del Consorcio en Sierra Alta y Salinas Blancas es el puerto de los Salares, de los Faroleros y del contrabando ✅. En inglés, *Highchill* y *White Salt Flats* ([18](18-biblia-narrativa.md), 6.5) ⏳ F1-20. Los actos de la columna anterior ✅ siguen los de las zonas de minado, que no cambian ([17](17-mapa-de-historia.md)): cada asentamiento abre con su zona.
 
-### 1.3 Dos propuestas dentro de la estructura 🟡
+### 1.3 Dos reglas dentro de la estructura ✅
 
 - ✅ **Campamentos con nombre descriptivo.** Las Cavernas y la Fosa no tienen vivienda y su asentamiento es un campamento. Los nombres «el campamento de las Cavernas» y «el campamento de la Comisión» son definitivos (decisión del autor, 2026-10-16).
-- **Horarios por bloque.** Cada edificación declara en qué bloques del día abre (mañana, tarde, noche); el bar de Los Faroleros y el Salón del Farol, solo de noche, como el mercado negro ([03](03-comercio.md)). La tienda del jugador, en cambio, abre solo de mañana y de tarde: **nunca de noche** ✅ ([01](01-core-loop.md)).
+- ✅ **Horarios por bloque.** Cada edificación declara en qué bloques del día abre (mañana, tarde, noche); el bar de Los Faroleros y el Salón del Farol, solo de noche, como el mercado negro ([03](03-comercio.md)). La tienda del jugador, en cambio, abre solo de mañana y de tarde: **nunca de noche** ✅ ([01](01-core-loop.md)).
 
 ---
 
-## 2 · Catálogo de edificaciones por zona 🟡
+## 2 · Catálogo de edificaciones por zona ✅
 
-**Estado:** ✅ el catálogo como base (decisión del autor, 2026-10-13): las edificaciones, sus roles, lo que hace propia a cada una de su zona y su versión (MVP, V1, V2.0, V2.1, V2.2 y evolutivo), incluidos los nombres del Salón del Farol, el chalet de Altafría, el caserón de Salinas Blancas y las tres mansiones; 🟡 el número exacto de edificaciones por zona (solo el total está confirmado) y la ubicación de la Lotería (la ventanilla de la sede del Ministerio). El detalle de la mercancía exacta de cada edificación se fija al hacerla: ⏳ F4-219 a F4-225 en V1 y ⏳ F6-47 a F6-58 en V2.
+El detalle de la mercancía exacta de cada edificación se fija al hacerla: ⏳ F4-219 a F4-225 en V1 y ⏳ F6-47 a F6-58 en V2.
 
 **Roles.** *Comprar* y *vender* (el jugador compra o vende), *ganar* (ingresos que no son una venta: contratos, sueldos, premios), *gastar* (cuotas, impuestos, mantenimiento, estilo de vida), *minijuego* (se juega uno de [09](09-minijuegos.md)) e *historia* (sitio de misión o de cinta, [23](23-arbol-de-decisiones.md), sección 7). **Versiones:** MVP, V1, V2.0, V2.1, V2.2 y evolutivo (sección 7). **ID:** `ed-<zona>-<nombre>`, con `vb` Villa Brasa, `af` Altafría, `sb` Salinas Blancas, `cv` Cavernas, `fo` Fosa y `pm` Puerto Meridiano.
 
@@ -127,7 +125,7 @@ Lujo, prensa y modas de la esmeralda. Llega en el Acto III.
 | ID | Edificación | Rol | Qué la hace de su zona | Versión | Marca |
 |---|---|---|---|---|---|
 | `ed-pm-bolsa` | La Bolsa | comprar, vender (mercado spot) | Interfaz del mercado ([03](03-comercio.md), ⏳ F4-166); pestaña de inversiones en V2.2 | V1 | ✅ |
-| `ed-pm-ministerio` | Sede del Ministerio de Recursos | gastar (licencias mayores, impuestos), ganar (contratos oficiales) | Montenegro; la ventanilla de la Lotería en V2.0 (ubicación 🟡, sección 5) | V1 | ✅ |
+| `ed-pm-ministerio` | Sede del Ministerio de Recursos | gastar (licencias mayores, impuestos), ganar (contratos oficiales) | Montenegro; la ventanilla de la Lotería en V2.0 (ubicación ⏳ F6-46, sección 5) | V1 | ✅ |
 | `ed-pm-casa-ormeno` | Casa Ormeño (tienda insignia) | vender (plata, joyas), comprar (piezas de lujo) | Joyería de plata para la élite; sin dueño ni medidor | V1 | ✅ |
 | `ed-pm-comision` | Oficina de la Comisión del Éter | vender (Aetherita) | Canal legal del Acto IV: la Comisión compra la Aetherita a valor justo, con tope diario; siempre abierta, pero hay que ir a la capital a vender ✅ ([28](28-numeros-base-de-la-economia.md)) | V1 | ✅ |
 | `ed-pm-estacion` | Estación | historia | Consigna con la cinta 3 | V1 | ✅ |
@@ -150,11 +148,11 @@ Lujo, prensa y modas de la esmeralda. Llega en el Acto III.
 
 ## 3 · Joyerías y joyas por zona ✅
 
-**Estado:** ✅ decisión del autor (2026-10-13): cada zona vende o compra joyas de sus minerales, Casa Ormeño es la tienda insignia de la capital y la joyería se compra a su dueño en Puerto Meridiano en V2.1. El dueño y el trabajo en el banco se detallan en ⏳ F6-54 y ⏳ F6-55.
+Decisión del autor (2026-10-13): cada zona vende o compra joyas de sus minerales, Casa Ormeño es la tienda insignia de la capital y la joyería se compra a su dueño en Puerto Meridiano en V2.1. El dueño y el trabajo en el banco se detallan en ⏳ F6-54 y ⏳ F6-55.
 
 ### 3.1 Qué existe para hacer joyas
 
-La única receta de joyería del registro del mundo es **Joyería = oro o plata + esmeralda o diamante** ([03](03-comercio.md), `world.json`). Las gemas aparecen en las Cavernas (Acto III), así que **ninguna joya existe antes del Acto III**: hasta entonces la platería de Altafría solo compra y vende plata y lingote de plata. No se inventan minerales ni recetas. Las cuatro combinaciones posibles (oro o plata, con esmeralda o diamante) son las «joyas específicas» de cada zona, según qué metal y qué gema abundan allí.
+La única receta de joyería del registro del mundo es **Joyería = oro o plata + esmeralda o diamante** ([03](03-comercio.md), `world.json`). Las gemas aparecen en las Cavernas (Acto III), así que **ninguna joya existe antes del Acto III**: hasta entonces la platería de Altafría solo compra y vende plata y lingote de plata. No se inventan minerales ni recetas. **Única excepción (decisión del autor, 2026-10-16) ✅:** la Aetherita puede aparecer, casi nunca, en piezas de joyería muy raras, extremadamente caras y en edición super limitada, hechas con los materiales más caros. Qué materiales, qué precio y cuántas piezas ⏳ F6-56. Las cuatro combinaciones posibles (oro o plata, con esmeralda o diamante) son las «joyas específicas» de cada zona, según qué metal y qué gema abundan allí.
 
 ### 3.2 Por zona
 
@@ -174,9 +172,7 @@ El autor pidió que el jugador pueda **comprarle una joyería pequeña a su due�
 
 ---
 
-## 4 · Casas y mansiones 🟡
-
-**Estado:** ✅ que hay casas y mansiones comprables en varias zonas, cada una con su vista, aspecto y nombre (el chalet de Altafría, el caserón de Salinas Blancas, las mansiones del Paseo Marítimo, la Colina de la Bolsa y el Barrio Alto) en V2.1, que la casa base es completa, que la de V1 nace con ranuras de decoración y que la decoración variada llega después; 🟡 las ranuras exactas, los objetos de decoración y los efectos de los bonos.
+## 4 · Casas y mansiones ✅
 
 ### 4.1 Dónde y con qué vista
 
@@ -195,9 +191,9 @@ No hay casas en las Cavernas (campamento en zona disputada) ni en la Fosa (milit
 
 ### 4.2 La casa base completa
 
-La casa **llega amueblada y completa** desde el MVP, sin habitaciones por desbloquear. En V1 se mejora (⏳ F4-110) y **nace con ranuras de decoración** ✅; las ranuras (⏳ F4-226) se hacen en el hito F4.7, antes de la casa mejorable. Las ranuras son cinco, fijas 🟡: **sala, despacho, dormitorio, vitrina y exterior**. Cada una acepta un objeto de una región (forja y lámparas del Hollín, pieles y mapas de la sierra, faroles y redes del litoral, geodas de las Cavernas, platería de la capital). En V1 cada ranura trae un objeto inicial; el catálogo variado llega en V2.1.
+La casa **llega amueblada y completa** desde el MVP, sin habitaciones por desbloquear. En V1 se mejora (⏳ F4-110) y **nace con ranuras de decoración** ✅; las ranuras (⏳ F4-226) se hacen en el hito F4.7, antes de la casa mejorable. Las ranuras son cinco y fijas: **sala, despacho, dormitorio, vitrina y exterior** (su lista final ⏳ F4-226). Cada una acepta un objeto de una región (forja y lámparas del Hollín, pieles y mapas de la sierra, faroles y redes del litoral, geodas de las Cavernas, platería de la capital). En V1 cada ranura trae un objeto inicial; el catálogo variado llega en V2.1.
 
-- **Bonos pequeños 🟡:** la casa mejor da un poco más de energía al empezar cada expedición: +2 por nivel, hasta +8 en el nivel 4 ✅ ([04](04-progresion-y-meta.md)); las ranuras no dan bonos de juego, son cosméticas.
+- **Bonos pequeños ✅:** la casa mejor da un poco más de energía al empezar cada expedición: +2 por nivel, hasta +8 en el nivel 4 ([04](04-progresion-y-meta.md), [28](28-numeros-base-de-la-economia.md)). Otros bonos pasivos y el efecto, si lo hay, de las ranuras ⏳ F4-110.
 - **Precios de la casa base en V1 ✅:** remozada, 4 000 esquirlas; de comerciante, 22 000; de empresario, 110 000; residencia, 450 000 ([28](28-numeros-base-de-la-economia.md)).
 - **Costos:** impuesto predial (sumidero) de un 1 % del valor al mes y riesgo de saqueo, que se mitiga con guardias y protección ([07](07-sociedad-y-eventos.md)). Un seguro contra saqueo cuesta un 0,3 % del valor de la casa al mes; sin él, un saqueo cuesta cerca de un 3 % del efectivo ([28](28-numeros-base-de-la-economia.md)).
 - **Varias casas:** puedes tener varias; duermes en la **casa base activa**, y las otras dan su vista y su decoración y cobran su impuesto.
@@ -208,13 +204,11 @@ Decoración libre (colocar objetos donde quieras), subastas de propiedades, alqu
 
 ---
 
-## 5 · Salón del Farol y Lotería 🟡
-
-**Estado:** ✅ que el casino llega en V2.0 con el nombre Salón del Farol, en Puerto Meridiano, y con sus condiciones legales (la sección 5.2); 🟡 la Lotería (su ubicación) y los premios.
+## 5 · Salón del Farol y Lotería ✅
 
 ### 5.1 Qué es
 
-El **Salón del Farol** es el casino de Puerto Meridiano. Abre de noche y lo operan **Los Faroleros**, que no tienen medidor: se miden por la alianza ([07](07-sociedad-y-eventos.md)). Tiene tragamonedas, ruleta y blackjack ([06](06-roadmap-y-pendientes.md), ⏳ F6-01). Aparte, la **Lotería del Ministerio** hace un sorteo semanal que publica el Heraldo; los billetes se compran en la ventanilla de la sede del Ministerio 🟡. Cómo entra el Salón en la economía y la vigilancia ⏳ F6-11.
+El **Salón del Farol** es el casino de Puerto Meridiano. Abre de noche y lo operan **Los Faroleros**, que no tienen medidor: se miden por la alianza ([07](07-sociedad-y-eventos.md)). Tiene tragamonedas, ruleta y blackjack ([06](06-roadmap-y-pendientes.md), ⏳ F6-01). Aparte, la **Lotería del Ministerio** hace un sorteo semanal que publica el Heraldo; los billetes se compran en la ventanilla de la sede del Ministerio (ubicación y premios ⏳ F6-46). Cómo entra el Salón en la economía y la vigilancia ⏳ F6-11.
 
 ### 5.2 Condiciones legales ✅
 
@@ -233,14 +227,12 @@ El **Salón del Farol** es el casino de Puerto Meridiano. Abre de noche y lo ope
 
 ---
 
-## 6 · Vehículos, ropa, embarcaciones, pesca e inversiones 🟡
-
-**Estado:** ✅ que existen, que la ropa solo cambia el sprite pequeño, que V1 trae ropa por estatus y un auto, y que la sastrería, la concesionaria, el astillero, el puerto deportivo y la pesca llegan en V2.1 y V2.2; 🟡 que el auto de V1 sea solo estatus y aspecto, qué vehículo va en qué zona y qué efecto tiene cada vehículo y embarcación.
+## 6 · Vehículos, ropa, embarcaciones, pesca e inversiones ✅
 
 | Cosa | Lugar temático | Qué hace | Por qué ahí | Versión |
 |---|---|---|---|---|
 | **Ropa**: un traje por escalón de estatus (Heredero a Magnate) | V1: pantalla de estilo de vida ⏳ F4-119; V2.1: sastrería de la capital | Solo cambia el sprite pequeño; las hojas de modelo y los retratos no se rehacen ✅. Un traje cuesta 300 esquirlas (Minero con licencia), 2 500 (Comerciante), 16 000 (Empresario) o 90 000 (Magnate) ✅ | La ropa dice a qué clase perteneces ([07](07-sociedad-y-eventos.md)); la sastrería es de la capital | V1 y V2.1 |
-| **Auto**: uno en V1 (⏳ F4-112); en V2.1 tres 🟡 | V1: pantalla de estilo de vida; V2.1 🟡: carreta (herrería de Villa Brasa), camioneta (Altafría), automóvil (concesionaria) | El de V1 es solo estatus y aspecto, sin efecto en el viaje ✅, y cuesta 70 000 esquirlas, con un mantenimiento del 0,5 % al mes ✅; el viaje cuesta un poco de dinero y eso da sentido al auto ✅ ([01](01-core-loop.md)); el efecto funcional pequeño en tiempo de viaje y carga llega con la concesionaria de V2.1 ⏳ F6-57; ninguno es obligatorio | Cada vehículo es del lugar que lo usa: carreta en el Hollín obrero, camioneta en la sierra del Consorcio, automóvil en la capital | V1 y V2.1 |
+| **Auto**: uno en V1 (⏳ F4-112); en V2.1 tres (⏳ F6-57) | V1: pantalla de estilo de vida; V2.1: carreta (herrería de Villa Brasa), camioneta (Altafría), automóvil (concesionaria); qué vehículo va en qué zona ⏳ F6-57 | El de V1 es solo estatus y aspecto, sin efecto en el viaje ✅, y cuesta 70 000 esquirlas, con un mantenimiento del 0,5 % al mes ✅; el viaje cuesta un poco de dinero y eso da sentido al auto ✅ ([01](01-core-loop.md)); el efecto funcional pequeño en tiempo de viaje y carga llega con la concesionaria de V2.1 ⏳ F6-57; ninguno es obligatorio | Cada vehículo es del lugar que lo usa: carreta en el Hollín obrero, camioneta en la sierra del Consorcio, automóvil en la capital | V1 y V2.1 |
 | **Embarcaciones**: bote, pesquero y barcaza | Astillero de Salinas Blancas | El bote y el pesquero mejoran la pesca; la barcaza aligera el transporte de salitre por la costa (efecto ⏳ F6-63) | Solo hay puerto de pesca y carga en los Salares | V2.2 |
 | **Yate** | Puerto deportivo de la capital | Solo estatus, de unos 3 millones de esquirlas ✅ | El lujo vive en Puerto Meridiano | V2.2 |
 | **Pesca** | Muelle y lonja de Salinas Blancas | Se juega con el motor del Cribado ([09](09-minijuegos.md): inclinación y caudal, «como la pesca»); el pescado se vende en la lonja | El Cribado es del litoral y la lonja ya es el comercio del puerto | V2.2 |
@@ -250,13 +242,13 @@ El pescado es una mercancía nueva y **no es un mineral**: no cambia la regla de
 
 ---
 
-## 7 · Versiones y horas 🟡
+## 7 · Versiones y horas ✅
 
-**Estado:** ✅ el reparto por versiones (decisión del autor, 2026-10-13): MVP con solo Villa Brasa y 6 edificaciones, V1 con unos 22, V2.0 con casino y lotería, V2.1 con casas y mansiones, decoración, joyería comprable, concesionaria y sastrería (unos 10), V2.2 con pesca, astillero, barcos e inversiones (unos 4) y los evolutivos, y el orden de V2 (casino, propiedad y mar); 🟡 todas las horas (±50 %, como el resto de F4 en adelante).
+El reparto por versiones es decisión del autor (2026-10-13): MVP con solo Villa Brasa y 6 edificaciones, V1 con unos 22, V2.0 con casino y lotería, V2.1 con casas y mansiones, decoración, joyería comprable, concesionaria y sastrería (unos 10), V2.2 con pesca, astillero, barcos e inversiones (unos 4) y los evolutivos. Las horas son estimaciones con un margen de ±50 %, como el resto de F4 en adelante ✅.
 
-Las horas son del autor y se suman a las del roadmap ([06](06-roadmap-y-pendientes.md)). Supuesto 🟡: de 6 a 10 h por edificación nueva según plantilla (exterior, interior y datos); las 12 de F4-219 a F4-223 suman 78 h, unas 6,5 h cada una; la decoración y la ropa son el mayor gasto de arte. «V2» es el contenido de la fase F6; iOS, PC, voces e idiomas de F6 no se tocan.
+Las horas son del autor y se suman a las del roadmap ([06](06-roadmap-y-pendientes.md)). Supuesto ✅: de 6 a 10 h por edificación nueva según plantilla (exterior, interior y datos); las 12 de F4-219 a F4-223 suman 78 h, unas 6,5 h cada una; la decoración y la ropa son el mayor gasto de arte. «V2» es el contenido de la fase F6; iOS, PC, voces e idiomas de F6 no se tocan.
 
-| Versión | Fase del roadmap | Edificaciones | Contenido | Horas sobre el roadmap 🟡 |
+| Versión | Fase del roadmap | Edificaciones | Contenido | Horas sobre el roadmap (±50 %) |
 |---|---|---|---|---|
 | **MVP** | F2–F3 | 7: tienda, taller, almacén, casa, Reme, Quiroga y boca de las Galerías | Solo Villa Brasa, en lista con arte provisional (⏳ F3-18). Sin mapa. El taller se construye aquí pero se abre en el Acto II ✅ | 0 |
 | **V1** | F4–F5 | +24: 19 edificios y 5 bocas de mina | Mapa y vista de zona de las seis zonas (⏳ F4-152, ⏳ F4-165); los 9 del roadmap (⏳ F4-155, ⏳ F4-156), la Bolsa, la oficina de la Comisión, 6 edificios de historia y 6 comercios; casa mejorable con ranuras, ropa por estatus y un auto | +110 a 150 |
@@ -283,9 +275,9 @@ Las horas son del autor y se suman a las del roadmap ([06](06-roadmap-y-pendient
 
 ---
 
-## 8 · Por qué cada cosa está donde está 🟡
+## 8 · Por qué cada cosa está donde está ✅
 
-Las razones de cada colocación; nada se pone sin una razón de mundo. ✅ Las del catálogo, confirmadas por el autor; 🟡 la de los vehículos.
+Las razones de cada colocación; nada se pone sin una razón de mundo. Las del catálogo las confirmó el autor ✅; la de los vehículos por zona ⏳ F6-57.
 
 | Cosa | Dónde | Por qué ahí |
 |---|---|---|
@@ -301,21 +293,19 @@ Las razones de cada colocación; nada se pone sin una razón de mundo. ✅ Las d
 | Sin casas en Cavernas y Fosa | — | Zona disputada y zona militarizada: nadie compra casa allí |
 | Mansiones | Puerto Meridiano | El estatus alto vive en la capital |
 | Joyería comprable | Puerto Meridiano | Compite con Casa Ormeño y vende a la misma élite |
-| Carreta, camioneta, automóvil 🟡 | Hollín, Altafría y capital | Cada vehículo es del lugar que lo usa |
+| Carreta, camioneta, automóvil ⏳ F6-57 | Hollín, Altafría y capital | Cada vehículo es del lugar que lo usa |
 | Inversiones | Bolsa | La Bolsa es donde se especula |
 | Historia (taller, estación, pensión, campamentos) | Donde Anselmo escondió las cintas | Son sitios de su vida ([23](23-arbol-de-decisiones.md)) |
 
 ---
 
-## 9 · Riesgos y reglas de canon 🟡
+## 9 · Riesgos y reglas de canon ✅
 
-**Estado:** ✅ solo Casa Ormeño; 🟡 las demás reglas y los riesgos, propuestos al autor.
+**Reglas de canon** (se respetan en todo el catálogo; las confirmó el autor el 2026-10-16, con una excepción):
 
-**Reglas de canon** (se respetan en todo el catálogo):
-
-- **Aetherita 🟡.** No va en joyas, casas, decoración ni premios. La celda de éter es otra receta. El éter no se muestra suelto ([18](18-biblia-narrativa.md), 5.2).
-- **La Fosa 🟡.** No tiene vivienda, lujo ni azar.
-- **Joyas y medidores 🟡.** Regalar o vender joyas no sube ningún medidor: los cuatro medidores se mueven por decisiones de la historia ([24](24-umbrales-de-acto.md)), y el estilo de vida no sube stats directamente ([04](04-progresion-y-meta.md)).
+- **Aetherita ✅.** No va en joyas, casas, decoración ni premios. **Excepción del autor:** puede aparecer, casi nunca, en prendas de joyería (un collar o similar) muy raras y extremadamente caras, hechas con los materiales más caros y super limitadas (sección 3.1; ⏳ F6-56). Casas, decoración y premios siguen sin Aetherita, y la **celda de éter** es el único uso rutinario de la Aetherita en productos (otra receta, [03](03-comercio.md)). El éter no se muestra suelto ([18](18-biblia-narrativa.md), 5.2), también en esas piezas.
+- **La Fosa ✅.** No tiene vivienda, lujo ni azar.
+- **Joyas y medidores ✅.** Regalar o vender joyas no sube ningún medidor: los cuatro medidores se mueven por decisiones de la historia ([24](24-umbrales-de-acto.md)), y el estilo de vida no sube stats directamente ([04](04-progresion-y-meta.md)).
 - **Casa Ormeño ✅.** Sin dueño, jefe, personaje ni medidor ([21](21-pasado-de-valdoria.md)).
 
 **Riesgos:**
@@ -338,7 +328,7 @@ Las razones de cada colocación; nada se pone sin una razón de mundo. ✅ Las d
 - ⏳ F4-154 Cómo se ve el viaje entre zonas (su costo en dinero ya está fijado ✅); ⏳ F6-57 efecto funcional de los vehículos de V2.1 y ⏳ F6-63 el de las embarcaciones.
 - ⏳ F6-13 y ⏳ F6-14 Clasificación por edad y juego responsable del casino.
 - ⏳ F1-20 Inglés de los términos nuevos del glosario ([18](18-biblia-narrativa.md)).
-- Siguen 🟡 hasta que el autor las revise: las horas, el número exacto de edificaciones por zona, las ranuras exactas y los objetos de decoración, los vehículos por zona, los efectos de los bonos y la ubicación de la Lotería.
+- ✅ El número de edificaciones por zona es el del catálogo (cada fila está decidida); las horas son estimaciones de ±50 %. Quedan aplazados con tarea: las ranuras exactas y los objetos de decoración ⏳ F4-226, los efectos de los bonos ⏳ F4-110, los vehículos por zona ⏳ F6-57, la ubicación y los premios de la Lotería ⏳ F6-46, las piezas de joyería con Aetherita ⏳ F6-56 y el inglés de Altafría y Salinas Blancas ⏳ F1-20.
 
 ### Tareas creadas
 

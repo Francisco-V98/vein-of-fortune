@@ -4,7 +4,7 @@
 
 Qué hace falta para pasar de un acto al siguiente, y cómo se cumple de varias maneras sin obligarte a seguir la trama. Parte de [08](08-historia-y-personaje.md), [17](17-mapa-de-historia.md), [22](22-acto-ii-variantes.md) y [23](23-arbol-de-decisiones.md). Los tramos de los medidores también viven en `studio/data/decisions.json` (`meta.tramos`).
 
-**Cómo leer las marcas.** La palomita verde es lo que decidió el autor (2026-10-12, F0-47, en dos rondas: el modelo y, después, los ajustes, las preguntas de la sección «Decisiones tomadas» y las secciones 5 y 6.4). El círculo amarillo es propuesta del narrador; si no la lleva una tarea, es menor y no condiciona finales ni guiones. El reloj de arena lleva el ID de la tarea existente de la que depende. Un título lleva la palomita solo si todo lo que tiene debajo está confirmado; si mezcla, lleva el círculo y una nota «Estado».
+**Cómo leer las marcas.** La palomita verde es lo que decidió el autor (2026-10-12, F0-47, en dos rondas: el modelo y, después, los ajustes, las preguntas de la sección «Decisiones tomadas» y las secciones 5 y 6.4) y lo que confirmó en la pasada de cierre F0-80 (2026-10-16). No queda ninguna propuesta ni pregunta abierta. El reloj de arena lleva el ID de la tarea existente de la que depende un detalle que nada anterior necesita (cifras, sistemas y guiones).
 
 ## Resumen en cinco líneas
 
@@ -48,7 +48,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 
 - Ninguna vía es obligatoria por sí sola: basta cualquier par de las tres ✅.
 - Las opcionales O1 a O4 pueden mover un medidor, pero **ninguna puerta las necesita** ✅ (se comprueba en la sección 6).
-- Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`: cómo trates a Reme no abre ni cierra nada ✅. El nodo `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme; ninguna puerta lo usa para decidir 🟡.
+- Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`: cómo trates a Reme no abre ni cierra nada ✅. El nodo `n-ii-alianza` lee `f-orden-reme` solo para mostrar el costo de Reme; ninguna puerta lo usa para decidir ✅ (decisión del autor, 2026-10-16).
 - Montenegro no tiene medidor; la Unión sí, y cuenta como cualquiera de los cuatro ✅.
 
 ---
@@ -65,30 +65,30 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 
 ---
 
-## 4 · Las tres vías 🟡
+## 4 · Las tres vías ✅
 
-**Estado:** ✅ cómo se mide cada vía, qué no cuenta (incluidos los abonos anónimos), que la relación nace cumplida y las cifras de deuda (25 % y 50 % del capital K = 24 000, es decir 6 000 y 12 000 esquirlas; [28](28-numeros-base-de-la-economia.md)); 🟡 las de logros (4 y 10), **aplazadas a propósito**: nada anterior depende de ellas, porque las puertas se leen en A5 y en el círculo, y las calibra ⏳ F4-116. Si cambian, no hay que rehacer ninguna escena ni regla. ⏳ F4-127 el evaluador.
+**Estado:** cómo se mide cada vía, qué no cuenta (incluidos los abonos anónimos), que la relación nace cumplida y las cifras de deuda (25 % y 50 % del capital K = 24 000, es decir 6 000 y 12 000 esquirlas; [28](28-numeros-base-de-la-economia.md)) están decididos. Las de logros (4 y 10) están **aplazadas a propósito**: nada anterior depende de ellas, porque las puertas se leen en A5 y en el círculo, y las calibra ⏳ F4-116. Si cambian, no hay que rehacer ninguna escena ni regla. ⏳ F4-127 el evaluador.
 
 | Vía | Cómo se mide ✅ | Acto II (A5) | Acto III (círculo) | Qué no cuenta ✅ |
 |---|---|---|---|---|
 | **Deuda** | % del capital que pagaste **de tu bolsillo** ✅ | 25 % ✅ (6 000 esquirlas) | 50 % ✅ (12 000 esquirlas) | Lo que asume el Consorcio ✅; los abonos anónimos de Reme ✅; los intereses y los recargos ✅; la deuda de luz de los Faroleros no la rompe ✅ |
-| **Logros** | Número de logros del sistema ✅ | 4 🟡 ⏳ F4-116 | 10 🟡 ⏳ F4-116 | Ninguno es obligatorio: sirve cualquiera 🟡 ⏳ F4-115 |
+| **Logros** | Número de logros del sistema ✅ | 4, orientativo ⏳ F4-116 | 10, orientativo ⏳ F4-116 | Ninguno es obligatorio: sirve cualquiera ⏳ F4-115 |
 | **Relación** | Al menos un medidor en tramo alto ✅ | Igual ✅ | Igual ✅ | Reme y Montenegro no tienen medidor ✅ |
 
 **Teo arranca en 60 (tramo alto) y la vía de relación nace cumplida** ✅. Es lo buscado: la relación es la vía más fácil, y la deuda y los logros son las que piden esfuerzo. Solo la pierdes si rompes la huelga de Teo y no cuidas a otro medidor.
 
-- **El capital es el de la herencia** ✅. El porcentaje se mide sobre el capital original de la deuda de la herencia, K = 24 000 esquirlas; solo cuenta el capital que amortizas de tu bolsillo. Un adelanto de la cuota (si rechazas la orden de A2) se acredita y cuenta. El fiado de la gestión de Quiroga es una línea aparte, sin interés, fuera de K ✅. La deuda de luz de los Faroleros es aparte: no entra en el numerador ni en el denominador 🟡.
+- **El capital es el de la herencia** ✅. El porcentaje se mide sobre el capital original de la deuda de la herencia, K = 24 000 esquirlas; solo cuenta el capital que amortizas de tu bolsillo. Un adelanto de la cuota (si rechazas la orden de A2) se acredita y cuenta. El fiado de la gestión de Quiroga es una línea aparte, sin interés, fuera de K ✅. La deuda de luz de los Faroleros es aparte: no entra en el numerador ni en el denominador ✅ ([28](28-numeros-base-de-la-economia.md), [22](22-acto-ii-variantes.md), sección 9).
 - **Los abonos anónimos de Reme no cuentan como pagados por ti** ✅, para no regalar la vía. El abono anónimo es de 400 esquirlas al mes, solo paga intereses y nunca amortiza capital ✅, así que no resta nada de lo que te falta. Lo que asuma el Consorcio no pasa del 30 % de K (7 200), para que el 50 % siga siendo alcanzable ✅.
-- **Los logros.** Cuántos hacen falta es la cifra de arriba; cuáles son lo decide el sistema ⏳ F4-115 y los primeros 30 ⏳ F4-116. 🟡 Restricción para esa tarea: los 30 primeros deben incluir al menos 4 que se puedan lograr antes de A5 sin tocar la historia ⏳ F4-116.
+- **Los logros.** Cuántos hacen falta es la cifra de arriba; cuáles son lo decide el sistema ⏳ F4-115 y los primeros 30 ⏳ F4-116. Restricción para esa tarea: los 30 primeros deben incluir al menos 4 que se puedan lograr antes de A5 sin tocar la historia ⏳ F4-116.
 - **La deuda nunca bloquea** ✅. Ninguna puerta exige tenerla saldada y ninguna puerta depende solo de ella.
-- **Siempre hay salida.** 🟡 Deuda y logros se logran jugando, sin importar tus decisiones. Por eso «dos de tres» es siempre alcanzable, aunque pierdas la relación. Lo comprobó la economía al fijar la cifra de deuda ([28](28-numeros-base-de-la-economia.md)): falta entre 960 y 3 840 esquirlas tras las cuotas para el 25 % y entre 1 920 y 7 680 para el 50 %. Lo comprueba ⏳ F4-116 al fijar la de logros.
+- **Siempre hay salida** ✅ ([28](28-numeros-base-de-la-economia.md), sección 13, F0-53). Deuda y logros se logran jugando, sin importar tus decisiones. Por eso «dos de tres» es siempre alcanzable, aunque pierdas la relación. Lo comprobó la economía al fijar la cifra de deuda ([28](28-numeros-base-de-la-economia.md)): falta entre 960 y 3 840 esquirlas tras las cuotas para el 25 % y entre 1 920 y 7 680 para el 50 %. Lo comprueba ⏳ F4-116 al fijar la de logros.
 - **Cuándo se evalúa.** Lo decide el evaluador ⏳ F4-127. Debe revisar las puertas al ocurrir un evento que mueve una vía (pagar una cuota, ganar un logro, mover un medidor, subir de estatus).
 
 ---
 
-## 5 · Los tramos de los medidores y lo que desbloquean 🟡
+## 5 · Los tramos de los medidores y lo que desbloquean ✅
 
-**Estado:** ✅ los tramos, los arranques y lo que desbloquea cada tramo de Esteban (en `n-iv-esteban`), Lucía, Teo y la Unión (en `n-iv-montenegro` y `n-iv-aetherita`); ✅ el castigo de que Montenegro solo pueda «borrarte» con la Unión alta; 🟡 tres reglas de lectura menores. Los movimientos de cada decisión ⏳ F4-61
+**Estado:** los tramos, los arranques y lo que desbloquea cada tramo de Esteban (en `n-iv-esteban`), Lucía, Teo y la Unión (en `n-iv-montenegro` y `n-iv-aetherita`) son decisión del autor, igual que el castigo de que Montenegro solo pueda «borrarte» con la Unión alta; las reglas de lectura menores las confirmó el autor el 2026-10-16 (F0-80). Los movimientos de cada decisión ⏳ F4-61.
 
 | Tramo | Valor ✅ | Quién arranca aquí ✅ |
 |---|---|---|
@@ -96,7 +96,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | **Medio** | 35 a 54 | Unión (50), Lucía (50) y Esteban (40) |
 | **Alto** | 55 a 100 | Teo (60) |
 
-Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el tramo y su motivo, no la cifra 🟡 ⏳ F4-61.
+Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el tramo y su motivo, no la cifra ⏳ F4-61.
 
 | Medidor | Alto | Medio | Bajo |
 |---|---|---|---|
@@ -106,18 +106,18 @@ Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el t
 | **Unión** | Cuenta para la vía de relación ✅. En `n-iv-montenegro`, Montenegro intenta borrarte y falla ✅. En `n-iv-aetherita`, la Unión sale contigo si revelas ✅ | No cuenta para la vía de relación ✅. Sin efecto propio en el IV ✅ | En `n-iv-aetherita`, nadie te respalda en el Hollín si revelas ✅ |
 
 - **Teo sin revisión muere, sea cual sea su tramo** ✅. Si el medidor y la revisión chocan, gana el no haberlo atendido ✅. Esto incluye la opción respetuosa «se lo propones y aceptas su no» ✅.
-- **Esteban.** El aval se lee en el momento de elegir entrada ✅. 🟡 Como `n-iii-esteban-trato` ocurre antes, el medidor ya trae lo que hiciste en la bolsa. Después de la entrada, el medidor de Esteban no se mueve, así que el tramo del IV es el de la entrada ⏳ F4-61.
-- **Lucía.** 🟡 Antes de decidir sobre la Aetherita se te muestra quién publicaría, para elegir con aviso ⏳ F4-142. `n-iv-lucia-publica` se activa si la verdad sale.
+- **Esteban.** El aval se lee en el momento de elegir entrada ✅. Como `n-iii-esteban-trato` ocurre antes, el medidor ya trae lo que hiciste en la bolsa. Después de la entrada, el medidor de Esteban no se mueve, así que el tramo del IV es el de la entrada ⏳ F4-61.
+- **Lucía.** Antes de decidir sobre la Aetherita se te muestra quién publicaría, para elegir con aviso ✅ (decisión del autor, 2026-10-16; su implementación ⏳ F4-142). `n-iv-lucia-publica` se activa si la verdad sale.
 - **Unión.** En `n-iv-montenegro`, «borrarte» pide Unión alta y al menos dos pruebas, y falla ✅. Si vendes al Ministerio, te compra con el sello y esa regla manda primero ✅. Como siempre conservas al menos tres ([23](23-arbol-de-decisiones.md), sección 8), en la práctica solo importa la Unión: es el castigo de quien tiene gente detrás ✅. Con Unión media o baja, y si no vendes al Ministerio, te amenaza ✅: la entrada que usaste ya no decide qué hace Montenegro. Su desenlace se decide al cerrar el acto, con el comprador ya fijado ✅ (decisión del autor, 2026-10-12). Los **empleados** solo **leen** el tramo de la Unión (modula su Lealtad); contratar, despedir o publicar una oferta no mueve el medidor ✅ (decisión del autor, 2026-10-15; [04](04-progresion-y-meta.md)).
 - **Montenegro** no tiene tramos ✅.
 
 ---
 
-## 6 · Cómo alcanza cada medidor cada tramo 🟡
+## 6 · Cómo alcanza cada medidor cada tramo ✅
 
-**Estado:** ✅ los ajustes A a D y que romper la huelga baja mucho a Teo y a la Unión (sección 6.4, decisión del autor); 🟡 las tablas 6.1 a 6.3, que son cuentas del narrador con los tamaños de 23 (poco ≈ 5, normal ≈ 10, mucho ≈ 20). Las cifras finales ⏳ F4-61, que debe **conservar los caminos de esta sección**.
+**Estado:** los ajustes A a D y que romper la huelga baja mucho a Teo y a la Unión (sección 6.4) son decisión del autor. Los tamaños de efecto en los medidores son decisión del autor (2026-10-16, F0-80): pequeño ≈ 5, normal ≈ 10 y grande ≈ 20 puntos. Las tablas 6.1 a 6.3 son las cuentas del narrador con esos tamaños. F4-61 los implementa y solo afina el ajuste fino de cada opción, sin cambiar los caminos mínimos de esta sección ⏳ F4-61.
 
-### 6.1 · Qué mueve a cada medidor 🟡
+### 6.1 · Qué mueve a cada medidor
 
 | Medidor | Arranque | Qué lo sube | Qué lo baja |
 |---|---|---|---|
@@ -126,7 +126,7 @@ Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el t
 | **Teo** | 60 | Apoyar la huelga (+10). Creerle sobre el abono (+10). Llevarlo a revisión (+5) | Romper la huelga (−20). Dudar de él (−20 con el ajuste C). No sacar el tema de la tos (−10) |
 | **Unión** | 50 | Apoyar la huelga (+10). Plantarte en el primer conflicto (+5) | Romper la huelga (−20). Ceder en el conflicto (−5). Aliarte con el Consorcio o el Ministerio (−10). Entrar por la presión de ese aliado (−10, ajuste D) |
 
-### 6.2 · Caminos mínimos, sin ninguna opcional 🟡
+### 6.2 · Caminos mínimos, sin ninguna opcional
 
 | Medidor | Alto (55 o más) | Medio (35 a 54) | Bajo (menos de 35) |
 |---|---|---|---|
@@ -135,7 +135,7 @@ Los tramos están en `meta.tramos` de `decisions.json`. La pantalla muestra el t
 | **Teo** | El arranque (60). Apoyar la huelga lo sube a 70 | Romper la huelga o dudar de él, con revisión (45) | Romper la huelga y dudar de él, con revisión: 2 decisiones (25) |
 | **Unión** | Con los Faroleros, apoyar la huelga: 1 decisión (60). Con el Consorcio o el Ministerio, apoyar y plantarte: 2 (55) | El arranque (50) | Romper la huelga: 1 decisión (30) |
 
-### 6.3 · La prueba del aval, sin O2, en las tres variantes 🟡
+### 6.3 · La prueba del aval, sin O2, en las tres variantes
 
 O2 («Esteban gana un contrato») es opcional y no puede ser la llave del aval. Se parte de 40 y se cuenta solo lo que ocurre sin O2.
 
@@ -162,42 +162,42 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 
 ---
 
-## 7 · Las tres alianzas y las vías 🟡
+## 7 · Las tres alianzas y las vías ✅
 
-**Estado:** ✅ ninguna facción es mejor por defecto y lo que asume el Consorcio no cuenta como pagado por ti; 🟡 lo que hace cada alianza con cada vía. Los efectos de cada alianza ⏳ F4-133; el autor no revisó esta sección.
+**Estado:** ninguna facción es mejor por defecto y lo que asume el Consorcio no cuenta como pagado por ti son decisión del autor (2026-10-12). Lo que garantiza la tabla es que cada alianza deja al menos dos vías alcanzables, como consecuencia de la regla «dos de tres» y de que la deuda nunca bloquea. El efecto exacto de cada alianza sobre cada vía ⏳ F4-133.
 
 | Alianza | Deuda | Logros | Relación | Vías abiertas |
 |---|---|---|---|---|
-| **Consorcio Arvel** | Compra tu deuda y cambia el acreedor, no el capital 🟡. Si asumiera una parte, esa parte no cuenta ✅. Sigue abierta | Abierta 🟡 | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres. Sin deuda, quedan logros + relación |
-| **Ministerio** | Su oferta no toca tu deuda 🟡. Abierta | Abierta 🟡 | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres |
-| **Los Faroleros** | La deuda de luz se suma aparte y no rompe la vía ✅. Abierta | Abierta 🟡 | La Unión se mantiene ✅ | Las tres |
+| **Consorcio Arvel** | Compra tu deuda y cambia el acreedor, no el capital ⏳ F4-133. Si asumiera una parte, esa parte no cuenta ✅. Sigue abierta | Abierta ⏳ F4-133 | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres. Sin deuda, quedan logros + relación |
+| **Ministerio** | Su oferta no toca tu deuda ⏳ F4-133. Abierta | Abierta ⏳ F4-133 | La Unión baja ✅ (≈ 10 ⏳ F4-61). Quedan Lucía, Teo y Esteban | Las tres |
+| **Los Faroleros** | La deuda de luz se suma aparte y no rompe la vía ✅. Abierta | Abierta ⏳ F4-133 | La Unión se mantiene ✅ | Las tres |
 
-- **Peor caso.** 🟡 ⏳ F4-133 Aunque el Consorcio dejara tu deuda cerrada para la vía, quedan logros y relación. La relación sigue abierta porque Lucía, Teo y Esteban no dependen de tu alianza (sección 6.2).
-- Ninguna alianza cierra el círculo 🟡. Ninguna deja menos de dos vías alcanzables 🟡 ⏳ F4-133.
+- **Peor caso.** ⏳ F4-133 Aunque el Consorcio dejara tu deuda cerrada para la vía, quedan logros y relación. La relación sigue abierta porque Lucía, Teo y Esteban no dependen de tu alianza (sección 6.2).
+- Ninguna alianza cierra el círculo ✅. Ninguna deja menos de dos vías alcanzables ✅ (consecuencia de «dos de tres» y de que la deuda nunca bloquea, secciones 1 y 4); ⏳ F4-133 lo comprueba al definir sus efectos.
 
 ---
 
-## 8 · Los disparadores de A1 a A6 🟡
+## 8 · Los disparadores de A1 a A6 ✅
 
-**Estado:** ✅ el encadenado y los eventos de A2, A3 y A4; 🟡 el resto del detalle, que son ajustes menores que se cierran en el guion del Acto II ⏳ F4-128. Todo es **por eventos tuyos**, sin plazos en días. Si el evento no llega, la escena **espera en la cola** y el juego sigue ✅.
+**Estado:** el encadenado y los eventos de A2, A3 y A4 son decisión del autor (2026-10-12); el resto del detalle lo confirmó el 2026-10-16 (F0-80), y los ajustes finos de A3 y A4 se cierran en el guion del Acto II ⏳ F4-128. Todo es **por eventos tuyos**, sin plazos en días. Si el evento no llega, la escena **espera en la cola** y el juego sigue, y eso está decidido.
 
 | Escena | Se dispara cuando… | Detalle |
 |---|---|---|
-| **A1** · La política manda | Cierras el Acto I ✅ | 🟡 El decreto de A1 es lo que abre las zonas del II; no es una condición previa ⏳ F4-128 |
+| **A1** · La política manda | Cierras el Acto I ✅ | El decreto de A1 es lo que abre las zonas del II; no es una condición previa ✅ (su guion ⏳ F4-128) |
 | **A2** · La orden de Reme | A1 resuelta y atiendes tu primera cuota después de A1 ✅ | Pagada o prorrogada. Las cuotas vencen cada 7 días ✅. Si ya saldaste la deuda, A2 llega en tu siguiente visita a Reme. Con K = 24 000 esquirlas no puede ocurrir antes de A2; queda como salvaguarda ✅ |
-| **A3** · El primer conflicto | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | 🟡 Zona: Sierra Alta (Consorcio), Villa Brasa (Ministerio) y Salares (Faroleros), como en [22](22-acto-ii-variantes.md) ⏳ F4-128 |
-| **A4** · La primera huelga | A3 resuelta, el aviso en las noticias y una acción tuya ✅, sin plazo en días ✅ | 🟡 «Acción tuya»: tu siguiente bloque de expedición, venta, taller o cierre del puesto. Cuántas acciones separan el aviso del cierre ⏳ F4-132 |
+| **A3** · El primer conflicto | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | Zona: Sierra Alta (Consorcio), Villa Brasa (Ministerio) y Salares (Faroleros), como en [22](22-acto-ii-variantes.md) ✅ (el disparador fino ⏳ F4-128) |
+| **A4** · La primera huelga | A3 resuelta, el aviso en las noticias y una acción tuya ✅, sin plazo en días ✅ | «Acción tuya»: tu siguiente bloque de expedición, venta, taller o cierre del puesto ✅. Cuántas acciones separan el aviso del cierre ⏳ F4-132 |
 | **A5** · Las tres ofertas | A4 resuelta, estatus de Comerciante y dos vías de tres ✅ | Cierra el Acto II ✅. El estatus y sus cifras ⏳ F4-109 |
 | **A6** · El cierre de Reme | A5 resuelta ✅ | Es la última pantalla del II, no una condición para el III ✅ |
 
 - **Opcionales O1 a O4.** Se disparan también por evento (comprar tres rumores, perder un contrato, una visita nocturna, la primera visita a Quiroga) y **no puntúan** para ninguna puerta ✅.
-- **Sin calendario.** 🟡 «Tardar» en un contrato (O2) se mide por el vencimiento del contrato, no por días de la historia ⏳ F4-128.
+- **Sin calendario.** «Tardar» en un contrato (O2) se mide por el vencimiento del contrato, no por días de la historia; el detalle ⏳ F4-128.
 
 ---
 
-## 9 · Las cintas 1 a 5 y la puerta al IV 🟡
+## 9 · Las cintas 1 a 5 y la puerta al IV ✅
 
-**Estado:** ✅ las cintas 1 a 5 son obligatorias, no caducan y tienen misión persistente; 🟡 el estado intermedio, el orden y La Fosa, que se cierran al escribir el IV ⏳ F4-142. El contenido de la misión ⏳ F4-150
+**Estado:** las cintas 1 a 5 son obligatorias, no caducan y tienen misión persistente. El estado intermedio, el orden y La Fosa se cierran al escribir el IV ⏳ F4-142. El contenido de la misión ⏳ F4-150
 
 | Cinta | Se recoge en el acto ✅ | Dónde ([23](23-arbol-de-decisiones.md), sección 7) |
 |---|---|---|
@@ -208,14 +208,14 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 - **Puerta al IV** ✅: encuentro con Montenegro resuelto y cintas 1 a 5 recogidas.
 - **No caducan** ✅ por tiempo ni por decisiones. Ninguna decisión puede cerrar el camino a una cinta ✅.
 - **Misión persistente** ✅: si falta una, queda en el diario con su lugar hasta que la recojas. No bloquea los actos anteriores.
-- **Estado intermedio.** 🟡 El orden entre el encuentro con Montenegro y las cintas es libre. Si tienes el encuentro y faltan cintas, el III está cerrado y el IV espera en la cola, mientras sigues en sandbox.
-- **Las cintas 6 a 8** esperan en La Fosa y se recogen dentro del IV ✅. 🟡 Montenegro no puede cerrarte La Fosa antes de que las recojas ⏳ F4-142.
+- **Estado intermedio.** El orden entre el encuentro con Montenegro y las cintas es libre. Si tienes el encuentro y faltan cintas, el III está cerrado y el IV espera en la cola, mientras sigues en sandbox (el detalle ⏳ F4-142).
+- **Las cintas 6 a 8** esperan en La Fosa y se recogen dentro del IV ✅. Montenegro no puede cerrarte La Fosa antes de que las recojas ⏳ F4-142.
 
 ---
 
-## 10 · La red anti-atasco 🟡
+## 10 · La red anti-atasco ✅
 
-**Estado:** ✅ qué piezas existen y qué hacen; ⏳ F0-78 su diseño. La deuda nunca bloquea ✅.
+**Estado:** qué piezas existen y qué hacen está decidido; su diseño ⏳ F0-78. La deuda nunca bloquea, y eso está decidido.
 
 | Pieza | Qué hace ✅ | Diseño |
 |---|---|---|
@@ -224,16 +224,16 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 | **Diario** | Lista las vías que faltan para pasar de acto, con lo que ya cumples | ⏳ F0-78 |
 | **Misión de rescate** | Llega tras mucho tiempo sin avanzar | ⏳ F0-78. Cuánto tiempo, en horas de juego ✅ (F0-53, con las cifras aprobadas el 2026-10-16): **13,5 h** acumuladas para la puerta A5 y **26,5 h** para el círculo (1,25 × el percentil 95 del jugador lento, redondeado a 0,5 h; [28](28-numeros-base-de-la-economia.md) sección 13; viven en `world.json`, `economy.rescue_mission`) |
 
-- 🟡 **Restricciones para las tareas que lo diseñan.**
+- **Restricciones para las tareas que lo diseñan** (⏳ F0-78 y ⏳ F4-109).
   - Misión de rescate (F0-78): señala qué falta y cómo; no concede estatus, logros ni medidores.
   - Estatus ⏳ F4-109: subir a Comerciante o a Empresario no puede exigir una escena de historia ni una puerta, para no crear un ciclo. Una vez cumplido el piso de una puerta, no se pierde por una pérdida de dinero ni por suspender la licencia ✅ (decisión del autor, 2026-10-15).
   - Mora ✅: con 4 semanas de atraso acumuladas la tasa sube +1 pp hasta que pagues una cuota completa y Reme deja de fiar la gestión. Nunca cierra una puerta ([28](28-numeros-base-de-la-economia.md)).
 
 ---
 
-## 11 · Casos «no cumples nada» 🟡
+## 11 · Casos «no cumples nada» ✅
 
-**Estado:** propuesta, con la salida ✅ en cada caso; los textos del diario se escriben en ⏳ F0-78. Todos terminan igual: el juego sigue y la historia espera.
+**Estado:** cada caso tiene su salida, y eso está decidido; los textos del diario se escriben en ⏳ F0-78. Todos terminan igual: el juego sigue y la historia espera.
 
 | Te falta… | Qué pasa | Qué ves en el diario |
 |---|---|---|
@@ -273,7 +273,7 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 | 4 | Como siempre conservas tres pruebas, «borrarte» depende solo de la Unión alta | Confirmado ✅: es el castigo de quien tiene gente detrás |
 | 5 | ¿Los abonos anónimos cuentan como pagados por ti? | No ✅, para no regalar la vía |
 
-## Decisiones aplazadas 🟡
+## Decisiones aplazadas
 
 **Estado:** el autor aceptó dejar estas cifras como propuesta y calibrarlas con la economía. Se aplazan con una tarea porque nada que se escriba antes depende de ellas: ninguna escena, texto ni regla cambia si el 4 pasa a 5.
 
@@ -296,7 +296,7 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 - ⏳ F4-150 Misión persistente de las cintas.
 - La escena del primer contacto con los empleados está en el guion del Acto I ([27](27-guion-del-acto-i.md), sección 15): día 7, a primera hora, antes de la cuota.
 - ✅ F0-47 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión: «puerta» es solo el paso entre actos, el círculo se abre por «entrada» y la cuota vence cada 7 días.
-- ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.
+- ✅ F0-80 cerró este documento con el autor (2026-10-16): no queda ningún punto abierto; lo que depende de otras tareas lleva la tarea que lo resuelve.
 
 ---
 
