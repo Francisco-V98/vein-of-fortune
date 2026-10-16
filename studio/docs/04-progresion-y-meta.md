@@ -160,7 +160,7 @@ Funciones en el juego ✅:
 
 ✅ Lo que decidió el autor (2026-10-13; detalle en [26](26-zonas-y-edificios.md)): la V1 trae la casa mejorable con ranuras de decoración, la ropa por escalón de estatus (solo cambia el sprite pequeño) y un auto (⏳ F4-110, ⏳ F4-111, ⏳ F4-112), y después llegan, en la V2.1, las casas y mansiones por zona, la decoración, la joyería comprable, la concesionaria y la sastrería, y en la V2.2, las embarcaciones, la pesca y las inversiones.
 
-✅ **El auto de V1 es solo estatus y aspecto**, sin efecto en el viaje (decisión del autor, 2026-10-15). Viajar no gasta bloque pero cuesta un poco de dinero (billete o combustible; de 30 a 150 esquirlas por trayecto), y eso es lo que da sentido al auto cuando en V2.1 gane un efecto funcional pequeño ([01](01-core-loop.md), [28](28-numeros-base-de-la-economia.md)).
+✅ **El auto de V1 es solo estatus y aspecto**, sin efecto en el viaje (decisión del autor, 2026-10-15). Viajar no gasta bloque pero cuesta un poco de dinero (billete o combustible; de 42 a 210 esquirlas por trayecto), y eso es lo que da sentido al auto cuando en V2.1 gane un efecto funcional pequeño ([01](01-core-loop.md), [28](28-numeros-base-de-la-economia.md)).
 
 ✅ Qué stats suben con qué compras: **ninguna** (arriba). Casas, ropa y auto dan solo bonos pasivos pequeños y proveedores. Los precios base de V1 ✅ ([28](28-numeros-base-de-la-economia.md)):
 

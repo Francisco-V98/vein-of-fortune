@@ -275,7 +275,7 @@ Mineral que consume cada subida:
 
 Comprar el mineral que falta en el marketplace cuesta +18 % (valor justo × 1,18): el costo total del pico a nivel 2 sube de 750 a 799.
 
-**Mejorar no se paga solo en una expedición.** Medido con el simulador (F0-53, regla C1; cada mejora sube un solo tipo de herramienta y rinde solo en los minerales que ese tipo extrae), la **mejor mejora de cada nivel** se paga en **1,0 · 3,4 · 7,1 · 3,2 expediciones** (niveles 2 a 5; el costo total es dinero más mineral a precio base). Las otras de cada nivel son opcionales y más lentas (el pico a nivel 4 y 5 tarda 17 y 70 expediciones; criba nivel 4, 31). En el Acto I, mejorar el día 5 deja al jugador medio un margen del 39 % de la cuota (sección 7): «ahorrar o mejorar» es una decisión real.
+**Mejorar no se paga solo en una expedición.** Medido con el simulador (F0-53, regla C1; cada mejora sube un solo tipo de herramienta y rinde solo en los minerales que ese tipo extrae), la **mejor mejora de cada nivel** se paga en **1,0 · 3,4 · 7,1 · 3,2 expediciones** (niveles 2 a 5; el costo total es dinero más mineral a precio base). Las otras de cada nivel son opcionales y más lentas (el pico a nivel 4 y 5 tarda 17 y 70 expediciones; criba nivel 4, 31). En el Acto I, mejorar el día 5 deja al jugador medio un margen del 45 % de la cuota (sección 7): «ahorrar o mejorar» es una decisión real.
 
 ### 5.3 Reparar y desgaste
 

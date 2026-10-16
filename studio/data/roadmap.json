@@ -294,7 +294,7 @@
               "title": "Storyboard de las escenas clave del Acto I",
               "est": 10,
               "status": "backlog",
-              "desc": "Storyboard barato de las escenas clave del Acto I (d1.2, d1.6, d2.4, d3.2, d4.4, d7.2 y d7.4 del documento 27): paneles con la descripción, el diálogo, la pantalla del juego dibujada de forma simple y arte provisional. Los personajes y los minerales ya hechos se reutilizan como referencia; los escenarios y los momentos se generan nuevos y baratos; el mapa de Valdoria se regenera ahora, barato y con las zonas actuales (Altafría, Salinas Blancas y la capital). Todo marcado provisional. Requiere el cierre del documento 27 (F0-86).",
+              "desc": "Storyboard barato de las escenas clave del Acto I (d1.2, d1.6, d2.4, d3.2, d4.4, d7.2 y d7.4 del documento 27): paneles con la descripción, el diálogo, la pantalla del juego dibujada de forma simple y arte provisional. Los personajes y los minerales ya hechos se reutilizan como referencia; los escenarios y los momentos se generan nuevos y baratos; el mapa de Valdoria se regenera ahora, barato y con las zonas actuales (Altafría, Salinas Blancas y la capital). Todo marcado provisional. Requiere el cierre del documento 27 (F0-86). Dibuja d4.4 en las tres variantes del Acto II y d1.2 y d7.2 con el decorado de cada variante (con el papel sellado del Ministerio como eco); la lámpara de red de d1.2 se distingue de la lámpara de minero de d1.6.",
               "done_when": "Storyboard visible en el hub, con el mapa regenerado, el arte provisional marcado y sin gastar más créditos de los acordados con el autor.",
               "prio": "P2"
             },
@@ -823,7 +823,7 @@
               "est": 3,
               "status": "backlog",
               "prio": "P1",
-              "desc": "Las tres piezas anti-atasco de los umbrales de acto: un diario que lista las vías que faltan para pasar de acto, la cola donde espera la historia mientras el jugador hace sandbox, y la misión de rescate que se ofrece tras mucho tiempo sin avanzar.",
+              "desc": "Las tres piezas anti-atasco de los umbrales de acto: un diario que lista las vías que faltan para pasar de acto, la cola donde espera la historia mientras el jugador hace sandbox, y la misión de rescate que se ofrece tras mucho tiempo sin avanzar. La cola debe cumplir la invariante del guion del Acto I (documento 27): suelta las escenas de una en una y en orden y nunca dos mecánicas nuevas a la vez.",
               "done_when": "Las tres piezas diseñadas y acordadas con el autor, sin que la deuda ni ningún umbral puedan atascar la partida."
             },
             {
@@ -882,11 +882,11 @@
             },
             {
               "id": "F0-86",
-              "status": "backlog",
+              "status": "done",
               "title": "Pasada de cierre: guion del Acto I (27)",
               "est": 3,
               "prio": "P1",
-              "desc": "Cerrar con el autor los puntos abiertos del documento 27 (guion del Acto I): días 1 a 4, días 5 a 7 y la cuota, decisiones y pistas, y la cinta 1, las sombras y el nombre por defecto de la tienda, hasta llevarlo a un 90 % o más de limpieza y dejar el esquema de escenas y textos listo para F0-24, F3-16 y F3-47. Las dos propuestas de 27:528-537 las cerró F0-80.",
+              "desc": "Cerrar con el autor los puntos abiertos del documento 27 (guion del Acto I): días 1 a 4, días 5 a 7 y la cuota, decisiones y pistas, y la cinta 1, las sombras y el nombre por defecto de la tienda, hasta llevarlo a un 90 % o más de limpieza y dejar el esquema de escenas y textos listo para F0-24, F3-16 y F3-47. Las dos propuestas que pendían del Acto I (el día 1 como una sola mecánica y las pistas del sorteo) las cerró F0-80.",
               "done_when": "El documento 27 llega al 90 % de limpieza o tiene sus puntos abiertos aplazados con una tarea que no condiciona nada anterior, y F0-24, F3-16 y F3-47 pueden empezar sobre él."
             }
           ]
@@ -1085,7 +1085,7 @@
               "title": "Fuente pixel con caracteres latinos extendidos y plan de fuentes de respaldo por idioma",
               "est": 2,
               "status": "backlog",
-              "desc": "Debe incluir á é í ó ú ñ ¿ ¡. Prever fuentes de respaldo para idiomas futuros. Aquí se validan también los límites de las cajas de diálogo (34 caracteres por línea, 3 líneas, 3 botones de 28; documento 18) y el largo del nombre del protagonista y de la tienda en la Steam Deck a 1280×800.",
+              "desc": "Debe incluir á é í ó ú ñ ¿ ¡. Prever fuentes de respaldo para idiomas futuros. Aquí se validan también los límites de las cajas de diálogo (34 caracteres por línea, 3 líneas, 3 botones de 28; documento 18) y el largo del nombre del protagonista y de la tienda en la Steam Deck a 1280×800. El nombre por defecto de la tienda es «Puesto de {nombre}» (22 caracteres con un nombre de 12 letras), así que el largo máximo del nombre de la tienda es de 22 o más.",
               "done_when": "Fuente elegida con licencia registrada, glifos verificados y límites de cajas y nombres comprobados con el texto real.",
               "prio": "P1"
             },
@@ -1103,7 +1103,7 @@
               "title": "Flujo de traducción: extracción, traducción asistida por IA, revisión y glosario ES/EN",
               "est": 4,
               "status": "backlog",
-              "desc": "Proceso repetible para traducir y revisar, con glosario de términos del mundo (Aetherita, Faroleros, etc.). Incluye la traducción al inglés de los términos del glosario del documento 18 (unos 40, como Highchill y White Salt Flats) y de las fichas de lugares del documento 26. Cubre también los términos de los apartados 6.5 y 6.11 del documento 18, Highchill, White Salt Flats y el farol vinotinto.",
+              "desc": "Proceso repetible para traducir y revisar, con glosario de términos del mundo (Aetherita, Faroleros, etc.). Incluye la traducción al inglés de los términos del glosario del documento 18 (unos 40, como Highchill y White Salt Flats) y de las fichas de lugares del documento 26. Cubre también los términos de los apartados 6.5 y 6.11 del documento 18, Highchill, White Salt Flats y el farol vinotinto. Incluye los términos de la sección del glosario del documento 27.",
               "done_when": "Un lote de textos recorre el flujo completo y todos los términos del glosario tienen su inglés revisado.",
               "prio": "P1"
             },
@@ -1384,7 +1384,7 @@
               "title": "Ciclo de 3 bloques y avance del día",
               "est": 6,
               "status": "backlog",
-              "desc": "Mañana, tarde y noche con eventos de fin de día. Un bloque admite medio bloque. Ver zonas en el mapa no cuesta nada y viajar entre regiones cuesta un pequeño precio en dinero (documento 28); minar y abrir la tienda cuestan un bloque completo y la tienda no se abre de noche; trámites, misiones y eventos cuestan 0, medio o un bloque según su peso. Botón «Esperar» para saltar un bloque (documento 01). La Fosa abre 3 días por semana y las expediciones profundas ocupan Tarde y Noche.",
+              "desc": "Mañana, tarde y noche con eventos de fin de día. Un bloque admite medio bloque. Ver zonas en el mapa no cuesta nada y viajar entre regiones cuesta un pequeño precio en dinero (documento 28); minar y abrir la tienda cuestan un bloque completo y la tienda no se abre de noche; trámites, misiones y eventos cuestan 0, medio o un bloque según su peso. Botón «Esperar» para saltar un bloque (documento 01). La Fosa abre 3 días por semana y las expediciones profundas ocupan Tarde y Noche. Define el mecanismo de pesos de las escenas guionizadas (0, medio o un bloque), que F3-16 asigna en el Acto I.",
               "done_when": "Se puede avanzar días consumiendo bloques.",
               "prio": "P0"
             },
@@ -1948,7 +1948,7 @@
               "title": "Acto I: Villa Brasa, Reme, Teo, deuda y tutorial guiado",
               "est": 14,
               "status": "backlog",
-              "desc": "Los siete días guiados del Acto I según el documento 27: tres bloques por día, las mecánicas de una en una, la cola de escenas, las tres pistas del sorteo oculto con sus props, la ficha del candidato y las reglas para que nunca se atasque. Los textos son de F3-47. Requiere el cierre del documento 27 (F0-86).",
+              "desc": "Los siete días guiados del Acto I según el documento 27 y su sección 21: tres bloques por día, las mecánicas de una en una, la cola de escenas, el peso de cada escena (0, medio o 1), las tres pistas del sorteo oculto con sus props (incluido el papel sellado del Ministerio), el taladro prestado de Teo solo el día 3, la placa de Pozo Negro, la cinta 1 en el día 2 (bandera, aviso y «Carrete 1» sin reproducción), la interacción de pagar antes, la visita de Reme al puesto el día 7, la ficha del candidato, la mecánica Reponer del día 2 y las reglas para que nunca se atasque. Los textos son de F3-47. Requiere el cierre del documento 27 (F0-86).",
               "done_when": "Los siete días se juegan de principio a fin con las tres decisiones pequeñas, la cuota del día 7 y el cierre del acto sin atascos.",
               "prio": "P0"
             },
@@ -1967,7 +1967,7 @@
               "title": "Textos del Acto I: guion de los siete días",
               "est": 14,
               "prio": "P0",
-              "desc": "Escribir los textos de los siete días del Acto I según el documento 27: escenas de Reme, Teo, Quiroga y Lucía, la carta a Vega Mansa, las tres decisiones pequeñas, las tres pistas del sorteo y los avisos del tutorial, con las variables {cuota} y {recargo}. Requiere el cierre del documento 27 (F0-86).",
+              "desc": "Escribir los textos de los siete días del Acto I según el documento 27 y su sección 21 (identificadores, variables y tabla maestra de las 28 escenas): escenas de Reme, Teo, Quiroga y Lucía, la carta a Vega Mansa, las tres decisiones pequeñas con botones de 28 caracteres o menos, las tres pistas del sorteo, la interacción corta de pagar antes en casa de Reme, la ficha del candidato, los tres textos del Teletipo del día 5 (entero, mitad y reserva) y los avisos del tutorial, con las variables {nombre}, {tienda}, {cuota} y {recargo}. Requiere el cierre del documento 27 (F0-86).",
               "done_when": "Los textos de los siete días están escritos en español, respetan las voces de la biblia y el documento 27, y la traducción queda para F3-30."
             }
           ]
@@ -2123,7 +2123,7 @@
               "title": "Diez noticias iniciales y seis eventos del Acto I",
               "est": 8,
               "prio": "P1",
-              "desc": "Material para que el mercado se sienta vivo.",
+              "desc": "Material para que el mercado se sienta vivo: diez noticias iniciales y seis eventos del Acto I, más las noticias guionizadas de los siete días (el carbón sube el día 2, el hierro el día 3, el rumor del ferrocarril el día 6, la confirmación y el decreto del día 7 (titular), la nota del Heraldo con el nombre del jugador y de la tienda el día 4). Respeta el tope de una noticia y un rumor por día (documento 27).",
               "done_when": "Aparecen en partidas distintas."
             },
             {
@@ -2132,7 +2132,7 @@
               "title": "Doce pedidos de ejemplo con clientes",
               "est": 4,
               "prio": "P1",
-              "desc": "Variedad de pedidos de clientes para el Acto I (estándar y urgente con prima, según el documento 27); «contrato» queda para el Acto II en adelante.",
+              "desc": "Variedad de pedidos de clientes para el Acto I (estándar y urgente con prima, según el documento 27); «contrato» queda para el Acto II en adelante. Incluye las tarjetas del pedido estándar del día 4 y del urgente del día 6 con sus cifras (8, 448 y 729; documento 28) y las variables {tienda} y {cuota} donde haga falta, que no van en las escenas de F3-47.",
               "done_when": "Se generan contratos distintos."
             },
             {
