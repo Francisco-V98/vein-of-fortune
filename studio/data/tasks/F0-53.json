@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Pasa a revisión del autor tras QA",
       "ref": "PR de F0-53"
+    },
+    {
+      "at": "2026-10-16",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea",
+      "ref": "PR #51"
     }
   ],
   "comments": [],
@@ -86,9 +94,9 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-16",
-        "nota": "Esperando la revisión del autor"
+        "nota": "El autor revisó y aprobó el entregable el 2026-10-16"
       },
       {
         "etapa": "playtest",
@@ -96,7 +104,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR fusionado"
       }
     ],
     "traspasos": [
@@ -195,6 +206,13 @@
         "de": "coordinador",
         "a": "autor",
         "que": "Revisión de F0-53: simulador, resultados y ajustes",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobación de F0-53",
         "at": "2026-10-16",
         "tipo": "entrega"
       }
