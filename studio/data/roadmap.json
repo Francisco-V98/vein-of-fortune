@@ -848,7 +848,7 @@
               "id": "F0-80",
               "title": "Pasada de cierre: biblia, documentos de pasado, variantes, árbol, umbrales y finales, equipo y zonas (18, 20 a 26)",
               "est": 9.5,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Repasar con el autor los documentos 18, 20, 21, 22, 23, 24, 25 y 26 hasta llevar cada uno a un 90 % o más de limpieza, confirmando lo que siga en propuesta y aplazando solo lo que cumpla la regla del documento 15. El guion del Acto I (27) lo cierra F0-86.",
               "done_when": "Cada uno de los documentos 18, 20, 21, 22, 23, 24, 25 y 26 llega al 90 % de limpieza o tiene sus puntos abiertos aplazados con una tarea que no condiciona nada anterior."
