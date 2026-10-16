@@ -59,8 +59,9 @@ Lore:
 
 ✅ Las probabilidades de aparición y obtención se calibran para que no sea fácil ganar mucho dinero rápido ni terminar el juego pronto.
 
-- ✅ **Energía:** el **Aguante base es de 25** y es la energía máxima de **cada expedición**: se rellena entera al empezar, y una casa mejor sube un poco la energía inicial (+2 por nivel de casa). Cada mena gasta energía según su mineral: carbón 8 · hierro 10 · cobre 12 · salitre 12 · plata 14 · cuarzo 16 · oro 18 · esmeralda 22 · diamante 26 · Aetherita 34 (cada nivel de herramienta la baja un 10 % del valor base, hasta ×0,6 en el nivel 5).
-- ✅ **Menas por expedición:** variable según tus skills, herramientas y mejoras. Al principio caben **2 a 3** (con 25 de energía, 3 de carbón o 2 de hierro) y el número crece con la recolección: unas 4 en el Acto II, 7 en el III y hasta 10 por bloque en el IV. Los empleados rinden mucho menos que tú, pero escalan igual con sus skills ([04](04-progresion-y-meta.md)).
+- ✅ **Energía:** el **Aguante base es de 28** (decisión del autor, 2026-10-16: sube de 25 porque con 25 el jugador medio no pagaba la primera cuota con margen) y es la energía máxima de **cada expedición**: se rellena entera al empezar, y una casa mejor sube un poco la energía inicial (+2 por nivel de casa). Cada mena gasta energía según su mineral: carbón 8 · hierro 10 · cobre 12 · salitre 12 · plata 14 · cuarzo 16 · oro 18 · esmeralda 22 · diamante 26 · Aetherita 34 (cada nivel de herramienta la baja un 10 % del valor base, hasta ×0,6 en el nivel 5).
+- ✅ **Descartar una mena cuesta energía** (decisión del autor, 2026-10-15): si escaneas una mena y no la extraes (porque no te conviene o porque tu herramienta no puede con ella), pagas el **25 % de la energía que habría costado extraerla**. Sin ese costo, descartar era gratis y el jugador solo minaba lo de mayor valor por energía; con él, repartir la energía entre extraer y descartar es una decisión real ([28](28-numeros-base-de-la-economia.md), sección 3.7). El simulador (F0-53) mide la pérdida de ingreso de descartar a este costo en ≈ 23 % frente a descartar gratis.
+- ✅ **Menas por expedición:** variable según tus skills, herramientas y mejoras. Al principio caben **2 a 3** (con 28 de energía, 3 de carbón o 2 de hierro) y el número crece con la recolección: unas 4 en el Acto II, 7 en el III y hasta 10 por bloque en el IV. Los empleados rinden mucho menos que tú, pero escalan igual con sus skills ([04](04-progresion-y-meta.md)).
 - ✅ **Expedición profunda:** gasta **×1,8 de energía** y permite **×1,5 de carga**.
 - ✅ **Consumibles de recarga de energía** y similares: versiones futuras, mucho después de la V1 ([06](06-roadmap-y-pendientes.md)).
 - ✅ **Zonas que se agotan:** cada expedición baja la riqueza de la zona 6 puntos, cada día sube 3 y nunca baja del 40 %, así que rotar de zona rinde más que repetir una ([28](28-numeros-base-de-la-economia.md)).
@@ -72,6 +73,8 @@ Lore:
 - Las herramientas **se desgastan** con el uso.
 - Cada herramienta sirve para ciertos materiales; los materiales de mayor nivel requieren herramientas mejores.
 - Mejor herramienta → minijuego más fácil / zona óptima más amplia / más probabilidad de obtención.
+
+✅ **Los niveles de herramienta por acto son una guía, no un tope** (decisión del autor, 2026-10-15): Acto I 1–2 · II 2–3 · III 3–4 · IV 4–5 indican el nivel con el que se espera llegar a cada acto; si un jugador compra antes un nivel que se lo puede permitir, puede. Si el simulador (F0-53) ve que el optimizador llega demasiado pronto a un nivel, propone subir el costo de ese nivel y el autor decide.
 
 ✅ Lo que mejora el jugador al ir comprando: más resistencia, más almacenamiento (carga), mejor minado, mejor información (escáner). Son los cuatro componentes de **cada nivel**: un nivel de herramienta es un paquete que mejora las cuatro cosas a la vez, no cuatro escaleras separadas ✅.
 

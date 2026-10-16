@@ -28,7 +28,8 @@
         "carbon": 70,
         "hierro": 30
       },
-      "initial_wealth": 100
+      "initial_wealth": 100,
+      "place": "villa-brasa"
     },
     {
       "id": "canon-ferroso",
@@ -42,7 +43,8 @@
         "carbon": 20,
         "cobre": 25
       },
-      "initial_wealth": 100
+      "initial_wealth": 100,
+      "place": "villa-brasa"
     },
     {
       "id": "sierra-alta",
@@ -57,7 +59,8 @@
         "hierro": 15,
         "oro": 10
       },
-      "initial_wealth": 100
+      "initial_wealth": 100,
+      "place": "altafria"
     },
     {
       "id": "salares",
@@ -71,7 +74,8 @@
         "cuarzo": 25,
         "plata": 20
       },
-      "initial_wealth": 100
+      "initial_wealth": 100,
+      "place": "salinas-blancas"
     },
     {
       "id": "cavernas",
@@ -87,7 +91,8 @@
         "diamante": 10,
         "plata": 10
       },
-      "initial_wealth": 100
+      "initial_wealth": 100,
+      "place": "cavernas"
     },
     {
       "id": "fosa",
@@ -107,7 +112,8 @@
         2,
         4,
         6
-      ]
+      ],
+      "place": "fosa"
     }
   ],
   "minigames": [
@@ -270,7 +276,8 @@
         "tecnologia": 30
       },
       "minigames": [
-        "perforacion"
+        "perforacion",
+        "picado"
       ],
       "zones": {
         "sierra-alta": "principal",
@@ -353,7 +360,8 @@
       },
       "minigames": [
         "perforacion",
-        "cribado"
+        "cribado",
+        "picado"
       ],
       "zones": {
         "sierra-alta": "principal",
@@ -396,7 +404,8 @@
       },
       "minigames": [
         "cribado",
-        "perforacion"
+        "perforacion",
+        "picado"
       ],
       "zones": {
         "cavernas": "principal",
@@ -1141,7 +1150,7 @@
         "avg_at_exit_pct": {
           "II": 59,
           "III": 65,
-          "IV": 88
+          "IV": 94
         }
       },
       "aetherita": {
@@ -1152,7 +1161,24 @@
           "cincel"
         ],
         "filter_cost_per_expedition": 400,
-        "employees_can_extract": false
+        "employees_can_extract": false,
+        "legal_channel": {
+          "buyer": "comision",
+          "from_act": "IV",
+          "max_vials_per_day": 5,
+          "price_mult_of_fair": 1.0,
+          "sale_tax_applies": true,
+          "slippage": false,
+          "vigilance": 0,
+          "nota": "Decisión del autor (2026-10-15 y 2026-10-16): en el Acto IV la Comisión del Éter compra Aetherita por el canal legal, con un tope diario de viales, en una oficina de Puerto Meridiano siempre abierta. El precio (valor justo, sin prima) y el impuesto son la propuesta del simulador (F0-53), aprobada",
+          "location": "puerto-meridiano",
+          "always_open": true,
+          "description": "Oficina de la Comisión del Éter en Puerto Meridiano, siempre abierta; compra hasta 5 viales al día a valor justo, sin prima"
+        }
+      },
+      "ore_discard": {
+        "energy_pct_of_ore": 25,
+        "nota": "Decisión del autor (2026-10-15): descartar una mena escaneada (la que no quieres o la que tu herramienta no puede extraer) cuesta el 25 % de la energía que habría costado extraerla"
       }
     },
     "pace": {
@@ -1164,16 +1190,16 @@
         },
         "II": {
           "start": 6300,
-          "end": 10200,
+          "end": 10800,
           "target": 7500
         },
         "III": {
-          "attentive": 36000,
-          "target": 27000
+          "attentive": 38700,
+          "target": 33000
         },
         "IV": {
-          "attentive": 167000,
-          "target": 125000
+          "attentive": 181000,
+          "target": 110000
         }
       },
       "acts": {
@@ -1201,7 +1227,7 @@
             18,
             46
           ],
-          "wealth_end": 35000
+          "wealth_end": 26000
         },
         "III": {
           "hours": [
@@ -1223,27 +1249,30 @@
             14,
             28
           ],
-          "wealth_end": 570000
+          "wealth_end": 280000
         }
       },
       "sinks_per_act": {
         "II": 20000,
-        "III": 60000,
-        "IV": 150000
+        "III": 100000,
+        "IV": 330000
       },
       "wealth_definition": "efectivo + stock a valor justo; no resta la deuda; no cuentan herramientas, casa, ropa ni auto",
       "status_floors": {
-        "comerciante": 25000,
-        "empresario": 120000,
-        "magnate": 500000
+        "comerciante": 15000,
+        "empresario": 90000,
+        "magnate": 250000
       },
-      "status_floors_note": "orden de magnitud; F4-109 fija los finales"
+      "status_floors_note": "orden de magnitud; F4-109 fija los finales",
+      "target_is_act_mean": true,
+      "hour_definition": "tiempo de día de juego (13 min por día, sin escenas ni diálogos)",
+      "act_ratio_note": "Decisión del autor (2026-10-15): el objetivo de cada acto es su media; el salto I→II puede llegar a ×7 (excepción); si el simulador muestra que las cifras no llegan, propone el ajuste"
     },
     "energy": {
-      "base": 25,
+      "base": 28,
       "per_act": {
         "I": [
-          25,
+          28,
           30
         ],
         "II": 40,
@@ -1279,7 +1308,9 @@
         "reduces_loss_by": 0.5,
         "price_pct_of_avg_expedition": 6
       },
-      "consumables_note": "Consumibles de recarga de energía y similares: versiones futuras, sin cifra"
+      "consumables_note": "Consumibles de recarga de energía y similares: versiones futuras, sin cifra",
+      "ramp_fraction_of_act": 0.7,
+      "ramp_note": "Fracción del acto en la que el Aguante sube linealmente desde el valor del acto anterior hasta el objetivo del acto (1 = lo alcanza al terminar el acto; 0,5 = a mitad del acto). Supuesto del simulador (F0-53) hasta que F3-11 fije la curva de Aguante"
     },
     "tools": {
       "types": [
@@ -1372,32 +1403,32 @@
         ]
       },
       "upgrade_cost_base": {
-        "2": 200,
+        "2": 480,
         "3": 1100,
         "4": 13000,
         "5": 40000
       },
       "upgrade_cost": {
         "pico": {
-          "2": 200,
+          "2": 480,
           "3": 1100,
           "4": 13000,
           "5": 40000
         },
         "criba": {
-          "2": 220,
+          "2": 528,
           "3": 1210,
           "4": 14300,
           "5": 44000
         },
         "taladro": {
-          "2": 250,
+          "2": 600,
           "3": 1380,
           "4": 16250,
           "5": 50000
         },
         "cincel": {
-          "2": 300,
+          "2": 720,
           "3": 1650,
           "4": 19500,
           "5": 60000
@@ -1481,11 +1512,11 @@
       "marketplace_markup": 1.18,
       "repair": {
         "money_per_point": [
-          3,
-          5,
-          20,
-          85,
-          240
+          0.9,
+          1.5,
+          6,
+          25,
+          72
         ],
         "type_mult_as_upgrade": true,
         "points_per_part": 20,
@@ -1516,12 +1547,12 @@
         "powers": [
           {
             "power": 1,
-            "cost": 15,
+            "cost": 20,
             "for_tier": 1
           },
           {
             "power": 2,
-            "cost": 50,
+            "cost": 55,
             "for_tier": 2
           },
           {
@@ -1643,9 +1674,9 @@
         "w_max": 4.0,
         "by_act": {
           "I": 0.5,
-          "II": 0.67,
-          "III": 1.35,
-          "IV": 2.4
+          "II": 0.6,
+          "III": 1.0,
+          "IV": 1.6
         },
         "recovery_per_block": 0.25
       },
@@ -1660,14 +1691,21 @@
           60,
           80,
           100
-        ]
+        ],
+        "own_goods_only": true,
+        "client_markup_by_skill": {
+          "lento": 1.08,
+          "medio": 1.15,
+          "rapido": 1.2
+        },
+        "own_goods_note": "Decisión del autor (2026-10-15): la tienda y los pedidos solo aceptan mercancía propia (extraída o refinada); no se compra al mercado para revender en la tienda o en un pedido"
       },
       "licenses": {
         "renewal_days": 28,
         "minero": 150,
         "comerciante": 900,
-        "empresario": 6000,
-        "magnate": 30000
+        "empresario": 4500,
+        "magnate": 17000
       },
       "storage_min_fee_per_lot_day": 1,
       "warehouse": [
@@ -1708,7 +1746,18 @@
           "rent_per_day": 1200,
           "cost": 600000
         }
-      ]
+      ],
+      "loose_events": {
+        "prob_pct_per_mineral_day": 8,
+        "magnitude_weights": {
+          "menor": 40,
+          "medio": 30,
+          "mayor": 20,
+          "extremo": 10
+        },
+        "nota": "Eventos sueltos de un solo mineral (sin sector): probabilidad por mineral y día, magnitud entre event_base_points; signo al azar. Fijado desde el prototipo de F0-52"
+      },
+      "buyer_cap_excess_slippage_mult": 3
     },
     "debt": {
       "principal": 24000,
@@ -1816,21 +1865,21 @@
         },
         {
           "level": 3,
-          "efficiency_pct": 46,
+          "efficiency_pct": 42,
           "max_tier": 3,
-          "salary_per_day": 430
+          "salary_per_day": 200
         },
         {
           "level": 4,
-          "efficiency_pct": 54,
+          "efficiency_pct": 46,
           "max_tier": 4,
-          "salary_per_day": 1000
+          "salary_per_day": 600
         },
         {
           "level": 5,
-          "efficiency_pct": 60,
+          "efficiency_pct": 50,
           "max_tier": 4,
-          "salary_per_day": 1180
+          "salary_per_day": 720
         }
       ],
       "never_extract": [
@@ -1949,7 +1998,49 @@
         },
         "theft_pct_of_day_value": 15
       },
-      "act_IV_role": "residual"
+      "act_IV_role": "residual",
+      "miner_assignment": {
+        "expeditions_per_day": 1,
+        "zone": "asignada por el jugador",
+        "salary_follows_level": true,
+        "nota": "Decisión del autor (2026-10-15): un Minero hace una expedición al día en la zona que le asigna el jugador; al subir de nivel (entrenamiento o cada 40 días trabajados) el salario sigue al nivel (renegociación automática)"
+      },
+      "candidates": {
+        "loyalty_pct": {
+          "baja": 25,
+          "media": 55,
+          "alta": 20
+        },
+        "level_pct_by_act": {
+          "II": {
+            "1": 60,
+            "2": 40
+          },
+          "III": {
+            "2": 20,
+            "3": 50,
+            "4": 30
+          },
+          "IV": {
+            "3": 20,
+            "4": 50,
+            "5": 30
+          }
+        },
+        "nota": "Propuesta del simulador (F0-53): reparto de la Lealtad (oculta) y del nivel de los candidatos que llegan por el anuncio o la Bolsa de la Unión"
+      },
+      "support_roles": {
+        "dependiente_frees_shop_block": true,
+        "refinador_added_value": 0,
+        "analista_only_cost": true,
+        "nota": "El Dependiente libera el bloque de tienda; el Refinador no añade valor hasta que exista el refinado (F3-07); el Analista solo cuesta (aporta la capa 3 de información)"
+      },
+      "act_IV_warning": {
+        "warn_before_sending_to_depleted_zone": true,
+        "shows_estimated_loss": true,
+        "player_can_still_decide": true,
+        "nota": "Decisión del autor (2026-10-16): en el Acto IV el juego avisa, con la pérdida estimada, antes de mandar a un Minero a una zona agotada, pero deja decidir al jugador. Sin el aviso, un Minero en La Fosa o las Cavernas resta ≈ 10 000 esquirlas al día (F0-53)"
+      }
     },
     "store_upgrades": [
       {
@@ -2008,15 +2099,15 @@
           "subscription_days": 28,
           "papers": {
             "heraldo": {
-              "subscription": 220,
+              "subscription": 120,
               "single": 10
             },
             "voz": {
-              "subscription": 220,
+              "subscription": 120,
               "single": 10
             },
             "teletipo": {
-              "subscription": 450,
+              "subscription": 250,
               "single": 20
             }
           },
@@ -2051,77 +2142,77 @@
         {
           "a": "villa-brasa",
           "b": "altafria",
-          "cost": 30
+          "cost": 42
         },
         {
           "a": "villa-brasa",
           "b": "salinas-blancas",
-          "cost": 40
+          "cost": 56
         },
         {
           "a": "villa-brasa",
           "b": "puerto-meridiano",
-          "cost": 70
+          "cost": 98
         },
         {
           "a": "villa-brasa",
           "b": "cavernas",
-          "cost": 90
+          "cost": 126
         },
         {
           "a": "villa-brasa",
           "b": "fosa",
+          "cost": 196
+        },
+        {
+          "a": "altafria",
+          "b": "salinas-blancas",
+          "cost": 63
+        },
+        {
+          "a": "altafria",
+          "b": "puerto-meridiano",
+          "cost": 84
+        },
+        {
+          "a": "altafria",
+          "b": "cavernas",
           "cost": 140
         },
         {
           "a": "altafria",
-          "b": "salinas-blancas",
-          "cost": 45
-        },
-        {
-          "a": "altafria",
-          "b": "puerto-meridiano",
-          "cost": 60
-        },
-        {
-          "a": "altafria",
-          "b": "cavernas",
-          "cost": 100
-        },
-        {
-          "a": "altafria",
           "b": "fosa",
-          "cost": 150
+          "cost": 210
         },
         {
           "a": "salinas-blancas",
           "b": "puerto-meridiano",
-          "cost": 35
+          "cost": 49
         },
         {
           "a": "salinas-blancas",
           "b": "cavernas",
-          "cost": 85
+          "cost": 119
         },
         {
           "a": "salinas-blancas",
           "b": "fosa",
-          "cost": 130
+          "cost": 182
         },
         {
           "a": "puerto-meridiano",
           "b": "cavernas",
-          "cost": 50
+          "cost": 70
         },
         {
           "a": "puerto-meridiano",
           "b": "fosa",
-          "cost": 110
+          "cost": 154
         },
         {
           "a": "cavernas",
           "b": "fosa",
-          "cost": 70
+          "cost": 98
         }
       ],
       "same_mouth_cost": 0
@@ -2139,7 +2230,14 @@
           "I": 0,
           "II": 15
         },
-        "first_qty": "8 sacos de carbon"
+        "first_qty": "8 sacos de carbon",
+        "cadence_days": 2,
+        "qty_days_of_production": [
+          1,
+          2
+        ],
+        "first_units": 8,
+        "first_mineral": "carbon"
       },
       {
         "id": "urgente",
@@ -2153,7 +2251,14 @@
           "I": 5,
           "II": 30
         },
-        "first_qty": "6 de hierro"
+        "first_qty": "6 de hierro",
+        "cadence_days": 7,
+        "qty_days_of_production": [
+          0.5,
+          1
+        ],
+        "first_units": 6,
+        "first_mineral": "hierro"
       },
       {
         "id": "negro",
@@ -2180,6 +2285,11 @@
         "price_drift_pct": [
           15,
           20
+        ],
+        "cadence_days": 14,
+        "qty_days_of_production": [
+          3,
+          5
         ]
       },
       {
@@ -2191,7 +2301,12 @@
           14
         ],
         "penalty_pct": 50,
-        "vigilance": 10
+        "vigilance": 10,
+        "cadence_days": 14,
+        "qty_days_of_production": [
+          1,
+          2
+        ]
       }
     ],
     "surveillance": {
@@ -2231,7 +2346,6 @@
         "III": 12000,
         "IV": 55000
       },
-      "aetherita_max_vials_per_night": 3,
       "bribe_quiroga": {
         "base": 500,
         "pct_of_wealth": 0.8,
@@ -2287,6 +2401,26 @@
           -12,
           -8
         ]
+      },
+      "aetherita_special_orders": {
+        "from_act": "IV",
+        "every_days": 21,
+        "vials": [
+          1,
+          2
+        ],
+        "premium_pct": 30,
+        "vigilance": 8,
+        "routine": false,
+        "nota": "Decisión del autor (2026-10-15): la Aetherita solo entra en el mercado negro como encargo especial (con trasfondo e historia), raro, de poco volumen y a veces una compra sin mucho detalle; nunca un canal rutinario ni de grandes cantidades. Frecuencia, viales y vigilancia son la propuesta del simulador (F0-53)",
+        "casilda_variant": {
+          "every_days": 14,
+          "premium_bonus_points": [
+            10,
+            15
+          ],
+          "nota": "Decisión del autor (2026-10-16): si Casilda es la compradora elegida en el final, los encargos especiales de Aetherita del negro llegan cada ≈ 14 días en vez de ≈ 21 (con más historia); la prima sigue en +10 a +15 puntos sobre la base"
+        }
       }
     },
     "lifestyle": {
@@ -2392,8 +2526,11 @@
       "fine_values": "F3-22"
     },
     "validation": {
-      "last_simulated": "scratchpad f052_check.py (fuera del repo)",
+      "last_simulated": "tools/sim/run.py --completo (2026-10-16; resultados en studio/data/sim/resultados.json)",
       "verified_in": "F0-53",
+      "results_file": "studio/data/sim/resultados.json",
+      "rules_file": "studio/data/sim/reglas.json",
+      "assumptions_file": "studio/data/sim/supuestos.json",
       "checks": [
         "cuota del dia 7",
         "ritmo por acto",
@@ -2404,8 +2541,88 @@
         "sin ganancia segura",
         "topes de volatilidad",
         "mercado negro",
-        "reparar"
-      ]
+        "reparar",
+        "descartar menas",
+        "Aetherita con canal legal",
+        "tienda y pedidos con mercancia propia",
+        "mision de rescate"
+      ],
+      "summary": "50 de 50 reglas de equilibrio pasan con las cifras aprobadas el 2026-10-16 (resultados en studio/data/sim/resultados.json)"
+    },
+    "orders_rules": {
+      "own_goods_only": true,
+      "cadence_from_act": "II",
+      "income_share_cap_pct": 15,
+      "nota": "Decisión del autor (2026-10-15): fuera del Acto I (guionizado) llega un pedido estándar cada 2 días (1–2 días de producción media, +12 %) y un urgente por semana (+35 %); entre todos aportan como máximo el 15 % del ingreso. Los contratos a largo plazo y oficiales llegan según su acto. Las cantidades de urgente, largo plazo y oficial son la propuesta del simulador (F0-53)"
+    },
+    "scripted_drift_act1": [
+      {
+        "mineral": "carbon",
+        "from_day": 2,
+        "pct": 3,
+        "kind": "escalon",
+        "fuente": "doc 27: el frío adelantado sube el carbón un poco desde el día 2"
+      },
+      {
+        "mineral": "hierro",
+        "from_day": 3,
+        "to_day": 7,
+        "pct_per_day": 1,
+        "kind": "acumulado",
+        "fuente": "doc 27: la noticia del hierro hace que suba despacio los días siguientes"
+      }
+    ],
+    "act1_script": {
+      "expedition_days": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "expedition_minerals": [
+        "carbon",
+        "hierro",
+        "carbon",
+        "hierro",
+        "hierro"
+      ],
+      "extra_expedition_day": 6,
+      "extra_expedition_minerals": [
+        "hierro",
+        "carbon"
+      ],
+      "first_expedition_result": "bueno",
+      "anselmo_sack": {
+        "mineral": "carbon",
+        "units": 1
+      },
+      "management_day": 2,
+      "upgrade_day": 5,
+      "upgrade_tool": "pico",
+      "upgrade_level": 2,
+      "standard_order": {
+        "offered_day": 4,
+        "delivery_day": 5
+      },
+      "urgent_order": {
+        "offered_day": 6,
+        "delivery_day": 7
+      },
+      "store_days": [
+        2,
+        4,
+        7
+      ],
+      "nota": "Datos del guion del Acto I (docs/27) que usa el simulador: días de expedición, mineral de cada una y de las extra, pedidos y mejora del día 5"
+    },
+    "rescue_mission": {
+      "hours_accumulated": {
+        "A5": 13.5,
+        "circle": 26.5
+      },
+      "rule": "1,25 × el percentil 95 de las horas del jugador lento para cumplir la parte económica de cada puerta, redondeado a 0,5 h (F0-53); horas de juego acumuladas desde el inicio de la partida",
+      "nota": "F0-78 diseña la misión; aquí solo vive la cifra"
     }
   }
 }

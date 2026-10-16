@@ -17,6 +17,8 @@ Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/world.json          registro del mundo: minerales, zonas, minijuegos, recetas, facciones y personajes
   - studio/data/decisions.json      árbol de decisiones: nodos, banderas, cuellos, cintas y pruebas del Acto IV
   - studio/data/hilos.json          registro de hilos narrativos: dónde se siembra y se resuelve cada pista, promesa o secreto
+  - studio/data/sim/reglas.json     reglas de equilibrio de la economía y trazabilidad requisito -> regla (F0-53)
+  - studio/data/sim/resultados.json resultado del simulador (generado por tools/sim/run.py y versionado)
 
 Limpieza del diseño (ver studio/docs/15-flujo-de-trabajo-y-calidad.md):
   limpieza = ✅ / (✅ + 🟡 + ❓)  por documento y en total. Meta: lo más cerca posible de 100 %.
@@ -28,7 +30,9 @@ Regla de coherencia: si el estado de una tarea no es "backlog", debe existir su
 archivo de actividad y el último movimiento del historial debe llevar a ese estado.
 Así, que una tarea esté "En proceso" siempre implica que alguien editó sus datos.
 """
+import copy
 import datetime
+import importlib.util
 import json
 import pathlib
 import re
@@ -43,6 +47,8 @@ DOCS = STUDIO / "docs"
 DATA = STUDIO / "data"
 TASKS_DIR = DATA / "tasks"
 EVIDENCE = STUDIO / "evidence"
+SIM_DIR = DATA / "sim"
+SIM_MUNDO = STUDIO.parent / "tools" / "sim" / "mundo.py"
 
 VALID_STATUS = ["backlog", "sprint", "doing", "review", "qa", "done", "dropped"]
 VALID_PRIO = ["P0", "P1", "P2", "P3"]
@@ -717,6 +723,256 @@ def load_hilos(world, decisions=None, story=None):
     return data
 
 
+# ---------- simulador de economía (F0-53) ----------
+SIM_ESTADOS = ["pasa", "falla", "incierto"]
+SIM_ORIGENES = ["doc", "prop."]
+SIM_SERIES = ["ingreso_hora_por_acto", "patrimonio_por_dia", "acto1_caja_antes_de_cuota"]
+SIM_MAX_KB = 300
+SIM_HUELLA_FUNCIONES = ["huella", "calcular_huella", "huella_mundo"]
+# Mientras F0-53 esté en curso la ausencia de resultados solo se avisa; al cerrarla se pone True
+# y entonces el build exige que resultados.json exista (y --strict que esté vigente y sin fallos).
+SIM_REQUERIDO = True
+
+
+def _es_numero(x):
+    return isinstance(x, (int, float)) and not isinstance(x, bool)
+
+
+def _sim_check_reglas(res, perfiles):
+    """Valida la lista de reglas de resultados.json (esquema del informe, apartado 3.1)."""
+    out, seen = [], set()
+    reglas = res.get("reglas")
+    if not isinstance(reglas, list) or not reglas:
+        return ["resultados.json: 'reglas' debe ser una lista no vacía"]
+    for r in reglas:
+        rid = r.get("id", "?") if isinstance(r, dict) else "?"
+        if not isinstance(r, dict):
+            out.append("resultados.json: hay una regla que no es un objeto")
+            continue
+        if rid in seen:
+            out.append("resultados.json: regla repetida: %s" % rid)
+        seen.add(rid)
+        for key in ("id", "grupo", "titulo", "metrica"):
+            if not isinstance(r.get(key), str) or not r.get(key):
+                out.append("resultados.json: la regla %s no tiene '%s'" % (rid, key))
+        docs = r.get("docs")
+        if not isinstance(docs, list) or not docs or not all(isinstance(d, str) for d in docs):
+            out.append("resultados.json: la regla %s necesita 'docs' (lista de textos)" % rid)
+        if r.get("estado") not in SIM_ESTADOS:
+            out.append("resultados.json: la regla %s tiene un estado inválido: %s" % (rid, r.get("estado")))
+        if r.get("origen") not in SIM_ORIGENES:
+            out.append("resultados.json: la regla %s tiene un origen inválido: %s" % (rid, r.get("origen")))
+        if r.get("valor") is None or r.get("umbral") is None:
+            out.append("resultados.json: la regla %s necesita 'valor' y 'umbral'" % rid)
+        ic = r.get("ic95")
+        if ic is not None and not (isinstance(ic, list) and len(ic) == 2 and all(_es_numero(x) for x in ic) and ic[0] <= ic[1]):
+            out.append("resultados.json: el ic95 de %s debe ser null o [inferior, superior]" % rid)
+        n = r.get("n")
+        if n is not None and not (isinstance(n, int) and not isinstance(n, bool) and n >= 0):
+            out.append("resultados.json: la n de %s debe ser null o un entero >= 0" % rid)
+        pp = r.get("por_perfil", {})
+        if not isinstance(pp, dict):
+            out.append("resultados.json: por_perfil de %s debe ser un objeto" % rid)
+            continue
+        for pid, cell in pp.items():
+            if pid not in perfiles:
+                out.append("resultados.json: %s cita un perfil desconocido en por_perfil: %s" % (rid, pid))
+            if not isinstance(cell, dict) or "valor" not in cell:
+                out.append("resultados.json: por_perfil.%s de %s necesita 'valor'" % (pid, rid))
+            elif cell.get("estado", "pasa") not in SIM_ESTADOS:
+                out.append("resultados.json: por_perfil.%s de %s tiene un estado inválido: %s" % (pid, rid, cell.get("estado")))
+    return out
+
+
+def _sim_referencias_validas(refs):
+    """Los pisos de estatus pueden venir como {nombre: valor} o como [{valor, etiqueta}]."""
+    if isinstance(refs, dict):
+        return bool(refs) and all(_es_numero(v) and v > 0 for v in refs.values())
+    if isinstance(refs, list):
+        return bool(refs) and all(isinstance(r, dict) and _es_numero(r.get("valor")) and r["valor"] > 0 and isinstance(r.get("etiqueta"), str) for r in refs)
+    return False
+
+
+def _sim_check_series(series, perfiles):
+    """Valida las tres series obligatorias que dibujan los gráficos del hub."""
+    out = []
+    if not isinstance(series, dict):
+        return ["resultados.json: 'series' debe ser un objeto"]
+    for key in SIM_SERIES:
+        if not isinstance(series.get(key), dict):
+            out.append("resultados.json: falta la serie '%s'" % key)
+    ing = series.get("ingreso_hora_por_acto")
+    if isinstance(ing, dict):
+        actos = ing.get("actos")
+        if not isinstance(actos, list) or not actos:
+            out.append("resultados.json: ingreso_hora_por_acto necesita 'actos' (lista)")
+            actos = []
+        if not isinstance(ing.get("objetivo"), dict) or any(not _es_numero(ing["objetivo"].get(a)) for a in actos):
+            out.append("resultados.json: ingreso_hora_por_acto.objetivo debe dar un número por acto")
+        for pid, vals in (ing.get("perfiles") or {}).items():
+            if pid not in perfiles:
+                out.append("resultados.json: ingreso_hora_por_acto cita un perfil desconocido: %s" % pid)
+            if not isinstance(vals, dict) or any(not _es_numero(vals.get(a)) for a in actos):
+                out.append("resultados.json: ingreso_hora_por_acto.perfiles.%s debe dar un número por acto" % pid)
+        if not ing.get("perfiles"):
+            out.append("resultados.json: ingreso_hora_por_acto.perfiles está vacío")
+    pat = series.get("patrimonio_por_dia")
+    if isinstance(pat, dict):
+        dias = pat.get("dias")
+        if not isinstance(dias, list) or len(dias) < 2 or not all(_es_numero(d) for d in dias):
+            out.append("resultados.json: patrimonio_por_dia.dias debe ser una lista de números (>= 2)")
+            dias = []
+        for pid, vals in (pat.get("perfiles") or {}).items():
+            if pid not in perfiles:
+                out.append("resultados.json: patrimonio_por_dia cita un perfil desconocido: %s" % pid)
+            if not isinstance(vals, list) or len(vals) != len(dias) or not all(_es_numero(v) for v in vals):
+                out.append("resultados.json: patrimonio_por_dia.perfiles.%s debe tener un número por día" % pid)
+        if not pat.get("perfiles"):
+            out.append("resultados.json: patrimonio_por_dia.perfiles está vacío")
+        if "referencias" in pat and not _sim_referencias_validas(pat["referencias"]):
+            out.append("resultados.json: patrimonio_por_dia.referencias debe ser {etiqueta: valor} o [{valor, etiqueta}] con valores positivos")
+    caja = series.get("acto1_caja_antes_de_cuota")
+    if isinstance(caja, dict):
+        if not _es_numero(caja.get("cuota")):
+            out.append("resultados.json: acto1_caja_antes_de_cuota.cuota debe ser un número")
+        for pid, c in (caja.get("perfiles") or {}).items():
+            if pid not in perfiles:
+                out.append("resultados.json: acto1_caja_antes_de_cuota cita un perfil desconocido: %s" % pid)
+            ok = isinstance(c, dict) and all(_es_numero(c.get(k)) for k in ("p10", "p50", "p90"))
+            if not ok or not c["p10"] <= c["p50"] <= c["p90"]:
+                out.append("resultados.json: acto1_caja_antes_de_cuota.perfiles.%s necesita p10 <= p50 <= p90" % pid)
+        if not caja.get("perfiles"):
+            out.append("resultados.json: acto1_caja_antes_de_cuota.perfiles está vacío")
+    return out
+
+
+def _sim_check_reglas_json(reglas, ids_resultado):
+    """Valida reglas.json: definiciones y trazabilidad requisito -> regla."""
+    out = []
+    if reglas is None:
+        return out
+    defs = reglas.get("reglas")
+    if not isinstance(defs, list) or any(not isinstance(d, dict) or not d.get("id") for d in defs or []):
+        return ["reglas.json: 'reglas' debe ser una lista de objetos con 'id'"]
+    ids = [d["id"] for d in defs]
+    if len(set(ids)) != len(ids):
+        out.append("reglas.json: hay reglas con el mismo id")
+    for rid in sorted(set(ids) - ids_resultado):
+        out.append("reglas.json: la regla %s no tiene resultado en resultados.json" % rid)
+    for rid in sorted(ids_resultado - set(ids)):
+        out.append("resultados.json: la regla %s no está definida en reglas.json" % rid)
+    for i, t in enumerate(reglas.get("trazabilidad", [])):
+        if not isinstance(t, dict) or not t.get("requisito") or not t.get("fuente"):
+            out.append("reglas.json: la trazabilidad %d necesita 'requisito' y 'fuente'" % (i + 1))
+            continue
+        if not t.get("reglas"):
+            out.append("reglas.json: el requisito «%s» no tiene ninguna regla" % t["requisito"])
+        for rid in t.get("reglas", []):
+            if rid not in set(ids) | ids_resultado:
+                out.append("reglas.json: el requisito «%s» cita una regla inexistente: %s" % (t["requisito"], rid))
+    return out
+
+
+def sim_problems(res, reglas, huella_actual):
+    """Devuelve los problemas de resultados.json (y reglas.json): esquema, huella y estado de las reglas.
+    huella_actual es None cuando no se puede calcular; entonces solo se valida la forma."""
+    if not isinstance(res, dict):
+        return ["resultados.json: debe ser un objeto"]
+    out = []
+    if not isinstance(res.get("version"), int):
+        out.append("resultados.json: 'version' debe ser un entero")
+    for key in ("generado", "huella"):
+        if not isinstance(res.get(key), str) or not res.get(key):
+            out.append("resultados.json: falta '%s'" % key)
+    if res.get("semillas") in (None, [], {}):
+        out.append("resultados.json: falta 'semillas'")
+    perfiles = res.get("perfiles")
+    if not isinstance(perfiles, list) or not perfiles:
+        return out + ["resultados.json: 'perfiles' debe ser una lista no vacía"]
+    pids = {p["id"] if isinstance(p, dict) else p for p in perfiles}
+    out += _sim_check_reglas(res, pids)
+    out += _sim_check_series(res.get("series"), pids)
+    if out:
+        return out
+    ids = {r["id"] for r in res["reglas"]}
+    out += _sim_check_reglas_json(reglas, ids)
+    if huella_actual is not None and res["huella"] != huella_actual:
+        out.append("resultados.json está caducado: world.json cambió desde que se generó (huella %s, ahora %s). Reejecuta tools/sim/run.py"
+                   % (res["huella"][:12], huella_actual[:12]))
+    for r in res["reglas"]:
+        if r["estado"] != "pasa":
+            out.append("simulador: la regla %s (%s) está en «%s»" % (r["id"], r["titulo"], r["estado"]))
+    return out
+
+
+def sim_conteo(res):
+    conteo = {e: 0 for e in SIM_ESTADOS}
+    for r in res.get("reglas", []):
+        if r.get("estado") in conteo:
+            conteo[r["estado"]] += 1
+    conteo["total"] = sum(conteo.values())
+    return conteo
+
+
+def sim_huella(world):
+    """Huella del mundo según tools/sim/mundo.py (la define el simulador). None si aún no se puede calcular."""
+    if not SIM_MUNDO.exists():
+        return None
+    spec = importlib.util.spec_from_file_location("sim_mundo", SIM_MUNDO)
+    mod = importlib.util.module_from_spec(spec)
+    path = sys.path[:]
+    sys.path.insert(0, str(SIM_MUNDO.parent.parent))  # permite "from sim import ..." entre módulos del simulador
+    try:
+        spec.loader.exec_module(mod)
+    except Exception as exc:  # noqa: BLE001
+        warn("tools/sim/mundo.py no se puede importar: %s" % exc)
+        return None
+    finally:
+        sys.path[:] = path
+    fn = next((getattr(mod, n) for n in SIM_HUELLA_FUNCIONES if callable(getattr(mod, n, None))), None)
+    if fn is None:
+        print("Simulador: mundo.py no define %s; solo se valida la forma de la huella." % " / ".join(SIM_HUELLA_FUNCIONES))
+        return None
+    try:
+        return str(fn(copy.deepcopy(world)))
+    except Exception as exc:  # noqa: BLE001
+        warn("tools/sim/mundo.py: no se pudo calcular la huella: %s" % exc)
+        return None
+
+
+def load_sim(world, sim_dir=None, huella_actual=False):
+    """Carga resultados.json y reglas.json del simulador, los valida y los devuelve para incrustarlos en el hub.
+    huella_actual=False significa «calcúlala con tools/sim/mundo.py»."""
+    sim_dir = sim_dir or SIM_DIR
+    path = sim_dir / "resultados.json"
+    if not path.exists():
+        msg = "studio/data/sim/resultados.json todavía no existe (F0-53 en curso)"
+        if SIM_REQUERIDO:
+            warn(msg)
+        else:
+            print("Simulador: " + msg)
+        return {"disponible": False, "motivo": msg}
+    res = load_json(path)
+    rpath = sim_dir / "reglas.json"
+    reglas = load_json(rpath) if rpath.exists() else None
+    if huella_actual is False:
+        huella_actual = sim_huella(world)
+    kb = path.stat().st_size / 1024
+    if kb > SIM_MAX_KB:
+        warn("resultados.json pesa %d KB y el máximo es %d KB (submuestrea las series)" % (kb, SIM_MAX_KB))
+    for msg in sim_problems(res, reglas, huella_actual):
+        warn(msg)
+    caducado = huella_actual is not None and isinstance(res, dict) and res.get("huella") != huella_actual
+    return {
+        "disponible": True,
+        "resultados": res,
+        "reglas": reglas,
+        "caducado": caducado,
+        "huella_verificada": huella_actual is not None,
+        "conteo": sim_conteo(res) if isinstance(res, dict) else {"total": 0},
+    }
+
+
 def build_assets(assets):
     for img in assets["images"]:
         path = STUDIO / img["file"]
@@ -828,6 +1084,7 @@ def build_hub():
         "decisions": decisions,
         "hilos": hilos,
         "coherence": coherence.check(world, story, decisions, hilos, task_status),
+        "sim": load_sim(world),
     }
 
 
@@ -860,6 +1117,12 @@ def main():
     r = hub["hilos"]["resumen"]
     print("Hilos: %d · sembrados sin resolver %d · resueltos sin sembrar %d · personajes que faltan %d"
           % (r["total"], len(r["sin_resolver"]), len(r["sin_sembrar"]), len(r["faltan"])))
+    sim = hub["sim"]
+    if sim["disponible"]:
+        c = sim["conteo"]
+        print("Simulador: %d de %d reglas pasan · %d fallan · %d inciertas · %s"
+              % (c["pasa"], c["total"], c["falla"], c["incierto"],
+                 "caducado" if sim["caducado"] else "vigente" if sim["huella_verificada"] else "huella sin verificar"))
     if warnings:
         print("%d aviso(s)." % len(warnings))
         if strict:

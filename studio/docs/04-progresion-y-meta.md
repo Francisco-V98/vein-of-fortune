@@ -43,7 +43,7 @@ Decisión del autor (2026-10-15):
 - ✅ El botón **«Contratar»** se abre **al cerrar el Acto I** y **también exige una mejora de la tienda**. La mejora **se compra en la propia tienda, desde el Acto II, con dinero** (la tienda sigue sin abrirse de noche, [01](01-core-loop.md)). Es el **Puesto ampliado** y cuesta **3 500 esquirlas** ✅ ([03](03-comercio.md), [28](28-numeros-base-de-la-economia.md)); ⏳ F4-245 lo construye.
 - ✅ En el Acto I el botón está **bloqueado** y su motivo es esa mejora de la tienda pendiente (el Acto I no la ofrece). El Acto I solo ofrece el primer contacto: la ficha de un candidato ([27](27-guion-del-acto-i.md), sección 15).
 - ✅ Se empieza con **Minero** y **Dependiente**. El **Analista** llega en el Acto III.
-- ✅ Los empleados **nunca extraen Aetherita**.
+- ✅ Los empleados **nunca extraen Aetherita**: la extrae solo el jugador, y se vende por la Comisión del Éter, un canal legal con tope, o por encargos especiales raros del mercado negro ([03](03-comercio.md), [28](28-numeros-base-de-la-economia.md)).
 
 ### Para qué sirven ✅
 
@@ -99,7 +99,7 @@ Detalles:
 | Se va | Puede irse a la competencia (por ejemplo, al Consorcio Arvel) |
 | Avisos | Aviso en pantalla unos días antes de que venza, agrupados en el resumen del día para no saturar al jugador (en PC no hay notificaciones del sistema) |
 
-- ✅ **Salarios** (por día, en un contrato de 30 días; los de 7 y 14 días llevan el modificador de arriba): Minero **N1 70 · N2 90 · N3 430 · N4 1 000 · N5 1 180 esquirlas**; Dependiente 160 en el Acto II, 620 en el III y 2 800 en el IV; el Refinador cobra igual que el Dependiente, el Guardia el 60 % y el Analista el 140 % (900 en el III y 3 900 en el IV). Cuánto dura cada contrato frente a los minutos por día está en [01](01-core-loop.md) y [17](17-mapa-de-historia.md) ([28](28-numeros-base-de-la-economia.md)).
+- ✅ **Salarios** (por día, en un contrato de 30 días; los de 7 y 14 días llevan el modificador de arriba): Minero **N1 70 · N2 90 · N3 200 · N4 600 · N5 720 esquirlas**; Dependiente 160 en el Acto II, 620 en el III y 2 800 en el IV; el Refinador cobra igual que el Dependiente, el Guardia el 60 % y el Analista el 140 % (900 en el III y 3 900 en el IV). Cuánto dura cada contrato frente a los minutos por día está en [01](01-core-loop.md) y [17](17-mapa-de-historia.md) ([28](28-numeros-base-de-la-economia.md)).
 - ✅ **Entrenamiento:** subir un nivel cuesta **8 veces el salario diario del nivel siguiente** y 3 días de baja; además el empleado sube 1 nivel por cada 40 días trabajados sin entrenar.
 
 Esto crea una tensión interesante: **entrenar a un empleado es una inversión que puede irse con él**. Se mitiga con contratos largos, bonos de permanencia y buen trato.
@@ -135,9 +135,9 @@ Se aplica el pilar «la información es poder»: del candidato se ven al inicio 
 
 ### Reglas de equilibrio ✅
 
-- ✅ Un Minero empleado rinde **menos que el jugador** en promedio y no juega el minijuego: su Eficiencia va del **30 % (N1) al 60 % (N5)** de lo que sacaría el jugador, y escala igual con sus skills. Un Minero N1 aporta cerca del 6 % de un día del jugador en el Acto II, y su salario es ≈ 50 % de lo que aporta. El **entrenamiento** lo sube de nivel (arriba).
-- ✅ Los minerales de **nivel alto** solo los extraen empleados **muy entrenados** y con la **herramienta adecuada**; los **básicos** los extrae cualquiera. La **Aetherita**, nunca. «Nivel alto» son los **niveles N4 y N5** (pueden extraer minerales de nivel 4: las gemas); N1 y N2 llegan al nivel 2, y N3 al 3. Cuánto entrenamiento exigen está en el costo de subir de nivel (arriba).
-- ✅ Cuestan salario diario y contratación (arriba); cantidad limitada por espacio: la plantilla máxima sube con el nivel de la tienda (0 · 2 · 3 · 5 · 7 empleados, y de ellos 0 · 1 · 2 · 3 · 4 Mineros). En el **Acto IV** su papel es residual: no se toca la economía del IV.
+- ✅ Un Minero empleado rinde **menos que el jugador** en promedio y no juega el minijuego: su Eficiencia va del **30 % (N1) al 50 % (N5)** de lo que sacaría el jugador, y escala igual con sus skills. Un Minero N1 aporta cerca del 6 % de un día del jugador en el Acto II, y su salario es ≈ 59 % de lo que aporta (en el Acto II el par previsto de la regla G1, de 40–60 %, es el N2, con ≈ 50 %; el N1 solo debe quedar por debajo del 100 %, [28](28-numeros-base-de-la-economia.md)). El **entrenamiento** lo sube de nivel (arriba).
+- ✅ Los minerales de **nivel alto** solo los extraen empleados **muy entrenados** y con la **herramienta adecuada**; los **básicos** los extrae cualquiera. La **Aetherita**, nunca (ni siquiera con el canal legal del Acto IV: solo la extrae el jugador). «Nivel alto» son los **niveles N4 y N5** (pueden extraer minerales de nivel 4: las gemas); N1 y N2 llegan al nivel 2, y N3 al 3. Cuánto entrenamiento exigen está en el costo de subir de nivel (arriba).
+- ✅ Cuestan salario diario y contratación (arriba); cantidad limitada por espacio: la plantilla máxima sube con el nivel de la tienda (0 · 2 · 3 · 5 · 7 empleados, y de ellos 0 · 1 · 2 · 3 · 4 Mineros). En el **Acto IV** su papel es residual: no se toca la economía del IV. ✅ Si el jugador envía a un Minero a una zona agotada, **el juego le avisa con la pérdida estimada antes de enviarlo, pero lo deja decidir** (decisión del autor, 2026-10-16; [28](28-numeros-base-de-la-economia.md)).
 - ✅ En **zonas peligrosas** un Minero puede **herirse** (queda inactivo unos días) o **perder la carga** de esa expedición. La probabilidad de herida por expedición va del 1,5 % en las Galerías al 12 % en La Fosa (3 % en el Cañón, 4 % en la Sierra y los Salares, 7 % en las Cavernas), con 3 a 8 días de baja, y la de perder la carga es 1,5 veces esa cifra ✅ ([28](28-numeros-base-de-la-economia.md)).
 - ✅ Los empleados conectan con la sociedad: la **Lealtad** se ve afectada por el tramo de la Unión ✅, por la alianza que elijas y por las huelgas.
 
@@ -149,7 +149,7 @@ Se aplica el pilar «la información es poder»: del candidato se ven al inicio 
 
 ✅ Mejorar el estilo de vida: casa, ropa, auto, estatus, clase social. Existe un mercado de cosméticos.
 
-✅ La escalera de estatus es _Heredero → Minero con licencia → Comerciante → Empresario → Magnate_ ([07](07-sociedad-y-eventos.md)). El **patrimonio** es el efectivo más el stock a valor justo, sin restar la deuda y sin contar herramientas, casa, ropa ni auto. Los pisos orientativos son **Comerciante ≈ 25 000, Empresario ≈ 120 000 y Magnate ≈ 500 000 esquirlas** ✅ ([28](28-numeros-base-de-la-economia.md)); ⏳ F4-109 fija los requisitos finales de cada ascenso.
+✅ La escalera de estatus es _Heredero → Minero con licencia → Comerciante → Empresario → Magnate_ ([07](07-sociedad-y-eventos.md)). El **patrimonio** es el efectivo más el stock a valor justo, sin restar la deuda y sin contar herramientas, casa, ropa ni auto. Los pisos orientativos son **Comerciante ≈ 15 000, Empresario ≈ 90 000 y Magnate ≈ 250 000 esquirlas** ✅ ([28](28-numeros-base-de-la-economia.md)); ⏳ F4-109 fija los requisitos finales de cada ascenso.
 
 Funciones en el juego ✅:
 

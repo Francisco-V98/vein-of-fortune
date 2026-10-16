@@ -697,7 +697,7 @@
       "acto": "III",
       "nivel": "mediana",
       "titulo": "El monopolio de la Aetherita negra",
-      "dispara": "Casilda negocia el monopolio de la Aetherita en el mercado negro de la capital. En el III la Aetherita solo se compra ahí, como mercancía escasa; no se extrae hasta el IV.",
+      "dispara": "Casilda negocia el monopolio de la Aetherita en el mercado negro de la capital. En el III la Aetherita solo se compra ahí, como mercancía escasa; no se extrae hasta el IV. En el IV la venta rutinaria va por el canal legal (la oficina de la Comisión en Puerto Meridiano): lo que Casilda controla son los encargos especiales del negro, raros y con historia.",
       "opciones": [
         {
           "id": "aceptar",
@@ -705,8 +705,8 @@
           "fija": [
             "f-monopolio"
           ],
-          "mundo": "Casilda manda en la venta clandestina de Aetherita.",
-          "mercado": "Prima negra de Aetherita +10 puntos; la vigilancia sube un 20 % más despacio.",
+          "mundo": "Casilda manda en los encargos especiales de Aetherita del mercado negro, no en la venta rutinaria.",
+          "mercado": "Prima negra de Aetherita +10 puntos, que se cobra en esos encargos (28, sección 3.6); la vigilancia sube un 20 % más despacio.",
           "personajes": "Casilda: socia interesada."
         },
         {
@@ -1052,7 +1052,7 @@
             "f-comprador"
           ],
           "mundo": "Casilda controla la verdad y su mercado negro.",
-          "mercado": "Prima negra de Aetherita +10 a +15 puntos.",
+          "mercado": "Prima negra de Aetherita +10 a +15 puntos, que se cobra solo en los encargos especiales del negro. Con Casilda de compradora esos encargos llegan más a menudo (cada ~14 días en vez de ~21) y con más historia; la Aetherita rutinaria sigue yendo a la Comisión.",
           "personajes": "Casilda: aliada interesada."
         },
         {

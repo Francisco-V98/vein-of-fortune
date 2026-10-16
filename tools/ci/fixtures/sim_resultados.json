@@ -1,0 +1,447 @@
+{
+ "version": 1,
+ "generado": "2026-10-16",
+ "huella": "abc123def4567890",
+ "semillas": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+ ],
+ "perfiles": [
+  {
+   "id": "lento",
+   "nombre": "Lento"
+  },
+  {
+   "id": "medio",
+   "nombre": "Medio"
+  },
+  {
+   "id": "rapido",
+   "nombre": "Rápido"
+  },
+  {
+   "id": "optimizador",
+   "nombre": "Optimizador"
+  }
+ ],
+ "reglas": [
+  {
+   "id": "A1",
+   "grupo": "A · Acto I y deuda",
+   "titulo": "Cuota del día 7 sin mejora",
+   "docs": [
+    "28 §3.1",
+    "03"
+   ],
+   "estado": "pasa",
+   "metrica": "pago a tiempo del medio con 5 expediciones",
+   "valor": 97.4,
+   "ic95": [
+    96.7,
+    98.0
+   ],
+   "n": 4000,
+   "umbral": "95–99,9 %",
+   "origen": "doc",
+   "por_perfil": {
+    "medio": {
+     "valor": 97.4,
+     "ic95": [
+      96.7,
+      98.0
+     ],
+     "n": 4000
+    }
+   },
+   "unidad": "%"
+  },
+  {
+   "id": "A3",
+   "grupo": "A · Acto I y deuda",
+   "titulo": "El lento ni imposible ni trivial",
+   "docs": [
+    "28 §3.1"
+   ],
+   "estado": "pasa",
+   "metrica": "pago del lento con 4 expediciones",
+   "valor": 34.0,
+   "ic95": [
+    32.6,
+    35.4
+   ],
+   "n": 4000,
+   "umbral": "10–60 %",
+   "origen": "prop.",
+   "por_perfil": {
+    "lento": {
+     "valor": 34.0,
+     "ic95": [
+      32.6,
+      35.4
+     ],
+     "n": 4000
+    }
+   },
+   "unidad": "%"
+  },
+  {
+   "id": "A5",
+   "grupo": "A · Acto I y deuda",
+   "titulo": "Ingreso neto por hora del Acto I",
+   "docs": [
+    "28 §2"
+   ],
+   "estado": "falla",
+   "metrica": "desviación del ingreso respecto al objetivo",
+   "valor": 24.0,
+   "ic95": [
+    22.1,
+    25.9
+   ],
+   "n": 2000,
+   "umbral": "≤ 20 %",
+   "origen": "doc",
+   "por_perfil": {
+    "lento": {
+     "valor": 4.0,
+     "estado": "pasa"
+    },
+    "medio": {
+     "valor": 3.0,
+     "estado": "pasa"
+    },
+    "rapido": {
+     "valor": 24.0,
+     "estado": "falla",
+     "ic95": [
+      22.1,
+      25.9
+     ],
+     "n": 2000
+    }
+   },
+   "unidad": "%"
+  },
+  {
+   "id": "B1",
+   "grupo": "B · Ritmo y progresión",
+   "titulo": "Ritmo por acto",
+   "docs": [
+    "28 §6"
+   ],
+   "estado": "pasa",
+   "metrica": "desviación máxima del medio",
+   "valor": 12.0,
+   "ic95": [
+    9.5,
+    14.4
+   ],
+   "n": 40,
+   "umbral": "≤ 20 %",
+   "origen": "doc",
+   "por_perfil": {
+    "medio": {
+     "valor": 12.0
+    }
+   },
+   "unidad": "%"
+  },
+  {
+   "id": "B5",
+   "grupo": "B · Ritmo y progresión",
+   "titulo": "El optimizador no supera el techo de herramienta",
+   "docs": [
+    "28 §7"
+   ],
+   "estado": "incierto",
+   "metrica": "corridas bajo el techo (acto II)",
+   "valor": 88.0,
+   "ic95": [
+    79.0,
+    93.5
+   ],
+   "n": 40,
+   "umbral": "≥ 90 %",
+   "origen": "prop.",
+   "por_perfil": {
+    "optimizador": {
+     "valor": 88.0,
+     "estado": "incierto",
+     "ic95": [
+      79.0,
+      93.5
+     ],
+     "n": 40
+    }
+   },
+   "unidad": "%"
+  },
+  {
+   "id": "E1",
+   "grupo": "E · Mercado y bucles",
+   "titulo": "Sin arbitraje seguro entre canales",
+   "docs": [
+    "28 §3.3",
+    "03"
+   ],
+   "estado": "pasa",
+   "metrica": "mejor ganancia por bloque",
+   "valor": -1.2,
+   "ic95": null,
+   "n": null,
+   "umbral": "< 0",
+   "origen": "doc",
+   "por_perfil": {}
+  }
+ ],
+ "series": {
+  "ingreso_hora_por_acto": {
+   "actos": [
+    "I",
+    "II",
+    "III",
+    "IV"
+   ],
+   "objetivo": {
+    "I": 1100,
+    "II": 7500,
+    "III": 27000,
+    "IV": 125000
+   },
+   "banda": 0.2,
+   "perfiles": {
+    "lento": {
+     "I": 650,
+     "II": 5200,
+     "III": 19000,
+     "IV": 88000
+    },
+    "medio": {
+     "I": 1084,
+     "II": 7400,
+     "III": 26500,
+     "IV": 121000
+    },
+    "rapido": {
+     "I": 2228,
+     "II": 11800,
+     "III": 41000,
+     "IV": 190000
+    },
+    "optimizador": {
+     "I": 1500,
+     "II": 10200,
+     "III": 36000,
+     "IV": 160000
+    }
+   }
+  },
+  "patrimonio_por_dia": {
+   "dias": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    36,
+    40,
+    44,
+    48,
+    52,
+    56,
+    60,
+    64,
+    68,
+    72,
+    76,
+    80,
+    84,
+    88,
+    92,
+    96,
+    100,
+    104,
+    108,
+    112,
+    116,
+    120
+   ],
+   "actos": [
+    {
+     "acto": "II",
+     "dia": 8
+    },
+    {
+     "acto": "III",
+     "dia": 50
+    },
+    {
+     "acto": "IV",
+     "dia": 90
+    }
+   ],
+   "perfiles": {
+    "lento": [
+     120,
+     184,
+     252,
+     326,
+     407,
+     495,
+     593,
+     703,
+     826,
+     966,
+     1126,
+     1309,
+     1521,
+     1766,
+     2051,
+     2386,
+     2778,
+     3239,
+     3784,
+     4428,
+     5192,
+     6098,
+     7175,
+     8456,
+     9983,
+     11802,
+     13972,
+     16563,
+     19656,
+     23352,
+     27769
+    ],
+    "medio": [
+     120,
+     254,
+     397,
+     553,
+     724,
+     915,
+     1131,
+     1381,
+     1673,
+     2018,
+     2433,
+     2936,
+     3553,
+     4315,
+     5264,
+     6452,
+     7945,
+     9831,
+     12220,
+     15253,
+     19111,
+     24027,
+     30299,
+     38308,
+     48543,
+     61630,
+     78373,
+     99800,
+     127229,
+     162351,
+     207330
+    ],
+    "rapido": [
+     120,
+     401,
+     697,
+     1012,
+     1352,
+     1727,
+     2149,
+     2633,
+     3201,
+     3882,
+     4716,
+     5753,
+     7066,
+     8748,
+     10927,
+     13773,
+     17517,
+     22469,
+     29043,
+     37799,
+     49489,
+     65124,
+     86061,
+     114127,
+     151779,
+     202318,
+     270184,
+     361345,
+     483825,
+     648413,
+     869615
+    ],
+    "optimizador": [
+     120,
+     325,
+     548,
+     793,
+     1072,
+     1394,
+     1779,
+     2247,
+     2832,
+     3578,
+     4544,
+     5814,
+     7503,
+     9769,
+     12828,
+     16981,
+     22640,
+     30373,
+     40962,
+     55484,
+     75421,
+     102818,
+     140487,
+     192300,
+     263594,
+     361715,
+     496779,
+     682720,
+     938723,
+     1291212,
+     1776574
+    ]
+   }
+  },
+  "acto1_caja_antes_de_cuota": {
+   "cuota": 960,
+   "perfiles": {
+    "lento": {
+     "p10": 380,
+     "p50": 690,
+     "p90": 1010
+    },
+    "medio": {
+     "p10": 1010,
+     "p50": 1520,
+     "p90": 1990
+    },
+    "rapido": {
+     "p10": 2300,
+     "p50": 3100,
+     "p90": 3900
+    }
+   }
+  }
+ }
+}

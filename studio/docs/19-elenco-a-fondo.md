@@ -354,14 +354,14 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 - "En este barrio la luz no es gratis. Pero conmigo, al menos, no se apaga."
 - "No te pido que me quieras. Te pido que pagues a tiempo."
 
-**Acciones en el juego.** Vende **protección**, da acceso al **mercado negro** en el Acto II y alivia las inspecciones a cambio de más deuda. En el Acto IV compra la verdad o la Aetherita.
+**Acciones en el juego.** Vende **protección**, da acceso al **mercado negro** en el Acto II y alivia las inspecciones a cambio de más deuda. En el Acto IV quiere comprar la verdad; en su mercado negro la Aetherita solo circula en encargos especiales raros, con historia, y si la eliges de compradora llegan más a menudo y con más historia ✅. La venta rutinaria de Aetherita va a la Comisión.
 
 **Arco por acto.**
 
 | Acto | Estado |
 |---|---|
 | II | Ofrece protección y pone a prueba al protagonista |
-| III | Negocia el monopolio de la venta clandestina de Aetherita (en el III la Aetherita solo se compra en el mercado negro, como mercancía escasa) ✅ |
+| III | Negocia el monopolio de los encargos clandestinos de Aetherita (en el III la Aetherita solo se compra en el mercado negro, como mercancía escasa) ✅ |
 | IV | Quiere comprar o controlar la verdad |
 
 **Conexiones.** Con **el Ministerio**, enemigo histórico; con **Quiroga**, una tregua; con **Reme**, a veces es quien está detrás de su deuda; con **el protagonista**, aliada interesada.

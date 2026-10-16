@@ -56,7 +56,7 @@ Tipos generales: estable, volátil, estacional, estratégico, lujo (ver [05](05-
 
 - **Oferta:** mineros NPC por región (una huelga la reduce), más lo que vende el jugador y sus empleados.
 - **Demanda:** por **sectores** (ferrocarril, energía, militar, agricultura, lujo, tecnología). Cada mineral alimenta varios sectores, y un evento en un sector arrastra a sus minerales. Los pesos de partida de cada mineral en sus sectores están acordados ✅ ([28](28-numeros-base-de-la-economia.md): por ejemplo, el carbón es 55 % energía, el hierro 45 % ferrocarril y 35 % militar); ⏳ F4-31 construye el modelo y los eventos con esos pesos.
-- ✅ El jugador es un actor pequeño al inicio y grande al final: su impacto en el precio **crece con su volumen y su patrimonio** (decisión del autor, 2026-10-15). El peso del jugador va de 0,5 en el Acto I a 0,67 en el II, 1,35 en el III y 2,4 en el IV (máximo 4), y su impacto se disipa un 25 % por bloque ✅ ([28](28-numeros-base-de-la-economia.md)). ⏳ F0-53 El simulador debe comprobar que ese impacto no crea bucles de ganancia.
+- ✅ El jugador es un actor pequeño al inicio y grande al final: su impacto en el precio **crece con su volumen y su patrimonio** (decisión del autor, 2026-10-15). El peso del jugador va de 0,5 en el Acto I a 0,6 en el II, 1,0 en el III y 1,6 en el IV (máximo 4; decisión del autor, 2026-10-16), y su impacto se disipa un 25 % por bloque ✅ ([28](28-numeros-base-de-la-economia.md)). ✅ El simulador (F0-53, regla E3) comprobó que ese impacto **no crea bucles de ganancia**: vender y recomprar pierde ≈ 5,9 % y comprar, esperar hasta 8 bloques y vender también pierde, con cualquier peso del jugador.
 
 ## Bots y mercado interno ✅
 
@@ -131,7 +131,7 @@ Cifras base ✅ ([28](28-numeros-base-de-la-economia.md)):
 - **Tope diario por comprador:** unas 3 veces la liquidez por día y por comprador (de 30 unidades de carbón a 2 de Aetherita).
 - **Marketplace:** comprar lo que falta cuesta el valor justo × 1,18.
 - **Almacén:** capacidad y renta, en «Almacén» más abajo.
-- **Licencias** (renovación cada 28 días): Minero con licencia 150 · Comerciante 900 · Empresario 6 000 · Magnate 30 000 esquirlas.
+- **Licencias** (renovación cada 28 días): Minero con licencia 150 · Comerciante 900 · Empresario 4 500 · Magnate 17 000 esquirlas (decisión del autor, 2026-10-16).
 
 ⏳ F2-07 Su construcción.
 
@@ -161,6 +161,8 @@ Cifras base ✅ ([28](28-numeros-base-de-la-economia.md)):
 
 ✅ En el Acto I los encargos se llaman «pedidos de cliente»; «contrato» queda del Acto II en adelante ([27](27-guion-del-acto-i.md)).
 
+✅ **Frecuencia fuera del Acto I (decisión del autor, 2026-10-15).** El Acto I está guionizado. Desde el II llega **un pedido estándar cada 2 días** (de 1 a 2 días de producción media, +12 %) y **un urgente por semana** (+35 %); entre todos aportan como máximo el **15 % del ingreso**, y el simulador mide que aportan menos de un 4 %. Los contratos a largo plazo y los oficiales llegan según su acto. **Los pedidos se cumplen solo con mercancía propia**, como la tienda ([28](28-numeros-base-de-la-economia.md)).
+
 ## Mercado negro y vigilancia ✅
 
 **Estado:** confirmado qué es, dónde y cuándo se opera, los cuatro niveles de vigilancia y la redada; las consecuencias de cada nivel ⏳ F4-67 y ⏳ F4-68; las cifras base están acordadas ✅ ([28](28-numeros-base-de-la-economia.md)).
@@ -174,7 +176,8 @@ Cifras base ✅ ([28](28-numeros-base-de-la-economia.md)):
 - ✅ Ventas **sin licencia**.
 - ✅ Acceso a bienes restringidos o en cuota (por ejemplo, grandes volúmenes de salitre).
 - ✅ **Aetherita en el Acto III:** su precio ya se ve, pero solo se compra aquí, con Casilda, como mercancía escasa. La extracción no ocurre hasta el Acto IV.
-- ✅ **Cuándo y dónde:** se opera **de noche**, en el **Bar del Farol de Salinas Blancas** (viajando hasta allí) y también con la **visita nocturna de Casilda a la tienda**. Esa visita **no es el modo tienda**: la tienda no se abre de noche ([01](01-core-loop.md)). El volumen es limitado por noche: **3 300 esquirlas de valor en el Acto II, 12 000 en el III y 55 000 en el IV**, y como máximo **3 viales de Aetherita** por noche ✅. Cuánto cuesta en bloques ⏳ F4-72.
+- ✅ **Aetherita en el Acto IV (decisión del autor, 2026-10-15 y 2026-10-16):** la que extraes la vendes por un **canal legal con tope**: la **Comisión del Éter** la compra en una **oficina de Puerto Meridiano, siempre abierta**, hasta **5 viales al día**, a valor justo sin prima y con el impuesto de 3 % ([28](28-numeros-base-de-la-economia.md)). En el mercado negro la Aetherita solo entra como **encargo especial**, con trasfondo e historia: raro (uno cada ≈ 21 días; si Casilda es la compradora elegida en el final, cada ≈ 14 días y con más historia, con la prima en +10 a +15 puntos), de pocos viales (1 o 2), a veces una compra sin mucho detalle, nunca un canal rutinario ni de grandes cantidades. La vigilancia no depende de la Aetherita: sus encargos especiales añaden menos de un tercio de lo que la vigilancia baja sola.
+- ✅ **Cuándo y dónde:** se opera **de noche**, en el **Bar del Farol de Salinas Blancas** (viajando hasta allí) y también con la **visita nocturna de Casilda a la tienda**. Esa visita **no es el modo tienda**: la tienda no se abre de noche ([01](01-core-loop.md)). El volumen es limitado por noche: **3 300 esquirlas de valor en el Acto II, 12 000 en el III y 55 000 en el IV**, ✅. La Aetherita ya no forma parte de las noches negras de rutina: en el Acto IV se vende por el **canal legal de la Comisión del Éter** y en el mercado negro solo aparece como **encargo especial** (ver más abajo). Cuánto cuesta en bloques una noche negra ⏳ F4-72: el simulador da el máximo que compensa, 0,97 bloques en el II, 0,95 en el III y 0,85 en el IV.
 - ✅ **Acceso por contacto:** Casilda y Los Faroleros abren el mercado negro en el Acto II. Los Faroleros no tienen medidor propio: se miden por la alianza que elijas ([07](07-sociedad-y-eventos.md)).
 
 ### Indicador de vigilancia ✅
@@ -243,7 +246,7 @@ Da utilidad real a cada mineral y evita que todo sea «extraer y vender crudo».
 
 **Estado:** confirmadas la tienda, el modo tienda, la tasación y las dinámicas de reponer, regatear y cumplir pedidos; el refinado ⏳ F4-56.
 
-✅ El jugador tiene una tienda que empieza modesta y mejora (espacio, stock, almacenamiento). **Una mejora de la tienda es condición para poder contratar empleados** ([04](04-progresion-y-meta.md)). Se compra en la propia tienda, desde el Acto II, con dinero; en el Acto I el botón «Contratar» se ve bloqueado con ese motivo. La mejora es el **Puesto ampliado** y cuesta **3 500 esquirlas** ✅: sube las unidades por bloque de tienda de 16 a 40 y permite 2 empleados (1 Minero) ([28](28-numeros-base-de-la-economia.md)); ⏳ F4-245 la construye. En la tienda, el precio de lista es el valor justo × 1,20 y el cliente medio paga × 1,15, sin slippage, y las unidades por bloque según el nivel de la tienda son 16 · 40 · 60 · 80 · 100 ✅.
+✅ El jugador tiene una tienda que empieza modesta y mejora (espacio, stock, almacenamiento). **Una mejora de la tienda es condición para poder contratar empleados** ([04](04-progresion-y-meta.md)). Se compra en la propia tienda, desde el Acto II, con dinero; en el Acto I el botón «Contratar» se ve bloqueado con ese motivo. La mejora es el **Puesto ampliado** y cuesta **3 500 esquirlas** ✅: sube las unidades por bloque de tienda de 16 a 40 y permite 2 empleados (1 Minero) ([28](28-numeros-base-de-la-economia.md)); ⏳ F4-245 la construye. En la tienda, el precio de lista es el valor justo × 1,20 y el cliente medio paga × 1,15, sin slippage, y las unidades por bloque según el nivel de la tienda son 16 · 40 · 60 · 80 · 100 ✅. **La tienda y los pedidos solo aceptan mercancía propia** (extraída o refinada) ✅ (decisión del autor, 2026-10-15): lo que compras en el mercado o en el marketplace sirve para mejorar herramientas, no para revenderlo en la tienda ni en un pedido. Sin esa regla, comprar al spot y revender en la tienda (×1,15 menos 3 % de impuesto, sin slippage) dejaba entre +7,5 y +10,6 % por vuelta.
 
 ✅ **Modo tienda.** Empieza en el momento en que decides abrirla, en el bloque que quieras (mañana o tarde, nunca de noche) y cuesta un bloque completo ([01](01-core-loop.md)). Ahí se comercia y se gestiona.
 

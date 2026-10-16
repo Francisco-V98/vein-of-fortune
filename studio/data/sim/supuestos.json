@@ -1,0 +1,1249 @@
+{
+  "version": 1,
+  "nota": "Supuestos de modelado del simulador de economía (F0-53): perfiles de jugador, semillas, tamaños de corrida y parámetros del mercado de referencia. Aquí NO hay cifras del juego (esas viven en world.json); estos valores describen cómo se simula, no cómo se juega. Todos son 🟡 hasta que el autor los confirme.",
+  "semillas": {
+    "base": 1000,
+    "paso": 7919,
+    "sub": {
+      "mercado": 101,
+      "empleados": 202,
+      "decisiones": 303,
+      "pedidos": 404
+    },
+    "flujos": {
+      "acto1": 17,
+      "e3": 5,
+      "e3_azar": 9,
+      "e4": 1,
+      "e5": 1,
+      "i1": 3
+    }
+  },
+  "tamanos": {
+    "rapido": {
+      "semillas": 5,
+      "semillas_largas": 2,
+      "serie_semillas": 3,
+      "acto1": 400,
+      "dias_etapa": 120,
+      "dias_largo": 800,
+      "dias_volatilidad": 2500,
+      "dias_especulacion": 2500,
+      "e3_pruebas": 5000,
+      "d1_celdas": "alta",
+      "d1_perfiles": "medio",
+      "d1_semillas": 3,
+      "d1_dias": 100,
+      "negro_dias": 100,
+      "negro_semillas": 3,
+      "g_semillas": 3,
+      "g_dias": 80,
+      "g_todos": false,
+      "semillas_etapa": 4,
+      "semillas_tasas": 5,
+      "negro_semillas_final": 3,
+      "semillas_ritmo": 5
+    },
+    "completo": {
+      "semillas": 60,
+      "semillas_largas": 4,
+      "serie_semillas": 10,
+      "acto1": 6000,
+      "dias_etapa": 400,
+      "dias_largo": 10000,
+      "dias_volatilidad": 10000,
+      "dias_especulacion": 150000,
+      "e3_pruebas": 60000,
+      "d1_celdas": "todas",
+      "d1_perfiles": "todos",
+      "d1_semillas": 10,
+      "d1_dias": 150,
+      "negro_dias": 250,
+      "negro_semillas": 6,
+      "g_semillas": 60,
+      "g_dias": 150,
+      "g_todos": true,
+      "semillas_etapa": 16,
+      "semillas_tasas": 160,
+      "negro_semillas_final": 30,
+      "semillas_ritmo": 800
+    },
+    "mini": {
+      "semillas": 3,
+      "semillas_largas": 1,
+      "serie_semillas": 1,
+      "acto1": 300,
+      "dias_etapa": 80,
+      "dias_largo": 400,
+      "dias_volatilidad": 1500,
+      "dias_especulacion": 1500,
+      "e3_pruebas": 1500,
+      "d1_celdas": "alta",
+      "d1_perfiles": "medio",
+      "d1_semillas": 2,
+      "d1_dias": 70,
+      "negro_dias": 70,
+      "negro_semillas": 2,
+      "g_semillas": 2,
+      "g_dias": 60,
+      "g_todos": false,
+      "semillas_etapa": 2,
+      "semillas_tasas": 3,
+      "negro_semillas_final": 2,
+      "semillas_ritmo": 3
+    }
+  },
+  "estadistica": {
+    "z95": 1.96,
+    "decimales": 4,
+    "calentamiento_dias": 30,
+    "banda_ritmo": 0.2,
+    "percentiles": [0.1, 0.5, 0.9],
+    "infinito": 1000000000.0,
+    "min_muestra": 5
+  },
+  "ruido": {
+    "modelo": "t",
+    "gl": 4,
+    "escala": 1.0,
+    "agrup_pers": 0.8,
+    "agrup_int": 0.2,
+    "nota": "Ruido de bloque no gaussiano: t de Student de 4 grados de libertad, con agrupación de la volatilidad por régimen diario. La escala se calibra para conservar la desviación diaria de cada mineral (volatility_num)."
+  },
+  "ruido_prototipo": {
+    "modelo": "gauss",
+    "escala": 1.0,
+    "agrup_pers": 0.0,
+    "agrup_int": 0.0
+  },
+  "mercado": {
+    "caida_max_pct": 60
+  },
+  "politica": {
+    "aeth_cobertura_dias": 5,
+    "ventana_prod": 7,
+    "max_escaneos_por_bloque": 40,
+    "e1_grilla": [0.05, 0.1, 0.25, 0.5, 1.0],
+    "e3_esperas": [0, 1, 4, 8],
+    "e3_salto": 7,
+    "e3_fracciones": [0.25, 1.0],
+    "margen_soborno": 10,
+    "plantilla_nivel": {
+      "II": 2,
+      "III": 4,
+      "IV": 5
+    },
+    "vol_bloques": 10,
+    "barrido_negro": {
+      "rapido": [
+        {
+          "umbral": 55
+        },
+        {
+          "umbral": 75
+        },
+        {
+          "umbral": 100
+        },
+        {
+          "umbral": 30,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true
+        },
+        {
+          "umbral": 55,
+          "comprar": true
+        }
+      ],
+      "mini": [
+        {
+          "umbral": 75
+        },
+        {
+          "umbral": 30,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true
+        }
+      ],
+      "completo": [
+        {
+          "umbral": 30
+        },
+        {
+          "umbral": 30,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true
+        },
+        {
+          "umbral": 30,
+          "comprar": true
+        },
+        {
+          "umbral": 30,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true,
+          "comprar": true
+        },
+        {
+          "umbral": 45
+        },
+        {
+          "umbral": 45,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true
+        },
+        {
+          "umbral": 45,
+          "comprar": true
+        },
+        {
+          "umbral": 45,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true,
+          "comprar": true
+        },
+        {
+          "umbral": 55
+        },
+        {
+          "umbral": 55,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true
+        },
+        {
+          "umbral": 55,
+          "comprar": true
+        },
+        {
+          "umbral": 55,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true,
+          "comprar": true
+        },
+        {
+          "umbral": 75
+        },
+        {
+          "umbral": 75,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true
+        },
+        {
+          "umbral": 75,
+          "comprar": true
+        },
+        {
+          "umbral": 75,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true,
+          "comprar": true
+        },
+        {
+          "umbral": 100
+        },
+        {
+          "umbral": 100,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true
+        },
+        {
+          "umbral": 100,
+          "comprar": true
+        },
+        {
+          "umbral": 100,
+          "soborno": true,
+          "guardias": 3,
+          "faroleros": true,
+          "comprar": true
+        }
+      ]
+    },
+    "emp_evitar": 0,
+    "uso_zona_decae": 0.9,
+    "negro_finalistas": 3
+  },
+  "prototipo": {
+    "calidad": 0.9,
+    "pts_mena": 1.1,
+    "aeth_noche": 3,
+    "aeth_descuento": 0.98,
+    "etapas": {
+      "IIe": {
+        "acto": "II",
+        "energia": ["I", 1],
+        "nivel": ["II", 0],
+        "tienda": 1,
+        "patrimonio": 8000
+      },
+      "II": {
+        "acto": "II",
+        "energia": ["II", null],
+        "nivel": ["II", 1],
+        "tienda": 1,
+        "patrimonio": 20000
+      },
+      "III": {
+        "acto": "III",
+        "energia": ["III", null],
+        "nivel": ["III", 1],
+        "tienda": 2,
+        "patrimonio": 120000
+      },
+      "IV": {
+        "acto": "IV",
+        "energia": ["IV", null],
+        "nivel": ["IV", 1],
+        "tienda": 3,
+        "patrimonio": 500000
+      }
+    },
+    "nota": "Reproduce el prototipo de F0-52 (econ2.py): cuatro etapas estacionarias de 250 días con ruido gaussiano, mena continua, sin tope por comprador, sin almacén y con la Aetherita vendida en negro (3 viales por noche).",
+    "dias": 250,
+    "ruido_unidades": [0.85, 1.15]
+  },
+  "perfiles": {
+    "lento": {
+      "nombre": "Lento",
+      "probs": "lento",
+      "eps": 0.35,
+      "compras": "guia",
+      "reserva": 0.6,
+      "acto1_exp": 4,
+      "duracion": "max",
+      "acto1_mejora": false,
+      "prensa": ["heraldo"],
+      "info": {}
+    },
+    "medio": {
+      "nombre": "Medio",
+      "probs": "medio",
+      "eps": 0.15,
+      "compras": "guia",
+      "reserva": 0.4,
+      "acto1_exp": 5,
+      "duracion": "media",
+      "acto1_mejora": false,
+      "prensa": ["heraldo", "voz", "teletipo"],
+      "info": {
+        "III": "analisis",
+        "IV": "tabulador"
+      }
+    },
+    "rapido": {
+      "nombre": "Rápido",
+      "probs": "rapido",
+      "eps": 0.05,
+      "compras": "guia",
+      "reserva": 0.2,
+      "acto1_exp": 9,
+      "duracion": "min",
+      "acto1_mejora": false,
+      "prensa": ["heraldo", "voz", "teletipo"],
+      "info": {
+        "III": "analisis",
+        "IV": "tabulador"
+      }
+    },
+    "optimizador": {
+      "nombre": "Optimizador",
+      "probs": "rapido",
+      "eps": 0.0,
+      "compras": "optimizador",
+      "reserva": 0.0,
+      "acto1_exp": 9,
+      "duracion": "media",
+      "acto1_mejora": true,
+      "prensa": [],
+      "info": {}
+    }
+  },
+  "campana": {
+    "paso_serie": 4,
+    "reserva_via_dias": 2.0,
+    "zonas_rotacion": 3,
+    "revisar_cada": 2,
+    "paquetes": true,
+    "pago_max_dias": 15,
+    "pago_max_dias_optimo": 30,
+    "almacen_colchon": 1.5,
+    "estilo_colchon": 3.0,
+    "dias_reserva_cuota": 3,
+    "tienda_por_acto": {
+      "II": 1,
+      "III": 2,
+      "IV": 3
+    }
+  },
+  "mutaciones": {
+    "A1": [
+      {
+        "descripcion": "El Aguante del Acto I sube de 25 a 27: el medio paga casi siempre",
+        "ediciones": [
+          {
+            "clave": "economy.energy.per_act.I",
+            "valor": [27, 30]
+          }
+        ]
+      }
+    ],
+    "A2": [
+      {
+        "descripcion": "Aguante 27 y mejora del día 5 a 300",
+        "ediciones": [
+          {
+            "clave": "economy.energy.per_act.I",
+            "valor": [27, 30]
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.pico.2",
+            "valor": 300
+          }
+        ]
+      }
+    ],
+    "A3": [
+      {
+        "descripcion": "Aguante 27: el lento paga más",
+        "ediciones": [
+          {
+            "clave": "economy.energy.per_act.I",
+            "valor": [27, 30]
+          }
+        ]
+      }
+    ],
+    "A4": [
+      {
+        "descripcion": "Cuota de 4 000: ni el rápido paga",
+        "ediciones": [
+          {
+            "clave": "economy.debt.first_payment",
+            "valor": 4000
+          }
+        ]
+      }
+    ],
+    "A5": [
+      {
+        "descripcion": "Aguante del Acto I de 20: el ritmo del Acto I se hunde",
+        "ediciones": [
+          {
+            "clave": "economy.energy.per_act.I",
+            "valor": [20, 30]
+          }
+        ]
+      }
+    ],
+    "A6": [
+      {
+        "descripcion": "Cuota de 4 000: la cuota del día 14 aplasta la semana",
+        "ediciones": [
+          {
+            "clave": "economy.debt.first_payment",
+            "valor": 4000
+          }
+        ]
+      }
+    ],
+    "A7": [
+      {
+        "descripcion": "Capital de 1 500: el rápido podría saldarlo",
+        "ediciones": [
+          {
+            "clave": "economy.debt.principal",
+            "valor": 1500
+          }
+        ]
+      }
+    ],
+    "B1": [
+      {
+        "descripcion": "Objetivos del medio rebajados al ritmo medido",
+        "ediciones": [
+          {
+            "clave": "economy.pace.net_income_per_hour.IV.target",
+            "valor": 75000
+          },
+          {
+            "clave": "economy.pace.net_income_per_hour.III.target",
+            "valor": 24000
+          }
+        ]
+      }
+    ],
+    "B2": [
+      {
+        "descripcion": "Aguante del Acto III de 20: el III deja de crecer",
+        "ediciones": [
+          {
+            "clave": "economy.energy.per_act.III",
+            "valor": 20
+          }
+        ]
+      }
+    ],
+    "B3": [
+      {
+        "descripcion": "Patrimonio objetivo del IV de 50 000",
+        "ediciones": [
+          {
+            "clave": "economy.pace.acts.IV.wealth_end",
+            "valor": 50000
+          }
+        ]
+      }
+    ],
+    "B4": [
+      {
+        "descripcion": "Pisos de estatus rebajados",
+        "ediciones": [
+          {
+            "clave": "economy.pace.status_floors.comerciante",
+            "valor": 12000
+          },
+          {
+            "clave": "economy.pace.status_floors.empresario",
+            "valor": 60000
+          },
+          {
+            "clave": "economy.pace.status_floors.magnate",
+            "valor": 200000
+          }
+        ]
+      }
+    ],
+    "B5": [
+      {
+        "descripcion": "Mejoras de nivel 4 y 5 casi gratis: el optimizador llega al nivel 5 en el II",
+        "ediciones": [
+          {
+            "clave": "economy.tools.upgrade_cost.pico.4",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.pico.5",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.criba.4",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.criba.5",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.taladro.4",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.taladro.5",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.cincel.4",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.cincel.5",
+            "valor": 10
+          }
+        ]
+      }
+    ],
+    "B6": [
+      {
+        "descripcion": "Prensa a un cuarto de precio",
+        "ediciones": [
+          {
+            "clave": "economy.information.layers.1.papers.heraldo.subscription",
+            "valor": 60
+          },
+          {
+            "clave": "economy.information.layers.1.papers.voz.subscription",
+            "valor": 60
+          },
+          {
+            "clave": "economy.information.layers.1.papers.teletipo.subscription",
+            "valor": 100
+          }
+        ]
+      }
+    ],
+    "B7": [
+      {
+        "descripcion": "El cliente medio de la tienda paga ×30: el ingreso supera el techo físico",
+        "ediciones": [
+          {
+            "clave": "economy.market.store.avg_client_markup",
+            "valor": 30.0
+          }
+        ]
+      }
+    ],
+    "B8": [
+      {
+        "descripcion": "Reparar casi gratis: el prototipo ya no coincide",
+        "ediciones": [
+          {
+            "clave": "economy.tools.repair.money_per_point",
+            "valor": [1, 1, 1, 1, 1]
+          }
+        ]
+      }
+    ],
+    "C1": [
+      {
+        "descripcion": "Mejoras de nivel 2 a 10 esquirlas: la más rápida se paga en menos de una expedición",
+        "ediciones": [
+          {
+            "clave": "economy.tools.upgrade_cost.pico.2",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.criba.2",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.taladro.2",
+            "valor": 10
+          },
+          {
+            "clave": "economy.tools.upgrade_cost.cincel.2",
+            "valor": 10
+          }
+        ]
+      }
+    ],
+    "C2": [
+      {
+        "descripcion": "Cincel a nivel 4 por 500 000",
+        "ediciones": [
+          {
+            "clave": "economy.tools.upgrade_cost.cincel.4",
+            "valor": 500000
+          }
+        ]
+      }
+    ],
+    "C3": [
+      {
+        "descripcion": "Reparación a un 45 % del precio actual",
+        "ediciones": [
+          {
+            "clave": "economy.tools.repair.money_per_point",
+            "valor": [1.4, 2.3, 9, 38, 108]
+          }
+        ]
+      }
+    ],
+    "C4": [
+      {
+        "descripcion": "Explosivo de potencia 1 a 1 esquirla",
+        "ediciones": [
+          {
+            "clave": "economy.tools.explosive.powers.0.cost",
+            "valor": 1
+          }
+        ]
+      }
+    ],
+    "C5": [
+      {
+        "descripcion": "Descartar una mena sin costo",
+        "ediciones": [
+          {
+            "clave": "economy.expedition.ore_discard.energy_pct_of_ore",
+            "valor": 0
+          }
+        ]
+      }
+    ],
+    "D1": [
+      {
+        "descripcion": "Las zonas no se agotan: una zona domina",
+        "ediciones": [
+          {
+            "clave": "economy.expedition.zone_wealth.per_expedition",
+            "valor": 0
+          }
+        ]
+      }
+    ],
+    "D2": [
+      {
+        "descripcion": "Las zonas no se regeneran",
+        "ediciones": [
+          {
+            "clave": "economy.expedition.zone_wealth.per_day",
+            "valor": 0
+          }
+        ]
+      }
+    ],
+    "D3": [
+      {
+        "descripcion": "Aetherita a 60 000 esquirlas: domina las ventas del IV",
+        "ediciones": [
+          {
+            "clave": "minerals.aetherita.base_price",
+            "valor": 60000
+          }
+        ]
+      }
+    ],
+    "E1": [
+      {
+        "descripcion": "La tienda y los pedidos aceptan mercancía comprada, con regateo ×1,4",
+        "ediciones": [
+          {
+            "clave": "economy.market.store.own_goods_only",
+            "valor": false
+          },
+          {
+            "clave": "economy.orders_rules.own_goods_only",
+            "valor": false
+          },
+          {
+            "clave": "economy.market.store.avg_client_markup",
+            "valor": 1.4
+          }
+        ]
+      }
+    ],
+    "E2": [
+      {
+        "descripcion": "w del Acto IV de 8",
+        "ediciones": [
+          {
+            "clave": "economy.market.player_impact.by_act.IV",
+            "valor": 8.0
+          }
+        ]
+      }
+    ],
+    "E3": [
+      {
+        "descripcion": "Sin impuesto ni spread: la ida y vuelta no pierde",
+        "ediciones": [
+          {
+            "clave": "economy.market.sale_tax_pct",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.carbon.spread",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.hierro.spread",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.cobre.spread",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.salitre.spread",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.plata.spread",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.cuarzo.spread",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.oro.spread",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.esmeralda.spread",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.diamante.spread",
+            "valor": 0
+          }
+        ]
+      }
+    ],
+    "E4": [
+      {
+        "descripcion": "Bolsa con el spread completo y sin impuesto",
+        "ediciones": [
+          {
+            "clave": "economy.market.bolsa.spread_mult",
+            "valor": 1.0
+          },
+          {
+            "clave": "economy.market.sale_tax_pct",
+            "valor": 0
+          }
+        ]
+      }
+    ],
+    "E5": [
+      {
+        "descripcion": "Carbón con ruido de 5 puntos",
+        "ediciones": [
+          {
+            "clave": "minerals.carbon.sigma",
+            "valor": 5.0
+          }
+        ]
+      }
+    ],
+    "E6": [
+      {
+        "descripcion": "Tienda de 1 unidad y tope por comprador de 1",
+        "ediciones": [
+          {
+            "clave": "economy.store_upgrades.0.units_per_block",
+            "valor": 1
+          },
+          {
+            "clave": "economy.store_upgrades.1.units_per_block",
+            "valor": 1
+          },
+          {
+            "clave": "economy.store_upgrades.2.units_per_block",
+            "valor": 1
+          },
+          {
+            "clave": "economy.store_upgrades.3.units_per_block",
+            "valor": 1
+          },
+          {
+            "clave": "economy.store_upgrades.4.units_per_block",
+            "valor": 1
+          },
+          {
+            "clave": "economy.market.store.units_per_block",
+            "valor": [1, 1, 1, 1, 1]
+          },
+          {
+            "clave": "minerals.carbon.buyer_cap",
+            "valor": 1
+          },
+          {
+            "clave": "minerals.hierro.buyer_cap",
+            "valor": 1
+          },
+          {
+            "clave": "minerals.cobre.buyer_cap",
+            "valor": 1
+          },
+          {
+            "clave": "minerals.salitre.buyer_cap",
+            "valor": 1
+          },
+          {
+            "clave": "minerals.plata.buyer_cap",
+            "valor": 1
+          },
+          {
+            "clave": "minerals.cuarzo.buyer_cap",
+            "valor": 1
+          },
+          {
+            "clave": "minerals.oro.buyer_cap",
+            "valor": 1
+          },
+          {
+            "clave": "minerals.esmeralda.buyer_cap",
+            "valor": 1
+          },
+          {
+            "clave": "minerals.diamante.buyer_cap",
+            "valor": 1
+          }
+        ]
+      }
+    ],
+    "E7": [
+      {
+        "descripcion": "Pedido estándar con prima de 400 %",
+        "ediciones": [
+          {
+            "clave": "economy.orders.0.premium_pct",
+            "valor": 400
+          }
+        ]
+      }
+    ],
+    "F1": [
+      {
+        "descripcion": "Prima negra de 90 %",
+        "ediciones": [
+          {
+            "clave": "minerals.carbon.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.hierro.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.cobre.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.salitre.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.plata.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.cuarzo.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.oro.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.esmeralda.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.diamante.black_premium",
+            "valor": 90
+          }
+        ]
+      }
+    ],
+    "F2": [
+      {
+        "descripcion": "Tope nocturno gigante y prima negra de 90 %",
+        "ediciones": [
+          {
+            "clave": "economy.surveillance.night_volume_cap.II",
+            "valor": 500000
+          },
+          {
+            "clave": "economy.surveillance.night_volume_cap.III",
+            "valor": 2000000
+          },
+          {
+            "clave": "economy.surveillance.night_volume_cap.IV",
+            "valor": 5000000
+          },
+          {
+            "clave": "minerals.carbon.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.hierro.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.cobre.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.salitre.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.plata.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.cuarzo.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.oro.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.esmeralda.black_premium",
+            "valor": 90
+          },
+          {
+            "clave": "minerals.diamante.black_premium",
+            "valor": 90
+          }
+        ]
+      }
+    ],
+    "F3": [
+      {
+        "descripcion": "Sin multas, sin redadas y vigilancia que baja 50 al día",
+        "ediciones": [
+          {
+            "clave": "economy.surveillance.raid.fine_pct_wealth",
+            "valor": 0
+          },
+          {
+            "clave": "economy.surveillance.raid.fine_min",
+            "valor": 0
+          },
+          {
+            "clave": "economy.surveillance.fines.vigilado.fine_pct_wealth",
+            "valor": 0
+          },
+          {
+            "clave": "economy.surveillance.fines.vigilado.fine_min",
+            "valor": 0
+          },
+          {
+            "clave": "economy.surveillance.fines.observado.fine_pct_wealth",
+            "valor": 0
+          },
+          {
+            "clave": "economy.surveillance.fines.observado.fine_min",
+            "valor": 0
+          },
+          {
+            "clave": "economy.surveillance.raid.at",
+            "valor": 300
+          },
+          {
+            "clave": "economy.surveillance.natural_decay_per_day",
+            "valor": 50
+          }
+        ]
+      }
+    ],
+    "F4": [
+      {
+        "descripcion": "Canal legal de 50 viales al día",
+        "ediciones": [
+          {
+            "clave": "economy.expedition.aetherita.legal_channel.max_vials_per_day",
+            "valor": 50
+          }
+        ]
+      }
+    ],
+    "F5": [
+      {
+        "descripcion": "Sin prima negra: una noche negra no compensa nada",
+        "ediciones": [
+          {
+            "clave": "minerals.carbon.black_premium",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.hierro.black_premium",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.cobre.black_premium",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.salitre.black_premium",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.plata.black_premium",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.cuarzo.black_premium",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.oro.black_premium",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.esmeralda.black_premium",
+            "valor": 0
+          },
+          {
+            "clave": "minerals.diamante.black_premium",
+            "valor": 0
+          }
+        ]
+      }
+    ],
+    "G1": [
+      {
+        "descripcion": "Salario del N2 de 500",
+        "ediciones": [
+          {
+            "clave": "economy.employees.levels.1.salary_per_day",
+            "valor": 500
+          }
+        ]
+      }
+    ],
+    "G2": [
+      {
+        "descripcion": "Eficiencia de N4 y N5 de 5 %",
+        "ediciones": [
+          {
+            "clave": "economy.employees.levels.3.efficiency_pct",
+            "valor": 5
+          },
+          {
+            "clave": "economy.employees.levels.4.efficiency_pct",
+            "valor": 5
+          }
+        ]
+      }
+    ],
+    "G3": [
+      {
+        "descripcion": "Eficiencia de N4 y N5 de 5 %",
+        "ediciones": [
+          {
+            "clave": "economy.employees.levels.3.efficiency_pct",
+            "valor": 5
+          },
+          {
+            "clave": "economy.employees.levels.4.efficiency_pct",
+            "valor": 5
+          }
+        ]
+      }
+    ],
+    "G4": [
+      {
+        "descripcion": "Dependiente por 10 al día",
+        "ediciones": [
+          {
+            "clave": "economy.employees.support_salary_per_day.dependiente.II",
+            "valor": 10
+          },
+          {
+            "clave": "economy.employees.support_salary_per_day.dependiente.III",
+            "valor": 10
+          },
+          {
+            "clave": "economy.employees.support_salary_per_day.dependiente.IV",
+            "valor": 10
+          }
+        ]
+      }
+    ],
+    "G5": [
+      {
+        "descripcion": "Todos los salarios a 1",
+        "ediciones": [
+          {
+            "clave": "economy.employees.levels.0.salary_per_day",
+            "valor": 1
+          },
+          {
+            "clave": "economy.employees.levels.1.salary_per_day",
+            "valor": 1
+          },
+          {
+            "clave": "economy.employees.levels.2.salary_per_day",
+            "valor": 1
+          },
+          {
+            "clave": "economy.employees.levels.3.salary_per_day",
+            "valor": 1
+          },
+          {
+            "clave": "economy.employees.levels.4.salary_per_day",
+            "valor": 1
+          }
+        ]
+      }
+    ],
+    "G6": [
+      {
+        "descripcion": "La Fosa hiere al 100 % con 30 días de baja",
+        "ediciones": [
+          {
+            "clave": "economy.employees.risk.by_zone.fosa.injury_pct",
+            "valor": 100
+          },
+          {
+            "clave": "economy.employees.risk.by_zone.fosa.sick_days",
+            "valor": 30
+          }
+        ]
+      }
+    ],
+    "H1": [
+      {
+        "descripcion": "Umbral del 25 % en 30 000",
+        "ediciones": [
+          {
+            "clave": "economy.debt.route.A5_amount",
+            "valor": 30000
+          }
+        ]
+      }
+    ],
+    "H2": [
+      {
+        "descripcion": "Amortización semanal de 100",
+        "ediciones": [
+          {
+            "clave": "economy.debt.amortization_weekly",
+            "valor": 100
+          }
+        ]
+      }
+    ],
+    "H3": [
+      {
+        "descripcion": "Abono anónimo de 2 000 al mes",
+        "ediciones": [
+          {
+            "clave": "economy.debt.anonymous_payment.amount_per_month",
+            "valor": 2000
+          }
+        ]
+      }
+    ],
+    "H4": [
+      {
+        "descripcion": "La mora cierra puertas",
+        "ediciones": [
+          {
+            "clave": "economy.debt.mora.closes_doors",
+            "valor": true
+          }
+        ]
+      }
+    ],
+    "H5": [
+      {
+        "descripcion": "Cuota extra de luz de 30 000",
+        "ediciones": [
+          {
+            "clave": "economy.debt.extra_light_fee",
+            "valor": 30000
+          }
+        ]
+      }
+    ],
+    "H6": [
+      {
+        "descripcion": "Piso de Comerciante de 500 000",
+        "ediciones": [
+          {
+            "clave": "economy.pace.status_floors.comerciante",
+            "valor": 500000
+          }
+        ]
+      }
+    ]
+  },
+  "presupuesto_rapido_s": 45
+}

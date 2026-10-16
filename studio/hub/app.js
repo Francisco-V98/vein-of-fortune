@@ -254,7 +254,8 @@
     art: { cat: 'Todas' },
     qa: { area: 'Todas', type: 'Todos' },
     dc: { act: 'all', level: 'all', who: 'all' },
-    hl: { act: 'all', tipo: 'all', estado: 'all', who: 'all' }
+    hl: { act: 'all', tipo: 'all', estado: 'all', who: 'all' },
+    sim: { grupo: 'all', estado: 'all', open: {} }
   };
   var lb = { list: [], idx: 0, opener: null };
 
@@ -273,7 +274,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('mapa', 'Mapa de historia', '⌖') + link('decisiones', 'Árbol de decisiones', '⑂') + link('hilos', 'Hilos narrativos', '⧉') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('mapa', 'Mapa de historia', '⌖') + link('decisiones', 'Árbol de decisiones', '⑂') + link('hilos', 'Hilos narrativos', '⧉') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('simulador', 'Simulador de economía', '⚖') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -364,8 +365,14 @@
     });
     h += '</div>';
 
-    h += '<h2 class="section-title">Limpieza del diseño <small>✅ acordado ÷ (✅ + 🟡 + ❓) · meta ' + H.cleanliness.target + ' %</small></h2>' + cleanTable(H.docs.slice().sort(function (a, b) { return cleanSort(a) - cleanSort(b); }).slice(0, 8)) + '<p class="clean-more"><a href="#/limpieza">Ver todos los documentos y los puntos abiertos →</a> · Coherencia con el registro del mundo: <strong>' + H.coherence.pct + ' %</strong> <a href="#/coherencia">Ver hallazgos →</a></p>';
+    h += '<h2 class="section-title">Limpieza del diseño <small>✅ acordado ÷ (✅ + 🟡 + ❓) · meta ' + H.cleanliness.target + ' %</small></h2>' + cleanTable(H.docs.slice().sort(function (a, b) { return cleanSort(a) - cleanSort(b); }).slice(0, 8)) + '<p class="clean-more"><a href="#/limpieza">Ver todos los documentos y los puntos abiertos →</a> · Coherencia con el registro del mundo: <strong>' + H.coherence.pct + ' %</strong> <a href="#/coherencia">Ver hallazgos →</a></p>' + simHome();
     return h;
+  }
+
+  function simHome() {
+    var S = H.sim;
+    if (!S || !S.disponible) return '<p class="clean-more">Equilibrio de la economía: <strong>sin resultados todavía</strong> <a href="#/simulador">Ver el simulador →</a></p>';
+    return '<p class="clean-more">Equilibrio de la economía: <strong>' + S.conteo.pasa + ' de ' + S.conteo.total + ' reglas pasan</strong>' + (S.caducado ? ' · <span class="sim-flag">resultado caducado</span>' : '') + ' <a href="#/simulador">Ver el simulador →</a></p>';
   }
 
   /* ---------- limpieza del diseño ---------- */
@@ -440,6 +447,230 @@
       h += '</details>';
     });
     return h;
+  }
+
+  /* ---------- simulador de economía y progresión ---------- */
+  var SIM_LABEL = { pasa: 'Pasa', falla: 'Falla', incierto: 'Incierto' };
+  var SIM_COLOR = { lento: '#8fb0ba', medio: '#e3b25c', rapido: '#4fb6a5', optimizador: '#c23b55' };
+  var SIM_EXTRA = ['#b8a6d9', '#7fb069', '#d98e5f', '#6fa8dc'];
+  /* Los pisos de estatus llegan de los datos como {comerciante: 15000, ...} o como [{valor, etiqueta}]; se normalizan a lista ordenada. */
+  function simRefs(raw) {
+    var list = Array.isArray(raw) ? raw : Object.keys(raw || {}).map(function (k) { return { valor: raw[k], etiqueta: k.charAt(0).toUpperCase() + k.slice(1) }; });
+    return list.filter(function (r) { return r && typeof r.valor === 'number' && isFinite(r.valor) && r.valor > 0; })
+      .map(function (r) { return { valor: r.valor, etiqueta: r.etiqueta == null ? '' : String(r.etiqueta) }; })
+      .sort(function (a, b) { return a.valor - b.valor; });
+  }
+  var SIM_CH = { w: 760, h: 300, l: 66, r: 16, t: 18, b: 34 };
+
+  function simNum(v) {
+    if (typeof v !== 'number' || !isFinite(v)) return v == null ? '—' : String(v);
+    var a = Math.abs(v);
+    var s = String(Number.isInteger(v) || a >= 1000 ? Math.round(v) : +v.toFixed(a >= 100 ? 0 : a >= 10 ? 1 : a >= 1 ? 2 : 3));
+    var p = s.split('.');
+    p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return p.join(',');
+  }
+  function simUnit(r) { return r.unidad ? ' ' + r.unidad : ''; }
+  function simRange(v) {
+    if (v && typeof v === 'object' && !Array.isArray(v)) return (v.min != null ? '≥ ' + simNum(v.min) : '') + (v.min != null && v.max != null ? ' y ' : '') + (v.max != null ? '≤ ' + simNum(v.max) : '');
+    if (Array.isArray(v)) return simNum(v[0]) + ' – ' + simNum(v[1]);
+    return simNum(v);
+  }
+  function simIc(ic) { return ic ? '[' + simNum(ic[0]) + ' – ' + simNum(ic[1]) + ']' : ''; }
+  function simPill(estado) { return '<span class="sim-st ' + esc(estado) + '">' + esc(SIM_LABEL[estado] || estado) + '</span>'; }
+  function simDocs(docs) {
+    return (docs || []).map(function (d) {
+      var m = /^\s*(\d{2})/.exec(d);
+      var doc = m && H.docs.filter(function (x) { return x.id.indexOf(m[1] + '-') === 0; })[0];
+      return doc ? '<a href="#/docs/' + esc(doc.id) + '" title="' + esc(doc.title) + '">' + esc(d) + '</a>' : esc(d);
+    }).join(' · ');
+  }
+  function simProfiles(res) {
+    return res.perfiles.map(function (p, i) {
+      var id = typeof p === 'string' ? p : p.id;
+      return { id: id, name: typeof p === 'string' ? p : (p.nombre || p.id), color: SIM_COLOR[id] || SIM_EXTRA[i % SIM_EXTRA.length] };
+    });
+  }
+  function simLegend(profiles) {
+    return '<div class="sim-legend">' + profiles.map(function (p) { return '<span><i style="background:' + p.color + '"></i>' + esc(p.name) + '</span>'; }).join('') + '</div>';
+  }
+  function simFailing(r) {
+    return Object.keys(r.por_perfil || {}).filter(function (k) { return r.por_perfil[k].estado && r.por_perfil[k].estado !== 'pasa'; });
+  }
+
+  /* Ejes: log (potencias de 10) y lineal con marcas "bonitas" */
+  function simLogAxis(lo, hi, y0, y1) {
+    var a = Math.floor(Math.log10(Math.max(lo, 1))), b = Math.max(Math.ceil(Math.log10(hi)), a + 1);
+    var ticks = [];
+    for (var e = a; e <= b; e++) ticks.push(Math.pow(10, e));
+    return { ticks: ticks, y: function (v) { return y0 - (Math.log10(Math.max(v, ticks[0])) - a) / (b - a) * (y0 - y1); }, min: ticks[0] };
+  }
+  function simLinAxis(lo, hi, y0, y1) {
+    var span = hi - lo || 1, raw = span / 5, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+    var step = [1, 2, 5, 10].map(function (k) { return k * mag; }).filter(function (s) { return s >= raw; })[0];
+    var a = Math.floor(lo / step) * step, b = Math.ceil(hi / step) * step, ticks = [];
+    for (var v = a; v <= b + step / 2; v += step) ticks.push(v);
+    return { ticks: ticks, y: function (v) { return y0 - (v - a) / (b - a) * (y0 - y1); } };
+  }
+  function simGrid(ax, c) {
+    return ax.ticks.map(function (t) {
+      var y = ax.y(t).toFixed(1);
+      return '<line x1="' + c.l + '" y1="' + y + '" x2="' + (c.w - c.r) + '" y2="' + y + '" stroke="#2a3d4a" stroke-width="1"/><text x="' + (c.l - 6) + '" y="' + (+y + 4) + '" text-anchor="end" fill="#8fb0ba" font-size="11">' + simNum(t) + '</text>';
+    }).join('');
+  }
+  function simSvg(label, body) {
+    return '<svg class="sim-chart" viewBox="0 0 ' + SIM_CH.w + ' ' + SIM_CH.h + '" role="img" aria-label="' + esc(label) + '">' + body + '</svg>';
+  }
+  function simFigure(title, lead, svg, profiles, rows) {
+    return '<figure class="sim-fig"><h3 class="sl-sub">' + esc(title) + '</h3><p class="page-lead">' + lead + '</p>' + simLegend(profiles) + svg +
+      '<details class="sim-data"><summary>Ver las cifras</summary><div class="table-wrap"><table><thead><tr>' + rows.head.map(function (x) { return '<th>' + esc(x) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+      rows.body.map(function (r) { return '<tr>' + r.map(function (x, i) { return '<td' + (i ? ' class="num-cell"' : '') + '>' + esc(x) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div></details></figure>';
+  }
+
+  /* Gráfico 1: ingreso neto por hora y acto (log), objetivo del medio y banda */
+  function simChartIncome(S, profiles) {
+    var c = SIM_CH, s = S.ingreso_hora_por_acto, band = s.banda == null ? 0.2 : s.banda;
+    var vals = [], P = profiles.filter(function (p) { return s.perfiles[p.id]; });
+    s.actos.forEach(function (a) { vals.push(s.objetivo[a] * (1 - band), s.objetivo[a] * (1 + band)); P.forEach(function (p) { vals.push(s.perfiles[p.id][a]); }); });
+    var ax = simLogAxis(Math.min.apply(null, vals) * 0.8, Math.max.apply(null, vals) * 1.2, c.h - c.b, c.t);
+    var gw = (c.w - c.l - c.r) / s.actos.length, bw = gw * 0.78 / Math.max(P.length, 1);
+    var g = simGrid(ax, c), base = ax.y(ax.min);
+    s.actos.forEach(function (a, i) {
+      var x0 = c.l + i * gw, o = s.objetivo[a];
+      g += '<rect x="' + x0.toFixed(1) + '" y="' + ax.y(o * (1 + band)).toFixed(1) + '" width="' + gw.toFixed(1) + '" height="' + (ax.y(o * (1 - band)) - ax.y(o * (1 + band))).toFixed(1) + '" fill="#e3b25c" opacity="0.13"/>';
+      P.forEach(function (p, k) {
+        var v = s.perfiles[p.id][a], x = x0 + gw * 0.11 + k * bw, y = ax.y(v);
+        g += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + (bw - 2).toFixed(1) + '" height="' + Math.max(base - y, 0).toFixed(1) + '" fill="' + p.color + '"><title>' + esc(p.name) + ' · acto ' + esc(a) + ': ' + simNum(v) + ' por hora</title></rect>';
+      });
+      g += '<line x1="' + x0.toFixed(1) + '" y1="' + ax.y(o).toFixed(1) + '" x2="' + (x0 + gw).toFixed(1) + '" y2="' + ax.y(o).toFixed(1) + '" stroke="#e3b25c" stroke-width="1.6" stroke-dasharray="6 4"><title>Objetivo del acto ' + esc(a) + ': ' + simNum(o) + '</title></line>';
+      g += '<text x="' + (x0 + gw / 2).toFixed(1) + '" y="' + (c.h - 12) + '" text-anchor="middle" fill="#c9dcdf" font-size="12">Acto ' + esc(a) + '</text>';
+    });
+    return simSvg('Ingreso neto por hora en cada acto y perfil, escala logarítmica, con el objetivo del acto y su banda de más o menos ' + Math.round(band * 100) + ' por ciento', g);
+  }
+
+  /* Gráfico 2: patrimonio por perfil en el tiempo (log) con los pisos de estatus */
+  function simChartWealth(S, profiles) {
+    var c = SIM_CH, s = S.patrimonio_por_dia, refs = simRefs(s.referencias);
+    var P = profiles.filter(function (p) { return s.perfiles[p.id]; });
+    var vals = refs.map(function (r) { return r.valor; });
+    P.forEach(function (p) { s.perfiles[p.id].forEach(function (v) { vals.push(v); }); });
+    var pos = vals.filter(function (v) { return v > 0; });
+    var ax = simLogAxis(Math.min.apply(null, pos), Math.max.apply(null, pos) * 1.1, c.h - c.b, c.t);
+    var d0 = s.dias[0], d1 = s.dias[s.dias.length - 1];
+    var x = function (d) { return c.l + (d - d0) / (d1 - d0 || 1) * (c.w - c.l - c.r); };
+    var g = simGrid(ax, c);
+    refs.forEach(function (r) {
+      var y = ax.y(r.valor).toFixed(1);
+      g += '<line x1="' + c.l + '" y1="' + y + '" x2="' + (c.w - c.r) + '" y2="' + y + '" stroke="#e3b25c" stroke-width="1.2" stroke-dasharray="5 4"/><text x="' + (c.l + 6) + '" y="' + (y - 4) + '" fill="#e3b25c" font-size="11">' + esc(r.etiqueta) + ' ' + simNum(r.valor) + '</text>';
+    });
+    (s.actos || []).forEach(function (a) {
+      var xx = x(a.dia).toFixed(1);
+      g += '<line x1="' + xx + '" y1="' + c.t + '" x2="' + xx + '" y2="' + (c.h - c.b) + '" stroke="#5b7c8c" stroke-dasharray="2 4"/><text x="' + (+xx + 4) + '" y="' + (c.h - c.b - 6) + '" fill="#8fb0ba" font-size="11">Acto ' + esc(a.acto) + '</text>';
+    });
+    P.forEach(function (p) {
+      g += '<polyline fill="none" stroke="' + p.color + '" stroke-width="2.2" stroke-linejoin="round" points="' + s.perfiles[p.id].map(function (v, i) { return x(s.dias[i]).toFixed(1) + ',' + ax.y(v).toFixed(1); }).join(' ') + '"><title>' + esc(p.name) + '</title></polyline>';
+    });
+    g += '<text x="' + c.l + '" y="' + (c.h - 12) + '" fill="#5b7c8c" font-size="11">día ' + simNum(d0) + '</text><text x="' + (c.w - c.r) + '" y="' + (c.h - 12) + '" text-anchor="end" fill="#5b7c8c" font-size="11">día ' + simNum(d1) + ' →</text>';
+    return simSvg('Patrimonio de cada perfil a lo largo de los días, escala logarítmica, con los pisos de estatus' + (refs.length ? ' de ' + refs.map(function (r) { return simNum(r.valor); }).join(', ') : ''), g);
+  }
+
+  /* Gráfico 3: caja antes de la cuota del día 7 (p10 / p50 / p90) frente a la cuota */
+  function simChartCash(S, profiles) {
+    var c = SIM_CH, s = S.acto1_caja_antes_de_cuota, P = profiles.filter(function (p) { return s.perfiles[p.id]; });
+    var vals = [0, s.cuota * 1.15];
+    P.forEach(function (p) { vals.push(s.perfiles[p.id].p10, s.perfiles[p.id].p90); });
+    var ax = simLinAxis(Math.min.apply(null, vals), Math.max.apply(null, vals), c.h - c.b, c.t);
+    var gw = (c.w - c.l - c.r) / P.length, g = simGrid(ax, c);
+    P.forEach(function (p, i) {
+      var q = s.perfiles[p.id], cx = c.l + gw * (i + 0.5);
+      g += '<line x1="' + cx.toFixed(1) + '" y1="' + ax.y(q.p10).toFixed(1) + '" x2="' + cx.toFixed(1) + '" y2="' + ax.y(q.p90).toFixed(1) + '" stroke="' + p.color + '" stroke-width="14" stroke-linecap="round" opacity="0.35"><title>' + esc(p.name) + ': p10 ' + simNum(q.p10) + ' · p50 ' + simNum(q.p50) + ' · p90 ' + simNum(q.p90) + '</title></line>' +
+        '<line x1="' + (cx - 14).toFixed(1) + '" y1="' + ax.y(q.p50).toFixed(1) + '" x2="' + (cx + 14).toFixed(1) + '" y2="' + ax.y(q.p50).toFixed(1) + '" stroke="' + p.color + '" stroke-width="3"/>';
+      [['p90', q.p90], ['p50', q.p50], ['p10', q.p10]].forEach(function (e) {
+        g += '<text x="' + (cx + 22).toFixed(1) + '" y="' + (ax.y(e[1]) + 4).toFixed(1) + '" fill="#c9dcdf" font-size="11">' + e[0] + ' ' + simNum(e[1]) + '</text>';
+      });
+      g += '<text x="' + cx.toFixed(1) + '" y="' + (c.h - 12) + '" text-anchor="middle" fill="#c9dcdf" font-size="12">' + esc(p.name) + '</text>';
+    });
+    var yc = ax.y(s.cuota).toFixed(1);
+    g += '<line x1="' + c.l + '" y1="' + yc + '" x2="' + (c.w - c.r) + '" y2="' + yc + '" stroke="#c23b55" stroke-width="1.8" stroke-dasharray="6 4"/><text x="' + (c.w - c.r) + '" y="' + (yc - 5) + '" text-anchor="end" fill="#ef8da0" font-size="12">Cuota del día 7: ' + simNum(s.cuota) + '</text>';
+    return simSvg('Caja antes de pagar la cuota del día 7 por perfil: percentiles 10, 50 y 90 frente a la cuota de ' + s.cuota, g);
+  }
+
+  function simRuleRows(res, profiles) {
+    var q = state.sim, h = '';
+    res.reglas.filter(function (r) { return (q.grupo === 'all' || r.grupo === q.grupo) && (q.estado === 'all' || r.estado === q.estado); }).forEach(function (r) {
+      var open = !!q.open[r.id], fail = simFailing(r), cols = 7;
+      h += '<tr class="sim-row ' + esc(r.estado) + '"><td><button class="sim-toggle" type="button" data-action="sim-row" data-value="' + esc(r.id) + '" aria-expanded="' + open + '" aria-label="Cifras por perfil de ' + esc(r.id) + '">' + (open ? '▾' : '▸') + '</button> <b>' + esc(r.id) + '</b></td>' +
+        '<td>' + esc(r.titulo) + '<small class="sim-metric">' + esc(r.metrica) + '</small></td><td>' + simPill(r.estado) + '</td>' +
+        '<td class="num-cell">' + simNum(r.valor) + simUnit(r) + (r.ic95 ? '<small class="sim-ic">IC 95 % ' + simIc(r.ic95) + (r.n != null ? ' · n = ' + simNum(r.n) : '') + '</small>' : (r.n != null ? '<small class="sim-ic">n = ' + simNum(r.n) + '</small>' : '')) + '</td>' +
+        '<td class="num-cell">' + esc(simRange(r.umbral)) + '<small class="sim-ic">' + (r.origen === 'doc' ? 'del documento' : 'propuesto') + '</small></td>' +
+        '<td>' + (fail.length ? esc(fail.map(function (k) { return (profiles.filter(function (p) { return p.id === k; })[0] || { name: k }).name; }).join(', ')) : '—') + '</td><td>' + simDocs(r.docs) + '</td></tr>';
+      if (open) {
+        var pp = r.por_perfil || {}, keys = profiles.filter(function (p) { return pp[p.id]; });
+        h += '<tr class="sim-detail"><td colspan="' + cols + '">' + (keys.length ? '<table class="sim-sub"><thead><tr><th>Perfil</th><th>Valor</th><th>IC 95 %</th><th>n</th><th>Estado</th></tr></thead><tbody>' + keys.map(function (p) {
+          var c = pp[p.id];
+          return '<tr><td>' + esc(p.name) + '</td><td class="num-cell">' + simNum(c.valor) + simUnit(r) + '</td><td class="num-cell">' + (c.ic95 ? simIc(c.ic95) : '—') + '</td><td class="num-cell">' + (c.n != null ? simNum(c.n) : '—') + '</td><td>' + simPill(c.estado || r.estado) + '</td></tr>';
+        }).join('') + '</tbody></table>' : '<small>Esta regla no se mide por perfil.</small>') + '</td></tr>';
+      }
+    });
+    return h || '<tr><td colspan="7"><div class="empty">Ninguna regla con estos filtros.</div></td></tr>';
+  }
+
+  function simTrace(S, res) {
+    var tr = (S.reglas && S.reglas.trazabilidad) || [];
+    if (!tr.length) return '<div class="empty">reglas.json todavía no trae la trazabilidad requisito → regla.</div>';
+    var byId = {}; res.reglas.forEach(function (r) { byId[r.id] = r; });
+    return '<div class="table-wrap"><table><thead><tr><th>Requisito</th><th>Fuente</th><th>Reglas que lo comprueban</th></tr></thead><tbody>' + tr.map(function (t) {
+      return '<tr><td>' + esc(t.requisito) + '</td><td>' + simDocs([t.fuente]) + '</td><td>' + (t.reglas.length ? t.reglas.map(function (id) {
+        var r = byId[id];
+        return '<span class="sim-st ' + (r ? esc(r.estado) : 'falla') + '" title="' + esc(r ? r.titulo + ' · ' + SIM_LABEL[r.estado] : 'regla inexistente') + '">' + esc(id) + '</span>';
+      }).join(' ') : '<span class="sim-st falla">sin regla</span>') + '</td></tr>';
+    }).join('') + '</tbody></table></div>';
+  }
+
+  function viewSimulator() {
+    var S = H.sim, h = '<p class="eyebrow">Calidad</p><h1 class="page-title">Simulador de economía y progresión</h1>';
+    if (!S || !S.disponible) {
+      return h + '<div class="notice">' + esc(S ? S.motivo : 'El hub no trae datos del simulador.') + '. Genera los resultados con <code>python3 tools/sim/run.py --completo</code> y después <code>python3 studio/hub/build.py</code>.</div>';
+    }
+    var res = S.resultados, c = S.conteo, profiles = simProfiles(res), q = state.sim;
+    var grupos = res.reglas.reduce(function (a, r) { if (a.indexOf(r.grupo) < 0) a.push(r.grupo); return a; }, []);
+    var pct = c.total ? Math.round(100 * c.pasa / c.total) : 0;
+    h += '<p class="page-lead">Comprueba con cifras que el equilibrio de <a href="#/docs/28-numeros-base-de-la-economia">los números base</a> se sostiene: cuatro perfiles de jugador recorren la campaña con las cifras de <a href="../data/world.json" target="_blank" rel="noopener">world.json</a>. Cada regla dice si <strong>pasa</strong>, <strong>falla</strong> o es <strong>incierta</strong> (el intervalo de confianza toca el umbral). Al cierre no puede haber reglas en falla ni inciertas.</p>';
+    if (S.caducado) h += '<div class="sim-stale" role="alert"><strong>Resultado caducado.</strong> Las cifras de world.json cambiaron desde que se generó este resultado: lo que ves ya no vale. Reejecuta <code>python3 tools/sim/run.py --completo</code>.</div>';
+    else if (!S.huella_verificada) h += '<div class="notice sim-unverified">La huella frente a world.json todavía no se puede verificar (falta tools/sim/mundo.py): solo se valida la forma del resultado.</div>';
+    h += '<div class="cln-summary"><div class="ring" style="--p:' + pct + '"><b>' + c.pasa + '/' + c.total + '</b><span>reglas pasan</span></div><div class="st-grid">' +
+      '<div class="st-card sim-ok"><small>Pasan</small><b>' + c.pasa + '</b><span>de ' + c.total + ' reglas</span></div>' +
+      '<div class="st-card sim-bad"><small>Fallan</small><b>' + c.falla + '</b><span>' + (c.falla ? 'proponer un cambio de cifra' : 'ninguna') + '</span></div>' +
+      '<div class="st-card sim-mid"><small>Inciertas</small><b>' + c.incierto + '</b><span>' + (c.incierto ? 'faltan corridas' : 'ninguna') + '</span></div>' +
+      '<div class="st-card"><small>Generado</small><b class="sim-date">' + esc(res.generado) + '</b><span>' + profiles.length + ' perfiles · ' + (Array.isArray(res.semillas) ? res.semillas.length + ' semillas' : 'semillas fijas') + '</span></div></div></div>';
+
+    h += '<h2 class="section-title">Reglas <small>valor medido frente al umbral · clic en ▸ para ver las cifras por perfil</small></h2>';
+    h += '<div class="filters"><div class="filter-group"><span class="filter-label">Grupo</span>' + filterChips('sim-grupo', q.grupo, [['all', 'Todos']].concat(grupos.map(function (g) { return [g, g]; }))) + '</div>' +
+      '<div class="filter-group"><span class="filter-label">Estado</span>' + filterChips('sim-estado', q.estado, [['all', 'Todos'], ['pasa', 'Pasa'], ['falla', 'Falla'], ['incierto', 'Incierto']]) + '</div></div>';
+    h += '<div class="table-wrap"><table class="sim-table"><thead><tr><th>Regla</th><th>Qué se mide</th><th>Estado</th><th class="num-cell">Valor</th><th class="num-cell">Umbral</th><th>Perfil que falla</th><th>Documento</th></tr></thead><tbody>' + simRuleRows(res, profiles) + '</tbody></table></div>';
+
+    h += '<h2 class="section-title">Gráficos</h2>';
+    h += simFigure('Ingreso neto por hora en cada acto', 'Escala logarítmica. La línea ámbar es el objetivo del acto (la media del perfil medio) y la franja, su banda de ±' + Math.round((res.series.ingreso_hora_por_acto.banda == null ? 0.2 : res.series.ingreso_hora_por_acto.banda) * 100) + ' %.', simChartIncome(res.series, profiles), profiles, simIncomeRows(res.series, profiles));
+    h += simFigure('Patrimonio de cada perfil en el tiempo', 'Escala logarítmica. Las líneas ámbar son los pisos de estatus (Comerciante, Empresario, Magnate); las verticales separan los actos.', simChartWealth(res.series, profiles), profiles, simWealthRows(res.series, profiles));
+    h += simFigure('Caja antes de la cuota del día 7', 'Barra de p10 a p90 y marca en la mediana, por perfil. Por encima de la línea roja la cuota se paga a tiempo; por debajo, el jugador pide prórroga.', simChartCash(res.series, profiles), profiles, simCashRows(res.series, profiles));
+
+    h += '<h2 class="section-title">Trazabilidad <small>requisito del diseño → regla que lo comprueba</small></h2>' + simTrace(S, res);
+    return h;
+  }
+  function simIncomeRows(S, profiles) {
+    var s = S.ingreso_hora_por_acto, P = profiles.filter(function (p) { return s.perfiles[p.id]; });
+    return { head: ['Acto', 'Objetivo'].concat(P.map(function (p) { return p.name; })), body: s.actos.map(function (a) { return [a, simNum(s.objetivo[a])].concat(P.map(function (p) { return simNum(s.perfiles[p.id][a]); })); }) };
+  }
+  function simWealthRows(S, profiles) {
+    var s = S.patrimonio_por_dia, P = profiles.filter(function (p) { return s.perfiles[p.id]; });
+    var step = Math.max(1, Math.ceil(s.dias.length / 12)), idx = [];
+    for (var i = 0; i < s.dias.length; i += step) idx.push(i);
+    if (idx[idx.length - 1] !== s.dias.length - 1) idx.push(s.dias.length - 1);
+    return { head: ['Día'].concat(P.map(function (p) { return p.name; })), body: idx.map(function (i) { return [simNum(s.dias[i])].concat(P.map(function (p) { return simNum(s.perfiles[p.id][i]); })); }) };
+  }
+  function simCashRows(S, profiles) {
+    var s = S.acto1_caja_antes_de_cuota, P = profiles.filter(function (p) { return s.perfiles[p.id]; });
+    return { head: ['Perfil', 'p10', 'p50', 'p90', 'Cuota'], body: P.map(function (p) { var q = s.perfiles[p.id]; return [p.name, simNum(q.p10), simNum(q.p50), simNum(q.p90), simNum(s.cuota)]; }) };
   }
 
   /* ---------- roadmap ---------- */
@@ -1475,6 +1706,7 @@
       case 'hilos': html = viewThreads(); title += ' · Hilos narrativos'; anchor = r.query.h || null; break;
       case 'limpieza': html = viewClean(); title += ' · Limpieza del diseño'; break;
       case 'coherencia': html = viewCoherence(); title += ' · Coherencia del diseño'; break;
+      case 'simulador': html = viewSimulator(); title += ' · Simulador de economía'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'personajes': html = viewGallery(); title += ' · Personajes y NPC'; anchor = r.query.h || null; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
@@ -1565,6 +1797,9 @@
     else if (act === 'hl-tipo') { state.hl.tipo = val; render(true); }
     else if (act === 'hl-estado') { state.hl.estado = val; render(true); }
     else if (act === 'qa-type') { state.qa.type = val; render(true); }
+    else if (act === 'sim-grupo') { state.sim.grupo = val; render(true); }
+    else if (act === 'sim-estado') { state.sim.estado = val; render(true); }
+    else if (act === 'sim-row') { if (state.sim.open[val]) delete state.sim.open[val]; else state.sim.open[val] = true; render(true); }
     else if (act === 'open-img') { openLightbox(+el.getAttribute('data-index'), el); }
     else if (act === 'tl-select') { state.tl.sel = state.tl.sel === val ? null : val; render(true); }
     else if (act === 'board-more') { state.board.limit[val] = (state.board.limit[val] || 12) + 25; render(true); }

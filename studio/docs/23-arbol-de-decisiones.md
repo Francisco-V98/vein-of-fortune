@@ -26,7 +26,7 @@ Decisiones del 2026-10-12 (F0-45), más las que ya estaban en [22](22-acto-ii-va
 | Pequeñas por acto | **3 en el I, 5 en el II, 5 en el III y 5 en el IV** ✅ |
 | Estado que se guarda | **Unas 14 banderas de elección y 4 medidores**: Unión, Esteban, Lucía y Teo ✅. El Consorcio, el Ministerio y Los Faroleros **no tienen medidor propio**: se miden por la alianza que elijas ✅ |
 | Deuda del Acto I | La cuota vence **cada 7 días y la primera, el día 7**. Si no puedes pagar, se **prorroga una semana con un recargo del 6 % de la cuota atrasada** en Intermedio (4 % en Novato; en Difícil y Hardcore, la cuota atrasada se suma a la del día 14 con un recargo del 12 % y el 18 %). La cuota del día 7 es de **960 esquirlas** y su recargo en Intermedio, de 58 ✅ ([28](28-numeros-base-de-la-economia.md)) |
-| Aetherita en el III | El precio es visible y **solo se compra en el mercado negro (Casilda)**, como mercancía escasa. La extracción no ocurre hasta el IV ✅ |
+| Aetherita en el III y el IV | En el III el precio es visible y **solo se compra en el mercado negro (Casilda)**, como mercancía escasa; la extracción no ocurre hasta el IV ✅. En el IV se vende por un **canal legal con tope**: la oficina de la Comisión del Éter en Puerto Meridiano, siempre abierta y a valor justo ([26](26-zonas-y-edificios.md)) y el mercado negro solo recibe **encargos especiales** raros, con su historia, nunca como venta rutinaria ✅ ([28](28-numeros-base-de-la-economia.md)) |
 | Vigilancia | Un **indicador global de 0 a 100** que sube con las operaciones negras. Sus cambios se escriben «vigilancia +N» o «vigilancia −N», sin la palabra «puntos»; el «%» solo describe el ritmo de subida, y nunca se nombra un lugar. «Bajo investigación» es la redada ([03](03-comercio.md)) ✅ |
 | Las tres grandes | **Alianza** (II, escena A5), **cómo entras al círculo** (III) y **destino de la Aetherita** (IV: revelar, callar o vender) ✅ |
 | Cómo entras al círculo | Tres entradas: el **aval de Esteban**, el **sello de Montenegro** (solo vale como firma, sin humanizarlo) o la **presión de tu alianza**. Todas llegan al **mismo encuentro con Montenegro** y la entrada fija **quién te debe un favor en el IV** ✅. «Puerta» queda para el paso entre actos ([24](24-umbrales-de-acto.md)) ✅ |
@@ -44,7 +44,7 @@ Decisiones del 2026-10-12 (F0-45), más las que ya estaban en [22](22-acto-ii-va
 
 ## 2 · Reglas del árbol 🟡
 
-**Estado:** ✅ los cupos, las banderas, los medidores y sus tramos de la sección 1; 🟡 las definiciones de nivel, los cuellos de botella y las reglas de seguridad, que propone el narrador. Las cifras de precios, cuotas y gastos son las de [28](28-numeros-base-de-la-economia.md) ✅ (base que verifica ⏳ F0-53); las del movimiento de los medidores son orientativas ⏳ F4-61
+**Estado:** ✅ los cupos, las banderas, los medidores y sus tramos de la sección 1; 🟡 las definiciones de nivel, los cuellos de botella y las reglas de seguridad, que propone el narrador. Las cifras de precios, cuotas y gastos son las de [28](28-numeros-base-de-la-economia.md) ✅ (base que verificó F0-53 ✅ con el simulador: con los ajustes que aprobó el autor pasan las 50 reglas de equilibrio, ver [28](28-numeros-base-de-la-economia.md), sección 13); las del movimiento de los medidores son orientativas ⏳ F4-61
 
 ### 2.1 Niveles
 
@@ -237,8 +237,8 @@ La entrada que elijas decide quién te debe un favor en el IV:
 - **Fija:** —. **Lee:** `f-alianza`.
 
 **`n-iii-monopolio` · El monopolio de la Aetherita negra** (mediana)
-- **Dispara:** Casilda negocia el monopolio de la Aetherita en el mercado negro de la capital. En el III la Aetherita solo se compra ahí, como mercancía escasa; no se extrae hasta el IV ✅.
-- **Dejas que Casilda lo controle.** → *Mundo:* Casilda manda en la venta clandestina de Aetherita. *Mercado:* Prima negra de Aetherita +10 puntos; la vigilancia sube un 20 % más despacio. *Personajes:* Casilda: socia interesada.
+- **Dispara:** Casilda negocia el monopolio de la Aetherita en el mercado negro de la capital. En el III la Aetherita solo se compra ahí, como mercancía escasa; no se extrae hasta el IV ✅. En el IV la venta rutinaria va por el canal legal (la oficina de la Comisión en Puerto Meridiano): lo que Casilda controla son los **encargos especiales** del negro, raros y con historia ✅.
+- **Dejas que Casilda lo controle.** → *Mundo:* Casilda manda en los encargos especiales de Aetherita del mercado negro, no en la venta rutinaria. *Mercado:* Prima negra de Aetherita +10 puntos, que se cobra en esos encargos ([28](28-numeros-base-de-la-economia.md), sección 3.6); la vigilancia sube un 20 % más despacio. *Personajes:* Casilda: socia interesada.
 - **Pides tu parte.** → *Mundo:* Tú y Casilda os repartís el negocio. *Mercado:* Prima +5 puntos; vigilancia sin cambio. *Personajes:* Casilda: respeto seco.
 - **No entras.** → *Mundo:* El Consorcio o el Ministerio ocupan el hueco. *Mercado:* Prima +0 puntos; la vigilancia sube un 10 % más rápido. *Personajes:* Casilda: cobra la luz de lo que toque.
 - **Fija:** `f-monopolio`. **Lee:** `f-alianza`.
@@ -296,7 +296,7 @@ La entrada que elijas decide quién te debe un favor en el IV:
 
 **`n-iv-comprador` · A quién vendes la verdad** (pequeña) ✅
 - **Dispara:** Elegiste vender. Vender al Ministerio no es callar: el Ministerio se queda con tu prueba (los comprobantes y las cintas que usas) y contigo ✅. No se queda con el archivo de Quiroga ✅. Si entraste por la presión de tu alianza, la facción aliada te paga mejor.
-- **A Casilda.** → *Mundo:* Casilda controla la verdad y su mercado negro. *Mercado:* Prima negra de Aetherita +10 a +15 puntos. *Personajes:* Casilda: aliada interesada.
+- **A Casilda.** → *Mundo:* Casilda controla la verdad y su mercado negro. *Mercado:* Prima negra de Aetherita +10 a +15 puntos, que se cobra solo en los encargos especiales del negro. Con Casilda de compradora esos encargos llegan más a menudo (cada ~14 días en vez de ~21) y con más historia ✅; la Aetherita rutinaria sigue yendo a la Comisión. *Personajes:* Casilda: aliada interesada.
 - **Al Consorcio.** → *Mundo:* El Consorcio financia el silencio ahora a tu nombre. *Mercado:* La Aetherita sube un 8 a 12 %. *Personajes:* Esteban: atrapado en su apellido.
 - **Al Ministerio.** → *Mundo:* Montenegro te deja subir y se queda con tu prueba (los comprobantes y las cintas que usas), no con el archivo de Quiroga ✅ (si lo protegiste, sigue a salvo). *Mercado:* La Aetherita se mantiene (0 a +3 %) por la cuota. *Personajes:* Montenegro gana; tú te vuelves una pieza de la Comisión.
 - **Fija:** `f-comprador`. **Lee:** `f-destino`, `f-monopolio`, `f-entrada`.
@@ -431,7 +431,7 @@ Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conserv
 - ⏳ F4-61 Cifras y efectos de los medidores por facción.
 - ⏳ F4-150 El reproductor y el sistema de cintas.
 - ⏳ F4-147 La curva de la caída y el rebote de la Aetherita dentro del tope diario, y el nivel en que queda (algo por debajo del de antes ✅).
-- ✅ Cifras de precios, cuotas, gastos y vigilancia: resueltas en [28](28-numeros-base-de-la-economia.md); su verificación con el simulador ⏳ F0-53.
+- ✅ Cifras de precios, cuotas, gastos y vigilancia: resueltas en [28](28-numeros-base-de-la-economia.md); su verificación con el simulador ✅ (F0-53, [28](28-numeros-base-de-la-economia.md) sección 13): la cuota del día 7 y los recargos se sostienen con el Aguante 28, la vía de deuda es alcanzable y la mora no cierra puertas; los ajustes de patrimonio, estatus y empleados los aprobó el autor.
 - ⏳ F4-135 Guion del Acto III, con el médico del dispensario.
 - ⏳ F0-75 Dibujo del árbol con conexiones (SVG) en el hub; la vista actual usa columnas, tarjetas y flechas de texto.
 - ⏳ F4-213 Licencias (sello, revisión, ampliación y suspensión), ⏳ F4-214 rumores comprados y contados a Lucía y ⏳ F4-215 exclusividad de venta y entrega de cuentas: los sistemas que usan las decisiones del II y del III. La plantilla de guion con identificadores y condiciones ⏳ F4-216.

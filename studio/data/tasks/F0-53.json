@@ -1,0 +1,203 @@
+{
+  "id": "F0-53",
+  "history": [
+    {
+      "at": "2026-10-15",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el simulador de economía y progresión",
+      "ref": "rama studio/F0-53-simulador-de-economia"
+    },
+    {
+      "at": "2026-10-16",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-53"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "economista",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "El simulador y sus reglas ya están descritos en la tarea y en el documento 28"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-15",
+        "por": "analista",
+        "nota": "Reglas de equilibrio como 50 casos medibles, datos que lee el simulador, vista del hub y criterios de aceptación; el autor decidió 8 puntos el 2026-10-15"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "Simulador en tools/sim con 50 reglas (50 pasan), vista #/simulador, pruebas y CI; el autor aprobó los ajustes de cifras en 5 rondas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "qa",
+        "nota": "QA devolvió un fallo grave en la vista del simulador y varias cifras viejas en documentos; se corrigieron y el build estricto y las 251 pruebas pasan",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "La vista #/simulador se rompía con el resultados.json real (referencias como dict)",
+            "resuelto_por": "herramientas",
+            "como": "app.js y build.py aceptan dict o lista, con 6 pruebas nuevas, entre ellas una con el resultado real"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El hub tenía los pisos de estatus viejos escritos a mano",
+            "resuelto_por": "herramientas",
+            "como": "Se leen de los datos"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El modo rápido tardaba 80 s en la CLI",
+            "resuelto_por": "herramientas",
+            "como": "--rapido no ejecuta las mutaciones por defecto: 33 s; la prueba cronometra lo mismo que la CLI"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Cifras viejas de sueldos, eficiencias, pisos y ritmos en los documentos 04, 23, 24, 25 y 28",
+            "resuelto_por": "coordinador",
+            "como": "Se corrigieron y se alinearon con world.json"
+          },
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "Texto de la regla D2 (88 %) y de G1 (pares previstos) inconsistente",
+            "resuelto_por": "herramientas",
+            "como": "Alineados en reglas.json y los documentos 04 y 28"
+          }
+        ]
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-16",
+        "nota": "Esperando la revisión del autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: reglas de equilibrio del simulador como casos medibles y criterios de aceptación",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: informe con reglas A a I, límites del prototipo, vista #/simulador y criterios de aceptación",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "economista",
+        "que": "Simulador, reglas, datos y documentos",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "economista",
+        "a": "coordinador",
+        "que": "Devolución parcial: 25 reglas fallaban con las cifras de F0-52; propuestas de ajuste",
+        "at": "2026-10-16",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "coordinador",
+        "a": "herramientas",
+        "que": "Vista #/simulador, load_sim y paso de CI",
+        "at": "2026-10-15",
+        "tipo": "entrega"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Entrega: vista, validación del esquema y 17 pruebas",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "disenador",
+        "que": "Ajuste de los documentos 01, 04, 05 y 09",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega: documentos ajustados",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Ajuste de los documentos 17, 19, 23, 25 y 26",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Entrega: documentos ajustados y oficina de la Comisión",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "economista",
+        "a": "coordinador",
+        "que": "Entrega: 50 de 50 reglas pasan con los ajustes aprobados",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar F0-53",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Devolución: 1 fallo grave y 5 menores corregidos",
+        "at": "2026-10-16",
+        "tipo": "devolucion"
+      },
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Revisión de F0-53: simulador, resultados y ajustes",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

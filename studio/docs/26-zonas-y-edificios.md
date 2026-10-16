@@ -62,8 +62,8 @@ Obrero y humo; manda la Unión. La herrería alimenta el Acero y la tienda atien
 | `ed-vb-casa` | Casa obrera (casa base) | gastar | Chimeneas y humo en la vista; descanso y decoración (sección 4) | MVP; mejorable en V1 | ✅ |
 | `ed-vb-reme` | Casa de Reme | gastar (cuotas de la deuda) | Reme, la prestamista; su facción cambia según la partida ([22](22-acto-ii-variantes.md)) | MVP | ✅ |
 | `ed-vb-quiroga` | Oficina del Inspector | gastar (licencias, multas, «trámites») | Quiroga; baja o sube la vigilancia ([03](03-comercio.md)) | MVP | ✅ |
-| `ed-vb-mina-galerias` | Boca de las Galerías del Hollín | minijuego (Picado y Perforación; la Detonación, con el explosivo, desde el Acto III y no en el MVP) | Carbón principal; Teo enseña el oficio | MVP | ✅ |
-| `ed-vb-mina-canon` | Boca del Cañón Ferroso | minijuego (Picado, Perforación) | Hierro principal; bandas rivales | V1 | ✅ |
+| `ed-vb-mina-galerias` | Boca de las Galerías del Hollín | minijuego (Picado y Perforación; la Detonación, con el explosivo, desde el Acto III y no en el MVP) | Carbón principal; Teo enseña el oficio. El Picado sirve para carbón, hierro, cobre, plata y oro ✅ ([09](09-minijuegos.md)); aquí se pica carbón y hierro | MVP | ✅ |
+| `ed-vb-mina-canon` | Boca del Cañón Ferroso | minijuego (Picado, Perforación) | Hierro principal, con algo de cobre; bandas rivales. El Picado sirve para carbón, hierro, cobre, plata y oro ✅ ([09](09-minijuegos.md)), así que también pica el cobre | V1 | ✅ |
 | `ed-vb-union` | Sede de la Unión | ganar (Bolsa de la Unión: contratar), gastar | Medidor de la Unión, huelgas, Delegado de la Unión | V1 | ✅ |
 | `ed-vb-periodico` | Quiosco y redacción de La Voz del Hollín | comprar (prensa, anuncios), ganar (empleos) | Sesgo sindical; vende también el Heraldo y el Teletipo; Lucía y el voceador pasan por aquí | V1 | ✅ |
 | `ed-vb-herreria` | Herrería-chatarrería | comprar, vender | Hierro, carbón y repuestos de herramientas; su hierro y su carbón alimentan el Acero del taller | V1 | ✅ |
@@ -76,7 +76,7 @@ Frío y Consorcio. La plata que se afina aquí la compra después Casa Ormeño.
 
 | ID | Edificación | Rol | Qué la hace de su zona | Versión | Marca |
 |---|---|---|---|---|---|
-| `ed-af-mina` | Boca de las Minas de Sierra Alta | minijuego (Perforación, Cribado) | Cobre y plata principales; frío y falta de aire; guardias de empresa | V1 | ✅ |
+| `ed-af-mina` | Boca de las Minas de Sierra Alta | minijuego (Picado, Perforación, Cribado) | Cobre y plata principales (el Picado sirve para cobre, plata y oro ✅, [09](09-minijuegos.md)); frío y falta de aire; guardias de empresa | V1 | ✅ |
 | `ed-af-consorcio` | Oficina del Consorcio Arvel | ganar (contratos del Consorcio) | Esteban Arvel; ejecutivos y capataces | V1 | ✅ |
 | `ed-af-economato` | Economato del Consorcio | comprar | Abrigo y vales de empresa: se paga al precio del Consorcio | V1 | ✅ |
 | `ed-af-plateria` | Fundición-platería | vender (plata), comprar (lingote de plata) | Afina la plata de la sierra; sus joyas de plata llegan con las gemas (sección 3) | V1 | ✅ |
@@ -91,7 +91,7 @@ Faroleros y contrabando. El salitre enlaza con la agricultura y la pólvora.
 |---|---|---|---|---|---|
 | `ed-sb-mina` | Boca de los Salares del Litoral | minijuego (Cribado) | Salitre principal; sed y gases; contrabandistas e inspectores corruptos | V1 | ✅ |
 | `ed-sb-lonja` | Lonja y almacén de salitre | vender, comprar | Salitre para agricultura y pólvora; más adelante, el pescado | V1 | ✅ |
-| `ed-sb-bar` | Bar del Farol (Los Faroleros) | comprar y vender en el mercado negro, ganar | Casilda; abre de noche; contacto del mercado negro (también hay una visita nocturna de Casilda a la tienda, que no es el modo tienda); joyas sin sello (sección 3) | V1 | ✅ |
+| `ed-sb-bar` | Bar del Farol (Los Faroleros) | comprar y vender en el mercado negro, ganar | Casilda; abre de noche; contacto del mercado negro: en el III compras aquí la Aetherita y en el IV recibes sus encargos especiales, raros y con historia (la venta rutinaria va a la Comisión) (también hay una visita nocturna de Casilda a la tienda, que no es el modo tienda); joyas sin sello (sección 3) | V1 | ✅ |
 | `ed-sb-caseron` | Caserón frente al mar | gastar (casa comprable) | Mar abierto (sección 4) | V2.1 | ✅ |
 | `ed-sb-muelle` | Muelle de pesca | minijuego (pesca), vender | Pesca con el motor del Cribado | V2.2 | ✅ |
 | `ed-sb-astillero` | Astillero | comprar (embarcaciones), gastar | Bote, pesquero y barcaza | V2.2 | ✅ |
@@ -105,7 +105,7 @@ Gemas en zona disputada; sin vivienda.
 
 | ID | Edificación | Rol | Qué la hace de su zona | Versión | Marca |
 |---|---|---|---|---|---|
-| `ed-cv-mina` | Boca de las Cavernas de Cristal | minijuego (Cincelado, Perforación, Cribado) | Oro, cuarzo y esmeralda principales; cristales cortantes; cazarrecompensas; siempre abierta, expedición de 2 bloques (Tarde y Noche) ✅ | V1 | ✅ |
+| `ed-cv-mina` | Boca de las Cavernas de Cristal | minijuego (Picado, Cincelado, Perforación, Cribado) | Oro, cuarzo y esmeralda principales; cristales cortantes; cazarrecompensas; siempre abierta, expedición de 2 bloques (Tarde y Noche) ✅ | V1 | ✅ |
 | `ed-cv-tasadores` | Tasadores | vender (gemas), minijuego (Tasar) | Tasan esmeralda, diamante y cuarzo; hay piezas falsas (⏳ F4-55) | V1 | ✅ |
 | `ed-cv-campamento` | Campamento de ensayo | historia | Cinta 4, bajo el cuarzo | V1 | ✅ |
 | `ed-cv-taller-talla` | Taller de talla | minijuego (Cincelado), vender | Joyas de gema tallada (sección 3) | V2.1 | ✅ |
@@ -116,7 +116,7 @@ Sin vivienda, lujo ni azar. Solo historia y la boca de mina.
 
 | ID | Edificación | Rol | Qué la hace de su zona | Versión | Marca |
 |---|---|---|---|---|---|
-| `ed-fo-mina` | Boca de La Fosa del Éter | minijuego (Contención, Cincelado) | Aetherita y diamante principales; mostrador de filtros; solo abre 3 días por semana, los de calibración de la Comisión ✅ (los días 2, 4 y 6 de cada semana) | V1 | ✅ |
+| `ed-fo-mina` | Boca de La Fosa del Éter | minijuego (Contención, Cincelado) | Aetherita y diamante principales; mostrador de filtros (los filtros de la Comisión que exige la Aetherita; cifras en [28](28-numeros-base-de-la-economia.md)); solo abre 3 días por semana, los de calibración de la Comisión ✅ (los días 2, 4 y 6 de cada semana) | V1 | ✅ |
 | `ed-fo-campamento-viejo` | Campamento de la Primera Expedición | historia | Cinta 6, en la caja del equipo de ensayo | V1 | ✅ |
 | `ed-fo-barracon` | Barracón de calibración | historia | Cintas 7 y 8 y el acta de calibración | V1 | ✅ |
 
@@ -129,6 +129,7 @@ Lujo, prensa y modas de la esmeralda. Llega en el Acto III.
 | `ed-pm-bolsa` | La Bolsa | comprar, vender (mercado spot) | Interfaz del mercado ([03](03-comercio.md), ⏳ F4-166); pestaña de inversiones en V2.2 | V1 | ✅ |
 | `ed-pm-ministerio` | Sede del Ministerio de Recursos | gastar (licencias mayores, impuestos), ganar (contratos oficiales) | Montenegro; la ventanilla de la Lotería en V2.0 (ubicación 🟡, sección 5) | V1 | ✅ |
 | `ed-pm-casa-ormeno` | Casa Ormeño (tienda insignia) | vender (plata, joyas), comprar (piezas de lujo) | Joyería de plata para la élite; sin dueño ni medidor | V1 | ✅ |
+| `ed-pm-comision` | Oficina de la Comisión del Éter | vender (Aetherita) | Canal legal del Acto IV: la Comisión compra la Aetherita a valor justo, con tope diario; siempre abierta, pero hay que ir a la capital a vender ✅ ([28](28-numeros-base-de-la-economia.md)) | V1 | ✅ |
 | `ed-pm-estacion` | Estación | historia | Consigna con la cinta 3 | V1 | ✅ |
 | `ed-pm-pension` | Pensión | historia | Cinta 5, donde Anselmo se alojaba al entregar sus informes | V1 | ✅ |
 | `ed-pm-salon` | Salón del Farol | ganar y gastar (azar), minijuego | Casino de noche de Los Faroleros (sección 5) | V2.0 | ✅ |
@@ -141,7 +142,7 @@ Lujo, prensa y modas de la esmeralda. Llega en el Acto III.
 | `ed-pm-sastreria` | Sastrería | comprar (ropa) | Un traje por escalón de estatus y ropa cosmética | V2.1 | ✅ |
 | `ed-pm-puerto-deportivo` | Puerto deportivo | comprar (yate), gastar | El yate, solo estatus | V2.2 | ✅ |
 
-**Cuenta.** El catálogo tiene 45 filas: las **44 edificaciones** de MVP, V1 y V2 y, además, la aduana de Salinas Blancas, que es evolutivo y **no entra en las 44**.
+**Cuenta.** El catálogo tiene 46 filas: las **45 edificaciones** de MVP, V1 y V2 y, además, la aduana de Salinas Blancas, que es evolutivo y **no entra en las 45**. La oficina de la Comisión del Éter (`ed-pm-comision`, Puerto Meridiano) es la que se añadió el 2026-10-16 ✅.
 
 **Edificaciones que se dejan fuera por ahora (evolutivo):** la aduana de Salinas Blancas (la única con fila, para reservar su ID), las redacciones del Heraldo y del Teletipo (hoy se compran en el quiosco), un tablón de cazarrecompensas en las Cavernas y una oficina del Consorcio en la capital. Ninguna es necesaria para la historia ni para el mercado.
 
@@ -258,13 +259,13 @@ Las horas son del autor y se suman a las del roadmap ([06](06-roadmap-y-pendient
 | Versión | Fase del roadmap | Edificaciones | Contenido | Horas sobre el roadmap 🟡 |
 |---|---|---|---|---|
 | **MVP** | F2–F3 | 7: tienda, taller, almacén, casa, Reme, Quiroga y boca de las Galerías | Solo Villa Brasa, en lista con arte provisional (⏳ F3-18). Sin mapa. El taller se construye aquí pero se abre en el Acto II ✅ | 0 |
-| **V1** | F4–F5 | +23: 18 edificios y 5 bocas de mina | Mapa y vista de zona de las seis zonas (⏳ F4-152, ⏳ F4-165); los 9 del roadmap (⏳ F4-155, ⏳ F4-156), la Bolsa, 6 edificios de historia y 6 comercios; casa mejorable con ranuras, ropa por estatus y un auto | +110 a 150 |
+| **V1** | F4–F5 | +24: 19 edificios y 5 bocas de mina | Mapa y vista de zona de las seis zonas (⏳ F4-152, ⏳ F4-165); los 9 del roadmap (⏳ F4-155, ⏳ F4-156), la Bolsa, la oficina de la Comisión, 6 edificios de historia y 6 comercios; casa mejorable con ranuras, ropa por estatus y un auto | +110 a 150 |
 | **V2.0** | F6, hito F6.1 | +1: Salón del Farol | Casino y Lotería | +12 (la Lotería; el casino son las ~100 h ya estimadas) |
 | **V2.1** | F6, hito nuevo | +10 | Casas por zona y mansiones, catálogo de decoración, joyería comprable, joyas por zona, concesionaria y sastrería | 250 a 300 |
 | **V2.2** | F6, hito nuevo | +3 y una pestaña | Pesca, astillero, embarcaciones, yate e inversiones en la Bolsa | 120 a 160 |
 | **Evolutivos** | después de F6 | — | Decoración libre, subastas, alquiler de casas, aduana, redacciones, sucursales ([06](06-roadmap-y-pendientes.md), ⏳ F6-34) y más ciudades (⏳ F6-35) | sin estimar |
 
-**Lo que suman.** Al final de V1 hay 30 edificaciones (24 edificios y 6 bocas); el autor decidió «unos 22 edificios», y salen de 9 del roadmap, la Bolsa, 6 de historia y 6 comercios. Los otros 2 son la casa de Reme y la oficina de Quiroga, que ya existen en el MVP y reciben su exterior en V1. Con MVP, V1 y V2: 44 edificaciones (la aduana, evolutivo, es la fila 45 del catálogo y no cuenta). F6 pasa de 305–570 h a unas 690–1.040 h. El orden de V2 es casino, propiedad y mar ✅.
+**Lo que suman.** Al final de V1 hay 31 edificaciones (25 edificios y 6 bocas); el autor decidió «unos 22 edificios», y salen de 9 del roadmap, la Bolsa, la oficina de la Comisión, 6 de historia y 6 comercios. Los otros 2 son la casa de Reme y la oficina de Quiroga, que ya existen en el MVP y reciben su exterior en V1. Con MVP, V1 y V2: 45 edificaciones (la aduana, evolutivo, es la fila 46 del catálogo y no cuenta). F6 pasa de 305–570 h a unas 690–1.040 h. El orden de V2 es casino, propiedad y mar ✅.
 
 **Por qué los edificios de historia son seis y no cinco.** Las cintas 1 a 8 están en siete sitios ([23](23-arbol-de-decisiones.md), sección 7): el puesto (la tienda), el viejo taller de ensayo, la estación, el campamento de ensayo, la pensión, el campamento de la Primera Expedición y el barracón de calibración. Seis son edificaciones nuevas. Como las cintas 1 a 5 son obligatorias, no pueden ser opcionales.
 
@@ -324,7 +325,7 @@ Las razones de cada colocación; nada se pone sin una razón de mundo. ✅ Las d
 | Casas, casino e inversión son sumideros o atajos de dinero | Sus precios ya están en [28](28-numeros-base-de-la-economia.md) ✅ y se ajustan con ⏳ F5-06; la inversión usa los frenos de [03](03-comercio.md) (spread y tope) |
 | Arte: la ropa multiplica piezas y la decoración es el mayor pozo | Ropa solo en el sprite pequeño; ranuras fijas; objetos como íconos, no sprites animados |
 | Legal: azar y público | Sección 5 y [11](11-legal-y-cumplimiento.md); ⏳ F6-13 |
-| Alcance: 44 edificaciones en total | Cada versión se corta sola; V2.1 y V2.2 son recortables sin tocar la historia |
+| Alcance: 45 edificaciones en total | Cada versión se corta sola; V2.1 y V2.2 son recortables sin tocar la historia |
 | «Zona» es ambigua | Zona es la del mapa; las de [02](02-extraccion.md) son zonas de minado |
 
 ---
@@ -345,7 +346,7 @@ Ya están en el roadmap, cada una de 20 h o menos. La columna ID dice cuál es; 
 
 | ID | Nombre | Fase | Horas | Descripción |
 |---|---|---|---|---|
-| F0-83 | Registro de zonas y edificaciones en `world.json`, con su validación en el hub | F0, hito F0.12 | 6 | Seis asentamientos y las 44 edificaciones con ID, rol, versión y enlaces a minerales, recetas y facciones; el build comprueba que todo exista |
+| F0-83 | Registro de zonas y edificaciones en `world.json`, con su validación en el hub | F0, hito F0.12 | 6 | Seis asentamientos y las 45 edificaciones con ID, rol, versión y enlaces a minerales, recetas y facciones; el build comprueba que todo exista |
 | F3-46 | Navegador zona a edificación y horarios por bloque | F3 | 6 | Lista de edificaciones de Villa Brasa en el MVP con apertura por bloque |
 | F4-217 | Vista de zona: Villa Brasa, Altafría y Salinas Blancas | F4 | 12 | Los tres asentamientos isométricos con edificaciones tocables |
 | F4-218 | Vista de zona: campamentos de las Cavernas y de la Fosa | F4 | 6 | Los dos campamentos |

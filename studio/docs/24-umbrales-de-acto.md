@@ -222,7 +222,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 | **Sandbox** | Si no cumples una puerta, el juego sigue: minas, vendes, exploras y comercias | Ya existe como modo de juego |
 | **Cola de historia** | La escena que no se puede disparar espera; no se pierde ni caduca | ⏳ F0-78 |
 | **Diario** | Lista las vías que faltan para pasar de acto, con lo que ya cumples | ⏳ F0-78 |
-| **Misión de rescate** | Llega tras mucho tiempo sin avanzar | ⏳ F0-78. Cuánto tiempo, en horas de juego ⏳ F0-53 |
+| **Misión de rescate** | Llega tras mucho tiempo sin avanzar | ⏳ F0-78. Cuánto tiempo, en horas de juego ✅ (F0-53, con las cifras aprobadas el 2026-10-16): **13,5 h** acumuladas para la puerta A5 y **26,5 h** para el círculo (1,25 × el percentil 95 del jugador lento, redondeado a 0,5 h; [28](28-numeros-base-de-la-economia.md) sección 13; viven en `world.json`, `economy.rescue_mission`) |
 
 - 🟡 **Restricciones para las tareas que lo diseñan.**
   - Misión de rescate (F0-78): señala qué falta y cómo; no concede estatus, logros ni medidores.
@@ -286,8 +286,8 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 ## Pendiente
 
 - ⏳ F0-78 Diseño del diario, la cola de historia y la misión de rescate.
-- ⏳ F0-53 «Mucho tiempo sin avanzar», en horas de juego.
-- ⏳ F4-109 Escalera de estatus: requisitos de Comerciante y de Empresario. El patrimonio es efectivo más stock a valor justo, sin restar la deuda y sin herramientas, casa, ropa ni auto ✅, con pisos orientativos de unas 25 000, 120 000 y 500 000 esquirlas para Comerciante, Empresario y Magnate ([28](28-numeros-base-de-la-economia.md)).
+- ✅ «Mucho tiempo sin avanzar», en horas de juego (F0-53, con las cifras aprobadas el 2026-10-16): 13,5 h para A5 y 26,5 h para el círculo, contadas desde el inicio de la partida; F0-78 las usa.
+- ⏳ F4-109 Escalera de estatus: requisitos de Comerciante y de Empresario. El patrimonio es efectivo más stock a valor justo, sin restar la deuda y sin herramientas, casa, ropa ni auto ✅, con pisos orientativos de unas 15 000, 90 000 y 250 000 esquirlas para Comerciante, Empresario y Magnate ([28](28-numeros-base-de-la-economia.md)).
 - ✅ Montos de la cuota (960), del recargo de la prórroga (58 en Intermedio), mora, abonos anónimos y umbral de deuda (25 % y 50 % de K): fijados en [28](28-numeros-base-de-la-economia.md). El periodo (cada 7 días) ya está decidido ✅.
 - ⏳ F4-132 Aviso previo de la huelga (cuántas acciones lo separan del cierre).
 - ⏳ F4-61 Cifras de los medidores (deltas), conservando los caminos de la sección 6.

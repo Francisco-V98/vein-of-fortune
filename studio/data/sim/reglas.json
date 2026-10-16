@@ -1,0 +1,896 @@
+{
+  "version": 1,
+  "nota": "Las reglas de equilibrio de la economía (F0-53). Cada regla es un caso medible: el simulador (tools/sim) calcula su métrica, la compara con el umbral y devuelve pasa, falla o incierto. «origen»: doc = el umbral sale de un documento ya aprobado; prop. = lo propone el simulador y lo confirma el autor. El campo «criterio» son los números que usa el código (nada de umbrales dentro de tools/sim).",
+  "reglas": [
+    {
+      "id": "A1",
+      "grupo": "A · Acto I y deuda",
+      "titulo": "Cuota del día 7 sin mejora",
+      "docs": ["28 §7.2", "28 §13", "27"],
+      "metrica": "pago a tiempo y margen del jugador medio con 5 expediciones (4 000 corridas)",
+      "umbral": "pago 95–99,9 % · margen 30–75 % de la cuota",
+      "origen": "doc",
+      "criterio": {
+        "pago_min": 95,
+        "pago_max": 99.9,
+        "margen_min": 30,
+        "margen_max": 75
+      }
+    },
+    {
+      "id": "A2",
+      "grupo": "A · Acto I y deuda",
+      "titulo": "Ahorrar o mejorar el día 5",
+      "docs": ["28 §5.2", "28 §13", "27"],
+      "metrica": "margen y pago del medio con la mejora del pico; diferencia con no mejorar",
+      "umbral": "margen con mejora ≥ 10 % · diferencia 8–45 pp · pago con mejora ≥ 80 %",
+      "origen": "doc",
+      "criterio": {
+        "margen_con_min": 10,
+        "dif_min": 8,
+        "dif_max": 45,
+        "pago_con_min": 80
+      }
+    },
+    {
+      "id": "A3",
+      "grupo": "A · Acto I y deuda",
+      "titulo": "El lento no es imposible ni trivial",
+      "docs": ["28 §7.3", "28 §13", "24", "27"],
+      "metrica": "pago del lento con 4 y 5 expediciones; cierre del acto; pago del día 14 tras prorrogar",
+      "umbral": "4 exp.: 10–60 % · 5 exp.: ≥ 60 % · cierra el acto · día 14 ≥ 90 %",
+      "origen": "prop.",
+      "criterio": {
+        "exp_lento": 4,
+        "pago4_min": 10,
+        "pago4_max": 60,
+        "pago5_min": 60,
+        "pago14_min": 90
+      }
+    },
+    {
+      "id": "A4",
+      "grupo": "A · Acto I y deuda",
+      "titulo": "El rápido paga con holgura",
+      "docs": ["28 §13", "27"],
+      "metrica": "pago y margen del rápido con 9 expediciones",
+      "umbral": "pago ≥ 99,9 % · margen 100–300 %",
+      "origen": "doc",
+      "criterio": {
+        "pago_min": 99.9,
+        "margen_min": 100,
+        "margen_max": 300
+      }
+    },
+    {
+      "id": "A5",
+      "grupo": "A · Acto I y deuda",
+      "titulo": "Ingreso neto por hora del Acto I",
+      "docs": ["28 §2", "17"],
+      "metrica": "desviación del ingreso por hora de cada perfil frente a 650 · 1 100 · 2 200",
+      "umbral": "≤ 20 %",
+      "origen": "doc",
+      "criterio": {
+        "desv_max": 20
+      }
+    },
+    {
+      "id": "A6",
+      "grupo": "A · Acto I y deuda",
+      "titulo": "Cuota del día 14 y recargos en las cuatro dificultades",
+      "docs": ["28 §7.3", "27", "24"],
+      "metrica": "peso de la cuota del día 14 sobre el ingreso de la semana 2",
+      "umbral": "Novato e Intermedio ≤ 30 % · Difícil ≤ 55 % · Hardcore ≤ 60 %",
+      "origen": "doc",
+      "criterio": {
+        "leve_max": 30,
+        "dificil_max": 55,
+        "duro_max": 60
+      }
+    },
+    {
+      "id": "A7",
+      "grupo": "A · Acto I y deuda",
+      "titulo": "Saldar la deuda antes del día 8 es imposible",
+      "docs": ["28 §7.3", "24"],
+      "metrica": "caja máxima del Acto I frente al capital de la deuda",
+      "umbral": "< 100 % de K",
+      "origen": "doc",
+      "criterio": {
+        "tope_pct": 99.9
+      }
+    },
+    {
+      "id": "B1",
+      "grupo": "B · Ritmo, progresión y estatus",
+      "titulo": "Ritmo por acto de la campaña completa",
+      "docs": ["28 §2", "04", "17"],
+      "metrica": "ingreso neto por hora de cada acto frente al objetivo (la media del acto); medio frente al optimizador; orden de perfiles",
+      "umbral": "±20 % del objetivo · medio = 60–80 % del optimizador · lento < medio < rápido · rápido/lento ≤ 4",
+      "origen": "doc",
+      "criterio": {
+        "desv_max": 20,
+        "opt_min": 60,
+        "opt_max": 80,
+        "rapido_lento_max": 4
+      }
+    },
+    {
+      "id": "B2",
+      "grupo": "B · Ritmo, progresión y estatus",
+      "titulo": "Crecimiento razonable entre actos",
+      "docs": ["28 §2", "28 §13"],
+      "metrica": "razones de ritmo entre actos y rampa dentro de cada acto",
+      "umbral": "I < II < III < IV · razones 3–5 (I→II hasta 7) · rampa ≤ ×3,5",
+      "origen": "doc",
+      "criterio": {
+        "razon_min": 3,
+        "razon_max": 5,
+        "razon_12_max": 7,
+        "rampa_max": 3.5,
+        "tramo_div": 4
+      }
+    },
+    {
+      "id": "B3",
+      "grupo": "B · Ritmo, progresión y estatus",
+      "titulo": "Patrimonio al cierre de cada acto",
+      "docs": ["28 §2", "04"],
+      "metrica": "patrimonio (efectivo + stock) al cerrar cada acto frente al objetivo; sumideros por acto",
+      "umbral": "Acto I dentro de 600–1 000 (rápido ±25 % de 2 300) · II, III, IV ±25 % · sumideros ±40 % · lento ≥ 50 % del medio",
+      "origen": "doc",
+      "criterio": {
+        "desv_max": 25,
+        "lento_min": 50,
+        "sumideros_max": 40
+      }
+    },
+    {
+      "id": "B4",
+      "grupo": "B · Ritmo, progresión y estatus",
+      "titulo": "Los estatus se alcanzan a tiempo",
+      "docs": ["28 §2", "04", "24"],
+      "metrica": "corridas que alcanzan Comerciante, Empresario y Magnate y en qué punto del acto",
+      "umbral": "≥ 95 % de las corridas · entre el 60 y el 90 % del acto · Magnate antes del cierre",
+      "origen": "doc",
+      "criterio": {
+        "alcanza_min": 95,
+        "momento_min": 60,
+        "momento_max": 90,
+        "magnate_min": 80
+      }
+    },
+    {
+      "id": "B5",
+      "grupo": "B · Ritmo, progresión y estatus",
+      "titulo": "El optimizador no se salta el techo de herramienta",
+      "docs": ["28 §5.1", "28 §5.2"],
+      "metrica": "corridas del optimizador con el nivel de pico dentro del techo del acto",
+      "umbral": "≥ 90 % de las corridas con nivel ≤ guía del acto + 1",
+      "origen": "prop.",
+      "criterio": {
+        "bajo_techo_min": 90,
+        "margen_techo": 1
+      }
+    },
+    {
+      "id": "B6",
+      "grupo": "B · Ritmo, progresión y estatus",
+      "titulo": "Sumideros recurrentes",
+      "docs": ["28 §2", "28 §5.3", "28 §6", "28 §9"],
+      "metrica": "prensa, licencias, viaje, reparación y renta del almacén sobre el ingreso",
+      "umbral": "prensa ≈ 1,5 % · licencias 1,5–3 % · viaje 3–5 % (II) y ≈ 1 % (IV) · reparación 7–9 % · renta ≤ 5 %",
+      "origen": "doc",
+      "criterio": {
+        "prensa_min": 1.0,
+        "prensa_max": 2.2,
+        "lic_min": 1.5,
+        "lic_max": 3.0,
+        "viaje_II_min": 3,
+        "viaje_II_max": 5,
+        "viaje_IV_min": 0.5,
+        "viaje_IV_max": 1.5,
+        "rep_min": 7,
+        "rep_max": 9,
+        "renta_max": 5
+      }
+    },
+    {
+      "id": "B7",
+      "grupo": "B · Ritmo, progresión y estatus",
+      "titulo": "La economía no explota tras el Acto IV",
+      "docs": ["28 §2", "03"],
+      "metrica": "crecimiento del ingreso diario entre dos ventanas, identidad contable y techo físico",
+      "umbral": "crecimiento ≤ 10 % · identidad exacta · ≤ techo × 1,05",
+      "origen": "prop.",
+      "criterio": {
+        "ventana_a": [25, 35],
+        "ventana_b": [90, 100],
+        "crec_max": 10,
+        "ident_max": 0.5,
+        "techo_holgura": 1.05
+      }
+    },
+    {
+      "id": "B8",
+      "grupo": "B · Ritmo, progresión y estatus",
+      "titulo": "El simulador reproduce el prototipo de F0-52",
+      "docs": ["28 §2", "28 §13"],
+      "metrica": "las cuatro etapas del prototipo frente a 6 300 · 10 200 · 36 000 · 167 000",
+      "umbral": "≤ 5 %",
+      "origen": "prop.",
+      "criterio": {
+        "desv_max": 5
+      }
+    },
+    {
+      "id": "C1",
+      "grupo": "C · Herramientas",
+      "titulo": "Cada mejora se paga en pocas expediciones",
+      "docs": ["28 §5.2"],
+      "metrica": "expediciones para pagar cada una de las 16 mejoras (mineral propio o comprado a ×1,18)",
+      "umbral": "la mejor mejora de cada nivel se paga en 1–8 expediciones",
+      "origen": "doc",
+      "criterio": {
+        "exp_min": 1,
+        "exp_max": 8,
+        "modo": "mejor_por_nivel"
+      }
+    },
+    {
+      "id": "C2",
+      "grupo": "C · Herramientas",
+      "titulo": "Cadencia de mejoras",
+      "docs": ["28 §5.1", "28 §5.2"],
+      "metrica": "horas de juego entre un nivel de herramienta y el siguiente",
+      "umbral": "0,3–3 h",
+      "origen": "prop.",
+      "criterio": {
+        "horas_min": 0.3,
+        "horas_max": 3.0
+      }
+    },
+    {
+      "id": "C3",
+      "grupo": "C · Herramientas",
+      "titulo": "Reparar cuesta 7–9 % del valor bruto",
+      "docs": ["28 §5.3"],
+      "metrica": "coste de reparar sobre el valor bruto de la expedición en cada acto de la campaña del jugador medio",
+      "umbral": "6–10 %",
+      "origen": "doc",
+      "criterio": {
+        "rep_min": 6,
+        "rep_max": 10
+      }
+    },
+    {
+      "id": "C4",
+      "grupo": "C · Herramientas",
+      "titulo": "El explosivo apenas compensa",
+      "docs": ["28 §5.4"],
+      "metrica": "rendimiento neto del explosivo para el medio y para el rápido",
+      "umbral": "medio ≤ +5 % · rápido ≤ +25 %",
+      "origen": "doc",
+      "criterio": {
+        "medio_max": 5,
+        "rapido_max": 25
+      }
+    },
+    {
+      "id": "C5",
+      "grupo": "C · Herramientas",
+      "titulo": "Descartar una mena tiene un costo real",
+      "docs": ["02", "28 §4"],
+      "metrica": "pérdida de ingreso por descartar al 25 % de la energía frente a descartar gratis; sensibilidad al 0, 25 y 50 %",
+      "umbral": "pérdida 3–35 % · al doblar el costo pierde ≥ 1 % más · ≤ 60 % de las menas descartadas",
+      "origen": "prop.",
+      "criterio": {
+        "perdida_min": 3,
+        "perdida_max": 35,
+        "doble_min": 1,
+        "descartes_max": 60
+      }
+    },
+    {
+      "id": "D1",
+      "grupo": "D · Zonas",
+      "titulo": "Ninguna zona es siempre la óptima",
+      "docs": ["02", "28 §3.7", "28 §13"],
+      "metrica": "reparto de la política adaptativa y rendimiento de la mejor zona fija (cuadrícula nivel × Aguante × acto)",
+      "umbral": "mejor zona ≤ 65 % · mejor fija ≤ 100 % de la adaptativa · ≥ 3 zonas con ≥ 15 % de uso",
+      "origen": "doc",
+      "criterio": {
+        "zona_max": 65,
+        "fija_max": 100,
+        "uso_min": 15,
+        "zonas_min": 3
+      }
+    },
+    {
+      "id": "D2",
+      "grupo": "D · Zonas",
+      "titulo": "Agotamiento de las zonas",
+      "docs": ["01", "02", "28 §3.7"],
+      "metrica": "riqueza media al salir de la zona y pérdida de quien repite una sola zona",
+      "umbral": "59 · 65 · 94 % ±5 pp · repetir pierde ≥ 5 %",
+      "origen": "doc",
+      "criterio": {
+        "pp_max": 5,
+        "perdida_min": 5
+      }
+    },
+    {
+      "id": "D3",
+      "grupo": "D · Zonas",
+      "titulo": "La Fosa y la Aetherita no mandan",
+      "docs": ["28 §1.2", "28 §3.1", "26"],
+      "metrica": "expediciones a La Fosa por semana y parte de la Aetherita en las ventas del Acto IV",
+      "umbral": "≤ 3 por semana · Aetherita ≤ 60 % de las ventas",
+      "origen": "prop.",
+      "criterio": {
+        "fosa_semana_max": 3,
+        "aeth_max": 60
+      }
+    },
+    {
+      "id": "E1",
+      "grupo": "E · Mercado y bucles",
+      "titulo": "Sin ganancia segura entre canales",
+      "docs": ["03", "28 §6", "28 §3.6"],
+      "metrica": "mayor ganancia de comprar (spot, marketplace o bolsa) y revender (spot, bolsa; tienda si no fuera solo mercancía propia); y ganancia diaria sostenible de llenar el lote del mercado negro, limitada por la vigilancia",
+      "umbral": "ninguna ganancia fuera del negro · negro ≤ 15 % del ingreso diario",
+      "origen": "doc",
+      "criterio": {
+        "negro_max": 15
+      }
+    },
+    {
+      "id": "E2",
+      "grupo": "E · Mercado y bucles",
+      "titulo": "Impacto del jugador en el precio",
+      "docs": ["03", "28 §6"],
+      "metrica": "w(P) monótona y coste del slippage sobre el ingreso bruto; w por acto frente al w del patrimonio medio",
+      "umbral": "w crece de 0,5 a 4 · slippage creciente (o estable, ≥ 0,9×) y ≤ 12 % en el IV · w por acto ±15 %",
+      "origen": "doc",
+      "criterio": {
+        "slip_IV_max": 12,
+        "w_acto_max": 15,
+        "grilla_patrimonio": [0, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000],
+        "razon_min": 0.9
+      }
+    },
+    {
+      "id": "E3",
+      "grupo": "E · Mercado y bucles",
+      "titulo": "Sin bucle de impacto",
+      "docs": ["03", "28 §6"],
+      "metrica": "ganancia de vender y recomprar, o de comprar, esperar hasta 8 bloques y vender",
+      "umbral": "< 0 en todo el rango",
+      "origen": "doc",
+      "criterio": {}
+    },
+    {
+      "id": "E4",
+      "grupo": "E · Mercado y bucles",
+      "titulo": "La especulación no domina",
+      "docs": ["03", "28 §3.3", "28 §3.4", "28 §13"],
+      "metrica": "rendimiento neto de especular con aviso perfecto, con la estación y de un trader puro",
+      "umbral": "spot ≤ +2,5 % · Bolsa ≤ +7 % · estación ≤ +12 % · trader ≤ 25 % del ingreso minero",
+      "origen": "doc",
+      "criterio": {
+        "umbrales": [5, 8, 12],
+        "esperas": [1, 3],
+        "spot_max": 2.5,
+        "bolsa_max": 7,
+        "estacion_max": 12,
+        "esperas_estacion": [28, 56],
+        "trader_max": 25
+      }
+    },
+    {
+      "id": "E5",
+      "grupo": "E · Mercado y bucles",
+      "titulo": "Volatilidad y topes diarios",
+      "docs": ["28 §3.2"],
+      "metrica": "desviación diaria de cada mineral frente a la de la tabla, orden entre minerales y días en el tope",
+      "umbral": "±10 % · orden respetado · ≤ 6 % de los días en el tope",
+      "origen": "doc",
+      "criterio": {
+        "desv_max": 10,
+        "tope_max": 6,
+        "eps_tope": 0.05
+      }
+    },
+    {
+      "id": "E6",
+      "grupo": "E · Mercado y bucles",
+      "titulo": "Tope por comprador y capacidad del almacén",
+      "docs": ["28 §3.2", "28 §6.1"],
+      "metrica": "cambio del ritmo al aplicar el tope por comprador y el almacén; el excedente se vende con descuento",
+      "umbral": "±10 % del ritmo",
+      "origen": "doc",
+      "criterio": {
+        "cambio_max": 10
+      }
+    },
+    {
+      "id": "E7",
+      "grupo": "E · Mercado y bucles",
+      "titulo": "Los pedidos son un complemento",
+      "docs": ["28 §9.3", "03"],
+      "metrica": "ganancia extra de los pedidos sobre el ingreso de cada acto",
+      "umbral": "> 0 y ≤ 15 % del ingreso",
+      "origen": "doc",
+      "criterio": {
+        "extra_min": 0.5,
+        "extra_max": 15
+      }
+    },
+    {
+      "id": "F1",
+      "grupo": "F · Mercado negro y vigilancia",
+      "titulo": "Mercado negro prudente",
+      "docs": ["03", "28 §10.4"],
+      "metrica": "ganancia semanal del jugador que se detiene en vigilancia 30 sobre su ingreso honesto",
+      "umbral": "+3 a +12 %",
+      "origen": "doc",
+      "criterio": {
+        "politica": {
+          "umbral": 30
+        },
+        "min": 3,
+        "max": 12
+      }
+    },
+    {
+      "id": "F2",
+      "grupo": "F · Mercado negro y vigilancia",
+      "titulo": "Barrido de políticas del mercado negro",
+      "docs": ["03", "28 §10.4"],
+      "metrica": "mayor ganancia entre umbrales, sobornos, guardias, Faroleros y compra para llenar el lote",
+      "umbral": "≤ +12 %",
+      "origen": "doc",
+      "criterio": {
+        "max": 12
+      }
+    },
+    {
+      "id": "F3",
+      "grupo": "F · Mercado negro y vigilancia",
+      "titulo": "El mercado negro abusivo pierde",
+      "docs": ["03", "28 §10.3", "28 §10.4"],
+      "metrica": "ganancia y días entre redadas del jugador que no se detiene",
+      "umbral": "< 0 % · una redada cada 11 ± 3 días",
+      "origen": "doc",
+      "criterio": {
+        "politica": {
+          "umbral": 100
+        },
+        "max": 0,
+        "intervalo_min": 8,
+        "intervalo_max": 14
+      }
+    },
+    {
+      "id": "F4",
+      "grupo": "F · Mercado negro y vigilancia",
+      "titulo": "Aetherita en el Acto IV: canal legal con tope",
+      "docs": ["03", "28 §3.6", "28 §10.1", "25"],
+      "metrica": "canal legal con tope; negro solo en encargos especiales raros; la vigilancia no depende de ella",
+      "umbral": "legal ≥ 90 % de las ventas · encargo cada ≥ 14 días y ≤ 2 viales · vigilancia ≤ 25 % de la bajada natural",
+      "origen": "prop.",
+      "criterio": {
+        "umbral_politica": 30,
+        "tope_max": 6,
+        "legal_min": 90,
+        "cada_min": 14,
+        "viales_max": 2,
+        "vig_max": 25
+      }
+    },
+    {
+      "id": "F5",
+      "grupo": "F · Mercado negro y vigilancia",
+      "titulo": "Cuánto cuesta una noche negra en bloques",
+      "docs": ["03", "28 §10.1"],
+      "metrica": "bloques de expedición que puede costar una noche negra antes de que deje de compensar (insumo para F4-72)",
+      "umbral": "informativa (> 0)",
+      "origen": "prop.",
+      "criterio": {
+        "politica": {
+          "umbral": 30
+        },
+        "min": 0.0,
+        "informativa": true
+      }
+    },
+    {
+      "id": "G1",
+      "grupo": "G · Empleados",
+      "titulo": "El empleado no domina: salario frente a aporte",
+      "docs": ["04", "28 §8.3"],
+      "metrica": "salario dividido por el aporte de un Minero por nivel y acto, con contratos de 7, 14 y 30 días",
+      "umbral": "pares previstos 40–60 % (N2 del II; N4 y N5 del III) · todos ≤ 100 % (también N1) · 7 días ≤ 85 % · aporte neto en el IV ≤ 0",
+      "origen": "doc",
+      "criterio": {
+        "previstos": [["II", 2], ["III", 4], ["III", 5]],
+        "siempre": [["IV", 4], ["IV", 5]],
+        "otros": [["II", 1], ["III", 2]],
+        "prev_min": 40,
+        "prev_max": 60,
+        "todos_max": 100,
+        "siete_max": 85
+      }
+    },
+    {
+      "id": "G2",
+      "grupo": "G · Empleados",
+      "titulo": "La plantilla máxima no domina",
+      "docs": ["04", "28 §8.3"],
+      "metrica": "aporte bruto y neto de la plantilla máxima (Mineros y Dependiente) con el jugador presente",
+      "umbral": "bruto ≤ 70 % · neto ≤ 45 % del jugador solo",
+      "origen": "doc",
+      "criterio": {
+        "bruto_max": 70,
+        "neto_max": 45
+      }
+    },
+    {
+      "id": "G3",
+      "grupo": "G · Empleados",
+      "titulo": "El jugador ausente rinde menos",
+      "docs": ["04", "28 §8.3"],
+      "metrica": "ingreso de la plantilla sola y ganancia de jugador + plantilla",
+      "umbral": "plantilla sola ≤ 65 % · jugador + plantilla ≥ solo + 5 %",
+      "origen": "prop.",
+      "criterio": {
+        "ausente_max": 65,
+        "conjunto_min": 5,
+        "actos_conjunto": ["II", "III"]
+      }
+    },
+    {
+      "id": "G4",
+      "grupo": "G · Empleados",
+      "titulo": "El Dependiente aporta, pero poco",
+      "docs": ["28 §8.3", "04"],
+      "metrica": "aporte neto del Dependiente simulado sobre el ingreso diario del jugador",
+      "umbral": "> 0 y ≤ 35 % (II y III)",
+      "origen": "prop.",
+      "criterio": {
+        "max_pct": 35,
+        "actos": ["II", "III"]
+      }
+    },
+    {
+      "id": "G5",
+      "grupo": "G · Empleados",
+      "titulo": "Entrenar y ascender no es un bucle",
+      "docs": ["28 §8.2", "04"],
+      "metrica": "días que tarda en recuperarse el entrenamiento de un nivel al siguiente; el salario sigue al nivel",
+      "umbral": "retorno ≥ 5 días, sin máximo",
+      "origen": "prop.",
+      "criterio": {
+        "min": 5,
+        "max": 100000,
+        "niveles": [["II", 1], ["II", 2], ["III", 3], ["III", 4], ["III", 5]]
+      }
+    },
+    {
+      "id": "G6",
+      "grupo": "G · Empleados",
+      "titulo": "Riesgo de los empleados",
+      "docs": ["28 §8.4"],
+      "metrica": "pérdida esperada de un Minero por herida, pérdida de carga y robo (informativa)",
+      "umbral": "informativa (≤ 100 % del aporte)",
+      "origen": "prop.",
+      "criterio": {
+        "max": 100,
+        "informativa": true
+      }
+    },
+    {
+      "id": "H1",
+      "grupo": "H · Deuda, mora y rescate",
+      "titulo": "Vía de deuda del 25 % en el Acto II",
+      "docs": ["28 §7.4", "24"],
+      "metrica": "horas de ingreso que faltan para el 25 % sin pagos extra; corridas que lo alcanzan con la política «paga cuota y extra»; combinación con Comerciante",
+      "umbral": "falta ≤ 0,5 h · alcanzable · Comerciante + 25 % ≤ 6,5 h",
+      "origen": "doc",
+      "criterio": {
+        "horas_max": 0.5,
+        "alcanza_min": 90,
+        "combinado_max": 6.5
+      }
+    },
+    {
+      "id": "H2",
+      "grupo": "H · Deuda, mora y rescate",
+      "titulo": "Vía de deuda del 50 % en el círculo",
+      "docs": ["28 §7.4", "24"],
+      "metrica": "horas de ingreso del Acto III que faltan para el 50 % sin pagos extra",
+      "umbral": "falta ≤ 0,3 h",
+      "origen": "doc",
+      "criterio": {
+        "horas_max": 0.3
+      }
+    },
+    {
+      "id": "H3",
+      "grupo": "H · Deuda, mora y rescate",
+      "titulo": "Abonos anónimos y Consorcio",
+      "docs": ["28 §7.2", "28 §7.4", "24"],
+      "metrica": "capital con y sin abono; abono frente a interés; asunción del Consorcio",
+      "umbral": "mismo capital · abono < interés · Consorcio ≤ 30 % de K y queda ≥ 50 %",
+      "origen": "doc",
+      "criterio": {
+        "semanas": 20,
+        "abono_max": 100,
+        "queda_min": 50
+      }
+    },
+    {
+      "id": "H4",
+      "grupo": "H · Deuda, mora y rescate",
+      "titulo": "La mora no cierra puertas",
+      "docs": ["28 §7.3", "24"],
+      "metrica": "semanas para ponerse al corriente tras 4, 8 y 12 semanas de atraso, en las cuatro dificultades, con el ritmo del lento",
+      "umbral": "≤ 2 · 3 · 4 semanas · Hardcore día 14 ≤ 40 % del ingreso del lento",
+      "origen": "prop.",
+      "criterio": {
+        "atrasos": [4, 8, 12],
+        "semanas": {
+          "4": 2,
+          "8": 3,
+          "12": 4
+        },
+        "extra_dificiles": 1,
+        "hardcore_max": 40
+      }
+    },
+    {
+      "id": "H5",
+      "grupo": "H · Deuda, mora y rescate",
+      "titulo": "Variantes de A2 con el lento",
+      "docs": ["28 §7.1", "28 §7.3", "23"],
+      "metrica": "caja negativa del lento y vía alcanzable con la cuota extra de luz y con el adelanto de cuota",
+      "umbral": "caja < 0 a lo sumo una semana · vía alcanzable",
+      "origen": "prop.",
+      "criterio": {
+        "caja_min": 90,
+        "via_min": 90
+      }
+    },
+    {
+      "id": "H6",
+      "grupo": "H · Deuda, mora y rescate",
+      "titulo": "Misión de rescate: horas de juego",
+      "docs": ["24"],
+      "metrica": "1,25 × p95 de las horas del lento para cumplir la parte económica de cada puerta, redondeado a 0,5 h",
+      "umbral": "entrega de la cifra (informativa)",
+      "origen": "prop.",
+      "criterio": {
+        "margen": 1.25,
+        "paso": 0.5,
+        "max": 100,
+        "informativa": true,
+        "percentil": 0.95
+      }
+    },
+    {
+      "id": "I1",
+      "grupo": "I · Meta-casos",
+      "titulo": "Determinismo",
+      "docs": ["15"],
+      "metrica": "misma semilla, mismo resultado tras redondear",
+      "umbral": "idéntico",
+      "origen": "prop.",
+      "criterio": {
+        "acto1": 150,
+        "semillas": 1,
+        "dias": 60,
+        "pasos": 40
+      }
+    },
+    {
+      "id": "I2",
+      "grupo": "I · Meta-casos",
+      "titulo": "Mutaciones",
+      "docs": ["15"],
+      "metrica": "cambiar una cifra de world.json en memoria cambia el estado de su regla",
+      "umbral": "100 % de las reglas",
+      "origen": "prop.",
+      "criterio": {
+        "min": 100,
+        "modo": "mini"
+      }
+    },
+    {
+      "id": "I3",
+      "grupo": "I · Meta-casos",
+      "titulo": "Intervalos visibles y ninguna regla incierta",
+      "docs": ["15"],
+      "metrica": "reglas en «incierto» y reglas medidas sin n ni intervalo",
+      "umbral": "0",
+      "origen": "prop.",
+      "criterio": {
+        "deterministas": [
+          "A6",
+          "A7",
+          "B8",
+          "C1",
+          "C4",
+          "E1",
+          "E2",
+          "E6",
+          "F4",
+          "G5",
+          "G6",
+          "H3",
+          "H4",
+          "H6",
+          "I1",
+          "I2",
+          "I3"
+        ]
+      }
+    }
+  ],
+  "trazabilidad": [
+    {
+      "requisito": "La cuota del día 7 (960) se paga con 5 expediciones y el margen es real",
+      "fuente": "28 §7.2",
+      "reglas": ["A1", "A2", "A4"]
+    },
+    {
+      "requisito": "El lento no es imposible ni trivial; la prórroga no cierra puertas",
+      "fuente": "28 §7.3",
+      "reglas": ["A3", "H4"]
+    },
+    {
+      "requisito": "Ingreso neto por hora del Acto I (650 · 1 100 · 2 200)",
+      "fuente": "28 §2",
+      "reglas": ["A5", "B1"]
+    },
+    {
+      "requisito": "Cuota del día 14 y recargos en las cuatro dificultades",
+      "fuente": "28 §7.3",
+      "reglas": ["A6", "H4"]
+    },
+    {
+      "requisito": "Saldar la deuda antes de A2 es imposible",
+      "fuente": "24",
+      "reglas": ["A7"]
+    },
+    {
+      "requisito": "Ritmo por acto 1 100 · 7 500 · 27 000 · 125 000 (la media del acto)",
+      "fuente": "28 §2",
+      "reglas": ["B1", "B2", "B8"]
+    },
+    {
+      "requisito": "Patrimonio al cierre de cada acto",
+      "fuente": "28 §2",
+      "reglas": ["B3"]
+    },
+    {
+      "requisito": "Pisos de estatus (Comerciante, Empresario, Magnate)",
+      "fuente": "28 §2",
+      "reglas": ["B4", "H1"]
+    },
+    {
+      "requisito": "Niveles de herramienta por acto: guía, no tope",
+      "fuente": "28 §5.1",
+      "reglas": ["B5", "C2"]
+    },
+    {
+      "requisito": "Sumideros por acto y recurrentes (prensa, licencias, viaje, reparación, renta)",
+      "fuente": "28 §2",
+      "reglas": ["B6", "C3"]
+    },
+    {
+      "requisito": "La economía no explota después del Acto IV",
+      "fuente": "28 §2",
+      "reglas": ["B7"]
+    },
+    {
+      "requisito": "Mejorar no se paga en una sola expedición",
+      "fuente": "28 §5.2",
+      "reglas": ["C1", "C2"]
+    },
+    {
+      "requisito": "El explosivo apenas compensa",
+      "fuente": "28 §5.4",
+      "reglas": ["C4"]
+    },
+    {
+      "requisito": "Descartar una mena cuesta el 25 % de su energía",
+      "fuente": "02",
+      "reglas": ["C5"]
+    },
+    {
+      "requisito": "Ninguna zona es siempre la óptima",
+      "fuente": "02",
+      "reglas": ["D1", "D2"]
+    },
+    {
+      "requisito": "La Fosa abre tres días por semana; la Aetherita no domina",
+      "fuente": "28 §1.2",
+      "reglas": ["D3", "F4"]
+    },
+    {
+      "requisito": "No existe ganancia segura entre canales (tienda y pedidos solo con mercancía propia)",
+      "fuente": "03",
+      "reglas": ["E1", "E3", "E4"]
+    },
+    {
+      "requisito": "El impacto del jugador no crea bucles de ganancia",
+      "fuente": "03",
+      "reglas": ["E2", "E3"]
+    },
+    {
+      "requisito": "Volatilidad, topes diarios y orden entre minerales",
+      "fuente": "28 §3.2",
+      "reglas": ["E5"]
+    },
+    {
+      "requisito": "Tope por comprador y capacidad del almacén",
+      "fuente": "28 §6.1",
+      "reglas": ["E6"]
+    },
+    {
+      "requisito": "Pedidos fuera del Acto I: un estándar cada 2 días y un urgente por semana, ≤ 15 % del ingreso",
+      "fuente": "28 §9.3",
+      "reglas": ["E7"]
+    },
+    {
+      "requisito": "El mercado negro es un complemento moderado, no una estrategia dominante",
+      "fuente": "03",
+      "reglas": ["F1", "F2", "F3", "F5"]
+    },
+    {
+      "requisito": "Aetherita del Acto IV: canal legal con tope; negro solo en encargos especiales",
+      "fuente": "03",
+      "reglas": ["F4", "D3"]
+    },
+    {
+      "requisito": "El empleado no domina (salario, plantilla, ausencia, Dependiente)",
+      "fuente": "04",
+      "reglas": ["G1", "G2", "G3", "G4"]
+    },
+    {
+      "requisito": "Entrenamiento y ascenso: el salario sigue al nivel",
+      "fuente": "28 §8.2",
+      "reglas": ["G5"]
+    },
+    {
+      "requisito": "Riesgo de los empleados (herida, pérdida de carga, robo)",
+      "fuente": "28 §8.4",
+      "reglas": ["G6"]
+    },
+    {
+      "requisito": "Vía de deuda: 25 % en el Acto II y 50 % en el círculo",
+      "fuente": "24",
+      "reglas": ["H1", "H2"]
+    },
+    {
+      "requisito": "Los abonos anónimos y el Consorcio no hacen inalcanzable la vía",
+      "fuente": "24",
+      "reglas": ["H3"]
+    },
+    {
+      "requisito": "Variantes de A2 (cuota extra de luz, deuda de luz, adelanto de cuota)",
+      "fuente": "23",
+      "reglas": ["H5"]
+    },
+    {
+      "requisito": "Misión de rescate: cuánto tiempo sin avanzar, en horas de juego",
+      "fuente": "24",
+      "reglas": ["H6"]
+    },
+    {
+      "requisito": "El simulador es reproducible y cada regla se puede voltear",
+      "fuente": "15",
+      "reglas": ["I1", "I2", "I3", "B8"]
+    }
+  ]
+}
