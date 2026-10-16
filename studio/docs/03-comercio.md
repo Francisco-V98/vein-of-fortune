@@ -223,16 +223,20 @@ Cifras base de cada nivel ✅ ([28](28-numeros-base-de-la-economia.md)):
 
 **Estado:** confirmado que entra en la primera versión, la tabla de productos y el taller (se construye en el MVP y se abre en el Acto II); cómo funciona un lote ⏳ F3-07, ⏳ F4-56 y ⏳ F4-102.
 
-Mena → lingote (+valor) → producto. Productos que alimentan a las industrias:
+Mena → lingote (+valor) → producto, la cadena de refinado. Productos que alimentan a las industrias:
 
-| Producto | Ingredientes |
-|---|---|
-| Acero | Hierro + carbón |
-| Conductor | Cobre + plata |
-| Oscilador | Cuarzo (clave del detector y las radios) |
-| Joyería | Oro/plata + gemas |
-| Pólvora | Salitre + carbón |
-| Celda de éter | Aetherita + cuarzo |
+| Producto | Ingredientes | Desde |
+|---|---|---|
+| Acero | Hierro + carbón | Acto II ✅ |
+| Pólvora | Salitre + carbón | Acto II ✅ |
+| Conductor | Cobre + plata | Acto II ✅ |
+| Oscilador | Cuarzo (clave del detector y las radios) | Acto II ✅ |
+| Joyería | Oro/plata + gemas | Acto III ✅ |
+| Celda de éter | Aetherita + cuarzo | Acto IV ✅ |
+
+✅ **Cada receta tiene su acto** (decisión del autor, 2026-10-16). El taller abre en el Acto II con Acero, Pólvora, Conductor y Oscilador (la primera versión de ⏳ F3-07 empieza con acero y pólvora). La **Joyería** llega en el Acto III, porque ninguna gema existe antes (esmeralda y diamante son tier 4, [26](26-zonas-y-edificios.md)). La **Celda de éter** llega en el Acto IV, con la Aetherita (tier 5).
+
+✅ **La Celda de éter no se vende en la tienda ni en los pedidos de cliente.** Solo la compran la **Comisión del Éter** o el **Consorcio**, y fabricarla consume **viales del mismo tope diario de la Aetherita** (5 viales al día en la oficina de la Comisión de Puerto Meridiano, [28](28-numeros-base-de-la-economia.md)): un vial en una Celda es un vial que no vendes a la Comisión ese día. La tienda y los pedidos siguen aceptando solo mercancía propia extraída o refinada, y la Celda queda fuera por esta regla.
 
 ✅ Se hace en el **taller** de la tienda. El taller se construye en el MVP (⏳ F3-07) pero **se abre en el Acto II**: el Acto I no lo usa ([27](27-guion-del-acto-i.md)).
 
@@ -240,7 +244,7 @@ Mena → lingote (+valor) → producto. Productos que alimentan a las industrias
 
 Da utilidad real a cada mineral y evita que todo sea «extraer y vender crudo».
 
-⏳ F3-07 Receta detallada del refinado (tiempos, rendimiento, cantidades).
+⏳ F3-07 Receta detallada del refinado (tiempos, rendimiento, cantidades) de cada producto, incluidas la Joyería y la Celda de éter.
 
 ## Tienda ✅
 
@@ -299,4 +303,4 @@ El mercado debe construirse como un **módulo independiente que se pueda simular
 
 - ⏳ F2-04 Fórmulas concretas del modelo de precios.
 - ⏳ F4-68 y ⏳ F5-07 La construcción y el ajuste de las multas del mercado negro (las cifras base ya están acordadas, [28](28-numeros-base-de-la-economia.md)).
-- ⏳ F3-07 Receta detallada del refinado (tiempos, rendimiento, cantidades).
+- ⏳ F3-07 Receta detallada del refinado (tiempos, rendimiento, cantidades) de cada producto, incluidas la Joyería y la Celda de éter.

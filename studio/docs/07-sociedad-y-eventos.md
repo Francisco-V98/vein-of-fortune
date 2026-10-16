@@ -16,16 +16,16 @@
 | Huelga | Puede cerrar zonas o reducir la oferta de un mineral → sube el precio; puede afectar tareas |
 | Saqueo / disturbios | Hay **días en que no se puede abrir** el negocio; si no estás protegido, pueden sacar materiales del inventario general |
 
-### Principios de diseño 🟡
+### Principios de diseño ✅
 
 - **Avisan antes.** Noticias y rumores anticipan los eventos (con fiabilidad variable). Así no se sienten injustos: el jugador que lee el mercado y las noticias está preparado.
-- **Tienen respuestas.** Cada riesgo tiene mitigaciones: generador, guardias, pagar protección, seguro, bodega oculta, sobornos, reserva de dinero.
+- **Tienen respuestas.** Cada riesgo tiene mitigaciones: generador, guardias, pagar protección, seguro, sobornos, reserva de dinero.
 - **Alimentan el mercado.** Una huelga minera sube el precio del mineral, un apagón baja la demanda industrial, un saqueo golpea el lujo, etc. El evento social es también un evento económico.
 - **Gravedad según dificultad.** Frecuencia y pérdida escalan con el nivel elegido.
 
-## Facciones 🟡 (borrador)
+## Facciones ✅
 
-Pocas, claras, con efectos simples en el juego.
+Seis, claras, con efectos simples en el juego: cinco de las propuestas originales más la Comisión del Éter.
 
 ✅ **Solo hay cuatro medidores de relación: la Unión, Esteban, Lucía y Teo** ([24](24-umbrales-de-acto.md)). Las facciones restantes (el Consorcio, el Ministerio y Los Faroleros) **no tienen medidor propio**: se miden por la alianza que elijas en el Acto II. Reme y Montenegro tampoco tienen medidor.
 
@@ -36,6 +36,7 @@ Pocas, claras, con efectos simples en el juego.
 | Sindicato minero | Mano de obra y huelgas | Apoyo y ayuda en zonas; huelgas si los ignoras |
 | Organización criminal ("protectores") | Extorsión, mercado negro | Protección y acceso a negocios oscuros; saqueos/cobros si no pagas |
 | Prensa | Noticias y rumores | Información (y desinformación) |
+| Comisión del Éter (dentro del Ministerio) | La Aetherita extraída y La Fosa | Un canal legal con tope para vender la Aetherita y comprador de la Celda de éter ([03](03-comercio.md)); sin medidor propio |
 
 ### Nombres ✅
 
@@ -63,18 +64,18 @@ Esto da forma a la fiabilidad variable de las noticias (ver [03](03-comercio.md)
 
 ✅ Los periódicos también son un canal de **contratación** de empleados, y su sesgo político influye en los candidatos (ver [04](04-progresion-y-meta.md)).
 
-### Reputación y conexiones 🟡
+### Reputación y conexiones ✅
 
 El jugador no solo tiene dinero: tiene **conexiones** (a quién conoce, de quién es amigo) y **reputación** (cómo lo ven). Subir en la sociedad es mover esas piezas, igual que en Papers, Please cada decisión tiene un costo moral y práctico.
 
 ✅ En números, la reputación se reduce a los cuatro medidores y a la alianza elegida; ninguna otra facción tiene un medidor aparte.
 
-## Corrupción como mecánica 🟡
+## Corrupción como mecánica ✅
 
 - El jugador **elige cuánto se mancha las manos** — no es obligatorio jugar sucio.
 - Opciones: pagar o no la "protección", sobornar para obtener licencias, comprar en mercado negro, entregar información a una facción.
 - Cada elección tiene beneficios y riesgos (inspecciones, multas, represalias).
-- Quien juega limpio avanza más lento pero más seguro; quien juega sucio puede crecer más rápido y con más riesgo.
+- Quien juega limpio avanza más lento pero más seguro; quien juega sucio crece algo más rápido (el mercado negro aporta ≈ +7 %) y abusar pierde por las redadas ([28](28-numeros-base-de-la-economia.md), sección 10). Los sobornos cuestan más cada vez y no hay medidor de corrupción ([03](03-comercio.md)). El mercado negro es un complemento moderado, no una estrategia dominante.
 
 ## Estatus y clase social
 
@@ -82,12 +83,12 @@ El jugador no solo tiene dinero: tiene **conexiones** (a quién conoce, de quié
 
 ✅ Escalera de estatus: _Heredero → Minero con licencia → Comerciante → Empresario → Magnate_. En inglés, _Heir_; el primer escalón tiene la variante de género _Heredera_ (regla de variantes de género, [18](18-biblia-narrativa.md), 1.2). Los cinco nombres están decididos.
 
-🟡 Cada escalón desbloquea contactos, zonas, contratos y opciones de estilo de vida. ⏳ F4-109 Requisitos y cifras de cada ascenso.
+✅ Cada escalón desbloquea proveedores (⏳ F4-114), clientes y contratos mejores y opciones de estilo de vida; **no desbloquea zonas**, que se abren por acto ([17](17-mapa-de-historia.md)). ⏳ F4-109 Requisitos y cifras de cada ascenso.
 
 ## Notas de producción
 
-- 🟡 Mundo y naciones **ficticios**, sin referencias a política real, para evitar problemas de contenido y de tiendas de apps. Revisar la clasificación por edad según la crudeza de temas (extorsión, violencia, corrupción).
-- 🟡 Alcance: empezar con 3–4 facciones y 4–5 tipos de evento social. El sistema se amplía después.
+- ✅ Mundo y naciones **ficticios**, sin referencias a política real, para evitar problemas de contenido y de tiendas de apps ([05](05-mundo-y-minerales.md)). El juego no se dirige a menores ([11](11-legal-y-cumplimiento.md)). La clasificación por edad según la crudeza de temas (extorsión, violencia, corrupción) ⏳ F5-28.
+- ✅ Alcance: 6 facciones, 4 medidores de relación y 3 eventos sociales (apagón, huelga y saqueo), más la redada como consecuencia de la vigilancia ([03](03-comercio.md)). Otros eventos sueltos ⏳ F4-168.
 
 ## Pendiente
 

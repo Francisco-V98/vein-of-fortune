@@ -79,6 +79,11 @@ def integrity(world):
             if g not in minigames:
                 errors.append("mineral %s usa un minijuego inexistente: %s" % (m["id"], g))
     for r in world.get("recipes", []):
+        if r.get("act") is not None and r["act"] not in idx:
+            errors.append("receta %s: acto desconocido (%s)" % (r["id"], r["act"]))
+        for b in r.get("buyers", []):
+            if b not in factions:
+                errors.append("receta %s tiene un comprador inexistente: %s" % (r["id"], b))
         for group in r.get("inputs", []):
             for ing in group:
                 if ing not in minerals:
@@ -600,16 +605,25 @@ def check(world, story, decisions=None, hilos=None, task_status=None):
             bad.append("%s llega en el Acto %s pero necesita %s, que aparece en el Acto %s" % (mech["name"], mech["act"], names[ing], first or "—"))
     add("C7", "Mecánicas", "Lo que necesita un mineral lo tiene disponible cuando se desbloquea", len(needs), bad)
     taller = next((mech for mech in world.get("mechanics", []) if mech["id"] == "taller"), None)
-    groups = [(r, g) for r in world.get("recipes", []) for g in r.get("inputs", [])]
+    recipes = world.get("recipes", [])
+    groups = [(r, g) for r in recipes for g in r.get("inputs", [])]
     bad = []
     if taller:
-        for r, group in groups:
-            firsts = [available[i] for i in group if available.get(i)]
-            if not firsts or min(idx[a] for a in firsts) > idx[taller["act"]]:
-                got = min(firsts, key=lambda a: idx[a]) if firsts else "—"
-                bad.append("%s necesita %s, que aparece en el Acto %s, y el taller abre en el Acto %s" %
-                           (r["name"], " o ".join(names[i] for i in group), got, taller["act"]))
-    add("C8", "Mecánicas", "Los ingredientes de cada receta existen cuando abre el taller", len(groups), bad)
+        for r in recipes:
+            act = r.get("act")
+            if act not in idx:
+                bad.append("%s no tiene un acto válido (%s): cada receta declara en qué acto se desbloquea" % (r["name"], act or "sin acto"))
+                continue
+            if idx[act] < idx[taller["act"]]:
+                bad.append("%s se desbloquea en el Acto %s y el taller abre en el Acto %s" % (r["name"], act, taller["act"]))
+            for group in r.get("inputs", []):
+                firsts = [available[i] for i in group if available.get(i)]
+                if not firsts or min(idx[a] for a in firsts) > idx[act]:
+                    got = min(firsts, key=lambda a: idx[a]) if firsts else "—"
+                    bad.append("%s (Acto %s) necesita %s, que aparece en el Acto %s" %
+                               (r["name"], act, " o ".join(names[i] for i in group), got))
+    add("C8", "Mecánicas", "Cada receta se desbloquea con el taller o después y sus ingredientes existen en el acto de la receta",
+        len(groups) + len(recipes), bad)
 
     # --- Mapa de historia frente al registro
     story_min = _lane(story, "minerales")

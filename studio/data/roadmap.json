@@ -593,7 +593,7 @@
               "id": "F0-55",
               "title": "Pasada de cierre: mundo, historia y sociedad (05, 07, 08, 17, 19)",
               "est": 6,
-              "status": "backlog",
+              "status": "review",
               "prio": "P1",
               "desc": "Cerrar con el autor los puntos abiertos de mundo y minerales, sociedad, historia, mapa de historia y elenco, y resolver los hallazgos de coherencia del registro del mundo.",
               "done_when": "Cada documento por encima de la meta y sin hallazgos de coherencia en mundo e historia."
@@ -3395,8 +3395,8 @@
               "title": "Dilema moral 3",
               "est": 4,
               "prio": "P1",
-              "desc": "Tercer dilema moral del Acto III (el abono y Teo).",
-              "done_when": "El dilema está escrito con sus tres salidas y sus banderas del documento 23."
+              "desc": "Tercer dilema moral del Acto III: el dilema de información (Lucía reconoce la firma de la letra, nodo n-iii-lucia-letra del documento 23). El abono y Teo (n-iii-abono) lo cubre el guion del Acto III (F4-135).",
+              "done_when": "El dilema de información está escrito con sus tres salidas y sus banderas del documento 23."
             },
             {
               "id": "F4-140",
@@ -3748,7 +3748,9 @@
               "status": "backlog",
               "title": "Nombres y clientes procedurales",
               "est": 5,
-              "prio": "P2"
+              "prio": "P2",
+              "desc": "Fichas breves de los personajes secundarios con nombre (clientes y empleados) y generador de nombres y de clientes procedurales (cliente obrero sin nombre de los pedidos, compradores y candidatos) con las reglas de nombre del documento 18.",
+              "done_when": "Los clientes y candidatos generados tienen nombre y rasgos según las reglas del documento 18."
             },
             {
               "id": "F4-173",
@@ -3900,7 +3902,8 @@
               "status": "backlog",
               "title": "Retratos definitivos (PixelLab): Esteban, Casilda, Ministro y Anselmo",
               "est": 10,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Retratos definitivos con PixelLab de Esteban, Casilda, el Ministro y Anselmo. Los de Reme, Teo, Quiroga, Lucía y los dos protagonistas son F4-229 y los provisionales F3-19."
             },
             {
               "id": "F4-191",
@@ -4115,8 +4118,8 @@
               "title": "Plantilla de guion con identificadores y condiciones",
               "est": 4,
               "prio": "P0",
-              "desc": "Formato común para escribir los guiones de los cuatro actos, con identificadores de escena, condiciones de activación y banderas, para que el motor y los traductores lo lean.",
-              "done_when": "Hay una plantilla acordada y los guiones del Acto I la usan sin cambios."
+              "desc": "Formato común para escribir los guiones de los cuatro actos, con identificadores de escena, condiciones de activación y banderas, para que el motor y los traductores lo lean. Generaliza el esquema del Acto I (documento 27: dN.M, n-…) a los Actos II a IV sin reescribir el Acto I (decisión del autor del 2026-10-16).",
+              "done_when": "Hay una plantilla acordada que generaliza el esquema del Acto I a los Actos II a IV y el Acto I no necesita reescribirse."
             }
           ]
         },
