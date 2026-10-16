@@ -13,7 +13,7 @@ Qué pasó **antes del juego**: el descubrimiento de la Aetherita, el nacimiento
 1. Un derrumbe (hace 40 años) crea la Unión y marca a Anselmo, a Teo, a Montenegro y al padre del protagonista.
 2. El Ministerio halla la Aetherita (hace 30), crea la Comisión (hace 27) y manda la primera expedición a La Fosa (hace 20). La cuadrilla enferma.
 3. La electrificación con Aetherita empieza después (hace 17). Deja sin oficio a los faroleros, y Casilda empieza a «cobrar la luz» (hace 15).
-4. Anselmo calibra durante 18 años 🟡 los límites de exposición. Hace 2 años intenta denunciar, lo detienen y acepta el trato: muere en público, sigue vivo en secreto.
+4. Anselmo calibra durante 18 años ✅ los límites de exposición. Hace 2 años intenta denunciar, lo detienen y acepta el trato: muere en público, sigue vivo en secreto.
 5. Hace pocas semanas ✅ firma un acta de calibración. Esa firma es la última escena del juego.
 
 ---
@@ -123,7 +123,7 @@ El mal del éter **se acumula con la exposición** 🟡. Con esta regla, lo que 
 | **La cuadrilla** (unas doce personas ✅, sin contar la escolta 🟡) | Siete meses seguidos en la veta (los ocho de la expedición, menos el primero) 🟡 | Todos murieron en uno a tres años 🟡, de «tos de mina» |
 | **Montenegro** | Ninguna: nunca bajó a la veta ✅ | Sano ✅ |
 | **Teo** | Un solo mes. Lo evacuaron con el brazo roto y **no volvió a La Fosa** ✅ | Tos incipiente a los 64 años ✅ ([19](19-elenco-a-fondo.md)) |
-| **Anselmo** | Enfermó en la expedición (síntomas leves desde el segundo mes 🟡). Después, **18 años de campañas anuales de calibración en La Fosa** 🟡: cada año lo expuso de nuevo | Enfermo avanzado, con tratamiento paliativo ✅ |
+| **Anselmo** | Enfermó en la expedición (síntomas leves desde el segundo mes 🟡). Después, **18 años de campañas anuales de calibración en La Fosa** ✅: cada año lo expuso de nuevo | Enfermo avanzado, con tratamiento paliativo ✅ |
 
 ### Por qué Anselmo sobrevive y la cuadrilla no 🟡
 
@@ -134,7 +134,7 @@ La cuadrilla murió en uno a tres años con siete meses de exposición. Anselmo 
 - **Vive, pero no se cura ✅.** El paliativo frena el mal, no lo revierte. Su mal avanza lento y cada campaña de calibración agrava sus recaídas: hoy está avanzado y el tratamiento ya solo lo sostiene.
 - **La Comisión no es «buena» aquí ✅.** Lo mantuvo vivo porque lo necesitaba, no por piedad. La misma Comisión dejó morir a la cuadrilla sin tratamiento. Anselmo lo sabe, y es parte de por qué carga con ello.
 
-- **Por qué Anselmo denuncia 18 años después 🟡.** Calibró los límites desde dentro creyendo que podía bajar la dosis. La Comisión lo mantuvo con tratamiento y protección. Hace cuatro años doblaron la cuota **contra su informe** ✅, y esa fue la razón de la denuncia ✅. Los dos años de protestas inútiles antes de preparar la denuncia son propuesta 🟡.
+- **Por qué Anselmo denuncia 18 años después ✅.** Calibró los límites desde dentro creyendo que podía bajar la dosis. La Comisión lo mantuvo con tratamiento y protección. Hace cuatro años doblaron la cuota **contra su informe** ✅, y esa fue la razón de la denuncia ✅. Los dos años de protestas inútiles antes de preparar la denuncia son propuesta 🟡.
 - **Por qué «tos de mina» esconde el mal ✅.** La tos de mina es la enfermedad vieja del Hollín. Un minero que muere tosiendo no llama la atención de nadie, y esa es la tapadera de la Comisión.
 - **Quién le puso nombre ✅.** «Mal del éter» lo escribió Anselmo en su libreta. Internamente la Comisión lo llama *fatiga de exposición* 🟡. Nadie lo dice en público antes del Acto IV (1.4 de [18](18-biblia-narrativa.md)).
 
@@ -310,8 +310,8 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 | I | La libreta termina con una anotación sin fecha de cierre | **Hace 2 años, la noche antes de la detención**: Anselmo no la fechó 🟡 |
 | II | El certificado de defunción con sello irregular y **sin registro de cremación** | **Hace 2 años, la muerte pública**: cremación que nadie registró ✅; sello del sanatorio ✅ |
 | II | Teo cambia de tema cuando se menciona el último viaje a La Fosa | **Hace 20 años, la Primera Expedición**: su evacuación ✅ y el silencio firmado por la pensión ✅ |
-| III | Lucía oyó que «alguien de la Comisión recibe cartas con la letra de un muerto» | **Pocas semanas** 🟡: los informes de calibración que Anselmo escribe a mano para la Comisión desde el trato |
-| III | El abono sigue llegando y Teo jura que no es él | **Hace 2 años, el trato** ✅. Teo dice la verdad: él no lo paga 🟡 |
+| III | Lucía oyó que «alguien de la Comisión recibe cartas con la letra de un muerto» | **Pocas semanas** ✅: los informes de calibración que Anselmo escribe a mano para la Comisión desde el trato |
+| III | El abono sigue llegando y Teo jura que no es él | **Hace 2 años, el trato** ✅. Teo dice la verdad: él no lo paga ✅ |
 | IV | La octava cinta termina cortada | **Hace 2 años, la noche de la detención** (cintas 7 y 8) ✅ |
 | IV (final) | El acta de calibración firmada por Anselmo | **Pocas semanas** ✅. La firma es la de los papeles de la herencia ✅ ([27](27-guion-del-acto-i.md), sección 4) |
 

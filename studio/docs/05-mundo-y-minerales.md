@@ -27,11 +27,11 @@ Con buena energía y ganas de lograr todo lo que quiera, pero que debe **adaptar
 | **Cuenca del Hollín** *(inicio)* | Carbón y hierro, humo, pueblos obreros | Sindicato minero | Villa Brasa |
 | **Sierra Alta** | Cobre y plata, frío, pueblos de empresa | Casas industriales | Altafría |
 | **Salares del Litoral** | Salitre, puertos, contrabando | Organización criminal | Salinas Blancas |
-| **Cavernas de Cristal** | Cuarzo y gemas, cuevas inestables | Disputada entre todos | Un campamento, sin vivienda (nombre provisional) |
-| **La Fosa** | Donde apareció la Aetherita; militarizada | Gobierno | El campamento de la Comisión, sin vivienda (nombre provisional) |
+| **Cavernas de Cristal** | Cuarzo y gemas, cuevas inestables | Disputada entre todos | El campamento de las Cavernas, sin vivienda |
+| **La Fosa** | Donde apareció la Aetherita; militarizada | Gobierno | El campamento de la Comisión, sin vivienda |
 | **Puerto Meridiano** *(capital)* | Bolsa, prensa, élite, lujo | Gobierno y Casas | La propia ciudad |
 
-✅ Cada región es una **zona del mapa** con un asentamiento, y la boca de mina es una edificación más de ese asentamiento: Villa Brasa atiende las dos zonas de minado del Hollín. Los nombres **Altafría** y **Salinas Blancas** los decidió el autor (2026-10-13). Catálogo de edificaciones, casas y versiones en [26](26-zonas-y-edificios.md).
+✅ Cada región es una **zona del mapa** con un asentamiento, y la boca de mina es una edificación más de ese asentamiento: Villa Brasa atiende las dos zonas de minado del Hollín. Los nombres **Altafría** y **Salinas Blancas** los decidió el autor (2026-10-13); «el campamento de las Cavernas» y «el campamento de la Comisión» son nombres descriptivos definitivos (decisión del autor, 2026-10-16). Catálogo de edificaciones, casas y versiones en [26](26-zonas-y-edificios.md).
 
 ## Zonas de minado
 
@@ -54,7 +54,7 @@ Mínimo **10 minerales**, cada uno con lore, utilidad y necesidad dentro del jue
 | 9 | **Diamante** | Volátil | Herramientas de corte y lujo extremo |
 | 10 | **Aetherita** | Volátil / estratégico | Combustible casi milagroso, descubierto hace unos 30 años en La Fosa (cronología en [21](21-pasado-de-valdoria.md)). Peligroso, y nadie sabe bien qué es. Eje del misterio principal. ✅ En el Acto III solo se ve su precio y únicamente se compra en el mercado negro (Casilda), como mercancía escasa; la extracción no ocurre hasta el Acto IV. ✅ En el Acto IV la que extraes se vende por un **canal legal con tope**, la Comisión del Éter (a valor justo, con el impuesto general y sin pasar por la vigilancia); en el mercado negro solo entra como **encargo especial**: raro, de pocos viales y con su historia, nunca un canal rutinario (decisión del autor, 2026-10-15/16; [03](03-comercio.md), cifras en [28](28-numeros-base-de-la-economia.md)) |
 
-🟡 La lista y los lores son una propuesta aceptada en general; los precios base, la volatilidad y los sectores que demandan cada uno están acordados como base ✅ ([28](28-numeros-base-de-la-economia.md)), y el resto de los detalles (por ejemplo la cadena de refinado) se afinan en el diseño del mercado.
+✅ La lista y los lores son definitivos (decisión del autor, 2026-10-16). Los precios base, la volatilidad y los sectores que demandan cada uno están acordados como base ([28](28-numeros-base-de-la-economia.md)). La cadena de refinado (mena → lingote → producto) se detalla en ⏳ F3-07.
 
 ### Distribución por zona
 
@@ -90,6 +90,6 @@ Lore:
 
 ## Pendiente
 
-- ❓ Fichas completas de cada mineral.
-- ❓ Cadena de refinado (mena → lingote → aleación): qué requiere cada paso.
+- ✅ La ficha de un mineral es su fila de la tabla de arriba más sus campos en `world.json` (nivel, zonas, mezcla de menas, minijuego, sectores y precio); no hay fichas largas aparte (decisión del autor, 2026-10-16). La ficha de cara al jugador es ⏳ F5-03 y los datos de mercado de los 10 minerales, ⏳ F4-29.
+- ✅ Cadena de refinado: **mena → lingote → producto** (decisión del autor, 2026-10-16). Qué requiere cada paso ⏳ F3-07, y el minijuego de refinado ⏳ F4-56.
 - ✅ Nombres de facciones ([07](07-sociedad-y-eventos.md)), ciudades y asentamientos (Villa Brasa, Altafría, Salinas Blancas y Puerto Meridiano, [08](08-historia-y-personaje.md) y [26](26-zonas-y-edificios.md)) y personajes recurrentes ([19](19-elenco-a-fondo.md)): definidos.

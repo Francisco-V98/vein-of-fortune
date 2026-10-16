@@ -25,6 +25,18 @@ WORLD = {
 }
 STORY = {"lanes": []}
 
+# Registro con taller en el Acto II y recetas con acto propio (m1 aparece en el I, m2 en el III).
+WORLD_TALLER = copy.deepcopy(WORLD)
+WORLD_TALLER["acts"] = ["I", "II", "III"]
+WORLD_TALLER["zones"].append({"id": "z3", "name": "Zona 3", "act": "III"})
+WORLD_TALLER["minerals"].append({"id": "m2", "name": "M2", "base_price": 9, "sectors": ["s"], "minigames": ["g1"], "zones": {"z3": "principal"}})
+WORLD_TALLER["minerals"][0]["zones"] = {"z1": "principal", "z2": "secundario"}
+WORLD_TALLER["mechanics"] = [{"id": "taller", "name": "Taller", "act": "II"}]
+WORLD_TALLER["recipes"] = [
+    {"id": "r1", "name": "R1", "act": "II", "inputs": [["m1"]]},
+    {"id": "r2", "name": "R2", "act": "III", "inputs": [["m1"], ["m2"]], "buyers": ["f1"]},
+]
+
 
 def failed(world, story=STORY):
     return {c["id"]: c["failed"] for c in coherence.check(world, story)["checks"]}
@@ -87,6 +99,44 @@ class Coherencia(unittest.TestCase):
         w["minerals"][0]["zones"] = {"z2": "principal"}
         w["mechanics"] = [{"id": "x", "name": "X", "act": "I", "needs_minerals": ["m1"]}]
         self.assertEqual(failed(w)["C7"], 1)
+
+    def test_recetas_con_acto_propio(self):
+        w = copy.deepcopy(WORLD_TALLER)
+        self.assertEqual(failed(w)["C8"], 0)
+        self.assertEqual(coherence.integrity(w), [])
+
+    def test_receta_sin_acto(self):
+        w = copy.deepcopy(WORLD_TALLER)
+        del w["recipes"][0]["act"]
+        self.assertEqual(failed(w)["C8"], 1)
+
+    def test_receta_con_acto_desconocido(self):
+        w = copy.deepcopy(WORLD_TALLER)
+        w["recipes"][0]["act"] = "IX"
+        self.assertEqual(failed(w)["C8"], 1)
+        self.assertEqual(len(coherence.integrity(w)), 1)
+
+    def test_receta_anterior_al_taller(self):
+        w = copy.deepcopy(WORLD_TALLER)
+        w["mechanics"][0]["act"] = "II"
+        w["recipes"][0]["act"] = "I"
+        self.assertEqual(failed(w)["C8"], 1)
+
+    def test_ingrediente_posterior_al_acto_de_la_receta(self):
+        w = copy.deepcopy(WORLD_TALLER)
+        w["recipes"][1]["act"] = "II"  # necesita m2, que aparece en el Acto III
+        self.assertEqual(failed(w)["C8"], 1)
+
+    def test_ingrediente_alternativo_disponible_basta(self):
+        w = copy.deepcopy(WORLD_TALLER)
+        w["recipes"][1]["act"] = "II"
+        w["recipes"][1]["inputs"] = [["m1", "m2"]]
+        self.assertEqual(failed(w)["C8"], 0)
+
+    def test_comprador_de_receta_inexistente(self):
+        w = copy.deepcopy(WORLD_TALLER)
+        w["recipes"][1]["buyers"] = ["f1", "no"]
+        self.assertEqual(len(coherence.integrity(w)), 1)
 
     def test_mapa_de_historia_contradice_al_registro(self):
         story = {"lanes": [

@@ -1,0 +1,165 @@
+{
+  "id": "F0-55",
+  "history": [
+    {
+      "at": "2026-10-16",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza la pasada de cierre de mundo, historia y sociedad (05, 07, 08, 17, 19)",
+      "ref": "rama studio/F0-55-cierre-mundo-historia-sociedad"
+    },
+    {
+      "at": "2026-10-16",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-55"
+    },
+    {
+      "at": "2026-10-16",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea",
+      "ref": "PR #52"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "narrador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Es una pasada de cierre: los puntos abiertos se deciden con el autor"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "analista",
+        "nota": "Inventario de los puntos abiertos de los cinco documentos, 15 contradicciones y 8 preguntas; el autor las decidió en dos rondas el 2026-10-16"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "narrador",
+        "nota": "Narrador (docs 05, 07, 08, 17, 19, 21, 23, 26 y story.json), diseñador (docs 03 y 28) y herramientas (recetas por acto y C8) terminaron; la coordinación ajustó 4 tareas del roadmap"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "qa",
+        "nota": "QA aprobó sin fallos bloqueantes; 3 observaciones menores, una corregida (alcance de F4-172)"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "nota": "El autor revisó y aprobó el entregable el 2026-10-16"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-16",
+        "por": "coordinador",
+        "nota": "Tarea cerrada y PR fusionado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario de puntos abiertos de los documentos 05, 07, 08, 17 y 19 y de los hallazgos de coherencia",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: informe de F0-55 con puntos abiertos por documento y 8 preguntas",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "narrador",
+        "que": "Cerrar los documentos 05, 07, 08, 17 y 19 con las decisiones del autor",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Entrega: los cinco documentos al 100 %",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "disenador",
+        "que": "Recetas por acto en los documentos 03 y 28",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega: columna «Desde» y regla de la Celda de éter",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "herramientas",
+        "que": "Acto por receta en world.json y comprobación C8",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Entrega: C8 sin hallazgos y 7 pruebas nuevas",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar F0-55",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Aprobado: sin fallos bloqueantes",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Revisión de F0-55: cinco documentos al 100 % y recetas por acto",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobación de F0-55",
+        "at": "2026-10-16",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

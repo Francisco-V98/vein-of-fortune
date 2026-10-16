@@ -603,6 +603,7 @@
     {
       "id": "acero",
       "name": "Acero",
+      "act": "II",
       "inputs": [
         [
           "hierro"
@@ -615,6 +616,7 @@
     {
       "id": "conductor",
       "name": "Conductor",
+      "act": "II",
       "inputs": [
         [
           "cobre"
@@ -627,6 +629,7 @@
     {
       "id": "oscilador",
       "name": "Oscilador",
+      "act": "II",
       "inputs": [
         [
           "cuarzo"
@@ -636,6 +639,7 @@
     {
       "id": "joyeria",
       "name": "Joyería",
+      "act": "III",
       "inputs": [
         [
           "oro",
@@ -650,6 +654,7 @@
     {
       "id": "polvora",
       "name": "Pólvora",
+      "act": "II",
       "inputs": [
         [
           "salitre"
@@ -662,6 +667,7 @@
     {
       "id": "celda-eter",
       "name": "Celda de éter",
+      "act": "IV",
       "inputs": [
         [
           "aetherita"
@@ -669,7 +675,15 @@
         [
           "cuarzo"
         ]
-      ]
+      ],
+      "buyers": [
+        "comision",
+        "consorcio"
+      ],
+      "sells_in_store": false,
+      "customer_orders": false,
+      "counts_against_aetherita_cap": true,
+      "fuente": "Decisión del autor (2026-10-16): la Celda de éter solo la compran la Comisión del Éter o el Consorcio Arvel; consume viales del mismo tope diario de Aetherita; nunca se vende en tienda ni en pedidos de cliente"
     }
   ],
   "factions": [

@@ -237,7 +237,7 @@ La entrada que elijas decide quién te debe un favor en el IV:
 - **Fija:** —. **Lee:** `f-alianza`.
 
 **`n-iii-monopolio` · El monopolio de la Aetherita negra** (mediana)
-- **Dispara:** Casilda negocia el monopolio de la Aetherita en el mercado negro de la capital. En el III la Aetherita solo se compra ahí, como mercancía escasa; no se extrae hasta el IV ✅. En el IV la venta rutinaria va por el canal legal (la oficina de la Comisión en Puerto Meridiano): lo que Casilda controla son los **encargos especiales** del negro, raros y con historia ✅.
+- **Dispara:** Casilda negocia el monopolio de la Aetherita en el mercado negro (el Bar del Farol de Salinas Blancas y su visita nocturna a la tienda). En el III la Aetherita solo se compra ahí, como mercancía escasa; no se extrae hasta el IV ✅. En el IV la venta rutinaria va por el canal legal (la oficina de la Comisión en Puerto Meridiano): lo que Casilda controla son los **encargos especiales** del negro, raros y con historia ✅.
 - **Dejas que Casilda lo controle.** → *Mundo:* Casilda manda en los encargos especiales de Aetherita del mercado negro, no en la venta rutinaria. *Mercado:* Prima negra de Aetherita +10 puntos, que se cobra en esos encargos ([28](28-numeros-base-de-la-economia.md), sección 3.6); la vigilancia sube un 20 % más despacio. *Personajes:* Casilda: socia interesada.
 - **Pides tu parte.** → *Mundo:* Tú y Casilda os repartís el negocio. *Mercado:* Prima +5 puntos; vigilancia sin cambio. *Personajes:* Casilda: respeto seco.
 - **No entras.** → *Mundo:* El Consorcio o el Ministerio ocupan el hueco. *Mercado:* Prima +0 puntos; la vigilancia sube un 10 % más rápido. *Personajes:* Casilda: cobra la luz de lo que toque.

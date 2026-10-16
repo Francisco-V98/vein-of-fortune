@@ -24,12 +24,12 @@ El protagonista **hereda la licencia, el puesto en el mercado y la deuda** de su
 
 Después del Acto IV: **sandbox** con la capa de imperio (ver [04](04-progresion-y-meta.md)).
 
-## Reglas de diseño narrativo 🟡
+## Reglas de diseño narrativo ✅
 
 1. ✅ **Los actos se activan por umbrales** (estatus, logros, relación con los cuatro medidores, deuda pagada), no por fechas. Así la historia convive con el mundo procedural y con el juego libre. Reglas concretas en [24](24-umbrales-de-acto.md).
-2. **Los hitos son fijos; las circunstancias varían.** Cada partida cuenta la misma historia con otro mundo: otra facción hostil, otros eventos, otros precios.
-3. **Permadeath y narrativa:** una partida es una historia completa. Si en hardcore mueres, la nueva partida arranca desde el Acto I. Se estudiará una forma de acelerar o resumir los actos ya vistos.
-4. **MVP:** solo Cuenca del Hollín y Acto I, que ya prueba el loop completo y la voz del juego.
+2. ✅ **Los hitos son fijos; las circunstancias varían.** Cada partida cuenta la misma historia con otro mundo: la facción de Reme se sortea al empezar y el Acto II tiene tres variantes ([22](22-acto-ii-variantes.md), [23](23-arbol-de-decisiones.md)); varían además los eventos sueltos y los precios.
+3. ✅ **Permadeath y narrativa:** una partida es una historia completa. Si en Hardcore mueres, la nueva partida arranca desde el Acto I, con el legado de las partidas terminadas ([04](04-progresion-y-meta.md)). Acelerar o resumir los actos ya vistos ⏳ F4-126.
+4. ✅ **MVP:** solo Cuenca del Hollín (Villa Brasa) y Acto I ([26](26-zonas-y-edificios.md)), que ya prueba el loop completo y la voz del juego.
 
 ## Personaje jugable
 
@@ -42,12 +42,12 @@ Después del Acto IV: **sandbox** con la capa de imperio (ver [04](04-progresion
 | Género | Hombre o mujer |
 | Apariencia en v1 | **1 personaje hombre y 1 mujer** (sin editor de rostro) |
 
-### Notas de producción 🟡
+### Notas de producción ✅
 
 - Los diálogos usan una variable para el nombre (`{nombre}`). Hay que cuidar que no suene raro con nombres largos o con signos.
 - El español tiene género gramatical. Para evitar duplicar todos los textos, conviene escribir diálogos **neutros** cuando se pueda y usar variantes solo donde sea necesario.
 - Conviene validar el nombre (longitud, caracteres, filtro de palabras ofensivas) antes de aceptarlo, sobre todo si se piensa publicar en tiendas.
-- El nombre de la tienda también aparece en periódicos, contratos y carteles, así que debe tener largo máximo.
+- El nombre de la tienda también aparece en periódicos, contratos y carteles, así que debe tener largo máximo (la cifra ⏳ F1-18). El nombre del personaje lleva una sola palabra y el tratamiento y las variantes de género se rigen por [18](18-biblia-narrativa.md), secciones 1.2 y 1.8; la validación del nombre, por [10](10-tecnico-y-herramientas.md) y [11](11-legal-y-cumplimiento.md).
 
 ## El tío y la deuda ✅
 
@@ -99,6 +99,6 @@ Cualquier opción cambia la partida, pero **el sistema se reabsorbe y todo sigue
 ## Pendiente
 
 - ✅ El Acto I se guioniza en siete días ([27](27-guion-del-acto-i.md)).
-- 🟡 El detalle del guion (29 escenas y unos 340 textos, en cajas de diálogo con retrato, [18](18-biblia-narrativa.md), 1.9) es propuesta hasta que el autor lo apruebe. Las escenas clave se dibujan en ⏳ F0-24.
+- ✅ El detalle del guion del Acto I son 28 escenas y ≈ 320 textos, en cajas de diálogo con retrato (aprobado por el autor el 2026-10-13; [27](27-guion-del-acto-i.md) y [06](06-roadmap-y-pendientes.md)). Las escenas clave se dibujan en ⏳ F0-24.
 - ✅ Idiomas: español primero; inglés después. El glosario ES/EN está en [18](18-biblia-narrativa.md), capítulo 6, y el flujo de traducción ⏳ F1-20.
 - ✅ Estructura de las variantes del Acto II decidida por el autor (sorteo oculto, alianza entre tres facciones, huelga que depende del jugador). El detalle escena por escena queda como propuesta en [22](22-acto-ii-variantes.md).

@@ -37,7 +37,7 @@ Los nombres **Altafría** y **Salinas Blancas**, en español, los decidió el au
 
 ### 1.3 Dos propuestas dentro de la estructura 🟡
 
-- **Campamentos sin nombre propio.** Las Cavernas y la Fosa no tienen vivienda y su asentamiento es un campamento. Se usan nombres descriptivos («el campamento de las Cavernas», «el campamento de la Comisión») hasta que el autor elija nombres propios; cambiarlos solo toca textos y datos, no estructura.
+- ✅ **Campamentos con nombre descriptivo.** Las Cavernas y la Fosa no tienen vivienda y su asentamiento es un campamento. Los nombres «el campamento de las Cavernas» y «el campamento de la Comisión» son definitivos (decisión del autor, 2026-10-16).
 - **Horarios por bloque.** Cada edificación declara en qué bloques del día abre (mañana, tarde, noche); el bar de Los Faroleros y el Salón del Farol, solo de noche, como el mercado negro ([03](03-comercio.md)). La tienda del jugador, en cambio, abre solo de mañana y de tarde: **nunca de noche** ✅ ([01](01-core-loop.md)).
 
 ---

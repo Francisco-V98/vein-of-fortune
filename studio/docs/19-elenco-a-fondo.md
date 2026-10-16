@@ -2,7 +2,7 @@
 
 > ⚠️ **Contiene spoilers de toda la historia.** Es material para el equipo, no para el jugador.
 
-Fichas completas del protagonista y los 8 personajes principales de [08](08-historia-y-personaje.md). Las decisiones del autor van marcadas ✅; lo que propongo y falta acordar, 🟡. Los nombres de lugares nuevos o los datos inventados para dar cuerpo a un personaje también son 🟡 hasta que el autor los confirme. Las fechas, las edades de cada hito y la aldea ya están en [21 · Pasado de Valdoria](21-pasado-de-valdoria.md).
+Fichas completas del protagonista, de Anselmo y de los 7 personajes del elenco de [08](08-historia-y-personaje.md). Las decisiones del autor van marcadas ✅ y lo que espera a otra tarea lleva el ID de esa tarea. Los trasfondos y los datos inventados para dar cuerpo a un personaje los confirmó el autor el 2026-10-16. Las líneas de voz de ejemplo son la excepción: son siempre propuesta de estilo y no se marcan una a una. Las fechas, las edades de cada hito y la aldea ya están en [21 · Pasado de Valdoria](21-pasado-de-valdoria.md).
 
 ## Cómo leer una ficha
 
@@ -21,22 +21,24 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | **Conexiones** | Su relación con cada personaje y con la historia |
 | **Secreto y pistas** | Lo que oculta y dónde se deja ver |
 
-## El patrón del libro 🟡
+Las líneas de voz de ejemplo son siempre propuesta de estilo: no se marcan una a una ([27](27-guion-del-acto-i.md), «Cómo leer las marcas»). El texto final de los diálogos lo escriben ⏳ F3-47 (Acto I), ⏳ F4-179 (Acto II), ⏳ F4-180 (Acto III) y ⏳ F4-181 (Acto IV).
+
+## El patrón del libro ✅
 
 **Casi todos se comprometieron por sobrevivir.** Reme traiciona por obligación, Teo firmó un silencio por una pensión, Quiroga se vende, Lucía vende información, Anselmo se quedó callado a cambio de vivir. Nadie en Valdoria es limpio, y por eso la pregunta del jugador es la misma que la del tema: *"No cambias el país, pero cambias tu lugar en él"*. El protagonista es el único que llega sin deudas morales, y la historia es qué hace con las suyas cuando empiece a tenerlas.
 
-## La verdad sobre Anselmo 🟡
+## La verdad sobre Anselmo ✅
 
-**Estado:** ✅ el canon del recuadro, la cronología de [21](21-pasado-de-valdoria.md) y la revelación final; 🟡 solo «18 años» y la convicción del punto 4 de abajo.
+**Estado:** ✅ todo: el canon del recuadro, la cronología de [21](21-pasado-de-valdoria.md), la revelación final, los «18 años» de calibración (20 años desde la expedición menos los 2 desde la detención) y la convicción del punto 4 (decisión del autor, 2026-10-16).
 
 > **Decisión del autor ✅:** Anselmo **está vivo, pero se cree que murió enfermo**. Es **cómplice** de la Comisión del Éter. El protagonista lo descubre **al final del último acto** y queda con ganas de saber qué pasó, dónde está y por qué decidió lo que decidió. Eso deja la puerta abierta a **capítulos o actualizaciones futuras**.
 
-**Cómo encaja** (confirmado por el autor el 2026-10-12, sección 1 del [21](21-pasado-de-valdoria.md), salvo «18 años» y la convicción del punto 4):
+**Cómo encaja** (confirmado por el autor el 2026-10-12 y el 2026-10-16, sección 1 del [21](21-pasado-de-valdoria.md)):
 
 1. Hace veinte años Anselmo, Teo y Aurelio Montenegro, entonces un funcionario de unos 40 años y «joven» solo frente a la cúpula del Ministerio ✅, estuvieron en la primera expedición a La Fosa. La cuadrilla empezó a enfermar. Fechas y edades en [21](21-pasado-de-valdoria.md).
-2. Anselmo lo documentó en una libreta y grabó **ocho cintas**. Calibró durante 18 años 🟡 los límites de exposición, y cada calibración agravó su mal ✅. Hace dos años intentó denunciarlo y la Comisión lo detuvo.
+2. Anselmo lo documentó en una libreta y grabó **ocho cintas**. Calibró durante 18 años ✅ los límites de exposición, y cada calibración agravó su mal ✅. Hace dos años intentó denunciarlo y la Comisión lo detuvo.
 3. Estaba ya enfermo. La Comisión le ofreció un trato: **tratamiento paliativo** (el único que existe), **su silencio y su trabajo** como perito de La Fosa, y que Reme, Teo y su heredero no sufrieran represalias. A cambio, **su muerte oficial**.
-4. Desde entonces vive en secreto, ayudando a la Comisión a calibrar los límites de exposición. Cree que desde dentro salva más vidas que estando muerto 🟡. En la práctica, ayuda a que se siga ocultando.
+4. Desde entonces vive en secreto, ayudando a la Comisión a calibrar los límites de exposición. Cree que desde dentro salva más vidas que estando muerto ✅. En la práctica, ayuda a que se siga ocultando.
 5. Las cintas son lo último que grabó **antes** del trato: su último acto de honestidad.
 
 **La revelación (final del Acto IV, después de la decisión sobre la Aetherita):** el protagonista encuentra un **acta de calibración de la Comisión firmada por Anselmo con fecha de hace pocas semanas** ✅. No hay discurso ni explicación: una línea breve del protagonista (ocho palabras o menos) y una firma que reconoce. La escena es igual en las tres salidas, el último plano es la lámpara, y **Anselmo sigue vivo y secreto**: el acta no cuenta como prueba y Lucía no la publica ✅ ([25](25-finales-y-epilogos.md)).
@@ -49,7 +51,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 - **Riesgo a evitar:** que "cómplice" lo vuelva simplemente malo. Debe ser ambiguo: lo hizo por salvarse, por proteger a los suyos y por una convicción discutible. Que el jugador no sepa si perdonarlo es lo que lo hace valer.
 - **Gancho de la herencia ✅:** «por qué te dejaron heredar» **no se escribe ahora**. Queda como hilo para una segunda parte, sin sembrar nada en el Acto I ni tocar F0-23 (decisión del autor, 2026-10-12).
 
-## Pistas sembradas a lo largo del juego 🟡
+## Pistas sembradas a lo largo del juego ✅
 
 | Acto | Pista | Quién la deja |
 |---|---|---|
@@ -61,6 +63,8 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | III | El abono anónimo sigue llegando y Teo jura que no es él | Reme y Teo |
 | IV | La octava cinta termina cortada; falta el final | Cintas |
 | IV (final) | El acta de calibración firmada por Anselmo | Archivo de la Comisión |
+
+La tabla está confirmada (2026-10-16), incluidas las dos pistas del Acto III que al principio eran propuesta: Lucía oyó lo de las cartas «hace pocas semanas» y Teo dice la verdad cuando jura que él no paga el abono ([21](21-pasado-de-valdoria.md)).
 
 ## Protagonista
 
@@ -141,7 +145,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 | **Rol** | Acreedora del protagonista y de Anselmo |
 | **Aparece** | Acto I, Villa Brasa |
 
-**Trasfondo.** Hija de mineras y viuda de un capataz. Montó su casa de préstamos hace unos 25 años ✅ con dinero que ella misma pidió a una facción mayor, y desde entonces **su propia deuda está en manos de otros**. Prestó a Anselmo, hace unos 21 años ✅ y antes de la expedición, para que pagara equipos de ensayo en La Fosa. Lo quería como a un hermano menor 🟡.
+**Trasfondo.** Hija de mineras y viuda de un capataz. Montó su casa de préstamos hace unos 25 años ✅ con dinero que ella misma pidió a una facción mayor, y desde entonces **su propia deuda está en manos de otros**. Prestó a Anselmo, hace unos 21 años ✅ y antes de la expedición, para que pagara equipos de ensayo en La Fosa. Lo quería como a un hermano menor ✅.
 
 **Personalidad.** Cálida, generosa con el que está al lado y despiadada con la cuenta. Sabe que su amabilidad es parte de su negocio y también que, a veces, es de verdad. Su contradicción: **cuida a quien debe y a la vez es quien lo cobra**.
 
@@ -154,7 +158,7 @@ Todas siguen el mismo orden, para poder comparar y para que quien escriba diálo
 **Emociones.** Ternura contenida; vergüenza cuando traiciona; alivio cuando por fin puede elegir. Se quiebra cuando debe presionar a alguien que aprecia.
 
 **Voz.** Cálida, con diminutivos y consejos que son amenazas. Dice "criatura" para no marcar género.
-- "Con calma, criatura. Yo en tu lugar pagaría esta semana." 🟡
+- "Con calma, criatura. Yo en tu lugar pagaría esta semana."
 - "No es que me duela cobrarte. Es que me duele que no sea otro."
 
 **Acciones en el juego.** Gestiona la **deuda**: cuotas, plazos e intereses. Ofrece tiempo y crédito, y en el Acto II **ejecuta la orden de su facción** (la que cambia por partida) contra el protagonista. Al final, es fuente de información y apoyo.
@@ -183,7 +187,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 | **Rol** | Minero veterano, amigo de Anselmo, mentor del tutorial |
 | **Aparece** | Acto I, la mina del Hollín |
 
-**Trasfondo 🟡.** Minero desde los 14 años. Estuvo en La Fosa con Anselmo solo el primer mes (lo evacuaron con un brazo roto) ✅ y vio enfermar a compañeros. Firmó el silencio a cambio de una **pensión** para su esposa enferma, que luego murió. Hoy cobra esa pensión y la odia.
+**Trasfondo ✅.** Minero desde los 14 años. Estuvo en La Fosa con Anselmo solo el primer mes (lo evacuaron con un brazo roto) ✅ y vio enfermar a compañeros. Firmó el silencio a cambio de una **pensión** para su esposa enferma, que luego murió. Hoy cobra esa pensión y la odia.
 
 **Personalidad.** Seco, paciente, honrado en lo pequeño y cobarde en lo grande, y lo sabe. Su contradicción: **enseña a otros a no tener miedo, pero él lo tuvo una vez y no se lo perdona**.
 
@@ -221,7 +225,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 | **Rol** | Inspector de licencias del Ministerio en Villa Brasa |
 | **Aparece** | Acto I |
 
-**Trasfondo 🟡.** Hijo de burócratas pobres. Aprendió pronto que el cargo no paga y que el sistema vive de lo que cada uno cobra. Sobornó para ascender y ahora es él quien cobra. Procesó el certificado de defunción de Anselmo.
+**Trasfondo ✅.** Hijo de burócratas pobres. Aprendió pronto que el cargo no paga y que el sistema vive de lo que cada uno cobra. Sobornó para ascender y ahora es él quien cobra. Procesó el certificado de defunción de Anselmo.
 
 **Personalidad.** Formal, ordenado y cordial incluso cuando extorsiona. No es cruel, es **eficiente**. Su contradicción: **tiene un código** (nunca cobra dos veces por lo mismo) y lo cumple.
 
@@ -261,7 +265,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 | **Rol** | Periodista del Teletipo Meridiano; fuente de rumores |
 | **Aparece** | Acto I |
 
-**Trasfondo 🟡.** Hija de una operadora de teletipo. Creció entre cables, rumores y noticias a medias. Quiere pasar del Teletipo, rápido pero poco serio, a un medio respetado, y para eso necesita una gran historia.
+**Trasfondo ✅.** Hija de una operadora de teletipo. Creció entre cables, rumores y noticias a medias. Quiere pasar del Teletipo, rápido pero poco serio, a un medio respetado, y para eso necesita una gran historia.
 
 **Personalidad.** Rápida, preguntona, simpática y calculadora. Ni miente ni dice toda la verdad. Su contradicción: **quiere ser creíble en un oficio donde la rapidez vale más que la verdad**.
 
@@ -301,7 +305,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 | **Rol** | Heredero del Consorcio Arvel; rival comerciante |
 | **Aparece** | Acto II |
 
-**Trasfondo 🟡.** Hijo del patriarca del Consorcio. Estudió en las mejores escuelas, recibió todo y siente que no ha ganado nada. Compite con el protagonista no por necesidad, sino por **probarse**.
+**Trasfondo ✅.** Hijo del patriarca del Consorcio. Estudió en las mejores escuelas, recibió todo y siente que no ha ganado nada. Compite con el protagonista no por necesidad, sino por **probarse**.
 
 **Personalidad.** Seguro, simpático, encantador y algo cruel cuando se siente amenazado. Su contradicción: **cree que es meritocrático y vive de su apellido**.
 
@@ -338,7 +342,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 | **Rol** | Jefa de Los Faroleros |
 | **Aparece** | Acto II |
 
-**Trasfondo 🟡.** Hija y nieta de faroleros. De niña encendía los faroles del puerto. Vio cómo el Ministerio dejaba a oscuras los barrios que no pagaban tras la electrificación (hace 17 años ✅) y, a los 30 ✅, organizó a los suyos para **cobrar la luz** antes que el Estado ([21](21-pasado-de-valdoria.md)). Hoy protege y extorsiona con la misma mano.
+**Trasfondo ✅.** Hija y nieta de faroleros. De niña encendía los faroles del puerto. Vio cómo el Ministerio dejaba a oscuras los barrios que no pagaban tras la electrificación (hace 17 años ✅) y, a los 30 ✅, organizó a los suyos para **cobrar la luz** antes que el Estado ([21](21-pasado-de-valdoria.md)). Hoy protege y extorsiona con la misma mano.
 
 **Personalidad.** Tranquila, de pocas palabras y mirada larga. Pragmática y capaz de ternura con los suyos. Su contradicción: **protege al barrio cobrándole**.
 
@@ -375,7 +379,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 | **Rol** | Ministro de Recursos; rostro del Estado; **enemigo claro** ✅ |
 | **Aparece** | Acto III |
 
-**Trasfondo 🟡.** De joven vivió los disturbios que casi destruyen la República. Entró al Ministerio decidido a que nunca volviera a pasar. Fue compañero de Anselmo en la Escuela de Minas y su superior en la primera expedición a La Fosa. Ordenó el trato.
+**Trasfondo ✅.** De joven vivió los disturbios que casi destruyen la República. Entró al Ministerio decidido a que nunca volviera a pasar. Fue compañero de Anselmo en la Escuela de Minas y su superior en la primera expedición a La Fosa. Ordenó el trato.
 
 **Personalidad.** **Duro, severo e inflexible** ✅. No es cruel por gusto: lo es por convicción. Rechaza toda alternativa porque aceptar una grieta en la mentira le parece peor que el costo de mantenerla. Su contradicción: **destruye a quienes dice proteger**.
 
@@ -389,7 +393,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 
 **Voz.** Seca, imperativa, sin humor. No alza la voz.
 - "No le pregunto qué opina. Le informo qué va a hacer."
-- "Valdoria se sostiene con cuotas, no con opiniones." 🟡
+- "Valdoria se sostiene con cuotas, no con opiniones."
 
 **Acciones en el juego.** Controla **licencias, cuotas y contratos oficiales**, cierra zonas y aplica **inspecciones y redadas** si el jugador se pasa. En el Acto IV es el obstáculo principal.
 
@@ -402,7 +406,7 @@ Cómo cambia su papel en el Acto II según la facción de Reme: [22](22-acto-ii-
 
 **Conexiones.** Con **Anselmo**, amistad rota; con **Esteban**, protegido; con **Casilda**, enemigos históricos; con **Quiroga**, un subordinado prescindible; con **el protagonista**, la prueba final.
 
-## Red de relaciones 🟡
+## Red de relaciones ✅
 
 ```
 Anselmo ── amistad rota ── Ministro Montenegro ── protege ── Esteban Arvel
@@ -415,6 +419,6 @@ Anselmo ── amistad rota ── Ministro Montenegro ── protege ── Est
 ## Pendiente
 
 - ✅ Aldea del protagonista: **Vega Mansa**, sin región propia en el mapa; detalles de su familia en [21](21-pasado-de-valdoria.md).
-- ✅ Esteban tiene un medidor propio entre los cuatro del árbol, personal y no el del Consorcio; 🟡 se refleja en el mercado con un 2 a 4 % sobre lo que compra ([23](23-arbol-de-decisiones.md)).
+- ✅ Esteban tiene un medidor propio entre los cuatro del árbol, personal y no el del Consorcio. Se refleja en el mercado con un efecto pequeño sobre el mineral que compra, del orden de unos pocos puntos porcentuales ([23](23-arbol-de-decisiones.md)); la cifra final ⏳ F4-43.
 - ⏳ F4-172 Fichas breves de los personajes secundarios con nombre (clientes y empleados). Los figurantes por tipo, como el capataz, ya tienen hoja en F0-64.
-- ⏳ F4-190 Diseño visual de cada ficha para los retratos finales.
+- ⏳ F4-190 Retratos definitivos (PixelLab) de Esteban, Casilda, el Ministro y Anselmo; ⏳ F4-229 pixel art definitivo de Reme, Teo, Quiroga, Lucía y los dos protagonistas. Mientras tanto, los retratos y sprites provisionales son ⏳ F3-19.
