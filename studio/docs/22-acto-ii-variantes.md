@@ -4,7 +4,7 @@
 
 Qué cambia en el Acto II según la facción de doña Reme: el Consorcio Arvel, Los Faroleros o el Ministerio. Parte del canon de [08](08-historia-y-personaje.md), los hitos de [17](17-mapa-de-historia.md), la voz de [18](18-biblia-narrativa.md), las fichas de [19](19-elenco-a-fondo.md) y las razones de Reme de [21](21-pasado-de-valdoria.md) (sección 6).
 
-**Cómo leer las marcas.** La palomita verde es lo que decidió el autor o lo que ya está confirmado en otro documento. El círculo amarillo es propuesta de este documento. El reloj de arena lleva siempre el ID de la tarea de la que depende. Una sección lleva la palomita en el título solo si todo lo que tiene debajo está confirmado; si mezcla o es propuesta, lleva el círculo y una nota «Estado».
+**Cómo leer las marcas.** La palomita verde es lo que decidió el autor o lo que ya está confirmado en otro documento. Todo este documento quedó confirmado por el autor en la pasada de cierre F0-80 (2026-10-16): no queda ninguna propuesta ni pregunta abierta. Las líneas de ejemplo son guía de voz y no los textos finales. El reloj de arena lleva siempre el ID de la tarea existente de la que depende un detalle que nada anterior necesita.
 
 ## Resumen en cinco líneas
 
@@ -34,13 +34,13 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 
 ---
 
-## 2 · Las seis escenas ancla 🟡
+## 2 · Las seis escenas ancla ✅
 
-**Estado:** ✅ los disparadores son **eventos tuyos y no fechas**, van encadenados y los piden A2, A3, A4 y A5 como indica [24](24-umbrales-de-acto.md) (decisión del autor, 2026-10-12); 🟡 las escenas y su contenido, propuesta del narrador a partir de la sección 1
+**Estado:** los disparadores son **eventos tuyos y no fechas**, van encadenados y los piden A2, A3, A4 y A5 como indica [24](24-umbrales-de-acto.md) (decisión del autor, 2026-10-12). Las seis escenas, su contenido y su capa por variante los confirmó el autor el 2026-10-16 (F0-80).
 
 | # | Escena | Tipo | Disparador | Salida |
 |---|---|---|---|---|
-| A1 | **La política manda** | Común, con capa | Acto I cerrado: puesto reabierto, primera cuota atendida (vence el día 7) y primer contacto con los empleados ✅. El decreto de A1 es lo que abre las zonas del II 🟡 ⏳ F4-128 | Contacto respondido (aceptas, rechazas o pospones). Queda en cola la orden de A2 |
+| A1 | **La política manda** | Común, con capa | Acto I cerrado: puesto reabierto, primera cuota atendida (vence el día 7) y primer contacto con los empleados ✅. El decreto de A1 es lo que abre las zonas del II ✅ (su guion ⏳ F4-128) | Contacto respondido (aceptas, rechazas o pospones). Queda en cola la orden de A2 |
 | A2 | **La orden de Reme** | **Única** | A1 resuelta y tu primera cuota atendida después de A1 (pagada o prorrogada, según la regla de tu dificultad: [27](27-guion-del-acto-i.md), sección 11; montos en [28](28-numeros-base-de-la-economia.md)) ✅ | Orden aceptada, negociada o rechazada. La facción queda revelada y anotada en el diario |
 | A3 | **El primer conflicto** | **Única** | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | Conflicto resuelto, con un costo. La facción fija su postura ante la huelga |
 | A4 | **La primera huelga** | Común, con capa | A3 resuelta, aviso en las noticias y una acción tuya, sin plazo en días ✅ | Bando elegido, precio subido, apagón vivido, mercado negro abierto (primer contacto con Casilda, si aún no lo tenías), Teo y la Unión movidos |
@@ -53,7 +53,7 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 - **A1 común.** Los tres medios cuentan el mismo decreto, que abre las zonas del Acto II con la firma de Montenegro, y cada uno lo lee con su tono. La capa es el contacto de la facción.
 - **Una sombra por escena, como máximo** ([18](18-biblia-narrativa.md), 1.4): Teo y La Fosa en A4, el certificado de Quiroga en A5 y el sobre sin remitente (el abono) en A6.
 
-### Escenas opcionales 🟡
+### Escenas opcionales ✅
 
 Se activan por evento tuyo, no por calendario, se pueden saltar y no puntúan para ninguna puerta ✅ ([24](24-umbrales-de-acto.md)). Si el jugador no conoció antes a Esteban, A5 lo presenta; Casilda ya apareció en A2 o en A4.
 
@@ -66,24 +66,24 @@ Se activan por evento tuyo, no por calendario, se pueden saltar y no puntúan pa
 
 ---
 
-## 3 · Las tres variantes, escena por escena 🟡
+## 3 · Las tres variantes, escena por escena ✅
 
-**Estado:** propuesta. Las líneas de ejemplo van aparte y respetan el límite de 100 caracteres por caja de [18](18-biblia-narrativa.md) (1.9).
+**Estado:** confirmado por el autor, escena por escena (2026-10-16, F0-80). Las líneas de ejemplo van aparte y respetan el límite de 100 caracteres por caja de [18](18-biblia-narrativa.md) (1.9).
 
 | Escena | Consorcio Arvel | Ministerio | Los Faroleros |
 |---|---|---|---|
 | **A1** · contacto (capa) | **Esteban** te cita y ofrece «comprar tu deuda». No sabe que el Consorcio ya está en la cadena de Reme | **Quiroga** te cita para un «trámite»: tu licencia necesita revisión | Un **cobrador farolero** te espera a la salida del puesto: la luz «se paga» |
 | **A2** · la orden (única) | Reme pide **vender con exclusividad** al Consorcio. La orden la trae un **ejecutivo del Consorcio**, no Esteban | Reme pide **entregar tus cuentas** y **no vender a Los Faroleros** (qué cuenta como vender a Los Faroleros antes del mercado negro ⏳ F4-131) | Reme pide **pagar la «cuota extra de luz»** (960 esquirlas, una sola vez) y **abrir el contacto del mercado negro** con Casilda |
 | **A3** · primer conflicto (única) | **Contratos de hierro y cobre** en Sierra Alta: Esteban te quita contratos mientras el Consorcio ofrece prima a cambio de la exclusividad | **Licencias e inspecciones** en Villa Brasa: revisión de tu licencia, el «trámite» de Quiroga y un rumor de cuotas ⏳ F4-74 | **Cobros en los Salares**: un cobrador y matones cobran la luz en cada viaje ⏳ F4-86 |
-| **A4** · huelga (capa) | El Consorcio quiere **romper la huelga** con guardias de empresa y se beneficia con su stock. En el apagón, Casilda se presenta en persona de noche: **primer contacto con el mercado negro** 🟡 | El Ministerio declara la huelga irregular y **revisa licencias**; luego corta la luz. En el apagón, Casilda se presenta en persona de noche: **primer contacto con el mercado negro** 🟡 | Casilda ofrece luz a los huelguistas y sus informantes anotan quién apoya. El mercado negro ya está abierto desde A2 |
+| **A4** · huelga (capa) | El Consorcio quiere **romper la huelga** con guardias de empresa y se beneficia con su stock. En el apagón, Casilda se presenta en persona de noche: **primer contacto con el mercado negro** ✅ | El Ministerio declara la huelga irregular y **revisa licencias**; luego corta la luz. En el apagón, Casilda se presenta en persona de noche: **primer contacto con el mercado negro** ✅ | Casilda ofrece luz a los huelguistas y sus informantes anotan quién apoya. El mercado negro ya está abierto desde A2 |
 | **A5** · ofertas (capa) | La oferta del Consorcio se presenta primero y trae la **compra de tu deuda** con una cláusula sobre la de Reme | La oferta del Ministerio se presenta primero, por **carta con sello y firma de Montenegro** que entrega Quiroga | La oferta de Casilda se presenta primero: **protección** en persona y una cláusula sobre la deuda de Reme |
 | **A6** · cierre (única) | Reme calla el abono: investigarlo lleva al **fondo reservado**. Si eliges otra facción, el Consorcio le retira el crédito | Reme calla el abono: es la **misma cadena**. Si eliges otra, el fondo de crédito le retira la línea | Reme calla el abono: los **informantes** vieron el giro. Si eliges otra, la caja común le cobra su parte |
 
 La razón de cada silencio es la de la tabla de [21](21-pasado-de-valdoria.md) (sección 6) y **Reme no la dice nunca** en el Acto II: se oye en cómo calla.
 
-### Líneas de ejemplo 🟡
+### Líneas de ejemplo
 
-Reme tutea y dice «criatura»; Quiroga trata de usted ([18](18-biblia-narrativa.md), 1.2). Entre paréntesis, el apelativo con variante de género.
+Son ejemplos de voz, no los textos finales: los escribe ⏳ F4-179. Reme tutea y dice «criatura»; Quiroga trata de usted ([18](18-biblia-narrativa.md), 1.2). Entre paréntesis, el apelativo con variante de género.
 
 | Escena | Variante | Línea |
 |---|---|---|
@@ -118,9 +118,9 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 
 ---
 
-## 5 · La orden que duele igual 🟡
+## 5 · La orden que duele igual ✅
 
-**Estado:** propuesta. Lo que cambia entre variantes es **qué** se pide; el **cómo** se pide es idéntico. Así la traición pesa lo mismo en las tres.
+**Estado:** confirmado por el autor (2026-10-16, F0-80): los seis gestos. Lo que cambia entre variantes es **qué** se pide; el **cómo** se pide es idéntico. Así la traición pesa lo mismo en las tres.
 
 | Gesto | Qué pasa en A2, en las tres |
 |---|---|
@@ -136,9 +136,9 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 
 ---
 
-## 6 · El papel de cada personaje 🟡
+## 6 · El papel de cada personaje ✅
 
-**Estado:** propuesta. La columna «En las tres» conserva la ficha y las pistas de [19](19-elenco-a-fondo.md); las otras tres columnas son la capa.
+**Estado:** confirmado por el autor (2026-10-16, F0-80). La columna «En las tres» conserva la ficha y las pistas de [19](19-elenco-a-fondo.md); las otras tres columnas son la capa.
 
 | Personaje | En las tres | Consorcio Arvel | Ministerio | Los Faroleros |
 |---|---|---|---|---|
@@ -148,7 +148,7 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 | **Lucía** | Vende información a más de una parte | También a Esteban | También a Quiroga | También a los informantes de Casilda |
 | **Esteban** | Rival que quita contratos. No sabe qué financia el Consorcio. Dice «amigo» | Abre A1 y es el rostro de A3, pero **no da la orden** | Rival de fondo (O2) y oferta de A5 | Rival de fondo (O2) y oferta de A5 |
 | **Casilda** | Ofrece protección, vende luz en los apagones y abre el mercado negro | Aparece en el apagón de A4, donde abre el mercado negro, y en A5 | Aparece en el apagón de A4, donde abre el mercado negro, y en A5 | Actúa desde A1 por su cobrador; aparece en persona al final de A3 |
-| **Montenegro** | Ausente. Solo decretos y firma 🟡: el de zonas (A1), el corte de luz (A4) y la carta de A5. Sin retrato ni líneas | — | Firma además la revisión de licencias (A3) | — |
+| **Montenegro** | Ausente. Solo decretos y firma ✅: el de zonas (A1), el corte de luz (A4) y la carta de A5. Sin retrato ni líneas | — | Firma además la revisión de licencias (A3) | — |
 | **Anselmo** | Solo rastro: el abono, que llega en un sobre sin remitente (A6) | — | — | — |
 
 - Esteban **no** conoce el fondo reservado: un ejecutivo del Consorcio, sin nombre, es quien habla con Reme.
@@ -156,9 +156,9 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 
 ---
 
-## 7 · La primera huelga: depende de ti 🟡
+## 7 · La primera huelga: depende de ti ✅
 
-**Estado:** ✅ la huelga ocurre en las tres partidas (el precio sube en todas) y tú decides tu bando: apoyar, abstenerte o romper, y romper baja mucho a Teo y a la Unión (decisión del autor, 2026-10-12); 🟡 las consecuencias pequeñas por variante.
+**Estado:** la huelga ocurre en las tres partidas (el precio sube en todas) y tú decides tu bando: apoyar, abstenerte o romper, y romper baja mucho a Teo y a la Unión (decisión del autor, 2026-10-12). Las consecuencias pequeñas por variante las confirmó el autor el 2026-10-16 (F0-80).
 
 Lo común está en la sección 4. Además, mientras dura, Cañón Ferroso se cierra, como permite [07](07-sociedad-y-eventos.md).
 
@@ -178,7 +178,7 @@ Lo común está en la sección 4. Además, mientras dura, Cañón Ferroso se cie
 | Ministerio | Una inspección extra a tu licencia (vigilancia sube un poco) | Quiroga «olvida» una multa pendiente |
 | Los Faroleros | Casilda te presta una noche de luz en el apagón | Casilda te cobra un cargo extra de luz |
 
-Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación ⏳ F4-61
+Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación ⏳ F4-61.
 
 **Titulares de ejemplo.** Un mismo suceso, tres medios y tres tonos ([18](18-biblia-narrativa.md), 1.10). El Heraldo siempre lleva un «pero»; el Teletipo remata con SIN CONFIRMAR.
 
@@ -192,9 +192,9 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 
 ---
 
-## 8 · Capa de mercado: un precio y el mercado negro 🟡
+## 8 · Capa de mercado: un precio y el mercado negro ✅
 
-**Estado:** ✅ la vigilancia es un indicador global (decisión del autor, 2026-10-12); 🟡 todo lo demás, propuesta. Solo usa lo que ya existe: la subida del precio por huelga ([07](07-sociedad-y-eventos.md)), la prima del mercado negro y el indicador de vigilancia de 0 a 100 ([03](03-comercio.md)). No se inventa ninguna mecánica nueva.
+**Estado:** la vigilancia es un indicador global (decisión del autor, 2026-10-12) y la capa de mercado la confirmó el autor el 2026-10-16 (F0-80); las cifras de los modificadores del mercado negro ⏳ F4-73. Solo usa lo que ya existe: la subida del precio por huelga ([07](07-sociedad-y-eventos.md)), la prima del mercado negro y el indicador de vigilancia de 0 a 100 ([03](03-comercio.md)). No se inventa ninguna mecánica nueva.
 
 **El precio.** El mineral de la zona cerrada sube en las tres (hierro, en Cañón Ferroso). La capa añade un **segundo mineral** que se mueve de **3 a 5 puntos** de mercado sobre su tendencia del día (un punto es el 1 % del precio base del mineral; [28](28-numeros-base-de-la-economia.md)) ✅
 
@@ -204,7 +204,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 | Ministerio | Carbón | Sensible a huelgas e invierno | Quiroga y las tasas del Ministerio |
 | Los Faroleros | Salitre | Sensible a Los Faroleros y a los puertos | Casilda, con la luz del apagón |
 
-**El mercado negro** se abre en las tres, y su primer contacto ocurre siempre en una escena obligatoria 🟡. En la variante de Los Faroleros lo abre la orden de A2, antes de la huelga. En las del Consorcio y del Ministerio lo abre Casilda en persona durante el apagón de A4. O3 queda como camino extra y no es el primer contacto. Los dos lugares del mercado negro son el Bar del Farol de Salinas Blancas y la visita nocturna de Casilda a la tienda; esa visita no es el modo tienda ✅ ([03](03-comercio.md)). Hasta que eliges alianza, cada variante lo toca con un modificador pequeño; al elegir alianza se sustituye por el de la alianza ⏳ F4-133
+**El mercado negro** se abre en las tres, y su primer contacto ocurre siempre en una escena obligatoria ✅ (decisión del autor, 2026-10-16). En la variante de Los Faroleros lo abre la orden de A2, antes de la huelga. En las del Consorcio y del Ministerio lo abre Casilda en persona durante el apagón de A4. O3 queda como camino extra y no es el primer contacto. Los dos lugares del mercado negro son el Bar del Farol de Salinas Blancas y la visita nocturna de Casilda a la tienda; esa visita no es el modo tienda ✅ ([03](03-comercio.md)). Hasta que eliges alianza, cada variante lo toca con un modificador pequeño; al elegir alianza se sustituye por el de la alianza ⏳ F4-133.
 
 | Variante | Prima del mercado negro | Ritmo de subida de la vigilancia por operación |
 |---|---|---|
@@ -212,7 +212,7 @@ Abstenerte no activa ninguna de las seis consecuencias. Las cifras de relación 
 | Ministerio | Sin cambio | La vigilancia sube un 20 % más rápido: el Ministerio te mira más |
 | Los Faroleros | +5 puntos en salitre | La vigilancia sube un 20 % más despacio: Casilda alivia las inspecciones |
 
-Los modificadores son 🟡 y no cambian los niveles del indicador (Tranquilo, Observado, Vigilado y Bajo investigación; [03](03-comercio.md)). La vigilancia es un indicador global de 0 a 100: sus cambios se escriben «vigilancia +10» o «vigilancia −15», sin la palabra «puntos», y el «%» solo describe el ritmo de subida (×1,2 si sube un 20 % más rápido, ×0,8 si más despacio). Precios y riesgos ⏳ F4-73
+Los modificadores de la tabla son orientativos (sus cifras finales ⏳ F4-73) y no cambian los niveles del indicador (Tranquilo, Observado, Vigilado y Bajo investigación; [03](03-comercio.md)). La vigilancia es un indicador global de 0 a 100: sus cambios se escriben «vigilancia +10» o «vigilancia −15», sin la palabra «puntos», y el «%» solo describe el ritmo de subida (×1,2 si sube un 20 % más rápido, ×0,8 si más despacio). Precios y riesgos ⏳ F4-73
 
 **Ideas sin mecánica todavía.** Se anotan para no perderlas; ninguna es necesaria para el Acto II:
 
@@ -224,11 +224,11 @@ Los modificadores son 🟡 y no cambian los niveles del indicador (Tranquilo, Ob
 
 ---
 
-## 9 · La alianza final y el costo para Reme 🟡
+## 9 · La alianza final y el costo para Reme ✅
 
-**Estado:** el reparto de facciones, la regla de Reme, el costo de cada caso y que se muestre antes de elegir son decisión del autor (2026-10-12); lo que ofrece cada facción es propuesta. Los efectos de cada alianza ⏳ F4-133
+**Estado:** el reparto de facciones, la regla de Reme, el costo de cada caso y que se muestre antes de elegir son decisión del autor (2026-10-12); lo que ofrece cada facción lo confirmó el autor el 2026-10-16 (F0-80). Los efectos de cada alianza ⏳ F4-133.
 
-**Las tres ofertas.** Las tres llegan siempre, en A5 🟡. La Unión y Teo no se ofrecen como alianza: son un hilo ✅ (sección 1)
+**Las tres ofertas.** Las tres llegan siempre, en A5 ✅. La Unión y Teo no se ofrecen como alianza: son un hilo ✅ (sección 1)
 
 | Facción | Quién la trae | Forma de la oferta |
 |---|---|---|
@@ -247,15 +247,15 @@ Las tres facciones aliables no tienen medidor propio: se miden por la alianza qu
 | Los Faroleros | La caja común perdona la parte de Reme. Tu deuda de luz (3 600 esquirlas, sin interés, que crece un 2 % al mes si no la tocas) se suma aparte de tu deuda y no entra en la vía de deuda | La caja común le cobra su parte y Casilda cobra la luz de su casa |
 
 - **Aviso antes de elegir ✅.** A5 muestra el costo para Reme de cada alianza antes de que elijas (decisión del autor, 2026-10-12): eliges sabiendo lo que le cuesta a ella. A6 muestra cómo lo paga o cómo respira.
-- **Cómo suena Reme en A6.** Si te alías con su facción: «Respiro, criatura. Pero ahora estamos en la misma cadena.» Si te alías con otra: «Era tu decisión, criatura. Lo mío lo pago yo.» Las dos líneas son propuesta 🟡.
-- **Sin reproche.** Propuesta 🟡: Reme no te reprocha nada en A6. Lo que es canon ✅ es que en el Acto IV será tu mayor aliada.
+- **Cómo suena Reme en A6.** Si te alías con su facción: «Respiro, criatura. Pero ahora estamos en la misma cadena.» Si te alías con otra: «Era tu decisión, criatura. Lo mío lo pago yo.» Las dos líneas son ejemplos de voz, no textos finales ⏳ F4-179.
+- **Sin reproche ✅** ([25](25-finales-y-epilogos.md), sección 1): Reme no te reprocha nada en A6 y en el Acto IV será tu mayor aliada ✅.
 - En el Acto III queda **distante pero atenta**, sin atreverse a ayudar abiertamente ✅ ([19](19-elenco-a-fondo.md)).
 
 ---
 
-## 10 · El sorteo y las pistas del Acto I 🟡
+## 10 · El sorteo y las pistas del Acto I ✅
 
-**Estado:** que la variante se sortee al empezar y quede oculta, y que el Acto I deje una pista distinta, son decisión del autor (sección 1). Las probabilidades, dónde se guarda y las tres pistas concretas son propuesta.
+**Estado:** que la variante se sortee al empezar y quede oculta, y que el Acto I deje una pista distinta, son decisión del autor (sección 1). El sorteo uniforme de una entre tres y las tres pistas concretas los confirmó el autor el 2026-10-16 (F0-80).
 
 - **Sorteo.** Una de tres, con la misma probabilidad, con la semilla de la partida. Se sortea y se guarda en el estado de la partida ⏳ F2-01, para que el Acto I (que siembra la pista) no espere a la variación del mundo ⏳ F4-168. No se ve ni se cambia al recargar. Una partida nueva (también tras morir en hardcore) sortea otra vez.
 - **Para el equipo.** La variante se muestra en el overlay de depuración ⏳ F1-22 y se puede forzar desde la consola ⏳ F1-23.
@@ -270,13 +270,13 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 
 ---
 
-## 11 · El cierre del acto 🟡
+## 11 · El cierre del acto ✅
 
-**Estado:** el hito y la actitud de Reme en el Acto III y el IV son decisión del autor; las pruebas por variante son una ampliación de canon propuesta.
+**Estado:** el hito y la actitud de Reme en el Acto III y el IV son decisión del autor (2026-10-12); las tres pruebas extra por variante las confirmó el autor el 2026-10-16 (F0-80).
 
 - El Acto II se cierra al elegir alianza ✅. Lo lleva la escena A5 ✅, con los umbrales de [24](24-umbrales-de-acto.md).
 - **Reme.** Traiciona por obligación en A2 ✅, queda distante pero atenta en el Acto III ✅ y es tu mayor aliada en el IV ✅.
-- **Las pruebas del Acto IV.** Los comprobantes del abono son comunes ([19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md)) y no cambian. Propuesta de ampliación, sin tocar la sección 6 de [21](21-pasado-de-valdoria.md): además entrega una prueba propia de su variante (reparto en [23](23-arbol-de-decisiones.md), sección 8). Su epílogo son las piezas RE-01 a RE-03 de [25](25-finales-y-epilogos.md), con la facción rellenada desde la variante oculta 🟡
+- **Las pruebas del Acto IV.** Los comprobantes del abono son comunes ([19](19-elenco-a-fondo.md), [21](21-pasado-de-valdoria.md)) y no cambian. Ampliación de canon confirmada, sin tocar la sección 6 de [21](21-pasado-de-valdoria.md): además entrega una prueba propia de su variante (reparto en [23](23-arbol-de-decisiones.md), sección 8). Su epílogo son las piezas RE-01 a RE-03 de [25](25-finales-y-epilogos.md), con la facción rellenada desde la variante oculta ✅ (decisión del autor, 2026-10-16)
 
 | Variante | Prueba extra en el Acto IV | Por qué la tiene Reme |
 |---|---|---|
@@ -286,9 +286,9 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 
 ---
 
-## 12 · Coste de producción 🟡
+## 12 · Coste de producción
 
-**Estado:** estimación del narrador para F4-128, F4-179 y las traducciones. Una caja de diálogo es de unas 15 palabras (100 caracteres).
+**Estado:** estimación del narrador para F4-128, F4-179 y las traducciones, que se afina al empezar F4-128. Una caja de diálogo es de unas 15 palabras (100 caracteres).
 
 | Elemento | Cantidad | Textos aprox. | Tarea |
 |---|---|---|---|
@@ -304,14 +304,14 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 - **Traducciones.** El inglés suma el mismo número de textos. El Acto I tiene su tarea (F3-30), pero la traducción del Acto II va con la de los Actos III y IV y los epílogos ⏳ F4-211; el flujo y el glosario son ⏳ F1-20
 - **Arte.** El Acto II ya tiene sus dos retratos (Esteban y Casilda), sin nuevos retratos. Las tres pistas del Acto I son props pequeños ⏳ F3-16
 - **Pruebas.** Hay 81 caminos (3 variantes × 3 respuestas a la orden × 3 bandos en la huelga × 3 alianzas). Se recorren forzando la variante desde la consola ⏳ F1-23
-- **Datos de estado.** Cuatro valores de tres opciones cada uno: variante, respuesta a la orden, bando de la huelga y alianza ⏳ F2-01. La variante se guarda además con un nombre estable (`e-variante-reme`) para releer el epílogo 🟡 ([25](25-finales-y-epilogos.md), sección 8)
+- **Datos de estado.** Cuatro valores de tres opciones cada uno: variante, respuesta a la orden, bando de la huelga y alianza ⏳ F2-01. La variante se guarda además con un nombre estable (`e-variante-reme`) para releer el epílogo ✅ ([25](25-finales-y-epilogos.md), sección 8)
 
 ---
 
 ## Pendiente
 
-- ✅ Las ramas de A2, A4 y A5 están en [23](23-arbol-de-decisiones.md). 🟡 Las pruebas distintas del Acto IV y el acto de cada cinta, también ahí.
-- 🟡 Epílogo de Reme y de cada facción según la alianza: propuesto en [25](25-finales-y-epilogos.md) (RE-01 a RE-03 y FC-01 a FC-06). Que Reme sea siempre tu aliada es ✅; las piezas del epílogo, 🟡.
+- ✅ Las ramas de A2, A4 y A5 están en [23](23-arbol-de-decisiones.md). Las pruebas distintas del Acto IV y el acto de cada cinta, también ahí ✅.
+- ✅ Epílogo de Reme y de cada facción según la alianza: en [25](25-finales-y-epilogos.md) (RE-01 a RE-03 y FC-01 a FC-06). Que Reme sea siempre tu aliada y las piezas del epílogo están confirmados; sus textos finales ⏳ F4-212.
 - ✅ Umbrales de A1 a A6 y de las escenas opcionales: resueltos en [24](24-umbrales-de-acto.md). El evaluador ⏳ F4-127
 - Las tres pistas del Acto I y su lugar en los días del tutorial están en [27](27-guion-del-acto-i.md), sección 13; sus props ⏳ F3-16.
 - ✅ Cifras de la cuota extra de luz, del adelanto de la cuota y de los modificadores de precio y de vigilancia: en la sección 7 y en la sección 8 de este documento, con las escalas de [28](28-numeros-base-de-la-economia.md).
@@ -319,7 +319,7 @@ La pista nunca nombra a la facción, se ve sin buscarla y tiene una lectura inoc
 - ⏳ F4-179 Textos del Acto II en español.
 - ⏳ F4-213 Licencias (sello, revisión y ampliación), ⏳ F4-214 rumores que se compran y se cuentan a Lucía y ⏳ F4-215 exclusividad de venta y entrega de cuentas: los sistemas que usan A1, A2, A3, A5 y O1. La plantilla de guion ⏳ F4-216.
 - ✅ F0-44 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión: términos unificados (escena, facción de Reme), voz de las líneas de ejemplo y marcas.
-- ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.
+- ✅ F0-80 cerró este documento con el autor (2026-10-16): no queda ningún punto abierto; lo que depende de otras tareas lleva la tarea que lo resuelve.
 - ⏳ F4-72 Ideas de mercado negro y de generadores (sección 8), y contratos del Ministerio en el Acto III ⏳ F4-74
 
 ---

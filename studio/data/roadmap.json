@@ -294,7 +294,7 @@
               "title": "Storyboard de las escenas clave del Acto I",
               "est": 10,
               "status": "backlog",
-              "desc": "Storyboard barato de las escenas clave del Acto I (d1.2, d1.6, d2.4, d3.2, d4.4, d7.2 y d7.4 del documento 27): paneles con la descripción, el diálogo, la pantalla del juego dibujada de forma simple y arte provisional. Los personajes y los minerales ya hechos se reutilizan como referencia; los escenarios y los momentos se generan nuevos y baratos; el mapa de Valdoria se regenera ahora, barato y con las zonas actuales (Altafría, Salinas Blancas y la capital). Todo marcado provisional.",
+              "desc": "Storyboard barato de las escenas clave del Acto I (d1.2, d1.6, d2.4, d3.2, d4.4, d7.2 y d7.4 del documento 27): paneles con la descripción, el diálogo, la pantalla del juego dibujada de forma simple y arte provisional. Los personajes y los minerales ya hechos se reutilizan como referencia; los escenarios y los momentos se generan nuevos y baratos; el mapa de Valdoria se regenera ahora, barato y con las zonas actuales (Altafría, Salinas Blancas y la capital). Todo marcado provisional. Requiere el cierre del documento 27 (F0-86).",
               "done_when": "Storyboard visible en el hub, con el mapa regenerado, el arte provisional marcado y sin gastar más créditos de los acordados con el autor.",
               "prio": "P2"
             },
@@ -846,12 +846,12 @@
             },
             {
               "id": "F0-80",
-              "title": "Pasada de cierre: biblia y documentos de pasado, variantes, árbol, umbrales y finales (18 y 21 a 25)",
-              "est": 6,
-              "status": "backlog",
+              "title": "Pasada de cierre: biblia, documentos de pasado, variantes, árbol, umbrales y finales, equipo y zonas (18, 20 a 26)",
+              "est": 9.5,
+              "status": "done",
               "prio": "P1",
-              "desc": "Repasar con el autor los documentos 18 y 21 a 25 hasta llevar cada uno a un 90 % o más de limpieza, confirmando lo que siga en propuesta y aplazando solo lo que cumpla la regla del documento 15.",
-              "done_when": "Cada uno de los documentos 18 y 21 a 25 llega al 90 % de limpieza o tiene sus puntos abiertos aplazados con una tarea que no condiciona nada anterior."
+              "desc": "Repasar con el autor los documentos 18, 20, 21, 22, 23, 24, 25 y 26 hasta llevar cada uno a un 90 % o más de limpieza, confirmando lo que siga en propuesta y aplazando solo lo que cumpla la regla del documento 15. El guion del Acto I (27) lo cierra F0-86.",
+              "done_when": "Cada uno de los documentos 18, 20, 21, 22, 23, 24, 25 y 26 llega al 90 % de limpieza o tiene sus puntos abiertos aplazados con una tarea que no condiciona nada anterior."
             },
             {
               "id": "F0-82",
@@ -879,6 +879,15 @@
               "prio": "P0",
               "desc": "Cambio de plataforma decidido por el autor: el juego se lanza primero en PC, compatible y preparado para Steam, y solo después de terminarlo en PC se lleva a móvil. Revisa todo lo que dependía de Android primero: visión, controles y interfaz, resolución, motor y exportación, legal y tiendas, QA, arte, hoja de ruta y fases.",
               "done_when": "Los documentos y el roadmap reflejan PC primero con Steam y móvil como una fase posterior, y el autor ha decidido las plataformas, los controles y el modelo de venta."
+            },
+            {
+              "id": "F0-86",
+              "status": "backlog",
+              "title": "Pasada de cierre: guion del Acto I (27)",
+              "est": 3,
+              "prio": "P1",
+              "desc": "Cerrar con el autor los puntos abiertos del documento 27 (guion del Acto I): días 1 a 4, días 5 a 7 y la cuota, decisiones y pistas, y la cinta 1, las sombras y el nombre por defecto de la tienda, hasta llevarlo a un 90 % o más de limpieza y dejar el esquema de escenas y textos listo para F0-24, F3-16 y F3-47. Las dos propuestas de 27:528-537 las cerró F0-80.",
+              "done_when": "El documento 27 llega al 90 % de limpieza o tiene sus puntos abiertos aplazados con una tarea que no condiciona nada anterior, y F0-24, F3-16 y F3-47 pueden empezar sobre él."
             }
           ]
         }
@@ -1076,8 +1085,8 @@
               "title": "Fuente pixel con caracteres latinos extendidos y plan de fuentes de respaldo por idioma",
               "est": 2,
               "status": "backlog",
-              "desc": "Debe incluir á é í ó ú ñ ¿ ¡. Prever fuentes de respaldo para idiomas futuros.",
-              "done_when": "Fuente elegida con licencia registrada y glifos verificados.",
+              "desc": "Debe incluir á é í ó ú ñ ¿ ¡. Prever fuentes de respaldo para idiomas futuros. Aquí se validan también los límites de las cajas de diálogo (34 caracteres por línea, 3 líneas, 3 botones de 28; documento 18) y el largo del nombre del protagonista y de la tienda en la Steam Deck a 1280×800.",
+              "done_when": "Fuente elegida con licencia registrada, glifos verificados y límites de cajas y nombres comprobados con el texto real.",
               "prio": "P1"
             },
             {
@@ -1094,8 +1103,8 @@
               "title": "Flujo de traducción: extracción, traducción asistida por IA, revisión y glosario ES/EN",
               "est": 4,
               "status": "backlog",
-              "desc": "Proceso repetible para traducir y revisar, con glosario de términos del mundo (Aetherita, Faroleros, etc.).",
-              "done_when": "Un lote de textos recorre el flujo completo.",
+              "desc": "Proceso repetible para traducir y revisar, con glosario de términos del mundo (Aetherita, Faroleros, etc.). Incluye la traducción al inglés de los términos del glosario del documento 18 (unos 40, como Highchill y White Salt Flats) y de las fichas de lugares del documento 26. Cubre también los términos de los apartados 6.5 y 6.11 del documento 18, Highchill, White Salt Flats y el farol vinotinto.",
+              "done_when": "Un lote de textos recorre el flujo completo y todos los términos del glosario tienen su inglés revisado.",
               "prio": "P1"
             },
             {
@@ -1366,7 +1375,7 @@
               "title": "Modelo de estado de partida y semilla",
               "est": 4,
               "status": "backlog",
-              "desc": "Día, bloque, dinero, inventario y semilla aleatoria reproducible. Guarda también el modo de partida y admite hasta 5 partidas guardables a elegir (documento 01).",
+              "desc": "Día, bloque, dinero, inventario y semilla aleatoria reproducible. Guarda también el modo de partida y admite hasta 5 partidas guardables a elegir (documento 01). Guarda también las banderas del documento 23 (14 banderas y la variante oculta) y los estados de los epílogos (los e-… del documento 25) con sus valores y su modelo. Incluye el patrimonio fijado al entrar en el acta (carta de la familia).",
               "done_when": "El estado se crea, modifica y se reproduce con la misma semilla.",
               "prio": "P0"
             },
@@ -1939,7 +1948,7 @@
               "title": "Acto I: Villa Brasa, Reme, Teo, deuda y tutorial guiado",
               "est": 14,
               "status": "backlog",
-              "desc": "Los siete días guiados del Acto I según el documento 27: tres bloques por día, las mecánicas de una en una, la cola de escenas, las tres pistas del sorteo oculto con sus props, la ficha del candidato y las reglas para que nunca se atasque. Los textos son de F3-47.",
+              "desc": "Los siete días guiados del Acto I según el documento 27: tres bloques por día, las mecánicas de una en una, la cola de escenas, las tres pistas del sorteo oculto con sus props, la ficha del candidato y las reglas para que nunca se atasque. Los textos son de F3-47. Requiere el cierre del documento 27 (F0-86).",
               "done_when": "Los siete días se juegan de principio a fin con las tres decisiones pequeñas, la cuota del día 7 y el cierre del acto sin atascos.",
               "prio": "P0"
             },
@@ -1958,7 +1967,7 @@
               "title": "Textos del Acto I: guion de los siete días",
               "est": 14,
               "prio": "P0",
-              "desc": "Escribir los textos de los siete días del Acto I según el documento 27: escenas de Reme, Teo, Quiroga y Lucía, la carta a Vega Mansa, las tres decisiones pequeñas, las tres pistas del sorteo y los avisos del tutorial, con las variables {cuota} y {recargo}.",
+              "desc": "Escribir los textos de los siete días del Acto I según el documento 27: escenas de Reme, Teo, Quiroga y Lucía, la carta a Vega Mansa, las tres decisiones pequeñas, las tres pistas del sorteo y los avisos del tutorial, con las variables {cuota} y {recargo}. Requiere el cierre del documento 27 (F0-86).",
               "done_when": "Los textos de los siete días están escritos en español, respetan las voces de la biblia y el documento 27, y la traducción queda para F3-30."
             }
           ]
@@ -2735,7 +2744,7 @@
               "est": 6,
               "prio": "P1",
               "desc": "Modelo de los medidores de la Unión, Esteban, Lucía y Teo (0 a 100, arranques 50, 40, 50 y 60). Las facciones no tienen medidor propio. Debe respetar los tramos del documento 24 (bajo menos de 35, medio 35 a 54, alto 55 o más) y los efectos de 5, 10 y 20 por opción del documento 23. Los empleados solo leen el tramo de la Unión para modular su lealtad: contratar, despedir o publicar una oferta no mueve el medidor (documento 04).",
-              "done_when": "Los caminos mínimos del documento 24 (sección 6) siguen valiendo: el aval de Esteban se alcanza sin la escena opcional en las tres variantes y los tramos bajos de Lucía y Teo son alcanzables; si cambia un tamaño de efecto, se rehace antes esa sección."
+              "done_when": "Los caminos mínimos del documento 24 (sección 6) siguen valiendo con los tamaños de efecto confirmados por el autor (pequeño 5, normal 10, grande 20): el aval de Esteban se alcanza sin la escena opcional en las tres variantes y los tramos bajos de Lucía y Teo son alcanzables."
             },
             {
               "id": "F4-62",
@@ -2832,7 +2841,9 @@
               "status": "backlog",
               "title": "Mercado negro: precios y riesgos",
               "est": 4,
-              "prio": "P1"
+              "prio": "P1",
+              "desc": "Precios y riesgos del mercado negro por variante del Acto II: prima por mineral (documento 28), modificadores de los Faroleros, el Consorcio y el Ministerio (documento 22) y sus cifras exactas, y las reglas de los encargos especiales de Aetherita.",
+              "done_when": "El mercado negro aplica sus precios, riesgos y modificadores por variante y las pruebas los comprueban con las cifras del documento 28."
             },
             {
               "id": "F4-74",
@@ -3125,7 +3136,7 @@
               "title": "Escalera de estatus y condiciones de ascenso",
               "est": 8,
               "prio": "P1",
-              "desc": "Requisitos y cifras de cada estatus (Heredero a Magnate). Debe respetar los pisos del documento 24: Comerciante en la escena A5 del Acto II, Empresario en el círculo del Acto III, y Magnate como premio al cerrar el acta, no como puerta.",
+              "desc": "Requisitos y cifras de cada estatus (Heredero a Magnate). Debe respetar los pisos del documento 24: Comerciante en la escena A5 del Acto II, Empresario en el círculo del Acto III, y Magnate como premio al cerrar el acta, no como puerta. Fija también el umbral final del piso de patrimonio de la carta de la familia de Vega Mansa (≈ 250.000 esquirlas, el piso de Magnate del documento 28): «se paga» si el patrimonio al entrar en el acta lo alcanza y «se alivia» si no.",
               "done_when": "Los pisos de estatus del documento 24 se cumplen con las horas por acto del documento 17 y ninguna puerta se puede atascar."
             },
             {
@@ -3134,7 +3145,7 @@
               "title": "Ranuras de decoración de la casa base",
               "est": 8,
               "prio": "P1",
-              "desc": "Cinco ranuras fijas con un objeto inicial. Según el documento 26 (zonas y edificios).",
+              "desc": "Ranuras fijas de decoración de la casa base con un objeto inicial en cada una; aquí se fija su lista final (sala, despacho, dormitorio, vitrina y exterior, o la que salga). Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
@@ -3341,8 +3352,8 @@
               "title": "Alianza: elección y consecuencias",
               "est": 5,
               "prio": "P1",
-              "desc": "Consecuencias de elegir alianza en la escena A5 del Acto II. Debe respetar el documento 24 (sección 7): ninguna alianza cierra la puerta del Acto III y cada una deja al menos una vía abierta; el costo de Reme se muestra antes de elegir.",
-              "done_when": "Las tres alianzas dejan al menos una vía abierta para la entrada al círculo y el costo de Reme se ve antes de elegir."
+              "desc": "Consecuencias de elegir alianza en la escena A5 del Acto II. Debe respetar el documento 24 (sección 7): ninguna alianza cierra la puerta del Acto III y cada una deja al menos dos vías alcanzables (regla de «dos de tres»); el costo de Reme se muestra antes de elegir. Aquí se fija lo que hace cada alianza con cada vía.",
+              "done_when": "Las tres alianzas dejan al menos dos vías alcanzables para la entrada al círculo y el costo de Reme se ve antes de elegir."
             },
             {
               "id": "F4-134",
@@ -3422,7 +3433,7 @@
               "title": "Acto IV: guion y escenas",
               "est": 6,
               "prio": "P1",
-              "desc": "Guion y escenas del Acto IV, incluido el acta de calibración y sus tres fondos.",
+              "desc": "Guion y escenas del Acto IV, incluido el acta de calibración y sus tres fondos. Incluye el aviso previo sobre quién publicaría antes de decidir sobre la Aetherita (documentos 23 y 24), el orden de las cintas, el emblema de cada sello y dónde se encuentra la carpeta del acta.",
               "done_when": "El guion del Acto IV está escrito y el acta es la última escena en las tres salidas."
             },
             {
@@ -4082,7 +4093,7 @@
               "title": "Textos finales de las 54 piezas de los epílogos",
               "est": 6,
               "prio": "P0",
-              "desc": "Escribir los textos definitivos en español de las 54 piezas del documento 25 (cabecera, personajes, facciones, mundo, mercado y familia) en la voz de cada medio, en prospectivo y sin cifras escritas.",
+              "desc": "Escribir los textos definitivos en español de las 54 piezas del documento 25 (cabecera, personajes, facciones, mundo, mercado y familia) en la voz de cada medio, en prospectivo y sin cifras escritas. Aquí se fijan también el tamaño de cada tarjeta (por ejemplo, 35 palabras y 18 por línea) los nombres, las variables y el orden de lo que aparece dentro de las tarjetas (personajes, facciones, mundo, mercado y familia).",
               "done_when": "Las 54 piezas tienen su texto final en español, respetan el canon y las reglas del documento 25, y la traducción queda para F4-211."
             },
             {
@@ -4928,7 +4939,7 @@
               "title": "Lotería del Ministerio",
               "est": 12,
               "prio": "P2",
-              "desc": "Sorteo semanal, ventanilla y publicación en el Heraldo. Según el documento 26 (zonas y edificios).",
+              "desc": "Sorteo semanal, ventanilla (su ubicación) y premios, y publicación en el Heraldo. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]
@@ -5315,7 +5326,7 @@
               "title": "Joyas por zona: taller de talla y mostrador sin sello",
               "est": 20,
               "prio": "P2",
-              "desc": "Las dos joyerías de zona. Según el documento 26 (zonas y edificios).",
+              "desc": "Las dos joyerías de zona. Según el documento 26 (zonas y edificios). Incluye las piezas de joyería con Aetherita (decisión del autor del 2026-10-16): muy raras, extremadamente caras y en edición super limitada, hechas con los materiales más caros; aquí se fijan sus materiales, precio y cantidad.",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
@@ -5324,7 +5335,7 @@
               "title": "Concesionaria y vehículos",
               "est": 20,
               "prio": "P2",
-              "desc": "Carreta, camioneta y automóvil. Según el documento 26 (zonas y edificios).",
+              "desc": "Carreta, camioneta y automóvil: qué vehículo va en qué zona y su efecto pequeño en viaje y carga. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {

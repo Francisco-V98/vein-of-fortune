@@ -387,7 +387,7 @@ Otras cifras de [23](23-arbol-de-decisiones.md): *gestión pequeña* de Quiroga 
 
 - **Tope:** el recargo de una misma cuota **deja de crecer a las 3 semanas** (máximo 12 / 18 / 36 / 54 % de la cuota).
 - **Mora** (nunca cierra una puerta): con **4 semanas de atraso acumuladas** la tasa sube **+1 pp** hasta que pagues una cuota completa; además Reme deja de fiar la gestión. No hay otra consecuencia.
-- **Adelanto de la cuota** (rechazar la orden de Los Faroleros en A2): Reme cobra por adelantado la cuota de la semana siguiente, **media cuota** si pagaste a tiempo en el Acto I o **cuota completa** si prorrogaste. Es un **adelanto, no un costo extra**: se acredita a las siguientes cuotas, cuenta para la vía de deuda y solo aprieta la caja.
+- **Adelanto de la cuota** (rechazar la orden de Reme en A2, en **cualquiera de las tres variantes**: Consorcio, Ministerio o Los Faroleros; [22](22-acto-ii-variantes.md), [23](23-arbol-de-decisiones.md), [24](24-umbrales-de-acto.md)): Reme cobra por adelantado la cuota de la semana siguiente, **media cuota** si pagaste a tiempo en el Acto I o **cuota completa** si prorrogaste. Es un **adelanto, no un costo extra**: se acredita a las siguientes cuotas, cuenta para la vía de deuda y solo aprieta la caja.
 - **Cuota extra de luz** (aceptar la orden de Los Faroleros): **960** una vez.
 - **Saldar la deuda antes de A2** ([24](24-umbrales-de-acto.md)): imposible con estas cifras (K = 24 000 son ≈ 3,8 h al ritmo del inicio del Acto II, unos 6 300 por hora); el caso de «si ya saldaste la deuda» queda como salvaguarda.
 

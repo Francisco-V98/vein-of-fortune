@@ -66,7 +66,7 @@
         }
       ],
       "lee": [],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-i-reme-plazo",
@@ -107,7 +107,7 @@
         }
       ],
       "lee": [],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-i-lucia-rumor",
@@ -148,14 +148,14 @@
         }
       ],
       "lee": [],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-ii-contacto",
       "acto": "II",
       "nivel": "pequena",
       "titulo": "Responder al primer contacto de la política",
-      "dispara": "Acto I cerrado (escena A1 de 22). El decreto de A1 es lo que abre las zonas del II; no es una condición previa 🟡 ⏳ F4-128.",
+      "dispara": "Acto I cerrado (escena A1 de 22). El decreto de A1 es lo que abre las zonas del II; no es una condición previa ⏳ F4-128.",
       "opciones": [
         {
           "id": "aceptar",
@@ -187,7 +187,7 @@
         }
       ],
       "lee": [],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-ii-orden",
@@ -271,7 +271,7 @@
       "lee": [
         "f-orden-reme"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-ii-huelga",
@@ -357,7 +357,7 @@
       "lee": [
         "m-lucia"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-ii-esteban-contrato",
@@ -400,7 +400,7 @@
       "lee": [
         "m-esteban"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-ii-certificado",
@@ -441,7 +441,7 @@
         }
       ],
       "lee": [],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-ii-alianza",
@@ -530,7 +530,7 @@
       "lee": [
         "f-certificado"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iii-esteban-trato",
@@ -573,7 +573,7 @@
       "lee": [
         "f-alianza"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iii-contrato-oficial",
@@ -610,7 +610,7 @@
       "lee": [
         "f-alianza"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iii-lucia-letra",
@@ -651,7 +651,7 @@
       "lee": [
         "f-certificado"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iii-abono",
@@ -690,7 +690,7 @@
         }
       ],
       "lee": [],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iii-monopolio",
@@ -733,7 +733,7 @@
       "lee": [
         "f-alianza"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iii-revision-teo",
@@ -778,7 +778,7 @@
       "lee": [
         "m-teo"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iii-circulo",
@@ -867,7 +867,7 @@
       "lee": [
         "f-alianza"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iv-esteban",
@@ -905,7 +905,7 @@
         "m-esteban",
         "f-entrada"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iv-quiroga-archivo",
@@ -950,7 +950,7 @@
         "f-certificado",
         "f-entrada"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iv-montenegro",
@@ -991,7 +991,7 @@
         "m-union",
         "f-comprador"
       ],
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "id": "n-iv-aetherita",
@@ -1383,63 +1383,66 @@
       "n": 1,
       "acto": "I",
       "lugar": "Puesto de Villa Brasa: doble fondo del cajón de la caja, junto a la libreta.",
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "n": 2,
       "acto": "II",
       "lugar": "Minas de Sierra Alta: casillero del viejo taller de ensayo.",
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "n": 3,
       "acto": "III",
       "lugar": "Puerto Meridiano: consigna de la estación, con una etiqueta de Anselmo.",
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "n": 4,
       "acto": "III",
       "lugar": "Cavernas de Cristal: campamento de ensayo bajo el cuarzo.",
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "n": 5,
       "acto": "III",
       "lugar": "Puerto Meridiano: pensión donde Anselmo se alojaba al entregar sus informes.",
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "n": 6,
       "acto": "IV",
       "lugar": "La Fosa: caja del equipo de ensayo que quedó en el campamento de la Primera Expedición.",
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "n": 7,
       "acto": "IV",
       "lugar": "La Fosa: bajo la litera del barracón de calibración.",
-      "estado": "prop"
+      "estado": "ok"
     },
     {
       "n": 8,
       "acto": "IV",
       "lugar": "La Fosa: junto al registrador, el carrete cortado y sin etiqueta.",
-      "estado": "prop"
+      "estado": "ok"
     }
   ],
   "pruebas_iv": [
     {
       "variante": "consorcio",
-      "prueba": "El libro del fondo reservado: Reme vio los giros del Consorcio al pedir su préstamo."
+      "prueba": "El libro del fondo reservado: Reme vio los giros del Consorcio al pedir su préstamo.",
+      "estado": "ok"
     },
     {
       "variante": "ministerio",
-      "prueba": "La orden de la cadena: Reme la recibió por escrito, con sello."
+      "prueba": "La orden de la cadena: Reme la recibió por escrito, con sello.",
+      "estado": "ok"
     },
     {
       "variante": "faroleros",
-      "prueba": "El registro de informantes: Casilda le dejó copia al cobrarle la deuda de luz."
+      "prueba": "El registro de informantes: Casilda le dejó copia al cobrarle la deuda de luz.",
+      "estado": "ok"
     }
   ]
 }

@@ -41,7 +41,7 @@
           "acto": "IV",
           "donde": "El acta de calibración cierra la pista; la copia del certificado en el archivo de Quiroga nunca se destruye",
           "ref": "doc 25 §7.3 · doc 23 §8 · nodo n-iv-quiroga-archivo",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "El jugador entiende que la muerte de Anselmo fue un papel de la Comisión. La copia queda como prueba que ninguna decisión puede perder (23 §8). Cumbre Clara es solo un nombre (decisión del autor, 2026-10-13): el sello del sanatorio no abre ninguna zona ni edificio visitable (26 no le da edificio).",
@@ -62,7 +62,7 @@
           "acto": "I",
           "donde": "Reme atribuye el giro mensual a la deuda a «algún vecino bondadoso»",
           "ref": "doc 19 «Pistas sembradas» y ficha de Reme · doc 21 §6 y §11 · doc 27 §4 (día 1, mañana, d1.3)",
-          "estado": "prop"
+          "estado": "ok"
         },
         {
           "acto": "II",
@@ -96,7 +96,7 @@
           "acto": "III",
           "donde": "El abono llega otra vez; Teo jura que no lo paga y tú decides si le crees",
           "ref": "doc 19 «Pistas sembradas» · doc 21 §11 · nodo n-iii-abono · medidor m-teo",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -104,7 +104,7 @@
           "acto": "IV",
           "donde": "Se cierra: Teo no lo paga (los comprobantes de Reme y la confesión de Teo lo muestran)",
           "ref": "doc 25 §7.3 · doc 21 §11",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "Teo queda libre de sospecha. Su confianza cambia según le creíste (le crees: alivio; dudas: le duele mucho).",
@@ -123,7 +123,7 @@
           "acto": "I",
           "donde": "La libreta de Anselmo guía las primeras misiones y su última anotación no tiene fecha de cierre",
           "ref": "doc 19 «Pistas sembradas» · doc 18 Anexo «Dónde está Anselmo en cada acto» · doc 21 §11 · doc 27 §4 (día 1, noche, d1.5)",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -131,7 +131,7 @@
           "acto": "IV",
           "donde": "Se cierra con el acta: la anotación es de la noche antes de la detención, sin fechar",
           "ref": "doc 25 §7.3 · doc 21 §11",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "La libreta deja de ser una guía de tutorial y pasa a ser el último papel honesto de Anselmo antes del trato.",
@@ -185,7 +185,7 @@
           "acto": "III",
           "donde": "Su salud se nota y evita hablar de La Fosa",
           "ref": "doc 19 ficha de Teo (arco por acto)",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -212,7 +212,7 @@
           "acto": "III",
           "donde": "La tos de Teo se nota en escena y Reme y Lucía la comentan antes de que decidas llevarlo a revisión",
           "ref": "doc 23 §2.4 y §5 · nodo n-iii-revision-teo · bandera f-teo-revision · médico del dispensario: tarea F4-135",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -349,7 +349,7 @@
           "acto": "I",
           "donde": "El abono anónimo es la huella del trato (el sueldo se paga como abono a la deuda con Reme)",
           "ref": "doc 21 §5 y §6 · doc 27 §4 (día 1, mañana, d1.3)",
-          "estado": "prop"
+          "estado": "ok"
         },
         {
           "acto": "IV",
@@ -520,7 +520,7 @@
           "acto": "III",
           "donde": "Lucía oye hablar de las cintas: primera sombra de que hay algo que escuchar",
           "ref": "doc 19 ficha de Lucía · doc 23 §7 · doc 18 6.11",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -548,13 +548,13 @@
           "acto": "II",
           "donde": "Quiroga se pone nervioso con el certificado; guarda copia en su archivo como seguro de vida",
           "ref": "doc 19 ficha de Quiroga · doc 21 §1 y §5 · nodo n-ii-certificado",
-          "estado": "prop"
+          "estado": "ok"
         },
         {
           "acto": "III",
           "donde": "Quiroga pide una salida y deja ver que su archivo es su seguro",
           "ref": "doc 19 ficha de Quiroga · nodo n-iii-quiroga-salida",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -608,7 +608,7 @@
           "acto": "I",
           "donde": "Reme tiene la única lámpara de red de la calle, con una «A» grabada en la base («un regalo de un cliente agradecido»)",
           "ref": "doc 22 §10 · props: tarea F3-16 · guion: doc 27 §13 (día 4, noche, d4.4)",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -616,7 +616,7 @@
           "acto": "II",
           "donde": "A2: la orden de vender solo al Consorcio la trae un ejecutivo de la casa",
           "ref": "doc 22 §3 y §5",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "La lectura inocente cae: Reme responde al Consorcio.",
@@ -636,7 +636,7 @@
           "acto": "I",
           "donde": "Quiroga saluda a Reme con deferencia y le devuelve un papel sellado sin cobrarle: «Doña Reme, su trámite está en orden»",
           "ref": "doc 22 §10 · props: tarea F3-16 · guion: doc 27 §13 (día 4, noche, d4.4)",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -644,7 +644,7 @@
           "acto": "II",
           "donde": "A2: la orden de entregar las cuentas y no vender a Los Faroleros viene del Ministerio",
           "ref": "doc 22 §3 y §5",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "La lectura inocente cae: Reme responde al Ministerio.",
@@ -663,7 +663,7 @@
           "acto": "I",
           "donde": "Reme enciende un farol vinotinto pequeño, con luz ámbar, en la ventana los días de pago («una costumbre de mi madre»)",
           "ref": "doc 22 §10 · doc 21 §10 · props: tarea F3-16 · guion: doc 27 §13 (día 4, noche, d4.4)",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -671,7 +671,7 @@
           "acto": "II",
           "donde": "A2: la orden de pagar la cuota extra de luz y abrir el contacto con Casilda viene de Los Faroleros",
           "ref": "doc 22 §3 y §5",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "La lectura inocente cae: Reme responde a Los Faroleros. El farol vinotinto vuelve como sello de Casilda en el acta si le vendes.",
@@ -705,7 +705,7 @@
           "acto": "IV",
           "donde": "Se entiende para qué era el préstamo: los equipos de ensayo que quedaron en el campamento de La Fosa (cinta 6)",
           "ref": "doc 21 §6 · doc 19 ficha de Reme · cintas 2 y 6",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "Explica el cariño y la culpa de Reme: prestó antes de la expedición y el equipo nunca volvió.",
@@ -731,7 +731,7 @@
           "acto": "II",
           "donde": "A2: rechazar la orden de Reme adelanta la cuota",
           "ref": "doc 22 §5 · nodo n-ii-orden",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [],
@@ -847,7 +847,7 @@
           "acto": "II",
           "donde": "Según su facción, Reme guarda el libro del fondo reservado, la orden sellada de la cadena o la copia del registro de informantes; no se muestra",
           "ref": "doc 22 §2 (A2) y §11 · doc 23 §8",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -855,7 +855,7 @@
           "acto": "IV",
           "donde": "Reme entrega esa prueba junto a los comprobantes del abono",
           "ref": "doc 22 §11 · doc 23 §8 · archivo decisions.json (pruebas_iv)",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "Suma una prueba que no se pierde. Con los comprobantes y las cintas, la ruta del IV conserva siempre al menos tres.",
@@ -874,7 +874,7 @@
           "acto": "II",
           "donde": "Un ejecutivo del Consorcio, sin nombre, habla con Reme; Esteban no conoce el fondo reservado",
           "ref": "doc 22 §6 · doc 21 §6 y §10",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -1010,7 +1010,7 @@
           "acto": "III",
           "donde": "En Puerto Meridiano Quiroga se ofrece a ayudarte a cambio de una salida (el retiro)",
           "ref": "doc 19 ficha de Quiroga · nodo n-iii-quiroga-salida · bandera f-quiroga-salida · tarea F4-137",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -1045,13 +1045,13 @@
           "acto": "II",
           "donde": "Una sombra por escena: Teo y La Fosa (A4)",
           "ref": "doc 18 1.4 · doc 22 §2 y §4",
-          "estado": "prop"
+          "estado": "ok"
         },
         {
           "acto": "III",
           "donde": "La tos de Teo («tos de mina») y el precio de la Aetherita sin explicación",
           "ref": "doc 18 1.4 · doc 17 decisión 8 · doc 23 §2.4",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -1107,7 +1107,7 @@
           "acto": "II",
           "donde": "Solo decretos y firma: zonas (A1), corte de luz (A4) y la carta de A5",
           "ref": "doc 22 §6 · doc 19 ficha de Montenegro",
-          "estado": "prop"
+          "estado": "ok"
         },
         {
           "acto": "III",
@@ -1196,7 +1196,7 @@
           "acto": "I",
           "donde": "El padre del protagonista dejó el Hollín tras el derrumbe de Pozo Negro; la Unión nace de aquel derrumbe y Teo lo sobrevivió",
           "ref": "doc 21 §2, §8 y §10 · doc 19 Protagonista · nodo n-i-herencia · doc 27 §6 (día 3, mañana, d3.2)",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -1204,7 +1204,7 @@
           "acto": "IV",
           "donde": "Cinta 2: Anselmo estudia con la beca de los huérfanos de Pozo Negro y comparte aula con Montenegro",
           "ref": "doc 21 §7 · cinta 2",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "Pozo Negro une a Anselmo, Teo, Montenegro y el padre del protagonista: todos reaccionaron distinto a la misma pérdida.",
@@ -1250,13 +1250,13 @@
           "acto": "I",
           "donde": "Fuente simpática de rumores: te ofrece uno a cambio de otro",
           "ref": "doc 19 ficha de Lucía · nodo n-i-lucia-rumor · medidor m-lucia · doc 27 §6 y §8 (día 3, tarde; día 5, mañana, d5.2)",
-          "estado": "prop"
+          "estado": "ok"
         },
         {
           "acto": "II",
           "donde": "Se descubre que vende información a más de una parte",
           "ref": "doc 19 ficha de Lucía · doc 22 O1 · nodo n-ii-lucia",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "resuelve": [
@@ -1291,7 +1291,7 @@
           "acto": "IV",
           "donde": "El epílogo de la familia: llega una carta de Vega Mansa según lo que les contaste",
           "ref": "doc 25 §5.3 (FM-01 a FM-03) y §7.2",
-          "estado": "prop"
+          "estado": "ok"
         }
       ],
       "cambia": "El padre ya no escribe con reproche, o no pregunta nada. Se cuenta con ternura y humor ligero.",
@@ -1308,7 +1308,7 @@
       "siembra": [
         {
           "acto": "I",
-          "donde": "La cosecha perdida dejó a la familia debiendo al banco agrario; el protagonista busca trabajo para ayudar a su familia; el desenlace depende del estatus con el que cierres el acta, sin envíos de dinero",
+          "donde": "La cosecha perdida dejó a la familia debiendo al banco agrario; el protagonista busca trabajo para ayudar a su familia; el desenlace depende del patrimonio con el que entres en el acta, sin envíos de dinero",
           "ref": "doc 19 Protagonista · doc 21 §8 · doc 27 §4 (día 1, noche, d1.6)",
           "estado": "ok"
         }
@@ -1316,12 +1316,12 @@
       "resuelve": [
         {
           "acto": "IV",
-          "donde": "La carta de la familia dice si la deuda con el banco agrario se paga si entras en el acta como Empresario o Magnate y se alivia con un estatus menor",
-          "ref": "doc 25 §5.3 (FM-01 a FM-03) y §7.2 · decisión del autor 2026-10-13",
+          "donde": "La carta de la familia dice si la deuda con el banco agrario se paga, si el patrimonio al entrar en el acta llega al piso de Magnate (≈ 250 000), o se alivia, si no llega",
+          "ref": "doc 25 §5.3 (FM-01 a FM-03) y §7.2 · doc 28 (piso de Magnate) · decisión del autor 2026-10-16 (F0-80) · umbral final: tarea F4-109",
           "estado": "ok"
         }
       ],
-      "cambia": "Es la razón de salir de casa. La carta de Vega Mansa lo cierra: la deuda se paga (Empresario o Magnate) o se alivia (estatus menor) según el estatus al cerrar el acta, sin cifras.",
+      "cambia": "Es la razón de salir de casa. La carta de Vega Mansa lo cierra: la deuda se paga (patrimonio al entrar en el acta igual o mayor que el piso de Magnate, ≈ 250 000) o se alivia (patrimonio menor), sin cifras escritas. Ya no depende del estatus al entrar; «se alivia» es la carta del jugador lento.",
       "estado": "resuelto",
       "motivo": ""
     }

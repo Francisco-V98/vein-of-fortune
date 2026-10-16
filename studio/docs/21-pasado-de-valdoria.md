@@ -6,7 +6,7 @@ Qué pasó **antes del juego**: el descubrimiento de la Aetherita, el nacimiento
 
 **Cómo se cuentan los años.** «Hace X años» se mide desde el **inicio del juego**: el día en que el protagonista llega a Villa Brasa. Las edades «de hoy» son las de [19](19-elenco-a-fondo.md).
 
-**Cómo leer las marcas.** ✅ es lo que decidió el autor, incluidas las confirmaciones en lote del 2026-10-12; 🟡 es propuesta de este documento que el autor aún no ha visto. Una sección lleva ✅ en el título solo si todo lo que tiene debajo está confirmado; si mezcla, el título lleva 🟡 y la palomita queda únicamente en las filas o frases confirmadas. Lo que depende de otra tarea lleva el reloj de arena con su ID.
+**Cómo leer las marcas.** La palomita verde es lo que decidió el autor: las confirmaciones en lote del 2026-10-12 y 2026-10-13 y la pasada de cierre del 2026-10-16, que dejó este documento sin propuestas por confirmar. Lo que depende de otra tarea lleva el reloj de arena con su ID.
 
 ## Resumen en cinco líneas
 
@@ -43,33 +43,34 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 | Reme | Montó su casa de préstamos hace unos 25 años con dinero de una facción mayor. Recibió una carta sin firma que le pide callar. Sabe que el pago viene del Estado por la Comisión y no sabe que Anselmo vive. El equipo quedó en el campamento y la deuda creció. La tabla de razones por facción, tal como está en la sección 6 ✅ |
 | Montenegro a los 40 | Era el técnico más joven con la confianza de la cúpula, redactó el reglamento de la Comisión y eligió a Anselmo. Su lección: ninguna grieta en la mentira. Sigue duro, inflexible y poco razonable ✅ |
 | Voz | Los titulares de los medios sobre la muerte de Anselmo, los de Casa Ormeño y el humor y la comprobación de las cintas 1 a 6 ✅ |
+| Pasada de cierre | Decisiones del 2026-10-16 (F0-80): el derrumbe de Pozo Negro, la huelga larga, la cuadrilla y el mal del éter tal como están en las secciones 2 y 4; los detalles de la muerte pública, el abono y la libreta; la enemistad de Montenegro con los Faroleros y los orígenes de la sección 10; los ocho lugares de las cintas y el humor de la 7 y la 8; y la carta del día 1 y la respuesta del día 5. Se recortaron «sin contar la escolta» y «fatiga de exposición» ✅ |
 | Canon que no se toca | Anselmo está vivo pero se cree muerto y enfermo, y es cómplice de la Comisión. Reme traiciona en el Acto II por obligación y al final es la mayor aliada. Montenegro es el enemigo claro, duro e inflexible ✅ |
 
 ---
 
-## 2 · Cronología por hitos 🟡
+## 2 · Cronología por hitos ✅
 
-**Estado:** ✅ el hito y sus cifras, confirmados por el autor el 2026-10-12, y con ellos el silencio firmado de Teo, el testamento y la parte de Montenegro; 🟡 los detalles que se marcan dentro de la fila, propuestos por este documento. Las edades se calculan a partir de las de hoy (tabla de la sección 3).
+Las edades se calculan a partir de las de hoy (tabla de la sección 3).
 
 | Hace | Qué pasó | Quién estaba (edad) | Estado |
 |---|---|---|---|
-| **40 años** | **Derrumbe de Pozo Negro**, en la Cuenca del Hollín. Cae la galería principal y mueren decenas de mineros 🟡, entre ellos el padre de Anselmo y de su hermano menor. Sigue una huelga larga con disturbios que casi acaban con la República 🟡. De ahí nace la Unión | Teo 24 (sobrevive: estaba en otro turno 🟡), Anselmo 18, su hermano menor 15 (deja el Hollín y jura que ningún hijo bajará a una mina), Montenegro 20 (estudia en la Escuela de Minas y vive los disturbios) | ✅ el hito; 🟡 lo marcado |
+| **40 años** | **Derrumbe de Pozo Negro**, en la Cuenca del Hollín. Cae la galería principal y mueren decenas de mineros ✅, entre ellos el padre de Anselmo y de su hermano menor. Sigue una huelga larga con disturbios que casi acaban con la República ✅. De ahí nace la Unión | Teo 24 (sobrevive: estaba en otro turno ✅), Anselmo 18, su hermano menor 15 (deja el Hollín y jura que ningún hijo bajará a una mina), Montenegro 20 (estudia en la Escuela de Minas y vive los disturbios) | ✅ |
 | **30 años** | Un **geólogo del Ministerio halla Aetherita en La Fosa**. El Ministerio lo declara **secreto de Estado**. Solo hay muestras pequeñas. Anselmo, perito de ensayo, analiza las primeras | Anselmo 28, Montenegro 30, Teo 34 (en el Hollín), Casilda 15 (enciende faroles en el puerto) | ✅ |
 | **27 años** | Nace la **Comisión del Éter**, dentro del Ministerio, para custodiar el mineral, estudiar el fenómeno y controlar La Fosa | Montenegro 33 (técnico de la Comisión), Reme 35, Quiroga 23 | ✅ |
 | **21 años** | **Reme presta a Anselmo** para pagar sus equipos de ensayo en La Fosa: el Ministerio reembolsa tarde y él no puede esperar | Reme 41, Anselmo 37 | ✅ |
 | **20 años** | **Primera Expedición a La Fosa.** Montenegro dirige desde el campamento, Anselmo es el perito y Teo, minero veterano. Dura unos ocho meses. Confirma la veta. Empieza el mal del éter en la cuadrilla. A Teo lo evacuan al primer mes con un brazo roto y al volver firma el silencio a cambio de una pensión | Montenegro 40, Anselmo 38, Teo 44, protagonista 2 (aún en Vega Mansa) | ✅ |
-| **20 a 17 años** | La **cuadrilla enferma**: los que bajaron a la veta mueren de «tos de mina» en uno a tres años 🟡. Anselmo pasa a la Comisión como **ingeniero de calibración** tras la expedición ✅. Quedan con vida Montenegro, Anselmo y Teo (por qué Anselmo sobrevive, en la sección 4). El Consorcio Arvel pagó el equipo mayor de la expedición a cambio de preferencia en los contratos | Anselmo 38 a 41, Teo 44 a 47 | ✅ el hito; 🟡 lo marcado |
+| **20 a 17 años** | La **cuadrilla enferma**: los que bajaron a la veta mueren de «tos de mina» en uno a tres años ✅. Anselmo pasa a la Comisión como **ingeniero de calibración** tras la expedición ✅. Quedan con vida Montenegro, Anselmo y Teo (por qué Anselmo sobrevive, en la sección 4). El Consorcio Arvel pagó el equipo mayor de la expedición a cambio de preferencia en los contratos | Anselmo 38 a 41, Teo 44 a 47 | ✅ |
 | **17 años** | **Empieza la electrificación con Aetherita**, después de la primera extracción seria. El Ministerio pone la red; el Consorcio gana el contrato de las celdas y desde entonces **financia un fondo reservado de la Comisión** | Montenegro 43, Casilda 28 | ✅ |
 | **15 años** | **Casilda organiza a los faroleros** para **«cobrar la luz»** | Casilda 30 | ✅ |
 | **14 años** | **Anselmo visita Vega Mansa** y presta la lámpara a su sobrino o sobrina. Es la única vez que se ven | Anselmo 44, protagonista 8 | ✅ |
 | **8 años** | **Montenegro es nombrado ministro de Recursos** | Montenegro 52 | ✅ |
 | **4 años** | El Ministerio dobla la cuota de extracción y la Comisión alarga el turno máximo **contra el informe de Anselmo** | Anselmo 54, Montenegro 56 | ✅ |
 | **2 años (otoño)** | Anselmo **prepara la denuncia**, deja el testamento firmado y empieza a grabar las cintas | Anselmo 56 | ✅ |
-| **2 años (invierno)** | La noche antes graba y esconde las dos últimas cintas. **Lo detienen** y acepta el trato. A **fines de invierno** muere en público | Anselmo 56, Montenegro 58 (ordena el trato ✅), Quiroga 48 (tramita el certificado) | ✅ el hito; 🟡 lo marcado |
+| **2 años (invierno)** | La noche antes graba y esconde las dos últimas cintas. **Lo detienen** y acepta el trato. A **fines de invierno** muere en público | Anselmo 56, Montenegro 58 (ordena el trato ✅), Quiroga 48 (tramita el certificado) | ✅ |
 | **Pocas semanas** | Anselmo **firma el acta de calibración** | Anselmo 58 | ✅ (decisión del autor, 2026-10-12) |
 | **Hoy** | El protagonista hereda la licencia, el puesto y la deuda | Protagonista 22 | ✅ |
 
-### Lo que sabe el país y lo que no 🟡
+### Lo que sabe el país y lo que no ✅
 
 - Durante los primeros 13 años (del hallazgo a la electrificación) la Aetherita fue **secreto total**.
 - Desde que se encienden las primeras luces nuevas **se sabe que existe**: es el «combustible casi milagroso» de [05](05-mundo-y-minerales.md). Lo que sigue secreto de Estado es **cómo es y qué cuesta sacarla**.
@@ -77,9 +78,7 @@ Decisiones del 2026-10-12 (F0-43), en cuatro tandas: la elección de cronología
 
 ---
 
-## 3 · Tabla de edades 🟡
-
-**Estado:** ✅ la tabla y las edades, y de la subsección sobre Montenegro lo que lleva ✅ (confirmado por el autor el 2026-10-12); 🟡 solo lo que se marca dentro de esa subsección.
+## 3 · Tabla de edades ✅
 
 Edad en cada hito. Las de hoy vienen de [19](19-elenco-a-fondo.md) y siguen siendo aproximadas. El autor confirmó la tabla entera el 2026-10-12. «—» es que aún no había nacido.
 
@@ -101,48 +100,44 @@ Edad en cada hito. Las de hoy vienen de [19](19-elenco-a-fondo.md) y siguen sien
 - **Esteban (28) y Lucía (32)** no tienen hito en el pasado. Lucía nació dos años antes del hallazgo; Esteban, dos años después.
 - Teo empezó a minar a los 14, así que a la expedición llegó con **30 años de oficio**: de ahí «minero veterano».
 
-### Por qué Montenegro ya mandaba a los 40 🟡
+### Por qué Montenegro ya mandaba a los 40 ✅
 
 En [19](19-elenco-a-fondo.md) Montenegro aparece como «joven funcionario» de la expedición. A los 40 no es joven, y aquí no se le humaniza.
 
-- **Joven solo frente a la cúpula ✅.** A los 40, Montenegro era el técnico más joven con la confianza de la cúpula del Ministerio ✅. Esa cúpula rondaba los 60 🟡. Eso es todo lo que significa «joven».
-- **Ya era quien decidía.** Llevaba más de quince años de funcionario 🟡 y había redactado el reglamento de la Comisión ✅. Eligió a Anselmo para la expedición ✅ y decidió **no bajar a la veta**: dirigió desde el campamento ✅. Por eso no enfermó ✅.
-- **No es inocencia ni duda.** A los 20 vio cómo una huelga mal contenida casi destruye la República 🟡 (la misma huelga de la cronología, también 🟡). A los 40 aplicó esa lección a la Aetherita: ninguna grieta en la mentira ✅. No sale de la expedición con remordimiento, sino con método 🟡.
+- **Joven solo frente a la cúpula ✅.** A los 40, Montenegro era el técnico más joven con la confianza de la cúpula del Ministerio ✅. Esa cúpula rondaba los 60 ✅. Eso es todo lo que significa «joven».
+- **Ya era quien decidía.** Llevaba más de quince años de funcionario ✅ y había redactado el reglamento de la Comisión ✅. Eligió a Anselmo para la expedición ✅ y decidió **no bajar a la veta**: dirigió desde el campamento ✅. Por eso no enfermó ✅.
+- **No es inocencia ni duda.** A los 20 vio cómo una huelga mal contenida casi destruye la República ✅ (la misma huelga de la cronología, también ✅). A los 40 aplicó esa lección a la Aetherita: ninguna grieta en la mentira ✅. No sale de la expedición con remordimiento, sino con método ✅.
 - Sigue siendo duro, inflexible y poco razonable ✅ ([19](19-elenco-a-fondo.md)). La edad no lo ablanda: lo vuelve más seguro.
 
 ---
 
-## 4 · Cómo enfermó cada uno 🟡
+## 4 · Cómo enfermó cada uno ✅
 
-**Estado:** ✅ las cifras (cuadrilla de unas doce personas, expedición de ocho meses, Teo evacuado al primer mes, Montenegro sin bajar a la veta) y, desde el 2026-10-12, por qué Anselmo sobrevive y por qué denuncia, la tapadera de la «tos de mina» y quién nombró el «mal del éter»; 🟡 la regla de acumulación, las exposiciones de la tabla y lo que se marca dentro.
-
-El mal del éter **se acumula con la exposición** 🟡. Con esta regla, lo que cuentan [19](19-elenco-a-fondo.md) y [08](08-historia-y-personaje.md) encaja sin contradicción.
+El mal del éter **se acumula con la exposición** ✅. Con esta regla, lo que cuentan [19](19-elenco-a-fondo.md) y [08](08-historia-y-personaje.md) encaja sin contradicción.
 
 | Quién | Exposición | Hoy |
 |---|---|---|
-| **La cuadrilla** (unas doce personas ✅, sin contar la escolta 🟡) | Siete meses seguidos en la veta (los ocho de la expedición, menos el primero) 🟡 | Todos murieron en uno a tres años 🟡, de «tos de mina» |
+| **La cuadrilla** (unas doce personas ✅) | Siete meses seguidos en la veta (los ocho de la expedición, menos el primero) ✅ | Todos murieron en uno a tres años ✅, de «tos de mina» |
 | **Montenegro** | Ninguna: nunca bajó a la veta ✅ | Sano ✅ |
 | **Teo** | Un solo mes. Lo evacuaron con el brazo roto y **no volvió a La Fosa** ✅ | Tos incipiente a los 64 años ✅ ([19](19-elenco-a-fondo.md)) |
-| **Anselmo** | Enfermó en la expedición (síntomas leves desde el segundo mes 🟡). Después, **18 años de campañas anuales de calibración en La Fosa** ✅: cada año lo expuso de nuevo | Enfermo avanzado, con tratamiento paliativo ✅ |
+| **Anselmo** | Enfermó en la expedición (síntomas leves desde el segundo mes ✅). Después, **18 años de campañas anuales de calibración en La Fosa** ✅: cada año lo expuso de nuevo | Enfermo avanzado, con tratamiento paliativo ✅ |
 
-### Por qué Anselmo sobrevive y la cuadrilla no 🟡
+### Por qué Anselmo sobrevive y la cuadrilla no ✅
 
 La cuadrilla murió en uno a tres años con siete meses de exposición. Anselmo lleva 18 años expuestos y sigue vivo. Se explica así, sin quitarle gravedad:
 
 - **Tuvo tratamiento y protección; ellos no ✅.** Desde la expedición la Comisión le dio un tratamiento paliativo y lo apartó de lo peor de la veta: bajaba a medir con turnos cortos, equipo cerrado y relevo, no a picar siete meses seguidos. El Ministerio **reservó** ese tratamiento para quienes necesitaba, y necesitaba al perito que sabía medir. La cuadrilla era mano de obra y no lo recibió.
-- **A cambio de su trabajo.** El tratamiento era una concesión revocable, pagada con las campañas de calibración. Con el trato de hace dos años deja de ser concesión y pasa a ser cláusula 🟡.
+- **A cambio de su trabajo.** El tratamiento era una concesión revocable, pagada con las campañas de calibración. Con el trato de hace dos años deja de ser concesión y pasa a ser cláusula ✅.
 - **Vive, pero no se cura ✅.** El paliativo frena el mal, no lo revierte. Su mal avanza lento y cada campaña de calibración agrava sus recaídas: hoy está avanzado y el tratamiento ya solo lo sostiene.
 - **La Comisión no es «buena» aquí ✅.** Lo mantuvo vivo porque lo necesitaba, no por piedad. La misma Comisión dejó morir a la cuadrilla sin tratamiento. Anselmo lo sabe, y es parte de por qué carga con ello.
 
-- **Por qué Anselmo denuncia 18 años después ✅.** Calibró los límites desde dentro creyendo que podía bajar la dosis. La Comisión lo mantuvo con tratamiento y protección. Hace cuatro años doblaron la cuota **contra su informe** ✅, y esa fue la razón de la denuncia ✅. Los dos años de protestas inútiles antes de preparar la denuncia son propuesta 🟡.
+- **Por qué Anselmo denuncia 18 años después ✅.** Calibró los límites desde dentro creyendo que podía bajar la dosis. La Comisión lo mantuvo con tratamiento y protección. Hace cuatro años doblaron la cuota **contra su informe** ✅, y esa fue la razón de la denuncia ✅. Los dos años de protestas inútiles antes de preparar la denuncia también están decididos ✅.
 - **Por qué «tos de mina» esconde el mal ✅.** La tos de mina es la enfermedad vieja del Hollín. Un minero que muere tosiendo no llama la atención de nadie, y esa es la tapadera de la Comisión.
-- **Quién le puso nombre ✅.** «Mal del éter» lo escribió Anselmo en su libreta. Internamente la Comisión lo llama *fatiga de exposición* 🟡. Nadie lo dice en público antes del Acto IV (1.4 de [18](18-biblia-narrativa.md)).
+- **Quién le puso nombre ✅.** «Mal del éter» lo escribió Anselmo en su libreta. Nadie lo dice en público antes del Acto IV (1.4 de [18](18-biblia-narrativa.md)).
 
 ---
 
-## 5 · La muerte pública de Anselmo 🟡
-
-**Estado:** ✅ todo, confirmado por el autor el 2026-10-12: la versión pública (cuándo, de qué, dónde, cremación sin registro, certificado de Quiroga en Villa Brasa, cenizas y aviso por carta), la verdad detrás (traslado a Cumbre Clara, sello, orden sellada, copia de Quiroga, testamento), el trato, el abono y los titulares de los medios. El lugar donde vive hoy queda abierto. 🟡 Solo tres detalles que añade este documento y que el autor no vio: el libro de cremaciones de la comarca, que el sello no sea el del registro civil y que Quiroga se ponga nervioso con el certificado.
+## 5 · La muerte pública de Anselmo ✅
 
 | Dato | Versión pública |
 |---|---|
@@ -153,12 +148,12 @@ La cuadrilla murió en uno a tres años con siete meses de exposición. Anselmo 
 | **Quién tramitó el papel** | El **certificado de defunción** se tramitó en **Villa Brasa**, ante el **Inspector Quiroga** ✅ |
 | **Cómo se avisó a la familia** | Por carta, después de la cremación ✅ |
 
-### La verdad detrás 🟡
+### La verdad detrás ✅
 
 - Lo detuvieron en invierno ✅ y lo llevaron a Cumbre Clara ✅. No murió: **aceptó el trato** ✅. Dónde vive hoy **no se define**: es el hilo abierto que pide el canon para una continuación ✅.
-- El sanatorio certificó una **cremación que nadie vio y que nadie registró** ✅. La pista no es «no apareció el cuerpo», sino **«sin registro de cremación»** ✅: el libro de cremaciones de la comarca no tiene ese día 🟡.
-- El **sello del certificado es irregular** ✅: es el del sanatorio ✅, no el del registro civil 🟡.
-- Quiroga lo tramitó por una orden sellada de la Comisión, con una «gestión» de por medio ✅. Guardó una copia en su archivo, su seguro de vida ✅, y allí también la carta de la cinta 6 que retuvo (sección 7) ✅. Por eso se pone nervioso cuando alguien menciona el certificado 🟡.
+- El sanatorio certificó una **cremación que nadie vio y que nadie registró** ✅. La pista no es «no apareció el cuerpo», sino **«sin registro de cremación»** ✅: el libro de cremaciones de la comarca no tiene ese día ✅.
+- El **sello del certificado es irregular** ✅: es el del sanatorio ✅, no el del registro civil ✅.
+- Quiroga lo tramitó por una orden sellada de la Comisión, con una «gestión» de por medio ✅. Guardó una copia en su archivo, su seguro de vida ✅, y allí también la carta de la cinta 6 que retuvo (sección 7) ✅. Por eso se pone nervioso cuando alguien menciona el certificado ✅.
 - El **testamento** lo firmó Anselmo antes de que lo detuvieran ✅. Esa firma es la de los papeles de la herencia del Acto I ✅ y la misma del acta de calibración final ✅ (decisión del autor, 2026-10-12). Se siembra en el Acto I ([27](27-guion-del-acto-i.md), sección 4).
 
 ### El trato ✅
@@ -181,11 +176,9 @@ El autor confirmó el trato el 2026-10-12, tal como está escrito en la tabla: c
 
 ---
 
-## 6 · El abono anónimo y el préstamo de Reme 🟡
+## 6 · El abono anónimo y el préstamo de Reme ✅
 
-**Estado:** ✅ el préstamo hace 21 años, el equipo que quedó en el campamento y la deuda que creció, la casa de préstamos de hace unos 25 años, el abono como cláusula del trato, la carta sin firma, lo que Reme sabe y no sabe, y la tabla de razones por facción (confirmados el 2026-10-12); ✅ que Reme nunca llega a saber que Anselmo vive y que el sobre, la carta sin firma y el giro son un solo hilo (decisión del autor, 2026-10-13); 🟡 solo los pagos a ratos de Anselmo y la razón propia de Reme.
-
-**El préstamo.** Reme prestó a Anselmo **hace unos 21 años**, antes de la expedición, para pagar los equipos de ensayo que llevó a La Fosa ✅. El equipo se quedó en el campamento y nunca se lo devolvieron ✅. La deuda creció con los intereses ✅. Anselmo pagó a ratos mientras pudo 🟡.
+**El préstamo.** Reme prestó a Anselmo **hace unos 21 años**, antes de la expedición, para pagar los equipos de ensayo que llevó a La Fosa ✅. El equipo se quedó en el campamento y nunca se lo devolvieron ✅. La deuda creció con los intereses ✅. Anselmo pagó a ratos mientras pudo ✅.
 
 **La casa de préstamos.** Reme enviudó de un capataz y montó su casa de préstamos **hace unos 25 años** ✅ con dinero que pidió a una facción mayor. Desde entonces su propia deuda está en manos de otros ([19](19-elenco-a-fondo.md)). Que esa facción cambie por partida no cambia la fecha: en cada variante, la facción ya existía como casa grande (el Consorcio), como fondo de crédito minero (el Ministerio) o como caja común del gremio (los Faroleros).
 
@@ -199,20 +192,18 @@ El autor confirmó el trato el 2026-10-12, tal como está escrito en la tabla: c
 | **El Consorcio Arvel** | El Consorcio financia el fondo reservado de la Comisión. Un abono que se investigue lleva a ese dinero |
 | **Los Faroleros** | Los informantes de Casilda vieron el giro. Casilda lo guarda como moneda: quiere comprar la verdad en el Acto IV |
 
-- **Su razón propia, en las tres 🟡.** El abono mantiene la deuda del protagonista a flote. Si habla, la Comisión lo corta y la deuda se dispara. Calla por culpa y por cariño.
+- **Su razón propia, en las tres ✅.** El abono mantiene la deuda del protagonista a flote. Si habla, la Comisión lo corta y la deuda se dispara. Calla por culpa y por cariño.
 - **Qué sabe.** Reme sabe que el pago no es de un vecino y que viene del Estado por vía de la Comisión ✅. **No sabe que Anselmo está vivo**: lo sospecha ✅, y la sospecha nunca se confirma, ni en el Acto IV ni después, igual que la de Lucía ✅ (decisión del autor, 2026-10-13).
 - Al final del Acto IV entrega los comprobantes como prueba ([19](19-elenco-a-fondo.md)). Si revelas, la Comisión corta el abono; si callas o vendes, sigue llegando ✅.
 - Cómo suena ese silencio en cada variante: [22](22-acto-ii-variantes.md), escena A6 y sección 3.
 
 ---
 
-## 7 · Las ocho cintas 🟡
-
-**Estado:** ✅ las ocho cintas en título, fecha y hecho verificable, y el humor y la forma de comprobarlo de las cintas 1 a 6, incluido que Quiroga retuvo la carta de la cinta 6 y guardó copia (confirmado el 2026-10-12; la 7 y la 8, antes, con quien cortó la octava abierto); 🟡 el humor de la 7 y la 8, que sigue la regla 1.7 de [18](18-biblia-narrativa.md), marcada 🟡 en la biblia. El acto de cada una ✅ (decisión del autor, 2026-10-12); dónde las escondió Anselmo 🟡 ([23](23-arbol-de-decisiones.md), sección 7).
+## 7 · Las ocho cintas ✅
 
 Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuvieran** (hace 2 años, entre otoño e invierno) y las **escondió él mismo** en lugares de su vida. Todas son **anteriores al trato** ✅: por eso en ninguna menciona el trato ni su estado actual. Hablan de hechos del pasado, cada uno con una fecha de esta cronología y una forma de comprobarlo.
 
-| # | Título | Hecho verificable | Fecha | Cómo se comprueba (1 a 6) | Humor (1 a 6 ✅; 7 y 8 🟡) |
+| # | Título | Hecho verificable | Fecha | Cómo se comprueba (1 a 6) | Humor |
 |---|---|---|---|---|---|
 | 1 | **La lámpara y el sobrino** ✅ | Anselmo visita Vega Mansa y presta su lámpara a su sobrino o sobrina. Es la única vez que se ven | Hace 14 años | La libreta anota el viaje con fecha | Bromista |
 | 2 | **La Escuela y Montenegro** ✅ | Anselmo (beca de los huérfanos de Pozo Negro) y Montenegro comparten aula. Montenegro es el primero de la promoción. Años después elige a Anselmo para la expedición | Hace 40 años (la Escuela) y hace 21 (la elección, un año antes de partir, cuando prepara los equipos que paga Reme) | Registro de promociones de la Escuela de Minas | Irónico |
@@ -220,34 +211,30 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 | 4 | **Los primeros enfermos y Teo** ✅ | Los primeros enfermos de la cuadrilla. Evacuación de Teo y su silencio firmado a cambio de la pensión | Hace 20 años | Registro mensual de la pensión de Teo | Serio |
 | 5 | **Lo que midió** ✅ | Sus informes numerados de calibración. El último, contra el que se dobló la cuota | Hace 4 años | Informes del Archivo de la Comisión | Técnico y cansado |
 | 6 | **La denuncia que preparó** ✅ | El dossier con copias de los informes y la carta a la redacción de La Voz del Hollín. La carta nunca llegó (Quiroga la retuvo y guardó copia) | Hace 2 años (otoño) | La copia del archivo de Quiroga | Firme y asustado |
-| 7 | **La detención** ✅ | Anselmo graba la noche anterior. Tiene una orden de traslado «a revisión médica» y sabe que es una detención («si estás oyendo esto, ya me detuvieron»). **No nombra el trato**: aún no existe | Hace 2 años (invierno) | La orden de traslado de la Comisión | Casi apagado 🟡 |
-| 8 | **Cortada** ✅ | Empieza a contar qué piensa hacer y la cinta se corta a media frase. Falta el final | La misma noche | Es el carrete que se corta | Sin humor 🟡 |
+| 7 | **La detención** ✅ | Anselmo graba la noche anterior. Tiene una orden de traslado «a revisión médica» y sabe que es una detención («si estás oyendo esto, ya me detuvieron»). **No nombra el trato**: aún no existe | Hace 2 años (invierno) | La orden de traslado de la Comisión | Casi apagado |
+| 8 | **Cortada** ✅ | Empieza a contar qué piensa hacer y la cinta se corta a media frase. Falta el final | La misma noche | Es el carrete que se corta | Sin humor |
 
 - **La octava cortada.** La cinta se corta porque llegaron a buscarlo. **Quién cortó el carrete se deja abierto** ✅ (decisión del autor, 2026-10-12): puede ser el azar, un guardia o el propio Anselmo, y el jugador nunca lo sabe con certeza.
-- **El humor se apaga** de la primera a la octava 🟡 ([18](18-biblia-narrativa.md), 1.7, que sigue 🟡). El orden de las seis primeras es ✅; «casi apagado» y «sin humor» en la 7 y la 8 aún no.
-- **Dónde aparecen en el juego.** Las ocho cintas se encuentran a lo largo de la historia y se **oyen** en el **Acto IV** con un reproductor, como indica la fila de narrativa de `studio/data/story.json` («Oyes las cintas»). Se recogen antes: 1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV ✅. El lugar donde las dejó Anselmo y el reparto del reproductor están en [23](23-arbol-de-decisiones.md), sección 7 🟡
+- **El humor se apaga** de la primera a la octava ✅ ([18](18-biblia-narrativa.md), 1.7): el orden de las seis primeras y, desde el 2026-10-16, «casi apagado» en la 7 y «sin humor» en la 8.
+- **Dónde aparecen en el juego.** Las ocho cintas se encuentran a lo largo de la historia y se **oyen** en el **Acto IV** con un reproductor, como indica la fila de narrativa de `studio/data/story.json` («Oyes las cintas»). Se recogen antes: 1 en el I, 2 en el II, 3 a 5 en el III y 6 a 8 en el IV ✅. El lugar donde las dejó Anselmo y el reparto del reproductor están en [23](23-arbol-de-decisiones.md), sección 7 ✅ (los ocho lugares, confirmados el 2026-10-16: el puesto, el taller de ensayo, la estación, el campamento de ensayo, la pensión, la caja del campamento de la Primera Expedición, el barracón y el registrador)
 - El texto final y la voz de cada cinta ⏳ F4-151
 - «Cinta» es la grabación de historia y «carrete» el objeto ✅ (1.6 de [18](18-biblia-narrativa.md)).
 
 ---
 
-## 8 · Vega Mansa y la familia del protagonista 🟡
-
-**Estado:** ✅ el nombre, la historia del padre, la región, la visita de hace 14 años y la lámpara prestada (cinta 1), decididos por el autor el 2026-10-12; 🟡 solo lo que se marca dentro.
+## 8 · Vega Mansa y la familia del protagonista ✅
 
 - **Vega Mansa** es una aldea agrícola de las **tierras bajas del sur** ✅ ([19](19-elenco-a-fondo.md)). Allí vive la familia: el padre y la madre.
 - **El padre** es el hermano menor de Anselmo. Tenía 15 años en el derrumbe de Pozo Negro, donde murió su padre (el mismo de Anselmo) ✅. Dejó el Hollín, se hizo aparcero y **juró que ningún hijo bajaría a una mina** ✅. No es un villano: perdió a su padre en una galería.
 - **La región.** `world.json` **no tiene una región agraria**: sus seis regiones son mineras o de ciudad. Vega Mansa **no es una zona ni una región jugable**; queda fuera del mapa, al sur, y no se añade al registro del mundo ✅.
 - **La helada tardía y el banco agrario** son los de [19](19-elenco-a-fondo.md): la cosecha perdida es lo que empuja al protagonista a salir.
-- **La visita de hace 14 años.** Anselmo llegó a Vega Mansa una sola vez. El padre lo recibió con un silencio incómodo («tu tío trabaja en lo que yo juré dejar» 🟡). Esa noche Anselmo sacó a su sobrino o sobrina a ver las estrellas 🟡 y le prestó la lámpara ✅. Nunca la pidió de vuelta ni volvieron a verse ✅. Es la primera cinta ✅.
+- **La visita de hace 14 años.** Anselmo llegó a Vega Mansa una sola vez. El padre lo recibió con un silencio incómodo («tu tío trabaja en lo que yo juré dejar» ✅). Esa noche Anselmo sacó a su sobrino o sobrina a ver las estrellas ✅ y le prestó la lámpara ✅. Nunca la pidió de vuelta ni volvieron a verse ✅. Es la primera cinta ✅.
 - **La ironía.** Al heredar el puesto y la licencia, el protagonista **rompe sin querer el juramento del padre**: baja a la mina que él juró evitar. Se cuenta con ternura y con humor ligero, sin burla.
-- 🟡 Cómo se lo cuenta a su familia y cómo reacciona el padre: la carta del día 1 y la respuesta del día 5, en el nodo `n-i-herencia` ([27](27-guion-del-acto-i.md), secciones 4 y 8). Propuesta del guion, a la espera del autor.
+- ✅ Cómo se lo cuenta a su familia y cómo reacciona el padre: la carta del día 1 y la respuesta del día 5, en el nodo `n-i-herencia` ([27](27-guion-del-acto-i.md), secciones 4 y 8), confirmados por el autor el 2026-10-16.
 
 ---
 
 ## 9 · Casas industriales ✅
-
-**Estado:** ✅ todo (decisión del autor, 2026-10-12): que son nombres de ambiente, cuál se conserva, qué es Casa Ormeño, por qué se descartaron las otras y los ejemplos de voz. Desde 2026-10-13, además, Casa Ormeño es una tienda insignia (abajo).
 
 | Casa | Qué es | Estado |
 |---|---|---|
@@ -263,51 +250,47 @@ Anselmo grabó las ocho cintas en los **últimos meses antes de que lo detuviera
 
 ---
 
-## 10 · Orígenes de la Comisión, la Unión, los Faroleros y el Consorcio 🟡
-
-**Estado:** ✅ las fechas, el origen de la Comisión, de la Unión y de los Faroleros, y el pacto del Consorcio con la Comisión (confirmados el 2026-10-12); 🟡 el detalle derivado, que se marca dentro.
+## 10 · Orígenes de la Comisión, la Unión, los Faroleros y el Consorcio ✅
 
 ### La Comisión del Éter
 
 - Hace 30 años el hallazgo lo lleva una oficina de ensayo de tres personas ✅. Hace 27 años el Ministerio la convierte en la **Comisión del Éter** ✅.
-- **Para qué 🟡.** Para custodiar el mineral, controlar La Fosa (de ahí la militarización) y fijar los límites de exposición.
-- **Por qué «del Éter» y no «de la Aetherita» 🟡.** Los instrumentos del geólogo detectaron una emanación alrededor del mineral y la bautizó éter. El mineral recibió su nombre por ella. La Comisión nació para gestionar **el fenómeno**: es la regla 1.3 de [18](18-biblia-narrativa.md) vista desde su origen.
+- **Para qué ✅.** Para custodiar el mineral, controlar La Fosa (de ahí la militarización) y fijar los límites de exposición.
+- **Por qué «del Éter» y no «de la Aetherita» ✅.** Los instrumentos del geólogo detectaron una emanación alrededor del mineral y la bautizó éter. El mineral recibió su nombre por ella. La Comisión nació para gestionar **el fenómeno**: es la regla 1.3 de [18](18-biblia-narrativa.md) vista desde su origen.
 - **Hasta el Acto IV** se presenta como el organismo técnico que gestiona La Fosa ✅ (capítulo 3 de [18](18-biblia-narrativa.md)).
-- **El geólogo** no tiene nombre en el juego 🟡.
+- **El geólogo** no tiene nombre en el juego ✅.
 
 ### La Unión de Mineros del Hollín
 
-- Nace del **derrumbe de Pozo Negro** (hace 40 años) y de la huelga que siguió; el Ministerio la reconoció tras la huelga ✅, para frenar los disturbios 🟡.
-- La Unión conmemora el derrumbe cada año 🟡. Teo es de los que sobrevivieron.
-- La Unión **no conoce el secreto** de La Fosa 🟡: su prensa, La Voz del Hollín, solo recibe rumores.
+- Nace del **derrumbe de Pozo Negro** (hace 40 años) y de la huelga que siguió; el Ministerio la reconoció tras la huelga ✅, para frenar los disturbios ✅.
+- La Unión conmemora el derrumbe cada año ✅. Teo es de los que sobrevivieron.
+- La Unión **no conoce el secreto** de La Fosa ✅: su prensa, La Voz del Hollín, solo recibe rumores.
 
 ### Los Faroleros
 
 - **Gremio de faroles del puerto** ✅ ([07](07-sociedad-y-eventos.md)). Durante generaciones encendían y cuidaban los faroles de gas de Puerto Meridiano y de los puertos del Litoral. Tenían una caja común y un **farol vinotinto con luz ámbar** como señal. Casilda es hija y nieta de faroleros ✅.
-- **Hace 17 años** ✅, con la electrificación, el Ministerio retira los faroles de los barrios que pagan la tarifa de la red 🟡. Los barrios pobres quedan con luz racionada o a oscuras 🟡. Los faroleros pierden el oficio.
-- **Hace 15 años** ✅, Casilda (30 años) organiza a los suyos para **«cobrar la luz»** antes que el Estado ✅: mantienen el barrio iluminado con lámparas, generadores pequeños y conexiones, y cobran la «deuda de luz» 🟡.
-- **Su enemistad histórica con Montenegro 🟡.** Montenegro firmó el plan de tarifa que dejó a oscuras esos barrios 🟡.
+- **Hace 17 años** ✅, con la electrificación, el Ministerio retira los faroles de los barrios que pagan la tarifa de la red ✅. Los barrios pobres quedan con luz racionada o a oscuras ✅. Los faroleros pierden el oficio.
+- **Hace 15 años** ✅, Casilda (30 años) organiza a los suyos para **«cobrar la luz»** antes que el Estado ✅: mantienen el barrio iluminado con lámparas, generadores pequeños y conexiones, y cobran la «deuda de luz» ✅.
+- **Su enemistad histórica con Montenegro ✅.** Montenegro firmó el plan de tarifa que dejó a oscuras esos barrios ✅.
 - **Por qué quiere que el Hollín no dependa del Ministerio** ✅ ([19](19-elenco-a-fondo.md)). La red nueva llega al Hollín la última y peor, y el Ministerio la corta después de cada huelga, como castigo. Los Faroleros se mueven tierra adentro desde los puertos y venden luz propia en esos apagones. Casilda no quiere que el interruptor del Hollín esté en manos del Ministerio.
-- Su base sigue en los **Salares del Litoral**, el puerto y el contrabando 🟡.
+- Su base sigue en los **Salares del Litoral**, el puerto y el contrabando ✅.
 
-### El Consorcio Arvel y la Comisión (injerto de la cronología C) 🟡
+### El Consorcio Arvel y la Comisión (injerto de la cronología C) ✅
 
 - Hace 20 años el Consorcio **paga el equipo mayor** de la Primera Expedición a cambio de preferencia en los contratos ✅.
 - Hace 17 años gana el contrato de las **celdas** de la electrificación y desde entonces **financia el fondo reservado** de la Comisión ✅.
-- Eso es lo que [19](19-elenco-a-fondo.md) llama «el Consorcio financia el silencio». Esteban lo descubre en el Acto IV: su apellido paga ese silencio 🟡.
+- Eso es lo que [19](19-elenco-a-fondo.md) llama «el Consorcio financia el silencio». Esteban lo descubre en el Acto IV: su apellido paga ese silencio ✅.
 
 ---
 
-## 11 · De cada pista de [19](19-elenco-a-fondo.md) a su hito 🟡
-
-**Estado:** ✅ los hitos que cubren las decisiones del 2026-10-12 (el trato y el abono, la muerte pública con su sello y sin registro de cremación, la evacuación de Teo con su silencio firmado y las cintas 7 y 8); 🟡 lo que se marca dentro y la fila de Lucía, que apunta a «pocas semanas».
+## 11 · De cada pista de [19](19-elenco-a-fondo.md) a su hito ✅
 
 La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md) tiene ocho filas. Cada una apunta a un hito de este documento.
 
 | Acto | Pista | Hito al que apunta |
 |---|---|---|
 | I | El abono anónimo que Reme atribuye a «algún vecino bondadoso» | **Hace 2 años, el trato**: es el sueldo de Anselmo ✅. El préstamo original es de hace 21 años ✅ |
-| I | La libreta termina con una anotación sin fecha de cierre | **Hace 2 años, la noche antes de la detención**: Anselmo no la fechó 🟡 |
+| I | La libreta termina con una anotación sin fecha de cierre | **Hace 2 años, la noche antes de la detención**: Anselmo no la fechó ✅ |
 | II | El certificado de defunción con sello irregular y **sin registro de cremación** | **Hace 2 años, la muerte pública**: cremación que nadie registró ✅; sello del sanatorio ✅ |
 | II | Teo cambia de tema cuando se menciona el último viaje a La Fosa | **Hace 20 años, la Primera Expedición**: su evacuación ✅ y el silencio firmado por la pensión ✅ |
 | III | Lucía oyó que «alguien de la Comisión recibe cartas con la letra de un muerto» | **Pocas semanas** ✅: los informes de calibración que Anselmo escribe a mano para la Comisión desde el trato |
@@ -320,8 +303,8 @@ La tabla «Pistas sembradas a lo largo del juego» de [19](19-elenco-a-fondo.md)
 ## Pendiente
 
 - ⏳ F4-151 Texto final y voz de las ocho cintas, a partir de la sección 7.
-- Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8): 🟡 propuesto en el guion del Acto I, con la carta del día 1 y la respuesta del día 5 ([27](27-guion-del-acto-i.md)), a la espera del autor.
+- ✅ Cómo cuenta el protagonista a su familia que hereda un puesto de minería y cómo reacciona su padre (sección 8): la carta del día 1 y la respuesta del día 5, en el guion del Acto I ([27](27-guion-del-acto-i.md)).
 - ✅ Dónde está Anselmo hoy: queda abierto, como hilo para una segunda parte y sin tarea. Sigue vivo y secreto en las tres salidas; el abono se corta solo si revelas ([25](25-finales-y-epilogos.md), sección 7).
 - ✅ Registro de hilos: dónde se siembra cada pista de la sección 11 y dónde se resuelve está en `studio/data/hilos.json` (vista del hub en `#/hilos`).
 - ✅ La firma de los papeles de la herencia es la del acta final (decisión del autor, 2026-10-12). F0-43 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión.
-- ⏳ F0-80 Pasada de cierre con el autor para llevar este documento a 90 % o más de limpieza.
+- ✅ Pasada de cierre F0-80 con el autor (2026-10-16): todo lo que este documento proponía quedó decidido.
