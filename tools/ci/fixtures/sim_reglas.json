@@ -1,0 +1,99 @@
+{
+ "version": 1,
+ "reglas": [
+  {
+   "id": "A1",
+   "grupo": "A · Acto I y deuda",
+   "titulo": "Cuota del día 7 sin mejora",
+   "docs": [
+    "28 §3.1",
+    "03"
+   ],
+   "origen": "doc",
+   "umbral": "95–99,9 %"
+  },
+  {
+   "id": "A3",
+   "grupo": "A · Acto I y deuda",
+   "titulo": "El lento ni imposible ni trivial",
+   "docs": [
+    "28 §3.1"
+   ],
+   "origen": "prop.",
+   "umbral": "10–60 %"
+  },
+  {
+   "id": "A5",
+   "grupo": "A · Acto I y deuda",
+   "titulo": "Ingreso neto por hora del Acto I",
+   "docs": [
+    "28 §2"
+   ],
+   "origen": "doc",
+   "umbral": "≤ 20 %"
+  },
+  {
+   "id": "B1",
+   "grupo": "B · Ritmo y progresión",
+   "titulo": "Ritmo por acto",
+   "docs": [
+    "28 §6"
+   ],
+   "origen": "doc",
+   "umbral": "≤ 20 %"
+  },
+  {
+   "id": "B5",
+   "grupo": "B · Ritmo y progresión",
+   "titulo": "El optimizador no supera el techo de herramienta",
+   "docs": [
+    "28 §7"
+   ],
+   "origen": "prop.",
+   "umbral": "≥ 90 %"
+  },
+  {
+   "id": "E1",
+   "grupo": "E · Mercado y bucles",
+   "titulo": "Sin arbitraje seguro entre canales",
+   "docs": [
+    "28 §3.3",
+    "03"
+   ],
+   "origen": "doc",
+   "umbral": "< 0"
+  }
+ ],
+ "trazabilidad": [
+  {
+   "requisito": "La cuota del día 7 (960) se paga con 5 expediciones",
+   "fuente": "28 §3.1",
+   "reglas": [
+    "A1",
+    "A3"
+   ]
+  },
+  {
+   "requisito": "Ingreso neto por hora de cada perfil en el Acto I",
+   "fuente": "28 §2",
+   "reglas": [
+    "A5"
+   ]
+  },
+  {
+   "requisito": "Ritmo por acto 1 100 · 7 500 · 27 000 · 125 000",
+   "fuente": "28 §6",
+   "reglas": [
+    "B1",
+    "B5"
+   ]
+  },
+  {
+   "requisito": "No existe ganancia segura entre canales",
+   "fuente": "03",
+   "reglas": [
+    "E1"
+   ]
+  }
+ ]
+}

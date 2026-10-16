@@ -52,7 +52,7 @@ Mínimo **10 minerales**, cada uno con lore, utilidad y necesidad dentro del jue
 | 7 | **Cuarzo** | Medio, clave tecnológica | Hace funcionar radios y teletipos. **El detector básico es una herencia de Anselmo y no depende del cuarzo; el cuarzo lo mejora más adelante** ✅ |
 | 8 | **Esmeralda** | Lujo / volátil | Prestigio de la élite; el precio sigue las modas |
 | 9 | **Diamante** | Volátil | Herramientas de corte y lujo extremo |
-| 10 | **Aetherita** | Volátil / estratégico | Combustible casi milagroso, descubierto hace unos 30 años en La Fosa (cronología en [21](21-pasado-de-valdoria.md)). Peligroso, y nadie sabe bien qué es. Eje del misterio principal. ✅ En el Acto III solo se ve su precio y únicamente se compra en el mercado negro (Casilda), como mercancía escasa; la extracción no ocurre hasta el Acto IV ([03](03-comercio.md)) |
+| 10 | **Aetherita** | Volátil / estratégico | Combustible casi milagroso, descubierto hace unos 30 años en La Fosa (cronología en [21](21-pasado-de-valdoria.md)). Peligroso, y nadie sabe bien qué es. Eje del misterio principal. ✅ En el Acto III solo se ve su precio y únicamente se compra en el mercado negro (Casilda), como mercancía escasa; la extracción no ocurre hasta el Acto IV. ✅ En el Acto IV la que extraes se vende por un **canal legal con tope**, la Comisión del Éter (a valor justo, con el impuesto general y sin pasar por la vigilancia); en el mercado negro solo entra como **encargo especial**: raro, de pocos viales y con su historia, nunca un canal rutinario (decisión del autor, 2026-10-15/16; [03](03-comercio.md), cifras en [28](28-numeros-base-de-la-economia.md)) |
 
 🟡 La lista y los lores son una propuesta aceptada en general; los precios base, la volatilidad y los sectores que demandan cada uno están acordados como base ✅ ([28](28-numeros-base-de-la-economia.md)), y el resto de los detalles (por ejemplo la cadena de refinado) se afinan en el diseño del mercado.
 
@@ -73,7 +73,7 @@ Mínimo **10 minerales**, cada uno con lore, utilidad y necesidad dentro del jue
 | Diamante | | | | | ○ | ● |
 | Aetherita | | | | | | ● |
 
-✅ El **salitre** y la **Aetherita** aparecen en una sola zona: son las excepciones a la regla de «más de una zona» porque están ligados a la historia, y la Aetherita solo sale de La Fosa por canon (decisión del autor, 2026-10-15; [02](02-extraccion.md)).
+✅ El **salitre** y la **Aetherita** aparecen en una sola zona: son las excepciones a la regla de «más de una zona» porque están ligados a la historia, y la Aetherita solo sale de La Fosa por canon (decisión del autor, 2026-10-15; [02](02-extraccion.md)). ✅ Una vez extraída, la Aetherita no se vende como un mineral cualquiera: va por la Comisión del Éter (canal legal con tope) y, de forma excepcional, por encargos especiales del mercado negro ([03](03-comercio.md), [28](28-numeros-base-de-la-economia.md)).
 
 ### Ficha de mineral (plantilla para detallar)
 

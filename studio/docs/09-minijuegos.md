@@ -45,7 +45,7 @@ Los números son ilustrativos y se calibran en el prototipo ⏳ F2-13.
 
 | # | Minijuego | Herramienta | Parámetros | Cómo se juega |
 |---|---|---|---|---|
-| 1 | **Picado** | Pico | Fuerza ↔ Precisión | Mantienes pulsado para cargar fuerza mientras un marcador oscila sobre la mena. Sueltas cuando ambos están en zona. Las menas duras necesitan 2–3 golpes |
+| 1 | **Picado** | Pico | Fuerza ↔ Precisión | Mantienes pulsado para cargar fuerza mientras un marcador oscila sobre la mena. Sueltas cuando ambos están en zona. Las menas duras necesitan 2–3 golpes. ✅ Sirve para carbón, hierro, cobre, plata y oro (decisión del autor, 2026-10-16) |
 | 2 | **Perforación** | Taladro | Velocidad ↔ Calor | Mantener pulsado avanza más rápido pero sube el calor; soltar enfría. Llegar al fondo sin sobrecalentar |
 | 3 | **Cincelado** | Cincel | Precisión pura | Trazar con el cursor, con el botón izquierdo pulsado (o con el stick del mando), una línea sobre la gema sin salirse del margen. Un error agrieta la pieza y pierdes fragmentos 🟡 (con ratón; el dedo queda para la variante móvil) |
 | 4 | **Cribado** | Criba | Inclinación ↔ Caudal | Dos deslizadores que mantienen un indicador de flotación en zona mientras la carga cambia |
@@ -55,16 +55,16 @@ Los números son ilustrativos y se calibran en el prototipo ⏳ F2-13.
 
 ### Asignación a minerales ✅
 
-Coincide con el registro del mundo y con los minijuegos de cada boca de mina ([26](26-zonas-y-edificios.md)). La **Detonación** también se juega en las **Galerías del Hollín** (decisión del autor, 2026-10-15), con el carbón.
+Coincide con el registro del mundo y con los minijuegos de cada boca de mina ([26](26-zonas-y-edificios.md)), salvo la ampliación del **Picado** a cobre, plata y oro (decisión del autor, 2026-10-16). La **Detonación** también se juega en las **Galerías del Hollín** (decisión del autor, 2026-10-15), con el carbón.
 
 | Mineral | Minijuego principal |
 |---|---|
 | Carbón | Picado / Detonación |
 | Hierro | Picado / Perforación |
-| Cobre | Perforación |
+| Cobre | Picado / Perforación |
 | Salitre | Cribado |
-| Plata | Perforación / Cribado |
-| Oro | Cribado (aluvial) / Perforación (veta) |
+| Plata | Picado / Perforación / Cribado |
+| Oro | Picado / Cribado (aluvial) / Perforación (veta) |
 | Cuarzo | Cincelado |
 | Esmeralda | Cincelado |
 | Diamante | Cincelado de alto nivel |
@@ -72,11 +72,11 @@ Coincide con el registro del mundo y con los minijuegos de cada boca de mina ([2
 
 ### Contención (Aetherita) ✅
 
-Minijuego propio para el final del juego: mantener una energía inestable entre **presión** y **resonancia**. Cada extracción acumula **exposición**, que enferma al jugador («mal del éter») y baja temporalmente sus stats. **El mal del éter no mata** ([04](04-progresion-y-meta.md)). Introduce el secreto de la Aetherita antes de revelarlo y es una decisión real: ¿vale la pena extraer más? (Ver [08](08-historia-y-personaje.md).)
+Minijuego propio para el final del juego: mantener una energía inestable entre **presión** y **resonancia**. Cada extracción acumula **exposición**, que enferma al jugador («mal del éter») y baja temporalmente sus stats. **El mal del éter no mata** ([04](04-progresion-y-meta.md)). Introduce el secreto de la Aetherita antes de revelarlo y es una decisión real: ¿vale la pena extraer más? (Ver [08](08-historia-y-personaje.md).) ✅ Lo extraído se vende por la Comisión del Éter, un canal legal con tope diario, y solo en encargos especiales raros por el mercado negro, así que la decisión de extraer más no se resuelve vendiendo sin límite ([03](03-comercio.md), [28](28-numeros-base-de-la-economia.md)).
 
 ## Escáner ✅
 
-Para el MVP es **instantáneo**: hacer clic en la mena y ver los rangos. El **Ojo** y la herramienta determinan qué tan estrechos son. El detector básico es una herencia de Anselmo desde el Acto I; el cuarzo lo mejora más adelante. Un minijuego de sintonización queda como posible mejora futura.
+Para el MVP es **instantáneo**: hacer clic en la mena y ver los rangos. El **Ojo** y la herramienta determinan qué tan estrechos son. El detector básico es una herencia de Anselmo desde el Acto I; el cuarzo lo mejora más adelante. Un minijuego de sintonización queda como posible mejora futura. ✅ **Descartar** una mena escaneada sin extraerla cuesta el 25 % de la energía de esa mena ([02](02-extraccion.md), [28](28-numeros-base-de-la-economia.md)).
 
 ## Tareas de peligro (estilo Among Us) ✅
 

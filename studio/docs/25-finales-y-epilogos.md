@@ -38,6 +38,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | Líneas del acta | Las tres líneas de ejemplo del protagonista en el acta se aceptan como guía; el texto final ⏳ F4-142 ✅ |
 | Quién | Escribe el narrador. El motor es F4-210 y la traducción F4-211 ✅ |
 | Aetherita | Al revelar, **cae, rebota y sube** (su extracción es difícil y el mineral es limitado) y queda **algo por debajo del precio de antes**. No deja de valer ni se acaba el mercado ✅ |
+| Aetherita que extraes | Se vende a la Comisión, por un canal legal con tope, en su oficina de Puerto Meridiano; el mercado negro solo recibe encargos especiales raros y con historia. Con Casilda de compradora llegan más a menudo y con más historia ([23](23-arbol-de-decisiones.md), `n-iv-comprador`) ✅ |
 | Vender al Ministerio | El Ministerio se queda con **tu prueba** (los comprobantes y las cintas que usas), **no con el archivo de Quiroga** ✅ |
 | Ya decidido antes | Teo se queda, se va o muere. Reme siempre es tu mayor aliada, sin reproche. La cinta 8 queda cortada y quién la cortó, abierto. Ninguna salida es la correcta. Tono: esperanza con filo, sin cinismo. Montenegro no se humaniza ✅ |
 
@@ -155,7 +156,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 |---|---|---|---|---|
 | CA-01 | Le vendes la verdad | `f-comprador` | Teletipo | «CASILDA IBARRA GUARDA LO QUE COMPRÓ. SE ESPERA MÁS LUZ EN EL HOLLÍN, A SU PRECIO. SIN CONFIRMAR» |
 | CA-02 | Te aliaste con Los Faroleros | `f-alianza` | Teletipo | «LOS FAROLEROS EXTIENDEN SU LUZ POR LOS BARRIOS ALIADOS. LA DEUDA DE LUZ SE COBRA IGUAL. SIN CONFIRMAR» |
-| CA-03 | Aceptaste o compartiste su monopolio | `f-monopolio`, `f-destino` | Teletipo | **Si revelas:** «CASILDA IBARRA PESA EN EL MERCADO NEGRO DE AETHERITA. SE ESPERA QUE LA PRIMA CAIGA CON LA NOTICIA Y REBOTE DESPUÉS. SIN CONFIRMAR» **Si no:** «…SE ESPERA QUE LA PRIMA SE MANTENGA. SIN CONFIRMAR» |
+| CA-03 | Aceptaste o compartiste su monopolio | `f-monopolio`, `f-destino` | Teletipo | **Si revelas:** «CASILDA IBARRA MANDA EN LOS ENCARGOS ESPECIALES DE AETHERITA. SE ESPERA QUE LA PRIMA CAIGA CON LA NOTICIA Y REBOTE DESPUÉS. SIN CONFIRMAR» **Si no:** «…SE ESPERA QUE LA PRIMA SE MANTENGA. SIN CONFIRMAR» |
 | CA-04 | El resto | — | Voz | «Los Faroleros siguen cobrando la luz en el Hollín. Casilda Ibarra no pide que la quieran: pide que se pague a tiempo.» |
 
 **Quiroga.** Se elige por `f-archivo`. Cubre `f-quiroga-salida` con la segunda línea de QU-02.
@@ -230,7 +231,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 |---|---|---|---|---|
 | ME-01 | Revelas | `f-destino` | Teletipo | «AETHERITA CAE POR TRAMOS DIARIOS. SE ESPERA QUE REBOTE Y QUEDE ALGO MÁS ABAJO. SIN CONFIRMAR» |
 | ME-02 | Callas | `f-destino` | Heraldo | «La Aetherita se mantiene firme y se espera que siga al alza, pero el Heraldo recomienda prudencia.» |
-| ME-03 | Vendes | `f-destino`, `f-comprador` | Teletipo / Heraldo | **Casilda:** «LA PRIMA NEGRA DE LA AETHERITA SUBE EN EL PUERTO. CASILDA IBARRA SABE POR QUÉ. SIN CONFIRMAR» **Consorcio:** (Heraldo) «La Aetherita sube con las compras del Consorcio, pero el Heraldo no ve motivo de alarma.» **Ministerio:** (Heraldo) «La Aetherita se mantiene gracias a la cuota oficial, pero se espera que el Ministerio la vigile de cerca.» |
+| ME-03 | Vendes | `f-destino`, `f-comprador` | Teletipo / Heraldo | **Casilda:** «LOS ENCARGOS NEGROS DE AETHERITA LLEGAN MÁS A MENUDO AL PUERTO. CASILDA IBARRA SABE POR QUÉ. SIN CONFIRMAR» **Consorcio:** (Heraldo) «La Aetherita sube con las compras del Consorcio, pero el Heraldo no ve motivo de alarma.» **Ministerio:** (Heraldo) «La Aetherita se mantiene gracias a la cuota oficial, pero se espera que el Ministerio la vigile de cerca.» |
 | ME-04 | Si Esteban no defiende: mercado negro | `f-monopolio` | Teletipo | **Aceptaste o compartiste:** «EL MERCADO NEGRO SE REACOMODA. SE ESPERA MÁS VIGILANCIA DE NOCHE. SIN CONFIRMAR» **Rechazaste:** «EL CONSORCIO Y EL MINISTERIO SE REPARTEN EL HUECO DEL MERCADO NEGRO. SIN CONFIRMAR» |
 | ME-05 | Si Esteban defiende: hierro y cobre | `e-esteban` | Heraldo | «El hierro y el cobre se encarecen en Sierra Alta, pero el Consorcio atribuye el movimiento al calendario.» |
 
@@ -242,7 +243,7 @@ Decisiones del 2026-10-12 (F0-46), tomadas después de comparar tres formas: cab
 | FM-02 | A medias | `f-familia` | Narrador | «Llega una carta corta de Vega Mansa. En casa saben del puesto, no de la mina. De la deuda con el banco agrario, dice que {deuda-familia}. Se espera que pregunten más de lo que dices.» |
 | FM-03 | Nada | `f-familia` | Narrador | «Después de semanas sin noticias, llega una carta de Vega Mansa. Tu padre no pregunta nada. De la deuda con el banco agrario, solo dice que {deuda-familia}. Se espera que escriba otra.» |
 
-**La deuda del banco agrario ✅.** Las tres cartas cierran la deuda de la familia con una sola línea, sin cifras (decisión del autor, 2026-10-13). El hueco `{deuda-familia}` depende solo del **estatus que tenías al entrar en el acta de calibración**: con Empresario o Magnate dice «se paga» y con un estatus menor dice «se alivia» ✅. No hay una acción de enviar dinero a casa ni una mecánica nueva. Magnate se concede **al cerrar** el acta ([24](24-umbrales-de-acto.md)), así que no cuenta para la carta; si contara, todas dirían «se paga». El patrimonio es efectivo más stock a valor justo, sin restar la deuda y sin bienes de consumo ✅, con pisos orientativos de 25 000, 120 000 y 500 000 esquirlas ([28](28-numeros-base-de-la-economia.md)); cuánto exige cada estatus lo fija ⏳ F4-109.
+**La deuda del banco agrario ✅.** Las tres cartas cierran la deuda de la familia con una sola línea, sin cifras (decisión del autor, 2026-10-13). El hueco `{deuda-familia}` depende solo del **estatus que tenías al entrar en el acta de calibración**: con Empresario o Magnate dice «se paga» y con un estatus menor dice «se alivia» ✅. No hay una acción de enviar dinero a casa ni una mecánica nueva. Magnate se concede **al cerrar** el acta ([24](24-umbrales-de-acto.md)), así que no cuenta para la carta; si contara, todas dirían «se paga». El patrimonio es efectivo más stock a valor justo, sin restar la deuda y sin bienes de consumo ✅, con pisos orientativos de 15 000, 90 000 y 250 000 esquirlas ([28](28-numeros-base-de-la-economia.md)); cuánto exige cada estatus lo fija ⏳ F4-109.
 
 ---
 

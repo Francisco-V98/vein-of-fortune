@@ -37,6 +37,9 @@ jobs:
         run: python3 -m unittest discover -s tools/arch -v
       - name: Verificador de commits
         run: python3 -m unittest discover -s tools/ci -v
+      - name: Simulador de economía (modo rápido)
+        timeout-minutes: 5
+        run: python3 -m unittest discover -s tools/ci -p "test_simulador_economia.py" -v
 
   commits:
     name: Convención de commits

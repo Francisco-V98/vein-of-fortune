@@ -50,7 +50,7 @@ Decisión del autor (2026-10-15): una expedición a una **zona profunda** (las *
 Para que ninguna mitad domine, la otra se vuelve necesaria:
 
 - Solo minar: el almacén se llena, cuesta mantenerlo y no se vende → pérdidas.
-- Solo comerciar: sin mercancía no hay qué vender; comprar en el marketplace deja menos margen.
+- Solo comerciar: sin mercancía no hay qué vender. ✅ La tienda y los pedidos solo aceptan **mercancía propia** (extraída o refinada por ti): no se revende lo comprado. Comprar para revender solo se puede en el mercado spot, la Bolsa y el mercado negro, cada uno con sus frenos (decisión del autor, 2026-10-16; [03](03-comercio.md), [28](28-numeros-base-de-la-economia.md)).
 - Los contratos tienen plazo; el mercado se mueve en cada bloque; las menas de las zonas se agotan y regeneran en ciclos.
 
 ## Ritmo de sesión y guardado ✅

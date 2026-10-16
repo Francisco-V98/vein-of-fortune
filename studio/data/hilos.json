@@ -953,7 +953,7 @@
       "siembra": [
         {
           "acto": "III",
-          "donde": "Casilda negocia el monopolio de la venta clandestina de Aetherita; solo se compra en el mercado negro",
+          "donde": "Casilda negocia el monopolio de los encargos clandestinos de Aetherita; en el III la Aetherita solo se compra en el mercado negro",
           "ref": "doc 19 ficha de Casilda · doc 17 decisión 8 · nodo n-iii-monopolio · bandera f-monopolio",
           "estado": "ok"
         }
@@ -961,7 +961,7 @@
       "resuelve": [
         {
           "acto": "IV",
-          "donde": "Lo que aceptaste decide la prima negra y cómo suena Casilda al comprar la verdad",
+          "donde": "Lo que aceptaste decide la prima negra de sus encargos especiales y cómo suena Casilda al comprar la verdad",
           "ref": "nodo n-iv-comprador · piezas CA-01 a CA-04 y ME-04",
           "estado": "ok"
         }
@@ -1085,7 +1085,7 @@
       "resuelve": [
         {
           "acto": "IV",
-          "donde": "Revelarla hace caer el precio, que rebota y queda algo por debajo; callar o vender lo sostiene o lo sube",
+          "donde": "Revelarla hace caer el precio, que rebota y queda algo por debajo; callar o vender lo sostiene o lo sube. Lo que extraes se vende a la Comisión por un canal legal, y el mercado negro solo recibe encargos especiales raros",
           "ref": "nodo n-iv-aetherita · doc 25 §1 · piezas ME-01 a ME-03 · curva: tarea F4-147",
           "estado": "ok"
         }

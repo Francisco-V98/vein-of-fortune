@@ -575,7 +575,7 @@
               "id": "F0-53",
               "title": "Simulador de economía y progresión con reglas de equilibrio",
               "est": 16,
-              "status": "backlog",
+              "status": "done",
               "prio": "P1",
               "desc": "Simulación sin interfaz de miles de días. Comprueba que no hay bucles de ganancia infinita, que la deuda del Acto I se paga en su plazo sin ser trivial, que mejorar una herramienta no se paga sola en una expedición, que los ingresos por hora crecen de forma razonable y que no hay una zona siempre óptima. Debe comprobar también que el impacto del jugador en el precio crece con su volumen y patrimonio sin crear bucles de ganancia (documento 03), y que contratar Mineros empleados no domina al jugador.",
               "done_when": "Simulador en las pruebas automáticas con las reglas de equilibrio como casos y resultados visibles en el hub."
@@ -631,7 +631,7 @@
               "title": "Registro de zonas y edificaciones en `world.json`, con su validación en el hub",
               "est": 6,
               "prio": "P1",
-              "desc": "Seis asentamientos y las 44 edificaciones con ID, rol, versión y enlaces a minerales, recetas y facciones; el build comprueba que todo exista. Según el documento 26 (zonas y edificios).",
+              "desc": "Seis asentamientos y las 45 edificaciones con ID, rol, versión y enlaces a minerales, recetas y facciones; el build comprueba que todo exista. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]
