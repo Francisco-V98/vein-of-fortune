@@ -566,7 +566,7 @@
               "id": "F0-52",
               "title": "Modelo económico: números base",
               "est": 10,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Decidir con el autor los números base: precio y volatilidad de cada mineral, sectores de demanda, spreads, costos de herramientas, salarios, deuda y duración del día. Se cargan en el registro del mundo. Incluye también impuestos, multas, vigilancia, precios de información, renta, mora, mejora de tienda para contratar, materiales de reparar, energía por mena, pérdida y minutos por día frente a contratos de 7, 14 y 30 días. Incluye los salarios y el entrenamiento de empleados, el impacto del jugador en el precio y el costo del viaje y de la mejora de tienda.",
               "done_when": "Todos los minerales con precio base, volatilidad y demanda; costos y salarios acordados."
