@@ -953,6 +953,15 @@
               "done_when": "Documentos, datos y roadmap describen el efecto de estaciones y clima, el calendario con su ficha única, los festivos y el catálogo de 12 mini-historias; las tareas afectadas están recalibradas y todo termina en ✅ o ⏳ de una tarea existente."
             },
             {
+              "id": "F0-95",
+              "status": "done",
+              "title": "Sesiones numeradas y aviso de cambio de sesión",
+              "est": 2,
+              "prio": "P1",
+              "desc": "Cada sesión de trabajo lleva un número correlativo y un nombre claro (S-NN · tarea y tema), registrado en studio/data/sesiones.json con tools/sesion.py. Cuando la coordinación recomiende cambiar de sesión, lo avisa y entrega el prompt listo, y abre la sesión nueva con un clic (spawn_task). Regla en CLAUDE.md y memoria del proyecto.",
+              "done_when": "CLAUDE.md describe la regla, tools/sesion.py numera y valida el registro con pruebas, y la sesión actual y la siguiente quedan registradas."
+            },
+            {
               "id": "F0-92",
               "status": "done",
               "title": "Reescribir y recalibrar el simulador de economía para minas con cinco entradas, batería y cierres",
