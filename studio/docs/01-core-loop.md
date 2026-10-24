@@ -32,7 +32,7 @@ Decisión del autor (2026-10-15):
 - ✅ **Medio bloque** es la mitad de un bloque: dos medios bloques hacen uno. Sirve para lo que pesa poco (un trámite corto, una visita, una conversación que mueve la historia).
 - ✅ **El modo tienda empieza en el momento en que decides abrirla**, en el bloque que quieras (mañana o tarde, nunca de noche). Desde ahí se comercia y se gestiona: cerrar ventas a clientes y contratos y jugar las dinámicas de la tienda ([03](03-comercio.md)).
 - ✅ **De noche la tienda no se abre.** Sí caben las escenas, las visitas y el mercado negro, que no es el modo tienda (el bar de Salinas Blancas y la visita nocturna de Casilda, [03](03-comercio.md)).
-- ✅ **Esperar:** un botón «Esperar» salta un bloque cuando el jugador no quiere hacer nada en él. Es una decisión real porque el mercado se mueve igual ([03](03-comercio.md)).
+- ✅ **Esperar:** un botón «Esperar» salta un bloque cuando el jugador no quiere hacer nada en él. Es una decisión real porque el mercado se mueve igual ([03](03-comercio.md)). Vive en la **barra superior** y pide confirmación ✅ ([30](30-flujo-de-pantallas.md)). **Comprar, vender, refinar y regatear solo se hace dentro de un edificio** (tienda o puesto en el Acto I; lonja y herrería después; Bolsa desde el Acto III); la libreta solo muestra el mercado en lectura ✅.
 - ⏳ F2-02 Cómo se reparten los medios bloques dentro del día (si un medio que sobra se suma al siguiente o se pierde) y qué peso lleva cada misión, trámite, evento o visita.
 - ⏳ F4-72 Cuánto cuesta en bloques operar el mercado negro por la noche.
 
