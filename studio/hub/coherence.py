@@ -634,6 +634,8 @@ def _building_checks(world, add, task_status, doc26):
         if len(mines.get(z["id"], [])) != 1:
             bad.append("La zona de minado %s debe tener una sola boca de mina y tiene %d" % (z["id"], len(mines.get(z["id"], []))))
     for b in buildings:
+        if not b.get("tasks") and not b.get("evolutivo"):
+            bad.append("%s: edificación sin ninguna tarea que la construya" % b["id"])
         for t in b.get("tasks", []):
             total += 1
             if task_status is None:
