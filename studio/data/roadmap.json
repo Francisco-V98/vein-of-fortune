@@ -302,7 +302,7 @@
               "id": "F0-25",
               "title": "Flujo de pantallas",
               "est": 5,
-              "status": "backlog",
+              "status": "done",
               "desc": "Diagrama de pantallas y transiciones: título, mapa, ciudad, edificios con vista interior, mina, mercado, minijuegos y menús.",
               "done_when": "Flujo de pantallas acordado.",
               "prio": "P1"
