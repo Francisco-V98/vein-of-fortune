@@ -38,6 +38,7 @@ class Partida:
         self.mk.caida_max = S["mercado"]["caida_max_pct"]
         self.mk.markup_tienda = cfg.get("markup_tienda", P["mk"]["tienda"]["media"])
         self.acto = cfg["acto"]
+        self.motor = cfg.get("motor_minas")  # None = comportamiento anterior (huella 9dff70c2c639dbb5)
         self.dia = cfg.get("dia0", P["t"]["inicio_dia"])
         self.cash = float(cfg.get("cash", 0.0))
         self.stock = {m: 0.0 for m in P["min"]}
@@ -302,6 +303,8 @@ class Partida:
         z = plan["z"]
         Z = P["Z"][z]
         rich = self.rich[z] / 100.0
+        if self.motor:  # interruptor v2 (F0-93): calidad de la entrada y presión de los cierres
+            rich *= self.motor.factor(z, emp is not None)
         niv = P["herr"]["niveles"]
         mr = P["exp"]["mult_res"]
         resultados = P["resultados"]
@@ -789,6 +792,8 @@ class Partida:
         mk.fijar_acto(self.acto)
         mk.nuevo_dia(self.dia)
         self.aplicar_guion()
+        if self.motor:
+            self.motor.nuevo_dia(self.dia, self.acto, P["zonas"])
         for m in self.prod_ema:
             self.prod_ema[m] *= 1.0 - 1.0 / max(S["politica"]["ventana_prod"], 1)
         self.generar_pedidos()
