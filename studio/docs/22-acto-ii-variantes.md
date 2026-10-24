@@ -57,6 +57,8 @@ Decisiones del 2026-10-12 (F0-44), tomadas después de comparar tres enfoques (c
 
 Se activan por evento tuyo, no por calendario, se pueden saltar y no puntúan para ninguna puerta ✅ ([24](24-umbrales-de-acto.md)). Si el jugador no conoció antes a Esteban, A5 lo presenta; Casilda ya apareció en A2 o en A4.
 
+Las mini-historias de temporada ([29](29-calendario-y-temporadas.md)) se ofrecen desde el Acto II (el invierno empieza el día 8), son opcionales y no puntúan para ninguna puerta ✅.
+
 | Opción | Qué es | Disparador | Capa por variante |
 |---|---|---|---|
 | O1 · Lo que vende Lucía | Descubres que vende información a más de una parte | Comprar tres rumores | A quién vende además: a Esteban, a Quiroga o a los informantes de Casilda |

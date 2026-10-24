@@ -944,12 +944,21 @@
               "done_when": "El simulador sortea las entradas, aplica cierres con presión y batería, las reglas J1 a J5 y C5 están escritas y pasan sus pruebas, y A1 a A7 y B1 siguen definidas."
             },
             {
+              "id": "F0-94",
+              "status": "doing",
+              "title": "Estaciones, clima, calendario y mini-historias de temporada",
+              "est": 16,
+              "prio": "P1",
+              "desc": "Diseñar cómo afectan las estaciones y el clima (visual y jugable ligero; sistema completo para versiones futuras), la barra de fecha, el tablón de cada pueblo, el calendario en lista con ficha homologada, 6 a 8 festivos fijos y 12 mini-historias de temporada (3 por estación, de 2 o 3 misiones, elegibles y repetibles).",
+              "done_when": "Documentos, datos y roadmap describen el efecto de estaciones y clima, el calendario con su ficha única, los festivos y el catálogo de 12 mini-historias; las tareas afectadas están recalibradas y todo termina en ✅ o ⏳ de una tarea existente."
+            },
+            {
               "id": "F0-92",
               "status": "backlog",
               "title": "Reescribir y recalibrar el simulador de economía para minas con cinco entradas, batería y cierres",
               "est": 20,
               "prio": "P0",
-              "desc": "Recalibrar con las reglas de F0-93: zone_mix pasa a ser la media de las cinco entradas; economy.expedition (ores_per_expedition, fixed_seconds, seconds_per_ore, zone_wealth) se reescribe; D1 y D2 (zona óptima y riqueza) se recalibran; A1 a A7 y B1 se verifican y se ajustan los rendimientos base (−8 a −12 % si el valor esperado con el cambio sube a ~1,15); la cuota del Acto I se comprueba con el abanico estrecho 0,85/1,0/1,3; se regeneran los resultados (python3 tools/sim/run.py --completo --escribir) y se llevan al autor las cifras definitivas de partida de economy.mine_entrances (calidades, menas visibles, batería, presión, cierres) para su aprobación. Total de F0-92 y F0-93: 36 h, dentro de las 24 a 40 h previstas.",
+              "desc": "Recalibrar con las reglas de F0-93: zone_mix pasa a ser la media de las cinco entradas; economy.expedition (ores_per_expedition, fixed_seconds, seconds_per_ore, zone_wealth) se reescribe; D1 y D2 (zona óptima y riqueza) se recalibran; A1 a A7 y B1 se verifican y se ajustan los rendimientos base (−8 a −12 % si el valor esperado con el cambio sube a ~1,15); la cuota del Acto I se comprueba con el abanico estrecho 0,85/1,0/1,3; se regeneran los resultados (python3 tools/sim/run.py --completo --escribir) y se llevan al autor las cifras definitivas de partida de economy.mine_entrances (calidades, menas visibles, batería, presión, cierres) para su aprobación. Total de F0-92 y F0-93: 36 h, dentro de las 24 a 40 h previstas. F0-94: también mide las claves nuevas de economy.seasons_weather (Aguante −2 en invierno, riqueza +4 al día en primavera, desgaste +10 % en verano, −1 mena visible en otoño y niebla, nieve −1 carga de detector) con cuidado del doble conteo invierno/carbón +12 y del choque de la nieve con J3; sin horas extra.",
               "done_when": "El simulador queda en «50 de 50 · vigente» (o el número que hoy corresponda con las reglas nuevas), los resultados se regeneran, las cifras de partida de economy.mine_entrances las aprueba el autor y world.json y el documento 28 coinciden."
             }
           ]
@@ -2064,9 +2073,9 @@
               "id": "F3-48",
               "status": "backlog",
               "title": "Diario, cola de historia y aviso de rescate",
-              "est": 14,
+              "est": 18,
               "prio": "P0",
-              "desc": "Pantalla del diario (pestaña propia, accesible desde el día 1, con las vías de cada puerta en tramos y en cuatro estados: lejos, en camino, casi y cumplida, sin cifras), motor de la cola de historia (orden fijo por identificador de escena, una a una, nunca dos mecánicas nuevas a la vez, escenas condicionales omitidas si su condición ya no se da y «resuelta por vía alterna» si un hecho las supera) y aviso de rescate (una pista priorizada y descartable, una vez por puerta, solo en A5 y el círculo, a las 13,5 h y 26,5 h acumuladas pospuestas 2 h por cada vía nueva cumplida). Según el diseño de F0-78 (documentos 24 y 27). Los textos de cada acto los escriben las tareas de guion.",
+              "desc": "Pantalla del diario (pestaña propia, accesible desde el día 1, con las vías de cada puerta en tramos y en cuatro estados: lejos, en camino, casi y cumplida, sin cifras), motor de la cola de historia (orden fijo por identificador de escena, una a una, nunca dos mecánicas nuevas a la vez, escenas condicionales omitidas si su condición ya no se da y «resuelta por vía alterna» si un hecho las supera) y aviso de rescate (una pista priorizada y descartable, una vez por puerta, solo en A5 y el círculo, a las 13,5 h y 26,5 h acumuladas pospuestas 2 h por cada vía nueva cumplida). Según el diseño de F0-78 (documentos 24 y 27). Los textos de cada acto los escriben las tareas de guion. F0-94 (+4 h): añade la pestaña «Calendario» (F3-59) y el apartado «En curso» para la mini-historia aceptada.",
               "done_when": "El diario muestra las vías y avisa al cambiar una; la cola suelta las escenas del Acto I en orden sin atascos; el aviso de rescate aparece a su hora y se descarta sin costo; hay pruebas de que ninguna combinación suelta dos mecánicas nuevas a la vez."
             },
             {
@@ -2356,6 +2365,42 @@
               "prio": "P1",
               "desc": "Lista de edificaciones de Villa Brasa en el MVP con apertura por bloque. El mapa se abre desde cualquier lugar y, dentro de la zona, viajar de una edificación a otra no cuesta nada ni consume bloque. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F3-57",
+              "status": "backlog",
+              "title": "Barra superior de fecha, estación y clima",
+              "est": 6,
+              "prio": "P0",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Barra superior siempre visible con el formato «Día 14 · 7 de invierno · nieve», un punto cuando hay una ficha del calendario hoy y clic que abre el calendario. En los días 1 a 7 (Acto I) no muestra clima con efecto. El clima del día sale de la semilla y de la zona (despejado, lluvia, nieve, niebla).",
+              "done_when": "La barra muestra día, día de estación, estación y clima de la zona; el punto aparece cuando hay una ficha hoy y el clic abre el calendario; los días 1 a 7 no muestran clima con efecto; hay pruebas del formato y del texto en ES y EN."
+            },
+            {
+              "id": "F3-58",
+              "status": "backlog",
+              "title": "Tablón de anuncios de cada pueblo y ficha homologada",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Ficha única de 8 campos (tipo, fecha o ventana, zona, efecto, recompensa, riesgo, estado y certeza; vacíos como «—») y tablón de cada asentamiento, que es el calendario filtrado por esa zona. Unifica el «tablón de pedidos» del puesto (documento 27): los pedidos son un tipo de ficha.",
+              "done_when": "El tablón de cada asentamiento lista las fichas de su zona con el mismo formato; el detalle de una ficha muestra los 8 campos; los pedidos del puesto se muestran como fichas de tipo pedido; hay pruebas del modelo de la ficha."
+            },
+            {
+              "id": "F3-59",
+              "status": "backlog",
+              "title": "Calendario en lista, mes a mes, dentro del diario",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Pestaña «Calendario» del diario (F3-48): lista mes a mes con solo las fichas que tienen efecto o son elegibles, incluidas las posibles; al hacer clic se abre la ficha. La mini-historia aceptada pasa al apartado «En curso» del diario.",
+              "done_when": "La pestaña lista el mes en curso y los siguientes, oculta lo que no tiene efecto ni es elegible, muestra posibles con su certeza, abre la ficha al hacer clic y tiene el apartado «En curso»; hay pruebas."
+            },
+            {
+              "id": "F3-60",
+              "status": "backlog",
+              "title": "Motor de mini-historias de temporada",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Motor de las mini-historias (documento 29): una elegida por estación entre tres, máximo una activa, cada misión cuesta como máximo 1 bloque, ventana de 14 a 28 días sin plazo el día de cuota (día 7), un cierre de entrada pausa el plazo, sorteo de variante de obstáculo con hash(partida, año, historia), rotación (la hecha descansa un año o vuelve con otra variante). No pide Aguante extra, no puntúa para las puertas y no bloquea escenas ancla. Las historias de otoño no aparecen en la campaña: se ofrecen desde el Acto II y en el sandbox (F4-149).",
+              "done_when": "Una mini-historia de prueba se ofrece, se acepta, avanza por misiones enlazadas, aplica su variante de obstáculo, se pausa con un cierre de entrada y se cierra con su recompensa; el motor impide dos activas y respeta la rotación; hay pruebas."
             }
           ]
         },
@@ -2696,15 +2741,19 @@
               "id": "F4-32",
               "status": "backlog",
               "title": "Calendario estacional y ciclos",
-              "est": 6,
-              "prio": "P1"
+              "est": 10,
+              "prio": "P1",
+              "desc": "F0-94 (+4 h): añade los efectos de estación de partida (invierno −2 de Aguante, primavera +4 de riqueza al día, verano +10 % de desgaste de herramienta, otoño −1 mena visible), el clima por zona y la ficha de festivos; ver documento 29. Atención al doble conteo del invierno con el carbón +12 (documento 28, sección 3.3).",
+              "done_when": "El calendario aplica los efectos de estación y el clima del día por zona, sin clima con efecto en los días 1 a 7, y los festivos salen en su fecha."
             },
             {
               "id": "F4-33",
               "status": "backlog",
               "title": "Noticias de producción y clima",
-              "est": 4,
-              "prio": "P1"
+              "est": 6,
+              "prio": "P1",
+              "desc": "F0-94 (+2 h): las noticias de clima avisan la víspera de la lluvia fuerte que cierra una entrada y anuncian los festivos; el pronóstico completo es F6-77.",
+              "done_when": "Las noticias de clima salen con su certeza (rumor, probable, confirmado) y avisan la víspera de un cierre por lluvia."
             },
             {
               "id": "F4-34",
@@ -3132,8 +3181,10 @@
               "id": "F4-89",
               "status": "backlog",
               "title": "Calendario aleatorio de eventos y severidad por dificultad",
-              "est": 6,
-              "prio": "P1"
+              "est": 8,
+              "prio": "P1",
+              "desc": "F0-94 (+2 h): el calendario aleatorio emite fichas posibles con certeza y estado, y comparte el modelo de ficha homologada de F3-58.",
+              "done_when": "Los eventos aleatorios salen como fichas con los 8 campos y sus estados."
             }
           ]
         },
@@ -3668,7 +3719,7 @@
               "title": "Transición a sandbox tras el Acto IV",
               "est": 5,
               "prio": "P1",
-              "desc": "Paso al sandbox tras el acta: Magnate, el abono según la salida y los ecos del epílogo.",
+              "desc": "Paso al sandbox tras el acta: Magnate, el abono según la salida y los ecos del epílogo. F0-94: las mini-historias de otoño (que no aparecen en la campaña) se ven en el sandbox y en el segundo año.",
               "done_when": "Al cerrar el acta empieza el sandbox con el estado guardado y los epilogos releíbles desde el diario."
             },
             {
@@ -3734,9 +3785,9 @@
               "id": "F4-248",
               "status": "backlog",
               "title": "Estación y tren modular: escena de viaje con fondos de ventanilla",
-              "est": 12,
+              "est": 15,
               "prio": "P1",
-              "desc": "Pantalla de carga a pantalla completa tipo time-lapse con el personaje sentado junto a la ventanilla y el paisaje pasando de la zona A a la B; una escena base reutilizable con fondos por tramo, de unos 6 s, saltable desde el segundo viaje, más la estación o andén de llegada. Los cinco fondos de ventanilla definitivos son F4-249. La estación de Puerto Meridiano sigue siendo edificio de historia.",
+              "desc": "Pantalla de carga a pantalla completa tipo time-lapse con el personaje sentado junto a la ventanilla y el paisaje pasando de la zona A a la B; una escena base reutilizable con fondos por tramo, de unos 6 s, saltable desde el segundo viaje, más la estación o andén de llegada. Los cinco fondos de ventanilla definitivos son F4-249. La estación de Puerto Meridiano sigue siendo edificio de historia. F0-94 (+3 h): el paisaje de la ventanilla cambia con la estación y el clima del trayecto (tinte y capas, F4-261).",
               "done_when": "Cada viaje muestra la escena modular de 6 s con el billete cobrado y se salta desde el segundo viaje."
             },
             {
@@ -3833,9 +3884,9 @@
               "id": "F4-165",
               "status": "backlog",
               "title": "Puerto Meridiano: asentamiento cenital caminable",
-              "est": 16,
+              "est": 19,
               "prio": "P1",
-              "desc": "La ciudad en vista aérea: calles, plazas y límites para caminar, estación (andén de referencia) y las puertas de sus edificaciones.",
+              "desc": "La ciudad en vista aérea: calles, plazas y límites para caminar, estación (andén de referencia) y las puertas de sus edificaciones. F0-94 (+3 h): variantes estacionales y de clima por tinte de paleta y decoración de festivos (F4-261).",
               "done_when": "Se recorre Puerto Meridiano a pie y se llega a cada puerta."
             },
             {
@@ -3860,7 +3911,7 @@
               "title": "Asentamientos cenitales caminables: Villa Brasa, Altafría y Salinas Blancas",
               "est": 20,
               "prio": "P1",
-              "desc": "Los tres asentamientos en vista aérea, caminables, con las edificaciones vistas por fuera y con su puerta, y estación o calle de llegada. Según el documento 26 (zonas y edificios).",
+              "desc": "Los tres asentamientos en vista aérea, caminables, con las edificaciones vistas por fuera y con su puerta, y estación o calle de llegada. Según el documento 26 (zonas y edificios). F0-94 (sin horas extra; las 3 h van a F4-261): variantes estacionales y de clima por tinte de paleta y decoración de festivos (F4-261).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
@@ -3948,9 +3999,9 @@
               "id": "F4-250",
               "status": "backlog",
               "title": "Cierres de entradas por eventos, con presión y reapertura",
-              "est": 7,
+              "est": 9,
               "prio": "P1",
-              "desc": "Los problemas sociales o políticos que afectan a un mineral cierran entradas de esa mina: suave 1, complicado 2 y situación complicada en Valdoria 3, siempre con al menos 2 abiertas y en orden abundante, media, escasa; más cierres rinden menos por la presión (×0,95, ×0,88 y ×0,75). Se aplican al empezar el día con aviso previo, nunca con el jugador dentro; si cierran su entrada se le reasigna gratis. Se ven (piquete, precinto o soldados) con una frase del diario y reabren una por día en orden inverso. Sin cierres en el Acto I; el cierre total de una mina solo como excepción de guion. Cifras de partida; las calibra F0-92.",
+              "desc": "Los problemas sociales o políticos que afectan a un mineral cierran entradas de esa mina: suave 1, complicado 2 y situación complicada en Valdoria 3, siempre con al menos 2 abiertas y en orden abundante, media, escasa; más cierres rinden menos por la presión (×0,95, ×0,88 y ×0,75). Se aplican al empezar el día con aviso previo, nunca con el jugador dentro; si cierran su entrada se le reasigna gratis. Se ven (piquete, precinto o soldados) con una frase del diario y reabren una por día en orden inverso. Sin cierres en el Acto I; el cierre total de una mina solo como excepción de guion. Cifras de partida; las calibra F0-92. F0-94 (+2 h): la lluvia fuerte cierra una entrada de severidad suave, con aviso la víspera y como máximo 2 veces por estación y zona; un cierre de entrada pausa el plazo de la mini-historia activa.",
               "done_when": "Un evento cierra el número de entradas que corresponde a su severidad, la presión se aplica, se reabre una por día y nunca quedan menos de 2 abiertas; hay pruebas."
             },
             {
@@ -3979,6 +4030,15 @@
               "prio": "P2",
               "desc": "Las 46 edificaciones deben poder entrarse a futuro: se construyen primero las necesarias y las demás quedan con puerta cerrada o pendiente. Esta tarea deja el marcador, el cartel y el registro de interior reservado (enterable en world.json) para que añadir una dinámica después no rompa nada.",
               "done_when": "Todas las edificaciones sin interior muestran su puerta pendiente y el registro lista las que faltan."
+            },
+            {
+              "id": "F4-261",
+              "status": "backlog",
+              "title": "Arte estacional: tinte y superposición de paleta",
+              "est": 13,
+              "prio": "P2",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Variantes de estación y de clima del mapa, los asentamientos y las minas con un tinte o superposición de paleta (nieve, lluvia, niebla, hojas), sin hojas de sprites nuevas, más decoración de festivos. Coordinado con F4-217, F4-165 y F4-248.",
+              "done_when": "Las cuatro estaciones y los cuatro climas se ven en el mapa, los asentamientos y las minas sin duplicar hojas; el cambio de estación es legible y no tapa la información útil."
             }
           ]
         },
@@ -4013,8 +4073,10 @@
               "id": "F4-171",
               "status": "backlog",
               "title": "Calendario de eventos distinto por semilla",
-              "est": 4,
-              "prio": "P1"
+              "est": 6,
+              "prio": "P1",
+              "desc": "F0-94 (+2 h): la semilla también cambia el clima del día por zona, las fichas posibles y las variantes de las mini-historias.",
+              "done_when": "Dos semillas distintas dan calendarios y climas distintos y la misma semilla repite el calendario."
             },
             {
               "id": "F4-172",
@@ -4032,6 +4094,51 @@
               "est": 10,
               "prio": "P3",
               "desc": "Incluye la Detonación en las Galerías (documento 09)."
+            },
+            {
+              "id": "F4-256",
+              "status": "backlog",
+              "title": "Mini-historias de temporada: primavera (3 historias)",
+              "est": 8,
+              "prio": "P2",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Implementa las 3 mini-historias de primavera del documento 29 con el molde B1 (gancho, obstáculo, entrega con huecos), 2 variantes de obstáculo cada una, 2 o 3 misiones lineales, solo acciones que ya existen y recompensa de 0,5 a 1 día de ingreso medio más una pila u objeto de decoración. Textos ES y EN.",
+              "done_when": "Las 3 historias se juegan de principio a fin en sus dos variantes, no bloquean ninguna escena de la historia principal y dan su recompensa; hay textos en ES y EN y pruebas."
+            },
+            {
+              "id": "F4-257",
+              "status": "backlog",
+              "title": "Mini-historias de temporada: verano (3 historias)",
+              "est": 7,
+              "prio": "P2",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Implementa las 3 mini-historias de verano del documento 29 con el molde B1 (gancho, obstáculo, entrega con huecos), 2 variantes de obstáculo cada una, 2 o 3 misiones lineales, solo acciones que ya existen y recompensa de 0,5 a 1 día de ingreso medio más una pila u objeto de decoración. Textos ES y EN.",
+              "done_when": "Las 3 historias se juegan de principio a fin en sus dos variantes, no bloquean ninguna escena de la historia principal y dan su recompensa; hay textos en ES y EN y pruebas."
+            },
+            {
+              "id": "F4-258",
+              "status": "backlog",
+              "title": "Mini-historias de temporada: otoño (3 historias)",
+              "est": 7,
+              "prio": "P2",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Implementa las 3 mini-historias de otoño del documento 29 con el molde B1 (gancho, obstáculo, entrega con huecos), 2 variantes de obstáculo cada una, 2 o 3 misiones lineales, solo acciones que ya existen y recompensa de 0,5 a 1 día de ingreso medio más una pila u objeto de decoración. Textos ES y EN. Las de otoño no aparecen en la campaña (es el Acto I): se ven en el sandbox (F4-149) y en el segundo año.",
+              "done_when": "Las 3 historias se juegan de principio a fin en sus dos variantes, no bloquean ninguna escena de la historia principal y dan su recompensa; hay textos en ES y EN y pruebas."
+            },
+            {
+              "id": "F4-259",
+              "status": "backlog",
+              "title": "Mini-historias de temporada: invierno (3 historias)",
+              "est": 8,
+              "prio": "P2",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Implementa las 3 mini-historias de invierno del documento 29 con el molde B1 (gancho, obstáculo, entrega con huecos), 2 variantes de obstáculo cada una, 2 o 3 misiones lineales, solo acciones que ya existen y recompensa de 0,5 a 1 día de ingreso medio más una pila u objeto de decoración. Textos ES y EN.",
+              "done_when": "Las 3 historias se juegan de principio a fin en sus dos variantes, no bloquean ninguna escena de la historia principal y dan su recompensa; hay textos en ES y EN y pruebas."
+            },
+            {
+              "id": "F4-260",
+              "status": "backlog",
+              "title": "Festivos fijos del calendario (6 a 8 al año)",
+              "est": 8,
+              "prio": "P2",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). 1 o 2 festivos por estación con su efecto de mercado (como máximo ±2 puntos) y una escena breve o decoración, según el documento 29. Cada festivo es una ficha de tipo festivo.",
+              "done_when": "Los festivos salen en su fecha, mueven el mercado dentro del tope y tienen su escena breve o decoración; hay pruebas de fechas y de tope."
             }
           ]
         },
@@ -4321,6 +4428,15 @@
               "title": "Informe de QA del contenido",
               "est": 3,
               "prio": "P1"
+            },
+            {
+              "id": "F4-262",
+              "status": "backlog",
+              "title": "QA de estaciones, clima, calendario y mini-historias",
+              "est": 7,
+              "prio": "P1",
+              "desc": "Diseño de F0-94 en el documento 29 (calendario-y-temporadas) y el bloque economy.seasons_weather de world.json (cifras de partida; el simulador todavía no las lee, la huella no cambia; las calibran F0-92 y F0-93). Casos de prueba de la ficha, el calendario, el tablón, el clima por zona, los efectos de estación, el cierre por lluvia (máximo 2 por estación y zona), las 12 mini-historias con sus variantes y la rotación anual.",
+              "done_when": "Hay casos TC para cada tipo de ficha y cada mini-historia, automatizados donde se puede; nada del clima ocurre en los días 1 a 7; las mini-historias nunca bloquean escenas ancla."
             }
           ]
         },
@@ -5475,6 +5591,24 @@
               "title": "Temporada 2",
               "est": 10,
               "prio": "P3"
+            },
+            {
+              "id": "F6-77",
+              "status": "backlog",
+              "title": "Sistema de clima completo (1 de 2): pronóstico y modelo de clima",
+              "est": 20,
+              "prio": "P3",
+              "desc": "Versión futura o DLC (V2+) decidida en F0-94: el clima pasa de visual y jugable ligero a un sistema completo; esta parte hace el pronóstico y el modelo de clima por zona y por día (los efectos son F6-78), a partir de la base de F3-57, F4-32 y F4-261. F6-37, F6-38 y F6-39 quedan como están. Cifras y diseño a hacer cuando se priorice.",
+              "done_when": "Existe el modelo de clima con pronóstico por zona y por día, probado, y su diseño está aprobado por el autor."
+            },
+            {
+              "id": "F6-78",
+              "status": "backlog",
+              "title": "Sistema de clima completo (2 de 2): salud, ruta del tren y producción",
+              "est": 20,
+              "prio": "P3",
+              "desc": "Versión futura o DLC (V2+) decidida en F0-94: efectos del clima sobre la salud del personaje, la ruta del tren y la producción, a partir del pronóstico de F6-77. Cifras y diseño a hacer cuando se priorice.",
+              "done_when": "El clima afecta a la salud, la ruta del tren y la producción con cifras aprobadas por el autor, y la economía sigue dentro de sus rangos."
             }
           ]
         },

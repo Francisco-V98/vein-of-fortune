@@ -67,6 +67,7 @@ Para que ninguna mitad domine, la otra se vuelve necesaria:
 - ✅ Se puede cerrar o suspender en cualquier momento sin perder progreso (autoguardado instantáneo): la Steam Deck suspende y no se quiere perder avance (decisión del autor, 2026-10-15).
 - ✅ **Tiempo de juego:** un día completo dura **12–15 minutos** (≈ 13 nominales) y cada bloque **≈ 4–5 minutos**. La semana son 7 días y el **mes y la estación duran 28 días** cada uno (4 estaciones por año); de ahí sale la duración de cada acto ([17](17-mapa-de-historia.md), [28](28-numeros-base-de-la-economia.md)).
 - ✅ **Calendario de arranque:** el día 1 es el 22 de otoño, así que el invierno empieza el día 8, el primer día del Acto II ([28](28-numeros-base-de-la-economia.md)).
+- ✅ **Estaciones, clima y calendario (F0-94, decisión del autor, 2026-10-24):** la barra superior muestra siempre fecha, estación y clima («Día 14 · 7 de invierno · nieve»); el calendario es una pestaña del diario, en lista, con una ficha única, y cada pueblo tiene su tablón. Las estaciones y el clima son **visuales y jugables ligeros** (invierno con 2 de Aguante menos, la lluvia fuerte puede cerrar una entrada un día); nunca hay clima con efecto en los días 1 a 7. El sistema completo de clima es ⏳ F6-77. Detalle en [29](29-calendario-y-temporadas.md); cifras de partida en el bloque `economy.seasons_weather` de `world.json`, que el simulador no lee todavía (⏳ F0-92, ⏳ F0-93).
 
 ## Ciclo macro
 

@@ -29,6 +29,8 @@ Cada mineral tiene un **valor justo**, que se ajusta cada día según oferta, de
 
 ✅ **Precios base** (esquirlas por unidad, siempre enteros; el total de cada operación se redondea una sola vez): carbón 50 · hierro 90 · cobre 170 · salitre 150 · plata 200 · cuarzo 300 · oro 420 · esmeralda 800 · diamante 1 800 · Aetherita 6 000. La volatilidad, la liquidez y el costo de guardar de cada mineral están en [28](28-numeros-base-de-la-economia.md); el **costo de guardar** va de 0,03 % (Aetherita y diamante) a 0,15 % (carbón y hierro) del precio base por unidad y día, con un mínimo de 1 esquirla por lote.
 
+✅ **Estaciones, festivos y mercado (F0-94):** la estacionalidad por mineral sigue siendo la de [28](28-numeros-base-de-la-economia.md), sección 3.3. Los festivos fijos (1 o 2 por estación, 6 a 8 al año) mueven el mercado **±2 puntos como máximo** y las dificultades sociales o políticas de las mini-historias pueden mover un precio si hace falta, siempre como ficha del calendario ([29](29-calendario-y-temporadas.md)). Nada del clima mueve precios por sí solo en la versión 1; el efecto de clima en la producción es ⏳ F6-77.
+
 ✅ **Cómo se escriben los cambios de precio** (regla única, decisión del autor, 2026-10-15): un **«punto»** a secas es el **1 % del precio base** del mineral (no del precio del momento, para que los puntos se sumen): «carbón +3 puntos» son +3 % de 50 esquirlas, o sea +1,5. En la **deuda** se escribe **«pp»** (punto porcentual de interés: «−1 pp» es pasar del 4 % al 3 % mensual). En la **vigilancia** se escribe «vigilancia +10», nunca «+10 puntos». El «%» queda para ritmos y proporciones («sube un 20 % más despacio»).
 
 ### Personalidad de cada mineral ✅

@@ -199,6 +199,10 @@ Cambio de diseño F0-91; el detalle de las zonas está en [26](26-zonas-y-edific
 
 Las estaciones y los andenes se dibujan como referencia; la mecánica de viajar andando por la estación queda para otras versiones (ver [26](26-zonas-y-edificios.md)).
 
+### Estaciones y clima en el arte ✅ (autor, 2026-10-24, F0-94)
+
+Las estaciones y el clima se resuelven con un **tinte y una superposición de paleta** sobre las escenas ya hechas (mapa, asentamientos, minas y la ventanilla del tren) y con decoración de festivos; **no se dibujan hojas de sprites nuevas** por estación. Cuatro tintes (primavera, verano, otoño, invierno) y cuatro climas por zona (despejado, lluvia, nieve, niebla) con partículas ligeras; los tintes mantienen legibles los colores del detector (gris, ámbar, verde) y la niebla del mapa. Todo es arte provisional hasta la Puerta B (política de assets, más abajo). El trabajo de arte es ⏳ F4-261, junto con ⏳ F4-217, ⏳ F4-165 y ⏳ F4-248. Detalle de reglas en [29](29-calendario-y-temporadas.md).
+
 ## Assets provisionales y definitivos ✅
 
 ### Política del autor ✅ (2026-10-13)

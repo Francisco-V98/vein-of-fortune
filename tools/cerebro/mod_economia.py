@@ -19,6 +19,7 @@ BLOQUES = {
     "pace": ("Ritmo objetivo", 2, []),
     "energy": ("Energía", 4, []),
     "mine_entrances": ("Entradas de mina", 4, ["F0-92"]),
+    "seasons_weather": ("Estaciones y clima", 1, ["F0-92"]),
     "tools": ("Herramientas", 5, ["mj-picado", "mj-perforacion", "mj-cribado", "mj-cincelado"]),
     "market": ("Mercado", 6, []),
     "debt": ("Deuda del Acto I", 7, ["pj-reme", "ed-vb-reme"]),

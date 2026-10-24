@@ -87,6 +87,8 @@ Cada módulo corresponde a un tema de diseño ya documentado. `depende de` son l
 
 `world` y `exploration` (✅ 2026-10-24) separan la geografía y el paseo de la economía: `world` decide qué zonas están abiertas o con niebla y cuánto cuesta el viaje (lee el acto de `story` por evento, no depende de él); `exploration` solo conoce posiciones, puertas y el sorteo determinista `hash(partida, día, mina, entrada)` del reparto de entradas. `extraction` consume ese reparto y los cierres de `world_events` (dependencia declarada) por sus `api`, y el dominio no usa nodos ni coordenadas de Godot (la presentación sí). `staff` y `world_events` no cambian de dependencias: los empleados abstraen la entrada y los cierres llegan como eventos.
 
+Estaciones, clima y calendario (✅ F0-94): viven en el módulo `day` (fecha, estación y clima del día por zona, determinista con la semilla) y las fichas del calendario, los festivos y las mini-historias las emite `world_events` hacia `story` y `news` por eventos; la barra de fecha y el calendario son presentación. No se añade ningún módulo ni se cambian dependencias en `architecture.json` por ahora; si el motor de mini-historias (⏳ F3-60) pide un módulo propio, lo decide esa tarea. Ver [29](29-calendario-y-temporadas.md).
+
 El casino y los logros entrarán más adelante creando su propio módulo, sin tocar los demás. Los logros llegan a Steam a través del puerto de tienda.
 
 El grafo es **acíclico**: ningún módulo puede depender, directa o indirectamente, de sí mismo (regla A7).
