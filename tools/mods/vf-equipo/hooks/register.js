@@ -1,10 +1,30 @@
 // Tablero del equipo de Veta de Fortuna: /equipo abre un panel con el diagrama de traspasos de cada tarea
 // (quién le pasa el trabajo a quién, qué entregó cada uno, qué hallazgos dejó y quién los resolvió),
 // los especialistas que trabajan ahora y una bandeja con lo que te toca a ti: revisar, aprobar un PR o probar.
-// Se actualiza solo. Solo lee archivos del repositorio y ejecuta `gh pr list`. Los botones de la bandeja
+// Se actualiza solo. Solo lee archivos del repositorio y ejecuta `gh pr list` y `git branch --show-current`. Los botones
 // envían un mensaje a la conversación como si lo escribieras tú, solo cuando los pulsas; no modifican archivos.
+// Además aplica la política de modelos: al lanzarse un subagente rellena su modelo y su esfuerzo desde equipo.json
+// y pide tu autorización antes de dejar usar Fable 5.1 (ver politica.js y la sección de seguridad de tools/mods/README.md).
 
 import { svgAvatar, svgOficina, svgTraspasos } from './vis.js'
+import {
+  DENEGADO_FABLE,
+  aprobacionVigente,
+  aprobar,
+  anotarLanzamiento,
+  claveTarea,
+  contarPorModelo,
+  familiaDe,
+  interpretarRespuesta,
+  mensajeCambio,
+  nuevoLanzamiento,
+  pideFable,
+  preguntaFable,
+  preguntaOtroModelo,
+  resolverEleccion,
+  resolverRol,
+  ultimosLanzamientos,
+} from './politica.js'
 
 const PANE = 'vf-equipo'
 const EQUIPO = 'studio/data/equipo.json'
@@ -32,6 +52,11 @@ let acciones = {}
 let firmaDatos = ''
 let actualizado = ''
 let error = ''
+// Política de modelos
+let lanzamientos = {}
+let inicioSesion = 0
+let colaAutorizacion = Promise.resolve()
+const pendientes = []
 
 // ---------- lógica pura (se prueba sin sesión) ----------
 
@@ -415,6 +440,68 @@ function nombreEtapa(id) {
   return e ? e.nombre : id
 }
 
+// ---------- política de modelos (usa el motor) ----------
+
+async function ahoraMs($) {
+  try {
+    return await $.clock.now()
+  } catch (err) {
+    return Date.now()
+  }
+}
+
+async function ramaGit($) {
+  try {
+    const r = await $.process.run(['git', 'branch', '--show-current'], { timeoutMs: 5000 })
+    return r.exitCode === 0 ? String(r.stdout).trim() : ''
+  } catch (err) {
+    return ''
+  }
+}
+
+// Una pregunta a la vez: si el coordinador lanza varios agentes con Fable de golpe, el segundo espera a la respuesta del primero
+// (que puede ser «Aprobar para esta tarea») y entonces ya no pregunta.
+function enCola(fn) {
+  const turno = colaAutorizacion.then(fn)
+  colaAutorizacion = turno.catch(() => {})
+  return turno
+}
+
+// Pide la autorización de Fable. Resuelve a { autorizado, tarea } si se aprueba, a { model, tarea } si el autor elige otro modelo,
+// o a { deny } si cancela, rechaza, no hay interfaz o falla el diálogo.
+async function autorizarFable($, e, eleccion) {
+  const texto = (e.description || '') + ' ' + (e.prompt || '')
+  let tarea = claveTarea(texto, '')
+  if (!tarea) tarea = claveTarea('', await ramaGit($))
+  let aprobaciones = {}
+  try {
+    aprobaciones = (await $.store.get('aprobaciones')) || {}
+  } catch (err) {
+    aprobaciones = {}
+  }
+  const ahora = await ahoraMs($)
+  if (aprobacionVigente(aprobaciones, tarea, ahora)) return { autorizado: true, tarea }
+
+  const preguntar = async (q) => interpretarRespuesta(await $.ui.ask(q.pregunta, { options: q.opciones, header: q.header }))
+  try {
+    let r = await preguntar(preguntaFable(eleccion, e.description, tarea))
+    if (r.accion === 'otro') r = await preguntar(preguntaOtroModelo(e.description))
+    if (r.accion === 'modelo') return { model: r.model, tarea }
+    if (r.accion === 'solo') return { autorizado: true, tarea }
+    if (r.accion === 'tarea' && tarea) {
+      try {
+        await $.store.set('aprobaciones', aprobar(aprobaciones, tarea, ahora))
+      } catch (err) {
+        // si no se puede guardar, vale solo para este lanzamiento
+      }
+      return { autorizado: true, tarea }
+    }
+  } catch (err) {
+    // cancelado, sin interfaz (-p) o error del diálogo
+  }
+  return { deny: DENEGADO_FABLE }
+}
+
 // ---------- el mod ----------
 
 export function register(on) {
@@ -425,6 +512,13 @@ export function register(on) {
     } catch (err) {
       acciones = {}
     }
+    try {
+      const previos = await $.store.get('lanzamientos')
+      lanzamientos = previos && typeof previos === 'object' ? previos : {}
+    } catch (err) {
+      lanzamientos = {}
+    }
+    inicioSesion = await ahoraMs($)
     // Se actualiza solo: mira los datos y los especialistas cada pocos segundos, y los PR cada rato
     $.clock.every(SONDEO_MS, () => sondear($))
     $.clock.every(SONDEO_MS, () => refrescarAgentes($))
@@ -435,6 +529,71 @@ export function register(on) {
       immediate: true,
     })
     return next(e)
+  })
+
+  // Política de modelos: rellena modelo y esfuerzo del subagente desde la tabla del rol (lo que el coordinador fijó se respeta)
+  // y pide autorización antes de dejar usar Fable. También cubre los lanzamientos hechos desde otro subagente (`e.agentId`).
+  // Si equipo.json no se puede leer no bloquea nada, salvo que el modelo sea Fable.
+  on('tool.call', { tool: 'Agent' }, async ($, e, next) => {
+    const eq = await leerJson($, EQUIPO)
+    const eleccion = resolverEleccion(e, eq)
+    let { model, effort, motivo } = eleccion
+    let autorizado = false
+    let tarea = claveTarea((e.description || '') + ' ' + (e.prompt || ''), '')
+    if (pideFable(eleccion, eq)) {
+      const r = await enCola(() => autorizarFable($, e, eleccion))
+      if (r.deny) return { deny: r.deny }
+      tarea = r.tarea || tarea
+      if (r.model) {
+        model = r.model
+        motivo = 'ajuste'
+      } else {
+        autorizado = true
+      }
+    }
+    const salida = { ...e }
+    if (model) salida.model = model
+    if (effort) salida.effort = effort
+    const pendiente = { id: e.tool_use_id, tipo: e.subagent_type || '', descripcion: e.description || '', rol: eleccion.rol, modelo: model, esfuerzo: effort, motivo, tarea, autorizado }
+    pendientes.push(pendiente)
+    if (pendientes.length > 50) pendientes.shift()
+    try {
+      return await next(salida)
+    } finally {
+      const i = pendientes.indexOf(pendiente)
+      if (i >= 0) pendientes.splice(i, 1)
+    }
+  }).catch(($, e, next) => {
+    if (next.called) return next(e)
+    // un fallo inesperado no frena el trabajo, pero Fable nunca pasa sin permiso
+    return /fable/i.test(String(e.model || '')) ? { deny: DENEGADO_FABLE } : next(e)
+  })
+
+  // Apunta qué modelo, esfuerzo y motivo lleva cada subagente, porque `AgentInfo` no lo trae
+  on('agent.spawn', async ($, e, next) => {
+    const r = await next(e)
+    if (!r || r.deny || !r.agentId || e.resume) return r
+    try {
+      const i = pendientes.findIndex((p) => (e.tool_use_id && p.id === e.tool_use_id) || (p.tipo === e.subagentType && p.descripcion === e.description))
+      const p = i >= 0 ? pendientes[i] : null
+      const eq = p ? null : equipo || (await leerJson($, EQUIPO))
+      const rol = p ? p.rol : (resolverRol(e.subagentType, eq) || {}).id
+      const reg = nuevoLanzamiento({
+        rol,
+        modelo: familiaDe(r.model) || (p && p.modelo) || e.model || '',
+        esfuerzo: p ? p.esfuerzo : '',
+        motivo: p ? p.motivo : 'defecto',
+        tarea: p ? p.tarea : claveTarea((e.description || '') + ' ' + (e.prompt || ''), ''),
+        autorizado: p ? p.autorizado : false,
+        t: await ahoraMs($),
+      })
+      lanzamientos = anotarLanzamiento(lanzamientos, r.agentId, reg)
+      await $.store.set('lanzamientos', lanzamientos)
+      $.ui.invalidate('ui.render')
+    } catch (err) {
+      // el registro es informativo: un fallo no debe frenar el lanzamiento
+    }
+    return r
   })
 
   // Al terminar cada turno el trabajo suele haber cambiado: se actualiza sin esperar al sondeo
@@ -497,7 +656,7 @@ export function register(on) {
       }
       filas.push(...(tab === 'oficina' ? vistaOficina(ctx, acc) : vistaTraspasos(ctx, acc)))
     } else {
-      filas.push(...vistaEquipo(ctx))
+      filas.push(...vistaEquipo(ctx, { cambiar: (rol, que) => $.prompt.submit({ text: mensajeCambio(rol, que), asUser: true }) }))
     }
 
     return Box({ flexDirection: 'column', children: [cabecera, Text({ children: [' '] }), ...filas] })
@@ -818,9 +977,24 @@ function tarjetaAccion(ctx, item, estado, acc) {
   return Box({ flexDirection: 'column', borderStyle: 'round', paddingX: 1, marginBottom: 1, children: hijos })
 }
 
-function vistaEquipo(ctx) {
-  const { Text, Box, Svg, escritorio } = ctx
-  const filas = []
+// Los lanzamientos de la sesión por modelo y los últimos agentes lanzados, con el motivo de cada elección
+function resumenLanzamientos(ctx) {
+  const { Text } = ctx
+  const filas = [titulo(Text, 'Lanzamientos de esta sesión')]
+  const cuenta = contarPorModelo(lanzamientos, inicioSesion)
+  const partes = Object.entries(cuenta).map(([m, n]) => m + ' ' + n)
+  filas.push(Text({ dimColor: partes.length === 0, children: [partes.length ? partes.join(' · ') : 'Todavía no se ha lanzado ningún agente.'] }))
+  for (const l of ultimosLanzamientos(lanzamientos, 5)) {
+    const detalle = [l.modelo || 'heredado', l.esfuerzo, l.motivo === 'ajuste' ? 'ajuste' : 'por defecto', l.tarea, l.autorizado ? 'Fable autorizado' : ''].filter(Boolean).join(' · ')
+    filas.push(Text({ dimColor: true, wrap: 'wrap', children: [nombreRol(l.rol) + ' · ' + detalle] }))
+  }
+  filas.push(Text({ children: [' '] }))
+  return filas
+}
+
+function vistaEquipo(ctx, acc) {
+  const { Text, Box, Button, Svg, escritorio } = ctx
+  const filas = [...resumenLanzamientos(ctx)]
   const idx = (f) => Math.max(0, ordenFases.indexOf(f))
   for (const depto of equipo.deptos) {
     const roles = equipo.roles.filter((r) => r.depto === depto.id)
@@ -837,6 +1011,19 @@ function vistaEquipo(ctx) {
         Text({ dimColor: true, wrap: 'wrap', children: ['Entrega: ' + rol.entrega] }),
       ]
       if (suyas.length) cuerpo.push(Text({ color: 'yellow', children: ['Ahora: ' + suyas.map((t) => t.id).join(', ')] }))
+      if (rol.agente) {
+        cuerpo.push(Text({ children: ['Modelo ' + (rol.modelo || 'sin definir') + ' · esfuerzo ' + (rol.esfuerzo || 'sin definir')] }))
+        cuerpo.push(
+          Box({
+            flexDirection: 'row',
+            columnGap: 2,
+            children: [
+              Button({ key: 'modelo-' + rol.id, label: 'Cambiar modelo', plain: true, onPress: () => acc.cambiar(rol, 'modelo') }),
+              Button({ key: 'esfuerzo-' + rol.id, label: 'Cambiar esfuerzo', plain: true, onPress: () => acc.cambiar(rol, 'esfuerzo') }),
+            ],
+          }),
+        )
+      }
       const avatar = escritorio ? Svg({ key: 'avatar-' + rol.id, alt: rol.nombre, width: 48, height: 48, source: svgAvatar(rol.nombre, i, vivo || suyas.length > 0, rol.tipo === 'humano') }) : Text({ bold: true, children: [(vivo ? '●' : '○') + ' '] })
       filas.push(Box({ flexDirection: 'row', columnGap: 2, borderStyle: 'round', paddingX: 1, marginBottom: 1, children: [avatar, Box({ flexDirection: 'column', flexShrink: 1, children: cuerpo })] }))
     }

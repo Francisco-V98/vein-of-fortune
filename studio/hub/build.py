@@ -181,6 +181,47 @@ def check_activity(tid, status, act):
             e["exists"] = bool(rel) and (STUDIO / rel).exists()
 
 
+def _load_sincronizador():
+    """Carga tools/equipo/sincronizar_agentes.py (fuente única del bloque común)."""
+    spec = importlib.util.spec_from_file_location(
+        "sincronizar_agentes", STUDIO.parent / "tools" / "equipo" / "sincronizar_agentes.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def check_modelos_equipo(data, agents_dir):
+    """Valida modelo y esfuerzo de cada rol con agente y que su .md coincida (frontmatter y bloque común)."""
+    pol = data.get("politica_modelos")
+    if not isinstance(pol, dict) or not pol.get("modelos") or not pol.get("esfuerzos"):
+        warn("equipo.json: falta politica_modelos con modelos y esfuerzos")
+        return
+    sync = _load_sincronizador()
+    for rol in data.get("roles", []):
+        agente = rol.get("agente")
+        if not agente:
+            continue
+        ok = True
+        if rol.get("modelo") not in pol["modelos"]:
+            warn("equipo.json: el rol %s tiene un modelo inválido: %s" % (rol["id"], rol.get("modelo")))
+            ok = False
+        if rol.get("esfuerzo") not in pol["esfuerzos"]:
+            warn("equipo.json: el rol %s tiene un esfuerzo inválido: %s" % (rol["id"], rol.get("esfuerzo")))
+            ok = False
+        md = pathlib.Path(agents_dir) / ("%s.md" % agente)
+        if not ok or not md.exists():
+            continue
+        texto = md.read_text(encoding="utf-8")
+        front, _ = sync.partir_frontmatter(texto)
+        for clave, esperado in (("model", rol["modelo"]), ("effort", rol["esfuerzo"])):
+            actual = sync.valor_front(front, clave)
+            if actual != esperado:
+                warn("%s.md: %s es %s y equipo.json dice %s (ejecuta tools/equipo/sincronizar_agentes.py)"
+                     % (agente, clave, actual, esperado))
+        if sync.BLOQUE_MARCADO not in texto:
+            warn("%s.md: falta el bloque común o no coincide (ejecuta tools/equipo/sincronizar_agentes.py)" % agente)
+
+
 def load_equipo():
     """Carga y valida el equipo de especialistas y las etapas del flujo."""
     path = DATA / "equipo.json"
@@ -207,6 +248,7 @@ def load_equipo():
         agent_file = STUDIO.parent / ".claude" / "agents" / ("%s.md" % rol["agente"]) if rol.get("agente") else None
         if agent_file is not None and not agent_file.exists():
             warn("equipo.json: el rol %s apunta al agente %s, que no existe en .claude/agents" % (rol["id"], rol["agente"]))
+    check_modelos_equipo(data, STUDIO.parent / ".claude" / "agents")
     return data
 
 

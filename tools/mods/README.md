@@ -10,7 +10,16 @@ Tres mods, en un marketplace local llamado `vein-mods`. Documentación del equip
 
 ## Seguridad
 
-Un mod corre con tus mismos permisos y sin aislamiento. Lee el código antes de instalarlo: está en `hooks/register.js` de cada mod. `vf-consumo` no lee ni ejecuta nada fuera de Claude Code: solo guarda en el almacén propio del mod, en tu carpeta de configuración, el texto de cada prompt (recortado a 200 caracteres), la carpeta del proyecto, los tokens y los porcentajes de las ventanas; no envía nada a ninguna parte. Los otros dos solo leen archivos del repositorio y ejecutan `python3 studio/hub/build.py`, `git` y `gh pr list` (`vf-estado`). Los botones de `vf-equipo` envían un mensaje con tu nombre solo cuando los pulsas, y `gh pr list` lo ejecuta para ver los PR abiertos.
+Un mod corre con tus mismos permisos y sin aislamiento. Lee el código antes de instalarlo: está en `hooks/register.js` de cada mod. `vf-consumo` no lee ni ejecuta nada fuera de Claude Code: solo guarda en el almacén propio del mod, en tu carpeta de configuración, el texto de cada prompt (recortado a 200 caracteres), la carpeta del proyecto, los tokens y los porcentajes de las ventanas; no envía nada a ninguna parte. `vf-estado` solo lee archivos del repositorio y ejecuta `python3 studio/hub/build.py`, `git` y `gh pr list`. `vf-equipo` lee archivos del repositorio, ejecuta `gh pr list` y `git branch --show-current`, y sus botones envían un mensaje con tu nombre solo cuando los pulsas.
+
+### Qué lee y qué intercepta `vf-equipo` sobre `Agent`
+
+`vf-equipo` aplica la política de modelos y esfuerzo por agente (`studio/data/equipo.json`, campos `modelo`, `esfuerzo` y `politica_modelos`; lógica en `vf-equipo/hooks/politica.js`). Para eso engancha dos eventos:
+
+- **`tool.call` de la herramienta `Agent`** (cada vez que Claude lanza un subagente, también desde otro subagente). Lee el `subagent_type`, la `description` y el `prompt` del encargo, y `studio/data/equipo.json`. Si el encargo no trae `model` o `effort`, los rellena con los de la tabla del rol; lo que Claude fija a propósito se respeta. No cambia el prompt, ni las herramientas, ni los permisos del subagente. Si el modelo final es **Fable 5.1**, abre el diálogo de preguntas del motor (`$.ui.ask`) y solo lo deja pasar si lo autorizas: «Aprobar para esta tarea» (vale 8 horas para esa tarea; la tarea se identifica por el ID `F0-87` del encargo o, si no hay, por la rama git), «Aprobar solo este», o «Usar otro modelo» (Opus, Sonnet o Haiku). Es un diálogo de dos pasos porque el del motor admite como máximo cuatro opciones. El texto libre del diálogo solo vale si nombra un modelo; cualquier otra cosa, cancelar, un error o una sesión sin interfaz (`-p`) deniegan el lanzamiento con «Fable no autorizado». Si `equipo.json` no se puede leer no bloquea nada, salvo que el modelo sea Fable.
+- **`agent.spawn`**. No cambia ni deniega nada: solo apunta, por `agentId`, el rol, el modelo, el esfuerzo, el motivo (defecto o ajuste), la tarea y si Fable estaba autorizado. Se guarda en el almacén del mod (hasta 500 entradas), junto con las aprobaciones por tarea, y alimenta la pestaña «Equipo». No guarda prompts.
+
+Límites: solo se pregunta por lo que pasa por la herramienta `Agent`; un lanzamiento de otro mod (`$.agent.spawn`), un workflow o un equipo de teammates no pasa por el diálogo. Un fallo inesperado del hook deja pasar el lanzamiento, salvo que el encargo pida Fable de forma explícita. Los botones «Cambiar modelo» y «Cambiar esfuerzo» no editan nada: envían a Claude un mensaje con tu nombre pidiéndole que cambie `equipo.json`.
 
 ## Instalar
 
@@ -32,6 +41,10 @@ cd tools/mods/vf-estado && claude plugin validate . && claude plugin test
 cd ../vf-equipo && claude plugin validate . && claude plugin test
 cd ../vf-consumo && claude plugin validate . && claude plugin test
 ```
+
+## Versión mínima y riesgo sin comprobar
+
+`vf-equipo` usa `tool.call` sobre `Agent` (con `model` y `effort`), `agent.spawn` y `$.ui.ask`. Sus pruebas pasan con Claude Code 2.1.295 y 2.1.299 (`claude plugin test`), y los tipos de la 2.1.299 los traen; no hay forma de comprobarlo con la 2.1.287, la mínima declarada arriba, porque no hay un binario de esa versión a mano. Si en esa versión falta alguno, el hook no se carga y la política de modelos no se aplica (el resto del mod sigue funcionando); en ese caso hay que subir el mínimo.
 
 ## Consumo de tokens (`/consumo`)
 

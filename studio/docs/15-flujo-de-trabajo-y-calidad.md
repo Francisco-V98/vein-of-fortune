@@ -217,6 +217,16 @@ Toda decisión que afecte la estructura, una dependencia o un proceso se registr
 - Claude abre cada cambio como rama y deja el PR listo; el autor revisa y fusiona.
 - Cada tarea documenta su evidencia y su referencia (`ref`) en el hub.
 
+## Coste de la IA ✅
+
+Decisión del autor (2026-10-23, [ADR-0010](adr/0010-politica-de-modelos-y-autorizacion-de-fable.md)). Las reglas completas están en `CLAUDE.md`; este es el resumen:
+
+- **Modelo y esfuerzo:** cada agente lleva los de su rol en `studio/data/equipo.json` (tabla en [20](20-equipo-y-flujo-de-agentes.md)). Los cambios por tarea llevan su motivo; Fable 5.1 exige la autorización del autor.
+- **Informes cortos:** encargo mínimo y informe de máximo 60 líneas o 6.000 caracteres (resultado, archivos tocados, hallazgos con `archivo:línea`, dudas para el autor).
+- **Lectura parcial:** `grep -n` y rangos en lugar de documentos enteros; los archivos generados grandes no se leen.
+- **Lotes:** los agentes independientes se lanzan juntos y sus informes se procesan juntos.
+- **Cierre de sesión:** al fusionar el PR de una tarea se cierra la sesión o se compacta, para no arrastrar un contexto grande a la tarea siguiente.
+
 ## Ajustes de GitHub que hace el autor 🟡
 
 En *Settings → Branches → Branch protection rule* para `main`:
