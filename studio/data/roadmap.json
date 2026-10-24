@@ -971,6 +971,15 @@
               "done_when": "El job «Pruebas de las herramientas» pasa en CI sobre main."
             },
             {
+              "id": "F0-98",
+              "status": "doing",
+              "title": "Límite de tiempo del modo rápido en CI",
+              "est": 1,
+              "prio": "P0",
+              "desc": "La prueba test_dura_menos_de_45_segundos falla en CI por poco (45,8 a 46,6 s) porque el runner es más lento que un equipo de desarrollo (36,8 s en local). El límite sigue en 45 s en local y pasa a 75 s cuando CI está definida.",
+              "done_when": "El job «Pruebas de las herramientas» pasa de forma estable en CI y el límite de 45 s se mantiene en local."
+            },
+            {
               "id": "F0-92",
               "status": "done",
               "title": "Reescribir y recalibrar el simulador de economía para minas con cinco entradas, batería y cierres",

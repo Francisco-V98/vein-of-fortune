@@ -1,0 +1,66 @@
+{
+  "id": "F0-98",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Prueba de tiempo del modo rápido inestable en CI",
+      "ref": "rama studio/F0-98-limite-modo-rapido-en-ci"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "36,8 s en local frente a 45,8 a 46,6 s en CI"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "Límite de 75 s cuando CI está definida; 45 s en local"
+      },
+      {
+        "etapa": "qa",
+        "estado": "activa",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "La verifica el job de CI del PR"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Encargo: comprobar que el job de CI pasa",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}
