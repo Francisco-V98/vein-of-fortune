@@ -1,0 +1,72 @@
+{
+  "id": "F0-95",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Sesiones numeradas y aviso de cambio de sesión",
+      "ref": "rama studio/F0-95-sesiones-numeradas"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "Regla en CLAUDE.md, tools/sesion.py, registro de sesiones y pruebas; tarea pequeña de proceso hecha por la coordinación"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "QA aprobó sin fallos"
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-24",
+        "por": "autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Encargo: build, pruebas y revisión de tools/sesion.py y CLAUDE.md",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Informe: aprobado; 379 pruebas",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

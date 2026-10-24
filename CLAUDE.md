@@ -26,6 +26,7 @@ Estudio de diseño de un juego de gestión minera (Godot 4, pixel art horizontal
 ## Sesión
 - Al fusionar el PR de una tarea, cierra la sesión o compacta (`/compact`); evita seguir con contextos de más de 200 k tokens y los reposos largos con contexto grande (la caché caduca a los 5 minutos y se reescribe entera).
 - `/consumo` muestra el gasto por modelo, ventana y día.
+- **Cambio de sesión (siempre avisado):** cuando recomiendes cerrar o compactar la sesión, dilo de forma explícita, entrega el prompt de la sesión nueva en un bloque y ábrela con `spawn_task` (un clic). Cada sesión lleva número y nombre claro: `python3 tools/sesion.py nueva "<tarea> <tema>"` la registra en `studio/data/sesiones.json` y devuelve el título `S-NN · <tarea> <tema>`; úsalo como título del chip y, al empezar, como título de la sesión (`set_session_title`).
 
 ## Medidas de calidad del diseño
 - Limpieza por documento ≥ 90 % (meta 100 %: 0 🟡 y 0 ❓); coherencia con 0 hallazgos; hilos sin problemas; simulador «50 de 50 · vigente». Si cambias una cifra de `studio/data/world.json` o del documento 28, reejecuta `python3 tools/sim/run.py --completo --escribir`.
