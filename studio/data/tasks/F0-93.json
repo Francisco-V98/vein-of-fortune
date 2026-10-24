@@ -35,13 +35,16 @@
       },
       {
         "etapa": "qa",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-24",
-        "por": "qa"
+        "por": "qa",
+        "nota": "QA aprobó sin fallos"
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-24",
+        "por": "autor"
       },
       {
         "etapa": "playtest",
@@ -71,6 +74,13 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Encargo: build, pruebas, huella y reglas v2 de F0-93",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Informe: aprobado; huella intacta, 373 pruebas",
         "at": "2026-10-24",
         "tipo": "entrega"
       }
