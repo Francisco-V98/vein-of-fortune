@@ -1,0 +1,784 @@
+{
+  "items": [
+    {
+      "type": "graph",
+      "ctime": 0,
+      "title": "Grafo: sin el backlog de F1 a F6",
+      "options": {
+        "collapse-filter": false,
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "colorGroups": [
+          {
+            "query": "path:\"00 Inicio\" OR path:MOC",
+            "color": {
+              "a": 1,
+              "rgb": 16777215
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/hecho",
+            "color": {
+              "a": 1,
+              "rgb": 5025616
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/en-curso",
+            "color": {
+              "a": 1,
+              "rgb": 16757504
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/descartado",
+            "color": {
+              "a": 1,
+              "rgb": 12000284
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/pendiente",
+            "color": {
+              "a": 1,
+              "rgb": 7697781
+            }
+          },
+          {
+            "query": "path:generado/roadmap",
+            "color": {
+              "a": 1,
+              "rgb": 38536
+            }
+          },
+          {
+            "query": "path:generado/docs",
+            "color": {
+              "a": 1,
+              "rgb": 2201331
+            }
+          },
+          {
+            "query": "path:generado/secciones",
+            "color": {
+              "a": 1,
+              "rgb": 9489145
+            }
+          },
+          {
+            "query": "path:generado/adr",
+            "color": {
+              "a": 1,
+              "rgb": 10233776
+            }
+          },
+          {
+            "query": "path:generado/equipo",
+            "color": {
+              "a": 1,
+              "rgb": 16740419
+            }
+          },
+          {
+            "query": "path:generado/memoria",
+            "color": {
+              "a": 1,
+              "rgb": 15483002
+            }
+          },
+          {
+            "query": "path:generado/mundo",
+            "color": {
+              "a": 1,
+              "rgb": 9159498
+            }
+          },
+          {
+            "query": "path:generado/economia",
+            "color": {
+              "a": 1,
+              "rgb": 16766287
+            }
+          },
+          {
+            "query": "path:generado/narrativa",
+            "color": {
+              "a": 1,
+              "rgb": 14696699
+            }
+          },
+          {
+            "query": "path:generado/qa",
+            "color": {
+              "a": 1,
+              "rgb": 15684432
+            }
+          },
+          {
+            "query": "path:generado/simulador",
+            "color": {
+              "a": 1,
+              "rgb": 2541274
+            }
+          },
+          {
+            "query": "path:generado/arte",
+            "color": {
+              "a": 1,
+              "rgb": 16744619
+            }
+          },
+          {
+            "query": "path:generado/glosario",
+            "color": {
+              "a": 1,
+              "rgb": 12364452
+            }
+          },
+          {
+            "query": "path:mis-notas",
+            "color": {
+              "a": 1,
+              "rgb": 16771899
+            }
+          }
+        ],
+        "showArrow": false,
+        "textFadeMultiplier": -0.5,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "centerStrength": 0.5,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "search": "-tag:#backlog/futuro"
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 0,
+      "title": "Grafo: solo F0",
+      "options": {
+        "collapse-filter": false,
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "colorGroups": [
+          {
+            "query": "path:\"00 Inicio\" OR path:MOC",
+            "color": {
+              "a": 1,
+              "rgb": 16777215
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/hecho",
+            "color": {
+              "a": 1,
+              "rgb": 5025616
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/en-curso",
+            "color": {
+              "a": 1,
+              "rgb": 16757504
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/descartado",
+            "color": {
+              "a": 1,
+              "rgb": 12000284
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/pendiente",
+            "color": {
+              "a": 1,
+              "rgb": 7697781
+            }
+          },
+          {
+            "query": "path:generado/roadmap",
+            "color": {
+              "a": 1,
+              "rgb": 38536
+            }
+          },
+          {
+            "query": "path:generado/docs",
+            "color": {
+              "a": 1,
+              "rgb": 2201331
+            }
+          },
+          {
+            "query": "path:generado/secciones",
+            "color": {
+              "a": 1,
+              "rgb": 9489145
+            }
+          },
+          {
+            "query": "path:generado/adr",
+            "color": {
+              "a": 1,
+              "rgb": 10233776
+            }
+          },
+          {
+            "query": "path:generado/equipo",
+            "color": {
+              "a": 1,
+              "rgb": 16740419
+            }
+          },
+          {
+            "query": "path:generado/memoria",
+            "color": {
+              "a": 1,
+              "rgb": 15483002
+            }
+          },
+          {
+            "query": "path:generado/mundo",
+            "color": {
+              "a": 1,
+              "rgb": 9159498
+            }
+          },
+          {
+            "query": "path:generado/economia",
+            "color": {
+              "a": 1,
+              "rgb": 16766287
+            }
+          },
+          {
+            "query": "path:generado/narrativa",
+            "color": {
+              "a": 1,
+              "rgb": 14696699
+            }
+          },
+          {
+            "query": "path:generado/qa",
+            "color": {
+              "a": 1,
+              "rgb": 15684432
+            }
+          },
+          {
+            "query": "path:generado/simulador",
+            "color": {
+              "a": 1,
+              "rgb": 2541274
+            }
+          },
+          {
+            "query": "path:generado/arte",
+            "color": {
+              "a": 1,
+              "rgb": 16744619
+            }
+          },
+          {
+            "query": "path:generado/glosario",
+            "color": {
+              "a": 1,
+              "rgb": 12364452
+            }
+          },
+          {
+            "query": "path:mis-notas",
+            "color": {
+              "a": 1,
+              "rgb": 16771899
+            }
+          }
+        ],
+        "showArrow": false,
+        "textFadeMultiplier": -0.5,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "centerStrength": 0.5,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "search": "tag:#fase/F0 OR path:generado/docs OR path:generado/secciones OR path:generado/adr OR path:MOC"
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 0,
+      "title": "Grafo: lo que se está haciendo",
+      "options": {
+        "collapse-filter": false,
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "colorGroups": [
+          {
+            "query": "path:\"00 Inicio\" OR path:MOC",
+            "color": {
+              "a": 1,
+              "rgb": 16777215
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/hecho",
+            "color": {
+              "a": 1,
+              "rgb": 5025616
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/en-curso",
+            "color": {
+              "a": 1,
+              "rgb": 16757504
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/descartado",
+            "color": {
+              "a": 1,
+              "rgb": 12000284
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/pendiente",
+            "color": {
+              "a": 1,
+              "rgb": 7697781
+            }
+          },
+          {
+            "query": "path:generado/roadmap",
+            "color": {
+              "a": 1,
+              "rgb": 38536
+            }
+          },
+          {
+            "query": "path:generado/docs",
+            "color": {
+              "a": 1,
+              "rgb": 2201331
+            }
+          },
+          {
+            "query": "path:generado/secciones",
+            "color": {
+              "a": 1,
+              "rgb": 9489145
+            }
+          },
+          {
+            "query": "path:generado/adr",
+            "color": {
+              "a": 1,
+              "rgb": 10233776
+            }
+          },
+          {
+            "query": "path:generado/equipo",
+            "color": {
+              "a": 1,
+              "rgb": 16740419
+            }
+          },
+          {
+            "query": "path:generado/memoria",
+            "color": {
+              "a": 1,
+              "rgb": 15483002
+            }
+          },
+          {
+            "query": "path:generado/mundo",
+            "color": {
+              "a": 1,
+              "rgb": 9159498
+            }
+          },
+          {
+            "query": "path:generado/economia",
+            "color": {
+              "a": 1,
+              "rgb": 16766287
+            }
+          },
+          {
+            "query": "path:generado/narrativa",
+            "color": {
+              "a": 1,
+              "rgb": 14696699
+            }
+          },
+          {
+            "query": "path:generado/qa",
+            "color": {
+              "a": 1,
+              "rgb": 15684432
+            }
+          },
+          {
+            "query": "path:generado/simulador",
+            "color": {
+              "a": 1,
+              "rgb": 2541274
+            }
+          },
+          {
+            "query": "path:generado/arte",
+            "color": {
+              "a": 1,
+              "rgb": 16744619
+            }
+          },
+          {
+            "query": "path:generado/glosario",
+            "color": {
+              "a": 1,
+              "rgb": 12364452
+            }
+          },
+          {
+            "query": "path:mis-notas",
+            "color": {
+              "a": 1,
+              "rgb": 16771899
+            }
+          }
+        ],
+        "showArrow": false,
+        "textFadeMultiplier": -0.5,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "centerStrength": 0.5,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "search": "tag:#estado/en-curso OR tag:#estado/hecho"
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 0,
+      "title": "Grafo: solo documentos y ADR",
+      "options": {
+        "collapse-filter": false,
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "colorGroups": [
+          {
+            "query": "path:\"00 Inicio\" OR path:MOC",
+            "color": {
+              "a": 1,
+              "rgb": 16777215
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/hecho",
+            "color": {
+              "a": 1,
+              "rgb": 5025616
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/en-curso",
+            "color": {
+              "a": 1,
+              "rgb": 16757504
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/descartado",
+            "color": {
+              "a": 1,
+              "rgb": 12000284
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/pendiente",
+            "color": {
+              "a": 1,
+              "rgb": 7697781
+            }
+          },
+          {
+            "query": "path:generado/roadmap",
+            "color": {
+              "a": 1,
+              "rgb": 38536
+            }
+          },
+          {
+            "query": "path:generado/docs",
+            "color": {
+              "a": 1,
+              "rgb": 2201331
+            }
+          },
+          {
+            "query": "path:generado/secciones",
+            "color": {
+              "a": 1,
+              "rgb": 9489145
+            }
+          },
+          {
+            "query": "path:generado/adr",
+            "color": {
+              "a": 1,
+              "rgb": 10233776
+            }
+          },
+          {
+            "query": "path:generado/equipo",
+            "color": {
+              "a": 1,
+              "rgb": 16740419
+            }
+          },
+          {
+            "query": "path:generado/memoria",
+            "color": {
+              "a": 1,
+              "rgb": 15483002
+            }
+          },
+          {
+            "query": "path:generado/mundo",
+            "color": {
+              "a": 1,
+              "rgb": 9159498
+            }
+          },
+          {
+            "query": "path:generado/economia",
+            "color": {
+              "a": 1,
+              "rgb": 16766287
+            }
+          },
+          {
+            "query": "path:generado/narrativa",
+            "color": {
+              "a": 1,
+              "rgb": 14696699
+            }
+          },
+          {
+            "query": "path:generado/qa",
+            "color": {
+              "a": 1,
+              "rgb": 15684432
+            }
+          },
+          {
+            "query": "path:generado/simulador",
+            "color": {
+              "a": 1,
+              "rgb": 2541274
+            }
+          },
+          {
+            "query": "path:generado/arte",
+            "color": {
+              "a": 1,
+              "rgb": 16744619
+            }
+          },
+          {
+            "query": "path:generado/glosario",
+            "color": {
+              "a": 1,
+              "rgb": 12364452
+            }
+          },
+          {
+            "query": "path:mis-notas",
+            "color": {
+              "a": 1,
+              "rgb": 16771899
+            }
+          }
+        ],
+        "showArrow": false,
+        "textFadeMultiplier": -0.5,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "centerStrength": 0.5,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "search": "path:generado/docs OR path:generado/secciones OR path:generado/adr OR path:MOC"
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 0,
+      "title": "Grafo: todo",
+      "options": {
+        "collapse-filter": false,
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "colorGroups": [
+          {
+            "query": "path:\"00 Inicio\" OR path:MOC",
+            "color": {
+              "a": 1,
+              "rgb": 16777215
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/hecho",
+            "color": {
+              "a": 1,
+              "rgb": 5025616
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/en-curso",
+            "color": {
+              "a": 1,
+              "rgb": 16757504
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/descartado",
+            "color": {
+              "a": 1,
+              "rgb": 12000284
+            }
+          },
+          {
+            "query": "path:generado/roadmap/tareas tag:#estado/pendiente",
+            "color": {
+              "a": 1,
+              "rgb": 7697781
+            }
+          },
+          {
+            "query": "path:generado/roadmap",
+            "color": {
+              "a": 1,
+              "rgb": 38536
+            }
+          },
+          {
+            "query": "path:generado/docs",
+            "color": {
+              "a": 1,
+              "rgb": 2201331
+            }
+          },
+          {
+            "query": "path:generado/secciones",
+            "color": {
+              "a": 1,
+              "rgb": 9489145
+            }
+          },
+          {
+            "query": "path:generado/adr",
+            "color": {
+              "a": 1,
+              "rgb": 10233776
+            }
+          },
+          {
+            "query": "path:generado/equipo",
+            "color": {
+              "a": 1,
+              "rgb": 16740419
+            }
+          },
+          {
+            "query": "path:generado/memoria",
+            "color": {
+              "a": 1,
+              "rgb": 15483002
+            }
+          },
+          {
+            "query": "path:generado/mundo",
+            "color": {
+              "a": 1,
+              "rgb": 9159498
+            }
+          },
+          {
+            "query": "path:generado/economia",
+            "color": {
+              "a": 1,
+              "rgb": 16766287
+            }
+          },
+          {
+            "query": "path:generado/narrativa",
+            "color": {
+              "a": 1,
+              "rgb": 14696699
+            }
+          },
+          {
+            "query": "path:generado/qa",
+            "color": {
+              "a": 1,
+              "rgb": 15684432
+            }
+          },
+          {
+            "query": "path:generado/simulador",
+            "color": {
+              "a": 1,
+              "rgb": 2541274
+            }
+          },
+          {
+            "query": "path:generado/arte",
+            "color": {
+              "a": 1,
+              "rgb": 16744619
+            }
+          },
+          {
+            "query": "path:generado/glosario",
+            "color": {
+              "a": 1,
+              "rgb": 12364452
+            }
+          },
+          {
+            "query": "path:mis-notas",
+            "color": {
+              "a": 1,
+              "rgb": 16771899
+            }
+          }
+        ],
+        "showArrow": false,
+        "textFadeMultiplier": -0.5,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "centerStrength": 0.5,
+        "repelStrength": 10,
+        "linkStrength": 1,
+        "linkDistance": 250,
+        "search": ""
+      }
+    }
+  ]
+}
