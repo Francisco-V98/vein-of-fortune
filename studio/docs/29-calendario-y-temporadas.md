@@ -2,7 +2,7 @@
 
 Cómo se ve y se juega el paso del año en Veta de Fortuna: estaciones y clima del día, la ficha única del calendario, los festivos y las mini-historias de temporada. Nace de la tarea F0-94 y de las decisiones del autor del 2026-10-24. El calendario base (año de 112 días, cuatro estaciones de 28) está en [28](28-numeros-base-de-la-economia.md) §1.2; la historia principal **no** depende de este documento ([24](24-umbrales-de-acto.md), [27](27-guion-del-acto-i.md)).
 
-**Estado.** ✅ El alcance, la ficha, las reglas y el molde de las mini-historias son decisión del autor. ✅ Los 8 festivos y el catálogo de 12 mini-historias (títulos, ganchos, misiones y variantes) los aprobó el autor el 2026-10-24. ⏳ F0-92 y ⏳ F0-93: las cifras de efecto de la sección 2 viven en claves nuevas de `world.json` que el simulador **todavía no lee**; la huella del simulador no cambia con este documento.
+**Estado.** ✅ El alcance, la ficha, las reglas y el molde de las mini-historias son decisión del autor. ✅ Los 8 festivos y el catálogo de 12 mini-historias (títulos, ganchos, misiones y variantes) los aprobó el autor el 2026-10-24. Las cifras de efecto de la sección 2 viven en `economy.seasons_weather` de `world.json`; el simulador las lee (entran en su huella) y F0-92 las midió: J3 y J6 pasan.
 
 ---
 
@@ -21,25 +21,25 @@ El año tiene 112 días: primavera, verano, otoño e invierno, 28 días cada una
 
 **Alcance.** Cambia la paleta y el aspecto del mapa, los asentamientos y las minas (nieve, lluvia, niebla), con efectos suaves. Es un tinte u overlay de paleta, no hojas de arte nuevas (⏳ F4-217, ⏳ F4-165). Un sistema completo de clima queda para V2 o un DLC (sección 7).
 
-### 2.1 Efecto de la estación ✅ (cifras de partida, ⏳ F0-92 y ⏳ F0-93)
+### 2.1 Efecto de la estación ✅ (medido por F0-92: J6 pasa)
 
 | Estación | Efecto | Nota |
 |---|---|---|
-| Invierno | Aguante −2 (de 28 a 26) | Cuidado con contar dos veces el frío y el carbón +12 de la tabla de estacionalidad: se anota en [28](28-numeros-base-de-la-economia.md) |
-| Primavera | Riqueza de mina +4 al día en vez de +3 | |
+| Invierno | Aguante −2 (de 28 a 26) | Cuidado con contar dos veces el frío y el carbón +12 de la tabla de estacionalidad: se anota en [28](28-numeros-base-de-la-economia.md). J6: invierno rinde ≈ 4–7 % menos por hora que la media de las estaciones, dentro de ±20 % |
+| Primavera | Riqueza de mina +4 al día en vez de +3 | J6: ≈ +8 % por hora sobre la media, la estación más rentable y aún dentro de ±20 % |
 | Verano | Desgaste de herramienta +10 % | |
-| Otoño | −1 mena visible | |
+| Otoño | −1 mena visible | No se aplica en los días 1 a 7 (Acto I): `no_season_effect_days`; J7 vigila la cuota del día 7 con esa exención |
 
-### 2.2 Clima del día por zona ✅ (cifras de partida, ⏳ F0-92 y ⏳ F0-93)
+### 2.2 Clima del día por zona ✅ (medido por F0-92: J3 pasa)
 
 | Clima | Efecto |
 |---|---|
 | Despejado | Ninguno |
 | Lluvia | Si es fuerte, cierra **1 entrada** de mina por un día; se avisa la víspera; máximo 2 por estación y zona; severidad suave; reutiliza ⏳ F4-250 |
-| Nieve | −1 carga de detector (la nieve choca con la regla J3; la mide ⏳ F0-92) |
+| Nieve | −1 carga de detector, una vez al día (con la batería 12 · 17 · 25 · 32 los días de nieve dejan la batería corta ≈ 56 % de las veces frente a ≈ 45 % los días normales: J3 pasa en ambos) |
 | Niebla | −1 mena visible |
 
-Reglas ✅: **nunca hay clima con efecto en el Acto I** (días 1–7). Un cierre por lluvia pausa el plazo de cualquier mini-historia en curso. El clima solo sale en el calendario como ficha de tipo «clima» cuando es un cierre anunciado.
+Reglas ✅: **nunca hay clima ni efecto de estación en el Acto I** (días 1–7; el otoño del arranque no resta menas visibles, decisión del autor, 2026-10-24). Un cierre por lluvia pausa el plazo de cualquier mini-historia en curso. El clima solo sale en el calendario como ficha de tipo «clima» cuando es un cierre anunciado.
 
 ## 3 · Pantalla y ficha única ✅
 
@@ -82,7 +82,7 @@ Entre 1 y 2 por estación (8 al año en este catálogo). Efecto pequeño: **merc
 | Verano | Fiesta de la Sal | 8 de verano | Salinas Blancas | Salitre +2 | Montículos de sal pintados |
 | Verano | Noche de los Faroleros | 22 de verano | Puerto Meridiano | Plata +1 | Fila de faroles en el Paseo Marítimo; la presencia de Los Faroleros |
 
-Cada festivo tiene su ficha de tipo «festivo». ⏳ F4-32 construye el calendario y ⏳ F0-92 mide el efecto antes de fijar las cifras.
+Cada festivo tiene su ficha de tipo «festivo». ⏳ F4-32 construye el calendario. El efecto de ±2 puntos de mercado es el tope de un evento menor ✅ y el simulador no lo modela (decisión del autor, 2026-10-24).
 
 ## 5 · Reglas de las mini-historias ✅
 
@@ -120,7 +120,7 @@ Tono ✅: español neutro con tuteo, frases cortas, humor seco, nunca burla de l
 
 ## 6 · Catálogo de 12 mini-historias ✅
 
-Cada una: **zona**, **misiones** (2 o 3), **obstáculo A / B** (se sortea uno) y **recompensa** (0,5–1 día de ingreso medio + pila u objeto). Cada misión cuesta, como máximo, 1 bloque. Las cifras de vigilancia (N) se fijan al medirlas ⏳ F0-92.
+Cada una: **zona**, **misiones** (2 o 3), **obstáculo A / B** (se sortea uno) y **recompensa** (0,5–1 día de ingreso medio + pila u objeto). Cada misión cuesta, como máximo, 1 bloque. Las cifras de vigilancia (N) se ajustan al escribir cada mini-historia (⏳ F4-256 a F4-259) ✅.
 
 ### 6.1 Primavera ✅
 
@@ -239,11 +239,11 @@ Pronóstico, salud, ruta del tren y producción afectados por el clima quedan pa
 | ⏳ F4-250 | Cierres por lluvia |
 | ⏳ F4-217 · ⏳ F4-165 | Tinte de paleta en los asentamientos |
 | ⏳ F4-149 | Mini-historias de otoño en el sandbox |
-| ⏳ F0-92 · ⏳ F0-93 | Cifras de efecto en el simulador |
+| ✅ F0-92 · F0-93 | Cifras de efecto en el simulador (J3 y J6 miden la nieve y las estaciones) |
 
 ## 9 · Decisiones del autor ✅
 
 1. Los 8 festivos (nombres, fechas, zonas y efectos de mercado) quedan aprobados el 2026-10-24.
 2. Los 12 títulos y ganchos del catálogo quedan aprobados el 2026-10-24; los de otoño no se ven en la campaña hasta el segundo año.
-3. Doble cuenta del invierno ✅: el Aguante −2 y el carbón +12 son una compensación deliberada. ⏳ F0-93 añade la regla J6 (el ingreso por hora de cada estación queda dentro de ±20 % de la media); si el invierno se sale, se ajusta el −2 y no el carbón. La nieve ocurre como máximo 6 días por invierno y zona, y ⏳ F0-92 mide J3 por separado en días normales y en días de nieve.
-4. Las cifras de vigilancia (N) y de plazo de cada variante se fijan al medirlas con el simulador (⏳ F0-92).
+3. Doble cuenta del invierno ✅: el Aguante −2 y el carbón +12 son una compensación deliberada. La regla J6 (el ingreso por hora de cada estación queda dentro de ±20 % de la media) pasa; si el invierno se saliera, se ajustaría el −2 y no el carbón. La nieve ocurre como máximo 6 días por invierno y zona, y J3 se mide por separado en días normales (≈ 45 %) y en días de nieve (≈ 56 %).
+4. Las cifras de vigilancia (N) y de plazo de cada variante se ajustan al escribir cada mini-historia (⏳ F4-256 a F4-259) ✅.

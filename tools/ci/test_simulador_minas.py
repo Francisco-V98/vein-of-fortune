@@ -1,7 +1,7 @@
 """Pruebas de las reglas del motor de minas (F0-93, parte 2): C5b, J1 a J6 en tools/sim/reglas_minas.py.
 
 Una prueba por regla (estados e intervalos coherentes) y una mutación por regla (cambiar una cifra de world.json en
-memoria o un criterio cambia lo medido). Las reglas que fallan con las cifras de partida quedan registradas: las calibra F0-92.
+memoria o un criterio cambia lo medido). F0-92 las calibró: con las cifras vigentes de world.json las reglas deben pasar (o quedar registradas como inciertas).
 """
 import json
 import pathlib
@@ -14,8 +14,8 @@ sys.path.insert(0, str(ROOT / "tools"))
 from sim import entradas as E  # noqa: E402
 from sim import mundo, reglas, reglas_minas as RM, run  # noqa: E402
 
-IDS = ("C5b", "J1", "J2", "J3", "J4", "J5", "J6")
-HUELLA = "9dff70c2c639dbb5"
+IDS = ("C5b", "J1", "J2", "J3", "J4", "J5", "J6", "J7")
+HUELLA = "ee83d86daa1121d5"
 
 
 def valores(r):
@@ -52,6 +52,7 @@ MUTACIONES = {
     "J4": ([("economy.mine_entrances.quality_mult", {"escasa": 1.0, "media": 1.0, "abundante": 1.0})], {}),
     "J5": ([], {"minutos": 0}),
     "J6": ([("economy.seasons_weather.season_effects.invierno.energy_delta", -10)], {}),
+    "J7": ([("economy.mine_entrances.quality_mult_act1", {"escasa": 0.5, "media": 1.0, "abundante": 1.5})], {}),
 }
 
 
@@ -66,8 +67,12 @@ class Datos(unittest.TestCase):
             for k in ("id", "grupo", "titulo", "docs", "metrica", "umbral", "origen", "criterio"):
                 self.assertIn(k, r, r["id"])
 
-    def test_la_huella_por_defecto_no_cambia(self):
+    def test_la_huella_incluye_las_claves_de_las_minas(self):
         self.assertEqual(mundo.huella(Compartido.world), HUELLA)
+        for clave, valor in (("economy.mine_entrances.base_yield_mult", 0.5),
+                             ("economy.mine_entrances.detector.battery_by_level", [1, 2, 3, 4]),
+                             ("economy.seasons_weather.season_effects.verano.tool_wear_pct", 99)):
+            self.assertNotEqual(mundo.huella(editar((clave, valor))), HUELLA, clave)
 
     def test_calendario(self):
         cal = Compartido.S["minas_v2"]["calendario"]

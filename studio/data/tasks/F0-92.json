@@ -1,0 +1,89 @@
+{
+  "id": "F0-92",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Calibración de minas, batería, cierres, clima y estaciones con el simulador",
+      "ref": "rama studio/F0-92-calibracion-minas-y-temporadas"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "economista",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "analista",
+        "nota": "F0-93 dejó medidos C5b y J1 a J6 con cifras de partida"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "economista",
+        "nota": "El economista calibró las cifras; el autor las aprobó el 2026-10-24 (batería, rendimientos, Acto I, pendientes)"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "QA halló 7 fallos de texto y de medición; corregidos y verificados por la coordinación (build, 376 pruebas, huella ee83d86daa1121d5)"
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-24",
+        "por": "autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "economista",
+        "que": "Encargo: calibrar J1 a J6 y C5b e integrar las claves nuevas en la huella",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "economista",
+        "a": "coordinador",
+        "que": "Entrega: cifras calibradas, motor integrado en la huella ee83d86daa1121d5 y reglas v2 pasando",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Encargo: build, pruebas, huella y coherencia de F0-92",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Informe: 7 fallos, corregidos y reverificados",
+        "at": "2026-10-24",
+        "tipo": "devolucion"
+      }
+    ]
+  }
+}

@@ -3866,7 +3866,7 @@
       "nota": "F0-78 diseña la misión; aquí solo vive la cifra"
     },
     "mine_entrances": {
-      "nota": "Cifras de partida; las calibra ⏳ F0-92. El simulador todavía no lee esta clave (la huella no cambia). Decisiones del autor del 2026-10-24 (F0-91): cada boca de mina da a un recinto con cinco entradas sorteadas cada día a ciegas.",
+      "nota": "Decisiones del autor del 2026-10-24 (F0-91): cada boca de mina da a un recinto con cinco entradas sorteadas cada día a ciegas. Cifras calibradas por F0-92 con el simulador (reglas C5b y J1 a J7) y aprobadas por el autor el 2026-10-24 ✅: calidades, batería, presión por cierres y base_yield_mult; el simulador lee esta clave y entra en la huella.",
       "entrances_per_mine": 5,
       "split": {
         "escasa": 2,
@@ -3879,16 +3879,17 @@
         "deterministic": true
       },
       "quality_mult": {
-        "escasa": 0.7,
+        "escasa": 0.78,
         "media": 1.0,
-        "abundante": 1.6
+        "abundante": 1.44
       },
       "quality_mult_act1": {
         "escasa": 0.85,
         "media": 1.0,
         "abundante": 1.3
       },
-      "quality_note": "Solo cambia las unidades por mena, no la mezcla de minerales (zone_mix se mantiene). La media de las cinco entradas es 1,0. Si el valor esperado con el cambio sube a ~1,15, los rendimientos base bajan 8-12 % (F0-92).",
+      "base_yield_mult": 0.85,
+      "quality_note": "Solo cambia las unidades por mena, no la mezcla de minerales (zone_mix se mantiene). La media de las cinco entradas es 1,0. El jugador que escanea y cambia de entrada gana entre un 5 y un 10 % (J2) y el detector le enseña el rango de cantidad de cada mena, así que los rendimientos base bajan un 15 % (base_yield_mult 0,85) en todos los actos ✅; el Acto I conserva su abanico estrecho y J7 vigila la cuota.",
       "visible_ores": {
         "I": [
           5,
@@ -3901,10 +3902,10 @@
       "pickable_ratio": 0.5,
       "detector": {
         "battery_by_level": [
-          6,
-          8,
-          11,
-          14
+          12,
+          17,
+          25,
+          32
         ],
         "cost_per_scan": 1,
         "scan_shows": [
@@ -3952,7 +3953,7 @@
           1.0,
           0.95,
           0.88,
-          0.75
+          0.8
         ],
         "secondary_min_share_pct": 25,
         "none_in_act": "I",
@@ -3960,9 +3961,13 @@
       }
     },
     "seasons_weather": {
-      "nota": "Cifras de partida de F0-94 (decisión del autor, 2026-10-24). El simulador todavía no lee esta clave (la huella no cambia); las calibran F0-92 y F0-93. Diseño en el documento 29. El sistema completo de clima (pronóstico, salud, ruta del tren, producción) es F6-77.",
+      "nota": "Cifras de partida de F0-94 (decisión del autor, 2026-10-24). El simulador ya las lee (entran en la huella) y F0-92 las midió con J3 y J6: no cambian. Diseño en el documento 29. El sistema completo de clima (pronóstico, salud, ruta del tren, producción) es F6-77.",
       "scope": "visual y jugable ligero",
       "no_weather_days": [
+        1,
+        7
+      ],
+      "no_season_effect_days": [
         1,
         7
       ],
@@ -4002,7 +4007,7 @@
         "nieve": {
           "detector_charge_delta": -1,
         "max_days_per_winter_per_zone": 6,
-          "note": "choca con la regla J3 del simulador; la mide F0-92"
+          "note": "resta una carga una vez al día; J3 la mide por separado en días de nieve y pasa"
         },
         "niebla": {
           "visible_ores_delta": -1

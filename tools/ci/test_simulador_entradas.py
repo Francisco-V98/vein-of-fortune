@@ -11,7 +11,7 @@ from sim import entradas as E  # noqa: E402
 from sim import mundo  # noqa: E402
 
 P = E.cargar()
-HUELLA = "9dff70c2c639dbb5"
+HUELLA = "ee83d86daa1121d5"
 
 
 class Sorteo(unittest.TestCase):
@@ -23,11 +23,12 @@ class Sorteo(unittest.TestCase):
         self.assertGreater(len(distintas), 1)
 
     def test_calidad_media_uno_y_abanico_del_acto_1(self):
-        for acto, k in (("II", "calidad"), ("I", "calidad_a1")):
+        # la media de las cinco entradas es 1,0; el recorte de rendimiento (base_yield_mult) la multiplica en todos los actos
+        for acto, k, recorte in (("II", "calidad", P["rend_base"]), ("I", "calidad_a1", P["rend_base"])):
             ent = E.sortear_entradas(3, 9, "z", P)
             media = sum(E.mult_calidad(c, acto, P) for c in ent) / len(ent)
-            self.assertAlmostEqual(media, sum(P[k][c] * P["reparto"][c] for c in P["reparto"]) / P["n"])
-            self.assertAlmostEqual(media, 1.0, places=1)
+            self.assertAlmostEqual(media, recorte * sum(P[k][c] * P["reparto"][c] for c in P["reparto"]) / P["n"])
+            self.assertAlmostEqual(media, recorte, places=1)
 
 
 class Cierres(unittest.TestCase):
@@ -77,6 +78,14 @@ class ClimaYEstaciones(unittest.TestCase):
         dias = [c.del_dia(d, "z", "invierno") for d in range(hi + 1, hi + 40)]
         self.assertEqual(dias.count("nieve"), P["clima"]["nieve"]["max_days_per_winter_per_zone"])
         self.assertEqual(E.Clima(1, {"nieve": 1.0}, P, 2).del_dia(20, "z", "verano"), "despejado")
+
+    def test_el_acto_1_no_recibe_efectos_de_estacion(self):
+        m = E.MotorMinas(1, P)
+        m.nuevo_dia(3, "I", ["z"], estacion="otono")
+        self.assertEqual(m.efectos(), {})
+        lo, hi = P["sin_estacion"]
+        m.nuevo_dia(hi + 1, "II", ["z"], estacion="otono")
+        self.assertEqual(m.efectos(), E.efectos_estacion("otono", P))
 
     def test_lluvia_cierra_una_y_efectos(self):
         self.assertEqual(E.cierres_por_clima("lluvia", P), P["clima"]["lluvia"]["heavy_rain_closes_entrances"])
