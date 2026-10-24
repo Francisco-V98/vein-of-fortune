@@ -1,0 +1,63 @@
+{
+  "id": "F0-93",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Simulador: motor de entradas, batería, cierres y clima; reglas J1–J6 y C5 reescrita",
+      "ref": "rama studio/F0-93-simulador-entradas-bateria-cierres"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "analista",
+        "nota": "El inventario de F0-91 y F0-94 define las reglas J1 a J6 y C5"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "activa",
+        "at": "2026-10-24",
+        "por": "desarrollador-herramientas",
+        "nota": "El motor sortea entradas, aplica cierres, batería y clima; las reglas se escriben después"
+      },
+      {
+        "etapa": "qa",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "desarrollador-herramientas",
+        "que": "Encargo: motor del simulador para entradas, batería, cierres y clima",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}
