@@ -70,7 +70,9 @@ Cada módulo corresponde a un tema de diseño ya documentado. `depende de` son l
 | `day` | Días, bloques de tiempo y calendario | — | [01](01-core-loop.md) |
 | `inventory` | Ítems, almacén, capacidad y costos | — | [03](03-comercio.md) |
 | `market` | Precios, oferta y demanda, bots, spread | day | [03](03-comercio.md) |
-| `extraction` | Zonas, menas, escáner, minijuegos y peligros | day, inventory | [02](02-extraccion.md), [09](09-minijuegos.md) |
+| `world` | Mapa, niebla de zonas bloqueadas, tren (billete y viaje), asentamientos y edificaciones como datos | day | [26](26-zonas-y-edificios.md), [ADR-0011](adr/0011-exploracion-caminable-tren-y-minas.md) |
+| `exploration` | Movimiento por acciones, colisiones, puertas, loader entre escenas, recinto de cinco entradas, sorteo diario y cambio único | day, world | [10](10-tecnico-y-herramientas.md), [ADR-0011](adr/0011-exploracion-caminable-tren-y-minas.md) |
+| `extraction` | Zonas, menas, detector con batería, minijuegos, peligros y cierres de entradas | day, inventory, exploration, world_events | [02](02-extraccion.md), [09](09-minijuegos.md) |
 | `shop` | Tienda, ventas, contratos y regateo | market, inventory, day | [03](03-comercio.md) |
 | `crafting` | Refinado y productos | inventory, market | [03](03-comercio.md) |
 | `staff` | Empleados, contratos de trabajo y lealtad | day, extraction, shop | [04](04-progresion-y-meta.md) |
@@ -82,6 +84,8 @@ Cada módulo corresponde a un tema de diseño ya documentado. `depende de` son l
 | `lifestyle` | Casa, ropa, auto y cosméticos | progression, inventory | [04](04-progresion-y-meta.md) |
 | `save` | Guardado versionado, con punto de control por acción y hasta 5 partidas guardables | — | [01](01-core-loop.md), [10](10-tecnico-y-herramientas.md) |
 | `telemetry` | Diagnóstico local exportable | — | [10](10-tecnico-y-herramientas.md) |
+
+`world` y `exploration` (✅ 2026-10-24) separan la geografía y el paseo de la economía: `world` decide qué zonas están abiertas o con niebla y cuánto cuesta el viaje (lee el acto de `story` por evento, no depende de él); `exploration` solo conoce posiciones, puertas y el sorteo determinista `hash(partida, día, mina, entrada)` del reparto de entradas. `extraction` consume ese reparto y los cierres de `world_events` (dependencia declarada) por sus `api`, y el dominio no usa nodos ni coordenadas de Godot (la presentación sí). `staff` y `world_events` no cambian de dependencias: los empleados abstraen la entrada y los cierres llegan como eventos.
 
 El casino y los logros entrarán más adelante creando su propio módulo, sin tocar los demás. Los logros llegan a Steam a través del puerto de tienda.
 
@@ -124,7 +128,7 @@ El juego se lanza **primero en PC (Windows y Linux, con Steam)** y el móvil lle
 | Entrada | Acciones (aceptar, cancelar, mover, usar, menú) y detección del último dispositivo | **Ratón y teclado** y **mando** (Steam Deck incluida); **táctil**: adaptador futuro, fase móvil |
 | Almacenamiento | Guardados, carpeta de guardados y diagnóstico local | Archivos locales; Steam Auto-Cloud sincroniza esa carpeta (hasta 5 partidas; en Hardcore manda el guardado local) |
 | **Plataforma / tienda** | Logros, nube y actualizaciones | Steam (🟡 GodotSteam, [10](10-tecnico-y-herramientas.md)); un adaptador **nulo** para itch.io y pruebas, de modo que el juego corra sin Steam |
-| **Pantalla** | Resolución, modo ventana y pantalla completa, escala | Adaptador de PC; el detalle (resolución base, escala entera con bandas) ⏳ F1-06 |
+| **Pantalla** | Resolución, modo ventana y pantalla completa, escala | Adaptador de PC; ✅ resolución base 640×360 y escala entera con bandas ([10](10-tecnico-y-herramientas.md)) |
 | Audio, idioma, reloj | Reproducción, idioma activo, tiempo inyectado | Adaptadores de PC y dobles de pruebas |
 | Háptica | Vibración | Vibración del mando; en la fase móvil, la del teléfono |
 

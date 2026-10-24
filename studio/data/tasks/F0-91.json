@@ -1,0 +1,153 @@
+{
+  "id": "F0-91",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Cambio de diseño: niebla, tren, asentamientos caminables y minas con cinco entradas",
+      "ref": "rama studio/F0-91-mapa-tren-y-minas-caminables"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Aprobado por el autor",
+      "ref": ""
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "disenador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "ideador",
+        "nota": "El ideador propuso modelos de mina caminable con detector, batería y cinco entradas; el autor eligió el modelo A «Galería del día» con piezas del C el 2026-10-24"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "analista",
+        "nota": "El analista inventarió el impacto en documentos, datos, tareas, horas y simulador; el autor cerró las decisiones el 2026-10-24"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "disenador",
+        "nota": "El diseñador reescribió documentos (partes A y B, ADR-0011), roadmap y datos (parte C) y sincronizó el documento 26; build estricto, 341 pruebas y huella del simulador intactos"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "QA aprobó con 2 observaciones menores (F1-06 en docs 16 y 06), corregidas"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "autor",
+        "nota": "Aprobado por el autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "PR fusionado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: modelos de mina caminable con detector, batería, cinco entradas y cambio único",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario del impacto del cambio en documentos, datos, tareas, horas y simulador",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "ideador",
+        "a": "coordinador",
+        "que": "Entrega: modelos de mina caminable con alternativas y recomendación",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: inventario del impacto en documentos, datos, tareas, horas y simulador",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "disenador",
+        "que": "Encargo parte C: roadmap (tareas afectadas y nuevas, horas por fase, F0-92 y F0-93) y world.json (economy.mine_entrances, travel.mode/map/resolution, enterable) sin tocar claves del simulador",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega parte C: 22 tareas nuevas, 37 recalibradas, horas por fase ajustadas y world.json con huella del simulador intacta (9dff70c2c639dbb5)",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega partes A y B: documentos 01, 02, 07, 09, 10, 12, 14, 16, 22 a 28 y ADR-0009/0011",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega sincronía: tabla de tareas del documento 26 y nota provisional en assets.json; aviso de que F4 supera el techo previsto para V1",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Encargo: build estricto, pruebas, huella y coherencia de F0-91",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Informe: aprobado; 341 pruebas, huella intacta, 2 observaciones menores corregidas",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobación: revisó el entregable y está aprobado",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

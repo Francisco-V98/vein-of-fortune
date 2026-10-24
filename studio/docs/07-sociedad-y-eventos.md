@@ -13,12 +13,12 @@
 | Evento | Efecto en el juego |
 |---|---|
 | Apagón / corte de luz | Se necesita un **generador eléctrico** (compra y combustible) para mantener la tienda y equipos funcionando |
-| Huelga | Puede cerrar zonas o reducir la oferta de un mineral → sube el precio; puede afectar tareas |
+| Huelga | Puede **cerrar entradas de la mina** del mineral afectado (no la mina entera, salvo una excepción de guion) o reducir la oferta de un mineral → sube el precio; puede afectar tareas (ver «Severidad y cierres de entradas») |
 | Saqueo / disturbios | Hay **días en que no se puede abrir** el negocio; si no estás protegido, pueden sacar materiales del inventario general |
 
 ### Principios de diseño ✅
 
-- **Avisan antes.** Noticias y rumores anticipan los eventos (con fiabilidad variable). Así no se sienten injustos: el jugador que lee el mercado y las noticias está preparado.
+- **Avisan antes.** Noticias y rumores anticipan los eventos (con fiabilidad variable). Así no se sienten injustos: el jugador que lee el mercado y las noticias está preparado. Los cierres de entradas de una mina se avisan el día anterior y se aplican al empezar el día, nunca con el jugador dentro ✅.
 - **Tienen respuestas.** Cada riesgo tiene mitigaciones: generador, guardias, pagar protección, seguro, sobornos, reserva de dinero.
 - **Alimentan el mercado.** Una huelga minera sube el precio del mineral, un apagón baja la demanda industrial, un saqueo golpea el lujo, etc. El evento social es también un evento económico.
 - **Gravedad según dificultad.** Frecuencia y pérdida escalan con el nivel elegido.
@@ -84,6 +84,23 @@ El jugador no solo tiene dinero: tiene **conexiones** (a quién conoce, de quié
 ✅ Escalera de estatus: _Heredero → Minero con licencia → Comerciante → Empresario → Magnate_. En inglés, _Heir_; el primer escalón tiene la variante de género _Heredera_ (regla de variantes de género, [18](18-biblia-narrativa.md), 1.2). Los cinco nombres están decididos.
 
 ✅ Cada escalón desbloquea proveedores (⏳ F4-114), clientes y contratos mejores y opciones de estilo de vida; **no desbloquea zonas**, que se abren por acto ([17](17-mapa-de-historia.md)). ⏳ F4-109 Requisitos y cifras de cada ascenso.
+
+### Severidad y cierres de entradas ✅
+
+Cambio de diseño del autor (2026-10-24, F0-91). Cada evento tiene una **severidad** de tres niveles, que la redacta el coordinador y revisa el autor; la severidad decide cuántas **entradas de la mina** cierra el evento ([02](02-extraccion.md), «La mina por dentro»):
+
+| Severidad | Entradas cerradas | Eventos |
+|---|---|---|
+| **Suave** | 1 | Apagón y huelga normales de los primeros actos; saqueo o disturbio |
+| **Complicado** | 2 | Apagón y huelga normales de los actos avanzados; huelga larga; guerra; cierres del Estado |
+| **Situación complicada en Valdoria** | 3 | La crisis de Valdoria |
+
+- **Siempre quedan al menos 2 entradas abiertas.** Orden de cierre: primero la abundante, luego una media y de tercero una escasa (nunca quedan las 2 escasas: con 3 cierres quedan 1 media y 1 escasa).
+- **Alcance por mineral:** el evento puede afectar a una o varias minas de distintos minerales. Gravedad entera donde el mineral es el principal de la mina, un nivel menos donde es secundario (≥ 25 % de la mezcla) y nada si es menor. Con dos eventos en la misma mina, el mayor +1, con tope 3.
+- **Presión:** las entradas abiertas rinden menos unidades (×0,95 con 1 cierre, ×0,88 con 2, ×0,75 con 3), así que más cierres rinden siempre menos ([28](28-numeros-base-de-la-economia.md), sección 14).
+- **Cuándo y cómo:** se aplican al empezar el día con aviso previo; un evento de guion a mitad de día rige desde el bloque siguiente; si cierra tu entrada del día te reasigna gratis. Se ve el cierre (piquete, precinto o soldados) con una frase del diario. Reabren una entrada por día al terminar el evento, en orden inverso. **Sin cierres en el Acto I.**
+- **Excepción de guion:** el **cierre total** de una mina solo existe cuando la historia lo amerita (la huelga del Acto II que cierra el Cañón Ferroso, [22](22-acto-ii-variantes.md)); queda marcado como excepción de guion, no como cierre por gravedad.
+- La asignación de severidad a cada evento suelto del calendario ⏳ F4-168; ⏳ F0-92 calibra su efecto en el simulador.
 
 ## Notas de producción
 

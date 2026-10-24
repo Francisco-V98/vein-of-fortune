@@ -5,7 +5,7 @@
 - El proyecto **nace como un proyecto 100 % personal**: se hace para disfrutarlo jugando y construyéndolo. Publicar es una decisión posterior, si el juego resulta divertido.
 - Meta inmediata: **algo barato y rápido, aunque no sea bonito, para probar si es divertido**.
 - ✅ **PC primero** (autor, 2026-10-15; ver [ADR-0009](adr/0009-pc-primero-movil-despues.md)): el juego se diseña para ratón y teclado, con mando completo, y se lanza en Steam. El móvil llega después de la 1.0. *Esto reemplaza el enfoque anterior de «mobile de verdad» con pantalla táctil y orientación horizontal pensada en los pulgares.*
-- ✅ **Pantalla horizontal**, como corresponde a un juego de PC. Resolución y modo ventana: ⏳ F1-06.
+- ✅ **Pantalla horizontal**, como corresponde a un juego de PC. ✅ Resolución base **640×360** (autor, 2026-10-24; ver [12](12-direccion-de-arte.md) y [ADR-0011](adr/0011-exploracion-caminable-tren-y-minas.md)).
 
 ## Plataformas ✅
 
@@ -67,11 +67,22 @@ Decisión del autor (2026-10-15): **ratón y teclado son los controles principal
 | Íconos | Los glifos de botones cambian según el dispositivo y el tipo de mando |
 | Vibración | Vibración del mando cuando exista |
 | Reasignación | Mapeo configurable (a futuro) |
-| Resolución y ventana | Resolución base, escala entera con bandas, ventana y pantalla completa: ⏳ F1-06 |
+| Resolución y ventana | ✅ Resolución base 640×360, escala entera con bandas (×3 en 1080p, ×4 en 1440p, ×6 en 4K, ×2 en la Steam Deck), ventana y pantalla completa |
 
 🟡 Minijuegos: Picado y Perforación se juegan con un botón (ratón, teclado o mando); Cincelado (trazar) y arrastrar mercancía usan el puntero con ratón y un cursor con el stick con mando. Hay que diseñarlos con ambas variantes desde el inicio. Las variantes táctiles (trazar con el dedo) pasan a la fase móvil.
 
 🟡 Probar con un mando real en Windows y en la Steam Deck antes de dar por buenos los controles (F1-15).
+
+## Exploración caminable ✅ (autor, 2026-10-24)
+
+El juego deja de ser solo menús y pasa a tener tres escenas por las que se camina ([ADR-0011](adr/0011-exploracion-caminable-tren-y-minas.md)): el **exterior** del asentamiento (vista aérea), el **interior lateral** de cada edificación y la **galería de mina** (vista aérea cenital).
+
+- **Movimiento por acciones:** el paseo usa las acciones de entrada (mover, usar, aceptar, cancelar), nunca teclas ni el ratón directamente, para que el mando (Steam Deck incluida) y un futuro adaptador táctil (⏳ F6-72) funcionen igual. Ocho direcciones; la cámara sigue al personaje y se detiene en los bordes del mapa.
+- **Escenas y loader:** entrar a una edificación o a una entrada de mina pasa por un loader corto (fundido de menos de un segundo) y carga la escena de destino; caminar, el loader y el tren **no consumen bloques**. El tiempo real de paseo (unos 40 s por mina) se mide en el prototipo y se absorbe al recalibrar el ritmo por hora.
+- **Datos:** cada asentamiento, edificación, interior, recinto y galería es un recurso de datos (trazado, colisiones, puertas, puntos de aparición de menas); el dominio no conoce coordenadas ni nodos de Godot, solo «quién entra a dónde» y el sorteo diario de entradas (ver [14](14-arquitectura-y-modularidad.md)).
+- **Estado de partida:** se guarda la zona, la edificación y la posición, pero **solo en puntos seguros** (calle, casa, andén); dentro de una mina no se guarda a mitad de galería (el autoguardado instantáneo se mantiene en los menús y entre bloques).
+- **Tren:** una escena base modular con fondos de ventanilla por región, unos 6 s, saltable desde el segundo viaje; se precarga mientras se paga el billete.
+- **Rendimiento (Steam Deck y gama baja):** la base 640×360 es ligera; las medidas de cuadros por segundo con una escena de paseo, la niebla (shader sencillo con ruido, sin cálculos por cuadro en el dominio) y el cambio de escena se toman en la matriz de PC y en la Steam Deck con ⏳ F1-44, que fija los límites. Regla de diseño: ningún sorteo, cierre ni cálculo de economía corre dentro de la escena de paseo.
 
 ## Arte y sonido
 
@@ -234,5 +245,5 @@ Principio: **reducir la superficie de ataque y los datos que se manejan**.
 - ✅ Herramienta del arte definitivo: PixelLab (autor, 2026-10-13; ver [12](12-direccion-de-arte.md)).
 - ❓ Herramientas concretas de audio.
 - ❓ Un PC Windows real para pruebas (requisito de F1): el autor lo tiene o lo consigue.
-- ⏳ F1-06 · Resolución base y modo ventana.
+- ✅ Resolución base 640×360 y escala entera con bandas (autor, 2026-10-24; cierra F1-06).
 - ❓ Hub de documentación y tablero de tareas (ver [06](06-roadmap-y-pendientes.md)).

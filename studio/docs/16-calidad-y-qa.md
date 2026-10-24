@@ -82,6 +82,25 @@ Cada punto tiene un caso de prueba en el catálogo (área **Seguridad** y **Priv
 - El catálogo inicial tenía **49 casos** derivados de lo diseñado; con el cambio a PC primero ([ADR-0009](adr/0009-pc-primero-movil-despues.md)) suma **55**: accesibilidad por teclado (TC-050), Steam Auto-Cloud (TC-051), pantallas de PC (TC-052) y tres casos con la etiqueta **[Fase móvil]** (TC-053 a TC-055, prioridad P3) que conservan lo táctil y lo de Android. Se amplía cada vez que una tarea introduce comportamiento.
 - Los casos automáticos se convierten en pruebas del repositorio; los manuales se ejecutan en el PC de pruebas.
 
+### Casos nuevos por la exploración caminable ✅ (F0-91, 2026-10-24)
+
+Lista de diseño de los casos que el cambio añade al catálogo (a partir de TC-056; se cargan en `cases.json` al crear las tareas de QA de exploración, ⏳ F0-92 para los de economía y ritmo). Los automáticos van al repositorio; los manuales se ejecutan en el PC de pruebas y en la Steam Deck.
+
+| Área | Caso | Tipo | Resultado esperado |
+|---|---|---|---|
+| Colisión | El personaje no atraviesa edificaciones, vallas ni paredes del interior o de la galería, y puede rodear cada edificación | Manual, P1 | No hay zonas atrapadas ni salidas del mapa en los seis asentamientos |
+| Loader | Entrar y salir de edificaciones y de entradas de mina | Integración, P1 | El loader dura menos de un segundo, no pierde la posición ni consume bloque; salir deja al personaje frente a la puerta |
+| Sorteo diario | `hash(partida, día, mina, entrada)` | Unitaria automática, P1 | Mismo reparto con la misma semilla; siempre 2 escasas, 2 medias y 1 abundante; el reparto no se ve antes de entrar |
+| Cambio único | Cambiar de entrada una vez por mina y día | Integración, P1 | El segundo cambio se rechaza; el cambio no cuenta como otra visita para el agotamiento; la batería gastada no se devuelve |
+| Batería | Carga del detector por escaneo y recarga nocturna | Unitaria automática, P1 | 1 carga por clic; con 0 carga se pica a ciegas; se recarga entera al pasar el día; la pila de repuesto respeta el máximo diario |
+| Cierres | 1, 2 y 3 entradas cerradas por gravedad, y cierre total solo por guion | Unitaria automática, P1 | Orden abundante, media, escasa; siempre al menos 2 abiertas; los cierres se aplican al empezar el día y nunca con el jugador dentro; si cierra tu entrada del día te reasigna gratis y sin gastar el cambio |
+| Reapertura | Fin del evento | Unitaria automática, P2 | Reabre una entrada por día en orden inverso (escasa, media, abundante) |
+| Niebla | Zona bloqueada, seleccionarla y abrirla por acto | Integración, P2 | Se ve la niebla con su detalle; seleccionar muestra una frase del diario sin cifras; al abrirse se levanta con la animación breve; La Fosa cerrada no tiene niebla ni tren los días 1, 3, 5 y 7 |
+| Tren | Viaje entre zonas | Integración, P1 | El billete cobra entre 42 y 210 esquirlas; la escena dura unos 6 s y es saltable desde el segundo viaje; no gasta bloque; sin dinero no sale |
+| Mapa | Viaje dentro de la zona desde el mapa | Manual, P2 | Gratis, desde cualquier lugar, sin tren |
+| Guardado | Puntos seguros | Integración, P1 | Solo se guarda en calle, casa o andén; dentro de una mina se restaura al último punto seguro |
+| Rendimiento | Escena de paseo con niebla en Steam Deck | Manual, P2 | Los límites los fija ⏳ F1-44 |
+
 ## Errores ✅
 
 Cada error es un archivo en `studio/data/qa/bugs/BUG-NNNN.json` con título, severidad, estado, versión donde apareció, pasos para reproducirlo, resultado esperado y real, y evidencias.
@@ -128,7 +147,7 @@ Decisión del autor (2026-10-15): se prueba en un **PC Windows real** y en la St
 | Sistema operativo | **Windows** y **Linux** |
 | Steam Deck | 1280×800 con mando, sin HUD táctil y texto legible (objetivo *Verified*) |
 | Resolución | 1080p, 1440p y 4K |
-| Proporción de pantalla | 16:9 y **ultrapanorámico**; cómo se escala lo decide ⏳ F1-06 |
+| Proporción de pantalla | 16:9 y **ultrapanorámico**; resolución base 640×360 decidida el 2026-10-24 (ADR-0011); el escalado a cada pantalla se prueba en ⏳ F1-06 con los personajes y escenas ya diseñados en PixelLab ✅ |
 | Entrada | Ratón y teclado, y mando (incluido el de la Deck) |
 | Equipo real | Un **PC Windows real** de pruebas |
 | macOS | Después de la 1.0 |

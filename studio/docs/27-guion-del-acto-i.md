@@ -40,7 +40,7 @@ Decisiones del 2026-10-13 (F0-23), del 2026-10-15 (F0-54) y del 2026-10-16 (F0-8
 | Puerta del Acto I | Reabrir el puesto, atender la primera cuota (pagada o prorrogada) y tener el primer contacto con los empleados ✅ (la misma puerta) |
 | Primer contacto con los empleados | **Día 7, a primera hora**, como escena corta antes de la cuota: la ficha del candidato sin nombre y «Contratar» bloqueado con su motivo ✅ |
 | «Contratar» bloqueado | El botón se abre al cerrar el Acto I y **también exige una mejora de la tienda**. En el Acto I está bloqueado y su motivo es esa **mejora de la tienda pendiente** ✅ (2026-10-15). El primer contacto sigue siendo la puerta del acto, no contratar ✅ |
-| Bloques y tienda | Viajar no gasta bloque pero cuesta dinero (entre 42 y 210 esquirlas por trayecto; en el Acto I todo ocurre en Villa Brasa y no cuesta nada) y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; **la tienda no se abre de noche**, así que ninguna venta del Acto I cae en la noche. Las zonas profundas (2 bloques) y que La Fosa solo abra 3 días por semana (los días 2, 4 y 6) no afectan al Acto I: ninguna se visita en él ✅ (2026-10-15; [01](01-core-loop.md)) |
+| Bloques y tienda | Viajar en tren no gasta bloque pero cuesta dinero (el billete, entre 42 y 210 esquirlas por trayecto; en el Acto I todo ocurre en Villa Brasa y no hay trayecto ni costo), ver zonas es gratis y **caminar, los loaders y el tren no gastan bloque** (✅ 2026-10-24, [ADR-0011](adr/0011-exploracion-caminable-tren-y-minas.md)); minar y abrir la tienda cuestan un bloque completo; **la tienda no se abre de noche**, así que ninguna venta del Acto I cae en la noche. Las zonas profundas (2 bloques) y que La Fosa solo abra 3 días por semana (los días 2, 4 y 6) no afectan al Acto I: ninguna se visita en él ✅ (2026-10-15; [01](01-core-loop.md)) |
 | Deuda | La deuda nunca bloquea ✅ |
 | Anselmo | Solo sombras: libreta, lámpara, firma y cinta 1 ✅ |
 | Firma | La firma de los papeles de la herencia es la misma del acta final ✅ |
@@ -74,7 +74,7 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 | Regla |
 |---|
 | Cada día tiene tres bloques: mañana, tarde y noche. El mercado se mueve una vez por bloque ([03](03-comercio.md)) ✅ |
-| Viajar no gasta bloque pero cuesta dinero (entre 42 y 210 esquirlas fuera del Acto I; nada en el Acto I, donde todo ocurre en Villa Brasa) y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; los trámites, las visitas y las conversaciones cuestan nada, medio bloque o un bloque según su peso ([01](01-core-loop.md)) ✅ |
+| Viajar en tren no gasta bloque pero cuesta dinero (entre 42 y 210 esquirlas fuera del Acto I; nada en el Acto I, donde todo ocurre en Villa Brasa), ver zonas es gratis y caminar por el pueblo o por la mina no gasta bloque ✅; minar y abrir la tienda cuestan un bloque completo; los trámites, las visitas y las conversaciones cuestan nada, medio bloque o un bloque según su peso ([01](01-core-loop.md)) ✅ |
 | **Ninguna venta cae en la noche**: la tienda no se abre de noche ([01](01-core-loop.md)). Las escenas de noche son de casa, de cierre o de visita, y ninguna abre el modo tienda ✅ |
 | Las escenas se disparan por evento; si no ocurren, pasan a la cola ✅ ([24](24-umbrales-de-acto.md), sección 10; motor ⏳ F3-48) |
 | Solo la cuota tiene fecha: el día 7 llega aunque las escenas anteriores no se hayan jugado ✅ |
@@ -91,7 +91,7 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 
 **Cómo se aplican ✅.**
 
-- Una expedición o abrir el puesto gasta un bloque completo; viajar (que cuesta dinero, aunque no en el Acto I), leer noticias, mirar el mercado y organizar el inventario no gastan ninguno ([01](01-core-loop.md)). Cada bloque tiene una actividad principal y las conversaciones cortas del barrio caben dentro del bloque en que ocurren. El peso de cada escena (0, medio o 1) lo asigna ⏳ F3-16 y el mecanismo lo define ⏳ F2-02; minar y abrir la tienda valen 1 (sección 21.2). Las escenas guionizadas no quitan bloques salvo la expedición y la tienda: por ejemplo, `d1.5` y `d1.6` no suman dos bloques.
+- Una expedición o abrir el puesto gasta un bloque completo; viajar en tren (que cuesta dinero, aunque no en el Acto I), caminar, los loaders, leer noticias, mirar el mercado y organizar el inventario no gastan ninguno ([01](01-core-loop.md)). Cada bloque tiene una actividad principal y las conversaciones cortas del barrio caben dentro del bloque en que ocurren. El peso de cada escena (0, medio o 1) lo asigna ⏳ F3-16 y el mecanismo lo define ⏳ F2-02; minar y abrir la tienda valen 1 (sección 21.2). Las escenas guionizadas no quitan bloques salvo la expedición y la tienda: por ejemplo, `d1.5` y `d1.6` no suman dos bloques.
 - Cada día cabe en sus tres bloques con la regla de arriba: las ventas y los pedidos caen en la mañana o en la tarde, y la noche queda para las escenas.
 - El día que se indica en cada escena es el **esperado**. Si el jugador va más rápido, la escena se adelanta solo hasta donde cumple sus requisitos; si va más lento, espera en la cola. La cola suelta las escenas de una en una y en orden, para que nunca se enseñen dos mecánicas nuevas a la vez; esa invariante ya está en las reglas de la cola ✅ ([24](24-umbrales-de-acto.md), sección 10); la construye ⏳ F3-48.
 - Cada día tiene **como máximo una decisión principal**; si hay otra (la del nombre de la tienda el día 2 o `n-i-lucia-rumor` el día 5), es **menor** y cae dentro del mismo día. Los días 5 y 6 no obligan a ninguna principal: ahorrar o mejorar y vender ya o esperar al Heraldo son elecciones libres, sin nodo del árbol.
@@ -165,10 +165,10 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 | Escena | Bloque | Qué pasa | Quién habla |
 |---|---|---|---|
-| `d1.1` Llegada | Mañana | Llegas a Villa Brasa con una maleta y 120 esquirlas, todo tu efectivo ✅ ([28](28-numeros-base-de-la-economia.md)). La interfaz muestra los tres bloques del día. No hay ninguna carta en la maleta: la única carta del día es la que escribes de noche (`d1.6`) | **Narrador:** «Villa Brasa huele a humo y a pan. Traes una maleta, 120 esquirlas y un día entero.» |
-| `d1.2` La llave y los papeles | Mañana | Reme te recibe en su casa. Te da la llave, los papeles de la herencia con la **firma de Anselmo** y la caja con su detector. En la casa hay un decorado de la pista del sorteo, sin texto (sección 13): la lámpara de red, un papel sellado doblado sobre la mesa o un farol apagado | **Reme:** «Pasa, criatura. Esta es la llave. Y estos, los papeles de tu tío: ahí está su firma.» |
+| `d1.1` Llegada | Mañana | Llegas a pie a Villa Brasa (desde la estación a la calle, ya con control del personaje, ✅ 2026-10-24) con una maleta y 120 esquirlas, todo tu efectivo ✅ ([28](28-numeros-base-de-la-economia.md)). La interfaz muestra los tres bloques del día. No hay ninguna carta en la maleta: la única carta del día es la que escribes de noche (`d1.6`) | **Narrador:** «Villa Brasa huele a humo y a pan. Traes una maleta, 120 esquirlas y un día entero.» |
+| `d1.2` La llave y los papeles | Mañana | Caminas hasta la casa de Reme (`ed-vb-reme`, una edificación del pueblo a la que se camina y se entra por la puerta ✅) y Reme te recibe dentro, en el interior lateral. Te da la llave, los papeles de la herencia con la **firma de Anselmo** y la caja con su detector. En la casa hay un decorado de la pista del sorteo, sin texto (sección 13): la lámpara de red, un papel sellado doblado sobre la mesa o un farol apagado | **Reme:** «Pasa, criatura. Esta es la llave. Y estos, los papeles de tu tío: ahí está su firma.» |
 | `d1.3` El libro de deuda | Mañana | Reme abre el libro: capital, cuota cada 7 días y la primera el día 7. Una línea muestra el **abono** de cada mes. El decorado de la pista sigue a la vista (sección 13) | **Reme:** «Este abono llega cada mes. Algún vecino bondadoso, criatura. Yo no pregunto.» |
-| `d1.4` Las Galerías | Tarde | Teo te presta el pico, te enseña a escanear y a picar tres menas de carbón. Dice que fue amigo de tu tío y lo deja ahí | **Teo:** «El carbón no perdona, pero avisa. Escanea primero, aprendiz.» Y, al irse: «Fui amigo de tu tío. Lo demás, otro día.» |
+| `d1.4` Las Galerías | Tarde | Teo te acompaña caminando desde el pueblo hasta la boca de la mina (`ed-vb-mina-galerias`) ✅; allí te presta el pico, te enseña a escanear y a picar tres menas de carbón en la entrada de tu primer día. Dice que fue amigo de tu tío y lo deja ahí | **Teo:** «El carbón no perdona, pero avisa. Escanea primero, aprendiz.» Y, al irse: «Fui amigo de tu tío. Lo demás, otro día.» |
 | `d1.5` El puesto cerrado | Noche | La llave abre el puesto, lleno de polvo; sigue cerrado al público. En el cajón de la caja está la **libreta**; su última anotación no tiene fecha. El primer apunte manda ir a Quiroga | **Narrador:** «La libreta tiene mil apuntes. El último, una sola línea sin fecha.» |
 | `d1.6` La carta | Noche | En la casa obrera, la lámpara sobre la mesa. Escribes a Vega Mansa (`n-i-herencia`) | **{nombre}:** «Mamá, papá: heredé un puesto. Lo del banco agrario lo arreglo yo.» |
 
@@ -198,7 +198,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | `d2.1` El trámite | Mañana | Quiroga pone el puesto a tu nombre. Lo llama «gestión» y la cobra con la primera venta | **Quiroga:** «Es un simple trámite, estimado (estimada). Tan simple que me da pena cobrarlo.» |
 | `d2.2` Surtir los estantes | Tarde | Es la mecánica **Reponer**: arrastras la mercancía a los estantes (con mando, eliges estante y mercancía) y fijas el precio ✅ ([03](03-comercio.md), [09](09-minijuegos.md)). Colocas el carbón de ayer (o el saco que dejó Anselmo en la trastienda) | **Narrador:** «Queda un saco de carbón en la trastienda. Dos años de polvo y sigue negro.» |
 | `d2.3` La primera venta | Tarde | Llega un cliente obrero. Vendes, eliges el margen y cuelgas el cartel con el nombre. El puesto queda **reabierto** | **Cliente:** «¿Es verdad que reabren el puesto? Aquí compraba mi padre.» |
-| `d2.4` Cierre de caja | Noche | El puesto ya cerró y no se vende: solo cuadras la caja. El cajón de la caja se atasca; debajo del doble fondo hay un carrete con el número 1 y aparece el aviso «Encontraste una cinta» | **Narrador:** «El cajón suena hueco. Debajo hay un carrete con un número: 1.» |
+| `d2.4` Cierre de caja | Noche | El puesto ya cerró y no se vende: solo cuadras la caja, en el interior lateral de la tienda. El cajón de la caja se atasca; debajo del doble fondo hay un carrete con el número 1 y aparece el aviso «Encontraste una cinta» | **Narrador:** «El cajón suena hueco. Debajo hay un carrete con un número: 1.» |
 
 - **Noticia guionizada (la primera, de ⏳ F3-31):** el Heraldo dice que el abasto de carbón está garantizado, pero que el frío llega antes (el día 1 es el 22 de otoño y el invierno empieza el día 8 ✅). El Teletipo trae el primer **rumor** y el carbón sube un poco en los dos bloques siguientes, así que el rumor era cierto. Los dos pasan por el mostrador, repartidos por el voceador. Es la noticia y el rumor del día, dentro del tope ✅.
   - **Heraldo:** «El Ministerio informa de que el frío llegará antes, pero el carbón está garantizado este invierno.»
@@ -426,7 +426,7 @@ Solo se ve la pista de la variante sorteada. Los otros dos props no existen en e
 
 **Estado:** cerrada. La cinta 1 se recoge en el Acto I, está en el doble fondo del cajón de la caja del puesto, no se puede oír hasta el IV y no hace falta para cerrar el acto. El disparador, el aviso y la construcción mínima los confirmó el autor el 2026-10-16 (F0-86).
 
-- **Dónde:** el doble fondo del cajón de la caja del puesto (`ed-vb-tienda`), el cajón donde estaba la libreta ✅ ([26](26-zonas-y-edificios.md), [23](23-arbol-de-decisiones.md), sección 7).
+- **Dónde:** el doble fondo del cajón de la caja del puesto (`ed-vb-tienda`), el cajón donde estaba la libreta; se ve y se recoge en el **interior lateral** de la tienda, ya dentro de la edificación ✅ ([26](26-zonas-y-edificios.md), [23](23-arbol-de-decisiones.md), sección 7).
 - **Cuándo:** el día 2, de noche, al cerrar la caja por primera vez (`d2.4`). No es `d1.5`: habría dos sombras en una escena ([18](18-biblia-narrativa.md), 1.4) ✅.
 - **Cómo se ve:** un carrete con un número 1 en la etiqueta, sin nombre ni fecha. El aviso es «Encontraste una cinta» ✅ ([18](18-biblia-narrativa.md), 1.6) y el objeto se llama «Carrete 1».
 - **Qué se construye:** ⏳ F3-16 construye lo mínimo: la bandera `cinta-1`, el aviso y el objeto «Carrete 1» sin reproducción. El reproductor y el sistema de cintas son de ⏳ F4-150.
@@ -579,6 +579,8 @@ A los 319 textos de las 28 escenas se suman las 3 cajas de la interacción de pa
 | Totales | Las cifras por escena incluyen todas sus variantes de rama, de género y de sorteo |
 
 ### 21.2 Tabla maestra de las 28 escenas
+
+Nota del 2026-10-24 (F0-91) ✅: cada lugar de la columna «Lugar» (`ed-vb-*`) es una edificación del pueblo a la que se camina por el exterior aéreo y se entra por su puerta, con un loader corto hacia el interior lateral; `calle` es el exterior. La escena se dispara al entrar al edificio o al hablar con el PNJ, con un marcador discreto en el diario. Los textos, los pesos y los totales no cambian.
 
 El peso es 1 donde la escena es una expedición o abre la tienda ([01](01-core-loop.md)); en el resto lo asigna F3-16 (⏳ F3-16, mecanismo ⏳ F2-02). Las columnas de textos cuentan cajas (C), ayudas e interfaz (U) y cartas y avisos (K).
 

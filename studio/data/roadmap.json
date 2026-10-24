@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-11",
+    "updated": "2026-10-24",
     "targets": [
       "MVP",
       "Release 1",
@@ -924,6 +924,33 @@
               "prio": "P2",
               "desc": "Vault de Obsidian generado desde el repo, solo lectura y regenerado con cada build, en una carpeta ignorada por git (studio/cerebro). Contiene todo lo que se pueda del proyecto en notas atómicas bien fragmentadas y enlazadas (documentos y ADR por secciones, tareas, equipo y memoria, mundo y economía, narrativa) con propiedades, etiquetas, notas índice y una configuración de la vista de grafo que separe por tipo; se sigue la forma habitual de organizar un «segundo cerebro» (notas atómicas, mapas de contenido, propiedades en el encabezado y consultas). Decisión del autor del 2026-10-23.",
               "done_when": "Al abrir studio/cerebro en Obsidian se ve el grafo del proyecto con todas las entidades como notas individuales y enlazadas, el build lo regenera sin intervención y las pruebas lo comprueban."
+            },
+            {
+              "id": "F0-91",
+              "status": "done",
+              "title": "Ajuste de diseño: niebla en el mapa, tren, asentamientos y minas caminables con cinco entradas",
+              "est": 20,
+              "prio": "P0",
+              "desc": "Cambio grande de diseño pedido por el autor el 2026-10-24: (1) zonas bloqueadas tapadas por una niebla densa y oscura con un detalle visible; (2) un tren como único medio de desplazamiento (el billete es el costo del viaje) con una pantalla de carga a pantalla completa tipo time-lapse; (3) asentamientos que se recorren caminando por fuera (estilo Stardew Valley, pudiendo rodear las edificaciones) con la entrada a cada edificación y un loader hacia el interior, que también se recorre con desplazamiento lateral plano (estilo Pet Society); (4) minas caminables con cinco entradas (2 escasas, 2 medias y 1 abundante, sorteadas cada día a ciegas, con 1 a 3 cerradas por problemas sociales o políticos y siempre al menos 2 abiertas), en las que el detector, con batería que se gasta en cada escaneo, muestra el promedio de cada mena antes de picarla; solo se puede cambiar de entrada una vez al día; la batería del detector y el desgaste de las herramientas limitan lo que se mina, con una recarga al final del día por definir. El autor dice que no importa el tiempo ni el costo. Requiere análisis de impacto en economía, simulador, documentos 01, 02, 09, 10, 12, 14 y 26, y el roadmap. Los documentos de la lista de impacto, los módulos nuevos `world` y `exploration` del documento 14 y el ADR nuevo se rehacen aquí; el simulador y su recalibración son F0-93 y F0-92; las tareas y horas de las fases F1 a F4 se ajustan en este mismo cambio.",
+              "done_when": "Diseño completo y acordado con el autor, con los documentos y datos ajustados, el simulador recalibrado y el roadmap corregido (tareas, horas y fases)."
+            },
+            {
+              "id": "F0-93",
+              "status": "backlog",
+              "title": "Simulador: reglas J1–J5, C5 reescrita y motor para entradas, batería y cierres",
+              "est": 16,
+              "prio": "P0",
+              "desc": "Reescribir en tools/sim y studio/data/sim/reglas.json lo que cambia con las minas de cinco entradas (F0-91): la entrada por empleados, la regla C5 (el descarte al 25 % desaparece y lo sustituye la carga del detector) y las reglas nuevas J1 (más cierres, menos valor esperado), J2 (cambiar de entrada da +5 a +10 %), J3 (la batería se queda corta entre el 30 y el 60 % de los días), J4 (los empleados rinden la media de las entradas abiertas) y J5 (parámetro de minutos de caminar; el ingreso por hora queda dentro de ±20 %). El motor sortea las entradas con la semilla del día y lee las claves de economy.mine_entrances de world.json. Mientras no esté hecha, las claves que lee el simulador no cambian (huella 9dff70c2c639dbb5). La calibración y la aprobación de las cifras son F0-92.",
+              "done_when": "El simulador sortea las entradas, aplica cierres con presión y batería, las reglas J1 a J5 y C5 están escritas y pasan sus pruebas, y A1 a A7 y B1 siguen definidas."
+            },
+            {
+              "id": "F0-92",
+              "status": "backlog",
+              "title": "Reescribir y recalibrar el simulador de economía para minas con cinco entradas, batería y cierres",
+              "est": 20,
+              "prio": "P0",
+              "desc": "Recalibrar con las reglas de F0-93: zone_mix pasa a ser la media de las cinco entradas; economy.expedition (ores_per_expedition, fixed_seconds, seconds_per_ore, zone_wealth) se reescribe; D1 y D2 (zona óptima y riqueza) se recalibran; A1 a A7 y B1 se verifican y se ajustan los rendimientos base (−8 a −12 % si el valor esperado con el cambio sube a ~1,15); la cuota del Acto I se comprueba con el abanico estrecho 0,85/1,0/1,3; se regeneran los resultados (python3 tools/sim/run.py --completo --escribir) y se llevan al autor las cifras definitivas de partida de economy.mine_entrances (calidades, menas visibles, batería, presión, cierres) para su aprobación. Total de F0-92 y F0-93: 36 h, dentro de las 24 a 40 h previstas.",
+              "done_when": "El simulador queda en «50 de 50 · vigente» (o el número que hoy corresponda con las reglas nuevas), los resultados se regeneran, las cifras de partida de economy.mine_entrances las aprueba el autor y world.json y el documento 28 coinciden."
             }
           ]
         }
@@ -935,8 +962,8 @@
       "name": "Preparación técnica",
       "target": "MVP",
       "hours": [
-        127,
-        197
+        141,
+        219
       ],
       "goal": "Tener el entorno funcionando, un proyecto Godot que corre en PC (Windows y Linux), la estructura de datos y las reglas de arte listas.",
       "gate": null,
@@ -965,11 +992,11 @@
             },
             {
               "id": "F1-03",
-              "title": "Hola mundo en PC: escena 16:9 con un botón que responde a ratón, teclado y mando",
-              "est": 1.5,
+              "title": "Hola mundo en PC: escena 16:9 a 640×360 con un botón y un cuadrado que se mueve con ratón, teclado y mando",
+              "est": 4,
               "status": "backlog",
-              "desc": "Escena mínima con texto y un botón que responde al clic, al teclado y al mando. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
-              "done_when": "El hola mundo corre en un PC Windows real y responde a ratón, teclado y mando.",
+              "desc": "Escena mínima con texto y un botón que responde al clic, al teclado y al mando. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009). Decisión del autor del 2026-10-24 (F0-91). La escena también lleva un cuadrado de prueba que se mueve en ocho direcciones con una cámara que lo sigue (base del paseo de F1-46).",
+              "done_when": "El hola mundo corre en un PC Windows real, responde a ratón, teclado y mando, y el cuadrado se mueve con los tres dispositivos y la cámara lo sigue.",
               "prio": "P0"
             },
             {
@@ -998,21 +1025,30 @@
           "tasks": [
             {
               "id": "F1-06",
-              "title": "Resolución base, escalado entero y modos de pantalla",
-              "est": 3,
+              "title": "Resolución base 640×360 (decidida), escalado entero y modos de pantalla",
+              "est": 5,
               "status": "backlog",
-              "desc": "Probar 480x270 (x4) y 640x360 con escala entera y bandas, en ventana y pantalla completa, 16:9, 16:10 y ultrapanorámico, y 1280x800 de la Steam Deck. La zona segura para 20:9 es de la fase móvil. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
-              "done_when": "Hay una resolución base y un escalado elegidos con pruebas, con ventana y pantalla completa.",
+              "desc": "Decisión del autor del 2026-10-24: resolución base 640×360 con sprites de paseo de 32 a 48 px y retratos de diálogo aparte. La tarea comprueba con pruebas el escalado entero con bandas (×3 en 1920×1080, ×2 en 1280×800 de la Steam Deck), 16:9, 16:10 y ultrapanorámico, ventana y pantalla completa, y que el pixel art se vea nítido con la cámara que sigue al personaje (sin vibración de subpíxel). La zona segura para 20:9 es de la fase móvil. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "done_when": "La resolución base 640×360 y el escalado entero quedan comprobados en ventana y pantalla completa en 16:9, 16:10, ultrapanorámico y Steam Deck, sin vibración al mover la cámara.",
               "prio": "P0"
             },
             {
               "id": "F1-07",
-              "title": "Capa de entrada por acciones: ratón, teclado y mando",
-              "est": 3,
+              "title": "Capa de entrada por acciones: ratón, teclado y mando, con movimiento en ocho direcciones",
+              "est": 7,
               "status": "backlog",
-              "desc": "Acciones abstractas, detección del último dispositivo y glifos de mando; el táctil queda como un adaptador futuro de la fase móvil. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
-              "done_when": "Con mando conectado el juego se maneja entero con el mando y los glifos cambian al último dispositivo usado.",
+              "desc": "Acciones abstractas, detección del último dispositivo y glifos de mando; el táctil queda como un adaptador futuro de la fase móvil. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009). Decisión del autor del 2026-10-24 (F0-91). Se añaden las acciones de movimiento (ocho direcciones con palanca analógica, teclas y ratón), interactuar y abrir el mapa desde cualquier lugar, con zonas muertas del mando.",
+              "done_when": "Con mando conectado el juego se maneja entero con el mando, los glifos cambian al último dispositivo usado y el movimiento en ocho direcciones responde igual con teclado y palanca.",
               "prio": "P0"
+            },
+            {
+              "id": "F1-46",
+              "status": "backlog",
+              "title": "Prueba técnica del motor de paseo: movimiento, colisiones y cámara",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Módulo `exploration` (documento 14): un personaje que camina en ocho direcciones por un escenario de prueba de tiles, con colisiones por capas, interactuables por proximidad y cámara que sigue con límites de mapa y posición de píxel entero. Es la base del paseo por asentamientos y minas (F3-49). Resolución 640×360 de F1-06. Decisión del autor del 2026-10-24 (F0-91).",
+              "done_when": "Un escenario de prueba de varias pantallas se recorre en ocho direcciones con teclado, mando y ratón, el personaje no atraviesa paredes, la cámara no tiembla y hay pruebas de las colisiones."
             },
             {
               "id": "F1-08",
@@ -1396,8 +1432,8 @@
       "name": "Prototipo del núcleo",
       "target": "MVP",
       "hours": [
-        159,
-        249
+        184,
+        290
       ],
       "goal": "Algo jugable aunque feo: un día completo con extracción, mercado y tienda, para comprobar si el loop es divertido.",
       "gate": "Puerta A: ¿es divertido? Si no lo es, se ajusta o se replantea antes de invertir en arte final.",
@@ -1501,30 +1537,39 @@
           "tasks": [
             {
               "id": "F2-10",
-              "title": "Zona 1 (Galerías del Hollín) con menas y probabilidades",
-              "est": 5,
+              "title": "Zona 1 (Galerías del Hollín): recinto de cinco entradas, menas y probabilidades",
+              "est": 9,
               "status": "backlog",
-              "desc": "Generación de menas con composición oculta.",
-              "done_when": "Cada mena tiene composición coherente con la zona.",
+              "desc": "Generación de menas con composición oculta, ahora por entrada: cada una de las cinco entradas de la mina (2 escasas, 2 medias y 1 abundante) tiene su calidad solo en unidades por mena (×0,7, ×1,0 y ×1,6; en el Acto I el abanico estrecho 0,85/1,0/1,3) y la mezcla de minerales de la zona es la media de las cinco. Hay el doble de menas visibles que de menas picables (Acto I: 5 o 6). Lógica abstracta, sin espacio. Cifras de partida; las calibra F0-92.",
+              "done_when": "Cada mena tiene composición coherente con la zona, cada entrada aplica su calidad y la media de las cinco entradas conserva la mezcla de la zona.",
               "prio": "P0"
             },
             {
               "id": "F2-11",
-              "title": "Escáner instantáneo con rangos",
-              "est": 4,
+              "title": "Detector con batería: rango de composición y cantidad por mena",
+              "est": 9,
               "status": "backlog",
-              "desc": "Muestra rangos de composición; la precisión depende del Ojo y la herramienta.",
-              "done_when": "Tocar una mena muestra sus rangos.",
+              "desc": "Dentro de la mina, un clic en una mena gasta 1 carga de la batería del detector (6, 8, 11 o 14 cargas según su nivel) y muestra el rango de composición con marca de promedio (desplazado del valor real para que no delate la verdad), el rango de cantidad y un color (gris: tu herramienta no puede picarla; ámbar; verde). Con 0 cargas se pica a ciegas y la roca solo insinúa el nivel. La precisión depende del Ojo y de la herramienta. Lógica abstracta; el sonar, las pilas y la interfaz son F3-53. Cifras de partida; las calibra F0-92.",
+              "done_when": "Tocar una mena gasta una carga y muestra sus rangos y su color; sin carga no hay datos; hay pruebas del gasto y del desplazamiento del rango.",
               "prio": "P0"
             },
             {
               "id": "F2-12",
-              "title": "Energía y herramienta con desgaste",
-              "est": 4,
+              "title": "Aguante, herramienta con desgaste y estado «mellada»",
+              "est": 8,
               "status": "backlog",
-              "desc": "Pico con durabilidad y energía por mena.",
-              "done_when": "Minar gasta energía y desgasta el pico.",
+              "desc": "Pico con durabilidad y Aguante por mena (28 de base; caminar no gasta). Por debajo del 20 % de integridad la herramienta queda «mellada» y el margen del minijuego baja un 30 %. El descarte al 25 % de Aguante desaparece: lo sustituye la carga del detector (F2-11). Hay tres límites a la vez (Aguante, batería y desgaste) y la tarea cuida que no frustren; al principio es complicado y con mejoras se vuelve más fácil.",
+              "done_when": "Minar gasta Aguante y desgasta el pico, la herramienta mellada reduce el margen del minijuego y hay pruebas de los tres límites juntos.",
               "prio": "P0"
+            },
+            {
+              "id": "F2-39",
+              "status": "backlog",
+              "title": "Sorteo diario de las cinco entradas y cambio único (lógica)",
+              "est": 5,
+              "prio": "P0",
+              "desc": "Reparto cada día de qué entrada es escasa, media o abundante con la semilla hash(partida, día, mina, entrada), determinista y a ciegas. El jugador puede cambiar de entrada una sola vez por mina y por día, dentro del mismo bloque y con el mismo Aguante; no cuenta como otra visita para el agotamiento y las demás visitas del día vuelven a «tu entrada del día». Lógica abstracta que usan F2-10 y F2-11.",
+              "done_when": "El sorteo es determinista con la misma semilla y reparte siempre 2 escasas, 2 medias y 1 abundante; el segundo cambio del día se rechaza; hay pruebas."
             },
             {
               "id": "F2-13",
@@ -1561,10 +1606,10 @@
             },
             {
               "id": "F2-16",
-              "title": "Zona óptima según herramienta y Pericia",
-              "est": 3,
+              "title": "Zona óptima según herramienta y Pericia, con herramienta mellada",
+              "est": 5,
               "status": "backlog",
-              "desc": "Mejor herramienta, zona más amplia.",
+              "desc": "Mejor herramienta, zona más amplia; la herramienta mellada la estrecha un 30 %. Documento 09.",
               "done_when": "La dificultad cambia al mejorar herramienta y stat.",
               "prio": "P0"
             }
@@ -1609,10 +1654,10 @@
           "tasks": [
             {
               "id": "F2-20",
-              "title": "Pantallas placeholder: día, mina, mercado y tienda en horizontal",
-              "est": 10,
+              "title": "Pantallas placeholder: día, recinto de la mina, galería, mercado y tienda en horizontal",
+              "est": 14,
               "status": "backlog",
-              "desc": "Interfaz funcional con formas y colores de la paleta. Incluye decidir con el autor el símbolo o la abreviatura de la moneda (esquirlas) para los precios en pantalla.",
+              "desc": "Interfaz funcional con formas y colores de la paleta. Incluye decidir con el autor el símbolo o la abreviatura de la moneda (esquirlas) para los precios en pantalla. Con las minas caminables incluye el recinto de cinco entradas y una galería de prueba con el detector (formas y colores de la paleta). Decisión del autor del 2026-10-24 (F0-91).",
               "done_when": "Se navega entre las pantallas con ratón, teclado y mando.",
               "prio": "P0"
             },
@@ -1792,6 +1837,15 @@
               "title": "Pruebas de guardado: corrupción y migración",
               "est": 5,
               "prio": "P0"
+            },
+            {
+              "id": "F2-40",
+              "status": "backlog",
+              "title": "Casos de prueba de entradas, detector, batería y cambio único",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Casos TC nuevos de la mina de cinco entradas: sorteo, cambio único, gasto de batería, rango desplazado, mena gris, picar a ciegas, herramienta mellada y recarga nocturna, con la automatización de los que sean de lógica. Decisión del autor del 2026-10-24 (F0-91).",
+              "done_when": "Los casos están en el catálogo, los de lógica corren en el CI y pasan."
             }
           ]
         },
@@ -1816,8 +1870,8 @@
       "name": "Vertical slice",
       "target": "MVP",
       "hours": [
-        291,
-        486
+        367,
+        606
       ],
       "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido PROVISIONALES baratos (se reemplazan después de la Puerta B), información por capas, noticias, encuentros y progresión base.",
       "gate": "Puerta B: ¿se sigue hacia la v1 y se piensa en publicar?",
@@ -1939,21 +1993,48 @@
             },
             {
               "id": "F3-12",
-              "title": "Herramientas: 5 niveles, reparación y mejora con minerales",
-              "est": 8,
+              "title": "Herramientas: 5 niveles, reparación, mejora con minerales y estado «mellada»",
+              "est": 10,
               "status": "backlog",
-              "desc": "Mejoras que consumen minerales concretos. Reparar cuesta dinero y materiales; el mineral de mejora de nivel k se extrae con herramienta de nivel k−1 (documento 02).",
+              "desc": "Mejoras que consumen minerales concretos. Reparar cuesta dinero y materiales; el mineral de mejora de nivel k se extrae con herramienta de nivel k−1 (documento 02). Por debajo del 20 % de integridad la herramienta queda mellada (margen del minijuego −30 %); reparar la devuelve a su máximo.",
               "done_when": "Se puede mejorar y reparar una herramienta.",
               "prio": "P1"
             },
             {
               "id": "F3-13",
-              "title": "Regeneración y agotamiento de zonas",
-              "est": 5,
+              "title": "Riqueza y agotamiento por mina (no por entrada) y regeneración",
+              "est": 8,
               "status": "backlog",
-              "desc": "Las menas se agotan y regresan por ciclos visibles.",
+              "desc": "La riqueza de la mina (40 a 100 %, −6 por visita, +3 al día) es de la mina y no de la entrada, y multiplica unidades. Las menas se agotan y regresan por ciclos visibles; cambiar de entrada no cuenta como otra visita. Los cierres de entradas por eventos son F4-250.",
               "done_when": "La zona se agota y se regenera.",
               "prio": "P1"
+            },
+            {
+              "id": "F3-52",
+              "status": "backlog",
+              "title": "Recinto de cinco entradas y galerías caminables de las Galerías del Hollín",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Escena del recinto con las cinco entradas (la cara de cada una no revela su calidad), cambio único con aviso y galerías de 2 a 3 pantallas en vista aérea cenital con las menas visibles (Acto I: 5 o 6) según los trazados de F3-54. Usa la lógica de F2-39 y el paseo de F3-49.",
+              "done_when": "Se elige entrada, se camina por la galería hasta las menas, se puede cambiar una vez y se vuelve al recinto."
+            },
+            {
+              "id": "F3-53",
+              "status": "backlog",
+              "title": "Detector en la mina: batería, sonar, pilas de repuesto y recarga con su interfaz",
+              "est": 12,
+              "prio": "P0",
+              "desc": "Interfaz del detector dentro de la galería: indicador de carga, clic en una mena con su ficha (rango de composición con marca de promedio, rango de cantidad y color), sonar de colores (frío, tibio o caliente por cámara) como función del detector de nivel 2, pilas de repuesto opcionales desde el Acto II (máximo 1 al día) y recarga entera y gratis cada noche. Usa la lógica de F2-11. Cifras de partida; las calibra F0-92.",
+              "done_when": "Se escanea, se agota la batería, se pica a ciegas, el sonar funciona con el detector de nivel 2 y la carga se repone al pasar el día."
+            },
+            {
+              "id": "F3-54",
+              "status": "backlog",
+              "title": "Trazados de menas: herramienta de puntos de aparición y los cinco trazados de las Galerías",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Herramienta para colocar los puntos de aparición de menas en una galería y guardar el trazado en datos; se hacen a mano los cinco trazados de las Galerías del Hollín (uno por entrada). Los de las otras minas son F4-252 (30 trazados en total: 5 por mina).",
+              "done_when": "Los cinco trazados de las Galerías cargan en la mina y cada uno respeta el número de menas visibles del Acto I."
             }
           ]
         },
@@ -1991,9 +2072,9 @@
             {
               "id": "F3-16",
               "title": "Acto I: Villa Brasa, Reme, Teo, deuda y tutorial guiado",
-              "est": 14,
+              "est": 17,
               "status": "backlog",
-              "desc": "Los siete días guiados del Acto I según el documento 27 y su sección 21: tres bloques por día, las mecánicas de una en una, la cola de escenas, el peso de cada escena (0, medio o 1), las tres pistas del sorteo oculto con sus props (incluido el papel sellado del Ministerio), el taladro prestado de Teo solo el día 3, la placa de Pozo Negro, la cinta 1 en el día 2 (bandera, aviso y «Carrete 1» sin reproducción), la interacción de pagar antes, la visita de Reme al puesto el día 7, la ficha del candidato, la mecánica Reponer del día 2 y las reglas para que nunca se atasque. Los textos son de F3-47. Requiere el cierre del documento 27 (F0-86). Usa el diario y la cola de F3-48.",
+              "desc": "Los siete días guiados del Acto I según el documento 27 y su sección 21: tres bloques por día, las mecánicas de una en una, la cola de escenas, el peso de cada escena (0, medio o 1), las tres pistas del sorteo oculto con sus props (incluido el papel sellado del Ministerio), el taladro prestado de Teo solo el día 3, la placa de Pozo Negro, la cinta 1 en el día 2 (bandera, aviso y «Carrete 1» sin reproducción), la interacción de pagar antes, la visita de Reme al puesto el día 7, la ficha del candidato, la mecánica Reponer del día 2 y las reglas para que nunca se atasque. Los textos son de F3-47. Requiere el cierre del documento 27 (F0-86). Usa el diario y la cola de F3-48. Con el paseo libre por Villa Brasa las escenas se disparan al entrar al edificio o al hablar con el PNJ, con un marcador discreto en el diario, y el recorrido no pierde al jugador (cola de escenas de F3-48); en el Acto I no hay cierres de entradas. Decisión del autor del 2026-10-24 (F0-91).",
               "done_when": "Los siete días se juegan de principio a fin con las tres decisiones pequeñas, la cuota del día 7 y el cierre del acto sin atascos.",
               "prio": "P0"
             },
@@ -2023,11 +2104,11 @@
           "tasks": [
             {
               "id": "F3-18",
-              "title": "Arte provisional: mina, tienda (vista interior) e interfaz base",
-              "est": 6,
+              "title": "Arte provisional: exterior cenital de Villa Brasa, interiores laterales, mina de cinco entradas e interfaz base",
+              "est": 10,
               "status": "backlog",
-              "desc": "Reutilizar las pruebas de estilo existentes (mina y tienda) y componer la interfaz base de forma barata, marcado como provisional. El pixel art definitivo con PixelLab viene después de la Puerta B.",
-              "done_when": "Mina, tienda e interfaz base se ven y se juegan en el vertical slice, marcadas provisionales.",
+              "desc": "Reutilizar las pruebas de estilo existentes y componer de forma barata, marcado como provisional: tilesets del exterior cenital de Villa Brasa, interiores en corte lateral (tienda, taller, almacén y casa), el recinto y las galerías de la mina, un sprite de paseo provisional de 32 a 48 px y la interfaz base. El pixel art definitivo con PixelLab viene después de la Puerta B.",
+              "done_when": "El exterior, los interiores, el recinto de la mina y la interfaz base se ven y se juegan en el vertical slice, marcados como provisionales.",
               "prio": "P0"
             },
             {
@@ -2216,11 +2297,11 @@
             {
               "id": "F3-36",
               "status": "backlog",
-              "title": "Transiciones entre pantallas y animaciones mínimas",
-              "est": 6,
+              "title": "Transiciones entre pantallas, loader de entrada a edificios y animaciones mínimas",
+              "est": 9,
               "prio": "P2",
-              "desc": "Pulido de la interfaz.",
-              "done_when": "Las pantallas cambian con transición."
+              "desc": "Pulido de la interfaz y loader corto al entrar a un edificio o a la mina (exterior ↔ interior). Caminar, el loader y el tren no consumen bloques.",
+              "done_when": "Las pantallas cambian con transición y entrar a un edificio muestra un loader corto."
             },
             {
               "id": "F3-37",
@@ -2232,12 +2313,48 @@
               "done_when": "Guía escrita y probada una vez."
             },
             {
+              "id": "F3-49",
+              "status": "backlog",
+              "title": "Motor de paseo del asentamiento: colisiones por capas, cámara y puertas",
+              "est": 8,
+              "prio": "P0",
+              "desc": "Sobre la prueba técnica de F1-46: el jugador camina por el exterior de Villa Brasa (vista aérea tipo Stardew Valley), puede rodear las edificaciones, explora un mínimo, y cada edificación tiene su puerta con colisión y zona de entrada. Módulo `exploration` (documento 14). Sprite de paseo de 32 a 48 px en ocho direcciones con un estado estático con respiración. Decisión del autor del 2026-10-24 (F0-91).",
+              "done_when": "Se camina por Villa Brasa de principio a fin sin atravesar edificios ni quedar atascado, y cada puerta lanza la entrada al edificio."
+            },
+            {
+              "id": "F3-50",
+              "status": "backlog",
+              "title": "Tilemaps y loader exterior ↔ interior",
+              "est": 12,
+              "prio": "P0",
+              "desc": "Carga de tilemaps de exteriores cenitales y de interiores, con un loader corto al entrar o salir de un edificio, regreso a la puerta correcta y estado de la escena conservado. Módulo `exploration`. Las 46 edificaciones deben poder entrarse a futuro: las que aún no tienen interior muestran «puerta cerrada/pendiente».",
+              "done_when": "Se entra y se sale de las siete edificaciones del MVP con loader y se vuelve a la misma puerta; las demás muestran el cartel de pendiente."
+            },
+            {
+              "id": "F3-51",
+              "status": "backlog",
+              "title": "Interior lateral: movimiento, puertas e interactuables",
+              "est": 12,
+              "prio": "P0",
+              "desc": "Vista lateral plana en corte transversal (tipo Pet Society): el personaje camina de lado, hay puertas a otras habitaciones, interactuables (mostrador, mesa, cama) y salida a la calle. Los PNJ hablan o se mueven por el interior. Decisión del autor del 2026-10-24 (F0-91).",
+              "done_when": "Se recorren la tienda, el taller, el almacén y la casa de lado, se interactúa con sus objetos y se sale a la calle."
+            },
+            {
+              "id": "F3-55",
+              "status": "backlog",
+              "title": "Estado de partida con posición y guardado en puntos seguros",
+              "est": 5,
+              "prio": "P0",
+              "desc": "El estado de partida guarda la posición del personaje (zona, escena y coordenadas) además de lo que ya guarda. Se guarda solo en puntos seguros (calle, casa o andén) y no dentro de una mina; al cargar se vuelve a ese punto. Módulo `save` (documento 14).",
+              "done_when": "Se guarda y se carga volviendo al mismo punto seguro, no se puede guardar dentro de una mina y hay pruebas del guardado."
+            },
+            {
               "id": "F3-46",
               "status": "backlog",
-              "title": "Navegador zona a edificación y horarios por bloque",
-              "est": 6,
+              "title": "Mapa y navegador zona a edificación (gratis dentro de la zona) y horarios por bloque",
+              "est": 9,
               "prio": "P1",
-              "desc": "Lista de edificaciones de Villa Brasa en el MVP con apertura por bloque. Según el documento 26 (zonas y edificios).",
+              "desc": "Lista de edificaciones de Villa Brasa en el MVP con apertura por bloque. El mapa se abre desde cualquier lugar y, dentro de la zona, viajar de una edificación a otra no cuesta nada ni consume bloque. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             }
           ]
@@ -2306,6 +2423,15 @@
               "title": "Informe de QA del vertical slice",
               "est": 3,
               "prio": "P0"
+            },
+            {
+              "id": "F3-56",
+              "status": "backlog",
+              "title": "Casos de prueba de exploración, interiores, loader y guardado",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Casos TC nuevos y su automatización donde se pueda: colisiones, puertas, loader, interior lateral, guardado en puntos seguros y recorrido de las galerías.",
+              "done_when": "Los casos están en el catálogo, los automatizables corren en el CI y pasan."
             }
           ]
         },
@@ -2330,8 +2456,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        1301,
-        2241
+        1503,
+        2562
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -2385,9 +2511,10 @@
             {
               "id": "F4-07",
               "status": "backlog",
-              "title": "Zona 3 (Minas de Sierra Alta): ficha, probabilidades y regeneración",
-              "est": 3,
-              "prio": "P1"
+              "title": "Zona 3 (Minas de Sierra Alta): ficha, probabilidades, regeneración y entradas",
+              "est": 5,
+              "prio": "P1",
+              "desc": "Ficha, mezcla de menas, regeneración y las cinco entradas de la mina (calidades y trazados de F4-252)."
             },
             {
               "id": "F4-08",
@@ -3082,9 +3209,9 @@
               "id": "F4-99",
               "status": "backlog",
               "title": "Minero automático: expediciones sin minijuego",
-              "est": 10,
+              "est": 14,
               "prio": "P1",
-              "desc": "Un Minero empleado rinde menos que el jugador en promedio y sin minijuego; el entrenamiento lo mejora; los minerales de nivel alto solo los extraen empleados muy entrenados y con la herramienta adecuada; nunca extrae Aetherita; en zonas peligrosas puede herirse (inactivo unos días) o perder la carga de esa expedición (documento 04)."
+              "desc": "Un Minero empleado rinde menos que el jugador en promedio y sin minijuego; el entrenamiento lo mejora; los minerales de nivel alto solo los extraen empleados muy entrenados y con la herramienta adecuada; nunca extrae Aetherita; en zonas peligrosas puede herirse (inactivo unos días) o perder la carga de esa expedición (documento 04). Los empleados sufren los cierres como el jugador: se les asigna una entrada abierta al azar, sin detector, y rinden la media de las entradas abiertas."
             },
             {
               "id": "F4-100",
@@ -3571,102 +3698,145 @@
             {
               "id": "F4-152",
               "status": "backlog",
-              "title": "Mapa de Valdoria interactivo: zonas con ratón",
-              "est": 8,
+              "title": "Mapa de Valdoria interactivo: zonas con ratón, teclado y mando, abierto desde cualquier lugar",
+              "est": 14,
               "prio": "P1",
-              "desc": "Mapa de Valdoria con zonas que se señalan y se eligen con el ratón, el teclado y el mando. Usa el mapa provisional regenerado para el storyboard; el mapa definitivo en pixel art es F4-233."
+              "desc": "Mapa de Valdoria con zonas que se señalan y se eligen con el ratón, el teclado y el mando; se puede abrir desde cualquier lugar. Dentro de la misma zona se viaja de una edificación a otra sin coste. Las estaciones quedan solo como referencia en esta versión. Usa el mapa provisional regenerado para el storyboard; el mapa definitivo en pixel art es F4-233."
             },
             {
               "id": "F4-153",
               "status": "backlog",
-              "title": "Estado visual del mapa: zonas bloqueadas y desbloqueadas",
-              "est": 5,
-              "prio": "P1"
+              "title": "Estado visual del mapa: niebla sobre las zonas bloqueadas, apertura por acto y frase del diario",
+              "est": 12,
+              "prio": "P1",
+              "desc": "Las zonas bloqueadas se tapan con niebla (el shader y la animación son F4-247); esta tarea cubre el estado de cada zona, la apertura por acto, el detalle reconocible que asoma y la frase corta del diario, sin cifras, al seleccionar una zona con niebla. La Fosa cerrada sus días 1, 3, 5 y 7 no lleva niebla sino el cartel de que no hay tren.",
+              "done_when": "Cada zona se ve bloqueada o abierta según el acto, la zona con niebla muestra su frase del diario y la Fosa muestra su cartel."
+            },
+            {
+              "id": "F4-247",
+              "status": "backlog",
+              "title": "Niebla del mapa: shader, detalles reconocibles y animación de apertura",
+              "est": 12,
+              "prio": "P1",
+              "desc": "Niebla densa y oscura que cubre casi todo el 100 % de la zona bloqueada y deja asomar un detalle reconocible (cima de montaña, muelle, torre de la ciudad), con animación breve al levantarse cuando el acto abre la zona. Usa el estado de F4-153.",
+              "done_when": "Cada zona bloqueada se ve cubierta por la niebla con su detalle y la apertura se anima en pocos segundos sin tirones."
             },
             {
               "id": "F4-154",
               "status": "backlog",
-              "title": "Viaje entre regiones: costo en dinero y zonas profundas",
-              "est": 4,
+              "title": "Tren entre zonas: billete como costo del viaje y zonas profundas",
+              "est": 14,
               "prio": "P2",
-              "desc": "El viaje y ver zonas en el mapa no gastan bloque; viajar tiene un pequeño costo en dinero (billete o combustible; tarifas por trayecto en el documento 28) que el auto de V2.1 puede reducir. Las zonas profundas (Cavernas y La Fosa) cuestan 2 bloques, ocupan Tarde y Noche y el juego lo recomienda antes de salir; las Cavernas siempre están abiertas y La Fosa solo abre 3 días por semana (los días de calibración de la Comisión). Documento 01."
+              "desc": "El tren es el único medio de desplazamiento entre zonas y el billete es el costo del viaje (42 a 210 esquirlas por trayecto, documento 28 y economy.travel de world.json). Viajar y ver el mapa no gastan bloque; el auto de V2.1 puede reducir el costo. Las zonas profundas (Cavernas y La Fosa) cuestan 2 bloques, ocupan Tarde y Noche y el juego lo recomienda antes de salir; las Cavernas siempre están abiertas y La Fosa solo abre 3 días por semana (los días de calibración de la Comisión). Documento 01. La escena del viaje es F4-248.",
+              "done_when": "Viajar descuenta el billete, respeta las zonas profundas y los días de La Fosa, y no consume bloque."
+            },
+            {
+              "id": "F4-248",
+              "status": "backlog",
+              "title": "Estación y tren modular: escena de viaje con fondos de ventanilla",
+              "est": 12,
+              "prio": "P1",
+              "desc": "Pantalla de carga a pantalla completa tipo time-lapse con el personaje sentado junto a la ventanilla y el paisaje pasando de la zona A a la B; una escena base reutilizable con fondos por tramo, de unos 6 s, saltable desde el segundo viaje, más la estación o andén de llegada. Los cinco fondos de ventanilla definitivos son F4-249. La estación de Puerto Meridiano sigue siendo edificio de historia.",
+              "done_when": "Cada viaje muestra la escena modular de 6 s con el billete cobrado y se salta desde el segundo viaje."
             },
             {
               "id": "F4-155",
               "status": "backlog",
-              "title": "Edificios isométricos: tienda, taller, almacén y casa",
-              "est": 14,
-              "prio": "P1"
+              "title": "Exteriores cenitales caminables: tienda, taller, almacén y casa",
+              "est": 20,
+              "prio": "P1",
+              "desc": "Sustituye a los «edificios isométricos» (cancelados por la decisión del autor del 2026-10-24). Fachada y puerta de cada edificación vistas desde arriba, con colisiones, tiles propios y el detalle para rodearlas y explorar un mínimo, en la vista aérea del asentamiento (documento 26). Arte provisional; el definitivo es F4-254.",
+              "done_when": "Los cuatro exteriores se ven y se rodean caminando, con su puerta de entrada, y el autor los aprueba."
             },
             {
               "id": "F4-156",
               "status": "backlog",
-              "title": "Edificios isométricos: Ministerio, Consorcio, Unión, bar y periódico",
-              "est": 16,
-              "prio": "P2"
+              "title": "Exteriores cenitales caminables: Ministerio, Consorcio, Unión, bar y periódico",
+              "est": 20,
+              "prio": "P2",
+              "desc": "Sustituye a los «edificios isométricos» (cancelados por la decisión del autor del 2026-10-24). Fachada y puerta de los cinco edificios de Puerto Meridiano vistas desde arriba, con colisiones y tiles propios. Arte provisional; el definitivo es F4-254.",
+              "done_when": "Los cinco exteriores se ven y se rodean caminando, con su puerta de entrada, y el autor los aprueba."
             },
             {
               "id": "F4-157",
               "status": "backlog",
-              "title": "Vista interior: tienda",
-              "est": 6,
-              "prio": "P1"
+              "title": "Interior lateral: tienda",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Interior de tienda en corte transversal con desplazamiento lateral plano (tipo Pet Society), con sus interactuables, puertas y PNJ. Reabre y sustituye a la «vista interior» fija.",
+              "done_when": "Se entra desde la calle, se recorre de lado, se interactúa con sus objetos y se sale a la calle."
             },
             {
               "id": "F4-158",
               "status": "backlog",
-              "title": "Vista interior: taller",
-              "est": 5,
-              "prio": "P1"
+              "title": "Interior lateral: taller",
+              "est": 7,
+              "prio": "P1",
+              "desc": "Interior de taller en corte transversal con desplazamiento lateral plano (tipo Pet Society), con sus interactuables, puertas y PNJ. Reabre y sustituye a la «vista interior» fija.",
+              "done_when": "Se entra desde la calle, se recorre de lado, se interactúa con sus objetos y se sale a la calle."
             },
             {
               "id": "F4-159",
               "status": "backlog",
-              "title": "Vista interior: almacén",
-              "est": 5,
-              "prio": "P1"
+              "title": "Interior lateral: almacén",
+              "est": 7,
+              "prio": "P1",
+              "desc": "Interior de almacén en corte transversal con desplazamiento lateral plano (tipo Pet Society), con sus interactuables, puertas y PNJ. Reabre y sustituye a la «vista interior» fija.",
+              "done_when": "Se entra desde la calle, se recorre de lado, se interactúa con sus objetos y se sale a la calle."
             },
             {
               "id": "F4-160",
               "status": "backlog",
-              "title": "Vista interior: Ministerio",
-              "est": 5,
-              "prio": "P2"
+              "title": "Interior lateral: Ministerio",
+              "est": 7,
+              "prio": "P2",
+              "desc": "Interior de Ministerio en corte transversal con desplazamiento lateral plano (tipo Pet Society), con sus interactuables, puertas y PNJ. Reabre y sustituye a la «vista interior» fija.",
+              "done_when": "Se entra desde la calle, se recorre de lado, se interactúa con sus objetos y se sale a la calle."
             },
             {
               "id": "F4-161",
               "status": "backlog",
-              "title": "Vista interior: Consorcio Arvel",
-              "est": 5,
-              "prio": "P2"
+              "title": "Interior lateral: Consorcio Arvel",
+              "est": 7,
+              "prio": "P2",
+              "desc": "Interior de Consorcio Arvel en corte transversal con desplazamiento lateral plano (tipo Pet Society), con sus interactuables, puertas y PNJ. Reabre y sustituye a la «vista interior» fija.",
+              "done_when": "Se entra desde la calle, se recorre de lado, se interactúa con sus objetos y se sale a la calle."
             },
             {
               "id": "F4-162",
               "status": "backlog",
-              "title": "Vista interior: sede de la Unión",
-              "est": 4,
-              "prio": "P2"
+              "title": "Interior lateral: sede de la Unión",
+              "est": 6,
+              "prio": "P2",
+              "desc": "Interior de sede de la Unión en corte transversal con desplazamiento lateral plano (tipo Pet Society), con sus interactuables, puertas y PNJ. Reabre y sustituye a la «vista interior» fija.",
+              "done_when": "Se entra desde la calle, se recorre de lado, se interactúa con sus objetos y se sale a la calle."
             },
             {
               "id": "F4-163",
               "status": "backlog",
-              "title": "Vista interior: bar de Los Faroleros",
-              "est": 4,
-              "prio": "P2"
+              "title": "Interior lateral: bar de Los Faroleros",
+              "est": 6,
+              "prio": "P2",
+              "desc": "Interior de bar de Los Faroleros en corte transversal con desplazamiento lateral plano (tipo Pet Society), con sus interactuables, puertas y PNJ. Reabre y sustituye a la «vista interior» fija.",
+              "done_when": "Se entra desde la calle, se recorre de lado, se interactúa con sus objetos y se sale a la calle."
             },
             {
               "id": "F4-164",
               "status": "backlog",
-              "title": "Vista interior: periódico",
-              "est": 4,
-              "prio": "P2"
+              "title": "Interior lateral: periódico",
+              "est": 6,
+              "prio": "P2",
+              "desc": "Interior de periódico en corte transversal con desplazamiento lateral plano (tipo Pet Society), con sus interactuables, puertas y PNJ. Reabre y sustituye a la «vista interior» fija.",
+              "done_when": "Se entra desde la calle, se recorre de lado, se interactúa con sus objetos y se sale a la calle."
             },
             {
               "id": "F4-165",
               "status": "backlog",
-              "title": "Puerto Meridiano: mapa de ciudad",
-              "est": 8,
-              "prio": "P1"
+              "title": "Puerto Meridiano: asentamiento cenital caminable",
+              "est": 16,
+              "prio": "P1",
+              "desc": "La ciudad en vista aérea: calles, plazas y límites para caminar, estación (andén de referencia) y las puertas de sus edificaciones.",
+              "done_when": "Se recorre Puerto Meridiano a pie y se llega a cada puerta."
             },
             {
               "id": "F4-166",
@@ -3678,78 +3848,80 @@
             {
               "id": "F4-167",
               "status": "backlog",
-              "title": "Navegación entre mapa, ciudad y edificios",
-              "est": 6,
-              "prio": "P1"
+              "title": "Navegación entre mapa, asentamiento y edificios: mapa desde cualquier lugar y viaje gratis dentro de la zona",
+              "est": 12,
+              "prio": "P1",
+              "desc": "Une los tres niveles: el mapa se abre desde cualquier lugar; dentro de la zona se viaja de una edificación a otra sin coste; entre zonas se toma el tren (F4-154); entrar a un edificio pasa por el loader (F3-50). Sin estaciones jugables en esta versión.",
+              "done_when": "Se pasa del mapa al asentamiento, de la calle al interior y de una zona a otra sin saltos ni atascos."
             },
             {
               "id": "F4-217",
               "status": "backlog",
-              "title": "Vista de zona: Villa Brasa, Altafría y Salinas Blancas",
-              "est": 12,
+              "title": "Asentamientos cenitales caminables: Villa Brasa, Altafría y Salinas Blancas",
+              "est": 20,
               "prio": "P1",
-              "desc": "Los tres asentamientos isométricos con edificaciones tocables. Según el documento 26 (zonas y edificios).",
+              "desc": "Los tres asentamientos en vista aérea, caminables, con las edificaciones vistas por fuera y con su puerta, y estación o calle de llegada. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
               "id": "F4-218",
               "status": "backlog",
-              "title": "Vista de zona: campamentos de las Cavernas y de la Fosa",
-              "est": 6,
+              "title": "Asentamientos cenitales caminables: campamentos de las Cavernas y de la Fosa",
+              "est": 12,
               "prio": "P1",
-              "desc": "Los dos campamentos. Según el documento 26 (zonas y edificios).",
+              "desc": "Los dos campamentos, también caminables en vista aérea. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
               "id": "F4-219",
               "status": "backlog",
               "title": "Herrería y economato",
-              "est": 16,
+              "est": 18,
               "prio": "P1",
-              "desc": "Exterior, interior y mercancía. Según el documento 26 (zonas y edificios).",
+              "desc": "Exterior cenital, interior lateral y mercancía. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
               "id": "F4-220",
               "status": "backlog",
               "title": "Platería y lonja con almacén de salitre",
-              "est": 16,
+              "est": 18,
               "prio": "P1",
-              "desc": "Exterior, interior y mercancía. Según el documento 26 (zonas y edificios).",
+              "desc": "Exterior cenital, interior lateral y mercancía. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
               "id": "F4-221",
               "status": "backlog",
               "title": "Tasadores y Casa Ormeño",
-              "est": 16,
+              "est": 18,
               "prio": "P1",
-              "desc": "Exterior, interior y mercancía. Según el documento 26 (zonas y edificios).",
+              "desc": "Exterior cenital, interior lateral y mercancía. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
               "id": "F4-222",
               "status": "backlog",
               "title": "Edificios de historia: taller de ensayo, estación y pensión",
-              "est": 15,
+              "est": 18,
               "prio": "P1",
-              "desc": "Exterior, interior y el sitio de cada cinta. Según el documento 26 (zonas y edificios).",
+              "desc": "Exterior cenital, interior lateral y el sitio de cada cinta. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
               "id": "F4-223",
               "status": "backlog",
               "title": "Edificios de historia: campamento de ensayo, campamento de la Primera Expedición y barracón",
-              "est": 15,
+              "est": 18,
               "prio": "P1",
-              "desc": "Exterior, interior y el sitio de cada cinta. Según el documento 26 (zonas y edificios).",
+              "desc": "Exterior cenital, interior lateral y el sitio de cada cinta. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
               "id": "F4-224",
               "status": "backlog",
               "title": "Casa de Reme y oficina de Quiroga definitivas",
-              "est": 8,
+              "est": 10,
               "prio": "P1",
               "desc": "Exterior e interior. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
@@ -3757,10 +3929,10 @@
             {
               "id": "F4-225",
               "status": "backlog",
-              "title": "Mostrador de preparación en las seis bocas de mina",
-              "est": 10,
+              "title": "Bocas de mina y recinto de cinco entradas en las seis zonas, con mostrador de preparación",
+              "est": 20,
               "prio": "P1",
-              "desc": "Equipo propio de cada zona. Según el documento 26 (zonas y edificios).",
+              "desc": "Cada boca de mina es una edificación con su mostrador de preparación (equipo propio de cada zona) y al entrar lleva al recinto de las cinco entradas (2 escasas, 2 medias y 1 abundante, sorteadas cada día a ciegas) con el cambio único. Reparte el trabajo: la escena base del recinto es de F3-52 y las galerías de las minas 2 a 6 son F4-251. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
@@ -3771,6 +3943,42 @@
               "prio": "P1",
               "desc": "Oficina de la Comisión del Éter en Puerto Meridiano (siempre abierta): exterior, interior y el canal legal de venta de la Aetherita del Acto IV (5 viales al día, a valor justo, con impuesto y sin pasar por la vigilancia; los encargos especiales del mercado negro son aparte). Según los documentos 26 y 28 y la decisión del autor del 2026-10-16.",
               "done_when": "Se puede vender Aetherita a la Comisión con el tope diario y la oficina está dibujada según el documento 26."
+            },
+            {
+              "id": "F4-250",
+              "status": "backlog",
+              "title": "Cierres de entradas por eventos, con presión y reapertura",
+              "est": 7,
+              "prio": "P1",
+              "desc": "Los problemas sociales o políticos que afectan a un mineral cierran entradas de esa mina: suave 1, complicado 2 y situación complicada en Valdoria 3, siempre con al menos 2 abiertas y en orden abundante, media, escasa; más cierres rinden menos por la presión (×0,95, ×0,88 y ×0,75). Se aplican al empezar el día con aviso previo, nunca con el jugador dentro; si cierran su entrada se le reasigna gratis. Se ven (piquete, precinto o soldados) con una frase del diario y reabren una por día en orden inverso. Sin cierres en el Acto I; el cierre total de una mina solo como excepción de guion. Cifras de partida; las calibra F0-92.",
+              "done_when": "Un evento cierra el número de entradas que corresponde a su severidad, la presión se aplica, se reabre una por día y nunca quedan menos de 2 abiertas; hay pruebas."
+            },
+            {
+              "id": "F4-251",
+              "status": "backlog",
+              "title": "Galerías caminables de las minas 2 a 6: recintos y mapas por entrada",
+              "est": 20,
+              "prio": "P1",
+              "desc": "Las galerías de 2 a 3 pantallas en vista aérea cenital de las cinco minas restantes (Cañón Ferroso, Minas de Sierra Alta, Salares, Cavernas y La Fosa), con tilemaps, puntos de aparición y el número de menas visibles del acto (II: 8, III: 14, IV: 18). Usa el recinto de F4-225.",
+              "done_when": "Las cinco minas se recorren por sus cinco entradas con las menas visibles que corresponden al acto."
+            },
+            {
+              "id": "F4-252",
+              "status": "backlog",
+              "title": "Trazados de menas de las minas 2 a 6 (25 trazados a mano)",
+              "est": 12,
+              "prio": "P1",
+              "desc": "Cinco trazados por mina para las cinco minas restantes (25), con puntos de aparición y composición por mena; junto a los cinco de F3-54 son los 30 trazados del juego.",
+              "done_when": "Los 25 trazados cargan en su mina y respetan las menas visibles del acto."
+            },
+            {
+              "id": "F4-253",
+              "status": "backlog",
+              "title": "Interiores pendientes: puerta cerrada y reserva de interior para las 46 edificaciones",
+              "est": 8,
+              "prio": "P2",
+              "desc": "Las 46 edificaciones deben poder entrarse a futuro: se construyen primero las necesarias y las demás quedan con puerta cerrada o pendiente. Esta tarea deja el marcador, el cartel y el registro de interior reservado (enterable en world.json) para que añadir una dinámica después no rompa nada.",
+              "done_when": "Todas las edificaciones sin interior muestran su puerta pendiente y el registro lista las que faltan."
             }
           ]
         },
@@ -3966,32 +4174,34 @@
               "id": "F4-190",
               "status": "backlog",
               "title": "Retratos definitivos (PixelLab): Esteban, Casilda, Ministro y Anselmo",
-              "est": 10,
+              "est": 14,
               "prio": "P1",
-              "desc": "Retratos definitivos con PixelLab de Esteban, Casilda, el Ministro y Anselmo. Los de Reme, Teo, Quiroga, Lucía y los dos protagonistas son F4-229 y los provisionales F3-19."
+              "desc": "Retratos definitivos con PixelLab de Esteban, Casilda, el Ministro y Anselmo. Los de Reme, Teo, Quiroga, Lucía y los dos protagonistas son F4-229 y los provisionales F3-19. Cada personaje lleva retrato detallado, sprite cenital y sprite lateral, con caminar y respiración en ocho direcciones."
             },
             {
               "id": "F4-191",
               "status": "backlog",
-              "title": "Sprites definitivos (PixelLab) de los personajes restantes",
-              "est": 10,
-              "prio": "P1"
+              "title": "Sprites definitivos (PixelLab) de los personajes restantes, en ocho direcciones",
+              "est": 20,
+              "prio": "P1",
+              "desc": "Sprites cenital y lateral de todos los personajes restantes, también los PNJ, con caminar y un estado estático con respiración en ocho direcciones, y las animaciones específicas de escena que se decidan.",
+              "done_when": "Todos los personajes tienen sus sprites en ocho direcciones y el autor los aprueba."
             },
             {
               "id": "F4-192",
               "status": "backlog",
               "title": "Íconos definitivos (PixelLab) de los 10 minerales y de las herramientas",
-              "est": 12,
+              "est": 14,
               "prio": "P0",
-              "desc": "Incluye los íconos del Acto I que el slice dejó provisionales."
+              "desc": "Incluye los íconos del Acto I que el slice dejó provisionales. Incluye los íconos del detector, la batería y las pilas."
             },
             {
               "id": "F4-193",
               "status": "backlog",
               "title": "Marcos, botones y componentes de interfaz definitivos (PixelLab)",
-              "est": 16,
+              "est": 18,
               "prio": "P0",
-              "desc": "Marcos, botones y componentes de interfaz definitivos del resto del juego. La interfaz base del Acto I se rehace en F4-228."
+              "desc": "Marcos, botones y componentes de interfaz definitivos del resto del juego. La interfaz base del Acto I se rehace en F4-228. Incluye el indicador de batería, el billete del tren y el loader."
             }
           ]
         },
@@ -4053,6 +4263,15 @@
               "title": "Automatizar los casos de extracción, tienda y empleados",
               "est": 10,
               "prio": "P0"
+            },
+            {
+              "id": "F4-255",
+              "status": "backlog",
+              "title": "Automatizar los casos de exploración, minas y viaje",
+              "est": 4,
+              "prio": "P2",
+              "desc": "Automatizar los casos TC de mina de cinco entradas, cierres, tren y niebla creados en F2-40 y F3-56 que aún sean manuales.",
+              "done_when": "Los casos nuevos que se pueden automatizar corren en el CI."
             },
             {
               "id": "F4-201",
@@ -4196,27 +4415,27 @@
               "id": "F4-227",
               "status": "backlog",
               "title": "Prueba de PixelLab: flujo, estilo, paleta, tamaños, precio y términos comerciales",
-              "est": 8,
+              "est": 12,
               "prio": "P0",
-              "desc": "Probar PixelLab con un personaje, un mineral y una escena del juego para fijar el flujo, la paleta, los tamaños y el costo real, y comprobar sus términos de uso comercial. Es la primera tarea de la producción definitiva: las demás dependen de ella. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
-              "done_when": "Hay un flujo y tamaños acordados, un costo por asset estimado y los términos comerciales registrados."
+              "desc": "Probar PixelLab con un personaje, un mineral y una escena del juego para fijar el flujo, la paleta, los tamaños y el costo real, y comprobar sus términos de uso comercial. Es la primera tarea de la producción definitiva: las demás dependen de ella. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final. Con el cambio de F0-91 la prueba incluye un personaje en ocho direcciones con caminar y un estado estático con respiración, un tileset de exterior cenital y uno de interior lateral, y el costo por animación.",
+              "done_when": "Hay un flujo y tamaños acordados (sprite de paseo de 32 a 48 px), un costo por asset estimado, probadas las ocho direcciones, el caminar y los tilesets, y los términos comerciales registrados."
             },
             {
               "id": "F4-228",
               "status": "backlog",
-              "title": "Pixel art definitivo: mina, tienda (vista interior) e interfaz base",
+              "title": "Pixel art definitivo: mina de cinco entradas, tienda (interior lateral) e interfaz base",
               "est": 20,
               "prio": "P1",
-              "desc": "Rehacer en pixel art con PixelLab lo que el vertical slice mostró de forma provisional. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "desc": "Rehacer en pixel art con PixelLab lo que el vertical slice mostró de forma provisional: la mina de cinco entradas (recinto y galerías cenitales), la tienda (interior lateral) y la interfaz base. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
               "done_when": "La mina, la tienda y la interfaz base definitivas reemplazan a las provisionales y el autor las aprueba."
             },
             {
               "id": "F4-229",
               "status": "backlog",
               "title": "Pixel art definitivo: retratos y sprites de Reme, Teo, Quiroga, Lucía y los dos protagonistas",
-              "est": 14,
+              "est": 20,
               "prio": "P1",
-              "desc": "Retrato detallado y sprite pequeño de cada uno de los seis personajes del Acto I en pixel art con PixelLab, con sus animaciones básicas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
+              "desc": "Retrato detallado y sprite pequeño de cada uno de los seis personajes del Acto I en pixel art con PixelLab, con sus animaciones básicas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final. Tres tipos de arte por personaje: sprite cenital, sprite lateral y retrato detallado; con caminar y respiración en ocho direcciones.",
               "done_when": "Los seis personajes del Acto I tienen retrato y sprite definitivos aprobados por el autor."
             },
             {
@@ -4250,10 +4469,28 @@
               "id": "F4-233",
               "status": "backlog",
               "title": "Mapa de Valdoria definitivo en pixel art",
+              "est": 14,
+              "prio": "P1",
+              "desc": "Rehacer en pixel art con PixelLab el mapa de Valdoria con todas las zonas (incluidas Altafría, Salinas Blancas y la capital), sustituyendo al mapa provisional que se regeneró para el storyboard. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final. Incluye la niebla sobre las zonas bloqueadas con el detalle reconocible de cada una.",
+              "done_when": "El mapa definitivo reemplaza al provisional y sus zonas son tocables en F4-152."
+            },
+            {
+              "id": "F4-249",
+              "status": "backlog",
+              "title": "Fondos de ventanilla del tren (5 regiones) en pixel art",
               "est": 12,
               "prio": "P1",
-              "desc": "Rehacer en pixel art con PixelLab el mapa de Valdoria con todas las zonas (incluidas Altafría, Salinas Blancas y la capital), sustituyendo al mapa provisional que se regeneró para el storyboard. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final.",
-              "done_when": "El mapa definitivo reemplaza al provisional y sus zonas son tocables en F4-152."
+              "desc": "Cinco fondos de paisaje por tramo para la ventanilla de la escena modular de F4-248 (Cuenca del Hollín, Sierra Alta, Salares, Cavernas y Puerto Meridiano/La Fosa), con PixelLab.",
+              "done_when": "Los cinco fondos se encadenan sin cortes en la escena del tren y el autor los aprueba."
+            },
+            {
+              "id": "F4-254",
+              "status": "backlog",
+              "title": "Tilesets definitivos (PixelLab): exteriores cenitales, galerías e interiores laterales",
+              "est": 14,
+              "prio": "P1",
+              "desc": "Tilesets definitivos de los exteriores cenitales de las seis zonas, de las galerías de las minas y de los interiores laterales, con PixelLab. Sustituyen al arte provisional de F3-18, F4-155 y F4-156.",
+              "done_when": "Los tilesets definitivos reemplazan a los provisionales y el autor los aprueba."
             }
           ]
         },
