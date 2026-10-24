@@ -147,7 +147,7 @@ Decisión del autor (2026-10-15): se prueba en un **PC Windows real** y en la St
 | Sistema operativo | **Windows** y **Linux** |
 | Steam Deck | 1280×800 con mando, sin HUD táctil y texto legible (objetivo *Verified*) |
 | Resolución | 1080p, 1440p y 4K |
-| Proporción de pantalla | 16:9 y **ultrapanorámico**; resolución base 640×360 decidida el 2026-10-24 (ADR-0011); el escalado a cada pantalla se prueba en ⏳ F1-06 |
+| Proporción de pantalla | 16:9 y **ultrapanorámico**; resolución base 640×360 decidida el 2026-10-24 (ADR-0011); el escalado a cada pantalla se prueba en ⏳ F1-06 con los personajes y escenas ya diseñados en PixelLab ✅ |
 | Entrada | Ratón y teclado, y mando (incluido el de la Deck) |
 | Equipo real | Un **PC Windows real** de pruebas |
 | macOS | Después de la 1.0 |

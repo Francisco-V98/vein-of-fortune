@@ -382,4 +382,4 @@ Ya están en el roadmap, cada una de 20 h o menos. La columna ID dice cuál es; 
 | F6-68 | Textos ES/EN de V2.2 | F6, V2.2 | 8 | Todo lo anterior en los dos idiomas |
 | F6-69 y F6-70 | Pruebas y reserva de V2.2 | F6, V2.2 | 24 | Casos, regresión y correcciones |
 
-Las tareas F4-217 a F4-226 suman **+160 h en F4** (la exploración caminable subió el alcance de las +110 a 150 h previstas para V1; ⚠ el autor debe confirmar el nuevo techo); con F4-251 a F4-253 (40 h) son 200 h, con F3-46 (9 h) y F3-52 a F3-54 (28 h) en F3. Las F6-47 a F6-61 suman 250 h (V2.1) y las F6-62 a F6-70, 130 h (V2.2).
+Las tareas F4-217 a F4-226 suman **+160 h en F4** (la exploración caminable subió el alcance de las +110 a 150 h previstas para V1; ✅ techo confirmado por el autor el 2026-10-24); con F4-251 a F4-253 (40 h) son 200 h, con F3-46 (9 h) y F3-52 a F3-54 (28 h) en F3. Las F6-47 a F6-61 suman 250 h (V2.1) y las F6-62 a F6-70, 130 h (V2.2).
