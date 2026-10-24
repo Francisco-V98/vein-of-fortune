@@ -1,0 +1,10 @@
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "mis-notas",
+  "attachmentFolderPath": "mis-notas",
+  "useMarkdownLinks": false,
+  "readableLineLength": true,
+  "propertiesInDocument": "visible",
+  "showUnsupportedFiles": false
+}

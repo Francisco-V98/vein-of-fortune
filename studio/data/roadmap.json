@@ -915,6 +915,15 @@
               "prio": "P2",
               "desc": "Fase 3 del plan de ahorro de tokens. Guía para dividir agentes largos, reducción del prefijo fijo de cada turno (MCP y skills sin uso en este proyecto), y ampliación de /consumo para clasificar el gasto por rol, modelo y esfuerzo, con una medición antes y después en tareas comparables. Decisión del autor del 2026-10-23: optimizar el consumo de tokens con modelo y esfuerzo por agente, autorización de Fable 5.1 y un modo conciso (plan en tres fases).",
               "done_when": "El consumo se ve por rol y modelo, el prefijo fijo se reduce y hay una medición del ahorro respecto a antes de F0-87."
+            },
+            {
+              "id": "F0-90",
+              "status": "review",
+              "title": "Cerebro del proyecto en Obsidian (vault generado)",
+              "est": 12,
+              "prio": "P2",
+              "desc": "Vault de Obsidian generado desde el repo, solo lectura y regenerado con cada build, en una carpeta ignorada por git (studio/cerebro). Contiene todo lo que se pueda del proyecto en notas atómicas bien fragmentadas y enlazadas (documentos y ADR por secciones, tareas, equipo y memoria, mundo y economía, narrativa) con propiedades, etiquetas, notas índice y una configuración de la vista de grafo que separe por tipo; se sigue la forma habitual de organizar un «segundo cerebro» (notas atómicas, mapas de contenido, propiedades en el encabezado y consultas). Decisión del autor del 2026-10-23.",
+              "done_when": "Al abrir studio/cerebro en Obsidian se ve el grafo del proyecto con todas las entidades como notas individuales y enlazadas, el build lo regenera sin intervención y las pruebas lo comprueban."
             }
           ]
         }

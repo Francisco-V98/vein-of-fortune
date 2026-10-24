@@ -1,0 +1,135 @@
+{
+  "id": "F0-90",
+  "history": [
+    {
+      "at": "2026-10-23",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el cerebro del proyecto en Obsidian",
+      "ref": "rama studio/F0-90-cerebro-en-obsidian"
+    },
+    {
+      "at": "2026-10-23",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-90"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-23",
+        "por": "ideador",
+        "nota": "El ideador investigó la forma habitual de organizar un vault y propuso la estructura; el autor decidió nombres legibles, notas por sección y entidad, todas las tareas como nodos y todos los extras"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida",
+        "nota": "El diseño ya cubre los datos disponibles y sus límites"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-23",
+        "por": "herramientas",
+        "nota": "Núcleo y módulos de documentos, tareas, equipo, memoria, mundo, economía, narrativa, glosario, QA, simulador y arte; build.py lo regenera"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-23",
+        "por": "qa",
+        "nota": "QA aprobó lo mecánico (322 pruebas, 0 enlaces sin resolver, 0 huérfanas, idempotente); su único fallo era el ⏳ F0-88 inexistente, resuelto al apilar la rama sobre F0-87",
+        "hallazgos": [
+          {
+            "de": "qa",
+            "estado": "resuelto",
+            "que": "El documento 10 cita ⏳ F0-88, que no existía en la rama",
+            "resuelto_por": "coordinador",
+            "como": "La rama se apila sobre la de F0-87, que crea F0-88 y F0-89"
+          }
+        ]
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-23",
+        "nota": "Esperando la revisión del autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: investigar buenas prácticas de organización de un vault (notas atómicas, mapas de contenido, propiedades, grafo) y proponer estructura para este proyecto",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "ideador",
+        "a": "coordinador",
+        "que": "Entrega: buenas prácticas de vault, estructura, estimación de notas y 4 preguntas",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "herramientas",
+        "que": "Núcleo del generador y módulos de documentos, tareas, equipo y memoria",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Entrega: parte 1 con 1.151 notas",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Entrega: mundo, economía, QA, simulador y arte; narrativa y glosario (1.961 notas)",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar F0-90",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Aprobado tras resolver el ⏳ F0-88",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Revisión de F0-90: vault de Obsidian generado con unas 2.000 notas",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}
