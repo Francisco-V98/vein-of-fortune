@@ -821,7 +821,7 @@
               "id": "F0-78",
               "title": "Diseñar el diario, la cola de historia y la misión de rescate",
               "est": 3,
-              "status": "backlog",
+              "status": "review",
               "prio": "P1",
               "desc": "Las tres piezas anti-atasco de los umbrales de acto: un diario que lista las vías que faltan para pasar de acto, la cola donde espera la historia mientras el jugador hace sandbox, y la misión de rescate que se ofrece tras mucho tiempo sin avanzar. La cola debe cumplir la invariante del guion del Acto I (documento 27): suelta las escenas de una en una y en orden y nunca dos mecánicas nuevas a la vez.",
               "done_when": "Las tres piezas diseñadas y acordadas con el autor, sin que la deuda ni ningún umbral puedan atascar la partida."
@@ -1816,8 +1816,8 @@
       "name": "Vertical slice",
       "target": "MVP",
       "hours": [
-        277,
-        472
+        291,
+        486
       ],
       "goal": "Un tramo del juego con calidad real: Acto I, Hollín y tienda con arte y sonido PROVISIONALES baratos (se reemplazan después de la Puerta B), información por capas, noticias, encuentros y progresión base.",
       "gate": "Puerta B: ¿se sigue hacia la v1 y se piensa en publicar?",
@@ -1980,11 +1980,20 @@
               "prio": "P0"
             },
             {
+              "id": "F3-48",
+              "status": "backlog",
+              "title": "Diario, cola de historia y aviso de rescate",
+              "est": 14,
+              "prio": "P0",
+              "desc": "Pantalla del diario (pestaña propia, accesible desde el día 1, con las vías de cada puerta en tramos y en cuatro estados: lejos, en camino, casi y cumplida, sin cifras), motor de la cola de historia (orden fijo por identificador de escena, una a una, nunca dos mecánicas nuevas a la vez, escenas condicionales omitidas si su condición ya no se da y «resuelta por vía alterna» si un hecho las supera) y aviso de rescate (una pista priorizada y descartable, una vez por puerta, solo en A5 y el círculo, a las 13,5 h y 26,5 h acumuladas pospuestas 2 h por cada vía nueva cumplida). Según el diseño de F0-78 (documentos 24 y 27). Los textos de cada acto los escriben las tareas de guion.",
+              "done_when": "El diario muestra las vías y avisa al cambiar una; la cola suelta las escenas del Acto I en orden sin atascos; el aviso de rescate aparece a su hora y se descarta sin costo; hay pruebas de que ninguna combinación suelta dos mecánicas nuevas a la vez."
+            },
+            {
               "id": "F3-16",
               "title": "Acto I: Villa Brasa, Reme, Teo, deuda y tutorial guiado",
               "est": 14,
               "status": "backlog",
-              "desc": "Los siete días guiados del Acto I según el documento 27 y su sección 21: tres bloques por día, las mecánicas de una en una, la cola de escenas, el peso de cada escena (0, medio o 1), las tres pistas del sorteo oculto con sus props (incluido el papel sellado del Ministerio), el taladro prestado de Teo solo el día 3, la placa de Pozo Negro, la cinta 1 en el día 2 (bandera, aviso y «Carrete 1» sin reproducción), la interacción de pagar antes, la visita de Reme al puesto el día 7, la ficha del candidato, la mecánica Reponer del día 2 y las reglas para que nunca se atasque. Los textos son de F3-47. Requiere el cierre del documento 27 (F0-86).",
+              "desc": "Los siete días guiados del Acto I según el documento 27 y su sección 21: tres bloques por día, las mecánicas de una en una, la cola de escenas, el peso de cada escena (0, medio o 1), las tres pistas del sorteo oculto con sus props (incluido el papel sellado del Ministerio), el taladro prestado de Teo solo el día 3, la placa de Pozo Negro, la cinta 1 en el día 2 (bandera, aviso y «Carrete 1» sin reproducción), la interacción de pagar antes, la visita de Reme al puesto el día 7, la ficha del candidato, la mecánica Reponer del día 2 y las reglas para que nunca se atasque. Los textos son de F3-47. Requiere el cierre del documento 27 (F0-86). Usa el diario y la cola de F3-48.",
               "done_when": "Los siete días se juegan de principio a fin con las tres decisiones pequeñas, la cuota del día 7 y el cierre del acto sin atascos.",
               "prio": "P0"
             },

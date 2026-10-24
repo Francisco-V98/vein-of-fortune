@@ -30,7 +30,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Vía de relación | Se cumple si **al menos uno de los cuatro medidores** está en tramo alto ✅ |
 | Vía de deuda | Cuenta **solo lo que pagas tú** (% de capital pagado de tu bolsillo). Lo que asume el Consorcio no regala la vía ✅ |
 | Cintas | Las cintas **1 a 5 son obligatorias** para entrar al IV, no caducan por tiempo ni por decisiones, y tienen una **misión persistente** si faltan ✅ |
-| Red anti-atasco | El juego sigue como sandbox, **la historia espera en cola**, **el diario lista las vías que faltan** y **la misión de rescate** llega tras mucho tiempo sin avanzar. La deuda nunca bloquea. Las tres piezas se diseñan aparte ✅ ⏳ F0-78 |
+| Red anti-atasco | El juego sigue como sandbox, **la historia espera en cola**, **el diario lista las vías que faltan** y **la misión de rescate** llega tras mucho tiempo sin avanzar. La deuda nunca bloquea. Las tres piezas están diseñadas en la sección 10 ✅; las construye ⏳ F3-48 |
 | Teo | **Sin revisión muere**, también si le propones y aceptas su no: la opción respetuosa tiene costo ✅ |
 | Magnate y cierre del IV | Magnate se concede al **cerrar el acta de calibración** y **no es puerta**. El IV cierra con la cabecera, las tarjetas y el acta tras la decisión sobre la Aetherita; Magnate llega como un aviso silencioso al volver al sandbox ✅ ([25](25-finales-y-epilogos.md)) |
 | Disparadores | Van **por eventos del jugador y no por calendario**: A2 tras atender tu primera cuota después de A1; A3 tras tu primera venta o expedición en la zona; A4 tras el aviso de noticias y una acción tuya, sin plazo en días. Las opcionales O1 a O4 **no puntúan** para ninguna puerta ✅ |
@@ -215,37 +215,38 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 
 ## 10 · La red anti-atasco ✅
 
-**Estado:** qué piezas existen y qué hacen está decidido; su diseño ⏳ F0-78. La deuda nunca bloquea, y eso está decidido.
+**Estado:** piezas y diseño decididos ✅ (decisión del autor, 2026-10-24); las construye ⏳ F3-48 y los textos de cada acto los escriben las tareas de guion. La deuda nunca bloquea.
 
 | Pieza | Qué hace ✅ | Diseño |
 |---|---|---|
 | **Sandbox** | Si no cumples una puerta, el juego sigue: minas, vendes, exploras y comercias | Ya existe como modo de juego |
-| **Cola de historia** | La escena que no se puede disparar espera; no se pierde ni caduca | ⏳ F0-78 |
-| **Diario** | Lista las vías que faltan para pasar de acto, con lo que ya cumples | ⏳ F0-78 |
-| **Misión de rescate** | Llega tras mucho tiempo sin avanzar | ⏳ F0-78. Cuánto tiempo, en horas de juego ✅ (F0-53, con las cifras aprobadas el 2026-10-16): **13,5 h** acumuladas para la puerta A5 y **26,5 h** para el círculo (1,25 × el percentil 95 del jugador lento, redondeado a 0,5 h; [28](28-numeros-base-de-la-economia.md) sección 13; viven en `world.json`, `economy.rescue_mission`) |
+| **Cola de historia** | La escena que no se puede disparar espera; no se pierde ni caduca | ✅ Orden fijo por identificador de escena (d1.2, d1.3…). Una escena se suelta cuando cumple sus requisitos y la anterior está resuelta; nunca dos mecánicas nuevas a la vez. Nada caduca: tras muchas horas en sandbox la escena sigue esperando y el diario la recuerda. Las condicionales (d3.4, d4.3, d5.1, d5.4) se omiten si su condición ya no se da. Si un hecho supera una escena (por ejemplo la cuota vence antes) se marca «resuelta por vía alterna» y se pasa a la siguiente, sin perder la decisión narrativa que abría. d7.2 no espera (fecha dura) y d5.3 es opcional y no pasa por la cola |
+| **Diario** | Lista las vías que faltan para pasar de acto, con lo que ya cumples | ✅ Pestaña propia, accesible desde el día 1 (ya guarda la libreta). Avisa cuando una vía cambia de estado. Las vías con medidor (relación) muestran tramo y motivo sin cifra; las vías con cifra (deuda 25 % y 50 % de K, logros 4 y 10) muestran cuatro estados en palabras: lejos, en camino, casi, cumplida, sin números |
+| **Misión de rescate** | Llega tras mucho tiempo sin avanzar | ✅ Es una **pista priorizada en el diario**, no una misión con recompensa. Cuánto tiempo, en horas de juego (F0-53, cifras aprobadas el 2026-10-16): **13,5 h** acumuladas para la puerta A5 y **26,5 h** para el círculo (1,25 × el percentil 95 del jugador lento, a 0,5 h; [28](28-numeros-base-de-la-economia.md) sección 13; `world.json`, `economy.rescue_mission`). Las horas son del jugador, y el aviso se pospone 2 h cada vez que cumples una vía nueva de esa puerta. Lo dice Reme o la voz del diario, discreto, y nombra la vía más barata de las que faltan y dónde conseguirla. Se descarta con una marca sin costo; sale una vez por puerta y después el diario mantiene la pista fija. Solo existe en A5 y en el círculo |
 
-- **Restricciones para las tareas que lo diseñan** (⏳ F0-78 y ⏳ F4-109).
-  - Misión de rescate (F0-78): señala qué falta y cómo; no concede estatus, logros ni medidores.
-  - Estatus ⏳ F4-109: subir a Comerciante o a Empresario no puede exigir una escena de historia ni una puerta, para no crear un ciclo. Una vez cumplido el piso de una puerta, no se pierde por una pérdida de dinero ni por suspender la licencia ✅ (decisión del autor, 2026-10-15).
+- **Reglas del rescate y de la cola** ✅ (decisión del autor, 2026-10-24).
+  - Rescate: señala qué falta y cómo; no concede estatus, logros ni medidores; no toca banderas ni finales; igual en todas las dificultades y con empleados que juegan solos. Las demás puertas se abren por eventos o cintas, y ahí bastan el diario y la cola; las cintas tienen su misión persistente en ⏳ F4-150. El simulador no modela el rescate (28 H6 ya da la cifra); si hace falta la regla de posponer, la mide ⏳ F3-48.
+  - Restricción de ⏳ F4-109:
+  - Estatus: subir a Comerciante o a Empresario no puede exigir una escena de historia ni una puerta, para no crear un ciclo. Una vez cumplido el piso de una puerta, no se pierde por una pérdida de dinero ni por suspender la licencia ✅ (decisión del autor, 2026-10-15).
   - Mora ✅: con 4 semanas de atraso acumuladas la tasa sube +1 pp hasta que pagues una cuota completa y Reme deja de fiar la gestión. Nunca cierra una puerta ([28](28-numeros-base-de-la-economia.md)).
 
 ---
 
 ## 11 · Casos «no cumples nada» ✅
 
-**Estado:** cada caso tiene su salida, y eso está decidido; los textos del diario se escriben en ⏳ F0-78. Todos terminan igual: el juego sigue y la historia espera.
+**Estado:** cada caso tiene su salida, y eso está decidido; los textos del diario son una plantilla en palabras, sin cifras ✅ (2026-10-24); su redacción final es de ⏳ F3-48 y las tareas de guion. Todos terminan igual: el juego sigue y la historia espera.
 
 | Te falta… | Qué pasa | Qué ves en el diario |
 |---|---|---|
 | Reabrir el puesto, atender la primera cuota o el contacto con los empleados | El Acto I no cierra; A1 espera ✅ | Las tres condiciones del I, con las que ya cumples. El contacto con los empleados está guionado en [27](27-guion-del-acto-i.md), sección 15 (día 7, a primera hora) |
-| Atender una cuota (A2) | A2 espera en la cola ✅ | «Reme te espera para la cuota» ⏳ F0-78 |
-| Tu primera venta o expedición en la zona de tu variante (A3) | A3 espera ✅ | La zona donde vender ⏳ F0-78 |
-| Una acción tuya tras el aviso (A4) | La huelga espera ✅ | Nada que hacer: sigue tu juego ⏳ F0-78 |
+| Atender una cuota (A2) | A2 espera en la cola ✅ | «Reme te espera para la cuota» ✅ |
+| Tu primera venta o expedición en la zona de tu variante (A3) | A3 espera ✅ | La zona donde vender ✅ |
+| Una acción tuya tras el aviso (A4) | La huelga espera ✅ | Nada que hacer: sigue tu juego ✅ |
 | El estatus de Comerciante (A5) | A5 espera ✅ | El estatus que falta ⏳ F4-109 |
-| Dos vías de tres (A5 o el círculo) | La escena espera ✅ | Las tres vías, con la que cumples y lo que falta ⏳ F0-78 |
-| El aval de Esteban | El aval se ve bloqueado con el motivo; eliges sello o presión ✅ | El motivo: su tramo ⏳ F0-78 |
+| Dos vías de tres (A5 o el círculo) | La escena espera ✅ | Las tres vías, con la que cumples y lo que falta ✅ |
+| El aval de Esteban | El aval se ve bloqueado con el motivo; eliges sello o presión ✅ | El motivo: su tramo, sin cifra ✅ |
 | Las cintas 1 a 5 | El IV espera ✅ | La misión de cada cinta que falta ✅ |
-| **Nada de lo anterior** | Sigues en sandbox; nada se pierde ✅ | Todo lo que falta, y tras mucho tiempo llega la misión de rescate ✅ ⏳ F0-78 |
+| **Nada de lo anterior** | Sigues en sandbox; nada se pierde ✅ | Todo lo que falta, y tras mucho tiempo llega la pista de rescate (solo en A5 y en el círculo) ✅ |
 
 ---
 
@@ -285,8 +286,8 @@ Respuestas del autor (2026-10-12, F0-47) a las preguntas que dejó el narrador.
 
 ## Pendiente
 
-- ⏳ F0-78 Diseño del diario, la cola de historia y la misión de rescate.
-- ✅ «Mucho tiempo sin avanzar», en horas de juego (F0-53, con las cifras aprobadas el 2026-10-16): 13,5 h para A5 y 26,5 h para el círculo, contadas desde el inicio de la partida; F0-78 las usa.
+- ✅ Diseño del diario, la cola de historia y el rescate (F0-78, 2026-10-24): sección 10. Lo construye ⏳ F3-48.
+- ✅ «Mucho tiempo sin avanzar», en horas de juego (F0-53, con las cifras aprobadas el 2026-10-16): 13,5 h para A5 y 26,5 h para el círculo, contadas desde el inicio de la partida; el rescate las usa.
 - ⏳ F4-109 Escalera de estatus: requisitos de Comerciante y de Empresario. El patrimonio es efectivo más stock a valor justo, sin restar la deuda y sin herramientas, casa, ropa ni auto ✅, con pisos orientativos de unas 15 000, 90 000 y 250 000 esquirlas para Comerciante, Empresario y Magnate ([28](28-numeros-base-de-la-economia.md)).
 - ✅ Montos de la cuota (960), del recargo de la prórroga (58 en Intermedio), mora, abonos anónimos y umbral de deuda (25 % y 50 % de K): fijados en [28](28-numeros-base-de-la-economia.md). El periodo (cada 7 días) ya está decidido ✅.
 - ⏳ F4-132 Aviso previo de la huelga (cuántas acciones lo separan del cierre).

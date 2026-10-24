@@ -1,0 +1,119 @@
+{
+  "id": "F0-78",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el diseño del diario, la cola de historia y la misión de rescate",
+      "ref": "rama studio/F0-78-diario-cola-y-rescate"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-78"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "disenador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Las tres piezas ya están descritas en el documento 24 y en las decisiones de F0-80; falta cerrar el diseño"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "analista",
+        "nota": "Inventario de lo decidido, 4 contradicciones, 1 hueco de roadmap y 8 preguntas; el autor las decidió el 2026-10-24"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "disenador",
+        "nota": "Diseño del diario, la cola y el rescate en los documentos 24, 27, 18 y 28; la coordinación creó F3-48 que lo construye"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "QA aprobó sin fallos"
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-24",
+        "nota": "Esperando la revisión del autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario de lo decidido y lo abierto sobre diario, cola de historia y misión de rescate, con preguntas para el autor",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: inventario con 4 contradicciones y 8 preguntas",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "disenador",
+        "que": "Diseño del diario, la cola y el rescate en los documentos",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega: diseño escrito sin ⏳ F0-78",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar F0-78",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Aprobado",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Revisión de F0-78: diario, cola de historia y rescate",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}
