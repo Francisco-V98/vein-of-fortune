@@ -52,6 +52,8 @@ Precios: **por unidad y enteros** al mostrarse; el **total de cada operación se
 
 Un jugador medio hace en el Acto II ≈ 2,5 bloques de expedición y 0,5 de tienda por día.
 
+> **Nota (F0-91, 2026-10-24).** Caminar por el asentamiento y por la galería, el loader y el tren **no cuentan** en el tiempo de la expedición ni consumen bloques ✅. El tiempo real de paseo (≈ +40 s por mina) se mide en el prototipo y se absorbe al recalibrar el ritmo por hora ⏳ F0-92. Las cifras de arriba siguen siendo las vigentes hasta entonces.
+
 ---
 
 ## 2 · Ritmo objetivo y patrimonio ✅
@@ -229,6 +231,8 @@ Probabilidad (%) de que una mena sea de cada mineral. Con herramienta insuficien
 
 Comprobación del arranque del guion: con 28 de energía, el carbón (8) da 3 menas y el hierro (10) da 2: «2 a 3 menas». Una expedición de carbón del Acto I vale ≈ 255 esquirlas y una de hierro ≈ 305, con resultados medios.
 
+> **Nota (F0-91, 2026-10-24).** El **descarte desaparece**: no hay costo del 25 % de la energía por escanear sin extraer, porque mirar una mena cuesta ahora una carga de la batería del detector (sección 14). El Aguante 28 se mantiene (caminar es gratis). Las filas y la comprobación de arriba son las vigentes del simulador hasta que ⏳ F0-92 reescriba la regla C5.
+
 **Consumibles de recarga de energía y otros ✅:** son una versión futura, mucho después de la V1, sin cifra; viven en la tabla de evolutivos de [06](06-roadmap-y-pendientes.md).
 
 ---
@@ -311,6 +315,8 @@ El detector básico heredado es el nivel 1. Se mejora **aparte con cuarzo** (tie
 | 4 | 14 000 + 8 cuarzo | ±5 |
 
 Nivel por acto: 2 en el II, 3 en el III, 4 en el IV. Ancho final = ancho del detector × multiplicador del escáner de la herramienta × (1 − efecto del Ojo, F3-11).
+
+> **Nota (F0-91, 2026-10-24).** El detector se usa dentro de la mina y cada clic gasta una carga de su batería: 6 · 8 · 11 · 14 cargas por nivel y sonar en el nivel 2 (sección 14). Los anchos y costos de esta tabla no cambian.
 
 ---
 
@@ -504,7 +510,7 @@ La prensa completa cuesta ≈ 890 por mes (≈ 1,5 % del ingreso mensual del Act
 
 ### 9.2 Viaje
 
-Viajar no gasta bloque pero cuesta un poco de dinero; ver las zonas en el mapa es gratis ([01](01-core-loop.md)). Costo por trayecto, ida o vuelta:
+El viaje es en **tren** (único medio entre zonas): no gasta bloque y el **billete es el costo del viaje**; ver las zonas en el mapa es gratis y, dentro de una misma zona, ir de una edificación a otra también ([01](01-core-loop.md), [26](26-zonas-y-edificios.md); decisión del autor, 2026-10-24, F0-91). Costo por trayecto, ida o vuelta (las cifras no cambian):
 
 | Origen | Destino | Costo |
 |---|---|---|
@@ -700,6 +706,33 @@ Ampliar el Picado a cobre, plata y oro aceleró el Acto III y abarató el pico; 
 ### 13.5 Lo que el simulador no modela
 
 El refinado y las recetas (valor agregado 0 hasta ⏳ F3-07), los bots y el mercado interno (⏳ F3-06 y ⏳ F4-39), el modelo real de sectores y eventos (⏳ F4-31: los eventos del simulador son sueltos, de un solo mineral), el coste en bloques de una noche negra (⏳ F4-72: F5 da el máximo que compensa), la curva real del Aguante (⏳ F3-11), los valores de dificultad (⏳ F3-22), los minijuegos más allá de sus cuatro probabilidades, la prensa más allá de su precio, los encuentros, las relaciones y los logros. Cuando F2-04 y F2-08 construyan el mercado real, se reejecutan las reglas E.
+
+---
+
+## 14 · Entradas, batería y cierres (cifras de partida)
+
+Cambio de diseño del autor (2026-10-24, F0-91; diseño en [02](02-extraccion.md), «La mina por dentro»). Estas cifras son **de partida**, las decisiones del autor para arrancar; **las calibra ⏳ F0-92** con el simulador. Mientras tanto viven en claves nuevas de `world.json` que el simulador no lee, y las tablas de las secciones 1 a 13 siguen siendo las vigentes. ✅
+
+| Concepto | Cifra de partida |
+|---|---|
+| Entradas por mina | **5**: 2 escasas · 2 medias · 1 abundante; sorteo diario a ciegas, determinista (`hash(partida, día, mina, entrada)`) |
+| Unidades por mena según la entrada | escasa **×0,7** · media **×1,0** · abundante **×1,6** |
+| Abanico del Acto I (protege la cuota) | **0,85 · 1,0 · 1,3** |
+| Menas visibles (el doble de las que se pueden picar) | Acto I **5–6** · II **8** · III **14** · IV **18** |
+| Galería | **2–3 pantallas** en vista aérea cenital |
+| Batería del detector (cargas por nivel 1 · 2 · 3 · 4) | **6 · 8 · 11 · 14**; con 0 carga se pica a ciegas |
+| Sonar | función del detector de **nivel 2** |
+| Recarga | entera y gratis cada noche; **pilas** opcionales desde el Acto II, **máx. 1 al día** |
+| Cambio de entrada | **1 por mina y por día**; no cuenta como otra visita para el agotamiento |
+| Herramienta mellada | integridad **< 20 %** → margen del minijuego **−30 %** |
+| Riqueza de la mina | se mantiene: **40–100 %**, −6 por visita, +3 al día (sección 3.7) |
+| Cierres por gravedad | suave **1** · complicado **2** · Valdoria **3** entradas; siempre **≥ 2 abiertas** |
+| Orden de cierre | abundante → una media → una escasa |
+| Presión (unidades de las abiertas) | 1 cierre **×0,95** · 2 cierres **×0,88** · 3 cierres **×0,75** |
+| Reapertura | una entrada por día, en orden inverso |
+| Acto I | sin cierres |
+
+Lo que **⏳ F0-92** deja calibrado: los rendimientos base bajan un 8–12 % si el valor esperado sube a ~1,15 con el cambio de entrada; el simulador reescribe la regla C5 y recalibra D1 y D2; los empleados rinden la media de las entradas abiertas; reglas nuevas J1 (más cierres, menos valor esperado), J2 (cambiar de entrada da +5–10 %), J3 (la batería se queda corta el 30–60 % de los días), J4 (empleados rinden la media de las abiertas) y J5 (con el parámetro de minutos de caminar, el ingreso por hora queda dentro de ±20 %).
 
 ---
 

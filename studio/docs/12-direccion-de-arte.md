@@ -7,7 +7,7 @@
 | Paleta | **Colores fríos** (azules pizarra, grises azulados, tonos hielo) |
 | Acento principal | **Vinotinto**, usado en detalles y resaltados; es el color "marca" del proyecto |
 | Estética | **Industrial y retrofuturista** (atompunk), lúgubre pero colorido |
-| Técnica | Pixel art, cosas más bien estáticas |
+| Técnica | Pixel art; los escenarios y la interfaz son más bien estáticos, y los personajes caminan (cambio del 2026-10-24, ver «Animación») |
 | Referencia de paleta | Imagen aportada por el autor (portada de *Cult of the Lamb*): tonos fríos con un detalle rojo de contraste. Se toma como **referencia de paleta**, no se copian sus personajes ni su arte |
 
 ## Paleta propuesta 🟡 (valores aproximados, a afinar)
@@ -101,8 +101,8 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 | `sprites.png` → `sprites-corregido.png` | Sprites pequeños tipo Stardew (protagonistas hombre y mujer y elenco) | ✅ Funcionan como guía. El ministro original parecía un sacerdote (estola con cruces); se reemplazó por un funcionario severo de abrigo azul marino y faja vinotinto, sin símbolos religiosos (`ministro-corregido.png`) |
 | `ui-mercado.png` → `ui-mercado-corregido.png` | Terminal de mercado (lista, gráfico, teletipo, bloques del día) | ✅ Buen punto de partida. Las flechas rojo/verde se cambiaron por ▲ cian (sube) y ▼ vinotinto (baja), que cumple la regla de accesibilidad. ✅ La regla vigente cambia la subida a azul hielo, porque el cian es solo de la Aetherita; la imagen se conserva como referencia de composición |
 | `ui-tienda.png` | Pantalla de la tienda con corte transversal | ✅ Muy buena base; comunica el "taller + mostrador + almacén" |
-| `edificios.png` | 9 edificios (tienda, taller, almacén, casa, Ministerio, Consorcio, Unión, bar, periódico) | ✅ Consistentes entre sí; en isométrica |
-| `mapa-valdoria.png` | Mapa ilustrado con las 6 regiones y vías de tren | ✅ Muy bueno; viable como **imagen estática con zonas tocables** |
+| `edificios.png` | 9 edificios (tienda, taller, almacén, casa, Ministerio, Consorcio, Unión, bar, periódico) | ✅ Consistentes entre sí. Eran isométricos: tras el cambio del 2026-10-24 quedan como referencia de estilo y de piezas, y los exteriores definitivos se rehacen en vista aérea cenital (ver «Perspectivas, mapa con niebla y tren») |
+| `mapa-valdoria.png` | Mapa ilustrado con las 6 regiones y vías de tren | ✅ Muy bueno; viable como **imagen estática con zonas tocables**. Con el cambio del 2026-10-24 es la base del mapa con niebla y de los trayectos del tren |
 | `zonas.png` | 6 fondos de zonas de minado | ✅ Cada zona tiene identidad propia; La Fosa conecta con el color de la Aetherita |
 | `minijuegos.png` | Maquetas de Picado, Perforación y Regateo | ✅ Sirven de guía de interfaz |
 | `mina-horizontal.png` | Galerías del Hollín en horizontal | ✅ La favorita del autor, ahora en formato correcto |
@@ -118,7 +118,7 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 
 ### Lo que se aprendió
 
-- La IA da muy buen material de **referencia y de dirección**; las composiciones completas (mapa, zonas, tienda) pueden usarse como **imagen estática** con zonas tocables, lo cual encaja con la estética estática.
+- La IA da muy buen material de **referencia y de dirección**; las composiciones completas (mapa, zonas, tienda) pueden usarse como **imagen estática** con zonas tocables. Desde el 2026-10-24 solo el mapa y las pantallas de interfaz siguen siendo imagen estática; los exteriores, las minas y los interiores son escenas por las que se camina.
 - Para sprites, íconos y UI el arte definitivo **reconstruye y separa piezas** en pixel art con PixelLab, después de la Puerta B (ver pipeline arriba). Lo generado en estas rondas es provisional.
 - La paleta funciona en todos los tipos de imagen: personajes, minerales, edificios, interfaz y mapa.
 - El vinotinto está presente en casi todas las imágenes; hay que **controlar su dosis** para que no pierda fuerza y para que la Aetherita siga siendo especial.
@@ -131,13 +131,23 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 
 | Hoja | Contenido |
 |---|---|
-| **Modelo** | **Chibi pixel art** como el sprite del ministro: cuerpo entero y pose estática, de frente, tres cuartos, ambos lados y espalda |
+| **Modelo** | **Chibi pixel art** como el sprite del ministro: cuerpo entero y pose estática, en **8 direcciones** (frente, tres cuartos, lados y espalda) |
 | **Expresiones** | **Estilo detallado** como los retratos de diálogo. Seis, **iguales para todos**: la **por defecto** según su personalidad, feliz, triste (llorando), enojo, susto y cansancio (bostezando, no triste) |
-| **Poses** | **Chibi pixel art** de cuerpo entero: estático, caminando (ciclo de 4 fotogramas de lado, más de frente y de espalda) y gestos al hablar |
+| **Poses** | **Chibi pixel art** de cuerpo entero: estático con respiración y caminando, en **8 direcciones** (ciclo de 4 fotogramas por dirección), más gestos al hablar y las animaciones específicas de cada escena |
 
 **Orden de producción ✅:** de cada personaje se hace primero la **hoja de modelo**, que **define la estética completa** (rasgos, colores, tamaño de píxel y proporciones). Después se hace la hoja de **poses usando la de modelo como única referencia**, para que sea el mismo diseño. Las **expresiones** se hacen en estilo detallado a partir del retrato y del modelo. Una hoja no se da por buena hasta que el autor la aprueba.
 
-**Estética chibi de referencia ✅:** el sprite del ministro (`ministro-corregido.png`). Todos los personajes del modelo y las poses llevan esa estética: píxeles grandes y claramente visibles (cada personaje de unos 100 píxeles de alto), colores planos con 2 a 3 tonos por material, sombreado simple de bordes duros, contorno negro grueso, **sin textura fina, sin hebras de pelo y sin degradados**, ojos grandes y sencillos con un solo punto de brillo, boca pequeña, cabeza de cerca del 40 % de la altura y cuerpo compacto. El modelo y las poses de un mismo personaje tienen las mismas proporciones.
+**Tres tipos de arte por personaje ✅ (autor, 2026-10-24):** reabren el criterio de «dos tipos de personaje» (2026-10-11) y el chibi de ~100 px de arriba. Cada personaje, también los PNJ, tiene:
+
+| Tipo | Uso | Detalle |
+|---|---|---|
+| **Sprite de vista aérea** (tipo Stardew) | Pasear por el exterior de los asentamientos, la mina cenital y el mapa | 32–48 px de alto; **8 direcciones** con **caminar** y un **estado estático con respiración** |
+| **Sprite de vista lateral plana** (tipo Pet Society) | Pasear por los interiores de las edificaciones en corte transversal | Mismas animaciones (caminar y reposo con respiración), vista lateral; las 8 direcciones se reducen a las que la vista pide |
+| **Retrato detallado** | Diálogos y expresiones (las seis de siempre) | Chibi detallado en pixel art, aparte de los sprites; es donde van los rasgos finos |
+
+Los tres comparten diseño, paleta y proporciones, y se generan con PixelLab (8 direcciones y animación de caminar). Muchos personajes llevan además animaciones específicas por escena (se piden por escena en la producción; el flujo con PixelLab lo fija ⏳ F4-227).
+
+**Estética chibi de referencia ✅:** el sprite del ministro (`ministro-corregido.png`). Todos los personajes del modelo y las poses llevan esa estética: píxeles grandes y claramente visibles (✅ el sprite de paseo mide **32–48 px de alto** sobre la resolución base 640×360; el chibi de unos 100 px de las hojas de referencia queda superado y los detalles finos pasan al retrato), colores planos con 2 a 3 tonos por material, sombreado simple de bordes duros, contorno negro grueso, **sin textura fina, sin hebras de pelo y sin degradados**, ojos grandes y sencillos con un solo punto de brillo, boca pequeña, cabeza de cerca del 40 % de la altura y cuerpo compacto. El modelo y las poses de un mismo personaje tienen las mismas proporciones.
 
 **Expresiones ✅:** retrato de busto en pixel art con la estética del modelo: ojos grandes y expresivos, sombreado plano suave y el mismo tamaño de píxel, como en las hojas del protagonista y de Reme. Las seis tienen los mismos gestos para todos, sutiles y legibles: la **predeterminada** según la personalidad, feliz (riendo), triste (con una lágrima), enojo, susto y cansancio. El **cansancio** es discreto (párpados pesados, ojeras leves, boca relajada), no exagerado y distinto de triste.
 
@@ -167,11 +177,27 @@ El ministro Montenegro sigue siendo el antagonista narrativo y no tiene duelo de
 
 **Calidad de las hojas de referencia:** generación en calidad media a 2K, que equilibra detalle y costo. Se revisa y aprueba cada hoja antes de pasar a la siguiente. Las hojas nuevas que hagan falta para pruebas se generan en calidad baja (ver reglas de uso de la sección siguiente).
 
-**Animación ✅:** el movimiento se define según la necesidad y casi todo el tiempo los personajes son **estáticos**.
-- **Versión 1:** sprites estáticos y retratos con expresiones en los diálogos. Como mucho, alguna caminata suelta del protagonista; casi no hay caminatas.
-- **Después de la versión 1:** el protagonista podrá tener algunos movimientos en ciertas zonas o escenas, buscando un punto medio entre costo y vida en pantalla.
-- Los NPC y los enemigos no llevan ciclos de caminar; si más adelante hace falta movimiento en alguno, se pide como tarea aparte.
-- Las poses de caminar de las hojas quedan como referencia para cuando se decida animar.
+**Animación ✅ (reabierta por el autor el 2026-10-24):** como el jugador camina por exteriores, minas e interiores, la regla anterior («casi estáticos», sin ciclos de caminar para PNJ y enemigos) queda **superada**.
+- **Todos los personajes** (protagonista, elenco, PNJ y enemigos humanos) llevan **caminar** y un **estado estático con respiración**, en **8 direcciones**, tanto en vista aérea como en vista lateral.
+- Muchos llevan **animaciones específicas por escena** (por ejemplo, atender el mostrador o mirar el reloj); se piden por escena, no de forma genérica.
+- Los retratos de diálogo siguen con expresiones estáticas.
+- Las criaturas de La Fosa y los jefes siguen el mismo criterio en cuanto aparezcan en una escena por la que se camine.
+- Costo: es el cambio de mayor impacto en las horas de arte (F4-227, F4-233 y F4-190 a F4-193; ver [ADR-0011](adr/0011-exploracion-caminable-tren-y-minas.md)).
+
+## Perspectivas, mapa con niebla y tren ✅ (autor, 2026-10-24)
+
+Cambio de diseño F0-91; el detalle de las zonas está en [26](26-zonas-y-edificios.md) y el razonamiento en [ADR-0011](adr/0011-exploracion-caminable-tren-y-minas.md).
+
+| Pieza | Decisión de arte |
+|---|---|
+| **Exterior** | Vista aérea tipo Stardew sobre la resolución 640×360; cada edificación se ve por fuera con su puerta o entrada; cielo y calle dan la identidad de la región. Las 46 edificaciones deben poder entrarse a futuro: se dibujan primero las necesarias y las demás muestran la puerta cerrada |
+| **Interior** | Corte transversal con desplazamiento lateral plano (Pet Society); un interior reservado por edificación |
+| **Mina** | Recinto con cinco entradas y galerías de 2 a 3 pantallas en vista aérea cenital; las menas se leen por color y silueta, y el color de la lectura del detector (gris, ámbar, verde) respeta la paleta y la regla de accesibilidad |
+| **Mapa** | Imagen estática del mapa de Valdoria con las zonas tocables y las vías de tren (base: `mapa-valdoria.png`); se abre desde cualquier lugar |
+| **Niebla** | Las zonas aún bloqueadas se cubren con una **niebla densa y oscura** (casi opaca) que deja asomar **un detalle reconocible** (cima de montaña, muelle, torre de la ciudad). Se levanta con una animación breve cuando el acto abre la zona. La niebla es pura presentación, no cambia reglas |
+| **Tren** | Pantalla de carga a pantalla completa tipo time-lapse: el personaje sentado junto a la ventanilla y el paisaje pasando de la zona A a la B. **Una escena base modular** reutilizable con **fondos de ventanilla por región**, unos 6 s, saltable desde el segundo viaje |
+
+Las estaciones y los andenes se dibujan como referencia; la mecánica de viajar andando por la estación queda para otras versiones (ver [26](26-zonas-y-edificios.md)).
 
 ## Assets provisionales y definitivos ✅
 
@@ -239,10 +265,10 @@ PixelLab es la herramienta del arte definitivo por decisión del autor. Su flujo
 
 ## Decisiones técnicas de arte pendientes
 
-- ⏳ F1-06 · **Resolución base y modo ventana.** Con el enfoque de PC primero ([ADR-0009](adr/0009-pc-primero-movil-despues.md)) la pregunta cambia: 480×270 frente a 640×360, escala entera con bandas, ventana y pantalla completa, en 1080p, 1440p, 4K, ultrapanorámico y Steam Deck (1280×800). La zona segura 20:9 era una pregunta móvil y pasa a la fase móvil. No bloquea nada anterior: F1-06 la decide antes de producir arte definitivo. Las primeras pruebas eran verticales y quedan superadas.
-- ✅ **Perspectiva.** Los **edificios van en isométrica** (mapa de ciudad) y, al entrar, se muestra su **vista interior** en corte transversal, como la tienda. Las escenas de mina y zonas siguen en vista lateral.
+- ✅ **Resolución base 640×360** (autor, 2026-10-24; cierra F1-06). Con el enfoque de PC primero ([ADR-0009](adr/0009-pc-primero-movil-despues.md)): escala **entera con bandas** (1080p ×3, 1440p ×4, 4K ×6; en la Steam Deck 1280×800 ×2 con bandas), ventana y pantalla completa, y ultrapanorámico con bandas laterales. El sprite de paseo mide 32–48 px (de 9 a 13 % del alto) y los retratos de diálogo se dibujan aparte. La zona segura 20:9 era una pregunta móvil y pasa a la fase móvil.
+- ✅ **Perspectiva** (autor, 2026-10-24; sustituye a «edificios en isométrica»). Tres vistas: el **exterior de los asentamientos** es una **vista aérea** tipo Stardew por la que se camina y se puede rodear cada edificación (exploración mínima), con la puerta de cada una visible; el **interior** de cada edificación es un **corte transversal con desplazamiento lateral plano** tipo Pet Society (la tienda es la referencia); y la **mina** es una galería caminable en **vista aérea cenital**. Al entrar o salir hay un loader corto. No importa el tiempo ni el costo: es para dar dinamismo. Los edificios isométricos F4-155 y F4-156 se cancelan y se rehacen como exteriores cenitales.
 - ❓ **Nivel de "pixel estricto".** Los retratos son muy detallados (ilustración pixelada) y los sprites son más cercanos a Stardew. Decidir si se mantienen así o se unifican.
-- ❓ Tamaño de íconos (por ejemplo 32×32 o 48×48) y de sprites de personaje. Para el arte definitivo se prueba con PixelLab (ver «Assets provisionales y definitivos»).
+- ❓ Tamaño de íconos (por ejemplo 32×32 o 48×48); el sprite de personaje ya quedó en 32–48 px (arriba). Para el arte definitivo se prueba con PixelLab (ver «Assets provisionales y definitivos»).
 - ❓ Fuente pixel para el texto, con licencia clara.
 - ✅ Herramienta de pixel art del arte definitivo: **PixelLab** (autor, 2026-10-13).
 - ❓ Cuántos cuadros de animación se permiten (el estilo es estático; probablemente pocos).

@@ -160,7 +160,7 @@ Es el canon general del Acto II. **Ninguna variante lo posee**: cada una solo ca
 
 **Estado:** la huelga ocurre en las tres partidas (el precio sube en todas) y tú decides tu bando: apoyar, abstenerte o romper, y romper baja mucho a Teo y a la Unión (decisión del autor, 2026-10-12). Las consecuencias pequeñas por variante las confirmó el autor el 2026-10-16 (F0-80).
 
-Lo común está en la sección 4. Además, mientras dura, Cañón Ferroso se cierra, como permite [07](07-sociedad-y-eventos.md).
+Lo común está en la sección 4. Además, mientras dura, Cañón Ferroso se cierra **por completo**: es una **excepción de guion** (no un cierre por gravedad), como permite [07](07-sociedad-y-eventos.md) ✅.
 
 **Qué decides.** Tres bandos, con acciones que ya existen (vender, entregar un pedido, abrir o cerrar el puesto):
 

@@ -26,7 +26,7 @@ Propuestas 🟡 que acompañan la decisión:
 - 🟡 Integración continua con exportación a **Windows y Linux** y build reproducible por línea de comandos.
 - 🟡 La capa B de telemetría ([ADR-0007](0007-telemetria-por-capas.md)) pasa a ser lo que entregue Steam; su alcance real se verifica en la fuente vigente al llegar a F5-40.
 
-Aplazado con su tarea (⏳): resolución base y modo ventana ⏳ F1-06; precio y DLC ⏳ F5-33, F6-01 y F6-61; demo con el Acto I ⏳ F3-23; declaración de IA de Steam y términos de PixelLab ⏳ F4-227.
+Aplazado con su tarea (⏳): resolución base y modo ventana ✅ 640×360 (2026-10-24, cierra F1-06; [ADR-0011](0011-exploracion-caminable-tren-y-minas.md)); precio y DLC ⏳ F5-33, F6-01 y F6-61; demo con el Acto I ⏳ F3-23; declaración de IA de Steam y términos de PixelLab ⏳ F4-227.
 
 ## Alternativas descartadas
 
@@ -46,5 +46,5 @@ Aplazado con su tarea (⏳): resolución base y modo ventana ⏳ F1-06; precio y
 - **Guardado:** carpeta de guardados pequeños y estable para Auto-Cloud, hasta 5 partidas, y política de Hardcore local ([10](../10-tecnico-y-herramientas.md)).
 - **QA:** la matriz de dispositivos pasa a ser una matriz de PC y los presupuestos de rendimiento se miden en PC (⏳ F1-44). Lo específico de Android se conserva como «Fase móvil» ([16](../16-calidad-y-qa.md)).
 - **Legal:** aparecen Steam Direct, entrevista fiscal, cuestionario de contenido y declaración de IA; desaparecen Google Play Data safety y la prueba cerrada ([11](../11-legal-y-cumplimiento.md)).
-- **Resolución:** las preguntas de 480×270 y zona segura 20:9 eran móviles y se rehacen con el enfoque de PC en F1-06.
+- **Resolución:** las preguntas de 480×270 y zona segura 20:9 eran móviles y se rehicieron con el enfoque de PC: ✅ resolución base **640×360** con escala entera y bandas (autor, 2026-10-24, cierra F1-06).
 - **Deuda:** el trabajo de Android (JDK, SDK, keystore, APK, `versionCode`, backup de Android, Play Vitals) no se pierde: queda documentado en la sección «Fase móvil (después de la 1.0)» de [10](../10-tecnico-y-herramientas.md) y [16](../16-calidad-y-qa.md).

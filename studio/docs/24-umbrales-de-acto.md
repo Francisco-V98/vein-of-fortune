@@ -33,7 +33,7 @@ Decisiones del 2026-10-12 (F0-47), tomadas después de comparar tres modelos (pu
 | Red anti-atasco | El juego sigue como sandbox, **la historia espera en cola**, **el diario lista las vías que faltan** y **la misión de rescate** llega tras mucho tiempo sin avanzar. La deuda nunca bloquea. Las tres piezas están diseñadas en la sección 10 ✅; las construye ⏳ F3-48 |
 | Teo | **Sin revisión muere**, también si le propones y aceptas su no: la opción respetuosa tiene costo ✅ |
 | Magnate y cierre del IV | Magnate se concede al **cerrar el acta de calibración** y **no es puerta**. El IV cierra con la cabecera, las tarjetas y el acta tras la decisión sobre la Aetherita; Magnate llega como un aviso silencioso al volver al sandbox ✅ ([25](25-finales-y-epilogos.md)) |
-| Disparadores | Van **por eventos del jugador y no por calendario**: A2 tras atender tu primera cuota después de A1; A3 tras tu primera venta o expedición en la zona; A4 tras el aviso de noticias y una acción tuya, sin plazo en días. Las opcionales O1 a O4 **no puntúan** para ninguna puerta ✅ |
+| Disparadores | Van **por eventos del jugador y no por calendario**: A2 tras atender tu primera cuota después de A1; A3 tras tu primera venta o expedición en la zona (✅ «expedición» = entrar a una entrada de mina de la zona y minar; solo caminar por el asentamiento o por la mina no cuenta, [ADR-0011](adr/0011-exploracion-caminable-tren-y-minas.md)); A4 tras el aviso de noticias y una acción tuya, sin plazo en días. Las opcionales O1 a O4 **no puntúan** para ninguna puerta ✅ |
 | Círculo y puerta al IV | El círculo pide **Empresario + dos vías de tres + una entrada abierta** y cierra en el encuentro con Montenegro. El IV entra con ese encuentro resuelto y las cintas 1 a 5 recogidas. Montenegro **no tiene medidor**. Ninguna puerta lee `f-pago-reme` ni `f-orden-reme`, Reme nunca cierra puertas y ninguna facción es mejor por defecto ✅ |
 
 ---
@@ -185,8 +185,8 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 |---|---|---|
 | **A1** · La política manda | Cierras el Acto I ✅ | El decreto de A1 es lo que abre las zonas del II; no es una condición previa ✅ (su guion ⏳ F4-128) |
 | **A2** · La orden de Reme | A1 resuelta y atiendes tu primera cuota después de A1 ✅ | Pagada o prorrogada. Las cuotas vencen cada 7 días ✅. Si ya saldaste la deuda, A2 llega en tu siguiente visita a Reme. Con K = 24 000 esquirlas no puede ocurrir antes de A2; queda como salvaguarda ✅ |
-| **A3** · El primer conflicto | A2 resuelta y tu primera venta o expedición en la zona de tu variante ✅ | Zona: Sierra Alta (Consorcio), Villa Brasa (Ministerio) y Salares (Faroleros), como en [22](22-acto-ii-variantes.md) ✅ (el disparador fino ⏳ F4-128) |
-| **A4** · La primera huelga | A3 resuelta, el aviso en las noticias y una acción tuya ✅, sin plazo en días ✅ | «Acción tuya»: tu siguiente bloque de expedición, venta, taller o cierre del puesto ✅. Cuántas acciones separan el aviso del cierre ⏳ F4-132 |
+| **A3** · El primer conflicto | A2 resuelta y tu primera venta o expedición en la zona de tu variante (expedición = entrar a una entrada de mina y minar ✅) ✅ | Zona: Sierra Alta (Consorcio), Villa Brasa (Ministerio) y Salares (Faroleros), como en [22](22-acto-ii-variantes.md) ✅ (el disparador fino ⏳ F4-128) |
+| **A4** · La primera huelga | A3 resuelta, el aviso en las noticias y una acción tuya ✅, sin plazo en días ✅ | «Acción tuya»: tu siguiente bloque de expedición (entrar a una entrada y minar), venta, taller o cierre del puesto ✅. Cuántas acciones separan el aviso del cierre ⏳ F4-132 |
 | **A5** · Las tres ofertas | A4 resuelta, estatus de Comerciante y dos vías de tres ✅ | Cierra el Acto II ✅. El estatus y sus cifras ⏳ F4-109 |
 | **A6** · El cierre de Reme | A5 resuelta ✅ | Es la última pantalla del II, no una condición para el III ✅ |
 

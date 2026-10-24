@@ -143,7 +143,7 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 - **Fija:** `m-union`. **Lee:** `f-orden-reme`.
 
 **`n-ii-huelga` · La primera huelga** (mediana) ✅
-- **Dispara:** Escena A4 de 22: el aviso sale en las noticias y la huelga cierra Cañón Ferroso. Ocurre en las tres variantes.
+- **Dispara:** Escena A4 de 22: el aviso sale en las noticias y la huelga cierra Cañón Ferroso por completo (excepción de guion de cierre total, [07](07-sociedad-y-eventos.md)). Ocurre en las tres variantes.
 - **Apoyas la huelga.** → *Mundo:* Cierras el puesto un día y entregas mineral a la caja de huelga. Luego llega el apagón, común a todos. *Mercado:* Hierro +8 a +12 % mientras dura el cierre, dentro del tope diario; el segundo mineral de tu variante, +3 a +5 puntos. *Personajes:* Teo y la Unión se acercan. Tu variante añade una consecuencia pequeña (22, sección 7).
 - **Te abstienes.** → *Mundo:* Sigues con tu negocio. Llega el mismo apagón. *Mercado:* Mismo movimiento de precios para todos. *Personajes:* Teo y la Unión no cambian. No se activa ninguna consecuencia de variante.
 - **Rompes la huelga.** → *Mundo:* Vendes el mineral que pide quien quiere la huelga rota. Luego llega el mismo apagón. *Mercado:* Mismo movimiento de precios; la prima de contrato de tu variante sube 3 a 5 puntos. *Personajes:* Teo y la Unión se alejan mucho. Tu variante añade una consecuencia pequeña (22, sección 7).

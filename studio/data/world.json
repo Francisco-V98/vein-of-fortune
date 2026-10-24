@@ -200,7 +200,8 @@
       "tasks": [
         "F2-20",
         "F3-18"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-taller",
@@ -226,7 +227,8 @@
       "npcs": [],
       "tasks": [
         "F3-07"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-almacen",
@@ -247,7 +249,8 @@
       "tasks": [
         "F2-17",
         "F3-08"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-casa",
@@ -268,7 +271,8 @@
       "tasks": [
         "F4-226",
         "F6-51"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-reme",
@@ -290,7 +294,8 @@
       "npcs": [],
       "tasks": [
         "F4-224"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-quiroga",
@@ -314,7 +319,8 @@
       "npcs": [],
       "tasks": [
         "F4-224"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-mina-galerias",
@@ -346,7 +352,8 @@
       "npcs": [],
       "tasks": [
         "F4-225"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-mina-canon",
@@ -374,7 +381,8 @@
       "npcs": [],
       "tasks": [
         "F4-225"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-union",
@@ -399,7 +407,8 @@
       ],
       "tasks": [
         "F4-244"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-periodico",
@@ -428,7 +437,8 @@
       "tasks": [
         "F4-94",
         "F4-95"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-vb-herreria",
@@ -454,7 +464,8 @@
       "npcs": [],
       "tasks": [
         "F4-219"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-af-mina",
@@ -484,7 +495,8 @@
       "npcs": [],
       "tasks": [
         "F4-225"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-af-consorcio",
@@ -508,7 +520,8 @@
       "npcs": [],
       "tasks": [
         "F4-63"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-af-economato",
@@ -530,7 +543,8 @@
       "npcs": [],
       "tasks": [
         "F4-219"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-af-plateria",
@@ -553,7 +567,8 @@
       "npcs": [],
       "tasks": [
         "F4-220"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-af-taller-ensayo",
@@ -573,7 +588,8 @@
       "npcs": [],
       "tasks": [
         "F4-222"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-af-chalet",
@@ -595,7 +611,8 @@
         "F6-48",
         "F6-51",
         "F6-53"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-sb-mina",
@@ -627,7 +644,8 @@
       ],
       "tasks": [
         "F4-225"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-sb-lonja",
@@ -653,7 +671,8 @@
       "tasks": [
         "F4-220",
         "F6-67"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-sb-bar",
@@ -683,7 +702,8 @@
       "tasks": [
         "F4-65",
         "F6-56"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-sb-caseron",
@@ -705,7 +725,8 @@
         "F6-48",
         "F6-51",
         "F6-53"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-sb-muelle",
@@ -728,7 +749,8 @@
       "npcs": [],
       "tasks": [
         "F6-62"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-sb-astillero",
@@ -749,7 +771,8 @@
       "npcs": [],
       "tasks": [
         "F6-63"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-sb-aduana",
@@ -771,7 +794,8 @@
       "npcs": [
         "aduanero-mayor"
       ],
-      "tasks": []
+      "tasks": [],
+      "enterable": true
     },
     {
       "id": "ed-cv-mina",
@@ -805,7 +829,8 @@
       ],
       "tasks": [
         "F4-225"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-cv-tasadores",
@@ -831,7 +856,8 @@
       "tasks": [
         "F4-55",
         "F4-221"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-cv-campamento",
@@ -853,7 +879,8 @@
       "npcs": [],
       "tasks": [
         "F4-223"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-cv-taller-talla",
@@ -876,7 +903,8 @@
       "npcs": [],
       "tasks": [
         "F6-56"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-fo-mina",
@@ -907,7 +935,8 @@
       "npcs": [],
       "tasks": [
         "F4-225"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-fo-campamento-viejo",
@@ -927,7 +956,8 @@
       "npcs": [],
       "tasks": [
         "F4-223"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-fo-barracon",
@@ -947,7 +977,8 @@
       "npcs": [],
       "tasks": [
         "F4-223"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-bolsa",
@@ -969,7 +1000,8 @@
       "tasks": [
         "F4-166",
         "F6-65"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-ministerio",
@@ -995,7 +1027,8 @@
       "tasks": [
         "F4-74",
         "F6-46"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-casa-ormeno",
@@ -1020,7 +1053,8 @@
       "npcs": [],
       "tasks": [
         "F4-221"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-comision",
@@ -1044,7 +1078,8 @@
       "npcs": [],
       "tasks": [
         "F4-246"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-estacion",
@@ -1064,7 +1099,8 @@
       "npcs": [],
       "tasks": [
         "F4-222"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-pension",
@@ -1088,7 +1124,8 @@
       "npcs": [],
       "tasks": [
         "F4-222"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-salon",
@@ -1112,7 +1149,8 @@
       "npcs": [],
       "tasks": [
         "F6-11"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-inmobiliaria",
@@ -1132,7 +1170,8 @@
       "npcs": [],
       "tasks": [
         "F6-47"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-mansion-paseo",
@@ -1154,7 +1193,8 @@
         "F6-49",
         "F6-52",
         "F6-53"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-mansion-colina",
@@ -1176,7 +1216,8 @@
         "F6-49",
         "F6-52",
         "F6-53"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-mansion-barrio",
@@ -1198,7 +1239,8 @@
         "F6-50",
         "F6-52",
         "F6-53"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-joyeria",
@@ -1223,7 +1265,8 @@
       "tasks": [
         "F6-54",
         "F6-55"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-concesionaria",
@@ -1243,7 +1286,8 @@
       "npcs": [],
       "tasks": [
         "F6-57"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-sastreria",
@@ -1263,7 +1307,8 @@
       "npcs": [],
       "tasks": [
         "F6-58"
-      ]
+      ],
+      "enterable": true
     },
     {
       "id": "ed-pm-puerto-deportivo",
@@ -1284,7 +1329,8 @@
       "npcs": [],
       "tasks": [
         "F6-64"
-      ]
+      ],
+      "enterable": true
     }
   ],
   "minigames": [
@@ -3400,7 +3446,17 @@
           "cost": 98
         }
       ],
-      "same_mouth_cost": 0
+      "same_mouth_cost": 0,
+      "mode": "tren",
+      "map": {
+        "fog": true,
+        "open_anywhere": true,
+        "free_within_zone": true
+      },
+      "resolution": [
+        640,
+        360
+      ]
     },
     "orders": [
       {
@@ -3808,6 +3864,100 @@
       },
       "rule": "1,25 × el percentil 95 de las horas del jugador lento para cumplir la parte económica de cada puerta, redondeado a 0,5 h (F0-53); horas de juego acumuladas desde el inicio de la partida",
       "nota": "F0-78 diseña la misión; aquí solo vive la cifra"
+    },
+    "mine_entrances": {
+      "nota": "Cifras de partida; las calibra ⏳ F0-92. El simulador todavía no lee esta clave (la huella no cambia). Decisiones del autor del 2026-10-24 (F0-91): cada boca de mina da a un recinto con cinco entradas sorteadas cada día a ciegas.",
+      "entrances_per_mine": 5,
+      "split": {
+        "escasa": 2,
+        "media": 2,
+        "abundante": 1
+      },
+      "draw": {
+        "seed": "hash(partida, dia, mina, entrada)",
+        "blind": true,
+        "deterministic": true
+      },
+      "quality_mult": {
+        "escasa": 0.7,
+        "media": 1.0,
+        "abundante": 1.6
+      },
+      "quality_mult_act1": {
+        "escasa": 0.85,
+        "media": 1.0,
+        "abundante": 1.3
+      },
+      "quality_note": "Solo cambia las unidades por mena, no la mezcla de minerales (zone_mix se mantiene). La media de las cinco entradas es 1,0. Si el valor esperado con el cambio sube a ~1,15, los rendimientos base bajan 8-12 % (F0-92).",
+      "visible_ores": {
+        "I": [
+          5,
+          6
+        ],
+        "II": 8,
+        "III": 14,
+        "IV": 18
+      },
+      "pickable_ratio": 0.5,
+      "detector": {
+        "battery_by_level": [
+          6,
+          8,
+          11,
+          14
+        ],
+        "cost_per_scan": 1,
+        "scan_shows": [
+          "rango de composición con marca de promedio (desplazado del valor real)",
+          "rango de cantidad",
+          "color: gris, ámbar o verde"
+        ],
+        "empty_battery": "picar a ciegas (la roca solo insinúa el nivel)",
+        "sonar_min_level": 2,
+        "recharge": "entera y gratis cada noche, al pasar el día",
+        "spare_cells": {
+          "from_act": "II",
+          "max_per_day": 1
+        }
+      },
+      "switch": {
+        "per_mine_per_day": 1,
+        "counts_as_visit": false,
+        "same_block_and_energy": true,
+        "closed_entrance_reassign_free": true
+      },
+      "tool_dull": {
+        "integrity_below_pct": 20,
+        "minigame_margin_pct": -30
+      },
+      "closures": {
+        "by_severity": {
+          "suave": 1,
+          "complicado": 2,
+          "valdoria": 3
+        },
+        "min_open": 2,
+        "close_order": [
+          "abundante",
+          "media",
+          "escasa"
+        ],
+        "reopen_order": [
+          "escasa",
+          "media",
+          "abundante"
+        ],
+        "reopen_per_day": 1,
+        "pressure_mult_by_closed": [
+          1.0,
+          0.95,
+          0.88,
+          0.75
+        ],
+        "secondary_min_share_pct": 25,
+        "none_in_act": "I",
+        "total_closure": "solo excepción de guion marcada (p. ej. la huelga del Acto II que cierra el Cañón Ferroso)"
+      }
     }
   }
 }

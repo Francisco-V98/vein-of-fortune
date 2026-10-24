@@ -10,17 +10,23 @@ Cómo está organizado el mapa vivo de Valdoria: qué zonas hay, qué edificacio
 
 ### 1.1 Los tres niveles ✅
 
-1. **Mapa de Valdoria.** Imagen ilustrada con las seis regiones tocables; las bloqueadas se ven apagadas ([12](12-direccion-de-arte.md), ⏳ F4-152 y ⏳ F4-153).
-2. **Zona.** La región es la zona. Al hacer clic en ella (o elegirla con el mando) entras a la **vista de zona**: el asentamiento en isométrica, con sus edificaciones seleccionables ([12](12-direccion-de-arte.md), perspectiva).
-3. **Edificación.** Eliges a cuál entrar y ves **esa edificación por separado**, en vista interior en corte transversal, como la tienda. La boca de mina es una edificación más: al entrar a ella pasas a la vista lateral de la mina.
+Cambio de diseño del autor (2026-10-24, F0-91): sustituye la vista isométrica de zona y la entrada directa a la vista interior. «No importa el tiempo ni el costo; es para dar más dinamismo.»
 
-La navegación entre los tres niveles es ⏳ F4-167.
+1. **Mapa de Valdoria con niebla.** Imagen ilustrada con las seis regiones tocables. Las zonas que el acto aún no abre se tapan con una **niebla densa y oscura** que cubre casi todo y deja asomar un solo detalle reconocible (la cima de una montaña, el muelle, la torre de la ciudad). La niebla se levanta cuando el acto abre la zona, con una animación breve; si el jugador toca una zona con niebla, el diario muestra una frase corta, sin cifras ✅. El mapa se puede abrir **desde cualquier lugar**, y dentro de la misma zona sirve para ir de una edificación a otra **sin coste** ✅ (⏳ F4-152 y ⏳ F4-153; la niebla y su animación, ⏳ F4-154).
+2. **Zona y asentamiento aéreo.** La región es la zona. Al llegar a ella (el **tren** es el único medio entre zonas, ver 1.2) el jugador aparece **fuera**, en la estación o en la calle, y **camina** por el asentamiento en **vista aérea** tipo Stardew Valley: puede rodear las casas y explorar un mínimo. Cada edificación se ve por fuera con su puerta o entrada ([12](12-direccion-de-arte.md), perspectiva) ✅.
+3. **Edificación e interior lateral.** Al entrar por la puerta hay un **loader corto** y se pasa al **interior** en corte transversal, también con **desplazamiento**: vista lateral plana, tipo Pet Society ✅. Las 46 edificaciones deben poder entrarse a futuro: el diseño reserva un interior para cada una; se construyen primero las necesarias y las demás quedan «puerta cerrada/pendiente», y el autor puede añadir dinámicas después ✅. La **boca de mina** es una edificación más, pero su interior no es un corte lateral: es el **recinto de 5 entradas** (1.2 y [02](02-extraccion.md), «La mina por dentro»), y cada entrada lleva a una galería caminable en vista aérea cenital ✅.
+
+Caminar, el loader y el tren **no consumen bloques** ✅ ([01](01-core-loop.md)). La navegación entre los tres niveles es ⏳ F4-167.
 
 ### 1.2 Zona, asentamiento y zona de minado ✅
 
 - **Zona** (del mapa) es la región con su asentamiento. **Zona de minado** son las seis de [02](02-extraccion.md); cada una se entra por su **boca de mina**, dentro de un asentamiento.
-- Cada zona tiene **un asentamiento**. **Villa Brasa atiende las dos zonas de minado del Hollín** (Galerías del Hollín y Cañón Ferroso): desde su vista de zona eliges una de las dos bocas. **Puerto Meridiano** es la zona de la capital y no tiene boca de mina.
-- El asentamiento es donde se comercia, se contrata y se vive; la boca de mina es donde se extrae. Moverte entre zonas no gasta bloques pero cuesta un poco de dinero (billete o combustible), y ver las zonas en el mapa es gratis ✅ ([01](01-core-loop.md); decisión del autor, 2026-10-15). El trayecto cuesta entre 42 y 210 esquirlas, 0 entre las dos bocas de Villa Brasa y nada en el Acto I, porque todo ocurre en Villa Brasa ✅ ([28](28-numeros-base-de-la-economia.md)). Las Cavernas y La Fosa son zonas profundas: 2 bloques, Tarde y Noche, y La Fosa solo abre 3 días por semana ✅: los días 2, 4 y 6 de cada semana, y el 7 queda libre para la cuota. Cómo se ve el viaje ⏳ F4-154.
+- Cada zona tiene **un asentamiento**. **Villa Brasa atiende las dos zonas de minado del Hollín** (Galerías del Hollín y Cañón Ferroso): caminando por Villa Brasa eliges una de las dos bocas. **Puerto Meridiano** es la zona de la capital y no tiene boca de mina.
+- El asentamiento es donde se comercia, se contrata y se vive; la boca de mina es donde se extrae.
+- **Viaje con tren** ✅ (decisión del autor, 2026-10-24; sustituye «billete o combustible» de 2026-10-15). El tren es el **único medio** entre zonas y el **billete es el costo del viaje**: de 42 a 210 esquirlas por trayecto, 0 entre las dos bocas de Villa Brasa y nada en el Acto I, porque todo ocurre en Villa Brasa ✅ ([28](28-numeros-base-de-la-economia.md), 9.2). El viaje no gasta bloque y se muestra en una **pantalla de carga a pantalla completa**, tipo time-lapse: el personaje sentado junto a la ventanilla y el paisaje pasando de la zona A a la B. Es una escena modular reutilizable, con fondos de ventanilla por región o tramo, de unos 6 s y **saltable desde el segundo viaje** ✅ (⏳ F4-154). Dentro de la misma zona, el mapa lleva de una edificación a otra gratis ✅.
+- **Estaciones y andenes** quedan por ahora solo como **referencia** (el jugador llega a la estación o a la calle): viajar en el tren con estaciones como mecánica se ajusta para otras versiones si al jugar se ve que se puede añadir sin que resulte fastidioso ✅. La estación de Puerto Meridiano (`ed-pm-estacion`) sigue siendo edificio de historia (cinta 3). **La Fosa cerrada** sus días 1, 3, 5 y 7 no tiene tren (cartel) y no lleva niebla ✅.
+- **Boca de mina como recinto de 5 entradas** ✅: al entrar a la boca de mina hay un recinto con **cinco entradas**, 2 de recursos escasos, 2 medios y 1 abundante; el reparto se sortea cada día **a ciegas**. Cada entrada es una galería caminable en vista aérea cenital. El detalle, el detector con batería y los cierres, en [02](02-extraccion.md), «La mina por dentro».
+- Las Cavernas y La Fosa son zonas profundas: 2 bloques, Tarde y Noche, y La Fosa solo abre 3 días por semana ✅: los días 2, 4 y 6 de cada semana, y el 7 queda libre para la cuota.
 
 | Zona (región) | Asentamiento | Bocas de mina | Se abre en el acto |
 |---|---|---|---|
@@ -250,8 +256,8 @@ Las horas son del autor y se suman a las del roadmap ([06](06-roadmap-y-pendient
 
 | Versión | Fase del roadmap | Edificaciones | Contenido | Horas sobre el roadmap (±50 %) |
 |---|---|---|---|---|
-| **MVP** | F2–F3 | 7: tienda, taller, almacén, casa, Reme, Quiroga y boca de las Galerías | Solo Villa Brasa, en lista con arte provisional (⏳ F3-18). Sin mapa. El taller se construye aquí pero se abre en el Acto II ✅ | 0 |
-| **V1** | F4–F5 | +24: 19 edificios y 5 bocas de mina | Mapa y vista de zona de las seis zonas (⏳ F4-152, ⏳ F4-165); los 9 del roadmap (⏳ F4-155, ⏳ F4-156), la Bolsa, la oficina de la Comisión, 6 edificios de historia y 6 comercios; casa mejorable con ranuras, ropa por estatus y un auto | +110 a 150 |
+| **MVP** | F2–F3 | 7: tienda, taller, almacén, casa, Reme, Quiroga y boca de las Galerías | Solo Villa Brasa, con arte provisional (⏳ F3-18): el asentamiento se camina en vista aérea y cada edificación tiene su interior lateral. Sin mapa ni tren. El taller se construye aquí pero se abre en el Acto II ✅ | 0 |
+| **V1** | F4–F5 | +24: 19 edificios y 5 bocas de mina | Mapa con niebla, tren y asentamientos caminables de las seis zonas (⏳ F4-152, ⏳ F4-165); los 9 del roadmap (⏳ F4-155, ⏳ F4-156), la Bolsa, la oficina de la Comisión, 6 edificios de historia y 6 comercios; casa mejorable con ranuras, ropa por estatus y un auto | +110 a 150 |
 | **V2.0** | F6, hito F6.1 | +1: Salón del Farol | Casino y Lotería | +12 (la Lotería; el casino son las ~100 h ya estimadas) |
 | **V2.1** | F6, hito nuevo | +10 | Casas por zona y mansiones, catálogo de decoración, joyería comprable, joyas por zona, concesionaria y sastrería | 250 a 300 |
 | **V2.2** | F6, hito nuevo | +3 y una pestaña | Pesca, astillero, embarcaciones, yate e inversiones en la Bolsa | 120 a 160 |
@@ -337,16 +343,19 @@ Ya están en el roadmap, cada una de 20 h o menos. La columna ID dice cuál es; 
 | ID | Nombre | Fase | Horas | Descripción |
 |---|---|---|---|---|
 | F0-83 | Registro de zonas y edificaciones en `world.json`, con su validación en el hub | F0, hito F0.12 | 6 | Seis asentamientos y las 45 edificaciones con ID, rol, versión y enlaces a minerales, recetas y facciones; el build comprueba que todo exista |
-| F3-46 | Navegador zona a edificación y horarios por bloque | F3 | 6 | Lista de edificaciones de Villa Brasa en el MVP con apertura por bloque |
-| F4-217 | Vista de zona: Villa Brasa, Altafría y Salinas Blancas | F4 | 12 | Los tres asentamientos isométricos con edificaciones tocables |
-| F4-218 | Vista de zona: campamentos de las Cavernas y de la Fosa | F4 | 6 | Los dos campamentos |
-| F4-219 | Herrería y economato | F4 | 16 | Exterior, interior y mercancía |
-| F4-220 | Platería y lonja con almacén de salitre | F4 | 16 | Exterior, interior y mercancía |
-| F4-221 | Tasadores y Casa Ormeño | F4 | 16 | Exterior, interior y mercancía |
-| F4-222 | Edificios de historia: taller de ensayo, estación y pensión | F4 | 15 | Exterior, interior y el sitio de cada cinta |
-| F4-223 | Edificios de historia: campamento de ensayo, campamento de la Primera Expedición y barracón | F4 | 15 | Exterior, interior y el sitio de cada cinta |
-| F4-224 | Casa de Reme y oficina de Quiroga definitivas | F4 | 8 | Exterior e interior |
-| F4-225 | Mostrador de preparación en las seis bocas de mina | F4 | 10 | Equipo propio de cada zona |
+| F3-46 | Mapa y navegador zona a edificación (gratis dentro de la zona) y horarios por bloque | F3 | 9 | Lista de edificaciones de Villa Brasa en el MVP con apertura por bloque |
+| F4-217 | Asentamientos cenitales caminables: Villa Brasa, Altafría y Salinas Blancas | F4 | 20 | Los tres asentamientos en vista aérea, caminables, con las edificaciones con su puerta |
+| F4-218 | Asentamientos cenitales caminables: campamentos de las Cavernas y de la Fosa | F4 | 12 | Los dos campamentos, también caminables en vista aérea |
+| F4-219 | Herrería y economato | F4 | 18 | Exterior, interior y mercancía |
+| F4-220 | Platería y lonja con almacén de salitre | F4 | 18 | Exterior, interior y mercancía |
+| F4-221 | Tasadores y Casa Ormeño | F4 | 18 | Exterior, interior y mercancía |
+| F4-222 | Edificios de historia: taller de ensayo, estación y pensión | F4 | 18 | Exterior, interior y el sitio de cada cinta |
+| F4-223 | Edificios de historia: campamento de ensayo, campamento de la Primera Expedición y barracón | F4 | 18 | Exterior, interior y el sitio de cada cinta |
+| F4-224 | Casa de Reme y oficina de Quiroga definitivas | F4 | 10 | Exterior e interior |
+| F4-225 | Bocas de mina y recinto de cinco entradas en las seis zonas, con mostrador de preparación | F4 | 20 | Equipo propio de cada zona |
+| F3-52 a F3-54 | Recinto y galerías de las Galerías del Hollín, detector en la mina y trazados de menas | F3 | 28 | Mina 1 caminable (8 + 12 + 8 h) |
+| F4-251, F4-252 y F4-253 | Galerías caminables de las minas 2 a 6, sus 25 trazados de menas e interiores pendientes | F4 | 40 | 20 + 12 + 8 h |
+| F4-247 a F4-255 | Niebla, tren, cierres de entradas, pixel art del mapa, tren y tilesets, y automatización de exploración | F4 | ver roadmap | Ver `studio/data/roadmap.json` |
 | F4-226 | Ranuras de decoración de la casa base | F4, hito F4.7 (antes de F4-110) | 8 | Cinco ranuras fijas con un objeto inicial |
 | F6-46 | Lotería del Ministerio | F6, hito F6.1 | 12 | Sorteo semanal, ventanilla y publicación en el Heraldo |
 | F6-47 | Inmobiliaria y compra de casas | F6, hito nuevo V2.1 | 14 | Comprar, vender y elegir la casa base |
@@ -373,4 +382,4 @@ Ya están en el roadmap, cada una de 20 h o menos. La columna ID dice cuál es; 
 | F6-68 | Textos ES/EN de V2.2 | F6, V2.2 | 8 | Todo lo anterior en los dos idiomas |
 | F6-69 y F6-70 | Pruebas y reserva de V2.2 | F6, V2.2 | 24 | Casos, regresión y correcciones |
 
-Las tareas F4-217 a F4-226 suman **+122 h en F4**, dentro de las +110 a 150 h de V1; con F3-46 (6 h) son 128 h, también dentro. Las F6-47 a F6-61 suman 250 h (V2.1) y las F6-62 a F6-70, 130 h (V2.2).
+Las tareas F4-217 a F4-226 suman **+160 h en F4** (la exploración caminable subió el alcance de las +110 a 150 h previstas para V1; ⚠ el autor debe confirmar el nuevo techo); con F4-251 a F4-253 (40 h) son 200 h, con F3-46 (9 h) y F3-52 a F3-54 (28 h) en F3. Las F6-47 a F6-61 suman 250 h (V2.1) y las F6-62 a F6-70, 130 h (V2.2).

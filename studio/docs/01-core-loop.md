@@ -18,15 +18,17 @@ Decisión del autor (2026-10-15):
 
 | Acción | Cuesta |
 |---|---|
-| Viajar entre zonas | **No gasta bloque**, pero cuesta **un poco de dinero** (billete o combustible; de 42 a 210 esquirlas por trayecto según el destino, [28](28-numeros-base-de-la-economia.md)) ✅ |
-| Ver las zonas en el mapa | **Gratis** ✅ |
+| Viajar entre zonas | En **tren**: **no gasta bloque**, pero el **billete es el costo del viaje** (de 42 a 210 esquirlas por trayecto según el destino, [28](28-numeros-base-de-la-economia.md)) ✅ |
+| Abrir el mapa y ver las zonas | **Gratis**, **desde cualquier lugar** ✅ |
+| Viajar dentro de la misma zona (de una edificación a otra, desde el mapa) | **Gratis** y sin bloque ✅ |
+| Caminar por el asentamiento o la mina, entrar a un edificio, loader | **No gasta bloque** ✅ |
 | Minar (una expedición) | **1 bloque completo**; las zonas profundas, 2 bloques (ver abajo) ✅ |
 | Abrir la tienda y comerciar | **1 bloque completo**, y **nunca de noche** ✅ |
 | Misiones secundarias, trámites, eventos y visitas | **Gratis, medio bloque o 1 bloque completo**, según el peso real que tengan en el juego (cuánto tiempo lleva su lógica) ✅ |
 | Mirar el mercado, leer noticias y organizar el inventario | **No consume bloques** ✅ |
 | Varias expediciones al día | Sí, mientras queden bloques, como en Dave the Diver ✅ |
 
-- ✅ **El viaje no gasta bloque pero tiene un pequeño costo en dinero** (decisión del autor, 2026-10-15): el billete o el combustible. Así el auto, que en V1 es solo estatus, gana sentido cuando en V2.1 llegue su pequeño efecto funcional con la concesionaria ([04](04-progresion-y-meta.md), [26](26-zonas-y-edificios.md)). Ver las zonas en el mapa no cuesta nada. El costo por trayecto es de 42 a 210 esquirlas según el destino, y en el Acto I no hay viaje porque todo ocurre en Villa Brasa ✅ ([28](28-numeros-base-de-la-economia.md)); su construcción y los tiempos del trayecto ⏳ F4-154.
+- ✅ **El viaje no gasta bloque pero el billete tiene un costo en dinero** (decisión del autor, 2026-10-15; el tren como único medio, 2026-10-24, F0-91). El tren es el único medio entre zonas y el billete es el costo del viaje; así el auto, que en V1 es solo estatus, gana sentido cuando en V2.1 llegue su pequeño efecto funcional con la concesionaria ([04](04-progresion-y-meta.md), [26](26-zonas-y-edificios.md)). Abrir el mapa no cuesta nada y puede hacerse desde cualquier lugar; dentro de la misma zona se viaja de una edificación a otra sin coste. El costo por trayecto es de 42 a 210 esquirlas según el destino, y en el Acto I no hay viaje porque todo ocurre en Villa Brasa ✅ ([28](28-numeros-base-de-la-economia.md)). El viaje se muestra en una pantalla de carga de unos 6 s, saltable desde el segundo viaje, y su construcción ⏳ F4-154. **Caminar** por el asentamiento y por la galería de la mina, **entrar** a un edificio y el **loader** no consumen bloques; el tiempo real de paseo (≈ +40 s por mina) se mide en el prototipo y se absorbe al recalibrar el ritmo por hora ⏳ F0-92 ✅.
 - ✅ **Medio bloque** es la mitad de un bloque: dos medios bloques hacen uno. Sirve para lo que pesa poco (un trámite corto, una visita, una conversación que mueve la historia).
 - ✅ **El modo tienda empieza en el momento en que decides abrirla**, en el bloque que quieras (mañana o tarde, nunca de noche). Desde ahí se comercia y se gestiona: cerrar ventas a clientes y contratos y jugar las dinámicas de la tienda ([03](03-comercio.md)).
 - ✅ **De noche la tienda no se abre.** Sí caben las escenas, las visitas y el mercado negro, que no es el modo tienda (el bar de Salinas Blancas y la visita nocturna de Casilda, [03](03-comercio.md)).
@@ -71,7 +73,7 @@ Para que ninguna mitad domine, la otra se vuelve necesaria:
 1. Leer contexto (noticias, mercado, pedidos).
 2. Decidir plan del día (a qué zona ir, qué preparar, qué vender).
 3. Equiparse según el peligro de la zona.
-4. Expedición(es): escanear, elegir menas, minar, afrontar peligros.
+4. Expedición(es): entrar a la mina por la entrada del día, usar el detector (con batería), elegir menas, minar, afrontar peligros.
 5. Volver: refinar, almacenar, vender, cumplir pedidos.
 6. Invertir: herramientas, almacén, tienda, estilo de vida.
 7. Fin de día: se pagan los costos, aparecen noticias y las zonas se regeneran. El mercado ya se movió en cada bloque.

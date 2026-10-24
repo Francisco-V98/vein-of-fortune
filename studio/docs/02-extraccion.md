@@ -40,7 +40,7 @@ Lore:
 
 ✅ Las zonas están ambientadas en Valdoria (ver [05](05-mundo-y-minerales.md) para regiones y distribución de minerales).
 
-✅ Estas seis son **zonas de minado**: cada una se entra por la boca de mina de un asentamiento (Villa Brasa atiende las dos del Hollín). En el mapa, «zona» es la región completa con su asentamiento ([26](26-zonas-y-edificios.md)). Ir de una a otra no gasta bloque pero cuesta un poco de dinero (de 42 a 210 esquirlas por trayecto ✅; [01](01-core-loop.md), [28](28-numeros-base-de-la-economia.md)). Las **Cavernas** y **La Fosa** son zonas profundas: una expedición cuesta 2 bloques y ocupa la Tarde y la Noche, y La Fosa solo abre 3 días por semana, los días 2, 4 y 6 ✅ ([01](01-core-loop.md)).
+✅ Estas seis son **zonas de minado**: cada una se entra por la boca de mina de un asentamiento (Villa Brasa atiende las dos del Hollín). En el mapa, «zona» es la región completa con su asentamiento ([26](26-zonas-y-edificios.md)). Ir de una a otra se hace en **tren**: no gasta bloque y el billete es el costo del viaje (de 42 a 210 esquirlas por trayecto ✅; [01](01-core-loop.md), [28](28-numeros-base-de-la-economia.md)). Las **Cavernas** y **La Fosa** son zonas profundas: una expedición cuesta 2 bloques y ocupa la Tarde y la Noche, y La Fosa solo abre 3 días por semana, los días 2, 4 y 6 ✅ ([01](01-core-loop.md)).
 
 ✅ Los «enemigos» de las primeras zonas son **personas** (capataces, bandas, inspectores que piden soborno), no monstruos, como muestra la tabla. Encaja con el tono y con los encuentros por decisión (pagar, negociar, pelear, huir). Las criaturas aparecen solo en La Fosa, por la Aetherita.
 
@@ -51,20 +51,52 @@ Lore:
 
 ## Menas y detector de probabilidades ✅
 
-✅ Cada mena tiene una composición con probabilidades (ej. 30 % oro, 3 % diamante, 50 % carbón). Un **detector** muestra esas probabilidades y el jugador decide si le conviene extraerla o buscar otra, sabiendo que gasta energía y desgasta herramientas.
+✅ Cada mena tiene una composición con probabilidades (ej. 30 % oro, 3 % diamante, 50 % carbón). Cambio de diseño del autor (2026-10-24, F0-91): el **detector** ya no es un escáner instantáneo del mapa, sino una herramienta que se usa **dentro de la mina**, con **batería** (ver «La mina por dentro»): un clic en una mena gasta 1 carga y muestra los rangos de composición con su promedio y los de cantidad, y el jugador decide si le conviene picarla o buscar otra.
 
-✅ El detector muestra **rangos** (ej. «oro: 20–40 %») y no valores exactos. El **Ojo** y la herramienta determinan qué tan estrechos son ([04](04-progresion-y-meta.md), [09](09-minijuegos.md)); la precisión mejora con mejores escáneres → la información es progresión.
+✅ El detector muestra **rangos** (ej. «oro: 20–40 %») y no valores exactos; el rango va desplazado respecto al valor real para que el promedio no delate la verdad. El **Ojo** y el nivel del detector determinan qué tan estrechos son ([04](04-progresion-y-meta.md), [09](09-minijuegos.md)); la precisión mejora con mejores detectores → la información es progresión.
 
 ✅ El protagonista empieza con un **detector básico heredado de Anselmo**. No depende del cuarzo: el cuarzo solo lo mejora más adelante.
 
 ✅ Las probabilidades de aparición y obtención se calibran para que no sea fácil ganar mucho dinero rápido ni terminar el juego pronto.
 
 - ✅ **Energía:** el **Aguante base es de 28** (decisión del autor, 2026-10-16: sube de 25 porque con 25 el jugador medio no pagaba la primera cuota con margen) y es la energía máxima de **cada expedición**: se rellena entera al empezar, y una casa mejor sube un poco la energía inicial (+2 por nivel de casa). Cada mena gasta energía según su mineral: carbón 8 · hierro 10 · cobre 12 · salitre 12 · plata 14 · cuarzo 16 · oro 18 · esmeralda 22 · diamante 26 · Aetherita 34 (cada nivel de herramienta la baja un 10 % del valor base, hasta ×0,6 en el nivel 5).
-- ✅ **Descartar una mena cuesta energía** (decisión del autor, 2026-10-15): si escaneas una mena y no la extraes (porque no te conviene o porque tu herramienta no puede con ella), pagas el **25 % de la energía que habría costado extraerla**. Sin ese costo, descartar era gratis y el jugador solo minaba lo de mayor valor por energía; con él, repartir la energía entre extraer y descartar es una decisión real ([28](28-numeros-base-de-la-economia.md), sección 3.7). El simulador (F0-53) mide la pérdida de ingreso de descartar a este costo en ≈ 23 % frente a descartar gratis.
+- ✅ **No hay descarte con costo de energía** (decisión del autor, 2026-10-24; sustituye la del 2026-10-15, que cobraba el 25 % de la energía de la mena): lo que cuesta mirar una mena es la **carga de la batería** del detector. Caminar por la mina no gasta Aguante ni bloque. El Aguante 28 se mantiene y deja de repartirse entre extraer y descartar; el simulador reescribe la regla C5 en ⏳ F0-92 ([28](28-numeros-base-de-la-economia.md), sección 4).
 - ✅ **Menas por expedición:** variable según tus skills, herramientas y mejoras. Al principio caben **2 a 3** (con 28 de energía, 3 de carbón o 2 de hierro) y el número crece con la recolección: unas 4 en el Acto II, 7 en el III y hasta 10 por bloque en el IV. Los empleados rinden mucho menos que tú, pero escalan igual con sus skills ([04](04-progresion-y-meta.md)).
 - ✅ **Expedición profunda:** gasta **×1,8 de energía** y permite **×1,5 de carga**.
 - ✅ **Consumibles de recarga de energía** y similares: versiones futuras, mucho después de la V1 ([06](06-roadmap-y-pendientes.md)).
-- ✅ **Zonas que se agotan:** cada expedición baja la riqueza de la zona 6 puntos, cada día sube 3 y nunca baja del 40 %, así que rotar de zona rinde más que repetir una ([28](28-numeros-base-de-la-economia.md)).
+- ✅ **Minas que se agotan:** cada visita baja la riqueza de la mina 6 puntos, cada día sube 3 y nunca baja del 40 %, así que rotar de mina rinde más que repetir una. La riqueza es **de la mina, no de la entrada** y multiplica las unidades; el cambio de entrada no cuenta como otra visita ([28](28-numeros-base-de-la-economia.md)).
+
+## La mina por dentro ✅
+
+Cambio de diseño del autor (2026-10-24, F0-91, modelo «Galería del día»). Las cifras son **de partida**: las calibra ⏳ F0-92 ([28](28-numeros-base-de-la-economia.md), «Entradas, batería y cierres»).
+
+### Recinto de 5 entradas ✅
+
+- La **boca de mina** es una edificación del asentamiento. Al entrar hay un **recinto con cinco entradas**: **2 de recursos escasos, 2 medios y 1 abundante**. El reparto (cuál es cuál) se sortea **cada día y a ciegas**: no se ve antes de entrar. Semilla determinista `hash(partida, día, mina, entrada)`.
+- Cada entrada es una **galería caminable de 2 a 3 pantallas** en **vista aérea cenital** (tipo Stardew; la vista lateral plana queda solo para los interiores de edificios). El jugador camina hasta las menas y no gasta Aguante ni bloque por caminar.
+- **Calidad de la entrada: solo cantidades** (unidades por mena): escasa ×0,7, media ×1,0, abundante ×1,6. En el Acto I el abanico es estrecho (0,85 · 1,0 · 1,3) para no romper la cuota. **No cambia la mezcla de minerales** de la zona. ⏳ F0-92 baja los rendimientos base un 8–12 % si el valor esperado sube a ~1,15 con el cambio de entrada.
+- **Cambio de entrada: una sola vez por mina y por día**, dentro del mismo bloque y con el mismo Aguante; no cuenta como otra visita para el agotamiento. Si no te gusta la primera, entras en otra (con suerte distinta), pero ya habrás gastado detector y batería en la primera. Las demás visitas del día vuelven a «tu entrada del día».
+- Se ven **el doble de menas de las que puedes picar**: Acto I 5–6, II 8, III 14, IV 18 menas visibles.
+
+### Detector con batería ✅
+
+- Un clic en una mena gasta **1 carga** y muestra el rango de composición con marca de promedio, el rango de cantidad y un **color**: gris (tu herramienta no puede picarla), ámbar o verde.
+- **Batería de 6 · 8 · 11 · 14 cargas** según el nivel del detector (1 a 4). Con 0 carga picas **a ciegas**: la roca solo insinúa el tier.
+- **Sonar (detector de nivel 2):** colorea cada cámara de la galería en frío, tibio o caliente según lo que hay en ella.
+- **Recarga:** entera y gratis cada noche, al pasar el día; no se liga a la casa (la casa ya da +2 de Aguante). **Pilas de repuesto** opcionales desde el Acto II, máximo 1 al día, como sumidero de dinero.
+- **Herramienta en consonancia:** el desgaste actual se mantiene; por debajo del 20 % de integridad la herramienta queda **mellada** (margen del minijuego −30 %). Son tres límites a la vez (Aguante, batería, desgaste): al principio es complicado y con mejoras se vuelve más fácil; el simulador vigila que no frustre (⏳ F0-92).
+
+### Cierres de entradas ✅
+
+- Los problemas sociales o políticos que afectan a un mineral cierran entradas **de esa mina** ([07](07-sociedad-y-eventos.md), «Severidad y cierres»): suave = 1 entrada cerrada, complicado = 2, situación complicada en Valdoria = 3. **Siempre quedan al menos 2 abiertas.**
+- **Orden de cierre:** primero la abundante, luego una media y de tercero una escasa (con 3 cierres quedan 1 media y 1 escasa).
+- **Alcance:** un evento puede afectar a una o varias minas de distintos minerales: gravedad entera donde el mineral es el principal de la mina, un nivel menos donde es secundario (≥ 25 % de la mezcla), nada si es menor. Con dos eventos en la misma mina, el mayor +1, tope 3.
+- **Presión** (más mineros en menos galerías): unidades de las entradas abiertas ×0,95 con 1 cierre, ×0,88 con 2 y ×0,75 con 3, para que más cierres rindan siempre menos.
+- **Cuándo rigen:** al empezar el día, con aviso previo, nunca con el jugador dentro; un evento de guion a mitad de día rige desde el bloque siguiente. Si cierra tu entrada del día, se te reasigna gratis sin gastar el cambio. Se ve el cierre (piquete, precinto o soldados) con una frase del diario.
+- **Reapertura:** al terminar el evento reabre una entrada por día, en orden inverso (escasa → media → abundante). **Sin cierres en el Acto I.**
+- **Empleados:** sufren lo mismo; entran por una entrada abierta al azar, sin detector, y rinden la media de las abiertas.
+- **Cierre total:** solo como **excepción de guion** cuando la historia lo amerite (la huelga del Acto II que cierra el Cañón Ferroso, [22](22-acto-ii-variantes.md)); no es un cierre por gravedad.
+- **Guardado:** solo en puntos seguros (calle, casa, andén); no dentro de una mina.
 
 ## Herramientas ✅
 
@@ -76,7 +108,7 @@ Lore:
 
 ✅ **Los niveles de herramienta por acto son una guía, no un tope** (decisión del autor, 2026-10-15): Acto I 1–2 · II 2–3 · III 3–4 · IV 4–5 indican el nivel con el que se espera llegar a cada acto; si un jugador compra antes un nivel que se lo puede permitir, puede. Si el simulador (F0-53) ve que el optimizador llega demasiado pronto a un nivel, propone subir el costo de ese nivel y el autor decide.
 
-✅ Lo que mejora el jugador al ir comprando: más resistencia, más almacenamiento (carga), mejor minado, mejor información (escáner). Son los cuatro componentes de **cada nivel**: un nivel de herramienta es un paquete que mejora las cuatro cosas a la vez, no cuatro escaleras separadas ✅.
+✅ Lo que mejora el jugador al ir comprando: más resistencia, más almacenamiento (carga), mejor minado, mejor información (detector). Son los cuatro componentes de **cada nivel**: un nivel de herramienta es un paquete que mejora las cuatro cosas a la vez, no cuatro escaleras separadas ✅.
 
 ### Modelo de herramientas ✅
 
