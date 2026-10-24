@@ -3958,6 +3958,136 @@
         "none_in_act": "I",
         "total_closure": "solo excepción de guion marcada (p. ej. la huelga del Acto II que cierra el Cañón Ferroso)"
       }
+    },
+    "seasons_weather": {
+      "nota": "Cifras de partida de F0-94 (decisión del autor, 2026-10-24). El simulador todavía no lee esta clave (la huella no cambia); las calibran F0-92 y F0-93. Diseño en el documento 29. El sistema completo de clima (pronóstico, salud, ruta del tren, producción) es F6-77.",
+      "scope": "visual y jugable ligero",
+      "no_weather_days": [
+        1,
+        7
+      ],
+      "season_effects": {
+        "invierno": {
+          "energy_delta": -2,
+          "energy_base_after": 26,
+          "note": "Aguante 28 a 26; cuidado con el doble conteo con el carbón +12 de la estacionalidad (documento 28, sección 3.3)"
+        },
+        "primavera": {
+          "mine_wealth_recovery_per_day": 4,
+          "mine_wealth_recovery_base": 3
+        },
+        "verano": {
+          "tool_wear_pct": 10
+        },
+        "otono": {
+          "visible_ores_delta": -1
+        }
+      },
+      "weather_types": [
+        "despejado",
+        "lluvia",
+        "nieve",
+        "niebla"
+      ],
+      "weather_by_zone": true,
+      "weather_effects": {
+        "despejado": {},
+        "lluvia": {
+          "heavy_rain_closes_entrances": 1,
+          "severity": "suave",
+          "warned_day_before": true,
+          "max_per_season_per_zone": 2,
+          "reuses": "F4-250"
+        },
+        "nieve": {
+          "detector_charge_delta": -1,
+        "max_days_per_winter_per_zone": 6,
+          "note": "choca con la regla J3 del simulador; la mide F0-92"
+        },
+        "niebla": {
+          "visible_ores_delta": -1
+        }
+      },
+      "calendar_card": {
+        "fields": [
+          "tipo",
+          "fecha_o_ventana",
+          "zona",
+          "efecto",
+          "recompensa",
+          "riesgo",
+          "estado",
+          "certeza"
+        ],
+        "types": [
+          "festivo",
+          "mercado",
+          "social",
+          "politico",
+          "clima",
+          "propuesta",
+          "pedido"
+        ],
+        "states": [
+          "posible",
+          "anunciado",
+          "en curso",
+          "cerrado"
+        ],
+        "certainty": [
+          "rumor",
+          "probable",
+          "confirmado"
+        ],
+        "empty_value": "—",
+        "bulletin_board": "calendario filtrado por zona; unifica el tablón de pedidos del puesto"
+      },
+      "festivals": {
+        "per_season": [
+          1,
+          2
+        ],
+        "per_year": [
+          6,
+          8
+        ],
+        "market_max_points": 2,
+        "note": "Nombres y fechas en el documento 29"
+      },
+      "season_stories": {
+        "per_season": 3,
+        "catalog_total": 12,
+        "missions": [
+          2,
+          3
+        ],
+        "pick_one_of_three": true,
+        "max_active": 1,
+        "max_blocks_per_mission": 1,
+        "window_days": [
+          14,
+          28
+        ],
+        "no_deadline_on_quota_day": 7,
+        "closure_pauses_deadline": true,
+        "extra_energy": false,
+        "counts_for_gates": false,
+        "blocks_anchor_scenes": false,
+        "fosa_open_weekdays": [
+          2,
+          4,
+          6
+        ],
+        "reward_income_days": [
+          0.5,
+          1.0
+        ],
+        "reward_extra": "una pila u objeto de decoración",
+        "obstacle_variants": 2,
+        "variant_seed": "hash(partida, año, historia)",
+        "rotation": "la hecha descansa un año o vuelve con otra variante",
+        "autumn": "no aparecen en la campaña (Acto I); se ofrecen desde el Acto II, en el sandbox y en el segundo año"
+      }
     }
   }
 }

@@ -48,6 +48,8 @@ El Acto I se cierra cuando **reabres el puesto, atiendes tu primera cuota (pagad
 
 Se mide en **tiempo real de juego**, no en días del calendario del juego ✅. La duración orientativa de cada acto es la de la tabla ✅ ([28](28-numeros-base-de-la-economia.md), secciones 1 y 2); la calibración real con jugadores ⏳ F4-206:
 
+Las mini-historias de temporada ([29](29-calendario-y-temporadas.md)) son opcionales, no puntúan para las puertas y no cuentan para la duración de los actos ✅; las de otoño no aparecen en la campaña porque el otoño es el Acto I y se ofrecen desde el Acto II ✅.
+
 | Acto | Duración orientativa |
 |---|---|
 | I | 1,5–3 h |

@@ -56,6 +56,8 @@ Mínimo **10 minerales**, cada uno con lore, utilidad y necesidad dentro del jue
 
 ✅ La lista y los lores son definitivos (decisión del autor, 2026-10-16). Los precios base, la volatilidad y los sectores que demandan cada uno están acordados como base ([28](28-numeros-base-de-la-economia.md)). La cadena de refinado (mena → lingote → producto) se detalla en ⏳ F3-07.
 
+✅ **Estaciones (F0-94):** el carbón sube en invierno según la tabla de estacionalidad ([28](28-numeros-base-de-la-economia.md), 3.3). Además, el clima y la estación se notan en las minas de forma ligera (Aguante −2 en invierno, nieve y niebla con menos detector y menos menas visibles). Los climas por zona (despejado, lluvia, nieve, niebla) son los mismos para toda Valdoria; no hay mineral nuevo por estación. Detalle en [29](29-calendario-y-temporadas.md).
+
 ### Distribución por zona
 
 ● principal · ○ secundario (zonas numeradas como en [02](02-extraccion.md))

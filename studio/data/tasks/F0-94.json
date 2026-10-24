@@ -1,0 +1,139 @@
+{
+  "id": "F0-94",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Estaciones, clima, calendario y mini-historias de temporada",
+      "ref": "rama studio/F0-94-estaciones-clima-y-calendario"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Aprobado por el autor",
+      "ref": ""
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "disenador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "ideador",
+        "nota": "El ideador propone la ficha homologada del calendario y el molde de las mini-historias"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "analista",
+        "nota": "El analista inventaría el impacto en documentos, tareas, horas y simulador"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "narrador",
+        "nota": "El narrador creó el documento 29 y el diseñador anotó los demás documentos, world.json (seasons_weather) y el roadmap (14 tareas nuevas, 9 recalibradas)"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "QA aprobó con una observación menor (texto del doc 29 §7), corregida"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "autor",
+        "nota": "Aprobado por el autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "PR fusionado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: ficha homologada del calendario y molde de las 12 mini-historias de temporada",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario del impacto de estaciones, clima, calendario y mini-historias",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "ideador",
+        "a": "coordinador",
+        "que": "Entrega: tres opciones de ficha, molde y efectos con recomendación",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: inventario de impacto y 6 puntos por decidir",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "narrador",
+        "a": "coordinador",
+        "que": "Entrega: documento 29 con ficha, festivos y catálogo de 12 mini-historias",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "disenador",
+        "a": "coordinador",
+        "que": "Entrega: notas en 12 documentos, world.json y roadmap con huella intacta",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Encargo: build estricto, pruebas, huella y coherencia de F0-94",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Informe: aprobado; huella intacta, horas coinciden, una observación menor corregida",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobación: revisó el entregable y está aprobado",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

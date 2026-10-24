@@ -36,6 +36,7 @@ Precios: **por unidad y enteros** al mostrarse; el **total de cada operación se
 | Duración del juego (orientativa) | ≈ 90 días de calendario (7 + 32 + 32 + 20) | ≈ 20 h |
 
 - **Calendario de arranque ✅.** Estaciones en orden: primavera, verano, otoño, invierno. El **día 1 es el 22 de otoño**, así que el **invierno empieza el día 8** (primer día del Acto II). Encaja con la noticia del día 2 («el frío llegará antes») y con el apagón y la huelga del Acto II: el carbón sube justo cuando empiezas a dominar el mercado.
+- **Estaciones y clima (F0-94) ✅.** Efectos de partida en `economy.seasons_weather` de `world.json`: invierno Aguante −2 (28 a 26), primavera riqueza de mina +4 al día en vez de +3, verano desgaste de herramienta +10 %, otoño −1 mena visible; clima del día por zona (lluvia fuerte cierra 1 entrada, nieve −1 carga de detector, niebla −1 mena visible) y nada en los días 1 a 7. Son cifras de partida: el simulador no las lee todavía y las calibran ⏳ F0-92 y ⏳ F0-93 (la huella no cambia). Calendario, festivos y mini-historias: [29](29-calendario-y-temporadas.md).
 - **La Fosa abre los días 2, 4 y 6 de cada semana ✅** (la semana empieza el día 1; el día 7 queda libre para la cuota). Una expedición profunda a La Fosa son 2 bloques, así que caben como máximo 3 por semana.
 - **Minutos y actos.** Siete días de 13 min son 91 min, el suelo del Acto I (1,5–3 h con texto y escenas). El Acto II (4–10 h) equivale a 18–46 días, el III igual y el IV (3–6 h) a 14–28 días. El contrato más largo, de 30 días, son 6,5 h de juego, menos que un acto.
 
@@ -141,6 +142,8 @@ Puntos de mercado a mitad de estación; la curva se interpola entre estaciones.
 | Hierro, plata, cuarzo, Aetherita | 0 | 0 | 0 | 0 |
 
 Carbón: de pleno verano (−8) a pleno invierno (+12) hay 20 puntos; con costo de guardar de 0,15 % al día, comprar en verano y vender en invierno (56 días) deja ≈ +21 − 5 − 8 = **+8 %**. Especular con la estación rinde poco y tarda 12 h de juego: es una opción, no una máquina.
+
+Nota de F0-94 ✅: los festivos mueven el mercado ±2 puntos como máximo ([29](29-calendario-y-temporadas.md)), el tope de un evento menor. El efecto de invierno sobre el Aguante (−2) y el carbón +12 de esta tabla son una compensación deliberada ✅: ⏳ F0-93 añade la regla J6 (ingreso por hora de cada estación dentro de ±20 % de la media) y, si el invierno se sale, se ajusta el −2 y no el carbón. La nieve ocurre como máximo 6 días por invierno y zona y ⏳ F0-92 mide J3 por separado en días normales y de nieve.
 
 ### 3.4 Sensibilidad a eventos ✅
 

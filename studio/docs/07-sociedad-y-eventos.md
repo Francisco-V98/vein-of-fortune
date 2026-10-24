@@ -102,6 +102,16 @@ Cambio de diseño del autor (2026-10-24, F0-91). Cada evento tiene una **severid
 - **Excepción de guion:** el **cierre total** de una mina solo existe cuando la historia lo amerita (la huelga del Acto II que cierra el Cañón Ferroso, [22](22-acto-ii-variantes.md)); queda marcado como excepción de guion, no como cierre por gravedad.
 - La asignación de severidad a cada evento suelto del calendario ⏳ F4-168; ⏳ F0-92 calibra su efecto en el simulador.
 
+### Eventos de temporada y fichas del calendario ✅
+
+Decisión del autor (2026-10-24, F0-94). Detalle y catálogo en [29](29-calendario-y-temporadas.md).
+
+- **Qué son.** Eventos aleatorios y **opcionales** por estación, con dificultades sociales o políticas que mueven un precio si hace falta. Nada ocurre siempre y no afectan a la línea temporal de la historia principal, que sigue yendo por eventos tuyos y no por calendario ([24](24-umbrales-de-acto.md)).
+- **Mini-historias:** 3 por estación (12 en el catálogo), de 2 o 3 misiones lineales y enlazadas, genéricas, repetibles cada año. Eliges **una de las tres** cuando quieras hacerla; máximo 1 activa a la vez. No piden Aguante extra, no puntúan para ninguna puerta y no bloquean escenas ancla.
+- **Ficha única** de 8 campos (tipo, fecha o ventana, zona, efecto, recompensa, riesgo, estado y certeza) para festivos, mercado, sociales, políticos, clima, propuestas y pedidos. Los cierres de entradas se anuncian como ficha de clima o social con su severidad.
+- **Lluvia fuerte:** cierra 1 entrada (severidad suave), se avisa la víspera, máximo 2 por estación y zona; reutiliza ⏳ F4-250. Un cierre de entrada pausa el plazo de la mini-historia activa.
+- El sistema completo de clima es ⏳ F6-77; los eventos de temporada de pago (F6-37, F6-38 y F6-39) no cambian.
+
 ## Notas de producción
 
 - ✅ Mundo y naciones **ficticios**, sin referencias a política real, para evitar problemas de contenido y de tiendas de apps ([05](05-mundo-y-minerales.md)). El juego no se dirige a menores ([11](11-legal-y-cumplimiento.md)). La clasificación por edad según la crudeza de temas (extorsión, violencia, corrupción) ⏳ F5-28.

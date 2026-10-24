@@ -192,6 +192,7 @@ Además, romper la huelga baja a Teo y a la Unión «mucho» (≈ 20) ✅. En 23
 
 - **Opcionales O1 a O4.** Se disparan también por evento (comprar tres rumores, perder un contrato, una visita nocturna, la primera visita a Quiroga) y **no puntúan** para ninguna puerta ✅.
 - **Sin calendario.** «Tardar» en un contrato (O2) se mide por el vencimiento del contrato, no por días de la historia; el detalle ⏳ F4-128.
+- **Mini-historias de temporada.** No son escenas ancla ni opcionales O1 a O4: son opcionales por estación ([29](29-calendario-y-temporadas.md)), no puntúan para ninguna puerta, no bloquean escenas ancla ni vías, y los días 1 a 7 no hay clima con efecto ✅.
 
 ---
 
