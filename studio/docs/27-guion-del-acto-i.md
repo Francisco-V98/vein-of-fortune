@@ -24,7 +24,7 @@ Decisiones del 2026-10-13 (F0-23), del 2026-10-15 (F0-54) y del 2026-10-16 (F0-8
 
 | Tema | Decisión |
 |---|---|
-| Estructura | **Siete días ceñidos.** Solo la cuota es fecha dura; las demás escenas van por evento y, si no ocurren, pasan a la cola (⏳ F0-78). **Una mecánica nueva por día como máximo** ✅ |
+| Estructura | **Siete días ceñidos.** Solo la cuota es fecha dura; las demás escenas van por evento y, si no ocurren, pasan a la cola ✅ ([24](24-umbrales-de-acto.md), sección 10; motor ⏳ F3-48). **Una mecánica nueva por día como máximo** ✅ |
 | Días 5 y 6 ligeros | La **mejora de la herramienta** (día 5) y el **pedido urgente con prima** (día 6) son **opcionales**: ayuda a pedido, sin tutorial forzado; el jugador puede saltarlos y el acto cierra igual. El día 5 es un **día de respiro** (ahorrar o mejorar, el rumor de Lucía y `n-i-lucia-rumor`). El día 6 queda **solo con noticia y rumor**: confirmar el rumor con la noticia oficial del Heraldo, sin pedido obligatorio y sin contacto con empleados ✅ |
 | Prórroga de la cuota del día 7 | En **Novato e Intermedio** desplaza toda la serie una semana, con un recargo por cada semana de atraso (el 4 % de la cuota en Novato y el **6 % en Intermedio**, que son 38 y 58 esquirlas sobre la cuota del día 7), y **no pagar equivale a prórroga automática con recargo**. En **Difícil y Hardcore** la cuota atrasada se suma a la del día 14, sin desplazar la serie y con un **recargo mayor** (12 % y 18 %: 115 y 173 esquirlas) ✅ ([28](28-numeros-base-de-la-economia.md)) |
 | Reabrir el puesto | Es el **trámite de Quiroga más la primera venta**, el día 2 ✅ |
@@ -76,7 +76,7 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 | Cada día tiene tres bloques: mañana, tarde y noche. El mercado se mueve una vez por bloque ([03](03-comercio.md)) ✅ |
 | Viajar no gasta bloque pero cuesta dinero (entre 42 y 210 esquirlas fuera del Acto I; nada en el Acto I, donde todo ocurre en Villa Brasa) y ver zonas es gratis; minar y abrir la tienda cuestan un bloque completo; los trámites, las visitas y las conversaciones cuestan nada, medio bloque o un bloque según su peso ([01](01-core-loop.md)) ✅ |
 | **Ninguna venta cae en la noche**: la tienda no se abre de noche ([01](01-core-loop.md)). Las escenas de noche son de casa, de cierre o de visita, y ninguna abre el modo tienda ✅ |
-| Las escenas se disparan por evento; si no ocurren, pasan a la cola (⏳ F0-78) ✅ |
+| Las escenas se disparan por evento; si no ocurren, pasan a la cola ✅ ([24](24-umbrales-de-acto.md), sección 10; motor ⏳ F3-48) |
 | Solo la cuota tiene fecha: el día 7 llega aunque las escenas anteriores no se hayan jugado ✅ |
 | Cada día enseña una mecánica nueva como máximo ✅ |
 | Los días 5 y 6 son de respiro: la mejora de la herramienta y el pedido urgente son opcionales, con ayuda a pedido y sin tutorial forzado. Si el jugador los salta, el acto cierra igual ✅ |
@@ -93,7 +93,7 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 
 - Una expedición o abrir el puesto gasta un bloque completo; viajar (que cuesta dinero, aunque no en el Acto I), leer noticias, mirar el mercado y organizar el inventario no gastan ninguno ([01](01-core-loop.md)). Cada bloque tiene una actividad principal y las conversaciones cortas del barrio caben dentro del bloque en que ocurren. El peso de cada escena (0, medio o 1) lo asigna ⏳ F3-16 y el mecanismo lo define ⏳ F2-02; minar y abrir la tienda valen 1 (sección 21.2). Las escenas guionizadas no quitan bloques salvo la expedición y la tienda: por ejemplo, `d1.5` y `d1.6` no suman dos bloques.
 - Cada día cabe en sus tres bloques con la regla de arriba: las ventas y los pedidos caen en la mañana o en la tarde, y la noche queda para las escenas.
-- El día que se indica en cada escena es el **esperado**. Si el jugador va más rápido, la escena se adelanta solo hasta donde cumple sus requisitos; si va más lento, espera en la cola. La cola suelta las escenas de una en una y en orden, para que nunca se enseñen dos mecánicas nuevas a la vez; esa invariante es un requisito de ⏳ F0-78, que diseña la cola.
+- El día que se indica en cada escena es el **esperado**. Si el jugador va más rápido, la escena se adelanta solo hasta donde cumple sus requisitos; si va más lento, espera en la cola. La cola suelta las escenas de una en una y en orden, para que nunca se enseñen dos mecánicas nuevas a la vez; esa invariante ya está en las reglas de la cola ✅ ([24](24-umbrales-de-acto.md), sección 10); la construye ⏳ F3-48.
 - Cada día tiene **como máximo una decisión principal**; si hay otra (la del nombre de la tienda el día 2 o `n-i-lucia-rumor` el día 5), es **menor** y cae dentro del mismo día. Los días 5 y 6 no obligan a ninguna principal: ahorrar o mejorar y vender ya o esperar al Heraldo son elecciones libres, sin nodo del árbol.
 - **Ayuda a pedido.** Lo opcional (la mejora, el pedido urgente) no abre ventanas de tutorial: tiene un botón «?» y una frase de Teo que el jugador lee si quiere.
 - Una escena lleva una sombra como máximo (regla de [18](18-biblia-narrativa.md), 1.4). Sombra es un elemento que deja una pregunta sobre Anselmo o la Comisión; las pistas del sorteo no son sombras (sección 13).
@@ -549,7 +549,7 @@ A los 319 textos de las 28 escenas se suman las 3 cajas de la interacción de pa
 | pedido urgente · prima | El pedido de cliente urgente (opcional, sin escena) y lo que paga de más |
 | ficha de candidato | La tarjeta del candidato de la sección de empleos, que se ve el día 7 a primera hora |
 | mejora de la tienda | La mejora del puesto que hace falta para poder contratar; se compra en la propia tienda desde el Acto II (el «puesto ampliado», 3 500 esquirlas). No es la mejora de una herramienta, que hace Teo. En el Acto I es el motivo del bloqueo de «Contratar» |
-| cola de historia | Donde esperan las escenas que no se pueden disparar ([24](24-umbrales-de-acto.md), ⏳ F0-78) |
+| cola de historia | Donde esperan las escenas que no se pueden disparar ([24](24-umbrales-de-acto.md), sección 10) |
 | sombra | Un elemento que deja una pregunta sobre Anselmo o la Comisión sin revelar nada ([18](18-biblia-narrativa.md), 1.4) |
 | pagar antes | Adelantar la cuota desde el día 4, solo en casa de Reme: la cuota queda en 900 y el interés baja 1 pp |
 | papel sellado | El papel doblado sobre la mesa de Reme que es la pista del Ministerio; no nombra a nadie |
@@ -661,7 +661,7 @@ A estos **319** se suman las **3 cajas** de la interacción de pagar antes (secc
 | `d7.3` | Tras `d7.2`, de noche, con la cuota atendida y el primer contacto hecho | No | Ninguna | — |
 | `d7.4` | Tras `d7.3`. Es la escena-gancho del acto: no cuenta para el tope de prensa | No | Ninguna | — |
 
-La cola suelta las escenas de una en una y en orden, y nunca dos mecánicas nuevas a la vez (requisito de ⏳ F0-78). Solo `d5.3` es **opcional**. Son **condicionales** (dependen de algo que puede no haber ocurrido) `d3.4` (sin hierro), `d4.3` (si dejas ir al cliente), `d5.1` (sin pedido) y `d5.4` (con «nada» en la herencia). La única fecha dura es `d7.2`.
+La cola suelta las escenas de una en una y en orden, y nunca dos mecánicas nuevas a la vez (reglas de la cola ✅, [24](24-umbrales-de-acto.md) sección 10). Solo `d5.3` es **opcional** y no pasa por la cola. Son **condicionales** (dependen de algo que puede no haber ocurrido) `d3.4` (sin hierro), `d4.3` (si dejas ir al cliente), `d5.1` (sin pedido) y `d5.4` (con «nada» en la herencia). La única fecha dura es `d7.2`.
 
 ### 21.4 Hilos, sombras, props, ramas y responsable
 
@@ -810,7 +810,7 @@ El autor confirmó el 2026-10-16 (F0-80) los dos puntos que estaban en propuesta
 
 - ✅ Montos de la cuota, el recargo (y su valor mayor en Difícil y Hardcore), la gestión de Quiroga, el efectivo inicial, los precios, el costo de guardar y de la mejora: fijados en [28](28-numeros-base-de-la-economia.md).
 - ⏳ F0-24 Storyboard de las escenas clave (sección 19 y sección 21).
-- ⏳ F0-78 Diseño de la cola, el diario y la misión de rescate, que usan las escenas por evento y deben cumplir su invariante (una mecánica nueva a la vez).
+- ⏳ F3-48 Construye la cola, el diario y el aviso de rescate (diseño cerrado ✅ en [24](24-umbrales-de-acto.md), sección 10); las escenas por evento cumplen su invariante (una mecánica nueva a la vez).
 - ⏳ F2-02 Mecanismo de los pesos de bloque; ⏳ F2-01 sorteo guardado en el estado de la partida; ⏳ F1-23 forzar la variante desde la consola.
 - ⏳ F4-150 Reproductor y sistema de cintas; ⏳ F4-151 texto y voz de la cinta 1.
 - ⏳ F3-14 Pantalla del nombre de la tienda; ⏳ F1-18 largo máximo.
