@@ -33,13 +33,13 @@ Decisiones del autor (2026-10-24):
 
 - **Arte:** los edificios isométricos F4-155 y F4-156 se cancelan y se rehacen como exteriores cenitales; hacen falta interiores laterales, el recinto de cinco entradas, 30 trazados de mina (5 por mina), una escena de tren con fondos de ventanilla por región y la niebla. El personaje pasa de «casi estático» a caminar en 8 direcciones ([12](../12-direccion-de-arte.md)), lo que sube F4-227, F4-233 y F4-190 a F4-193.
 - **Horas:** unas +380 a +550 h en total (F0 +40–60, F1 +15–22, F2 +30–45, F3 +65–95, F4 +230–330), con tareas nuevas de motor de paseo, interiores, recinto y sorteo, detector y batería, generador de menas, tren, niebla, cierres, estado de partida, simulador y QA.
-- **Simulador y economía:** `economy.expedition`, `zone_mix` (media de las cinco entradas), `economy.energy` (desaparece el descarte) y `economy.tools.detector` (batería) se rehacen en ⏳ F0-92; hasta entonces `world.json` no cambia las claves que lee el simulador y las cifras nuevas viven en claves que no lee. Reglas nuevas previstas: más cierres rinden menos, cambiar de entrada da entre +5 y +10 %, la batería se queda corta entre el 30 y el 60 % de los días, los empleados rinden la media de las abiertas y el tiempo de paseo no mueve el ingreso por hora más de ±20 %.
+- **Simulador y economía:** `economy.expedition`, `zone_mix` (media de las cinco entradas), `economy.energy` (desaparece el descarte) y `economy.tools.detector` (batería) se rehicieron en F0-92 ✅: el simulador lee ahora `economy.mine_entrances` y `economy.seasons_weather` (entran en la huella) y las cifras calibradas están en el documento 28, sección 14. Reglas nuevas (C5b y J1 a J7, todas pasan): más cierres rinden menos, cambiar de entrada da entre +5 y +10 %, la batería se queda corta entre el 30 y el 60 % de los días, los empleados rinden la media de las abiertas y el tiempo de paseo no mueve el ingreso por hora más de ±20 %.
 - **Riesgos:** tres límites a la vez (Aguante, batería y desgaste), más varianza por el sorteo a ciegas, 46 interiores laterales y un Acto I con paseo libre que puede perder al jugador (cola de escenas y diario, F3-48).
 - **Rendimiento:** la base 640×360 es ligera; se mide en Steam Deck con ⏳ F1-44.
 
 ## Verificación
 
 - Casos de QA de colisión, loader, sorteo diario, cambio único, batería, cierres, niebla y tren ([16](../16-calidad-y-qa.md)).
-- `python3 tools/sim/run.py --completo --escribir` reejecutado con las cifras nuevas (⏳ F0-92) y simulador «50 de 50 · vigente».
+- `python3 tools/sim/run.py --completo --escribir` reejecutado con las cifras nuevas (✅ F0-92) y simulador «50 de 50 · vigente».
 - `python3 studio/hub/build.py --strict` sin avisos de coherencia ni bajada de limpieza.
 - Prototipo: el tiempo real de paseo (unos 40 s por mina) se mide y se absorbe al recalibrar el ritmo por hora.

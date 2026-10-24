@@ -1246,7 +1246,7 @@
     ]
   },
   "minas_v2": {
-    "nota": "Supuestos del motor de minas de cinco entradas (F0-93). Solo los usa el interruptor motor_minas; no entran en la huella por defecto. Valores de partida: los calibra F0-92.",
+    "nota": "Supuestos del motor de minas de cinco entradas (F0-93). Solo los usa el interruptor motor_minas; no entran en la huella por defecto. Calibrados por F0-92 (aprobados por el autor el 2026-10-24). Las reglas C5b y J1 a J7 se miden en modo completo (16 semillas por etapa y 400 días): con las pocas semillas del modo rápido C5b, J2 y J7 salen «inciertas» por ruido, y resultados.json guarda la corrida completa (reglas_v2).",
     "clima_probs": {
       "lluvia": 0.12,
       "nieve": 0.25,
@@ -1273,6 +1273,13 @@
       "cambiar_si": "escasa",
       "escanea_al_entrar": true
     },
+    "tamano_mena": {
+      "valores": [0.6, 1.0, 1.4],
+      "probs": [0.25, 0.5, 0.25],
+      "saltar_si_menor": 1.0
+    },
+    "reparar_bajo_pct": 30,
+    "minutos_caminar": 0.67,
     "bateria_infinita": 999,
     "etapa": "III",
     "perfil": "medio"

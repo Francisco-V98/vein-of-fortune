@@ -1,9 +1,9 @@
-"""Reglas del motor de minas de cinco entradas (F0-93): C5b, J1 a J6.
+"""Reglas del motor de minas de cinco entradas (F0-93 y F0-92): C5b, J1 a J7.
 
-Viven aparte de las 50 reglas de `reglas.py` (que miden la huella por defecto) y se declaran en `reglas_v2` de
-reglas.json. Todas corren con el interruptor `motor_minas`; las cifras de partida las calibra F0-92, así que una
-regla que falle con ellas se queda registrada como «falla» o «incierto». C5b sustituye a C5 (el descarte al 25 %
-desaparece y lo sustituye la carga del detector); C5 sigue vigente hasta que F0-92 integre las claves en la huella.
+Viven aparte de las 50 reglas de `reglas.py` y se declaran en `reglas_v2` de reglas.json. Todas corren con el
+interruptor `motor_minas`; F0-92 calibró sus cifras. C5b es la regla de la carga del detector que sustituye al
+descarte en el juego; C5 sigue midiendo el modelo sin entradas de las 50 reglas vigentes, que aún descuenta el 25 %
+de la energía al descartar (quitarlo exige recalibrar todo el simulador).
 """
 from . import campana as C
 from . import entradas as E
@@ -30,6 +30,10 @@ class Mundo:
         self.EP = E.cargar(world)
         self.sup = c.S["minas_v2"]
         self.dph = R.per_hour(c.P)
+
+    def minutos(self, K):
+        """Minutos de caminata por entrada a la mina y por cambio de entrada (supuesto compartido por J2 y J5)."""
+        return K.get("minutos", self.sup["minutos_caminar"])
 
     def motor(self, sem, **kw):
         if kw.pop("sin_eventos", False):  # sin problemas sociales ni políticos ni clima (las estaciones siguen)
@@ -97,9 +101,15 @@ def J1(c, K):
 def J2(c, K):
     W = Mundo(c, K.get("_world"))
     e, p = W.sup["etapa"], W.sup["perfil"]
-    sin = W.correr(e, p, sin_eventos=True, cambiar_entrada=False)
-    con = W.correr(e, p, sin_eventos=True)
-    sub = cond_media(c, "ganancia de cambiar de entrada una vez al día", pares_pct(sin, con), K["ganancia_min"], K["ganancia_max"])
+    sin = W.correr(e, p, sin_eventos=True, cambiar_entrada=False, minutos_caminar=W.minutos(K))
+    con = W.correr(e, p, sin_eventos=True, minutos_caminar=W.minutos(K))
+    # ingreso por hora de reloj: el jugador que cambia camina más (la entrada a la mina y cada cambio de entrada)
+    dia_min = c.P["t"]["dia_min"]
+    gan = []
+    for (a, ma), (b, mb) in zip(sin, con):
+        ea, eb = (m.horas_caminadas() * MIN_H / c.tam["dias_etapa"] for m in (ma, mb))
+        gan.append((b["neto_dia"] / (dia_min + eb)) / (a["neto_dia"] / (dia_min + ea)) * 100.0 - 100.0)
+    sub = cond_media(c, "ganancia de cambiar de entrada una vez al día, por hora de reloj", gan, K["ganancia_min"], K["ganancia_max"])
     return R.r_final([sub], {p: {"valor": sub["valor"], "ic95": sub["ic95"], "n": sub["n"]}})
 
 
@@ -146,13 +156,13 @@ def J5(c, K):
     W = Mundo(c, K.get("_world"))
     e, p = W.sup["etapa"], W.sup["perfil"]
     base = W.correr(e, p, v2=False)
-    con = W.correr(e, p, sin_eventos=True, minutos_caminar=K["minutos"])
+    con = W.correr(e, p, sin_eventos=True, minutos_caminar=W.minutos(K))
     dia_min = c.P["t"]["dia_min"]
     devs = []
     for (b, _), (v, m) in zip(base, con):
         extra = m.horas_caminadas() * MIN_H / c.tam["dias_etapa"]  # minutos de caminata por día
         devs.append(v["neto_dia"] / b["neto_dia"] * dia_min / (dia_min + extra) * 100.0 - 100.0)
-    sub = cond_media(c, "ingreso por hora con %s minutos de caminar frente al modelo sin entradas" % K["minutos"], devs, -K["desv_max"], K["desv_max"])
+    sub = cond_media(c, "ingreso por hora con %s minutos de caminar frente al modelo sin entradas" % W.minutos(K), devs, -K["desv_max"], K["desv_max"])
     return R.r_final([sub], {p: {"valor": sub["valor"], "ic95": sub["ic95"], "n": sub["n"]}})
 
 
@@ -187,6 +197,30 @@ def J6(c, K):
         dev = [(x / media - 1.0) * 100.0 for x in v]
         subs.append(cond_media(c, "ingreso por hora en %s frente a la media de las estaciones" % s_, dev, -K["desv_max"], K["desv_max"]))
     return R.r_final(subs, {})
+
+
+# ------------------------------------------------------------------ J7
+@regla("J7")
+def J7(c, K):
+    """La cuota del Acto I sigue pagándose con el abanico estrecho (A1, A3 y A4 con el jugador que escanea y cambia de entrada)."""
+    W = Mundo(c, K.get("_world"))
+    n = c.tam["acto1"]
+    fab = lambda sem: W.motor(sem, sin_eventos=True, minutos_caminar=W.minutos(K))
+
+    def lote(pid, **kw):
+        return C.resumen_acto1(C.lote_acto1(c.P, c.S, c.perfil(pid), n, motor_fn=fab, **kw), c.S)
+    a1, a3, a4 = c.crit("A1"), c.crit("A3"), c.crit("A4")
+    med, len4, rap = lote("medio"), lote("lento", n_exp=a3["exp_lento"]), lote("rapido")
+    pct = lambda r: [x * 100 for x in r["paga_ic"]]
+    subs = [cond_pct("pago a tiempo del medio", med["paga"] * 100, a1["pago_min"], a1["pago_max"], pct(med), med["n"]),
+            cond_pct("margen sobre la cuota del medio", med["margen_pct"], a1["margen_min"], a1["margen_max"], med["margen_pct_ic"], med["n"]),
+            cond_pct("pago del lento con %d expediciones" % a3["exp_lento"], len4["paga"] * 100, a3["pago4_min"], a3["pago4_max"], pct(len4), len4["n"]),
+            cond_pct("pago a tiempo del rápido", rap["paga"] * 100, a4["pago_min"], None, pct(rap), rap["n"]),
+            cond_pct("margen sobre la cuota del rápido", rap["margen_pct"], a4["margen_min"], a4["margen_max"], rap["margen_pct_ic"], rap["n"])]
+    return R.r_final(subs, {"medio": {"valor": subs[0]["valor"], "ic95": subs[0]["ic95"], "n": subs[0]["n"]}})
+
+
+cond_pct = R.cond
 
 
 def evalua(c, rid, world=None, criterio=None):

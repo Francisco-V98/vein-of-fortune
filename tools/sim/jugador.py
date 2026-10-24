@@ -38,7 +38,8 @@ class Partida:
         self.mk.caida_max = S["mercado"]["caida_max_pct"]
         self.mk.markup_tienda = cfg.get("markup_tienda", P["mk"]["tienda"]["media"])
         self.acto = cfg["acto"]
-        self.motor = cfg.get("motor_minas")  # None = comportamiento anterior (huella 9dff70c2c639dbb5)
+        self.motor = cfg.get("motor_minas")  # None = el modelo sin entradas (las 50 reglas vigentes)
+        self.integridad = 100.0  # % de integridad de la herramienta (solo con el motor de minas)
         self.dia = cfg.get("dia0", P["t"]["inicio_dia"])
         self.cash = float(cfg.get("cash", 0.0))
         self.stock = {m: 0.0 for m in P["min"]}
@@ -134,6 +135,10 @@ class Partida:
 
     def nivel_max(self):
         return max(self.niveles.values())
+
+    def nivel_detector(self):
+        """Nivel del detector del acto (el detector se mejora aparte de la herramienta, documento 28 §5.5)."""
+        return self.P["herr"]["detector_acto"].get(self.acto, 1)
 
     def carga(self, profunda):
         c = self.P["herr"]["niveles"][self.nivel_max() - 1]["carga"]
@@ -308,7 +313,7 @@ class Partida:
         mot = self.motor
         if mot:  # interruptor v2 (F0-93): entrada, cierres, batería, clima y estación
             if emp is None:
-                mot.entrar(z, self.nivel_max())
+                mot.entrar(z, self.nivel_detector())
             rich *= mot.factor(z, emp is not None)
         niv = P["herr"]["niveles"]
         mr = P["exp"]["mult_res"]
@@ -330,14 +335,16 @@ class Partida:
             lvl_any = max(self.nivel_max(), 1)
             carga = self.carga(Z["profunda"])
             tope_menas = P["exp"]["tope_menas"] * Z["bloques"]
-            if mot:
-                tope_menas = max(1, round(tope_menas * mot.ratio_visibles(z)))
             menas = 0
             total_u = 0
             desgaste_total = 0.0
             guardar = 0
             escaneos = 0
             tope_escaneos = S["politica"]["max_escaneos_por_bloque"] * Z["bloques"]
+            if mot:  # las menas visibles acotan lo que se puede mirar (todas) y lo que se puede picar (la mitad)
+                vis = mot.visibles(z, az) * Z["bloques"]
+                tope_escaneos = max(1, int(vis))
+                tope_menas = max(1, math.ceil(vis * mot.P["picables"]))
             while E > 0:
                 escaneos += 1
                 if escaneos > tope_escaneos:
@@ -352,8 +359,13 @@ class Partida:
                         break
                 d = P["M"][m]
                 quiere = m in sel
+                tam = 1.0
                 if mot and emp is None:  # el detector gasta una carga por mena; sin carga se pica a ciegas
-                    if not mot.escanear() and not quiere and self.nivel_min(m, tier_max) > 0:
+                    tam = mot.tamano(az.u())  # cantidad real de la mena (el rango que muestra el detector)
+                    if mot.escanear():
+                        if quiere and tam < mot.saltar_si_menor():
+                            quiere = False  # el rango de cantidad enseña que es pequeña: se salta sin gastar energía
+                    elif not quiere and self.nivel_min(m, tier_max) > 0:
                         quiere = True
                 if quiere:
                     lvl = self.nivel_min(m, tier_max)
@@ -371,13 +383,18 @@ class Partida:
                             break
                     if forzar:
                         res = forzar
-                    u = srnd(d["rend"] * niv[lvl - 1]["rend"] * mr[res] * rich * efic, az)
+                    mellada = 1.0
+                    if mot and emp is None:  # herramienta mellada (< 20 % de integridad): baja el margen del minijuego
+                        mellada = mot.mellada(self.integridad)
+                    u = srnd(d["rend"] * niv[lvl - 1]["rend"] * mr[res] * rich * efic * mellada * tam, az)
                     if total_u + u > carga:
                         u = int(carga - total_u)
                     unidades[m] = unidades.get(m, 0) + u
                     total_u += u
                     menas += 1
                     pts = P["herr"]["desgaste"][res] * (1.0 + P["herr"]["dureza"] * (d["tier"] - 1))
+                    if mot and emp is None:
+                        self.integridad -= pts * mot.mult_desgaste() / niv[lvl - 1]["dur"] * 100.0
                     t = self.tipo_usado(m)
                     money = P["herr"]["rep_dinero"][lvl - 1] * P["herr"]["tipo"][t]["mult"]
                     parte = P["M"][P["herr"]["rep_pieza"][lvl - 1]]["precio"] / P["herr"]["rep_pts_pieza"]
@@ -810,6 +827,8 @@ class Partida:
         if self.motor:
             self.motor.actos = self.motor.actos or P["actos"]
             self.motor.nuevo_dia(self.dia, self.acto, P["zonas"])
+            if self.integridad < self.motor.reparar_bajo:  # el jugador repara al empezar el día (el costo ya se cobra por punto)
+                self.integridad = 100.0
         for m in self.prod_ema:
             self.prod_ema[m] *= 1.0 - 1.0 / max(S["politica"]["ventana_prod"], 1)
         self.generar_pedidos()

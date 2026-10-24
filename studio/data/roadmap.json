@@ -954,7 +954,7 @@
             },
             {
               "id": "F0-92",
-              "status": "backlog",
+              "status": "done",
               "title": "Reescribir y recalibrar el simulador de economía para minas con cinco entradas, batería y cierres",
               "est": 20,
               "prio": "P0",

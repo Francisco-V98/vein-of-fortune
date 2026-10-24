@@ -133,7 +133,7 @@ def correr_etapa(P, S, cfg, perfil, sem, dias, calentamiento=0, hook=None):
 
 
 # ------------------------------------------------------------------ Acto I
-def acto1(P, S, perfil, sem, n_exp=None, mejora=False, urgente=False, dificultad="intermedio", descarte=None):
+def acto1(P, S, perfil, sem, n_exp=None, mejora=False, urgente=False, dificultad="intermedio", descarte=None, motor=None):
     """El Acto I guionizado (7 días). Devuelve caja antes de la cuota, margen y si paga a tiempo."""
     a1 = P["a1"]
     n_exp = perfil["acto1_exp"] if n_exp is None else n_exp
@@ -142,6 +142,9 @@ def acto1(P, S, perfil, sem, n_exp=None, mejora=False, urgente=False, dificultad
                    cash=float(P["deuda"]["caja0"]), tienda=0, sueltos=False, guion=True, buyer_cap=True,
                    markup_tienda=P["mk"]["tienda"]["destreza"][clave], dificultad=dificultad,
                    descarte=(P["exp"]["descarte_pct"] / 100.0 if descarte is None else descarte))
+    if motor is not None:  # interruptor v2 (F0-92): las entradas, la batería y la caminata también rigen en el Acto I
+        cfg["motor_minas"] = motor
+        motor.actos = motor.actos or P["actos"]
     cfg["niveles"]["pico"] = 1
     p = Partida(P, S, sem, dict(perfil, eps=0.0), cfg)
     mk = p.mk
@@ -161,6 +164,8 @@ def acto1(P, S, perfil, sem, n_exp=None, mejora=False, urgente=False, dificultad
         mk.fijar_acto("I")
         mk.nuevo_dia(d)
         p.aplicar_guion()
+        if motor is not None:
+            motor.nuevo_dia(d, "I", P["zonas"])
         for _ in range(P["t"]["bloques_dia"]):
             mk.paso()
         w = p.w()
@@ -219,10 +224,12 @@ def acto1(P, S, perfil, sem, n_exp=None, mejora=False, urgente=False, dificultad
             "exp": hecho, "pedido": pedido_ok, "urgente": urg_ok, "nivel_pico": p.niveles["pico"]}
 
 
-def lote_acto1(P, S, perfil, n, **kw):
+def lote_acto1(P, S, perfil, n, motor_fn=None, **kw):
+    """`motor_fn(semilla)` crea el motor de minas de cada corrida (None = el modelo sin entradas)."""
     out = []
     for i in range(n):
-        out.append(acto1(P, S, perfil, semilla_flujo(S, "acto1", i), **kw))
+        sem = semilla_flujo(S, "acto1", i)
+        out.append(acto1(P, S, perfil, sem, motor=motor_fn(sem) if motor_fn else None, **kw))
     return out
 
 

@@ -84,7 +84,7 @@ Cada punto tiene un caso de prueba en el catálogo (área **Seguridad** y **Priv
 
 ### Casos nuevos por la exploración caminable ✅ (F0-91, 2026-10-24)
 
-Lista de diseño de los casos que el cambio añade al catálogo (a partir de TC-056; se cargan en `cases.json` al crear las tareas de QA de exploración, ⏳ F0-92 para los de economía y ritmo). Los automáticos van al repositorio; los manuales se ejecutan en el PC de pruebas y en la Steam Deck.
+Lista de diseño de los casos que el cambio añade al catálogo (a partir de TC-056; se cargan en `cases.json` al crear las tareas de QA de exploración, los de economía y ritmo ya los cubren las reglas C5b y J1 a J7 del simulador ✅). Los automáticos van al repositorio; los manuales se ejecutan en el PC de pruebas y en la Steam Deck.
 
 | Área | Caso | Tipo | Resultado esperado |
 |---|---|---|---|

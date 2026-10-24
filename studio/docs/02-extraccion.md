@@ -60,7 +60,7 @@ Lore:
 ✅ Las probabilidades de aparición y obtención se calibran para que no sea fácil ganar mucho dinero rápido ni terminar el juego pronto.
 
 - ✅ **Energía:** el **Aguante base es de 28** (decisión del autor, 2026-10-16: sube de 25 porque con 25 el jugador medio no pagaba la primera cuota con margen) y es la energía máxima de **cada expedición**: se rellena entera al empezar, y una casa mejor sube un poco la energía inicial (+2 por nivel de casa). Cada mena gasta energía según su mineral: carbón 8 · hierro 10 · cobre 12 · salitre 12 · plata 14 · cuarzo 16 · oro 18 · esmeralda 22 · diamante 26 · Aetherita 34 (cada nivel de herramienta la baja un 10 % del valor base, hasta ×0,6 en el nivel 5).
-- ✅ **No hay descarte con costo de energía** (decisión del autor, 2026-10-24; sustituye la del 2026-10-15, que cobraba el 25 % de la energía de la mena): lo que cuesta mirar una mena es la **carga de la batería** del detector. Caminar por la mina no gasta Aguante ni bloque. El Aguante 28 se mantiene y deja de repartirse entre extraer y descartar; el simulador reescribe la regla C5 en ⏳ F0-92 ([28](28-numeros-base-de-la-economia.md), sección 4).
+- ✅ **No hay descarte con costo de energía** (decisión del autor, 2026-10-24; sustituye la del 2026-10-15, que cobraba el 25 % de la energía de la mena): lo que cuesta mirar una mena es la **carga de la batería** del detector. Caminar por la mina no gasta Aguante ni bloque. El Aguante 28 se mantiene y deja de repartirse entre extraer y descartar; la regla C5b del simulador mide la carga del detector (F0-92 ✅; C5 sigue midiendo el modelo sin entradas; [28](28-numeros-base-de-la-economia.md), sección 4).
 - ✅ **Menas por expedición:** variable según tus skills, herramientas y mejoras. Al principio caben **2 a 3** (con 28 de energía, 3 de carbón o 2 de hierro) y el número crece con la recolección: unas 4 en el Acto II, 7 en el III y hasta 10 por bloque en el IV. Los empleados rinden mucho menos que tú, pero escalan igual con sus skills ([04](04-progresion-y-meta.md)).
 - ✅ **Expedición profunda:** gasta **×1,8 de energía** y permite **×1,5 de carga**.
 - ✅ **Consumibles de recarga de energía** y similares: versiones futuras, mucho después de la V1 ([06](06-roadmap-y-pendientes.md)).
@@ -68,23 +68,23 @@ Lore:
 
 ## La mina por dentro ✅
 
-Cambio de diseño del autor (2026-10-24, F0-91, modelo «Galería del día»). Las cifras son **de partida**: las calibra ⏳ F0-92 ([28](28-numeros-base-de-la-economia.md), «Entradas, batería y cierres»).
+Cambio de diseño del autor (2026-10-24, F0-91, modelo «Galería del día»). Las cifras las calibró F0-92 con el simulador y el autor las aprobó el 2026-10-24 ✅ ([28](28-numeros-base-de-la-economia.md), «Entradas, batería y cierres»).
 
 ### Recinto de 5 entradas ✅
 
 - La **boca de mina** es una edificación del asentamiento. Al entrar hay un **recinto con cinco entradas**: **2 de recursos escasos, 2 medios y 1 abundante**. El reparto (cuál es cuál) se sortea **cada día y a ciegas**: no se ve antes de entrar. Semilla determinista `hash(partida, día, mina, entrada)`.
 - Cada entrada es una **galería caminable de 2 a 3 pantallas** en **vista aérea cenital** (tipo Stardew; la vista lateral plana queda solo para los interiores de edificios). El jugador camina hasta las menas y no gasta Aguante ni bloque por caminar.
-- **Calidad de la entrada: solo cantidades** (unidades por mena): escasa ×0,7, media ×1,0, abundante ×1,6. En el Acto I el abanico es estrecho (0,85 · 1,0 · 1,3) para no romper la cuota. **No cambia la mezcla de minerales** de la zona. ⏳ F0-92 baja los rendimientos base un 8–12 % si el valor esperado sube a ~1,15 con el cambio de entrada.
+- **Calidad de la entrada: solo cantidades** (unidades por mena): escasa ×0,78, media ×1,0, abundante ×1,44 ✅ (antes ×0,7 · ×1,0 · ×1,6). En el Acto I el abanico es estrecho (0,85 · 1,0 · 1,3) para no romper la cuota. **No cambia la mezcla de minerales** de la zona. Los rendimientos base bajan un 15 % en todos los actos (`base_yield_mult` 0,85 ✅), porque quien escanea y cambia de entrada gana ≈ +8 % por la entrada y ≈ +13 % por elegir las menas de más cantidad.
 - **Cambio de entrada: una sola vez por mina y por día**, dentro del mismo bloque y con el mismo Aguante; no cuenta como otra visita para el agotamiento. Si no te gusta la primera, entras en otra (con suerte distinta), pero ya habrás gastado detector y batería en la primera. Las demás visitas del día vuelven a «tu entrada del día».
 - Se ven **el doble de menas de las que puedes picar**: Acto I 5–6, II 8, III 14, IV 18 menas visibles.
 
 ### Detector con batería ✅
 
 - Un clic en una mena gasta **1 carga** y muestra el rango de composición con marca de promedio, el rango de cantidad y un **color**: gris (tu herramienta no puede picarla), ámbar o verde.
-- **Batería de 6 · 8 · 11 · 14 cargas** según el nivel del detector (1 a 4). Con 0 carga picas **a ciegas**: la roca solo insinúa el tier.
+- **Batería de 12 · 17 · 25 · 32 cargas ✅ (calibrado en F0-92)** según el nivel del detector (1 a 4). Con 0 carga picas **a ciegas**: la roca solo insinúa el tier.
 - **Sonar (detector de nivel 2):** colorea cada cámara de la galería en frío, tibio o caliente según lo que hay en ella.
 - **Recarga:** entera y gratis cada noche, al pasar el día; no se liga a la casa (la casa ya da +2 de Aguante). **Pilas de repuesto** opcionales desde el Acto II, máximo 1 al día, como sumidero de dinero.
-- **Herramienta en consonancia:** el desgaste actual se mantiene; por debajo del 20 % de integridad la herramienta queda **mellada** (margen del minijuego −30 %). Son tres límites a la vez (Aguante, batería, desgaste): al principio es complicado y con mejoras se vuelve más fácil; el simulador vigila que no frustre (⏳ F0-92).
+- **Herramienta en consonancia:** el desgaste actual se mantiene; por debajo del 20 % de integridad la herramienta queda **mellada** (margen del minijuego −30 %). Son tres límites a la vez (Aguante, batería, desgaste): al principio es complicado y con mejoras se vuelve más fácil; el simulador vigila que no frustre (✅ J3: la batería se queda corta ≈ 45 % de los días normales y ≈ 56 % de los de nieve).
 
 ### Cierres de entradas ✅
 

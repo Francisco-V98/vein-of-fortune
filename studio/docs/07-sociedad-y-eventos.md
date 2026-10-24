@@ -100,7 +100,7 @@ Cambio de diseño del autor (2026-10-24, F0-91). Cada evento tiene una **severid
 - **Presión:** las entradas abiertas rinden menos unidades (×0,95 con 1 cierre, ×0,88 con 2, ×0,75 con 3), así que más cierres rinden siempre menos ([28](28-numeros-base-de-la-economia.md), sección 14).
 - **Cuándo y cómo:** se aplican al empezar el día con aviso previo; un evento de guion a mitad de día rige desde el bloque siguiente; si cierra tu entrada del día te reasigna gratis. Se ve el cierre (piquete, precinto o soldados) con una frase del diario. Reabren una entrada por día al terminar el evento, en orden inverso. **Sin cierres en el Acto I.**
 - **Excepción de guion:** el **cierre total** de una mina solo existe cuando la historia lo amerita (la huelga del Acto II que cierra el Cañón Ferroso, [22](22-acto-ii-variantes.md)); queda marcado como excepción de guion, no como cierre por gravedad.
-- La asignación de severidad a cada evento suelto del calendario ⏳ F4-168; ⏳ F0-92 calibra su efecto en el simulador.
+- La asignación de severidad a cada evento suelto del calendario ⏳ F4-168; el efecto de los cierres sobre el ingreso lo mide el simulador (J1 ✅, documento 28 §14).
 
 ### Eventos de temporada y fichas del calendario ✅
 

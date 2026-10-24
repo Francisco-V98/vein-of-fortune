@@ -1,8 +1,8 @@
 """Motor de las minas de cinco entradas (F0-93, parte 1): sorteo, cierres, batería del detector, clima y estaciones.
 
 Solo se activa con el interruptor `cfg["motor_minas"]` (un `MotorMinas`); sin él, `Partida` se comporta como antes.
-Las claves de economy.mine_entrances y economy.seasons_weather se leen con un `Lector` propio, fuera de `mundo.compilar`,
-por eso la huella de las cifras no cambia hasta que F0-92 las recalibre y las integre. Solo biblioteca estándar.
+Las claves de economy.mine_entrances y economy.seasons_weather las lee `mundo.compilar` (P["minas"]) desde F0-92, así que
+entran en la huella de las cifras. Solo biblioteca estándar.
 """
 import random
 
@@ -12,21 +12,8 @@ MIN_HORA = 60.0  # minutos por hora (conversión de unidades)
 
 
 def cargar(world=None):
-    """Lee las claves de entradas, cierres, batería y clima de world.json (sin tocar la huella)."""
-    L = mundo.Lector(world if world is not None else mundo.cargar_world())
-    g = L.g
-    m, s = "economy.mine_entrances.", "economy.seasons_weather."
-    return mundo.D(
-        n=g(m + "entrances_per_mine"), reparto=g(m + "split"),
-        calidad=g(m + "quality_mult"), calidad_a1=g(m + "quality_mult_act1"),
-        menas_visibles=g(m + "visible_ores"),
-        bateria=g(m + "detector.battery_by_level"), costo_escaneo=g(m + "detector.cost_per_scan"),
-        cambios_dia=g(m + "switch.per_mine_per_day"),
-        sev=g(m + "closures.by_severity"), min_abiertas=g(m + "closures.min_open"),
-        orden_cierre=g(m + "closures.close_order"), presion=g(m + "closures.pressure_mult_by_closed"),
-        sin_cierres_en=g(m + "closures.none_in_act"),
-        mellada=g(m + "tool_dull"),
-        sin_clima=g(s + "no_weather_days"), estaciones=g(s + "season_effects"), clima=g(s + "weather_effects"))
+    """Claves de entradas, cierres, batería y clima de world.json (ya forman parte de la huella desde F0-92)."""
+    return mundo.cargar(world)[0]["minas"]
 
 
 def sortear_entradas(semilla, dia, mina, P):
@@ -38,7 +25,9 @@ def sortear_entradas(semilla, dia, mina, P):
 
 
 def mult_calidad(cal, acto, P):
-    return (P["calidad_a1"] if acto == P["sin_cierres_en"] else P["calidad"])[cal]
+    if acto == P["sin_cierres_en"]:  # el abanico estrecho del Acto I protege la cuota
+        return P["calidad_a1"][cal] * P["rend_base"]
+    return P["calidad"][cal] * P["rend_base"]
 
 
 def cerrar(entradas, severidad, acto, P):
@@ -250,6 +239,9 @@ class MotorMinas:
 
     # --- efectos del día
     def efectos(self):
+        lo, hi = self.P["sin_estacion"]  # el Acto I (días 1 a 7) queda libre de efectos de estación
+        if self.dia is not None and lo <= self.dia <= hi:
+            return {}
         return efectos_estacion(self.estacion, self.P)
 
     def delta_energia(self):
@@ -261,6 +253,37 @@ class MotorMinas:
 
     def mult_desgaste(self):
         return 1.0 + self.efectos().get("tool_wear_pct", 0) / 100.0
+
+    def visibles(self, zona, azar):
+        """Menas visibles de una visita: base del acto (un rango se sortea) con la estación y el clima de la zona."""
+        v = self.P["menas_visibles"][self.acto]
+        if isinstance(v, list):
+            v = v[0] + int(azar.u() * (v[-1] - v[0] + 1))
+        v += self.efectos().get("visible_ores_delta", 0) + self.P["clima"].get(self.tipos.get(zona), {}).get("visible_ores_delta", 0)
+        return max(v, 1)
+
+    def tamano(self, u):
+        """Cantidad relativa de una mena (el detector muestra su rango): valores y probabilidades de minas_v2.tamano_mena."""
+        if not self.sup:
+            return 1.0
+        t, acum = self.sup["tamano_mena"], 0.0
+        for v, p in zip(t["valores"], t["probs"]):
+            acum += p
+            if u < acum:
+                return v
+        return t["valores"][-1]
+
+    def saltar_si_menor(self):
+        """Tamaño por debajo del cual el jugador salta una mena escaneada."""
+        return self.sup["tamano_mena"]["saltar_si_menor"] if self.sup else 0.0
+
+    def mellada(self, integridad):
+        return mult_mellada(integridad, self.P)
+
+    @property
+    def reparar_bajo(self):
+        """Integridad (%) por debajo de la cual el jugador repara al empezar el día."""
+        return self.sup["reparar_bajo_pct"] if self.sup else 0.0
 
     def ratio_visibles(self, zona):
         """Menas visibles frente a las del acto sin estación ni clima (otoño y niebla restan)."""
@@ -280,11 +303,11 @@ class MotorMinas:
         return self.bateria
 
     def entrar(self, zona, nivel):
-        """El jugador entra a la mina: nieve resta una carga (una vez por zona y día); en la primera visita escanea
+        """El jugador entra a la mina: nieve resta una carga (una vez al día); en la primera visita escanea
         la entrada y, si es de la calidad a evitar, cambia (una vez al día) a otra abierta elegida a ciegas."""
         b = self.bateria_dia(nivel)
         self.cont["expediciones"] += 1
-        if self.tipos.get(zona) == "nieve" and zona not in self._nieve:
+        if self.tipos.get(zona) == "nieve" and not self._nieve:  # la nieve gasta una carga una vez al día, en la primera zona nevada
             self._nieve.add(zona)
             b.cargas = max(b.cargas + self.P["clima"]["nieve"]["detector_charge_delta"], 0)
         if zona in self._visitadas:

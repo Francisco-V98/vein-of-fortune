@@ -36,7 +36,7 @@ Precios: **por unidad y enteros** al mostrarse; el **total de cada operación se
 | Duración del juego (orientativa) | ≈ 90 días de calendario (7 + 32 + 32 + 20) | ≈ 20 h |
 
 - **Calendario de arranque ✅.** Estaciones en orden: primavera, verano, otoño, invierno. El **día 1 es el 22 de otoño**, así que el **invierno empieza el día 8** (primer día del Acto II). Encaja con la noticia del día 2 («el frío llegará antes») y con el apagón y la huelga del Acto II: el carbón sube justo cuando empiezas a dominar el mercado.
-- **Estaciones y clima (F0-94) ✅.** Efectos de partida en `economy.seasons_weather` de `world.json`: invierno Aguante −2 (28 a 26), primavera riqueza de mina +4 al día en vez de +3, verano desgaste de herramienta +10 %, otoño −1 mena visible; clima del día por zona (lluvia fuerte cierra 1 entrada, nieve −1 carga de detector, niebla −1 mena visible) y nada en los días 1 a 7. Son cifras de partida: el simulador no las lee todavía y las calibran ⏳ F0-92 y ⏳ F0-93 (la huella no cambia). Calendario, festivos y mini-historias: [29](29-calendario-y-temporadas.md).
+- **Estaciones y clima (F0-94) ✅.** Efectos de partida en `economy.seasons_weather` de `world.json`: invierno Aguante −2 (28 a 26), primavera riqueza de mina +4 al día en vez de +3, verano desgaste de herramienta +10 %, otoño −1 mena visible; clima del día por zona (lluvia fuerte cierra 1 entrada, nieve −1 carga de detector, niebla −1 mena visible) y nada en los días 1 a 7. El simulador ya las lee (entran en su huella) y las midió F0-92: J3 en días de nieve y J6 por estaciones pasan (sección 14.1). Calendario, festivos y mini-historias: [29](29-calendario-y-temporadas.md).
 - **La Fosa abre los días 2, 4 y 6 de cada semana ✅** (la semana empieza el día 1; el día 7 queda libre para la cuota). Una expedición profunda a La Fosa son 2 bloques, así que caben como máximo 3 por semana.
 - **Minutos y actos.** Siete días de 13 min son 91 min, el suelo del Acto I (1,5–3 h con texto y escenas). El Acto II (4–10 h) equivale a 18–46 días, el III igual y el IV (3–6 h) a 14–28 días. El contrato más largo, de 30 días, son 6,5 h de juego, menos que un acto.
 
@@ -53,7 +53,7 @@ Precios: **por unidad y enteros** al mostrarse; el **total de cada operación se
 
 Un jugador medio hace en el Acto II ≈ 2,5 bloques de expedición y 0,5 de tienda por día.
 
-> **Nota (F0-91, 2026-10-24).** Caminar por el asentamiento y por la galería, el loader y el tren **no cuentan** en el tiempo de la expedición ni consumen bloques ✅. El tiempo real de paseo (≈ +40 s por mina) se mide en el prototipo y se absorbe al recalibrar el ritmo por hora ⏳ F0-92. Las cifras de arriba siguen siendo las vigentes hasta entonces.
+> **Nota (F0-91, 2026-10-24).** Caminar por el asentamiento y por la galería, el loader y el tren **no cuentan** en el tiempo de la expedición ni consumen bloques ✅. El tiempo real de paseo (≈ +40 s por mina) lo absorbe la economía: la regla J5 (sección 14.1) mide que hasta ≈ 2,2 min por entrada el ingreso por hora queda dentro de ±20 %. Las cifras de arriba siguen siendo las vigentes hasta entonces.
 
 ---
 
@@ -143,7 +143,7 @@ Puntos de mercado a mitad de estación; la curva se interpola entre estaciones.
 
 Carbón: de pleno verano (−8) a pleno invierno (+12) hay 20 puntos; con costo de guardar de 0,15 % al día, comprar en verano y vender en invierno (56 días) deja ≈ +21 − 5 − 8 = **+8 %**. Especular con la estación rinde poco y tarda 12 h de juego: es una opción, no una máquina.
 
-Nota de F0-94 ✅: los festivos mueven el mercado ±2 puntos como máximo ([29](29-calendario-y-temporadas.md)), el tope de un evento menor. El efecto de invierno sobre el Aguante (−2) y el carbón +12 de esta tabla son una compensación deliberada ✅: ⏳ F0-93 añade la regla J6 (ingreso por hora de cada estación dentro de ±20 % de la media) y, si el invierno se sale, se ajusta el −2 y no el carbón. La nieve ocurre como máximo 6 días por invierno y zona y ⏳ F0-92 mide J3 por separado en días normales y de nieve.
+Nota de F0-94 ✅: los festivos mueven el mercado ±2 puntos como máximo ([29](29-calendario-y-temporadas.md)), el tope de un evento menor. El efecto de invierno sobre el Aguante (−2) y el carbón +12 de esta tabla son una compensación deliberada ✅: la regla J6 (ingreso por hora de cada estación dentro de ±20 % de la media) lo comprueba y pasa (el invierno rinde ≈ 4–7 % menos); si se saliera, se ajustaría el −2 y no el carbón. La nieve ocurre como máximo 6 días por invierno y zona y F0-92 midió J3 por separado en días normales y de nieve.
 
 ### 3.4 Sensibilidad a eventos ✅
 
@@ -234,7 +234,7 @@ Probabilidad (%) de que una mena sea de cada mineral. Con herramienta insuficien
 
 Comprobación del arranque del guion: con 28 de energía, el carbón (8) da 3 menas y el hierro (10) da 2: «2 a 3 menas». Una expedición de carbón del Acto I vale ≈ 255 esquirlas y una de hierro ≈ 305, con resultados medios.
 
-> **Nota (F0-91, 2026-10-24).** El **descarte desaparece**: no hay costo del 25 % de la energía por escanear sin extraer, porque mirar una mena cuesta ahora una carga de la batería del detector (sección 14). El Aguante 28 se mantiene (caminar es gratis). Las filas y la comprobación de arriba son las vigentes del simulador hasta que ⏳ F0-92 reescriba la regla C5.
+> **Nota (F0-91, 2026-10-24).** El **descarte desaparece**: no hay costo del 25 % de la energía por escanear sin extraer, porque mirar una mena cuesta ahora una carga de la batería del detector (sección 14). El Aguante 28 se mantiene (caminar es gratis). Las filas y la comprobación de arriba siguen siendo las del modelo sin entradas (regla C5); en el juego lo mide C5b (sección 14.1).
 
 **Consumibles de recarga de energía y otros ✅:** son una versión futura, mucho después de la V1, sin cifra; viven en la tabla de evolutivos de [06](06-roadmap-y-pendientes.md).
 
@@ -319,7 +319,7 @@ El detector básico heredado es el nivel 1. Se mejora **aparte con cuarzo** (tie
 
 Nivel por acto: 2 en el II, 3 en el III, 4 en el IV. Ancho final = ancho del detector × multiplicador del escáner de la herramienta × (1 − efecto del Ojo, F3-11).
 
-> **Nota (F0-91, 2026-10-24).** El detector se usa dentro de la mina y cada clic gasta una carga de su batería: 6 · 8 · 11 · 14 cargas por nivel y sonar en el nivel 2 (sección 14). Los anchos y costos de esta tabla no cambian.
+> **Nota (F0-91, 2026-10-24).** El detector se usa dentro de la mina y cada clic gasta una carga de su batería: 6 · 8 · 11 · 14 cargas por nivel (sustituidas por **12 · 17 · 25 · 32** al calibrar F0-92 ✅) y sonar en el nivel 2 (sección 14). Los anchos y costos de esta tabla no cambian.
 
 ---
 
@@ -712,30 +712,48 @@ El refinado y las recetas (valor agregado 0 hasta ⏳ F3-07), los bots y el merc
 
 ---
 
-## 14 · Entradas, batería y cierres (cifras de partida)
+## 14 · Entradas, batería y cierres (cifras calibradas por F0-92)
 
-Cambio de diseño del autor (2026-10-24, F0-91; diseño en [02](02-extraccion.md), «La mina por dentro»). Estas cifras son **de partida**, las decisiones del autor para arrancar; **las calibra ⏳ F0-92** con el simulador. Mientras tanto viven en claves nuevas de `world.json` que el simulador no lee, y las tablas de las secciones 1 a 13 siguen siendo las vigentes. ✅
+Cambio de diseño del autor (2026-10-24, F0-91; diseño en [02](02-extraccion.md), «La mina por dentro»). Las cifras de arranque las calibró F0-92 con el simulador (reglas C5b y J1 a J7, sección 14.1); viven en `economy.mine_entrances` de `world.json`, que el simulador ya lee y entra en su huella. El autor las aprobó el 2026-10-24 ✅ (las que cambian respecto al arranque llevan el valor anterior entre paréntesis). Las tablas de las secciones 1 a 13 siguen siendo las vigentes del modelo sin entradas.
 
-| Concepto | Cifra de partida |
+| Concepto | Cifra |
 |---|---|
 | Entradas por mina | **5**: 2 escasas · 2 medias · 1 abundante; sorteo diario a ciegas, determinista (`hash(partida, día, mina, entrada)`) |
-| Unidades por mena según la entrada | escasa **×0,7** · media **×1,0** · abundante **×1,6** |
-| Abanico del Acto I (protege la cuota) | **0,85 · 1,0 · 1,3** |
-| Menas visibles (el doble de las que se pueden picar) | Acto I **5–6** · II **8** · III **14** · IV **18** |
+| Unidades por mena según la entrada (Actos II a IV) | escasa **×0,78** · media **×1,0** · abundante **×1,44** ✅ (de ×0,7 · ×1,0 · ×1,6: con el abanico ancho, cambiar de entrada daba ≈ +11 % por hora de reloj y tres cierres costaban ≈ −54 %); la media de las cinco sigue siendo 1,0 |
+| Abanico del Acto I (protege la cuota) | **0,85 · 1,0 · 1,3**; con él, con el recorte de rendimiento y sin el efecto del otoño en los días 1 a 7, el pago y el margen de la cuota del día 7 quedan en las bandas de A1, A3 y A4 (J7) ✅ |
+| Rendimientos base (`base_yield_mult`, todos los actos) | **×0,85** ✅ (recorte del 15 %; se preveía 8–12 %). El jugador que escanea y cambia de entrada gana ≈ +8 % por la entrada y ≈ +13 % por elegir las menas de cantidad media o alta (el detector muestra el rango de cantidad); sin recorte, J5 daba +25 %. También recorta el Acto I: al quitarle el otoño (−1 mena visible) el margen de la cuota subía a ≈ 105 % de la cuota y con el recorte vuelve a ≈ 72 % |
+| Menas visibles (el doble de las que se pueden picar) | Acto I **5–6** · II **8** · III **14** · IV **18**; el simulador limita a esa cifra lo que se puede mirar y a su mitad (redondeada hacia arriba) lo que se puede picar, que coincide con las menas por expedición de la sección 1.3 |
 | Galería | **2–3 pantallas** en vista aérea cenital |
-| Batería del detector (cargas por nivel 1 · 2 · 3 · 4) | **6 · 8 · 11 · 14**; con 0 carga se pica a ciegas |
+| Batería del detector (cargas por nivel 1 · 2 · 3 · 4) | **12 · 17 · 25 · 32** ✅ (de 6 · 8 · 11 · 14: con ellas la batería se quedaba corta el 95 % de los días; una carga por mena mirada pide ≈ 9 cargas por expedición del Acto III); con 0 carga se pica a ciegas |
 | Sonar | función del detector de **nivel 2** |
 | Recarga | entera y gratis cada noche; **pilas** opcionales desde el Acto II, **máx. 1 al día** |
 | Cambio de entrada | **1 por mina y por día**; no cuenta como otra visita para el agotamiento |
-| Herramienta mellada | integridad **< 20 %** → margen del minijuego **−30 %** |
+| Herramienta mellada | integridad **< 20 %** → margen del minijuego **−30 %**; el simulador supone que el jugador repara al empezar el día si queda por debajo del 30 %, así que casi nunca la sufre |
 | Riqueza de la mina | se mantiene: **40–100 %**, −6 por visita, +3 al día (sección 3.7) |
 | Cierres por gravedad | suave **1** · complicado **2** · Valdoria **3** entradas; siempre **≥ 2 abiertas** |
 | Orden de cierre | abundante → una media → una escasa |
-| Presión (unidades de las abiertas) | 1 cierre **×0,95** · 2 cierres **×0,88** · 3 cierres **×0,75** |
+| Presión (unidades de las abiertas) | 1 cierre **×0,95** · 2 cierres **×0,88** · 3 cierres **×0,80** ✅ (de ×0,75: con ×0,75 tres cierres costaban −58 % del ingreso) |
 | Reapertura | una entrada por día, en orden inverso |
 | Acto I | sin cierres |
+| Minutos de caminar (supuesto del simulador) | **≈ 40 s** por entrada a la mina y por cambio de entrada (nota de la sección 1.3); la economía aguanta hasta ≈ 2,2 min por entrada y por cambio con el ingreso por hora dentro de ±20 % (a 1 min: −3 %; a 2 min: −17 %) ✅ |
+| Estaciones y clima (documento [29](29-calendario-y-temporadas.md)) | invierno Aguante −2 · primavera riqueza +4 al día · verano desgaste +10 % · otoño −1 mena visible · nieve −1 carga (una vez al día) · niebla −1 mena visible; **los días 1 a 7 (Acto I) no tienen efecto de estación ni de clima** (`no_season_effect_days` y `no_weather_days`) ✅ |
 
-Lo que **⏳ F0-92** deja calibrado: los rendimientos base bajan un 8–12 % si el valor esperado sube a ~1,15 con el cambio de entrada; el simulador reescribe la regla C5 y recalibra D1 y D2; los empleados rinden la media de las entradas abiertas; reglas nuevas J1 (más cierres, menos valor esperado), J2 (cambiar de entrada da +5–10 %), J3 (la batería se queda corta el 30–60 % de los días), J4 (empleados rinden la media de las abiertas) y J5 (con el parámetro de minutos de caminar, el ingreso por hora queda dentro de ±20 %).
+### 14.1 Lo que midió el simulador (modo completo, jugador medio, Acto III)
+
+| Regla | Qué exige | Resultado |
+|---|---|---|
+| C5b · la carga del detector sustituye al descarte | pérdida de ingreso frente a una batería infinita 1–35 % · otra batería gana ≥ 1 % · ≤ 60 % de menas a ciegas | ≈ 2,5 % · ≈ 2,6 % · ≈ 7 % |
+| J1 · más cierres, menos valor | cada cierre pierde ≥ 1 % · tres cerradas 10–55 % | −20 % · −16 % · −26 % · total ≈ −48 % |
+| J2 · cambiar de entrada | +5 a +10 % por hora de reloj, con la caminata | ≈ +8,5 % |
+| J3 · la batería se queda corta | 30–60 % de los días, normales y de nieve | ≈ 45 % y ≈ 56 % |
+| J4 · empleados | rinden la media de las abiertas (error ≤ 1e-9, ≤ 2 pp frente al jugador sin escanear) | exacto · −0,03 pp |
+| J5 · minutos de caminar | ingreso por hora a ±20 % del modelo sin entradas con 40 s | ≈ +2 % |
+| J6 · estaciones | cada estación a ±20 % de la media | primavera +8 % · invierno y otoño −4 a −7 % |
+| J7 · cuota del Acto I | pago y margen del día 7 dentro de A1, A3 y A4 con el abanico estrecho | pasa |
+
+**Por qué C5b queda en 1–35 %.** La pérdida por quedarse sin carga crece con la fracción de menas a ciegas (≈ 0,36 puntos por cada punto) y J3 exige que esa fracción no pase de ≈ 8 % para que la batería no frustre; con los dos topes a la vez la pérdida ronda el 2,5 %. El mínimo de la regla baja de 3 a 1 % ✅ (sigue siendo ≥ al 1 % que pedía C5 al duplicar el costo de descartar). Alternativa: batería 11 · 16 · 23 · 30 cumple el 3 % pero deja J3 en 60 % (normales) y 69 % (nieve).
+
+**C5 sigue vigente** para el modelo sin entradas: las 50 reglas (A a I) todavía descuentan el 25 % de la energía al descartar y quitarlo exige recalibrar todo el simulador; C5b mide lo que vale en el juego. **A1 a A7 y B1 no cambian** (el motor de minas va aparte de las 50 reglas; el Acto I con el motor se vigila con J7). Los festivos (±2 puntos de mercado) no se modelan y las cifras N de vigilancia y los plazos de las mini-historias se ajustan al escribirlas (⏳ F4-256 a F4-259).
 
 ---
 

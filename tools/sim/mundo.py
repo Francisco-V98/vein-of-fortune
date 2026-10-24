@@ -78,6 +78,23 @@ def cargar_supuestos(ruta=SUPUESTOS):
 ACTOS = ("I", "II", "III", "IV")
 
 
+def minas(L):
+    """Entradas, cierres, batería del detector, clima y estaciones de las minas (F0-92: ya forman parte de la huella)."""
+    g = L.g
+    m, s = "economy.mine_entrances.", "economy.seasons_weather."
+    return D(
+        n=g(m + "entrances_per_mine"), reparto=g(m + "split"),
+        rend_base=g(m + "base_yield_mult"), calidad=g(m + "quality_mult"), calidad_a1=g(m + "quality_mult_act1"),
+        menas_visibles=g(m + "visible_ores"), picables=g(m + "pickable_ratio"),
+        bateria=g(m + "detector.battery_by_level"), costo_escaneo=g(m + "detector.cost_per_scan"),
+        cambios_dia=g(m + "switch.per_mine_per_day"),
+        sev=g(m + "closures.by_severity"), min_abiertas=g(m + "closures.min_open"),
+        orden_cierre=g(m + "closures.close_order"), presion=g(m + "closures.pressure_mult_by_closed"),
+        sin_cierres_en=g(m + "closures.none_in_act"),
+        mellada=g(m + "tool_dull"),
+        sin_clima=g(s + "no_weather_days"), sin_estacion=g(s + "no_season_effect_days"), estaciones=g(s + "season_effects"), clima=g(s + "weather_effects"))
+
+
 def compilar(L):
     """Lee world.json a través del lector y devuelve el árbol de parámetros P."""
     g = L.g
@@ -303,6 +320,7 @@ def compilar(L):
                   pct=g("economy.scripted_drift_act1.%d.pct" % i, None, True),
                   pct_dia=g("economy.scripted_drift_act1.%d.pct_per_day" % i, None, True),
                   tipo=g("economy.scripted_drift_act1.%d.kind" % i)) for i in range(L.largo("economy.scripted_drift_act1"))])
+    P["minas"] = minas(L)
     return P
 
 

@@ -81,7 +81,7 @@ def parser():
     ap.add_argument("--escribir", action="store_true", help="escribe studio/data/sim/resultados.json (solo con --completo)")
     ap.add_argument("--mutaciones", action="store_true", help="incluye la regla I2 también en el modo rápido (el completo siempre la incluye)")
     ap.add_argument("--huella", action="store_true")
-    ap.add_argument("--minas", action="store_true", help="evalúa las reglas del motor de minas (C5b, J1 a J6; reglas_v2 de reglas.json)")
+    ap.add_argument("--minas", action="store_true", help="evalúa las reglas del motor de minas (C5b, J1 a J7; reglas_v2 de reglas.json); mídelas con --completo: en modo rápido C5b, J2 y J7 salen inciertas por ruido")
     ap.add_argument("--verbose", action="store_true")
     return ap
 
@@ -132,6 +132,12 @@ def main(argv=None):
         if "H6" in por_id:
             extras["rescate_horas"] = por_id["H6"]["extra"].get("puertas", {})
         res = informe.construir(c, out, R, modo, c.semillas, extras)
+        from sim import reglas_minas  # las reglas del motor de minas (C5b y J1 a J7) van aparte de las 50 vigentes
+        v2 = [reglas_minas.evalua(c, rid) for rid in reglas_minas.REGLAS_V2]
+        print("Reglas del motor de minas: %s" % ", ".join("%s %s" % (r["id"], r["estado"]) for r in v2))
+        mapa2 = {r["id"]: r for r in R["reglas_v2"]}
+        d_, inf_ = c.S["estadistica"]["decimales"], c.S["estadistica"]["infinito"]
+        res["reglas_v2"] = [informe.entrada(mapa2[r["id"]], r, d_, inf_) for r in v2]
         ruta = SIM_DIR / "resultados.json"
         texto = json.dumps(res, ensure_ascii=False, separators=(",", ":"))
         ruta.write_text(texto + "\n", encoding="utf-8")
