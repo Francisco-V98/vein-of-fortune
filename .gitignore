@@ -26,3 +26,6 @@ __pycache__/
 
 # Archivo generado por studio/hub/build.py (no se versiona)
 studio/hub/data.js
+
+# Vault de Obsidian generado por studio/hub/build.py (F0-90): no se versiona
+studio/cerebro/

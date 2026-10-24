@@ -5,6 +5,7 @@ de cada tarea (historial, comentarios y evidencias) y los assets de referencia.
 Uso:
     python3 studio/hub/build.py            # genera y muestra avisos
     python3 studio/hub/build.py --strict   # falla (código 1) si hay avisos
+    python3 studio/hub/build.py --sin-cerebro  # no regenera el vault de Obsidian (studio/cerebro/)
 
 Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/roadmap.json        plan y estado actual de cada tarea
@@ -19,6 +20,8 @@ Sin dependencias externas. Todo el estado vive en archivos de datos:
   - studio/data/hilos.json          registro de hilos narrativos: dónde se siembra y se resuelve cada pista, promesa o secreto
   - studio/data/sim/reglas.json     reglas de equilibrio de la economía y trazabilidad requisito -> regla (F0-53)
   - studio/data/sim/resultados.json resultado del simulador (generado por tools/sim/run.py y versionado)
+
+Al final regenera el cerebro (vault de Obsidian, solo lectura, git-ignored) en studio/cerebro/ con tools/cerebro (F0-90).
 
 Limpieza del diseño (ver studio/docs/15-flujo-de-trabajo-y-calidad.md):
   limpieza = ✅ / (✅ + 🟡 + ❓)  por documento y en total. Meta: lo más cerca posible de 100 %.
@@ -37,6 +40,7 @@ import json
 import pathlib
 import re
 import sys
+import time
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import coherence  # noqa: E402
@@ -49,6 +53,8 @@ TASKS_DIR = DATA / "tasks"
 EVIDENCE = STUDIO / "evidence"
 SIM_DIR = DATA / "sim"
 SIM_MUNDO = STUDIO.parent / "tools" / "sim" / "mundo.py"
+TOOLS = STUDIO.parent / "tools"
+CEREBRO = STUDIO / "cerebro"
 
 VALID_STATUS = ["backlog", "sprint", "doing", "review", "qa", "done", "dropped"]
 VALID_PRIO = ["P0", "P1", "P2", "P3"]
@@ -1134,6 +1140,23 @@ def render(hub):
     return "// Archivo generado por build.py. No editar a mano.\nwindow.HUB = " + json.dumps(hub, ensure_ascii=False) + ";\n"
 
 
+def build_cerebro():
+    """Regenera studio/cerebro/ (vault de Obsidian). No es esencial: si algo falla, avisa y el resto del build sigue."""
+    t0 = time.time()
+    try:
+        if str(TOOLS) not in sys.path:
+            sys.path.insert(0, str(TOOLS))
+        from cerebro import generar
+        res = generar.generar_vault(STUDIO.parent, CEREBRO)
+    except Exception as exc:  # noqa: BLE001
+        warn("cerebro: no se pudo regenerar studio/cerebro (%s: %s)" % (type(exc).__name__, exc))
+        return
+    for aviso in res.avisos:
+        warn("cerebro: %s" % aviso)
+    print("Cerebro: %d notas (%s) en %.1f s -> %s"
+          % (res.notas, ", ".join("%s %d" % kv for kv in sorted(res.conteo.items())), time.time() - t0, CEREBRO.relative_to(STUDIO.parent)))
+
+
 def main():
     strict = "--strict" in sys.argv
     hub = build_hub()
@@ -1165,6 +1188,8 @@ def main():
         print("Simulador: %d de %d reglas pasan · %d fallan · %d inciertas · %s"
               % (c["pasa"], c["total"], c["falla"], c["incierto"],
                  "caducado" if sim["caducado"] else "vigente" if sim["huella_verificada"] else "huella sin verificar"))
+    if "--sin-cerebro" not in sys.argv:
+        build_cerebro()
     if warnings:
         print("%d aviso(s)." % len(warnings))
         if strict:
