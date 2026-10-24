@@ -16,7 +16,7 @@ Cambio de diseño del autor (2026-10-24, F0-91): sustituye la vista isométrica 
 2. **Zona y asentamiento aéreo.** La región es la zona. Al llegar a ella (el **tren** es el único medio entre zonas, ver 1.2) el jugador aparece **fuera**, en la estación o en la calle, y **camina** por el asentamiento en **vista aérea** tipo Stardew Valley: puede rodear las casas y explorar un mínimo. Cada edificación se ve por fuera con su puerta o entrada ([12](12-direccion-de-arte.md), perspectiva) ✅.
 3. **Edificación e interior lateral.** Al entrar por la puerta hay un **loader corto** y se pasa al **interior** en corte transversal, también con **desplazamiento**: vista lateral plana, tipo Pet Society ✅. Las 46 edificaciones deben poder entrarse a futuro: el diseño reserva un interior para cada una; se construyen primero las necesarias y las demás quedan «puerta cerrada/pendiente», y el autor puede añadir dinámicas después ✅. La **boca de mina** es una edificación más, pero su interior no es un corte lateral: es el **recinto de 5 entradas** (1.2 y [02](02-extraccion.md), «La mina por dentro»), y cada entrada lleva a una galería caminable en vista aérea cenital ✅.
 
-Caminar, el loader y el tren **no consumen bloques** ✅ ([01](01-core-loop.md)). La navegación entre los tres niveles es ⏳ F4-167.
+Caminar, el loader y el tren **no consumen bloques** ✅ ([01](01-core-loop.md)). La navegación entre los tres niveles es ⏳ F4-167. Viajar por el mapa dentro de la zona es un **salto con loader y apareces fuera, en la puerta** de la edificación ✅ (F0-25); el flujo completo de pantallas está en [30](30-flujo-de-pantallas.md).
 
 ### 1.2 Zona, asentamiento y zona de minado ✅
 

@@ -1663,12 +1663,21 @@
           "tasks": [
             {
               "id": "F2-20",
-              "title": "Pantallas placeholder: día, recinto de la mina, galería, mercado y tienda en horizontal",
+              "title": "Pantallas placeholder: día, recinto de la mina, galería, mercado y tienda",
               "est": 14,
               "status": "backlog",
-              "desc": "Interfaz funcional con formas y colores de la paleta. Incluye decidir con el autor el símbolo o la abreviatura de la moneda (esquirlas) para los precios en pantalla. Con las minas caminables incluye el recinto de cinco entradas y una galería de prueba con el detector (formas y colores de la paleta). Decisión del autor del 2026-10-24 (F0-91).",
+              "desc": "Interfaz funcional con formas y colores de la paleta. Incluye la libreta de consulta con el mercado en solo lectura (comprar y vender solo en edificios; documento 30, decisión del autor del 2026-10-24, F0-25). Incluye decidir con el autor el símbolo o la abreviatura de la moneda (esquirlas) para los precios en pantalla. Con las minas caminables incluye el recinto de cinco entradas y una galería de prueba con el detector (formas y colores de la paleta). Decisión del autor del 2026-10-24 (F0-91). Incluye los atajos de teclado de la libreta y de la barra superior (documento 30).",
               "done_when": "Se navega entre las pantallas con ratón, teclado y mando.",
               "prio": "P0"
+            },
+            {
+              "id": "F2-41",
+              "title": "Título, selector de 5 partidas y pausa",
+              "est": 5,
+              "status": "backlog",
+              "desc": "Pantalla de título, selector de las 5 partidas guardables (zona, día y esquirlas por ranura) y menú de pausa con Esc o Start, aparte de la libreta de consulta. Navegables con ratón, teclado y mando. Documento 30 (flujo de pantallas), decisión del autor del 2026-10-24 (F0-25). F2-31 y F3-29 dependen de ella.",
+              "done_when": "Se abre el juego, se elige una de 5 partidas y se pausa desde cualquier escena segura con ratón, teclado y mando.",
+              "prio": "P1"
             },
             {
               "id": "F2-21",
@@ -1784,7 +1793,7 @@
               "title": "Ajustes mínimos: volumen, vibración e idioma",
               "est": 3,
               "prio": "P1",
-              "desc": "Pantalla de opciones básica.",
+              "desc": "Pantalla de opciones básica, que se abre desde el título y desde la pausa. Depende de F2-41 (documento 30).",
               "done_when": "Los ajustes persisten."
             },
             {
@@ -2233,7 +2242,7 @@
               "title": "Ícono de la app y pantalla de título provisionales",
               "est": 2,
               "status": "backlog",
-              "desc": "Ícono legible a tamaño pequeño y pantalla de título con el logo provisional, solo para probar.",
+              "desc": "Ícono legible a tamaño pequeño y pantalla de título con el logo provisional, solo para probar. Depende de F2-41, que construye el título (documento 30).",
               "done_when": "La app tiene un ícono de prueba y una pantalla de título con el logo provisional.",
               "prio": "P1"
             },
@@ -2363,7 +2372,7 @@
               "title": "Mapa y navegador zona a edificación (gratis dentro de la zona) y horarios por bloque",
               "est": 9,
               "prio": "P1",
-              "desc": "Lista de edificaciones de Villa Brasa en el MVP con apertura por bloque. El mapa se abre desde cualquier lugar y, dentro de la zona, viajar de una edificación a otra no cuesta nada ni consume bloque. Según el documento 26 (zonas y edificios).",
+              "desc": "Lista de edificaciones de Villa Brasa en el MVP con apertura por bloque. El mapa se abre desde cualquier lugar y, dentro de la zona, viajar de una edificación a otra no cuesta nada ni consume bloque: es un salto con loader y el jugador aparece fuera, en la puerta de la edificación. El mapa queda gris con aviso dentro de la mina, el minijuego, el loader y el tren (documento 30). Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
             },
             {
@@ -3752,7 +3761,7 @@
               "title": "Mapa de Valdoria interactivo: zonas con ratón, teclado y mando, abierto desde cualquier lugar",
               "est": 14,
               "prio": "P1",
-              "desc": "Mapa de Valdoria con zonas que se señalan y se eligen con el ratón, el teclado y el mando; se puede abrir desde cualquier lugar. Dentro de la misma zona se viaja de una edificación a otra sin coste. Las estaciones quedan solo como referencia en esta versión. Usa el mapa provisional regenerado para el storyboard; el mapa definitivo en pixel art es F4-233."
+              "desc": "Mapa de Valdoria con zonas que se señalan y se eligen con el ratón, el teclado y el mando; se puede abrir desde cualquier lugar. Dentro de la misma zona se viaja de una edificación a otra sin coste. Las estaciones quedan solo como referencia en esta versión. Incluye el atajo de teclado del mapa (documento 30). Usa el mapa provisional regenerado para el storyboard; el mapa definitivo en pixel art es F4-233."
             },
             {
               "id": "F4-153",
@@ -3902,7 +3911,7 @@
               "title": "Navegación entre mapa, asentamiento y edificios: mapa desde cualquier lugar y viaje gratis dentro de la zona",
               "est": 12,
               "prio": "P1",
-              "desc": "Une los tres niveles: el mapa se abre desde cualquier lugar; dentro de la zona se viaja de una edificación a otra sin coste; entre zonas se toma el tren (F4-154); entrar a un edificio pasa por el loader (F3-50). Sin estaciones jugables en esta versión.",
+              "desc": "Une los tres niveles: el mapa se abre desde cualquier lugar; dentro de la zona se viaja de una edificación a otra sin coste, con salto y loader, y apareces fuera, en la puerta (documento 30); entre zonas se toma el tren (F4-154); entrar a un edificio pasa por el loader (F3-50). Sin estaciones jugables en esta versión.",
               "done_when": "Se pasa del mapa al asentamiento, de la calle al interior y de una zona a otra sin saltos ni atascos."
             },
             {

@@ -1,0 +1,101 @@
+{
+  "id": "F0-25",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Flujo de pantallas: documento 30, libreta de consulta y pausa aparte",
+      "ref": "rama studio/F0-25-flujo-de-pantallas"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "disenador",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "ideador",
+        "nota": "El ideador propuso 4 estructuras (A libreta única, B capas sueltas, C mundo primero, D consultar ≠ actuar) y recomendó D"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "analista",
+        "nota": "El analista inventarió 18 pantallas, 5 huecos por decidir y los criterios de aceptación"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "uiux",
+        "nota": "El diseñador UI/UX creó el documento 30 y anotó roadmap (F2-41 nueva) y documentos 01, 02, 10, 26, 27 y ADR-0011"
+      },
+      {
+        "etapa": "qa",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: estructuras del flujo de pantallas",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario de pantallas, huecos y criterios",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "ideador",
+        "a": "coordinador",
+        "que": "Entrega: 4 opciones con recomendación D",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: 18 nodos, hallazgos y 5 puntos por decidir",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "uiux",
+        "que": "Encargo: documento 30 con las decisiones del autor",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "uiux",
+        "a": "coordinador",
+        "que": "Entrega: documento 30 y anotaciones",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

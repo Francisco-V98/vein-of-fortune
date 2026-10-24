@@ -71,6 +71,8 @@ Decisión del autor (2026-10-15): **ratón y teclado son los controles principal
 
 🟡 Minijuegos: Picado y Perforación se juegan con un botón (ratón, teclado o mando); Cincelado (trazar) y arrastrar mercancía usan el puntero con ratón y un cursor con el stick con mando. Hay que diseñarlos con ambas variantes desde el inicio. Las variantes táctiles (trazar con el dedo) pasan a la fase móvil.
 
+✅ El mando base (stick mover, A usar, B atrás, Start pausa, View mapa, LB/RB pestañas, stick derecho cursor) y el flujo de pantallas están en [30](30-flujo-de-pantallas.md).
+
 🟡 Probar con un mando real en Windows y en la Steam Deck antes de dar por buenos los controles (F1-15).
 
 ## Exploración caminable ✅ (autor, 2026-10-24)
