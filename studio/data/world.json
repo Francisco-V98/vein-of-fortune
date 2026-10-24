@@ -116,6 +116,1177 @@
       "place": "fosa"
     }
   ],
+  "settlements": [
+    {
+      "id": "villa-brasa",
+      "name": "Villa Brasa",
+      "region": "Cuenca del Hollín",
+      "act": "I",
+      "zones": [
+        "galerias-hollin",
+        "canon-ferroso"
+      ]
+    },
+    {
+      "id": "altafria",
+      "name": "Altafría",
+      "name_en": "Highchill",
+      "region": "Sierra Alta",
+      "act": "II",
+      "zones": [
+        "sierra-alta"
+      ]
+    },
+    {
+      "id": "salinas-blancas",
+      "name": "Salinas Blancas",
+      "name_en": "White Salt Flats",
+      "region": "Salares del Litoral",
+      "act": "II",
+      "zones": [
+        "salares"
+      ]
+    },
+    {
+      "id": "cavernas",
+      "name": "Campamento de las Cavernas",
+      "region": "Cavernas de Cristal",
+      "act": "III",
+      "zones": [
+        "cavernas"
+      ]
+    },
+    {
+      "id": "fosa",
+      "name": "Campamento de la Comisión",
+      "region": "La Fosa",
+      "act": "IV",
+      "zones": [
+        "fosa"
+      ]
+    },
+    {
+      "id": "puerto-meridiano",
+      "name": "Puerto Meridiano",
+      "region": "Puerto Meridiano",
+      "act": "III",
+      "zones": []
+    }
+  ],
+  "buildings": [
+    {
+      "id": "ed-vb-tienda",
+      "name": "Tienda (el puesto reabierto)",
+      "settlement": "villa-brasa",
+      "roles": [
+        "vender",
+        "comprar",
+        "minijuego"
+      ],
+      "minigames": [
+        "regateo"
+      ],
+      "version": "MVP",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "carbon",
+        "hierro"
+      ],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F2-20",
+        "F3-18"
+      ]
+    },
+    {
+      "id": "ed-vb-taller",
+      "name": "Taller",
+      "settlement": "villa-brasa",
+      "roles": [
+        "ganar",
+        "minijuego"
+      ],
+      "minigames": [],
+      "version": "MVP",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "carbon",
+        "hierro"
+      ],
+      "recipes": [
+        "acero"
+      ],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F3-07"
+      ]
+    },
+    {
+      "id": "ed-vb-almacen",
+      "name": "Almacén",
+      "settlement": "villa-brasa",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "MVP",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F2-17",
+        "F3-08"
+      ]
+    },
+    {
+      "id": "ed-vb-casa",
+      "name": "Casa obrera (casa base)",
+      "settlement": "villa-brasa",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "MVP",
+      "improvable": true,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-226",
+        "F6-51"
+      ]
+    },
+    {
+      "id": "ed-vb-reme",
+      "name": "Casa de Reme",
+      "settlement": "villa-brasa",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "MVP",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [
+        "reme"
+      ],
+      "npcs": [],
+      "tasks": [
+        "F4-224"
+      ]
+    },
+    {
+      "id": "ed-vb-quiroga",
+      "name": "Oficina del Inspector",
+      "settlement": "villa-brasa",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "MVP",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [
+        "ministerio"
+      ],
+      "characters": [
+        "quiroga"
+      ],
+      "npcs": [],
+      "tasks": [
+        "F4-224"
+      ]
+    },
+    {
+      "id": "ed-vb-mina-galerias",
+      "name": "Boca de las Galerías del Hollín",
+      "settlement": "villa-brasa",
+      "roles": [
+        "minijuego"
+      ],
+      "minigames": [
+        "picado",
+        "perforacion",
+        "detonacion"
+      ],
+      "version": "MVP",
+      "improvable": false,
+      "evolutivo": false,
+      "mine_zone": "galerias-hollin",
+      "minerals": [
+        "carbon",
+        "hierro"
+      ],
+      "recipes": [],
+      "factions": [
+        "union"
+      ],
+      "characters": [
+        "teo"
+      ],
+      "npcs": [],
+      "tasks": [
+        "F4-225"
+      ]
+    },
+    {
+      "id": "ed-vb-mina-canon",
+      "name": "Boca del Cañón Ferroso",
+      "settlement": "villa-brasa",
+      "roles": [
+        "minijuego"
+      ],
+      "minigames": [
+        "picado",
+        "perforacion"
+      ],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "mine_zone": "canon-ferroso",
+      "minerals": [
+        "hierro",
+        "carbon",
+        "cobre"
+      ],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-225"
+      ]
+    },
+    {
+      "id": "ed-vb-union",
+      "name": "Sede de la Unión",
+      "settlement": "villa-brasa",
+      "roles": [
+        "ganar",
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [
+        "union"
+      ],
+      "characters": [],
+      "npcs": [
+        "delegado-union"
+      ],
+      "tasks": [
+        "F4-244"
+      ]
+    },
+    {
+      "id": "ed-vb-periodico",
+      "name": "Quiosco y redacción de La Voz del Hollín",
+      "settlement": "villa-brasa",
+      "roles": [
+        "comprar",
+        "ganar"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [
+        "union",
+        "teletipo"
+      ],
+      "characters": [
+        "lucia"
+      ],
+      "npcs": [
+        "voceador"
+      ],
+      "tasks": [
+        "F4-94",
+        "F4-95"
+      ]
+    },
+    {
+      "id": "ed-vb-herreria",
+      "name": "Herrería-chatarrería",
+      "settlement": "villa-brasa",
+      "roles": [
+        "comprar",
+        "vender"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "carbon",
+        "hierro"
+      ],
+      "recipes": [
+        "acero"
+      ],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-219"
+      ]
+    },
+    {
+      "id": "ed-af-mina",
+      "name": "Boca de las Minas de Sierra Alta",
+      "settlement": "altafria",
+      "roles": [
+        "minijuego"
+      ],
+      "minigames": [
+        "picado",
+        "perforacion",
+        "cribado"
+      ],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "mine_zone": "sierra-alta",
+      "minerals": [
+        "cobre",
+        "plata",
+        "hierro",
+        "oro"
+      ],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-225"
+      ]
+    },
+    {
+      "id": "ed-af-consorcio",
+      "name": "Oficina del Consorcio Arvel",
+      "settlement": "altafria",
+      "roles": [
+        "ganar"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [
+        "consorcio"
+      ],
+      "characters": [
+        "esteban"
+      ],
+      "npcs": [],
+      "tasks": [
+        "F4-63"
+      ]
+    },
+    {
+      "id": "ed-af-economato",
+      "name": "Economato del Consorcio",
+      "settlement": "altafria",
+      "roles": [
+        "comprar"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [
+        "consorcio"
+      ],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-219"
+      ]
+    },
+    {
+      "id": "ed-af-plateria",
+      "name": "Fundición-platería",
+      "settlement": "altafria",
+      "roles": [
+        "vender",
+        "comprar"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "plata"
+      ],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-220"
+      ]
+    },
+    {
+      "id": "ed-af-taller-ensayo",
+      "name": "Viejo taller de ensayo",
+      "settlement": "altafria",
+      "roles": [
+        "historia"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-222"
+      ]
+    },
+    {
+      "id": "ed-af-chalet",
+      "name": "Chalet de la cordillera",
+      "settlement": "altafria",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-48",
+        "F6-51",
+        "F6-53"
+      ]
+    },
+    {
+      "id": "ed-sb-mina",
+      "name": "Boca de los Salares del Litoral",
+      "settlement": "salinas-blancas",
+      "roles": [
+        "minijuego"
+      ],
+      "minigames": [
+        "cribado"
+      ],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "mine_zone": "salares",
+      "minerals": [
+        "salitre",
+        "cuarzo",
+        "plata"
+      ],
+      "recipes": [],
+      "factions": [
+        "ministerio"
+      ],
+      "characters": [],
+      "npcs": [
+        "contrabandista",
+        "inspector-corrupto"
+      ],
+      "tasks": [
+        "F4-225"
+      ]
+    },
+    {
+      "id": "ed-sb-lonja",
+      "name": "Lonja y almacén de salitre",
+      "settlement": "salinas-blancas",
+      "roles": [
+        "vender",
+        "comprar"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "salitre"
+      ],
+      "recipes": [
+        "polvora"
+      ],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-220",
+        "F6-67"
+      ]
+    },
+    {
+      "id": "ed-sb-bar",
+      "name": "Bar del Farol (Los Faroleros)",
+      "settlement": "salinas-blancas",
+      "roles": [
+        "comprar",
+        "vender",
+        "ganar"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "aetherita"
+      ],
+      "recipes": [],
+      "factions": [
+        "comision",
+        "faroleros"
+      ],
+      "characters": [
+        "casilda"
+      ],
+      "npcs": [],
+      "tasks": [
+        "F4-65",
+        "F6-56"
+      ]
+    },
+    {
+      "id": "ed-sb-caseron",
+      "name": "Caserón frente al mar",
+      "settlement": "salinas-blancas",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-48",
+        "F6-51",
+        "F6-53"
+      ]
+    },
+    {
+      "id": "ed-sb-muelle",
+      "name": "Muelle de pesca",
+      "settlement": "salinas-blancas",
+      "roles": [
+        "minijuego",
+        "vender"
+      ],
+      "minigames": [
+        "cribado"
+      ],
+      "version": "V2.2",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-62"
+      ]
+    },
+    {
+      "id": "ed-sb-astillero",
+      "name": "Astillero",
+      "settlement": "salinas-blancas",
+      "roles": [
+        "comprar",
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "V2.2",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-63"
+      ]
+    },
+    {
+      "id": "ed-sb-aduana",
+      "name": "Aduana",
+      "settlement": "salinas-blancas",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "evolutivo",
+      "improvable": false,
+      "evolutivo": true,
+      "minerals": [],
+      "recipes": [],
+      "factions": [
+        "ministerio"
+      ],
+      "characters": [],
+      "npcs": [
+        "aduanero-mayor"
+      ],
+      "tasks": []
+    },
+    {
+      "id": "ed-cv-mina",
+      "name": "Boca de las Cavernas de Cristal",
+      "settlement": "cavernas",
+      "roles": [
+        "minijuego"
+      ],
+      "minigames": [
+        "picado",
+        "perforacion",
+        "cribado",
+        "cincelado"
+      ],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "mine_zone": "cavernas",
+      "minerals": [
+        "cuarzo",
+        "oro",
+        "esmeralda",
+        "diamante",
+        "plata"
+      ],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [
+        "cazarrecompensas"
+      ],
+      "tasks": [
+        "F4-225"
+      ]
+    },
+    {
+      "id": "ed-cv-tasadores",
+      "name": "Tasadores",
+      "settlement": "cavernas",
+      "roles": [
+        "vender",
+        "minijuego"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "cuarzo",
+        "esmeralda",
+        "diamante"
+      ],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-55",
+        "F4-221"
+      ]
+    },
+    {
+      "id": "ed-cv-campamento",
+      "name": "Campamento de ensayo",
+      "settlement": "cavernas",
+      "roles": [
+        "historia"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "cuarzo"
+      ],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-223"
+      ]
+    },
+    {
+      "id": "ed-cv-taller-talla",
+      "name": "Taller de talla",
+      "settlement": "cavernas",
+      "roles": [
+        "minijuego",
+        "vender"
+      ],
+      "minigames": [
+        "cincelado"
+      ],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-56"
+      ]
+    },
+    {
+      "id": "ed-fo-mina",
+      "name": "Boca de La Fosa del Éter",
+      "settlement": "fosa",
+      "roles": [
+        "minijuego"
+      ],
+      "minigames": [
+        "cincelado",
+        "contencion"
+      ],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "mine_zone": "fosa",
+      "minerals": [
+        "aetherita",
+        "diamante",
+        "esmeralda",
+        "oro"
+      ],
+      "recipes": [],
+      "factions": [
+        "comision"
+      ],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-225"
+      ]
+    },
+    {
+      "id": "ed-fo-campamento-viejo",
+      "name": "Campamento de la Primera Expedición",
+      "settlement": "fosa",
+      "roles": [
+        "historia"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-223"
+      ]
+    },
+    {
+      "id": "ed-fo-barracon",
+      "name": "Barracón de calibración",
+      "settlement": "fosa",
+      "roles": [
+        "historia"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-223"
+      ]
+    },
+    {
+      "id": "ed-pm-bolsa",
+      "name": "La Bolsa",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "comprar",
+        "vender"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-166",
+        "F6-65"
+      ]
+    },
+    {
+      "id": "ed-pm-ministerio",
+      "name": "Sede del Ministerio de Recursos",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "gastar",
+        "ganar"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [
+        "ministerio"
+      ],
+      "characters": [
+        "montenegro"
+      ],
+      "npcs": [],
+      "tasks": [
+        "F4-74",
+        "F6-46"
+      ]
+    },
+    {
+      "id": "ed-pm-casa-ormeno",
+      "name": "Casa Ormeño (tienda insignia)",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "vender",
+        "comprar"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "plata"
+      ],
+      "recipes": [
+        "joyeria"
+      ],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-221"
+      ]
+    },
+    {
+      "id": "ed-pm-comision",
+      "name": "Oficina de la Comisión del Éter",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "vender"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [
+        "aetherita"
+      ],
+      "recipes": [],
+      "factions": [
+        "comision"
+      ],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-246"
+      ]
+    },
+    {
+      "id": "ed-pm-estacion",
+      "name": "Estación",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "historia"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F4-222"
+      ]
+    },
+    {
+      "id": "ed-pm-pension",
+      "name": "Pensión",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "historia"
+      ],
+      "minigames": [],
+      "version": "V1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [
+        "comision"
+      ],
+      "characters": [
+        "anselmo"
+      ],
+      "npcs": [],
+      "tasks": [
+        "F4-222"
+      ]
+    },
+    {
+      "id": "ed-pm-salon",
+      "name": "Salón del Farol",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "ganar",
+        "gastar",
+        "minijuego"
+      ],
+      "minigames": [],
+      "version": "V2.0",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [
+        "faroleros"
+      ],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-11"
+      ]
+    },
+    {
+      "id": "ed-pm-inmobiliaria",
+      "name": "Inmobiliaria",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "comprar"
+      ],
+      "minigames": [],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-47"
+      ]
+    },
+    {
+      "id": "ed-pm-mansion-paseo",
+      "name": "Mansión del Paseo Marítimo",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-49",
+        "F6-52",
+        "F6-53"
+      ]
+    },
+    {
+      "id": "ed-pm-mansion-colina",
+      "name": "Mansión de la Colina de la Bolsa",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-49",
+        "F6-52",
+        "F6-53"
+      ]
+    },
+    {
+      "id": "ed-pm-mansion-barrio",
+      "name": "Mansión del Barrio Alto",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-50",
+        "F6-52",
+        "F6-53"
+      ]
+    },
+    {
+      "id": "ed-pm-joyeria",
+      "name": "Joyería del dueño",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "comprar",
+        "ganar",
+        "minijuego"
+      ],
+      "minigames": [],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [
+        "joyeria"
+      ],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-54",
+        "F6-55"
+      ]
+    },
+    {
+      "id": "ed-pm-concesionaria",
+      "name": "Concesionaria",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "comprar"
+      ],
+      "minigames": [],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-57"
+      ]
+    },
+    {
+      "id": "ed-pm-sastreria",
+      "name": "Sastrería",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "comprar"
+      ],
+      "minigames": [],
+      "version": "V2.1",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-58"
+      ]
+    },
+    {
+      "id": "ed-pm-puerto-deportivo",
+      "name": "Puerto deportivo",
+      "settlement": "puerto-meridiano",
+      "roles": [
+        "comprar",
+        "gastar"
+      ],
+      "minigames": [],
+      "version": "V2.2",
+      "improvable": false,
+      "evolutivo": false,
+      "minerals": [],
+      "recipes": [],
+      "factions": [],
+      "characters": [],
+      "npcs": [],
+      "tasks": [
+        "F6-64"
+      ]
+    }
+  ],
   "minigames": [
     {
       "id": "picado",

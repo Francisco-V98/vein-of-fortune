@@ -42,7 +42,7 @@ Los nombres **Altafría** y **Salinas Blancas**, en español, los decidió el au
 
 ## 2 · Catálogo de edificaciones por zona ✅
 
-El detalle de la mercancía exacta de cada edificación se fija al hacerla: ⏳ F4-219 a F4-225 en V1 y ⏳ F6-47 a F6-58 en V2.
+Esta tabla está registrada en `studio/data/world.json` (`settlements` y `buildings`) y el build comprueba que coincide (comprobación C33: IDs, nombres, versiones, asentamientos, roles y la cuenta de filas). El detalle de la mercancía exacta de cada edificación se fija al hacerla: ⏳ F4-219 a F4-225 en V1 y ⏳ F6-47 a F6-58 en V2.
 
 **Roles.** *Comprar* y *vender* (el jugador compra o vende), *ganar* (ingresos que no son una venta: contratos, sueldos, premios), *gastar* (cuotas, impuestos, mantenimiento, estilo de vida), *minijuego* (se juega uno de [09](09-minijuegos.md)) e *historia* (sitio de misión o de cinta, [23](23-arbol-de-decisiones.md), sección 7). **Versiones:** MVP, V1, V2.0, V2.1, V2.2 y evolutivo (sección 7). **ID:** `ed-<zona>-<nombre>`, con `vb` Villa Brasa, `af` Altafría, `sb` Salinas Blancas, `cv` Cavernas, `fo` Fosa y `pm` Puerto Meridiano.
 

@@ -1131,9 +1131,15 @@ def build_hub():
         "world": world,
         "decisions": decisions,
         "hilos": hilos,
-        "coherence": coherence.check(world, story, decisions, hilos, task_status),
+        "coherence": coherence.check(world, story, decisions, hilos, task_status, doc26=load_doc26()),
         "sim": load_sim(world),
     }
+
+
+def load_doc26():
+    """Texto del documento 26 (zonas y edificios) para comprobar world.json contra su tabla; None si no existe."""
+    found = sorted(DOCS.glob("26-*.md"))
+    return found[0].read_text(encoding="utf-8") if found else None
 
 
 def render(hub):
