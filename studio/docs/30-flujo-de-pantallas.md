@@ -43,6 +43,8 @@ flowchart TD
 
 ## 3 · Los 18 nodos ✅
 
+Correspondencia con el diagrama: «Libreta» (LB) agrupa los nodos 3 (Mapa), 7 (vista de mercado en lectura), 14 (Diario) y 15 (tablón y ficha, que además se abre en la calle); «Vistas por función» (7) y el cartel de La Fosa cerrada (12) se dibujan dentro del interior (I) y del tren (TR). La pausa (PA) se abre con Esc o Start desde cualquier escena segura y desde los nodos donde el mapa está bloqueado; no se dibuja una flecha por origen para no saturar.
+
 | # | Nodo | Tipo | Vista | Tarea |
 |---|---|---|---|---|
 | 1 | Título | Escena | Menú plano | ⏳ F2-41 (arte provisional ⏳ F3-29) |
@@ -134,7 +136,7 @@ flowchart TD
 
 **Bloque de expedición.** Se gasta al cruzar la entrada de la galería, con confirmación; si sales sin picar ninguna mena, se devuelve. **Detector con mando:** LB/RB recorren las menas visibles y X escanea, igual que el clic del ratón ([02](02-extraccion.md)). Batería de 12/17/25/32 cargas; calidad de entrada ×0,78, ×1,0 y ×1,44 ([02](02-extraccion.md), [28](28-numeros-base-de-la-economia.md)).
 
-**Mando base.** Stick izquierdo mover · A usar o aceptar · B atrás · Start pausa · View mapa · LB/RB pestañas (en la galería, menas) · stick derecho cursor (minijuegos de puntero). Teclado y ratón son los controles principales ([10](10-tecnico-y-herramientas.md)). Las zonas de clic miden, como mínimo, 24×24 px base (≈ 72 px en 1080p) y el texto no baja de 8 px base. 🟡
+**Mando base.** Stick izquierdo mover · A usar o aceptar · B atrás · Start pausa · View mapa · LB/RB pestañas (en la galería, menas) · stick derecho cursor (minijuegos de puntero). Teclado y ratón son los controles principales ([10](10-tecnico-y-herramientas.md)). Las zonas de clic miden, como mínimo, 24×24 px base (≈ 72 px en 1080p) y el texto no baja de 8 px base. ✅
 
 ## 8 · Propuestas del diseñador ✅ (confirmadas por el autor, 2026-10-24)
 

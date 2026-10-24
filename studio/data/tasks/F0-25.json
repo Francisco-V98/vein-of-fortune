@@ -38,7 +38,10 @@
       },
       {
         "etapa": "qa",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "QA con un 🟡 residual y 2 observaciones menores del diagrama, corregidos"
       },
       {
         "etapa": "autor",
@@ -93,6 +96,13 @@
         "de": "uiux",
         "a": "coordinador",
         "que": "Entrega: documento 30 y anotaciones",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Entrega: informe de QA con 1 fallo y 2 menores",
         "at": "2026-10-24",
         "tipo": "entrega"
       }
