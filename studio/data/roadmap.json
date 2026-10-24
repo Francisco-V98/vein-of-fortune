@@ -972,7 +972,7 @@
             },
             {
               "id": "F0-98",
-              "status": "doing",
+              "status": "done",
               "title": "Límite de tiempo del modo rápido en CI",
               "est": 1,
               "prio": "P0",

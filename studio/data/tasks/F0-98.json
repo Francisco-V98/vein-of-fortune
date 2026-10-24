@@ -8,6 +8,14 @@
       "by": "claude",
       "note": "Prueba de tiempo del modo rápido inestable en CI",
       "ref": "rama studio/F0-98-limite-modo-rapido-en-ci"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Aprobado por el autor",
+      "ref": ""
     }
   ],
   "comments": [],
@@ -42,7 +50,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "autor",
+        "nota": "Aprobado por el autor"
       },
       {
         "etapa": "playtest",
@@ -50,7 +61,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "PR fusionado"
       }
     ],
     "traspasos": [
@@ -58,6 +72,13 @@
         "de": "coordinador",
         "a": "qa",
         "que": "Encargo: comprobar que el job de CI pasa",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobación: revisó el entregable y está aprobado",
         "at": "2026-10-24",
         "tipo": "entrega"
       }
