@@ -25,6 +25,16 @@ SECTORS = ["ferrocarril", "energia", "militar", "agricultura", "lujo", "tecnolog
 VOLATILITY_ORDER = ["baja", "baja-media", "media", "media-alta", "alta", "muy alta"]
 TIER_MIN, TIER_MAX = 1, 5
 SURVEILLANCE_RANGE = (0, 100)
+
+# Asentamientos y edificaciones (F0-83, documento 26): valores válidos y prefijo de ID -> asentamiento
+BUILDING_ROLES = ["comprar", "vender", "ganar", "gastar", "minijuego", "historia"]
+BUILDING_VERSIONS = ["MVP", "V1", "V2.0", "V2.1", "V2.2", "evolutivo"]
+BUILDING_PREFIX = {"vb": "villa-brasa", "af": "altafria", "sb": "salinas-blancas", "cv": "cavernas", "fo": "fosa", "pm": "puerto-meridiano"}
+BUILDING_LINKS = (("minerals", "minerals", "mineral"), ("recipes", "recipes", "receta"), ("factions", "factions", "facción"),
+                  ("characters", "characters", "personaje"), ("npcs", "npcs", "PNJ"), ("minigames", "minigames", "minijuego"))
+_DOC_ROW = re.compile(r"^\|\s*`(ed-[a-z0-9-]+)`\s*\|")
+_DOC_VERSION = re.compile(r"MVP|V1|V2\.[0-9]|evolutivo")
+_DOC_ROLES = re.compile(r"\b(%s)\b" % "|".join(BUILDING_ROLES))
 _WAIT_REF = re.compile(r"\u23f3\s*([A-Z]\d+-\d+)")
 _NODE_REF = re.compile(r"\bn-[a-z0-9]+(?:-[a-z0-9]+)*")
 _TAPE_REF = re.compile(r"\bcintas?\s+(\d+(?:\s*(?:,|y|–|-|a)\s*\d+)*)", re.IGNORECASE)
@@ -53,7 +63,7 @@ def integrity(world):
     acts = world.get("acts", [])
     idx = _act_index(acts)
     seen = {}
-    for kind in ("zones", "minigames", "minerals", "mechanics", "recipes", "factions", "characters", "npcs"):
+    for kind in ("zones", "minigames", "minerals", "mechanics", "recipes", "factions", "characters", "npcs", "settlements", "buildings"):
         for item in world.get(kind, []):
             key = (kind, item.get("id"))
             if key in seen:
@@ -103,6 +113,57 @@ def integrity(world):
             errors.append("npc %s con facción inexistente: %s" % (npc["id"], npc["faction"]))
         if not npc.get("group"):
             errors.append("npc %s sin grupo" % npc["id"])
+    errors += _building_errors(world, idx)
+    return errors
+
+
+def _building_errors(world, act_idx):
+    """Errores de integridad de asentamientos y edificaciones: valores válidos y enlaces a IDs que existen."""
+    errors = []
+    zones = {z["id"]: z for z in world.get("zones", [])}
+    settlements = {s["id"]: s for s in world.get("settlements", [])}
+    for s in settlements.values():
+        if s.get("act") not in act_idx:
+            errors.append("asentamiento %s: acto desconocido (%s)" % (s["id"], s.get("act")))
+        for z in s.get("zones", []):
+            if z not in zones:
+                errors.append("asentamiento %s atiende una zona de minado inexistente: %s" % (s["id"], z))
+            elif zones[z].get("place") != s["id"]:
+                errors.append("asentamiento %s atiende la zona %s, que declara otro asentamiento (%s)" % (s["id"], z, zones[z].get("place")))
+    if settlements:
+        for z in zones.values():
+            if z.get("place") not in settlements:
+                errors.append("zona %s sin asentamiento válido (%s)" % (z["id"], z.get("place")))
+            elif z["id"] not in settlements[z["place"]].get("zones", []):
+                errors.append("zona %s no figura entre las zonas de su asentamiento %s" % (z["id"], z["place"]))
+    for b in world.get("buildings", []):
+        bid = b.get("id", "?")
+        if not re.fullmatch(r"ed-[a-z]{2}-[a-z0-9-]+", str(bid)):
+            errors.append("edificación %s: el ID no sigue ed-<zona>-<nombre>" % bid)
+        elif b.get("settlement") in settlements and BUILDING_PREFIX.get(bid.split("-")[1]) != b["settlement"]:
+            errors.append("edificación %s: el prefijo del ID no corresponde a su asentamiento (%s)" % (bid, b["settlement"]))
+        if b.get("settlement") not in settlements:
+            errors.append("edificación %s con asentamiento inexistente: %s" % (bid, b.get("settlement")))
+        if not b.get("roles"):
+            errors.append("edificación %s sin roles" % bid)
+        for r in b.get("roles", []):
+            if r not in BUILDING_ROLES:
+                errors.append("edificación %s: rol desconocido (%s)" % (bid, r))
+        if b.get("version") not in BUILDING_VERSIONS:
+            errors.append("edificación %s: versión desconocida (%s)" % (bid, b.get("version")))
+        if bool(b.get("evolutivo")) != (b.get("version") == "evolutivo"):
+            errors.append("edificación %s: «evolutivo» no coincide con su versión (%s)" % (bid, b.get("version")))
+        for key, kind, label in BUILDING_LINKS:
+            known = {x["id"] for x in world.get(kind, [])}
+            for ref in b.get(key, []):
+                if ref not in known:
+                    errors.append("edificación %s enlaza a un %s inexistente: %s" % (bid, label, ref))
+        mz = b.get("mine_zone")
+        if mz is not None:
+            if mz not in zones:
+                errors.append("edificación %s: boca de una zona de minado inexistente (%s)" % (bid, mz))
+            elif zones[mz].get("place") != b.get("settlement"):
+                errors.append("edificación %s: la zona %s es de otro asentamiento (%s)" % (bid, mz, zones[mz].get("place")))
     return errors
 
 
@@ -543,6 +604,71 @@ def _economy_other_checks(world, add, task_status):
         add("C32", "Economía", "Los ⏳ del registro del mundo apuntan a tareas pendientes que existen", len(refs), sorted(set(bad)))
 
 
+def doc26_catalogo(text):
+    """Filas `ed-*` de la tabla del documento 26 como {id: {name, roles, version, improvable, settlement}}."""
+    rows = {}
+    for line in text.split("\n"):
+        if not _DOC_ROW.match(line):
+            continue
+        c = [x.strip() for x in re.split(r"(?<!\\)\|", line.strip().strip("|"))]
+        if len(c) < 6:
+            continue
+        v = _DOC_VERSION.search(c[4])
+        bid = c[0].strip("`")
+        rows[bid] = {"name": c[1], "roles": _DOC_ROLES.findall(re.sub(r"\([^)]*\)", "", c[2])), "version": v.group(0) if v else c[4],
+                     "improvable": "mejorable" in c[4], "settlement": BUILDING_PREFIX.get(bid.split("-")[1] if bid.count("-") > 1 else "")}
+    return rows
+
+
+def _building_checks(world, add, task_status, doc26):
+    """C33: edificaciones y asentamientos contra el documento 26 (IDs, nombres, versiones, roles, bocas de mina y cuenta)."""
+    buildings = world.get("buildings", [])
+    zones = world.get("zones", [])
+    bad = []
+    total = len(buildings) + len(zones)
+    mines = {}
+    for b in buildings:
+        if b.get("mine_zone"):
+            mines.setdefault(b["mine_zone"], []).append(b["id"])
+    for z in zones:
+        if len(mines.get(z["id"], [])) != 1:
+            bad.append("La zona de minado %s debe tener una sola boca de mina y tiene %d" % (z["id"], len(mines.get(z["id"], []))))
+    for b in buildings:
+        for t in b.get("tasks", []):
+            total += 1
+            if task_status is None:
+                continue
+            if t not in task_status:
+                bad.append("%s: la tarea %s no existe" % (b["id"], t))
+            elif task_status[t] == "done":
+                bad.append("%s: la tarea %s está terminada: debe resolverse" % (b["id"], t))
+    evol = [b for b in buildings if b.get("evolutivo")]
+    if doc26 is not None:
+        rows = doc26_catalogo(doc26)
+        total += len(set(rows) | {b["id"] for b in buildings}) + 1
+        mine = {b["id"]: b for b in buildings}
+        for bid in sorted(set(rows) - set(mine)):
+            bad.append("%s está en el documento 26 y falta en world.json" % bid)
+        for bid in sorted(set(mine) - set(rows)):
+            bad.append("%s está en world.json y no en el documento 26" % bid)
+        for bid in sorted(set(rows) & set(mine)):
+            r, b = rows[bid], mine[bid]
+            for key, label in (("name", "nombre"), ("version", "versión"), ("settlement", "asentamiento"), ("improvable", "mejorable")):
+                if r[key] != b.get(key):
+                    bad.append("%s: %s distinto (documento 26: %r; world.json: %r)" % (bid, label, r[key], b.get(key)))
+            if r["roles"] != b.get("roles"):
+                bad.append("%s: roles distintos (documento 26: %s; world.json: %s)" % (bid, ", ".join(r["roles"]), ", ".join(b.get("roles", []))))
+        m = re.search(r"(\d+) filas: las \*\*(\d+) edificaciones\*\*", doc26)
+        if m is None:
+            bad.append("El documento 26 no da la cuenta «N filas: las N edificaciones»")
+        elif (int(m.group(1)), int(m.group(2))) != (len(buildings), len(buildings) - len(evol)):
+            bad.append("La cuenta del documento 26 (%s filas, %s edificaciones) no coincide con world.json (%d filas, %d sin las evolutivas)"
+                       % (m.group(1), m.group(2), len(buildings), len(buildings) - len(evol)))
+    elif len(buildings) - len(evol) != 45 or len(evol) != 1:
+        bad.append("Debe haber 45 edificaciones más la aduana evolutiva y hay %d más %d evolutivas" % (len(buildings) - len(evol), len(evol)))
+    add("C33", "Mundo", "Las edificaciones de world.json coinciden con la tabla del documento 26 y cada zona de minado tiene su boca", total, bad)
+
+
 def _economy_checks(world, add, task_status=None):
     """Campos económicos del registro (F0-52): C20 a C32. Solo corre si el registro los tiene."""
     if not _has_economy(world):
@@ -553,7 +679,7 @@ def _economy_checks(world, add, task_status=None):
     _economy_zone_checks(world, add)
 
 
-def check(world, story, decisions=None, hilos=None, task_status=None):
+def check(world, story, decisions=None, hilos=None, task_status=None, doc26=None):
     """Evalúa las comprobaciones de coherencia. Devuelve un resumen listo para el hub."""
     acts = world.get("acts", [])
     idx = _act_index(acts)
@@ -668,6 +794,8 @@ def check(world, story, decisions=None, hilos=None, task_status=None):
     if hilos and hilos.get("hilos"):
         _hilo_checks(world, story, decisions, hilos, add)
     _economy_checks(world, add, task_status)
+    if world.get("buildings"):
+        _building_checks(world, add, task_status, doc26)
     checks.sort(key=lambda c: int(c["id"][1:]))
 
     total = sum(c["total"] for c in checks)

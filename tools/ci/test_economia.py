@@ -52,7 +52,7 @@ TASKS = {"F0-52": "doing", "F0-53": "backlog", "F0-10": "done"}
 
 def run(world, tasks=TASKS):
     result = coherence.check(world, {"lanes": []}, task_status=tasks)
-    return {c["id"]: c for c in result["checks"] if int(c["id"][1:]) >= 20}
+    return {c["id"]: c for c in result["checks"] if 20 <= int(c["id"][1:]) <= 32}  # C33 (edificaciones) tiene sus propias pruebas
 
 
 def failing(world, tasks=TASKS):

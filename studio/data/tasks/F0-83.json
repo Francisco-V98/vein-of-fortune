@@ -1,0 +1,105 @@
+{
+  "id": "F0-83",
+  "history": [
+    {
+      "at": "2026-10-23",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Se empieza el registro de zonas y edificaciones en world.json",
+      "ref": "rama studio/F0-83-edificaciones-en-world-json"
+    },
+    {
+      "at": "2026-10-23",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-83"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "El catálogo ya está decidido en el documento 26; la tarea es registrarlo en los datos"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-23",
+        "por": "coordinador",
+        "nota": "world.json ya trae las 6 zonas de minado con su asentamiento; faltan asentamientos y edificaciones, que están en la tabla del documento 26 (46 filas: 45 más la aduana evolutiva) y que el cerebro de Obsidian ya lee"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-23",
+        "por": "herramientas",
+        "nota": "world.json con 6 asentamientos y 46 edificaciones, validación en integrity y la comprobación C33 contra el documento 26, cerebro leyendo de world.json"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-23",
+        "por": "qa",
+        "nota": "QA aprobó con una observación menor: el enlace a world.json en cada nota del cerebro no era requisito de la tarea"
+      },
+      {
+        "etapa": "autor",
+        "estado": "activa",
+        "at": "2026-10-23",
+        "nota": "Esperando la revisión del autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "herramientas",
+        "que": "Encargo: asentamientos y edificaciones en world.json, validación en el build y comprobación contra el documento 26",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Entrega: registro de 6 asentamientos y 46 edificaciones, C33 y 15 pruebas nuevas",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Revisar F0-83",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Aprobado con una observación menor sin acción",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "autor",
+        "que": "Revisión de F0-83: 6 asentamientos y 46 edificaciones en world.json con validación",
+        "at": "2026-10-23",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

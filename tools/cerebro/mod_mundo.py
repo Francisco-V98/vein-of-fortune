@@ -1,5 +1,5 @@
 """Mundo: actos, zonas de minado, asentamientos, edificaciones, minerales, recetas, minijuegos, mecánicas, facciones,
-personajes y PNJ (studio/data/world.json) y las edificaciones `ed-*` del catálogo del documento 26.
+personajes y PNJ (studio/data/world.json, que también registra los asentamientos y las edificaciones `ed-*` del documento 26).
 
 IDs: acto-I, zona-galerias-hollin, asent-villa-brasa, ed-vb-tienda, min-carbon, rec-acero, mj-picado, mec-taller,
 fac-union, pj-reme, npc-voceador. Las relaciones cruzadas (mineral <-> zona <-> edificación <-> facción <-> personaje) se
@@ -24,32 +24,27 @@ FAC_PALABRAS = {
     "teletipo": ["teletipo"],
 }
 MINERAL_PALABRAS = {"aetherita": ["aetherita"], "esmeralda": ["esmeralda"], "diamante": ["diamante"]}  # el resto: su nombre
-ASENT = {  # ID del lugar en world.json -> nombre del asentamiento (documento 26, secciones 1.2 y 1.3)
-    "villa-brasa": ("Villa Brasa",),
-    "altafria": ("Altafría",),
-    "salinas-blancas": ("Salinas Blancas",),
-    "cavernas": ("Campamento de las Cavernas",),
-    "fosa": ("Campamento de la Comisión",),
-    "puerto-meridiano": ("Puerto Meridiano",),
-}
 PERSONAJE_NOMBRE = {"reme": "Reme", "montenegro": "Ministro Montenegro"}
 PERSONAJE_DOCS = {"reme": ["doc-22"], "anselmo": ["doc-21"], "montenegro": ["doc-25"]}
 MECANICA_NOMBRE = {"escaner": "Escáner", "mejora-detector": "Mejora del detector", "taller": "Taller (mecánica)"}
 ACTO_DOCS = {"I": ["doc-27", "doc-24"], "II": ["doc-22", "doc-24"], "III": ["doc-24", "doc-25"], "IV": ["doc-25", "doc-24"]}
 FILA_ED = re.compile(r"^\|\s*`(ed-[a-z0-9-]+)`\s*\|")
-VERSION = re.compile(r"MVP|V2\.[0-9]|V1|evolutivo")
+MEJORA_EN = "V1"  # `improvable` es booleano: la versión en que se mejora es la del documento 26, sección 2.1
 
 
-# --- lectura del catálogo de edificaciones (documento 26, sección 2) --------------------------------------------------
-def leer_catalogo(repo):
-    """[{id, nombre, rol, desc, version, marca, place, linea, ruta, intro}] de las filas `ed-*` de la sección 2."""
+# --- catálogo de edificaciones (world.json, claves `settlements` y `buildings`; contrastado con el documento 26 por coherencia C33) ---
+def ruta_doc26(repo):
+    ruta = next(iter(sorted((repo / "studio" / "docs").glob("26-*.md"))), None)
+    return ruta.relative_to(repo).as_posix() if ruta else None
+
+
+def leer_prosa(repo):
+    """({id: {rol, desc, linea}}, {asentamiento: intro}) con el texto de la tabla del documento 26, sección 2 (la prosa no se copia a world.json)."""
     ruta = next(iter(sorted((repo / "studio" / "docs").glob("26-*.md"))), None)
     if ruta is None:
-        return [], None
-    rel = ruta.relative_to(repo).as_posix()
-    lineas = ruta.read_text(encoding="utf-8").split("\n")
-    dentro, place, intros, filas = False, None, {}, []
-    for n, linea in enumerate(lineas, 1):
+        return {}, {}
+    dentro, place, intros, filas = False, None, {}, {}
+    for n, linea in enumerate(ruta.read_text(encoding="utf-8").split("\n"), 1):
         if linea.startswith("## "):
             dentro = linea.startswith("## 2 ")
             continue
@@ -67,12 +62,24 @@ def leer_catalogo(repo):
         if FILA_ED.match(linea):
             c = [x.strip() for x in re.split(r"(?<!\\)\|", linea.strip().strip("|"))]
             if len(c) >= 6:
-                v = VERSION.search(c[4])
-                filas.append({"id": c[0].strip("`"), "nombre": c[1], "rol": c[2], "desc": c[3], "version": v.group(0) if v else c[4],
-                              "version_texto": c[4], "marca": c[5], "place": place, "linea": n, "ruta": rel})
-    for f in filas:
-        f["intro"] = intros.get(f["place"], "")
-    return filas, rel
+                filas[c[0].strip("`")] = {"rol": c[2], "desc": c[3], "linea": n}
+    return filas, intros
+
+
+def leer_catalogo(w, repo):
+    """[{id, nombre, rol, desc, version, version_texto, place, ruta, intro, ...enlaces}] de `buildings` (estructura y enlaces de world.json,
+    prosa del documento 26), y la ruta del documento 26."""
+    ruta = ruta_doc26(repo)
+    prosa, intros = leer_prosa(repo)
+    filas = []
+    for b in w.get("buildings", []):
+        p = prosa.get(b["id"], {})
+        filas.append({"id": b["id"], "nombre": b["name"], "rol": p.get("rol", ", ".join(b.get("roles", []))), "desc": p.get("desc", ""),
+                      "version": b["version"], "version_texto": b["version"] + ("; mejorable en " + MEJORA_EN if b.get("improvable") else ""),
+                      "place": b["settlement"], "ruta": ruta or WORLD, "intro": intros.get(b["settlement"], ""), "mina": b.get("mine_zone"),
+                      "minerales": b.get("minerals", []), "pjs": b.get("characters", []), "npcs": b.get("npcs", []), "facs": b.get("factions", []),
+                      "mjs": b.get("minigames", []), "recs": b.get("recipes", []), "tareas": b.get("tasks", [])})
+    return filas, ruta
 
 
 def nombre_visible_ed(nombre):
@@ -93,6 +100,7 @@ class Mundo:
         self.facciones = {f["id"]: f for f in w.get("factions", [])}
         self.personajes = {c["id"]: c for c in w.get("characters", [])}
         self.npcs = {n["id"]: n for n in w.get("npcs", [])}
+        self.asent = {a["id"]: a for a in w.get("settlements", [])}
         self.tokens_pj = self._tokens_personajes()
 
     def _tokens_personajes(self):
@@ -148,7 +156,7 @@ class Mundo:
         for d, pre in ((self.minijuegos, "mj-"), (self.facciones, "fac-"), (self.recetas, "rec-"), (self.minerales, "min-")):
             for i in d:
                 ents[i] = pre + i
-        for p in ASENT:
+        for p in self.asent:
             ents[p] = "asent-" + p
         return ents
 
@@ -176,6 +184,12 @@ def _fuente_w(lineas, seccion, id_):
     return "%s:%d" % (WORLD, n) if n else WORLD
 
 
+def _fuente_doc(lineas, ruta, id_):
+    """«ruta:línea» de la fila de la edificación en el documento 26 (cadena vacía si no está)."""
+    n = linea_de(lineas, "`%s`" % id_) if ruta else 0
+    return "%s:%d" % (ruta, n) if n else ""
+
+
 # --- generación ------------------------------------------------------------------------------------------------------------
 def generar(registro, repo):
     w = cargar(repo, WORLD)
@@ -184,26 +198,17 @@ def generar(registro, repo):
         return
     m = Mundo(w)
     lw = lineas_de(repo, WORLD)
-    catalogo, ruta26 = leer_catalogo(repo)
+    l26 = lineas_de(repo, ruta_doc26(repo)) if ruta_doc26(repo) else []
+    catalogo, ruta26 = leer_catalogo(w, repo)
     ed_por_place, ed_de_mineral, ed_de_pj, ed_de_npc, ed_de_fac, ed_de_mj, ed_de_rec = {}, {}, {}, {}, {}, {}, {}
     ed_info = {}
     for f in catalogo:
-        texto = " ".join([f["nombre"], f["rol"], f["desc"]])
-        es_mina = re.search(r"-mina(-|$)", f["id"]) is not None
-        zona = None
-        if es_mina:
-            cand = [z for z, d in m.zonas.items() if d.get("place") == f["place"]]
-            zona = cand[0] if len(cand) == 1 else next((z for z in cand if z.split("-")[0] in f["id"]), None)
-        minerales = list(m.zonas[zona]["zone_mix"]) if zona and m.zonas[zona].get("zone_mix") else m.minerales_en(texto)
-        pjs = m.personas_en(texto)
-        npcs = m.npcs_en(texto)
-        facs = sin_repetidos(m.facciones_en(texto) + [m.personajes[p]["faction"] for p in pjs if m.personajes[p].get("faction") in m.facciones]
-                             + [m.npcs[n]["faction"] for n in npcs if m.npcs[n].get("faction") in m.facciones])
-        mjs = m.minijuegos_en(f["rol"] + " " + f["desc"])
-        recs = m.recetas_en(texto)
-        ed_info[f["id"]] = {"zona": zona, "minerales": minerales, "pjs": pjs, "npcs": npcs, "facs": facs, "mjs": mjs, "recs": recs}
+        ed_info[f["id"]] = {"zona": f["mina"], "minerales": f["minerales"], "pjs": f["pjs"], "npcs": f["npcs"], "facs": f["facs"], "mjs": f["mjs"],
+                            "recs": f["recs"]}
         ed_por_place.setdefault(f["place"], []).append(f["id"])
-        for lista, destino in ((minerales, ed_de_mineral), (pjs, ed_de_pj), (npcs, ed_de_npc), (facs, ed_de_fac), (mjs, ed_de_mj), (recs, ed_de_rec)):
+        info = ed_info[f["id"]]
+        for lista, destino in ((info["minerales"], ed_de_mineral), (info["pjs"], ed_de_pj), (info["npcs"], ed_de_npc), (info["facs"], ed_de_fac),
+                               (info["mjs"], ed_de_mj), (info["recs"], ed_de_rec)):
             for x in lista:
                 destino.setdefault(x, []).append(f["id"])
 
@@ -295,29 +300,30 @@ def generar(registro, repo):
         nota = registro.nueva(
             "zona-" + z, "zona", d["name"], "mundo/zonas", sufijo="zona", arriba="moc-zonas", tags=_tags(d.get("act")), fuente=_fuente_w(lw, "zones", z),
             props={"acto": d.get("act"), "region": d.get("region"), "profunda": bool(d.get("deep")), "bloques": d.get("blocks"),
-                   "riqueza_inicial": d.get("initial_wealth"), "asentamiento": ref("asent-" + d["place"]) if d.get("place") in ASENT else d.get("place")},
+                   "riqueza_inicial": d.get("initial_wealth"), "asentamiento": ref("asent-" + d["place"]) if d.get("place") in m.asent else d.get("place")},
             resumen="%s · Acto %s · %s" % (d.get("region"), d.get("act"), ", ".join(m.minerales[i]["name"] for i in mezcla if i in m.minerales)),
             cuerpo="\n".join(cuerpo))
-        nota.relacion("Asentamiento", [ref("asent-" + d["place"])] if d.get("place") in ASENT else [])
+        nota.relacion("Asentamiento", [ref("asent-" + d["place"])] if d.get("place") in m.asent else [])
         nota.relacion("Boca de mina", [ref(e) for e in bocas])
         nota.relacion("Minerales", [ref("min-" + i) for i in mezcla if i in m.minerales])
         nota.relacion("Se abre en", [ref("acto-" + d["act"])] if d.get("act") else [])
         nota.relacion("Documentos", dm("doc-02", "doc-26-s01", "doc-28-s03"))
     rutas = {(r["a"], r["b"]): r["cost"] for r in w.get("economy", {}).get("travel", {}).get("routes", [])}
-    for p, (titulo,) in ASENT.items():
-        zs = zonas_de_place.get(p, [])
-        acto = min((m.zonas[z]["act"] for z in zs), key=_min_acto) if zs else ("III" if p == "puerto-meridiano" else None)
+    for p, a in m.asent.items():
+        titulo = a["name"]
+        zs = a.get("zones") or zonas_de_place.get(p, [])
+        acto = a.get("act")
         intro = next((e["intro"] for e in catalogo if e["place"] == p), "")
         resumen = T.primera_frase(intro)
         cuerpo = [T.convertir(intro, ruta26 or "")[0]] if intro and len(intro) > len(resumen) + 3 else []
         cuerpo += ["", "## Trayectos (esquirlas, ida o vuelta)", ""]
-        cuerpo += tabla(["Destino", "Costo"], [(ref("asent-" + o), rutas.get((p, o), rutas.get((o, p)))) for o in ASENT
+        cuerpo += tabla(["Destino", "Costo"], [(ref("asent-" + o), rutas.get((p, o), rutas.get((o, p)))) for o in m.asent
                                               if o != p and ((p, o) in rutas or (o, p) in rutas)])
         facs = sin_repetidos(f for e in ed_por_place.get(p, []) for f in ed_info[e]["facs"])
-        regs = sin_repetidos(m.zonas[z]["region"] for z in zs)
+        regs = [a["region"]] if a.get("region") else []
         nota = registro.nueva(
-            "asent-" + p, "asentamiento", titulo, "mundo/zonas", sufijo="asentamiento", arriba="moc-zonas", tags=_tags(acto), fuente=ruta26,
-            alias=["Región " + r for r in regs] + (["Región Puerto Meridiano"] if p == "puerto-meridiano" else []),
+            "asent-" + p, "asentamiento", titulo, "mundo/zonas", sufijo="asentamiento", arriba="moc-zonas", tags=_tags(acto), fuente=ruta26 or _fuente_w(lw, "settlements", p),
+            alias=["Región " + r for r in regs],
             props={"acto": acto, "region": ", ".join(regs) or "Puerto Meridiano", "edificaciones": len(ed_por_place.get(p, []))},
             resumen=resumen or ("Asentamiento de %s" % ", ".join(regs)), cuerpo="\n".join(cuerpo))
         nota.relacion("Zonas de minado", [ref("zona-" + z) for z in zs])
@@ -330,7 +336,7 @@ def generar(registro, repo):
     for f in catalogo:
         info = ed_info[f["id"]]
         base = nombre_visible_ed(f["nombre"])
-        asent = ASENT.get(f["place"], ("", ""))[0]
+        asent = m.asent.get(f["place"], {}).get("name", "")
         nombre = "%s de %s" % (base, asent) if norm(base) in GENERICOS and asent else base
         conv, citas = T.convertir(f["desc"], f["ruta"])
         cuerpo = ["**Rol:** %s" % f["rol"], "", "**Qué la hace de su zona:** %s" % conv, "", "**Versión:** %s" % f["version_texto"]]
@@ -338,11 +344,11 @@ def generar(registro, repo):
             cuerpo += ["", "Entrada a la zona de minado %s." % ref("zona-" + info["zona"])]
         nota = registro.nueva(
             f["id"], "edificacion", f["nombre"], "mundo/edificaciones", nombre=nombre, sufijo=asent or "edificación", arriba="moc-edificaciones",
-            tags=_tags(version=f["version"]), fuente="%s:%d" % (f["ruta"], f["linea"]),
-            props={"asentamiento": ref("asent-" + f["place"]) if f["place"] in ASENT else f["place"], "rol": f["rol"], "version": f["version"],
+            tags=_tags(version=f["version"]), fuente=_fuente_doc(l26, ruta26, f["id"]) or _fuente_w(lw, "buildings", f["id"]),
+            props={"asentamiento": ref("asent-" + f["place"]) if f["place"] in m.asent else f["place"], "rol": f["rol"], "version": f["version"],
                    **({"zona": ref("zona-" + info["zona"])} if info["zona"] else {})},
             resumen=T.primera_frase(f["desc"]) or base, cuerpo="\n".join(cuerpo))
-        nota.relacion("Asentamiento", [ref("asent-" + f["place"])] if f["place"] in ASENT else [])
+        nota.relacion("Asentamiento", [ref("asent-" + f["place"])] if f["place"] in m.asent else [])
         nota.relacion("Zona de minado", [ref("zona-" + info["zona"])] if info["zona"] else [])
         nota.relacion("Minerales", [ref("min-" + i) for i in info["minerales"]])
         nota.relacion("Facciones", [ref("fac-" + i) for i in info["facs"]])
@@ -350,11 +356,11 @@ def generar(registro, repo):
         nota.relacion("PNJ", [ref("npc-" + i) for i in info["npcs"]])
         nota.relacion("Minijuegos", [ref("mj-" + i) for i in info["mjs"]])
         nota.relacion("Recetas", [ref("rec-" + i) for i in info["recs"]])
-        nota.relacion("Tareas", [ref_suave(t, t, t) for t in citas.tareas])
+        nota.relacion("Tareas", [ref_suave(t, t, t) for t in f["tareas"]])
         nota.relacion("Documento", dm("doc-26-s02"))
     moc_ed = registro.nota("moc-edificaciones")
     cuerpo = ["Catálogo del documento 26, sección 2: **%d edificaciones** en %d asentamientos." % (len(catalogo), len(ed_por_place))]
-    for p in ASENT:
+    for p in m.asent:
         if ed_por_place.get(p):
             cuerpo += ["", "## " + ref("asent-" + p), ""]
             cuerpo += tabla(["Edificación", "Rol", "Versión"], [(ref(e), next(x["rol"] for x in catalogo if x["id"] == e),
@@ -478,8 +484,8 @@ def generar(registro, repo):
             reglas["mineral_zones_min"], reglas.get("mineral_zones_max"),
             " y ".join(ref("min-" + x) for x in reglas.get("mineral_zones_excepciones", []) if x in m.minerales))
     moc_mundo.cuerpo += "\n\n**Cifras:** %d minerales, %d zonas de minado, %d asentamientos, %d edificaciones." % (
-        len(m.minerales), len(m.zonas), len(ASENT), len(catalogo))
+        len(m.minerales), len(m.zonas), len(m.asent), len(catalogo))
     registro.info.append("mundo: %d actos, %d minerales, %d zonas, %d asentamientos, %d edificaciones, %d recetas, %d minijuegos, %d mecánicas, "
-                         "%d facciones, %d personajes, %d PNJ" % (len(w.get("acts", [])), len(m.minerales), len(m.zonas), len(ASENT), len(catalogo),
+                         "%d facciones, %d personajes, %d PNJ" % (len(w.get("acts", [])), len(m.minerales), len(m.zonas), len(m.asent), len(catalogo),
                                                                   len(m.recetas), len(m.minijuegos), len(m.mecanicas), len(m.facciones),
                                                                   len(m.personajes), len(m.npcs)))

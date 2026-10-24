@@ -627,7 +627,7 @@
             },
             {
               "id": "F0-83",
-              "status": "backlog",
+              "status": "review",
               "title": "Registro de zonas y edificaciones en `world.json`, con su validación en el hub",
               "est": 6,
               "prio": "P1",
