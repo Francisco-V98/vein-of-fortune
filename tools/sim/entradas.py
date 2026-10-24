@@ -25,6 +25,7 @@ def cargar(world=None):
         sev=g(m + "closures.by_severity"), min_abiertas=g(m + "closures.min_open"),
         orden_cierre=g(m + "closures.close_order"), presion=g(m + "closures.pressure_mult_by_closed"),
         sin_cierres_en=g(m + "closures.none_in_act"),
+        mellada=g(m + "tool_dull"),
         sin_clima=g(s + "no_weather_days"), estaciones=g(s + "season_effects"), clima=g(s + "weather_effects"))
 
 
@@ -166,32 +167,154 @@ def menas_visibles(acto, estacion, tipo_clima, P, azar=None):
     return max(v, 0)
 
 
-class MotorMinas:
-    """Interruptor v2: factor de rendimiento por mina y día que `Partida.ejecutar` aplica a la riqueza de la zona.
+def calendario(dia, cal):
+    """(estación, día en la estación, año) del día de juego: el día 1 cae en un día dado de una estación."""
+    n = cal["dias_por_estacion"]
+    k = dia - 1 + cal["dia_en_estacion_del_dia_1"] - 1
+    orden = cal["orden"]
+    i0 = orden.index(cal["estacion_del_dia_1"])
+    est = orden[(i0 + k // n) % len(orden)]
+    return est, k % n + 1, k // (n * len(orden))
 
-    `severidad` es la del problema social o político del día (0 si no hay): se suma la lluvia fuerte de la zona.
-    `minutos_caminar` es el parámetro de J5: minutos por trayecto de una entrada a otra.
+
+def severidad_sembrada(semilla, dia, zona, acto, ev, P, actos):
+    """Severidad (0 a 3) del problema social o político del día, sembrada por la semilla; ninguno antes del acto `desde`."""
+    if actos.index(acto) < actos.index(ev["eventos_desde_acto"]):
+        return 0
+    r = random.Random("%s|%s|%s|evento" % (semilla, dia, zona)).random()
+    acum = 0.0
+    for nombre in sorted(P["sev"], key=lambda k: -P["sev"][k]):  # de la más grave a la más leve
+        acum += ev["eventos_por_dia"][nombre]
+        if r < acum:
+            return P["sev"][nombre]
+    return 0
+
+
+def mult_mellada(integridad_pct, P):
+    """Rendimiento de una herramienta mellada (por debajo del umbral de integridad): el margen del minijuego baja."""
+    d = P["mellada"]
+    return 1.0 + d["minigame_margin_pct"] / 100.0 if integridad_pct < d["integrity_below_pct"] else 1.0
+
+
+class MotorMinas:
+    """Interruptor v2: entradas, cierres, batería, clima y estaciones de las minas que `Partida` aplica al jugar.
+
+    `sup` son los supuestos (minas_v2 de supuestos.json): con ellos hay calendario, eventos sembrados y clima por zona.
+    Sin `sup`, `severidad` (callable dia, zona -> 0..3) y `clima` se pasan a mano. `minutos_caminar` es el parámetro de J5.
     """
 
-    def __init__(self, semilla, P=None, severidad=None, clima=None, minutos_caminar=0.0):
+    def __init__(self, semilla, P=None, sup=None, severidad=None, clima=None, minutos_caminar=0.0, cargas_extra=0,
+                 cambiar_entrada=True, actos=None, nieve_siempre=False):
         self.P = P or cargar()
-        self.semilla, self.severidad, self.clima = semilla, severidad or (lambda dia, zona: 0), clima
-        self.minutos_caminar = minutos_caminar
-        self.minas = {}
-        self.dia = None
+        self.sup, self.semilla, self.actos = sup, semilla, actos
+        self.minutos_caminar, self.cargas_extra, self.cambiar_entrada = minutos_caminar, cargas_extra, cambiar_entrada
+        self.nieve_siempre = nieve_siempre
+        self.severidad = severidad
+        if severidad is None:
+            if sup:
+                self.severidad = lambda dia, zona: severidad_sembrada(semilla, dia, zona, self.acto, sup, self.P, self.actos)
+            else:
+                self.severidad = lambda dia, zona: 0
+        if clima is None and sup:
+            clima = Clima(semilla, sup["clima_probs"], self.P, self.P["clima"]["lluvia"]["max_per_season_per_zone"])
+        self.clima = clima
+        self.minas, self.tipos, self.bateria = {}, {}, None
+        self.dia, self.acto, self.estacion = None, None, None
+        self.cont = {"expediciones": 0, "cambios": 0, "escaneos": 0, "ciegas": 0, "dias_normal": 0, "dias_nieve": 0,
+                     "cortas_normal": 0, "cortas_nieve": 0}
+        self._visitadas, self._nieve, self._corta = set(), set(), False
+
+    # --- día
+    def _cerrar_dia(self):
+        if self.bateria is not None:
+            nieve = "nieve" if self._nieve else "normal"
+            self.cont["dias_" + nieve] += 1
+            self.cont["cortas_" + nieve] += 1 if self._corta else 0
 
     def nuevo_dia(self, dia, acto, zonas, estacion=None, anio=0):
         P = self.P
-        self.dia, self.acto, self.minas = dia, acto, {}
+        self._cerrar_dia()
+        self.dia, self.acto = dia, acto
+        if estacion is None and self.sup:
+            estacion, _, anio = calendario(dia, self.sup["calendario"])
+        self.estacion = estacion
+        self.minas, self.tipos, self.bateria = {}, {}, None
+        self._visitadas, self._nieve, self._corta = set(), set(), False
+        base = next(iter(P["clima"]))
         for z in zonas:
-            tipo = self.clima.del_dia(dia, z, estacion, anio) if self.clima else next(iter(P["clima"]))
+            tipo = "nieve" if self.nieve_siempre else (self.clima.del_dia(dia, z, estacion, anio) if self.clima else base)
+            self.tipos[z] = tipo
             ent = sortear_entradas(self.semilla, dia, z, P)
             cerr = cerrar(ent, self.severidad(dia, z) + cierres_por_clima(tipo, P), acto, P)
             self.minas[z] = Mina(ent, cerr, P)
+
+    # --- efectos del día
+    def efectos(self):
+        return efectos_estacion(self.estacion, self.P)
+
+    def delta_energia(self):
+        return self.efectos().get("energy_delta", 0)
+
+    def extra_riqueza_dia(self):
+        e = self.efectos()
+        return e.get("mine_wealth_recovery_per_day", 0) - e.get("mine_wealth_recovery_base", 0)
+
+    def mult_desgaste(self):
+        return 1.0 + self.efectos().get("tool_wear_pct", 0) / 100.0
+
+    def ratio_visibles(self, zona):
+        """Menas visibles frente a las del acto sin estación ni clima (otoño y niebla restan)."""
+        v = self.P["menas_visibles"][self.acto]
+        base = sum(v) / len(v) if isinstance(v, list) else v
+        delta = self.efectos().get("visible_ores_delta", 0) + self.P["clima"].get(self.tipos.get(zona), {}).get("visible_ores_delta", 0)
+        return max(base + delta, 0) / base
 
     def factor(self, zona, empleado):
         m = self.minas[zona]
         return m.mult_empleados(self.acto) if empleado else m.mult_jugador(self.acto)
 
+    # --- batería y entrada del jugador
+    def bateria_dia(self, nivel):
+        if self.bateria is None:
+            self.bateria = Bateria(carga_maxima(nivel, False, self.P) + self.cargas_extra, self.P["costo_escaneo"])
+        return self.bateria
+
+    def entrar(self, zona, nivel):
+        """El jugador entra a la mina: nieve resta una carga (una vez por zona y día); en la primera visita escanea
+        la entrada y, si es de la calidad a evitar, cambia (una vez al día) a otra abierta elegida a ciegas."""
+        b = self.bateria_dia(nivel)
+        self.cont["expediciones"] += 1
+        if self.tipos.get(zona) == "nieve" and zona not in self._nieve:
+            self._nieve.add(zona)
+            b.cargas = max(b.cargas + self.P["clima"]["nieve"]["detector_charge_delta"], 0)
+        if zona in self._visitadas:
+            return
+        self._visitadas.add(zona)
+        m = self.minas[zona]
+        pol = self.sup["politica_entrada"] if self.sup else None
+        if not (self.cambiar_entrada and pol and pol["escanea_al_entrar"]):
+            return
+        if b.escanear():
+            self.cont["escaneos"] += 1
+            if m.entradas[m.actual] == pol["cambiar_si"]:
+                otras = [i for i in m.abiertas() if i != m.actual]
+                if otras and m.cambiar(random.Random("%s|%s|%s|cambio" % (self.semilla, self.dia, zona)).choice(otras)):
+                    self.cont["cambios"] += 1
+        else:
+            self._corta = True
+
+    def escanear(self):
+        """Un clic del detector sobre una mena: True si había carga; si no, se pica a ciegas."""
+        if self.bateria.escanear():
+            self.cont["escaneos"] += 1
+            return True
+        self._corta = True
+        self.cont["ciegas"] += 1
+        return False
+
     def horas_caminando(self, cambios):
         return cambios * self.minutos_caminar / MIN_HORA
+
+    def horas_caminadas(self):
+        """Horas de caminata por entrar a la mina y por cambiar de entrada."""
+        return self.horas_caminando(self.cont["expediciones"] + self.cont["cambios"])

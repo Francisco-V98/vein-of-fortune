@@ -892,5 +892,120 @@
       "fuente": "15",
       "reglas": ["I1", "I2", "I3", "B8"]
     }
+  ],
+  "reglas_v2": [
+    {
+      "id": "C5b",
+      "grupo": "C · Herramientas",
+      "titulo": "La carga del detector sustituye al descarte al 25 %",
+      "docs": [
+        "02",
+        "28 §14"
+      ],
+      "metrica": "pérdida de ingreso con la batería de partida frente a una infinita, ganancia de otra batería entera y menas a ciegas",
+      "umbral": "pérdida 3–35 % · otra batería gana ≥ 1 % · ≤ 60 % de menas a ciegas",
+      "origen": "prop.",
+      "criterio": {
+        "perdida_min": 3,
+        "perdida_max": 35,
+        "extra_min": 1,
+        "ciegas_max": 60
+      }
+    },
+    {
+      "id": "J1",
+      "grupo": "J · Minas de cinco entradas (motor_minas)",
+      "titulo": "Más cierres, menos valor esperado",
+      "docs": [
+        "28 §14",
+        "29"
+      ],
+      "metrica": "ingreso con 0, 1, 2 y 3 entradas cerradas (mismas semillas)",
+      "umbral": "cada cierre pierde ≥ 1 % · total con 3 cerradas 10–55 %",
+      "origen": "prop.",
+      "criterio": {
+        "paso_min": 1,
+        "total_min": 10,
+        "total_max": 55
+      }
+    },
+    {
+      "id": "J2",
+      "grupo": "J · Minas de cinco entradas (motor_minas)",
+      "titulo": "Cambiar de entrada da entre +5 y +10 %",
+      "docs": [
+        "28 §14"
+      ],
+      "metrica": "ganancia del jugador que escanea y cambia una vez al día frente al que no cambia",
+      "umbral": "+5 a +10 %",
+      "origen": "prop.",
+      "criterio": {
+        "ganancia_min": 5,
+        "ganancia_max": 10
+      }
+    },
+    {
+      "id": "J3",
+      "grupo": "J · Minas de cinco entradas (motor_minas)",
+      "titulo": "La batería se queda corta entre el 30 y el 60 % de los días",
+      "docs": [
+        "28 §14",
+        "29"
+      ],
+      "metrica": "días con al menos una mena picada a ciegas, por separado en días normales y de nieve",
+      "umbral": "30–60 % de los días (normales y de nieve)",
+      "origen": "prop.",
+      "criterio": {
+        "corta_min": 30,
+        "corta_max": 60
+      }
+    },
+    {
+      "id": "J4",
+      "grupo": "J · Minas de cinco entradas (motor_minas)",
+      "titulo": "Los empleados rinden la media de las entradas abiertas",
+      "docs": [
+        "28 §14"
+      ],
+      "metrica": "error exacto de la media y diferencia media con el jugador que no escanea",
+      "umbral": "error ≤ 1e-9 · diferencia ≤ 2 pp",
+      "origen": "prop.",
+      "criterio": {
+        "acto": "III",
+        "error_max": 1e-09,
+        "dif_max": 2
+      }
+    },
+    {
+      "id": "J5",
+      "grupo": "J · Minas de cinco entradas (motor_minas)",
+      "titulo": "Los minutos de caminar no desplazan el ingreso por hora",
+      "docs": [
+        "28 §14",
+        "14"
+      ],
+      "metrica": "ingreso por hora con los minutos de caminar de partida frente al modelo sin entradas",
+      "umbral": "±20 %",
+      "origen": "prop.",
+      "criterio": {
+        "minutos": 5,
+        "desv_max": 20
+      }
+    },
+    {
+      "id": "J6",
+      "grupo": "J · Minas de cinco entradas (motor_minas)",
+      "titulo": "Todas las estaciones rinden parecido por hora",
+      "docs": [
+        "29",
+        "28 §3.3"
+      ],
+      "metrica": "ingreso por hora de cada estación frente a la media de las cuatro",
+      "umbral": "±20 % de la media",
+      "origen": "prop.",
+      "criterio": {
+        "desv_max": 20
+      }
+    }
   ]
 }
