@@ -963,7 +963,7 @@
             },
             {
               "id": "F0-96",
-              "status": "doing",
+              "status": "done",
               "title": "CI en verde: intervalo con valores infinitos en el simulador",
               "est": 1,
               "prio": "P0",
