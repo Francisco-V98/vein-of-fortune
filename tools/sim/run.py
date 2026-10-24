@@ -81,6 +81,7 @@ def parser():
     ap.add_argument("--escribir", action="store_true", help="escribe studio/data/sim/resultados.json (solo con --completo)")
     ap.add_argument("--mutaciones", action="store_true", help="incluye la regla I2 también en el modo rápido (el completo siempre la incluye)")
     ap.add_argument("--huella", action="store_true")
+    ap.add_argument("--minas", action="store_true", help="evalúa las reglas del motor de minas (C5b, J1 a J6; reglas_v2 de reglas.json)")
     ap.add_argument("--verbose", action="store_true")
     return ap
 
@@ -93,11 +94,23 @@ def opciones(a):
     return {"modo": modo, "solo": solo, "mutaciones": mutaciones, "verbose": a.verbose}
 
 
+def minas(a):
+    from sim import reglas_minas
+    P, _ = mundo.cargar()
+    c = reglas.Ctx(P, mundo.cargar_supuestos(), cargar_reglas(), "completo" if a.completo else "rapido")
+    solo = a.regla.split(",") if a.regla else list(reglas_minas.REGLAS_V2)
+    out = [reglas_minas.evalua(c, rid) for rid in solo]
+    imprimir(out, c)
+    return 0
+
+
 def main(argv=None):
     a = parser().parse_args(argv)
     if a.huella:
         print(mundo.huella(mundo.cargar_world()))
         return 0
+    if a.minas:
+        return minas(a)
     op = opciones(a)
     modo, solo = op["modo"], op["solo"]
     t0 = time.time()

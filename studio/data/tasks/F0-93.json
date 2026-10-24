@@ -1,0 +1,108 @@
+{
+  "id": "F0-93",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Simulador: motor de entradas, batería, cierres y clima; reglas J1–J6 y C5 reescrita",
+      "ref": "rama studio/F0-93-simulador-entradas-bateria-cierres"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Aprobado por el autor",
+      "ref": ""
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "analista",
+        "nota": "El inventario de F0-91 y F0-94 define las reglas J1 a J6 y C5"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "herramientas",
+        "nota": "El motor y las reglas C5b y J1 a J6 están tras el interruptor motor_minas; huella intacta"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "QA aprobó sin fallos"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "autor",
+        "nota": "Aprobado por el autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "PR fusionado"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "herramientas",
+        "que": "Encargo: motor del simulador para entradas, batería, cierres y clima",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Entrega: motor, jugador simulado y reglas v2 con 373 pruebas",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Encargo: build, pruebas, huella y reglas v2 de F0-93",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Informe: aprobado; huella intacta, 373 pruebas",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobación: revisó el entregable y está aprobado",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}

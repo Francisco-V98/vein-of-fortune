@@ -38,6 +38,7 @@ class Partida:
         self.mk.caida_max = S["mercado"]["caida_max_pct"]
         self.mk.markup_tienda = cfg.get("markup_tienda", P["mk"]["tienda"]["media"])
         self.acto = cfg["acto"]
+        self.motor = cfg.get("motor_minas")  # None = comportamiento anterior (huella 9dff70c2c639dbb5)
         self.dia = cfg.get("dia0", P["t"]["inicio_dia"])
         self.cash = float(cfg.get("cash", 0.0))
         self.stock = {m: 0.0 for m in P["min"]}
@@ -140,6 +141,8 @@ class Partida:
 
     def energia(self):
         e = self.energia_fn(self)
+        if self.motor:
+            e += self.motor.delta_energia()
         if self.casa > 0:
             e += self.P["energia"]["casa"][self.casa - 1]
         return e
@@ -302,6 +305,11 @@ class Partida:
         z = plan["z"]
         Z = P["Z"][z]
         rich = self.rich[z] / 100.0
+        mot = self.motor
+        if mot:  # interruptor v2 (F0-93): entrada, cierres, batería, clima y estación
+            if emp is None:
+                mot.entrar(z, self.nivel_max())
+            rich *= mot.factor(z, emp is not None)
         niv = P["herr"]["niveles"]
         mr = P["exp"]["mult_res"]
         resultados = P["resultados"]
@@ -322,6 +330,8 @@ class Partida:
             lvl_any = max(self.nivel_max(), 1)
             carga = self.carga(Z["profunda"])
             tope_menas = P["exp"]["tope_menas"] * Z["bloques"]
+            if mot:
+                tope_menas = max(1, round(tope_menas * mot.ratio_visibles(z)))
             menas = 0
             total_u = 0
             desgaste_total = 0.0
@@ -341,7 +351,11 @@ class Partida:
                         m = mm
                         break
                 d = P["M"][m]
-                if m in sel:
+                quiere = m in sel
+                if mot and emp is None:  # el detector gasta una carga por mena; sin carga se pica a ciegas
+                    if not mot.escanear() and not quiere and self.nivel_min(m, tier_max) > 0:
+                        quiere = True
+                if quiere:
                     lvl = self.nivel_min(m, tier_max)
                     e = d["energia"] * niv[lvl - 1]["energia"]
                     if e > E:
@@ -372,6 +386,8 @@ class Partida:
                         guardar = 1
                     if total_u >= carga or menas >= tope_menas:
                         break
+                elif mot and emp is None:
+                    self.cont["descartes"] += 1  # con carga se descarta gratis: el costo es la carga
                 else:
                     ec = d["energia"] * niv[lvl_any - 1]["energia"] * c
                     if ec > E:
@@ -379,6 +395,8 @@ class Partida:
                     E -= ec
                     self.cont["descartes"] += 1
             self.cont["menas"] += menas
+            if mot:
+                desgaste_total *= mot.mult_desgaste()
             self.mover("desgaste", -desgaste_total)
             if guardar:
                 self.mover("filtro", -P["exp"]["aeth_filtro"])
@@ -789,6 +807,9 @@ class Partida:
         mk.fijar_acto(self.acto)
         mk.nuevo_dia(self.dia)
         self.aplicar_guion()
+        if self.motor:
+            self.motor.actos = self.motor.actos or P["actos"]
+            self.motor.nuevo_dia(self.dia, self.acto, P["zonas"])
         for m in self.prod_ema:
             self.prod_ema[m] *= 1.0 - 1.0 / max(S["politica"]["ventana_prod"], 1)
         self.generar_pedidos()
@@ -896,7 +917,7 @@ class Partida:
         if cfg.get("almacen_activo", True) and self.almacen > 0:
             self.mover("renta", -P["mk"]["almacen"][self.almacen]["rent_per_day"])
         for z in self.rich:
-            self.rich[z] = min(P["exp"]["rico_max"], self.rich[z] + P["exp"]["rico_dia"])
+            self.rich[z] = min(P["exp"]["rico_max"], self.rich[z] + P["exp"]["rico_dia"] + (self.motor.extra_riqueza_dia() if self.motor else 0))
             self.uso_zona[z] *= self.S["politica"]["uso_zona_decae"]
 
     def reservas_pedidos(self):

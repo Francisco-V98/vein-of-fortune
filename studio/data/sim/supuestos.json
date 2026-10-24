@@ -1245,5 +1245,37 @@
       }
     ]
   },
+  "minas_v2": {
+    "nota": "Supuestos del motor de minas de cinco entradas (F0-93). Solo los usa el interruptor motor_minas; no entran en la huella por defecto. Valores de partida: los calibra F0-92.",
+    "clima_probs": {
+      "lluvia": 0.12,
+      "nieve": 0.25,
+      "niebla": 0.08
+    },
+    "eventos_por_dia": {
+      "suave": 0.08,
+      "complicado": 0.03,
+      "valdoria": 0.01
+    },
+    "eventos_desde_acto": "II",
+    "calendario": {
+      "dia_en_estacion_del_dia_1": 22,
+      "estacion_del_dia_1": "otono",
+      "dias_por_estacion": 28,
+      "orden": [
+        "otono",
+        "invierno",
+        "primavera",
+        "verano"
+      ]
+    },
+    "politica_entrada": {
+      "cambiar_si": "escasa",
+      "escanea_al_entrar": true
+    },
+    "bateria_infinita": 999,
+    "etapa": "III",
+    "perfil": "medio"
+  },
   "presupuesto_rapido_s": 45
 }
