@@ -936,7 +936,7 @@
             },
             {
               "id": "F0-93",
-              "status": "doing",
+              "status": "done",
               "title": "Simulador: reglas J1–J5, C5 reescrita y motor para entradas, batería y cierres",
               "est": 16,
               "prio": "P0",
