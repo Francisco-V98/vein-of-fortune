@@ -1,0 +1,65 @@
+{
+  "id": "F0-96",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "CI en rojo por pstdev con infinitos en Python 3.11",
+      "ref": "rama studio/F0-96-ci-pstdev-infinitos"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "Causa localizada en los registros de CI"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "ic95 tolera valores infinitos; prueba nueva"
+      },
+      {
+        "etapa": "qa",
+        "estado": "activa",
+        "at": "2026-10-24",
+        "por": "qa"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Encargo: verificar pruebas y que el job de CI pase",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}
