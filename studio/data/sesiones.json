@@ -3,12 +3,61 @@
     {
       "n": 1,
       "tema": "F0-85 a F0-94 Diseño de exploración, simulador y calendario",
-      "fecha": "2026-10-24"
+      "fecha": "2026-10-24",
+      "resumen": "Rediseñó la exploración (mapa con niebla, tren, asentamientos y minas caminables, ADR-0011), recalibró el simulador de minas, batería y cierres, creó el calendario con estaciones, clima y mini-historias (documento 29), el registro de sesiones y arregló el CI del simulador.",
+      "tareas": [
+        "F0-91",
+        "F0-92",
+        "F0-93",
+        "F0-94",
+        "F0-95",
+        "F0-96"
+      ],
+      "prs": [
+        "60",
+        "62",
+        "63",
+        "64",
+        "65",
+        "67"
+      ],
+      "docs": [
+        "26",
+        "28",
+        "29"
+      ],
+      "decisiones": [
+        "El tren es el único medio entre zonas",
+        "Boca de mina = recinto de 5 entradas a ciegas",
+        "Estaciones y clima por tinte de paleta, sin hojas nuevas"
+      ]
     },
     {
       "n": 2,
       "tema": "F0-25 Flujo de pantallas",
-      "fecha": "2026-10-24"
+      "fecha": "2026-10-24",
+      "resumen": "Definió el flujo de pantallas: documento 30 con 18 nodos, transiciones con coste, mapa por estado, guardado y mando; añadió la tarea F2-41 (título, selector de 5 partidas y pausa) y alineó docs 01, 02, 10, 26, 27 y el ADR-0011.",
+      "tareas": [
+        "F0-25",
+        "F2-41",
+        "F0-97"
+      ],
+      "prs": [
+        "66",
+        "68"
+      ],
+      "docs": [
+        "30"
+      ],
+      "decisiones": [
+        "Menús D: libreta de consulta global + pausa aparte",
+        "Mercado al contado solo en edificios",
+        "Mapa bloqueado en mina, minijuego, loader y tren; salto a la puerta",
+        "Minijuegos como capa sobre la escena",
+        "Detector con mando LB/RB + X",
+        "Bloque de expedición al cruzar la entrada, se devuelve si no picas",
+        "Esperar en la barra superior con confirmación"
+      ]
     }
   ]
 }
