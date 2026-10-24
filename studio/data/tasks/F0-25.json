@@ -8,6 +8,14 @@
       "by": "claude",
       "note": "Flujo de pantallas: documento 30, libreta de consulta y pausa aparte",
       "ref": "rama studio/F0-25-flujo-de-pantallas"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Aprobado por el autor",
+      "ref": ""
     }
   ],
   "comments": [],
@@ -45,7 +53,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "autor",
+        "nota": "Aprobado por el autor"
       },
       {
         "etapa": "playtest",
@@ -53,7 +64,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "PR fusionado"
       }
     ],
     "traspasos": [
