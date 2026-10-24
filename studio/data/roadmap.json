@@ -821,7 +821,7 @@
               "id": "F0-78",
               "title": "Diseñar el diario, la cola de historia y la misión de rescate",
               "est": 3,
-              "status": "review",
+              "status": "done",
               "prio": "P1",
               "desc": "Las tres piezas anti-atasco de los umbrales de acto: un diario que lista las vías que faltan para pasar de acto, la cola donde espera la historia mientras el jugador hace sandbox, y la misión de rescate que se ofrece tras mucho tiempo sin avanzar. La cola debe cumplir la invariante del guion del Acto I (documento 27): suelta las escenas de una en una y en orden y nunca dos mecánicas nuevas a la vez.",
               "done_when": "Las tres piezas diseñadas y acordadas con el autor, sin que la deuda ni ningún umbral puedan atascar la partida."
