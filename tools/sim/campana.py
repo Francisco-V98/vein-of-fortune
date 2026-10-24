@@ -1,4 +1,5 @@
 """Corridas del simulador: Acto I guionizado, etapas estacionarias y campaña completa con progresión."""
+import math
 import statistics
 
 from . import mundo
@@ -30,6 +31,9 @@ def ic95(valores, S):
     if n < 2:
         return [None, None]
     m = sum(valores) / n
+    if not all(math.isfinite(v) for v in valores):
+        # Un valor infinito (p. ej. rampa con inicio nulo) no tiene desviación: Python 3.11 lanza error con pstdev.
+        return [m, m]
     sd = statistics.pstdev(valores) * (n / (n - 1)) ** 0.5
     h = S["estadistica"]["z95"] * sd / n ** 0.5
     return [m - h, m + h]
