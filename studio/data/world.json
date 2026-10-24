@@ -4001,6 +4001,7 @@
         },
         "nieve": {
           "detector_charge_delta": -1,
+        "max_days_per_winter_per_zone": 6,
           "note": "choca con la regla J3 del simulador; la mide F0-92"
         },
         "niebla": {

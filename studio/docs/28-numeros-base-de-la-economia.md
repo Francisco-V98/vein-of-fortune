@@ -143,7 +143,7 @@ Puntos de mercado a mitad de estación; la curva se interpola entre estaciones.
 
 Carbón: de pleno verano (−8) a pleno invierno (+12) hay 20 puntos; con costo de guardar de 0,15 % al día, comprar en verano y vender en invierno (56 días) deja ≈ +21 − 5 − 8 = **+8 %**. Especular con la estación rinde poco y tarda 12 h de juego: es una opción, no una máquina.
 
-Nota de F0-94 ✅: los festivos mueven el mercado ±2 puntos como máximo ([29](29-calendario-y-temporadas.md)), el tope de un evento menor. El efecto de invierno sobre el Aguante (−2) y el carbón +12 de esta tabla son cosas distintas; ⏳ F0-92 comprueba que no se cuenten dos veces al medir el invierno.
+Nota de F0-94 ✅: los festivos mueven el mercado ±2 puntos como máximo ([29](29-calendario-y-temporadas.md)), el tope de un evento menor. El efecto de invierno sobre el Aguante (−2) y el carbón +12 de esta tabla son una compensación deliberada ✅: ⏳ F0-93 añade la regla J6 (ingreso por hora de cada estación dentro de ±20 % de la media) y, si el invierno se sale, se ajusta el −2 y no el carbón. La nieve ocurre como máximo 6 días por invierno y zona y ⏳ F0-92 mide J3 por separado en días normales y de nieve.
 
 ### 3.4 Sensibilidad a eventos ✅
 

@@ -2,7 +2,7 @@
 
 Cómo se ve y se juega el paso del año en Veta de Fortuna: estaciones y clima del día, la ficha única del calendario, los festivos y las mini-historias de temporada. Nace de la tarea F0-94 y de las decisiones del autor del 2026-10-24. El calendario base (año de 112 días, cuatro estaciones de 28) está en [28](28-numeros-base-de-la-economia.md) §1.2; la historia principal **no** depende de este documento ([24](24-umbrales-de-acto.md), [27](27-guion-del-acto-i.md)).
 
-**Estado.** ✅ El alcance, la ficha, las reglas y el molde de las mini-historias son decisión del autor. 🟡 Los nombres de los festivos y el catálogo de 12 mini-historias (títulos, ganchos, misiones y variantes) los propone el narrador y esperan su confirmación. ⏳ F0-92 y ⏳ F0-93: las cifras de efecto de la sección 2 viven en claves nuevas de `world.json` que el simulador **todavía no lee**; la huella del simulador no cambia con este documento.
+**Estado.** ✅ El alcance, la ficha, las reglas y el molde de las mini-historias son decisión del autor. ✅ Los 8 festivos y el catálogo de 12 mini-historias (títulos, ganchos, misiones y variantes) los aprobó el autor el 2026-10-24. ⏳ F0-92 y ⏳ F0-93: las cifras de efecto de la sección 2 viven en claves nuevas de `world.json` que el simulador **todavía no lee**; la huella del simulador no cambia con este documento.
 
 ---
 
@@ -69,9 +69,9 @@ Los campos vacíos se escriben «—». Ejemplo de ficha:
 
 ## 4 · Festivos y fechas fijas ✅
 
-Entre 1 y 2 por estación (8 al año en este catálogo). Efecto pequeño: **mercado ±2 puntos como tope** (menos que un evento menor), más una escena breve o una decoración. Se repiten todos los años en la misma fecha. Nunca bloquean nada ni se pierden por no ir.
+Entre 1 y 2 por estación (8 al año en este catálogo). Efecto pequeño: **mercado ±2 puntos como tope** (igual que un evento menor del documento 28), más una escena breve o una decoración. Se repiten todos los años en la misma fecha. Nunca bloquean nada ni se pierden por no ir.
 
-| Estación | Festivo 🟡 | Fecha | Zona | Efecto de mercado | Escena o decoración |
+| Estación | Festivo ✅ | Fecha | Zona | Efecto de mercado | Escena o decoración |
 |---|---|---|---|---|---|
 | Otoño | Feria del Primer Hollín | 9 de otoño | Villa Brasa | Hierro +2 | Puestos con faroles en la plaza |
 | Otoño | Noche de las Calderas | 18 de otoño | Villa Brasa | Carbón +1 | Calderas encendidas en la calle; escena breve con la Unión |
@@ -118,13 +118,13 @@ Obstáculos genéricos que se pueden usar:
 
 Tono ✅: español neutro con tuteo, frases cortas, humor seco, nunca burla de los trabajadores. Los clientes no tienen nombre; las facciones son las que ya existen (Unión, Consorcio Arvel, Los Faroleros, Teletipo Meridiano).
 
-## 6 · Catálogo de 12 mini-historias 🟡
+## 6 · Catálogo de 12 mini-historias ✅
 
 Cada una: **zona**, **misiones** (2 o 3), **obstáculo A / B** (se sortea uno) y **recompensa** (0,5–1 día de ingreso medio + pila u objeto). Cada misión cuesta, como máximo, 1 bloque. Las cifras de vigilancia (N) se fijan al medirlas ⏳ F0-92.
 
-### 6.1 Primavera 🟡
+### 6.1 Primavera ✅
 
-**P1 · «Hierro para las vigas» 🟡** (Sierra Alta · Consorcio Arvel).
+**P1 · «Hierro para las vigas» ✅** (Sierra Alta · Consorcio Arvel).
 Gancho: el deshielo ha tirado una viga del economato y el capataz necesita hierro antes de que vuelva la nieve.
 1. Hablas con el capataz en Altafría y aceptas el encargo.
 2. Extraes el hierro en Sierra Alta.
@@ -132,7 +132,7 @@ Gancho: el deshielo ha tirado una viga del economato y el capataz necesita hierr
 - A · Plazo: vence en 14 días. B · Comprador rival sin nombre: otro contratista quiere el mismo hierro.
 - Recompensa: 1 día de ingreso medio y una viga de madera para tu casa (decoración).
 
-**P2 · «Salitre para los huertos» 🟡** (Salares · Unión de Mineros del Hollín).
+**P2 · «Salitre para los huertos» ✅** (Salares · Unión de Mineros del Hollín).
 Gancho: la Unión quiere cultivar un huerto en el patio de la sede, y la tierra del Hollín no da nada sola.
 1. Hablas con la Unión en Villa Brasa.
 2. Consigues salitre (extraído o comprado).
@@ -140,16 +140,17 @@ Gancho: la Unión quiere cultivar un huerto en el patio de la sede, y la tierra 
 - A · Cierre: la entrada que usas está cerrada un día. B · Vigilancia +N con atajo: el camino corto pasa junto a una inspección.
 - Recompensa: 0,5 días de ingreso medio y una maceta para la casa.
 
-**P3 · «Faroles nuevos» 🟡** (Salinas Blancas · Los Faroleros).
+**P3 · «Faroles nuevos» ✅** (Salinas Blancas · Los Faroleros).
 Gancho: el invierno se llevó la mitad de los faroles del muelle y Los Faroleros buscan cobre para repararlos.
 1. Recibes el encargo en el Bar del Farol.
 2. Extraes el cobre.
+3. Lo entregas en el muelle.
 - A · Plazo: 21 días. B · Comprador rival sin nombre: alguien compra todo el cobre del mercado.
 - Recompensa: 0,75 días de ingreso medio y un farol de bronce (decoración).
 
-### 6.2 Verano 🟡
+### 6.2 Verano ✅
 
-**V1 · «Sal para el camino» 🟡** (Salares · Puerto Meridiano).
+**V1 · «Sal para el camino» ✅** (Salares · Puerto Meridiano).
 Gancho: un cliente sin nombre del Puerto necesita sal para conservar una carga de pescado antes de que se eche a perder con el calor.
 1. Aceptas el pedido en Puerto Meridiano.
 2. Extraes salitre en Salares.
@@ -157,24 +158,24 @@ Gancho: un cliente sin nombre del Puerto necesita sal para conservar una carga d
 - A · Plazo: 14 días. B · Vigilancia +N con atajo: el atajo por la aduana la sube.
 - Recompensa: 1 día de ingreso medio y una pila.
 
-**V2 · «La pala que se rinde» 🟡** (Cañón Ferroso · Unión).
+**V2 · «La pala que se rinde» ✅** (Cañón Ferroso · Unión).
 Gancho: el calor ha estropeado los picos de la Unión y piden hierro para la herrería.
 1. Hablas con la Unión.
 2. Extraes hierro en el Cañón.
 3. Lo entregas en la herrería-chatarrería.
-- A · Cierre: una entrada del Cañón cerrada por los derrumbes de verano. B · Comprador rival sin nombre: otro herrero lo quiere.
+- A · Cierre: una entrada del Cañón cerrada un día por un problema social (suave). B · Comprador rival sin nombre: otro herrero lo quiere.
 - Recompensa: 0,75 días de ingreso medio y un martillo de adorno (decoración).
 
-**V3 · «Fiesta sin plata» 🟡** (Altafría · Consorcio Arvel).
+**V3 · «Fiesta sin plata» ✅** (Altafría · Consorcio Arvel).
 Gancho: el Consorcio prepara una cena en el chalet y le falta plata para los cubiertos.
 1. Recibes el encargo en la oficina del Consorcio.
 2. Entregas la plata.
 - A · Plazo: 14 días. B · Vigilancia +N con atajo: el camino corto pasa por una oficina que fiscaliza.
 - Recompensa: 1 día de ingreso medio y un juego de cubiertos (decoración).
 
-### 6.3 Otoño 🟡 (solo sandbox y segundo año)
+### 6.3 Otoño ✅ (solo sandbox y segundo año)
 
-**O1 · «La última carga antes del frío» 🟡** (Cuenca del Hollín · Unión).
+**O1 · «La última carga antes del frío» ✅** (Cuenca del Hollín · Unión).
 Gancho: la Unión quiere llenar los almacenes de carbón antes del invierno y paga por adelantado.
 1. Hablas con la Unión.
 2. Extraes carbón.
@@ -182,44 +183,45 @@ Gancho: la Unión quiere llenar los almacenes de carbón antes del invierno y pa
 - A · Plazo: 14 días. B · Comprador rival sin nombre: otro vendedor ofrece carbón más barato.
 - Recompensa: 0,75 días de ingreso medio y una pila.
 
-**O2 · «Cosecha de sal» 🟡** (Salares · Teletipo Meridiano).
+**O2 · «Cosecha de sal» ✅** (Salares · Teletipo Meridiano).
 Gancho: el Teletipo necesita salitre para un reportaje sobre la cosecha de sal del Litoral.
 1. Aceptas el pedido.
 2. Extraes salitre.
 3. Lo entregas en la lonja.
-- A · Cierre: una entrada cerrada por niebla. B · Vigilancia +N con atajo: pasas por la aduana.
+- A · Cierre: una entrada cerrada por un problema social (suave). B · Vigilancia +N con atajo: pasas por la aduana.
 - Recompensa: 0,5 días de ingreso medio y un ejemplar enmarcado del Teletipo (decoración).
 
-**O3 · «El mercadillo de Altafría» 🟡** (Altafría · Consorcio Arvel).
-Gancho: un cliente sin nombre pide cobre y plata para llenar un puesto en el mercadillo.
+**O3 · «El mercadillo de Altafría» ✅** (Altafría · Consorcio Arvel).
+Gancho: un cliente sin nombre pide cobre para llenar un puesto en el mercadillo.
 1. Recibes el encargo.
 2. Extraes cobre.
+3. Lo entregas en el puesto.
 - A · Plazo: 21 días. B · Comprador rival sin nombre: otro puesto compra antes.
 - Recompensa: 0,75 días de ingreso medio y una pila.
 
-### 6.4 Invierno 🟡
+### 6.4 Invierno ✅
 
-**I1 · «Carbón para la plaza» 🟡** (Villa Brasa · Unión).
+**I1 · «Carbón para la plaza» ✅** (Villa Brasa · Unión).
 Gancho: la Unión quiere brasas en la plaza para las noches más frías y pide carbón.
 1. Hablas con la Unión.
 2. Extraes carbón.
 3. Lo entregas en la plaza.
-- A · Cierre: la entrada principal cerrada por nieve un día. B · Plazo: 14 días.
+- A · Cierre: una entrada cerrada un día por un problema social (suave). B · Plazo: 14 días.
 - Recompensa: 0,75 días de ingreso medio y un brasero (decoración).
 
-**I2 · «El pedido del Puerto» 🟡** (Puerto Meridiano · cliente sin nombre).
+**I2 · «El pedido del Puerto» ✅** (Puerto Meridiano · cliente sin nombre).
 Gancho: un cliente sin nombre del Puerto pide plata a buen precio y necesita que no se sepa.
 1. Aceptas el pedido.
 2. Entregas la plata.
 - A · Vigilancia +N con atajo: el camino corto pasa por la aduana. B · Comprador rival sin nombre: otro cliente se adelanta.
 - Recompensa: 1 día de ingreso medio y una pila.
 
-**I3 · «Un abrigo para la guardia» 🟡** (Salinas Blancas · Los Faroleros).
-Gancho: Los Faroleros hacen guardia en el muelle y no tienen con qué calentarse; piden carbón y hierro.
+**I3 · «Un abrigo para la guardia» ✅** (Salinas Blancas · Los Faroleros).
+Gancho: Los Faroleros hacen guardia en el muelle y no tienen con qué calentarse; piden carbón.
 1. Recibes el encargo.
 2. Extraes carbón.
 3. Lo entregas en el muelle.
-- A · Plazo: 14 días. B · Cierre: una entrada de los Salares cerrada por nieve.
+- A · Plazo: 14 días. B · Cierre: una entrada de los Salares cerrada un día por un problema social (suave).
 - Recompensa: 0,5 días de ingreso medio y un abrigo colgado en tu casa (decoración).
 
 ## 7 · Futuro: sistema completo de clima ⏳ F6-77 y F6-78
@@ -239,8 +241,9 @@ Pronóstico, salud, ruta del tren y producción afectados por el clima quedan pa
 | ⏳ F4-149 | Mini-historias de otoño en el sandbox |
 | ⏳ F0-92 · ⏳ F0-93 | Cifras de efecto en el simulador |
 
-## 9 · Preguntas para el autor 🟡
+## 9 · Decisiones del autor ✅
 
-1. ¿Te gustan los 8 nombres de festivo y sus fechas? Fijan días en que un mineral sube o baja hasta 2 puntos.
-2. ¿Confirmas los 12 títulos y ganchos del catálogo? Los de otoño no se ven en la campaña hasta el segundo año.
-3. Las cifras de vigilancia (N) y de plazo de cada variante se fijan al medirlas con el simulador (⏳ F0-92).
+1. Los 8 festivos (nombres, fechas, zonas y efectos de mercado) quedan aprobados el 2026-10-24.
+2. Los 12 títulos y ganchos del catálogo quedan aprobados el 2026-10-24; los de otoño no se ven en la campaña hasta el segundo año.
+3. Doble cuenta del invierno ✅: el Aguante −2 y el carbón +12 son una compensación deliberada. ⏳ F0-93 añade la regla J6 (el ingreso por hora de cada estación queda dentro de ±20 % de la media); si el invierno se sale, se ajusta el −2 y no el carbón. La nieve ocurre como máximo 6 días por invierno y zona, y ⏳ F0-92 mide J3 por separado en días normales y en días de nieve.
+4. Las cifras de vigilancia (N) y de plazo de cada variante se fijan al medirlas con el simulador (⏳ F0-92).
