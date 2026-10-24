@@ -962,6 +962,15 @@
               "done_when": "CLAUDE.md describe la regla, tools/sesion.py numera y valida el registro con pruebas, y la sesión actual y la siguiente quedan registradas."
             },
             {
+              "id": "F0-96",
+              "status": "done",
+              "title": "CI en verde: intervalo con valores infinitos en el simulador",
+              "est": 1,
+              "prio": "P0",
+              "desc": "La prueba test_mutacion_B2 falla en CI (Python 3.11) desde hace varias fusiones porque statistics.pstdev lanza AttributeError con valores infinitos en campana.ic95; en local (Python 3.9) pasaba. ic95 devuelve el intervalo degenerado cuando hay un valor infinito y se añade una prueba.",
+              "done_when": "El job «Pruebas de las herramientas» pasa en CI sobre main."
+            },
+            {
               "id": "F0-92",
               "status": "done",
               "title": "Reescribir y recalibrar el simulador de economía para minas con cinco entradas, batería y cierres",
