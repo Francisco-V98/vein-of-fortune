@@ -962,6 +962,15 @@
               "done_when": "CLAUDE.md describe la regla, tools/sesion.py numera y valida el registro con pruebas, y la sesión actual y la siguiente quedan registradas."
             },
             {
+              "id": "F0-97",
+              "status": "doing",
+              "title": "Registro de qué hizo cada sesión",
+              "est": 1,
+              "prio": "P1",
+              "desc": "tools/sesion.py guarda por sesión un resumen, las tareas, los PR, los documentos y las decisiones (comandos resumen, ver, buscar y md) y genera studio/SESIONES.md, para ubicar en qué sesión se hizo algo. S-01 y S-02 quedan rellenas.",
+              "done_when": "python3 tools/sesion.py buscar F0-25 devuelve S-02 y studio/SESIONES.md lista qué hizo cada sesión."
+            },
+            {
               "id": "F0-96",
               "status": "done",
               "title": "CI en verde: intervalo con valores infinitos en el simulador",
