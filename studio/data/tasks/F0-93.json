@@ -28,14 +28,16 @@
       },
       {
         "etapa": "produccion",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-24",
-        "por": "desarrollador-herramientas",
-        "nota": "El motor sortea entradas, aplica cierres, batería y clima; las reglas se escriben después"
+        "por": "herramientas",
+        "nota": "El motor y las reglas C5b y J1 a J6 están tras el interruptor motor_minas; huella intacta"
       },
       {
         "etapa": "qa",
-        "estado": "pendiente"
+        "estado": "activa",
+        "at": "2026-10-24",
+        "por": "qa"
       },
       {
         "etapa": "autor",
@@ -53,8 +55,22 @@
     "traspasos": [
       {
         "de": "coordinador",
-        "a": "desarrollador-herramientas",
+        "a": "herramientas",
         "que": "Encargo: motor del simulador para entradas, batería, cierres y clima",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Entrega: motor, jugador simulado y reglas v2 con 373 pruebas",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "qa",
+        "que": "Encargo: build, pruebas, huella y reglas v2 de F0-93",
         "at": "2026-10-24",
         "tipo": "entrega"
       }
