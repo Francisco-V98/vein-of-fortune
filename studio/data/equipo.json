@@ -102,7 +102,9 @@
       "depto": "estrategia",
       "desde": "F0",
       "hace": "Explora opciones y referencias (juegos parecidos, mercado) y propone al menos tres alternativas con una recomendación.",
-      "entrega": "Opciones y recomendación"
+      "entrega": "Opciones y recomendación",
+      "modelo": "opus",
+      "esfuerzo": "high"
     },
     {
       "id": "analista",
@@ -114,7 +116,9 @@
       "depto": "estrategia",
       "desde": "F0",
       "hace": "Cruza lo propuesto con los documentos y el registro del mundo; revisa números, riesgos y dependencias; fija los criterios de aceptación.",
-      "entrega": "Informe de coherencia y criterios"
+      "entrega": "Informe de coherencia y criterios",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "legal",
@@ -126,7 +130,9 @@
       "depto": "estrategia",
       "desde": "F0",
       "hace": "Vigila la licencia de cada fuente, imagen y sonido, la privacidad, las reglas de las tiendas y la clasificación por edades.",
-      "entrega": "Registro de licencias y requisitos"
+      "entrega": "Registro de licencias y requisitos",
+      "modelo": "sonnet",
+      "esfuerzo": "high"
     },
     {
       "id": "lanzamiento",
@@ -138,7 +144,9 @@
       "depto": "estrategia",
       "desde": "F5",
       "hace": "Prepara la ficha de tienda, el kit de prensa, las capturas, la comunidad y las métricas en producción.",
-      "entrega": "Material de lanzamiento"
+      "entrega": "Material de lanzamiento",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "disenador",
@@ -150,7 +158,9 @@
       "depto": "diseno",
       "desde": "F0",
       "hace": "Escribe y edita el diseño del juego: bucle central, progresión, riesgo y el registro del mundo.",
-      "entrega": "Documentos de diseño en ✅ / 🟡 / ❓"
+      "entrega": "Documentos de diseño en ✅ / 🟡 / ❓",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "economista",
@@ -162,7 +172,9 @@
       "depto": "diseno",
       "desde": "F0",
       "hace": "Modela precios, demanda, mercado y recompensas, y comprueba con simulaciones que la economía no se rompa.",
-      "entrega": "Tablas y simulaciones de balance"
+      "entrega": "Tablas y simulaciones de balance",
+      "modelo": "sonnet",
+      "esfuerzo": "high"
     },
     {
       "id": "contenido",
@@ -174,7 +186,9 @@
       "depto": "diseno",
       "desde": "F0",
       "hace": "Diseña zonas, minerales, eventos, empleados y encuentros con sus parámetros.",
-      "entrega": "Fichas de contenido"
+      "entrega": "Fichas de contenido",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "uiux",
@@ -186,7 +200,9 @@
       "depto": "diseno",
       "desde": "F0",
       "hace": "Diseña pantallas, flujos, información por capas y accesibilidad en PC y Steam Deck (la fase móvil se suma después).",
-      "entrega": "Flujos y maquetas de pantallas"
+      "entrega": "Flujos y maquetas de pantallas",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "narrador",
@@ -198,7 +214,9 @@
       "depto": "narrativa",
       "desde": "F0",
       "hace": "Escribe la historia, los personajes y los diálogos con la voz acordada, sin romper el canon.",
-      "entrega": "Texto narrativo consistente"
+      "entrega": "Texto narrativo consistente",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "localizador",
@@ -210,7 +228,9 @@
       "depto": "narrativa",
       "desde": "F0",
       "hace": "Mantiene el glosario y adapta los textos entre español neutro con tuteo e inglés cercano.",
-      "entrega": "Glosario y textos en dos idiomas"
+      "entrega": "Glosario y textos en dos idiomas",
+      "modelo": "sonnet",
+      "esfuerzo": "low"
     },
     {
       "id": "arte",
@@ -222,7 +242,9 @@
       "depto": "arte",
       "desde": "F0",
       "hace": "Escribe los encargos de arte y revisa cada imagen contra el estilo acordado.",
-      "entrega": "Encargos y revisiones de arte"
+      "entrega": "Encargos y revisiones de arte",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "sonido",
@@ -234,7 +256,9 @@
       "depto": "arte",
       "desde": "F1",
       "hace": "Planifica efectos, voces en blips y música, y su licencia.",
-      "entrega": "Plan y encargos de sonido"
+      "entrega": "Plan y encargos de sonido",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "arquitecto",
@@ -246,7 +270,9 @@
       "depto": "ingenieria",
       "desde": "F0",
       "hace": "Define módulos, capas, datos y decisiones de arquitectura (ADR) y vigila la deuda técnica.",
-      "entrega": "ADR y estructura del proyecto"
+      "entrega": "ADR y estructura del proyecto",
+      "modelo": "opus",
+      "esfuerzo": "high"
     },
     {
       "id": "desarrollador",
@@ -258,7 +284,9 @@
       "depto": "ingenieria",
       "desde": "F1",
       "hace": "Programa el juego en Godot con código limpio, modular y probado.",
-      "entrega": "Código del juego con pruebas"
+      "entrega": "Código del juego con pruebas",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "herramientas",
@@ -270,7 +298,9 @@
       "depto": "ingenieria",
       "desde": "F0",
       "hace": "Mantiene el hub, la integración continua y los mods del estudio.",
-      "entrega": "Herramientas del estudio"
+      "entrega": "Herramientas del estudio",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "seguridad",
@@ -282,7 +312,9 @@
       "depto": "ingenieria",
       "desde": "F1",
       "hace": "Revisa la seguridad, la integridad de los datos guardados y la privacidad.",
-      "entrega": "Informe de seguridad"
+      "entrega": "Informe de seguridad",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "revisor",
@@ -294,7 +326,9 @@
       "depto": "calidad",
       "desde": "F1",
       "hace": "Revisa cada cambio de código antes de que llegue al autor: errores, claridad y arquitectura.",
-      "entrega": "Revisión de código"
+      "entrega": "Revisión de código",
+      "modelo": "sonnet",
+      "esfuerzo": "medium"
     },
     {
       "id": "qa",
@@ -306,7 +340,9 @@
       "depto": "calidad",
       "desde": "F0",
       "hace": "Ejecuta el build estricto, las pruebas y las comprobaciones, y reporta sin editar nada.",
-      "entrega": "Informe de QA aprobado o con fallos"
+      "entrega": "Informe de QA aprobado o con fallos",
+      "modelo": "sonnet",
+      "esfuerzo": "low"
     },
     {
       "id": "playtest",
@@ -318,7 +354,9 @@
       "depto": "calidad",
       "desde": "F0",
       "hace": "Prepara los casos de prueba y las guías de playtest para que el autor pruebe con método.",
-      "entrega": "Guía de prueba para el autor"
+      "entrega": "Guía de prueba para el autor",
+      "modelo": "sonnet",
+      "esfuerzo": "low"
     }
   ],
   "reglas": [
@@ -360,5 +398,22 @@
       "id": "calidad",
       "nombre": "Calidad"
     }
-  ]
+  ],
+  "politica_modelos": {
+    "modelos": [
+      "haiku",
+      "sonnet",
+      "opus",
+      "fable"
+    ],
+    "esfuerzos": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "fable_requiere_autorizacion": true,
+    "nota": "Defaults por rol (decisión del autor del 2026-10-23: tabla por defecto con ajuste por tarea). El coordinador puede subir o bajar el modelo o el esfuerzo en una tarea con el motivo en una línea; usar Fable 5.1 exige la autorización del autor. Nadie usa Fable por defecto."
+  }
 }

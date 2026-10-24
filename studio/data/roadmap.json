@@ -888,6 +888,33 @@
               "prio": "P1",
               "desc": "Cerrar con el autor los puntos abiertos del documento 27 (guion del Acto I): días 1 a 4, días 5 a 7 y la cuota, decisiones y pistas, y la cinta 1, las sombras y el nombre por defecto de la tienda, hasta llevarlo a un 90 % o más de limpieza y dejar el esquema de escenas y textos listo para F0-24, F3-16 y F3-47. Las dos propuestas que pendían del Acto I (el día 1 como una sola mecánica y las pistas del sorteo) las cerró F0-80.",
               "done_when": "El documento 27 llega al 90 % de limpieza o tiene sus puntos abiertos aplazados con una tarea que no condiciona nada anterior, y F0-24, F3-16 y F3-47 pueden empezar sobre él."
+            },
+            {
+              "id": "F0-87",
+              "status": "review",
+              "title": "Política de modelos y esfuerzo por agente, autorización de Fable y modo conciso",
+              "est": 8,
+              "prio": "P1",
+              "desc": "Fase 1 del plan de ahorro de tokens. Tabla de modelo y esfuerzo por rol en equipo.json (validada por el build y sincronizada con los agentes); hook del mod /equipo sobre el lanzamiento de agentes que aplica la tabla y pide autorización antes de usar Fable 5.1 con opciones de otro modelo; botones de cambio en la pestaña «Equipo»; CLAUDE.md del proyecto y skill de modo conciso (informes cortos de formato fijo, encargos mínimos, lectura parcial, lotes de agentes, cortar la sesión al cerrar cada tarea); documentación (documentos 15 y 20, README de los mods, ADR-0010). Decisión del autor del 2026-10-23: optimizar el consumo de tokens con modelo y esfuerzo por agente, autorización de Fable 5.1 y un modo conciso (plan en tres fases).",
+              "done_when": "Un agente lanzado con Fable pide autorización; cada rol usa el modelo y el esfuerzo de la tabla; los informes de los agentes siguen el formato corto; el build estricto y las pruebas pasan."
+            },
+            {
+              "id": "F0-88",
+              "status": "backlog",
+              "title": "Consulta del estudio sin leer documentos enteros (tools/consulta.py)",
+              "est": 5,
+              "prio": "P1",
+              "desc": "Fase 2 del plan de ahorro de tokens. Herramienta de consulta (limpieza por documento, puntos abiertos con línea, índice de encabezados, fichas de 10 a 20 líneas, tareas y datos del mundo por ruta) para que los agentes dejen de leer documentos enteros; se cita en CLAUDE.md y en los prompts de los agentes. Decisión del autor del 2026-10-23: optimizar el consumo de tokens con modelo y esfuerzo por agente, autorización de Fable 5.1 y un modo conciso (plan en tres fases).",
+              "done_when": "Los comandos de consulta coinciden con el build, tienen pruebas y los agentes los usan en lugar de leer documentos completos."
+            },
+            {
+              "id": "F0-89",
+              "status": "backlog",
+              "title": "Ajustes finos de consumo: agentes cortos, prefijo fijo y /consumo por rol",
+              "est": 5,
+              "prio": "P2",
+              "desc": "Fase 3 del plan de ahorro de tokens. Guía para dividir agentes largos, reducción del prefijo fijo de cada turno (MCP y skills sin uso en este proyecto), y ampliación de /consumo para clasificar el gasto por rol, modelo y esfuerzo, con una medición antes y después en tareas comparables. Decisión del autor del 2026-10-23: optimizar el consumo de tokens con modelo y esfuerzo por agente, autorización de Fable 5.1 y un modo conciso (plan en tres fases).",
+              "done_when": "El consumo se ve por rol y modelo, el prefijo fijo se reduce y hay una medición del ahorro respecto a antes de F0-87."
             }
           ]
         }

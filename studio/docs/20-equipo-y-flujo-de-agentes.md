@@ -56,6 +56,37 @@ Cada agente tiene su definición en `.claude/agents/<agente>.md`, con las herram
 
 **Por qué estos y no menos:** economía, localización, UI/UX, sonido, legal, seguridad, revisión de código y diseño de pruebas aparecen como tareas propias en el roadmap (balance económico, localización ES/EN, flujo de pantallas, sonido y música, legal y tienda, QA y seguridad, tutorial y accesibilidad, lanzamiento). Juntarlos en un solo «diseñador» o «desarrollador» haría que nadie los vigilara.
 
+## Modelo y esfuerzo por rol ✅
+
+Decisión del autor (2026-10-23, [ADR-0010](adr/0010-politica-de-modelos-y-autorizacion-de-fable.md)): cada agente tiene un modelo y un esfuerzo por defecto en `studio/data/equipo.json` (`roles[].modelo` y `roles[].esfuerzo`). Al lanzar un subagente, el coordinador fija esos valores en la llamada a `Agent`.
+
+| Rol | Agente | Modelo | Esfuerzo |
+|---|---|---|---|
+| Ideador e investigador | `ideador` | opus | high |
+| Arquitecto de software | `arquitecto` | opus | high |
+| Asesor legal y de licencias | `asesor-legal` | sonnet | high |
+| Economista y balance | `economista` | sonnet | high |
+| Analista de coherencia | `analista` | sonnet | medium |
+| Responsable de lanzamiento | `responsable-lanzamiento` | sonnet | medium |
+| Diseñador de sistemas | `disenador-sistemas` | sonnet | medium |
+| Diseñador de contenido | `disenador-contenido` | sonnet | medium |
+| Diseñador UI/UX | `disenador-ui-ux` | sonnet | medium |
+| Narrador | `narrador` | sonnet | medium |
+| Director de arte | `director-arte` | sonnet | medium |
+| Diseñador de sonido | `disenador-sonido` | sonnet | medium |
+| Desarrollador de juego | `desarrollador-juego` | sonnet | medium |
+| Desarrollador de herramientas | `desarrollador-herramientas` | sonnet | medium |
+| Ingeniero de seguridad | `ingeniero-seguridad` | sonnet | medium |
+| Revisor de código | `revisor-codigo` | sonnet | medium |
+| Localizador ES/EN | `localizador` | sonnet | low |
+| QA técnico | `qa` | sonnet | low |
+| Diseñador de pruebas | `disenador-pruebas` | sonnet | low |
+
+Reglas ✅:
+- **Ajuste por tarea:** el coordinador puede subir o bajar el modelo o el esfuerzo en una tarea concreta, con el motivo en una línea dentro del encargo. Los valores válidos son los de `politica_modelos` en `equipo.json` (modelos `haiku`, `sonnet`, `opus` y `fable`; esfuerzos `low`, `medium`, `high`, `xhigh` y `max`).
+- **Fable 5.1 solo con autorización del autor:** nadie lo usa por defecto. Cuando una tarea lo pide, el mod `vf-equipo` abre un diálogo en `/equipo` en dos pasos: primero **aprobar para esta tarea**, **aprobar solo este** o **usar otro modelo**, y si eliges cambiar, Opus, Sonnet, Haiku u otro modelo escrito (el diálogo admite de 2 a 4 opciones por paso). La aprobación vale para esa tarea, no para las siguientes. Si el coordinador no está seguro, usa el siguiente modelo más barato y avisa.
+- **Modo conciso:** los agentes y los encargos siguen la skill `.claude/skills/modo-conciso` y las reglas de [15](15-flujo-de-trabajo-y-calidad.md#coste-de-la-ia-): encargo mínimo e informes cortos.
+
 ## Cómo se registra el avance ✅
 
 La fuente de verdad del equipo y las etapas es `studio/data/equipo.json`. El avance de cada tarea va en su archivo de actividad `studio/data/tasks/<ID>.json`, en un bloque opcional:
@@ -100,14 +131,15 @@ El panel **se actualiza solo**: mira los datos cada pocos segundos, los PR cada 
 
 ## Los mods de Claude Code ✅
 
-Dos mods del repositorio, en `tools/mods/` (un marketplace local llamado `vein-mods`):
+Tres mods del repositorio, en `tools/mods/` (un marketplace local llamado `vein-mods`):
 
 | Mod | Comando | Qué muestra |
 |---|---|---|
 | `vf-estado` | `/estado` | Avance del roadmap por fase, hito y estado; limpieza y coherencia del diseño; tareas en curso; rama y PR abiertos |
+| `vf-consumo` | `/consumo` | Consumo de tokens: ventana de cinco horas y semanal, tokens por prompt e historial por día, modelo y subagentes |
 | `vf-equipo` | `/equipo` | **Oficina:** el estudio en planta, con cada empleado en su escritorio (trabajando, libre o en reserva), paquetes que viajan entre ellos y banderas con los hallazgos, más la bandeja «Te toca a ti» con los botones del autor. **Traspasos:** el detalle de cada tarea. **Equipo:** todos los roles por departamento |
 
-- Los botones del autor envían un mensaje como si lo escribiera él, solo cuando los pulsa; los mods **no modifican archivos** por su cuenta.
+- Los botones del autor envían un mensaje como si lo escribiera él, solo cuando los pulsa; los mods **no modifican archivos** por su cuenta. La excepción aparente es el hook de `vf-equipo` sobre la herramienta `Agent`: reescribe la llamada (fija el modelo y el esfuerzo del rol y pide la autorización de Fable), pero no escribe ni cambia ningún archivo del repositorio.
 - Un mod corre con los mismos permisos del usuario y sin aislamiento. Por eso solo se instalan los de este repositorio, tras revisar el código. Cada uno se valida con `claude plugin validate` y se prueba con `claude plugin test`.
 - Instalación y uso en `tools/mods/README.md`.
 
