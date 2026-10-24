@@ -8,6 +8,14 @@
       "by": "claude",
       "note": "Estaciones, clima, calendario y mini-historias de temporada",
       "ref": "rama studio/F0-94-estaciones-clima-y-calendario"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Aprobado por el autor",
+      "ref": ""
     }
   ],
   "comments": [],
@@ -45,9 +53,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "activa",
+        "estado": "hecha",
         "at": "2026-10-24",
-        "por": "autor"
+        "por": "autor",
+        "nota": "Aprobado por el autor"
       },
       {
         "etapa": "playtest",
@@ -55,7 +64,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "PR fusionado"
       }
     ],
     "traspasos": [
@@ -112,6 +124,13 @@
         "de": "qa",
         "a": "coordinador",
         "que": "Informe: aprobado; huella intacta, horas coinciden, una observación menor corregida",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "autor",
+        "a": "coordinador",
+        "que": "Aprobación: revisó el entregable y está aprobado",
         "at": "2026-10-24",
         "tipo": "entrega"
       }
