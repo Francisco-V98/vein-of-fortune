@@ -2321,8 +2321,8 @@
       "name": "Contenido v1",
       "target": "Release 1",
       "hours": [
-        1295,
-        2235
+        1301,
+        2241
       ],
       "goal": "Llegar a la primera versión completa: 6 zonas, 10 minerales, todos los minijuegos, facciones, empleados, estatus, historia completa y dificultades.",
       "gate": null,
@@ -3753,6 +3753,15 @@
               "prio": "P1",
               "desc": "Equipo propio de cada zona. Según el documento 26 (zonas y edificios).",
               "done_when": "Hecho, probado y aprobado por el autor, y coherente con el documento 26."
+            },
+            {
+              "id": "F4-246",
+              "status": "backlog",
+              "title": "Oficina de la Comisión del Éter y canal legal de la Aetherita",
+              "est": 6,
+              "prio": "P1",
+              "desc": "Oficina de la Comisión del Éter en Puerto Meridiano (siempre abierta): exterior, interior y el canal legal de venta de la Aetherita del Acto IV (5 viales al día, a valor justo, con impuesto y sin pasar por la vigilancia; los encargos especiales del mercado negro son aparte). Según los documentos 26 y 28 y la decisión del autor del 2026-10-16.",
+              "done_when": "Se puede vender Aetherita a la Comisión con el tope diario y la oficina está dibujada según el documento 26."
             }
           ]
         },

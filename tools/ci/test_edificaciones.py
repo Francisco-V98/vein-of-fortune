@@ -146,6 +146,14 @@ class RegistroDelProyecto(unittest.TestCase):
         self.assertEqual(coherence.integrity(world), [])
         self.assertEqual(c33(world, doc, None)["findings"], [])
 
+    def test_tareas_de_las_edificaciones_existen_y_solo_faltan_las_conocidas(self):
+        world = json.loads((ROOT / "studio" / "data" / "world.json").read_text(encoding="utf-8"))
+        roadmap = json.loads((ROOT / "studio" / "data" / "roadmap.json").read_text(encoding="utf-8"))
+        estado = {t["id"]: t["status"] for p in roadmap["phases"] for m in p["milestones"] for t in m["tasks"]}
+        self.assertEqual(c33(world, None, estado)["findings"], [])
+        # Sin tarea que las construya (el roadmap no la tiene): la aduana (evolutiva) y la oficina de la Comisión.
+        self.assertEqual([b["id"] for b in world["buildings"] if not b["tasks"]], ["ed-sb-aduana", "ed-pm-comision"])
+
 
 if __name__ == "__main__":
     unittest.main()

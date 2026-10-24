@@ -197,7 +197,10 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F2-20",
+        "F3-18"
+      ]
     },
     {
       "id": "ed-vb-taller",
@@ -221,7 +224,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F3-07"
+      ]
     },
     {
       "id": "ed-vb-almacen",
@@ -239,7 +244,10 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F2-17",
+        "F3-08"
+      ]
     },
     {
       "id": "ed-vb-casa",
@@ -257,7 +265,10 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-226",
+        "F6-51"
+      ]
     },
     {
       "id": "ed-vb-reme",
@@ -277,7 +288,9 @@
         "reme"
       ],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-224"
+      ]
     },
     {
       "id": "ed-vb-quiroga",
@@ -299,7 +312,9 @@
         "quiroga"
       ],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-224"
+      ]
     },
     {
       "id": "ed-vb-mina-galerias",
@@ -329,7 +344,9 @@
         "teo"
       ],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-225"
+      ]
     },
     {
       "id": "ed-vb-mina-canon",
@@ -355,7 +372,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-225"
+      ]
     },
     {
       "id": "ed-vb-union",
@@ -378,7 +397,9 @@
       "npcs": [
         "delegado-union"
       ],
-      "tasks": []
+      "tasks": [
+        "F4-244"
+      ]
     },
     {
       "id": "ed-vb-periodico",
@@ -404,7 +425,10 @@
       "npcs": [
         "voceador"
       ],
-      "tasks": []
+      "tasks": [
+        "F4-94",
+        "F4-95"
+      ]
     },
     {
       "id": "ed-vb-herreria",
@@ -428,7 +452,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-219"
+      ]
     },
     {
       "id": "ed-af-mina",
@@ -456,7 +482,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-225"
+      ]
     },
     {
       "id": "ed-af-consorcio",
@@ -478,7 +506,9 @@
         "esteban"
       ],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-63"
+      ]
     },
     {
       "id": "ed-af-economato",
@@ -498,7 +528,9 @@
       ],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-219"
+      ]
     },
     {
       "id": "ed-af-plateria",
@@ -519,7 +551,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-220"
+      ]
     },
     {
       "id": "ed-af-taller-ensayo",
@@ -537,7 +571,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-222"
+      ]
     },
     {
       "id": "ed-af-chalet",
@@ -555,7 +591,11 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-48",
+        "F6-51",
+        "F6-53"
+      ]
     },
     {
       "id": "ed-sb-mina",
@@ -585,7 +625,9 @@
         "contrabandista",
         "inspector-corrupto"
       ],
-      "tasks": []
+      "tasks": [
+        "F4-225"
+      ]
     },
     {
       "id": "ed-sb-lonja",
@@ -608,7 +650,10 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-220",
+        "F6-67"
+      ]
     },
     {
       "id": "ed-sb-bar",
@@ -635,7 +680,10 @@
         "casilda"
       ],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-65",
+        "F6-56"
+      ]
     },
     {
       "id": "ed-sb-caseron",
@@ -653,7 +701,11 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-48",
+        "F6-51",
+        "F6-53"
+      ]
     },
     {
       "id": "ed-sb-muelle",
@@ -674,7 +726,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-62"
+      ]
     },
     {
       "id": "ed-sb-astillero",
@@ -693,7 +747,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-63"
+      ]
     },
     {
       "id": "ed-sb-aduana",
@@ -747,7 +803,9 @@
       "npcs": [
         "cazarrecompensas"
       ],
-      "tasks": []
+      "tasks": [
+        "F4-225"
+      ]
     },
     {
       "id": "ed-cv-tasadores",
@@ -771,7 +829,8 @@
       "characters": [],
       "npcs": [],
       "tasks": [
-        "F4-55"
+        "F4-55",
+        "F4-221"
       ]
     },
     {
@@ -792,7 +851,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-223"
+      ]
     },
     {
       "id": "ed-cv-taller-talla",
@@ -813,7 +874,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-56"
+      ]
     },
     {
       "id": "ed-fo-mina",
@@ -842,7 +905,9 @@
       ],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-225"
+      ]
     },
     {
       "id": "ed-fo-campamento-viejo",
@@ -860,7 +925,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-223"
+      ]
     },
     {
       "id": "ed-fo-barracon",
@@ -878,7 +945,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-223"
+      ]
     },
     {
       "id": "ed-pm-bolsa",
@@ -898,7 +967,8 @@
       "characters": [],
       "npcs": [],
       "tasks": [
-        "F4-166"
+        "F4-166",
+        "F6-65"
       ]
     },
     {
@@ -923,6 +993,7 @@
       ],
       "npcs": [],
       "tasks": [
+        "F4-74",
         "F6-46"
       ]
     },
@@ -947,7 +1018,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-221"
+      ]
     },
     {
       "id": "ed-pm-comision",
@@ -987,7 +1060,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-222"
+      ]
     },
     {
       "id": "ed-pm-pension",
@@ -1009,7 +1084,9 @@
         "anselmo"
       ],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F4-222"
+      ]
     },
     {
       "id": "ed-pm-salon",
@@ -1031,7 +1108,9 @@
       ],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-11"
+      ]
     },
     {
       "id": "ed-pm-inmobiliaria",
@@ -1049,7 +1128,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-47"
+      ]
     },
     {
       "id": "ed-pm-mansion-paseo",
@@ -1067,7 +1148,11 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-49",
+        "F6-52",
+        "F6-53"
+      ]
     },
     {
       "id": "ed-pm-mansion-colina",
@@ -1085,7 +1170,11 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-49",
+        "F6-52",
+        "F6-53"
+      ]
     },
     {
       "id": "ed-pm-mansion-barrio",
@@ -1103,7 +1192,11 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-50",
+        "F6-52",
+        "F6-53"
+      ]
     },
     {
       "id": "ed-pm-joyeria",
@@ -1125,7 +1218,10 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-54",
+        "F6-55"
+      ]
     },
     {
       "id": "ed-pm-concesionaria",
@@ -1143,7 +1239,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-57"
+      ]
     },
     {
       "id": "ed-pm-sastreria",
@@ -1161,7 +1259,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-58"
+      ]
     },
     {
       "id": "ed-pm-puerto-deportivo",
@@ -1180,7 +1280,9 @@
       "factions": [],
       "characters": [],
       "npcs": [],
-      "tasks": []
+      "tasks": [
+        "F6-64"
+      ]
     }
   ],
   "minigames": [
