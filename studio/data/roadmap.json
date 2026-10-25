@@ -393,11 +393,11 @@
             },
             {
               "id": "F0-35",
-              "status": "backlog",
+              "status": "done",
               "title": "Protección de la rama main y ajustes de GitHub",
               "est": 1,
               "prio": "P0",
-              "desc": "Los hace el autor: PR obligatorio, comprobaciones requeridas, historial lineal.",
+              "desc": "Los hace el autor con la guía del documento 15: repo público, PR obligatorio, 5 comprobaciones requeridas, merge commit sin historial lineal, seguridad de Actions.",
               "done_when": "Reglas activas en Settings."
             },
             {
