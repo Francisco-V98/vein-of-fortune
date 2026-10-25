@@ -258,7 +258,7 @@
     hl: { act: 'all', tipo: 'all', estado: 'all', who: 'all' },
     sim: { grupo: 'all', estado: 'all', open: {} },
     sb: { v: {} },
-    s1: { mode: 'feliz', reme: 'all', diff: 'all', open: {} }
+    s1: { mode: 'feliz', reme: 'all', diff: 'all', open: {}, v: {}, gal: false, galf: 'todas' }
   };
   var lb = { list: [], idx: 0, opener: null };
 
@@ -1665,6 +1665,76 @@
     var sbScenes = {};
     (H.storyboard ? H.storyboard.escenas : []).forEach(function (e) { sbScenes[e.id] = true; });
     var reme = W.variantes_globales[0], diff = W.variantes_globales[2];
+    var IM = W.imagenes || {}, CAB = W.imagenes_cabecera || {}, byFile = {}, list = [], listIdx = {}, info = {};
+    var REME_VAR = { Consorcio: 'A', Ministerio: 'B', Faroleros: 'C' };
+    H.assets.images.forEach(function (i) { byFile[i.file] = i; });
+    W.dias.forEach(function (d) { d.bloques.forEach(function (b) { b.escenas.forEach(function (sc) { info[sc] = { dia: d.dia, bloque: b.bloque, lugar: b.lugar }; }); }); });
+    var allScenes = Object.keys(info);
+    function varOf(sc) {
+      var im = IM[sc];
+      if (!im || !im.variantes) return null;
+      return st.v[sc] || (!happy && REME_VAR[st.reme]) || 'A';
+    }
+    function fileOf(sc) {
+      var im = IM[sc], v = varOf(sc);
+      return !im ? null : (v ? im.variantes[v] : im.archivo);
+    }
+    function isDone(sc) { return !!(IM[sc] && IM[sc].estado === 'hecha' && fileOf(sc)); }
+    function lbIndex(file) {
+      if (!(file in listIdx)) { listIdx[file] = list.length; list.push(byFile[file]); }
+      return listIdx[file];
+    }
+    function thumb(file, label, cls) {
+      var a = byFile[file];
+      if (!a) return '<div class="s1-pend ' + (cls || '') + '">Falta la imagen ' + esc(file) + '</div>';
+      return '<button class="sb-shot s1-shot ' + (cls || '') + '" type="button" data-action="open-img" data-index="' + lbIndex(file) + '" aria-label="Ampliar: ' + esc(label) + '"><img loading="lazy" src="../' + esc(file) + '" alt="' + esc(a.title) + '"><span class="sb-stamp">ARTE PROVISIONAL</span></button>';
+    }
+    function sceneThumb(sc, cls) {
+      if (!isDone(sc)) return '<div class="s1-pend ' + (cls || '') + '" title="' + esc(IM[sc] ? IM[sc].nota : '') + '">Imagen pendiente · ' + esc(sc) + '</div>';
+      return thumb(fileOf(sc), 'escena ' + sc, cls);
+    }
+    function vtabs(sc) {
+      var im = IM[sc];
+      if (!im || !im.variantes) return '';
+      var cur = varOf(sc);
+      return '<div class="s1-vtabs s1-noprint" role="group" aria-label="Variante de ' + esc(sc) + '">' + Object.keys(im.variantes).map(function (k) {
+        return '<button class="chip" type="button" data-action="s1-var" data-scene="' + esc(sc) + '" data-value="' + k + '" aria-pressed="' + (cur === k) + '">' + k + '</button>';
+      }).join('') + '</div>';
+    }
+    function sceneCard(sc, withNote) {
+      var im = IM[sc];
+      return '<figure class="s1-scene" id="' + (withNote ? 's1-gsc-' : 's1-sc-') + esc(sc) + '"><div class="s1-scene-img">' + sceneThumb(sc) + '</div><figcaption><b>' + esc(sc) + '</b>' + (info[sc] ? ' <small>Día ' + info[sc].dia + ' · ' + esc(info[sc].bloque) + '</small>' : '') + vtabs(sc) + (withNote && im ? '<span class="s1-note">' + esc(im.nota) + '</span>' : '') + '</figcaption></figure>';
+    }
+    function filmstrip(scs) {
+      return '<div class="s1-film" aria-label="Imágenes del día en orden">' + scs.map(function (sc) {
+        if (!isDone(sc)) return '<span class="s1-frame is-pend" title="Imagen pendiente · ' + esc(sc) + '"><i>pendiente</i><b>' + esc(sc) + '</b></span>';
+        return '<button class="s1-frame" type="button" data-action="open-img" data-index="' + lbIndex(fileOf(sc)) + '" aria-label="Ampliar: escena ' + esc(sc) + '" title="' + esc(sc) + '"><img loading="lazy" src="../' + esc(fileOf(sc)) + '" alt=""><b>' + esc(sc) + '</b></button>';
+      }).join('') + '</div>';
+    }
+    function dayScenes(d) { var o = []; d.bloques.forEach(function (b) { o = o.concat(b.escenas); }); return o; }
+    var nDone = allScenes.filter(isDone).length;
+    function weekStrip() {
+      var x = '<section class="s1-week" id="s1-semana-img"><h2 class="section-title">Tira de la semana <small>' + nDone + ' de ' + allScenes.length + ' escenas con imagen · arte provisional</small></h2><div class="s1-week-head">';
+      if (CAB.mapa) x += '<div class="s1-cab"><span>Mapa de Valdoria</span>' + thumb(CAB.mapa, 'Mapa de Valdoria con niebla', 's1-cab-img') + '</div>';
+      if (CAB.props) x += '<div class="s1-cab"><span>Hoja de props</span>' + thumb(CAB.props, 'Hoja de props', 's1-cab-img') + '</div>';
+      x += '</div><div class="s1-week-grid">' + W.dias.map(function (d) {
+        return '<div class="s1-week-day"><a href="#/semana1?h=s1-d' + d.dia + '"><b>Día ' + d.dia + '</b> <small>' + esc(d.nombre) + '</small></a>' + filmstrip(dayScenes(d)) + '</div>';
+      }).join('') + '</div></section>';
+      return x;
+    }
+    function gallery() {
+      var f = st.galf, shown = 0;
+      var x = '<section class="s1-gal" id="s1-galeria"><h2 class="section-title">Galería de la semana <small>' + nDone + ' de ' + allScenes.length + ' escenas con imagen</small></h2><div class="filters s1-noprint" role="group" aria-label="Filtro de la galería"><div class="filter-group"><span class="filter-label">Mostrar</span>' +
+        [['todas', 'Todas'], ['hechas', 'Solo hechas'], ['pendientes', 'Solo pendientes']].map(function (a) { return '<button class="chip" type="button" data-action="s1-galf" data-value="' + a[0] + '" aria-pressed="' + (f === a[0]) + '">' + a[1] + '</button>'; }).join('') + '</div></div>';
+      W.dias.forEach(function (d) {
+        var scs = dayScenes(d).filter(function (sc) { return f === 'todas' || (f === 'hechas') === isDone(sc); });
+        if (!scs.length) return;
+        shown += scs.length;
+        x += '<h3 class="sb-sub"><a href="#/semana1?h=s1-d' + d.dia + '">Día ' + d.dia + ' · ' + esc(d.nombre) + '</a></h3><div class="s1-gal-grid">' + scs.map(function (sc) { return sceneCard(sc, true); }).join('') + '</div>';
+      });
+      if (!shown) x += '<div class="notice">Ninguna escena coincide con el filtro.</div>';
+      return x + '</section>';
+    }
     function changes(day, block) {
       var out = [];
       if (happy) return out;
@@ -1699,6 +1769,7 @@
       var open = st.open[key] || hl;
       var x = '<details class="s1-block' + (b.obligatorio ? ' is-ob' : '') + (hl ? ' s1-hl' : '') + '" data-key="' + esc(key) + '"' + (open ? ' open' : '') + '><summary><span class="s1-when">' + esc(b.bloque) + '</span><span class="s1-where">' + esc(b.lugar) + '</span><span class="s1-badges">' +
         (b.obligatorio ? '<span class="pill s1-must">OBLIGATORIO</span>' : '<span class="pill s1-opt">opcional</span>') + obs.map(function (o) { return '<a class="chip brass" href="#/semana1?h=s1-' + esc(o.id) + '">' + esc(o.id) + '</a>'; }).join('') + (ch.length ? '<span class="pill s1-chg">' + (hl ? 'cambia' : 'variantes') + '</span>' : '') + '</span></summary><div class="s1-body">';
+      if (b.escenas.length) x += '<div class="s1-shots">' + b.escenas.map(function (sc) { return sceneCard(sc, false); }).join('') + '</div>';
       x += '<div class="gx-tags">' + (b.escenas.length ? b.escenas.map(function (sc) {
         return sbScenes[sc] ? '<a class="chip" href="#/storyboard?h=sb-' + esc(sc) + '" title="Ver el panel del storyboard">' + esc(sc) + ' ▣</a>' : '<span class="chip">' + esc(sc) + '</span>';
       }).join('') : '<span class="chip">sin escenas guionizadas</span>') + '</div>';
@@ -1725,6 +1796,7 @@
     function dayCard(d) {
       var ch = changes(d.dia, null);
       var x = '<section class="s1-day" id="s1-d' + d.dia + '"><h2 class="section-title">Día ' + d.dia + ' · ' + esc(d.nombre) + ' <small>' + esc(d.fecha) + '</small></h2>';
+      x += filmstrip(dayScenes(d));
       x += '<p class="s1-goal"><b>Objetivo.</b> ' + esc(d.objetivo_del_dia) + '</p><p class="s1-new"><b>Mecánica nueva.</b> ' + esc(d.mecanica_nueva) + '</p>' + callouts(ch);
       x += '<div class="s1-states">' + statePair('Al empezar', d.estado_al_empezar) + statePair('Al terminar', d.estado_al_terminar) + '</div>';
       x += '<div class="s1-blocks">' + d.bloques.map(function (b) { return block(d, b); }).join('') + '</div>' + decision(d);
@@ -1742,6 +1814,9 @@
       '<div class="filter-group"><span class="filter-label">Modo</span><button class="chip" type="button" data-action="s1-mode" data-value="feliz" aria-pressed="' + happy + '">Solo camino feliz</button><button class="chip" type="button" data-action="s1-mode" data-value="variantes" aria-pressed="' + !happy + '">Con variantes</button></div>' +
       chips(st.reme, 's1-reme', S1_REME, 'Variante de Reme', 'Ninguna') + chips(st.diff, 's1-diff', S1_DIFF, 'Dificultad', 'Ninguna') +
       '<div class="filter-group"><button class="chip" type="button" data-action="s1-open" data-value="1">Desplegar todo</button><button class="chip" type="button" data-action="s1-open" data-value="0">Plegar todo</button><button class="chip" type="button" data-action="deck-print">Imprimir</button></div></div>';
+    h += '<div class="filters s1-noprint" role="group" aria-label="Vista de la semana"><div class="filter-group"><span class="filter-label">Vista</span><button class="chip" type="button" data-action="s1-gal" data-value="0" aria-pressed="' + !st.gal + '">Detalle por día</button><button class="chip" type="button" data-action="s1-gal" data-value="1" aria-pressed="' + st.gal + '">Galería de imágenes</button><span class="s1-count-img">' + nDone + ' de ' + allScenes.length + ' escenas con imagen</span></div></div>';
+    h += weekStrip();
+    if (st.gal) { lb.list = list; return '<div class="s1">' + h + gallery() + '</div>'; }
     h += '<nav class="s1-line" aria-label="Línea de tiempo de la semana">' + W.dias.map(function (d) {
       var short = d.mecanica_nueva.split(/[:.]/)[0];
       return '<a class="s1-chip" href="#/semana1?h=s1-d' + d.dia + '" title="' + esc(d.mecanica_nueva) + '"><b>Día ' + d.dia + '</b><span>' + esc(d.nombre) + '</span><small>' + esc(short) + '</small>' + (d.decision ? '<i class="s1-mark" title="Decisión del día: ' + esc(d.decision.id || d.decision.tipo) + '">⑂ decisión</i>' : '') + '</a>';
@@ -1778,6 +1853,7 @@
         W.errores_comunes_y_recuperacion.map(function (e) { return '<tr><td>' + esc(e.situacion) + '</td><td>' + esc(e.que_pasa) + '</td><td>' + esc(e.como_se_recupera) + '</td></tr>'; }).join('') + '</tbody></table></div></section>';
     }
     if (W.dudas && W.dudas.length) h += '<details class="s1-sum"><summary>Dudas abiertas para el autor (' + W.dudas.length + ')</summary>' + s1Ul(W.dudas) + '</details>';
+    lb.list = list;
     return '<div class="s1">' + h + '</div>';
   }
 
@@ -2014,6 +2090,9 @@
     else if (act === 'hl-tipo') { state.hl.tipo = val; render(true); }
     else if (act === 'hl-estado') { state.hl.estado = val; render(true); }
     else if (act === 'sb-var') { state.sb.v[el.getAttribute('data-scene')] = val; render(true); }
+    else if (act === 's1-var') { state.s1.v[el.getAttribute('data-scene')] = val; render(true); }
+    else if (act === 's1-gal') { state.s1.gal = val === '1'; render(true); }
+    else if (act === 's1-galf') { state.s1.galf = val; render(true); }
     else if (act === 's1-mode') { state.s1.mode = val; render(true); }
     else if (act === 's1-reme') { state.s1.reme = val; render(true); }
     else if (act === 's1-diff') { state.s1.diff = val; render(true); }

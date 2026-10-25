@@ -1184,7 +1184,36 @@ def _semana1_strings(node):
             yield from _semana1_strings(v)
 
 
-def load_semana1(task_status, hilos):
+def _check_semana1_imagenes(sem, doc27, registered):
+    """Valida el mapa `imagenes` de semana1.json: escenas de 27 §21.2, archivos y registro en assets.json."""
+    imgs = sem.get("imagenes", {})
+    m = re.search(r"### 21\.2 .*?(?=\n### )", doc27, re.S)
+    scenes = set(re.findall(r"^\|\s*`(d\d\.\d)`", m.group(0), re.M)) if m else set()
+    if not scenes:
+        warn("semana1.json: no encuentro la tabla de escenas del documento 27 §21.2")
+
+    def check(f, where):
+        if not f or not (STUDIO / f).exists():
+            warn("semana1.json: falta la imagen de %s: %s" % (where, f))
+        elif f not in registered:
+            warn("semana1.json: imagen sin registrar en assets.json (%s): %s" % (where, f))
+
+    for sid in sorted(scenes - set(imgs)):
+        warn("semana1.json: la escena %s de 27 §21.2 no tiene entrada en 'imagenes'" % sid)
+    for sid, im in imgs.items():
+        if sid not in scenes:
+            warn("semana1.json: 'imagenes' cita una escena que no está en 27 §21.2: %s" % sid)
+        if im.get("estado") not in ("hecha", "pendiente"):
+            warn("semana1.json: la imagen de %s tiene un estado no válido: %s" % (sid, im.get("estado")))
+        elif im["estado"] == "hecha":
+            check(im.get("archivo"), sid)
+            for k, f in im.get("variantes", {}).items():
+                check(f, "%s (variante %s)" % (sid, k))
+    for k, f in sem.get("imagenes_cabecera", {}).items():
+        check(f, "cabecera " + k)
+
+
+def load_semana1(task_status, hilos, assets):
     """Valida y devuelve la vista «Semana 1» (studio/data/semana1.json, tarea F0-24)."""
     path = DATA / "semana1.json"
     if not path.exists():
@@ -1222,6 +1251,7 @@ def load_semana1(task_status, hilos):
             warn("semana1.json: el obligatorio %s referencia un bloque inexistente: día %s, %s" % (ob.get("id"), ob.get("dia"), ob.get("bloque")))
     if not sem.get("obligatorios_de_la_semana"):
         warn("semana1.json: faltan los obligatorios de la semana")
+    _check_semana1_imagenes(sem, doc27, {i["file"] for i in assets["images"]})
     for text in _semana1_strings(sem):
         for tid in re.findall(r"⏳\s*(F\d+-\d+)", text):
             if tid not in task_status:
@@ -1259,7 +1289,7 @@ def build_hub():
         "assets": assets,
         "gallery": load_gallery(world, assets),
         "storyboard": load_storyboard(assets),
-        "semana1": load_semana1(task_status, hilos),
+        "semana1": load_semana1(task_status, hilos, assets),
         "palette": load_json(DATA / "palette.json"),
         "qa": load_qa(task_ids),
         "presentation": load_presentation({d["id"] for d in docs}),

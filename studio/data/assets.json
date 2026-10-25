@@ -2,115 +2,1009 @@
   "source_note": "Imágenes de referencia generadas con IA (gpt_image_2_5 vía Higgsfield). Todas son provisionales: sirven de referencia o de uso interno y se rehacen en pixel art con PixelLab en la producción definitiva (documento 12). Los términos de uso comercial deben revisarse antes de publicar. Términos de PixelLab leídos el 2026-10-15 (versión del 2025-11-23): el usuario conserva la propiedad y puede usarlos comercialmente, no puede entrenar modelos propios con las imágenes y responde de que no infrinjan derechos ajenos; falta la captura formal con el plan elegido (F4-227). Los términos de la herramienta de las referencias provisionales (gpt_image_2_5 vía Higgsfield) no se han leído: nada provisional llega a la tienda. Steam exige declarar el arte definitivo generado con IA (documento 11, F5-30).",
   "estado_por_defecto": "provisional",
   "images": [
-    { "file": "assets-ref/prueba-de-estilo/mina.png", "title": "Mina (vertical, primera ronda)", "category": "Escenas", "round": 1, "status": "superada", "note": "La primera mina en vertical. Gustó la atmósfera; el juego es horizontal." },
-    { "file": "assets-ref/prueba-de-estilo/personajes.png", "title": "Protagonistas hombre y mujer", "category": "Personajes", "round": 1, "status": "aprobada", "note": "Base para los protagonistas jugables. Gustó el estilo." },
-    { "file": "assets-ref/prueba-de-estilo/minerales.png", "title": "Minerales v1", "category": "Minerales", "round": 1, "status": "superada", "note": "Cuarzo, salitre y plata se parecían demasiado." },
-    { "file": "assets-ref/prueba-de-estilo/mercado.png", "title": "Interfaz de mercado (vertical)", "category": "Interfaz", "round": 1, "status": "superada", "note": "No convenció; reemplazada por versiones horizontales." },
-    { "file": "assets-ref/prueba-de-estilo-2/mina-horizontal.png", "title": "Galerías del Hollín (horizontal)", "category": "Escenas", "round": 2, "status": "aprobada", "note": "Escena de la zona 1. Referencia de atmósfera para las zonas." },
-    { "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png", "title": "Minerales v2", "category": "Minerales", "round": 2, "status": "aprobada", "note": "Siluetas distintas. La Aetherita es un cristal vinotinto con aura cian." },
-    { "file": "assets-ref/prueba-de-estilo-2/retratos-a.png", "title": "Retratos: Reme, Teo, Quiroga y Lucía", "category": "Personajes", "round": 2, "status": "aprobada", "note": "Retratos de diálogo detallados." },
-    { "file": "assets-ref/prueba-de-estilo-2/retratos-b.png", "title": "Retratos: Esteban, Casilda, Ministro Montenegro y Anselmo", "category": "Personajes", "round": 2, "status": "aprobada", "note": "Anselmo aparece como una foto desgastada." },
-    { "file": "assets-ref/prueba-de-estilo-2/sprites.png", "title": "Sprites pequeños tipo Stardew", "category": "Personajes", "round": 2, "status": "superada", "note": "Reemplazada por sprites-corregido.png: el ministro salió parecido a un sacerdote." },
-    { "file": "assets-ref/prueba-de-estilo-2/ui-mercado.png", "title": "Terminal de mercado", "category": "Interfaz", "round": 2, "status": "superada", "note": "Reemplazada por ui-mercado-corregido.png: flechas rojo/verde cambiadas." },
-    { "file": "assets-ref/prueba-de-estilo-2/sprites-corregido.png", "title": "Sprites pequeños (corregidos)", "category": "Personajes", "round": 3, "status": "aprobada", "note": "El ministro ahora es un funcionario severo: abrigo azul marino, faja vinotinto, medallas, sin cruces." },
-    { "file": "assets-ref/prueba-de-estilo-2/ministro-corregido.png", "title": "Ministro Montenegro: sprite corregido", "category": "Personajes", "round": 3, "status": "aprobada", "note": "Sprite chibi a tamaño original (1024 px) para usar de referencia." },
-    { "file": "assets-ref/prueba-de-estilo-2/ui-mercado-corregido.png", "title": "Terminal de mercado (corregida)", "category": "Interfaz", "round": 3, "status": "aprobada", "note": "Sube en ▲ y baja en vinotinto ▼: no depende solo del color. La imagen usa cian para la subida; la regla vigente es azul hielo, porque el cian es solo de la Aetherita." },
-    { "file": "assets-ref/personajes/reme/modelo.webp", "title": "Reme · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art como el sprite del ministro. Cinco vistas: frente, tres cuartos, ambos lados y espalda." },
-    { "file": "assets-ref/personajes/reme/expresiones.webp", "title": "Reme · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estilo detallado como los retratos. Seis expresiones comunes: predeterminada, feliz, triste (llorando), enojo, susto y cansancio (bostezando)." },
-    { "file": "assets-ref/personajes/reme/poses.webp", "title": "Reme · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art de cuerpo entero: estático, ciclo de caminar de 4 fotogramas, de frente y de espalda, y cuatro gestos al hablar." },
-    { "file": "assets-ref/personajes/protagonista-hombre/modelo.webp", "title": "Protagonista (hombre) · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art con gorra de minero y lámpara de latón. Aprobada." },
-    { "file": "assets-ref/personajes/protagonista-mujer/modelo.webp", "title": "Protagonista (mujer) · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art con trenza, gorra de minero y lámpara de latón. Aprobada." },
-    { "file": "assets-ref/personajes/protagonista-hombre/poses.webp", "title": "Protagonista (hombre) · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estático, ciclo de caminar, de frente y de espalda, y gestos al hablar, a partir de su hoja de modelo." },
-    { "file": "assets-ref/personajes/protagonista-hombre/expresiones.webp", "title": "Protagonista (hombre) · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Seis expresiones comunes; la predeterminada es una sonrisa decidida de optimista terco." },
-    { "file": "assets-ref/personajes/protagonista-mujer/poses.webp", "title": "Protagonista (mujer) · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estático, ciclo de caminar, de frente y de espalda, y gestos al hablar, a partir de su hoja de modelo." },
-    { "file": "assets-ref/personajes/protagonista-mujer/expresiones.webp", "title": "Protagonista (mujer) · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Seis expresiones comunes; la predeterminada es una sonrisa decidida de optimista terco." },
-    { "file": "assets-ref/personajes/anselmo/modelo.webp", "title": "Anselmo · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art en el formato de Reme. Aprobada." },
-    { "file": "assets-ref/personajes/teo/modelo.webp", "title": "Teo · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art en el formato de Reme. Aprobada." },
-    { "file": "assets-ref/personajes/quiroga/modelo.webp", "title": "Quiroga · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art en el formato de Reme. Aprobada." },
-    { "file": "assets-ref/personajes/lucia/modelo.webp", "title": "Lucía · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art en el formato de Reme. Aprobada." },
-    { "file": "assets-ref/personajes/anselmo/poses.webp", "title": "Anselmo · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo." },
-    { "file": "assets-ref/personajes/anselmo/expresiones.webp", "title": "Anselmo · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Seis expresiones comunes en el estilo aprobado." },
-    { "file": "assets-ref/personajes/teo/poses.webp", "title": "Teo · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo." },
-    { "file": "assets-ref/personajes/teo/expresiones.webp", "title": "Teo · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Seis expresiones comunes en el estilo aprobado." },
-    { "file": "assets-ref/personajes/quiroga/poses.webp", "title": "Quiroga · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo." },
-    { "file": "assets-ref/personajes/quiroga/expresiones.webp", "title": "Quiroga · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Seis expresiones comunes en el estilo aprobado." },
-    { "file": "assets-ref/personajes/lucia/poses.webp", "title": "Lucía · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo." },
-    { "file": "assets-ref/personajes/lucia/expresiones.webp", "title": "Lucía · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Seis expresiones comunes en el estilo aprobado." },
-    { "file": "assets-ref/personajes/esteban/modelo.webp", "title": "Esteban · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art en el formato de Reme. Aprobada." },
-    { "file": "assets-ref/personajes/casilda/modelo.webp", "title": "Casilda · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art en el formato de Reme. Aprobada." },
-    { "file": "assets-ref/personajes/montenegro/modelo.webp", "title": "Ministro Montenegro · Hoja de modelo", "category": "Personajes", "round": 3, "status": "referencia", "note": "Chibi pixel art en el formato de Reme. Aprobada." },
-    { "file": "assets-ref/personajes/esteban/poses.webp", "title": "Esteban · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo." },
-    { "file": "assets-ref/personajes/esteban/expresiones.webp", "title": "Esteban · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Seis expresiones comunes en el estilo aprobado." },
-    { "file": "assets-ref/personajes/casilda/poses.webp", "title": "Casilda · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo." },
-    { "file": "assets-ref/personajes/casilda/expresiones.webp", "title": "Casilda · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Seis expresiones comunes en el estilo aprobado." },
-    { "file": "assets-ref/personajes/montenegro/poses.webp", "title": "Ministro Montenegro · Hoja de poses", "category": "Personajes", "round": 3, "status": "referencia", "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo." },
-    { "file": "assets-ref/personajes/montenegro/expresiones.webp", "title": "Ministro Montenegro · Hoja de expresiones", "category": "Personajes", "round": 3, "status": "referencia", "note": "Seis expresiones comunes en el estilo aprobado." },
-    { "file": "assets-ref/npc/ministerio-1.webp", "title": "NPC Ministerio · 1 (inspector, escribiente y soldado)", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja de grupo: de frente, de lado, de espalda y cara, en chibi pixel art." },
-    { "file": "assets-ref/npc/ministerio-comision-2.webp", "title": "NPC Ministerio y Comisión · 2 (oficial, perito y guardia de La Fosa)", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja de grupo: de frente, de lado, de espalda y cara, en chibi pixel art." },
-    { "file": "assets-ref/npc/consorcio.webp", "title": "NPC Consorcio Arvel (guardia, ejecutivo y capataz)", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja de grupo: de frente, de lado, de espalda y cara, en chibi pixel art." },
-    { "file": "assets-ref/npc/union-prensa.webp", "title": "NPC Unión y prensa (minero sindicalista, delegado y reportero)", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja de grupo con las proporciones de la hoja del Consorcio." },
-    { "file": "assets-ref/npc/faroleros.webp", "title": "NPC Los Faroleros (cobrador, matón e informante)", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja de grupo con las proporciones de la hoja del Consorcio." },
-    { "file": "assets-ref/npc/empleados-1.webp", "title": "NPC Empleados · 1 (minero, dependiente y guardia)", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja de grupo con las proporciones de la hoja del Consorcio." },
-    { "file": "assets-ref/npc/empleados-2-voceador.webp", "title": "NPC Empleados · 2 y voceador (refinador, analista y voceador)", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja de grupo con las proporciones de la hoja del Consorcio." },
-    { "file": "assets-ref/npc/civiles-1.webp", "title": "NPC Civiles · 1 (vecino, vecina y comerciante)", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja de grupo con las proporciones de la hoja del Consorcio." },
-    { "file": "assets-ref/npc/civiles-2.webp", "title": "NPC Civiles · 2 (cliente obrero y cliente de la élite)", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja de grupo con las proporciones de la hoja del Consorcio." },
-    { "file": "assets-ref/npc/enemigos/saqueador.webp", "title": "Enemigo · Saqueador", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)." },
-    { "file": "assets-ref/npc/enemigos/banda-rival.webp", "title": "Enemigo · Banda rival", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)." },
-    { "file": "assets-ref/npc/enemigos/contrabandista.webp", "title": "Enemigo · Contrabandista", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)." },
-    { "file": "assets-ref/npc/enemigos/inspector-corrupto.webp", "title": "Enemigo · Inspector corrupto", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)." },
-    { "file": "assets-ref/npc/enemigos/cazarrecompensas.webp", "title": "Enemigo · Cazarrecompensas", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)." },
-    { "file": "assets-ref/npc/enemigos/soldado-fosa.webp", "title": "Enemigo · Soldado de La Fosa", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)." },
-    { "file": "assets-ref/npc/criaturas/rastrera.webp", "title": "Criatura · Rastrera de La Fosa", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual: minero mutado que se arrastra; de frente, de lado, de espalda, predeterminada y atacando." },
-    { "file": "assets-ref/npc/criaturas/cristalina.webp", "title": "Criatura · Cristalina de La Fosa", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual: soldado mutado cubierto de cristales de Aetherita; de frente, de lado, de espalda, predeterminada y atacando." },
-    { "file": "assets-ref/npc/criaturas/eterea.webp", "title": "Criatura · Etérea de La Fosa", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual: humano medio traslúcido expuesto al Éter puro; de frente, de lado, de espalda, predeterminada y atacando." },
-    { "file": "assets-ref/npc/jefes/capataz-mayor.webp", "title": "Jefe de zona · Capataz Mayor", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual del jefe de Galerías del Hollín: de frente, de lado, de espalda, predeterminada y enojo." },
-    { "file": "assets-ref/npc/jefes/cabecilla-banda-rival.webp", "title": "Jefe de zona · Cabecilla de la banda rival", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual del jefe de Cañón Ferroso: de frente, de lado, de espalda, predeterminada y enojo." },
-    { "file": "assets-ref/npc/jefes/jefe-seguridad-consorcio.webp", "title": "Jefe de zona · Jefe de seguridad del Consorcio", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual del jefe de Minas de Sierra Alta: de frente, de lado, de espalda, predeterminada y enojo." },
-    { "file": "assets-ref/npc/jefes/aduanero-mayor.webp", "title": "Jefe de zona · Aduanero Mayor", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual del jefe de Salares del Litoral: de frente, de lado, de espalda, predeterminada y enojo." },
-    { "file": "assets-ref/npc/jefes/cazarrecompensas-mayor.webp", "title": "Jefe de zona · Cazarrecompensas Mayor", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual del jefe de Cavernas de Cristal: de frente, de lado, de espalda, predeterminada y enojo." },
-    { "file": "assets-ref/npc/jefes/coronel-comision.webp", "title": "Jefe de zona · Coronel de la Comisión", "category": "NPC", "round": 3, "status": "referencia", "note": "Hoja individual del jefe de La Fosa del Éter: de frente, de lado, de espalda, predeterminada y enojo." },
-    { "file": "assets-ref/marca/logo-tablero-es.webp", "title": "Logo · Tablero en español", "category": "Marca", "round": 3, "status": "referencia", "note": "Tablero con el logo apilado, horizontal, icono de app y paleta. Provisional: el logo definitivo es F3-28." },
-    { "file": "assets-ref/marca/logo-tablero-en.webp", "title": "Logo · Tablero en inglés", "category": "Marca", "round": 3, "status": "referencia", "note": "Igual que el de español con «Vein of Fortune». Provisional: el logo definitivo es F3-28." },
-    { "file": "assets-ref/marca/logo-apilado-es.webp", "title": "Logo apilado · Veta de Fortuna", "category": "Marca", "round": 3, "status": "referencia", "note": "Icono grande con el nombre debajo. Provisional: el logo definitivo es F3-28." },
-    { "file": "assets-ref/marca/logo-apilado-en.webp", "title": "Logo apilado · Vein of Fortune", "category": "Marca", "round": 3, "status": "referencia", "note": "Icono grande con el nombre debajo. Provisional: el logo definitivo es F3-28." },
-    { "file": "assets-ref/marca/logo-horizontal-es.webp", "title": "Logo horizontal · Veta de Fortuna", "category": "Marca", "round": 3, "status": "referencia", "note": "Icono a la izquierda y nombre a la derecha. Provisional: el logo definitivo es F3-28." },
-    { "file": "assets-ref/marca/logo-horizontal-en.webp", "title": "Logo horizontal · Vein of Fortune", "category": "Marca", "round": 3, "status": "referencia", "note": "Icono a la izquierda y nombre a la derecha. Provisional: el logo definitivo es F3-28." },
-    { "file": "assets-ref/marca/icono-moneda.webp", "title": "Icono · Moneda de minero", "category": "Marca", "round": 3, "status": "referencia", "note": "Casco con lámpara, éter y barras de mercado; funciona sin el texto. Provisional: el logo definitivo es F3-28." },
-    { "file": "assets-ref/marca/icono-app.webp", "title": "Icono de app · Moneda de minero", "category": "Marca", "round": 3, "status": "referencia", "note": "El mismo icono sobre cuadrado redondeado. Provisional: el logo definitivo es F3-28." },
-    { "file": "assets-ref/prueba-de-estilo-2/ui-tienda.png", "title": "Tienda (vista interior)", "category": "Interfaz", "round": 2, "status": "aprobada", "note": "Corte transversal con mostrador, taller y almacén." },
-    { "file": "assets-ref/prueba-de-estilo-2/minijuegos.png", "title": "Maquetas de minijuegos", "category": "Minijuegos", "round": 2, "status": "referencia", "note": "Picado, Perforación y Regateo." },
-    { "file": "assets-ref/prueba-de-estilo-2/edificios.png", "title": "Edificios en isométrica", "category": "Edificios", "round": 2, "status": "aprobada", "note": "Referencia provisional: ahora exteriores cenitales caminables. Tienda, taller, almacén, casa, Ministerio, Consorcio, Unión, bar y periódico." },
-    { "file": "assets-ref/prueba-de-estilo-2/mapa-valdoria.png", "title": "Mapa de Valdoria", "category": "Mapa y zonas", "round": 2, "status": "referencia", "note": "Seis regiones con vías de tren. Viable como imagen estática con zonas tocables." },
-    { "file": "assets-ref/prueba-de-estilo-2/zonas.png", "title": "Fondos de las 6 zonas", "category": "Mapa y zonas", "round": 2, "status": "referencia", "note": "Cada zona con identidad propia." },
-    { "file": "assets-ref/prueba-de-estilo-2/paleta-laton.png", "title": "Acento secundario: latón (elegido)", "category": "Paleta", "round": 2, "status": "aprobada", "note": "Elegido como complemento cálido del vinotinto." },
-    { "file": "assets-ref/prueba-de-estilo-2/paleta-verdigris.png", "title": "Acento secundario: verdigrís", "category": "Paleta", "round": 2, "status": "superada", "note": "Reservar para detalles de cobre y tecnología." },
-    { "file": "assets-ref/prueba-de-estilo-2/paleta-oxido.png", "title": "Acento secundario: naranja óxido", "category": "Paleta", "round": 2, "status": "superada", "note": "Se lee como peligro." },
-    {"file": "assets-ref/storyboard-acto-i/01-mapa-valdoria-niebla.webp", "title": "Storyboard · Mapa de Valdoria con niebla", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Mapa de la libreta al empezar el Acto I (doc 30, nodo 3): solo el Hollín está abierto; el resto, bajo niebla opaca con un único detalle que asoma. Referencia provisional para F3-16 y F4-152/153. Sin rótulos en la imagen."},
-    {"file": "assets-ref/storyboard-acto-i/02-props-hoja.webp", "title": "Storyboard · Hoja de props", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Lámpara de red, lámpara de minero, farol apagado y encendido, papel sellado y carrete. Referencia provisional para F3-16."},
-    {"file": "assets-ref/storyboard-acto-i/03-casa-reme-base.webp", "title": "Storyboard d1.2 · La llave y los papeles (variante A)", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Reme entrega la llave al protagonista, de pie a la derecha. En la mesa, papeles, la caja del detector y la lámpara de red (base de latón con una «A» diminuta). La repisa de la ventana está vacía."},
-    {"file": "assets-ref/storyboard-acto-i/04-d12-papel-sellado.webp", "title": "Storyboard d1.2 · La llave y los papeles (variante B)", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Misma escena, sin lámpara de red: sobre la mesa hay un papel doblado con sello de cera vinotinto, sin escritura. La repisa sigue vacía."},
-    {"file": "assets-ref/storyboard-acto-i/05-d12-farol-apagado.webp", "title": "Storyboard d1.2 · La llave y los papeles (variante C)", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Misma escena, sin lámpara de red: en la repisa de la ventana hay un farol vinotinto pequeño, apagado (cristal oscuro). La mesa solo tiene papeles."},
-    {"file": "assets-ref/storyboard-acto-i/06-d44-cafe-lampara.webp", "title": "Storyboard d4.4 · El café (variante A)", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Reme y el protagonista comparten café; la lámpara de red brilla sobre la mesa como único objeto destacado. Repisa vacía."},
-    {"file": "assets-ref/storyboard-acto-i/07-d44-cafe-quiroga.webp", "title": "Storyboard d4.4 · El café (variante B)", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Quiroga entra por la puerta de la derecha, saluda a Reme con deferencia y le devuelve un papel sellado sin cobrarle. El protagonista sigue sentado."},
-    {"file": "assets-ref/storyboard-acto-i/08-d44-cafe-farol.webp", "title": "Storyboard d4.4 · El café (variante C)", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Reme y el protagonista toman café; en la repisa, contra la ventana oscura, un farol vinotinto pequeño con luz ámbar."},
-    {"file": "assets-ref/storyboard-acto-i/09-d72-cuota-lampara.webp", "title": "Storyboard d7.2 · La cuota (variante A)", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Tarde baja y ámbar. Reme sentada ante el libro; el protagonista de pie con unas monedas: paga o pide tiempo. Lámpara de red sobre la mesa; repisa vacía."},
-    {"file": "assets-ref/storyboard-acto-i/10-d72-cuota-papel.webp", "title": "Storyboard d7.2 · La cuota (variante B)", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Tarde baja y ámbar. Reme sentada ante el libro; el protagonista de pie con unas monedas: paga o pide tiempo. Sin lámpara: el papel sellado doblado, junto al libro de deuda."},
-    {"file": "assets-ref/storyboard-acto-i/11-d72-cuota-farol.webp", "title": "Storyboard d7.2 · La cuota (variante C)", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Tarde baja y ámbar. Reme sentada ante el libro; el protagonista de pie con unas monedas: paga o pide tiempo. Sin lámpara: el farol vinotinto, ahora ENCENDIDO (luz ámbar), en la repisa."},
-    {"file": "assets-ref/storyboard-acto-i/12-carta-casa-obrera.webp", "title": "Storyboard d1.6 · La carta", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). El protagonista escribe a sus padres sobre la mesa de su casa obrera, a la luz de la lámpara de minero (abollada, con gancho y llama; sin cable ni globo)."},
-    {"file": "assets-ref/storyboard-acto-i/13-cierre-caja.webp", "title": "Storyboard d2.4 · Cierre de caja", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Cerrado el puesto, el protagonista cuadra la caja; el cajón se atasca y bajo el doble fondo aparece un carrete con el número 1. Sale el aviso «Encontraste una cinta»."},
-    {"file": "assets-ref/storyboard-acto-i/14-placa-galerias.webp", "title": "Storyboard d3.2 · La placa", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). Teo y el protagonista ante la placa de Pozo Negro, fija junto a la boca de la mina. Teo la mira."},
-    {"file": "assets-ref/storyboard-acto-i/15-decreto-voceador.webp", "title": "Storyboard d7.4 · El decreto", "category": "Storyboard", "round": 1, "status": "referencia", "note": "Arte provisional (F0-24). En la calle, de noche, un voceador anuncia el decreto del Ministerio sobre las zonas del Hollín. Escena-gancho de A1; no nombra a Montenegro."}
+    {
+      "file": "assets-ref/prueba-de-estilo/mina.png",
+      "title": "Mina (vertical, primera ronda)",
+      "category": "Escenas",
+      "round": 1,
+      "status": "superada",
+      "note": "La primera mina en vertical. Gustó la atmósfera; el juego es horizontal."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo/personajes.png",
+      "title": "Protagonistas hombre y mujer",
+      "category": "Personajes",
+      "round": 1,
+      "status": "aprobada",
+      "note": "Base para los protagonistas jugables. Gustó el estilo."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo/minerales.png",
+      "title": "Minerales v1",
+      "category": "Minerales",
+      "round": 1,
+      "status": "superada",
+      "note": "Cuarzo, salitre y plata se parecían demasiado."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo/mercado.png",
+      "title": "Interfaz de mercado (vertical)",
+      "category": "Interfaz",
+      "round": 1,
+      "status": "superada",
+      "note": "No convenció; reemplazada por versiones horizontales."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/mina-horizontal.png",
+      "title": "Galerías del Hollín (horizontal)",
+      "category": "Escenas",
+      "round": 2,
+      "status": "aprobada",
+      "note": "Escena de la zona 1. Referencia de atmósfera para las zonas."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/minerales-v2.png",
+      "title": "Minerales v2",
+      "category": "Minerales",
+      "round": 2,
+      "status": "aprobada",
+      "note": "Siluetas distintas. La Aetherita es un cristal vinotinto con aura cian."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/retratos-a.png",
+      "title": "Retratos: Reme, Teo, Quiroga y Lucía",
+      "category": "Personajes",
+      "round": 2,
+      "status": "aprobada",
+      "note": "Retratos de diálogo detallados."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/retratos-b.png",
+      "title": "Retratos: Esteban, Casilda, Ministro Montenegro y Anselmo",
+      "category": "Personajes",
+      "round": 2,
+      "status": "aprobada",
+      "note": "Anselmo aparece como una foto desgastada."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/sprites.png",
+      "title": "Sprites pequeños tipo Stardew",
+      "category": "Personajes",
+      "round": 2,
+      "status": "superada",
+      "note": "Reemplazada por sprites-corregido.png: el ministro salió parecido a un sacerdote."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/ui-mercado.png",
+      "title": "Terminal de mercado",
+      "category": "Interfaz",
+      "round": 2,
+      "status": "superada",
+      "note": "Reemplazada por ui-mercado-corregido.png: flechas rojo/verde cambiadas."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/sprites-corregido.png",
+      "title": "Sprites pequeños (corregidos)",
+      "category": "Personajes",
+      "round": 3,
+      "status": "aprobada",
+      "note": "El ministro ahora es un funcionario severo: abrigo azul marino, faja vinotinto, medallas, sin cruces."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/ministro-corregido.png",
+      "title": "Ministro Montenegro: sprite corregido",
+      "category": "Personajes",
+      "round": 3,
+      "status": "aprobada",
+      "note": "Sprite chibi a tamaño original (1024 px) para usar de referencia."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/ui-mercado-corregido.png",
+      "title": "Terminal de mercado (corregida)",
+      "category": "Interfaz",
+      "round": 3,
+      "status": "aprobada",
+      "note": "Sube en ▲ y baja en vinotinto ▼: no depende solo del color. La imagen usa cian para la subida; la regla vigente es azul hielo, porque el cian es solo de la Aetherita."
+    },
+    {
+      "file": "assets-ref/personajes/reme/modelo.webp",
+      "title": "Reme · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art como el sprite del ministro. Cinco vistas: frente, tres cuartos, ambos lados y espalda."
+    },
+    {
+      "file": "assets-ref/personajes/reme/expresiones.webp",
+      "title": "Reme · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estilo detallado como los retratos. Seis expresiones comunes: predeterminada, feliz, triste (llorando), enojo, susto y cansancio (bostezando)."
+    },
+    {
+      "file": "assets-ref/personajes/reme/poses.webp",
+      "title": "Reme · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art de cuerpo entero: estático, ciclo de caminar de 4 fotogramas, de frente y de espalda, y cuatro gestos al hablar."
+    },
+    {
+      "file": "assets-ref/personajes/protagonista-hombre/modelo.webp",
+      "title": "Protagonista (hombre) · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art con gorra de minero y lámpara de latón. Aprobada."
+    },
+    {
+      "file": "assets-ref/personajes/protagonista-mujer/modelo.webp",
+      "title": "Protagonista (mujer) · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art con trenza, gorra de minero y lámpara de latón. Aprobada."
+    },
+    {
+      "file": "assets-ref/personajes/protagonista-hombre/poses.webp",
+      "title": "Protagonista (hombre) · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estático, ciclo de caminar, de frente y de espalda, y gestos al hablar, a partir de su hoja de modelo."
+    },
+    {
+      "file": "assets-ref/personajes/protagonista-hombre/expresiones.webp",
+      "title": "Protagonista (hombre) · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Seis expresiones comunes; la predeterminada es una sonrisa decidida de optimista terco."
+    },
+    {
+      "file": "assets-ref/personajes/protagonista-mujer/poses.webp",
+      "title": "Protagonista (mujer) · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estático, ciclo de caminar, de frente y de espalda, y gestos al hablar, a partir de su hoja de modelo."
+    },
+    {
+      "file": "assets-ref/personajes/protagonista-mujer/expresiones.webp",
+      "title": "Protagonista (mujer) · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Seis expresiones comunes; la predeterminada es una sonrisa decidida de optimista terco."
+    },
+    {
+      "file": "assets-ref/personajes/anselmo/modelo.webp",
+      "title": "Anselmo · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art en el formato de Reme. Aprobada."
+    },
+    {
+      "file": "assets-ref/personajes/teo/modelo.webp",
+      "title": "Teo · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art en el formato de Reme. Aprobada."
+    },
+    {
+      "file": "assets-ref/personajes/quiroga/modelo.webp",
+      "title": "Quiroga · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art en el formato de Reme. Aprobada."
+    },
+    {
+      "file": "assets-ref/personajes/lucia/modelo.webp",
+      "title": "Lucía · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art en el formato de Reme. Aprobada."
+    },
+    {
+      "file": "assets-ref/personajes/anselmo/poses.webp",
+      "title": "Anselmo · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo."
+    },
+    {
+      "file": "assets-ref/personajes/anselmo/expresiones.webp",
+      "title": "Anselmo · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Seis expresiones comunes en el estilo aprobado."
+    },
+    {
+      "file": "assets-ref/personajes/teo/poses.webp",
+      "title": "Teo · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo."
+    },
+    {
+      "file": "assets-ref/personajes/teo/expresiones.webp",
+      "title": "Teo · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Seis expresiones comunes en el estilo aprobado."
+    },
+    {
+      "file": "assets-ref/personajes/quiroga/poses.webp",
+      "title": "Quiroga · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo."
+    },
+    {
+      "file": "assets-ref/personajes/quiroga/expresiones.webp",
+      "title": "Quiroga · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Seis expresiones comunes en el estilo aprobado."
+    },
+    {
+      "file": "assets-ref/personajes/lucia/poses.webp",
+      "title": "Lucía · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo."
+    },
+    {
+      "file": "assets-ref/personajes/lucia/expresiones.webp",
+      "title": "Lucía · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Seis expresiones comunes en el estilo aprobado."
+    },
+    {
+      "file": "assets-ref/personajes/esteban/modelo.webp",
+      "title": "Esteban · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art en el formato de Reme. Aprobada."
+    },
+    {
+      "file": "assets-ref/personajes/casilda/modelo.webp",
+      "title": "Casilda · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art en el formato de Reme. Aprobada."
+    },
+    {
+      "file": "assets-ref/personajes/montenegro/modelo.webp",
+      "title": "Ministro Montenegro · Hoja de modelo",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Chibi pixel art en el formato de Reme. Aprobada."
+    },
+    {
+      "file": "assets-ref/personajes/esteban/poses.webp",
+      "title": "Esteban · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo."
+    },
+    {
+      "file": "assets-ref/personajes/esteban/expresiones.webp",
+      "title": "Esteban · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Seis expresiones comunes en el estilo aprobado."
+    },
+    {
+      "file": "assets-ref/personajes/casilda/poses.webp",
+      "title": "Casilda · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo."
+    },
+    {
+      "file": "assets-ref/personajes/casilda/expresiones.webp",
+      "title": "Casilda · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Seis expresiones comunes en el estilo aprobado."
+    },
+    {
+      "file": "assets-ref/personajes/montenegro/poses.webp",
+      "title": "Ministro Montenegro · Hoja de poses",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Estático, caminar, de frente y de espalda, y gestos al hablar a partir de su modelo."
+    },
+    {
+      "file": "assets-ref/personajes/montenegro/expresiones.webp",
+      "title": "Ministro Montenegro · Hoja de expresiones",
+      "category": "Personajes",
+      "round": 3,
+      "status": "referencia",
+      "note": "Seis expresiones comunes en el estilo aprobado."
+    },
+    {
+      "file": "assets-ref/npc/ministerio-1.webp",
+      "title": "NPC Ministerio · 1 (inspector, escribiente y soldado)",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja de grupo: de frente, de lado, de espalda y cara, en chibi pixel art."
+    },
+    {
+      "file": "assets-ref/npc/ministerio-comision-2.webp",
+      "title": "NPC Ministerio y Comisión · 2 (oficial, perito y guardia de La Fosa)",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja de grupo: de frente, de lado, de espalda y cara, en chibi pixel art."
+    },
+    {
+      "file": "assets-ref/npc/consorcio.webp",
+      "title": "NPC Consorcio Arvel (guardia, ejecutivo y capataz)",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja de grupo: de frente, de lado, de espalda y cara, en chibi pixel art."
+    },
+    {
+      "file": "assets-ref/npc/union-prensa.webp",
+      "title": "NPC Unión y prensa (minero sindicalista, delegado y reportero)",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja de grupo con las proporciones de la hoja del Consorcio."
+    },
+    {
+      "file": "assets-ref/npc/faroleros.webp",
+      "title": "NPC Los Faroleros (cobrador, matón e informante)",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja de grupo con las proporciones de la hoja del Consorcio."
+    },
+    {
+      "file": "assets-ref/npc/empleados-1.webp",
+      "title": "NPC Empleados · 1 (minero, dependiente y guardia)",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja de grupo con las proporciones de la hoja del Consorcio."
+    },
+    {
+      "file": "assets-ref/npc/empleados-2-voceador.webp",
+      "title": "NPC Empleados · 2 y voceador (refinador, analista y voceador)",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja de grupo con las proporciones de la hoja del Consorcio."
+    },
+    {
+      "file": "assets-ref/npc/civiles-1.webp",
+      "title": "NPC Civiles · 1 (vecino, vecina y comerciante)",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja de grupo con las proporciones de la hoja del Consorcio."
+    },
+    {
+      "file": "assets-ref/npc/civiles-2.webp",
+      "title": "NPC Civiles · 2 (cliente obrero y cliente de la élite)",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja de grupo con las proporciones de la hoja del Consorcio."
+    },
+    {
+      "file": "assets-ref/npc/enemigos/saqueador.webp",
+      "title": "Enemigo · Saqueador",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)."
+    },
+    {
+      "file": "assets-ref/npc/enemigos/banda-rival.webp",
+      "title": "Enemigo · Banda rival",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)."
+    },
+    {
+      "file": "assets-ref/npc/enemigos/contrabandista.webp",
+      "title": "Enemigo · Contrabandista",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)."
+    },
+    {
+      "file": "assets-ref/npc/enemigos/inspector-corrupto.webp",
+      "title": "Enemigo · Inspector corrupto",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)."
+    },
+    {
+      "file": "assets-ref/npc/enemigos/cazarrecompensas.webp",
+      "title": "Enemigo · Cazarrecompensas",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)."
+    },
+    {
+      "file": "assets-ref/npc/enemigos/soldado-fosa.webp",
+      "title": "Enemigo · Soldado de La Fosa",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual: de frente, de lado, de espalda y dos expresiones (predeterminada y enojo)."
+    },
+    {
+      "file": "assets-ref/npc/criaturas/rastrera.webp",
+      "title": "Criatura · Rastrera de La Fosa",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual: minero mutado que se arrastra; de frente, de lado, de espalda, predeterminada y atacando."
+    },
+    {
+      "file": "assets-ref/npc/criaturas/cristalina.webp",
+      "title": "Criatura · Cristalina de La Fosa",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual: soldado mutado cubierto de cristales de Aetherita; de frente, de lado, de espalda, predeterminada y atacando."
+    },
+    {
+      "file": "assets-ref/npc/criaturas/eterea.webp",
+      "title": "Criatura · Etérea de La Fosa",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual: humano medio traslúcido expuesto al Éter puro; de frente, de lado, de espalda, predeterminada y atacando."
+    },
+    {
+      "file": "assets-ref/npc/jefes/capataz-mayor.webp",
+      "title": "Jefe de zona · Capataz Mayor",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual del jefe de Galerías del Hollín: de frente, de lado, de espalda, predeterminada y enojo."
+    },
+    {
+      "file": "assets-ref/npc/jefes/cabecilla-banda-rival.webp",
+      "title": "Jefe de zona · Cabecilla de la banda rival",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual del jefe de Cañón Ferroso: de frente, de lado, de espalda, predeterminada y enojo."
+    },
+    {
+      "file": "assets-ref/npc/jefes/jefe-seguridad-consorcio.webp",
+      "title": "Jefe de zona · Jefe de seguridad del Consorcio",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual del jefe de Minas de Sierra Alta: de frente, de lado, de espalda, predeterminada y enojo."
+    },
+    {
+      "file": "assets-ref/npc/jefes/aduanero-mayor.webp",
+      "title": "Jefe de zona · Aduanero Mayor",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual del jefe de Salares del Litoral: de frente, de lado, de espalda, predeterminada y enojo."
+    },
+    {
+      "file": "assets-ref/npc/jefes/cazarrecompensas-mayor.webp",
+      "title": "Jefe de zona · Cazarrecompensas Mayor",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual del jefe de Cavernas de Cristal: de frente, de lado, de espalda, predeterminada y enojo."
+    },
+    {
+      "file": "assets-ref/npc/jefes/coronel-comision.webp",
+      "title": "Jefe de zona · Coronel de la Comisión",
+      "category": "NPC",
+      "round": 3,
+      "status": "referencia",
+      "note": "Hoja individual del jefe de La Fosa del Éter: de frente, de lado, de espalda, predeterminada y enojo."
+    },
+    {
+      "file": "assets-ref/marca/logo-tablero-es.webp",
+      "title": "Logo · Tablero en español",
+      "category": "Marca",
+      "round": 3,
+      "status": "referencia",
+      "note": "Tablero con el logo apilado, horizontal, icono de app y paleta. Provisional: el logo definitivo es F3-28."
+    },
+    {
+      "file": "assets-ref/marca/logo-tablero-en.webp",
+      "title": "Logo · Tablero en inglés",
+      "category": "Marca",
+      "round": 3,
+      "status": "referencia",
+      "note": "Igual que el de español con «Vein of Fortune». Provisional: el logo definitivo es F3-28."
+    },
+    {
+      "file": "assets-ref/marca/logo-apilado-es.webp",
+      "title": "Logo apilado · Veta de Fortuna",
+      "category": "Marca",
+      "round": 3,
+      "status": "referencia",
+      "note": "Icono grande con el nombre debajo. Provisional: el logo definitivo es F3-28."
+    },
+    {
+      "file": "assets-ref/marca/logo-apilado-en.webp",
+      "title": "Logo apilado · Vein of Fortune",
+      "category": "Marca",
+      "round": 3,
+      "status": "referencia",
+      "note": "Icono grande con el nombre debajo. Provisional: el logo definitivo es F3-28."
+    },
+    {
+      "file": "assets-ref/marca/logo-horizontal-es.webp",
+      "title": "Logo horizontal · Veta de Fortuna",
+      "category": "Marca",
+      "round": 3,
+      "status": "referencia",
+      "note": "Icono a la izquierda y nombre a la derecha. Provisional: el logo definitivo es F3-28."
+    },
+    {
+      "file": "assets-ref/marca/logo-horizontal-en.webp",
+      "title": "Logo horizontal · Vein of Fortune",
+      "category": "Marca",
+      "round": 3,
+      "status": "referencia",
+      "note": "Icono a la izquierda y nombre a la derecha. Provisional: el logo definitivo es F3-28."
+    },
+    {
+      "file": "assets-ref/marca/icono-moneda.webp",
+      "title": "Icono · Moneda de minero",
+      "category": "Marca",
+      "round": 3,
+      "status": "referencia",
+      "note": "Casco con lámpara, éter y barras de mercado; funciona sin el texto. Provisional: el logo definitivo es F3-28."
+    },
+    {
+      "file": "assets-ref/marca/icono-app.webp",
+      "title": "Icono de app · Moneda de minero",
+      "category": "Marca",
+      "round": 3,
+      "status": "referencia",
+      "note": "El mismo icono sobre cuadrado redondeado. Provisional: el logo definitivo es F3-28."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/ui-tienda.png",
+      "title": "Tienda (vista interior)",
+      "category": "Interfaz",
+      "round": 2,
+      "status": "aprobada",
+      "note": "Corte transversal con mostrador, taller y almacén."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/minijuegos.png",
+      "title": "Maquetas de minijuegos",
+      "category": "Minijuegos",
+      "round": 2,
+      "status": "referencia",
+      "note": "Picado, Perforación y Regateo."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/edificios.png",
+      "title": "Edificios en isométrica",
+      "category": "Edificios",
+      "round": 2,
+      "status": "aprobada",
+      "note": "Referencia provisional: ahora exteriores cenitales caminables. Tienda, taller, almacén, casa, Ministerio, Consorcio, Unión, bar y periódico."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/mapa-valdoria.png",
+      "title": "Mapa de Valdoria",
+      "category": "Mapa y zonas",
+      "round": 2,
+      "status": "referencia",
+      "note": "Seis regiones con vías de tren. Viable como imagen estática con zonas tocables."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/zonas.png",
+      "title": "Fondos de las 6 zonas",
+      "category": "Mapa y zonas",
+      "round": 2,
+      "status": "referencia",
+      "note": "Cada zona con identidad propia."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/paleta-laton.png",
+      "title": "Acento secundario: latón (elegido)",
+      "category": "Paleta",
+      "round": 2,
+      "status": "aprobada",
+      "note": "Elegido como complemento cálido del vinotinto."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/paleta-verdigris.png",
+      "title": "Acento secundario: verdigrís",
+      "category": "Paleta",
+      "round": 2,
+      "status": "superada",
+      "note": "Reservar para detalles de cobre y tecnología."
+    },
+    {
+      "file": "assets-ref/prueba-de-estilo-2/paleta-oxido.png",
+      "title": "Acento secundario: naranja óxido",
+      "category": "Paleta",
+      "round": 2,
+      "status": "superada",
+      "note": "Se lee como peligro."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/01-mapa-valdoria-niebla.webp",
+      "title": "Storyboard · Mapa de Valdoria con niebla",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Mapa de la libreta al empezar el Acto I (doc 30, nodo 3): solo el Hollín está abierto; el resto, bajo niebla opaca con un único detalle que asoma. Referencia provisional para F3-16 y F4-152/153. Sin rótulos en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/02-props-hoja.webp",
+      "title": "Storyboard · Hoja de props",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Lámpara de red, lámpara de minero, farol apagado y encendido, papel sellado y carrete. Referencia provisional para F3-16."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/03-casa-reme-base.webp",
+      "title": "Storyboard d1.2 · La llave y los papeles (variante A)",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Reme entrega la llave al protagonista, de pie a la derecha. En la mesa, papeles, la caja del detector y la lámpara de red (base de latón con una «A» diminuta). La repisa de la ventana está vacía."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/04-d12-papel-sellado.webp",
+      "title": "Storyboard d1.2 · La llave y los papeles (variante B)",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Misma escena, sin lámpara de red: sobre la mesa hay un papel doblado con sello de cera vinotinto, sin escritura. La repisa sigue vacía."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/05-d12-farol-apagado.webp",
+      "title": "Storyboard d1.2 · La llave y los papeles (variante C)",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Misma escena, sin lámpara de red: en la repisa de la ventana hay un farol vinotinto pequeño, apagado (cristal oscuro). La mesa solo tiene papeles."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/06-d44-cafe-lampara.webp",
+      "title": "Storyboard d4.4 · El café (variante A)",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Reme y el protagonista comparten café; la lámpara de red brilla sobre la mesa como único objeto destacado. Repisa vacía."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/07-d44-cafe-quiroga.webp",
+      "title": "Storyboard d4.4 · El café (variante B)",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Quiroga entra por la puerta de la derecha, saluda a Reme con deferencia y le devuelve un papel sellado sin cobrarle. El protagonista sigue sentado."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/08-d44-cafe-farol.webp",
+      "title": "Storyboard d4.4 · El café (variante C)",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Reme y el protagonista toman café; en la repisa, contra la ventana oscura, un farol vinotinto pequeño con luz ámbar."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/09-d72-cuota-lampara.webp",
+      "title": "Storyboard d7.2 · La cuota (variante A)",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Tarde baja y ámbar. Reme sentada ante el libro; el protagonista de pie con unas monedas: paga o pide tiempo. Lámpara de red sobre la mesa; repisa vacía."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/10-d72-cuota-papel.webp",
+      "title": "Storyboard d7.2 · La cuota (variante B)",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Tarde baja y ámbar. Reme sentada ante el libro; el protagonista de pie con unas monedas: paga o pide tiempo. Sin lámpara: el papel sellado doblado, junto al libro de deuda."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/11-d72-cuota-farol.webp",
+      "title": "Storyboard d7.2 · La cuota (variante C)",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Tarde baja y ámbar. Reme sentada ante el libro; el protagonista de pie con unas monedas: paga o pide tiempo. Sin lámpara: el farol vinotinto, ahora ENCENDIDO (luz ámbar), en la repisa."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/12-carta-casa-obrera.webp",
+      "title": "Storyboard d1.6 · La carta",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). El protagonista escribe a sus padres sobre la mesa de su casa obrera, a la luz de la lámpara de minero (abollada, con gancho y llama; sin cable ni globo)."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/13-cierre-caja.webp",
+      "title": "Storyboard d2.4 · Cierre de caja",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Cerrado el puesto, el protagonista cuadra la caja; el cajón se atasca y bajo el doble fondo aparece un carrete con el número 1. Sale el aviso «Encontraste una cinta»."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/14-placa-galerias.webp",
+      "title": "Storyboard d3.2 · La placa",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). Teo y el protagonista ante la placa de Pozo Negro, fija junto a la boca de la mina. Teo la mira."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/15-decreto-voceador.webp",
+      "title": "Storyboard d7.4 · El decreto",
+      "category": "Storyboard",
+      "round": 1,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24). En la calle, de noche, un voceador anuncia el decreto del Ministerio sobre las zonas del Hollín. Escena-gancho de A1; no nombra a Montenegro."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d1.1-llegada.webp",
+      "title": "Storyboard · d1.1 llegada",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d1.3-libro-de-deuda.webp",
+      "title": "Storyboard · d1.3 libro de deuda",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d1.4-pico-de-teo.webp",
+      "title": "Storyboard · d1.4 pico de teo",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d1.5-libreta-anselmo.webp",
+      "title": "Storyboard · d1.5 libreta anselmo",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d2.1-oficina-quiroga.webp",
+      "title": "Storyboard · d2.1 oficina quiroga",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d2.2-reponer-estantes.webp",
+      "title": "Storyboard · d2.2 reponer estantes",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d2.3-precios.webp",
+      "title": "Storyboard · d2.3 precios",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d3.1-taladro-de-teo.webp",
+      "title": "Storyboard · d3.1 taladro de teo",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d3.3-lucia-teletipo.webp",
+      "title": "Storyboard · d3.3 lucia teletipo",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d3.4-noticia-hierro.webp",
+      "title": "Storyboard · d3.4 noticia hierro",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d4.1-cliente-obrero.webp",
+      "title": "Storyboard · d4.1 cliente obrero",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d4.2-decidir-pedido.webp",
+      "title": "Storyboard · d4.2 decidir pedido",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d4.3-picar-carbon.webp",
+      "title": "Storyboard · d4.3 picar carbon",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d5.1-entrega-pedido.webp",
+      "title": "Storyboard · d5.1 entrega pedido",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d5.2-rumor-ferrocarril.webp",
+      "title": "Storyboard · d5.2 rumor ferrocarril",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d5.3-forja-del-pico.webp",
+      "title": "Storyboard · d5.3 forja del pico",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d5.4-carta-vega-mansa.webp",
+      "title": "Storyboard · d5.4 carta vega mansa",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d6.1-rumor-sin-confirmar.webp",
+      "title": "Storyboard · d6.1 rumor sin confirmar",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d6.2-cierre-dia-6.webp",
+      "title": "Storyboard · d6.2 cierre dia 6",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d7.1-heraldo-confirma.webp",
+      "title": "Storyboard · d7.1 heraldo confirma",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    },
+    {
+      "file": "assets-ref/storyboard-acto-i/d7.3-sello-de-licencia.webp",
+      "title": "Storyboard · d7.3 sello de licencia",
+      "category": "Storyboard",
+      "round": 2,
+      "status": "referencia",
+      "note": "Arte provisional (F0-24, escena de la Semana 1). Sin texto en la imagen."
+    }
   ],
   "sounds_planned": [
-    { "name": "Interfaz: tocar, confirmar, cancelar", "group": "Interfaz", "status": "pendiente" },
-    { "name": "Picado: golpe, carga, acierto y fallo", "group": "Minería", "status": "pendiente" },
-    { "name": "Perforación: taladro, calor y sobrecalentamiento", "group": "Minería", "status": "pendiente" },
-    { "name": "Teletipo y mercado: impresión, subida y bajada", "group": "Mercado", "status": "pendiente" },
-    { "name": "Moneda y caja registradora", "group": "Tienda", "status": "pendiente" },
-    { "name": "Blips de voz por personaje", "group": "Personajes", "status": "pendiente" },
-    { "name": "Ambiente: galerías del Hollín", "group": "Ambientes", "status": "pendiente" },
-    { "name": "Aetherita: zumbido y exposición", "group": "Ambientes", "status": "pendiente" },
-    { "name": "Música base de la mina y de la tienda", "group": "Música", "status": "pendiente" },
-    { "name": "Eventos sociales: sirena, apagón, saqueo", "group": "Eventos", "status": "pendiente" }
+    {
+      "name": "Interfaz: tocar, confirmar, cancelar",
+      "group": "Interfaz",
+      "status": "pendiente"
+    },
+    {
+      "name": "Picado: golpe, carga, acierto y fallo",
+      "group": "Minería",
+      "status": "pendiente"
+    },
+    {
+      "name": "Perforación: taladro, calor y sobrecalentamiento",
+      "group": "Minería",
+      "status": "pendiente"
+    },
+    {
+      "name": "Teletipo y mercado: impresión, subida y bajada",
+      "group": "Mercado",
+      "status": "pendiente"
+    },
+    {
+      "name": "Moneda y caja registradora",
+      "group": "Tienda",
+      "status": "pendiente"
+    },
+    {
+      "name": "Blips de voz por personaje",
+      "group": "Personajes",
+      "status": "pendiente"
+    },
+    {
+      "name": "Ambiente: galerías del Hollín",
+      "group": "Ambientes",
+      "status": "pendiente"
+    },
+    {
+      "name": "Aetherita: zumbido y exposición",
+      "group": "Ambientes",
+      "status": "pendiente"
+    },
+    {
+      "name": "Música base de la mina y de la tienda",
+      "group": "Música",
+      "status": "pendiente"
+    },
+    {
+      "name": "Eventos sociales: sirena, apagón, saqueo",
+      "group": "Eventos",
+      "status": "pendiente"
+    }
   ]
 }
