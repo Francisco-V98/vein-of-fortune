@@ -803,7 +803,7 @@
               "id": "F0-75",
               "title": "Dibujar el árbol de decisiones con conexiones",
               "est": 3,
-              "status": "backlog",
+              "status": "review",
               "prio": "P3",
               "desc": "Convertir la vista #/decisiones del hub, hoy de columnas y tarjetas, en un dibujo SVG con las ramas, los cuellos de botella y las banderas conectadas.",
               "done_when": "Árbol dibujado con conexiones visibles y filtros por acto, nivel y personaje."

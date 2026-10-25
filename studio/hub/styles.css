@@ -1021,3 +1021,42 @@ button.s1-frame:hover { border-color: var(--amber); }
 .flow-help summary { cursor: pointer; }
 .flow-tr { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
 @media (max-width: 860px) { .flow { grid-template-columns: 1fr; } }
+
+/* ---------- árbol SVG de decisiones (F0-75) ---------- */
+.dc-tree { overflow-x: auto; margin: 10px 0 28px; padding: 6px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); }
+.dct-svg { display: block; width: 100%; height: auto; font-family: var(--font); }
+.dct-head rect { fill: color-mix(in srgb, var(--c) 22%, var(--surface)); stroke: var(--c); stroke-width: 1.5; }
+.dct-act { fill: var(--text); font-size: 12px; font-weight: 700; font-family: var(--mono); }
+.dct-sub { fill: var(--muted); font-size: 11px; }
+.dct-node { cursor: pointer; outline: none; }
+.dct-node rect { fill: var(--surface); stroke: var(--line-2); stroke-width: 1.5; }
+.dct-grande rect { fill: color-mix(in srgb, var(--amber) 9%, var(--surface)); stroke: var(--amber); stroke-width: 2.5; }
+.dct-gl { fill: var(--muted); }
+.dct-grande .dct-gl { fill: var(--amber); }
+.dct-t { fill: var(--text); font-size: 12px; }
+.dct-node:hover rect, .dct-node:focus-visible rect { stroke: var(--accent-hi); stroke-width: 3; }
+.dct-node:focus-visible rect { stroke: var(--amber); stroke-width: 3.5; stroke-dasharray: none; }
+.dct-cuello path { fill: var(--surface-2); stroke: var(--dim); stroke-width: 1.5; }
+.dct-cuello text { fill: var(--text); font-size: 11px; font-weight: 600; }
+.dct-edge { stroke-width: 1.4; transition: opacity .15s, stroke-width .15s; }
+.dct-neck { stroke: var(--dim); }
+.dct-flag { stroke: var(--accent-hi); stroke-dasharray: 6 4; opacity: .75; }
+.dct-flag.dct-med { stroke: var(--brass); }
+.dct-mk { fill: var(--accent-hi); }
+.dct-mk-med { fill: var(--brass); }
+.dct-node, .dct-cuello { transition: opacity .15s; }
+.dct-off { opacity: .2; }
+a.dct-off { pointer-events: none; }
+.dct-flag.dct-med { stroke-dasharray: 2 3; }
+@media (prefers-reduced-motion: reduce) { .dct-edge, .dct-node, .dct-cuello { transition: none; } }
+.dct-svg.dct-focus .dct-edge:not(.is-on), .dct-svg.dct-focus .dct-node:not(.is-on), .dct-svg.dct-focus .dct-cuello:not(.is-on) { opacity: .12; }
+.dct-svg.dct-focus .dct-edge.is-on { opacity: 1; stroke-width: 2.6; }
+.dct-svg.dct-focus .dct-node.is-on rect { stroke: var(--accent-hi); }
+.dct-help { margin: 10px 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 14px; }
+.dct-help summary { cursor: pointer; font-weight: 600; }
+.dct-help ul { margin: 8px 0 4px; padding-left: 20px; color: var(--muted); font-size: 14px; max-width: 90ch; }
+.dct-help li { margin: 4px 0; }
+.dct-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 6px 0 8px; font-size: 13px; color: var(--muted); }
+.dct-k { display: inline-block; width: 26px; height: 0; border-top: 2px solid var(--dim); vertical-align: middle; margin-right: 4px; }
+.dct-k-flag { border-top: 2px dashed var(--accent-hi); }
+.dct-k-med { border-top: 2px dashed var(--brass); }

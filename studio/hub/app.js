@@ -1301,10 +1301,151 @@
       return '<tr><td><b>' + esc(p.variante) + '</b></td><td>' + esc(p.prueba) + '</td></tr>';
     }).join('') + '</tbody></table></div>';
   }
+  /* ---------- árbol SVG de decisiones ---------- */
+  var DCT = { col: 280, padX: 10, nodeX: 28, nodeW: 220, head: 56, gap: 14, hNode: 54, hBig: 66, hNeck: 34, bottom: 24 };
+  function dctLines(text, max) {
+    var words = String(text).split(/\s+/), lines = [''], i;
+    for (i = 0; i < words.length; i++) {
+      var cur = lines[lines.length - 1];
+      if ((cur + ' ' + words[i]).trim().length <= max) lines[lines.length - 1] = (cur + ' ' + words[i]).trim();
+      else if (lines.length < 2) lines.push(words[i]);
+      else { lines[1] = lines[1].replace(/[\s.,;:]+$/, '') + '…'; break; }
+    }
+    return lines.map(function (l) { return l.length > max + 2 ? l.slice(0, max) + '…' : l; });
+  }
+  function dctLayout(D, acts) {
+    var pos = {}, necks = {}, H2 = DCT.head, maxY = H2;
+    acts.forEach(function (a, ci) {
+      var x = DCT.padX + ci * DCT.col + DCT.nodeX, y = H2;
+      var nodes = D.nodes.filter(function (n) { return n.acto === a.n; });
+      var cs = D.cuellos.filter(function (c) { return c.acto === a.n; });
+      var after = {};
+      cs.forEach(function (c) {
+        var last = -1;
+        nodes.forEach(function (n, i) { if (c.recibe.indexOf(n.id) >= 0) last = i; });
+        (after[last < 0 ? nodes.length - 1 : last] = after[last < 0 ? nodes.length - 1 : last] || []).push(c);
+      });
+      nodes.forEach(function (n, i) {
+        var h = n.nivel === 'grande' ? DCT.hBig : DCT.hNode;
+        pos[n.id] = { x: x, y: y, w: DCT.nodeW, h: h, cx: x, cy: y + h / 2, ci: ci };
+        y += h + DCT.gap;
+        (after[i] || []).forEach(function (c) {
+          necks[c.id] = { x: x, y: y, w: DCT.nodeW, h: DCT.hNeck, cy: y + DCT.hNeck / 2 };
+          y += DCT.hNeck + DCT.gap;
+        });
+      });
+      maxY = Math.max(maxY, y);
+    });
+    return { pos: pos, necks: necks, height: maxY + DCT.bottom, width: DCT.padX * 2 + acts.length * DCT.col };
+  }
+  function dctEdges(D, flags, L) {
+    var edges = [], byPair = {};
+    D.cuellos.forEach(function (c) {
+      var nk = L.necks[c.id];
+      c.recibe.forEach(function (id) {
+        var p = L.pos[id];
+        if (!p || !nk) return;
+        var x0 = p.x, x1 = nk.x, xe = x0 - 14;
+        edges.push({ kind: 'neck', a: id, b: c.id, d: 'M' + x0 + ' ' + p.cy + 'H' + xe + 'V' + nk.cy + 'H' + x1, cls: 'dct-neck' });
+      });
+    });
+    D.nodes.forEach(function (src) {
+      nodeFlags(src).forEach(function (f) {
+        D.nodes.forEach(function (dst) {
+          if (dst.id === src.id || dst.lee.indexOf(f) < 0) return;
+          var k = src.id + '>' + dst.id;
+          if (byPair[k]) { byPair[k].f.push(f); if ((flags[f] || {}).tipo === 'medidor') byPair[k].med = true; return; }
+          byPair[k] = { kind: 'flag', a: src.id, b: dst.id, f: [f], med: (flags[f] || {}).tipo === 'medidor' };
+          edges.push(byPair[k]);
+        });
+      });
+    });
+    edges.forEach(function (e) {
+      if (e.kind !== 'flag') return;
+      var s = L.pos[e.a], t = L.pos[e.b], x0 = s.x + s.w, y0 = s.cy, x1, y1 = t.cy;
+      if (s.ci === t.ci) {
+        var bulge = 20 + Math.min(14, Math.abs(y1 - y0) / 14);
+        x1 = t.x + t.w + 4;
+        e.d = 'M' + x0 + ' ' + y0 + 'C' + (x0 + bulge + 10) + ' ' + y0 + ' ' + (x1 + bulge + 10) + ' ' + y1 + ' ' + x1 + ' ' + y1;
+      } else {
+        x1 = t.x - 4;
+        var dx = Math.max(30, (x1 - x0) / 2);
+        e.d = 'M' + x0 + ' ' + y0 + 'C' + (x0 + dx) + ' ' + y0 + ' ' + (x1 - dx) + ' ' + y1 + ' ' + x1 + ' ' + y1;
+      }
+      e.cls = 'dct-flag' + (e.med ? ' dct-med' : '');
+    });
+    return edges;
+  }
+  function decisionTree(D, acts, flags, visible) {
+    var L = dctLayout(D, acts), edges = dctEdges(D, flags, L);
+    var neckVisible = {};
+    D.cuellos.forEach(function (c) { neckVisible[c.id] = c.recibe.some(function (id) { return visible[id]; }); });
+    var titles = {};
+    D.nodes.forEach(function (n) { titles[n.id] = n.titulo; });
+    var s = '<svg class="dct-svg" viewBox="0 0 ' + L.width + ' ' + L.height + '" role="group" aria-label="Árbol de decisiones: cuatro actos, nodos enlazados a su tarjeta" style="min-width:' + Math.max(1100, L.width) + 'px">';
+    s += '<defs><marker id="dctArrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="dct-mk" d="M0 0L8 4L0 8z"/></marker><marker id="dctArrowM" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="dct-mk dct-mk-med" d="M0 0L8 4L0 8z"/></marker></defs>';
+    acts.forEach(function (a, ci) {
+      var x = DCT.padX + ci * DCT.col, nodes = D.nodes.filter(function (n) { return n.acto === a.n; });
+      var shown = nodes.filter(function (n) { return visible[n.id]; }).length;
+      s += '<g class="dct-head" style="--c:' + esc(a.color) + '"><rect x="' + x + '" y="4" width="' + (DCT.nodeW + DCT.nodeX) + '" height="38" rx="3"/><text x="' + (x + 10) + '" y="20" class="dct-act">Acto ' + esc(a.n) + '</text><text x="' + (x + 10) + '" y="35" class="dct-sub">' + esc(a.title) + ' · ' + shown + ' de ' + nodes.length + '</text></g>';
+    });
+    s += '<g class="dct-edges">' + edges.map(function (e) {
+      var off = e.kind === 'neck' ? !visible[e.a] : (!visible[e.a] || !visible[e.b]);
+      var tt = e.kind === 'flag' ? '<title>' + esc(titles[e.a]) + ' fija ' + esc(e.f.join(', ')) + ' y lo lee ' + esc(titles[e.b]) + '</title>' : '';
+      return '<path class="dct-edge ' + e.cls + (off ? ' dct-off' : '') + '" d="' + e.d + '" data-a="' + esc(e.a) + '" data-b="' + esc(e.b) + '"' + (e.kind === 'flag' ? ' marker-end="url(#' + (e.med ? 'dctArrowM' : 'dctArrow') + ')"' : '') + ' fill="none">' + tt + '</path>';
+    }).join('') + '</g>';
+    D.cuellos.forEach(function (c) {
+      var p = L.necks[c.id];
+      if (!p) return;
+      var cx = p.x + p.w / 2;
+      s += '<g class="dct-cuello' + (neckVisible[c.id] ? '' : ' dct-off') + '" data-id="' + esc(c.id) + '" data-neck="1"><title>' + esc('Cuello: ' + c.titulo + '. Reúne: ' + c.recibe.map(function (id) { return titles[id] || id; }).join(', ')) + '</title>' +
+        '<path d="M' + p.x + ' ' + (p.y + p.h / 2) + 'L' + (p.x + 14) + ' ' + p.y + 'H' + (p.x + p.w - 14) + 'L' + (p.x + p.w) + ' ' + (p.y + p.h / 2) + 'L' + (p.x + p.w - 14) + ' ' + (p.y + p.h) + 'H' + (p.x + 14) + 'z"/>' +
+        '<text x="' + cx + '" y="' + (p.y + p.h / 2 + 4) + '" text-anchor="middle">⇣ ' + esc(dctLines(c.titulo, 28)[0]) + '</text></g>';
+    });
+    D.nodes.forEach(function (n) {
+      var p = L.pos[n.id], lv = LEVEL[n.nivel], lines = dctLines(n.titulo, 25), big = n.nivel === 'grande';
+      var y0 = p.y + (big ? 28 : 23);
+      s += '<a class="dct-node dct-' + n.nivel + (visible[n.id] ? '' : ' dct-off') + '" href="#/decisiones?h=' + esc(n.id) + '" data-id="' + esc(n.id) + '"' + (visible[n.id] ? '' : ' tabindex="-1" aria-disabled="true"') + '><title>' + esc(n.titulo + ' · Acto ' + n.acto + ' · ' + lv.label + (n.estado === 'ok' ? ' · acordada' : ' · propuesta')) + '</title>' +
+        '<rect x="' + p.x + '" y="' + p.y + '" width="' + p.w + '" height="' + p.h + '" rx="4"/>' +
+        '<text class="dct-gl" x="' + (p.x + 10) + '" y="' + (p.y + (big ? 26 : 22)) + '" font-size="' + (big ? 22 : 16) + '" aria-hidden="true">' + lv.glyph + '</text>' +
+        '<text class="dct-mk-t" x="' + (p.x + p.w - 8) + '" y="' + (p.y + 16) + '" text-anchor="end" font-size="12" aria-hidden="true">' + (n.estado === 'ok' ? '✅' : '🟡') + '</text>' +
+        lines.map(function (l, i) { return '<text class="dct-t" x="' + (p.x + 34) + '" y="' + (y0 + i * 15) + '"' + (big ? ' font-weight="700"' : '') + '>' + esc(l) + '</text>'; }).join('') + '</a>';
+    });
+    return s + '</svg>';
+  }
+  function decisionTreeGuide() {
+    var KEY = 'vf-dct-guia', seen = false;
+    try { seen = localStorage.getItem(KEY) === '1'; if (!seen) localStorage.setItem(KEY, '1'); } catch (err) { /* sin almacenamiento: se muestra siempre abierta */ }
+    return '<details class="dct-help"' + (seen ? '' : ' open') + '><summary>Cómo leer el árbol</summary><ul>' +
+      '<li>Cada <b>caja</b> es una decisión; su <b>acto</b> es la columna. Al pulsarla bajas a su tarjeta con las opciones.</li>' +
+      '<li>El <b>tamaño y el símbolo</b> dicen el nivel: ◆ grande (más alta, borde ámbar), ◈ mediana, ◇ pequeña. ✅ acordada por el autor · 🟡 propuesta pendiente.</li>' +
+      '<li>Un <b>cuello de botella</b> (⇣, barra hexagonal) es la escena donde se reúnen las ramas del acto. La <b>línea continua gris</b> une cada decisión con el cuello que la reúne.</li>' +
+      '<li>La <b>línea discontinua con flecha</b> es una bandera: sale de la decisión que la fija y llega a la que la lee. Latón = medidor; rosa = el resto. Las banderas pueden cruzar actos.</li>' +
+      '<li>Pasa el ratón o enfoca una caja con el teclado (Tab) para resaltar sus conexiones. Los <b>filtros</b> atenúan lo que no cumple, sin mover nada; abajo, el detalle sí lo oculta.</li></ul></details>' +
+      '<p class="dct-legend" aria-label="Leyenda"><span><i class="dct-k dct-k-neck"></i> reúne ramas (cuello)</span><span><i class="dct-k dct-k-flag"></i> bandera: fija → lee</span><span><i class="dct-k dct-k-med"></i> bandera de medidor</span><span>◆ grande · ◈ mediana · ◇ pequeña</span><span>✅ acordada · 🟡 propuesta</span></p>';
+  }
+  function dctHighlight(target) {
+    var svg = main.querySelector('.dct-svg');
+    if (!svg) return;
+    var id = target && target.getAttribute('data-id');
+    Array.prototype.forEach.call(svg.querySelectorAll('.is-on'), function (el) { el.classList.remove('is-on'); });
+    svg.classList.toggle('dct-focus', !!id);
+    if (!id) return;
+    var linked = {};
+    linked[id] = true;
+    Array.prototype.forEach.call(svg.querySelectorAll('.dct-edge'), function (e) {
+      if (e.getAttribute('data-a') === id || e.getAttribute('data-b') === id) {
+        e.classList.add('is-on');
+        linked[e.getAttribute('data-a')] = true;
+        linked[e.getAttribute('data-b')] = true;
+      }
+    });
+    Array.prototype.forEach.call(svg.querySelectorAll('[data-id]'), function (el) { if (linked[el.getAttribute('data-id')]) el.classList.add('is-on'); });
+  }
   function viewDecisions() {
     var D = H.decisions;
     var acts = (H.story && H.story.acts) || [];
-    var h = '<p class="eyebrow">Diseño del juego</p><h1 class="page-title">Árbol de decisiones</h1><p class="page-lead">Las decisiones de los cuatro actos: quién las dispara, qué opciones hay y qué cambian en el mundo, el mercado y los personajes. Los cuellos reúnen las ramas de un acto en una misma escena. Documento: <a href="#/docs/23-arbol-de-decisiones">23 · Árbol de decisiones</a>. Contiene spoilers.</p>';
+    var h = '<p class="eyebrow">Diseño del juego</p><h1 class="page-title">Árbol de decisiones</h1><p class="page-lead">Las decisiones de los cuatro actos como un árbol: cada caja es una decisión, los cuellos reúnen las ramas de un acto en una misma escena y las líneas discontinuas siguen las banderas de una decisión a otra. Debajo, el detalle: quién las dispara, qué opciones hay y qué cambian en el mundo, el mercado y los personajes. Documento: <a href="#/docs/23-arbol-de-decisiones">23 · Árbol de decisiones</a>. Contiene spoilers.</p>';
     if (!D || !D.nodes.length) return h + '<div class="empty">Sin datos: falta studio/data/decisions.json.</div>';
     var flags = {};
     D.flags.forEach(function (f) { flags[f.id] = f; });
@@ -1316,7 +1457,9 @@
     D.nodes.forEach(function (n) {
       visible[n.id] = (q.act === 'all' || n.acto === q.act) && (q.level === 'all' || n.nivel === q.level) && (q.who === 'all' || nodeWhos(n, flags).indexOf(q.who) >= 0);
     });
-    h += decisionSummary(D, acts) + '<h2 class="section-title">Decisiones por acto</h2>' + decisionFilters(D, acts, who);
+    h += decisionSummary(D, acts) + '<h2 class="section-title">Árbol de decisiones</h2>' + decisionFilters(D, acts, who) + decisionTreeGuide();
+    h += '<div class="dc-tree" tabindex="0" role="region" aria-label="Árbol de decisiones (desplazable con el teclado)">' + decisionTree(D, acts, flags, visible) + '</div>';
+    h += '<h2 class="section-title">Detalle de las decisiones</h2>';
     h += '<div class="dc-board" style="--n:' + acts.length + '">' + acts.map(function (a) { return decisionColumn(a, D, flags, visible); }).join('') + '</div>';
     return h + decisionFlagTable(D, flags) + decisionProofs(D);
   }
@@ -2178,6 +2321,10 @@
     else if (act === 'tl-zoom') { state.tl.px = parseFloat(el.value); render(true); }
     else if (act === 'tl-rate') { state.tl.rate = parseInt(el.value, 10); render(true); }
   });
+  main.addEventListener('mouseover', function (e) { var n = e.target.closest && e.target.closest('.dct-node, .dct-cuello'); if (n || e.target.closest('.dct-svg')) dctHighlight(n); });
+  main.addEventListener('mouseout', function (e) { if (e.target.closest && e.target.closest('.dct-node, .dct-cuello') && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest('.dct-node, .dct-cuello'))) dctHighlight(null); });
+  main.addEventListener('focusin', function (e) { var n = e.target.closest && e.target.closest('.dct-node'); if (n) dctHighlight(n); });
+  main.addEventListener('focusout', function (e) { if (e.target.closest && e.target.closest('.dct-node')) dctHighlight(null); });
   main.addEventListener('toggle', function (e) {
     var d = e.target;
     if (d.classList && d.classList.contains('s1-block')) {
