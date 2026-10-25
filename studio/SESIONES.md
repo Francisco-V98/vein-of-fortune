@@ -12,7 +12,7 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 | S-05 · F0-56 Pasada de cierre marca y arte | 2026-10-24 | F0-56, F1-12, F1-18, F4-227 | #72 | Cerró los puntos abiertos de dirección de arte y marca (docs 12 y 13) en dos rondas con el autor; ambos documentos quedan con 0 🟡 y 0 ❓; F1-12 absorbida por F1-18. |
 | S-06 · F0-57 Pasada de cierre técnico, legal y arquitectura | 2026-10-24 | F0-57 | #73 | Cierre de los puntos abiertos de los docs 10, 11 y 14 con 3 rondas de decisiones del autor; ADR-0012 y ADR-0013; audio por ruta gratuita |
 | S-07 · Cierre de flujo, QA y plan (F0-58) | 2026-10-25 | F0-58, F1-47 | #74 | Cierre de los puntos abiertos de los docs 06, 15 y 16 en 2 rondas de decisiones del autor; ADR-0005 a merge commit; commit sin ID = error en CI; F1-47; sesiones por bloques |
-| S-08 · Vistas del hub (F0-74, F0-75) | 2026-10-25 | F0-74 | #75 | Bloque de vistas del hub: F0-74 muestra el flujo (pipeline) de cada tarea en su vista de tarea |
+| S-08 · Vistas del hub (F0-74, F0-75) | 2026-10-25 | F0-74, F0-75 | #75, #76 | F0-75 dibuja #/decisiones como árbol SVG con ramas, cuellos y banderas conectadas, y filtros por acto, nivel y personaje |
 
 ## S-01 · F0-85 a F0-94 Diseño de exploración, simulador y calendario
 - Documentos: 26, 28, 29
@@ -79,5 +79,7 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 - Sesiones por bloques de tareas afines
 
 ## S-08 · Vistas del hub (F0-74, F0-75)
-- Documentos: 15
+- Documentos: 15, 23
 - El flujo se dibuja desde pipeline con ayuda plegable
+- Los filtros atenúan en vez de quitar nodos
+- Las tarjetas quedan como detalle bajo el árbol
