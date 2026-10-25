@@ -1002,3 +1002,22 @@ button.s1-frame:hover { border-color: var(--amber); }
 .s1-pend { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; background: var(--surface-2); border: 1px dashed var(--line-2); border-radius: 6px; color: var(--dim); font-size: 13px; text-align: center; padding: 6px; }
 .s1-count-img { margin-left: 8px; color: var(--amber); font-size: 13px; }
 @media print { .s1-frame, .s1-shot { break-inside: avoid; } .s1-week-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* flujo por etapas de la tarea */
+.flow { list-style: none; margin: 0 0 10px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px; }
+.flow-step { display: flex; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--dim); border-radius: var(--radius); padding: 10px; min-width: 0; }
+.flow-glyph { flex: none; width: 26px; height: 26px; display: grid; place-content: center; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--line-2, var(--line)); font-weight: 700; font-size: 13px; }
+.flow-body { min-width: 0; flex: 1; }
+.flow-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.flow-st { font-size: 12px; font-weight: 600; color: var(--muted); }
+.flow-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.flow-note { font-size: 13px; margin: 6px 0 0; overflow-wrap: anywhere; }
+.flow-find { font-size: 12.5px; margin: 6px 0 0; padding: 5px 8px; border-radius: var(--radius); background: var(--surface-2); border-left: 3px solid var(--amber); overflow-wrap: anywhere; }
+.flow-find.resuelto { border-left-color: var(--ok); }
+.flow-step.st-hecha { border-left-color: var(--ok); } .flow-step.st-hecha .flow-st { color: var(--ok); }
+.flow-step.st-activa { border-left-color: var(--amber); } .flow-step.st-activa .flow-st { color: var(--amber); }
+.flow-step.st-omitida { border-left-color: var(--line-2, var(--line)); } .flow-step.st-pendiente .flow-glyph { opacity: .6; }
+.flow-help { margin: 0 0 10px; font-size: 13px; color: var(--muted); }
+.flow-help summary { cursor: pointer; }
+.flow-tr { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+@media (max-width: 860px) { .flow { grid-template-columns: 1fr; } }
