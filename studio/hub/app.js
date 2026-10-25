@@ -1763,6 +1763,13 @@
     function statePair(label, o) {
       return '<div class="s1-state"><h5>' + esc(label) + '</h5><dl>' + [['esquirlas', 'Esquirlas'], ['inventario', 'Inventario'], ['herramienta', 'Herramienta'], ['deuda', 'Deuda']].map(function (k) { return '<dt>' + k[1] + '</dt><dd>' + esc(o[k[0]]) + '</dd>'; }).join('') + '</dl></div>';
     }
+    function tutorialBox(tut) {
+      if (!tut) return '';
+      var body = tut.length ? '<ul class="s1-tutlist">' + tut.map(function (t) {
+        return '<li><b>' + esc(t.que) + '</b><dl class="s1-ver"><dt>Cómo se enseña</dt><dd>' + esc(t.como) + '</dd><dt class="s1-gate-k">Compuerta</dt><dd>' + esc(t.compuerta) + '</dd><dt>Si falla o abandonas</dt><dd>' + esc(t.si_falla) + '</dd></dl></li>';
+      }).join('') + '</ul>' : '<p>Sin proceso de primera vez en este bloque.</p>';
+      return '<div class="s1-sec s1-tut"><h5>Tutorial y compuerta</h5>' + body + '</div>';
+    }
     function block(d, b) {
       var key = 'd' + d.dia + '-' + b.bloque;
       var obs = obsFor(d.dia, b.bloque), ch = changes(d.dia, b), hl = ch.some(function (x) { return x.sel !== 'all'; });
@@ -1777,6 +1784,7 @@
       x += callouts(ch);
       x += s1Row('Se dispara cuando', b.dispara);
       x += s1Sec('Pasos', b.pasos, 's1-steps') + s1Sec('Cómo se hace', b.como) + s1Sec('Qué se espera', b.se_espera);
+      x += tutorialBox(b.tutorial);
       if (!happy) x += s1Sec('Opcional', b.opcional) + s1Row('Si no lo haces', b.si_no_lo_haces);
       x += s1Row('Ayuda en pantalla', b.ayuda_en_pantalla) + s1Row('Prensa y rumores', b.prensa);
       if (b.hilos.length) x += '<div class="s1-sec"><h5>Hilos</h5><div class="gx-tags">' + b.hilos.map(function (hid) { return '<a class="chip" href="#/hilos?h=' + esc(hid) + '">' + esc(hid) + '</a>'; }).join('') + '</div></div>';

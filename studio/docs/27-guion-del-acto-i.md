@@ -10,7 +10,7 @@ Baja el Acto I a siete días: qué aprende el jugador cada día, qué pasa en su
 
 ## Resumen en cinco líneas
 
-1. El Acto I son **siete días de tres bloques** (mañana, tarde y noche) ✅, y la tienda no se abre de noche ✅. Cada día enseña como máximo una mecánica nueva ✅, y los días 5 y 6 son de respiro: lo que traen es opcional ✅. La prensa es solo el Heraldo (noticia oficial) y el Teletipo (rumor) ✅.
+1. El Acto I son **siete días de tres bloques** (mañana, tarde y noche) ✅, y la tienda no se abre de noche ✅. Cada día enseña como máximo una mecánica nueva ✅, y los días 5 y 6 son de respiro: mejorar y aceptar el pedido urgente son libres, pero su primera vez lleva un paso guiado ✅. Toda primera vez lleva tutorial y compuerta ✅ (sección 2.4). La prensa es solo el Heraldo (noticia oficial) y el Teletipo (rumor) ✅.
 2. **Solo la cuota es fecha dura**: vence el día 7 ✅. Lo demás se dispara por evento y, si no ocurre, espera en la cola ✅.
 3. El puesto se reabre el **día 2** (trámite de Quiroga más la primera venta) ✅; el primer contacto con los empleados (**día 7, a primera hora**) y la cuota del **día 7** completan la puerta ✅. Entonces Quiroga sella «Minero con licencia» ✅.
 4. Anselmo es solo **rastro** (firma, abono, libreta, lámpara y cinta 1) ✅. Nadie dice «mal del éter» ✅.
@@ -25,7 +25,8 @@ Decisiones del 2026-10-13 (F0-23), del 2026-10-15 (F0-54) y del 2026-10-16 (F0-8
 | Tema | Decisión |
 |---|---|
 | Estructura | **Siete días ceñidos.** Solo la cuota es fecha dura; las demás escenas van por evento y, si no ocurren, pasan a la cola ✅ ([24](24-umbrales-de-acto.md), sección 10; motor ⏳ F3-48). **Una mecánica nueva por día como máximo** ✅ |
-| Días 5 y 6 ligeros | La **mejora de la herramienta** (día 5) y el **pedido urgente con prima** (día 6) son **opcionales**: ayuda a pedido, sin tutorial forzado; el jugador puede saltarlos y el acto cierra igual. El día 5 es un **día de respiro** (ahorrar o mejorar, el rumor de Lucía y `n-i-lucia-rumor`). El día 6 queda **solo con noticia y rumor**: confirmar el rumor con la noticia oficial del Heraldo, sin pedido obligatorio y sin contacto con empleados ✅ |
+| Días 5 y 6 ligeros | Siguen siendo **ligeros** (sin decisión principal, tarde libre): el día 5 es un **día de respiro** (ahorrar o mejorar, el rumor de Lucía y `n-i-lucia-rumor`) y el día 6 queda **solo con noticia y rumor**, sin contacto con empleados ✅. **Cambia el 2026-10-24:** la **mejora del pico** (d5.3) y el **tablón con el pedido urgente** (día 6) ya **no son «sin tutorial forzado»**; se enseñan en un paso guiado que se completa una vez (sección 2.4). Lo que sigue libre es mejorar de verdad, aceptar o ignorar el urgente, vender y ahorrar. Revoca la decisión del 2026-10-13 ✅ |
+| Tutoriales y compuertas | **Todo proceso de primera vez y todo paso obligatorio lleva un tutorial guiado y una compuerta**: nada se puede saltar y ninguna compuerta bloquea la partida (siempre hay reintento, recordatorio o modo práctica). El «?» queda como repaso, no como único apoyo. Inventario completo en la sección 2.4 ✅ (decisión del autor, 2026-10-24) |
 | Prórroga de la cuota del día 7 | En **Novato e Intermedio** desplaza toda la serie una semana, con un recargo por cada semana de atraso (el 4 % de la cuota en Novato y el **6 % en Intermedio**, que son 38 y 58 esquirlas sobre la cuota del día 7), y **no pagar equivale a prórroga automática con recargo**. En **Difícil y Hardcore** la cuota atrasada se suma a la del día 14, sin desplazar la serie y con un **recargo mayor** (12 % y 18 %: 115 y 173 esquirlas) ✅ ([28](28-numeros-base-de-la-economia.md)) |
 | Reabrir el puesto | Es el **trámite de Quiroga más la primera venta**, el día 2 ✅ |
 | Premio del cierre | Quiroga sella **«Minero con licencia»** el día 7 ✅ |
@@ -79,7 +80,8 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 | Las escenas se disparan por evento; si no ocurren, pasan a la cola ✅ ([24](24-umbrales-de-acto.md), sección 10; motor ⏳ F3-48) |
 | Solo la cuota tiene fecha: el día 7 llega aunque las escenas anteriores no se hayan jugado ✅ |
 | Cada día enseña una mecánica nueva como máximo ✅ |
-| Los días 5 y 6 son de respiro: la mejora de la herramienta y el pedido urgente son opcionales, con ayuda a pedido y sin tutorial forzado. Si el jugador los salta, el acto cierra igual ✅ |
+| Los días 5 y 6 son de respiro (sin decisión principal, tarde libre), pero la mejora de la herramienta y el tablón con el pedido urgente llevan un paso guiado que se completa una vez (sección 2.4). Mejorar, aceptar el urgente o no hacerlo es libre y el acto cierra igual ✅ (2026-10-24) |
+| Toda primera vez lleva tutorial guiado y compuerta; ninguna compuerta bloquea la partida (sección 2.4) ✅ (2026-10-24) |
 | Los medios hablan del protagonista en tercera persona con `{nombre}` ([18](18-biblia-narrativa.md), 1.10) ✅ |
 | **Tope de prensa:** como máximo 1 noticia y 1 rumor por día ([01](01-core-loop.md), [03](03-comercio.md)). El decreto del día 7 es una escena-gancho y no cuenta ✅ |
 | **Reponer** (día 2): arrastrar la mercancía a los estantes y fijar los precios; es más gestión que minijuego ([03](03-comercio.md), [09](09-minijuegos.md)) ✅ |
@@ -95,9 +97,9 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 - Cada día cabe en sus tres bloques con la regla de arriba: las ventas y los pedidos caen en la mañana o en la tarde, y la noche queda para las escenas.
 - El día que se indica en cada escena es el **esperado**. Si el jugador va más rápido, la escena se adelanta solo hasta donde cumple sus requisitos; si va más lento, espera en la cola. La cola suelta las escenas de una en una y en orden, para que nunca se enseñen dos mecánicas nuevas a la vez; esa invariante ya está en las reglas de la cola ✅ ([24](24-umbrales-de-acto.md), sección 10); la construye ⏳ F3-48.
 - Cada día tiene **como máximo una decisión principal**; si hay otra (la del nombre de la tienda el día 2 o `n-i-lucia-rumor` el día 5), es **menor** y cae dentro del mismo día. Los días 5 y 6 no obligan a ninguna principal: ahorrar o mejorar y vender ya o esperar al Heraldo son elecciones libres, sin nodo del árbol.
-- **Ayuda a pedido.** Lo opcional (la mejora, el pedido urgente) no abre ventanas de tutorial: tiene un botón «?» y una frase de Teo que el jugador lee si quiere.
+- **Tutorial primero, «?» después.** La primera vez de cualquier proceso (también la mejora y el tablón con el pedido urgente) se enseña con un paso guiado y una compuerta (sección 2.4). Después queda el botón «?» y una frase del personaje como repaso. Lo libre sigue libre: decidir, vender más, no mejorar otra vez.
 - Una escena lleva una sombra como máximo (regla de [18](18-biblia-narrativa.md), 1.4). Sombra es un elemento que deja una pregunta sobre Anselmo o la Comisión; las pistas del sorteo no son sombras (sección 13).
-- El guion usa además un pedido de cliente estándar (día 4) y uno urgente con prima (día 6, **opcional**, sin escena), que son los contratos de [03](03-comercio.md) con otro nombre: en el Acto I se llaman «pedidos de cliente» ✅. El urgente es una variante del mismo pedido, no una mecánica nueva.
+- El guion usa además un pedido de cliente estándar (día 4) y uno urgente con prima (día 6, **libre de aceptar**, sin escena, con paso guiado la primera vez), que son los contratos de [03](03-comercio.md) con otro nombre: en el Acto I se llaman «pedidos de cliente» ✅. El urgente es una variante del mismo pedido, no una mecánica nueva.
 
 ### 2.2 Qué se abre y qué queda fuera
 
@@ -126,6 +128,50 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 **Valores por dificultad ✅.** Desde el día 4 la pérdida es la normal de la dificultad: el castigo (desgaste, multas, pérdida de carga con tope del 75 %, costo de contratar, herida de empleados) se multiplica por 0,7 · 1 · 1,4 · 2 y el ruido de los precios por 0,8 · 1 · 1,25 · 1,5 en Novato, Intermedio, Difícil y Hardcore ([04](04-progresion-y-meta.md), `world.json`). **En Hardcore no hay derrota en los siete días**: solo mata un encuentro de riesgo o un jefe y ninguno aparece en el Acto I ([02](02-extraccion.md), [04](04-progresion-y-meta.md)). Las tres noticias guionizadas suben o bajan en el mismo sentido en las cuatro dificultades y solo cambia el tamaño. El efectivo inicial, la cuota, el capital, el interés y los precios base no cambian con la dificultad. Las cifras finas ⏳ F3-22.
 
+### 2.4 Tutoriales y compuertas ✅
+
+**Estado:** cerrada por decisión del autor (2026-10-24). Todo proceso de primera vez y todo paso obligatorio lleva un **tutorial guiado** y una **compuerta**; nada se puede saltar y **ninguna compuerta bloquea la partida**.
+
+**Reglas comunes.**
+
+- **Cómo se enseña:** un paso guiado (marcador con forma, resaltado de la zona y un cuadro corto en fuente pixel; nunca texto dentro de una imagen) o el propio diálogo del personaje. El «?» queda como repaso, no como único apoyo. Los avisos usan forma y texto además del color.
+- **Compuerta:** lo que exige el paso guiado y lo que frena mientras no se complete. La implementa la cola de escenas (⏳ F3-48): la escena siguiente espera, nunca se descarta.
+- **Si falla o abandonas:** siempre hay reintento, recordatorio o modo práctica sin costo (por ejemplo, la vista previa de la mejora sin hierro). Nunca hay softlock, penalización ni pérdida.
+- **Se completa una vez.** Después el proceso es libre, con su «?».
+- **Quién lo construye:** la guía es ⏳ F5-01; las escenas, ayudas y props, ⏳ F3-16; los textos, ⏳ F3-47. Cada fila nombra además la tarea del proceso que se enseña.
+- **Una mecánica nueva por día** se mantiene. El día 6 enseña la mecánica (confirmar un rumor, de mañana) y recorre la tarjeta del pedido urgente, que es una variante del pedido del día 4, no una mecánica nueva.
+
+**Inventario (por escena y bloque).** Detalle completo por bloque en la vista «Semana 1» del hub (`studio/data/semana1.json`, clave `tutorial`).
+
+| Escena | Primera vez | Cómo se enseña | Compuerta | Si falla o abandonas | Estado |
+|---|---|---|---|---|---|
+| `d1.1` | Moverte, entrar a un edificio | Marcador hacia la casa de Reme y aviso de controles | `d1.2` no se dispara hasta cruzar la puerta | El marcador y el aviso se repiten | ⏳ F5-01, F1-07 |
+| `d1.2` | Hablar y avanzar cajas | Indicador del botón de usar y de avanzar | `d1.3` espera a `d1.2` | La línea se puede releer | ⏳ F5-01 |
+| `d1.1`-`d1.3` | Bloques, efectivo y libro de deuda | Resaltado por turnos con botón de cierre | `d1.4` no se suelta sin ver el libro | El libro queda en la libreta | ⏳ F5-01 |
+| `d1.4` | Entrar a la mina, escanear y picar | Teo, resaltado de entradas, detector y zona de Picado | `d1.5` espera a tres menas picadas | Fallo: Teo repite; salir sin picar devuelve el bloque | ⏳ F5-01, F3-52, F2-16 |
+| `d1.5` | Libreta, sus pestañas y el Mapa | Resaltado del botón y recorrido de las pestañas | `d1.6` no se abre sin libreta y Mapa vistos | Se repite; no gasta bloque | ⏳ F5-01, F2-20 |
+| `d1.6` | Primera decisión y la barra «Esperar» | Botones con efecto escrito; resaltado de la barra | El día 2 no empieza sin cerrar el resaltado | Confirmación; candado en recinto y minijuego | ⏳ F5-01, F3-57 |
+| `d2.1` | Trámite y pago (pagar o fiar) | Marcador a la oficina; resaltado de importe y botones | La tienda no se habilita sin el trámite | «Fiar» siempre activo | ⏳ F5-01 |
+| `d2.2` | Surtir y fijar precio | Resaltado de estante, mercancía y margen | Abrir la tienda exige estante surtido y precio | El saco de la trastienda garantiza stock | ⏳ F5-01, F2-02 |
+| `d2.3` | Abrir la tienda, vender, cartel | Confirmación del bloque, cobro e impuesto, nombre | El puesto no se reabre sin primera venta y cartel | Nombre vacío = por defecto | ⏳ F5-01, F3-47 |
+| `d2.4` | Cuadrar la caja | Resaltado de la caja con desglose | Sin freno al día; `d2.4` espera con recordatorio | El recordatorio vuelve cada noche | ⏳ F5-01 |
+| `d3.1` | Perforación (velocidad y calor) | Ejercicio guiado con el taladro y las barras | Teo no recoge el taladro ni se suelta `d3.4` sin una perforación con éxito | Sobrecalentar no daña; Teo repite | ⏳ F5-01, F2-16 |
+| `d3.3`-`d3.4` | Leer noticia y mercado; vender o guardar | Resaltado de flecha y noticia; botones con efecto | `d3.4` no se abre sin la noticia leída | La noticia queda en el Diario | ⏳ F5-01, F3-47 |
+| `d4.1`-`d4.2` | Pedido de cliente y Regateo | Tarjeta resaltada y primera ronda guiada | El Regateo no se abre sin ver la tarjeta; la primera ronda se juega entera | Cliente se va = jugado, sin castigo | ⏳ F5-01, F2-19, F3-32 |
+| `d4.3` | Seguir un pedido en curso | Resaltado en el Diario («En curso») | Sin freno; recordatorio al día siguiente | El pedido espera hasta el plazo | ⏳ F5-01 |
+| `d4.4` | Pagar antes (casa de Reme) | Cuadro de la interacción de 3 cajas | Se recorre una vez; pagar es libre | El botón indica cuánto falta | ⏳ F5-01 |
+| `d5.1` | Entregar un pedido y cobrar | Resaltado de entrega y cobro | `d5.2` espera al cobro, si hay pedido | Sin pedido: se aplaza a la primera entrega real | ⏳ F5-01 |
+| `d5.2` | Intercambiar rumores con Lucía | Tres botones con efecto escrito | Una decisión; `d5.3` y `d5.4` esperan | Sin plazo; callar nunca deja sin material | ⏳ F5-01, F3-47 |
+| `d5.3` | **Mejora del pico** (cambia hoy) | Oferta de Teo en paso guiado: qué mejora, costo, dos botones | El paso se completa una vez; `d5.4` y lo siguiente esperan | Sin hierro o dinero: vista previa sin cobro | ⏳ F5-01, F3-12 |
+| `d6.1` | Rumor SIN CONFIRMAR y cómo se confirma | Etiqueta con texto y símbolo; cuadro del Heraldo de mañana | `d6.2` no se suelta sin leerlo | El cuadro vuelve al puesto | ⏳ F5-01, F3-31 |
+| Tablón, día 6 | **Tablón y pedido urgente** (cambia hoy) | Marcador al tablón; tarjeta con prima, plazo y penalización | El paso se completa una vez; `d6.2` y el día 7 esperan | Ignorar cuenta como hecho; sin hierro se puede aceptar igual | ⏳ F5-01, F3-58, F3-32 |
+| `d7.1` | Ficha de empleado y «Contratar» bloqueado | Sección de empleos con candado y motivo | `d7.2` no se suelta sin abrir la ficha | Si no la abres, Teo la abre por ti | ⏳ F5-01 |
+| `d7.2` | La cuota: pagar o pedir tiempo | Pantalla con importe, recargo y dos botones | Se muestra una vez antes de responder | Sin respuesta: prórroga automática, sin reproche | ⏳ F5-01, F3-47 |
+
+Sin proceso de primera vez: `d3.2` (la placa), `d3` noche, `d5.4`, `d6.2`, `d6` tarde (solo un recordatorio del plazo), `d7.3` y `d7.4`. Los obligatorios nuevos están en `obligatorios_de_la_semana` (ob-10 a ob-19) de la vista «Semana 1».
+
+**Cómo actúan las compuertas de los días 5 y 6 ✅.** Las de `d5.3` y del tablón del día 6 hacen que `d5.4` y `d6.2` esperen en la cola: el jugador pasa por Teo y por el tablón (con marcador y recordatorio) antes de que avance la historia, aunque el día siga corriendo. El día 6 reúne dos pasos guiados (rumor y tablón), uno tras otro en la mañana y la calle.
+
 ---
 
 ## 3 · Los siete días de un vistazo ✅
@@ -138,13 +184,13 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | **2 · Abrir el puesto** | La tienda: surtir y fijar precios | Oficina de Quiroga: el trámite | El puesto: surtir, primera venta y cartel | Cierre de caja y cinta 1 | Principal: el margen. Menor: el nombre de la tienda |
 | **3 · El hierro** | Perforación (el desgaste se ve al usarla, no es otra mecánica) | Galerías con Teo (taladro prestado): hierro y la placa de Pozo Negro | El puesto: debuta Lucía y sale la noticia del hierro | Fin de día | ¿Vender o guardar el hierro? |
 | **4 · El cliente** | Regateo (el pedido estándar es su escenario) | El puesto: cliente y regateo; sale la nota del Heraldo | Galerías: reunir el pedido | Café con Reme: una pista y pagar antes | El mínimo del regateo |
-| **5 · Un respiro** | Ninguna obligatoria (opcional: la mejora de la herramienta, con ayuda a pedido) | El puesto: entrega y rumor de Lucía | Libre; Teo ofrece el pico de nivel 2 (opcional) | La respuesta de casa | Menor: `n-i-lucia-rumor`. Libre: ahorrar o mejorar |
-| **6 · El rumor** | Confirmar un rumor con la noticia oficial | El puesto: el rumor del Teletipo | Libre (el pedido urgente, si quieres, en el tablón) | Casa: mañana lo dice el Heraldo | Ninguna principal. Libre: vender ya o esperar al Heraldo |
+| **5 · Un respiro** | La mejora de la herramienta, en un paso guiado una vez (mejorar de verdad es libre) | El puesto: entrega y rumor de Lucía | Libre; Teo ofrece el pico de nivel 2 (paso guiado una vez) | La respuesta de casa | Menor: `n-i-lucia-rumor`. Libre: ahorrar o mejorar |
+| **6 · El rumor** | Confirmar un rumor con la noticia oficial | El puesto: el rumor del Teletipo | Libre (el pedido urgente: tablón guiado una vez; aceptarlo es libre) | Casa: mañana lo dice el Heraldo | Ninguna principal. Libre: vender ya o esperar al Heraldo |
 | **7 · La cuota** | La cuota (el primer contacto con empleados no es mecánica: es una ficha bloqueada) | El puesto, primera hora: el Heraldo confirma, Teo señala los empleos; últimas ventas | Casa de Reme: la cuota (si no estás, Reme pasa por el puesto) | El puesto: Quiroga sella y suena el decreto | `n-i-reme-plazo`: antes (desde el día 4, en casa de Reme), justo o prórroga |
 
 - **Una mecánica, un día.** ✅ Solo el día 1 junta dos acciones, «escanear y picar», y se cuenta como una sola mecánica (la expedición guiada; decisión del autor, 2026-10-16). El desgaste (día 3) forma parte de usar la herramienta, el pedido estándar (día 4) es el escenario del Regateo y el pedido urgente (día 6, opcional) es el mismo pedido con prima. La mejora (día 5) también es opcional: si se salta, no se pierde ninguna mecánica obligatoria. Los bloques, el trato con Reme y la lectura de la prensa no son mecánicas nuevas: son el marco.
 - **Como máximo una decisión principal por día.** Los días 5 y 6 no obligan a ninguna. Los días 2 y 5 llevan además una decisión menor (el nombre de la tienda y el rumor de Lucía), que cae dentro del mismo día.
-- **Escenas.** Son 28 en total: 6, 4, 4, 4, 4, 2 y 4 ✅. De ellas, solo `d5.3` es **opcional**; son **condicionales** (dependen de algo que puede no haber ocurrido) `d3.4` (sin hierro), `d4.3` (si dejas ir al cliente), `d5.1` (sin pedido) y `d5.4` (con «nada» en la herencia). Cada escena tiene un código `d<día>.<n>`, por ejemplo `d1.2`. La interacción corta de pagar antes (sección 21.6) no cuenta entre las 28.
+- **Escenas.** Son 28 en total: 6, 4, 4, 4, 4, 2 y 4 ✅. De ellas, solo `d5.3` es **libre en lo que se paga** (su paso guiado se completa una vez); son **condicionales** (dependen de algo que puede no haber ocurrido) `d3.4` (sin hierro), `d4.3` (si dejas ir al cliente), `d5.1` (sin pedido) y `d5.4` (con «nada» en la herencia). Cada escena tiene un código `d<día>.<n>`, por ejemplo `d1.2`. La interacción corta de pagar antes (sección 21.6) no cuenta entre las 28.
 - **Noticias y pedidos.** Hay 3 noticias guionizadas (días 2, 3 y 6; la del día 6 se confirma en la mañana del 7), la nota del Heraldo con el nombre y la tienda (día 4), el titular del decreto del día 7, los tres textos del Teletipo del día 5 (que escribe ⏳ F3-47) y 2 pedidos de cliente guionizados (el estándar del día 4 y el urgente opcional del día 6, que es una tarjeta sin escena). Los textos de prensa son de ⏳ F3-31 y los de los pedidos de ⏳ F3-32, no de F3-47. El resto sale al azar de las 10 noticias y los 12 pedidos de ⏳ F3-31 y ⏳ F3-32, siempre con el tope de 1 noticia y 1 rumor por día ✅. El decreto del día 7 es una escena-gancho y no cuenta para el tope.
 
 ---
@@ -267,14 +313,14 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 ## 8 · Día 5 · Un respiro ✅
 
-**Estado:** cerrada. El día 5 es un día de respiro y la mejora de la herramienta es opcional, con ayuda a pedido y sin tutorial forzado (decisión del autor, 2026-10-13); la mejora la hace Teo y hay herramientas de nivel 2 en el Acto I. Qué herramienta se mejora, con qué, el rumor de Lucía (y el rumor de reserva si no oíste al cliente) y el orden los confirmó el autor el 2026-10-16 (F0-86).
+**Estado:** cerrada. El día 5 es un día de respiro y mejorar la herramienta es libre, pero su primera vez lleva un paso guiado y una compuerta (decisión del autor, 2026-10-24, que revoca el «sin tutorial forzado» del 2026-10-13; sección 2.4); la mejora la hace Teo y hay herramientas de nivel 2 en el Acto I. Qué herramienta se mejora, con qué, el rumor de Lucía (y el rumor de reserva si no oíste al cliente) y el orden los confirmó el autor el 2026-10-16 (F0-86).
 
 | Campo | Contenido |
 |---|---|
-| Se aprende | **Nada obligatorio.** Opcional: la **mejora** de una herramienta, que se paga con hierro y dinero (3 hierro y 480 esquirlas para el pico de nivel 2 ✅) y la hace Teo ([02](02-extraccion.md), [28](28-numeros-base-de-la-economia.md)). Sin tutorial: Teo la ofrece y la ayuda está en un «?» |
+| Se aprende | La **mejora** de una herramienta, que se paga con hierro y dinero (3 hierro y 480 esquirlas para el pico de nivel 2 ✅) y la hace Teo ([02](02-extraccion.md), [28](28-numeros-base-de-la-economia.md)). Con **paso guiado y compuerta** la primera vez (sección 2.4); después es libre y la ayuda queda en un «?» como repaso |
 | Decisión | Menor, dentro del día: `n-i-lucia-rumor`. Libre, sin nodo: **ahorrar o mejorar** |
 | Lo cierra | La respuesta de casa |
-| Si no haces lo esperado | Si no mejoras, el pico sigue prestado hasta el día 7, cuando Teo te lo deja. Si no tienes hierro, la mejora espera sin plazo. Saltarse `d5.3` no cambia nada: el acto cierra igual ✅ |
+| Si no haces lo esperado | Si no mejoras, el pico sigue prestado hasta el día 7, cuando Teo te lo deja. Si no tienes hierro, la mejora espera sin plazo. No mejorar de verdad no cambia nada: el acto cierra igual. El paso guiado sí se completa una vez, sin obligar a pagar (con falta de hierro o dinero, en vista previa sin cobro) ✅ |
 
 **Líneas de ejemplo**
 
@@ -282,11 +328,11 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 |---|---|---|---|
 | `d5.1` La entrega | Mañana | Entregas el pedido del día 4 y cobras | **Cliente:** «Buen carbón. Da gusto ver el puesto abierto otra vez.» |
 | `d5.2` El rumor | Mañana | Lucía **siempre** te da primero su rumor del ferrocarril y luego te pide otro (`n-i-lucia-rumor`); lo da aunque después calles ✅ | **Lucía:** «Te doy uno por uno. El mío: el ferrocarril quiere hierro. ¿Y el tuyo? ¿Lo cuentas entero?» |
-| `d5.3` El pico de nivel 2 (opcional) | Tarde | Si pasas por Teo con hierro, él se ofrece a forjar el pico y te lo devuelve ya tuyo. Sin ventana de tutorial | **Teo:** «Si me traes hierro, te devuelvo un pico que muerda. Sin prisa, aprendiz.» |
+| `d5.3` El pico de nivel 2 | Tarde | Al pasar por Teo, él ofrece forjar el pico y te lo devuelve ya tuyo. La primera vez, la oferta se recorre en un paso guiado (sección 2.4) | **Teo:** «Si me traes hierro, te devuelvo un pico que muerda. Sin prisa, aprendiz.» |
 | `d5.4` La respuesta de casa | Noche | Llega la carta de Vega Mansa, según lo que contaste el día 1 | **Padre:** «Sabíamos que te irías. No que bajarías. Escríbenos cada semana.» |
 
 - **Un día de respiro.** La tarde queda libre: puedes salir a las Galerías, vender, mirar el mercado o no hacer nada. No hay mecánica nueva que aprender.
-- **Ayuda a pedido.** La mejora no abre ninguna ventana. Quien quiera saber cuánto cuesta y qué mejora pulsa el «?» de la oferta de Teo.
+- **Tutorial y repaso.** La primera vez, la oferta de Teo se recorre en un paso guiado (qué mejora, cuánto cuesta, «Mejorar» o «Ahora no»), que no obliga a pagar. Después, quien quiera repasarlo pulsa el «?» de la oferta.
 - **Si no tienes el rumor del cliente** (dejaste ir al cliente el día 4 o no oíste a quien lo contó), Lucía acepta como tuyo lo que viste en el mercado: «el hierro lleva dos días subiendo». Es el rumor de reserva. Las tres salidas (entero, mitad y callar) funcionan igual, con el Teletipo titulando «HIERRO SUBIRÍA DESPACIO EN EL HOLLÍN. SIN CONFIRMAR» también si callas ✅ (decisión del autor, 2026-10-24); es el único rumor impreso del día, así que el tope de 1 rumor no se rompe, y callar solo baja `m-lucia`. Así `n-i-lucia-rumor` nunca se queda sin material ✅.
 - **El rumor:** si lo cuentas entero, el Teletipo lo publica esa noche con su SIN CONFIRMAR («HERRERO DE LA CALLE HONDA ACAPARA CARBÓN. SIN CONFIRMAR») y el carbón se mueve 2 a 3 puntos; si cuentas la mitad, sale una nota vaga y se mueve 1; si callas, no sale nada, salvo con el rumor de reserva, que se publica igual (sin efecto de mercado: callar solo baja `m-lucia`; opciones de [23](23-arbol-de-decisiones.md), sección 3). Los tres textos del Teletipo de este día (entero, mitad y reserva) los escribe ⏳ F3-47 ✅ (decisión del autor, 2026-10-16).
 - **Rumor de Lucía y tope de prensa.** El rumor del ferrocarril que te da Lucía es de boca, no sale en el Teletipo hasta el día 6, así que el día 5 sigue con 1 rumor impreso como máximo. Callar solo baja `m-lucia`: no quita el rumor del ferrocarril, de modo que `d6.1` funciona sea cual sea la decisión ✅.
@@ -299,14 +345,14 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 ## 9 · Día 6 · El rumor ✅
 
-**Estado:** cerrada. En el Acto I la prensa es solo el Heraldo y el Teletipo; la prensa con sesgos y el cruzar fuentes entran en el Acto II ([07](07-sociedad-y-eventos.md)). El día 6 enseña a confirmar un rumor con la noticia oficial del día siguiente y queda solo con noticia y rumor, sin pedido urgente obligatorio y sin contacto con empleados (decisión del autor, 2026-10-13). La noticia concreta, la escena de la noche y qué ocupa la tarde los confirmó el autor el 2026-10-16 (F0-86).
+**Estado:** cerrada. En el Acto I la prensa es solo el Heraldo y el Teletipo; la prensa con sesgos y el cruzar fuentes entran en el Acto II ([07](07-sociedad-y-eventos.md)). El día 6 enseña a confirmar un rumor con la noticia oficial del día siguiente y queda solo con noticia y rumor, sin pedido urgente obligatorio y sin contacto con empleados (decisión del autor, 2026-10-13); desde el 2026-10-24 el tablón con el pedido urgente se enseña en un paso guiado una vez (sección 2.4), aunque aceptarlo sigue siendo libre. La noticia concreta, la escena de la noche y qué ocupa la tarde los confirmó el autor el 2026-10-16 (F0-86).
 
 | Campo | Contenido |
 |---|---|
 | Se aprende | **Confirmar un rumor**: el Teletipo lo adelanta sin confirmar y el Heraldo lo confirma (o no) al día siguiente |
 | Decisión | Ninguna principal. Libre, sin nodo: vender el hierro ya o esperar al Heraldo |
 | Lo cierra | La escena de la noche: mañana habla el Heraldo |
-| Si no haces lo esperado | Si no lees el rumor, el Heraldo del día 7 se explica solo. Si no aceptas el pedido urgente, no pasa nada: nunca fue obligatorio |
+| Si no haces lo esperado | Si no lees el rumor, el Heraldo del día 7 se explica solo. Si no aceptas el pedido urgente, no pasa nada: aceptarlo es libre (abrir la tarjeta en el paso guiado, una vez, sí es obligatorio) |
 
 **Líneas de ejemplo**
 
@@ -321,7 +367,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 - **Lo que enseña:** el rumor del Teletipo se adelanta; la noticia oficial del día siguiente lo confirma, aunque la baje de tono. Cruzar medios con distintos sesgos queda para el Acto II ✅.
 - **Sea cual sea tu decisión del día 5**, Lucía te dio su rumor del ferrocarril, así que `d6.1` funciona igual ✅. Si hiciste el trato, el Teletipo ya publicó tu rumor (el del carbón) esa noche, y el jugador reconoce cómo se ve un rumor sin confirmar; si callaste, el Teletipo del día 6 es la primera vez que ves uno impreso. El rumor del ferrocarril queda sin confirmar hasta el Heraldo del día 7.
 - **Tope del día ✅:** un rumor (el del ferrocarril) y ninguna noticia; la noticia oficial llega el día 7.
-- **Pedido urgente (opcional, sin escena):** una tarjeta en el tablón de pedidos, con un cliente del Hollín sin nombre (⏳ F4-172) que pide 6 sacos de hierro con prima alta (un 35 %, 729 esquirlas) y plazo corto. No lleva tutorial ni diálogo; la ayuda está en un «?». Texto de ⏳ F3-32. Se entrega antes de la tarde del día 7; si no llegas o lo ignoras, no pasa nada (como mucho, una penalización de hasta el 5 % del valor, que nunca bloquea nada).
+- **Pedido urgente (libre de aceptar, sin escena):** una tarjeta en el tablón de pedidos, con un cliente del Hollín sin nombre (⏳ F4-172) que pide 6 sacos de hierro con prima alta (un 35 %, 729 esquirlas) y plazo corto. No lleva diálogo, pero la primera vez el tablón y la tarjeta se recorren en un paso guiado con compuerta (sección 2.4); después la ayuda queda en un «?» de repaso. Texto de ⏳ F3-32. Se entrega antes de la tarde del día 7; si no llegas o lo ignoras, no pasa nada (como mucho, una penalización de hasta el 5 % del valor, que nunca bloquea nada).
 - **Tablón y calendario (F0-94) ✅:** el «tablón de pedidos» es una ficha de tipo pedido del calendario ([29](29-calendario-y-temporadas.md)); el Acto I no cambia de cifras ni de textos. Los días 1 a 7 no hay clima con efecto ni mini-historias (las de otoño no aparecen en la campaña), y la barra de fecha muestra «Día 1 · 22 de otoño». Las fichas y la barra son ⏳ F3-57 y ⏳ F3-58.
 - **Tarde libre.** No hay escena: expedición, ventas, inventario o pedido urgente, a gusto del jugador.
 - **Hilos que se siembran:** ninguno.
@@ -463,7 +509,7 @@ Solo se ve la pista de la variante sorteada. Los otros dos props no existen en e
 | **Detector básico** | Heredado de Anselmo; no depende del cuarzo ✅ |
 | **Pico** | Nivel 1, prestado por Teo ✅ |
 | **Taladro** | Prestado por Teo solo el día 3; no entra en el inventario ✅ |
-| **Mejora** | La hace Teo ✅; opcional, con ayuda a pedido ✅. Pico a nivel 2: 3 hierro y 480 esquirlas ✅ ([28](28-numeros-base-de-la-economia.md)) |
+| **Mejora** | La hace Teo ✅; libre, con paso guiado la primera vez ✅ (2026-10-24). Pico a nivel 2: 3 hierro y 480 esquirlas ✅ ([28](28-numeros-base-de-la-economia.md)) |
 | **Trastienda** | El almacén modesto del puesto (40 unidades), con un costo de guardar mínimo de 1 esquirla por lote y día ✅ |
 | **Prensa** | Heraldo (noticia oficial) y Teletipo (rumor), gratis en el Acto I, con el tope de 1 noticia y 1 rumor por día ✅ ([03](03-comercio.md)) |
 | **Pedidos de cliente** | Estándar el día 4 y urgente con prima el día 6 (opcional) ✅ |
@@ -524,7 +570,7 @@ A los 319 textos de las 28 escenas se suman las 3 cajas de la interacción de pa
 - **Fuera de la cuenta de F3-47:** las 3 noticias guionizadas (6 titulares y notas), la nota del Heraldo del día 4, el titular del decreto y los 2 pedidos guionizados (≈ 8 textos, con la tarjeta del pedido urgente) más las 7 noticias aleatorias y los 10 pedidos aleatorios (≈ 60) son de ⏳ F3-31 y ⏳ F3-32: ≈ 70 textos y los 2 de la nota y el decreto, unos 72. Con los 325 de F3-47 (322 más los 3 del Teletipo), unos 397 para traducir.
 - **Reparto de horas ✅ (ya en el roadmap).**
   - ⏳ F3-47 **Textos del Acto I** (14 h): los 322 textos de los siete días (sin noticias ni pedidos) y de la interacción de pagar antes, más los 3 del Teletipo del día 5, que son ≈ 9 h de escritura, más la revisión de voz. Las 14 h se mantienen.
-  - ⏳ F3-16 **Escenas, cola, ayudas y props** (14 h, ya sin los textos): las 28 escenas con disparadores, cola y ayudas (con lo opcional del día 5 y del día 6 sin tutorial forzado), la interacción de pagar antes, la visita de Reme al puesto el día 7, el taladro del día 3, la placa de Pozo Negro, la cinta 1 con su aviso, la ficha del candidato en el día 7 y los props de las pistas (incluido el papel sellado del Ministerio). Las 14 h se mantienen.
+  - ⏳ F3-16 **Escenas, cola, ayudas y props** (14 h, ya sin los textos): las 28 escenas con disparadores, cola y ayudas (con los pasos guiados y compuertas de la sección 2.4, también los del día 5 y del día 6), la interacción de pagar antes, la visita de Reme al puesto el día 7, el taladro del día 3, la placa de Pozo Negro, la cinta 1 con su aviso, la ficha del candidato en el día 7 y los props de las pistas (incluido el papel sellado del Ministerio). Las 14 h se mantienen.
   - ⏳ F3-17 **Deuda** (6 h): las dos reglas por dificultad, con el recargo mayor, y la prórroga automática.
   - ⏳ F3-30 **Traducción** (13 h): unos 397 textos al ritmo de 35 por hora son ≈ 11 h, con margen de revisión.
 - **Sin cambio de horas:** ⏳ F3-14 (6 h, con el nombre de la tienda en el día 2), ⏳ F3-31 (8 h, con los textos de las 3 noticias guionizadas) y ⏳ F3-32 (4 h, con los de los 2 pedidos guionizados, uno de ellos la tarjeta opcional del día 6).
@@ -655,7 +701,7 @@ A estos **319** se suman las **3 cajas** de la interacción de pagar antes (secc
 | `d4.4` | Tras `d4.3`, de noche, en la casa de Reme | No. Si no vas, la oferta de pagar antes sigue abierta hasta el día 7 | Ninguna | — |
 | `d5.1` | Día 5, con el pedido reunido (plazo de 3 días) | Condicional: sin pedido (se perdió el día 4) no se juega | Ninguna | — |
 | `d5.2` | Tras `d5.1`, en el puesto | No. Si no se juega, espera en la cola | Ninguna | `n-i-lucia-rumor` |
-| `d5.3` | Día 5, tarde, si pasas por Teo con 3 hierro. Sin plazo | Opcional (la única). Saltarla no cambia nada: el acto cierra igual | Ninguna obligatoria (opcional: la mejora de una herramienta) | Libre, sin nodo: ahorrar o mejorar |
+| `d5.3` | Día 5, tarde, al pasar por Teo (con 3 hierro para mejorar de verdad). Sin plazo | Paso guiado obligatorio una vez; mejorar de verdad es libre y el acto cierra igual | La mejora de una herramienta, con paso guiado y compuerta | Libre, sin nodo: ahorrar o mejorar |
 | `d5.4` | De noche, tras `d5.2`, si contaste algo el día 1 | Condicional: con «nada» no llega carta y no se juega | Ninguna | — |
 | `d6.1` | Día 6, en el puesto. Funciona sea cual sea la decisión del día 5 | No. Si no lees el rumor, el Heraldo del día 7 se explica solo | Confirmar un rumor con la noticia oficial | Libre, sin nodo: vender el hierro ya o esperar al Heraldo |
 | `d6.2` | Tras `d6.1`, de noche, en casa | No | Ninguna | — |
@@ -690,9 +736,9 @@ La cola suelta las escenas de una en una y en orden, y nunca dos mecánicas nuev
 | `d4.4` | `h-pista-lampara-de-red`, `h-pista-deferencia-de-quiroga`, `h-pista-farol-vinotinto` (solo el de la variante sorteada) | — | Según la variante sorteada: la lámpara de red con una «A» grabada; Quiroga con el papel sellado; el farol vinotinto encendido. Los otros dos no existen en esa partida. Pantalla: caja de diálogo sobre la casa de Reme | Por variante sorteada (`.consorcio`, `.ministerio`, `.faroleros`) | F3-47 |
 | `d5.1` | — | — | El tablón de pedidos y el cobro. Pantalla: caja de diálogo sobre el puesto | Sin pedido, la escena no se juega | F3-47 |
 | `d5.2` | `h-lealtad-de-lucia` | — | El Teletipo. Lucía da primero su rumor del ferrocarril, aunque luego calles. Pantalla: la decisión con tres botones | Por decisión: `.todo`, `.parte` y `.nada`; `.reserva` si no oíste al cliente | F3-47, incluidos los tres textos del Teletipo (entero, mitad y reserva) |
-| `d5.3` | — | — | El pico de nivel 2 (3 hierro y 480 esquirlas). Sin ventana de tutorial. Pantalla: la oferta de Teo con su «?» | Sin hierro, la mejora espera | F3-47 |
+| `d5.3` | — | — | El pico de nivel 2 (3 hierro y 480 esquirlas). Paso guiado la primera vez (sección 2.4). Pantalla: la oferta de Teo con su «?» de repaso | Sin hierro, la mejora espera | F3-47 |
 | `d5.4` | `h-vega-mansa-y-el-juramento` | — | La carta de casa. Pantalla: la carta | Por decisión del día 1: `.todo` y `.parte`; `.nada` no se juega | F3-47 |
-| `d6.1` | — | — | El Teletipo y el tablón con la tarjeta del pedido urgente (opcional). Pantalla: el mercado | Ninguna | F3-47; el rumor del Teletipo, F3-31; la tarjeta del pedido urgente, F3-32 |
+| `d6.1` | — | — | El Teletipo y el tablón con la tarjeta del pedido urgente (paso guiado una vez; aceptarlo es libre). Pantalla: el mercado | Ninguna | F3-47; el rumor del Teletipo, F3-31; la tarjeta del pedido urgente, F3-32 |
 | `d6.2` | — | — | La casa obrera de noche. Pantalla: caja de diálogo sobre la casa | Ninguna | F3-47 |
 | `d7.1` | — | — | La sección de empleos con la tarjeta fija «Candidato sin nombre» (Minero nivel 1, 70 esquirlas al día, Lealtad «?»), el botón «Contratar» bloqueado y el Heraldo del día. Teo deja el pico si no lo mejoraste. Pantalla: la sección de empleos | Ninguna | F3-47; la confirmación del Heraldo, F3-31 |
 | `d7.2` | `h-deuda-del-protagonista`, `h-traicion-de-reme` | — | El libro de deuda y, según la variante sorteada, la lámpara de red, el papel sellado doblado o el farol vinotinto encendido. Pantalla: la elección de pago | Por decisión: `.antes`, `.plazo` y `.tarde`; por dificultad: `.serie` (Novato e Intermedio) y `.suma` (Difícil y Hardcore); por variante sorteada; visita de Reme | F3-47 |
@@ -729,7 +775,7 @@ Lo decidido son los **totales por escena** (21.2) y estas piezas: el aviso «Enc
 | `d5.2` | común 4, `.todo` 3, `.parte` 3, `.nada` 3, `.reserva` 1 | qué pasa con lo que cuentas | — |
 | `d5.3` | Teo 4, {nombre} 2 | el «?» de la oferta: qué mejora y cuánto cuesta (2) | un aviso de pico mejorado |
 | `d5.4` | común 2, `.todo` 4, `.parte` 4 | — | la carta de casa, `.todo`; la carta de casa, `.parte` |
-| `d6.1` | Narrador 6, {nombre} 2 | qué es SIN CONFIRMAR; el Heraldo de mañana lo confirma o no; el tablón: el pedido urgente es opcional | — |
+| `d6.1` | Narrador 6, {nombre} 2 | qué es SIN CONFIRMAR; el Heraldo de mañana lo confirma o no; el tablón: paso guiado del pedido urgente, que es libre aceptar | — |
 | `d6.2` | Narrador 4, {nombre} 2 | — | un aviso de cierre del día |
 | `d7.1` | Teo 6, Narrador 4, {nombre} 2 | la ficha del candidato ✅; «Contratar» bloqueado y su motivo ✅; el «?» de la ficha, sin el costo de la mejora; el libro de deuda marca «hoy» | — |
 | `d7.2` | común 3, `.antes` (agradecimiento) 1, `.plazo` 2, `.tarde` por dificultad, `.serie` y `.suma` 4, visita de Reme al puesto 2, prórroga automática sin respuesta 1, ecos del sorteo 3, cierre 2 | la elección de pago, con {cuota}; qué pasa si pides tiempo | un aviso de cuota atendida; un aviso de cuota anotada con recargo |
@@ -839,7 +885,7 @@ El autor confirmó el 2026-10-16 (F0-80) los dos puntos que estaban en propuesta
 | Las tres decisiones pequeñas con su día y sus botones | Sí ✅ | Secciones 12 y 21.8 |
 | Las tres pistas del sorteo, con día, lectura inocente y variante | Sí ✅ | Sección 13 |
 | Cinta 1 y primer contacto con los empleados (día 7, a primera hora) | Sí ✅ | Secciones 14 y 15 |
-| Días 5 y 6 ligeros: mejora y pedido urgente opcionales, día 6 solo con noticia y rumor | Sí ✅ | Secciones 1, 8 y 9 |
+| Días 5 y 6 ligeros: mejora y pedido urgente libres con paso guiado una vez (2026-10-24), día 6 solo con noticia y rumor | Sí ✅ | Secciones 1, 8 y 9 |
 | Una sombra por escena como máximo y Anselmo solo como rastro | Sí ✅ | Secciones 17 y 21.4 |
 | Sin atascos y con la deuda sin bloquear | Sí ✅ | Secciones 2, 4 a 11 |
 | Textos y horas de F3-47, F3-16, F3-17, F3-30, F3-31 y F3-32 | Sí ✅ | Sección 19 |

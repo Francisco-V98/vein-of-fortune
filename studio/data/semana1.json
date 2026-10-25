@@ -54,6 +54,26 @@
           "opcional": [
             "Mirar el decorado de la casa con calma: la pista del sorteo no se explica y no hace falta notarla (27 §13)."
           ],
+          "tutorial": [
+            {
+              "que": "Moverte por la calle y entrar a un edificio (primera vez)",
+              "como": "Al recuperar el control, un marcador con forma (flecha con contorno, no solo color) señala la casa de Reme y un aviso corto dice qué stick o teclas mover y qué botón usar en la puerta (teclas ⏳ F1-07). Guía: ⏳ F5-01; escena: ⏳ F3-16.",
+              "compuerta": "d1.2 no se dispara hasta que cruces la puerta de Reme. No bloquea nada más: la calle sigue caminable, pero no hay otra cosa que hacer.",
+              "si_falla": "El marcador y el aviso se quedan en pantalla y vuelven con una pulsación si te alejas. Nada caduca ni se puede perder."
+            },
+            {
+              "que": "Hablar y avanzar las cajas de diálogo",
+              "como": "En la primera conversación (Reme) sale el indicador del botón de usar sobre ella y la primera caja resalta el botón de avanzar. Una frase corta recuerda que consultar no es actuar.",
+              "compuerta": "d1.3 solo se abre al terminar d1.2: la cola suelta las escenas en orden (24 §10; motor ⏳ F3-48).",
+              "si_falla": "Si cierras una caja sin querer, la línea se puede releer; Reme no avanza sin ti."
+            },
+            {
+              "que": "Los tres bloques del día, el efectivo y el libro de deuda",
+              "como": "Resaltado por turnos de la barra de bloques, de las 120 esquirlas y, en d1.3, de las tres cifras del libro (capital, cuota cada 7 días, abono). Cada resaltado se cierra con un botón y deja su «?» para repasar.",
+              "compuerta": "d1.4 (Teo) no se suelta hasta que hayas visto el libro de deuda.",
+              "si_falla": "El libro y el «?» quedan en la libreta; repasar no gasta bloque."
+            }
+          ],
           "si_no_lo_haces": "La escena espera en la cola; no caduca (27 §4 «Si no haces lo esperado»; 24 §10). Teo te espera en la boca de las Galerías.",
           "hilos": [
             "h-firma-de-la-herencia",
@@ -102,6 +122,26 @@
             "Cambiar de entrada una vez si la primera no te gusta (02).",
             "Dejar menas sin picar: el resto de las 5-6 visibles no se pueden picar de todos modos (28 §14)."
           ],
+          "tutorial": [
+            {
+              "que": "Entrar a la mina: recinto, cinco entradas y confirmar el bloque",
+              "como": "Teo te lleva a la boca y señala que el bloque se gasta al cruzar una entrada y confirmar. Un resaltado marca las cinco entradas (sin revelar su calidad) y el aviso de confirmación. Guía: ⏳ F5-01; recinto y bloque: ⏳ F3-52.",
+              "compuerta": "No puedes salir con la lección sin hacer: Teo no te suelta hasta que hayas escaneado y picado (abajo). d1.5 espera en la cola.",
+              "si_falla": "Si sales sin picar, el bloque se devuelve (30 §9) y Teo te espera en la boca para repetir."
+            },
+            {
+              "que": "Escanear una mena con el detector",
+              "como": "Teo pide que toques una mena (clic; con mando LB/RB y X). Se resaltan la mena, el gasto de 1 carga de batería y la lectura de rangos; el resultado lleva símbolo y texto además del color (gris, ámbar, verde). Guía: ⏳ F5-01.",
+              "compuerta": "El Picado no se habilita hasta que escanees una mena.",
+              "si_falla": "Si escaneas otra mena, Teo lo acepta y vuelve a señalar la primera. La batería de nivel 1 alcanza (12 cargas; 28 §14)."
+            },
+            {
+              "que": "Picar con Fuerza y Precisión",
+              "como": "Teo señala la zona óptima del marcador y pide mantener y soltar; tras el primer golpe resume Fuerza contra Precisión. Se pican tres menas de carbón. Zona óptima: ⏳ F2-16; teclas: ⏳ F1-07.",
+              "compuerta": "Salir de la galería y cerrar d1.4 exige haber picado las tres menas guiadas; d1.5 y todo lo que sigue esperan en la cola.",
+              "si_falla": "Un golpe fallido no te echa: Teo repite la explicación y puedes reintentar. Si abandonas, el bloque se devuelve y la lección vuelve a empezar al volver, sin penalización."
+            }
+          ],
           "si_no_lo_haces": "La escena espera en la cola y Teo te espera; la carta puede esperar y el día 2 sigue (27 §4). Nada atasca.",
           "hilos": [
             "h-anselmo-sigue-vivo"
@@ -138,6 +178,26 @@
           "por_que_obligatorio": "No cierra la puerta del acto (24 §3), pero fija f-familia, que lee el Acto IV (n-iv-montenegro; 23 §9). Si la escena no se juega, la cola la conserva y la decisión no se pierde (24 §10); d7.3 no se suelta sin haberla resuelto (27 §21.3).",
           "opcional": [
             "Elegir «No decir nada todavía»: es una opción válida y simplemente omite d5.4."
+          ],
+          "tutorial": [
+            {
+              "que": "Abrir la libreta y visitar sus pestañas (Diario, Mapa, Mercado en lectura, Inventario)",
+              "como": "Al encontrar la libreta de Anselmo, el botón de la libreta (View en mando) pulsa con forma resaltada. Se recorre cada pestaña con un cuadro corto: el Mapa muestra Villa Brasa marcada y el resto del reino con niebla; consultar no gasta bloque. Guía: ⏳ F5-01; pantallas: ⏳ F2-20, mapa: ⏳ F4-152.",
+              "compuerta": "d1.6 (la carta) no se abre hasta que hayas abierto la libreta y visto la pestaña Mapa.",
+              "si_falla": "El resaltado se repite si cierras la libreta antes de tiempo. Cerrar la libreta nunca gasta bloque ni bloquea."
+            },
+            {
+              "que": "Tu primera decisión (n-i-herencia)",
+              "como": "Tres botones con texto claro y sin cronómetro; un cuadro dice que consultar no es actuar y que lo elegido se recuerda más adelante.",
+              "compuerta": "Ya existente: la cola no suelta d7.3 sin resolver d1.6 (ob-6). El día 2 puede empezar sin ella.",
+              "si_falla": "Puedes cerrar el menú y volver: no hay opción por defecto ni plazo."
+            },
+            {
+              "que": "Pasar el bloque y terminar el día (barra superior, «Esperar»)",
+              "como": "Al caer la noche un resaltado muestra la barra y «Esperar», que pide confirmación; al amanecer apareces en la casa base (30 §8). Guía: ⏳ F5-01; barra: ⏳ F3-57.",
+              "compuerta": "El día 2 no empieza hasta que se haya mostrado y cerrado este resaltado; el día termina solo al acabar el bloque de noche, así que no hay nada que el jugador pueda dejar de hacer.",
+              "si_falla": "La confirmación evita el error; «Esperar» se desactiva con candado en recinto, galería y minijuego (30 §8)."
+            }
           ],
           "si_no_lo_haces": "La carta puede esperar y el día 2 sigue (27 §4). La escena queda en la cola con su decisión (24 §10).",
           "hilos": [
@@ -229,6 +289,14 @@
           "obligatorio": true,
           "por_que_obligatorio": "Reabrir el puesto es el trámite de Quiroga más la primera venta (27 §1); sin el trámite el puesto no se puede abrir y la puerta del Acto I no se cumple (24 §3, §11).",
           "opcional": [],
+          "tutorial": [
+            {
+              "que": "Tu primer trámite y tu primer pago (gestión de 240 esquirlas)",
+              "como": "Marcador hacia la oficina de Quiroga; en la pantalla de pago se resaltan el importe, «Pagar ahora» y «Fiar con la primera venta». Un cuadro corto explica el efecto de cada botón. Guía: ⏳ F5-01; escena: ⏳ F3-16.",
+              "compuerta": "La tienda (surtir y abrir) no se habilita hasta cerrar el trámite (ob-1).",
+              "si_falla": "Si no te alcanza el dinero, «Fiar» siempre está activo. Si sales sin cerrar, Quiroga te espera y el marcador sigue; mientras tanto solo vendes al contado, con peor precio. Nunca bloquea."
+            }
+          ],
           "si_no_lo_haces": "El puesto sigue cerrado y la escena espera en la cola. Mientras tanto vendes al contado en el mercado, con peor precio (27 §5). La gestión puede fiarse; nada atasca (27 §1).",
           "hilos": [],
           "prensa": "Noticia del día (Heraldo, ⏳ F3-31): «El Ministerio informa de que el frío llegará antes, pero el carbón está garantizado este invierno.» Rumor (Teletipo): «FRÍO ADELANTADO EN EL HOLLÍN. CARBÓN SUBIRÍA. SIN CONFIRMAR». Llegan al mostrador por el voceador (27 §5).",
@@ -268,6 +336,26 @@
             "Cambiar el margen respecto al 20 % por defecto (el rango se fija en la pantalla de la tienda ⏳ F2-20; 27 §5).",
             "Poner un nombre propio a la tienda (si no, «Puesto de {nombre}»)."
           ],
+          "tutorial": [
+            {
+              "que": "Surtir los estantes (Reponer)",
+              "como": "Se resalta el estante vacío y la mercancía: arrastra con el ratón o, con mando, elige estante y mercancía. Guía: ⏳ F5-01; interacción: ⏳ F2-02.",
+              "compuerta": "Abrir la tienda se habilita cuando hay al menos un estante surtido.",
+              "si_falla": "Si no tienes mercancía, el saco de la trastienda (el que dejó Anselmo) garantiza algo que colocar. Soltar mal solo devuelve la mercancía a su sitio."
+            },
+            {
+              "que": "Fijar el precio y el margen",
+              "como": "Al colocar la mercancía sale el valor justo con su flecha de tendencia, y el precio de lista por defecto (valor justo x 1,20; 28). Se resalta cómo subir o bajar el margen. Los avisos usan flecha y texto, no solo color.",
+              "compuerta": "Abrir la tienda exige un precio fijado en cada mercancía puesta a la venta.",
+              "si_falla": "Un precio absurdo muestra un aviso antes de confirmar y se puede corregir; no bloquea."
+            },
+            {
+              "que": "Abrir la tienda, vender y colgar el cartel con el nombre",
+              "como": "Abrir cuesta un bloque y pide confirmación (se resalta). El cliente obrero compra y se explica el cobro y el impuesto del 3 %; después se escribe el nombre del cartel (por defecto «Puesto de {nombre}»). Texto de ayuda: ⏳ F3-47.",
+              "compuerta": "El puesto no queda reabierto hasta la primera venta y el cartel (ob-2); d2.4 espera hasta entonces.",
+              "si_falla": "Si cierras el nombre vacío se usa el nombre por defecto. Si no abres la tienda, la escena espera en la cola con recordatorio y nada caduca."
+            }
+          ],
           "si_no_lo_haces": "Sin la primera venta el puesto no queda reabierto y la puerta no se cumple; la escena espera en la cola y el juego sigue (24 §11).",
           "hilos": [],
           "prensa": "Ver Mañana: el carbón sube un poco en los dos bloques siguientes, así que el rumor era cierto (27 §5).",
@@ -297,6 +385,14 @@
           "obligatorio": false,
           "por_que_obligatorio": "La cinta 1 no hace falta para cerrar el Acto I (27 §14) y queda como misión persistente hasta el IV si no la recoges (24 §9). Las cintas 1 a 5 sí abren la puerta al IV, así que no conviene perderla de vista, pero no caduca.",
           "opcional": [],
+          "tutorial": [
+            {
+              "que": "Cuadrar la caja al cerrar (primera vez)",
+              "como": "En el interior lateral de la tienda, un resaltado marca la caja y desglosa lo cobrado, el impuesto y la gestión. Aparece al terminar el bloque de tarde. Guía: ⏳ F5-01.",
+              "compuerta": "No frena el día (el tiempo no espera), pero d2.4 queda en la cola con recordatorio hasta cuadrar la caja y la cinta 1 espera con ella (ob-9).",
+              "si_falla": "Si no cierras la caja, el recordatorio vuelve cada noche de tienda; nada se pierde ni caduca (27 §14)."
+            }
+          ],
           "si_no_lo_haces": "Si no cierras la caja, la cinta espera; no se pierde ni caduca (27 §14).",
           "hilos": [
             "h-lampara-y-cinta-1"
@@ -397,6 +493,14 @@
           "opcional": [
             "Ver la placa (d3.2) no cambia nada mecánico."
           ],
+          "tutorial": [
+            {
+              "que": "Perforación: velocidad contra calor, con el taladro prestado",
+              "como": "Teo entrega el taladro y señala la barra de calor (con número y marca, no solo color) y la barra de desgaste de la herramienta. Un ejercicio guiado: presiona, ve subir el calor, suelta y espera a que baje. Guía: ⏳ F5-01; minijuego: ⏳ F2-16.",
+              "compuerta": "Teo no recoge el taladro ni se suelta d3.2 hasta perforar con éxito una mena de hierro; sin hierro no existe d3.4.",
+              "si_falla": "Si sobrecalientas, la herramienta se detiene sin daño (Teo asume el desgaste) y vuelve a explicar. Si abandonas, Teo te lo propone otra vez al volver."
+            }
+          ],
           "si_no_lo_haces": "Sin perforar no hay hierro y la decisión de d3.4 no existe; Teo te lo vuelve a proponer cuando vuelvas, con el taladro de la lección. Lucía espera en la cola (27 §6).",
           "hilos": [
             "h-pozo-negro"
@@ -436,6 +540,20 @@
             "Guardar o vender el hierro (decisión libre).",
             "Leer la noticia del hierro."
           ],
+          "tutorial": [
+            {
+              "que": "Leer una noticia y el mercado (primera vez): flechas de tendencia",
+              "como": "Se resalta el precio del hierro con su flecha (subida o bajada con forma y texto, nunca rojo y verde) y la noticia que lo explica; un cuadro distingue noticia (oficial) y rumor (de boca, el que deja Lucía). Se consulta en el mostrador o en la libreta (Mercado en lectura). Textos: ⏳ F3-47.",
+              "compuerta": "d3.4 (vender o guardar) no se abre hasta que hayas leído la noticia del hierro.",
+              "si_falla": "La noticia queda en el Diario y en la libreta para releerla; no caduca."
+            },
+            {
+              "que": "Vender o guardar el hierro (primera decisión de mercado)",
+              "como": "Los dos botones muestran lo que pasa con cada uno: vender cobra al precio de hoy menos el 3 % de impuesto; guardar tiene un costo pequeño visible. Sin cronómetro.",
+              "compuerta": "Hay que elegir una vez para cerrar la escena; qué eliges es libre.",
+              "si_falla": "No hay mala opción. Si guardas, puedes vender otro día; si vendes, el hierro de la mejora se vuelve a sacar con el pico."
+            }
+          ],
           "si_no_lo_haces": "d3.3 espera en la cola. Sin hierro, d3.4 no se juega (condicional; 27 §21.3).",
           "hilos": [
             "h-comision-y-mal-del-eter",
@@ -465,6 +583,7 @@
           "opcional": [
             "Cualquier cosa del sandbox: mirar el mercado, organizar el inventario (no cuestan bloque; 01)."
           ],
+          "tutorial": [],
           "si_no_lo_haces": "No aplica.",
           "hilos": [],
           "prensa": null,
@@ -548,6 +667,20 @@
             "Aceptar el pedido (puedes dejarlo ir).",
             "Fijar un mínimo alto o bajo (decisión libre)."
           ],
+          "tutorial": [
+            {
+              "que": "El pedido de cliente: leer la tarjeta y aceptarla",
+              "como": "La tarjeta resalta cantidad (8 sacos), precio, plazo (3 días) y el impuesto del 3 %. El plazo se ve en el Diario, en «En curso». Texto de la tarjeta: ⏳ F3-32; guía: ⏳ F5-01.",
+              "compuerta": "El Regateo no se abre hasta que hayas abierto la tarjeta y visto sus cuatro datos.",
+              "si_falla": "La tarjeta se puede reabrir desde el cliente; nada caduca mientras no pase el plazo de tres días."
+            },
+            {
+              "que": "Regateo: tu mínimo contra la paciencia del cliente",
+              "como": "Se juega una primera ronda guiada: fijas tu mínimo, ves la oferta y la barra de paciencia (con número y marca, no solo color) y decides subir, bajar o aceptar. Mecánica: ⏳ F2-19; guía: ⏳ F5-01.",
+              "compuerta": "La primera ronda del Regateo se recorre entera, guiada, una vez. Después aceptar o dejar ir es una decisión libre; d4.3 se suelta solo si aceptas.",
+              "si_falla": "Si el cliente se va, cuenta como regateo jugado, sin castigo; llega otro pedido y el día 5 usa el rumor de reserva de Lucía. Nunca se queda sin salida."
+            }
+          ],
           "si_no_lo_haces": "Si dejas ir al cliente, el pedido se pierde sin castigo y llegará otro. Además d4.3 no se juega y el día 5 usa el rumor de reserva de Lucía (27 §7, §8).",
           "hilos": [],
           "prensa": "Heraldo (⏳ F3-31): nota con {nombre} y {tienda}. No hay noticia guionizada ese día (27 §7). El rumor del cliente llega en d4.3.",
@@ -580,6 +713,14 @@
           "por_que_obligatorio": "Reunir el pedido no es parte de la puerta. Sin reunir, el pedido se pierde sin castigo (28 §9.3).",
           "opcional": [
             "La expedición entera (puedes quedarte con el carbón que ya tienes si alcanza)."
+          ],
+          "tutorial": [
+            {
+              "que": "Seguir un pedido en curso (Diario, «En curso»)",
+              "como": "Al salir de la mina con el pedido a medias, un resaltado muestra el pedido en el Diario con lo reunido y lo que falta. La expedición ya está enseñada (día 1). Guía: ⏳ F5-01.",
+              "compuerta": "Ninguna dura: no frena la expedición. El recordatorio vuelve al día siguiente si no lo abres, y la entrega del día 5 lo cierra.",
+              "si_falla": "El pedido sigue en el Diario hasta el plazo; pasado el plazo se pierde sin castigo."
+            }
           ],
           "si_no_lo_haces": "Si dejaste ir al cliente, d4.3 no se juega (condicional) y el día 5 usa el rumor de reserva (27 §21.3, §8).",
           "hilos": [],
@@ -614,6 +755,14 @@
           "por_que_obligatorio": "La pista del sorteo cae aquí (27 §13) y se resuelve en la orden de Reme del Acto II (27 §13 «Dónde se resuelve»), pero no es parte de la puerta del Acto I (24 §3). Pagar antes es opcional y solo es realista los días 6 y 7 (27 §1).",
           "opcional": [
             "Pagar antes de golpe (la interacción `pa`)."
+          ],
+          "tutorial": [
+            {
+              "que": "Pagar antes (interacción de 3 cajas en casa de Reme)",
+              "como": "La primera vez que entras a casa de Reme desde esta noche, Reme ofrece adelantar la cuota y un cuadro resalta la rebaja (900 en vez de 960) y los dos botones. Es la interacción corta de 27 §21.6. Guía: ⏳ F5-01.",
+              "compuerta": "El cuadro se recorre una vez la primera vez que se abre. Después pagar antes es libre (hasta el día 7); si no pagas, d7.2 lo resuelve.",
+              "si_falla": "Si no te alcanza el dinero, el botón muestra cuánto falta y no cobra. Si cierras el cuadro, la oferta sigue abierta."
+            }
           ],
           "si_no_lo_haces": "Si no vas, la oferta de pagar antes sigue abierta hasta el día 7 (27 §7). La pista se verá el eco de d7.2 igualmente.",
           "hilos": [
@@ -671,7 +820,7 @@
       "dia": 5,
       "nombre": "Un respiro",
       "fecha": "26 de otoño",
-      "mecanica_nueva": "Ninguna obligatoria. Opcional: la mejora de una herramienta (pico a nivel 2), con ayuda a pedido en un «?» y sin ventana de tutorial (27 §8).",
+      "mecanica_nueva": "La mejora de una herramienta (pico a nivel 2): paso guiado obligatorio una vez, con el «?» como repaso. Mejorar de verdad sigue libre (27 §8, §2.4).",
       "objetivo_del_dia": "Entregar el pedido, decidir cuánto le cuentas a Lucía (n-i-lucia-rumor) y, si quieres, mejorar el pico. Día de respiro: la tarde es libre (27 §1, §8).",
       "estado_al_empezar": {
         "esquirlas": "Derivado: lo acumulado hasta el día 4",
@@ -716,6 +865,20 @@
           "opcional": [
             "Cualquiera de las tres respuestas a Lucía (callar solo baja m-lucia; no quita el rumor del ferrocarril; 27 §8)."
           ],
+          "tutorial": [
+            {
+              "que": "Entregar un pedido y cobrar (primera vez)",
+              "como": "Al presentarte con el pedido, se resaltan el botón de entregar, el cobro y el impuesto del 3 %. Guía: ⏳ F5-01.",
+              "compuerta": "d5.2 no se suelta hasta cobrar la entrega, si hay pedido.",
+              "si_falla": "Si te falta mercancía, se indica cuánta y el pedido sigue abierto hasta el plazo. Si no hay pedido (lo dejaste ir), el paso se aplaza a la primera entrega real (el urgente del día 6 o un pedido posterior)."
+            },
+            {
+              "que": "Intercambiar rumores con Lucía (n-i-lucia-rumor)",
+              "como": "Lucía da primero el suyo; luego tres botones (entero, mitad, callar) con su efecto escrito. Se explica que un rumor de boca puede ser falso. Textos: ⏳ F3-47.",
+              "compuerta": "La decisión se toma una vez; d5.3 y d5.4 esperan en la cola hasta resolverla (ob-7).",
+              "si_falla": "Sin cronómetro. Callar solo baja la confianza de Lucía; nunca deja sin material."
+            }
+          ],
           "si_no_lo_haces": "d5.1 no se juega sin pedido (condicional). d5.2 espera en la cola si no se juega (27 §21.3).",
           "hilos": [
             "h-lealtad-de-lucia"
@@ -729,14 +892,14 @@
             "d5.3"
           ],
           "lugar": "boca de las Galerías (ed-vb-mina-galerias), libre",
-          "dispara": "Día 5 por la tarde, si pasas por Teo con 3 hierro. Sin plazo (27 §21.3). Es la única escena opcional del acto.",
+          "dispara": "Día 5 por la tarde, al pasar por Teo. Sin plazo (27 §21.3). El paso guiado de la mejora es obligatorio una vez; mejorar de verdad (con 3 hierro) es libre.",
           "pasos": [
             "1. La tarde es libre: puedes salir a las Galerías, vender, mirar el mercado o no hacer nada (27 §8).",
             "2. Si quieres mejorar el pico, ve con Teo con 3 hierro y 480 esquirlas. Teo forja el pico y te lo devuelve ya tuyo.",
             "3. Si no quieres, ahorra: guarda el dinero para la cuota del día 7."
           ],
           "como": [
-            "Ayuda a pedido: la oferta de Teo tiene un «?» que explica qué mejora y cuánto cuesta (27 §8). No hay ventana de tutorial.",
+            "Paso guiado la primera vez (27 §2.4); después la oferta de Teo tiene un «?» de repaso que explica qué mejora y cuánto cuesta (27 §8).",
             "La mejora se paga en la oferta de Teo (gesto por definir en ⏳ F3-12, tarea de herramientas y mejoras).",
             "Si no tienes 3 hierro, saca hierro con el pico (Picado sirve para hierro; 26) en una expedición normal (1 bloque)."
           ],
@@ -745,11 +908,19 @@
             "Medido por el simulador: mejorar el día 5 baja el pago de la cuota a tiempo de 99,6 % a 90,6 % del jugador medio y deja un margen del 45 % de la cuota (28 §13.3). «Ahorrar o mejorar» es una decisión real.",
             "Si no mejoras: nada cambia; el acto cierra igual (27 §8)."
           ],
-          "obligatorio": false,
-          "por_que_obligatorio": "Opcional por decisión del autor (27 §1, 2026-10-13): ni la puerta ni ninguna bandera la leen.",
+          "obligatorio": true,
+          "por_que_obligatorio": "El paso guiado de la mejora es obligatorio una vez (decisión del autor, 2026-10-24, que revoca la del 2026-10-13): toda primera vez lleva tutorial y compuerta. Mejorar de verdad sigue libre: ni la puerta ni ninguna bandera la leen.",
           "opcional": [
-            "La mejora completa.",
+            "Pagar la mejora (recorrer el paso guiado es obligatorio una vez; pagar, no).",
             "Una expedición, ventas o nada en la tarde libre."
+          ],
+          "tutorial": [
+            {
+              "que": "Mejorar una herramienta (primera vez): el pico de nivel 2",
+              "como": "Al pasar por Teo (marcador en la boca de las Galerías) se abre su oferta en paso guiado: se resaltan lo que mejora (rendimiento x1,25, energía x0,90, resistencia, carga), el costo (3 hierro y 480 esquirlas) y los botones «Mejorar» y «Ahora no». El «?» queda como repaso, no como único apoyo. Guía: ⏳ F5-01; mejora: ⏳ F3-12.",
+              "compuerta": "El paso guiado se recorre una vez, entero, y no se puede saltar: d5.4 y las escenas siguientes esperan en la cola hasta completarlo. Completarlo exige abrir la oferta y pulsar una de las dos opciones; no obliga a pagar. Después la oferta es libre.",
+              "si_falla": "Sin los 3 hierro o sin 480 esquirlas, el paso corre en vista previa (muestra el costo, indica qué falta y no cobra) y cuenta como hecho; la mejora real queda abierta sin plazo. Si cierras la oferta, Teo la repite al volver."
+            }
           ],
           "si_no_lo_haces": "Si no mejoras, el pico sigue prestado hasta el día 7, cuando Teo te lo deja. Sin hierro, la mejora espera sin plazo. Saltarse d5.3 no cambia nada (27 §8).",
           "hilos": [],
@@ -778,6 +949,7 @@
           "obligatorio": false,
           "por_que_obligatorio": "Escena condicional (con «nada» no se juega). No cierra puerta.",
           "opcional": [],
+          "tutorial": [],
           "si_no_lo_haces": "Con «nada» no se juega; si no la juegas se queda en la cola (24 §10).",
           "hilos": [
             "h-vega-mansa-y-el-juramento"
@@ -840,7 +1012,7 @@
       "nombre": "El rumor",
       "fecha": "27 de otoño",
       "mecanica_nueva": "Confirmar un rumor con la noticia oficial del día siguiente: el Teletipo adelanta, el Heraldo confirma (27 §9).",
-      "objetivo_del_dia": "Leer el rumor del ferrocarril y quedarte con la idea de que mañana el Heraldo lo confirmará o no. Día ligero: el pedido urgente es opcional (27 §1, §9).",
+      "objetivo_del_dia": "Leer el rumor del ferrocarril y quedarte con la idea de que mañana el Heraldo lo confirmará o no. Día ligero: el tablón y el pedido urgente se recorren con un paso guiado una vez; aceptarlo es libre (27 §1, §9, §2.4).",
       "estado_al_empezar": {
         "esquirlas": "Derivado: lo acumulado hasta el día 5",
         "inventario": "Hierro y carbón que tengas",
@@ -864,11 +1036,11 @@
           "pasos": [
             "1. Pasa por el puesto. Llega el Teletipo con un rumor: el ferrocarril compraría hierro. Termina en SIN CONFIRMAR.",
             "2. Entiende que un rumor no es una noticia: mañana el Heraldo dirá si es cierto.",
-            "3. Mira el tablón: hay una tarjeta de pedido urgente, opcional (6 sacos de hierro, prima del 35 %)."
+            "3. Sal a la calle y abre el tablón: un paso guiado te lleva a la tarjeta del pedido urgente (6 sacos de hierro, prima del 35 %). Abrirla es obligatorio una vez; aceptarla o ignorarla es libre."
           ],
           "como": [
             "Leer el Teletipo: llega al mostrador (27 §5) o se consulta en la libreta, pestaña Mercado en solo lectura (30 §7).",
-            "Tablón de pedidos: usar el tablón en la calle (30 §5, ⏳ F3-58). Aceptar el urgente es opcional y no abre tutorial; la ayuda está en un «?» (27 §9).",
+            "Tablón de pedidos: usar el tablón en la calle (30 §5, ⏳ F3-58). La primera vez, un paso guiado recorre la tarjeta; aceptar el urgente es libre y el «?» queda como repaso (27 §9, §2.4).",
             "Si aceptas el urgente, necesitas 6 sacos de hierro (se sacan con el pico; 27 §16)."
           ],
           "se_espera": [
@@ -877,16 +1049,30 @@
             "Pedido urgente (si lo aceptas): 6 de hierro, +35 %, valor 6 x 90 x 1,35 = 729 esquirlas (28 §9.3), plazo corto, entrega el día 7; penalización de hasta el 5 % del valor, que nunca bloquea (28 §9.3; 27 §9). Texto de la tarjeta ⏳ F3-32.",
             "Ningún hilo sembrado este día (27 §9)."
           ],
-          "obligatorio": false,
-          "por_que_obligatorio": "Ningún elemento del día 6 es obligatorio: no hay hilo, no hay bandera ni parte de la puerta. Es el día de la lección de prensa (27 §9).",
+          "obligatorio": true,
+          "por_que_obligatorio": "Los dos pasos guiados (el rumor sin confirmar y el tablón con el pedido urgente) son obligatorios una vez (decisión del autor, 2026-10-24, que revoca la del 2026-10-13). No hay hilo, bandera ni parte de la puerta: lo libre sigue siendo aceptar o ignorar el pedido (27 §9).",
           "opcional": [
-            "Aceptar el pedido urgente.",
+            "Aceptar el pedido urgente (abrir la tarjeta es obligatorio una vez; aceptarla, no).",
             "Salir de expedición, vender o no hacer nada (tarde libre)."
+          ],
+          "tutorial": [
+            {
+              "que": "Un rumor sin confirmar (SIN CONFIRMAR) y cómo se confirma",
+              "como": "El titular del Teletipo lleva la etiqueta SIN CONFIRMAR con texto y símbolo (no solo color). Un cuadro dice que mañana el Heraldo confirmará o no, y señala dónde se leerá. Textos: ⏳ F3-31, ⏳ F3-47; guía: ⏳ F5-01.",
+              "compuerta": "d6.2 (cierre del día) no se suelta hasta leer el rumor y cerrar el cuadro.",
+              "si_falla": "El rumor queda en el Diario y en la libreta; si no lo lees, el cuadro vuelve al volver al puesto. El Heraldo del día 7 lo explica solo."
+            },
+            {
+              "que": "El tablón de pedidos y la tarjeta del pedido urgente con prima",
+              "como": "Al salir a la calle, un marcador lleva al tablón. Paso guiado: abrir la tarjeta, ver 6 sacos de hierro, prima del 35 % (729 esquirlas), plazo corto y la penalización máxima del 5 %, y elegir «Aceptar» o «Ignorar». El «?» queda como repaso. Guía: ⏳ F5-01; tablón: ⏳ F3-58; texto: ⏳ F3-32.",
+              "compuerta": "El paso guiado se recorre una vez, entero, y no se puede saltar: d6.2 y el día 7 esperan en la cola hasta abrir la tarjeta y elegir. Elegir es libre; no hay que aceptarla.",
+              "si_falla": "Ignorar no penaliza y cuenta como completado. Si aceptas y no llegas a tiempo, a lo sumo el 5 % del valor, sin bloquear nada. Sin hierro todavía, puedes aceptar igual y sacarlo con el pico. Si cierras la tarjeta a medias, el marcador vuelve."
+            }
           ],
           "si_no_lo_haces": "Si no lees el rumor, el Heraldo del día 7 se explica solo. Si no aceptas el pedido urgente, no pasa nada: nunca fue obligatorio (27 §9).",
           "hilos": [],
           "prensa": "Teletipo: «FERROCARRIL COMPRARÍA HIERRO EN GRAN CANTIDAD. PRECIO SUBIRÍA. SIN CONFIRMAR» (⏳ F3-31). Sin noticia del Heraldo hoy.",
-          "ayuda_en_pantalla": "Qué es SIN CONFIRMAR; el Heraldo de mañana lo confirma o no; el tablón: el pedido urgente es opcional (27 §21.5)."
+          "ayuda_en_pantalla": "Qué es SIN CONFIRMAR; el Heraldo de mañana lo confirma o no; el tablón: paso guiado del pedido urgente, que es libre aceptar (27 §21.5, §2.4)."
         },
         {
           "bloque": "Tarde",
@@ -911,6 +1097,14 @@
           "por_que_obligatorio": "La tarde es libre por diseño (27 §9).",
           "opcional": [
             "Todo."
+          ],
+          "tutorial": [
+            {
+              "que": "Entregar el pedido urgente con prima (solo si lo aceptaste)",
+              "como": "La entrega se enseñó en d5.1; aquí solo hay un recordatorio con el plazo y la prima en el Diario, en «En curso». Sin proceso nuevo.",
+              "compuerta": "Ninguna dura: el plazo corre hasta la tarde del día 7 y la penalización máxima es del 5 %, sin bloquear nada.",
+              "si_falla": "Si no llegas, se aplica la penalización pequeña y el acto sigue igual."
+            }
           ],
           "si_no_lo_haces": "Nada.",
           "hilos": [],
@@ -938,6 +1132,7 @@
           "obligatorio": false,
           "por_que_obligatorio": "Escena de cierre del día, sin efectos en banderas.",
           "opcional": [],
+          "tutorial": [],
           "si_no_lo_haces": "Se juega al volver a casa; si no, espera en la cola.",
           "hilos": [],
           "prensa": null,
@@ -1037,6 +1232,14 @@
             "Entregar el pedido urgente.",
             "Últimas ventas."
           ],
+          "tutorial": [
+            {
+              "que": "La ficha de un empleado (primera vez) y el botón «Contratar» bloqueado",
+              "como": "Teo señala la sección de empleos; se abre la ficha del candidato sin nombre (Minero nivel 1, 70 esquirlas al día, Lealtad «?») con «Contratar» bloqueado y su motivo escrito: la mejora de la tienda pendiente. El bloqueo se muestra con candado y texto, no solo color. Guía: ⏳ F5-01; ficha: ⏳ F3-16.",
+              "compuerta": "d7.2 (la cuota) no se suelta hasta abrir la ficha (ob-3). Si no abres la sección, Teo la abre por ti en un paso guiado.",
+              "si_falla": "Puedes cerrar y reabrir la ficha desde el tablón del puesto; nunca se pierde."
+            }
+          ],
           "si_no_lo_haces": "Si no abres la sección de empleos, Teo lo cuenta y la ficha queda en el tablón del puesto; cuenta igual (27 §10, §15). Si se salta la primera hora, la escena se dispara en el primer bloque en que pases por el puesto, antes de la cuota de la tarde.",
           "hilos": [],
           "prensa": "Heraldo (confirmación del rumor del día 6). La ficha de candidato es lo único nuevo.",
@@ -1072,6 +1275,14 @@
           "opcional": [
             "Pagar antes (días 4 a 6), que adelanta la bandera y baja el interés 1 pp (27 §21.6)."
           ],
+          "tutorial": [
+            {
+              "que": "La cuota: pagar, pagar antes (ya hecho) o pedir tiempo (primera vez)",
+              "como": "La pantalla de la cuota resalta el importe ({cuota}: 960, o 900 si pagaste antes), el interés y los dos botones: «Pagar ahora» y «Pedir tiempo». Un cuadro explica el recargo ({recargo}) y la regla de tu dificultad. Si ya pagaste, es una línea de agradecimiento. Guía: ⏳ F5-01; textos: ⏳ F3-47.",
+              "compuerta": "La pantalla guiada se muestra una vez antes de poder responder. d7.3 exige la cuota atendida (ob-4); si no respondes se aplica la prórroga automática.",
+              "si_falla": "Si no te alcanza el dinero, «Pagar ahora» muestra cuánto falta y «Pedir tiempo» siempre está activo. Nunca bloquea y no hay reproche (27 §10)."
+            }
+          ],
           "si_no_lo_haces": "d7.2 se dispara sola. Solo si no respondes se aplica la prórroga automática con la regla de tu dificultad, sin reproche. La puerta se cumple igual: pagada o prorrogada (27 §10, §11).",
           "hilos": [
             "h-deuda-del-protagonista",
@@ -1106,6 +1317,7 @@
           "obligatorio": true,
           "por_que_obligatorio": "El sello es el premio del cierre (27 §1) y d7.3 exige cuota atendida y primer contacto hecho; el decreto abre el Acto II (24 §8).",
           "opcional": [],
+          "tutorial": [],
           "si_no_lo_haces": "Si falta alguna de las tres condiciones de la puerta, el Acto I no cierra y A1 espera; nada se pierde (24 §11).",
           "hilos": [],
           "prensa": "Decreto (titular de ⏳ F3-31): «¡Decreto del Ministerio de Recursos! ¡Se abren nuevas zonas en el Hollín!» No cuenta para el tope de prensa.",
@@ -1238,6 +1450,106 @@
       "por_que": "No hace falta para cerrar el Acto I (27 §14), pero las cintas 1 a 5 abren la puerta al Acto IV (24 §3, §9).",
       "verificacion": "Bandera cinta-1 y objeto «Carrete 1» en el inventario.",
       "falla_si": "No cierras la caja: la cinta espera sin caducar; si el acto cierra sin ella queda como misión persistente hasta el IV (27 §14)."
+    },
+    {
+      "id": "ob-10",
+      "tipo": "tutorial",
+      "que": "Primeros pasos guiados: moverte, entrar a un edificio, hablar y ver el libro de deuda.",
+      "dia": 1,
+      "bloque": "Mañana",
+      "por_que": "Toda primera vez lleva tutorial y compuerta (27 §2.4; decisión del autor, 2026-10-24). d1.4 no se suelta sin ellos.",
+      "verificacion": "d1.2 y d1.3 jugadas; el libro de deuda se abrió y se cerró una vez.",
+      "falla_si": "Imposible por omisión: el marcador y el aviso se repiten; nada caduca."
+    },
+    {
+      "id": "ob-11",
+      "tipo": "tutorial",
+      "que": "Expedición guiada: cruzar una entrada y confirmar, escanear una mena y picar tres menas con Teo.",
+      "dia": 1,
+      "bloque": "Tarde",
+      "por_que": "Primera vez de la mecánica central (27 §2.4). Cierra d1.4 y suelta d1.5.",
+      "verificacion": "Tres menas picadas en la expedición guiada; d1.4 jugada.",
+      "falla_si": "Sales sin picar: el bloque se devuelve y la lección se repite, sin penalización."
+    },
+    {
+      "id": "ob-12",
+      "tipo": "tutorial",
+      "que": "Abrir la libreta, recorrer sus pestañas (incluido el Mapa) y pasar el día con la barra.",
+      "dia": 1,
+      "bloque": "Noche",
+      "por_que": "Primera vez de la libreta, el mapa y la barra superior (27 §2.4; 30 §8). d1.6 no se abre sin la libreta.",
+      "verificacion": "La libreta se abrió y se vio la pestaña Mapa; el día 1 se cerró.",
+      "falla_si": "Imposible por omisión: el resaltado se repite; cerrar la libreta nunca gasta bloque."
+    },
+    {
+      "id": "ob-13",
+      "tipo": "tutorial",
+      "que": "Surtir los estantes y fijar el precio antes de abrir la tienda por primera vez.",
+      "dia": 2,
+      "bloque": "Tarde",
+      "por_que": "Primera vez de la tienda (27 §2.4). Abrir la tienda se habilita con un estante surtido y con precio.",
+      "verificacion": "Un estante surtido con precio fijado antes de d2.3.",
+      "falla_si": "Sin mercancía: el saco de la trastienda garantiza algo que colocar."
+    },
+    {
+      "id": "ob-14",
+      "tipo": "tutorial",
+      "que": "Perforación guiada: hacer una perforación con éxito con el taladro de Teo.",
+      "dia": 3,
+      "bloque": "Mañana",
+      "por_que": "Primera vez de la Perforación (27 §2.4). Sin ella no hay hierro ni d3.4.",
+      "verificacion": "Una mena de hierro perforada con éxito; Teo recoge el taladro tras d3.4.",
+      "falla_si": "Sobrecalentar no daña: la herramienta se detiene y Teo repite."
+    },
+    {
+      "id": "ob-15",
+      "tipo": "tutorial",
+      "que": "Leer una noticia y el mercado con sus flechas, y elegir vender o guardar el hierro.",
+      "dia": 3,
+      "bloque": "Tarde",
+      "por_que": "Primera vez de la prensa y del mercado (27 §2.4). d3.4 no se abre sin la noticia leída.",
+      "verificacion": "La noticia del hierro está leída y d3.4 jugada.",
+      "falla_si": "No puede fallar: la noticia queda en el Diario y no caduca."
+    },
+    {
+      "id": "ob-16",
+      "tipo": "tutorial",
+      "que": "Pedido de cliente y primera ronda guiada del Regateo.",
+      "dia": 4,
+      "bloque": "Mañana",
+      "por_que": "Primera vez del pedido y del Regateo (27 §2.4). Después aceptar o dejar ir es libre.",
+      "verificacion": "La tarjeta se abrió y la primera ronda del Regateo se jugó entera.",
+      "falla_si": "El cliente se va: cuenta como jugado, sin castigo; llega otro pedido."
+    },
+    {
+      "id": "ob-17",
+      "tipo": "tutorial",
+      "que": "Recorrer el paso guiado de la mejora del pico con Teo (no hace falta pagarla).",
+      "dia": 5,
+      "bloque": "Tarde",
+      "por_que": "Revoca la decisión del 2026-10-13: el día 5 deja de ser «sin tutorial forzado» (27 §2.4; decisión del autor, 2026-10-24). Mejorar de verdad sigue libre.",
+      "verificacion": "La oferta de Teo se abrió y se pulsó «Mejorar» o «Ahora no»; con falta de hierro o dinero, se hizo en vista previa.",
+      "falla_si": "Cerrar la oferta a medias: Teo la repite. d5.4 y las escenas siguientes esperan en la cola hasta completarla."
+    },
+    {
+      "id": "ob-18",
+      "tipo": "tutorial",
+      "que": "Leer el rumor SIN CONFIRMAR del Teletipo y cerrar su cuadro explicativo.",
+      "dia": 6,
+      "bloque": "Mañana",
+      "por_que": "Primera vez de confirmar un rumor (27 §2.4). d6.2 no se suelta sin él.",
+      "verificacion": "El rumor del ferrocarril está leído y el cuadro cerrado.",
+      "falla_si": "Imposible por omisión: el cuadro vuelve al pasar por el puesto; el Heraldo del día 7 lo explica solo."
+    },
+    {
+      "id": "ob-19",
+      "tipo": "tutorial",
+      "que": "Recorrer el paso guiado del tablón: abrir la tarjeta del pedido urgente y elegir aceptar o ignorar.",
+      "dia": 6,
+      "bloque": "Mañana",
+      "por_que": "Revoca la decisión del 2026-10-13: el pedido urgente deja de ser «sin tutorial forzado» (27 §2.4; decisión del autor, 2026-10-24). Aceptarlo sigue libre.",
+      "verificacion": "La tarjeta se abrió y se eligió «Aceptar» o «Ignorar»; ignorar cuenta como completado.",
+      "falla_si": "Cerrar la tarjeta a medias: el marcador vuelve. d6.2 y el día 7 esperan en la cola hasta completarla."
     }
   ],
   "puerta_del_acto": {
@@ -1850,7 +2162,7 @@
     "Día 3 · El hierro: perforas con el taladro de Teo, Lucía debuta con la sombra de la Comisión, guardas el hierro (3 o más sacos para poder mejorar).",
     "Día 4 · El cliente: aceptas el pedido de 8 de carbón (448), regateas, reúnes el carbón, el Heraldo cita tu tienda y tomas café con Reme (la pista de tu variante).",
     "Día 5 · Un respiro: entregas el pedido (448 menos 3 %), cuentas tu rumor a Lucía (m-lucia), decides entre ahorrar o mejorar el pico (480 + 3 hierro) y lees la carta de casa.",
-    "Día 6 · El rumor: el Teletipo anuncia que el ferrocarril compraría hierro, sin confirmar; tarde libre (pedido urgente de 729 opcional); a casa, mañana habla el Heraldo.",
+    "Día 6 · El rumor: el Teletipo anuncia que el ferrocarril compraría hierro, sin confirmar; tarde libre (tablón guiado una vez; pedido urgente de 729 libre de aceptar); a casa, mañana habla el Heraldo.",
     "Día 7 · La cuota: el Heraldo confirma, Teo te enseña la ficha del candidato con «Contratar» bloqueado (condición 3), pagas la cuota de 960 (o 900 si pagaste antes) o prorrogas (condición 2), Quiroga te sella «Minero con licencia» y el decreto cierra el Acto I."
   ],
   "errores_comunes_y_recuperacion": [
@@ -1939,7 +2251,8 @@
     "El rango del margen se fija en la pantalla de la tienda ⏳ F2-20 (27 §5).",
     "«Si no alcanza» la gestión de Quiroga se compara con el efectivo total: 120 más la venta (27 §5).",
     "Consejo: no vendas todo tu carbón; el pedido pide 8 y una expedición da unos 5 (27 §7).",
-    "Villa Brasa no tiene mapa interno en el MVP: solo se camina (30 §5; 26)."
+    "Villa Brasa no tiene mapa interno en el MVP: solo se camina (30 §5; 26).",
+    "Todo proceso de primera vez y todo paso obligatorio lleva tutorial guiado y compuerta; nada se puede saltar y ninguna compuerta bloquea la partida. La mejora del pico (d5.3) y el tablón con el pedido urgente (d6) se enseñan en un paso guiado que se completa una vez; después son libres. Revoca la decisión del 2026-10-13 de «sin tutorial forzado» (27 §2.4; decisión del autor, 2026-10-24)."
   ],
   "imagenes": {
     "d1.1": {

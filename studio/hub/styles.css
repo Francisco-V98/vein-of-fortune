@@ -957,6 +957,12 @@ main.is-deck { padding: 0; max-width: none; }
 .s1-ver { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; margin: 6px 0 0 26px; font-size: 12.5px; }
 .s1-ver dt { color: var(--dim); }
 .s1-ver dd { margin: 0; }
+.s1-tut { border-left: 3px solid var(--accent-hi); padding-left: 10px; }
+.s1-tutlist { list-style: none; margin: 4px 0 6px; padding: 0; font-size: 13.5px; }
+.s1-tutlist > li { margin: 8px 0; }
+.s1-tutlist .s1-ver { margin-left: 0; }
+.s1-tutlist .s1-gate-k { color: var(--accent-hi); font-weight: 700; }
+.s1-tutlist .s1-gate-k::before { content: "\25A0  "; }
 button.chip:disabled { opacity: .45; cursor: not-allowed; }
 @media (max-width: 900px) { .s1-states { grid-template-columns: 1fr; } .s1-block > summary { grid-template-columns: 1fr; } .s1-badges { justify-content: flex-start; } }
 @media print {
