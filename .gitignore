@@ -33,3 +33,6 @@ studio/hub/data.js
 
 # Vault de Obsidian generado por studio/hub/build.py (F0-90): no se versiona
 studio/cerebro/
+
+# Exportaciones de /consumo
+.claude/consumo/

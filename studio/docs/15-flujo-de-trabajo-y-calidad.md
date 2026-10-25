@@ -241,6 +241,35 @@ Decisión del autor (2026-10-23, [ADR-0010](adr/0010-politica-de-modelos-y-autor
 - **Lotes:** los agentes independientes se lanzan juntos y sus informes se procesan juntos.
 - **Cierre de sesión:** al fusionar el PR de una tarea se cierra la sesión o se compacta, para no arrastrar un contexto grande a la tarea siguiente.
 
+### Ajustes finos (F0-89) ✅
+
+Decisiones del autor (2026-10-25):
+
+- **Agentes cortos:** un agente = un entregable. Se divide el encargo si pasa de unos 60 turnos, si su informe superaría las 6.000 caracteres o si mezcla dos entregables que no comparten archivos. Ejemplo: en lugar de «implementa la herramienta, escribe la documentación y revisa todo», se lanzan el desarrollador (herramienta y pruebas), después el revisor y después QA, cada uno con su encargo de un archivo del scratchpad.
+- **Prefijo fijo:** lo que depende del repositorio es `CLAUDE.md`, la skill `modo-conciso` y el bloque común de los agentes; sus tamaños se miden y se vigilan (tabla más abajo). Los MCP y skills globales son configuración personal y no se commitean: para quitar los que este proyecto no usa se desactivan por proyecto con `/mcp` o con `.claude/settings.local.json` (ignorado por git). La lista de cuáles quitar la decide el autor; nunca se hace `git add` de `.claude/settings.json`.
+- **`/consumo` por rol:** la pestaña «Roles» reparte los tokens nuevos por rol, modelo y esfuerzo; lo que no se puede atribuir sale como «sin rol». `/consumo exportar` guarda un JSON local sin el texto de los prompts para la comparación.
+- **Éxito del ahorro:** la fracción de tokens nuevos en subagentes baja del 56 % del ADR-0010, o el costo por tarea comparable baja al menos un 20 %.
+
+**Tamaño del prefijo fijo que controla el repositorio** ✅ (bytes, antes de F0-89 → después):
+
+| Pieza | Antes | Después |
+|---|---|---|
+| `CLAUDE.md` | 5.321 | 5.419 (+98: regla de dividir agentes; no había texto duplicado que recortar sin perder reglas) |
+| Skill `modo-conciso` | 1.836 | 1.836 |
+| `.claude/agents/*` (19 archivos; solo su descripción entra siempre) | 46.206 | 46.206 |
+
+**Medición antes y después de F0-87** ✅ (almacén de `/consumo`, tokens nuevos = entrada + salida + caché escrita; el autor ya tiene `/consumo exportar` para repetirla con rol y esfuerzo):
+
+| Día | Prompts | Tokens nuevos por prompt | Parte en subagentes |
+|---|---|---|---|
+| 2026-10-13 (antes) | 22 | 238 000 | 54 % |
+| 2026-10-15 (antes) | 20 | 354 000 | 62 % |
+| 2026-10-16 (antes) | 40 | 157 000 | 58 % |
+| 2026-10-24 (después) | 154 | 24 000 | 4 % |
+| 2026-10-25 (después) | 59 | 11 000 | 2 % |
+
+Lectura: se cumplen los dos umbrales (la parte en subagentes baja del 56 % y los tokens nuevos por prompt bajan mucho más del 20 %). Límites: es una comparación por días y no por pares de tareas, porque el texto guardado de cada prompt (200 caracteres) no permite emparejar tareas fiables; los días de «antes» eran de investigación con muchos agentes largos y los de «después» de tareas pequeñas; y el «después» probablemente subestima los subagentes, porque el almacén solo ve los turnos de las sesiones con el mod cargado. Por eso la cifra definitiva saldrá de la pestaña «Roles» con las próximas tareas, que ya reparte por rol, modelo y esfuerzo.
+
 ## Ajustes de GitHub que hace el autor ✅
 
 Tarea F0-35. Decisiones del autor (2026-10-24): el repositorio se hace **público** (el plan gratuito no permite proteger ramas en repos privados), licencia propietaria de solo consulta (`LICENSE`), merge commit sin historial lineal, las 5 comprobaciones requeridas y reglas también para admins. Se acepta que el correo `frncsico@gmail.com` quede visible en 188 commits antiguos.

@@ -1,0 +1,90 @@
+{
+  "id": "F0-89",
+  "history": [
+    {
+      "at": "2026-10-25",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Cierra el bloque «Ahorro de tokens y herramientas» (S-09)",
+      "ref": "rama studio/F0-89-consumo-por-rol"
+    },
+    {
+      "at": "2026-10-25",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-89"
+    },
+    {
+      "at": "2026-10-25",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea",
+      "ref": "PR #78"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Omitida: el plan de tres fases del autor (2026-10-23) ya fija el alcance"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "nota": "Datos que guardan vf-consumo y vf-equipo, prefijo fijo del repositorio frente al personal, límites de la medición y 5 decisiones; el autor eligió guía y tamaños, /consumo exportar, umbral de 20 % o por debajo del 56 % y pares elegidos por Claude",
+        "at": "2026-10-25",
+        "por": "analista"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "vf-consumo reparte por rol, modelo y esfuerzo (pestaña Roles) y exporta sin prompts; guía de agentes cortos, tamaños del prefijo y medición antes/después en el documento 15; la revisión halló 10 puntos y se corrigieron 8",
+        "at": "2026-10-25",
+        "por": "herramientas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "nota": "Aprobado: build estricto sin avisos, 402 pruebas de tools/ci OK, vf-consumo 27/27, vf-estado 3/3; vf-equipo conserva un fallo anterior ajeno a la tarea",
+        "at": "2026-10-25",
+        "por": "qa"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "nota": "El autor revisó el entregable, lo aprobó y dio «Terminé mi parte»",
+        "at": "2026-10-25",
+        "por": "autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida",
+        "nota": "Omitida: herramienta del estudio, sin juego que probar"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "nota": "PR #78 fusionado con merge commit",
+        "at": "2026-10-25",
+        "por": "coordinador"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "tipo": "entrega",
+        "at": "2026-10-25",
+        "que": "/consumo por rol listo"
+      }
+    ]
+  }
+}
