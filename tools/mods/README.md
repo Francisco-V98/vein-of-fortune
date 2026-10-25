@@ -10,7 +10,7 @@ Tres mods, en un marketplace local llamado `vein-mods`. Documentación del equip
 
 ## Seguridad
 
-Un mod corre con tus mismos permisos y sin aislamiento. Lee el código antes de instalarlo: está en `hooks/register.js` de cada mod. `vf-consumo` no lee ni ejecuta nada fuera de Claude Code: solo guarda en el almacén propio del mod, en tu carpeta de configuración, el texto de cada prompt (recortado a 200 caracteres), la carpeta del proyecto, los tokens y los porcentajes de las ventanas; no envía nada a ninguna parte. `vf-estado` solo lee archivos del repositorio y ejecuta `python3 studio/hub/build.py`, `git` y `gh pr list`. `vf-equipo` lee archivos del repositorio, ejecuta `gh pr list` y `git branch --show-current`, y sus botones envían un mensaje con tu nombre solo cuando los pulsas.
+Un mod corre con tus mismos permisos y sin aislamiento. Lee el código antes de instalarlo: está en `hooks/register.js` de cada mod. `vf-consumo` no lee ni ejecuta nada fuera de Claude Code: solo guarda en el almacén propio del mod, en tu carpeta de configuración, el texto de cada prompt (recortado a 200 caracteres), la carpeta del proyecto, los tokens (por prompt y por subagente), los porcentajes de las ventanas y, de los últimos 500 subagentes lanzados, su rol, modelo y esfuerzo (lo toma del evento de lanzamiento; no lee el almacén de `vf-equipo`); no envía nada a ninguna parte. Solo escribe fuera del almacén con `/consumo exportar`: un JSON en `.claude/consumo/` sin el texto de los prompts. Observa las llamadas a `Agent` sin modificarlas (solo apunta rol, modelo y esfuerzo). `vf-estado` solo lee archivos del repositorio y ejecuta `python3 studio/hub/build.py`, `git` y `gh pr list`. `vf-equipo` lee archivos del repositorio, ejecuta `gh pr list` y `git branch --show-current`, y sus botones envían un mensaje con tu nombre solo cuando los pulsas.
 
 ### Qué lee y qué intercepta `vf-equipo` sobre `Agent`
 
@@ -48,10 +48,13 @@ cd ../vf-consumo && claude plugin validate . && claude plugin test
 
 ## Consumo de tokens (`/consumo`)
 
-El panel tiene tres pestañas:
+El panel tiene cuatro pestañas:
 
 - **Ahora:** las ventanas de cinco horas y semanal con su porcentaje y cuándo se reinician, lo gastado hoy, cuántos tokens nuevos valen un punto de cada ventana (estimado con lo que el mod vio gastar) y los últimos prompts. La ventana de uso es de **cinco** horas, no seis.
 - **Prompts:** todos los prompts guardados, recientes o más caros primero; al pulsar uno se ve el detalle: tokens de entrada, salida y caché, cuánto fue del hilo principal y cuánto de subagentes, qué modelos y cuántos puntos subió cada ventana.
 - **Días:** los últimos 14 días, el gasto de la semana por modelo y los prompts más caros.
+- **Roles:** los tokens nuevos de la semana por rol, modelo y esfuerzo (hilo principal más subagentes). Lo que no se puede atribuir (registros anteriores a esta versión, un agente sin rol o con el lanzamiento ya olvidado) sale como «sin rol»; las filas suman el total. El esfuerzo solo aparece si el encargo lo fijó antes de lanzarse; si no, queda vacío.
+
+`/consumo exportar` guarda un JSON con las cifras (fecha, modelo, tokens por prompt y por rol) en `.claude/consumo/consumo-AAAA-MM-DD.json` dentro del proyecto y abre el panel. No incluye el texto de los prompts, la carpeta del proyecto ni identificadores de turno o de agente. La ruta se resuelve contra la carpeta de la sesión. Si el motor no deja escribir esa ruta, el panel muestra el error. No se verificó en una sesión real (solo en las pruebas con el motor simulado).
 
 Un prompt es un turno del hilo principal. Los subagentes que lanza cuentan dentro de ese prompt. «Tokens nuevos» es entrada, salida y caché escrita; la caché leída se muestra aparte porque pesa mucho menos. El historial se guarda en el almacén del mod: hasta 3.000 prompts y un resumen por día sin límite. En la línea de estado aparece el porcentaje de cada ventana. El porcentaje solo existe con una suscripción de Claude y el motor lo informa en puntos enteros, así que un prompt pequeño puede mostrar +0 puntos.

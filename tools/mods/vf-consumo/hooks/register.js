@@ -1,7 +1,7 @@
 // Mod de consumo: guarda cuántos tokens gasta cada prompt, cuánto sube cada ventana
 // (cinco horas y semanal) y arma un historial para ver en qué se fue el consumo.
 import {
-  acumularTurno, barra, cerrarRegistro, claveDia, coma, fechaCorta, frescos, hora, leerLimites, masCaros, nombreModelo,
+  acumularTurno, anotarAgente, barra, construirExportacion, porRol, PRINCIPAL, SIN_ROL, cerrarRegistro, claveDia, coma, fechaCorta, frescos, hora, leerLimites, masCaros, nombreModelo,
   nuevoRegistro, podar, porModelo, porcentaje, puntos, restarUso, sumarADia, sumarTardio, tiempoHasta, tokens,
   tokensPorPunto, ultimosDias, usoRegistro, usoVacio, sumarUso,
   CINCO_HORAS, MAX_MUESTRAS, SIETE_DIAS,
@@ -13,6 +13,8 @@ const PANE = 'vf-consumo'
 let registros = []
 let dias = {}
 let muestras = []
+let agentes = {} // agentId → { rol, modelo, esfuerzo, t }, propio de este mod y acotado
+const pendientes = [] // Agent en curso: de ahí sale el esfuerzo, que agent.spawn no trae
 let limites = { cinco: null, semana: null }
 const abiertos = new Map() // prompts en curso, por id de turno
 let ultimoCerrado = null // el último prompt guardado: recibe lo que un subagente gaste tarde
@@ -23,12 +25,14 @@ let orden = 'recientes'
 let abierto = null
 let pagina = 0
 let error = ''
+let aviso = ''
 
 async function cargarAlmacen($) {
   try {
     registros = (await $.store.get('registros')) || []
     dias = (await $.store.get('dias')) || {}
     muestras = (await $.store.get('muestras')) || []
+    agentes = (await $.store.get('agentes')) || {}
   } catch (e) {
     fallo('No se pudo leer el historial: ', e)
   }
@@ -83,6 +87,17 @@ function guardarTardio($, reg, delta) {
   })
 }
 
+function guardarAgente($, agentId, datos) {
+  return enCola(async () => {
+    try {
+      agentes = anotarAgente((await $.store.get('agentes')) || agentes, agentId, datos)
+      await $.store.set('agentes', agentes)
+    } catch (e) {
+      // sin el mapa el gasto sale como «sin rol»: no se avisa
+    }
+  })
+}
+
 function guardarMuestra($, ahora) {
   if (!limites.cinco && !limites.semana) return Promise.resolve()
   return enCola(async () => {
@@ -125,12 +140,12 @@ function carpeta(ruta) {
 async function registrarSubagente($, e, ahora) {
   const enCurso = [...abiertos.values()].pop()
   if (enCurso) {
-    acumularTurno(enCurso, e.usage, true, e.durationMs)
+    acumularTurno(enCurso, e.usage, true, e.durationMs, e.agentId)
     return
   }
   if (!ultimoCerrado) return
   const antes = { uso: usoRegistro(ultimoCerrado), sub: ultimoCerrado.sub, mod: { ...ultimoCerrado.mod } }
-  acumularTurno(ultimoCerrado, e.usage, true, e.durationMs)
+  acumularTurno(ultimoCerrado, e.usage, true, e.durationMs, e.agentId)
   const mod = {}
   for (const [m, u] of Object.entries(ultimoCerrado.mod)) mod[m] = restarUso(u, antes.mod[m] || usoVacio())
   const delta = { uso: restarUso(usoRegistro(ultimoCerrado), antes.uso), sub: restarUso(ultimoCerrado.sub, antes.sub), mod }
@@ -153,9 +168,32 @@ export function register(on) {
     return next(e)
   })
 
-  on('command.run', { command: 'consumo' }, async ($) => {
+  on('command.run', { command: 'consumo' }, async ($, e) => {
+    if (String((e && e.args) || '').trim().toLowerCase() === 'exportar') await exportar($)
     await $.ui.open({ id: PANE, title: 'Consumo', focus: true, closeOnEscape: true })
     return {}
+  })
+
+  // Solo observa los Agent que se lanzan (no los modifica): respaldo para el esfuerzo si agent.spawn no lo trae
+  on('tool.call', { tool: 'Agent' }, async ($, e, next) => {
+    pendientes.push({ id: e.tool_use_id, tipo: e.subagent_type || '', descripcion: e.description || '', esfuerzo: e.effort || '' })
+    if (pendientes.length > 50) pendientes.shift()
+    return next(e)
+  })
+
+  // Apunta rol, modelo y esfuerzo de cada subagente: lo necesita la vista «Roles»
+  on('agent.spawn', async ($, e, next) => {
+    const r = await next(e)
+    if (!r || r.deny || !r.agentId || e.resume) return r
+    try {
+      const i = pendientes.findIndex((p) => (e.tool_use_id && p.id === e.tool_use_id) || (p.tipo === e.subagentType && p.descripcion === e.description))
+      const p = i >= 0 ? pendientes.splice(i, 1)[0] : null
+      const rol = String(e.subagentType || '').split(':').pop()
+      await guardarAgente($, r.agentId, { rol, modelo: nombreModelo(r.model || e.model), esfuerzo: e.effort || (p && p.esfuerzo) || '', t: await $.clock.now() })
+    } catch (err) {
+      // un fallo aquí no debe frenar el lanzamiento
+    }
+    return r
   })
 
   // Cada turno del hilo principal es un «prompt»: aquí se abre su registro
@@ -229,6 +267,7 @@ export function register(on) {
           tab = nombre
           pagina = 0
           abierto = null
+          aviso = ''
           redibujar()
         },
       })
@@ -236,13 +275,15 @@ export function register(on) {
     const cabecera = Box({
       flexDirection: 'row',
       columnGap: 3,
-      children: [pestana('ahora', 'Ahora', '1'), pestana('prompts', 'Prompts', '2'), pestana('dias', 'Días', '3')],
+      children: [pestana('ahora', 'Ahora', '1'), pestana('prompts', 'Prompts', '2'), pestana('dias', 'Días', '3'), pestana('roles', 'Roles', '4')],
     })
 
     const cuerpo = []
     if (error) cuerpo.push(Text({ color: 'yellow', children: [error] }))
+    if (aviso) cuerpo.push(Text({ color: 'green', wrap: 'truncate', children: [aviso] }))
     if (tab === 'ahora') cuerpo.push(...vistaAhora(ctx))
     else if (tab === 'prompts') cuerpo.push(...vistaPrompts(ctx))
+    else if (tab === 'roles') cuerpo.push(...vistaRoles(ctx))
     else cuerpo.push(...vistaDias(ctx))
 
     return Box({ flexDirection: 'column', children: [cabecera, Text({ children: [' '] }), ...cuerpo] })
@@ -372,5 +413,47 @@ function vistaDias({ Text, ahora }) {
   const caros = masCaros(registros, Date.parse(semana[0].dia + 'T00:00:00'), 5)
   if (!caros.length) salida.push(linea(Text, 'Sin datos todavía.', true))
   for (const c of caros) salida.push(linea(Text, fechaCorta(claveDia(c.reg.t)) + ' ' + hora(c.reg.t) + ' · ' + tokens(c.nuevos) + ' · ' + c.reg.txt))
+  return salida
+}
+
+// Exporta cifras (sin el texto de los prompts) a un JSON local dentro del proyecto
+const RUTA_EXPORTACION = '.claude/consumo'
+
+async function exportar($) {
+  try {
+    const ahora = await $.clock.now()
+    let base = ''
+    try {
+      base = String((await $.session.cwd()) || '').replace(/\/+$/, '')
+    } catch (e) {
+      // sin carpeta de sesión se usa la ruta relativa
+    }
+    const ruta = (base ? base + '/' : '') + RUTA_EXPORTACION + '/consumo-' + claveDia(ahora) + '.json'
+    await $.fs.write(ruta, JSON.stringify(construirExportacion(registros, agentes, ahora), null, 2) + '\n')
+    error = ''
+    aviso = 'Exportado a ' + ruta + ' (' + registros.length + ' prompts, sin su texto)'
+  } catch (e) {
+    aviso = ''
+    fallo('No se pudo exportar: ', e)
+  }
+}
+
+const etiquetaFila = (f) => f.rol + (f.modelo ? ' · ' + f.modelo : '') + (f.esfuerzo ? ' · ' + f.esfuerzo : '')
+
+function vistaRoles({ Text, ahora }) {
+  const salida = []
+  const desde = Date.parse(ultimosDias(dias, 7, ahora)[0].dia + 'T00:00:00')
+  const filas = porRol(registros, agentes, desde)
+  const total = filas.reduce((a, f) => a + frescos(f.uso), 0)
+  salida.push(titulo(Text, 'Últimos 7 días por rol (tokens nuevos)'))
+  salida.push(linea(Text, 'Hilo principal más subagentes por rol, modelo y esfuerzo; lo que no se puede atribuir sale como «sin rol».', true))
+  if (!filas.length) salida.push(linea(Text, 'Sin datos todavía.', true))
+  for (const f of filas) {
+    const pct = total > 0 ? (frescos(f.uso) / total) * 100 : 0
+    salida.push(linea(Text, barra(pct, 10) + ' ' + tokens(frescos(f.uso)) + ' · ' + porcentaje(pct) + ' · ' + etiquetaFila(f) + (f.agentes ? ' (' + f.agentes + (f.agentes === 1 ? ' agente)' : ' agentes)') : ''), f.rol === SIN_ROL))
+  }
+  if (filas.length) salida.push(linea(Text, 'Total ' + tokens(total) + ' nuevos · «' + PRINCIPAL + '» no lleva modelo ni esfuerzo.', true))
+  salida.push(vacio(Text))
+  salida.push(linea(Text, '/consumo exportar guarda estas cifras en ' + RUTA_EXPORTACION + ' (sin el texto de los prompts).', true))
   return salida
 }
