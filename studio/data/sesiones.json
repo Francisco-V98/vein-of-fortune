@@ -89,7 +89,25 @@
     {
       "n": 4,
       "tema": "F0-35 Protección de main",
-      "fecha": "2026-10-24"
+      "fecha": "2026-10-24",
+      "resumen": "Protección de main: auditorías de seguridad y licencias, guía de GitHub (repo público, ruleset con 5 checks, merge commit), LICENSE de solo consulta y guía para correr el proyecto",
+      "tareas": [
+        "F0-35"
+      ],
+      "prs": [
+        "71"
+      ],
+      "docs": [
+        "11",
+        "15"
+      ],
+      "decisiones": [
+        "Repo público",
+        "Licencia propietaria de solo consulta",
+        "Merge commit sin historial lineal",
+        "5 comprobaciones requeridas y admins incluidos",
+        "Correo aceptado y todo visible"
+      ]
     }
   ]
 }

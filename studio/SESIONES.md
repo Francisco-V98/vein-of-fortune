@@ -8,6 +8,7 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 | S-01 · F0-85 a F0-94 Diseño de exploración, simulador y calendario | 2026-10-24 | F0-91, F0-92, F0-93, F0-94, F0-95, F0-96 | #60, #62, #63, #64, #65, #67 | Rediseñó la exploración (mapa con niebla, tren, asentamientos y minas caminables, ADR-0011), recalibró el simulador de minas, batería y cierres, creó el calendario con estaciones, clima y mini-historias (documento 29), el registro de sesiones y arregló el CI del simulador. |
 | S-02 · F0-25 Flujo de pantallas | 2026-10-24 | F0-25, F2-41, F0-97 | #66, #68 | Definió el flujo de pantallas: documento 30 con 18 nodos, transiciones con coste, mapa por estado, guardado y mando; añadió la tarea F2-41 (título, selector de 5 partidas y pausa) y alineó docs 01, 02, 10, 26, 27 y el ADR-0011. |
 | S-03 · F0-24 Storyboard del Acto I | 2026-10-24 | F0-24, F2-08 | — | F0-24: storyboard (15 imágenes), vista Semana 1 del hub con 28 escenas ilustradas (7 + 21 nuevas, medio 1k, ~11 créditos; total tarea ≈26,8) y 6 decisiones del autor aplicadas en docs 23, 27 y 30 F2-08 30 23 |
+| S-04 · F0-35 Protección de main | 2026-10-24 | F0-35 | #71 | Protección de main: auditorías de seguridad y licencias, guía de GitHub (repo público, ruleset con 5 checks, merge commit), LICENSE de solo consulta y guía para correr el proyecto |
 
 ## S-01 · F0-85 a F0-94 Diseño de exploración, simulador y calendario
 - Documentos: 26, 28, 29
@@ -37,3 +38,11 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 - margen y gestión contra efectivo total
 - sin mapa interno en el MVP
 - pedido de 8 sacos y hierro de la mejora a F2-08
+
+## S-04 · F0-35 Protección de main
+- Documentos: 11, 15
+- Repo público
+- Licencia propietaria de solo consulta
+- Merge commit sin historial lineal
+- 5 comprobaciones requeridas y admins incluidos
+- Correo aceptado y todo visible

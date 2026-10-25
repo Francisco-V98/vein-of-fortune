@@ -8,6 +8,14 @@
       "by": "claude",
       "note": "Protección de main: guía para el autor, licencia y preparación para repo público",
       "ref": "rama studio/F0-35-proteccion-de-main"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Guía de protección de main, licencia de solo consulta y preparación para repo público; aprobado por el autor",
+      "ref": "PR #71"
     }
   ],
   "comments": [],
@@ -39,13 +47,14 @@
         "estado": "hecha",
         "at": "2026-10-24",
         "por": "qa",
-        "nota": "QA aprobada: build estricto sin avisos, pruebas OK y nombres de las 5 comprobaciones coinciden con el CI",
         "nota": ""
       },
       {
         "etapa": "autor",
-        "estado": "pendiente",
-        "nota": "El autor ejecuta la guía del documento 15 en GitHub"
+        "estado": "hecha",
+        "nota": "El autor revisó el entregable (guía, licencia y ajustes), lo aprobó y dio «Terminé mi parte»; ejecuta la guía del documento 15 en GitHub tras la fusión",
+        "at": "2026-10-24",
+        "por": "autor"
       },
       {
         "etapa": "playtest",
@@ -54,8 +63,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente",
-        "nota": ""
+        "estado": "hecha",
+        "nota": "PR #71 fusionado con merge commit",
+        "at": "2026-10-24",
+        "por": "coordinador"
       }
     ],
     "traspasos": []
