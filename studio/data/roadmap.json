@@ -620,7 +620,7 @@
               "id": "F0-58",
               "title": "Pasada de cierre: flujo, QA y plan (06, 15, 16)",
               "est": 4,
-              "status": "review",
+              "status": "done",
               "prio": "P2",
               "desc": "Cerrar los puntos abiertos del plan, el flujo de trabajo y la calidad.",
               "done_when": "Cada documento por encima de la meta."

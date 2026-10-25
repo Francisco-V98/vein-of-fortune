@@ -11,6 +11,7 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 | S-04 · F0-35 Protección de main | 2026-10-24 | F0-35 | #71 | Protección de main: auditorías de seguridad y licencias, guía de GitHub (repo público, ruleset con 5 checks, merge commit), LICENSE de solo consulta y guía para correr el proyecto |
 | S-05 · F0-56 Pasada de cierre marca y arte | 2026-10-24 | F0-56, F1-12, F1-18, F4-227 | #72 | Cerró los puntos abiertos de dirección de arte y marca (docs 12 y 13) en dos rondas con el autor; ambos documentos quedan con 0 🟡 y 0 ❓; F1-12 absorbida por F1-18. |
 | S-06 · F0-57 Pasada de cierre técnico, legal y arquitectura | 2026-10-24 | F0-57 | #73 | Cierre de los puntos abiertos de los docs 10, 11 y 14 con 3 rondas de decisiones del autor; ADR-0012 y ADR-0013; audio por ruta gratuita |
+| S-07 · Cierre de flujo, QA y plan (F0-58) | 2026-10-25 | F0-58, F1-47 | #74 | Cierre de los puntos abiertos de los docs 06, 15 y 16 en 2 rondas de decisiones del autor; ADR-0005 a merge commit; commit sin ID = error en CI; F1-47; sesiones por bloques |
 
 ## S-01 · F0-85 a F0-94 Diseño de exploración, simulador y calendario
 - Documentos: 26, 28, 29
@@ -66,3 +67,12 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 - JSON como fuente del contenido (ADR-0013); pruebas con GUT
 - Nunca voces reales; audio gratis: bfxr-mcp, música propia en LMMS, REAPER opcional
 - Texto mínimo de 6 px en Steam Deck; Windows sin firmar hasta F5-22
+
+## S-07 · Cierre de flujo, QA y plan (F0-58)
+- Documentos: 06, 15, 16
+- Pago único, sin DLC de pago y demo con el Acto I
+- Merge commit y commit sin ID como error
+- Cobertura ≥ 80 % desde F2 y 10 % de horas para refactor
+- Salida de versión: 0 S1/S2, P0 y P1 aprobados, 0 softlocks
+- Windows real obligatorio, Steam Deck Verified en F4-239
+- Sesiones por bloques de tareas afines
