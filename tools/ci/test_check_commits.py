@@ -43,7 +43,15 @@ class AsuntosInvalidos(unittest.TestCase):
         self.assertTrue(any("punto" in p for p in cc.check_subject("docs: algo.")))
 
     def test_demasiado_largo(self):
-        self.assertTrue(any("máximo" in p for p in cc.check_subject("docs: " + "x" * 120)))
+        self.assertTrue(any("máximo" in p for p in cc.check_subject("docs: F0-58 " + "x" * 120)))
+
+    def test_sin_id_de_tarea_es_error(self):
+        problems = cc.check_subject("feat(market): modelo de precio")
+        self.assertTrue(any("tarea" in p for p in problems))
+
+    def test_merge_sin_id_no_es_error(self):
+        self.assertEqual(cc.check_subject("Merge pull request #73 from Francisco-V98/studio/F0-57-x"), [])
+        self.assertEqual(cc.check_subject("Merge branch 'main' into studio/F0-58-x"), [])
 
 
 class DeteccionDeTareas(unittest.TestCase):

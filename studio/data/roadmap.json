@@ -620,7 +620,7 @@
               "id": "F0-58",
               "title": "Pasada de cierre: flujo, QA y plan (06, 15, 16)",
               "est": 4,
-              "status": "backlog",
+              "status": "done",
               "prio": "P2",
               "desc": "Cerrar los puntos abiertos del plan, el flujo de trabajo y la calidad.",
               "done_when": "Cada documento por encima de la meta."
@@ -1466,6 +1466,15 @@
               "prio": "P1",
               "desc": "Arranque, cuadros por segundo y memoria en un PC de gama baja y en la Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009). Criterio de texto: fuente base de al menos 6 px (×2 = 12 px en la Deck).",
               "done_when": "Medidas registradas."
+            },
+            {
+              "id": "F1-47",
+              "status": "backlog",
+              "title": "CI impide que baje la limpieza de un documento",
+              "est": 4,
+              "prio": "P1",
+              "desc": "Un trabajo nuevo de ci.yml compara la limpieza de cada documento de studio/docs con la de main y falla si baja, o si queda algún punto abierto sin tarea válida (documento 15, «Limpieza del diseño»). Decisión del autor del 2026-10-25 (F0-58). Mientras no exista, la regla es manual y está en la definición de terminado.",
+              "done_when": "Un PR de prueba que baja la limpieza de un documento falla en la integración continua y otro que no la baja pasa."
             }
           ]
         }

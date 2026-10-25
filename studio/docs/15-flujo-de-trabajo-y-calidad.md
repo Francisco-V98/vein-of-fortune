@@ -2,9 +2,9 @@
 
 ## Requisito del autor ✅
 
-Trabajar **por ramas**, de forma **muy organizada**, cumpliendo la metodología de **clean code**. Este documento define cómo. El modelo concreto de ramas está marcado 🟡 hasta que lo confirmes ([ADR-0005](adr/0005-ramas-y-commits.md)).
+Trabajar **por ramas**, de forma **muy organizada**, cumpliendo la metodología de **clean code**. Este documento define cómo. El modelo de ramas está confirmado ([ADR-0005](adr/0005-ramas-y-commits.md), enmendado el 2026-10-25 a *merge commit*).
 
-## Modelo de ramas 🟡
+## Modelo de ramas ✅
 
 **GitHub Flow con ramas de versión.** `main` siempre está sano; todo el trabajo entra por ramas cortas y *pull requests*.
 
@@ -27,7 +27,7 @@ Trabajar **por ramas**, de forma **muy organizada**, cumpliendo la metodología 
 - **`main` está protegida:** nadie sube directamente; todo entra por PR con la integración continua en verde.
 - **Por qué no Git Flow completo:** una rama `develop` añade fusiones y no aporta nada a un proyecto de una persona con integración continua. Si prefieres Git Flow, se cambia con un ADR.
 
-## Commits ✅ / 🟡
+## Commits ✅
 
 Convención **Conventional Commits** en español, con el ID de la tarea:
 
@@ -52,7 +52,7 @@ Co-Authored-By: …
 
 - **Ámbito:** el módulo (`market`, `shop`…) o el área (`ci`, `roadmap`, `hub`).
 - Asunto de **hasta 100 caracteres**, sin punto final. Un commit = un cambio con sentido, que compila y pasa las pruebas.
-- Se verifica con `tools/ci/check_commits.py`. Un commit sin ID de tarea da aviso.
+- Se verifica con `tools/ci/check_commits.py`. **El ID de la tarea es obligatorio:** un commit sin él es un error de la integración continua (decisión del autor, 2026-10-25). Los commits de fusión («Merge …») y de reversión quedan exentos, y solo se revisa el rango del PR, no la historia anterior de `main`.
 
 ## Flujo de una tarea ✅
 
@@ -77,14 +77,14 @@ El estado de la tarea refleja siempre el de su rama, y queda registrado en el hi
 
 Dentro de estos estados, cada tarea recorre un flujo por etapas con un equipo de especialistas (ideación, análisis, producción, QA técnico, revisión y prueba del autor, y cierre); está descrito en [20](20-equipo-y-flujo-de-agentes.md).
 
-## Pull requests 🟡
+## Pull requests ✅
 
-- **Pequeños:** idealmente menos de ~400 líneas de cambio.
+- **Pequeños:** idealmente menos de ~400 líneas de cambio. Es una guía, no bloquea el PR (práctica habitual: los PR de menos de 400 líneas se revisan mejor); si se pasa, el PR explica por qué no se divide.
 - **Título** con la misma convención que los commits (el CI lo verifica en cada commit del PR).
 - **Plantilla** con qué, por qué, cómo se probó, evidencias y lista de verificación (`.github/pull_request_template.md`).
 - Se **fusionan con merge commit** (no squash ni rebase): conserva la rama `studio/<ID>-tema` y los commits `tipo(ámbito): ID descripción`, que el CI valida. Decisión del autor en F0-35: no se exige historial lineal.
 
-### Lista de revisión 🟡
+### Lista de revisión ✅
 
 - **Arquitectura:** ¿respeta capas y módulos? ¿pasa el verificador? ¿algo debería estar en otro módulo?
 - **Claridad:** nombres, funciones cortas, sin duplicación ni código comentado.
@@ -94,6 +94,7 @@ Dentro de estos estados, cada tarea recorre un flujo por etapas con un equipo de
 - **Seguridad y privacidad:** sin secretos, sin datos personales en telemetría, entradas validadas.
 - **Rendimiento:** sin trabajo costoso en cada cuadro; sin asignaciones innecesarias.
 - **Accesibilidad:** no depende solo del color; funciona con ratón y teclado y con mando (el táctil, en la fase móvil).
+- **Tutorial y compuerta:** si el cambio introduce algo de primera vez u obligatorio, trae su tutorial guiado y su compuerta, sin saltos ni softlock ([ADR-0012](adr/0012-modulo-tutorial-y-logros-en-progression.md), [27](27-guion-del-acto-i.md)).
 - **Documentación:** actualizada si cambió el comportamiento o la arquitectura.
 
 ## Integración continua ✅
@@ -108,9 +109,9 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 | `architecture` | Verificador de arquitectura sobre `game/` |
 | `game` | Formato, lint y pruebas de GDScript (se activa cuando exista `project.godot`) |
 
-## Definición de listo y de terminado 🟡
+## Definición de listo y de terminado ✅
 
-**Lista para empezar (Definition of Ready):** tiene descripción y "listo cuando", prioridad, estimación de hasta 20 horas y no depende de algo sin resolver.
+**Lista para empezar (Definition of Ready):** tiene descripción y "listo cuando", prioridad, estimación de hasta 20 horas (hoy ninguna tarea del roadmap la supera) y no depende de algo sin resolver.
 
 **Terminada (Definition of Done):**
 
@@ -121,7 +122,8 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 - [ ] Formato y lint sin avisos.
 - [ ] Textos en ES y EN; sin cadenas fijas.
 - [ ] Documentación y registro de decisiones al día si corresponde.
-- [ ] Si toca documentos de diseño: la limpieza no baja, lo que queda sin cerrar está marcado como diferido, con su tarea, y no hay conexiones rotas (hub, «Limpieza del diseño»).
+- [ ] Si toca algo de primera vez para el jugador u obligatorio para avanzar: tiene tutorial guiado y compuerta, sin saltos ni softlock ([ADR-0012](adr/0012-modulo-tutorial-y-logros-en-progression.md)); QA lo verifica ([16](16-calidad-y-qa.md)).
+- [ ] Si toca documentos de diseño: la limpieza no baja respecto de `main` (se comprueba a mano con el panel del hub hasta que exista ⏳ F1-47), lo que queda sin cerrar está marcado como diferido, con su tarea, y no hay conexiones rotas (hub, «Limpieza del diseño»).
 - [ ] Si crea imágenes o audio de prueba: van marcados como provisionales en `studio/data/assets.json` (campo `estado`) y no se pulen ([12](12-direccion-de-arte.md)).
 - [ ] Evidencia en la tarea (captura, resultado de pruebas o nota).
 - [ ] PR revisado y fusionado.
@@ -134,10 +136,10 @@ Se ejecuta en cada PR y en cada cambio de `main` (`.github/workflows/ci.yml`):
 
 | Qué | Regla |
 |---|---|
-| **Limpieza** de un documento | ✅ ÷ (✅ + 🟡 + ❓), en porcentaje. También se calcula para todo el diseño |
+| **Limpieza** de un documento | puntos cerrados ÷ puntos totales (cerrados más abiertos y dudas), en porcentaje. También se calcula para todo el diseño |
 | **Diferido** | `⏳ F2-04` marca algo que depende de una tarea posterior. No resta, pero debe nombrar una tarea que exista y que no esté terminada; si la tarea se termina, el punto debe resolverse |
 | **Conexión** | Los enlaces entre documentos y las tareas citadas deben existir. Una conexión rota es un error del build |
-| **Meta** | 🟡 Como mínimo 90 % por documento (umbral propuesto) y acercarse al 100 % |
+| **Meta** ✅ | Mínimo 90 % por documento; meta 100 %. Meta de la fase F0 (decisión del autor, 2026-10-25): ningún punto abierto en ningún documento; las dudas solo se admiten con un diferido válido y con el mínimo del 90 % |
 
 **Qué se puede aplazar ✅** (regla del autor, 2026-10-12)
 
@@ -158,10 +160,10 @@ Cada aplazamiento queda justificado en el informe del analista y lo comprueba QA
 
 **Cómo se atiende:**
 
-1. Un documento nuevo no se da por terminado mientras tenga puntos 🟡 o ❓ que se puedan decidir ya. Lo que no se puede decidir todavía se marca como diferido, con la tarea de la que depende.
+1. Un documento nuevo no se da por terminado mientras tenga puntos abiertos o dudas que se puedan decidir ya. Lo que no se puede decidir todavía se marca como diferido, con la tarea de la que depende.
 2. Los puntos abiertos se cierran en **pasadas de cierre por documento**: se presentan al autor, se decide, y se convierten en ✅. Cada pasada tiene su tarea en el roadmap.
 3. El panel **Limpieza del diseño** del hub muestra el porcentaje de cada documento, la lista de puntos por cerrar y las conexiones rotas. `python3 studio/hub/build.py --strict` informa el resumen y falla si hay conexiones rotas.
-4. 🟡 Más adelante la integración continua impedirá que la limpieza de un documento baje respecto de `main`.
+4. ⏳ F1-47: la integración continua impedirá que la limpieza de un documento baje respecto de `main`. Mientras tanto la regla es manual y está en la definición de terminado.
 
 **Coherencia ✅:** además de decidido, el diseño debe ser **coherente**: sin cabos sueltos en la historia, sin contradicciones entre documentos y sin números que rompan la economía. Es una segunda medida, independiente de la limpieza:
 
@@ -175,7 +177,7 @@ Cada aplazamiento queda justificado en el informe del analista y lo comprueba QA
 
 Es normal que ambos porcentajes empiecen bajos: suben a medida que se cierran las tareas y se profundiza el diseño. La meta es llegar al lanzamiento lo más cerca posible del 100 %.
 
-## Pruebas 🟡
+## Pruebas ✅
 
 | Nivel | Proporción orientativa | Qué cubre |
 |---|---|---|
@@ -183,26 +185,28 @@ Es normal que ambos porcentajes empiecen bajos: suben a medida que se cierran la
 | Casos de uso con dobles | ~20 % | Servicios de `application` con puertos falsos |
 | Integración y manuales | ~10 % | Varios módulos juntos y sensaciones en el dispositivo |
 
-- Meta de cobertura del dominio: **80 % o más**.
+- Las proporciones son una guía (pirámide de pruebas), no una cuota.
+- Meta de cobertura del dominio: **80 % o más**, exigible solo desde la F2 (decisión del autor, 2026-10-25); antes no hay código de dominio que medir. Se mide con GUT desde ⏳ F1-33.
 - Las pruebas son parte de cada tarea (están incluidas en sus horas) y su resultado se registra en el catálogo de QA ([16](16-calidad-y-qa.md)).
 - Simulaciones largas del mercado (10.000 días) se ejecutan bajo demanda y antes de cada versión.
 - Un error corregido incorpora una prueba que lo reproduce.
 
-## Versionado y publicación 🟡
+## Versionado y publicación ✅
 
 - **SemVer** `MAJOR.MINOR.PATCH` para el juego, con etiquetas `vX.Y.Z` en `main`.
 - **`CHANGELOG.md`** en formato *Keep a Changelog*, derivado de los commits.
 - Steam: la versión del juego (`vX.Y.Z`) se registra en cada build subida. Fase móvil (después de la 1.0): en Android, `versionCode` que solo crece y `versionName` igual a la versión del juego ([10](10-tecnico-y-herramientas.md)).
+- **Antes de la 1.0** las versiones son `0.x.y` (prototipo, vertical slice y contenido); `1.0.0` es el lanzamiento en Steam. Las builds de Steam salen a la rama `beta` para probar y pasan a `default` solo al publicar una versión aprobada por QA.
 - Se corta `release/X.Y` cuando una versión está completa; allí solo entran correcciones.
 
 ## Decisiones de arquitectura (ADR) ✅
 
 Toda decisión que afecte la estructura, una dependencia o un proceso se registra en `studio/docs/adr/NNNN-titulo.md` con contexto, decisión, alternativas y consecuencias. Estados: **Propuesta**, **Aceptada**, **Reemplazada**. Se leen en el hub, sección *Decisiones de arquitectura*.
 
-## Deuda técnica 🟡
+## Deuda técnica ✅
 
 - Se registra como tarea de tipo `refactor`, nunca como un `TODO` suelto.
-- Cada fase incluye una **revisión de arquitectura y deuda técnica** con horas reservadas.
+- Cada fase incluye una **revisión de arquitectura y deuda técnica** con horas reservadas: el **10 %** de las horas de la fase se dedican a refactor y deuda (decisión del autor, 2026-10-25).
 - Regla del boy scout: se deja el código un poco mejor de como se encontró.
 
 ## Seguridad en el flujo ✅
@@ -216,6 +220,16 @@ Toda decisión que afecte la estructura, una dependencia o un proceso se registr
 - Cada sesión de trabajo empieza **creando una rama**; Claude no sube directamente a `main` ni fuerza subidas.
 - Claude abre cada cambio como rama y deja el PR listo; el autor revisa y fusiona.
 - Cada tarea documenta su evidencia y su referencia (`ref`) en el hub.
+
+## Sesiones por bloques ✅
+
+Decisión del autor (2026-10-25). Una sesión puede abarcar varias tareas:
+
+- **Bloque:** las tareas pequeñas o del mismo ámbito o de los mismos archivos (un grupo de la misma fase o del mismo documento) se hacen en una sola sesión, una tras otra.
+- **Sesión propia:** solo una tarea grande o densa (muchas decisiones del autor o contexto pesado).
+- **Nada cambia en el flujo:** una tarea = una rama = un PR, y cada tarea tiene su cierre.
+- **Tras fusionar** el PR, la sesión sigue con la tarea siguiente del bloque. Se compacta o se cierra al terminar el bloque o al pasar de unos 200 k tokens de contexto.
+- **Título:** `S-NN · <bloque o tema> (<IDs>)`, que se registra con `tools/sesion.py nueva`.
 
 ## Coste de la IA ✅
 
@@ -262,8 +276,6 @@ Si algo falla, el nombre de una comprobación en la regla debe coincidir con el 
 
 El QA es una etapa propia, entre la revisión y el cierre. Procedimiento completo, tipos de prueba, seguridad, errores y criterios de salida en [16 · Calidad y QA](16-calidad-y-qa.md).
 
-## Pendiente ❓
+## Pendiente ✅
 
-- Confirmar el modelo de ramas (ADR-0005) y el QA como etapa (ADR-0008).
-- Ejecutar la integración continua por primera vez en GitHub y corregir lo que aparezca.
-- Instalar `gdtoolkit` y el marco de pruebas cuando exista el proyecto Godot.
+- Instalar `gdtoolkit` y el marco de pruebas cuando exista el proyecto Godot ⏳ F1-33.

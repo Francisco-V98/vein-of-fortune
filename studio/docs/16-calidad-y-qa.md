@@ -4,7 +4,7 @@
 
 El **QA es un proceso dentro del flujo de trabajo**: revisiones, pruebas funcionales, pruebas en general, seguridad y lo que haga falta. No es una fase al final: acompaña a cada tarea.
 
-Los principios son requisitos; los umbrales y los detalles están marcados 🟡 y se afinan con el prototipo ([ADR-0008](adr/0008-qa-como-etapa-del-flujo.md)).
+Los principios son requisitos; los umbrales y los detalles están decididos en este documento y las mediciones se afinan con el prototipo ([ADR-0008](adr/0008-qa-como-etapa-del-flujo.md)).
 
 ## Principios ✅
 
@@ -34,35 +34,36 @@ backlog → sprint → doing → review → qa → done
 - Si QA falla, la tarea vuelve a `doing` y el error se registra con su severidad.
 - El resultado de QA queda en el historial de la tarea y en el catálogo de casos.
 
-## Tipos de verificación 🟡
+## Tipos de verificación ✅
 
-| Tipo | Qué busca | Cómo |
-|---|---|---|
-| **Revisión de código** | Claridad, arquitectura, deuda | PR con lista de revisión y `/code-review` |
-| **Unitarias** | Reglas del dominio correctas y deterministas | GUT, sin interfaz |
-| **De integración** | Módulos juntos a través de sus `api` y eventos | GUT con dobles de plataforma |
-| **Funcionales / de aceptación** | Que lo diseñado funciona como se describió | Casos de prueba ejecutados en el PC de pruebas |
-| **De regresión** | Que lo anterior sigue funcionando | Casos automáticos en CI y rondas manuales por bloque |
-| **Exploratorias** | Lo que nadie pensó | Sesiones con un objetivo y tiempo limitado |
-| **Simulación y economía** | Mercado sin trucos, inflación y estrategias dominantes | Simulador de 10.000 días y partidas completas |
-| **Rendimiento** | Cuadros por segundo, memoria, arranque, tamaño | Medición en la matriz de PC contra presupuestos |
-| **Compatibilidad** | Gamas de PC, resoluciones, Windows y Linux, Steam Deck, mandos | Matriz de PC |
-| **Accesibilidad** | Daltonismo, tamaño de texto, contraste, teclado (TC-050), mando (TC-038) | Lista de verificación y pruebas manuales |
-| **Localización** | ES y EN completos, textos que no se cortan, formatos | Pseudo-localización y revisión por pantalla |
-| **Guardado y actualización** | Integridad, corrupción, migración entre versiones | Casos automáticos y manuales |
-| **Instalación** | Instalar desde Steam, abrir, actualizar sin perder la partida; sincronización de la nube | Pruebas en el PC de pruebas |
-| **Usabilidad** | Si se entiende y se disfruta | Playtest con personas externas |
-| **Seguridad** | Ver sección siguiente | Lista de verificación y análisis estático |
-| **Privacidad** | Que la telemetría no filtre datos | Revisión de lo que se guarda y exporta |
-| **Contenido** | Datos válidos, textos faltantes, referencias rotas | Validación de datos en CI |
+| Tipo | Qué busca | Cómo | Cuándo |
+|---|---|---|---|
+| **Revisión de código** | Claridad, arquitectura, deuda | PR con lista de revisión y `/code-review` | En cada PR |
+| **Unitarias** | Reglas del dominio correctas y deterministas | GUT, sin interfaz | Desde la F2, con el dominio |
+| **De integración** | Módulos juntos a través de sus `api` y eventos | GUT con dobles de plataforma | Desde la F2, al unir módulos |
+| **Funcionales / de aceptación** | Que lo diseñado funciona como se describió | Casos de prueba ejecutados en el PC de pruebas | Al cerrar cada tarea con comportamiento |
+| **De regresión** | Que lo anterior sigue funcionando | Casos automáticos en CI y rondas manuales por bloque | En cada PR (automáticos) y en cada bloque (manuales) |
+| **Exploratorias** | Lo que nadie pensó | Sesiones con un objetivo y tiempo limitado | Al cierre de cada fase |
+| **Simulación y economía** | Mercado sin trucos, inflación y estrategias dominantes | Simulador de 10.000 días y partidas completas | Al cambiar la economía y antes de cada versión |
+| **Rendimiento** | Cuadros por segundo, memoria, arranque, tamaño | Medición en la matriz de PC contra presupuestos | F1-44 fija las medidas; se repite en F3 y F5 |
+| **Compatibilidad** | Gamas de PC, resoluciones, Windows y Linux, Steam Deck, mandos | Matriz de PC | Windows real antes de F1-39; el resto desde F3 |
+| **Accesibilidad** | Daltonismo, tamaño de texto, contraste, teclado (TC-050), mando (TC-038) | Lista de verificación y pruebas manuales | F3 (vertical slice) y F5 |
+| **Localización** | ES y EN completos, textos que no se cortan, formatos | Pseudo-localización y revisión por pantalla | En cada bloque con textos y en F3 y F5 |
+| **Guardado y actualización** | Integridad, corrupción, migración entre versiones | Casos automáticos y manuales | Desde la F2 y antes de cada versión |
+| **Instalación** | Instalar desde Steam, abrir, actualizar sin perder la partida; sincronización de la nube | Pruebas en el PC de pruebas | F5 |
+| **Usabilidad** | Si se entiende y se disfruta | Playtest con personas externas | F3 (primera ronda) y F4 (playtest F4-206) |
+| **Seguridad** | Ver sección siguiente | Lista de verificación y análisis estático | En cada PR (secretos) y antes de cada versión |
+| **Privacidad** | Que la telemetría no filtre datos | Revisión de lo que se guarda y exporta | Desde que exista telemetría y antes de cada versión |
+| **Contenido** | Datos válidos, textos faltantes, referencias rotas | Validación de datos en CI | En cada PR |
+| **Onboarding / tutorial** | Que todo proceso de primera vez y todo paso obligatorio tiene tutorial guiado y compuerta, sin saltos ni softlock (primeros procesos: abrir la tienda, vender, cuota del día 7) | Casos que recorren cada compuerta con entradas hostiles (saltar, repetir, salir a mitad) | Al construir cada tutorial (F3-16) y en la revisión final de F5-01 |
 
 ## Seguridad en QA ✅
 
-Lista de verificación **adaptada de OWASP MASVS** (estándar de seguridad para aplicaciones móviles, que sigue siendo una buena guía) a un juego de PC **sin conexión ni cuentas propias** 🟡:
+Lista de verificación **adaptada de OWASP MASVS** (referencia de seguridad de aplicaciones, válida también para un juego de PC) a un juego de PC **sin conexión ni cuentas propias**, con las prácticas de publicación de Steam (SteamPipe, sin claves de Steamworks en el repositorio):
 
 | Área | Verificación |
 |---|---|
-| Secretos | Sin claves, tokens ni contraseñas en el repositorio ni en las builds de Windows y Linux (escaneo automático) |
+| Secretos | Sin claves, tokens ni contraseñas en el repositorio ni en las builds de Windows y Linux (escaneo automático, ⏳ F1-42) |
 | Almacenamiento | Los guardados no incluyen datos personales; el archivo de diagnóstico tampoco |
 | Integridad de datos | Un guardado corrupto o manipulado se detecta y no rompe el juego ni ejecuta contenido |
 | Entradas | El nombre del personaje y de la tienda tienen límites y caracteres permitidos, y no inyectan formato (por ejemplo etiquetas de texto enriquecido) ni rompen la interfaz |
@@ -84,7 +85,7 @@ Cada punto tiene un caso de prueba en el catálogo (área **Seguridad** y **Priv
 
 ### Casos nuevos por la exploración caminable ✅ (F0-91, 2026-10-24)
 
-Lista de diseño de los casos que el cambio añade al catálogo (a partir de TC-056; se cargan en `cases.json` al crear las tareas de QA de exploración, los de economía y ritmo ya los cubren las reglas C5b y J1 a J7 del simulador ✅). Los automáticos van al repositorio; los manuales se ejecutan en el PC de pruebas y en la Steam Deck.
+Lista de diseño de los casos que el cambio añade al catálogo (a partir de TC-056, porque `cases.json` tiene hoy 55 casos; se confirma la numeración al crearlos; se cargan en `cases.json` al crear las tareas de QA de exploración, los de economía y ritmo ya los cubren las reglas C5b y J1 a J7 del simulador ✅). Los automáticos van al repositorio; los manuales se ejecutan en el PC de pruebas y en la Steam Deck.
 
 | Área | Caso | Tipo | Resultado esperado |
 |---|---|---|---|
@@ -105,11 +106,11 @@ Lista de diseño de los casos que el cambio añade al catálogo (a partir de TC-
 
 Cada error es un archivo en `studio/data/qa/bugs/BUG-NNNN.json` con título, severidad, estado, versión donde apareció, pasos para reproducirlo, resultado esperado y real, y evidencias.
 
-### Severidad 🟡
+### Severidad ✅
 
 | Nivel | Significado | Ejemplo | Regla |
 |---|---|---|---|
-| **S1 · Crítico** | Pérdida de datos, cierre del juego, bloqueo total | Se pierde la partida al guardar | Detiene todo; se corrige primero |
+| **S1 · Crítico** | Pérdida de datos, cierre del juego, bloqueo total (un softlock del tutorial es S1) | Se pierde la partida al guardar | Detiene todo; se corrige primero |
 | **S2 · Grave** | Función principal rota sin atajo | No se puede vender | Se corrige antes de la siguiente versión |
 | **S3 · Moderado** | Falla con alternativa o efecto limitado | Un texto se corta | Se planifica |
 | **S4 · Menor** | Cosmético o muy poco probable | Un píxel desalineado | Cuando haya tiempo |
@@ -118,26 +119,29 @@ Cada error es un archivo en `studio/data/qa/bugs/BUG-NNNN.json` con título, sev
 
 `abierto → triaje → en corrección → corregido → verificado → cerrado`, o `no se corrige` con su motivo. Todo error corregido incorpora una **prueba de regresión**.
 
-## Criterios de salida de una versión 🟡
+## Criterios de salida de una versión ✅
 
 - 0 errores **S1** y **S2** abiertos.
-- Casos de prioridad **P0** aprobados (automáticos y manuales).
+- Casos de prioridad **P0** y **P1** aprobados (automáticos y manuales); los **P2** que queden sin aprobar llevan una excusa escrita.
+- 0 softlocks de tutorial (decisión del autor, 2026-10-25).
 - Matriz de PC recorrida.
 - Lista de seguridad completa.
 - Presupuestos de rendimiento cumplidos.
 - Informe de QA de la versión redactado (`studio/qa/reports/`).
 
-## Plan de QA por fase 🟡
+## Plan de QA por fase ✅
 
 | Fase | Foco |
 |---|---|
-| F1 · Preparación | Verificación de herramientas; plan de pruebas, matriz de PC, el PC Windows de pruebas, lista de seguridad y escaneo de secretos |
+| F0 · Diseño | La integración continua valida roadmap, tareas, catálogo de QA y commits (el hub corre `build.py --strict`) |
+| F1 · Preparación | Verificación de herramientas; plan de pruebas, matriz de PC, el PC Windows de pruebas (hola mundo en Windows real, F1-39), lista de seguridad y escaneo de secretos |
 | F2 · Prototipo | Automatizar los casos del mercado y del día; ronda funcional en el PC de pruebas; guardado y corrupción |
-| F3 · Vertical slice | QA del Acto I: seguridad, accesibilidad, localización, rendimiento y compatibilidad (incluida la Steam Deck); playtest externo; informe |
-| F4 · Contenido | QA continuo: automatización y regresión después de cada bloque; seguridad; playtest |
-| F5 · Lanzamiento | Instalación y actualización desde Steam, seguridad final, privacidad, accesibilidad completa, builds de prueba en itch.io o Steam y decisión de lanzamiento |
+| F3 · Vertical slice | QA del Acto I: seguridad, accesibilidad, localización, rendimiento y compatibilidad (incluida la Steam Deck); playtest externo (F3-44); informe |
+| F4 · Contenido | QA continuo: automatización y regresión después de cada bloque; seguridad; playtest (F4-207, F4-206) |
+| F5 · Lanzamiento | Instalación y actualización desde Steam, seguridad final, privacidad, accesibilidad completa, builds de prueba en itch.io o Steam y decisión de lanzamiento (F5-54) |
+| F6 · Después del lanzamiento | Regresión completa en cada actualización; V2.0 con casino: clasificación por edad y cuestionario de Steam revisados antes de publicarlo (⏳ F6-13); el móvil tiene su propio plan al empezar |
 
-## Matriz de PC 🟡
+## Matriz de PC ✅
 
 Decisión del autor (2026-10-15): se prueba en un **PC Windows real** y en la Steam Deck si la hay ([ADR-0009](adr/0009-pc-primero-movil-despues.md)). Es un requisito de F1.
 
@@ -152,16 +156,16 @@ Decisión del autor (2026-10-15): se prueba en un **PC Windows real** y en la St
 | Equipo real | Un **PC Windows real** de pruebas |
 | macOS | Después de la 1.0 |
 
-❓ Falta definir los equipos reales: el autor trabaja en Mac, así que el PC Windows (que tiene o consigue) y la Steam Deck, si la hay, son la base; el resto de la matriz se completa con máquinas virtuales (Linux) y equipos prestados si hace falta.
+Equipos reales (decisión del autor, 2026-10-25): el autor trabaja en Mac y **tiene un PC Windows real**, que es la base y es obligatorio antes de F1-39. **No tiene Steam Deck:** la prueba en la Deck y el estado *Verified* quedan en ⏳ F4-239; mientras tanto se respetan sus reglas (1280×800, mando, texto legible). Linux se prueba con máquinas virtuales y equipos prestados si hace falta.
 
-## Presupuestos de rendimiento 🟡 (a medir en PC · ⏳ F1-44)
+## Presupuestos de rendimiento ✅ (a medir en PC · ⏳ F1-44)
 
-No hay cifras definitivas: se miden en la matriz de PC con la tarea F1-44 y recién entonces se fijan los límites.
+Objetivo inicial decidido el 2026-10-25: **60 cuadros por segundo (16,6 ms por cuadro) en PC** y **mínimo 30 en la Steam Deck**. Los demás límites se miden en la matriz de PC con la tarea F1-44, que también afina estos dos.
 
 | Medida | Objetivo inicial |
 |---|---|
 | Arranque en frío (gama baja de PC) | ⏳ F1-44 |
-| Cuadros por segundo | ⏳ F1-44 (interfaz y minijuegos; se mide también en Steam Deck y GPU integrada) |
+| Cuadros por segundo | 60 (16,6 ms) en PC; mínimo 30 en la Deck; F1-44 los afina (se mide también en GPU integrada) |
 | Tamaño de la instalación | ⏳ F1-44 |
 | Memoria | ⏳ F1-44 |
 | Estabilidad | 60 minutos de juego sin cierres (se conserva el objetivo del plan anterior) |
@@ -175,15 +179,15 @@ Se conserva lo previsto para Android y se retoma cuando empiece el móvil ([10](
 | Gamas y versiones | Android de gama baja, media y alta; la versión más reciente y la mínima soportada (a decidir) |
 | Proporciones | 16:9, 19.5:9 y 20:9 con zona segura |
 | Entrada | Táctil y mando Bluetooth |
-| Rendimiento | Arranque en frío ≤ 5 s en gama media; 60 cuadros por segundo en interfaz y mínimo 30 en minijuegos; descarga ≤ 150 MB; batería y calor a medir (los números del plan anterior son 🟡 y se revisan entonces) |
+| Rendimiento | Arranque en frío ≤ 5 s en gama media; 60 cuadros por segundo en interfaz y mínimo 30 en minijuegos; descarga ≤ 150 MB; batería y calor a medir (los números del plan anterior se revisan al empezar el móvil) |
 | Telemetría | Android vitals de Google Play ([ADR-0007](adr/0007-telemetria-por-capas.md)) |
 | Seguridad | APK, manifiesto con permisos mínimos y firma gestionada por Google Play |
 | Pruebas | Android del autor, emuladores y equipos prestados; iOS con su propia tarea |
 | Casos | Los casos de toque se mantienen en el catálogo con la etiqueta «fase móvil» |
 
-## Métricas de calidad 🟡
+## Métricas de calidad ✅
 
-Aprobación de casos, errores por severidad, errores que llegaron a una versión, cobertura del dominio, sesiones sin cierres y tiempo de corrección. Se ven en el hub y en el informe de cada versión.
+Aprobación de casos, errores por severidad, errores que llegaron a una versión, cobertura del dominio, sesiones sin cierres y tiempo de corrección. Umbrales (los de F5-54): 0 errores S1 abiertos y cobertura del dominio de 80 % o más (exigible desde la F2). Se ven en el hub y en el informe de cada versión.
 
 ## Responsabilidades ✅
 
@@ -194,9 +198,9 @@ Aprobación de casos, errores por severidad, errores que llegaron a una versión
 
 **Límite honesto:** Claude no puede jugar en el PC de pruebas ni sentir si algo es divertido o fluido. Esa parte de QA es del autor.
 
-## Pendiente ❓
+## Pendiente ✅
 
-- Definir los equipos reales de la matriz de PC (incluido el PC Windows de pruebas).
 - ⏳ F1-44 · Medir los presupuestos de rendimiento en PC.
-- Elegir la herramienta de escaneo de secretos (tarea F1-42).
-- Ejecutar la primera ronda de casos cuando exista el prototipo.
+- ⏳ F1-42 · Elegir la herramienta de escaneo de secretos.
+- ⏳ F4-239 · Prueba en Steam Deck y estado *Verified*.
+- ⏳ F2-03 · Ejecutar la primera ronda de casos cuando exista el prototipo (la ronda con personas externas, en ⏳ F3-44).

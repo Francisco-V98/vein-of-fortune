@@ -161,6 +161,32 @@
       "prs": [
         "73"
       ]
+    },
+    {
+      "n": 7,
+      "tema": "Cierre de flujo, QA y plan (F0-58)",
+      "fecha": "2026-10-25",
+      "resumen": "Cierre de los puntos abiertos de los docs 06, 15 y 16 en 2 rondas de decisiones del autor; ADR-0005 a merge commit; commit sin ID = error en CI; F1-47; sesiones por bloques",
+      "tareas": [
+        "F0-58",
+        "F1-47"
+      ],
+      "prs": [
+        "74"
+      ],
+      "docs": [
+        "06",
+        "15",
+        "16"
+      ],
+      "decisiones": [
+        "Pago único, sin DLC de pago y demo con el Acto I",
+        "Merge commit y commit sin ID como error",
+        "Cobertura ≥ 80 % desde F2 y 10 % de horas para refactor",
+        "Salida de versión: 0 S1/S2, P0 y P1 aprobados, 0 softlocks",
+        "Windows real obligatorio, Steam Deck Verified en F4-239",
+        "Sesiones por bloques de tareas afines"
+      ]
     }
   ]
 }
