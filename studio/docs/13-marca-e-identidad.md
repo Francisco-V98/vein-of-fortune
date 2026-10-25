@@ -14,11 +14,11 @@
 - Verificaciones hechas el 2026-10-11: sin coincidencias exactas en una búsqueda web preliminar y sin registro DNS para los `.com` de las dos versiones. **No es una búsqueda de marca registrada**; falta la revisión formal (ver [11](11-legal-y-cumplimiento.md)).
 - Subtítulo ✅: *El éxito se gana a pico y pala* / *Success is earned with pick and shovel* (ver [Subtítulo](#subtítulo)).
 
-## Esencia de la marca 🟡
+## Esencia de la marca ✅ (autor, 2026-10-24)
 
 > Un optimista en un mundo de cínicos. Escarba, negocia y asciende; el país no cambia, pero tu lugar en él sí.
 
-## Personalidad 🟡
+## Personalidad ✅ (autor, 2026-10-24)
 
 **Optimista terco.** Cálido, ingenioso y con filo. Nunca cínico, nunca ingenuo.
 
@@ -36,7 +36,7 @@
 - Frases cortas y concretas. Verbos en lugar de sustantivos abstractos.
 - Evitar la jerga financiera pesada: se explica con ejemplos del mundo.
 
-## Tono según el contexto 🟡
+## Tono según el contexto ✅ (autor, 2026-10-24)
 
 | Contexto | Tono |
 |---|---|
@@ -44,9 +44,9 @@
 | El protagonista | Cálido y esperanzado |
 | Tienda y clientes | Cercano, con algo de filo al negociar |
 | Ayudas y errores | Claros y amables, sin culpar |
-| Casino (futuro) | Ligero y de moneda del juego; sin lenguaje de dinero real |
+| Casino (V2) | Ligero y de moneda del juego; sin lenguaje de dinero real |
 
-### Voz de los medios 🟡
+### Voz de los medios ✅ (autor, 2026-10-24)
 
 | Medio | Estilo | Ejemplo en español | Example in English |
 |---|---|---|---|
@@ -54,7 +54,7 @@
 | La Voz del Hollín | Combativo y emotivo | «¡El Hollín no cederá! Se anuncia paro.» | "The Hollín will not yield! A strike is announced." |
 | Teletipo Meridiano | Telegráfico | «URGENTE. RUMORES DE PARO EN EL HOLLÍN. SIN CONFIRMAR.» | "URGENT. STRIKE RUMORS IN THE HOLLÍN. UNCONFIRMED." |
 
-### Ejemplos de microtexto 🟡
+### Ejemplos de microtexto ✅ (autor, 2026-10-24)
 
 | Situación | Español | English |
 |---|---|---|
@@ -112,11 +112,11 @@ Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre deb
 ### Tipografía
 
 - ✅ **Fuente pixel candidata: Pixelify Sans** (licencia abierta OFL, con á é í ó ú ñ ¿ ¡ y varios pesos), elegida por el autor el 2026-10-12 para probar primero en títulos y textos del juego.
-- ⏳ F1-18: verificar la licencia, probar los glifos en el motor y fijar las fuentes de respaldo por idioma. Si falla una prueba se vuelve a *Jersey 10* o *Silkscreen*, que eran las otras candidatas.
+- ⏳ F1-18 (absorbe F1-12): verificar la licencia, probar los glifos en el motor y fijar las fuentes de respaldo por idioma. Si falla una prueba se vuelve a *Jersey 10* o *Silkscreen*, que eran las otras candidatas.
 - ✅ **Interfaz del estudio (hub):** sans legible del sistema; no es parte de la marca del juego.
 - ✅ Todo el texto del juego es texto real con esta fuente, nunca texto dentro de imágenes (regla de escritura 2).
 
-### Guía visual 🟡 (F0-20)
+### Guía visual ✅ (F0-20; autor, 2026-10-24)
 
 **Colores de marca.** Fondo pizarra (`#17232C` o `#0E161D`), latón (`#B8893A`) y ámbar (`#E3B25C`) para la moneda, vinotinto (`#9A2640`) como acento y azul acero pálido para el nombre. El vinotinto no pasa del 5 % de cualquier pieza. El rojo-rosado y el cian solo aparecen en el cristal del icono, que es la Aetherita.
 
@@ -130,7 +130,7 @@ Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre deb
 
 **Texto del juego.** Pixelify Sans en títulos y botones; el nombre del logo es un dibujo, no la fuente.
 
-### Usos incorrectos 🟡
+### Usos incorrectos ✅ (autor, 2026-10-24)
 
 - No usar el rojo-rosado brillante fuera de la Aetherita.
 - No estirar, rotar ni suavizar el pixel art, ni escalar por valores no enteros.
@@ -140,7 +140,7 @@ Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre deb
 - No añadir degradados, brillos ni partículas al logo, ni más detalle al cristal.
 - No volver el nombre blanco puro ni cambiar su color.
 
-## Reglas de escritura 🟡
+## Reglas de escritura ✅ (autor, 2026-10-24)
 
 1. Frases cortas; una idea por frase.
 2. Nada de texto dentro del arte (todo es localizable).
@@ -148,7 +148,7 @@ Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre deb
 4. Coherencia de términos con el glosario ES/EN (Aetherita, Faroleros, Valdoria, etc.).
 5. Nada de referencias a política real.
 
-## Qué evitar 🟡
+## Qué evitar ✅ (autor, 2026-10-24)
 
 - Cinismo del protagonista.
 - Burlarse de los trabajadores o de las clases sociales.
@@ -160,8 +160,8 @@ Funciona sola, sin el texto (icono de app y firma pequeña), y con el nombre deb
 | Pieza | Estado | Tarea |
 |---|---|---|
 | Nombre y esencia | ✅ elegido | F0-18 |
-| Documento de marca | ✅ hecho; sus puntos 🟡 se cierran en ⏳ F0-56 | F0-19 |
-| Guía visual (tipografía, usos) | ✅ hecha; sus puntos 🟡 se cierran en ⏳ F0-56 | F0-20 |
+| Documento de marca | ✅ hecho y cerrado (F0-56) | F0-19 |
+| Guía visual (tipografía, usos) | ✅ hecha y cerrada (F0-56) | F0-20 |
 | Logo provisional (apilado, horizontal, icono y icono de app) | ✅ hecho (`studio/assets-ref/marca/`) | F0-21 |
 | Logo definitivo | ⏳ F4-230 pendiente | F4-230 |
 | Ícono y pantalla de título | ⏳ F4-231 pendiente | F4-231 |

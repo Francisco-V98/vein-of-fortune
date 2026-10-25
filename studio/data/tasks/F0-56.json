@@ -1,0 +1,82 @@
+{
+  "id": "F0-56",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Pasada de cierre de marca y arte (docs 12 y 13)",
+      "ref": "rama studio/F0-56-pasada-marca-y-arte"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-56"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea",
+      "ref": "PR #72"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "arte",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Omitida: son decisiones del autor, planteadas con recomendación"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "nota": "Inventario de 19 puntos 🟡/❓, contraste WCAG del vinotinto y 2 contradicciones internas del doc 12; el autor decidió en dos rondas el 2026-10-24",
+        "at": "2026-10-24",
+        "por": "analista"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "Docs 12 y 13 cerrados (0 🟡 y 0 ❓); F1-12 absorbida por F1-18",
+        "at": "2026-10-24",
+        "por": "arte"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "nota": "Build estricto sin avisos; docs 12 y 13 con 0 🟡 y 0 ❓; ⏳ válidos; cifra de sprite coherente",
+        "at": "2026-10-24",
+        "por": "qa"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "nota": "El autor revisó el entregable, lo aprobó y dio «Terminé mi parte»",
+        "at": "2026-10-24",
+        "por": "autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida",
+        "nota": "Omitida: tarea de documentación, sin código del juego"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "nota": "PR #72 fusionado con merge commit",
+        "at": "2026-10-24",
+        "por": "coordinador"
+      }
+    ],
+    "traspasos": []
+  }
+}

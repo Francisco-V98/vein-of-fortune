@@ -10,7 +10,7 @@
 | Técnica | Pixel art; los escenarios y la interfaz son más bien estáticos, y los personajes caminan (cambio del 2026-10-24, ver «Animación») |
 | Referencia de paleta | Imagen aportada por el autor (portada de *Cult of the Lamb*): tonos fríos con un detalle rojo de contraste. Se toma como **referencia de paleta**, no se copian sus personajes ni su arte |
 
-## Paleta propuesta 🟡 (valores aproximados, a afinar)
+## Paleta ✅ (autor, 2026-10-24)
 
 | Rol | Nombre | Hex orientativo |
 |---|---|---|
@@ -30,7 +30,7 @@
 | Éter ✅ | Aura cian pálida (solo Aetherita) | `#7FE3E8` |
 | Lujo | Oro (excepción cálida controlada) | `#D9A93A` |
 
-### Reglas de uso 🟡
+### Reglas de uso ✅ (autor, 2026-10-24)
 
 - ~80 % neutros fríos, ~15 % tonos medios y materiales, **menos de 5 % vinotinto**.
 - Vinotinto: botones de acción, estatus, peligro, cables, detalles del mundo. Si se usa en todo, pierde fuerza.
@@ -80,7 +80,7 @@ Cuatro imágenes generadas con IA (modelo `gpt_image_2_5`, calidad baja, ~0,25 c
 | Personajes y escenas | ✅ Referencia de diseño para el pixel art definitivo; no se reconstruyen a mano |
 | Assets directos del juego | ❌ No: lo generado con IA en las rondas de prueba es provisional |
 
-## Pipeline 🟡 (actualizado el 2026-10-13)
+## Pipeline ✅ (actualizado el 2026-10-13; aprobado por el autor el 2026-10-24)
 
 1. La IA genera **referencias** e ideas (rápido y barato). Son **provisionales** ✅.
 2. El prototipo y el vertical slice usan esas referencias tal cual (o formas simples con los colores de la paleta). No se limpian ni se reconstruyen ✅.
@@ -113,7 +113,7 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 | Opción | Efecto | Veredicto |
 |---|---|---|
 | **Latón / ámbar** | Aporta luz cálida, es muy industrial y combina con monedas, remaches y lámparas | ✅ **Elegida** |
-| Verdigrís (cobre oxidado) | Sutil, se mezcla con el frío; poco contraste como complemento | 🟡 Reservar para detalles de cobre y tecnología |
+| Verdigrís (cobre oxidado) | Sutil, se mezcla con el frío; poco contraste como complemento | ✅ Reservado para detalles de cobre y tecnología, sin añadir color a la paleta (autor, 2026-10-24) |
 | Naranja óxido | Más energía pero se lee como "peligro" | ❌ No como secundario general |
 
 ### Lo que se aprendió
@@ -133,7 +133,7 @@ El juego es **horizontal (landscape)**. Catorce imágenes en `studio/assets-ref/
 |---|---|
 | **Modelo** | **Chibi pixel art** como el sprite del ministro: cuerpo entero y pose estática, en **8 direcciones** (frente, tres cuartos, lados y espalda) |
 | **Expresiones** | **Estilo detallado** como los retratos de diálogo. Seis, **iguales para todos**: la **por defecto** según su personalidad, feliz, triste (llorando), enojo, susto y cansancio (bostezando, no triste) |
-| **Poses** | **Chibi pixel art** de cuerpo entero: estático con respiración y caminando, en **8 direcciones** (ciclo de 4 fotogramas por dirección), más gestos al hablar y las animaciones específicas de cada escena |
+| **Poses** | **Chibi pixel art** de cuerpo entero: estático con respiración y caminando, en **8 direcciones** (los cuadros de cada animación se fijan al producirla), más gestos al hablar y las animaciones específicas de cada escena |
 
 **Orden de producción ✅:** de cada personaje se hace primero la **hoja de modelo**, que **define la estética completa** (rasgos, colores, tamaño de píxel y proporciones). Después se hace la hoja de **poses usando la de modelo como única referencia**, para que sea el mismo diseño. Las **expresiones** se hacen en estilo detallado a partir del retrato y del modelo. Una hoja no se da por buena hasta que el autor la aprueba.
 
@@ -241,7 +241,7 @@ Las estaciones y el clima se resuelven con un **tinte y una superposición de pa
 | Ambiente y animaciones (ciclos de caminar de las hojas de poses) | Hojas de poses | Provisional ✅ | ✅ Referencia de movimiento |
 | Audio y voces | Aún no hay | — | Todo lo que se haga de prueba es provisional |
 
-### Reglas de uso 🟡
+### Reglas de uso ✅ (autor, 2026-10-24)
 
 1. **No se invierte tiempo ni créditos en pulir lo provisional.** Si no sirve para la prueba, se genera otro barato o se usa una forma simple con los colores de la paleta ✅.
 2. **Todo asset nuevo de prueba se marca provisional** en `studio/data/assets.json` con el campo `estado` (`provisional` o `definitivo`). Lo que no tenga el campo cuenta como provisional (`estado_por_defecto`).
@@ -251,7 +251,7 @@ Las estaciones y el clima se resuelven con un **tinte y una superposición de pa
 6. **Lo provisional se conserva como referencia** (rasgos, siluetas y colores) y no se edita a mano. Al reemplazarlo, el definitivo toma su lugar en el juego y el provisional queda en `studio/assets-ref/` como histórico.
 7. **El registro de licencias incluye lo provisional**, porque sigue siendo contenido generado por IA ([11](11-legal-y-cumplimiento.md)).
 
-### De la prueba barata a lo definitivo 🟡
+### De la prueba barata a lo definitivo ✅ (autor, 2026-10-24)
 
 1. **Generar barato**: calidad baja, a partir de las referencias aprobadas.
 2. **Marcar** `estado: provisional` en `assets.json`.
@@ -265,15 +265,15 @@ Las estaciones y el clima se resuelven con un **tinte y una superposición de pa
 
 ### PixelLab, herramienta del arte definitivo ✅
 
-PixelLab es la herramienta del arte definitivo por decisión del autor. Su flujo de trabajo, estilo, paleta, tamaños y precio se prueban en la **primera tarea de producción definitiva** (paso 6 del flujo). 🟡 Hasta entonces no se contrata ni se gastan créditos en ella. Los tamaños de personajes, íconos y fondos quedan 🟡 hasta esa prueba; los valores actuales (unos 100 píxeles de alto por personaje, ver «Estética chibi de referencia») son los de las referencias, no los del arte definitivo.
+PixelLab es la herramienta del arte definitivo por decisión del autor. Su flujo de trabajo, estilo, paleta y precio se prueban en la **primera tarea de producción definitiva** (paso 6 del flujo, F4-227); hasta entonces no se contrata ni se gastan créditos en ella. El sprite de personaje mide **32–48 px de alto** ✅ (el «unos 100 píxeles» de las referencias provisionales no es el definitivo). Los tamaños de fondos y marcos de interfaz se fijan en esa prueba ⏳ F4-227.
 
 ## Decisiones técnicas de arte pendientes
 
 - ✅ **Resolución base 640×360** (autor, 2026-10-24; cierra F1-06). Con el enfoque de PC primero ([ADR-0009](adr/0009-pc-primero-movil-despues.md)): escala **entera con bandas** (1080p ×3, 1440p ×4, 4K ×6; en la Steam Deck 1280×800 ×2 con bandas), ventana y pantalla completa, y ultrapanorámico con bandas laterales. El sprite de paseo mide 32–48 px (de 9 a 13 % del alto) y los retratos de diálogo se dibujan aparte. La zona segura 20:9 era una pregunta móvil y pasa a la fase móvil.
 - ✅ **Perspectiva** (autor, 2026-10-24; sustituye a «edificios en isométrica»). Tres vistas: el **exterior de los asentamientos** es una **vista aérea** tipo Stardew por la que se camina y se puede rodear cada edificación (exploración mínima), con la puerta de cada una visible; el **interior** de cada edificación es un **corte transversal con desplazamiento lateral plano** tipo Pet Society (la tienda es la referencia); y la **mina** es una galería caminable en **vista aérea cenital**. Al entrar o salir hay un loader corto. No importa el tiempo ni el costo: es para dar dinamismo. Los edificios isométricos F4-155 y F4-156 se cancelan y se rehacen como exteriores cenitales.
-- ❓ **Nivel de "pixel estricto".** Los retratos son muy detallados (ilustración pixelada) y los sprites son más cercanos a Stardew. Decidir si se mantienen así o se unifican.
-- ❓ Tamaño de íconos (por ejemplo 32×32 o 48×48); el sprite de personaje ya quedó en 32–48 px (arriba). Para el arte definitivo se prueba con PixelLab (ver «Assets provisionales y definitivos»).
-- ❓ Fuente pixel para el texto, con licencia clara.
+- ✅ **Nivel de «pixel estricto»** (autor, 2026-10-24): se mantienen los tres niveles (retrato detallado, sprite de vista aérea y sprite de vista lateral). Regla común: paleta bloqueada, contornos y sombreado de bordes duros, píxeles reales, sin degradados ni suavizado. Los retratos llevan más detalle, los sprites quedan en 32–48 px.
+- ✅ **Tamaño de íconos** (autor, 2026-10-24): 32×32 provisional (9 % del alto de 360 px, como los sprites); 48×48 si la prueba de PixelLab lo pide ⏳ F4-227.
+- ✅ **Fuente pixel para el texto:** Pixelify Sans (ver [13](13-marca-e-identidad.md)); la licencia y los glifos se verifican en ⏳ F1-18, que absorbe la elección de F1-12 (autor, 2026-10-24).
 - ✅ Herramienta de pixel art del arte definitivo: **PixelLab** (autor, 2026-10-13).
-- ❓ Cuántos cuadros de animación se permiten (el estilo es estático; probablemente pocos).
-- ❓ Si el vinotinto exacto es el de la tabla o se prefiere otro tono.
+- ✅ **Cuadros de animación** (autor, 2026-10-24): todo personaje se mueve en **8 direcciones** con **caminar** y **estado de reposo**. Cuántos cuadros lleva cada animación se decide al producirla (prueba de ⏳ F4-227), no antes.
+- ✅ **Vinotinto** (autor, 2026-10-24): se conservan `#6E1A2B` (sombra), `#9A2640` (principal) y `#C23B55` (resalte). Regla de contraste: el texto sobre vinotinto va en Hielo claro (5,43:1 con el principal) y el vinotinto nunca es el único portador de información sobre fondo oscuro (ningún tono llega a 4,5:1 sobre Abismo o Pizarra); el peligro lleva además forma o texto.
