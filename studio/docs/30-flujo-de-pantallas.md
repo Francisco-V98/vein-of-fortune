@@ -99,7 +99,7 @@ Correspondencia con el diagrama: «Libreta» (LB) agrupa los nodos 3 (Mapa), 7 (
 | Galería | Recinto | Salir; cambio único de entrada | 0; si no picaste ninguna mena, se devuelve el bloque |
 | Galería | Minijuego | Picar una mena | 0 (desgaste y Aguante según [02](02-extraccion.md)) |
 | Cualquier punto con mapa | Mapa | View (o botón de la libreta) | 0 |
-| Mapa | Puerta de otra edificación de la misma zona | Elegir edificación | 0, con loader; apareces **fuera**, en la puerta |
+| Mapa | Puerta de otra edificación de la misma zona | Elegir edificación | 0, con loader; apareces **fuera**, en la puerta. **En el MVP Villa Brasa no tiene mapa interno** ✅ (decisión del autor, 2026-10-24; [26](26-zonas-y-edificios.md)): solo se camina, y este salto llega con ⏳ F3-46 |
 | Mapa | Zona nueva | Elegir zona y confirmar billete | Billete 42 a 210 esquirlas; sin bloque |
 | Calle | Tablón | Usar el tablón | 0 |
 | Barra superior | Fin del bloque | Esperar y confirmar | Salta un bloque; el mercado se mueve igual |
@@ -157,6 +157,7 @@ Correspondencia con el diagrama: «Libreta» (LB) agrupa los nodos 3 (Mapa), 7 (
 9. Confirmadas las tres propuestas de la sección 8 (tamaños mínimos, amanecer en la casa base, candado en la barra).
 10. Cerrar el juego en un interior te deja en la puerta del edificio; en un loader o en el tren, en el destino con el billete ya pagado.
 11. «Menús V1/V2» = libreta de V1 (Diario, Mapa, Mercado en lectura, Inventario) más pestañas de V2 como estilo de vida (⏳ F4-119).
+12. Tutoriales con compuerta (2026-10-24): la primera vez de cada pantalla o proceso (libreta y Mapa, vista por función, recinto y galería, tablón, ficha de empleado, cuota) se abre con un paso guiado: marcador con forma, resaltado y un cuadro corto, con el «?» como repaso. La compuerta la ejecuta la cola de escenas y nunca bloquea la partida (reintento, recordatorio o vista previa sin cobro). En las lecciones guiadas, abandonar el minijuego no cuenta como fallo de la mena: el bloque se devuelve y se repite. Detalle por escena en [27](27-guion-del-acto-i.md), sección 2.4 (guía ⏳ F5-01).
 
 ## 10 · Pendiente aplazado ✅
 
@@ -176,3 +177,4 @@ Correspondencia con el diagrama: «Libreta» (LB) agrupa los nodos 3 (Mapa), 7 (
 | ⏳ F3-52 · ⏳ F3-53 | Recinto, bloque de expedición y detector con mando |
 | ⏳ F3-57 · ⏳ F3-58 · ⏳ F3-48 | Barra con «Esperar», tablón y diario |
 | ⏳ F4-154 · ⏳ F4-236 | Cartel del tren y glifos |
+| ⏳ F5-01 | Pasos guiados y compuertas de primera vez (decisión 12; inventario en [27](27-guion-del-acto-i.md), 2.4) |

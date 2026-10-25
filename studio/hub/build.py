@@ -1095,6 +1095,172 @@ def load_gallery(world, assets):
     return {"people": people, "sections": sections}
 
 
+STORYBOARD_SCENES = ["d1.2", "d1.6", "d2.4", "d3.2", "d4.4", "d7.2", "d7.4"]
+STORYBOARD_VARIANT_SCENES = ["d1.2", "d4.4", "d7.2"]
+STORYBOARD_REGIONS = 6
+STORYBOARD_DIFFICULTIES = 4
+STORYBOARD_FACTION_WORDS = ("consorcio", "ministerio", "faroleros", "comisión", "comision")
+
+
+def _storyboard_text(panel):
+    parts = [panel.get("titulo", ""), panel.get("lugar", ""), panel.get("descripcion", "")]
+    parts += panel.get("personajes", []) + panel.get("props", [])
+    parts += [x.get("texto", "") for x in panel.get("dialogo", [])]
+    parts += panel.get("wireframe", {}).get("botones", [])
+    return " ".join(parts).lower()
+
+
+def load_storyboard(assets):
+    """Valida y devuelve el storyboard del Acto I (studio/data/storyboard.json, tarea F0-24)."""
+    path = DATA / "storyboard.json"
+    if not path.exists():
+        warn("storyboard.json: no existe")
+        return None
+    sb = load_json(path)
+    registered = {i["file"] for i in assets["images"]}
+    doc27 = "".join(p.read_text(encoding="utf-8") for p in sorted(DOCS.glob("27-*.md")))
+    variants = {v["id"] for v in sb.get("variantes", [])}
+    seen, ids = {}, set()
+
+    def check_image(f, where):
+        if not f or not (STUDIO / f).exists():
+            warn("storyboard.json: falta la imagen de %s: %s" % (where, f))
+        elif f not in registered:
+            warn("storyboard.json: imagen sin registrar en assets.json (%s): %s" % (where, f))
+
+    for p in sb.get("paneles", []):
+        pid = p.get("id", "?")
+        if pid in ids:
+            warn("storyboard.json: panel repetido: %s" % pid)
+        ids.add(pid)
+        for key in ("escena", "titulo", "bloque", "lugar", "vista", "descripcion", "imagen", "wireframe", "dialogo"):
+            if not p.get(key):
+                warn("storyboard.json: el panel %s no tiene '%s'" % (pid, key))
+        if p.get("vista") not in ("interior", "exterior"):
+            warn("storyboard.json: el panel %s tiene una vista inválida: %s" % (pid, p.get("vista")))
+        check_image(p.get("imagen"), "el panel " + pid)
+        seen.setdefault(p.get("escena"), set()).add(p.get("variante"))
+        if ("`%s`" % p.get("escena")) not in doc27:
+            warn("storyboard.json: el panel %s cita una escena que no está en el documento 27: %s" % (pid, p.get("escena")))
+        if p.get("variante") in variants:
+            leaked = [w for w in STORYBOARD_FACTION_WORDS if w in _storyboard_text(p)]
+            if leaked:
+                warn("storyboard.json: el panel %s nombra a una facción (%s)" % (pid, ", ".join(leaked)))
+    for sid in STORYBOARD_SCENES:
+        if sid not in seen:
+            warn("storyboard.json: falta la escena clave %s" % sid)
+    for sid in STORYBOARD_VARIANT_SCENES:
+        missing = variants - seen.get(sid, set())
+        if missing:
+            warn("storyboard.json: la escena %s no tiene las variantes %s" % (sid, ", ".join(sorted(missing))))
+    tabla = sb.get("tabla_d72", {})
+    if len(tabla.get("dificultades", [])) != STORYBOARD_DIFFICULTIES or not tabla.get("filas"):
+        warn("storyboard.json: la tabla de d7.2 necesita %d dificultades y filas" % STORYBOARD_DIFFICULTIES)
+    for fila in tabla.get("filas", []):
+        if len(fila.get("celdas", [])) != STORYBOARD_DIFFICULTIES:
+            warn("storyboard.json: una fila de la tabla de d7.2 no tiene %d celdas: %s" % (STORYBOARD_DIFFICULTIES, fila.get("salida")))
+    mapa = sb.get("mapa", {})
+    check_image(mapa.get("imagen"), "el mapa")
+    check_image(mapa.get("hoja_props"), "la hoja de props")
+    if len(mapa.get("regiones", [])) != STORYBOARD_REGIONS:
+        warn("storyboard.json: el mapa debe describir %d regiones y describe %d" % (STORYBOARD_REGIONS, len(mapa.get("regiones", []))))
+    return sb
+
+
+SEMANA1_DAYS = 7
+SEMANA1_BLOCKS = ("Mañana", "Tarde", "Noche")
+SEMANA1_BLOCK_KEYS = ("escenas", "pasos", "como", "se_espera", "obligatorio", "si_no_lo_haces")
+SEMANA1_DONE = ("done", "dropped")
+
+
+def _semana1_strings(node):
+    if isinstance(node, str):
+        yield node
+    elif isinstance(node, dict):
+        for v in node.values():
+            yield from _semana1_strings(v)
+    elif isinstance(node, list):
+        for v in node:
+            yield from _semana1_strings(v)
+
+
+def _check_semana1_imagenes(sem, doc27, registered):
+    """Valida el mapa `imagenes` de semana1.json: escenas de 27 §21.2, archivos y registro en assets.json."""
+    imgs = sem.get("imagenes", {})
+    m = re.search(r"### 21\.2 .*?(?=\n### )", doc27, re.S)
+    scenes = set(re.findall(r"^\|\s*`(d\d\.\d)`", m.group(0), re.M)) if m else set()
+    if not scenes:
+        warn("semana1.json: no encuentro la tabla de escenas del documento 27 §21.2")
+
+    def check(f, where):
+        if not f or not (STUDIO / f).exists():
+            warn("semana1.json: falta la imagen de %s: %s" % (where, f))
+        elif f not in registered:
+            warn("semana1.json: imagen sin registrar en assets.json (%s): %s" % (where, f))
+
+    for sid in sorted(scenes - set(imgs)):
+        warn("semana1.json: la escena %s de 27 §21.2 no tiene entrada en 'imagenes'" % sid)
+    for sid, im in imgs.items():
+        if sid not in scenes:
+            warn("semana1.json: 'imagenes' cita una escena que no está en 27 §21.2: %s" % sid)
+        if im.get("estado") not in ("hecha", "pendiente"):
+            warn("semana1.json: la imagen de %s tiene un estado no válido: %s" % (sid, im.get("estado")))
+        elif im["estado"] == "hecha":
+            check(im.get("archivo"), sid)
+            for k, f in im.get("variantes", {}).items():
+                check(f, "%s (variante %s)" % (sid, k))
+    for k, f in sem.get("imagenes_cabecera", {}).items():
+        check(f, "cabecera " + k)
+
+
+def load_semana1(task_status, hilos, assets):
+    """Valida y devuelve la vista «Semana 1» (studio/data/semana1.json, tarea F0-24)."""
+    path = DATA / "semana1.json"
+    if not path.exists():
+        warn("semana1.json: no existe")
+        return None
+    sem = load_json(path)
+    doc27 = "".join(p.read_text(encoding="utf-8") for p in sorted(DOCS.glob("27-*.md")))
+    hilo_ids = {h["id"] for h in hilos.get("hilos", [])}
+    dias = {d.get("dia"): d for d in sem.get("dias", [])}
+    for n in range(1, SEMANA1_DAYS + 1):
+        d = dias.get(n)
+        if not d:
+            warn("semana1.json: falta el día %d" % n)
+            continue
+        names = [b.get("bloque") for b in d.get("bloques", [])]
+        for b in SEMANA1_BLOCKS:
+            if b not in names:
+                warn("semana1.json: el día %d no tiene el bloque %s" % (n, b))
+        for b in d.get("bloques", []):
+            where = "día %s, %s" % (n, b.get("bloque"))
+            for key in SEMANA1_BLOCK_KEYS:
+                if key not in b:
+                    warn("semana1.json: %s no tiene '%s'" % (where, key))
+            for sid in b.get("escenas", []):
+                if ("`%s`" % sid) not in doc27:
+                    warn("semana1.json: %s cita una escena que no está en el documento 27: %s" % (where, sid))
+            for hid in b.get("hilos", []):
+                if hid not in hilo_ids:
+                    warn("semana1.json: %s cita un hilo que no existe en hilos.json: %s" % (where, hid))
+    for ob in sem.get("obligatorios_de_la_semana", []):
+        d = dias.get(ob.get("dia"))
+        if not d:
+            warn("semana1.json: el obligatorio %s referencia un día inexistente: %s" % (ob.get("id"), ob.get("dia")))
+        elif ob.get("bloque") not in [b.get("bloque") for b in d.get("bloques", [])]:
+            warn("semana1.json: el obligatorio %s referencia un bloque inexistente: día %s, %s" % (ob.get("id"), ob.get("dia"), ob.get("bloque")))
+    if not sem.get("obligatorios_de_la_semana"):
+        warn("semana1.json: faltan los obligatorios de la semana")
+    _check_semana1_imagenes(sem, doc27, {i["file"] for i in assets["images"]})
+    for text in _semana1_strings(sem):
+        for tid in re.findall(r"⏳\s*(F\d+-\d+)", text):
+            if tid not in task_status:
+                warn("semana1.json: un ⏳ apunta a una tarea inexistente: %s" % tid)
+            elif task_status[tid] in SEMANA1_DONE:
+                warn("semana1.json: un ⏳ apunta a una tarea terminada: %s (%s)" % (tid, task_status[tid]))
+    return sem
+
+
 def build_hub():
     roadmap = load_json(DATA / "roadmap.json")
     activity = load_activity()
@@ -1122,6 +1288,8 @@ def build_hub():
         "roadmap": roadmap,
         "assets": assets,
         "gallery": load_gallery(world, assets),
+        "storyboard": load_storyboard(assets),
+        "semana1": load_semana1(task_status, hilos, assets),
         "palette": load_json(DATA / "palette.json"),
         "qa": load_qa(task_ids),
         "presentation": load_presentation({d["id"] for d in docs}),

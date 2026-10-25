@@ -58,6 +58,33 @@
         "Bloque de expedición al cruzar la entrada, se devuelve si no picas",
         "Esperar en la barra superior con confirmación"
       ]
+    },
+    {
+      "n": 3,
+      "tema": "F0-24 Storyboard del Acto I",
+      "fecha": "2026-10-24",
+      "resumen": "F0-24: storyboard (15 imágenes), vista Semana 1 del hub con 28 escenas ilustradas (7 + 21 nuevas, medio 1k, ~11 créditos; total tarea ≈26,8) y 6 decisiones del autor aplicadas en docs 23, 27 y 30 F2-08 30 23",
+      "tareas": [
+        "F0-24",
+        "F2-08"
+      ],
+      "docs": [
+        "27",
+        "30",
+        "23"
+      ],
+      "decisiones": [
+        "opción C: panel base y variantes editadas",
+        "protagonista hombre como ejemplo",
+        "encuadre de la cámara real del juego",
+        "ramas de d7.2 en tabla HTML",
+        "capital = Puerto Meridiano",
+        "la cola no suelta d7.3 sin d1.6 y d5.2",
+        "callar con rumor de reserva también publica el titular",
+        "margen y gestión contra efectivo total",
+        "sin mapa interno en el MVP",
+        "pedido de 8 sacos y hierro de la mejora a F2-08"
+      ]
     }
   ]
 }

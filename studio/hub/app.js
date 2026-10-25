@@ -37,6 +37,7 @@
   ];
   var PRIO_COLOR = { P0: '#c23b55', P1: '#e3b25c', P2: '#8fb0ba', P3: '#5b7c8c' };
 
+  function $$(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -255,7 +256,9 @@
     qa: { area: 'Todas', type: 'Todos' },
     dc: { act: 'all', level: 'all', who: 'all' },
     hl: { act: 'all', tipo: 'all', estado: 'all', who: 'all' },
-    sim: { grupo: 'all', estado: 'all', open: {} }
+    sim: { grupo: 'all', estado: 'all', open: {} },
+    sb: { v: {} },
+    s1: { mode: 'feliz', reme: 'all', diff: 'all', open: {}, v: {}, gal: false, galf: 'todas' }
   };
   var lb = { list: [], idx: 0, opener: null };
 
@@ -274,7 +277,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('mapa', 'Mapa de historia', '⌖') + link('decisiones', 'Árbol de decisiones', '⑂') + link('hilos', 'Hilos narrativos', '⧉') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('simulador', 'Simulador de economía', '⚖') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('storyboard', 'Storyboard del Acto I', '▣') + link('semana1', 'Semana 1 · camino feliz', '①') + link('mapa', 'Mapa de historia', '⌖') + link('decisiones', 'Árbol de decisiones', '⑂') + link('hilos', 'Hilos narrativos', '⧉') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('simulador', 'Simulador de economía', '⚖') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -1566,6 +1569,302 @@
     return h;
   }
 
+  /* ---------- storyboard del Acto I (F0-24) ---------- */
+  function viewStoryboard() {
+    var S = H.storyboard;
+    var h = '<p class="eyebrow">Diseño del juego</p><h1 class="page-title">Storyboard del Acto I</h1>';
+    if (!S) return h + '<div class="notice">Falta <code>studio/data/storyboard.json</code>.</div>';
+    var byFile = {};
+    H.assets.images.forEach(function (i) { byFile[i.file] = i; });
+    var list = [];
+    function shot(file, label) {
+      var a = byFile[file];
+      if (!a) return '<div class="notice">Falta la imagen ' + esc(file) + '</div>';
+      list.push(a);
+      return '<button class="sb-shot" type="button" data-action="open-img" data-index="' + (list.length - 1) + '" aria-label="Ampliar: ' + esc(label || a.title) + '"><img loading="lazy" src="../' + esc(file) + '" alt="' + esc(a.title) + '"><span class="sb-stamp">ARTE PROVISIONAL</span></button>';
+    }
+    function wireframe(p) {
+      var w = p.wireframe, b = w.barra;
+      var bar = '<div class="wf-bar"><span>Día ' + esc(b.dia) + '</span><span>' + esc(b.estacion) + '</span><span>clima</span><span>' + esc(b.bloque) + '</span><span>' + (b.esquirlas != null ? esc(b.esquirlas) + ' esq.' : '— esq.') + '</span><span class="wf-btn">Esperar</span><span class="wf-btn">Libreta</span></div>';
+      var figs = p.personajes.map(function (n) { return '<i class="wf-fig" title="' + esc(n) + '"><b>' + esc(n.charAt(0)) + '</b></i>'; }).join('');
+      var stage = '<div class="wf-stage ' + esc(p.vista) + '"><em>' + (p.vista === 'interior' ? 'Interior · corte lateral' : 'Exterior · vista aérea') + '</em><div class="wf-figs">' + figs + '</div></div>';
+      var lines = p.dialogo.slice(0, 2).map(function (d) { return '<p><b>' + esc(d.quien) + ':</b> ' + esc(d.texto) + '</p>'; }).join('');
+      var box = '<div class="wf-box">' + lines + '</div>';
+      var btns = '<div class="wf-btns">' + w.botones.map(function (t) { return '<span class="wf-btn">' + esc(t) + '</span>'; }).join('') + '</div>';
+      return '<div class="wf" role="img" aria-label="Esquema de la pantalla del juego: barra superior, escena, caja de diálogo y botones">' + bar + stage + box + btns + '</div>';
+    }
+    function panel(p) {
+      var h = '<article class="sb-panel"><div class="sb-media">' + shot(p.imagen, p.titulo) + '</div><div class="sb-info">';
+      h += '<div class="gx-tags"><span class="chip">Día ' + esc(p.dia) + ' · ' + esc(p.bloque) + '</span><span class="chip">' + (p.vista === 'interior' ? 'Interior lateral' : 'Exterior aéreo') + '</span></div>';
+      h += '<p class="sb-desc">' + esc(p.descripcion) + '</p>';
+      h += '<dl class="sb-facts"><dt>Lugar</dt><dd>' + esc(p.lugar) + '</dd><dt>Personajes</dt><dd>' + p.personajes.map(esc).join(', ') + '</dd><dt>Props</dt><dd>' + p.props.map(esc).join(' · ') + '</dd></dl>';
+      h += p.dialogo.map(function (d) { return '<blockquote class="sb-line"><b>' + esc(d.quien) + '</b> «' + esc(d.texto) + '»</blockquote>'; }).join('');
+      if (p.defecto) h += '<div class="notice">' + esc(p.defecto) + '</div>';
+      return h + '</div><div class="sb-wf">' + wireframe(p) + '</div></article>';
+    }
+    h += '<p class="page-lead">' + esc(S.nota) + ' Fuente: <a href="#/docs/27-guion-del-acto-i">27 · Guion del Acto I</a> y <a href="#/docs/30-flujo-de-pantallas">30 · Flujo de pantallas</a>. Los esquemas de pantalla son estructura, no diseño final de interfaz. Para el paso a paso de los siete días, mira <a href="#/semana1">Semana 1 · camino feliz</a>.</p>';
+    h += '<nav class="gx-index" aria-label="Escenas del storyboard"><a class="chip" href="#/storyboard?h=sb-mapa">Mapa</a>' + S.escenas.map(function (e) { return '<a class="chip" href="#/storyboard?h=sb-' + esc(e.id) + '">' + esc(e.id) + ' · ' + esc(e.titulo) + '</a>'; }).join('') + '<a class="chip" href="#/storyboard?h=sb-props">Props</a></nav>';
+    var M = S.mapa;
+    h += '<h2 class="section-title" id="sb-mapa">Mapa de Valdoria con niebla <small>pestaña de la libreta · seis regiones</small></h2><p class="gx-lead">' + esc(M.nota) + '</p>';
+    h += '<div class="sb-map">' + shot(M.imagen, 'Mapa de Valdoria con niebla') + '<div class="table-wrap"><table><thead><tr><th>Región</th><th>Posición</th><th>Estado</th><th>Qué se ve</th></tr></thead><tbody>' +
+      M.regiones.map(function (r) { return '<tr><td>' + esc(r.nombre) + '</td><td>' + esc(r.posicion) + '</td><td><span class="pill ' + (r.estado === 'abierta' ? 'st-aprobada' : 'st-superada') + '">' + esc(r.estado) + '</span></td><td>' + esc(r.se_ve) + '</td></tr>'; }).join('') +
+      '</tbody></table>' + M.reglas.map(function (x) { return '<p class="gx-lead">' + esc(x) + '</p>'; }).join('') + '</div></div>';
+    S.escenas.forEach(function (e) {
+      var ps = S.paneles.filter(function (p) { return p.escena === e.id; });
+      h += '<h2 class="section-title" id="sb-' + esc(e.id) + '"><code>' + esc(e.id) + '</code> ' + esc(e.titulo) + (e.variantes ? ' <small>3 variantes</small>' : '') + '</h2>';
+      if (e.variantes) {
+        var cur = state.sb.v[e.id] || 'A';
+        h += '<div class="filters" role="tablist" aria-label="Variante de ' + esc(e.id) + '"><div class="filter-group">' + S.variantes.map(function (v) {
+          return '<button class="chip" type="button" role="tab" data-action="sb-var" data-scene="' + esc(e.id) + '" data-value="' + esc(v.id) + '" aria-pressed="' + (cur === v.id) + '" aria-selected="' + (cur === v.id) + '">Variante ' + esc(v.id) + ' · ' + esc(v.nombre) + '</button>';
+        }).join('') + '</div></div>';
+        ps = ps.filter(function (p) { return p.variante === cur; });
+      }
+      ps.forEach(function (p) { h += panel(p); });
+      if (e.id === 'd7.2') {
+        var T = S.tabla_d72;
+        h += '<h3 class="sb-sub">' + esc(T.titulo) + '</h3><p class="gx-lead">' + esc(T.fuente) + ' La imagen es la misma en las cuatro dificultades: cambia la cuenta, no el decorado.</p><div class="table-wrap"><table><thead><tr><th>Salida</th>' + T.dificultades.map(function (d) { return '<th>' + esc(d) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+          T.filas.map(function (f) { return '<tr><td>' + esc(f.salida) + '<br><small>f-pago-reme = ' + esc(f.flag) + '</small></td>' + f.celdas.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') +
+          '</tbody></table></div><p class="gx-lead">' + esc(T.nota) + '</p>';
+      }
+    });
+    h += '<h2 class="section-title" id="sb-props">Hoja de props <small>referencia provisional para F3-16</small></h2><div class="sb-map">' + shot(M.hoja_props, 'Hoja de props') + '</div>';
+    lb.list = list;
+    return h;
+  }
+
+  /* ---------- semana 1 · camino feliz (F0-24) ---------- */
+  var S1_KEY = 'vf-semana1-obligatorios';
+  var S1_REME = ['Consorcio', 'Ministerio', 'Faroleros'];
+  var S1_DIFF = ['Novato', 'Intermedio', 'Difícil', 'Hardcore'];
+  function s1Load() {
+    try { return JSON.parse(localStorage.getItem(S1_KEY) || '{}') || {}; } catch (err) { return {}; }
+  }
+  function s1Save(map) {
+    try { localStorage.setItem(S1_KEY, JSON.stringify(map)); } catch (err) { /* sin almacenamiento: el estado vive solo en la página */ }
+  }
+  function s1Days(v) {
+    if (typeof v === 'number') return [v];
+    var t = String(v), m = t.match(/(\d+)\s*a\s*(\d+)/), out = [], i;
+    if (m) { for (i = +m[1]; i <= +m[2]; i++) out.push(i); return out; }
+    if (/todos|todas/i.test(t)) return [1, 2, 3, 4, 5, 6, 7];
+    m = t.match(/\d+/);
+    return m ? [+m[0]] : [];
+  }
+  function s1Ul(items) { return '<ul class="s1-list">' + items.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'; }
+  function s1Sec(title, items, cls) {
+    if (!items || !items.length) return '';
+    return '<div class="s1-sec ' + (cls || '') + '"><h5>' + esc(title) + '</h5>' + s1Ul(items) + '</div>';
+  }
+  function s1Row(label, text) { return text ? '<div class="s1-sec"><h5>' + esc(label) + '</h5><p>' + esc(text) + '</p></div>' : ''; }
+
+  function viewSemana1() {
+    var W = H.semana1, st = state.s1;
+    var h = '<p class="eyebrow">Diseño del juego</p><h1 class="page-title">Semana 1 · camino feliz</h1>';
+    if (!W) return h + '<div class="notice">Falta <code>studio/data/semana1.json</code>.</div>';
+    var happy = st.mode === 'feliz', checks = s1Load();
+    var sbScenes = {};
+    (H.storyboard ? H.storyboard.escenas : []).forEach(function (e) { sbScenes[e.id] = true; });
+    var reme = W.variantes_globales[0], diff = W.variantes_globales[2];
+    var IM = W.imagenes || {}, CAB = W.imagenes_cabecera || {}, byFile = {}, list = [], listIdx = {}, info = {};
+    var REME_VAR = { Consorcio: 'A', Ministerio: 'B', Faroleros: 'C' };
+    H.assets.images.forEach(function (i) { byFile[i.file] = i; });
+    W.dias.forEach(function (d) { d.bloques.forEach(function (b) { b.escenas.forEach(function (sc) { info[sc] = { dia: d.dia, bloque: b.bloque, lugar: b.lugar }; }); }); });
+    var allScenes = Object.keys(info);
+    function varOf(sc) {
+      var im = IM[sc];
+      if (!im || !im.variantes) return null;
+      return st.v[sc] || (!happy && REME_VAR[st.reme]) || 'A';
+    }
+    function fileOf(sc) {
+      var im = IM[sc], v = varOf(sc);
+      return !im ? null : (v ? im.variantes[v] : im.archivo);
+    }
+    function isDone(sc) { return !!(IM[sc] && IM[sc].estado === 'hecha' && fileOf(sc)); }
+    function lbIndex(file) {
+      if (!(file in listIdx)) { listIdx[file] = list.length; list.push(byFile[file]); }
+      return listIdx[file];
+    }
+    function thumb(file, label, cls) {
+      var a = byFile[file];
+      if (!a) return '<div class="s1-pend ' + (cls || '') + '">Falta la imagen ' + esc(file) + '</div>';
+      return '<button class="sb-shot s1-shot ' + (cls || '') + '" type="button" data-action="open-img" data-index="' + lbIndex(file) + '" aria-label="Ampliar: ' + esc(label) + '"><img loading="lazy" src="../' + esc(file) + '" alt="' + esc(a.title) + '"><span class="sb-stamp">ARTE PROVISIONAL</span></button>';
+    }
+    function sceneThumb(sc, cls) {
+      if (!isDone(sc)) return '<div class="s1-pend ' + (cls || '') + '" title="' + esc(IM[sc] ? IM[sc].nota : '') + '">Imagen pendiente · ' + esc(sc) + '</div>';
+      return thumb(fileOf(sc), 'escena ' + sc, cls);
+    }
+    function vtabs(sc) {
+      var im = IM[sc];
+      if (!im || !im.variantes) return '';
+      var cur = varOf(sc);
+      return '<div class="s1-vtabs s1-noprint" role="group" aria-label="Variante de ' + esc(sc) + '">' + Object.keys(im.variantes).map(function (k) {
+        return '<button class="chip" type="button" data-action="s1-var" data-scene="' + esc(sc) + '" data-value="' + k + '" aria-pressed="' + (cur === k) + '">' + k + '</button>';
+      }).join('') + '</div>';
+    }
+    function sceneCard(sc, withNote) {
+      var im = IM[sc];
+      return '<figure class="s1-scene" id="' + (withNote ? 's1-gsc-' : 's1-sc-') + esc(sc) + '"><div class="s1-scene-img">' + sceneThumb(sc) + '</div><figcaption><b>' + esc(sc) + '</b>' + (info[sc] ? ' <small>Día ' + info[sc].dia + ' · ' + esc(info[sc].bloque) + '</small>' : '') + vtabs(sc) + (withNote && im ? '<span class="s1-note">' + esc(im.nota) + '</span>' : '') + '</figcaption></figure>';
+    }
+    function filmstrip(scs) {
+      return '<div class="s1-film" aria-label="Imágenes del día en orden">' + scs.map(function (sc) {
+        if (!isDone(sc)) return '<span class="s1-frame is-pend" title="Imagen pendiente · ' + esc(sc) + '"><i>pendiente</i><b>' + esc(sc) + '</b></span>';
+        return '<button class="s1-frame" type="button" data-action="open-img" data-index="' + lbIndex(fileOf(sc)) + '" aria-label="Ampliar: escena ' + esc(sc) + '" title="' + esc(sc) + '"><img loading="lazy" src="../' + esc(fileOf(sc)) + '" alt=""><b>' + esc(sc) + '</b></button>';
+      }).join('') + '</div>';
+    }
+    function dayScenes(d) { var o = []; d.bloques.forEach(function (b) { o = o.concat(b.escenas); }); return o; }
+    var nDone = allScenes.filter(isDone).length;
+    function weekStrip() {
+      var x = '<section class="s1-week" id="s1-semana-img"><h2 class="section-title">Tira de la semana <small>' + nDone + ' de ' + allScenes.length + ' escenas con imagen · arte provisional</small></h2><div class="s1-week-head">';
+      if (CAB.mapa) x += '<div class="s1-cab"><span>Mapa de Valdoria</span>' + thumb(CAB.mapa, 'Mapa de Valdoria con niebla', 's1-cab-img') + '</div>';
+      if (CAB.props) x += '<div class="s1-cab"><span>Hoja de props</span>' + thumb(CAB.props, 'Hoja de props', 's1-cab-img') + '</div>';
+      x += '</div><div class="s1-week-grid">' + W.dias.map(function (d) {
+        return '<div class="s1-week-day"><a href="#/semana1?h=s1-d' + d.dia + '"><b>Día ' + d.dia + '</b> <small>' + esc(d.nombre) + '</small></a>' + filmstrip(dayScenes(d)) + '</div>';
+      }).join('') + '</div></section>';
+      return x;
+    }
+    function gallery() {
+      var f = st.galf, shown = 0;
+      var x = '<section class="s1-gal" id="s1-galeria"><h2 class="section-title">Galería de la semana <small>' + nDone + ' de ' + allScenes.length + ' escenas con imagen</small></h2><div class="filters s1-noprint" role="group" aria-label="Filtro de la galería"><div class="filter-group"><span class="filter-label">Mostrar</span>' +
+        [['todas', 'Todas'], ['hechas', 'Solo hechas'], ['pendientes', 'Solo pendientes']].map(function (a) { return '<button class="chip" type="button" data-action="s1-galf" data-value="' + a[0] + '" aria-pressed="' + (f === a[0]) + '">' + a[1] + '</button>'; }).join('') + '</div></div>';
+      W.dias.forEach(function (d) {
+        var scs = dayScenes(d).filter(function (sc) { return f === 'todas' || (f === 'hechas') === isDone(sc); });
+        if (!scs.length) return;
+        shown += scs.length;
+        x += '<h3 class="sb-sub"><a href="#/semana1?h=s1-d' + d.dia + '">Día ' + d.dia + ' · ' + esc(d.nombre) + '</a></h3><div class="s1-gal-grid">' + scs.map(function (sc) { return sceneCard(sc, true); }).join('') + '</div>';
+      });
+      if (!shown) x += '<div class="notice">Ninguna escena coincide con el filtro.</div>';
+      return x + '</section>';
+    }
+    function changes(day, block) {
+      var out = [];
+      if (happy) return out;
+      [[reme, st.reme, 'Variante de Reme'], [diff, st.diff, 'Dificultad']].forEach(function (a) {
+        if (!a[0]) return;
+        a[0].que_cambia.forEach(function (c) {
+          if (s1Days(c.dia).indexOf(day) < 0) return;
+          var sc = (String(c.escena).match(/d\d+\.\d+/) || [''])[0];
+          var inBlock = block ? block.escenas.indexOf(sc) >= 0 : !sc || !W.dias[day - 1].bloques.some(function (b) { return b.escenas.indexOf(sc) >= 0; });
+          if (inBlock) out.push({ who: a[2], sel: a[1], c: c });
+        });
+      });
+      return out;
+    }
+    function callouts(list) {
+      return list.map(function (x) {
+        var c = x.c, po = c.por_opcion, body = '<span class="s1-ctx">' + esc(c.cambio) + '</span>';
+        if (po && x.sel !== 'all') body += '<div><mark>' + esc(x.sel) + '</mark> ' + esc(po[x.sel] || '') + '</div>';
+        else if (po) body += '<ul class="s1-list">' + Object.keys(po).map(function (k) { return '<li><b>' + esc(k) + ':</b> ' + esc(po[k]) + '</li>'; }).join('') + '</ul>';
+        return '<div class="s1-var"><b>' + esc(x.who) + (x.sel !== 'all' ? ': ' + esc(x.sel) : '') + (c.escena ? ' · ' + esc(c.escena) : '') + '</b> ' + body + '</div>';
+      }).join('');
+    }
+    function obsFor(day, name) {
+      return W.obligatorios_de_la_semana.filter(function (o) { return o.dia === day && o.bloque === name; });
+    }
+    function statePair(label, o) {
+      return '<div class="s1-state"><h5>' + esc(label) + '</h5><dl>' + [['esquirlas', 'Esquirlas'], ['inventario', 'Inventario'], ['herramienta', 'Herramienta'], ['deuda', 'Deuda']].map(function (k) { return '<dt>' + k[1] + '</dt><dd>' + esc(o[k[0]]) + '</dd>'; }).join('') + '</dl></div>';
+    }
+    function tutorialBox(tut) {
+      if (!tut) return '';
+      var body = tut.length ? '<ul class="s1-tutlist">' + tut.map(function (t) {
+        return '<li><b>' + esc(t.que) + '</b><dl class="s1-ver"><dt>Cómo se enseña</dt><dd>' + esc(t.como) + '</dd><dt class="s1-gate-k">Compuerta</dt><dd>' + esc(t.compuerta) + '</dd><dt>Si falla o abandonas</dt><dd>' + esc(t.si_falla) + '</dd></dl></li>';
+      }).join('') + '</ul>' : '<p>Sin proceso de primera vez en este bloque.</p>';
+      return '<div class="s1-sec s1-tut"><h5>Tutorial y compuerta</h5>' + body + '</div>';
+    }
+    function block(d, b) {
+      var key = 'd' + d.dia + '-' + b.bloque;
+      var obs = obsFor(d.dia, b.bloque), ch = changes(d.dia, b), hl = ch.some(function (x) { return x.sel !== 'all'; });
+      var open = st.open[key] || hl;
+      var x = '<details class="s1-block' + (b.obligatorio ? ' is-ob' : '') + (hl ? ' s1-hl' : '') + '" data-key="' + esc(key) + '"' + (open ? ' open' : '') + '><summary><span class="s1-when">' + esc(b.bloque) + '</span><span class="s1-where">' + esc(b.lugar) + '</span><span class="s1-badges">' +
+        (b.obligatorio ? '<span class="pill s1-must">OBLIGATORIO</span>' : '<span class="pill s1-opt">opcional</span>') + obs.map(function (o) { return '<a class="chip brass" href="#/semana1?h=s1-' + esc(o.id) + '">' + esc(o.id) + '</a>'; }).join('') + (ch.length ? '<span class="pill s1-chg">' + (hl ? 'cambia' : 'variantes') + '</span>' : '') + '</span></summary><div class="s1-body">';
+      if (b.escenas.length) x += '<div class="s1-shots">' + b.escenas.map(function (sc) { return sceneCard(sc, false); }).join('') + '</div>';
+      x += '<div class="gx-tags">' + (b.escenas.length ? b.escenas.map(function (sc) {
+        return sbScenes[sc] ? '<a class="chip" href="#/storyboard?h=sb-' + esc(sc) + '" title="Ver el panel del storyboard">' + esc(sc) + ' ▣</a>' : '<span class="chip">' + esc(sc) + '</span>';
+      }).join('') : '<span class="chip">sin escenas guionizadas</span>') + '</div>';
+      x += '<p class="s1-why"><b>' + (b.obligatorio ? 'Obligatorio porque' : 'Por qué') + ':</b> ' + esc(b.por_que_obligatorio) + '</p>';
+      x += callouts(ch);
+      x += s1Row('Se dispara cuando', b.dispara);
+      x += s1Sec('Pasos', b.pasos, 's1-steps') + s1Sec('Cómo se hace', b.como) + s1Sec('Qué se espera', b.se_espera);
+      x += tutorialBox(b.tutorial);
+      if (!happy) x += s1Sec('Opcional', b.opcional) + s1Row('Si no lo haces', b.si_no_lo_haces);
+      x += s1Row('Ayuda en pantalla', b.ayuda_en_pantalla) + s1Row('Prensa y rumores', b.prensa);
+      if (b.hilos.length) x += '<div class="s1-sec"><h5>Hilos</h5><div class="gx-tags">' + b.hilos.map(function (hid) { return '<a class="chip" href="#/hilos?h=' + esc(hid) + '">' + esc(hid) + '</a>'; }).join('') + '</div></div>';
+      return x + '</div></details>';
+    }
+    function decision(d) {
+      var x = '';
+      if (d.decision) {
+        var D = d.decision;
+        x += '<div class="s1-dec" id="s1-dec-' + d.dia + '"><h4>Decisión del día <small>' + esc(D.tipo) + (D.id ? ' · <a href="#/semana1?h=s1-r-' + esc(D.id) + '">' + esc(D.id) + '</a>' : '') + '</small></h4><p><b>' + esc(D.pregunta) + '</b></p><div class="table-wrap"><table><thead><tr><th>Opción</th><th>Efecto</th><th>Bandera</th><th>Fuente</th></tr></thead><tbody>' +
+          D.opciones.map(function (o) { return '<tr><td>' + esc(o.texto) + '</td><td>' + esc(o.efecto) + '</td><td><code>' + esc(o.bandera) + '</code></td><td><small>' + esc(o.fuente) + '</small></td></tr>'; }).join('') + '</tbody></table></div></div>';
+      }
+      var otras = W.decisiones_y_ramas.filter(function (r) { return r.dia === d.dia && !(d.decision && d.decision.id === r.id); });
+      if (otras.length) x += '<p class="s1-others"><b>Otras decisiones del día:</b> ' + otras.map(function (r) { return '<a class="chip" href="#/semana1?h=s1-r-' + esc(r.id) + '">' + esc(r.id) + '</a>'; }).join(' ') + '</p>';
+      return x;
+    }
+    function dayCard(d) {
+      var ch = changes(d.dia, null);
+      var x = '<section class="s1-day" id="s1-d' + d.dia + '"><h2 class="section-title">Día ' + d.dia + ' · ' + esc(d.nombre) + ' <small>' + esc(d.fecha) + '</small></h2>';
+      x += filmstrip(dayScenes(d));
+      x += '<p class="s1-goal"><b>Objetivo.</b> ' + esc(d.objetivo_del_dia) + '</p><p class="s1-new"><b>Mecánica nueva.</b> ' + esc(d.mecanica_nueva) + '</p>' + callouts(ch);
+      x += '<div class="s1-states">' + statePair('Al empezar', d.estado_al_empezar) + statePair('Al terminar', d.estado_al_terminar) + '</div>';
+      x += '<div class="s1-blocks">' + d.bloques.map(function (b) { return block(d, b); }).join('') + '</div>' + decision(d);
+      x += s1Sec('Al cerrar el día debe ser cierto', d.checkpoints, 's1-check');
+      return x + '</section>';
+    }
+    function chips(group, key, list, label, all) {
+      return '<div class="filter-group"><span class="filter-label">' + label + '</span>' + [['all', all]].concat(list.map(function (n) { return [n, n]; })).map(function (a) {
+        return '<button class="chip" type="button" data-action="' + key + '" data-value="' + esc(a[0]) + '" aria-pressed="' + (group === a[0]) + '"' + (happy && key !== 's1-mode' ? ' disabled title="Pasa a «Con variantes» para usar este filtro"' : '') + '>' + esc(a[1]) + '</button>';
+      }).join('') + '</div>';
+    }
+
+    h += '<p class="page-lead">' + esc(W.nota) + ' Fuente: <a href="#/docs/27-guion-del-acto-i">27 · Guion del Acto I</a>. Mira también el <a href="#/storyboard">storyboard del Acto I</a>.</p>';
+    h += '<div class="filters s1-noprint" role="group" aria-label="Filtros de la semana 1">' +
+      '<div class="filter-group"><span class="filter-label">Modo</span><button class="chip" type="button" data-action="s1-mode" data-value="feliz" aria-pressed="' + happy + '">Solo camino feliz</button><button class="chip" type="button" data-action="s1-mode" data-value="variantes" aria-pressed="' + !happy + '">Con variantes</button></div>' +
+      chips(st.reme, 's1-reme', S1_REME, 'Variante de Reme', 'Ninguna') + chips(st.diff, 's1-diff', S1_DIFF, 'Dificultad', 'Ninguna') +
+      '<div class="filter-group"><button class="chip" type="button" data-action="s1-open" data-value="1">Desplegar todo</button><button class="chip" type="button" data-action="s1-open" data-value="0">Plegar todo</button><button class="chip" type="button" data-action="deck-print">Imprimir</button></div></div>';
+    h += '<div class="filters s1-noprint" role="group" aria-label="Vista de la semana"><div class="filter-group"><span class="filter-label">Vista</span><button class="chip" type="button" data-action="s1-gal" data-value="0" aria-pressed="' + !st.gal + '">Detalle por día</button><button class="chip" type="button" data-action="s1-gal" data-value="1" aria-pressed="' + st.gal + '">Galería de imágenes</button><span class="s1-count-img">' + nDone + ' de ' + allScenes.length + ' escenas con imagen</span></div></div>';
+    h += weekStrip();
+    if (st.gal) { lb.list = list; return '<div class="s1">' + h + gallery() + '</div>'; }
+    h += '<nav class="s1-line" aria-label="Línea de tiempo de la semana">' + W.dias.map(function (d) {
+      var short = d.mecanica_nueva.split(/[:.]/)[0];
+      return '<a class="s1-chip" href="#/semana1?h=s1-d' + d.dia + '" title="' + esc(d.mecanica_nueva) + '"><b>Día ' + d.dia + '</b><span>' + esc(d.nombre) + '</span><small>' + esc(short) + '</small>' + (d.decision ? '<i class="s1-mark" title="Decisión del día: ' + esc(d.decision.id || d.decision.tipo) + '">⑂ decisión</i>' : '') + '</a>';
+    }).join('') + '<a class="s1-chip s1-gate" href="#/semana1?h=s1-puerta"><b>Puerta</b><span>del Acto I</span><small>Quiroga sella en d7.3</small></a></nav>';
+    h += '<div class="s1-door" id="s1-puerta"><h3>Puerta del Acto I</h3>' + s1Ul(W.puerta_del_acto.condiciones) + '<p><b>Resultado.</b> ' + esc(W.puerta_del_acto.resultado) + '</p></div>';
+    if (W.reglas_decididas && W.reglas_decididas.length) h += '<div class="s1-door" id="s1-reglas"><h3>Reglas decididas por el autor</h3>' + s1Ul(W.reglas_decididas) + '</div>';
+    h += '<details class="s1-sum"><summary>Resumen del camino feliz</summary>' + s1Ul(W.camino_feliz_resumen) + '</details>';
+    W.dias.forEach(function (d) { h += dayCard(d); });
+
+    var done = W.obligatorios_de_la_semana.filter(function (o) { return checks[o.id]; }).length;
+    h += '<section class="s1-obs" id="s1-obligatorios"><h2 class="section-title">Obligatorios de la semana <small id="s1-count">' + done + ' de ' + W.obligatorios_de_la_semana.length + ' cumplidos</small></h2><p class="gx-lead">Marca cada uno al comprobarlo en la partida. Se guarda en este navegador.</p>' +
+      '<div class="s1-noprint"><button class="chip" type="button" data-action="s1-reset">Reiniciar</button></div><ul class="s1-checks">' +
+      W.obligatorios_de_la_semana.map(function (o) {
+        return '<li id="s1-' + esc(o.id) + '"' + (checks[o.id] ? ' class="is-done"' : '') + '><label><input type="checkbox" data-action="s1-check" data-id="' + esc(o.id) + '"' + (checks[o.id] ? ' checked' : '') + '><span><b>' + esc(o.id) + '</b> · <a href="#/semana1?h=s1-d' + o.dia + '">Día ' + o.dia + ' · ' + esc(o.bloque) + '</a> · ' + esc(o.que) + '</span></label>' +
+          '<dl class="s1-ver"><dt>Por qué</dt><dd>' + esc(o.por_que) + '</dd><dt>Verificación</dt><dd>' + esc(o.verificacion) + '</dd><dt>Falla si</dt><dd>' + esc(o.falla_si) + '</dd></dl></li>';
+      }).join('') + '</ul></section>';
+
+    h += '<section id="s1-ramas"><h2 class="section-title">Decisiones y ramas</h2><p class="gx-lead">Qué pasa al instante con cada opción y dónde se nota después.</p>';
+    W.decisiones_y_ramas.forEach(function (r) {
+      var dd = W.dias.filter(function (d) { return d.decision && d.decision.id === r.id; })[0];
+      h += '<h3 class="sb-sub" id="s1-r-' + esc(r.id) + '"><code>' + esc(r.id) + '</code> <small>día ' + esc(r.dia) + (dd ? ' · ' + esc(dd.decision.pregunta) : '') + '</small></h3><div class="table-wrap"><table><thead><tr><th>Opción</th><th>Al instante</th><th>Después</th><th>Bandera</th></tr></thead><tbody>' +
+        r.opciones.map(function (o) {
+          return '<tr><td><b>' + esc(o.id) + '</b></td><td>' + esc(o.consecuencia_inmediata) + '</td><td>' + (o.consecuencias_posteriores.length ? '<ul class="s1-list">' + o.consecuencias_posteriores.map(function (c) { return '<li><b>' + (typeof c.dia === 'number' ? 'Día ' + c.dia : esc(c.dia)) + ' · ' + esc(c.escena) + '</b> ' + esc(c.que) + '</li>'; }).join('') + '</ul>' : '—') + '</td><td><code>' + esc(o.bandera) + '</code></td></tr>';
+        }).join('') + '</tbody></table></div>';
+    });
+    h += '</section>';
+
+    if (!happy) {
+      h += '<section id="s1-variantes"><h2 class="section-title">Variantes globales</h2>' + W.variantes_globales.map(function (v) {
+        return '<details class="s1-sum"><summary>' + esc(v.eje) + '</summary><div class="table-wrap"><table><thead><tr><th>Día</th><th>Escena</th><th>Qué cambia</th></tr></thead><tbody>' +
+          v.que_cambia.map(function (c) { return '<tr><td>' + esc(c.dia) + '</td><td>' + esc(c.escena) + '</td><td>' + esc(c.cambio) + (c.por_opcion ? '<ul class="s1-list">' + Object.keys(c.por_opcion).map(function (k) { return '<li><b>' + esc(k) + ':</b> ' + esc(c.por_opcion[k]) + '</li>'; }).join('') + '</ul>' : '') + '</td></tr>'; }).join('') + '</tbody></table></div></details>';
+      }).join('') + '</section>';
+      h += '<section id="s1-errores"><h2 class="section-title">Errores comunes y recuperación</h2><div class="table-wrap"><table><thead><tr><th>Situación</th><th>Qué pasa</th><th>Cómo se recupera</th></tr></thead><tbody>' +
+        W.errores_comunes_y_recuperacion.map(function (e) { return '<tr><td>' + esc(e.situacion) + '</td><td>' + esc(e.que_pasa) + '</td><td>' + esc(e.como_se_recupera) + '</td></tr>'; }).join('') + '</tbody></table></div></section>';
+    }
+    if (W.dudas && W.dudas.length) h += '<details class="s1-sum"><summary>Dudas abiertas para el autor (' + W.dudas.length + ')</summary>' + s1Ul(W.dudas) + '</details>';
+    lb.list = list;
+    return '<div class="s1">' + h + '</div>';
+  }
+
   function viewArt() {
     var imgs = H.assets.images;
     var cats = ['Todas'];
@@ -1709,6 +2008,8 @@
       case 'simulador': html = viewSimulator(); title += ' · Simulador de economía'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'personajes': html = viewGallery(); title += ' · Personajes y NPC'; anchor = r.query.h || null; break;
+      case 'storyboard': html = viewStoryboard(); title += ' · Storyboard del Acto I'; anchor = r.query.h || null; break;
+      case 'semana1': html = viewSemana1(); title += ' · Semana 1'; anchor = r.query.h || null; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
       case 'sonido': html = viewSound(); title += ' · Sonido'; break;
       case 'paleta': html = viewPalette(); title += ' · Paleta'; break;
@@ -1796,6 +2097,17 @@
     else if (act === 'hl-act') { state.hl.act = val; render(true); }
     else if (act === 'hl-tipo') { state.hl.tipo = val; render(true); }
     else if (act === 'hl-estado') { state.hl.estado = val; render(true); }
+    else if (act === 'sb-var') { state.sb.v[el.getAttribute('data-scene')] = val; render(true); }
+    else if (act === 's1-var') { state.s1.v[el.getAttribute('data-scene')] = val; render(true); }
+    else if (act === 's1-gal') { state.s1.gal = val === '1'; render(true); }
+    else if (act === 's1-galf') { state.s1.galf = val; render(true); }
+    else if (act === 's1-mode') { state.s1.mode = val; render(true); }
+    else if (act === 's1-reme') { state.s1.reme = val; render(true); }
+    else if (act === 's1-diff') { state.s1.diff = val; render(true); }
+    else if (act === 's1-open') {
+      $$('.s1-block').forEach(function (d) { d.open = val === '1'; if (val === '1') state.s1.open[d.getAttribute('data-key')] = true; else delete state.s1.open[d.getAttribute('data-key')]; });
+    }
+    else if (act === 's1-reset') { s1Save({}); render(true); }
     else if (act === 'qa-type') { state.qa.type = val; render(true); }
     else if (act === 'sim-grupo') { state.sim.grupo = val; render(true); }
     else if (act === 'sim-estado') { state.sim.estado = val; render(true); }
@@ -1816,6 +2128,15 @@
     var act = el.getAttribute('data-action');
     if (act === 'board-phase') { state.board.phase = el.value; state.board.limit = {}; render(true); }
     else if (act === 'board-target') { state.board.target = el.value; state.board.limit = {}; render(true); }
+    else if (act === 's1-check') {
+      var map = s1Load(), id = el.getAttribute('data-id');
+      if (el.checked) map[id] = true; else delete map[id];
+      s1Save(map);
+      var li = el.closest('li');
+      if (li) li.classList.toggle('is-done', el.checked);
+      var total = $$('.s1-checks input').length, n = $$('.s1-checks input:checked').length;
+      if ($('#s1-count')) $('#s1-count').textContent = n + ' de ' + total + ' cumplidos';
+    }
     else if (act === 'dc-who') { state.dc.who = el.value; render(true); }
     else if (act === 'hl-who') { state.hl.who = el.value; render(true); }
     else if (act === 'tl-target') { state.tl.target = el.value; state.tl.sel = null; render(true); }
@@ -1824,11 +2145,22 @@
   });
   main.addEventListener('toggle', function (e) {
     var d = e.target;
+    if (d.classList && d.classList.contains('s1-block')) {
+      var k = d.getAttribute('data-key');
+      if (d.open) state.s1.open[k] = true; else delete state.s1.open[k];
+    }
     if (d.classList && d.classList.contains('phase') && state.rm.open) {
       var id = d.getAttribute('data-phase');
       if (d.open) state.rm.open[id] = true; else delete state.rm.open[id];
     }
   }, true);
+
+  var s1Opened = [];
+  window.addEventListener('beforeprint', function () {
+    s1Opened = $$('.s1-block:not([open])');
+    s1Opened.forEach(function (d) { d.open = true; });
+  });
+  window.addEventListener('afterprint', function () { s1Opened.forEach(function (d) { d.open = false; }); s1Opened = []; });
 
   $('#lbClose').addEventListener('click', closeLightbox);
   $('#lbPrev').addEventListener('click', function () { stepLightbox(-1); });

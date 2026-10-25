@@ -1,0 +1,659 @@
+{
+  "nota": "Storyboard del Acto I (F0-24). Arte provisional: se rehace en pixel art con PixelLab. Cámara real del juego: interior en corte lateral, exterior aéreo. Protagonista: solo la versión hombre, marcada «ejemplo». Las líneas son las del documento 27 en voz de ejemplo.",
+  "variantes": [
+    {
+      "id": "A",
+      "nombre": "Consorcio"
+    },
+    {
+      "id": "B",
+      "nombre": "Ministerio"
+    },
+    {
+      "id": "C",
+      "nombre": "Faroleros"
+    }
+  ],
+  "escenas": [
+    {
+      "id": "d1.2",
+      "titulo": "La llave y los papeles",
+      "variantes": true
+    },
+    {
+      "id": "d1.6",
+      "titulo": "La carta"
+    },
+    {
+      "id": "d2.4",
+      "titulo": "Cierre de caja"
+    },
+    {
+      "id": "d3.2",
+      "titulo": "La placa"
+    },
+    {
+      "id": "d4.4",
+      "titulo": "El café",
+      "variantes": true
+    },
+    {
+      "id": "d7.2",
+      "titulo": "La cuota",
+      "variantes": true
+    },
+    {
+      "id": "d7.4",
+      "titulo": "El decreto"
+    }
+  ],
+  "paneles": [
+    {
+      "id": "d1.2-A",
+      "escena": "d1.2",
+      "titulo": "La llave y los papeles",
+      "variante": "A",
+      "dia": 1,
+      "bloque": "Mañana",
+      "lugar": "Casa de Reme (ed-vb-reme), interior lateral",
+      "vista": "interior",
+      "personajes": [
+        "Reme",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Llave de latón",
+        "Papeles de la herencia con la firma de Anselmo",
+        "Caja con el detector",
+        "Lámpara de red sobre la mesa"
+      ],
+      "descripcion": "Reme entrega la llave al protagonista, de pie a la derecha. En la mesa, papeles, la caja del detector y la lámpara de red (base de latón con una «A» diminuta). La repisa de la ventana está vacía.",
+      "dialogo": [
+        {
+          "quien": "Reme",
+          "texto": "Pasa, criatura. Esta es la llave. Y estos, los papeles de tu tío: ahí está su firma."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/03-casa-reme-base.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 1,
+          "estacion": "Otoño",
+          "bloque": "Mañana",
+          "esquirlas": 120
+        },
+        "botones": [
+          "A · Continuar"
+        ]
+      }
+    },
+    {
+      "id": "d1.2-B",
+      "escena": "d1.2",
+      "titulo": "La llave y los papeles",
+      "variante": "B",
+      "dia": 1,
+      "bloque": "Mañana",
+      "lugar": "Casa de Reme (ed-vb-reme), interior lateral",
+      "vista": "interior",
+      "personajes": [
+        "Reme",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Llave de latón",
+        "Papeles de la herencia",
+        "Caja con el detector",
+        "Papel doblado con sello de cera vinotinto, sin texto"
+      ],
+      "descripcion": "Misma escena, sin lámpara de red: sobre la mesa hay un papel doblado con sello de cera vinotinto, sin escritura. La repisa sigue vacía.",
+      "dialogo": [
+        {
+          "quien": "Reme",
+          "texto": "Pasa, criatura. Esta es la llave. Y estos, los papeles de tu tío: ahí está su firma."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/04-d12-papel-sellado.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 1,
+          "estacion": "Otoño",
+          "bloque": "Mañana",
+          "esquirlas": 120
+        },
+        "botones": [
+          "A · Continuar"
+        ]
+      }
+    },
+    {
+      "id": "d1.2-C",
+      "escena": "d1.2",
+      "titulo": "La llave y los papeles",
+      "variante": "C",
+      "dia": 1,
+      "bloque": "Mañana",
+      "lugar": "Casa de Reme (ed-vb-reme), interior lateral",
+      "vista": "interior",
+      "personajes": [
+        "Reme",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Llave de latón",
+        "Papeles de la herencia",
+        "Caja con el detector",
+        "Farol vinotinto APAGADO en la repisa de la ventana"
+      ],
+      "descripcion": "Misma escena, sin lámpara de red: en la repisa de la ventana hay un farol vinotinto pequeño, apagado (cristal oscuro). La mesa solo tiene papeles.",
+      "dialogo": [
+        {
+          "quien": "Reme",
+          "texto": "Pasa, criatura. Esta es la llave. Y estos, los papeles de tu tío: ahí está su firma."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/05-d12-farol-apagado.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 1,
+          "estacion": "Otoño",
+          "bloque": "Mañana",
+          "esquirlas": 120
+        },
+        "botones": [
+          "A · Continuar"
+        ]
+      }
+    },
+    {
+      "id": "d1.6",
+      "escena": "d1.6",
+      "titulo": "La carta",
+      "variante": "—",
+      "dia": 1,
+      "bloque": "Noche",
+      "lugar": "Casa obrera del protagonista, interior lateral",
+      "vista": "interior",
+      "personajes": [
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Lámpara de minero (de mano, de carburo; distinta de la lámpara de red)",
+        "Papel y pluma"
+      ],
+      "descripcion": "El protagonista escribe a sus padres sobre la mesa de su casa obrera, a la luz de la lámpara de minero (abollada, con gancho y llama; sin cable ni globo).",
+      "dialogo": [
+        {
+          "quien": "Protagonista (ejemplo, hombre)",
+          "texto": "Mamá, papá: heredé un puesto. Lo del banco agrario lo arreglo yo."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/12-carta-casa-obrera.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 1,
+          "estacion": "Otoño",
+          "bloque": "Noche",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Enviar la carta"
+        ]
+      }
+    },
+    {
+      "id": "d2.4",
+      "escena": "d2.4",
+      "titulo": "Cierre de caja",
+      "variante": "—",
+      "dia": 2,
+      "bloque": "Noche",
+      "lugar": "Puesto de Anselmo (tienda), interior lateral",
+      "vista": "interior",
+      "personajes": [
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Cajón de la caja atascado",
+        "Doble fondo",
+        "Carrete de cinta con el número 1"
+      ],
+      "descripcion": "Cerrado el puesto, el protagonista cuadra la caja; el cajón se atasca y bajo el doble fondo aparece un carrete con el número 1. Sale el aviso «Encontraste una cinta».",
+      "dialogo": [
+        {
+          "quien": "Narrador",
+          "texto": "El cajón suena hueco. Debajo hay un carrete con un número: 1."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/13-cierre-caja.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 2,
+          "estacion": "Otoño",
+          "bloque": "Noche",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Continuar"
+        ]
+      },
+      "defecto": "Defecto provisional: el carrete de la imagen muestra el número «2» en vez del «1». Se corrige al rehacer el arte (F3-16)."
+    },
+    {
+      "id": "d3.2",
+      "escena": "d3.2",
+      "titulo": "La placa",
+      "variante": "—",
+      "dia": 3,
+      "bloque": "Mañana",
+      "lugar": "Boca de las Galerías (ed-vb-mina-galerias), exterior aéreo",
+      "vista": "exterior",
+      "personajes": [
+        "Teo",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Placa de Pozo Negro (prop fijo de la boca)"
+      ],
+      "descripcion": "Teo y el protagonista ante la placa de Pozo Negro, fija junto a la boca de la mina. Teo la mira.",
+      "dialogo": [
+        {
+          "quien": "Teo",
+          "texto": "Tu abuelo está en esa placa. Yo estaba en otro turno. Por eso hablo poco de ese día."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/14-placa-galerias.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 3,
+          "estacion": "Otoño",
+          "bloque": "Mañana",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Continuar"
+        ]
+      }
+    },
+    {
+      "id": "d4.4-A",
+      "escena": "d4.4",
+      "titulo": "El café",
+      "variante": "A",
+      "dia": 4,
+      "bloque": "Noche",
+      "lugar": "Casa de Reme (ed-vb-reme), interior lateral, de noche",
+      "vista": "interior",
+      "personajes": [
+        "Reme",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Lámpara de red con «A» en la base, sobre la mesa",
+        "Tazas de café"
+      ],
+      "descripcion": "Reme y el protagonista comparten café; la lámpara de red brilla sobre la mesa como único objeto destacado. Repisa vacía.",
+      "dialogo": [
+        {
+          "quien": "Reme",
+          "texto": "Pasa, criatura, que el café se enfría. Si me adelantas la cuota, te rebajo un puntito."
+        },
+        {
+          "quien": "Reme",
+          "texto": "Un regalo de un cliente agradecido, criatura. Es la única que alumbra la calle."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/06-d44-cafe-lampara.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 4,
+          "estacion": "Otoño",
+          "bloque": "Noche",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Adelantar la cuota",
+          "B · Ahora no"
+        ]
+      }
+    },
+    {
+      "id": "d4.4-B",
+      "escena": "d4.4",
+      "titulo": "El café",
+      "variante": "B",
+      "dia": 4,
+      "bloque": "Noche",
+      "lugar": "Casa de Reme (ed-vb-reme), interior lateral, de noche",
+      "vista": "interior",
+      "personajes": [
+        "Reme",
+        "Protagonista (ejemplo, hombre)",
+        "Quiroga"
+      ],
+      "props": [
+        "Papel doblado con sello de cera vinotinto",
+        "Taza de té"
+      ],
+      "descripcion": "Quiroga entra por la puerta de la derecha, saluda a Reme con deferencia y le devuelve un papel sellado sin cobrarle. El protagonista sigue sentado.",
+      "dialogo": [
+        {
+          "quien": "Reme",
+          "texto": "Pasa, criatura, que el café se enfría. Si me adelantas la cuota, te rebajo un puntito."
+        },
+        {
+          "quien": "Quiroga",
+          "texto": "Doña Reme, su trámite está en orden."
+        },
+        {
+          "quien": "Reme",
+          "texto": "Siempre tan atento, inspector."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/07-d44-cafe-quiroga.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 4,
+          "estacion": "Otoño",
+          "bloque": "Noche",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Adelantar la cuota",
+          "B · Ahora no"
+        ]
+      }
+    },
+    {
+      "id": "d4.4-C",
+      "escena": "d4.4",
+      "titulo": "El café",
+      "variante": "C",
+      "dia": 4,
+      "bloque": "Noche",
+      "lugar": "Casa de Reme (ed-vb-reme), interior lateral, de noche",
+      "vista": "interior",
+      "personajes": [
+        "Reme",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Farol vinotinto ENCENDIDO (luz ámbar) en la repisa de la ventana",
+        "Tazas de café"
+      ],
+      "descripcion": "Reme y el protagonista toman café; en la repisa, contra la ventana oscura, un farol vinotinto pequeño con luz ámbar.",
+      "dialogo": [
+        {
+          "quien": "Reme",
+          "texto": "Pasa, criatura, que el café se enfría. Si me adelantas la cuota, te rebajo un puntito."
+        },
+        {
+          "quien": "Reme",
+          "texto": "Una costumbre de mi madre, criatura: cuando alguien viene a pagar, el farol encendido."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/08-d44-cafe-farol.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 4,
+          "estacion": "Otoño",
+          "bloque": "Noche",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Adelantar la cuota",
+          "B · Ahora no"
+        ]
+      }
+    },
+    {
+      "id": "d7.2-A",
+      "escena": "d7.2",
+      "titulo": "La cuota",
+      "variante": "A",
+      "dia": 7,
+      "bloque": "Tarde",
+      "lugar": "Casa de Reme (ed-vb-reme), interior lateral, al caer la tarde",
+      "vista": "interior",
+      "personajes": [
+        "Reme",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Lámpara de red con «A»",
+        "Libro de deuda cerrado",
+        "Monedas en la mano del protagonista"
+      ],
+      "descripcion": "Tarde baja y ámbar. Reme sentada ante el libro; el protagonista de pie con unas monedas: paga o pide tiempo. Lámpara de red sobre la mesa; repisa vacía.",
+      "dialogo": [
+        {
+          "quien": "Reme",
+          "texto": "Con calma, criatura. Yo en tu lugar pagaría esta semana, pero una más no me quita el sueño."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/09-d72-cuota-lampara.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 7,
+          "estacion": "Otoño",
+          "bloque": "Tarde",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Pagar",
+          "B · Pedir tiempo"
+        ]
+      }
+    },
+    {
+      "id": "d7.2-B",
+      "escena": "d7.2",
+      "titulo": "La cuota",
+      "variante": "B",
+      "dia": 7,
+      "bloque": "Tarde",
+      "lugar": "Casa de Reme (ed-vb-reme), interior lateral, al caer la tarde",
+      "vista": "interior",
+      "personajes": [
+        "Reme",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Papel doblado con sello vinotinto",
+        "Libro de deuda cerrado",
+        "Monedas"
+      ],
+      "descripcion": "Tarde baja y ámbar. Reme sentada ante el libro; el protagonista de pie con unas monedas: paga o pide tiempo. Sin lámpara: el papel sellado doblado, junto al libro de deuda.",
+      "dialogo": [
+        {
+          "quien": "Reme",
+          "texto": "Con calma, criatura. Yo en tu lugar pagaría esta semana, pero una más no me quita el sueño."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/10-d72-cuota-papel.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 7,
+          "estacion": "Otoño",
+          "bloque": "Tarde",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Pagar",
+          "B · Pedir tiempo"
+        ]
+      }
+    },
+    {
+      "id": "d7.2-C",
+      "escena": "d7.2",
+      "titulo": "La cuota",
+      "variante": "C",
+      "dia": 7,
+      "bloque": "Tarde",
+      "lugar": "Casa de Reme (ed-vb-reme), interior lateral, al caer la tarde",
+      "vista": "interior",
+      "personajes": [
+        "Reme",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Farol vinotinto encendido",
+        "Libro de deuda cerrado",
+        "Monedas"
+      ],
+      "descripcion": "Tarde baja y ámbar. Reme sentada ante el libro; el protagonista de pie con unas monedas: paga o pide tiempo. Sin lámpara: el farol vinotinto, ahora ENCENDIDO (luz ámbar), en la repisa.",
+      "dialogo": [
+        {
+          "quien": "Reme",
+          "texto": "Con calma, criatura. Yo en tu lugar pagaría esta semana, pero una más no me quita el sueño."
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/11-d72-cuota-farol.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 7,
+          "estacion": "Otoño",
+          "bloque": "Tarde",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Pagar",
+          "B · Pedir tiempo"
+        ]
+      }
+    },
+    {
+      "id": "d7.4",
+      "escena": "d7.4",
+      "titulo": "El decreto",
+      "variante": "—",
+      "dia": 7,
+      "bloque": "Noche",
+      "lugar": "Calle de Villa Brasa, exterior aéreo",
+      "vista": "exterior",
+      "personajes": [
+        "Voceador",
+        "Protagonista (ejemplo, hombre)"
+      ],
+      "props": [
+        "Voceador con hojas del decreto"
+      ],
+      "descripcion": "En la calle, de noche, un voceador anuncia el decreto del Ministerio sobre las zonas del Hollín. Escena-gancho de A1; no nombra a Montenegro.",
+      "dialogo": [
+        {
+          "quien": "Voceador",
+          "texto": "¡Decreto del Ministerio de Recursos! ¡Se abren nuevas zonas en el Hollín!"
+        }
+      ],
+      "imagen": "assets-ref/storyboard-acto-i/15-decreto-voceador.webp",
+      "wireframe": {
+        "barra": {
+          "dia": 7,
+          "estacion": "Otoño",
+          "bloque": "Noche",
+          "esquirlas": null
+        },
+        "botones": [
+          "A · Continuar"
+        ]
+      }
+    }
+  ],
+  "tabla_d72": {
+    "titulo": "d7.2 · ramas por dificultad y salida",
+    "fuente": "Documento 27, sección 11 (y 28, sección 7.2). Solo cifras ya escritas allí.",
+    "dificultades": [
+      "Novato",
+      "Intermedio",
+      "Difícil",
+      "Hardcore"
+    ],
+    "filas": [
+      {
+        "salida": "Pagas antes (desde el día 4, en casa de Reme)",
+        "celdas": [
+          "Pagada, con la cuota en 900 y el interés −1 pp. La siguiente vence el día 14. En d7.2 solo hay una línea de agradecimiento.",
+          "Pagada, con la cuota en 900 y el interés −1 pp. La siguiente vence el día 14. En d7.2 solo hay una línea de agradecimiento.",
+          "Pagada, con la cuota en 900 y el interés −1 pp. La siguiente vence el día 14. En d7.2 solo hay una línea de agradecimiento.",
+          "Pagada, con la cuota en 900 y el interés −1 pp. La siguiente vence el día 14. En d7.2 solo hay una línea de agradecimiento."
+        ],
+        "flag": "antes"
+      },
+      {
+        "salida": "Pagas el día 7",
+        "celdas": [
+          "Pagada. La siguiente vence el día 14.",
+          "Pagada. La siguiente vence el día 14.",
+          "Pagada. La siguiente vence el día 14.",
+          "Pagada. La siguiente vence el día 14."
+        ],
+        "flag": "plazo"
+      },
+      {
+        "salida": "Pides prórroga, o no respondes",
+        "celdas": [
+          "Toda la serie se desplaza una semana: la cuota vence el día 14, la siguiente el 21. Recargo de 38 esquirlas (4 % de 960).",
+          "Toda la serie se desplaza una semana: la cuota vence el día 14, la siguiente el 21. Recargo de 58 esquirlas (6 % de 960).",
+          "La cuota atrasada se suma a la del día 14: ese día debes 960 + 960 + 115 de recargo = 2 035. La serie no se desplaza.",
+          "La cuota atrasada se suma a la del día 14: ese día debes 960 + 960 + 173 de recargo = 2 093. La serie no se desplaza."
+        ],
+        "flag": "tarde"
+      }
+    ],
+    "nota": "El recargo es un importe en esquirlas (38, 58, 115 y 173 en las cuatro dificultades); deja de crecer a las 3 semanas. Reme no alza la voz ni reprocha en ninguna salida. f-pago-reme guarda antes, plazo o tarde."
+  },
+  "mapa": {
+    "imagen": "assets-ref/storyboard-acto-i/01-mapa-valdoria-niebla.webp",
+    "hoja_props": "assets-ref/storyboard-acto-i/02-props-hoja.webp",
+    "nota": "Mapa de la libreta al empezar el Acto I (doc 30, nodo 3): solo el Hollín está abierto; el resto, bajo niebla opaca con un único detalle que asoma. Referencia provisional para F3-16 y F4-152/153. Sin rótulos en la imagen.",
+    "regiones": [
+      {
+        "id": "hollin",
+        "nombre": "Cuenca del Hollín",
+        "posicion": "suroeste",
+        "estado": "abierta",
+        "se_ve": "Humo de carbón, chimeneas, el pueblo minero de Villa Brasa con su estación y las líneas de riel."
+      },
+      {
+        "id": "sierra-alta",
+        "nombre": "Sierra Alta",
+        "posicion": "noroeste",
+        "estado": "niebla",
+        "se_ve": "Un pico nevado asoma entre la niebla."
+      },
+      {
+        "id": "salares",
+        "nombre": "Salares del Litoral",
+        "posicion": "noreste",
+        "estado": "niebla",
+        "se_ve": "Un faro y la punta de un muelle."
+      },
+      {
+        "id": "cavernas",
+        "nombre": "Cavernas de Cristal",
+        "posicion": "centro-izquierda",
+        "estado": "niebla",
+        "se_ve": "Boca de cueva tenue con la punta de un cristal azul-blanco."
+      },
+      {
+        "id": "fosa",
+        "nombre": "La Fosa",
+        "posicion": "centro-derecha",
+        "estado": "niebla",
+        "se_ve": "El borde oscuro de un cráter con una valla oxidada, sin brillo."
+      },
+      {
+        "id": "meridiano",
+        "nombre": "Puerto Meridiano (la capital)",
+        "posicion": "sureste",
+        "estado": "niebla",
+        "se_ve": "La silueta de la torre más alta de la ciudad."
+      }
+    ],
+    "reglas": [
+      "No aparece Cumbre Clara ni ningún sanatorio.",
+      "Los rieles entre regiones se ven apenas, como líneas finas vinotinto bajo la niebla."
+    ]
+  }
+}

@@ -15,8 +15,8 @@ from .texto import slug
 
 NOMBRE = "arte"
 ASSETS, GALERIA, PALETA = "studio/data/assets.json", "studio/data/galeria.json", "studio/data/palette.json"
-PREFIJO_DIR = {"prueba-de-estilo": "pe1", "prueba-de-estilo-2": "pe2", "marca": "marca"}
-SECCION_DE_DIR = {"prueba-de-estilo": "Pruebas de estilo, ronda 1", "prueba-de-estilo-2": "Pruebas de estilo, ronda 2 (horizontal)", "marca": "Marca"}
+PREFIJO_DIR = {"prueba-de-estilo": "pe1", "prueba-de-estilo-2": "pe2", "marca": "marca", "storyboard-acto-i": "sb"}
+SECCION_DE_DIR = {"prueba-de-estilo": "Pruebas de estilo, ronda 1", "prueba-de-estilo-2": "Pruebas de estilo, ronda 2 (horizontal)", "marca": "Marca", "storyboard-acto-i": "Storyboard del Acto I (provisional)"}
 REEMPLAZO = re.compile(r"[Rr]eemplazada por ([\w.-]+)\.png")
 
 

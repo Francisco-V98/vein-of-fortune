@@ -7,6 +7,9 @@ Estudio de diseño de un juego de gestión minera (Godot 4, pixel art horizontal
 - Etapas por tarea: ideación, análisis, producción, QA, revisión del autor, prueba, cierre; con subagentes reales (`.claude/agents`, tabla en `studio/data/equipo.json`) y el bloque `pipeline` de `studio/data/tasks/<ID>.json` al día.
 - Todo termina en ✅ (decidido por el autor) o ⏳ `<ID de tarea existente y no terminada>`, y solo si nada de lo ya hecho depende de ello; si no, se decide ahora con el autor (preguntas en rondas de máximo 4, con contexto y recomendación).
 
+## Tutorial y onboarding (siempre)
+- Todo proceso de primera vez y todo paso obligatorio lleva tutorial guiado y compuerta (sin saltos ni softlock). Cada rol lo contempla en su entregable (regla en el bloque común de `.claude/agents`); QA lo verifica. Inventario de la semana 1: doc 27 «Tutoriales y compuertas».
+
 ## Modelo y esfuerzo de los subagentes (ahorro de tokens)
 - Al lanzar un subagente con la herramienta `Agent`, fija `model` y `effort` según `studio/data/equipo.json` (`roles[].modelo` y `roles[].esfuerzo`; el rol se busca por su campo `agente`). Si cambias alguno para una tarea, justifícalo en una línea en el encargo.
 - Fable 5.1 (`fable`) nunca se usa por defecto: requiere la autorización del autor (el mod `vf-equipo` pide la confirmación). Si no estás seguro, usa el siguiente modelo más barato y avisa.

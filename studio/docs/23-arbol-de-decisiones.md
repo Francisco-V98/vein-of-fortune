@@ -110,7 +110,7 @@ Un cuello es un punto donde varias ramas se juntan. Así el árbol no se multipl
 - **Dispara:** Lucía te ofrece un rumor a cambio de otro (día 5, bloque de mañana, en tu puesto).
 - **Le cuentas el rumor entero.** → *Mundo:* El Teletipo lo publica con su SIN CONFIRMAR. *Mercado:* El mineral del rumor se mueve 2 a 3 puntos ese día. *Personajes:* Lucía: confía más en ti.
 - **Le cuentas la mitad.** → *Mundo:* Sale una nota vaga. *Mercado:* El mineral del rumor se mueve 1 punto. *Personajes:* Lucía: sospecha, pero te debe una.
-- **No le cuentas nada.** → *Mundo:* No sale nada. *Personajes:* Lucía: toma nota y confía un poco menos.
+- **No le cuentas nada.** → *Mundo:* No sale nada, salvo con el rumor de reserva (si no oíste al cliente), que el Teletipo publica igual con su SIN CONFIRMAR ([27](27-guion-del-acto-i.md), sección 8 ✅, decisión del autor, 2026-10-24); sin efecto de mercado. *Personajes:* Lucía: toma nota y confía un poco menos.
 - **Fija:** `m-lucia`. **Lee:** —.
 
 **Cuello:** `c-i-cierre`. Las tres terminan en el mismo cierre del acto.
@@ -365,12 +365,14 @@ Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conserv
 
 ## 9 · Banderas: quién las fija y quién las lee ✅
 
+**Regla de cola ✅ (2026-10-24):** `f-familia` y `m-lucia` siempre quedan fijadas antes de cerrar el Acto I, porque la cola no suelta `d7.3` sin resolver `d1.6` y `d5.2` ([27](27-guion-del-acto-i.md), sección 21.3). No hay valor por defecto.
+
 **Estado:** el número de banderas y de medidores es decisión del autor (2026-10-12); los valores y a quién lee cada decisión los confirmó el 2026-10-16 (F0-80).
 
 | Bandera | Tipo | Valores | La fija | La leen |
 |---|---|---|---|---|
-| `f-familia` | elección | todo / a medias / nada | `n-i-herencia` | `n-iv-montenegro` |
-| `f-pago-reme` | elección | antes / a tiempo / tarde | `n-i-reme-plazo` | `n-ii-orden` |
+| `f-familia` | elección | todo / parte (a medias) / nada | `n-i-herencia` | `n-iv-montenegro` |
+| `f-pago-reme` | elección | antes / plazo (a tiempo) / tarde | `n-i-reme-plazo` | `n-ii-orden` |
 | `f-orden-reme` | elección | aceptar / negociar / rechazar | `n-ii-orden` | `n-ii-conflicto`, `n-ii-alianza` |
 | `f-huelga` | elección | apoyar / abstenerte / romper | `n-ii-huelga` | `n-ii-alianza` |
 | `f-alianza` | elección | Consorcio / Ministerio / Faroleros | `n-ii-alianza` | `n-iii-esteban-trato`, `n-iii-contrato-oficial`, `n-iii-monopolio`, `n-iii-circulo`, `n-iv-reme-proteccion` |
