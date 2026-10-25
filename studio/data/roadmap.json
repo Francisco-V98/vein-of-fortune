@@ -900,7 +900,7 @@
             },
             {
               "id": "F0-88",
-              "status": "review",
+              "status": "done",
               "title": "Consulta del estudio sin leer documentos enteros (tools/consulta.py)",
               "est": 5,
               "prio": "P1",
