@@ -99,7 +99,7 @@ Correspondencia con el diagrama: «Libreta» (LB) agrupa los nodos 3 (Mapa), 7 (
 | Galería | Recinto | Salir; cambio único de entrada | 0; si no picaste ninguna mena, se devuelve el bloque |
 | Galería | Minijuego | Picar una mena | 0 (desgaste y Aguante según [02](02-extraccion.md)) |
 | Cualquier punto con mapa | Mapa | View (o botón de la libreta) | 0 |
-| Mapa | Puerta de otra edificación de la misma zona | Elegir edificación | 0, con loader; apareces **fuera**, en la puerta |
+| Mapa | Puerta de otra edificación de la misma zona | Elegir edificación | 0, con loader; apareces **fuera**, en la puerta. **En el MVP Villa Brasa no tiene mapa interno** ✅ (decisión del autor, 2026-10-24; [26](26-zonas-y-edificios.md)): solo se camina, y este salto llega con ⏳ F3-46 |
 | Mapa | Zona nueva | Elegir zona y confirmar billete | Billete 42 a 210 esquirlas; sin bloque |
 | Calle | Tablón | Usar el tablón | 0 |
 | Barra superior | Fin del bloque | Esperar y confirmar | Salta un bloque; el mercado se mueve igual |

@@ -104,7 +104,7 @@ Todo lo de esta tabla viene de la sección 1 o de documentos ya confirmados.
 | Dentro del Acto I | Fuera del Acto I |
 |---|---|
 | Villa Brasa y las **Galerías del Hollín**; **carbón** y **hierro** ✅ | Taller, Refinado y Acero (el taller abre en el II) ✅ |
-| Escáner instantáneo, **Picado**, **Perforación** y **Regateo** ✅ | Herrería, quioscos y sede de la Unión (V1, [26](26-zonas-y-edificios.md)) ✅ |
+| Detector con batería, **Picado**, **Perforación** y **Regateo** ✅ | Herrería, quioscos y sede de la Unión (V1, [26](26-zonas-y-edificios.md)) ✅ |
 | Tienda modesta (con Reponer: arrastrar la mercancía a los estantes y fijar precios) y herramientas de nivel 1 y 2; el taladro solo lo presta Teo el día 3 ✅ | Cañón Ferroso y las demás zonas ✅ |
 | Información básica (precio y flecha), la noticia oficial del Heraldo (como máximo 1 noticia y 1 rumor del Teletipo por día) y la sección de empleos ✅ | Contratar de verdad (se abre al cerrar el Acto I y exige una mejora de la tienda), mercado negro y vigilancia (Acto II) ✅ |
 | | Capas 3 y 4 de información y la Aetherita ✅ |
@@ -186,10 +186,10 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | Campo | Contenido |
 |---|---|
 | Se aprende | La tienda: surtir los estantes y fijar los precios |
-| Decisión | Principal: el **margen**, que por defecto es del 20 %: precio de lista = valor justo × 1,20, y el cliente medio paga × 1,15 ✅ ([28](28-numeros-base-de-la-economia.md), `world.json`). Menor: el **nombre de la tienda**, al colgar el cartel (la pantalla, ⏳ F3-14) |
+| Decisión | Principal: el **margen**, que por defecto es del 20 %: precio de lista = valor justo × 1,20, y el cliente medio paga × 1,15 ✅ ([28](28-numeros-base-de-la-economia.md), `world.json`). Menor: el **nombre de la tienda**, al colgar el cartel (la pantalla, ⏳ F3-14). El **rango del margen que puedes elegir** se fija en la pantalla de la tienda (⏳ F2-20) ✅ (decisión del autor, 2026-10-24) |
 | Lo cierra | La primera venta y el cierre de caja; el puesto queda reabierto |
 | Si no haces lo esperado | Sin ir a Quiroga, el puesto sigue cerrado y la escena espera. Mientras tanto vendes al contado en el mercado, con peor precio |
-| Sin dinero | Quiroga cobra su gestión (240 esquirlas) con la primera venta; si no alcanza, Reme la fía como «fiado de la gestión», sin interés y fuera de la deuda de la herencia (se paga junto con la siguiente cuota) ✅ |
+| Sin dinero | Quiroga cobra su gestión (240 esquirlas) con la primera venta; si no alcanza, Reme la fía ("alcanza" se compara con tu **efectivo total**, los 120 más lo que ingresa la venta ✅, decisión del autor, 2026-10-24) como «fiado de la gestión», sin interés y fuera de la deuda de la herencia (se paga junto con la siguiente cuota) ✅ |
 
 **Líneas de ejemplo**
 
@@ -247,7 +247,7 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 | Se aprende | **Regateo** (oferta contra paciencia del cliente). El **pedido de cliente estándar** es su escenario |
 | Decisión | El **mínimo** del regateo: el precio por debajo del cual no vendes |
 | Lo cierra | El café con Reme |
-| Si no haces lo esperado | Si dejas ir al cliente, el pedido se pierde sin castigo y llegará otro. Si no vas a casa de Reme, la oferta de pagar antes sigue abierta hasta el día 7 (se paga solo allí, sección 21.6) |
+| Si no haces lo esperado | Si dejas ir al cliente, el pedido se pierde sin castigo y llegará otro. **Consejo al jugador ✅ (decisión del autor, 2026-10-24):** no vendas todo tu carbón, porque una expedición da unos 5 sacos y el pedido pide 8 (las cifras no cambian; ⏳ F2-08 verifica con el simulador que una expedición, unos 5 sacos, y el pedido de 8 cuadran). Si no vas a casa de Reme, la oferta de pagar antes sigue abierta hasta el día 7 (se paga solo allí, sección 21.6) |
 
 **Líneas de ejemplo**
 
@@ -287,13 +287,13 @@ El selector es de cuatro niveles: Novato, Intermedio, Difícil y Hardcore ✅. L
 
 - **Un día de respiro.** La tarde queda libre: puedes salir a las Galerías, vender, mirar el mercado o no hacer nada. No hay mecánica nueva que aprender.
 - **Ayuda a pedido.** La mejora no abre ninguna ventana. Quien quiera saber cuánto cuesta y qué mejora pulsa el «?» de la oferta de Teo.
-- **Si no tienes el rumor del cliente** (dejaste ir al cliente el día 4 o no oíste a quien lo contó), Lucía acepta como tuyo lo que viste en el mercado: «el hierro lleva dos días subiendo». Es el rumor de reserva. Las tres salidas (entero, mitad y nada) funcionan igual, con el Teletipo titulando «HIERRO SUBIRÍA DESPACIO EN EL HOLLÍN. SIN CONFIRMAR». Así `n-i-lucia-rumor` nunca se queda sin material ✅.
-- **El rumor:** si lo cuentas entero, el Teletipo lo publica esa noche con su SIN CONFIRMAR («HERRERO DE LA CALLE HONDA ACAPARA CARBÓN. SIN CONFIRMAR») y el carbón se mueve 2 a 3 puntos; si cuentas la mitad, sale una nota vaga y se mueve 1; si callas, no sale nada (opciones de [23](23-arbol-de-decisiones.md), sección 3). Los tres textos del Teletipo de este día (entero, mitad y reserva) los escribe ⏳ F3-47 ✅ (decisión del autor, 2026-10-16).
+- **Si no tienes el rumor del cliente** (dejaste ir al cliente el día 4 o no oíste a quien lo contó), Lucía acepta como tuyo lo que viste en el mercado: «el hierro lleva dos días subiendo». Es el rumor de reserva. Las tres salidas (entero, mitad y callar) funcionan igual, con el Teletipo titulando «HIERRO SUBIRÍA DESPACIO EN EL HOLLÍN. SIN CONFIRMAR» también si callas ✅ (decisión del autor, 2026-10-24); es el único rumor impreso del día, así que el tope de 1 rumor no se rompe, y callar solo baja `m-lucia`. Así `n-i-lucia-rumor` nunca se queda sin material ✅.
+- **El rumor:** si lo cuentas entero, el Teletipo lo publica esa noche con su SIN CONFIRMAR («HERRERO DE LA CALLE HONDA ACAPARA CARBÓN. SIN CONFIRMAR») y el carbón se mueve 2 a 3 puntos; si cuentas la mitad, sale una nota vaga y se mueve 1; si callas, no sale nada, salvo con el rumor de reserva, que se publica igual (sin efecto de mercado: callar solo baja `m-lucia`; opciones de [23](23-arbol-de-decisiones.md), sección 3). Los tres textos del Teletipo de este día (entero, mitad y reserva) los escribe ⏳ F3-47 ✅ (decisión del autor, 2026-10-16).
 - **Rumor de Lucía y tope de prensa.** El rumor del ferrocarril que te da Lucía es de boca, no sale en el Teletipo hasta el día 6, así que el día 5 sigue con 1 rumor impreso como máximo. Callar solo baja `m-lucia`: no quita el rumor del ferrocarril, de modo que `d6.1` funciona sea cual sea la decisión ✅.
 - **La carta de casa:** con «todo», contesta el padre, dolido pero sin darte la espalda; con «parte», se alegran sin saber de la mina; con «nada», no llega carta y `d5.4` no se juega.
 - **Hilos que se siembran** ✅: `h-lealtad-de-lucia` (`d5.2`) y `h-vega-mansa-y-el-juramento` (`d5.4`).
 - **Sombras:** ninguna.
-- **Hierro:** lo que guardaste el día 3 alimenta la mejora. Si lo vendiste, hay que sacar más, con el pico (el taladro de Teo fue solo del día 3).
+- **Hierro:** ⏳ F2-08 verifica que 2 menas de hierro (3-4 sacos) alcanzan para los 3 de la mejora. Lo que guardaste el día 3 alimenta la mejora. Si lo vendiste, hay que sacar más, con el pico (el taladro de Teo fue solo del día 3).
 
 ---
 
@@ -664,7 +664,7 @@ A estos **319** se suman las **3 cajas** de la interacción de pagar antes (secc
 | `d7.3` | Tras `d7.2`, de noche, con la cuota atendida y el primer contacto hecho | No | Ninguna | — |
 | `d7.4` | Tras `d7.3`. Es la escena-gancho del acto: no cuenta para el tope de prensa | No | Ninguna | — |
 
-La cola suelta las escenas de una en una y en orden, y nunca dos mecánicas nuevas a la vez (reglas de la cola ✅, [24](24-umbrales-de-acto.md) sección 10). Solo `d5.3` es **opcional** y no pasa por la cola. Son **condicionales** (dependen de algo que puede no haber ocurrido) `d3.4` (sin hierro), `d4.3` (si dejas ir al cliente), `d5.1` (sin pedido) y `d5.4` (con «nada» en la herencia). La única fecha dura es `d7.2`.
+La cola suelta las escenas de una en una y en orden, y nunca dos mecánicas nuevas a la vez (reglas de la cola ✅, [24](24-umbrales-de-acto.md) sección 10). **`d7.3` no se suelta sin haber resuelto `d1.6` y `d5.2`** ✅ (regla, no valor por defecto; decisión del autor, 2026-10-24), para que `f-familia` y `m-lucia` siempre tengan su decisión. Solo `d5.3` es **opcional** y no pasa por la cola. Son **condicionales** (dependen de algo que puede no haber ocurrido) `d3.4` (sin hierro), `d4.3` (si dejas ir al cliente), `d5.1` (sin pedido) y `d5.4` (con «nada» en la herencia). La única fecha dura es `d7.2`.
 
 ### 21.4 Hilos, sombras, props, ramas y responsable
 

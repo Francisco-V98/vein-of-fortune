@@ -1561,7 +1561,7 @@
               "title": "Simulador por consola de miles de días",
               "est": 6,
               "status": "backlog",
-              "desc": "Ejecuta el mercado sin interfaz y genera reportes.",
+              "desc": "Ejecuta el mercado sin interfaz y genera reportes. Verifica también dos casos del Acto I: el pedido de 8 sacos de carbón frente a unos 5 sacos por expedición, y que 2 menas de hierro (3-4 sacos) alcanzan para los 3 que pide la mejora del pico.",
               "done_when": "Corre 10.000 días y entrega un informe.",
               "prio": "P1"
             },

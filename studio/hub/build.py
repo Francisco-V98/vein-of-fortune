@@ -1167,6 +1167,70 @@ def load_storyboard(assets):
     return sb
 
 
+SEMANA1_DAYS = 7
+SEMANA1_BLOCKS = ("Mañana", "Tarde", "Noche")
+SEMANA1_BLOCK_KEYS = ("escenas", "pasos", "como", "se_espera", "obligatorio", "si_no_lo_haces")
+SEMANA1_DONE = ("done", "dropped")
+
+
+def _semana1_strings(node):
+    if isinstance(node, str):
+        yield node
+    elif isinstance(node, dict):
+        for v in node.values():
+            yield from _semana1_strings(v)
+    elif isinstance(node, list):
+        for v in node:
+            yield from _semana1_strings(v)
+
+
+def load_semana1(task_status, hilos):
+    """Valida y devuelve la vista «Semana 1» (studio/data/semana1.json, tarea F0-24)."""
+    path = DATA / "semana1.json"
+    if not path.exists():
+        warn("semana1.json: no existe")
+        return None
+    sem = load_json(path)
+    doc27 = "".join(p.read_text(encoding="utf-8") for p in sorted(DOCS.glob("27-*.md")))
+    hilo_ids = {h["id"] for h in hilos.get("hilos", [])}
+    dias = {d.get("dia"): d for d in sem.get("dias", [])}
+    for n in range(1, SEMANA1_DAYS + 1):
+        d = dias.get(n)
+        if not d:
+            warn("semana1.json: falta el día %d" % n)
+            continue
+        names = [b.get("bloque") for b in d.get("bloques", [])]
+        for b in SEMANA1_BLOCKS:
+            if b not in names:
+                warn("semana1.json: el día %d no tiene el bloque %s" % (n, b))
+        for b in d.get("bloques", []):
+            where = "día %s, %s" % (n, b.get("bloque"))
+            for key in SEMANA1_BLOCK_KEYS:
+                if key not in b:
+                    warn("semana1.json: %s no tiene '%s'" % (where, key))
+            for sid in b.get("escenas", []):
+                if ("`%s`" % sid) not in doc27:
+                    warn("semana1.json: %s cita una escena que no está en el documento 27: %s" % (where, sid))
+            for hid in b.get("hilos", []):
+                if hid not in hilo_ids:
+                    warn("semana1.json: %s cita un hilo que no existe en hilos.json: %s" % (where, hid))
+    for ob in sem.get("obligatorios_de_la_semana", []):
+        d = dias.get(ob.get("dia"))
+        if not d:
+            warn("semana1.json: el obligatorio %s referencia un día inexistente: %s" % (ob.get("id"), ob.get("dia")))
+        elif ob.get("bloque") not in [b.get("bloque") for b in d.get("bloques", [])]:
+            warn("semana1.json: el obligatorio %s referencia un bloque inexistente: día %s, %s" % (ob.get("id"), ob.get("dia"), ob.get("bloque")))
+    if not sem.get("obligatorios_de_la_semana"):
+        warn("semana1.json: faltan los obligatorios de la semana")
+    for text in _semana1_strings(sem):
+        for tid in re.findall(r"⏳\s*(F\d+-\d+)", text):
+            if tid not in task_status:
+                warn("semana1.json: un ⏳ apunta a una tarea inexistente: %s" % tid)
+            elif task_status[tid] in SEMANA1_DONE:
+                warn("semana1.json: un ⏳ apunta a una tarea terminada: %s (%s)" % (tid, task_status[tid]))
+    return sem
+
+
 def build_hub():
     roadmap = load_json(DATA / "roadmap.json")
     activity = load_activity()
@@ -1195,6 +1259,7 @@ def build_hub():
         "assets": assets,
         "gallery": load_gallery(world, assets),
         "storyboard": load_storyboard(assets),
+        "semana1": load_semana1(task_status, hilos),
         "palette": load_json(DATA / "palette.json"),
         "qa": load_qa(task_ids),
         "presentation": load_presentation({d["id"] for d in docs}),
