@@ -187,6 +187,24 @@
         "Windows real obligatorio, Steam Deck Verified en F4-239",
         "Sesiones por bloques de tareas afines"
       ]
+    },
+    {
+      "n": 8,
+      "tema": "Vistas del hub (F0-74, F0-75)",
+      "fecha": "2026-10-25",
+      "resumen": "Bloque de vistas del hub: F0-74 muestra el flujo (pipeline) de cada tarea en su vista de tarea",
+      "tareas": [
+        "F0-74"
+      ],
+      "prs": [
+        "75"
+      ],
+      "docs": [
+        "15"
+      ],
+      "decisiones": [
+        "El flujo se dibuja desde pipeline con ayuda plegable"
+      ]
     }
   ]
 }

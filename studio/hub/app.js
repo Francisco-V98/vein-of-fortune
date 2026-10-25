@@ -1492,6 +1492,40 @@
     if (e.type === 'doc') return '<div class="ev ev-text"><a href="#/docs/' + esc(e.doc) + '">Documento ' + esc(e.doc) + '</a>' + cap + '</div>';
     return '<div class="ev ev-text">' + (e.text ? '<p>' + esc(e.text) + '</p>' : '') + cap + '</div>';
   }
+  var FLOW_ST = { pendiente: ['○', 'Pendiente'], activa: ['►', 'Activa'], hecha: ['✓', 'Hecha'], omitida: ['–', 'Omitida'] };
+  function flowRole(id) {
+    var r = ((H.equipo || {}).roles || []).filter(function (x) { return x.id === id; })[0];
+    return r ? (r.corto || r.nombre) : (id || '(sin rol)');
+  }
+  function flowSection(p) {
+    var h = '<h2 class="section-title">Flujo</h2>';
+    h += '<details class="flow-help"><summary>¿Qué es el flujo?</summary><p>Cada tarea pasa por etapas en orden: ideación, análisis, producción, QA, revisión del autor, prueba y cierre. Estados: <b>○ Pendiente</b> (aún no toca), <b>► Activa</b> (en curso), <b>✓ Hecha</b> (terminada y con su responsable) y <b>– Omitida</b> (no hacía falta, con su motivo). Los hallazgos son los fallos que una etapa encuentra y otra resuelve; los traspasos son los pasos de una persona o rol a otro.</p></details>';
+    if (!p) return h + '<div class="empty">Esta tarea no tiene flujo registrado todavía.</div>';
+    var byId = {};
+    (p.etapas || []).forEach(function (e) { byId[e.etapa] = e; });
+    h += '<ol class="flow">';
+    ((H.equipo || {}).etapas || []).forEach(function (et) {
+      var e = byId[et.id] || { estado: 'pendiente' };
+      var est = FLOW_ST[e.estado] ? e.estado : 'pendiente';
+      var st = FLOW_ST[est];
+      var who = e.por ? flowRole(e.por) : (et.id === 'produccion' && p.especialista ? flowRole(p.especialista) : '');
+      h += '<li class="flow-step st-' + est + '"><span class="flow-glyph" aria-hidden="true" title="' + esc(et.que) + '">' + esc(et.glifo) + '</span><div class="flow-body"><div class="flow-head"><strong>' + esc(et.nombre) + '</strong><span class="flow-st"><span aria-hidden="true">' + st[0] + '</span> ' + st[1] + '</span></div>';
+      h += '<div class="flow-meta">' + (who ? esc(who) : '') + (who && e.at ? ' · ' : '') + (e.at ? esc(e.at) : '') + '</div>';
+      if (e.nota) h += '<p class="flow-note">' + esc(e.nota) + '</p>';
+      if (e.entrega) h += '<p class="flow-note"><b>Entrega:</b> ' + esc(e.entrega) + '</p>';
+      (e.hallazgos || []).forEach(function (f) {
+        h += '<p class="flow-find ' + (f.estado === 'resuelto' ? 'resuelto' : 'abierto') + '"><b>Hallazgo de ' + esc(flowRole(f.de)) + ' · ' + (f.estado === 'resuelto' ? 'resuelto' : 'abierto') + '.</b> ' + esc(f.texto || '') + (f.como ? ' <i>Cómo: ' + esc(f.como) + '</i>' : '') + (f.resuelto_por ? ' <small>(' + esc(flowRole(f.resuelto_por)) + ')</small>' : '') + '</p>';
+      });
+      h += '</div></li>';
+    });
+    h += '</ol>';
+    if ((p.traspasos || []).length) {
+      h += '<details class="flow-help"><summary>Traspasos (' + p.traspasos.length + ')</summary><ul class="flow-tr">' + p.traspasos.map(function (x) {
+        return '<li><span class="tid">' + esc(x.at || '') + '</span> <b>' + esc(flowRole(x.de)) + ' → ' + esc(flowRole(x.a)) + '</b> <span class="chip">' + (x.tipo === 'devolucion' || x.tipo === 'devolución' ? 'devolución' : 'entrega') + '</span> ' + esc(x.que || '') + '</li>';
+      }).join('') + '</ul></details>';
+    }
+    return h;
+  }
   function viewTask(id) {
     var t = taskById(id);
     if (!t) return '<div class="notice">No existe la tarea «' + esc(id) + '». <a href="#/roadmap">Volver al roadmap</a>.</div>';
@@ -1500,6 +1534,7 @@
     h += '<div class="doc-meta"><span class="chip">' + esc(t.id) + '</span>' + statusPill(t.status) + prioPill(t.prio) + targetPill(t.target) + '<span class="chip">' + num(t.est) + ' h estimadas</span></div>';
     h += '<div class="task-layout"><div>';
     h += '<div class="card"><dl class="task-dl"><dt>Prioridad</dt><dd>' + esc(t.prio + ' · ' + (PRIO_LABEL[t.prio] || '')) + '</dd><dt>Descripción</dt><dd>' + (t.desc ? esc(t.desc) : 'Se detalla antes de entrar a la fase.') + '</dd><dt>Listo cuando</dt><dd>' + (t.done_when ? esc(t.done_when) : 'Se define antes de entrar a la fase.') + '</dd></dl></div>';
+    h += flowSection(t.pipeline);
     h += '<h2 class="section-title">Evidencias <small>' + t.evidence.length + '</small></h2>';
     h += t.evidence.length ? '<div class="ev-grid">' + t.evidence.map(evidenceItem).join('') + '</div>' : '<div class="empty">Sin evidencias todavía.</div>';
     h += '<h2 class="section-title">Comentarios <small>' + t.comments.length + '</small></h2>';

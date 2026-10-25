@@ -324,6 +324,7 @@ def check_roadmap(roadmap, activity, equipo=None):
                 task["history"] = act.get("history", [])
                 task["comments"] = act.get("comments", [])
                 task["evidence"] = act.get("evidence", [])
+                task["pipeline"] = act.get("pipeline")
     for tid in activity:
         if tid not in seen:
             warn("Hay actividad para una tarea que no existe en el roadmap: %s" % tid)

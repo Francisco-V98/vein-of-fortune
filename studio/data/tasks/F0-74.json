@@ -1,0 +1,88 @@
+{
+  "id": "F0-74",
+  "history": [
+    {
+      "at": "2026-10-25",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Empieza el bloque «Vistas del hub»: flujo de cada tarea en la vista de tarea",
+      "ref": "rama studio/F0-74-flujo-en-hub"
+    },
+    {
+      "at": "2026-10-25",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-74"
+    },
+    {
+      "at": "2026-10-25",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea",
+      "ref": "PR #75"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Omitida: el encargo fija el diseño (etapas con estado y quién las hizo, desde el bloque pipeline)"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida",
+        "nota": "Omitida: sin decisiones abiertas; los datos y su validación ya existen en build.py"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "Sección «Flujo» en la vista de tarea (app.js, styles.css) y pipeline copiado a la tarea en build.py; con ayuda plegable «¿Qué es el flujo?»",
+        "at": "2026-10-25",
+        "por": "herramientas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "nota": "Aprobado: build estricto sin avisos, 387 pruebas OK, vista comprobada en navegador; la revisión de código halló 11 puntos (datos ausentes, accesibilidad) y se corrigieron los relevantes",
+        "at": "2026-10-25",
+        "por": "qa"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "nota": "El autor revisó el entregable, lo aprobó y dio «Terminé mi parte»",
+        "at": "2026-10-25",
+        "por": "autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida",
+        "nota": "Omitida: herramienta del estudio, sin juego que probar"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "nota": "PR #75 fusionado con merge commit",
+        "at": "2026-10-25",
+        "por": "coordinador"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "tipo": "entrega",
+        "at": "2026-10-25",
+        "que": "Vista del flujo lista"
+      }
+    ]
+  }
+}
