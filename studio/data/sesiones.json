@@ -58,6 +58,26 @@
         "Bloque de expedición al cruzar la entrada, se devuelve si no picas",
         "Esperar en la barra superior con confirmación"
       ]
+    },
+    {
+      "n": 3,
+      "tema": "F0-24 Storyboard del Acto I",
+      "fecha": "2026-10-24",
+      "resumen": "Storyboard del Acto I: 15 imágenes provisionales con Higgsfield (16 créditos, saldo 749,85) y sección Storyboard en el hub",
+      "tareas": [
+        "F0-24"
+      ],
+      "docs": [
+        "27",
+        "30"
+      ],
+      "decisiones": [
+        "opción C: panel base y variantes editadas",
+        "protagonista hombre como ejemplo",
+        "encuadre de la cámara real del juego",
+        "ramas de d7.2 en tabla HTML",
+        "capital = Puerto Meridiano"
+      ]
     }
   ]
 }

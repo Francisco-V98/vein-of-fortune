@@ -1095,6 +1095,78 @@ def load_gallery(world, assets):
     return {"people": people, "sections": sections}
 
 
+STORYBOARD_SCENES = ["d1.2", "d1.6", "d2.4", "d3.2", "d4.4", "d7.2", "d7.4"]
+STORYBOARD_VARIANT_SCENES = ["d1.2", "d4.4", "d7.2"]
+STORYBOARD_REGIONS = 6
+STORYBOARD_DIFFICULTIES = 4
+STORYBOARD_FACTION_WORDS = ("consorcio", "ministerio", "faroleros", "comisión", "comision")
+
+
+def _storyboard_text(panel):
+    parts = [panel.get("titulo", ""), panel.get("lugar", ""), panel.get("descripcion", "")]
+    parts += panel.get("personajes", []) + panel.get("props", [])
+    parts += [x.get("texto", "") for x in panel.get("dialogo", [])]
+    parts += panel.get("wireframe", {}).get("botones", [])
+    return " ".join(parts).lower()
+
+
+def load_storyboard(assets):
+    """Valida y devuelve el storyboard del Acto I (studio/data/storyboard.json, tarea F0-24)."""
+    path = DATA / "storyboard.json"
+    if not path.exists():
+        warn("storyboard.json: no existe")
+        return None
+    sb = load_json(path)
+    registered = {i["file"] for i in assets["images"]}
+    doc27 = "".join(p.read_text(encoding="utf-8") for p in sorted(DOCS.glob("27-*.md")))
+    variants = {v["id"] for v in sb.get("variantes", [])}
+    seen, ids = {}, set()
+
+    def check_image(f, where):
+        if not f or not (STUDIO / f).exists():
+            warn("storyboard.json: falta la imagen de %s: %s" % (where, f))
+        elif f not in registered:
+            warn("storyboard.json: imagen sin registrar en assets.json (%s): %s" % (where, f))
+
+    for p in sb.get("paneles", []):
+        pid = p.get("id", "?")
+        if pid in ids:
+            warn("storyboard.json: panel repetido: %s" % pid)
+        ids.add(pid)
+        for key in ("escena", "titulo", "bloque", "lugar", "vista", "descripcion", "imagen", "wireframe", "dialogo"):
+            if not p.get(key):
+                warn("storyboard.json: el panel %s no tiene '%s'" % (pid, key))
+        if p.get("vista") not in ("interior", "exterior"):
+            warn("storyboard.json: el panel %s tiene una vista inválida: %s" % (pid, p.get("vista")))
+        check_image(p.get("imagen"), "el panel " + pid)
+        seen.setdefault(p.get("escena"), set()).add(p.get("variante"))
+        if ("`%s`" % p.get("escena")) not in doc27:
+            warn("storyboard.json: el panel %s cita una escena que no está en el documento 27: %s" % (pid, p.get("escena")))
+        if p.get("variante") in variants:
+            leaked = [w for w in STORYBOARD_FACTION_WORDS if w in _storyboard_text(p)]
+            if leaked:
+                warn("storyboard.json: el panel %s nombra a una facción (%s)" % (pid, ", ".join(leaked)))
+    for sid in STORYBOARD_SCENES:
+        if sid not in seen:
+            warn("storyboard.json: falta la escena clave %s" % sid)
+    for sid in STORYBOARD_VARIANT_SCENES:
+        missing = variants - seen.get(sid, set())
+        if missing:
+            warn("storyboard.json: la escena %s no tiene las variantes %s" % (sid, ", ".join(sorted(missing))))
+    tabla = sb.get("tabla_d72", {})
+    if len(tabla.get("dificultades", [])) != STORYBOARD_DIFFICULTIES or not tabla.get("filas"):
+        warn("storyboard.json: la tabla de d7.2 necesita %d dificultades y filas" % STORYBOARD_DIFFICULTIES)
+    for fila in tabla.get("filas", []):
+        if len(fila.get("celdas", [])) != STORYBOARD_DIFFICULTIES:
+            warn("storyboard.json: una fila de la tabla de d7.2 no tiene %d celdas: %s" % (STORYBOARD_DIFFICULTIES, fila.get("salida")))
+    mapa = sb.get("mapa", {})
+    check_image(mapa.get("imagen"), "el mapa")
+    check_image(mapa.get("hoja_props"), "la hoja de props")
+    if len(mapa.get("regiones", [])) != STORYBOARD_REGIONS:
+        warn("storyboard.json: el mapa debe describir %d regiones y describe %d" % (STORYBOARD_REGIONS, len(mapa.get("regiones", []))))
+    return sb
+
+
 def build_hub():
     roadmap = load_json(DATA / "roadmap.json")
     activity = load_activity()
@@ -1122,6 +1194,7 @@ def build_hub():
         "roadmap": roadmap,
         "assets": assets,
         "gallery": load_gallery(world, assets),
+        "storyboard": load_storyboard(assets),
         "palette": load_json(DATA / "palette.json"),
         "qa": load_qa(task_ids),
         "presentation": load_presentation({d["id"] for d in docs}),

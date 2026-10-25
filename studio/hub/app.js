@@ -255,7 +255,8 @@
     qa: { area: 'Todas', type: 'Todos' },
     dc: { act: 'all', level: 'all', who: 'all' },
     hl: { act: 'all', tipo: 'all', estado: 'all', who: 'all' },
-    sim: { grupo: 'all', estado: 'all', open: {} }
+    sim: { grupo: 'all', estado: 'all', open: {} },
+    sb: { v: {} }
   };
   var lb = { list: [], idx: 0, opener: null };
 
@@ -274,7 +275,7 @@
     var h = '<div class="brand"><div class="brand-mark" aria-hidden="true">' + esc(cfg.mark || 'VF') + '</div><div><div class="brand-title">' + esc(cfg.title) + '</div><div class="brand-sub">' + esc(cfg.subtitle) + '</div></div></div>';
     h += '<nav class="nav" aria-label="Secciones">';
     h += '<div class="nav-group">Panel</div>';
-    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('mapa', 'Mapa de historia', '⌖') + link('decisiones', 'Árbol de decisiones', '⑂') + link('hilos', 'Hilos narrativos', '⧉') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('simulador', 'Simulador de economía', '⚖') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
+    h += link('', 'Inicio', '◆') + link('juego', 'El juego', '★') + link('personajes', 'Personajes y NPC', '☺') + link('storyboard', 'Storyboard del Acto I', '▣') + link('mapa', 'Mapa de historia', '⌖') + link('decisiones', 'Árbol de decisiones', '⑂') + link('hilos', 'Hilos narrativos', '⧉') + link('limpieza', 'Limpieza del diseño', '◌') + link('coherencia', 'Coherencia del diseño', '⌘') + link('simulador', 'Simulador de economía', '⚖') + link('roadmap', 'Roadmap', '▤') + link('linea', 'Línea de tiempo', '⟷') + link('tablero', 'Tablero', '▦') + link('qa', 'QA', '✔');
     H.groups.forEach(function (g) {
       var docs = H.docs.filter(function (d) { return d.group === g; });
       if (!docs.length) return;
@@ -1566,6 +1567,69 @@
     return h;
   }
 
+  /* ---------- storyboard del Acto I (F0-24) ---------- */
+  function viewStoryboard() {
+    var S = H.storyboard;
+    var h = '<p class="eyebrow">Diseño del juego</p><h1 class="page-title">Storyboard del Acto I</h1>';
+    if (!S) return h + '<div class="notice">Falta <code>studio/data/storyboard.json</code>.</div>';
+    var byFile = {};
+    H.assets.images.forEach(function (i) { byFile[i.file] = i; });
+    var list = [];
+    function shot(file, label) {
+      var a = byFile[file];
+      if (!a) return '<div class="notice">Falta la imagen ' + esc(file) + '</div>';
+      list.push(a);
+      return '<button class="sb-shot" type="button" data-action="open-img" data-index="' + (list.length - 1) + '" aria-label="Ampliar: ' + esc(label || a.title) + '"><img loading="lazy" src="../' + esc(file) + '" alt="' + esc(a.title) + '"><span class="sb-stamp">ARTE PROVISIONAL</span></button>';
+    }
+    function wireframe(p) {
+      var w = p.wireframe, b = w.barra;
+      var bar = '<div class="wf-bar"><span>Día ' + esc(b.dia) + '</span><span>' + esc(b.estacion) + '</span><span>clima</span><span>' + esc(b.bloque) + '</span><span>' + (b.esquirlas != null ? esc(b.esquirlas) + ' esq.' : '— esq.') + '</span><span class="wf-btn">Esperar</span><span class="wf-btn">Libreta</span></div>';
+      var figs = p.personajes.map(function (n) { return '<i class="wf-fig" title="' + esc(n) + '"><b>' + esc(n.charAt(0)) + '</b></i>'; }).join('');
+      var stage = '<div class="wf-stage ' + esc(p.vista) + '"><em>' + (p.vista === 'interior' ? 'Interior · corte lateral' : 'Exterior · vista aérea') + '</em><div class="wf-figs">' + figs + '</div></div>';
+      var lines = p.dialogo.slice(0, 2).map(function (d) { return '<p><b>' + esc(d.quien) + ':</b> ' + esc(d.texto) + '</p>'; }).join('');
+      var box = '<div class="wf-box">' + lines + '</div>';
+      var btns = '<div class="wf-btns">' + w.botones.map(function (t) { return '<span class="wf-btn">' + esc(t) + '</span>'; }).join('') + '</div>';
+      return '<div class="wf" role="img" aria-label="Esquema de la pantalla del juego: barra superior, escena, caja de diálogo y botones">' + bar + stage + box + btns + '</div>';
+    }
+    function panel(p) {
+      var h = '<article class="sb-panel"><div class="sb-media">' + shot(p.imagen, p.titulo) + '</div><div class="sb-info">';
+      h += '<div class="gx-tags"><span class="chip">Día ' + esc(p.dia) + ' · ' + esc(p.bloque) + '</span><span class="chip">' + (p.vista === 'interior' ? 'Interior lateral' : 'Exterior aéreo') + '</span></div>';
+      h += '<p class="sb-desc">' + esc(p.descripcion) + '</p>';
+      h += '<dl class="sb-facts"><dt>Lugar</dt><dd>' + esc(p.lugar) + '</dd><dt>Personajes</dt><dd>' + p.personajes.map(esc).join(', ') + '</dd><dt>Props</dt><dd>' + p.props.map(esc).join(' · ') + '</dd></dl>';
+      h += p.dialogo.map(function (d) { return '<blockquote class="sb-line"><b>' + esc(d.quien) + '</b> «' + esc(d.texto) + '»</blockquote>'; }).join('');
+      if (p.defecto) h += '<div class="notice">' + esc(p.defecto) + '</div>';
+      return h + '</div><div class="sb-wf">' + wireframe(p) + '</div></article>';
+    }
+    h += '<p class="page-lead">' + esc(S.nota) + ' Fuente: <a href="#/docs/27-guion-del-acto-i">27 · Guion del Acto I</a> y <a href="#/docs/30-flujo-de-pantallas">30 · Flujo de pantallas</a>. Los esquemas de pantalla son estructura, no diseño final de interfaz.</p>';
+    h += '<nav class="gx-index" aria-label="Escenas del storyboard"><a class="chip" href="#/storyboard?h=sb-mapa">Mapa</a>' + S.escenas.map(function (e) { return '<a class="chip" href="#/storyboard?h=sb-' + esc(e.id) + '">' + esc(e.id) + ' · ' + esc(e.titulo) + '</a>'; }).join('') + '<a class="chip" href="#/storyboard?h=sb-props">Props</a></nav>';
+    var M = S.mapa;
+    h += '<h2 class="section-title" id="sb-mapa">Mapa de Valdoria con niebla <small>pestaña de la libreta · seis regiones</small></h2><p class="gx-lead">' + esc(M.nota) + '</p>';
+    h += '<div class="sb-map">' + shot(M.imagen, 'Mapa de Valdoria con niebla') + '<div class="table-wrap"><table><thead><tr><th>Región</th><th>Posición</th><th>Estado</th><th>Qué se ve</th></tr></thead><tbody>' +
+      M.regiones.map(function (r) { return '<tr><td>' + esc(r.nombre) + '</td><td>' + esc(r.posicion) + '</td><td><span class="pill ' + (r.estado === 'abierta' ? 'st-aprobada' : 'st-superada') + '">' + esc(r.estado) + '</span></td><td>' + esc(r.se_ve) + '</td></tr>'; }).join('') +
+      '</tbody></table>' + M.reglas.map(function (x) { return '<p class="gx-lead">' + esc(x) + '</p>'; }).join('') + '</div></div>';
+    S.escenas.forEach(function (e) {
+      var ps = S.paneles.filter(function (p) { return p.escena === e.id; });
+      h += '<h2 class="section-title" id="sb-' + esc(e.id) + '"><code>' + esc(e.id) + '</code> ' + esc(e.titulo) + (e.variantes ? ' <small>3 variantes</small>' : '') + '</h2>';
+      if (e.variantes) {
+        var cur = state.sb.v[e.id] || 'A';
+        h += '<div class="filters" role="tablist" aria-label="Variante de ' + esc(e.id) + '"><div class="filter-group">' + S.variantes.map(function (v) {
+          return '<button class="chip" type="button" role="tab" data-action="sb-var" data-scene="' + esc(e.id) + '" data-value="' + esc(v.id) + '" aria-pressed="' + (cur === v.id) + '" aria-selected="' + (cur === v.id) + '">Variante ' + esc(v.id) + ' · ' + esc(v.nombre) + '</button>';
+        }).join('') + '</div></div>';
+        ps = ps.filter(function (p) { return p.variante === cur; });
+      }
+      ps.forEach(function (p) { h += panel(p); });
+      if (e.id === 'd7.2') {
+        var T = S.tabla_d72;
+        h += '<h3 class="sb-sub">' + esc(T.titulo) + '</h3><p class="gx-lead">' + esc(T.fuente) + ' La imagen es la misma en las cuatro dificultades: cambia la cuenta, no el decorado.</p><div class="table-wrap"><table><thead><tr><th>Salida</th>' + T.dificultades.map(function (d) { return '<th>' + esc(d) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+          T.filas.map(function (f) { return '<tr><td>' + esc(f.salida) + '<br><small>f-pago-reme = ' + esc(f.flag) + '</small></td>' + f.celdas.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') +
+          '</tbody></table></div><p class="gx-lead">' + esc(T.nota) + '</p>';
+      }
+    });
+    h += '<h2 class="section-title" id="sb-props">Hoja de props <small>referencia provisional para F3-16</small></h2><div class="sb-map">' + shot(M.hoja_props, 'Hoja de props') + '</div>';
+    lb.list = list;
+    return h;
+  }
+
   function viewArt() {
     var imgs = H.assets.images;
     var cats = ['Todas'];
@@ -1709,6 +1773,7 @@
       case 'simulador': html = viewSimulator(); title += ' · Simulador de economía'; break;
       case 'tarea': html = viewTask(r.segs[1] || ''); title += ' · ' + (r.segs[1] || 'Tarea'); activeKey = 'tablero'; break;
       case 'personajes': html = viewGallery(); title += ' · Personajes y NPC'; anchor = r.query.h || null; break;
+      case 'storyboard': html = viewStoryboard(); title += ' · Storyboard del Acto I'; anchor = r.query.h || null; break;
       case 'arte': html = viewArt(); title += ' · Arte'; break;
       case 'sonido': html = viewSound(); title += ' · Sonido'; break;
       case 'paleta': html = viewPalette(); title += ' · Paleta'; break;
@@ -1796,6 +1861,7 @@
     else if (act === 'hl-act') { state.hl.act = val; render(true); }
     else if (act === 'hl-tipo') { state.hl.tipo = val; render(true); }
     else if (act === 'hl-estado') { state.hl.estado = val; render(true); }
+    else if (act === 'sb-var') { state.sb.v[el.getAttribute('data-scene')] = val; render(true); }
     else if (act === 'qa-type') { state.qa.type = val; render(true); }
     else if (act === 'sim-grupo') { state.sim.grupo = val; render(true); }
     else if (act === 'sim-estado') { state.sim.estado = val; render(true); }

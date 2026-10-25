@@ -1,0 +1,125 @@
+{
+  "id": "F0-24",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Storyboard del Acto I: 15 imágenes provisionales (Higgsfield) y sección del hub",
+      "ref": "rama studio/F0-24-storyboard-del-acto-i"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "ideador",
+        "nota": "El ideador propuso 4 formas (A collage, B panel por variante, C plano base y edición, D casi todo en HTML) y recomendó C"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "analista",
+        "nota": "El analista inventarió 14 paneles de escena y el mapa, referencias existentes y criterios; el autor decidió costo, protagonista, encuadre y ramas"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "arte",
+        "nota": "La directora de arte escribió los prompts; el coordinador generó 15 imágenes (16 créditos) y herramientas construyó la sección Storyboard del hub"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "QA aprobada: build estricto sin avisos, 384 tests OK; 1 observación (rótulos de variante en el hub)"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "coordinador",
+        "a": "ideador",
+        "que": "Encargo: formas de organizar el storyboard y presupuesto de imágenes",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "analista",
+        "que": "Encargo: inventario de paneles, referencias y criterios",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "ideador",
+        "a": "coordinador",
+        "que": "Entrega: 4 opciones, recomienda C (15 imágenes)",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "analista",
+        "a": "coordinador",
+        "que": "Entrega: inventario, hallazgos y 5 dudas",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "arte",
+        "que": "Encargo: prompts de las 15 imágenes",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "arte",
+        "a": "coordinador",
+        "que": "Entrega: prompts.md",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "coordinador",
+        "a": "herramientas",
+        "que": "Encargo: sección Storyboard del hub y storyboard.json",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "herramientas",
+        "a": "coordinador",
+        "que": "Entrega: sección del hub, datos y validaciones de build.py",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      },
+      {
+        "de": "qa",
+        "a": "coordinador",
+        "que": "Entrega: informe de QA aprobado con 1 observación",
+        "at": "2026-10-24",
+        "tipo": "entrega"
+      }
+    ]
+  }
+}
