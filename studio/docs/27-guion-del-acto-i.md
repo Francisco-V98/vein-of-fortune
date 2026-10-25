@@ -463,7 +463,7 @@ Solo se ve la pista de la variante sorteada. Los otros dos props no existen en e
 | Los Faroleros | **Reme:** «Una costumbre de mi madre, criatura: cuando alguien viene a pagar, el farol encendido.» |
 
 - **Reglas.** La pista nunca nombra la facción. El farol vinotinto no aparece en las otras dos variantes, porque sería una falsa pista. «Lámpara de red» no se confunde con la lámpara de minero ([18](18-biblia-narrativa.md), 5.1): la de red es eléctrica y está en la casa de Reme (`d1.2`); la de minero es la que está sobre la mesa de tu casa (`d1.6`). El papel sellado tiene una lectura inocente y tampoco nombra a nadie.
-- **Storyboard.** ⏳ F0-24 dibuja `d4.4` en las tres variantes y `d1.2` y `d7.2` con el decorado de cada una.
+- **Storyboard.** ✅ F0-24 dibuja `d4.4` en las tres variantes y `d1.2` y `d7.2` con el decorado de cada una.
 - **Props:** ⏳ F3-16 (incluido el papel sellado del Ministerio). **Texto:** ⏳ F3-47.
 - **Dónde se resuelve:** en la orden de Reme del Acto II ([22](22-acto-ii-variantes.md), A2) ✅.
 
@@ -576,7 +576,7 @@ A los 319 textos de las 28 escenas se suman las 3 cajas de la interacción de pa
 - **Sin cambio de horas:** ⏳ F3-14 (6 h, con el nombre de la tienda en el día 2), ⏳ F3-31 (8 h, con los textos de las 3 noticias guionizadas) y ⏳ F3-32 (4 h, con los de los 2 pedidos guionizados, uno de ellos la tarjeta opcional del día 6).
 - **Fuera del Acto I:** los peligros ambientales (⏳ F3-10, 10 h) no suman horas aquí.
 - **Quién construye cada día.** Día 1: F2-10, F2-11 y F2-14; día 2: F2-17 y F2-18; día 3: F2-15, F2-12 y F3-08; día 4: F2-19 y F3-05; día 5: F3-12 (opcional); día 6: F3-01, F3-02, F3-03 y, si se acepta el pedido urgente, F3-05; día 7: F3-17 y la ficha de F3-16.
-- **Storyboard ✅.** Las escenas clave para ⏳ F0-24 son `d1.2`, `d1.6`, `d2.4`, `d3.2`, `d4.4`, `d7.2` y `d7.4`. Cada una tiene lugar, personajes, props, pantalla del juego, línea de ejemplo y variantes en las secciones 4 a 10 y 21. `d4.4` se dibuja en las tres variantes del Acto II; `d1.2` y `d7.2` con el decorado de cada variante y las ramas por dificultad de `d7.2`.
+- **Storyboard ✅.** Las escenas clave para ✅ F0-24 son `d1.2`, `d1.6`, `d2.4`, `d3.2`, `d4.4`, `d7.2` y `d7.4`. Cada una tiene lugar, personajes, props, pantalla del juego, línea de ejemplo y variantes en las secciones 4 a 10 y 21. `d4.4` se dibuja en las tres variantes del Acto II; `d1.2` y `d7.2` con el decorado de cada variante y las ramas por dificultad de `d7.2`.
 
 ---
 
@@ -606,7 +606,7 @@ A los 319 textos de las 28 escenas se suman las 3 cajas de la interacción de pa
 
 ## 21 · Esquema de escenas y textos ✅
 
-**Estado:** cerrada. Esta sección la aprobó el autor el 2026-10-16 (F0-86) y es el esquema para quien construye (⏳ F3-16), quien escribe (⏳ F3-47, ⏳ F3-31 y ⏳ F3-32), quien dibuja (⏳ F0-24) y quien programa el simulador. No renumera las secciones 1 a 20, que citan `hilos.json` y los documentos 04, 21, 22, 23 y 24. Los textos finales de cada pieza son de su responsable; las frases entre comillas de las secciones 4 a 10 son ejemplos de voz.
+**Estado:** cerrada. Esta sección la aprobó el autor el 2026-10-16 (F0-86) y es el esquema para quien construye (⏳ F3-16), quien escribe (⏳ F3-47, ⏳ F3-31 y ⏳ F3-32), quien dibuja (✅ F0-24) y quien programa el simulador. No renumera las secciones 1 a 20, que citan `hilos.json` y los documentos 04, 21, 22, 23 y 24. Los textos finales de cada pieza son de su responsable; las frases entre comillas de las secciones 4 a 10 son ejemplos de voz.
 
 ### 21.1 Identificadores y convenciones
 
@@ -839,7 +839,7 @@ Las ramas del texto usan `.todo`, `.parte` y `.nada` para la herencia y el rumor
 | ⏳ F3-16 | Las 28 escenas con bloque, peso, disparador, cola, ramas y props (21.2 a 21.4), la interacción de pagar antes, la visita de Reme al puesto, el taladro del día 3, la placa de Pozo Negro, la cinta 1 mínima, el papel sellado y la ficha del candidato |
 | ⏳ F3-47 | Los identificadores y la tabla maestra (21.1, 21.2 y 21.5), las variables (21.7), los botones (21.8) y los tres textos del Teletipo del día 5 |
 | ⏳ F3-31 y ⏳ F3-32 | La prensa guionizada (con el titular del decreto) y las tarjetas de los pedidos, que no entran en F3-47 (21.4) |
-| ⏳ F0-24 | Las siete escenas clave con lugar, personajes, props, pantalla, línea de ejemplo y variantes (secciones 4 a 10 y 21.4) |
+| ✅ F0-24 | Las siete escenas clave con lugar, personajes, props, pantalla, línea de ejemplo y variantes (secciones 4 a 10 y 21.4) |
 | ⏳ F1-20 | Los términos de la sección 20 |
 
 ---
@@ -858,7 +858,7 @@ El autor confirmó el 2026-10-16 (F0-80) los dos puntos que estaban en propuesta
 ## Pendiente
 
 - ✅ Montos de la cuota, el recargo (y su valor mayor en Difícil y Hardcore), la gestión de Quiroga, el efectivo inicial, los precios, el costo de guardar y de la mejora: fijados en [28](28-numeros-base-de-la-economia.md).
-- ⏳ F0-24 Storyboard de las escenas clave (sección 19 y sección 21).
+- ✅ F0-24 Storyboard de las escenas clave (sección 19 y sección 21).
 - ⏳ F3-48 Construye la cola, el diario y el aviso de rescate (diseño cerrado ✅ en [24](24-umbrales-de-acto.md), sección 10); las escenas por evento cumplen su invariante (una mecánica nueva a la vez).
 - ⏳ F2-02 Mecanismo de los pesos de bloque; ⏳ F2-01 sorteo guardado en el estado de la partida; ⏳ F1-23 forzar la variante desde la consola.
 - ⏳ F4-150 Reproductor y sistema de cintas; ⏳ F4-151 texto y voz de la cinta 1.
