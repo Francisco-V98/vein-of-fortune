@@ -1,0 +1,90 @@
+{
+  "id": "F0-75",
+  "history": [
+    {
+      "at": "2026-10-25",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Sigue el bloque «Vistas del hub»: árbol de decisiones con conexiones",
+      "ref": "rama studio/F0-75-arbol-decisiones-svg"
+    },
+    {
+      "at": "2026-10-25",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-75"
+    },
+    {
+      "at": "2026-10-25",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea",
+      "ref": "PR #76"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Omitida: el encargo fija el formato (SVG con ramas, cuellos y banderas); el trazado lo decide el coordinador"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "nota": "Datos de decisions.json: 27 nodos, 6 cuellos, 18 banderas y 37 lecturas; definidas las conexiones (nodo→cuello y fija→lee) y que los filtros atenúan en vez de quitar nodos",
+        "at": "2026-10-25",
+        "por": "coordinador"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "Árbol SVG en #/decisiones (app.js, styles.css): columnas por acto, cuellos, banderas fija→lee, resaltado, filtros que atenúan y guía «Cómo leer el árbol»; tarjetas como detalle",
+        "at": "2026-10-25",
+        "por": "herramientas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "nota": "Aprobado: build estricto sin avisos, 387 pruebas OK, vista comprobada en navegador; la revisión de código halló 13 puntos y se corrigieron los de accesibilidad y filtros",
+        "at": "2026-10-25",
+        "por": "qa"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "nota": "El autor revisó el entregable, lo aprobó y dio «Terminé mi parte»",
+        "at": "2026-10-25",
+        "por": "autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida",
+        "nota": "Omitida: herramienta del estudio, sin juego que probar"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "nota": "PR #76 fusionado con merge commit",
+        "at": "2026-10-25",
+        "por": "coordinador"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "tipo": "entrega",
+        "at": "2026-10-25",
+        "que": "Árbol de decisiones listo"
+      }
+    ]
+  }
+}

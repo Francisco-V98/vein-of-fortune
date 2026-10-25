@@ -192,18 +192,23 @@
       "n": 8,
       "tema": "Vistas del hub (F0-74, F0-75)",
       "fecha": "2026-10-25",
-      "resumen": "Bloque de vistas del hub: F0-74 muestra el flujo (pipeline) de cada tarea en su vista de tarea",
+      "resumen": "F0-75 dibuja #/decisiones como árbol SVG con ramas, cuellos y banderas conectadas, y filtros por acto, nivel y personaje",
       "tareas": [
-        "F0-74"
+        "F0-74",
+        "F0-75"
       ],
       "prs": [
-        "75"
+        "75",
+        "76"
       ],
       "docs": [
-        "15"
+        "15",
+        "23"
       ],
       "decisiones": [
-        "El flujo se dibuja desde pipeline con ayuda plegable"
+        "El flujo se dibuja desde pipeline con ayuda plegable",
+        "Los filtros atenúan en vez de quitar nodos",
+        "Las tarjetas quedan como detalle bajo el árbol"
       ]
     }
   ]

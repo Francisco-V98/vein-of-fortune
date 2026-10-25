@@ -435,7 +435,7 @@ Aunque vendas el archivo de Quiroga y Esteban se quede con el Consorcio, conserv
 - ⏳ F4-147 La curva de la caída y el rebote de la Aetherita dentro del tope diario, y el nivel en que queda (algo por debajo del de antes ✅).
 - ✅ Cifras de precios, cuotas, gastos y vigilancia: resueltas en [28](28-numeros-base-de-la-economia.md); su verificación con el simulador ✅ (F0-53, [28](28-numeros-base-de-la-economia.md) sección 13): la cuota del día 7 y los recargos se sostienen con el Aguante 28, la vía de deuda es alcanzable y la mora no cierra puertas; los ajustes de patrimonio, estatus y empleados los aprobó el autor.
 - ⏳ F4-135 Guion del Acto III, con el médico del dispensario.
-- ⏳ F0-75 Dibujo del árbol con conexiones (SVG) en el hub; la vista actual usa columnas, tarjetas y flechas de texto.
+- ✅ Árbol con conexiones (SVG) en el hub, con filtros por acto, nivel y personaje (F0-75, 2026-10-25).
 - ⏳ F4-213 Licencias (sello, revisión, ampliación y suspensión), ⏳ F4-214 rumores comprados y contados a Lucía y ⏳ F4-215 exclusividad de venta y entrega de cuentas: los sistemas que usan las decisiones del II y del III. La plantilla de guion con identificadores y condiciones ⏳ F4-216.
 - ⏳ F4-62, ⏳ F4-63 y ⏳ F4-65 Las alianzas con el Ministerio, el Consorcio y Los Faroleros: sus efectos se definen por la alianza elegida, sin un medidor propio por facción.
 - ✅ F0-45 está hecha y la lectura final F0-48 de este documento se cierra con esta revisión: términos (entrada, facción de Reme), vigilancia como «vigilancia +N», prórroga de la cuota y pruebas.
