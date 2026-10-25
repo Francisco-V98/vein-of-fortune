@@ -785,7 +785,7 @@
               "id": "F0-74",
               "title": "Mostrar el flujo de cada tarea en el hub",
               "est": 3,
-              "status": "review",
+              "status": "done",
               "prio": "P3",
               "desc": "En la vista de tarea del hub, dibujar las etapas con su estado y quién las hizo, usando el bloque pipeline de la tarea.",
               "done_when": "Vista de tarea con el flujo visible en el hub."
