@@ -22,7 +22,7 @@ Estudio de diseño de un juego de gestión minera (Godot 4, pixel art horizontal
 - Un agente = un entregable y unos 60 turnos como máximo; si la tarea es mayor, divídela.
 
 ## Lectura parcial
-- No leas documentos enteros si basta una sección: `grep -n`, rangos (`offset`/`limit`) y, cuando exista, `tools/consulta.py` (limpieza, puntos abiertos, índice de encabezados, tareas y datos del mundo).
+- No leas documentos enteros si basta una sección: `grep -n`, rangos (`offset`/`limit`) y `tools/consulta.py` (`limpieza`, `abiertos`, `indice`, `seccion`, `ficha`, `tarea`/`tareas`, `mundo`; sin argumentos muestra la ayuda).
 - Nunca leas `studio/hub/data.js` (generado, 1,6 MB) ni `studio/data/sim/resultados.json` enteros. Los documentos 18, 21, 23, 25, 27 y 28 son grandes: lee por secciones.
 - Cada lectura grande se paga en cada turno posterior: léela una vez y trabaja con notas.
 

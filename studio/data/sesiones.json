@@ -210,6 +210,11 @@
         "Los filtros atenúan en vez de quitar nodos",
         "Las tarjetas quedan como detalle bajo el árbol"
       ]
+    },
+    {
+      "n": 9,
+      "tema": "Ahorro de tokens y herramientas (F0-88, F0-89)",
+      "fecha": "2026-10-25"
     }
   ]
 }

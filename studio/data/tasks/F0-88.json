@@ -1,0 +1,76 @@
+{
+  "id": "F0-88",
+  "history": [
+    {
+      "at": "2026-10-25",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Abre el bloque «Ahorro de tokens y herramientas» (S-09)",
+      "ref": "rama studio/F0-88-consulta-estudio"
+    },
+    {
+      "at": "2026-10-25",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-88"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Omitida: el encargo fija los comandos (limpieza, abiertos, índice, fichas, tareas y mundo)"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "omitida",
+        "nota": "Omitida: sin decisiones de diseño; la regla es reutilizar el build para que las cifras coincidan"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "tools/consulta.py con 8 comandos sobre build.py, 15 pruebas y agentes y CLAUDE.md apuntando a la herramienta; la revisión de código halló 13 puntos y se corrigieron los de robustez",
+        "at": "2026-10-25",
+        "por": "herramientas"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "nota": "Aprobado: 8 comandos comprobados, totales idénticos al build, errores con código 1, 402 pruebas OK y build estricto sin avisos",
+        "at": "2026-10-25",
+        "por": "qa"
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente",
+        "nota": "Espera «Terminé mi parte»"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida",
+        "nota": "Omitida: herramienta del estudio, sin juego que probar"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente",
+        "nota": "PR con merge commit"
+      }
+    ],
+    "traspasos": [
+      {
+        "de": "herramientas",
+        "a": "qa",
+        "tipo": "entrega",
+        "at": "2026-10-25",
+        "que": "consulta.py listo"
+      }
+    ]
+  }
+}
