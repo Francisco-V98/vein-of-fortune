@@ -342,11 +342,11 @@
             },
             {
               "id": "F0-29",
-              "title": "Repositorio privado en GitHub",
+              "title": "Repositorio público en GitHub",
               "est": 3,
               "status": "done",
               "desc": "Preparar .gitignore, README y primer commit; subir cuando el nombre esté definido.",
-              "done_when": "El repositorio existe, es privado y tiene el primer commit.",
+              "done_when": "El repositorio existe, es público (desde F0-35, sin secretos) y tiene el primer commit.",
               "prio": "P1"
             }
           ]
@@ -611,7 +611,7 @@
               "id": "F0-57",
               "title": "Pasada de cierre: técnico, legal y arquitectura (10, 11, 14)",
               "est": 6,
-              "status": "backlog",
+              "status": "done",
               "prio": "P1",
               "desc": "Cerrar los puntos abiertos de herramientas, legal y cumplimiento y arquitectura modular.",
               "done_when": "Cada documento por encima de la meta."
@@ -1046,11 +1046,11 @@
             },
             {
               "id": "F1-04",
-              "title": "Repositorio Git privado con .gitignore y estructura de carpetas",
+              "title": "Repositorio Git público con .gitignore y estructura de carpetas",
               "est": 1.5,
               "status": "backlog",
               "desc": "Separar núcleo, datos, interfaz, entrada, guardado y assets. Copias de respaldo.",
-              "done_when": "El repositorio existe, es privado y tiene la estructura.",
+              "done_when": "El repositorio existe, es público (sin secretos) y tiene la estructura.",
               "prio": "P0"
             },
             {
@@ -1291,7 +1291,7 @@
               "est": 6,
               "prio": "P1",
               "desc": "Integrar GodotSteam como puerto «plataforma/tienda» con una aplicación de prueba de Steam, comprobar que el juego arranca desde Steam y en la Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
-              "done_when": "El juego arranca desde Steam con GodotSteam inicializado y sin romper el dominio."
+              "done_when": "La licencia de GodotSteam está verificada y anotada (compatible con un juego comercial cerrado) y el juego arranca desde Steam con GodotSteam inicializado, sin romper el dominio y con el adaptador nulo funcionando sin Steam."
             }
           ]
         },
@@ -1332,8 +1332,8 @@
               "title": "Puertos de plataforma y adaptadores de prueba",
               "est": 8,
               "prio": "P0",
-              "desc": "Entrada, almacenamiento, audio, idioma y reloj.",
-              "done_when": "Cada puerto tiene un adaptador de prueba."
+              "desc": "Entrada, almacenamiento, audio, idioma y reloj. Valida en Godot real el patrón de puertos como clases base abstractas (documento 14, «Límites conocidos») y amplía el verificador de arquitectura para los puentes de composición de app/puentes/ (ADR-0012): que lean solo la api de los módulos y que figuren en la tabla de puentes del documento 14.",
+              "done_when": "Cada puerto tiene un adaptador de prueba; el patrón de puertos queda validado en Godot real y el verificador rechaza un puente que use carpetas internas de un módulo o que no esté declarado, con pruebas."
             },
             {
               "id": "F1-31",
@@ -1359,7 +1359,7 @@
               "title": "Pruebas del dominio con Godot sin interfaz en integración continua",
               "est": 6,
               "prio": "P0",
-              "desc": "Marco de pruebas ejecutado por consola en cada PR.",
+              "desc": "Marco de pruebas GUT ejecutado por consola en cada PR (documento 14): el dominio es puro y determinista y GUT corre sin cabeza en CI con GDScript puro; gdUnit4 se revisaría por ADR solo si aparecen pruebas de escena pesadas.",
               "done_when": "Las pruebas corren en CI."
             },
             {
@@ -1464,7 +1464,7 @@
               "title": "Presupuestos de rendimiento medidos en PC",
               "est": 4,
               "prio": "P1",
-              "desc": "Arranque, cuadros por segundo y memoria en un PC de gama baja y en la Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "desc": "Arranque, cuadros por segundo y memoria en un PC de gama baja y en la Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009). Criterio de texto: fuente base de al menos 6 px (×2 = 12 px en la Deck).",
               "done_when": "Medidas registradas."
             }
           ]
@@ -2188,7 +2188,7 @@
               "title": "Sonidos provisionales: interfaz, minería, mercado, blips y música base",
               "est": 4,
               "status": "backlog",
-              "desc": "Sonidos libres o de bajo costo para probar el slice, con licencia registrada; se reemplazan por el audio definitivo después de la Puerta B. Referencia sonora: Balatro.",
+              "desc": "Sonidos para probar el slice con la ruta gratuita (bfxr-mcp para efectos y blips con semilla fija por personaje; LMMS para la música; plan B jfxr/bfxr; REAPER y reaper-mcp opcionales); se prueban y fijan aquí las herramientas, con licencia registrada y captura de los términos oficiales; se reemplazan por el audio definitivo después de la Puerta B. Referencia sonora: Balatro.",
               "done_when": "El slice tiene sonidos básicos de interfaz, minería y mercado, con licencias registradas.",
               "prio": "P1"
             }
@@ -4623,7 +4623,7 @@
               "title": "Audio definitivo del Acto I: interfaz, minería, mercado, blips y música base",
               "est": 10,
               "prio": "P1",
-              "desc": "Sonido y música definitivos del Acto I (con la herramienta que se elija entonces), con licencias registradas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final. La música del resto del juego es F4-186 y la mezcla final F4-189.",
+              "desc": "Sonido y música definitivos del Acto I (con la herramienta fijada en F3-21), con licencias registradas. Según la política de assets del documento 12: se produce solo después de que el vertical slice pase las pruebas y el autor autorice la producción final. La música del resto del juego es F4-186 y la mezcla final F4-189.",
               "done_when": "El Acto I tiene audio definitivo con licencias en regla."
             },
             {
@@ -4710,7 +4710,7 @@
               "title": "Lista de verificación de Steam Deck Verified y prueba en la Deck",
               "est": 6,
               "prio": "P1",
-              "desc": "Recorrer los requisitos de Steam Deck Verified (mando completo, texto legible en 1280x800, sin HUD táctil) y probar el juego en una Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
+              "desc": "Recorrer los requisitos de Steam Deck Verified (mando completo, texto legible en 1280x800 con fuente base de al menos 6 px (×2 = 12 px), sin HUD táctil) y probar el juego en una Steam Deck. Decisión del autor del 2026-10-15: PC primero (Windows y Linux, Steam), móvil después de la 1.0 (documento 10 y ADR-0009).",
               "done_when": "El juego cumple la lista de verificación de la Steam Deck y se prueba en la Deck si se consigue."
             },
             {

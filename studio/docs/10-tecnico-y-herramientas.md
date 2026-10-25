@@ -34,14 +34,14 @@ Por qué:
 
 Riesgo asumido: la ruta a consolas es menos directa que en Unity (requiere herramientas o socios de terceros). Se reevalúa si las consolas pasan a ser prioridad.
 
-## Arquitectura 🟡
+## Arquitectura ✅
 
 Separar en capas, con el contenido en datos:
 
 | Capa | Contenido | Nota |
 |---|---|---|
 | **Núcleo (simulación)** | Mercado, día/bloques, economía, eventos, contratos, vigilancia, empleados | Código sin interfaz, **simulable offline** durante miles de días |
-| **Datos** | Minerales, zonas, herramientas, noticias, facciones, textos | Archivos de datos (JSON/recursos); cambiar un precio no toca el código |
+| **Datos** | Minerales, zonas, herramientas, noticias, facciones, textos | Archivos JSON como fuente, convertidos al arrancar en objetos tipados y validados ([ADR-0013](adr/0013-json-como-fuente-del-contenido.md)); cambiar un precio no toca el código |
 | **Interfaz** | Pantallas, minijuegos, HUD | Consume el núcleo, no contiene reglas |
 | **Entrada** | Ratón y teclado, y mando; el táctil queda como adaptador futuro | Capa de acciones (ver abajo) |
 | **Guardado** | Persistencia | Versionado, con migraciones. Punto de control al iniciar cada acción y hasta 5 partidas guardables a elegir ✅ ([01](01-core-loop.md)) |
@@ -69,11 +69,11 @@ Decisión del autor (2026-10-15): **ratón y teclado son los controles principal
 | Reasignación | Mapeo configurable (a futuro) |
 | Resolución y ventana | ✅ Resolución base 640×360, escala entera con bandas (×3 en 1080p, ×4 en 1440p, ×6 en 4K, ×2 en la Steam Deck), ventana y pantalla completa |
 
-🟡 Minijuegos: Picado y Perforación se juegan con un botón (ratón, teclado o mando); Cincelado (trazar) y arrastrar mercancía usan el puntero con ratón y un cursor con el stick con mando. Hay que diseñarlos con ambas variantes desde el inicio. Las variantes táctiles (trazar con el dedo) pasan a la fase móvil.
+✅ Minijuegos (regla de diseño, consecuencia de [ADR-0009](adr/0009-pc-primero-movil-despues.md)): Picado y Perforación se juegan con un botón (ratón, teclado o mando); Cincelado (trazar) y arrastrar mercancía usan el puntero con ratón y un cursor con el stick con mando. Hay que diseñarlos con ambas variantes desde el inicio. Las variantes táctiles (trazar con el dedo) pasan a la fase móvil.
 
 ✅ El mando base (stick mover, A usar, B atrás, Start pausa, View mapa, LB/RB pestañas, stick derecho cursor) y el flujo de pantallas están en [30](30-flujo-de-pantallas.md).
 
-🟡 Probar con un mando real en Windows y en la Steam Deck antes de dar por buenos los controles (F1-15).
+✅ Criterio de aceptación: los controles no se dan por buenos hasta probarlos con un mando real en Windows y en la Steam Deck (⏳ F1-15; nada hecho depende de ello).
 
 ## Exploración caminable ✅ (autor, 2026-10-24)
 
@@ -88,11 +88,11 @@ El juego deja de ser solo menús y pasa a tener tres escenas por las que se cami
 
 ## Arte y sonido
 
-### Pipeline 🟡
+### Pipeline ✅
 
 1. **Prototipo y vertical slice:** formas simples, referencias y sonidos genéricos, todo **provisional** ✅ (política del autor, 2026-10-13). Prioridad: probar la diversión y fallar barato.
 2. **Guía de estilo:** paleta, resolución base, tamaño de píxel, reglas de contorno y sombreado.
-3. **Producción definitiva:** pixel art con **PixelLab**, voces y audio finales, solo después de que el vertical slice pase las pruebas y la Puerta B ✅. Los assets comprados o gratuitos, si se usan, llevan licencia clara.
+3. **Producción definitiva:** pixel art con **PixelLab**, blips y audio finales, solo después de que el vertical slice pase las pruebas y la Puerta B ✅. Los assets comprados o gratuitos, si se usan, llevan licencia clara.
 4. **Registro de licencias** de todo lo que entra, incluido lo provisional (ver [11](11-legal-y-cumplimiento.md)).
 
 Detalle de la política y del flujo en [12](12-direccion-de-arte.md), sección «Assets provisionales y definitivos».
@@ -101,11 +101,16 @@ Detalle de la política y del flujo en [12](12-direccion-de-arte.md), sección �
 
 Antes de comprometerse con un estilo: una pantalla de mina, un personaje, 5 íconos de minerales y un teletipo de mercado. Se evalúan coherencia, calidad y costo de producir en serie.
 
-### Audio 🟡
+### Audio ✅ (autor, 2026-10-24)
 
 - Referencia sonora: Balatro.
-- Voces: sonidos cortos tipo "blip" por personaje; voces reales como mejora futura.
-- Revisar los términos de uso comercial de cada herramienta o banco de sonidos.
+- **Voces:** solo sonidos cortos tipo «blip» por personaje; **nunca habrá voces reales de personas**. Cada personaje tiene una semilla fija, guardada en el repositorio, para que su blip sea siempre el mismo.
+- **Efectos y blips (ruta gratuita por defecto):** `bfxr-mcp` (motor MIT, sin IA, nada que declarar en Steam). Plan B si el MCP no pasa la revisión de licencia: jfxr o bfxr a mano.
+- **Música:** la compone el autor en LMMS (gratis; la GPL del programa no afecta a su música; se revisan los samples incluidos), sin integración MCP.
+- **Opcional:** REAPER (60 USD con descuento si los ingresos brutos son de hasta 20.000 USD al año) con `reaper-mcp` (MIT), solo si el autor quiere apoyo técnico de mezcla, masterización o cuantizado.
+- **Sin ElevenLabs ni música por IA.** Claude puede proponer ideas de melodía como texto o notas; el autor decide, y lo que Claude proponga y se use tal cual se registra y se declara en Steam como IA.
+- Cada herramienta se prueba en F3-21; F4-232 usa la herramienta fijada allí. Antes de pagar o usar una herramienta se reconfirman sus términos en la página oficial y se guarda una captura en el registro de licencias.
+- **Accesibilidad:** cada sonido importante lleva un equivalente visual, para no bloquear el avance con el audio silenciado.
 
 ## Localización (español e inglés desde el inicio) ✅
 
@@ -114,14 +119,14 @@ El juego se hace en **español e inglés desde el principio**, con un marco que 
 | Aspecto | Decisión |
 |---|---|
 | Voz | Español neutro latinoamericano con **tuteo**; en inglés, tono igual de cercano |
-| Formato de traducciones 🟡 | Archivos `.po` (gettext) que Godot soporta de forma nativa, con contexto y plurales |
+| Formato de traducciones ✅ | Archivos `.po` (gettext) que Godot soporta de forma nativa, con contexto y plurales |
 | Cadenas | **Ninguna cadena fija** en el código ni dentro del arte; el arte no lleva texto incrustado |
 | Variables | Marcadores con nombre (por ejemplo `{nombre}`), no posicionales; el género gramatical se resuelve con textos neutros y variantes solo cuando haga falta |
 | Longitud | El español ocupa entre 20 y 30 % más que el inglés; la interfaz debe tolerarlo (prueba con pseudo-localización) |
 | Fuentes | Pixel con caracteres latinos extendidos (á, ñ, ¿, ¡) y **fuentes de respaldo por idioma** para el futuro |
 | Números y fechas | Formato según el idioma |
-| Flujo 🟡 | Extraer cadenas, traducir con asistencia de IA, revisar con un glosario ES/EN y compilar |
-| Herramientas 🟡 | Edición de `.po` con un editor como Poedit; una plataforma de traducción (por ejemplo Weblate o Crowdin) solo si más adelante hay colaboradores |
+| Flujo ✅ | Extraer cadenas, traducir con asistencia de IA, revisar con un glosario ES/EN y compilar (⏳ F1-20). Los textos y traducciones asistidos por IA se declaran en Steam ([11](11-legal-y-cumplimiento.md)) |
+| Herramientas ✅ | Edición de `.po` con un editor como Poedit (opcional); una plataforma de traducción (por ejemplo Weblate o Crowdin) solo si más adelante hay colaboradores |
 | Idiomas futuros | Portugués, francés, alemán u otros. Los idiomas de derecha a izquierda exigen espejar la interfaz y quedan fuera de alcance por ahora |
 | Tienda | Ficha de Steam y capturas en ES y EN |
 | Documentos de `studio/` | Siguen en español; solo el juego y la ficha de tienda son bilingües |
@@ -141,19 +146,19 @@ Un solo repositorio con dos mundos separados:
 
 - `game/` **compila sin** `studio/`, y `studio/` **no importa** nada de `game/` (solo lee archivos de diagnóstico exportados).
 - `studio/` se puede **ignorar** con una línea en `.gitignore` o **extraer con su historial** a otro repositorio con `git subtree split`.
-- Repositorio **privado** en GitHub.
+- Repositorio **público** en GitHub (desde F0-35): sin secretos ni datos personales, y el arte provisional generado con IA queda marcado como tal.
 
-## Exportación y Steam 🟡
+## Exportación y Steam ✅
 
 | Tema | Propuesta |
 |---|---|
 | Exportación | Plantillas de Godot para Windows y Linux, generadas por línea de comandos (sin abrir el editor), con build reproducible: misma fuente y misma versión de Godot, mismo resultado (F1-26) |
-| Steamworks | **GodotSteam** detrás del puerto de plataforma/tienda ([14](14-arquitectura-y-modularidad.md)); sin Steam el juego debe arrancar igual (itch.io y pruebas) |
+| Steamworks | **GodotSteam** (decisión del autor, 2026-10-24; licencia verificada en F1-45) detrás del puerto de plataforma/tienda ([14](14-arquitectura-y-modularidad.md)); sin Steam el juego debe arrancar igual (itch.io y pruebas): el adaptador nulo siempre está disponible |
 | Nube | Steam Auto-Cloud ✅ (ver «Seguridad y protección de datos») |
 | Logros | Se conectan al módulo de logros por el puerto de tienda; el módulo no conoce a Steam |
 | Subida de builds | Herramienta de línea de comandos de Steam (`steamcmd`) desde un equipo de publicación; las credenciales fuera del repositorio |
 
-🟡 Falta una tarea del roadmap que integre Steamworks y fije la herramienta exacta (GodotSteam u otra); hay que crearla antes de la página de Steam (final de F4). Hasta que exista, esta propuesta sigue abierta y no se aplaza a ninguna tarea.
+✅ La integración de Steamworks ya tiene tareas: ⏳ F1-45 (GodotSteam y su licencia), F4-234, F4-235 (logros), F4-236, F4-239 (Steam Deck: texto de al menos 6 px de fuente base, ×2 = 12 px; también en F1-44), F5-22 y F5-40. Nada hecho depende de ellas.
 
 ## Fase móvil (después de la 1.0)
 
@@ -180,7 +185,7 @@ Se puede medir un juego sin conexión. Tres capas, en este orden:
 | Capa | Cómo | Cuándo |
 |---|---|---|
 | **A · Local y exportable** | El juego guarda rendimiento, errores y eventos en un archivo local sin datos personales; el probador lo exporta y se carga en el panel de `studio/` | Desde la Fase 2 |
-| **B · Steam** 🟡 | Lo que entregue Steam sobre cierres y rendimiento, sin SDK propio en el juego; el alcance real se verifica en la fuente vigente en F5-40. *Antes era Google Play Vitals, que pasa a la fase móvil* ([ADR-0007](adr/0007-telemetria-por-capas.md)) | Al publicar o en pruebas |
+| **B · Steam** ✅ | Lo que entregue Steam sobre cierres y rendimiento, sin SDK propio en el juego; el alcance real se verifica en la fuente vigente en F5-40. *Antes era Google Play Vitals, que pasa a la fase móvil* ([ADR-0007](adr/0007-telemetria-por-capas.md)) | Al publicar o en pruebas |
 | **C · Envío opcional** | Con consentimiento explícito y datos anónimos, a un servidor propio | Idea futura; cambia la política de privacidad y los formularios |
 
 Reglas de la capa A:
@@ -196,7 +201,7 @@ Qué muestra el panel: rendimiento por equipo, errores, estabilidad, economía (
 
 Principio: **reducir la superficie de ataque y los datos que se manejan**.
 
-### Decisiones para la v1 🟡
+### Decisiones para la v1 ✅
 
 | Tema | Decisión |
 |---|---|
@@ -212,9 +217,9 @@ Principio: **reducir la superficie de ataque y los datos que se manejan**.
 | Secretos | **Nunca en el repositorio** (claves, tokens, contraseñas) |
 | Claves de Steam | Las claves de Steamworks y cualquier credencial de publicación **no entran en el repositorio** |
 | Compra del juego | Gestionada por Steam (pago único); no se implementa validación propia |
-| Repositorio | Privado, con copias de respaldo |
+| Repositorio | Público (F0-35), sin secretos; copias de respaldo |
 
-### Si en el futuro hay nube o cuentas 🟡
+### Si en el futuro hay nube o cuentas ✅ (regla de contingencia; la v1 no tiene cuentas)
 
 - Usar el inicio de sesión de la plataforma (Steam; en el móvil, Google Play Games o Sign in with Apple); **no guardar contraseñas propias**.
 - Cifrado en tránsito, mínimo de datos, política de privacidad actualizada.
@@ -224,12 +229,12 @@ Principio: **reducir la superficie de ataque y los datos que se manejan**.
 
 - **Núcleo:** pruebas automáticas y simulaciones de balance.
 - **Interfaz y minijuegos:** pruebas manuales en un PC Windows real y, si la hay, en la Steam Deck; una lista de verificación por versión.
-- **Integración continua:** exportación a Windows y Linux 🟡 y build reproducible por línea de comandos (F1-26); el detalle está en [15](15-flujo-de-trabajo-y-calidad.md).
-- **Control de versiones:** Git, repositorio privado, commits frecuentes.
+- **Integración continua:** exportación a Windows y Linux ✅ y build reproducible por línea de comandos (F1-26); el detalle está en [15](15-flujo-de-trabajo-y-calidad.md).
+- **Control de versiones:** Git, repositorio público (sin secretos), commits frecuentes.
 
-## Trabajar con IA 🟡
+## Trabajar con IA ✅
 
-- Presupuesto: plan Max de Claude; ampliar si el proyecto avanza.
+- Presupuesto: plan Max de Claude como base (confirmado por el autor, 2026-10-24); el ahorro de tokens sigue [ADR-0010](adr/0010-politica-de-modelos-y-autorizacion-de-fable.md); ampliar si el proyecto avanza.
 - Por eso conviene dividir el trabajo en **tareas pequeñas y bien definidas** (ver el tablero de tareas): menos contexto por sesión, menos consumo, mejores resultados.
 - Yo escribo y reviso el código; **el jugador valida la diversión y el "feel"** jugando en PC.
 
@@ -240,12 +245,31 @@ Principio: **reducir la superficie de ataque y los datos que se manejan**.
 - **Cómo se usa:** abre la carpeta `studio/cerebro` como vault en Obsidian y empieza por la nota «00 Inicio». Cada nota guarda su `id` estable y su nombre legible; el grafo tiene colores por tipo y una vista guardada que oculta el backlog de F1 a F6. El código está en `tools/cerebro/` (ver su README).
 - Ahorra poco o nada en tokens: sirve para ver y navegar el proyecto. Para consultar sin leer documentos enteros se usa `tools/consulta.py` (⏳ F0-88).
 
+## Buenas prácticas por área ✅
+
+Revisión del 2026-10-24 contra las prácticas habituales de cada área; las aplica la tarea que se cita, sin cambiar decisiones del autor.
+
+| Área | Práctica |
+|---|---|
+| Git y binarios | `.gitattributes` con normalización de fin de línea (`* text=auto`, `eol=lf` en código y datos) y los binarios marcados; con Git LFS solo si el arte definitivo (PixelLab) y el audio hacen crecer el repositorio (la decisión se toma en ⏳ F4-227, al entrar el arte; hasta entonces no hace falta). Los originales pesados (hojas de sprites en capas, audio sin comprimir) viven fuera del repositorio público |
+| Godot en Git | Se versionan `project.godot`, escenas y recursos en texto (`.tscn`, `.tres`); la carpeta `.godot/` y las exportaciones van en `.gitignore`; la versión de Godot se fija en un solo archivo y la usan la CI y el equipo |
+| CI y builds | Exportación sin cabeza (`--headless --export-release`) con la versión de Godot y las plantillas fijadas, caché de plantillas, artefactos con la versión y el commit, y pruebas antes de exportar (F1-26) |
+| Exportación | Perfiles de exportación en el repositorio sin credenciales; Windows x86_64 y Linux x86_64; el Linux se prueba en la Steam Deck (Proton solo como respaldo); Windows se publica **sin firmar** hasta decidir en ⏳ F5-22 (recomendación aceptada por defecto) y se avisa en la ficha |
+| Localización | Claves de texto estables y contexto para el traductor; pseudo-localización en la CI; los plurales y marcadores con nombre se prueban con casos fijos; el `.pot` se regenera en la CI y falla si hay cadenas sin extraer (F1-16) |
+| Assets y licencias | Un registro único (origen, licencia, fecha, herramienta y si es IA) por cada archivo que entra; la CI falla si entra un archivo sin fila en el registro; el arte provisional con IA queda marcado |
+| Secretos | Variables de entorno o secretos de la CI, nunca en archivos del repositorio; revisión automática de secretos antes de cada commit y en la CI; los tokens de MCP y de Steam solo en configuración local fuera de git; si se filtra uno, se revoca y se rota |
+| Pruebas | Pirámide: núcleo con pruebas automáticas deterministas (semilla fija), simulaciones de balance, escenas con pruebas de humo y lista manual por versión; ningún fallo conocido se corrige sin una prueba que lo cubra |
+| Rendimiento (Steam Deck) | Presupuesto de cuadro (16,6 ms a 60 fps) medido en la Deck y no solo en el PC; límite de 40 o 60 fps y ahorro de batería opcional; suspensión y reanudación probadas (⏳ F1-44); texto de al menos 6 px de fuente base |
+| IA y MCP | El agente trabaja en ramas y PR revisados por el autor; los servidores MCP se limitan a lo necesario y con permisos mínimos; no se pega código ni datos con secretos en una sesión; lo que genera la IA se declara cuando corresponde ([11](11-legal-y-cumplimiento.md)) |
+
+Descartadas por ahora: firmar el ejecutable de Windows antes de la 1.0 (cuesta dinero y no bloquea Steam; se decide en F5-22, mientras tanto sin firmar) y mover los guardados a un servidor propio (contradice la v1 sin cuentas).
+
 ## Pendiente
 
 - ✅ Godot 4.x con GDScript confirmado por el autor el 2026-10-11.
-- ❓ Estructura de carpetas del proyecto del juego.
+- ✅ Estructura de carpetas de `game/`: la del [documento 14](14-arquitectura-y-modularidad.md), adoptada tal cual (autor, 2026-10-24); los cambios futuros van por ADR.
 - ✅ Herramienta del arte definitivo: PixelLab (autor, 2026-10-13; ver [12](12-direccion-de-arte.md)).
-- ❓ Herramientas concretas de audio.
-- ❓ Un PC Windows real para pruebas (requisito de F1): el autor lo tiene o lo consigue.
+- ✅ Herramientas de audio: bfxr-mcp para efectos y blips, LMMS para la música del autor, REAPER opcional (autor, 2026-10-24; ver «Audio»).
+- ✅ PC Windows real para pruebas: el autor ya lo tiene (2026-10-24); requisito de F1 cumplido.
 - ✅ Resolución base 640×360 y escala entera con bandas (autor, 2026-10-24; cierra F1-06).
-- ❓ Hub de documentación y tablero de tareas (ver [06](06-roadmap-y-pendientes.md)).
+- ✅ Hub de documentación y tablero de tareas: hechos (F0-14, F0-15; ver [06](06-roadmap-y-pendientes.md)).

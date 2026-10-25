@@ -19,3 +19,7 @@ Cada funcionalidad es un **módulo** con capas `domain`, `application`, `infrast
 ## Consecuencias
 
 Más disciplina y carpetas al inicio a cambio de poder cambiar un módulo sin romper otros, probar el dominio sin Godot y sumar plataformas o funciones sin tocar lo existente. Hay que validar el patrón con código real en la Fase 1.
+
+## Enmienda (2026-10-24, F0-57)
+
+La raíz de composición también aloja los **puentes de composición** (`app/puentes/`): implementan puertos que un módulo declara para recibir datos de otros sin depender de ellos, usando solo sus `api` y sin reglas del juego. Lo introduce [ADR-0012](0012-modulo-tutorial-y-logros-en-progression.md) para el módulo `tutorial` y la cola de `story`. La validación con código real sigue en la Fase 1 (F1-28, F1-30, F1-33).

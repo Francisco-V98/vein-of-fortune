@@ -135,6 +135,32 @@
         "Pixelify Sans y F1-12 fusionada en F1-18",
         "Verdigrís reservado y casino V2"
       ]
+    },
+    {
+      "n": 6,
+      "tema": "F0-57 Pasada de cierre técnico, legal y arquitectura",
+      "fecha": "2026-10-24",
+      "resumen": "Cierre de los puntos abiertos de los docs 10, 11 y 14 con 3 rondas de decisiones del autor; ADR-0012 y ADR-0013; audio por ruta gratuita",
+      "tareas": [
+        "F0-57"
+      ],
+      "docs": [
+        "09",
+        "10",
+        "11",
+        "14"
+      ],
+      "decisiones": [
+        "Declarar toda la IA en Steam (arte, textos, traducciones, música y voces si son de IA, marketing)",
+        "GodotSteam como herramienta de Steamworks con adaptador nulo",
+        "Estructura de game/ adoptada; módulo tutorial y logros en progression (ADR-0012)",
+        "JSON como fuente del contenido (ADR-0013); pruebas con GUT",
+        "Nunca voces reales; audio gratis: bfxr-mcp, música propia en LMMS, REAPER opcional",
+        "Texto mínimo de 6 px en Steam Deck; Windows sin firmar hasta F5-22"
+      ],
+      "prs": [
+        "73"
+      ]
     }
   ]
 }

@@ -12,13 +12,16 @@
   "domain_forbidden_symbols": [
     "Node", "Node2D", "Node3D", "Control", "CanvasItem", "SceneTree",
     "Input", "InputEvent", "DisplayServer", "OS", "FileAccess", "DirAccess",
-    "get_tree", "get_node", "ResourceLoader", "ResourceSaver", "Engine"
+    "get_tree", "get_node", "ResourceLoader", "ResourceSaver", "Engine",
+    "Time", "randi", "randf", "randi_range", "randf_range", "randomize"
   ],
   "modules": {
     "day": { "depends_on": [] },
     "inventory": { "depends_on": [] },
     "market": { "depends_on": ["day"] },
-    "extraction": { "depends_on": ["day", "inventory"] },
+    "world": { "depends_on": ["day"] },
+    "exploration": { "depends_on": ["day", "world"] },
+    "extraction": { "depends_on": ["day", "inventory", "exploration", "world_events"] },
     "shop": { "depends_on": ["market", "inventory", "day"] },
     "crafting": { "depends_on": ["inventory", "market"] },
     "staff": { "depends_on": ["day", "extraction", "shop"] },
@@ -28,6 +31,7 @@
     "story": { "depends_on": ["day", "factions", "world_events"] },
     "progression": { "depends_on": ["extraction", "shop"] },
     "lifestyle": { "depends_on": ["progression", "inventory"] },
+    "tutorial": { "depends_on": ["day", "story"] },
     "save": { "depends_on": [] },
     "telemetry": { "depends_on": [] }
   }

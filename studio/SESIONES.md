@@ -10,6 +10,7 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 | S-03 · F0-24 Storyboard del Acto I | 2026-10-24 | F0-24, F2-08 | — | F0-24: storyboard (15 imágenes), vista Semana 1 del hub con 28 escenas ilustradas (7 + 21 nuevas, medio 1k, ~11 créditos; total tarea ≈26,8) y 6 decisiones del autor aplicadas en docs 23, 27 y 30 F2-08 30 23 |
 | S-04 · F0-35 Protección de main | 2026-10-24 | F0-35 | #71 | Protección de main: auditorías de seguridad y licencias, guía de GitHub (repo público, ruleset con 5 checks, merge commit), LICENSE de solo consulta y guía para correr el proyecto |
 | S-05 · F0-56 Pasada de cierre marca y arte | 2026-10-24 | F0-56, F1-12, F1-18, F4-227 | #72 | Cerró los puntos abiertos de dirección de arte y marca (docs 12 y 13) en dos rondas con el autor; ambos documentos quedan con 0 🟡 y 0 ❓; F1-12 absorbida por F1-18. |
+| S-06 · F0-57 Pasada de cierre técnico, legal y arquitectura | 2026-10-24 | F0-57 | #73 | Cierre de los puntos abiertos de los docs 10, 11 y 14 con 3 rondas de decisiones del autor; ADR-0012 y ADR-0013; audio por ruta gratuita |
 
 ## S-01 · F0-85 a F0-94 Diseño de exploración, simulador y calendario
 - Documentos: 26, 28, 29
@@ -56,3 +57,12 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 - Vinotinto conservado con regla de contraste
 - Pixelify Sans y F1-12 fusionada en F1-18
 - Verdigrís reservado y casino V2
+
+## S-06 · F0-57 Pasada de cierre técnico, legal y arquitectura
+- Documentos: 09, 10, 11, 14
+- Declarar toda la IA en Steam (arte, textos, traducciones, música y voces si son de IA, marketing)
+- GodotSteam como herramienta de Steamworks con adaptador nulo
+- Estructura de game/ adoptada; módulo tutorial y logros en progression (ADR-0012)
+- JSON como fuente del contenido (ADR-0013); pruebas con GUT
+- Nunca voces reales; audio gratis: bfxr-mcp, música propia en LMMS, REAPER opcional
+- Texto mínimo de 6 px en Steam Deck; Windows sin firmar hasta F5-22

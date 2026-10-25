@@ -2,7 +2,7 @@
 
 ## Reglas comunes ✅
 
-**Estado:** confirmado que son simples, variados, de dos parámetros en tensión (con dos excepciones), con controles táctiles y de mando ([10](10-tecnico-y-herramientas.md)) y que la mejor herramienta los facilita; la duración ✅ (8–15 segundos) y la zona óptima ⏳ F2-16.
+**Estado:** confirmado que son simples, variados, de dos parámetros en tensión (con dos excepciones), con controles de ratón, teclado y mando (el táctil llega en la fase móvil, ⏳ F6-72) ([10](10-tecnico-y-herramientas.md)) y que la mejor herramienta los facilita; la duración ✅ (8–15 segundos) y la zona óptima ⏳ F2-16.
 
 - ✅ Minijuegos simples, variados (estilo Dave the Diver), alineados con el juego. Inspiración: pesca de Stardew Valley y minijuegos de Among Us.
 - ✅ **Cortos:** 8–15 segundos (se cuadra con el día de 12–15 minutos y el bloque de ≈ 4–5; [01](01-core-loop.md), [17](17-mapa-de-historia.md), [28](28-numeros-base-de-la-economia.md)). Con unas pocas menas por expedición (2 a 3 al principio, hasta 10 por bloque en el Acto IV; [02](02-extraccion.md)), los minijuegos de un bloque suman unos minutos y caben en cualquier sesión de PC o de Steam Deck.
