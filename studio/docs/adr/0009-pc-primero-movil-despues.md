@@ -20,11 +20,12 @@ Decisiones del autor (2026-10-15):
 8. **Pruebas:** en un **PC Windows real** (el autor lo tiene o lo consigue) y en la Steam Deck si la hay. Es un requisito de F1. El autor trabaja en Mac, así que ese PC es indispensable.
 9. **Sin cambio:** pago único, sin anuncios ni compras dentro del juego; autoguardado instantáneo (la Steam Deck suspende el juego en cualquier momento).
 
-Propuestas 🟡 que acompañan la decisión:
+Decisiones técnicas que acompañan la decisión (cerradas en F0-57, 2026-10-24):
 
-- 🟡 Integrar Steamworks con **GodotSteam**, siempre detrás del puerto de plataforma/tienda ([14](../14-arquitectura-y-modularidad.md)), de modo que el juego también corra sin Steam (itch.io y pruebas).
-- 🟡 Integración continua con exportación a **Windows y Linux** y build reproducible por línea de comandos.
-- 🟡 La capa B de telemetría ([ADR-0007](0007-telemetria-por-capas.md)) pasa a ser lo que entregue Steam; su alcance real se verifica en la fuente vigente al llegar a F5-40.
+- ✅ **GodotSteam** es la herramienta de Steamworks (decisión del autor), siempre detrás del puerto de plataforma/tienda ([14](../14-arquitectura-y-modularidad.md)) y con un **adaptador nulo** siempre disponible, de modo que el juego también corra sin Steam (itch.io y pruebas). Su licencia se verifica al integrarlo (⏳ F1-45).
+- ✅ Integración continua con exportación a **Windows y Linux** y build reproducible por línea de comandos, consecuencia de las plataformas de la 1.0; la implementa ⏳ F1-26.
+- ✅ La capa B de telemetría pasa a ser lo que entregue Steam (ya enmendada en [ADR-0007](0007-telemetria-por-capas.md)); su alcance real se verifica en la fuente vigente al llegar a ⏳ F5-40.
+- ✅ El **PC Windows real** para pruebas ya está disponible (autor, 2026-10-24): el requisito de F1 del punto 8 está cumplido.
 
 Aplazado con su tarea (⏳): resolución base y modo ventana ✅ 640×360 (2026-10-24, cierra F1-06; [ADR-0011](0011-exploracion-caminable-tren-y-minas.md)); precio y DLC ⏳ F5-33, F6-01 y F6-61; demo con el Acto I ⏳ F3-23; declaración de IA de Steam y términos de PixelLab ⏳ F4-227.
 
@@ -34,7 +35,7 @@ Aplazado con su tarea (⏳): resolución base y modo ventana ✅ 640×360 (2026-
 |---|---|
 | **Android primero** (el plan anterior) | Descartada por el autor. Obligaba a decisiones móviles (zona segura 20:9, HUD táctil, gamas de Android) que condicionaban una interfaz con mucha información |
 | **Solo Windows** | El autor incluyó Linux; además es la base de la Steam Deck, así que dejarlo fuera complicaría el objetivo *Verified* |
-| **Con macOS en la 1.0** | Aplazada por el autor hasta después de la 1.0; 🟡 además implicaría firma y notarización de Apple, por verificar entonces |
+| **Con macOS en la 1.0** | Aplazada por el autor hasta después de la 1.0; además implicaría firma y notarización de Apple, que se estudian al abrir esa plataforma |
 | **Móvil y PC a la vez** | El autor decidió terminar primero el juego en PC; hacerlo a la vez duplicaría el diseño de la interfaz y las pruebas |
 | **GOG y Epic en la 1.0** | Más trámites sin beneficio claro antes de publicar en Steam |
 

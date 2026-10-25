@@ -1,0 +1,82 @@
+{
+  "id": "F0-57",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Pasada de cierre técnico, legal y arquitectura (docs 10, 11 y 14)",
+      "ref": "rama studio/F0-57-pasada-tecnica-legal-arquitectura"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "review",
+      "by": "claude",
+      "note": "Pasa a revisión del autor tras QA",
+      "ref": "PR de F0-57"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea",
+      "ref": "PR #73"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "arquitecto",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Omitida: son decisiones del autor, planteadas con recomendación (la de audio con alternativas del diseñador de sonido)"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "nota": "Inventario de 88 🟡 y 12 ❓ en los tres documentos, 9 hallazgos de coherencia y 7 decisiones del autor; el autor decidió en 3 rondas el 2026-10-24",
+        "at": "2026-10-24",
+        "por": "analista"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "nota": "Docs 10, 11 y 14 cerrados (0 🟡 y 0 ❓); ADR-0012 (módulo tutorial, logros en progression) y ADR-0013 (JSON como fuente); architecture.json alineado; audio por la ruta gratuita",
+        "at": "2026-10-24",
+        "por": "arquitecto"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "nota": "Aprobado: build estricto sin avisos; docs 10, 11 y 14 con 0 🟡 y 0 ❓; ⏳ válidos; 384 pruebas de ci y 22 de arch OK; architecture.json coherente con el doc 14",
+        "at": "2026-10-24",
+        "por": "qa"
+      },
+      {
+        "etapa": "autor",
+        "estado": "hecha",
+        "nota": "El autor revisó el entregable, lo aprobó y dio «Terminé mi parte»",
+        "at": "2026-10-24",
+        "por": "autor"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida",
+        "nota": "Omitida: tarea de documentación y arquitectura, sin código del juego"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "hecha",
+        "nota": "PR #73 fusionado con merge commit",
+        "at": "2026-10-24",
+        "por": "coordinador"
+      }
+    ],
+    "traspasos": []
+  }
+}
