@@ -909,7 +909,7 @@
             },
             {
               "id": "F0-89",
-              "status": "review",
+              "status": "done",
               "title": "Ajustes finos de consumo: agentes cortos, prefijo fijo y /consumo por rol",
               "est": 5,
               "prio": "P2",

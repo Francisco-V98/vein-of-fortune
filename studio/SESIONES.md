@@ -13,7 +13,7 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 | S-06 · F0-57 Pasada de cierre técnico, legal y arquitectura | 2026-10-24 | F0-57 | #73 | Cierre de los puntos abiertos de los docs 10, 11 y 14 con 3 rondas de decisiones del autor; ADR-0012 y ADR-0013; audio por ruta gratuita |
 | S-07 · Cierre de flujo, QA y plan (F0-58) | 2026-10-25 | F0-58, F1-47 | #74 | Cierre de los puntos abiertos de los docs 06, 15 y 16 en 2 rondas de decisiones del autor; ADR-0005 a merge commit; commit sin ID = error en CI; F1-47; sesiones por bloques |
 | S-08 · Vistas del hub (F0-74, F0-75) | 2026-10-25 | F0-74, F0-75 | #75, #76 | F0-75 dibuja #/decisiones como árbol SVG con ramas, cuellos y banderas conectadas, y filtros por acto, nivel y personaje |
-| S-09 · Ahorro de tokens y herramientas (F0-88, F0-89) | 2026-10-25 | F0-88 | #77 | F0-88 crea tools/consulta.py (limpieza, abiertos, índice, sección, ficha, tarea y mundo) sobre el build; la sesión anterior renombra y modifica a la hija |
+| S-09 · Ahorro de tokens y herramientas (F0-88, F0-89) | 2026-10-25 | F0-88, F0-89 | #77, #78 | F0-89 amplía /consumo con la pestaña Roles y exportar, y documenta agentes cortos, prefijo fijo y la medición antes/después |
 
 ## S-01 · F0-85 a F0-94 Diseño de exploración, simulador y calendario
 - Documentos: 26, 28, 29
@@ -86,6 +86,9 @@ Para saber qué se hizo en una sesión: `python3 tools/sesion.py ver N` o `busca
 - Las tarjetas quedan como detalle bajo el árbol
 
 ## S-09 · Ahorro de tokens y herramientas (F0-88, F0-89)
-- Documentos: 10
+- Documentos: 10, 15
 - Las cifras de consulta salen del build
 - Renombrar o modificar una sesión lo hace la sesión que la inició
+- Prefijo fijo: guía y tamaños, sin tocar la configuración personal
+- Medición con /consumo exportar y umbral de 20 % o por debajo del 56 %
+- Pares de tareas los elige Claude, la comparación queda por días
