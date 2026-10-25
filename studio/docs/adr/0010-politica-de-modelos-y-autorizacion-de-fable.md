@@ -36,7 +36,7 @@ Decisiones del autor (2026-10-23):
 
 - El coordinador debe fijar `model` y `effort` en cada llamada a `Agent`; el hook de `vf-equipo` sobre `Agent` reescribe la llamada con los valores del rol y pide la autorización de Fable, sin modificar archivos.
 - Se añade el campo `politica_modelos` y los campos `modelo` y `esfuerzo` en `equipo.json`; el hub los valida.
-- Las tareas de seguimiento son ⏳ F0-88 (consulta del estudio sin leer documentos enteros) y ⏳ F0-89 (ajustes finos y `/consumo` por rol, con la medición antes y después).
+- Las tareas de seguimiento son ✅ F0-88 (`tools/consulta.py`, consulta del estudio sin leer documentos enteros) y ⏳ F0-89 (ajustes finos y `/consumo` por rol, con la medición antes y después).
 - Riesgo: un modelo más barato puede dar peor calidad en un rol concreto; se corrige subiéndolo en la tabla o en la tarea.
 
 ## Verificación

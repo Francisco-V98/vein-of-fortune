@@ -210,6 +210,25 @@
         "Los filtros atenúan en vez de quitar nodos",
         "Las tarjetas quedan como detalle bajo el árbol"
       ]
+    },
+    {
+      "n": 9,
+      "tema": "Ahorro de tokens y herramientas (F0-88, F0-89)",
+      "fecha": "2026-10-25",
+      "resumen": "F0-88 crea tools/consulta.py (limpieza, abiertos, índice, sección, ficha, tarea y mundo) sobre el build; la sesión anterior renombra y modifica a la hija",
+      "tareas": [
+        "F0-88"
+      ],
+      "prs": [
+        "77"
+      ],
+      "docs": [
+        "10"
+      ],
+      "decisiones": [
+        "Las cifras de consulta salen del build",
+        "Renombrar o modificar una sesión lo hace la sesión que la inició"
+      ]
     }
   ]
 }

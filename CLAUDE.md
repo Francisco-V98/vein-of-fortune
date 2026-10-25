@@ -22,7 +22,7 @@ Estudio de diseño de un juego de gestión minera (Godot 4, pixel art horizontal
 - Un agente = un entregable y unos 60 turnos como máximo; si la tarea es mayor, divídela.
 
 ## Lectura parcial
-- No leas documentos enteros si basta una sección: `grep -n`, rangos (`offset`/`limit`) y, cuando exista, `tools/consulta.py` (limpieza, puntos abiertos, índice de encabezados, tareas y datos del mundo).
+- No leas documentos enteros si basta una sección: `grep -n`, rangos (`offset`/`limit`) y `tools/consulta.py` (`limpieza`, `abiertos`, `indice`, `seccion`, `ficha`, `tarea`/`tareas`, `mundo`; sin argumentos muestra la ayuda).
 - Nunca leas `studio/hub/data.js` (generado, 1,6 MB) ni `studio/data/sim/resultados.json` enteros. Los documentos 18, 21, 23, 25, 27 y 28 son grandes: lee por secciones.
 - Cada lectura grande se paga en cada turno posterior: léela una vez y trabaja con notas.
 
@@ -30,6 +30,7 @@ Estudio de diseño de un juego de gestión minera (Godot 4, pixel art horizontal
 - Al fusionar el PR de una tarea la sesión continúa con la tarea siguiente del bloque; al terminar el bloque (o si el contexto pasa de ~200 k tokens) cierra la sesión o compacta (`/compact`); evita seguir con contextos de más de 200 k tokens y los reposos largos con contexto grande (la caché caduca a los 5 minutos y se reescribe entera).
 - `/consumo` muestra el gasto por modelo, ventana y día.
 - Registro de sesiones: antes de buscar en documentos algo «hecho en otra sesión», usa `python3 tools/sesion.py buscar <tarea, PR o texto>` y `ver N` (`studio/SESIONES.md` lo resume). Al cerrar una tarea, anota la sesión con `python3 tools/sesion.py resumen N "qué hizo" --tareas … --pr … --docs … --decisiones "a|b"` en el mismo PR.
+- **Renombrar o modificar una sesión:** lo hace siempre la sesión que la inició (la anterior), porque conoce su id; la sesión hija no usa `set_session_title` (no conoce su propio id) sino que le pide el cambio con `SendMessage` a esa sesión anterior. Regla del autor (2026-10-25), válida para cualquier modificación de la sesión actual.
 - **Cambio de sesión (siempre avisado):** cuando recomiendes cerrar o compactar la sesión, dilo de forma explícita, entrega el prompt de la sesión nueva en un bloque y ábrela con `spawn_task` (un clic). Cada sesión lleva número y nombre claro: `python3 tools/sesion.py nueva "<bloque o tema> (<IDs>)"` la registra en `studio/data/sesiones.json` y devuelve el título `S-NN · <bloque o tema> (<IDs>)`; úsalo como título del chip y, al empezar, como título de la sesión (`set_session_title`).
 
 ## Medidas de calidad del diseño
