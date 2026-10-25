@@ -36,7 +36,7 @@ Decisiones del 2026-10-13 (F0-23), del 2026-10-15 (F0-54) y del 2026-10-16 (F0-8
 | Peligros ambientales | **Fuera del Acto I**: ni gas ni derrumbes en los siete días. Entran desde el Acto II ✅ (⏳ F3-10) |
 | Fuera del Acto I | **El taller, la herrería, los quioscos y los peligros ambientales.** La prensa llega por Lucía y por la tienda, y la mejora de la herramienta la hace Teo ✅ |
 | Prensa | **Solo el Heraldo (noticia oficial sencilla) y el Teletipo (rumor).** La Voz del Hollín, la prensa con sesgos y el «cruzar fuentes» entran en el Acto II. El día 6 enseña a **confirmar un rumor con la noticia oficial del día siguiente** ✅ |
-| Pedidos de cliente | En el Acto I los encargos de clientes son **«pedidos de cliente»**: estándar el día 4 y urgente con prima el día 6 (opcional). «Contrato» queda para el Acto II en adelante ✅ |
+| Pedidos de cliente | En el Acto I los encargos de clientes son **«pedidos de cliente»**: estándar el día 4 y urgente con prima el día 6 (libre de aceptar; abrir la tarjeta con el paso guiado es obligatorio una vez). «Contrato» queda para el Acto II en adelante ✅ |
 | Cuota | Semanal; la primera vence el día 7 y es de **960 esquirlas** (720 de capital y 240 de interés) ✅ |
 | Puerta del Acto I | Reabrir el puesto, atender la primera cuota (pagada o prorrogada) y tener el primer contacto con los empleados ✅ (la misma puerta) |
 | Primer contacto con los empleados | **Día 7, a primera hora**, como escena corta antes de la cuota: la ficha del candidato sin nombre y «Contratar» bloqueado con su motivo ✅ |
@@ -512,9 +512,9 @@ Solo se ve la pista de la variante sorteada. Los otros dos props no existen en e
 | **Mejora** | La hace Teo ✅; libre, con paso guiado la primera vez ✅ (2026-10-24). Pico a nivel 2: 3 hierro y 480 esquirlas ✅ ([28](28-numeros-base-de-la-economia.md)) |
 | **Trastienda** | El almacén modesto del puesto (40 unidades), con un costo de guardar mínimo de 1 esquirla por lote y día ✅ |
 | **Prensa** | Heraldo (noticia oficial) y Teletipo (rumor), gratis en el Acto I, con el tope de 1 noticia y 1 rumor por día ✅ ([03](03-comercio.md)) |
-| **Pedidos de cliente** | Estándar el día 4 y urgente con prima el día 6 (opcional) ✅ |
+| **Pedidos de cliente** | Estándar el día 4 y urgente con prima el día 6 (libre de aceptar; abrir la tarjeta con el paso guiado es obligatorio una vez) ✅ |
 
-**Lo que fija el guion ✅.** El pico de nivel 2 puede llegar el día 5 (opcional) y ya es tuyo; la mejora cuesta 3 hierro y 480 esquirlas; Teo presta un taladro solo el día 3 y los días 5 y 6 se saca hierro con el pico; reparar cuesta dinero y materiales y no es un minijuego ([02](02-extraccion.md); los materiales son repuestos de hierro, 1 cada 20 puntos de desgaste); el Heraldo y el Teletipo llegan al mostrador y el Teletipo también por Lucía; sin el puesto abierto se vende al contado, con peor precio. La tienda y los pedidos solo aceptan mercancía propia ([28](28-numeros-base-de-la-economia.md)).
+**Lo que fija el guion ✅.** El pico de nivel 2 puede llegar el día 5 (libre de hacer; el paso guiado de la mejora se recorre una vez) y ya es tuyo; la mejora cuesta 3 hierro y 480 esquirlas; Teo presta un taladro solo el día 3 y los días 5 y 6 se saca hierro con el pico; reparar cuesta dinero y materiales y no es un minijuego ([02](02-extraccion.md); los materiales son repuestos de hierro, 1 cada 20 puntos de desgaste); el Heraldo y el Teletipo llegan al mostrador y el Teletipo también por Lucía; sin el puesto abierto se vende al contado, con peor precio. La tienda y los pedidos solo aceptan mercancía propia ([28](28-numeros-base-de-la-economia.md)).
 
 ---
 
@@ -592,8 +592,8 @@ A los 319 textos de las 28 escenas se suman las 3 cajas de la interacción de pa
 | cuota atrasada | La cuota del día 7 que no se pagó en Difícil y Hardcore |
 | libro de deuda | El libro de Reme donde se ven el capital, la cuota y el abono |
 | lámpara de red | La lámpara eléctrica de la pista del Consorcio. No es la lámpara de minero |
-| pedido de cliente | El encargo de un cliente en el Acto I (estándar el día 4, urgente y opcional el día 6). «Contrato» queda para el Acto II en adelante ✅ |
-| pedido urgente · prima | El pedido de cliente urgente (opcional, sin escena) y lo que paga de más |
+| pedido de cliente | El encargo de un cliente en el Acto I (estándar el día 4, urgente y libre de aceptar el día 6). «Contrato» queda para el Acto II en adelante ✅ |
+| pedido urgente · prima | El pedido de cliente urgente (libre de aceptar, sin escena) y lo que paga de más |
 | ficha de candidato | La tarjeta del candidato de la sección de empleos, que se ve el día 7 a primera hora |
 | mejora de la tienda | La mejora del puesto que hace falta para poder contratar; se compra en la propia tienda desde el Acto II (el «puesto ampliado», 3 500 esquirlas). No es la mejora de una herramienta, que hace Teo. En el Acto I es el motivo del bloqueo de «Contratar» |
 | cola de historia | Donde esperan las escenas que no se pueden disparar ([24](24-umbrales-de-acto.md), sección 10) |

@@ -2244,7 +2244,8 @@
   ],
   "dudas": [
     "1. No hay gesto fijado para: expedición guiada de Teo, equipar el taladro prestado, fijar precio y mínimo de regateo, entregar un pedido, dormir en casa. Todos se asignan a tareas existentes (F3-16, F2-19, F3-05, F3-12), no los invento.",
-    "Nota: ⏳ F2-08 verifica con el simulador el pedido de 8 sacos (unos 5 por expedición) y que 2 menas de hierro (3-4 sacos) alcanzan para la mejora de 3."
+    "Nota: ⏳ F2-08 verifica con el simulador el pedido de 8 sacos (unos 5 por expedición) y que 2 menas de hierro (3-4 sacos) alcanzan para la mejora de 3.",
+    "Decididas por el autor el 2026-10-24 ✅: la compuerta de los pasos guiados de d5 y d6 va en la cola (d5.4 y d6.2); completar la primera mejora del pico es abrir la oferta y elegir «Mejorar» o «Ahora no», sin pagar; el día 6 mantiene dos pasos guiados (rumor y tablón); d1.6 bloquea el inicio del día 2 y d2.4 es un recordatorio que vuelve cada noche. La decisión queda registrada en el doc 27 (2.4), el doc 30 (decisión 12) y `reglas_decididas`."
   ],
   "reglas_decididas": [
     "La cola no suelta d7.3 sin resolver d1.6 y d5.2: f-familia y m-lucia siempre quedan fijadas; sin valor por defecto (27 §21.3; 23 §9; decisión del autor 2026-10-24).",
