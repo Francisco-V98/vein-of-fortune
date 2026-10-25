@@ -16,6 +16,14 @@
       "by": "claude",
       "note": "Pasa a revisión del autor tras QA",
       "ref": "PR de F0-56"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "review",
+      "to": "done",
+      "by": "claude",
+      "note": "El autor aprobó la tarea",
+      "ref": "PR #72"
     }
   ],
   "comments": [],
@@ -51,8 +59,10 @@
       },
       {
         "etapa": "autor",
-        "estado": "pendiente",
-        "nota": "Esperando la revisión del autor («Terminé mi parte»)"
+        "estado": "hecha",
+        "nota": "El autor revisó el entregable, lo aprobó y dio «Terminé mi parte»",
+        "at": "2026-10-24",
+        "por": "autor"
       },
       {
         "etapa": "playtest",
@@ -61,8 +71,10 @@
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente",
-        "nota": ""
+        "estado": "hecha",
+        "nota": "PR #72 fusionado con merge commit",
+        "at": "2026-10-24",
+        "por": "coordinador"
       }
     ],
     "traspasos": []

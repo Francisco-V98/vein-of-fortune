@@ -112,7 +112,29 @@
     {
       "n": 5,
       "tema": "F0-56 Pasada de cierre marca y arte",
-      "fecha": "2026-10-24"
+      "fecha": "2026-10-24",
+      "resumen": "Cerró los puntos abiertos de dirección de arte y marca (docs 12 y 13) en dos rondas con el autor; ambos documentos quedan con 0 🟡 y 0 ❓; F1-12 absorbida por F1-18.",
+      "tareas": [
+        "F0-56",
+        "F1-12",
+        "F1-18",
+        "F4-227"
+      ],
+      "prs": [
+        "72"
+      ],
+      "docs": [
+        "12",
+        "13"
+      ],
+      "decisiones": [
+        "Tres niveles de pixel con regla común",
+        "Íconos 32×32 provisional",
+        "8 direcciones con caminar y reposo; cuadros al producir",
+        "Vinotinto conservado con regla de contraste",
+        "Pixelify Sans y F1-12 fusionada en F1-18",
+        "Verdigrís reservado y casino V2"
+      ]
     }
   ]
 }
