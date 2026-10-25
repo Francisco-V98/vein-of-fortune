@@ -1,0 +1,15 @@
+{
+  "id": "F1-12",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "dropped",
+      "by": "claude",
+      "note": "Absorbida por F1-18: el autor ya eligió Pixelify Sans y F1-18 verifica licencia y glifos.",
+      "ref": "rama studio/F0-56-pasada-marca-y-arte"
+    }
+  ],
+  "comments": [],
+  "evidence": []
+}

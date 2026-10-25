@@ -602,7 +602,7 @@
               "id": "F0-56",
               "title": "Pasada de cierre: marca y arte (12, 13)",
               "est": 5,
-              "status": "backlog",
+              "status": "review",
               "prio": "P2",
               "desc": "Cerrar los puntos abiertos de dirección de arte y de marca e identidad: subtítulo, lema, tipografía y logotipo.",
               "done_when": "Ambos documentos por encima de la meta."
@@ -1141,8 +1141,8 @@
               "id": "F1-12",
               "title": "Elegir fuente pixel con licencia clara",
               "est": 1,
-              "status": "backlog",
-              "desc": "Buscar una fuente que permita uso comercial y registrar su licencia.",
+              "status": "dropped",
+              "desc": "Absorbida por F1-18: el autor eligió Pixelify Sans el 2026-10-12 y F1-18 verifica la licencia y los glifos (decisión del 2026-10-24, F0-56).",
               "done_when": "Fuente elegida y registrada.",
               "prio": "P1"
             },
