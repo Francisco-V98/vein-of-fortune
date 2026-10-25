@@ -146,4 +146,4 @@ Tres mods del repositorio, en `tools/mods/` (un marketplace local llamado `vein-
 ## Pendiente
 
 - ✅ Etapas y roles confirmados por el autor (2026-10-16): las siete etapas del flujo y los 21 roles, que ya incluyen al economista y al diseñador de sonido. No falta ningún especialista.
-- ⏳ F0-74 Mostrar el flujo de cada tarea en la vista de tarea del hub.
+- ✅ El flujo de cada tarea se muestra en la vista de tarea del hub (F0-74, 2026-10-25).
