@@ -6,6 +6,9 @@ Formato:  tipo(ámbito): descripción        (ver studio/docs/15-flujo-de-trabaj
 Uso:
     python3 tools/ci/check_commits.py origin/main..HEAD
     python3 tools/ci/check_commits.py --subject "feat(market): F2-04 modelo de precio"
+
+El ID de la tarea es obligatorio (ERROR). Los commits de fusión («Merge …») y de reversión
+(«Revert "…"») se aceptan tal cual. Solo se revisa el rango del PR, no la historia de main.
 """
 import re
 import subprocess
@@ -28,6 +31,8 @@ def check_subject(subject):
         problems.append("el asunto tiene %d caracteres (máximo %d)" % (len(subject), MAX_SUBJECT))
     if subject.endswith("."):
         problems.append("el asunto no debe terminar en punto")
+    if not TASK_RE.search(subject):
+        problems.append("no menciona una tarea (por ejemplo F2-04)")
     return problems
 
 
@@ -53,8 +58,6 @@ def main(argv):
             print("ERROR %s «%s»" % (sha, subject))
             for p in problems:
                 print("   -", p)
-        elif not TASK_RE.search(subject):
-            print("AVISO %s «%s»: no menciona una tarea (por ejemplo F2-04)" % (sha, subject))
     if bad:
         print("\n%d commit(s) no cumplen la convención." % bad)
         return 1

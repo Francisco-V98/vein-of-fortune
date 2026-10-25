@@ -2,6 +2,7 @@
 """Registro de sesiones de trabajo: número correlativo y nombre claro.
 
   python3 tools/sesion.py nueva "F0-25 Flujo de pantallas"   -> registra y muestra «S-02 · F0-25 Flujo de pantallas»
+  python3 tools/sesion.py nueva "Vistas del hub (F0-74, F0-75)" -> un bloque de tareas afines: «S-NN · <bloque o tema> (<IDs>)»
   python3 tools/sesion.py lista                               -> muestra todas
   python3 tools/sesion.py siguiente                           -> muestra el próximo número sin registrar
   python3 tools/sesion.py resumen 2 "Qué hizo" --tareas F0-25,F2-41 --pr 66 --docs 30 --decisiones "una|otra"

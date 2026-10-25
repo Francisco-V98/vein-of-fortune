@@ -18,6 +18,12 @@ class TestSesion(unittest.TestCase):
             self.assertEqual(sesion.titulo(b), "S-02 · F0-24 Storyboard")
             self.assertEqual(sesion.siguiente(sesion.cargar(ruta)), 3)
 
+    def test_bloque_con_varias_tareas_en_el_titulo(self):
+        with tempfile.TemporaryDirectory() as d:
+            ruta = Path(d) / "sesiones.json"
+            a = sesion.nueva("Vistas del hub (F0-74, F0-75)", ruta, "2026-10-26")
+            self.assertEqual(sesion.titulo(a), "S-01 · Vistas del hub (F0-74, F0-75)")
+
     def test_tema_vacio_falla(self):
         with tempfile.TemporaryDirectory() as d:
             with self.assertRaises(ValueError):

@@ -1,8 +1,8 @@
 # 06 · Roadmap, ideas futuras y pendientes
 
-## Fases tentativas 🟡
+## Fases tentativas ✅ (histórico)
 
-> **Reemplazado por el roadmap detallado**: `studio/data/roadmap.json` (se ve en el hub, sección Roadmap). Tiene fases F0 a F6, hitos, tareas con horas, objetivo (MVP, Release 1, Evolutivo) y estado. La tabla de abajo es el borrador original.
+> **Reemplazado por el roadmap detallado**: `studio/data/roadmap.json` (se ve en el hub, sección Roadmap). Tiene fases F0 a F6, hitos, tareas con horas, objetivo (MVP, Release 1, Evolutivo) y estado. La tabla de abajo es el borrador original, conservado como histórico: manda el roadmap.
 
 Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 
@@ -21,7 +21,7 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 
 - **Casino** ✅ (idea del autor): tragamonedas, ruleta, blackjack, quizás minijuegos de azar. Dinero del juego solamente. Es la V2.0 y se llama Salón del Farol (decisión del autor, 2026-10-13; [26](26-zonas-y-edificios.md)).
 - **Estilo de vida ampliado** ✅ (idea del autor): casas y mansiones por zona, joyería comprable, vehículos, ropa y decoración, y mar e inversiones. Casas, mansiones, decoración, joyería, concesionaria y sastrería van en la V2.1; mar e inversiones, en la V2.2 (decisión del autor, 2026-10-13; [26](26-zonas-y-edificios.md)).
-  - 🟡 Nota: los juegos de azar simulados afectan la clasificación por edad en las tiendas (Steam y, después, las de apps); revisar requisitos antes.
+  - ✅ Nota: los juegos de azar simulados afectan la clasificación por edad en las tiendas (Steam y, después, las de apps). Se revisan los requisitos en ⏳ F6-13 antes de la V2.0; la v1 no tiene azar.
 - Capa de imperio: sucursales, otras ciudades, plantillas más grandes de empleados. (Los empleados básicos entran a mitad del juego, no aquí.)
 - Eventos de temporada.
 - **Evolutivo ✅ (decisión del autor, 2026-10-15):** consumibles de recarga de energía y similares: versiones futuras, mucho después de la V1, sin tarea ni fecha.
@@ -34,9 +34,9 @@ Borrador para ordenar el trabajo; se afinará cuando se fije el prototipo.
 1. Logotipo, wordmark e ícono (ver [13](13-marca-e-identidad.md)).
 2. Guion del Acto I ✅: aprobado por el autor el 2026-10-13 y cerrado el 2026-10-16 (F0-86), con todas sus propuestas confirmadas y sin ninguna pendiente; incluye el esquema de escenas y textos de la sección 21 ([27](27-guion-del-acto-i.md)). Las variantes del Acto II están en [22](22-acto-ii-variantes.md).
 3. Fichas completas de cada zona (⏳ F2-10 y ⏳ F4-02 a ⏳ F4-22) y de cada mineral (plantilla en 05).
-4. Tutorial: cómo se enseña a leer el mercado.
-5. Motor y arquitectura técnica (decisión posterior).
-6. Estilo visual concreto: referencias de arte.
+4. Tutorial: cómo se enseña a leer el mercado ✅ (decidido en [ADR-0012](adr/0012-modulo-tutorial-y-logros-en-progression.md); el contenido se diseña en ⏳ F5-01).
+5. Motor y arquitectura técnica ✅: Godot 4 ([10](10-tecnico-y-herramientas.md), [14](14-arquitectura-y-modularidad.md)).
+6. Estilo visual concreto ✅: pixel art con PixelLab ([12](12-direccion-de-arte.md)).
 
 Resueltas el 2026-10-15: las stats del jugador ([04](04-progresion-y-meta.md)), el legado (aplica a todas las dificultades) y cómo se salta un bloque (botón «Esperar», [01](01-core-loop.md)).
 
@@ -168,7 +168,7 @@ Resueltas el 2026-10-15: las stats del jugador ([04](04-progresion-y-meta.md)), 
 | 2026-10-15 | Fases: la F1 deja un proyecto Godot que corre en PC; la F5 lanza en Steam; la F6 es posterior al lanzamiento. El móvil es una fase propia después, y las actualizaciones V2.x pueden seguir en PC o ir también al móvil |
 | 2026-10-15 | Pruebas en un PC Windows real y, si hay una, en la Steam Deck: requisito de la F1. El autor trabaja en Mac |
 | 2026-10-15 | Sin cambio: pago único sin anuncios ni compras, autoguardado instantáneo (la Steam Deck suspende y no se quiere perder progreso) y las cifras base de la economía |
-| 2026-10-15 | 🟡 Propuestas aplazadas a su tarea: resolución base (superada: 640×360 decidida el 2026-10-24, ADR-0011) y modo de ventana ⏳ F1-06; precio y DLC (pago único, sin DLC de pago en la v1) ⏳ F5-33, ⏳ F6-01, ⏳ F6-61; demo con el Acto I ⏳ F3-23; declaración de IA de Steam y términos de PixelLab ⏳ F4-227, ⏳ F5-30; casino solo con moneda del juego y cuestionario de Steam sin azar en la v1 ⏳ F6-13 |
+| 2026-10-15 | Propuestas aplazadas a su tarea: resolución base (superada: 640×360 decidida el 2026-10-24, ADR-0011) y modo de ventana ⏳ F1-06; pago único ✅ y sin DLC de pago en la v1 ✅ (decisión del autor, 2026-10-25; el precio queda en ⏳ F5-33, y ⏳ F6-01 y ⏳ F6-61 revisan el contenido posterior); demo con el Acto I ✅ (2026-10-25; se construye en ⏳ F3-23); declaración de IA de Steam y términos de PixelLab ⏳ F4-227, ⏳ F5-30; casino solo con moneda del juego y cuestionario de Steam sin azar en la v1 ⏳ F6-13 |
 | 2026-10-15 | Economía (F0-52): moneda «esquirlas»; día de 12–15 min con tres bloques de unos 4–5 min; semana, mes y estación de 28 días (el día 1 es el 22 de otoño y el invierno empieza el día 8); contratos de 7, 14 y 30 días; La Fosa abre los días 2, 4 y 6 (ver [28](28-numeros-base-de-la-economia.md)) |
 | 2026-10-15 | Economía (F0-52): escala con carbón a 50, deuda de la herencia de 24.000 y cuota del día 7 de 960; «punto» de mercado = 1 % del precio base, «pp» para el interés y «vigilancia +N»; el abono anónimo solo paga intereses y la vía de deuda mide el capital que pagas de tu bolsillo (25 % y 50 % de 24.000), con el Consorcio hasta un 30 % |
 | 2026-10-15 | Economía (F0-52): la energía se rellena en cada expedición (2 a 3 menas al inicio, crece con skills y herramientas); un nivel de herramienta es un paquete (5 niveles, regla del nivel anterior); la Aetherita pide taladro o cincel de nivel 5 con filtro; explosivo desde el Acto III; la Bolsa cobra medio spread y no tiene impuesto de venta; los empleados tienen un papel residual en el Acto IV; los sobornos a Quiroga se recuperan 1 cada 56 días |
