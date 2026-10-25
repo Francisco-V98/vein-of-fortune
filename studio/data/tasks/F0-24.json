@@ -8,6 +8,14 @@
       "by": "claude",
       "note": "Storyboard del Acto I: 15 imágenes provisionales (Higgsfield) y sección del hub",
       "ref": "rama studio/F0-24-storyboard-del-acto-i"
+    },
+    {
+      "at": "2026-10-24",
+      "from": "doing",
+      "to": "done",
+      "by": "claude",
+      "note": "Storyboard del Acto I, vista Semana 1 con 28 escenas, tutoriales y compuertas; aprobado por el autor",
+      "ref": "PR #70"
     }
   ],
   "comments": [],
@@ -45,15 +53,22 @@
       },
       {
         "etapa": "autor",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "autor",
+        "nota": "El autor revisó el storyboard y la vista Semana 1 (28 escenas ilustradas), decidió tutoriales con compuerta, el cierre de las dudas de los días 5, 6, d1.6 y d2.4 y dio «Terminé mi parte»"
       },
       {
         "etapa": "playtest",
-        "estado": "omitida"
+        "estado": "omitida",
+        "nota": "Omitida: tarea de diseño y hub, sin código del juego"
       },
       {
         "etapa": "cierre",
-        "estado": "pendiente"
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "coordinador",
+        "nota": "PR #70 fusionado; créditos ≈26,8 de 60 (saldo 739,1)"
       }
     ],
     "traspasos": [
