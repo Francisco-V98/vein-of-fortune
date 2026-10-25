@@ -9,6 +9,10 @@
 *.jks
 *.p12
 export_credentials.cfg
+*.pem
+*.key
+.mcp.json
+.claude/settings.json
 
 # Builds
 *.apk

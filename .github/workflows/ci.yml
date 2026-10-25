@@ -17,6 +17,7 @@ jobs:
   studio:
     name: Estudio (roadmap, tareas, QA y hub)
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -28,6 +29,7 @@ jobs:
   tools:
     name: Pruebas de las herramientas
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -45,6 +47,7 @@ jobs:
     name: Convención de commits
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -58,6 +61,7 @@ jobs:
   architecture:
     name: Arquitectura modular de game/
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -69,6 +73,7 @@ jobs:
   game:
     name: Juego (formato, lint y pruebas)
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - name: Comprobar si existe el proyecto Godot

@@ -1,5 +1,7 @@
 # Cómo trabajar en este repositorio
 
+> El repositorio es público solo para consulta (ver [LICENSE](LICENSE)); por ahora no se aceptan PR externos.
+
 Resumen. El detalle está en `studio/docs/`:
 
 - **Arquitectura y modularidad:** `14-arquitectura-y-modularidad.md`
@@ -23,7 +25,7 @@ python3 tools/ci/check_commits.py origin/main..HEAD
 
 4. **Pull request** con la plantilla. La integración continua debe estar en verde.
 5. **Flujo de la tarea:** `backlog → sprint → doing → review → qa → done`. La revisión verifica código y arquitectura; QA verifica el comportamiento con casos de prueba.
-6. **Fusión con squash** y borrado de la rama.
+6. **Fusión con merge commit** (sin squash ni rebase) y borrado de la rama.
 
 ## Reglas que no se negocian
 

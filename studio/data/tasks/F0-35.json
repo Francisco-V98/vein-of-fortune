@@ -1,0 +1,63 @@
+{
+  "id": "F0-35",
+  "history": [
+    {
+      "at": "2026-10-24",
+      "from": "backlog",
+      "to": "doing",
+      "by": "claude",
+      "note": "Protección de main: guía para el autor, licencia y preparación para repo público",
+      "ref": "rama studio/F0-35-proteccion-de-main"
+    }
+  ],
+  "comments": [],
+  "evidence": [],
+  "pipeline": {
+    "especialista": "herramientas",
+    "etapas": [
+      {
+        "etapa": "ideacion",
+        "estado": "omitida",
+        "nota": "Omitida: las opciones (Pro, público, aplazar; merge/rebase/squash) las planteó el coordinador al autor con recomendación"
+      },
+      {
+        "etapa": "analisis",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "analista",
+        "nota": "El coordinador comprobó que el plan gratuito da 403 en protección y rulesets; seguridad auditó árbol e historial (sin secretos) y legal revisó licencias; el autor decidió repo público, licencia propietaria, merge commit, 5 checks, admins incluidos, correo aceptado y todo visible"
+      },
+      {
+        "etapa": "produccion",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "herramientas",
+        "nota": "LICENSE, SECURITY.md, aviso del README, .gitignore, timeouts del CI, doc 15 con guía paso a paso y nombres exactos de las 5 comprobaciones"
+      },
+      {
+        "etapa": "qa",
+        "estado": "hecha",
+        "at": "2026-10-24",
+        "por": "qa",
+        "nota": "QA aprobada: build estricto sin avisos, pruebas OK y nombres de las 5 comprobaciones coinciden con el CI",
+        "nota": ""
+      },
+      {
+        "etapa": "autor",
+        "estado": "pendiente",
+        "nota": "El autor ejecuta la guía del documento 15 en GitHub"
+      },
+      {
+        "etapa": "playtest",
+        "estado": "omitida",
+        "nota": "Omitida: tarea de configuración, sin código del juego"
+      },
+      {
+        "etapa": "cierre",
+        "estado": "pendiente",
+        "nota": ""
+      }
+    ],
+    "traspasos": []
+  }
+}

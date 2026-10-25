@@ -68,7 +68,7 @@ backlog → sprint → doing → review → qa → done
 6. **Integración continua en verde** y auto-revisión con la lista de abajo. Revisión asistida con `/code-review`.
 7. La tarea pasa a **`review`** con el enlace al PR: el autor revisa el código y la arquitectura.
 8. Con la revisión aprobada, pasa a **`qa`**: se ejecutan los casos de prueba de la tarea, la regresión, y las pruebas de seguridad y rendimiento que apliquen ([16](16-calidad-y-qa.md)).
-9. Si QA aprueba, el autor hace el **merge** (squash), borra la rama y la tarea pasa a **`done`** con la referencia del commit y la evidencia de QA.
+9. Si QA aprueba, el autor hace el **merge** (merge commit), borra la rama y la tarea pasa a **`done`** con la referencia del commit y la evidencia de QA.
 10. Si QA falla, la tarea vuelve a **`doing`** y el error se registra con su severidad.
 
 Las tareas que no producen comportamiento (documentos, decisiones, estudio) pasan de `review` a `done` y lo dicen en su nota.
@@ -80,9 +80,9 @@ Dentro de estos estados, cada tarea recorre un flujo por etapas con un equipo de
 ## Pull requests 🟡
 
 - **Pequeños:** idealmente menos de ~400 líneas de cambio.
-- **Título** con la misma convención que los commits (se usa al hacer *squash*).
+- **Título** con la misma convención que los commits (el CI lo verifica en cada commit del PR).
 - **Plantilla** con qué, por qué, cómo se probó, evidencias y lista de verificación (`.github/pull_request_template.md`).
-- Se **fusionan con squash** para mantener `main` lineal y legible.
+- Se **fusionan con merge commit** (no squash ni rebase): conserva la rama `studio/<ID>-tema` y los commits `tipo(ámbito): ID descripción`, que el CI valida. Decisión del autor en F0-35: no se exige historial lineal.
 
 ### Lista de revisión 🟡
 
@@ -227,15 +227,36 @@ Decisión del autor (2026-10-23, [ADR-0010](adr/0010-politica-de-modelos-y-autor
 - **Lotes:** los agentes independientes se lanzan juntos y sus informes se procesan juntos.
 - **Cierre de sesión:** al fusionar el PR de una tarea se cierra la sesión o se compacta, para no arrastrar un contexto grande a la tarea siguiente.
 
-## Ajustes de GitHub que hace el autor 🟡
+## Ajustes de GitHub que hace el autor ✅
 
-En *Settings → Branches → Branch protection rule* para `main`:
+Tarea F0-35. Decisiones del autor (2026-10-24): el repositorio se hace **público** (el plan gratuito no permite proteger ramas en repos privados), licencia propietaria de solo consulta (`LICENSE`), merge commit sin historial lineal, las 5 comprobaciones requeridas y reglas también para admins. Se acepta que el correo `frncsico@gmail.com` quede visible en 188 commits antiguos.
 
-- Requerir *pull request* antes de fusionar.
-- Requerir que pasen las comprobaciones de la integración continua.
-- Requerir historial lineal (squash).
-- No permitir subidas forzadas ni borrar la rama.
-- En *General*: borrar ramas automáticamente al fusionar.
+### Guía paso a paso (repositorio `Francisco-V98/vein-of-fortune`)
+
+Haz los pasos en este orden, después de fusionar el PR de F0-35 (así `LICENSE`, el aviso del README y los `timeout` ya están en `main`). Las rutas son de la web de GitHub.
+
+1. **Correo (antes de publicar).** Tu avatar → *Settings → Emails*: marca **Keep my email addresses private** y **Block command line pushes that expose my email**. En local: `git config user.email "<ID>+Francisco-V98@users.noreply.github.com"` (el ID está en *Emails*).
+2. **Revisar tu equipo.** Antes de cualquier `git add`, comprueba que no hay `.mcp.json` ni claves de PixelLab o Higgsfield dentro del repo (`.gitignore` ya los excluye).
+3. **Hacer público el repo.** *Settings → General → Danger Zone → Change visibility → Make public*. Escribe el nombre para confirmar.
+4. **Ramas.** *Settings → General → Pull Requests*: deja marcado solo **Allow merge commits**; desmarca *Allow squash merging* y *Allow rebase merging*; marca **Automatically delete head branches**.
+5. **Protección de `main`.** *Settings → Rules → Rulesets → New ruleset → New branch ruleset*:
+   - Name: `main protegida`; Enforcement status: **Active**; Bypass list: **vacía** (aplica también a ti).
+   - Target branches: *Add target → Include default branch*.
+   - Marca: **Restrict deletions**, **Block force pushes**, **Require a pull request before merging** (approvals: 0, eres el único autor) y **Require status checks to pass**.
+   - En *Require status checks* pulsa *Add checks* y añade estos 5 nombres exactos (aparecen tras la primera ejecución del CI):
+     `Estudio (roadmap, tareas, QA y hub)` · `Pruebas de las herramientas` · `Convención de commits` · `Arquitectura modular de game/` · `Juego (formato, lint y pruebas)`.
+   - Deja **sin marcar** *Require linear history*. Guarda con *Create*.
+6. **Actions.** *Settings → Actions → General*: *Fork pull request workflows* → **Require approval for all outside collaborators**; *Workflow permissions* → **Read repository contents permissions** y sin «Allow GitHub Actions to create and approve pull requests».
+7. **Seguridad.** *Settings → Advanced Security* (o *Code security*): activa **Private vulnerability reporting**, **Dependabot alerts**, **Secret scanning** y **Push protection**.
+8. **Comprobar.** Abre un PR de prueba: el botón de fusionar debe esperar a las 5 comprobaciones; un `git push origin main` directo debe ser rechazado.
+
+Si algo falla, el nombre de una comprobación en la regla debe coincidir con el `name:` del job en `.github/workflows/ci.yml`. Si cambias el nombre de un job, cámbialo también en la regla.
+
+### Riesgos aceptados al publicar
+
+- Términos comerciales de Higgsfield y del modelo de las imágenes provisionales: la ayuda de Higgsfield (cláusula 4.4) dice que no reclama la propiedad y no restringe el uso comercial; falta leer los Términos completos ⏳ F5-26.
+- Marca del título visible antes de la búsqueda formal ⏳ F5-29.
+- Acciones del CI por etiqueta y no por hash ⏳ F1-35.
 
 ## QA en el flujo ✅
 

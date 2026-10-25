@@ -36,4 +36,6 @@ Fase 0 (diseño) casi completa. Siguiente: marca, storyboard y preparación téc
 
 ## Derechos
 
-Todos los derechos reservados por ahora. El arte de referencia está generado con IA y sus términos de uso comercial están por revisar antes de publicar.
+Código y diseño visibles solo para consulta. **Todos los derechos reservados** (ver [LICENSE](LICENSE)): no se permite usar, copiar ni redistribuir nada de este repositorio. No se aceptan contribuciones externas por ahora.
+
+El arte de referencia está generado con IA (gpt_image_2_5 vía Higgsfield), es **provisional** y no está licenciado para uso; se rehará en pixel art con PixelLab. Problemas de seguridad: [SECURITY.md](SECURITY.md).
